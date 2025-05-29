@@ -1,0 +1,582 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 13.3: Tymoczko, Recasting K-nets</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Recasting K-nets">
+
+    <meta name="citation_author" content="Tymoczko, Dmitri">
+      
+
+<meta name="citation_publication_date" content="2007/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="13">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Recasting K-nets
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.07.13.3/mto.07.13.3.tymoczko.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Dmitri Tymoczko</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html">http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html</a></font></p><p><font size='4'>ABSTRACT: In this article I propose a new notation for hyper-transpositions and hyper-inversions, in which the usual subscripts are divided by 2.  This new notation allows us to recast the hyper operations as ordinary transpositions and inversions operating on equivalence classes in 24-tone equal temperament.  This suggests a response to Buchler and Losada, who both criticize the conceptual foundations of standard K-net analysis.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.tymoczko.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.07.13.3/tymoczko_examples.pdf">PDF examples </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2007</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 13, Number 3, September 2007 <br> Copyright &#0169; 2007 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align:center"><b>I. The Problem</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="tymoczko_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[1] In a recent article, Michael Buchler observes that K-nets such as those in <b>Figure 1</b>, which I will notate as <nobr>{C, E} + {G}</nobr> and {G, B} + {D}, are 
+related by &lt;<b>T</b><sub>2</sub>&gt; (&#8220;hyper-<b>T</b><sub>2</sub>&#8221;).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>, <sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>    He asks, in effect, &#8220;what&#8217;s <b>T</b><sub>2</sub>-like about the relation between C major and G major triads?&#8221;</p>
+
+<p>[2] This question is worth taking seriously.  Although hyper-transposition is different from ordinary transposition, being a function over functions rather than a function over pitch classes, comparisons between these two types of &#8220;transposition&#8221; are intrinsic to the practice of K-net analysis.  And although the primary analytical use of K-nets is to relate sets belonging to different set classes, the technology applies equally well to chords such as C major and G major.  Buchler has uncovered an example that seems to demonstrate that there is only a tenuous analogy between the two sorts of transposition.  It will not do simply to reiterate that they are different.  For Buchler&#8217;s challenge is, <i>given</i> that they disagree so dramatically about such a simple case, what&#8217;s the musical value of comparing them?</p>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="tymoczko_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[3] It is possible, however, that a simple change in notation might help meet his objection.  For suppose we used the label &lt;<b>T</b><sub>7</sub>&gt; to refer to the hyper-transposition linking {C, E} + {G} to {G, B} + {D}.  In that case, the force of Buchler&#8217;s worry would be significantly ameliorated, since there is <i>obviously</i> something <b>T</b><sub>7</sub>-like about the relationship.  We might therefore ask whether it is possible to label the members of the hyper-TI group &lt;TI&gt;, such that, if <b>T</b><sub><i>x</i></sub> or <b>I</b><sub><i>y</i></sub> transforms the pitch classes in one K-net K into those of another K&prime;, with arrows being updated accordingly, &lt;<b>T</b><sub><i>x</i></sub>&gt; or &lt;<b>I</b><sub><i>y</i></sub>&gt; transforms the arrow-labels in K into the arrow-labels in K&prime;? (See <b>Figure 2</b>.) In other words, can we label the elements of the hyper-TI group in a way that is consistent with the TI group?</p>
+			
+<p style="text-align:center"><b>II. The Solution</b></p>
+
+<p>[4] Yes. Simply divide the current hyper-T and hyper-I labels by 2. The only complication is that division is not uniquely defined in circular pitch-class space.
+<p>[5] As shown in Figure 1, {C, E} + {G} relates to {G, B} + {D} by &lt;<b>T</b><sub>2</sub>&gt; in ordinary K-net notation.  I propose instead that we label this hyper-transposition &lt;<b>T</b><sub>1</sub> <i>or</i> <b>T</b><sub>7</sub>&gt;.  This is because 1 + 1 = 7 + 7 = 2 (mod 12).  In other words, &#8220;2 divided by 2&#8221; can be either 1 or 7 in pitch-class space.  Note that the label <<b>T</b><sub>1</sub> <i>or</i> <b>T</b><sub>7</sub>> does <i>not</i> refer to a &#8220;dual transposition&#8221;: it does not mean that one part of the K-net moves by 1 semitone while the other moves by 7 semitones.  Instead, it says that the two parts of the K-net move by a total distance that is equal to both 1 + 1 and 7 + 7 (mod 12).  Intuitively, the parts move by an <i>average</i> distance of 1 or 7 (mod 12): thus they might move by 1 and 1, 7 and 7, 0 and 2, 6 and 8, and so on.
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="tymoczko_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="tymoczko_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6] Now what&#8217;s <b>T</b><sub>1</sub> or <b>T</b><sub>7</sub>-ish about the relation between C major and G major?  The <b>T</b><sub>7</sub> relationship is obvious.  What about <b>T</b><sub>1</sub>?  Well, {C, E} + {G} is strongly isographic (&lt;<b>T</b><sub>0</sub>&gt;) to {<nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>} + {<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>} and the <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major chord has to be transposed up one semitone to become G major.  This is illustrated in <b>Figure 3</b>.  The hyper-transpositional labels thus reflect actual transpositions: C major is related to G major by &lt;<b>T</b><sub>1</sub> <i>or</i> <b>T</b><sub>7</sub>&gt; because C major is strongly isographic to chords that are <b>T</b><sub>1</sub>- and <b>T</b><sub>7</sub>-related to G major (<nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major and C major respectively).  For the sake of clarity, I&#8217;m going to drop the clumsy &lt;<b>T</b><sub>1</sub> <i>or</i> <b>T</b><sub>7</sub>&gt; notation and use whichever of the pair is most appropriate to the context.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+
+<p>[7] Q: In the new system, what hyper-transposition relates {C, E} + {G} and {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>}?  A: &lt;<b>T</b><sub>1/2</sub>&gt; (&#8220;hyper-T one-half&#8221;).  What could that mean?  Here&#8217;s an informal way to think about it: in 24-tone equal-temperament, {C, E} + {G} and {C<img border="0" src="../../gifs/quartertoneflat.gif" width="8" height="18" align="texttop"> , E<img border="0" src="../../gifs/quartertoneflat.gif" width="8" height="18" align="texttop">} + {G<img border="0" src="../../gifs/quartertonesharp.gif" width="7" height="18" align="texttop">} (C and E quarter-tone flat, G quarter-tone sharp) are strongly isographic, and hence related by  &lt;<b>T</b><sub>0</sub>&gt;.  Transposing the second chord up by half a semitone yields {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>}.  Again, in the new system, the hyper-T labels reflect <i>actual transpositional relationships</i>: if <i>A</i> is related to <i>B</i> by &lt;<b>T</b><sub><i>x</i></sub>&gt; then there is a chord strongly isographic to <i>A</i> that can be transposed by <i>x</i> semitones to get chord <i>B</i>.  Note however that this chord <i>need not live in 12-tone equal temperament</i>&#8212;in fact for half-integer hyper-T, it will live in 24-tone equal-temperament.  Happily, once we pay attention to these quarter-tone chords, then &#8220;positively isographic to <i>A</i>&#8221; simply means &#8220;transpositionally related to a chord that is strongly isographic to <i>A</i>.&#8221;  Likewise, &#8220;negatively isographic to <i>A</i>&#8221; means &#8220;inversionally related to a chord that is strongly isographic to <i>A</i>.&#8221;</p>
+
+<p>[8] The new notation suggests a response to those, like Buchler, who worry that hyper-T and hyper-I are too abstract.  Every K-net defines an equivalence class of strongly isographic chords in 24-tone equal-temperament, as shown in <b>Figure 4</b>.  The statement that two (12-tone equal-tempered) K-nets are related by &lt;<b>T</b><sub><i>x</i></sub>&gt; or &lt;<b>I</b><sub><i>y</i></sub>&gt; is logically equivalent to the statement that these equivalence classes relate by <b>T</b><sub><i>x</i></sub> or <b>I</b><sub><i>y</i></sub> (Figure 4).  Thus we need not think of &#8220;hyper-transposition&#8221; and &#8220;hyper-inversion&#8221; as being extremely abstruse &#8220;functions over functions&#8221;: instead, we can understand them as ordinary transpositions and inversions of equivalence classes.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  In principle, there is nothing problematic about using transposition and inversion to relate equivalence classes; we do this every time we talk about transpositionally related pitch-class sets.  The only question is whether equivalence classes of strongly isographic chords are analytically or perceptually meaningful&#8212;an issue we will return to shortly.</p>
+
+<p>[9] I know that many music theorists dislike quarter tones.  So here&#8217;s an argument for my new notation that relies on 12-tone equal temperament exclusively: in twelve-tone equal-temperament, <i>no</i> chord that is strongly isographic to {C, E} + {G} is transpositionally related to {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>}.  Hence we need to identify the hyper-T operation that takes {C, E} + {G} to {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>} using a label <i>not</i> used by any equal-tempered transposition.  (Remember, we want to ensure consistency between labels for the TI group and the &lt;TI&gt; group.)  Furthermore, we want to label this hyper-transposition with a number <i>x</i> such that &lt;<b>T</b><sub><i>x</i></sub>&gt; + &lt;<b>T</b><sub><i>x</i></sub>&gt; = &lt;<b>T</b><sub><i>x</i>+<i>x</i></sub>&gt; = &lt;<b>T</b><sub>1</sub>&gt;.  (This is because doing &lt;<b>T</b><sub><i>x</i></sub>&gt; twice produces what we have decided to call &lt;<b>T</b><sub>1</sub>&gt;.)  This strongly suggests taking <i>x</i> to be 1/2.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>
+<p>[10] Since there are several ways to notate ordinary inversions, there are several ways to notate hyper-inversions.
+<blockquote>
+	
+<p><i>Alternative 1</i>. If you label inversions with index numbers, you should divide the current hyper-I labels by 2.  In this new system, &lt;<b>T</b><sub><i>x</i></sub>&gt;<b>I</b><sub><i>y</i></sub> = <b>I</b><sub>2<i>x</i>+<i>y</i></sub> and	&lt;<b>I</b><sub><i>x</i></sub>&gt;<b>I</b><sub><i>y</i></sub> = <b>I</b><sub>2<i>x</i>&#8211;<i>y</i></sub>. Some hyper-inversions will be labeled with half-integers, just like hyper-transpositions.</p>
+
+<p><i>Alternative 2</i>. If you use Lewin-type labels, such as <nobr><b>I<img border="0" src="../../gifs/ebe.gif" width="13" height="26" align="absbottom"></b></nobr>, then <nobr>&lt;<b>T</b><sub><i>x</i></sub>&gt;<b>I<img border="0" src="../../gifs/ab.gif" width="7" height="23" align="absbottom"></b></nobr>  will transpose <i>a</i> and <i>b</i> by an average of <i>x</i> semitones.  Thus <nobr>&lt;<b>T</b><sub>1/2</sub>&gt;<b>I<img border="0" src="../../gifs/ebe.gif" width="13" height="26" align="absbottom"></b>  =  <b>I<img border="0" src="../../gifs/ee.gif" width="7" height="25" align="absbottom"></b>,</nobr> since here we transpose <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> by 1 and E by 0, for an average transposition of (1 + 0)/2 = 1/2.  In this system, some hyper-inversions will be labeled with quarter tones.</p>
+
+<p><i>Alternative 3</i>. Perhaps the best solution is to divide <i>ordinary</i> inversion labels by 2, labeling inversions by their fixed points, or  <img border="0" src="../../gifs/index.gif" width="85" height="29" align="absbottom">.  In this system, <nobr><b>I<img border="0" src="../../gifs/ebe.gif" width="13" height="26" align="absbottom"></b></nobr> is represented by <b>I</b><sub>3.5</sub>. (Informally, this is an inversion that maps pitch class 3.5, or E<img border="0" src="../../gifs/quartertoneflat.gif" width="8" height="18" align="texttop">, to itself.)  This allows us to keep the traditional rule &lt;<b>T</b><sub><i>x</i></sub>&gt;<b>I</b><sub><i>y</i></sub> = <b>I</b><sub><i>x</i>+<i>y</i></sub>. However, in this system, some hyper-inversions will have <i>quarter</i>-integer labels, such as	&lt;<b>I</b><sub>1/4</sub>&gt;.
+
+</blockquote>
+
+<p>[11] <b>Table 1</b> compares these alternatives.  Note the consistency, in Alternative 3, between the way the TI operations operate on pitches, collections, and operations: in each case, <b>T</b> adds <i>x</i> to something (a pitch or an inversion subscript), while <b>I</b> subtracts something from 2<i>x</i> (a pitch or an inversion subscript).  In standard notation, there is an inconsistency between the way TI operate on collections and operations, while in Alternative 1, there is an inconsistency between the way TI operate on pitches and on collections and operations.  My goal here is to ensure consistency between collections and operations.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<div style="width:800px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=4&nonav=true"><img border="1" alt="Table 1 thumbnail" src="tymoczko_table1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p style="text-align:center"><b>III. Problems for recursivity</b></p>
+
+<p>[12] What happens to existing K-net analyses if we adopt my proposal?  Well, ordinary T labels stay the same while hyper-T labels are divided by two.  This means that in the new notation, existing &#8220;recursive&#8221; K-net analyses&#8212;purporting to demonstrate isographies between K-nets and &#8220;hyper K-nets&#8221;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>&#8212;will 
+no longer seem to be recursive.  It follows that their apparent &#8220;recursivity&#8221; depends on a particular (and possibly ad hoc) way of labelling hyper-operations.  I therefore agree with Buchler that we should be concerned about the significance of these analyses.</p>
+
+<p>[13] One can save these analyses by asserting that they require only a <i>group isomorphism</i> between the hyper-TI group and the ordinary TI group.  My rejoinder is threefold:
+<ol>
+	<li>Group isomorphism is actually a weak relationship.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+			</li>
+	<li>The use of labels like &lt;<b>T</b><sub>1</sub>&gt; and <b>T</b><sub>1</sub> misleads people by making the isomorphism look stronger than it actually is: if all we care about is group isomorphism, then we can associate &lt;<b>T</b><sub>1</sub>&gt; with either 
+	<b>T</b><sub>1</sub>, <b>T</b><sub>5</sub>, <b>T</b><sub>7</sub>, or <b>T</b><sub>11</sub>.  From the standpoint of group theory, there&#8217;s no principled reason for choosing among these.
+	</li>
+	<li>In the new notation, we can have recursive K-net analyses that are underwritten by something stronger than mere group-theoretical isomorphism.  My &lt;<b>T</b><sub><i>x</i></sub>&gt; really can be described as transpositions: they transpose equivalence classes of strongly isographic chords by 
+	<i>x</i> semitones.  (Similar points apply to 
+	&lt;<b>I</b><sub><i>x</i></sub>&gt;, which invert these equivalence classes.)  Consequently, there is a canonical way to associate each ordinary transposition 
+	<b>T</b><sub><i>x</i></sub> to a particular hyper-transposition &lt;<b>T</b><sub><i>x</i></sub>&gt;&#8212;something that group theory alone does not provide.  Furthermore, in the new system, there is a clear analogy between the techniques of K-net analysis and those of standard set theory&#8212;the main difference being that K-net analysis manipulates equivalence classes of strongly isographic chords, rather than equivalence classes of transpositionally or inversionally related chords.
+	</li>
+	</ol>
+
+<p>All of this, in my view, argues strongly in favor of the proposal. </p>
+
+<p style="text-align:center"><b>IV. Going up the hierarchy</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=5&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="tymoczko_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[14] Q. Can we do this again at the next level?  That is, can we label hyper-hyper-transpositions &lt;&lt;<b>T</b><sub><i>x</i></sub>&gt;&gt; consistently with our labeling of the transpositions and hyper-transpositions?
+</p>
+
+<p>[15] A. Yes, as <b>Figure 5</b> demonstrates.  There are no new difficulties here&#8212;and no need for anything other than half-integer labels.  (In particular, there is no cascade to ever-smaller fractions, as the hyper-operations get more hyper.)  I&#8217;ll leave the details up to the reader.  The resulting system has the nice feature that if you take a big hyper-hyper-hyper -...-hyper-network of pitch classes, transpose all the pitch classes by 
+<i>x</i> semitones, update all your arrow-labels accordingly, doing the same for your hyper-arrows, your hyper-hyper-arrows, etc., your two networks are related by
+<b>T</b><sub><i>x</i></sub>, &lt;<b>T</b><sub><i>x</i></sub>&gt;, &lt;&lt;<b>T</b><sub><i>x</i></sub>&gt;&gt;, and so on.  (Similar points apply to inversion and hyper-hyper-...-hyper-inversional labels.)  In other words, the ordinary transpositional and inversion labels propagate up the system.  This is not the case in standard notation, a fact that can lead to philosophical puzzles.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+<p style="text-align:center"><b>V. Hyper-transposition and dual transpositions</b></p>
+
+<p>[16] Buchler perceptively remarks that K-net analyses try to pack too much information into a single number.  He suggests that we use O&#8217;Donnell&#8217;s &#8220;dual transpositions&#8221; and &#8220;dual inversions&#8221; rather than hyper-transposition and hyper-inversion, identifying the particular TI operations that apply to each of the K-net&#8217;s two parts.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> This is illustrated in <b>Figure 6</b>.  I think this is a reasonable suggestion.  However, it should be noted that there are two independent questions here.  First, should we describe the relation between K-nets using one number or two?  And second, should we use &#8220;dual transpositions&#8221; or hyper-transpositions? </p>
+
+
+<div style="width:800px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=6&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="tymoczko_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[17] Buchler labels the relation between K-nets {C, E} + {G} and {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>} using the dual transposition <b>T</b><sub>0</sub>/<b>T</b><sub>1</sub>, indicating that the major third stays fixed while the singleton moves by one semitone.  But we can also label this relation <b> &lt;X</b><sub>1/2</sub><b>/<b>T</b></b><sub>1/2</sub>&gt;.  (Here &#8220;X&#8221; stands for &#8220;eXpand.&#8221;)  The subscript of &lt;<b>X</b><sub><i>x</i></sub>&gt; is calculated by taking half of the <i>difference</i> between the two components of Buchler&#8217;s dual transposition, while &lt;<b>T</b><sub><i>x</i></sub>&gt; is equal to their average: mathematically, the dual transposition <b>T</b><sub><i>a</i></sub>/<b>T</b><sub><i>b</i></sub> is equivalent to the pair of transformations &lt;<b>X</b><sub>(<i>b</i>-<i>a</i>)/2</sub>/<b>T</b><sub>(<i>a</i>+<i>b</i>)/2</sub>&gt;.  Thus, since {C, E} + {G} and {C, E} + {<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>} relate by <b>T</b><sub>0</sub>/<b>T</b><sub>1</sub>, they also relate by &lt;<b>X</b><sub>(1&#8211;0)/2</sub>/<b>T</b><sub>(1+0)/2</sub>&gt;= &lt;<b>X</b><sub>1/2</sub>/<b>T</b><sub>1/2</sub>&gt;. 
+</p>
+
+<p>[18] What do these numbers mean?  <b>Figure 7</b> presents a two-dimensional graph listing all the K-nets, in 24-tone equal-temperament, that are positively isographic to {C, E} + {G}, and that belong to set classes found in 12-tone equal temperament.  Strongly isographic chords lie on the same vertical line.  Transpositionally related chords lie on the same horizontal line.  The graph should be interpreted as a 2-torus, with its right edge glued to its left, and the top edge glued to the bottom.  (As in early video-games such as <i>Pac-Man</i> or <i>Asteroids</i>, one can move off of an edge to reappear on the opposite side of the figure.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>)  What I am calling the &lt;<b>X</b><sub><i>x</i></sub>&gt; transform moves the K-net 2<i>x</i> vertical steps on this figure, while hyper-transposition 	&lt;<b>T</b><sub><i>y</i></sub>&gt; moves 2<i>y</i> steps horizontally.  The first transformation represents motion within the equivalence class of strongly isographic chords, and describes how the structure of the set class is altered: under 	&lt;<b>X</b><sub><i>x</i></sub>&gt; each part of the K-net moves by <i>x</i> semitones in contrary motion, possibly changing the set class in the process.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>	The second transformation represents motion from one equivalence class to another, moving all the pitch-classes in the K-net upward by <i>y</i> semitones.  As can be seen from the figure, dual transpositions represent an alternative way of describing relationships on this two-dimensional surface: the dual transposition <b>T</b><sub><i>a</i></sub>/<b>T</b><sub><i>b</i></sub> moves a chord <i>a</i> positions diagonally southeast, and <i>b</i> positions diagonally northeast.  The two notational systems are fundamentally equivalent, and are related by what physicists would call a &#8220;coordinate transformation.&#8221;<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p> 
+
+<div style="width:800px">
+               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="tymoczko_examples.php?id=7&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="tymoczko_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[19] Let's now return to the issue of K-nets&#8217; abstractness.  Buchler is right to observe that standard K-net analyses use one number where it is possible to use two.  In fact, we can restate his observation more precisely: K-net analyses use only the <i>x</i>-coordinate to refer to relationships between objects situated on a two-dimensional surface.  One possible response is to adopt &#8220;dual transposition&#8221; labels.  A slightly more conservative alternative, from the standpoint of traditional K-net theory, is to use the 
+	&lt;<b>X</b><i><sub>x</sub></i>/<b>T</b><sub><i>y</i></sub>&gt; labels described here. These simply extend the techniques of K-net analysis by adding 
+the missing coordinate, representing motion within equivalence classes of strongly isographic chords.</p>
+
+<p>[20] To my mind, the deepest question raised by Buchler&#8217;s article is this: what coordinate system should we use when navigating Figure 7?  I share his feeling that &#8220;dual transformations&#8221; are somewhat more general than hyper-transpositions and 
+inversions.  (In particular, I think we should be reluctant to use standard K-net technology in cases where the musical surface does not clearly project exact contrary motion.)  Furthermore, I am sympathetic with Buchler&#8217;s complaint that K-net analysis throws away too much information.  I see no reason why we should have developed an analytical tradition that pays attention to only 
+<i>one</i> of the two dimensions of Figure 7. Buchler&#8217;s worry, which I share, is that our analytical practices may derive not from deep conceptual reflection, or from underlying musical necessity, but simply from the force of institutional habit: we disregard the second coordinate because we have always done so, perhaps without even noticing that 
+it could be incorporated into our K-net analyses.</p>
+
+<p style="text-align:center"><b>VI. Philosophical issues</b></p>
+
+<p>[21] The proposal in this paper is at bottom notational, a suggestion that we use new words to describe familiar relationships.  It might therefore seem that I do not go to 
+the musical heart of the matter.  My response is that notation is not at all trivial, but is rather something that shapes thought.  The importance of good notation is well understood by physicists and mathematicians, and is an issue that deserves more music-theoretical scrutiny&#8212;especially since some of our basic notational conventions are conceptually quite confusing.</p>
+
+<p>[22] Among these is the practice of referring to inversions by index number.   Ultimately, the notational question I have been pursuing is this: what should we call the function
+<i>F</i>(<b>I</b><sub><i>x</i></sub>) = <b>T</b><sub>1</sub>(<b>I</b><sub><i>x</i></sub>)<b>T</b><sub>-1</sub> = <b>I</b><sub><i>x</i>+2</sub>?  My suggestion is that we should call it &lt;<b>T</b><sub>1</sub>&gt;, or &ldquo;hyper-<b>T</b><sub>1</sub>,&rdquo; because it shifts the axis of inversional symmetry up by semitone: C is mapped to C under <b>I</b><sub>0</sub>, and <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is mapped to <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> under <b>T</b><sub>1</sub>(<b>I</b><sub>0</sub>)<b>T</b><sub>-1</sub> = <b>I</b><sub>2</sub>. This fact is obscured by index numbers, which represent the one-semitone shift of the axis of inversional symmetry by a <i>two</i>-unit change to the inversion&rsquo;s subscript. Standard notation might therefore mislead the unwary theorist into thinking that, when the inversional axis of symmetry shifts up by one semitone, something else&#8212;the index number, whatever that is&#8212;has shifted by <i>two</i>. 
+</p>
+<p>[23] Familiar K-net terminology inherits this problem, using the label &lt;<b>T</b><sub>2</sub>&gt; to refer to the operation <i>F</i>(<b>I</b><sub><i>x</i></sub>) = <b>T</b><sub>1</sub>(<b>I</b><sub><i>x</i></sub>)<b>T</b><sub>-1</sub> = <b>I</b><sub><i>x</i>+2</sub>.  This may be a case of bad notation leading to confused thought.  For though it can <i>feel</i> like we are transposing by two when we increase the index numbers by two, and though thinking in this way may help us calculate, this is not at all what is happening musically: transposition by <i>x</i> changes index numbers by 2<i>x</i>, as both Figure 2 and Table 1 demonstrate.  I worry that David Lewin may have been mislead by this simple but pernicious feature of our ordinary notation when he invented the now-standard labels for hyper-transpositions and hyper-inversions.
+</p>
+<p>[24] However, it may be that Lewin was motivated not by conceptual confusion, but by the desire to identify 	<b>T</b><sub>1</sub>, a <i>generator</i> of the T group, with &lt;<b>T</b><sub>1</sub>&gt;, a generator of the hyper-T group.  Presumably, this desire was in turn motivated by Lewin&#8217;s goal of exploiting the group isomorphism between the &lt;TI&gt; hyper-operations and the TI operations.  But is it so clear that this particular group isomorphism is, musically speaking, the most important one?  My notation emphasizes a 
+<i>different</i> isomorphism: that between the quotient group TI/<b>T</b><sub>6</sub> (the TI group for tritone-symmetrical objects, such as equivalence classes of strongly isographic chords) and a particular subgroup of &lt;TI&gt;&#8212;those that relate K-net arrows in networks whose pitch classes are related by ordinary transposition and inversion.  (In Lewin&#8217;s notation, these 
+are the hyper-operations with even-numbered subscripts; in my notation, they have integer subscripts.)  This relationship is more than a mere group isomorphism: any action of TI/<b>T</b><sub>6</sub> on K-net nodes induces a corresponding action of the &lt;TI&gt; subgroup on arrows; conversely, any action of the &lt;TI&gt; subgroup on arrows can be realized by networks whose PCs are related by a corresponding action of TI/<b>T</b><sub>6</sub> on nodes.  In many circumstances, the two perspectives provide <i>alternate descriptions</i> of the same musical process.
+	</p>
+<p>[25] The interesting point is that Lewin chose to emphasize a relatively weak relationship (group isomorphism) at the expense of this stronger relationship&#8212;and that almost all subsequent users of K-nets have followed him.  In doing so, they have asked us to overlook the fact that <<b>T</b><sub>1</sub>> (in my notation) <i>actually transposes something by one semitone</i> and focus instead on the very abstract fact that my <<b>T</b><sub>1</sub>>  generates only half of the 	&lt;T&gt; operations.  But it should be understood that this approach is 
+rooted in a discrete, group-theoretical perspective.  I would argue that it&#8217;s not necessary&#8212;and perhaps not even productive&#8212;to think about K-nets in this way.  In fact, there&#8217;s a very beautiful (and in my view much more natural) geometrical interpretation of K-nets and their significance.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+<p>[26] What rests on the choice between standard notation and my own?  First, convenience and conceptual clarity: the system I advocate is (I claim) simpler and more logical, once you get used to it.  Second, generalizability: K-nets define &#8220;wedge&#8221; voice leadings in which the two parts of the K-net move in exact contrary motion; 
+the system I propose can be extended to &#8220;generalized K-nets&#8221; whose parts move along arbitrary voice leadings&#8212;and not simply those involving exact contrary motion.  These arbitrary voice leadings  define generalized analogues to &#8220;strong isography&#8221; and give rise to  equivalence classes related by generalized analogues to the <TI>  
+&lt;TI&gt;  
+operations.
+(Unfortunately, describing this generalization further is beyond the scope of the current paper.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>)  Third, our understanding of 
+the relationship between &lt;<b>T</b><sub><i>x</i></sub>&gt; and 	<b>T</b><sub><i>x</i></sub>.  Under my proposal they&#8217;re extremely close, both transposing something by 
+<i>x</i>&#8212;chords in one case, equivalence classes of strongly isographic chords in the other.
+</p>
+<p>[27] How should we understand Buchler&#8217;s criticisms in light of my proposed notational reforms?  As I have indicated, I believe that some of his complaints can be ameliorated by a simple change of notation.  There is indeed a close relationship between hyper-transposition and ordinary transposition, though it is obscured by standard K-net terminology.  At the same time, even in my new notational system, it is clear that some of Buchler&#8217;s criticisms remain intact.  K-nets are woven with a very coarse mesh, allowing a lot of useful musical information to wriggle free.  (Indeed, relative to Figure 7, K-nets are not nets at all, but rather threads&#8212;using one dimension where two are needed!)  I applaud Michael for having the courage to point this out, and for challenging us to think about how the practice of K-net analysis might be improved.
+</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Dmitri Tymoczko<br>
+	Princeton University<br><a href="mailto:dmitri@princeton.edu">dmitri@princeton.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_buchler_2007" class="flyoverdiv">Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/retrofit/mto.07.13.2/mto.07.13.2.buchler.php'>Reconsidering Klumpenhouwer Networks.</a>&#8221; <i>Music Theory Online</i> 13.2: 1&#8211;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="buchler_2007"></a>Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/retrofit/mto.07.13.2/mto.07.13.2.buchler.php'>Reconsidering Klumpenhouwer Networks.</a>&#8221; <i>Music Theory Online</i> 13.2: 1&#8211;69.</p><div id="citediv_callendar_quinn_and_tymoczko_2007" class="flyoverdiv">Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2007. &ldquo;Generalized Voice Leading Spaces.&rdquo; Unpublished draft.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="callendar_quinn_and_tymoczko_2007"></a>Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2007. &ldquo;Generalized Voice Leading Spaces.&rdquo; Unpublished draft.</p><div id="citediv_klumpenhouwer_2007" class="flyoverdiv">Klumpenhouwer, Henry. 2007. &ldquo;Aspects of Depth in K-net Analysis with special reference to Webern&rsquo;s opus 16, 4.&rdquo; Forthcoming in the <i>Journal of Music Theory</i>. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_2007"></a>Klumpenhouwer, Henry. 2007. &ldquo;Aspects of Depth in K-net Analysis with special reference to Webern&rsquo;s opus 16, 4.&rdquo; Forthcoming in the <i>Journal of Music Theory</i>. </p><div id="citediv_lewin_1990" class="flyoverdiv">Lewin, David. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&ndash;120.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1990"></a>Lewin, David. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&ndash;120.</p><div id="citediv_losada_2007" class="flyoverdiv">Losada, Catherine. 2007. &ldquo;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recurrence: Further Considerations</a>.&rdquo; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="losada_2007"></a>Losada, Catherine. 2007. &ldquo;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recurrence: Further Considerations</a>.&rdquo; <i>Music Theory Online</i> 13.3.</p><div id="citediv_o&rsquo;donnell_1997" class="flyoverdiv">O&rsquo;Donnell, Shaugn J. 1997. &ldquo;Transformational Voice Leading in Atonal Music.&rdquo; Ph.D. dissertation, City University of New York. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="o&rsquo;donnell_1997"></a>O&rsquo;Donnell, Shaugn J. 1997. &ldquo;Transformational Voice Leading in Atonal Music.&rdquo; Ph.D. dissertation, City University of New York. </p><div id="citediv_tymoczko_2007" class="flyoverdiv">Tymoczko, Dmitri. 2007. &ldquo;Lewin, Intervals, and Transformations: A Response to Hook.&rdquo; Forthcoming in <i>Music Theory Spectrum</i>. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_2007"></a>Tymoczko, Dmitri. 2007. &ldquo;Lewin, Intervals, and Transformations: A Response to Hook.&rdquo; Forthcoming in <i>Music Theory Spectrum</i>. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Thanks to Michael Buchler, Norman Carey, Henry Klumpenhouwer, and Steven Rings for helpful conversations and suggestions.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Thanks to Michael Buchler, Norman Carey, Henry Klumpenhouwer, and Steven Rings for helpful conversations and suggestions.</div><p><a name="FN1">1.</a> As Buchler points out, a K-net partitions a chord into two parts. I will therefore use the notation {<i>x</i><sub>1</sub>} + {<i>x</i><sub>2</sub>} to refer to K-nets.  Pairs of notes within a single set are connected by T-arrows, while pairs of notes from different sets are connected by I-arrows.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Buchler actually uses different sets, but the essential point is the same.  See Figures
+
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('../mto.07.13.2/buchler_fig14.html',900,400); return false;' href='../mto.07.13.2/buchler_fig14.html'>
+14</a><a/> and
+
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('../mto.07.13.2/buchler_fig15.html',800,400); return false;' href='../mto.07.13.2/buchler_fig15.html'>
+15</a><a/> in Buchler 2007.  All subsequent references to Buchler&#8217;s work refer to this paper.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> This is mere notational shorthand: <<b>T</b><sub><i>x</i></sub>> should always be taken to abbreviate <<b>T</b><sub><i>x</i></sub> 
+<i>or</i> <b>T</b><sub><i>x</i>+6 (mod 12)</sub>>.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Of course, the &lt;TI&gt; operations <i>can</i> still be understood as &#8220;functions 
+over functions.&#8221;  The point is that any statement about these functions over functions can be translated into an equivalent statement about ordinary transposition and inversion of equivalence classes.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Or 13/2.  In some sense, what&#8217;s happening here resembles what happened when your teacher started talking about negative and zero exponents in junior high-school algebra.  We extend our system by introducing new notation, at first a little paradoxical, but in a way that is consistent, and that increases the formal system&#8217;s power.
+<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> In her response to Buchler, Catherine Losada shows that when we  
+relabel pitch-class space by adding <i>c</i> to every pitch-class label, we  
+add 2<i>c</i> to every inversion label and 4<i>c</i> to to every hyper-inversion  
+label.  (See Examples <a target='ex_window' style='text-decoration:none' onClick='newwindow('losada_ex8.html',800,600); return false;' href='losada_ex8.html'>
+			8</a> and <a target='ex_window' style='text-decoration:none' onClick='newwindow('losada_ex9.html',800,600); return false;' href='losada_ex9.html'>
+9</a> in <a href="#losada_2007" id="citation_losada_2007_67dc9b1e6612b">Losada 2007</a>, where <i>c</i> = 8.)  It  
+follows that associations between ordinary inversions and hyper-inversions  
+will depend on which pitch class we arbitrarily choose to label 0.   
+Under the alternative notation described here, this problem does not  
+arise: inversion and hyper-inversion labels transform in the same way  
+under relabelings of pitch class 0.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> The nodes of a &#8220;hyper-K-net&#8221; are themselves K-nets, connected by arrows indicating hyper-transpositional and hyper-inversional relationships.  See 
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('tymoczko_fig5.html',1000,900); return false;' href='tymoczko_fig5.html'>
+Figure 5</a>.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> See my &#8220;Lewin, intervals, and transformations,&#8221; forthcoming in 
+<i>Music Theory Spectrum</i>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> In a forthcoming article in the <i>Journal of Music Theory</i>, Henry Klumpenhouwer sorts through these puzzles, engaging in a careful investigation of the ontological difference between transposition, hyper-transposition, hyper-hyper-transposition, and so on.  By contrast, I propose an alternative notation in which the inconsistencies between these levels simply evaporate, along with the appearance of a philosophical puzzle.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> See <a href="#o&rsquo;donnell_1997" id="citation_o&rsquo;donnell_1997_67dc9b1e66130">O&rsquo;Donnell 1997</a>.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Here, however, the left edge needs to be glued to the right with in a &#8220;diagonal&#8221; fashion as shown by the 
+lines A and B.  Note that, for reasons of space, chords on the top edge also appear on the bottom edge, but chords on the left do not also appear on the right.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Given a K-net {<i>a</i><sub>1</sub>} + {<i>a</i><sub>2</sub>}, the &lt;<b>X</b><i><sub>x</i></sub>&gt; transformation transposes {<i>a</i><sub>1</sub>} up by 
+<i>x</i> semitones and {<i>a</i><sub>2</sub>} down by 
+<i>x</i> semitones.  Thus the notation requires us to identify which of the K-net&#8217;s two parts is the first and which is the second.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Indeed, physicists have a specific name for the coordinate transformation involved: they would say that my labels use the 
+<i>center-of-mass</i> reference frame to relate K-nets. In elementary physics, one often represents the motion of a group of particles as having an &#8220;internal component&#8221; defined relative to a coordinate system in which there is zero total momentum, and an &#8220;external component&#8221; representing the motion of this coordinate system relative to some other reference frame.  If we imagine the two parts of the K-net to have equal mass, then motion between strongly isographic chords occurs in the center-of-mass reference frame.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Clifton Callender, Ian Quinn, and I describe this interpretation in a collaborative paper which we hope to finish (and publish) soon.  A preliminary draft can be found at 
+<a href='http://music.princeton.edu/~dmitri/geometry.pdf'>http://music.princeton.edu/~dmitri/geometry.pdf</a>.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> See the paper cited in the previous footnote.  Interested readers can probably work out the details themselves: the idea is to consider all the equal-tempered set classes produced by an arbitrary voice leading&#8212;even if the sets themselves do not lie in 12-tone equal-temperament.  These sets can be understood as equivalence classes, can be related by transposition and inversion, and can be used to construct two-dimensional spaces exactly analogous to <a target='ex_window' style='text-decoration:none' onClick='newwindow('tymoczko_fig7.html',1300,800); return false;' href='tymoczko_fig7.html'>
+Figure 7</a>.<br><a href="#FN15REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">As Buchler points out, a K-net partitions a chord into two parts. I will therefore use the notation {<i>x</i>1} + {<i>x</i>2} to refer to K-nets.  Pairs of notes within a single set are connected by T-arrows, while pairs of notes from different sets are connected by I-arrows.</div><div id="fndiv2" class="flyoverdiv">Buchler actually uses different sets, but the essential point is the same.  See Figures
+
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('../mto.07.13.2/buchler_fig14.html',900,400); return false;' href='../mto.07.13.2/buchler_fig14.html'>
+14</a><a/> and
+
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('../mto.07.13.2/buchler_fig15.html',800,400); return false;' href='../mto.07.13.2/buchler_fig15.html'>
+15</a><a/> in Buchler 2007.  All subsequent references to Buchler&#8217;s work refer to this paper.</div><div id="fndiv3" class="flyoverdiv">This is mere notational shorthand:  should always be taken to abbreviate .</div><div id="fndiv4" class="flyoverdiv">Of course, the &lt;TI&gt; operations <i>can</i> still be understood as &#8220;functions 
+over functions.&#8221;  The point is that any statement about these functions over functions can be translated into an equivalent statement about ordinary transposition and inversion of equivalence classes.</div><div id="fndiv5" class="flyoverdiv">Or 13/2.  In some sense, what&#8217;s happening here resembles what happened when your teacher started talking about negative and zero exponents in junior high-school algebra.  We extend our system by introducing new notation, at first a little paradoxical, but in a way that is consistent, and that increases the formal system&#8217;s power.
+</div><div id="fndiv6" class="flyoverdiv">In her response to Buchler, Catherine Losada shows that when we  
+relabel pitch-class space by adding <i>c</i> to every pitch-class label, we  
+add 2<i>c</i> to every inversion label and 4<i>c</i> to to every hyper-inversion  
+label.  (See Examples <a target='ex_window' style='text-decoration:none' onClick='newwindow('losada_ex8.html',800,600); return false;' href='losada_ex8.html'>
+			8</a> and <a target='ex_window' style='text-decoration:none' onClick='newwindow('losada_ex9.html',800,600); return false;' href='losada_ex9.html'>
+9</a> in <a href="#losada_2007" id="citation_losada_2007_67dc9b1e6612b">Losada 2007</a>, where <i>c</i> = 8.)  It  
+follows that associations between ordinary inversions and hyper-inversions  
+will depend on which pitch class we arbitrarily choose to label 0.   
+Under the alternative notation described here, this problem does not  
+arise: inversion and hyper-inversion labels transform in the same way  
+under relabelings of pitch class 0.</div><div id="fndiv7" class="flyoverdiv">The nodes of a &#8220;hyper-K-net&#8221; are themselves K-nets, connected by arrows indicating hyper-transpositional and hyper-inversional relationships.  See 
+<a target='ex_window' style='text-decoration:none' onClick='newwindow('tymoczko_fig5.html',1000,900); return false;' href='tymoczko_fig5.html'>
+Figure 5</a>.</div><div id="fndiv8" class="flyoverdiv">See my &#8220;Lewin, intervals, and transformations,&#8221; forthcoming in 
+<i>Music Theory Spectrum</i>.</div><div id="fndiv9" class="flyoverdiv">In a forthcoming article in the <i>Journal of Music Theory</i>, Henry Klumpenhouwer sorts through these puzzles, engaging in a careful investigation of the ontological difference between transposition, hyper-transposition, hyper-hyper-transposition, and so on.  By contrast, I propose an alternative notation in which the inconsistencies between these levels simply evaporate, along with the appearance of a philosophical puzzle.</div><div id="fndiv10" class="flyoverdiv">See <a href="#o&rsquo;donnell_1997" id="citation_o&rsquo;donnell_1997_67dc9b1e66130">O&rsquo;Donnell 1997</a>.</div><div id="fndiv11" class="flyoverdiv">Here, however, the left edge needs to be glued to the right with in a &#8220;diagonal&#8221; fashion as shown by the 
+lines A and B.  Note that, for reasons of space, chords on the top edge also appear on the bottom edge, but chords on the left do not also appear on the right.</div><div id="fndiv12" class="flyoverdiv">Given a K-net {<i>a</i>1} + {<i>a</i>2}, the &lt;<b>X</b><i>x</i>&gt; transformation transposes {<i>a</i>1} up by 
+<i>x</i> semitones and {<i>a</i>2} down by 
+<i>x</i> semitones.  Thus the notation requires us to identify which of the K-net&#8217;s two parts is the first and which is the second.</div><div id="fndiv13" class="flyoverdiv">Indeed, physicists have a specific name for the coordinate transformation involved: they would say that my labels use the 
+<i>center-of-mass</i> reference frame to relate K-nets. In elementary physics, one often represents the motion of a group of particles as having an &#8220;internal component&#8221; defined relative to a coordinate system in which there is zero total momentum, and an &#8220;external component&#8221; representing the motion of this coordinate system relative to some other reference frame.  If we imagine the two parts of the K-net to have equal mass, then motion between strongly isographic chords occurs in the center-of-mass reference frame.</div><div id="fndiv14" class="flyoverdiv">Clifton Callender, Ian Quinn, and I describe this interpretation in a collaborative paper which we hope to finish (and publish) soon.  A preliminary draft can be found at 
+<a href='http://music.princeton.edu/~dmitri/geometry.pdf'>http://music.princeton.edu/~dmitri/geometry.pdf</a>.</div><div id="fndiv15" class="flyoverdiv">See the paper cited in the previous footnote.  Interested readers can probably work out the details themselves: the idea is to consider all the equal-tempered set classes produced by an arbitrary voice leading&#8212;even if the sets themselves do not lie in 12-tone equal-temperament.  These sets can be understood as equivalence classes, can be related by transposition and inversion, and can be used to construct two-dimensional spaces exactly analogous to <a target='ex_window' style='text-decoration:none' onClick='newwindow('tymoczko_fig7.html',1300,800); return false;' href='tymoczko_fig7.html'>
+Figure 7</a>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2007 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Stefanie Acevedo, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="2999417"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="e7f2332a"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/2999417/0/e7f2332a/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

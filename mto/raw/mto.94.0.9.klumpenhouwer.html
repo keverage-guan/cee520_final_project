@@ -1,0 +1,952 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.9: Klumpenhouwer, The Use of Riemann
+Transformations</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Some Remarks on the Use of Riemann
+Transformations">
+
+    <meta name="citation_author" content="Klumpenhouwer, Henry">
+      
+
+<meta name="citation_publication_date" content="1994/07/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="9">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Some Remarks on the Use of Riemann
+Transformations
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.94.0.9/mto.94.0.9.klumpenhouwer.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Henry Klumpenhouwer</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Riemann, harmonic dualism, Wagner</font></p><p><font size='4'>ABSTRACT: The essay examines Lewin&rsquo;s and Hyer&rsquo;s
+use of transformations derived from Riemann&rsquo;s
+work, and suggests a number of revisions.  An
+expanded collection of transformations is
+introduced and used in an short analysis of
+excerpts from Wagner&rsquo;s <i>Ring</i>.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.94.0.9/mto.94.0.9.klumpenhouwer.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.94.0.9/klumpenhouwer_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 9, July 1994 <br> Copyright &#0169; 1994 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] In this paper I suggest revisions to an
+analytical methodology developed in Lewin 1987,
+1992 and Hyer 1989.  Their work draws upon
+certain themes in Riemann&rdquo;s writings in order to
+construct procedures for investigating harmonic
+relationships in Wagner, procedures that also
+engage transformational approaches to analysis.
+My revisions also refer explicitly to Riemann&rdquo;s
+writing, but they refer to an earlier stage in
+his career, and in particular to his <i>Skizze
+einer Neuen Methode der Harmonielehre</i> (Riemann
+1880).
+ </p>
+<p style="text-align: center"><b>I. Chord Models and Chord Transformations</b></p>
+<p>[2] Hyer (1989) develops a group of
+transformations on triads from a collection of
+four relations generally associated with
+Riemann&rdquo;s work: parallel, relative,
+leittonwechsel, and dominant.  Lewin (1987,
+1992) begins with a somewhat larger number of
+basic transformations.  A few originate in
+Riemann (parallel, relative, leittonwechsel).
+Others (mediant, submediant) are adapted from
+other theorists.  And still others (slide
+relation) are constructed by Lewin himself.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="klumpenhouwer_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3] <b>Example 1</b> investigates how these transformations interact with the triads or klangs they
+relate.  Example 1a is a network of three arrows
+labelled with Riemann transformations, and three
+nodes containing klangs.  The relationship
+between C major and E minor is interpreted as
+leittonwechsel (L), defined by Lewin as a
+transformation on triads that maintains the two
+pitches that form a minor third (mod 8ve), and
+moves the remaining pitch one semitone so as to
+form another triad (1992, 49).  The network
+interprets the relationship between E minor and
+G major as an instance of the relative
+transformation (R), which maintains the two
+pitches that form a major third (mod 8ve), and
+moves the remaining pitch a whole tone so as to
+form another triad.  The arrow that extends from
+C major to the G major is labelled with the
+subdominant transformation (S), which transposes
+a klang by a perfect fifth up.  The network
+suggests the following functional equality: L
+followed by R yields S.</p>
+<p>[4]  Aside from node content, the network given
+in example 1b is very similar to the network in
+example 1a.  Both networks have leittonwechsel
+and relative labels on corresponding arrows.
+But while the arrow on example 1a that extends
+from C major to G major is labelled with the
+subdominant transformation (S), the
+corresponding arrow on example 1b (extending
+from A minor to D minor) is labelled with the
+dominant transformation (D), which transposes a
+klang up a perfect fifth down.  The network in
+example 1b, contrary to the network in example
+1a, suggests that L followed by R yields D.</p>
+<p>[5]  The difference bothers me because the
+difference (and other similar differences in the
+system) is brought about by separating dualist
+chord models from dualist transformations
+(leittonwechsel, relative) and then using those
+transformations in conjunction with functions or
+relations (dominant, subdominant, submediant,
+mediant) derived from fundamental-bass
+conceptions of chord structure.  My point here
+is not that Hyer and Lewin have been unfaithful
+to the wishes of Riemann.  My point is that
+technical properties of leittonwechsel and
+relative transformations&mdash;in particular the
+property that they are their own inverses&mdash;
+induce what amounts to a dualist relationship
+between major and minor chords.  For instance,
+as one examines the values and arguments on the
+relevant function table of the leittonwechsel
+transformation, one sees that in general the
+transformation changes the modality of a major
+triad to its parallel minor and transposes a
+major third up, while it changes the modality of
+a minor triad to its parallel major and
+transposes a major third <i>down</i>.  The reversal
+of direction that accompanies the reversal in
+modality is the imprint of dualist thinking.
+The imprint is indelible: the only way to avoid
+the dualism is to redefine the transformation so
+that its function table reverses the modality of
+a triad and transposes it a certain directed
+interval regardless of modality.  But that would
+simply turn leittonwechsel either into Lewin&rdquo;s
+SUBM (submediant) transformation or into his M
+(mediant) transformation, depending on the
+chosen directed interval.</p>
+<p>[6]  I have not faulted Hyer and Lewin with
+having misrepresented Riemann&rdquo;s work because I
+do not count that as a fault, and because there
+is a sense in which an uncomfortable
+juxtaposition of dualist and non-dualist
+thinking is a prominent characteristic of
+Riemann, particularly of his later work: the
+well-known contemporary critique of Riemann in
+Belinfante 1904 makes this very point.  In fact,
+it could be fairly argued that in what follows
+it is <i>I</i> who will be misrepresenting Riemann.
+My own distortions (as far as I can tell)
+involve projecting a particular ideational
+structure on Riemann&rdquo;s transformations (as they
+appear in the <i>Skizze einer Neuen Methode der
+Harmonielehre</i>), and then appropriating the
+transformations for analytical purposes other
+than those discussed by Riemann, who seems most
+interested in using transformations to chart out
+the topographies of his <i>Dur-Moll</i> and <i>Moll-
+Dur</i> systems.  Following Lewin and Hyer, I will
+be interested in extending the use of Riemann&rdquo;s
+transformations to seek out repetitions of
+harmonic patterns, which are then presented as
+motivic.</p>
+<p>[7]  Accordingly, my proposed revision of the
+analytical methodology involves firstly turning
+away from non-dualist transformations adapted
+from dominant, subdominant, mediant, and
+submediant relations, and secondly identifying
+in Riemann 1880 a less conflicted group of
+transformations.</p>
+<p>[8]  Since the transformations I shall be
+discussing <i>do</i> compel a dualist conception of
+triads, it will be worthwhile to establish at
+least the dominant features of such a view.  But
+because Riemann&rdquo;s own explanation of chord
+dualism is premised on the existence of harmonic
+undertones, I shall use an alternative yet
+functionally equivalent explanation, developed
+from Hauptmann&rdquo;s discussion of major and minor
+triads (1853, 25&ndash;35).</p>
+<p>[9]  Hauptmann assigns three &ldquo;functions&rdquo; to
+pitches that constitute major and minor triads:
+unity (<i>Einheit</i>); duality or separation (<i>Zweiheit</i>); union (<i>Verbindung</i>).  The three functions are labelled respectively I, II, and III
+for reference, and are assigned to triad members
+according to two rules:</p>
+<blockquote>1)  I and II form a perfect fifth (mod 8ve);<br>
+2)  I and III form a major third (mod 8ve).</blockquote>
+<p>The rules stipulate that only the pitch that
+acts as I or the <i>Einheit</i> participates in both
+the perfect fifth (mod 8ve) and the major third
+(mod 8ve) relationships.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="klumpenhouwer_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[10]  <b>Example 2</b> distributes the three symbols
+I, II, III among the pitches that form a major
+triad.  Example 2a calculates which two pitches
+may be assigned I and II under the first rule
+above.  Since the formalism asserts only that I
+and II form a perfect fifth, a perfect fourth,
+or one of their compounds, we cannot determine
+the assignment of function labels beyond what is
+shown in the example: F is either I or II; <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is
+also either I or II.  To decide which is I and
+which is II, we need to carry out rule 2.
+Example 2b calculates which pitches may be
+assigned I and III under the second rule above.
+Since the formalism asserts only that I and III
+form a major third, a minor sixth, or one of
+their compounds, we cannot determine the
+assignment of function labels beyond what is
+shown in the example: <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is either I or III; D
+is also either I or III.  But by combining the
+results of the rule assignments in examples 2a
+and 2b, we know that Bb must be I: only <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> participates in a perfect fifth (mod 8ve) relationship and a major third (mod 8ve) relationship.
+If <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is I, F must be II, and D must be III.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="klumpenhouwer_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[11]  <b>Examples 3a</b>, <b>3b</b>, and <b>3c</b> carry out on a
+minor triad the procedures for assigning the
+functions I, II, and III.  Example 3a calculates
+which pitches may be assigned I and II under the
+first rule above.  Since the formalism asserts
+only that I and II form a perfect fifth, a
+perfect fourth, or one of their compounds, we
+cannot determine the assignment of function
+label beyond what is shown in the example: F is
+either I or II; <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is also either I or II.  To
+decide which is I and which is II, we need to
+carry out the second rule.  Example 3b calculates which pitches may be assigned I and III
+under rule 2.  Since the formalism asserts only
+that I and III form a major third, a minor
+sixth, or one of their compounds, we cannot
+determine the assignment of function beyond what
+is shown in the example: F is either I or III;
+<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is also either I or III.  But by combining
+the results of the rule assignments in examples
+3a and 3b, we know that F must be I: only F
+participates in a perfect fifth (mod 8ve) relationship and a major third (mod 8ve) relationship.  And if F is I, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> must be II, and <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> must
+be III.</p>
+<p>[12]  Comparing the assignment of function
+labels in minor triads and major triads,
+Hauptmann analyzes the constitutive perfect
+fifths and major thirds as intervals directed
+upwards: in major klangs the two intervals
+extend respectively from I to II and from I to
+III; in minor klangs the two intervals extend
+respectively from II to I and from III to I.  In
+major klangs, says Hauptmann, the pitch that
+acts as I <i>has</i> a perfect fifth and major third,
+while in minor klangs the pitch that acts as
+I <i>is</i> a perfect fifth and major third.</p>
+<p>[13]  Under Hauptmann&rdquo;s explanation, a dualist
+model organizes aural sensations in roughly the
+following way: When listening to a triad, pick
+out a major third or its inversion, and pick out
+a perfect fifth or its inversion; when you do,
+you will become aware that one pitch in the
+triad member is overdetermined, and thereby
+seems more prominent than the others.  By way of
+contrast, a fundamental bass model organizes
+sensations in roughly the following way: When
+listening to a triad, reorganize it so that it
+takes up the smallest registral space and so
+that only thirds and fifths are formed; assign
+prominence to the lowest pitch and take note of
+the quality of the third between that pitch and
+the next lowest.  And a figured bass model organizes aural sensations in roughly the following
+way: When listening to a triad, concentrate on
+the lowest-sounding pitch, and assign it prominence; imagine a third and a fifth above the
+lowest pitch (the qualities of which are determined by a contextual diatonic collection);
+pitches that do not lie a diatonic third or
+fifth above the prominent pitch are momentarily
+displacing the pitches that do.  The degree to
+which figured bass and fundamental bass protocols have been hypostatized by theorists (to the
+extent that many will claim that one or the
+other defines more or less the response end of a
+reflex arc) is something worth worrying about.</p>
+<p>[14]  In the course of this paper we shall
+represent klangs as ordered pairs.  The first
+element defines Hauptmann&rdquo;s I-function or
+<i>Einheit</i> (<i>not</i> the <i>Grundton</i>). The second
+element defines the klang&rdquo;s modality.  &ldquo;+&rdquo;
+represents a major (or over or super) klang, or
+a &ldquo;positive&rdquo; <i>Einheit</i> Hauptmann calls it.  &ldquo;-&rdquo;
+represents a minor (or under or sub) klang, or a
+&ldquo;negative&rdquo; <i>Einheit</i>.  The klangs in examples 2c
+and 3c are respectively represented as (<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+)
+and (F,-).
+ </p>
+<p style="text-align: center"><b>II.  Schritts and Wechsels</b></p>
+<p>[15]  Having established the relevant chord
+model, we can now investigate appropriate
+transformations.  We begin by examining
+Riemann&rdquo;s Schritts, the first of two classes of
+transformations he presents in <i>Skizze einer
+Neuen Methode der Harmonielehre</i>.  Quintschritt
+(abbr. Q) transposes a klang by the directed
+interval that extends from I to II.  In the case
+of (C,+), where C functions as I and G as II,
+the relevant interval is a perfect fifth up.
+Accordingly, Q(C,+) = (G,+).  In the case of
+(C,-), where C functions as I and F as II, the
+relevant interval is a perfect fifth down.
+Accordingly, Q(C,-) = (F,-), i.e., a <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> minor
+triad.</p>
+<p>[16]  Gegenquintschritt (abbr. -Q) transposes a
+klang by the directed interval that extends from
+II to I.  In the case of (C,+), where G
+functions as II and C as I, the relevant
+interval is a perfect fifth down.  Accordingly,
+-Q(C,+) = (F,+).  In the case of (C,-), where F
+functions as II and C as I, the relevant
+interval is a perfect fifth up.  Accordingly,
+-Q(C,-) = (G,-).  Q and -Q are inverse-related
+transformations.</p>
+<p>[17]  Terzschritt (abbr. T) transposes a klang
+by the directed interval that extends from I to
+III.  In the case of (C,+), where C functions as
+I and E functions as III, the relevant interval
+is a major third up.  Accordingly, T(C,+) =
+(E,+).  In the case of (C,-), where C functions
+as I and <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> functions as III, the relevant
+interval is a major third down.  Accordingly,
+T(C,-) = (<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-).</p>
+<p>[18]   Leittonschritt (abbr. L) transposes a
+klang by the directed interval yielded by the
+composing the relevant directed intervals of Q
+and T.  In the case of (C,+), the composition of
+Q (a perfect fifth up) and T (a major third up)
+produces a major seventh up.   Accordingly,
+L(C,+) = (B,+).  In the case of (C,-), the
+composition of Q (a perfect fifth down) and T (a
+major third down) produces a major seventh down.
+Accordingly, L(C,-) = (<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-).</p>
+<p>[19]  Ganztonschritt (abbr. G) transposes a
+klang by twice the directed interval that
+extends from I to II.  Hence, G = Q2.  In the
+case of (C,+), where C functions as I and G as
+II, the relevant interval is two perfect fifths
+up, viz., a (compounded) whole tone up.
+Accordingly, G(C,+) = (D,+).  In the case of
+(C,-), where C functions as I and F as II, the
+relevant interval is two perfect fifths down,
+viz., a (compounded) whole-tone down.
+Accordingly, G(C,-) = (<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-).</p>
+<p>[20]  Kleinterzschritt (abbr. K) transposes a
+klang by the directed interval that extends from
+II to III.  In the case of (C,+), where G
+functions as II and E functions as III, the
+relevant interval is a minor third down.
+Accordingly, K(C,+) = (A,+).  In the case of
+(C,-), where F functions as II and <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> functions
+as III, the relevant interval is a minor third
+up.  Accordingly, K(C,-) = (<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-).</p>
+<p>[21]  Riemann only discusses these six
+schritts.  Following the pattern established by
+the pair quintschritt/gegenquintschritt, we can
+define four more schritts: gegenterzschritt
+(abbr.-T), gegenleittonschritt (abbr. -L),
+gegenganztonschritt (abbr. -G), and
+gegenkleinterzschritt (abbr. -K), which will be
+inversely-related to terzschritt,
+leittonschritt, ganztonschritt, and
+kleinterzschritt respectively.  Two others,
+which we shall call identity (abbr. I) and
+tritonusschritt (abbr. R) are generated by
+demands of group structure.  Appendix I lists
+all twelve schritts, and provides paradigms for
+each.  Those not explicitly defined by Riemann
+are given in angle brackets.</p>
+<p>[22]  The names of the transformations help us
+remember their particular effect: an X-schritt
+transposes by the <i>magnitude</i> X (where X is a
+German interval designation) in the direction
+determined by the operand: major (or over)
+klangs extend X upwards; minor (or under) klangs
+extend X downwards.  Gegen-X-schritt may be
+taken either to reverse the direction of X, or
+to replace the magnitude X with its inverse.
+Accordingly, X-schritt and gegen-X-schritt are
+inverses.  Kleinterzschritt and its gegen-form
+are the only schritts that do not follow the
+pattern: one needs provisionally to take
+kleinterz as signifying a major sixth.</p>
+<p>[23]  Schritts combine according to the
+following rule:</p>
+<blockquote>      Xschritt*Yschritt = (X+Y)schritt</blockquote>
+<p>In other words, summing the directed intervals
+of composed schritts (and reducing any
+compounds) yields the appropriate product
+schritt.  For example, Composing K and T in the
+context of major klangs yields -L, since a major
+sixth up (the directed interval by which K
+transposes major klangs) and a major third up
+(the directed interval by which T transposes
+major klangs) sum to a minor ninth up, a
+compound of a minor second up (the relevant
+directed interval by which -L, the inverse of L,
+transposes major klangs).  Composing K and T in
+the context of minor klangs still yields -L,
+since a major sixth down (the directed interval
+by which K transposes minor klangs) and a major
+third down (the directed interval by which T
+transposes minor klangs) sum to a minor ninth
+down, a compound of a minor second down (the
+relevant directed interval by which -L, the
+inverse of L, transposes minor klangs).</p>
+<p>[24]  Since schritts are quantities that
+combine under simple addition, the group is
+commutative: in general X*Y = Y*X.</p>
+<p>[25]  But schritts only relate klangs of the
+same genus.  Wechsels, the second class of
+transformations presented in Riemann 1880,
+relate klangs of opposing genera.</p>
+<p>[26]  Seitenwechsel (abbr. W) inverts a klang
+about I (or about I and I).  The transformation
+reflexively maps the major klang and the minor
+klang whose I-functions are executed by the same
+pitch.  In other words, it exchanges &ldquo;positive&rdquo;
+and &ldquo;negative&rdquo; forms of the same <i>Einheit</i>, so
+that W(C,+) = (C,-), and W(C,-) = (C,+).
+Seitenwechsel appears in Goetschius 1917 (114)
+as his &ldquo;stride relation,&rdquo; defined as &ldquo;a perfect
+fifth downward from any major keynote, and
+upward from any minor keynote, with a change in
+mode.&rdquo;</p>
+<p>[27]  The remaining wechsels may be construed
+as the composition of some schritt and
+seitenwechsel.  Terzwechsel (abbr. TW)
+transposes a klang by the directed interval that
+extends from its I to its III, that is, applies
+terzschritt, and then inverts the result around
+its I, that is, applies seitenwechsel.  One
+might then understand the designation
+&ldquo;terzwechsel&rdquo; as an elision of
+&ldquo;terzschrittseitenwechsel.&rdquo;  Terz(schritt) only
+affects the first element of an order pair;
+(seiten)wechsel only affects the second element.
+In the case of (C,+), TW(C,+) = W(E+) = (E,-);
+in the case of (C,-), TW(C,-) = W(<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-) =
+(<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+).  TW is functionally equivalent to
+Lewin&rdquo;s and Hyer&rdquo;s relative transformation
+(abbr. R), and may be alternatively defined as
+the inversion of a klang about I and III.</p>
+<p>[28]  Leittonwechsel (abbr. LW) is the
+composition of leittonschritt (L) and
+seitenwechsel (W).  In the case of (C,+),
+LW(C,+) = W(B,+) = (B,-); in the case of (C,-),
+LW(C,-) = W(<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-) = (<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+).  LW may be
+alternatively defined as the inversion of a
+klang about II and III.</p>
+<p>[29]  Riemann defines three more wechsels:
+quintwechsel (abbr. QW), ganztonwechsel (abbr.
+GW), and tritonuswechsel (abbr. RW).
+Quintwechsel is functionally equivalent to
+Lewin&rdquo;s and Hyer&rdquo;s parallel transformation
+(abbr. P), and may alternatively defined as
+inversion of klang about I and II.  Six more
+wechsels are constructed by extending the idea
+of composing gegenquintschritt,
+kleinterzschritt, gegenkleinterzschritt,
+gegenleittonschritt, gegenterzschritt, and
+gegenganztonschritt in turn with seitenwechsel.
+Appendix II lists all twelve wechsels, and
+provides paradigms for each.  Those not defined
+explicitly by Riemann are given in angle
+brackets.  Appendix III provides rules and
+relevant examples for combining the twenty-four
+schritts and wechsels given in the first two
+appendices.  The group is simply-transitive: in
+particular, for any two klangs j and k, there
+exists a unique member of the schritt-wechsel
+group S such that S(j)=k.  The analytical use of
+groups with the property are considered in Lewin
+1987.
+ </p>
+<p style="text-align: center"><b>III. Analysis</b></p>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Valhalla Theme I</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="klumpenhouwer_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Valhalla Theme II</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="klumpenhouwer_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Valhalla Theme I (after Lewin&rsquo;s Figure 3b)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="klumpenhouwer_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Valhalla Theme II (after Lewin&rsquo;s Figure 4b)
+</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="klumpenhouwer_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="klumpenhouwer_ex7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[30]  <b>Examples 4</b> and <b>5</b> investigate some
+possibilities of schritts and wechsels by using
+them as arrow labels on network analyses of two
+excerpts from Wagner&rdquo;s <i>Ring</i>.  Both networks
+are developed from analyses recently presented
+in Lewin 1992: <b>Example 6</b> is based on Lewin&rdquo;s
+figure 3b, which studies the harmonic structure
+of the Valhalla theme as it appears in <i>Das
+Rheingold</i> sc.2; <b>Example 7</b> is based on Lewin&rdquo;s
+figure 4b, which studies the harmonic structure
+of the same theme as it appears in <i>Die
+Walkuere</i>, act II, sc. 2.  The networks are not
+exactly as they appear in the cited figures in
+Lewin 1992.  The networks that appear in
+examples 6 and 7 were designed to have the same
+node-and-arrow configurations, viz., to contain
+the same number of nodes and arrows, with
+corresponding arrows extending in the same
+direction, while Lewin&rdquo;s figures were
+constructed to serve other analytical purposes
+that did not require identical node-and-arrow
+configurations.  In any case the divergences
+from Lewin&rdquo;s figures are slight and the networks
+in examples 6 and 7 are well-formed according to
+standards of the relevant methodologies.</p>
+<p>[31]  The nodes in examples 6 and 7 are filled
+with triads construed according to the
+fundamental bass model, and are represented by
+the relevant fundamental bass and an indication
+of the third&rdquo;s quality.  The arrow labels are
+Lewin&rdquo;s designations: L represents
+leittonwechsel; P, parallel; S, subdominant; D,
+dominant.  LP represents the composition of L
+and P.  Comparing the left sides of example 6
+and 7, we see that they are identical except for
+node content, and are thus strongly isographic
+structures.  The right sides of examples 6 and 7
+are not identical: while the node and arrow
+configurations are the same, the corresponding
+arrow labels are different.  The transformations
+L and LP on the left side of both networks
+invoke dualism on the relevant nodes.  (P is
+neutral with respect to chord model.)  Traveling
+to the right side of each network, one is
+constrained by the transformations S and D to
+adopt a non-dualist conception of major and
+minor chords, to shift from Riemann to Rameau.
+Accordingly the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major/<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> minor nodes in
+example 6 and the E major/E minor nodes in
+example 7 are ideational pivots that need to be
+conceived within both frameworks.</p>
+<p>[32]  Example 4 adapts example 6 to conform to
+the present methodology: harmonies are
+represented by the dualist ordered pair format,
+and arrows are relabelled with the appropriate
+schritt or wechsel.  Only leittonwechsel appears
+on both example 6 (as L) and example 4 (as LW).
+Quintwechsel (QW) replaces parallel (P), and
+terzschritt (T)&mdash;which uses as its paradigm the
+directed interval the extends from I (<nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>) to III
+(<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>) in the (<nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+) klang&mdash;replaces LP, the
+composition of L and P.  Quintschritt (Q) and
+its inverse, gegenquintschritt (-Q),
+transformations premised on the interval between
+I and II, replace the two S arrow labels.</p>
+<p>[33]  Example 5 carries out similar changes on
+example 7.  Comparing examples 4 and 5, one sees
+that the corresponding arrow labels are strictly
+identical.  The shift from the analysis in
+examples 6 and 7 to the analysis in examples 4
+and 5 allow us then to assert a strong isography
+between the harmonic relations in two Valhalla
+themes.  With respect to node content, one could
+assert that the network in example 4 is a
+positive or major form of the network in example
+5.</p>
+<p>[34]  I will not pretend that schritt and
+wechsel transformations are the only way to
+establish a link between the two Valhalla
+themes.  One could replace L and LP on example 6
+by Lewin&rdquo;s submediant transformation (SUBM) and
+the composite transformation SUBMP respectively,
+and replace L and LP on example 7 by Lewin&rdquo;s
+mediant transformation (M) and the composite
+transformation MP respectively, thereby shifting
+the networks entirely into the discourse of
+fundamental bass theory.  Corresponding arrows
+on example 6 and 7 would then be labelled by
+inverse-related (Rameau-) transformations.
+ </p>
+<p style="text-align: center"><b>APPENDIX I<br>
+    Schritts</b></p>
+&lt;Identity&gt;  [I]<br>
+(C,+) &#8594; (C,+); (C,-) &#8594; (C,-)</p>
+<p>&lt;Gegenleittonschritt&gt; [-L]<br>
+(C,+) &#8594; (<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+); (C,-) &#8594; (B,-)</p>
+<p>Ganztonschritt  [G]<br>
+(C,+) &#8594; (D,+); (C,-) &#8594; (<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>&lt;Gegenkleinterzschritt&gt;  [-K]<br>
+(C,+) &#8594; (<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+); (C,-) &#8594; (A,-)</p>
+<p>Terzschritt  [T]<br>
+(C,+) &#8594; (E,+); (C,-) &#8594; (<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>Gegenquintschritt  [-Q]<br>
+(C,+) &#8594; (F,+); (C,-) &#8594; (G,-)</p>
+<p>&lt;Tritonusschritt&gt;  [R]<br>
+(C,+) &#8594; (<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,+); (C,-) &#8594; (<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,-)</p>
+<p>Quintschritt  [Q]<br>
+(C,+) &#8594; (G,+); (C,-) &#8594; (F,-)</p>
+<p>&lt;Gegenterzschritt&gt; [-T]<br>
+(C,+) &#8594; (<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+); (C,-) &#8594; (E,-)</p>
+<p>Kleinterzschritt  [K]<br>
+(C,+) &#8594; (A,+); (C,-) &#8594; (<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>&lt;Gegenganztonschritt&gt;  [-G]<br>
+(C,+) &#8594; (<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,+); (C,-) &#8594; (D,-)</p>
+<p>Leittonschritt  [L]<br>
+(C,+) &#8594; (B,+); (C,-) &#8594; (<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p style="text-align: center"><b>APPENDIX II<br>Wechsels</b></p>
+Seitenwechsel [W]<br>
+(C,+)&#8596;(C,-)</p>
+<p>&lt;Gegenleittonwechsel&gt; [-LW]<br>
+(C,+)&#8596;(<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>Ganztonwechsel [GW]<br>
+(C,+)&#8596;(D,-)</p>
+<p>&lt;Gegenkleinterzwechsel&gt; [-KW]<br>
+(C,+)&#8594;(<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>Terzwechsel [TW]<br>
+(C,+)&#8594;(E,-)</p>
+<p>&lt;Gegenquintwechsel&gt; [-QW]<br>
+(C,+)&#8594;(F,-)</p>
+<p>Tritonuswechsel [RW]<br>
+(C,+)&#8594;(<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,-)</p>
+<p>Quintwechsel [QW]<br>
+(C,+)&#8594;(G,-)</p>
+<p>&lt;Gegenterzwechsel&gt; [-TW]<br>
+(C,+)&#8594;(<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>&lt;Kleinterzwechsel&gt; [-KW]<br>
+(C,+)&#8594;(A,-)</p>
+<p>&lt;Gegenganztonwechsel&gt; [-GW]<br>
+(C,+)&#8594;(<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,-)</p>
+<p>Leittonwechsel [LW]<br>
+(C,+)&#8594;(B,-)</p>
+<p style="text-align: center"><b>APPENDIX III<br>Rules for Combining Schritts and Wechsels</b></p>
+
+<p>Xschritt * Yschritt = (X*Y)schritt <br>
+Q*L = Q+L = R</p>
+<p>Xschritt * Ywechsel = (X*Y)wechsel <br>
+Q*LW = (Q+L)W</p>
+<p>Xwechsel * Yschritt = (X*-Y)wechsel <br>
+QW*L = (Q-L)W = -TW</p>
+<p>Xwechsel * Ywechsel = (X*-Y)schritt<br> 
+QW*LW = (Q-L) = -T</p>
+<br>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Henry Klumpenhouwer<br>
+	University of Alberta<br>Edmonton, Alberta T6G 2C9<br><a href="mailto:userklum@mts.ucs.ualberta.ca">userklum@mts.ucs.ualberta.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1994 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Natalie Boisvert, Cynthia Gonzales, and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

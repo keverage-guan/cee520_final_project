@@ -1,0 +1,578 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 13.3: Benadon, A Circular Plot for Rhythm Visualization and Analysis</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="A Circular Plot for Rhythm Visualization and Analysis">
+
+    <meta name="citation_author" content="Benadon, Fernando">
+      
+
+<meta name="citation_publication_date" content="2007/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="13">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">A Circular Plot for Rhythm Visualization and Analysis
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.07.13.3/mto.07.13.3.benadon.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Fernando Benadon</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Rhythm, expressive timing, visualization, beat subdivision, polar coordinates</font></p><p><font size='4'>ABSTRACT: Seeing how music is organized can help us understand 
+how it is heard. Musical rhythm usually operates within a recursive temporal 
+framework such as a (periodic) beat or a (metered) measure. Therefore it makes 
+sense to visualize tactus-based rhythm as a cyclical concept. This can be done 
+using a graph that uses polar coordinates to plot temporal information. The beat 
+is represented by a circle, with all possible time-points within the beat placed 
+along the circle&#8217;s circumference. Radius length denotes interonset interval, 
+with longer notes lying farther from the center of the circle. The circular plot 
+is well suited for visualizing and analyzing expressive timing data. It can also 
+be used to re-interpret complex rhythms, partition tempo curves, and summarize 
+rhythmic profiles.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.benadon.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.07.13.3/benadon_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received December 2006</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 13, Number 3, September 2007 <br> Copyright &#0169; 2007 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center"><b>Introduction</b></p>
+
+<p>
+
+
+ 
+[1] This report presents a graphing method designed to aid the study of rhythm and expressive timing in beat-based music.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>   I show how the polar coordinate system can be used to describe and analyze different features of expressive timing.  Numerous studies have shown that expressive timing lies at the core of rhythm production.  The evidence&#8212;reviewed by <a href="#clarke_1999" id="citation_clarke_1999_67dc9b14a4617">Clarke 1999</a>&#8212;confirms that musicians often place attack points along a continuum of beat subdivision values rather than on the predetermined slots afforded by metrical grid spacing, thus imbuing the performance with expressive depth.  This departure from a clear-cut temporal lattice is inadequately, if at all, represented by standard music notation.  Like the &#8220;piano roll&#8221; representation used by MIDI sequencers, standard music notation is a kind of visualization tool whose two &#8220;axes&#8221; capture two paramount features of music: time horizontally and pitch vertically.  The need to represent specific aspects of music in a detailed way has led to the design of various visualization methods, as I discuss next.
+
+<p style="text-align: center"><b>Visualization and Circles</b></p>
+
+
+<p>
+
+
+ 
+[2] Certain properties of musical structure can be depicted using rhythmograms (<a href="#todd_1994" id="citation_todd_1994_67dc9b14a461a">Todd 1994</a>), self-similarity squares (<a href="#foote_and_cooper_2001" id="citation_foote_and_cooper_2001_67dc9b14a461c">Foote and Cooper 2001</a>), or hierarchic trees (<a href="#lerdahl_and_jackendoff_1983" id="citation_lerdahl_and_jackendoff_1983_67dc9b14a461e">Lerdahl and Jackendoff 1983</a>).  Timbre can be viewed with various forms of spectrograms, hemiolas with ski-hill graphs (Cohn, 2001), harmony with 
+quotient topologies (<a href="#tymoczko_2006" id="citation_tymoczko_2006_67dc9b14a4620">Tymoczko 2006</a>), and the pitch chroma cycle with helices (<a href="#shepard_1983" id="citation_shepard_1983_67dc9b14a4621">Shepard 1983</a>).  Geometrical thinking has also served the composition process, as evidenced by the hand-drawn schematics of Reynolds (<a href="#reynolds_2004" id="citation_reynolds_2004_67dc9b14a4624">2004</a>) and Wishart (<a href="#wishart_1996" id="citation_wishart_1996_67dc9b14a4626">1996</a>), to name just two recent examples.
+
+<p>
+
+
+ 
+[3] Visualizations also play a role in the realm of rhythm and expressive timing.  Even though microtiming information is sometimes displayed with numerical tables, visualization strategies are often used to communicate information on a more perceptually intuitive level.  Desain & Honing (<a href="#desain_and_honing_2003" id="citation_desain_and_honing_2003_67dc9b14a4628">2003</a>) devised a triangular chronotopic map that plots the temporal nuances and categorical boundaries of three-note rhythms.  An important and appealing feature of their graphing method is that every point in the map represents a unique rhythmic pattern.  Dots that are near each other in the graph denote similar sounding rhythms, forming &#8220;clumps&#8221; that represent distinct perceptual categories.  However, the map is restricted to rhythms that consist of three durations only and is therefore of limited use in most real-world musical contexts.  For longer rhythms, note-for-note expressive timing data are often visualized with an XY graph where evenly partitioned time units (such as notes or measures) demarcate score position along the abscissa; the ordinate usually plots tempo, interonset interval, or deviation from a metronomic subdivision.  This type of design has proved helpful in different musical contexts including jazz (e.g., <a href="#benadon_2006" id="citation_benadon_2006_67dc9b14a462a">Benadon 2006</a>; <a href="#g_l_collier_and_j_l_collier_2002" id="citation_g_l_collier_and_j_l_collier_2002_67dc9b14a462c">G. L. Collier and J. L. Collier 2002</a>) and Western &#8220;classical&#8221; music (e.g., <a href="#friberg_and_sundberg_1999" id="citation_friberg_and_sundberg_1999_67dc9b14a463f">Friberg and Sundberg 1999</a>; <a href="#palmer_1996" id="citation_palmer_1996_67dc9b14a4641">Palmer 1996</a>; <a href="#repp_2002" id="citation_repp_2002_67dc9b14a4642">Repp 2002</a>), but its linear left-to-right orientation tends to conceal the recursive nature of beat-based patterns.
+
+<p>
+
+
+ 
+[4] Circles enjoy a privileged status in the visualization of musical time.  They have been tapped by music theorists, ethnomusicologists, and computer scientists to represent cyclical aspects of rhythm.  London (<a href="#london_2004" id="citation_london_2004_67dc9b14a4644">2004</a>, p. 64) visualizes meter by placing &#8220;peaks of attentional energy&#8221; (beats and subdivisions) along a circle&#8217;s circumference.  Time also flows around a circle in Becker&#8217;s (<a href="#becker_1980" id="citation_becker_1980_67dc9b14a4646">1980</a>, p. 107) representation of Javanese gamelan
+<i>gongan</i> (structural units of time marked by a gong), which are &#8220;cyclical rather than linear,&#8221; and in Anku&#8217;s (<a href="#anku_2000" id="citation_anku_2000_67dc9b14a4648">2000</a>) representation of African rhythms.  Locke (<a href="#locke_1996" id="citation_locke_1996_67dc9b14a4649">1996</a>, p. 90) and Collins (<a href="#collins_2004" id="citation_collins_2004_67dc9b14a464b">2004</a>, p. 59) also use circles to characterize African rhythms, taking the circular concept one step further by employing concentric circles that describe the stratification of polyrhythm.  In the work of Toussaint (<a href="#toussaint_2005" id="citation_toussaint_2005_67dc9b14a464d">2005</a>) and McLachlan (<a href="#mclachlan_2000" id="citation_mclachlan_2000_67dc9b14a464e">2000</a>), the circle facilitates mathematical explanations of rhythm such as maximal evenness and similarity measures.
+
+<p>
+
+
+ 
+[5] Hence, we find two parallel practices: (1) the graphical representation of expressive timing and (2) the circular representation of rhythm and time.  This paper seeks to combine them.
+
+
+
+<p style="text-align: center"><b>The Circle Graph</b></p>
+
+<p>
+
+
+ 
+[6] 
+The graphing method I propose uses polar coordinates to plot interonset interval and onset placement within the beat.  Polar coordinates consist of two variables, 
+<i>r</i> and <i>&#952;</i>.  The angular coordinate <i>&#952;</i> is the counterclockwise angle measured in radians.  Here, <i>&#952;</i> represents normalized onset placement within the beat according to the formula
+
+
+<div>
+<table border="0" width="100%" align ="center">
+	
+	<tr>
+
+		<td align="center">&nbsp;<i>&#952;</i> = (2&#960;<i>t</i>/<i>b</i>) + (&#960;/2)</td>
+
+		<td align="right">(1)
+
+</td>
+
+	</tr>
+
+</table>
+
+</div>
+
+
+<p>
+
+
+ 
+where <i>t</i> is the time of the note&#8217;s onset measured from the beat&#8217;s beginning and 
+<i>b</i> is the total beat length.  Normally, the angle&#8217;s zero-point lies on the Cartesian positive 
+<i>x</i>-axis (on a horizontal line to the right of the origin), but here the beat&#8217;s beginning time-point, or 
+<i>downbeat</i>, lies on the positive <i>y</i>-axis.  (I use the term downbeat to refer to the beginning of the beat (<i>t</i> = 0); it should not be confused with the term&#8217;s more common usage as the first beat in a measure.)  In this way, the downbeat lies at the top of the circle, or <i>&#952;</i> = &#960;/2.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>   As time flows through the beat (as 
+<i>t</i> increases from 0 to <i>b</i>), we move counterclockwise around the circle from the beginning of the beat 
+<i>t</i> = 0 (the downbeat at <i>&#952;</i> = &#960;/2), through its midway point 
+<i>t</i> = <i>b</i>/2 (the upbeat at <i>&#952;</i> = 3&#960;/2), and back up to the next downbeat.
+
+<p>
+
+
+ 
+[7] The radial coordinate <i>r</i> denotes distance from the pole (the graph&#8217;s central point, or origin).  In this graph, 
+<i>r</i> equals interonset interval.  Since longer notes have longer radii than shorter notes, concentric circles can be traced to provide a visual reference for different note durations.  For instance, if 
+<i>b</i> = 600 ms (equivalent to a tempo of 100 bpm given a
+<span style="background-position: 0 0">q</span>uarter-note beat), then the sixteenth-note equals 150 ms (<i>b</i>/4); all points inside/outside the circle whose 
+<i>r</i> = 150 denote values shorter/longer than the sixteenth-note.  <b>Animations 1</b> and <b>2</b> illustrate the graph&#8217;s basic mechanism.
+
+                <table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 1</b></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="benadon_examples.php?id=0&nonav=true"><img border="1" alt="Animation 1 thumbnail" src="benadon_animation1.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 2</b></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="benadon_examples.php?id=1&nonav=true"><img border="1" alt="Animation 2 thumbnail" src="benadon_animation2.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td></tr></table>
+<p>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Microrhythmic morphing</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="benadon_examples.php?id=2&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="benadon_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+ 
+<p>[8] <b>Figure 1a</b> shows the tripletizing inflection discussed by Iyer (<a href="#iyer_2002" id="citation_iyer_2002_67dc9b14a4734">2002</a>), in which a syncopated rhythm based on eighth- and sixteenth-notes is &#8220;spread&#8221; in order to accommodate a triplet-based grid.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+Note value categories are shown as concentric circles.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>   The first (bracketed) pattern shows the
+<span style="background-position: 0 0">q</span>uantized rhythmic template.  As actually performed here, however, the durations are evened out through &#8220;spreading,&#8221; first mildly (first beat), then enough to transform the pattern into an isochronous triplet (second beat).  The reverse type of microrhythmic morphing can be seen in <b>Figure 1b</b>, where the ternary long-short inflection is evened out to become a pair of even eighth-notes.  On the second beat of the measure, the pattern closely resembles a triplet.  The following two beats see a drive towards isochrony, such that the ternary long-short configuration is fully evened out by the beginning of the next measure.  The diagonal gridline marks the beat&#8217;s two-thirds division&#8212;that is, where the eighth-note triplet (as shown in the transcription) would be aligned given a deadpan performance.  Note that, unless marked with different point-shapes such as squares and triangles, the graph says nothing about which beat in the measure the notes belong to.  It merely tracks cumulative onsets within the recursive tactus cycle.  Neither does it presuppose a subdivision metric.
+<span style="background-position: 0 0">Q</span>uite the opposite: all possible time-points in the beat are fair game; gridlines can be added after the fact to reveal any underlying metrical frameworks.</p>
+
+<p style="text-align: center"><b>Analytical Contexts</b></p>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Bubber Miley (trumpet), &#8220;Creole Love Call&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="benadon_examples.php?id=3&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="benadon_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Wessell Anderson (alto saxophone), &#8220;Desimonae&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="benadon_examples.php?id=5&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="benadon_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Cumulative rhythmic activity across an 8-measure span</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="benadon_examples.php?id=7&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="benadon_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+ 
+[9] 
+As shown, the circle graph can shed light on details of expressive timing.  It can also prove useful in the analysis of rhythmically complex passages, such as the one shown in <b>Figure 2a</b>.  The gridlines suggest that this rhythm may be organized according to a 
+quintuplet grid.  But, as the transcription shows, notating the rhythm accurately requires that we use a more complicated subdivision ratio (19:16) if the last note is to line up correctly with the downbeat of the next measure.  Is there a grid that provides an alternative fit?  <b>Figure 2b</b> suggests so.  Even though the rhythm appears complex in its original tempo of 97 bpm, it can be rethought as a straightforward triplet pattern at 80 bpm&#8212;a tempo that may have momentarily supplanted the other one in the improviser&#8217;s mind.  As <b>Animation 3</b> shows, the ability to visually re-construe a given set of durations according to different clock speeds may constitute this graphing method&#8217;s biggest strength.</p>
+
+                <table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 3</b></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="benadon_examples.php?id=4&nonav=true"><img border="1" alt="Animation 3 thumbnail" src="benadon_animation3.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 4</b></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="benadon_examples.php?id=6&nonav=true"><img border="1" alt="Animation 4 thumbnail" src="benadon_animation4.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td></tr></table>
+<p>
+ 
+[10] Another potential purpose of the circle graph is to dissect nonperiodic rhythms
+that undergo a systematic retardation or acceleration.  An example of such a rhythm appears in <b>Figure 3</b>.  The transcription shows how each beat&#8217;s subdivision grid becomes successively finer as the notes get faster (6 to 8 to 10 subdivisions per beat; Figure 3a).  Another way of interpreting the phrase is as a sixteenth-note grid that gradually contracts, as the alternate transcription shows (Figure 3b / <b>Animation 4</b>).  In order to determine the precise nature of this tempo curve, we split the phrase into one-beat chunks (with one exception on the third beat) and, with the graph&#8217;s help, assign each segment a local tempo that provides a good visual fit.  This graph is in fact a composite of six different superimposed graphs, each with its own tempo and set of coordinates according to formula (1).
+
+<p>
+
+
+[11] We need not restrict the circle graph to brief passages.  Because the graph is essentially a round histogram, it can be used to provide a snapshot of overall rhythmic characteristics.  Huron (<a href="#huron_2006" id="citation_huron_2006_67dc9b14a4754">2006</a>, p. 178) did this with columned histograms to display onset frequency of occurrence for meter and hypermeter.  Similarly, we can allow the circle graph to collapse rhythmic activity over longer time spans, as in the two 8-measure passages shown in <b>Figure 4</b>.  Both are duets that feature an improvised string-instrument solo accompanied by a steady congas accompaniment (which is not graphed).  At first sight, the graphs resemble an inexperienced marksperson&#8217;s target.  But a moment&#8217;s reflection reveals rhythmic properties particular to each performance.  Nelson Gonz&aacute;lez&#8217;s solo is heavily syncopated: his eighth-notes are almost always displaced (they fall on the second and fourth sixteenth-note &#8220;slots&#8221;), he rarely plays on the downbeat, and his use of successive dotted eighth-notes result in hemiolas (Figure 4a).  By contrast, Jaco Pastorius uses sequences of sixteenth-notes to place equal stress on all four subdivisions (Figure 4b); there are indeed some syncopated eighth-notes but they are much less prominent than in the other solo. Pastorius&#8217; rhythmic urgency is of a different kind: he encloses the bull&#8217;s-eye with rapid (sub-100 ms) sixteenth-note triplets, whereas the sixteenth-note accounts for Gonz&aacute;lez&#8217;s 
+fastest value. 
+
+<p>
+
+[12] That these observations may be gleaned from a 
+standard transcription is immaterial. Of note is the graph&#8217;s capacity to display 
+various aspects of timing concisely and simultaneously. In addition, the circle 
+graph can be used to view, in the form of geometric rotation, temporal 
+displacement of a rhythmic figure. For instance, a rhythm that is delayed or 
+anticipated by a sixteenth-note results in a positive or negative 90-degree 
+rotation. If the displacement is microrhythmic rather than metronomic, the shape 
+will appear slightly rotated and mildly distorted. 
+<p>
+
+
+ 
+[13] Finally, a word on some 
+of the graph&#8217;s limitations. While useful in diverse contexts, this method&#8217;s 
+reliance on a pattern of recurring and isochronous beats makes it an impractical 
+choice for visualizing music that does not conform to this type of rhythmic 
+organization. Even if a steady beat is present, it is not always easy or 
+possible to determine its exact onset. Furthermore, the circle graph can neither 
+relate expressive timing patterns to larger musical structures nor portray the 
+detailed time course of a performance&#8212;these phenomena are best illustrated 
+linearly. 
+
+
+<p style="text-align: center"><b>Summary</b></p>
+
+<p>
+
+
+ 
+[14] I have shown how the circle graph can serve diverse 
+analytical functions. Its design facilitates understanding of beat subdivision 
+details by making them apparent to the naked eye. Alternate tempos, either 
+stable or fluctuating, can be sought visually to accommodate otherwise 
+intractable rhythms. Lastly, the distribution pattern of points can summarize 
+structural traits exhibited by different rhythmic patterns of any length from a 
+few notes to a multi-measure performance.
+</a></sup></span></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Fernando Benadon<br>
+	American University<br>Department of Performing Arts<br>4400 Massachusetts Avenue<br>NW Washington, D.C.20016<br><a href="mailto:fernando@american.edu">fernando@american.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_anku_2000" class="flyoverdiv">Anku, W. (2000). &ldquo;<a href='..mto.00.6.1/mto.00.6.1.anku.php'>Circles and Time: A Theory of Structural Organization of Rhythm in African Music</a>.&rdquo; <i>Music Theory Online</i> 6(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anku_2000"></a>Anku, W. (2000). &ldquo;<a href='..mto.00.6.1/mto.00.6.1.anku.php'>Circles and Time: A Theory of Structural Organization of Rhythm in African Music</a>.&rdquo; <i>Music Theory Online</i> 6(1).</p><div id="citediv_becker_1980" class="flyoverdiv">Becker, J. (1980). <i>Traditional Music in Modern Java: Gamelan in a Changing Society</i>. Honolulu: The University Press of Hawaii.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="becker_1980"></a>Becker, J. (1980). <i>Traditional Music in Modern Java: Gamelan in a Changing Society</i>. Honolulu: The University Press of Hawaii.</p><div id="citediv_benadon_2006" class="flyoverdiv">Benadon, F. (2006). &ldquo;Slicing the Beat: Jazz Eighth-notes as Expressive Microrhythm.&rdquo; <i>Ethnomusicology</i> 50(1), 73&ndash;98.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="benadon_2006"></a>Benadon, F. (2006). &ldquo;Slicing the Beat: Jazz Eighth-notes as Expressive Microrhythm.&rdquo; <i>Ethnomusicology</i> 50(1), 73&ndash;98.</p><div id="citediv_clarke_1999" class="flyoverdiv">Clarke, E. (1999). &ldquo;Rhythm and Timing in Music.&rdquo; In D. Deutsch (Ed.), <i>The Psychology of Music</i>. San Diego: Academic Press, 473&ndash;500.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clarke_1999"></a>Clarke, E. (1999). &ldquo;Rhythm and Timing in Music.&rdquo; In D. Deutsch (Ed.), <i>The Psychology of Music</i>. San Diego: Academic Press, 473&ndash;500.</p><div id="citediv_cohn_2001" class="flyoverdiv">Cohn, R. (2001). &ldquo;Complex Hemiolas, Ski-hill Graphs and Metric Spaces.&rdquo; <i>Music Analysis</i> 20(3), 295&ndash;326.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_2001"></a>Cohn, R. (2001). &ldquo;Complex Hemiolas, Ski-hill Graphs and Metric Spaces.&rdquo; <i>Music Analysis</i> 20(3), 295&ndash;326.</p><div id="citediv_g_l_collier_and_j_l_collier_2002" class="flyoverdiv">Collier, G. L., & Collier, J. L. (2002). &ldquo;A Study of Timing in Two Louis Armstrong Solos.&rdquo; <i>Music Perception</i> 19(3), 463&ndash;483.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="g_l_collier_and_j_l_collier_2002"></a>Collier, G. L., & Collier, J. L. (2002). &ldquo;A Study of Timing in Two Louis Armstrong Solos.&rdquo; <i>Music Perception</i> 19(3), 463&ndash;483.</p><div id="citediv_collins_2004" class="flyoverdiv">Collins, J. (2004). <i>African Musical Symbolism in Contemporary Perspective</i>. Berlin: Pro Business.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="collins_2004"></a>Collins, J. (2004). <i>African Musical Symbolism in Contemporary Perspective</i>. Berlin: Pro Business.</p><div id="citediv_desain_and_honing_2003" class="flyoverdiv">Desain, P., & Honing, H. (2003). &ldquo;The Formation of Rhythmic Categories and Metric Priming.&rdquo; <i>Perception</i> 32(3), 341&ndash;365.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="desain_and_honing_2003"></a>Desain, P., & Honing, H. (2003). &ldquo;The Formation of Rhythmic Categories and Metric Priming.&rdquo; <i>Perception</i> 32(3), 341&ndash;365.</p><div id="citediv_foote_and_cooper_2001" class="flyoverdiv">Foote, J., & Cooper, M. (2001). &ldquo;Visualizing Musical Structure and Rhythm via Self-similarity.&rdquo; <i>Proceedings, International Conference on Computer Music</i> (Habana, Cuba).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="foote_and_cooper_2001"></a>Foote, J., & Cooper, M. (2001). &ldquo;Visualizing Musical Structure and Rhythm via Self-similarity.&rdquo; <i>Proceedings, International Conference on Computer Music</i> (Habana, Cuba).</p><div id="citediv_friberg_and_sundberg_1999" class="flyoverdiv">Friberg, A., & Sundberg, J. (1999). &ldquo;Does Music Performance Allude to Locomotion? A Model of Final Ritardandi Derived from Measurements of Stopping Runners.&rdquo; <i>Journal of the Acoustical Society of America</i> 105(3), 1469&ndash;1484.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="friberg_and_sundberg_1999"></a>Friberg, A., & Sundberg, J. (1999). &ldquo;Does Music Performance Allude to Locomotion? A Model of Final Ritardandi Derived from Measurements of Stopping Runners.&rdquo; <i>Journal of the Acoustical Society of America</i> 105(3), 1469&ndash;1484.</p><div id="citediv_huron_2006" class="flyoverdiv">Huron, D. (2006). <i>Sweet Anticipation: Music and the Psychology of Expectation</i>. Cambridge: MIT Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="huron_2006"></a>Huron, D. (2006). <i>Sweet Anticipation: Music and the Psychology of Expectation</i>. Cambridge: MIT Press.</p><div id="citediv_iyer_2002" class="flyoverdiv">Iyer, V. (2002). &ldquo;Embodied Mind, Situated Cognition, and Expressive Microtiming in African-American Music.&rdquo; <i>Music Perception</i> 19(3):387&ndash;414</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="iyer_2002"></a>Iyer, V. (2002). &ldquo;Embodied Mind, Situated Cognition, and Expressive Microtiming in African-American Music.&rdquo; <i>Music Perception</i> 19(3):387&ndash;414</p><div id="citediv_lerdahl_and_jackendoff_1983" class="flyoverdiv">Lerdahl, F., & Jackendoff, R. (1983). <i>A Generative Theory of Tonal Music</i>. Cambridge: MIT Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lerdahl_and_jackendoff_1983"></a>Lerdahl, F., & Jackendoff, R. (1983). <i>A Generative Theory of Tonal Music</i>. Cambridge: MIT Press.</p><div id="citediv_locke_1996" class="flyoverdiv">Locke, D. (1996). &ldquo;Africa/Ewe, Mande, Dagbamba, Shona, BaAka.&rdquo; In <i>Worlds of Music: An Introduction to the Music of the World&rsquo;s Peoples</i>, edited by Jeff Todd Titon. New York: Schirmer Books, 71&ndash;143.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="locke_1996"></a>Locke, D. (1996). &ldquo;Africa/Ewe, Mande, Dagbamba, Shona, BaAka.&rdquo; In <i>Worlds of Music: An Introduction to the Music of the World&rsquo;s Peoples</i>, edited by Jeff Todd Titon. New York: Schirmer Books, 71&ndash;143.</p><div id="citediv_london_2004" class="flyoverdiv">London, J. (2004). <i>Hearing in Time: Psychological Aspects of Musical Meter</i>. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="london_2004"></a>London, J. (2004). <i>Hearing in Time: Psychological Aspects of Musical Meter</i>. New York: Oxford University Press.</p><div id="citediv_mclachlan_2000" class="flyoverdiv">McLachlan, N. (2000). &ldquo;A Spatial Theory of Rhythmic Resolution.&rdquo; <i>Leonardo Music Journal</i> 10, 61&ndash;67.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mclachlan_2000"></a>McLachlan, N. (2000). &ldquo;A Spatial Theory of Rhythmic Resolution.&rdquo; <i>Leonardo Music Journal</i> 10, 61&ndash;67.</p><div id="citediv_palmer_1996" class="flyoverdiv">Palmer, C. (1996). &ldquo;Anatomy of a Performance: Sources of Musical Expression.&rdquo; <i>Music Perception</i> 13(3), 433&ndash;453.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="palmer_1996"></a>Palmer, C. (1996). &ldquo;Anatomy of a Performance: Sources of Musical Expression.&rdquo; <i>Music Perception</i> 13(3), 433&ndash;453.</p><div id="citediv_repp_2002" class="flyoverdiv">Repp, B. H. (2002). &ldquo;The Embodiment of Musical Structure: Effects of Musical Context on Sensorimotor Synchronization with Complex Timing Patterns.&rdquo; In W. Prinz & B. Hommel (Eds.), <i>Common Mechanisms in Perception and Action: Attention and Performance XIX</i>. Oxford: Oxford University Press, 245&ndash;265.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="repp_2002"></a>Repp, B. H. (2002). &ldquo;The Embodiment of Musical Structure: Effects of Musical Context on Sensorimotor Synchronization with Complex Timing Patterns.&rdquo; In W. Prinz & B. Hommel (Eds.), <i>Common Mechanisms in Perception and Action: Attention and Performance XIX</i>. Oxford: Oxford University Press, 245&ndash;265.</p><div id="citediv_reynolds_2004" class="flyoverdiv">Reynolds, R. (2004). &ldquo;Compositional Strategies in &lsquo;The Angel of Death&rsquo; for Piano, Chamber Orchestra, and Computer-processed Sound.&rdquo; <i>Music Perception</i> 22(2), 173&ndash;205.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="reynolds_2004"></a>Reynolds, R. (2004). &ldquo;Compositional Strategies in &lsquo;The Angel of Death&rsquo; for Piano, Chamber Orchestra, and Computer-processed Sound.&rdquo; <i>Music Perception</i> 22(2), 173&ndash;205.</p><div id="citediv_shepard_1983" class="flyoverdiv">Shepard, R. (1983). &ldquo;Demonstrations of Circular Components in Pitch.&rdquo; <i>Journal of the Audio Engineering Society</i> 31, 641&ndash;649.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shepard_1983"></a>Shepard, R. (1983). &ldquo;Demonstrations of Circular Components in Pitch.&rdquo; <i>Journal of the Audio Engineering Society</i> 31, 641&ndash;649.</p><div id="citediv_todd_1994" class="flyoverdiv">Todd, N. P. (1994). &ldquo;The Auditory &lsquo;Primal Sketch&rsquo;: A Multiscale Model of Rhythmic Grouping.&rdquo; <i>Journal of New Music Research</i> 23, 25&ndash;70.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="todd_1994"></a>Todd, N. P. (1994). &ldquo;The Auditory &lsquo;Primal Sketch&rsquo;: A Multiscale Model of Rhythmic Grouping.&rdquo; <i>Journal of New Music Research</i> 23, 25&ndash;70.</p><div id="citediv_toussaint_2005" class="flyoverdiv">Toussaint, G. (2005). &ldquo;The Geometry of Musical Rhythm.&rdquo; <i>Proceedings, Japan Conference on Discrete and Computational Geometry (JCDCG 2004)</i>, 198&ndash;212.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="toussaint_2005"></a>Toussaint, G. (2005). &ldquo;The Geometry of Musical Rhythm.&rdquo; <i>Proceedings, Japan Conference on Discrete and Computational Geometry (JCDCG 2004)</i>, 198&ndash;212.</p><div id="citediv_tymoczko_2006" class="flyoverdiv">Tymoczko, D. (2006). &ldquo;The Geometry of Musical Chords.&rdquo; <i>Science</i> 313, 72&ndash;74.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_2006"></a>Tymoczko, D. (2006). &ldquo;The Geometry of Musical Chords.&rdquo; <i>Science</i> 313, 72&ndash;74.</p><div id="citediv_wishart_1996" class="flyoverdiv">Wishart, T. (1996). <i>On Sonic Art</i>. Amsterdam: Harwood Academic Publishers.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wishart_1996"></a>Wishart, T. (1996). <i>On Sonic Art</i>. Amsterdam: Harwood Academic Publishers.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> I am grateful to Charles J. Limb, Bruno Repp and Henkjan Honing for their feedback on an earlier draft of this article.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> The &#8220;top&#8221; of the beat lies at the top of the circle.  There are two logical alternatives to this configuration.  The downbeat could lie at <i>&#952; </i>= 0 (equating the beginning of the beat with the beginning of the arc) or at <i>&#952;</i> = &#8211;&#960;/2 (such that the 
+<i>down</i>beat lies at the bottom of the circle and the <i>up</i>beat at the top).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The performance measurements used in the examples were 
+made by the author with the sound editor Peak 4. Measurement errors are 
+estimated to lie between &#126;5 and &#126;10 ms. All examples are drawn from improvised 
+music. When music notation appears below a graph, it is a transcription and not 
+a score.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> These are provided for visual reference only and have no bearing on the coordinate placement of points.<br><a href="#FN4REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">I am grateful to Charles J. Limb, Bruno Repp and Henkjan Honing for their feedback on an earlier draft of this article.</div><div id="fndiv2" class="flyoverdiv">The &#8220;top&#8221; of the beat lies at the top of the circle.  There are two logical alternatives to this configuration.  The downbeat could lie at <i>&#952; </i>= 0 (equating the beginning of the beat with the beginning of the arc) or at <i>&#952;</i> = &#8211;&#960;/2 (such that the 
+<i>down</i>beat lies at the bottom of the circle and the <i>up</i>beat at the top).</div><div id="fndiv3" class="flyoverdiv">The performance measurements used in the examples were 
+made by the author with the sound editor Peak 4. Measurement errors are 
+estimated to lie between &#126;5 and &#126;10 ms. All examples are drawn from improvised 
+music. When music notation appears below a graph, it is a transcription and not 
+a score.</div><div id="fndiv4" class="flyoverdiv">These are provided for visual reference only and have no bearing on the coordinate placement of points.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2007 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Stefanie Acevedo, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="2999597"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="e669f145"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/2999597/0/e669f145/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

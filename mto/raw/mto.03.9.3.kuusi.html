@@ -1,0 +1,939 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 9.3: Kuusi, The Role of Set-Class Identity in the Estimation of Chords</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="The Role of Set-Class Identity in the Estimation of Chords">
+
+    <meta name="citation_author" content="Kuusi, Tuire">
+      
+
+<meta name="citation_publication_date" content="2003/08/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="9">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">The Role of Set-Class Identity in the Estimation of Chords
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.03.9.3/mto.03.9.3.kuusi.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Tuire Kuusi</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: set-class, trichord, pentachord, aural estimation, chord categorization</font></p><p><font size='4'>ABSTRACT: The study examined the role of set-class identity for the subjects&rsquo; 
+estimations of chords. Additionally, the study examined what factors other than 
+the set-class identity were guiding the subjects&rsquo; estimations. In the test the 
+subjects (professional musicians, amateurs, and non-musicians) heard sequences 
+of five chords. Four chords were derived from one set-class and one chord from 
+another set-class. The subjects were asked to rate which chord did not belong to 
+the same group as the others. It was found that the subjects selected the chord 
+according to the set-class identity in approximately 61% of the cases. The 
+chordal factors guiding the subjects&rsquo; estimations were also analyzed. Among 
+these factors were the register of the chords and the arrangement of the pitches 
+within the chords.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.03.9.3/mto.03.9.3.kuusi.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.03.9.3/kuusi_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received June 2003</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 9, Number 3, August 2003 <br> Copyright &#0169; 2003 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+<h3>
+<a name="top"></a>
+INTRODUCTION </h3>
+<p>
+[1] Pitch-class set theory was originally developed to provide a theoretical 
+framework for describing pitch organization of post-tonal music. Among important 
+pioneers were Milton Babbitt, Allen Forte, and David Lewin. Babbitt applied 
+concepts of mathematical set theory to music, and many pitch-class 
+set-theoretical concepts are based on Babbitt&rsquo;s ideas. A general theory using 
+these concepts was formulated by Forte. Since then, the theory has been 
+developed by many researchers.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+<p>
+[2] 
+Pitch-class set theory is most often applied to analysis. Instead of the 
+analytical application of the theory, this study is focused on one concept of 
+the theory, namely, the set-class.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Set-class is an abstract concept: a 
+complex of a number of entities sharing certain properties according to which 
+they can be classified. As an abstract concept, the set-class is not directly 
+observable. Since it is not possible to make perceptual estimations of 
+set-classes, these estimations must be done from observable entities (pitch 
+sets) representing the set-classes. Every set-class can be represented by an 
+infinite number of pitch sets, and the properties of a set-class are always 
+present in the pitch sets representing it. Many authors of pitch-class 
+set-theory have&mdash;directly or indirectly&mdash;discussed the connection between 
+set-classes and the pitch sets derived from them.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+Generally, they state that there is a connection between the set-class and the 
+pitch sets derived from it in some circumstances. However, they also state that 
+the realization of the pitch sets involves many factors some of which are 
+independent from the set-class (factors mentioned by different authors are, for 
+example, the arrangement of the pitches as chords or as melodies, the registral 
+placement of the pitches, the octave duplications, counter, rhythm, timbre, 
+articulation, and dynamics). </p>
+<p>
+[3] The number of studies on the connection 
+between set-classes and perception of pitch sets derived from them is small. 
+Most of these studies have analyzed the connection between certain pitch-class 
+set-theoretical resemblance models and the perception of closeness or similarity 
+between pitch sets. Some of these studies have also analyzed the factors 
+involved in the closeness estimations.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Further, Kuusi 
+has shown that there is a connection between some factors guiding the 
+estimations and the properties of the set-classes. </p>
+<h3>
+AIM </h3>
+<p>
+[4] The aim of this study 
+was to test the subjects&rsquo; ability to discriminate between selected set-classes. 
+In this study, the set-classes were represented by block chords played using 
+the piano sound. Each set-class was represented by a number of chords. The idea 
+was to test how well the subjects could discriminate chords derived from a 
+certain set-class from chords derived from some other set-class and what factors 
+other than the set-class identity were guiding the subjects&rsquo; estimations. </p>
+<p>
+[5] A new testing regime was used. The subjects were played sequences of chords. 
+These sequences were formed of five chords: four &lsquo;standard&rsquo; chords from the 
+&lsquo;standard&rsquo; set-class forming the context and one &lsquo;deviant&rsquo; chord from the 
+&lsquo;deviant&rsquo; set-class. The subjects were asked to rate which chord did not belong 
+to the same group as the others. Hence, another aim of the study was to test 
+this testing regime. </p>
+<h3>
+THE SET-CLASSES, THE TEST CHORDS, THE TEST, AND THE SUBJECTS </h3>
+<p>
+[6] 
+As it was possible to test only a rather small number of items, the author first 
+decided to use only triad and pentad classes. The  number of triad classes was 
+four: 3-1 {0, 1, 2} (the 3-pc chromatic class), 3-2A {0, 1, 3}, 3-8A {0, 2, 6} 
+(the set-class from which the dominant seventh chord without the fifth can be 
+derived), and 3-11B {0, 4, 7} (the set-class from which the major chord can be 
+derived). The number of pentad classes was five: 5-1 {0, 1, 2, 3, 4} (the 5-pc 
+chromatic class), 5-4A {0, 1, 2, 3, 6}, 5-33 {0, 2, 4, 6, 8} (the 5-pc 
+whole-tone class), 5-34 {0, 2, 4, 6, 9} (the set-class from which the dominant 
+ninth chord can be derived), and 5-35 {0, 2, 4, 7, 9} (the pentatonic class). 
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. The Huron consonance values for the set-classes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=0&nonav=true"><img border="1" alt="Table 1 thumbnail" src="kuusi_table1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[7] The consonance values for the set-classes were calculated using the Huron 
+model of consonance for set-classes (Huron 1994).<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> According to the Huron 
+values, the most dissonant set-class of the nine set-classes of the study was 
+3-1 with value -1.146, and the most consonant one was 3-11B with value 0.740 (see <b>Table 1</b>). 
+The other dissonant set-classes were 5-1 (-0.588), 3-2A (-0.472), and 5-4A 
+(-0.309), and the other consonant set-classes were 5-35 (0.479) and 5-34 
+(0.224). There were two set-classes close to the middle point of the range of 
+the values (the middle point was -0.203). These were 3-8A (-0.216) and 5-33 
+(-0.169). </p>
+<p>
+[8] The 
+location of set-class 3-8A in the middle of the range of consonance values needs 
+closer examination. As stated earlier, the dominant seventh chord without the 
+fifth can be derived from set-class 3-8A. The dominant seventh chord is usually 
+considered to be a rather consonant chord, at least by musically trained 
+subjects, and the absence of the (perfect) fifth does not affect the character 
+of the chord. However, the absence of the fifth affects the consonance value: 
+the three intervals between the fifth and the other pitches of the dominant 
+seventh chord (perfect fifth and two minor thirds) would increase the consonance 
+value. Hence, set-class 3-8A will be included in the &lsquo;consonant&rsquo; set-classes. 
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. The chords derived from the four triad 
+classes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=1&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="kuusi_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. The chords derived from the five pentad 
+classes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="kuusi_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[9] Each of the triad classes was represented by two chordal settings. The span 
+of the chordal settings varied between 13 and 16 semitones, that is, the 
+interval between the lowest and highest pitch varied between the minor ninth and 
+the major tenth. Additionally, each chordal setting was played on three to six 
+transpositional levels in middle register (between A3 and Eb5). Hence, each 
+triad class was represented by seven to twelve chords. The chords derived from 
+the triad classes are in <b>Figure 1</b>. </p>
+<p>
+[10] Three chordal settings with the span of 14 
+semitones (the major ninth) were derived from each pentad class. Each chordal 
+setting was played on five transpositional levels in middle register (between A3 
+and Eb5). Hence, each pentad class was represented by 15 chords. The chords 
+derived from the five pentad classes are in <b>Figure 2</b>.</p>
+<p>
+[11] The properties of the 
+set-classes are always present in chords derived from them. Hence, to some 
+extent the set-class properties determine the characteristics of the chords 
+representing it regardless of the chordal setting. For example, all chords 
+derived from set-class 3-11B are always major chords, and chords derived from 
+set-class 5-1 have dissonant intervals between the pitches. It seems likely that 
+the familiarity of chords derived from set-class 3-11B and the dissonance of 
+the chords derived from set-class 5-1 are characteristics guiding aural 
+perception of them, but it should be remembered that these characteristics are 
+due to the set-class properties. Naturally, the audibility of these 
+characteristics can to some extent be enhanced or concealed by aspects of 
+chordal setting. A limited number of chord spans and the middle register were 
+used in this test in order to diminish the effect of chordal factors (that is, 
+factors independent from the set-class). </p>
+<p>
+[12] The chords were first made using 
+the Finale 2000 program. On the program the pitches of each chord were made to 
+start and stop in perfect simultaneity by quantifying the note values. In 
+addition, each pitch was given the same objective dynamic level. A grand piano 
+sound <i>B&ouml;sendorfer</i> from the <i>Nemesys Gigastudio</i> piano sample library was used 
+when the chord sounds were played.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. The 42 test items</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=3&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="kuusi_fig3a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>
+[13] There were 42 items in the test. Each item consisted of a sequence of five 
+chords played three times. As already stated, in each sequence, four of the five 
+chords were derived from the standard set-class and one from the deviant 
+set-class. Every triad class was paired with every other triad class and every 
+pentad class with every other pentad class, but triad classes were not paired 
+with pentad classes. This made altogether 12 triad-class items and 20 
+pentad-class items. Additionally, there were ten controls (4 items using triad 
+classes and 6 items using pentad classes). All 16 items using triad classes 
+(played in random order) were presented first, followed by the 26 items using 
+pentad classes (again in random order). The test items are in <b>Figure 3</b>.</p>
+<p>
+[14] Each chord 
+lasted one second and the three sequences  were separated by a two-second 
+silence. Hence, one item lasted 3*7 = 21 seconds. Two items were separated by a 
+seven-second silence. The whole test lasted approximately 20 minutes. Two items 
+can be heard in the sound files <b>Item 1</b> and
+<b>Item 2</b>.</p>
+<p>
+[15] The subjects 
+were asked to rate which one of the five chords did not belong to the same group 
+as the others. The subjects were not told any principles of the criteria 
+according to which they should make their ratings; hence, they were allowed to 
+define for themselves their own criteria. During a short practicing session 
+before the test, the subjects were able to familiarize themselves with the 
+material to be used. The ratings were made on a test form in which numbers from 
+1 to 5 represented the five chords of each sequence. The subjects&rsquo; task was 
+first to aurally select one chord not belonging to the group and then to circle 
+the number representing that particular chord. After the test the subjects 
+filled out a questionnaire with questions about their age, sex, music studies, 
+and listening habits. </p>
+<p>
+[16] Eighty-two subjects participated. They were not paid for participating. 
+Twenty subjects were rejected because of their poor performance in the control 
+chord test. The remaining 62 subjects were divided into four subgroups according 
+to their music studies: </p>
+<ol>
+  <li>music theorists and composers (theorists/composers, N = 14) </li>
+  <li>professional musicians or music students (professionals, N = 27) </li>
+  <li>subjects who have studied music but not professionally (non-professionals, 
+  N = 11) </li>
+  <li>subjects who have never studied music (non-musicians N = 10) </li>
+</ol>
+<p>
+[17] The subjects of group 1 (theorists/composers) 
+were teachers or professional students from the Department of Composition and 
+Music Theory at the Sibelius Academy. Seven of them were female and seven male. 
+Their ages varied from 20 to 53 years, the average being 33.21. The total years 
+of music studies (both non-professional and professional) varied between 12  and 40 years, and the average was 20.86. They reported that they listen to or 
+play or compose post-tonal music from 2 to 43 hours per week (the average was 
+7.46 hours). Two of the subjects reported having absolute pitch. </p>
+<p>
+[18] The 
+subjects of group 2 (professionals) were professional musicians or professional 
+music students from various departments of the Sibelius Academy. Eight of them 
+were female and nineteen male. The average age was 24.44, and the range was from 
+18 to 41 years. The average of all music studies (both non-professional and 
+professional studies) was 14.96 years, the range being from 10 to 21 years. 
+These subjects reported that they listen to or play post-tonal music from 0 to 
+32 hours per week, the average being 4.39 hours. The number of subjects with 
+absolute pitch was seven. </p>
+<p>
+[19] The subjects of group 3 (non-professionals) were 
+teachers or students from Helsinki University, Department of Psychology. Nine of 
+them were female and two male. Their ages varied between 20 and 46 years, the 
+average being 28.18. The average time of non-professional music studies was 
+11.36 years, the range being from 5 to 20 years. These subjects reported that 
+they listen to or play post-tonal music from 0 to 10 hours per week, the average 
+being 2.18 hours. The number of subjects with absolute pitch was one. </p>
+<p>
+[20] The 
+subjects of group 4 (non-musicians) were teachers or students from Helsinki 
+University, Department of Psychology. Five of them were female and five male. 
+Their ages varied from 20 to 42 years, the average being 24.70. They reported 
+that they listen to or play post-tonal music from 0 to 5 hours per week (the 
+average was 1.00 hour). None of them reported having absolute pitch. </p>
+<h3>
+RESULTS 
+</h3>
+<p>
+[21] As already stated, there were originally 42 items in the test. However, a 
+mistake was discovered in one item when the chords were played to the first 
+group of subjects. The item 24 {5-4A, 5-1} was incorrect (it was actually {3-10, 
+5-1}), and the subjects&rsquo; ratings of this item were excluded from analyses. 
+Hence, the total number of items to be analyzed was 41. </p>
+<p>
+[22] The total number of 
+cases was 2542 (41 items rated by 62 subjects). The total number of cases in 
+which no selection was made was 30, hence, very small (1.18%). This can be 
+interpreted to indicate that the subjects were motivated to make the test and 
+that they were able to operate with the testing regime. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. The averages and the standard deviations (in parentheses) of ratings that were made according to the pitch-class set-theoretical paradigm</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=4&nonav=true"><img border="1" alt="Table 2 thumbnail" src="kuusi_table2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+[23] The connection 
+between the pitch-class set-theoretical paradigm and the subjects&rsquo; estimations 
+was analyzed first. In total, the deviant chord was selected in 1547 cases, that 
+is, in 60.9% of all cases. The averages of ratings in which the subjects 
+selected the deviant chord were also calculated separately for each group (see 
+<b>Table 2</b>). As can be seen, these averages differed clearly from one group to 
+another. The theorists/composers made their ratings most often according to the 
+pitch-class set-theoretical paradigm, even though only a few of them were familiar with the paradigm. The professionals made more ratings according to the 
+paradigm than the non-professionals, and the non-professionals more than the 
+non-musicians. </p>
+<p>
+[24] The differences between the average 
+by theorists/composers and the averages by other groups of subjects were 
+statistically very significant (p &lt; .001) in most cases (the value p &lt; .001 
+indicates that the result could have occurred by chance in fewer cases than 1 in 
+1000). The exceptions of this were the differences between theorists/composers 
+and professionals: the averages were 12.64 and 9.93 respectively for the triad 
+classes (p &lt; .010), and 19.07 and 17.00 for the pentad classes (this difference 
+was not statistically significant, p &gt; .050). Additionally, the differences 
+between the averages of non-musicians and the averages of the other subject 
+subgroups were statistically very significant (p &lt; .001) in all but two cases: 
+the averages of non-professionals and non-musicians were 7.91 and 4.60 for the 
+triad classes (p &lt; .010), and 13.82 and 9.07 for the pentad classes (p &lt; .050). 
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. The ratings made according to the pitch-class set-theoretical paradigm (Y-axis) plotted against the years of music studies (X-axis)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=5&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="kuusi_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[25] The results of the first analysis indicated that the subjects were rather 
+well able to aurally discriminate chords according to the set-class from which 
+the chords were derived. Naturally the aural perception was guided by the 
+audible characteristics of the chords (for example, the degree of consonance or 
+the familiarity of the chords), but, as already stated, these characteristics 
+are due to the set-class properties. Additionally, the results indicated that 
+the connection between pitch-class set-theoretical paradigm of set-classes and 
+subjects&rsquo; ratings of chords was higher for subjects who were musically highly 
+trained than for subjects without musical training. This result was expected and 
+reasonable. However, the number of years of music study alone could not explain 
+the ratings. This can be seen from the scatter diagram (<b>Figure 4</b>) in which the ratings made according to the pitch-class set-theoretical 
+paradigm are plotted against the years of music study. The correlation between 
+these ratings and the years of study was 0.57 (p &lt; .001), indicating that the 
+years of study explained the ratings only to some extent. The scatter diagram 
+shows that the type of musical studies is important as well. </p>
+<p>
+[26] In the questionnaire the subjects 
+were asked how many hours per week they listen to or play post-tonal music. Even 
+though this kind of question cannot be considered a very exact one, it was 
+hypothesized that there might be some connection between the ratings and the 
+familiarity with the chord material. The correlation was calculated between the reported hours and the ratings made according to the pitch-class set-theoretical 
+paradigm. The correlation was very low (r = 0.26, non-significant), indicating 
+that the results of the test cannot be explained by the listening habits. </p>
+<p>
+[27] 
+The second analysis aimed at identifying and categorizing the chordal factors 
+that were guiding the subjects when they selected one of the standard chords 
+instead of the deviant chord. These factors were connected with chordal setting 
+and they were independent of the set-class identity. In this analysis the focus 
+was on those chords that were selected by an especially high proportion (25% or 
+higher) of subjects. Ten such cases were found. In four of these cases the most 
+often selected standard chord was chosen more often than the deviant chord 
+(items 4, 11, 16, and 33) and in one case they were selected equally often (item 
+25). </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. The five chords of items 4 and 14. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=6&nonav=true"><img border="1" alt="Example 1 thumbnail" src="kuusi_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[28] In item 4, chords 1, 2, 3, and 5 were derived from the standard set-class 
+3-1, and chord 4 was the deviant derived from set-class 3-2A (see <b>Example 1</b> for 
+the item). Hence, the whole item consisted of dissonant chords. In this item, 
+41.9% of the subjects selected chord 3. It was selected especially by the 
+non-professionals, the professionals, and the non-musicians. As can be seen, 
+this chord was neither the highest nor the lowest one. Yet it was the only chord 
+of this item with a small interval (the major second) between the two highest 
+pitches; the other chords had a small interval (the major second in the standard 
+chords and the minor third in the deviant chord) between the two lowest pitches. 
+Hence, the difference in the arrangement of the pitches seemed to affect the 
+ratings. When the same item was played again as a control (item 14), similar 
+ratings were made: altogether 37.1% of the subjects selected chord 3. This time 
+this chord was selected especially by the non-professionals and the 
+professionals. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. The five chords of items 7 and 15. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=7&nonav=true"><img border="1" alt="Example 2 thumbnail" src="kuusi_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. The five chords of items 11 and 16. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=8&nonav=true"><img border="1" alt="Example 3 thumbnail" src="kuusi_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. The five chords of items 25 and 42. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=9&nonav=true"><img border="1" alt="Example 4 thumbnail" src="kuusi_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. The five chords of items 29 and 38. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=10&nonav=true"><img border="1" alt="Example 5 thumbnail" src="kuusi_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. The five chords of item 33. The percentiles indicate how often each chord was selected in the test</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kuusi_examples.php?id=11&nonav=true"><img border="1" alt="Example 6 thumbnail" src="kuusi_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[29] In item 7, chords 1, 3, 4, and 5 were derived from the standard set-class 
+3-8A, and chord 2 from the deviant set-class 3-1 (see <b>Example 2</b>). As stated 
+earlier, the dominant seventh chord without the fifth can be derived from 
+set-class 3-8A, and the chords can be considered consonant. And as can be seen, 
+this chord was twice in root position (chords 1 and 4) in this item. When 
+ratings were made of item 7, 29.0% of the subjects selected chord 1, the higher 
+one of the two chords in root position. Interestingly, chord 4 was selected by 
+0% of the subjects. Chord 1 was selected most often by the non-musicians. When 
+this item was played again as a control (item 15), 21% of all subjects selected 
+chord 1 and 0% chord 4. Again chord 1 was selected most often by the 
+non-musicians. </p>
+
+
+<p>
+[30] In item 11and its control item 16, the standard chords were 1, 2, 4, and 5 
+(derived from set-class 3-2A) and the deviant chord was 3 (set-class 3-1). 
+Hence, the set-classes were the same as those in items 4 and 14 (see above), and 
+all chords of these items were dissonant. The chords of items 11 and 16 are in 
+<b>Example 3</b>. As can be seen, chord 1 and chord 5 were similar chordal settings on 
+different transpositional levels, and so were chords 2 and 4. When ratings were 
+made of these items, the lower one of the two similar chordal settings was 
+selected more often that the higher one: chord 5 was selected more often than 
+chord 1, and chord 4 was selected more often than chord 2. </p>
+
+<p>
+[31] In item 25 and its control item 42, the standard chords were 1, 2, 3, and 5 
+and they were derived from set-class 5-35. Hence, the context was rather 
+consonant. The deviant chord was number 4 and it was derived from set-class 
+5-33. The chords are in <b>Example 4</b>. When the subjects made their ratings, 40.3% 
+of them selected chord 5 in item 25 and 32.3% of them in item 42. As can be 
+seen, chord 5 was the highest in register. There were subjects from all 
+subgroups, the fewest being theorists/composers and the most being 
+non-professionals and non-musicians. </p>
+
+<p>
+[32] In item 29 and its control item 38, the standard set-class was 5-34 and the 
+chords derived from it were 2, 3, 4, and 5. Hence, the context was rather 
+consonant. The deviant set-class was 5-33, and the deviant chord was number 1 
+(see the chords in <b>Example 5</b>). As can be seen, the dominant ninth chord was in 
+root position twice in these items (chords 3 and 4). In both cases chord 3, the 
+higher one of the root-position chords, was selected by 25.8% of the subjects. 
+There were subjects from all subgroups, yet this chord was most often selected 
+by the professionals and least often by the non-musicians. Chord 4 (the lower of 
+the root-position chords) was selected by 11.3% of the subjects in item 29 and 
+by 12.9% of the subjects in item 38. Those who selected chord 4 were most often 
+non-professionals and non-musicians. </p>
+
+<p>
+[33] In item 33, the set-classes were 5-35 (standard) and 5-34 (deviant), and 
+the whole item was rather consonant. The standard chords were 1, 2, 3, and 4, 
+and the deviant chord was number 5. The chords are in <b>Example 6</b>. As can be seen, 
+two of the standard chords had the major chord formed of the three lowest 
+pitches (chords 1 and 4). Of the standard chords, the highest chord (chord 2) 
+was selected by 30.7% of the subjects, especially by the theorists/composers and 
+the professionals. Chord 4, which was the higher one of the two having the major 
+chord, was selected by 21% of the subjects, most often by the professionals. 
+Hence, it seems that within this item, both the register and the arrangement of 
+pitches were factors guiding the ratings. </p>
+
+<h3>
+CONCLUSIONS </h3>
+<p>
+[34] The study has 
+examined the subjects&rsquo; ability to categorize chords according to their set-class 
+identity. Additionally, the study has examined the importance of chordal factors 
+for the categorization. In the test the subjects were played a five-chord 
+sequence successively three times and they were asked which chord does not 
+belong to the same group as the other chords. It seemed to be rather easy for 
+the subjects to make their ratings in this new testing regime. </p>
+<p>
+[35] The test was 
+made in pitch-class set-theoretical paradigm. In each five-chord sequence, the 
+four standard chords were derived from the standard set-class and the deviant 
+chord from the deviant set-class. It was found that in approximately 61% of all 
+cases the subjects selected the deviant chord; hence, they made their ratings 
+according to the pitch-class set-theoretical paradigm. Additionally, a clear 
+connection was found between the years and the type of music study and the 
+number of ratings made according to the paradigm. The highly trained subjects 
+from the Department of Composition and Music Theory from the Sibelius Academy 
+made their ratings most often according to the paradigm, even though only a few 
+of them were familiar with pitch-class set theory. The subjects with no music 
+study made their ratings most often according to factors other than those 
+connected with set-class identity. These other factors were chordal: the 
+register and the chordal setting of the chords. </p>
+<p>
+[36] The analyses of the cases 
+in which one of the standard chords was selected instead of the deviant chord 
+revealed some tendencies. First, the register of the chord seemed to affect 
+the ratings. If the context was consonant or rather consonant, the subjects 
+tended to select the highest chord. But if the context was dissonant, they 
+tended to select the lowest chord. There were altogether 20 cases in the test in 
+which this tendency could be seen, but only two cases with the opposite 
+tendency. Second, certain aspects of chordal setting seemed also to guide the 
+subjects. These were the placement of a small interval (in triads), and the 
+arrangement of the pitches so that they formed the root position of a familiar 
+tonal chord (both in triads and pentads). Altogether ten cases were found in 
+which these kind of chordal aspects seemed to guide the subjects&rsquo; estimations, 
+while the opposite was found in only one case. </p>
+<p>
+[37] The results of this study 
+showed that the estimations of chords are based on a number of simultaneous 
+factors. Set-class identity seems to be one of them, the other ones being chordal. The factors revealed in this study were closely related to those revealed 
+in earlier studies as well (7). This was the case even though the earlier 
+studies have used totally different kinds of testing regimes and even though 
+only some of the earlier studies have used pentachords.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+<p>
+[38] The present 
+study has evoked need for additional study. The new testing regime used in the 
+study needs to be tested using other set-classes. The relative importance of 
+set-class identity and the relative importance of chordal factors should be 
+examined in varying set-class and chord contexts. The finding that the subjects 
+tend to select the highest chord in a consonant context and the lowest chord in 
+a dissonant context is worth further examination.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Tuire Kuusi<br>
+	Sibelius Academy<br>Department of Composition and Music Theory<br>PL 86<br>00251 HELSINKI<br>FINLAND<br><a href="mailto:tuire.kuusi@siba.fi">tuire.kuusi@siba.fi</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The reader interested in the basic concepts, objectives, 
+and background of pitch-class set theory can find  a general discussion in, for 
+example, these: Allen Forte, <i>The Structure of Atonal Music</i> (New Haven and 
+London: Yale University Press, 1973); John Rahn, <i>Basic Atonal Theory</i> (New 
+York: Schirmer, 1980); Robert Morris, <i>Composition with Pitch-Classes</i> (New 
+Haven and London: Yale University Press, 1987); Joseph Straus, <i>Introduction to Post-Tonal Theory</i> (New Jersey: Prentice Hall, 1990).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> A pitch-class set is a collection of pitch-classes 
+without duplications, and a set-class is a collection of pitch-class sets 
+mutually related by a transformation or by a group of transformations. The 
+transformation used in this study is transposition (T<sub>n</sub>; 
+transpositional classification).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> See, for example, Robert Morris, &ldquo;A Similarity Index for 
+Pitch-Class Sets,&rdquo; <i>Perspectives of New Music</i> 18/2 
+(1979/80): 447; John Rahn, &ldquo;Relating Sets,&rdquo; <i>Perspectives of New Music</i> 18/2 
+(1979/80): 494; Mark Hoover, &ldquo;Set Constellations,&rdquo; <i>Perspectives of New Music</i> 
+23 (1984): 165&ndash;166; Fred Lerdahl, &ldquo;Atonal Prolongational Structure,&rdquo; 
+<i>Contemporary Music Review</i></i> 4 (1989): 66; Thomas Demske, &ldquo;Relating Sets: On 
+Considering a Computational Model of Similarity Analysis,&rdquo; <i>Music Theory Online</i> 
+1.2 (1995): 16, 17; Richard Hermann, &ldquo;Towards a New Analytical Method for 
+Post-Tonal Music: A Response to Thomas Demske,&rdquo; <i>Music Theory Online</i> 1.3 
+(1995): 15, 16, Footnote 2; Eric Isaacson, &ldquo;Issues in the Study of Similarity in 
+Atonal Music,&rdquo; <i>Music Theory Online</i> 2.7 (1996): 16; Isaacson, &ldquo;Neural Network 
+Models for the Study of Post-tonal Music,&rdquo; in Mark Leman (ed.), <i>Music, 
+Gestalt, and Computing: Studies in Cognitive and Systematic Musicology</i> (Berlin: 
+Springer-Verlag, 1997): 237&ndash;238; David Rogers, &ldquo;A Geometric Approach to Pcset 
+Similarity,&rdquo; <i>Perspectives of New Music</i> 37 (1999): 78; Marcus Castr&eacute;n, &ldquo;Pairs of Chords as Objects Illuminating Set-Class Similarity: Some Viewpoints and a 
+Computer-Assisted Procedure to Create test Material for Listener Experiments,&rdquo; 
+<i>Electronic Journal of Music Theory and Analysis</i></i> 1/1 (2000).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Cheryl Bruner, &ldquo;The Perception of Contemporary Pitch 
+Structures,&rdquo; <i>Music Perception</i> 2 (1984): 
+25&ndash;39; Don B. Gibson, &ldquo;The Aural Perception of Nontraditional Chords in Selected 
+Theoretical Relationships: A Computer-Generated Experiment,&rdquo; <i>Journal of 
+Research in Music Education</i> 34 (1986): 5&ndash;23; R.C. Lane, <i>A Multidimensional 
+Scaling Study of Seven Theoretical Indexes of Intervallic Similarity and 
+Musicians&rsquo; Perceptions Among Twenty-One Pitch-Class Sets</i> (Ph.D. diss., 
+University of North Carolina, 1997); Virginia Williamson and Panayotis 
+Mavromatis, &ldquo;Categorizing Atonal Sonorities: Multidimensional Scaling, 
+Tree-Fitting and Clustering Compared,&rdquo; (Paper presented at the Society for Music 
+Perception and Cognition Conference, Evanston, Illinois, 1999); Arthur Samplaski, 
+<i>A Comparison of Perceived Chord Similarity and Predictions of Selected 
+Twentieth-Century Chord-Classification Schemes, Using Multidimensional 
+Scaling, and Cluster Analysis</i></i> (Ph.D. diss., Indiana University, 2000); Tuire 
+Kuusi, <i>Set-Class and Chord: Examining Connection between Theoretical 
+Resemblance and Perceived Closeness</i> (Helsinki: Sibelius Academy, 2001); Kuusi, 
+&ldquo;Semantic Differential as a Method for Collecting Estimations of Chords,&rdquo; (in 
+the Fifth Triennal ESCOM Conference: Proceedings, 2003). Two closely related 
+studies by Gibson examine the effect of octave equivalence (or pitch class) in 
+chord perception: Gibson, &ldquo;The Aural Perception of Similarity in Nontraditional 
+Chords Related by Octave Equivalence, <i>Journal of Research in Music Education</i> 
+36 (1988): 5&ndash;17; Gibson, &ldquo;The Effects of Pitch and Pitch-Class Content of the 
+Aural Perception of Dissimilarity in Complementary Hexachords,&rdquo; <i>Psychomusicology</i> 
+12 (1993): 58&ndash;72.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> David Huron, &ldquo;Interval-Class Content in Equally Tempered 
+Pitch-Class Sets: Common Scales Exhibit Optimum Tonal Consonance,&rdquo; <i>Music Perception</i> 
+11 (1994): 289&ndash;305. When the Huron consonance values were calculated, the 
+indexes for interval-classes were summed up and the resulting value was divided 
+by the total number of interval-classes in the set-class. In each triad class 
+the total number of interval-classes was 3, and in each pentad class it was 10.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> I would like to thank Mr. Santtu Valve from the 
+department of Music Technology, Sibelius Academy, for helping to prepare the 
+sound data.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Bruner, &ldquo;The Perception of Contemporary Pitch 
+Structures&rdquo; (1984); Samplaski, <i>A Comparison of Perceived Chord Similarity and 
+Predictions of Selected Twentieth-Century Chord-Classification Schemes, Using 
+Multidimensional Scaling, and Cluster Analysis</i> (2000); Kuusi, <i>Set-Class and 
+Chord: Examining Connection between Theoretical Resemblance and Perceived 
+Closeness</i> (2001), &ldquo;Semantic Differential as a Method for Collecting 
+Estimations of Chords&rdquo; (2003).<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The reader interested in the basic concepts, objectives, 
+and background of pitch-class set theory can find  a general discussion in, for 
+example, these: Allen Forte, <i>The Structure of Atonal Music</i> (New Haven and 
+London: Yale University Press, 1973); John Rahn, <i>Basic Atonal Theory</i> (New 
+York: Schirmer, 1980); Robert Morris, <i>Composition with Pitch-Classes</i> (New 
+Haven and London: Yale University Press, 1987); Joseph Straus, <i>Introduction to Post-Tonal Theory</i> (New Jersey: Prentice Hall, 1990).</div><div id="fndiv2" class="flyoverdiv">A pitch-class set is a collection of pitch-classes 
+without duplications, and a set-class is a collection of pitch-class sets 
+mutually related by a transformation or by a group of transformations. The 
+transformation used in this study is transposition (Tn; 
+transpositional classification).</div><div id="fndiv3" class="flyoverdiv">See, for example, Robert Morris, &ldquo;A Similarity Index for 
+Pitch-Class Sets,&rdquo; <i>Perspectives of New Music</i> 18/2 
+(1979/80): 447; John Rahn, &ldquo;Relating Sets,&rdquo; <i>Perspectives of New Music</i> 18/2 
+(1979/80): 494; Mark Hoover, &ldquo;Set Constellations,&rdquo; <i>Perspectives of New Music</i> 
+23 (1984): 165&ndash;166; Fred Lerdahl, &ldquo;Atonal Prolongational Structure,&rdquo; 
+<i>Contemporary Music Review</i></i> 4 (1989): 66; Thomas Demske, &ldquo;Relating Sets: On 
+Considering a Computational Model of Similarity Analysis,&rdquo; <i>Music Theory Online</i> 
+1.2 (1995): 16, 17; Richard Hermann, &ldquo;Towards a New Analytical Method for 
+Post-Tonal Music: A Response to Thomas Demske,&rdquo; <i>Music Theory Online</i> 1.3 
+(1995): 15, 16, Footnote 2; Eric Isaacson, &ldquo;Issues in the Study of Similarity in 
+Atonal Music,&rdquo; <i>Music Theory Online</i> 2.7 (1996): 16; Isaacson, &ldquo;Neural Network 
+Models for the Study of Post-tonal Music,&rdquo; in Mark Leman (ed.), <i>Music, 
+Gestalt, and Computing: Studies in Cognitive and Systematic Musicology</i> (Berlin: 
+Springer-Verlag, 1997): 237&ndash;238; David Rogers, &ldquo;A Geometric Approach to Pcset 
+Similarity,&rdquo; <i>Perspectives of New Music</i> 37 (1999): 78; Marcus Castr&eacute;n, &ldquo;Pairs of Chords as Objects Illuminating Set-Class Similarity: Some Viewpoints and a 
+Computer-Assisted Procedure to Create test Material for Listener Experiments,&rdquo; 
+<i>Electronic Journal of Music Theory and Analysis</i></i> 1/1 (2000).</div><div id="fndiv4" class="flyoverdiv">Cheryl Bruner, &ldquo;The Perception of Contemporary Pitch 
+Structures,&rdquo; <i>Music Perception</i> 2 (1984): 
+25&ndash;39; Don B. Gibson, &ldquo;The Aural Perception of Nontraditional Chords in Selected 
+Theoretical Relationships: A Computer-Generated Experiment,&rdquo; <i>Journal of 
+Research in Music Education</i> 34 (1986): 5&ndash;23; R.C. Lane, <i>A Multidimensional 
+Scaling Study of Seven Theoretical Indexes of Intervallic Similarity and 
+Musicians&rsquo; Perceptions Among Twenty-One Pitch-Class Sets</i> (Ph.D. diss., 
+University of North Carolina, 1997); Virginia Williamson and Panayotis 
+Mavromatis, &ldquo;Categorizing Atonal Sonorities: Multidimensional Scaling, 
+Tree-Fitting and Clustering Compared,&rdquo; (Paper presented at the Society for Music 
+Perception and Cognition Conference, Evanston, Illinois, 1999); Arthur Samplaski, 
+<i>A Comparison of Perceived Chord Similarity and Predictions of Selected 
+Twentieth-Century Chord-Classification Schemes, Using Multidimensional 
+Scaling, and Cluster Analysis</i></i> (Ph.D. diss., Indiana University, 2000); Tuire 
+Kuusi, <i>Set-Class and Chord: Examining Connection between Theoretical 
+Resemblance and Perceived Closeness</i> (Helsinki: Sibelius Academy, 2001); Kuusi, 
+&ldquo;Semantic Differential as a Method for Collecting Estimations of Chords,&rdquo; (in 
+the Fifth Triennal ESCOM Conference: Proceedings, 2003). Two closely related 
+studies by Gibson examine the effect of octave equivalence (or pitch class) in 
+chord perception: Gibson, &ldquo;The Aural Perception of Similarity in Nontraditional 
+Chords Related by Octave Equivalence, <i>Journal of Research in Music Education</i> 
+36 (1988): 5&ndash;17; Gibson, &ldquo;The Effects of Pitch and Pitch-Class Content of the 
+Aural Perception of Dissimilarity in Complementary Hexachords,&rdquo; <i>Psychomusicology</i> 
+12 (1993): 58&ndash;72.</div><div id="fndiv5" class="flyoverdiv">David Huron, &ldquo;Interval-Class Content in Equally Tempered 
+Pitch-Class Sets: Common Scales Exhibit Optimum Tonal Consonance,&rdquo; <i>Music Perception</i> 
+11 (1994): 289&ndash;305. When the Huron consonance values were calculated, the 
+indexes for interval-classes were summed up and the resulting value was divided 
+by the total number of interval-classes in the set-class. In each triad class 
+the total number of interval-classes was 3, and in each pentad class it was 10.</div><div id="fndiv6" class="flyoverdiv">I would like to thank Mr. Santtu Valve from the 
+department of Music Technology, Sibelius Academy, for helping to prepare the 
+sound data.</div><div id="fndiv7" class="flyoverdiv">Bruner, &ldquo;The Perception of Contemporary Pitch 
+Structures&rdquo; (1984); Samplaski, <i>A Comparison of Perceived Chord Similarity and 
+Predictions of Selected Twentieth-Century Chord-Classification Schemes, Using 
+Multidimensional Scaling, and Cluster Analysis</i> (2000); Kuusi, <i>Set-Class and 
+Chord: Examining Connection between Theoretical Resemblance and Perceived 
+Closeness</i> (2001), &ldquo;Semantic Differential as a Method for Collecting 
+Estimations of Chords&rdquo; (2003).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2003 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

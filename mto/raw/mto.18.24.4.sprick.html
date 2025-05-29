@@ -1,0 +1,431 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 24.4: Sprick, Sequences</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Sequences: Between Affirmation and Destruction of Tonality">
+
+    <meta name="citation_author" content=", Jan Philipp Sprick">
+      
+
+<meta name="citation_publication_date" content="2018/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="24">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+			
+	<h1 style="width:900px; margin-top:1em">Sequences: Between Affirmation and Destruction of Tonality</h1>
+	<div style="width:900px">
+				</div>
+
+	
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Jan Philipp Sprick </a></font></span></h2><br><br><p><font size='4'>KEYWORDS: sequences, tonality, Riemann, F&eacute;tis, Capellen, Weigl, Gjerdingen, schema theory, Funktionstheorie, Satzmodell</font></p><p><font size='4'>ABSTRACT: In the history of music theory, we encounter the paradox that harmonic sequences are simultaneously seen as fundamental, affirmative examples for tonality (Rameau, Sechter, et al.) and as structures that threaten or even destroy cadence-oriented understandings of tonality (F&eacute;tis, Riemann, Grabner, et al.). Sprick (<a href="#sprick_2012" id="citation_sprick_2012_67dc99a90f219">2012</a>) has argued that the discussion of sequences around 1900 functioned as a kind of &ldquo;testing ground&rdquo; for individual conceptions of tonality. This article goes further in relating historical discourses on the sequence with a contemporary perspective, a study that reveals striking similarities suggesting the sequence remains an important and challenging structural device within the theoretical discourses of tonality.</font></p><p><small>DOI: 10.30535/mto.24.4.14</small></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.18.24.4/mto.18.24.4.sprick.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.18.24.4/sprick_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received April 2016</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 24, Number 4, December 2018 <br> Copyright &#0169; 2018 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] The sequence is frequently described as one of the most distinct phenomena of tonal music. In this article, I will examine how thinking about sequences as represented in historical documents of music theory still influences contemporary understandings of the phenomenon. To achieve that goal, I will proceed in a kind of zigzag movement back and forth between historical and contemporary writings. Due to the fact that the sequence is such a self-evident device of tonal harmony, we find theoretical treatments of it in almost every <i>Harmonielehre</i> or music theory textbook. Against this background, however, it is surprising that not many explicit theories of the sequence as an important structural device exist in contemporary music theory.</p>
+
+<p>[2] I will present a selective overview of the relation of historical and contemporary theory on the sequence. The former is represented particularly by F&eacute;tis, who conceived of the sequence as a means of suspending tonality and whose theoretical treatment is the first in the history of music theory that discusses the sequence explicitly in combination with the relatively new concept of <i>tonalit&eacute;</i>. The contemporary theory I will survey includes the few models for the sequence that exist in the theoretical literature, along with writings on schema theory and German <i>Modelltheorie</i>, both of which rely heavily on sequential structures. Both also deal mostly with seventeenth- and eighteenth-century repertoires and therefore with music that was composed long before the theoretical concept of <i>tonalit&eacute;</i> was developed in the nineteenth century. And both understand themselves as alternatives to traditional theories of tonality, namely Schenkerian theory in the United States and <i>Funktionstheorie</i> in Germanophone countries. Finally, I will discuss some interesting overlaps with respect to the understanding of tonality between schema theory, <i>Modelltheorie</i>, and neo-Riemannian theory.</p>
+
+<p>[3] Substantive commentary on the sequence in contemporary German theory starts with Carl Dahlhaus&rsquo; <i>Studies on the Origin of Harmonic Tonality</i> (<a href="#dahlhaus_1990" id="citation_dahlhaus_1990_67dc99a915cd8">1990</a>). This seminal publication forms the cornerstone for research on historical sequential models, or <i>Satzmodelle</i>, and their integration into theory and harmony teaching as well as into musical analysis.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Dahlhaus&rsquo;s central argument was that <i>Klangfortschreitungs-Modelle</i> have relatively stable meanings across historical periods and that they are structurally based on a combination of contrapuntal and harmonic principles, a fact that calls root-oriented theories of harmonic tonality into question. This model-oriented approach to tonal harmony was further developed by Dahlhaus&rsquo;s students and led to a general criticism, following from Hermann Grabner and Wilhelm Mahler, of influential approaches of functional harmony. Within this context of historical music theory, we can observe a variety of didactic approaches for many different music theoretical disciplines such as improvisation, analysis, and ear training.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> In all these approaches, the sequence plays a crucial role.</p>
+
+<p>[4] Whereas in earlier music theory the individual work was confronted by a &ldquo;grand theory,&rdquo; such as <i>Funktionstheorie</i>, <i>Stufentheorie</i>, or Schenkerian analysis, the influence of standard intervallic progressions on tonal works of the whole repertoire now seems to be understood more broadly (<a href="#menke_2009" id="citation_menke_2009_67dc99a915ce4">Menke 2009</a>, 87). With this understanding, we can see a change that involves departing from a work-oriented perspective of &ldquo;grand theories&rdquo; to an approach that focuses on models and conventions. A unifying feature of these approaches is their critique of analytical paradigms such as <i>Funktionstheorie</i> or <i>Stufentheorie</i> for an inability to adequately represent the horizontal-melodic structure of sequences.</p>
+
+<p>[5] Some general and often quoted observations, however, do not seem to support a high status for sequences. Many theorists consider sequences to be a &ldquo;minor method of construction,&rdquo; to quote Arnold Schoenberg, who is speaking here as both composer and theorist (<a href="#schoenberg_1976" id="citation_schoenberg_1976_67dc99a915cfb">1976</a>, 126). This opinion follows from his pejorative view of repetition in comparison to the highly esteemed ideal of motivic-thematic development. A similarly negative image is projected by much earlier writers, as well. Already in <a href="#schubart_1812" id="citation_schubart_1812_67dc99a915cfd">1812</a>, Christian Friedrich Daniel Schubart described the sequence in as an example of &ldquo;poverty of the mind&rdquo; in his widely-read text &ldquo;Von den Rosalien,&rdquo; which also coined the term &ldquo;Rosalia&rdquo; for certain types of sequences.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Schubart&rsquo;s text was the starting point for the nineteenth-century&rsquo;s generally negative reception of the sequence.</p>
+
+<p>[6] An aesthetic evaluation of sequential repetition, however, is secondary to the role of the sequence within the tonality of the piece. Both can be related, but do not have to be related to each other. Sequences can be and sometimes are used mechanically, and in those cases the disapprobation of Schoenberg and others may be warranted. But sequences can also serve as integral aspects of the harmonic, motivic, and formal content of a piece. In fact, the extremely important structural role of sequences in traditional tonal music can hardly be overestimated. In the second half of the nineteenth century, sequences became even more important because they not only appear in developmental passages but they also start to influence large parts of exposition sections due to their growing importance within the thematic material. Dahlhaus argues that &ldquo;it would be wrong to dismiss the change in the function of modulatory sequence from a developmental technique to an expositional technique as an event of merely peripheral significance.&rdquo; He goes so far as to compare the impact of this process with the &ldquo;chromatization of harmony&rdquo; (<a href="#dahlhaus_1980" id="citation_dahlhaus_1980_67dc99a915d01">1980</a>, 47).</p>
+
+<p>[7] In recent writings on the sequence, we can readily observe a kind of &ldquo;rhetoric&rdquo; of neglect. Richard Bass, for example, states that there is &ldquo;neither a consistent, established terminology adequate for in-depth analyses of sequential passages nor general agreement as to classification of sequence types, or even about what constitutes a proper sequence&rdquo; (<a href="#bass_1996" id="citation_bass_1996_67dc99a915d03">Bass 1996</a>, 265). In terms of the latter&mdash;that is, what constitutes a sequence&mdash;Bass is correct in that there is no consistency in the theoretical literature, specifically to the question of whether only one repetition of the sequence unit is sufficient, or whether one needs at least two repetitions. Adam Ricci asserts that it is striking that &ldquo;so vital a musical device still lacks a suitable and consistent theoretical apparatus&rdquo; (<a href="#ricci_2004" id="citation_ricci_2004_67dc99a915d04">Ricci 2004</a>, 1). In her recent treatment of the sequence in the <i>Oxford Handbook of Musical Concepts</i>, Naomi Waltham-Smith gives a solid account of the role of the sequence in the history of music theory, especially its role as a testing ground for the individual concepts of tonality, but she also broadens the discussion into the philosophical realm. Influenced by the philosophy of Gilles Deleuze, she advances a notion of the sequence as a &ldquo;bipolar machine for transforming identity into difference and difference into identity&rdquo; (<a href="#waltham-smith_2017" id="citation_waltham-smith_2017_67dc99a915d06">Waltham-Smith 2017</a>). </p>
+
+<p>[8] When we return from the heights of poststructural theorizing to the pragmatic discourse of current functional harmony, in Germanophone countries the sequence is largely understood to remain at a place outside harmonic functionality. In his <i>Lexikon der Harmonielehre</i>, for example, Reinhard Amon claims that &ldquo;the cadence sets a clear caesura, whereas the sequence drives forward. These forces, that are not easy to define, as well as the difficulties that sequences oppose a harmonic analysis, may have led to the fact that they have not obtained the place in music theory that they deserve&rdquo; (<a href="#amon_2005" id="citation_amon_2005_67dc99a915d08">Amon 2005</a>, 230; translation mine). From this, Amon concludes that cadences represent <i>Funktionalit&auml;t</i> and sequences represent <i>Nichtfunktionalit&auml;t</i>.</p>
+
+<p>[9] In his <i>Harmonielehre</i> from 1925, the Czech music theorist Bruno Weigl presents a concise summary of a number of important statements about the sequence from about 1850 to the year of the publication of his book. These statements reveal the multifaceted discussion of sequences in the nineteenth  and early twentieth century. Sequences can, according to Weigl, highlight certain musical moments and can therefore help one to remember difficult harmonic progressions (<a href="#weigl_1925" id="citation_weigl_1925_67dc99a915d09">Weigl 1925</a>, 79). Following Halm, Kurth, and others, Weigl also mentions the music of Bruckner as an example of the use of &ldquo;magnificent harmonic&rdquo; sequences. In this context, he nevertheless cites negative views on the mechanism of sequential repetition. The most important moment in his summary of properties of harmonic sequences, however, is his reference to F&eacute;tis&rsquo;s often cited explanation of tonality within sequential progressions. F&eacute;tis&rsquo;s definition of tonality attempts to clarify vertical and horizontal relationships in tonal music from the seventeenth  to the nineteenth centuries. Due to the fact that root position chords in a diatonic sequence appear on every scale step, the constitutive hierarchies for his definition of tonalit&eacute; are questioned fundamentally by sequential progressions.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> He therefore explains the role of tonality within a sequential progression as a &ldquo;halt of the proper harmonic progression&rdquo; and emphasizes the importance of the melodic progression of the sequence. Still, we have to keep in mind that F&eacute;tis differentiates between modulating and non-modulating sequences: a &ldquo;suspension of tonality&rdquo; only occurs within non-modulating sequences, because in modulating sequences, every chord could become a new tonic.</p>
+
+<p>[10] F&eacute;tis&rsquo;s explanation, especially his description of the sequence as a melodic phenomenon, is repeated frequently in the course of the twentieth century, long after Weigl&rsquo;s <i>Harmonielehre</i>. A prominent implicit point of reference for this return is Allen Forte and Steven Gilbert&rsquo;s notion of the linear intervallic pattern from their 1982 <i>Introduction to Schenkerian Analysis</i>. It is clear that the concept of tonality is completely different in this context, but F&eacute;tis&rsquo;s understanding of the sequence as a melodic&mdash;rather than harmonic&mdash;event is reflected in it. A Schenkerian understanding of tonality certainly integrates a linear intervallic pattern within tonality and not as something &ldquo;extratonal.&rdquo; The sequence in this context is an important device in the process of <i>Auskomponierung</i>: the two pillar chords that frame a sequence can be integrated into the overall tonal structure of the piece. That is to say, they are always in &ldquo;the service of some musical element of larger scale&rdquo; (<a href="#forte_and_gilbert_1982" id="citation_forte_and_gilbert_1982_67dc99a915d0d">Forte and Gilbert 1982</a>, 84). Sequences or linear intervallic patterns therefore could figure as a &ldquo;connector of harmonies&rdquo;: &ldquo;harmonic importance (if any) resides in where the pattern begins and where it ends.&rdquo; Another feature reminds us of F&eacute;tis&rsquo;s explanation: a linear intervallic pattern represents a &ldquo;directed tonal motion with complete precision and without ambiguity <nobr>. . .</nobr> once the pattern has been initiated.&rdquo; One has to add here that Forte and Gilbert differentiate between linear intervallic patterns and sequences. A sequence is characterized foremost by a &ldquo;melodic pattern in a single voice&rdquo; that gets repeated at different transpositional levels. The melodic pattern, however, &ldquo;is not a necessary condition for the linear intervallic pattern.&rdquo;</p>
+
+<p>[11] To conceptualize a linear intervallic pattern as a &ldquo;connector&rdquo; of structurally more important harmonies resonates surprisingly with some ideas of Hugo Riemann. Riemann deals with sequences in very interesting ways on many occasions in his large theoretical oeuvre. A recurrent element in Riemann&rsquo;s diverse discussions of the sequence is again F&eacute;tis&rsquo;s definition of the sequence as a primarily melodic phenomenon. Riemann states that the sequence has disturbed theorists for a long time until &ldquo;F&eacute;tis discovered the true character of the sequence as a &lsquo;melodic&rsquo; rather than a &lsquo;harmonic&rsquo; structure.&rdquo; (<a href="#riemann_1887" id="citation_riemann_1887_67dc99a915d1e">Riemann 1887</a>, 25) What Riemann clearly borrows from F&eacute;tis is the notion that in hearing sequences the mind becomes totally absorbed in the contemplation of musical repetition. So absorbed, in fact, that functions, were they perceptible, would be irrelevant.</p>
+
+<p>[12] In his <i>Vereinfachte Harmonielehre</i> Riemann explains sequences in a way somewhat similar to the notion of the sequence as a &ldquo;connector of harmonies.&rdquo; Despite his claim that tonal functions &ldquo;regain their importance&rdquo; when the sequence ends, he analyzes some sequences completely with functional symbols. Through the course of the chapter, however, Riemann formulates his opinion that it makes no sense to label every tonal function within a sequence. He then offers a compromise: &ldquo;As the tonal functions are suspended during the imitations of the sequence motive, there can be no object in indicating them; we therefore only give indications for the harmonies of the motive, and just indicate at the first imitation, whether the sequence rises or falls; but for the rest, abbreviate the indications by means of brackets.&rdquo; (<a href="#riemann_1893" id="citation_riemann_1893_67dc99a915d20">Riemann 1893</a>, 138). This designation reflects the fact that in Riemann&rsquo;s understanding the functional progression gets suspended within the sequence. Against this background, even Amon&rsquo;s claim that the functionality within a sequence gets suspended can be connected to Riemann.</p>
+
+<p>[13] From this perspective it is particularly striking that the discussion of sequences in his <i>Vereinfachte Harmonielehre</i> is reduced to the minimum necessary. Riemann certainly shows an awareness of the problems of a functional analysis of sequences. Nevertheless, he seems to have trouble admitting it, because to do so would threaten the systematic coherence of his harmonic system in a fundamental way. The sequence thus becomes an extra-territorial device that threatens his system with some destructive power.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Pergolesi, Stabat Meter, beginning, from Riemann&rsquo;s <i>Gro&szlig;e Kompositionslehre</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="sprick_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="sprick_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[14] Riemann&rsquo;s <i>Gro&szlig;e Kompositionslehre</i> from 1902/1903 differs significantly in its conceptual design from his systematic treatises. In the ninth chapter of the second volume, &ldquo;Der polyphone Satz,&rdquo; under the title &ldquo;Kontrapunktische Manieren,&rdquo; he extensively discusses &ldquo;Ligaturenketten&rdquo; or &ldquo;suspension chains&rdquo; that are&mdash;in his words&mdash;the foundation of every homophonic conception of music (<a href="#riemann_1903" id="citation_riemann_1903_67dc99a915dc9">Riemann 1903</a>, 32). In the preface to that volume, Riemann tries to explain why there was no space for melodic-contrapuntal sequence-models in his purely theoretical works. He states that in his <i>Kompositionslehre</i> he wants to reconcile &ldquo;thinking musicians&rdquo; with his earlier treatises (<a href="#riemann_1903" id="citation_riemann_1903_67dc99a915dcb">Riemann 1903</a>, VIII). For him, these contrapuntal-sequential models are mainly compositional techniques and therefore not a subject of theoretical exploration. The fact that he incorporates such a variety of sequential models in his composition treatise certainly shows his awareness of them. One particularly prominent example is the beginning of Pergolesi&rsquo;s <i>Stabat Mater</i> (see <b>Example 1</b>).</p>
+
+<p>[15] In this example, he stresses the free bass line that contradicts the &ldquo;rigid manner of the model&rdquo; (38). It seems as if Riemann the &ldquo;composer&rdquo; was always well aware of the crucial role of sequential patterns or other kinds of schemata, whereas Riemann the &ldquo;theorist&rdquo; faced major problems integrating the sequence into his system of harmonic functions.</p>
+
+<p>[16] If we now take a look at recent publications on schema theory, namely Robert Gjerdingen&rsquo;s <i>Music in the Galant Style</i> (<a href="#gjerdingen_2007a" id="citation_gjerdingen_2007a_67dc99a915dcd">2007a</a>) and several articles by Vasili Byros (<a href="#byros_2009" id="citation_byros_2009_67dc99a915dcf">2009</a>; <a href="#byros_2012" id="citation_byros_2012_67dc99a915dd1">2012</a> et al.), we see&mdash;in a paradoxical way&mdash;resemblances to Riemann&rsquo;s account of the sequential schemata or <i>Satzmodelle</i> in his <i>Gro&szlig;e Kompositionslehre</i>. This is surprising, given that the orientation of Riemann&rsquo;s theory towards concepts of tonality is fundamentally different from those of <i>Modelltheorie</i> and schema theory. The intersecting point is the fact that Riemann accounts for <i>Satzmodelle</i> or schemata in a context where he does not talk about systematic theory but rather about compositional technique. When it comes to the teaching of composition&mdash;which was in Riemann&rsquo;s case not necessarily contemporary composition&mdash;he seems to follow a kind of script-like, or filo-principle.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> These principles form the basis of an understanding of tonality within schema theory, as well, and within approaches of historically informed music theory in general. They resonate also with Byros&rsquo;s assertion that &ldquo;eighteenth-century harmonic schemata functioned as cognitive maps that regulated the cognition and communication of key&rdquo; (<a href="#byros_2012" id="citation_byros_2012_67dc99a915dd4">2012</a>, 120). The same is true for the German <i>Satzmodell</i>-discourse, in whose context Ludwig Holtmeier claims that the &ldquo;rule of the octave is a theory of &lsquo;harmonic functionality&rsquo;&rdquo; (<a href="#holtmeier_2009" id="citation_holtmeier_2009_67dc99a915dd6">2009</a>, 11). With this claim, he raises the status of the figured bass tradition through association with &ldquo;harmonic functionality,&rdquo; quite different from Riemann&rsquo;s dismissal of figured bass as a purely compositional technique without theoretical dignity. It is not easy to pin down the main differences between the concepts of <i>Satzmodell</i> and schema, but it seems reasonable to suggest that <i>Satzmodelle</i> are tonally and semantically indifferent and, in principle, are open to far-reaching transformation and combination, as well as being amenable to various contextualizations and functional ascriptions. A schema, on the other hand, appears to be a tonally-determined network of distinct structural components that constitute a field of flexible relations.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Edvard Grieg, Elegie op. 38, no. 6, mm. 15&ndash;18</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="sprick_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="sprick_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[17] If we move back in history again and consult the theoretical writings of German theorist Georg Capellen&mdash;a Riemann contemporary&mdash;we encounter a music theorist who offers some radically idiosyncratic views on the sequence. In his book <i>Die Freiheit oder Unfreiheit der T&ouml;ne und Intervalle</i> (<a href="#capellen_1904" id="citation_capellen_1904_67dc99a915deb">1904</a>), he states his position explicitly when he discusses a simple circle of fifths sequence in a piano piece by Edward Grieg&mdash;see <b>Example 2</b>.</p>
+
+<p>[18] Capellen comments on this example as follows: </p>
+
+	<blockquote>We have here an example of a tonal sequence, whose nature it is that the absence of a complete equality of the harmonic and melodic development . . . is hidden, due to the persistence of tonality [Tonit&auml;t] by means of the imitation of the model on the different scale steps. Therefore, one feels a complete symmetry of the progression of sounds and tones, although this is normally only true for strict, which means modulating, sequences. The perception of tonal sequences therefore relies on an acoustic delusion. (<a href="#capellen_1904" id="citation_capellen_1904_67dc99a915dec">Capellen 1904</a>, 52)</blockquote>
+
+<p>[19] This opinion has its origins in Capellen&rsquo;s overall rejection of the diatonic harmonic system. Proceeding from views guided by a negative reaction to harmonic dualism, he regards major chords as representing the normal chord type and minor chords as structurally less important. Against this background, real sequences represent the normal type of progression because of the sequential repetition of the same major chords. Since this is not the case within the tonal sequence, where different chord types follow one another, Capellen sees the sequence as corroborating his overall view on harmony and harmonic systems. Regardless of whether we are convinced by his argument of the &ldquo;acoustic delusion&rdquo; within tonal sequences, his discussion brings to the fore the important antagonism between tonal and real sequences in music of the nineteenth century, especially in the music of Wagner and Bruckner (certainly also in earlier music by Schubert, Schumann, and  Chopin). But there is yet another aspect to Capellen&rsquo;s theory, one that connects it with later developments: a &ldquo;tonic-free&rdquo; understanding of <i>Verwandtschaft</i> forms the basis for his symmetrical understanding of sequences, and it is against this background that real sequences figure as the &ldquo;normal&rdquo; progression. Capellen&rsquo;s thinking thus connects with some general aspects of neo-Riemannian theory and serves to bring our own discussion back to contemporary music-theoretical thinking.</p>
+
+<p>[20] It is quite striking that Richard Cohn takes F&eacute;tis&rsquo;s explanation of sequences and his understanding of sequential progression as suspension of tonality as a point of reference in the first chapter of his book <i>Audacious Euphony</i>. Whether Cohn is quoting F&eacute;tis just for historical reference, or whether he takes F&eacute;tis&rsquo;s thinking as a true starting point for his own understanding of tonality, is not quite clear. &ldquo;It is evident,&rdquo; Cohn writes, that &ldquo;F&eacute;tis conceives of classical tonality (&lsquo;transitonality&rsquo;) as a category whose constituent elements are not integral &lsquo;pieces&rsquo;&mdash;compositions or complete movements&mdash;but rather musical moments&rdquo; (<a href="#cohn_2012" id="citation_cohn_2012_67dc99a915dee">Cohn 2012</a>, 10). In F&eacute;tis&rsquo;s view, Cohn continues to explain, &ldquo;the faculty of (transi)tonal listening is capable of spontaneous suspension and reengagement without notice of fuss, like a carpenter exchanging a screwdriver for a hammer.&rdquo; Also in a purely diatonic environment, when a sequence arises midphrase, &ldquo;the &lsquo;law of tonality&rsquo; is placed in abeyance, as our cognition is submitted to a &lsquo;law of uniformity&rsquo;.&rdquo; Finally, Cohn quotes F&eacute;tis and seems to agree with him: &ldquo;The mind, absorbed in the contemplation of the progressive series, momentarily loses the feeling of tonality, and regains it only at the final cadence, where the normal order is reestablished&rdquo; (<a href="#cohn_2012" id="citation_cohn_2012_67dc99a915df0">Cohn 2012</a>, 10).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> This approach has to do with the understanding of tonality in neo-Riemannian theory. Tonality does not function in the sense that every chord is measured in its relation to an existing tonic, as in <i>Funktionstheorie</i>. It is rather the case that neo-Riemannian theory primarily models chord progressions based on Riemann&rsquo;s system of <i>Schritte</i> and <i>Wechsel</i> and not necessarily in relation to a tonic. It is clear that the boundaries between <i>Funktionstheorie</i> and neo-Riemannian theory are fluid, but it is also clear that the fundamental differences between these two theoretical approaches lie especially in their different understanding of tonality. Whereas the sequence figures as a challenge for a tonic-oriented understanding of tonality, it can be very well integrated into the graphic representation and the analytical procedures of neo-Riemannian theory.</p>
+
+<p>[21] Cohn further mentions Ernst Kurth&rsquo;s discussion of sequences in <i>Romantische Harmonik und ihre Krise in Wagners &lsquo;Tristan&rsquo;</i> (<a href="#kurth_1920" id="citation_kurth_1920_67dc99a915df3">1920</a>), where Kurth &ldquo;discovered an agent of tonal disruption in chromatic sequences, which, like F&eacute;tis&rsquo;s&rsquo;s diatonic ones, are governed by the logic of repetition&rdquo; (quoted in <a href="#cohn_2012" id="citation_cohn_2012_67dc99a915df4">Cohn 2012</a>, 10). Cohn describes these kinds of progressions as &ldquo;extratonal&rdquo; in the sense that their relation to the tonal pillars that bound them on either side &ldquo;is not tonally determined&rdquo; (<a href="#cohn_2012" id="citation_cohn_2012_67dc99a915df6">2012</a>, 10). In this respect, F&eacute;tis&rsquo;s understanding of suspension is turned upside down, because in F&eacute;tis&rsquo; theory, it was the diatonic sequence that was responsible for the &ldquo;suspension of tonality.&rdquo;</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Network of Discourses</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="sprick_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="sprick_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[22] As a result of these case studies we can construct a preliminary network of discourses around the question of sequences and tonality (see <b>Example 3</b>). This network could well be enlarged to include a number of other authors and theoretical aspects, but it illustrates concisely the general connections among the several authors and their arguments.</p>
+
+<p>[23] On a broader methodological level, the kind of discourse analysis employed in this article can be valuable in order to retrace the way certain concepts&mdash;in this case F&eacute;tis&rsquo;s problematic or at least insufficient explanation of tonality within sequential progressions&mdash;can persist and sometimes tacitly influence thinking over a long period. Let me summarize some aspects:</p>
+
+<p>[23.1] We find an expanded notion of sequences in schema theory and within the German <i>Satzmodell</i>-discourse. In these theoretical approaches we normally encounter an understanding of tonality that is&mdash;like Gjerdingen&rsquo;s filo-concept&mdash;not oriented towards functional coherence but rather is based on the succession of single events. A similar approach can be found in Riemann&rsquo;s <i>Gro&szlig;e Kompositionslehre</i>, where the use of contrapuntal <i>Satzmodelle</i> or schemata was not brought under the umbrella of a systematic theory, but rather treated as a means of learning to compose.</p>
+
+<p>[23.2] Neo-Riemannian theory takes F&eacute;tis&rsquo;s notion of the suspension of tonality in sequential progressions as a general point of departure, in order to theoretically explain and to visually represent what happens within a certain sequential or non-sequential progressions. This connects the neo-Riemannian understanding of sequences in a paradoxical way to notions of functional harmony, where it is still claimed&mdash;as the example by Amon showed&mdash;that within sequential progressions, functional logic is abrogated. This example shows again that the reference to F&eacute;tis&rsquo;s thesis of the &ldquo;suspension of tonality&rdquo; is very typical.</p>
+
+<p>[23.3] In hierarchical approaches, such as Schenkerian theory, sequences or linear intervallic patterns are viewed as structural features that are located on a foreground or middleground level, but could also govern larger structural portions of a piece. In this context, sequences can even function as affirmative devices of tonality, since they are responsible for the linear connection of two chords that are part of the overall tonal structure. Especially from a Schenkerian perspective on tonality, frequent reference in the literature to F&eacute;tis&rsquo;s explanation of tonality would seem to miss the point.</p>
+
+<p>[24] This by no means complete overview shows that the sequence is still an important aspect of actual discourses on tonality, although it is often thematized in an implicit way. But it is striking how many similarities we can find in comparing the discourses of the nineteenth  and early twentieth century, even if the individual solutions are quite different. With respect to current music theoretical thinking, sequences play an important role in very different theoretical approaches such as schema theory or <i>Modelltheorie</i> and neo-Riemannian theory, but it is also very clear that these theoretical approaches do not put forward an emphatic understanding of tonality whose main aspect is to model and understand the relation of every chord to an underlying tonic; rather, they represent an understanding of tonality whose main focus is to model and understand chord progressions. Tonal coherence can therefore also be achieved by sequential repetition. In this respect, the sequence remains a musical device whose explanation can show <i>in nuce</i> the specific understanding of tonality in different theories.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Jan Philipp Sprick <br>
+	Hochschule f&uuml;r Musik und Theater Hamburg<br><a href="mailto:jan.sprick@hfmt-hamburg.de">jan.sprick@hfmt-hamburg.de</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_aerts_2007" class="flyoverdiv">Aerts, Hans. 2007. &ldquo;&lsquo;Modell&rsquo; und &lsquo;Topos&rsquo; in der deutschsprachigen Musiktheorie seit Riemann.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (1&ndash;2): 143&ndash;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="aerts_2007"></a>Aerts, Hans. 2007. &ldquo;&lsquo;Modell&rsquo; und &lsquo;Topos&rsquo; in der deutschsprachigen Musiktheorie seit Riemann.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (1&ndash;2): 143&ndash;58.</p><div id="citediv_amon_2005" class="flyoverdiv">Amon, Reinhard. 2005. <i>Lexikon der Harmonielehre</i>. Doblinger.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="amon_2005"></a>Amon, Reinhard. 2005. <i>Lexikon der Harmonielehre</i>. Doblinger.</p><div id="citediv_bass_1996" class="flyoverdiv">Bass, Richard. 1996. &ldquo;From Gretchen to Tristan: The Changing Role of Harmonic Sequences in the Nineteenth Century.&rdquo; <i>19th-Century Music</i> 19 (3): 263&ndash;85.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bass_1996"></a>Bass, Richard. 1996. &ldquo;From Gretchen to Tristan: The Changing Role of Harmonic Sequences in the Nineteenth Century.&rdquo; <i>19th-Century Music</i> 19 (3): 263&ndash;85.</p><div id="citediv_byros_2009" class="flyoverdiv">Byros, Vasili. 2009. &ldquo;Towards an &lsquo;Archaeology&rsquo; of Hearing: Schemata and Eighteenth-Century Consciousness.&rdquo; <i>Musica Humana</i> 1 (2): 235&ndash;306.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="byros_2009"></a>Byros, Vasili. 2009. &ldquo;Towards an &lsquo;Archaeology&rsquo; of Hearing: Schemata and Eighteenth-Century Consciousness.&rdquo; <i>Musica Humana</i> 1 (2): 235&ndash;306.</p><div id="citediv_byros_2012" class="flyoverdiv">Byros, Vasili. 2012. &ldquo;Unearthing the Past: Theory and Archeology in Robert Gjerdingen&rsquo;s Music in the Galant Style.&rdquo; <i>Music Analysis</i> 31 (1): 112&ndash;24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="byros_2012"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2012. &ldquo;Unearthing the Past: Theory and Archeology in Robert Gjerdingen&rsquo;s Music in the Galant Style.&rdquo; <i>Music Analysis</i> 31 (1): 112&ndash;24.</p><div id="citediv_capellen_1904" class="flyoverdiv">Capellen, Georg. 1904. <i>Die Freiheit oder Unfreiheit der T&ouml;ne und Intervalle</i>. Kahnt.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capellen_1904"></a>Capellen, Georg. 1904. <i>Die Freiheit oder Unfreiheit der T&ouml;ne und Intervalle</i>. Kahnt.</p><div id="citediv_cohn_2012" class="flyoverdiv">Cohn, Richard. 2012. <i>Audacious Euphony: Chromaticism and the Triad&rsquo;s Second Nature</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_2012"></a>Cohn, Richard. 2012. <i>Audacious Euphony: Chromaticism and the Triad&rsquo;s Second Nature</i>. Oxford University Press.</p><div id="citediv_dahlhaus_1980" class="flyoverdiv">Dahlhaus, Carl. 1980. <i>Between Romanticism and Modernism. Four Studies in the Music of the Later Nineteenth Century</i>. Trans. by Mary Whittall. University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dahlhaus_1980"></a>Dahlhaus, Carl. 1980. <i>Between Romanticism and Modernism. Four Studies in the Music of the Later Nineteenth Century</i>. Trans. by Mary Whittall. University of California Press.</p><div id="citediv_dahlhaus_1990" class="flyoverdiv">Dahlhaus, Carl. 1990. <i>Studies on the Origin of Harmonic Tonality</i>. Trans. by Robert O. Gjerdingen. Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dahlhaus_1990"></a>Dahlhaus, Carl. 1990. <i>Studies on the Origin of Harmonic Tonality</i>. Trans. by Robert O. Gjerdingen. Princeton University Press.</p><div id="citediv_f&eacute;tis_2008" class="flyoverdiv">F&eacute;tis, François-Joseph. 2008. <i>Complete Treatise on the Theory and Practice of Harmony.</i> Trans. Peter Landey. Pendragon Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="f&eacute;tis_2008"></a>F&eacute;tis, François-Joseph. 2008. <i>Complete Treatise on the Theory and Practice of Harmony.</i> Trans. Peter Landey. Pendragon Press.</p><div id="citediv_fladt_2005a" class="flyoverdiv">Fladt, Hartmut. 2005a. &ldquo;Modell und Topos im musiktheoretischen Diskurs. Systematiken/Anregungen.&rdquo; <i>Musiktheorie</i> 20 (4): 343&ndash;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fladt_2005a"></a>Fladt, Hartmut. 2005a. &ldquo;Modell und Topos im musiktheoretischen Diskurs. Systematiken/Anregungen.&rdquo; <i>Musiktheorie</i> 20 (4): 343&ndash;69.</p><div id="citediv_fladt_2005b" class="flyoverdiv">Fladt, Hartmut. 2005b. &ldquo;Satztechnische Topoi.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 2 (2&ndash;3): 189&ndash;96.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fladt_2005b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005b. &ldquo;Satztechnische Topoi.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 2 (2&ndash;3): 189&ndash;96.</p><div id="citediv_forte_and_gilbert_1982" class="flyoverdiv">Forte, Allen, and Steven E. Gilbert. 1982. <i>Introduction to Schenkerian Analysis</i>. W. W. Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_and_gilbert_1982"></a>Forte, Allen, and Steven E. Gilbert. 1982. <i>Introduction to Schenkerian Analysis</i>. W. W. Norton.</p><div id="citediv_gjerdingen_2007a" class="flyoverdiv">Gjerdingen, Robert O. 2007a. <i>Music in the Galant Style</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gjerdingen_2007a"></a>Gjerdingen, Robert O. 2007a. <i>Music in the Galant Style</i>. Oxford University Press.</p><div id="citediv_gjerdingen_2007b" class="flyoverdiv">Gjerdingen, Robert O. 2007b. &ldquo;Partimento, que me veux-tu?&rdquo; <i>Journal of Music Theory</i> 51 (1): 85&ndash;135.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gjerdingen_2007b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007b. &ldquo;Partimento, que me veux-tu?&rdquo; <i>Journal of Music Theory</i> 51 (1): 85&ndash;135.</p><div id="citediv_gjerdingen_2011" class="flyoverdiv">Gjerdingen, Robert O. 2011. &ldquo;Gebrauchs-Formulas.&rdquo; <i>Music Theory Spectrum</i> 33 (2): 191&ndash;99.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gjerdingen_2011"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2011. &ldquo;Gebrauchs-Formulas.&rdquo; <i>Music Theory Spectrum</i> 33 (2): 191&ndash;99.</p><div id="citediv_holtmeier_2009" class="flyoverdiv">Holtmeier, Ludwig. 2009. &ldquo;Zum Tonalit&auml;tsbegriff der Oktavregel.&rdquo; In <i> Systeme der Musiktheorie</i>, ed. by Clemens K&uuml;hn and John Leigh, 7&ndash;19. Sandstein.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="holtmeier_2009"></a>Holtmeier, Ludwig. 2009. &ldquo;Zum Tonalit&auml;tsbegriff der Oktavregel.&rdquo; In <i> Systeme der Musiktheorie</i>, ed. by Clemens K&uuml;hn and John Leigh, 7&ndash;19. Sandstein.</p><div id="citediv_je&szlig;ulat_2001" class="flyoverdiv">Je&szlig;ulat, Ariane. 2001. <i>Die Frage als musikalischer Topos. Studien zur Motivbildung in der Musik des 19. Jahrhunderts</i>. Studio-Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="je&szlig;ulat_2001"></a>Je&szlig;ulat, Ariane. 2001. <i>Die Frage als musikalischer Topos. Studien zur Motivbildung in der Musik des 19. Jahrhunderts</i>. Studio-Verlag.</p><div id="citediv_kaiser_1998" class="flyoverdiv">Kaiser, Ulrich. 1998. <i>Geh&ouml;rbildung: Satzlehre&mdash;Improvisation&mdash;H&ouml;ranalyse</i>. B&auml;renreiter.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kaiser_1998"></a>Kaiser, Ulrich. 1998. <i>Geh&ouml;rbildung: Satzlehre&mdash;Improvisation&mdash;H&ouml;ranalyse</i>. B&auml;renreiter.</p><div id="citediv_kaiser_2007a" class="flyoverdiv">Kaiser, Ulrich. 2007a. <i>Die Notenb&uuml;cher der Mozarts als Grundlage der Analyse von W. A. Mozarts Kompositionen 1761&ndash;1767</i>. B&auml;renreiter.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kaiser_2007a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007a. <i>Die Notenb&uuml;cher der Mozarts als Grundlage der Analyse von W. A. Mozarts Kompositionen 1761&ndash;1767</i>. B&auml;renreiter.</p><div id="citediv_kaiser_2007b" class="flyoverdiv">Kaiser, Ulrich. 2007b. &ldquo;Was ist ein musikalisches Modell?&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (3): 275&ndash;89.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kaiser_2007b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007b. &ldquo;Was ist ein musikalisches Modell?&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (3): 275&ndash;89.</p><div id="citediv_kurth_1920" class="flyoverdiv">Kurth, Ernst. 1920. <i>Romantische Harmonik und ihre Krise in Wagners &lsquo;Tristan.&rsquo;</i> P. Haupt.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kurth_1920"></a>Kurth, Ernst. 1920. <i>Romantische Harmonik und ihre Krise in Wagners &lsquo;Tristan.&rsquo;</i> P. Haupt.</p><div id="citediv_menke_2009" class="flyoverdiv">Menke, Johannes. 2009. &ldquo;Historisch-systematische &Uuml;berlegungen zur Sequenz seit 1600.&rdquo; In <i>Passagen. Theorien des &Uuml;bergangs in Musik und anderen Kunstformen</i>, ed. by Christian Utz and Martin Zenck (musik.theorien der gegenwart 3), 87&ndash;111. Pfau Verlag. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="menke_2009"></a>Menke, Johannes. 2009. &ldquo;Historisch-systematische &Uuml;berlegungen zur Sequenz seit 1600.&rdquo; In <i>Passagen. Theorien des &Uuml;bergangs in Musik und anderen Kunstformen</i>, ed. by Christian Utz and Martin Zenck (musik.theorien der gegenwart 3), 87&ndash;111. Pfau Verlag. </p><div id="citediv_m&ouml;llers_1989" class="flyoverdiv">M&ouml;llers, Christian. 1989. &ldquo;Analyse durch Improvisation. Chaconneb&auml;sse der Barockzeit als Improvisationsmodelle.&rdquo; <i>&Uuml;ben und Musizieren</i> 6: 73&ndash;86.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="m&ouml;llers_1989"></a>M&ouml;llers, Christian. 1989. &ldquo;Analyse durch Improvisation. Chaconneb&auml;sse der Barockzeit als Improvisationsmodelle.&rdquo; <i>&Uuml;ben und Musizieren</i> 6: 73&ndash;86.</p><div id="citediv_moreno_2000" class="flyoverdiv">Moreno, Jairo. 2000. &ldquo;Challenging Views of Sequential Repetition: From &lsquo;Satzlehre&rsquo; to &lsquo;Melodielehre.&rsquo;&rdquo; <i>Journal of Music Theory</i> 44: 127&ndash;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moreno_2000"></a>Moreno, Jairo. 2000. &ldquo;Challenging Views of Sequential Repetition: From &lsquo;Satzlehre&rsquo; to &lsquo;Melodielehre.&rsquo;&rdquo; <i>Journal of Music Theory</i> 44: 127&ndash;69.</p><div id="citediv_preuss_1991" class="flyoverdiv">Preuss, Volkhardt. 1991. &ldquo;Die Anwendung der Clausellehre des 17. Jahrhunderts im Theorieunterricht.&rdquo; Unpublished manuscript.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="preuss_1991"></a>Preuss, Volkhardt. 1991. &ldquo;Die Anwendung der Clausellehre des 17. Jahrhunderts im Theorieunterricht.&rdquo; Unpublished manuscript.</p><div id="citediv_ricci_2004" class="flyoverdiv">Ricci, Adam. 2004. &ldquo;A Theory of the Harmonic Sequence.&rdquo; PhD dissertation, University of Rochester.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ricci_2004"></a>Ricci, Adam. 2004. &ldquo;A Theory of the Harmonic Sequence.&rdquo; PhD dissertation, University of Rochester.</p><div id="citediv_riemann_1887" class="flyoverdiv">Riemann, Hugo. 1887. <i>Systematische Modulationslehre als Grundlage der Musikalischen Formenlehre</i>. No publisher. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riemann_1887"></a>Riemann, Hugo. 1887. <i>Systematische Modulationslehre als Grundlage der Musikalischen Formenlehre</i>. No publisher. </p><div id="citediv_riemann_1893" class="flyoverdiv">Riemann, Hugo. 1893. <i>Vereinfachte Harmonielehre oder die Lehre von den tonalen Funktionen der Akkord</i>e. English translation published as Harmony Simplified, 1895. Augener.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riemann_1893"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1893. <i>Vereinfachte Harmonielehre oder die Lehre von den tonalen Funktionen der Akkord</i>e. English translation published as Harmony Simplified, 1895. Augener.</p><div id="citediv_riemann_1903" class="flyoverdiv">Riemann, Hugo. 1903. <i>Gro&szlig;e Kompositionslehre, II</i>. Band: Der polyphone Satz. Berlin/Stuttgart.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riemann_1903"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1903. <i>Gro&szlig;e Kompositionslehre, II</i>. Band: Der polyphone Satz. Berlin/Stuttgart.</p><div id="citediv_schoenberg_1976" class="flyoverdiv">Schoenberg, Arnold. 1976. &ldquo;Kriterien f&uuml;r die Bewertung von Musik.&rdquo; In <i>Stil und Gedanke: Aufs&auml;tze zur Musik</i>, ed. by Ivan Vojtech. Fischer, 123&ndash;33. S. Fischer Verlage.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schoenberg_1976"></a>Schoenberg, Arnold. 1976. &ldquo;Kriterien f&uuml;r die Bewertung von Musik.&rdquo; In <i>Stil und Gedanke: Aufs&auml;tze zur Musik</i>, ed. by Ivan Vojtech. Fischer, 123&ndash;33. S. Fischer Verlage.</p><div id="citediv_schubart_1812" class="flyoverdiv">Schubart, Christian Friedrich Daniel. 1812. &ldquo;Von der Rosalien.&rdquo; In <i>Vermischte Schriften I</i>, Z&uuml;rich, 220&ndash;27. Nabu Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubart_1812"></a>Schubart, Christian Friedrich Daniel. 1812. &ldquo;Von der Rosalien.&rdquo; In <i>Vermischte Schriften I</i>, Z&uuml;rich, 220&ndash;27. Nabu Press.</p><div id="citediv_schwab-felisch_2007" class="flyoverdiv">Schwab-Felisch, Oliver. 2007. &ldquo;Umriss eines allgemeinen Begriffs des musikalischen Satzmodells.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (3): 291&ndash;304.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schwab-felisch_2007"></a>Schwab-Felisch, Oliver. 2007. &ldquo;Umriss eines allgemeinen Begriffs des musikalischen Satzmodells.&rdquo; <i>Zeitschrift der Gesellschaft f&uuml;r Musiktheorie</i> 4 (3): 291&ndash;304.</p><div id="citediv_sprick_2012" class="flyoverdiv">Sprick, Jan Philipp. 2012. <i>Die Sequenz in der deutschen Musiktheorie um 1900</i>. Olms. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sprick_2012"></a>Sprick, Jan Philipp. 2012. <i>Die Sequenz in der deutschen Musiktheorie um 1900</i>. Olms. </p><div id="citediv_sprick_2014" class="flyoverdiv">Sprick, Jan Philipp. 2014. &ldquo;Schema, Satzmodell and Topos: Reflections on Terminology.&rdquo; <i>Music Theory & Analysis</i> 1 (1 & 2): 102&ndash;107.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sprick_2014"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2014. &ldquo;Schema, Satzmodell and Topos: Reflections on Terminology.&rdquo; <i>Music Theory & Analysis</i> 1 (1 & 2): 102&ndash;107.</p><div id="citediv_waltham-smith_2017" class="flyoverdiv">Waltham-Smith, Naomi. 2017. &ldquo;Sequence.&rdquo; In <i>The Oxford Handbook of Critical Concepts in Music Theory</i>, ed. by Alexander Rehding and Steven Rings. Oxford University Press. Online publication, 2015.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="waltham-smith_2017"></a>Waltham-Smith, Naomi. 2017. &ldquo;Sequence.&rdquo; In <i>The Oxford Handbook of Critical Concepts in Music Theory</i>, ed. by Alexander Rehding and Steven Rings. Oxford University Press. Online publication, 2015.</p><div id="citediv_weigl_1925" class="flyoverdiv">Weigl, Bruno. 1925. <i>Harmonielehre</i>. Schott.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="weigl_1925"></a>Weigl, Bruno. 1925. <i>Harmonielehre</i>. Schott.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> As exemplars, see <a href="#kaiser_1998" id="citation_kaiser_1998_67dc99a90f221">Kaiser 1998</a>; <a href="#kaiser_2007a" id="citation_kaiser_2007a_67dc99a90f226">2007a</a>; <a href="#kaiser_2007b" id="citation_kaiser_2007b_67dc99a90f22b">2007b</a>; <a href="#schwab-felisch_2007" id="citation_schwab-felisch_2007_67dc99a90f22e">Schwab-Felisch 2007</a>. For a detailed description of this development, see <a href="#aerts_2007" id="citation_aerts_2007_67dc99a90f231">Aerts 2007</a>. In the United States, where research in the history of theory did not have as much influence on theory teaching as in Europe, there nevertheless exist historically oriented approaches, the most important being Robert O. Gjerdingen&rsquo;s work on &ldquo;schema&rdquo; theory (<a href="#gjerdingen_2007a" id="citation_gjerdingen_2007a_67dc99a90f235">Gjerdingen 2007a</a>; <a href="#gjerdingen_2007b" id="citation_gjerdingen_2007b_67dc99a90f238">2007b</a>; <a href="#gjerdingen_2011" id="citation_gjerdingen_2011_67dc99a90f23b">2011</a>).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> On improvisation, see <a href="#m&ouml;llers_1989" id="citation_m&ouml;llers_1989_67dc99a90f23f">M&ouml;llers 1989</a> and <a href="#preuss_1991" id="citation_preuss_1991_67dc99a90f242">Preuss 1991</a>. On <i>Satzmodelle</i>, see <a href="#kaiser_1998" id="citation_kaiser_1998_67dc99a90f245">Kaiser 1998</a>. Hartmut Fladt (<a href="#fladt_2005a" id="citation_fladt_2005a_67dc99a90f248">2005a</a>; <a href="#fladt_2005b" id="citation_fladt_2005b_67dc99a90f24c">2005b</a>) and Ariane Je&szlig;ulat (<a href="#je&szlig;ulat_2001" id="citation_je&szlig;ulat_2001_67dc99a90f24f">2001</a>) broaden this primarily structurally oriented understanding of models with their integration of the concept of Topos and therefore a semantic level.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> <a href="#schubart_1812" id="citation_schubart_1812_67dc99a90f252">Schubart 1812</a>, 223. For more information on Schubart, see <a href="#sprick_2012" id="citation_sprick_2012_67dc99a90f255">Sprick 2012</a>; <a href="#moreno_2000" id="citation_moreno_2000_67dc99a90f258">Moreno 2000</a>, 133ff.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> F&eacute;tis 1844, 253: &ldquo;Il y a de ces progressions qui modulent &agrave; chaque mouvement: il en est d&rsquo;autres qui ne modulent pas. Dans ces derni&egrave;res, l&rsquo;esprit suspend toute id&eacute;e de tonalit&eacute; et de conclusion jusqu&rsquo;&agrave; la cadence finale, en sorte que les degr&eacute;s de la gamme perdent leur caract&egrave;re tonal, l&rsquo;oreille n&rsquo;&eacute;tant pr&eacute;occup&eacute;e que de l&rsquo;analogie du mouvement.&rdquo;<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> For Gjerdingen&rsquo;s understanding of the filo-principle, see <a href="#gjerdingen_2007a" id="citation_gjerdingen_2007a_67dc99a90f25b">Gjerdingen 2007a</a>, 369.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> <a href="#sprick_2014" id="citation_sprick_2014_67dc99a90f25e">Sprick 2014</a> provides a more detailed discussion of the differences between schema theory and Modelltheorie.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Cohn quotes F&eacute;tis&rsquo;s <i>Trait&eacute;</i> from the translation by Peter  Landey (<a href="#f&eacute;tis_2008" id="citation_f&eacute;tis_2008_67dc99a90f262">2008</a>, 27).<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">As exemplars, see <a href="#kaiser_1998" id="citation_kaiser_1998_67dc99a90f221">Kaiser 1998</a>; <a href="#kaiser_2007a" id="citation_kaiser_2007a_67dc99a90f226">2007a</a>; <a href="#kaiser_2007b" id="citation_kaiser_2007b_67dc99a90f22b">2007b</a>; <a href="#schwab-felisch_2007" id="citation_schwab-felisch_2007_67dc99a90f22e">Schwab-Felisch 2007</a>. For a detailed description of this development, see <a href="#aerts_2007" id="citation_aerts_2007_67dc99a90f231">Aerts 2007</a>. In the United States, where research in the history of theory did not have as much influence on theory teaching as in Europe, there nevertheless exist historically oriented approaches, the most important being Robert O. Gjerdingen&rsquo;s work on &ldquo;schema&rdquo; theory (<a href="#gjerdingen_2007a" id="citation_gjerdingen_2007a_67dc99a90f235">Gjerdingen 2007a</a>; <a href="#gjerdingen_2007b" id="citation_gjerdingen_2007b_67dc99a90f238">2007b</a>; <a href="#gjerdingen_2011" id="citation_gjerdingen_2011_67dc99a90f23b">2011</a>).</div><div id="fndiv2" class="flyoverdiv">On improvisation, see <a href="#m&ouml;llers_1989" id="citation_m&ouml;llers_1989_67dc99a90f23f">M&ouml;llers 1989</a> and <a href="#preuss_1991" id="citation_preuss_1991_67dc99a90f242">Preuss 1991</a>. On <i>Satzmodelle</i>, see <a href="#kaiser_1998" id="citation_kaiser_1998_67dc99a90f245">Kaiser 1998</a>. Hartmut Fladt (<a href="#fladt_2005a" id="citation_fladt_2005a_67dc99a90f248">2005a</a>; <a href="#fladt_2005b" id="citation_fladt_2005b_67dc99a90f24c">2005b</a>) and Ariane Je&szlig;ulat (<a href="#je&szlig;ulat_2001" id="citation_je&szlig;ulat_2001_67dc99a90f24f">2001</a>) broaden this primarily structurally oriented understanding of models with their integration of the concept of Topos and therefore a semantic level.</div><div id="fndiv3" class="flyoverdiv"><a href="#schubart_1812" id="citation_schubart_1812_67dc99a90f252">Schubart 1812</a>, 223. For more information on Schubart, see <a href="#sprick_2012" id="citation_sprick_2012_67dc99a90f255">Sprick 2012</a>; <a href="#moreno_2000" id="citation_moreno_2000_67dc99a90f258">Moreno 2000</a>, 133ff.</div><div id="fndiv4" class="flyoverdiv">F&eacute;tis 1844, 253: &ldquo;Il y a de ces progressions qui modulent &agrave; chaque mouvement: il en est d&rsquo;autres qui ne modulent pas. Dans ces derni&egrave;res, l&rsquo;esprit suspend toute id&eacute;e de tonalit&eacute; et de conclusion jusqu&rsquo;&agrave; la cadence finale, en sorte que les degr&eacute;s de la gamme perdent leur caract&egrave;re tonal, l&rsquo;oreille n&rsquo;&eacute;tant pr&eacute;occup&eacute;e que de l&rsquo;analogie du mouvement.&rdquo;</div><div id="fndiv5" class="flyoverdiv">For Gjerdingen&rsquo;s understanding of the filo-principle, see <a href="#gjerdingen_2007a" id="citation_gjerdingen_2007a_67dc99a90f25b">Gjerdingen 2007a</a>, 369.</div><div id="fndiv6" class="flyoverdiv"><a href="#sprick_2014" id="citation_sprick_2014_67dc99a90f25e">Sprick 2014</a> provides a more detailed discussion of the differences between schema theory and Modelltheorie.</div><div id="fndiv7" class="flyoverdiv">Cohn quotes F&eacute;tis&rsquo;s <i>Trait&eacute;</i> from the translation by Peter  Landey (<a href="#f&eacute;tis_2008" id="citation_f&eacute;tis_2008_67dc99a90f262">2008</a>, 27).</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2018 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Sam Reenan, Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		6363
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

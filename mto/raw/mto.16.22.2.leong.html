@@ -1,0 +1,429 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+      
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 22.2: Leong, Analysis and Performance</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Analysis <i>and</i> Performance, or <i>wissen, k&ouml;nnen, kennen</i>">
+
+    <meta name="citation_author" content="Leong, Daphne">
+      
+
+<meta name="citation_publication_date" content="2016/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="22">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+    
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+    <article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Analysis <i>and</i> Performance, or <i>wissen, k&ouml;nnen, kennen</i>
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Daphne Leong</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: analysis, performance, knowledge, score, structure, Shende</font></p><p><font size='4'>ABSTRACT: To counter the view that types of musical analysis not immediately relevant to performers are irrelevant to &#8220;music as performance,&#8221; this essay suggests that music exists in various states, and that changes between such states constitute transformations. Score-based analysis of musical structure and study of musical performance contribute to the understanding of music in this broad sense; analysis and performance dialogue productively when their distinctions as well as their correspondences are valued and interrogated. Analysis and performance exhibit multiple ways of knowing: <i>wissen</i> (knowing that), <i>k&ouml;nnen</i> (knowing how), and <i>kennen</i> (knowing, as in knowing a person). These ways of knowing are shown at play in a rehearsal of Shende&#8217;s <i>Throw Down or Shut Up!</i>.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.16.22.2/mto.16.22.2.leong.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.16.22.2/leong_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2015</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 22, Number 2, June 2016 <br> Copyright &#0169; 2016 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] I write this essay to counter the view that types of musical analysis not immediately relevant to performers are irrelevant to &#8220;music as performance.&#8221; My essay is an argument for collaboration between theorists, musicologists, composers, and performers, with the belief that our distinctive views, even and perhaps particularly when they do not intersect, enrich the study of music in its many forms.</p>
+
+<p>[2] As Nicholas Cook (<a href="#cook_2012" id="citation_cook_2012_67dc9a08924ca">2012</a>, 1&#8211;2) has noted, &#8220;different parts of the anglophone world have come to the study of musical performance from different directions. In the UK, . . . research into music as performance emerged primarily as a result of the convergence of interests between cognitive psychologists and music researchers. . . . In North America, . . . music theorists approached the study of performance by building on established approaches to scores.&#8221; Cook critiques the latter approach in <i>Beyond the Score: Music as Performance</i> (<a href="#cook_2013" id="citation_cook_2013_67dc9a08924cd">2013</a>), questioning the centrality of the score, the emphasis on musical structure, and the relevance of &#8220;theorist&#8217;s analysis&#8221; to &#8220;music as performance&#8221;:</p>
+
+<blockquote>
+    <p>Established theoretical approaches based on score analysis have a part to play in the study of music as performance, though they need to be placed in context and weaned from their traditional fixation with structure (2). The issue . . . is how far the structuralist paradigm, as developed by music theorists, can be an adequate basis for understanding performance (33).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+</blockquote>
+
+<p>[3] Scores are central, though, not just to music theorists, but also to performers. Most performers of Western art music work from scores of some kind, often (particularly if the composer is no longer living) relying upon scores as their primary sources. And scores, without question, play crucial roles in connecting composers, performers, and theorists.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+
+<fig>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Messiaen <i>Quatuor pour la fin du temps</i>, VI, mm. 1&ndash;6</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="leong_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="Leong_Ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[4] Throughout this essay, I will use locutions such as &#8220;score-based structure&#8221; or &#8220;score-based analysis&#8221; as shorthand for score-based analysis of musical structure. I provisionally define score-based analysis as proceeding from, and taking as a primary source, the information encoded in a score. We enter here into tricky terrain. The information encoded in a score can perform diverse functions. A score may include only the information needed by a &#8220;native speaker&#8221; conversant with the style (<i>notes in&eacute;gales</i>, figured bass, mnemonic notations in some of Mozart&#8217;s piano concertos). Or it may attempt to provide as thorough an accounting of musical elements as possible within its notational conventions (by necessity, still incomplete).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Furthermore, this accounting may describe the intended sound and/or the method by which the sound is to be produced. For example, on the modern piano Bach&#8217;s <i>Goldberg Variations&#8212;</i>at least those variations intended for the two-manual harpsichord<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>&#8212;require awkward hand choreography; the pitches and rhythms in the second movement of Webern&#8217;s Piano Variations, op. 27, can be played without the hand-crossings notated by the composer; Ravel&#8217;s <i>Concerto for the Left Hand</i> has been performed (by Alfred Cortot) with two hands, and (by Janina Fialkowska), astonishingly, with the right hand.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> The accounting may obscure, or transparently represent, structural processes. Carter, in his first string quartet (I, mm. 22&#8211;25), for instance, notates distinct concurrent tempi pragmatically within a single common meter; Messiaen&#8217;s barring in the <i>Quartet for the End of Time </i>(VI, mm. 1&#8211;13; see <b>Example 1</b> for mm. 1&#8211;6) bounds gestural units, transmitting the expanding grouping structure. A score, further, can be read and understood in different ways by different actors (composers, musicologists, theorists, performers), in different practical circumstances (writing for oneself, writing for an external reader; solo, chamber, or orchestral performance), and in different stylistic traditions (unmeasured preludes, symphonic poems, new complexity).</p>
+
+
+<p>[5] Music is not only &#8220;music as performance.&#8221; It exists in states that are not, literally, performed: in the composer&#8217;s mind, in a performer&#8217;s imagination, in a listener&#8217;s memory; in a score, as grooves on a wax cylinder, as data in an mp3. Change from one state to another is a <i>transformation,</i> changing the thing, which retains some common identity, from its mode in one domain to that in another. I posit this network view in distinction to a collectional view, in which each of these items forms part of a collection, the whole of which is the &#8220;work&#8221;; or to a <i>Werktreue </i>view, in which scores, performances, recordings are but imperfect representations of an ideal work;<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> or to a strong view of &#8220;music as performance,&#8221; in which works or scores exist to give performers something to perform, and its opposite, music as idealized in scores, in which performers translate scores in attempts to express composers&#8217; intentions.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+
+<p>[6] On this transformational view, then, score-based structural analysis serves the study of <i>music</i>:</p>
+
+<blockquote>
+    <p>It will not do for us to <i>either </i>celebrate structural listening as upholding some criterion of truth <i>or</i> to recoil from its ideology in alarm. While it is true that formal approaches to the study of music are but interpretations, it is worth remembering that the McClary-like negation of all metaphysics, for example, which casts us forever out of the Eden of unmediated truth, is also an interpretation. And while it is true that formal approaches to the study of music inevitably close down various other approaches, it is worth remembering that such closure is a necessary condition for the openings it proffers. (<a href="#scherzinger_2004" id="citation_scherzinger_2004_67dc9a0892540">Scherzinger 2004</a>, 275&#8211;76)</p>
+</blockquote>
+
+<p>The openings proffered by structural analysis depend, in part, on its distinctiveness from other types of musical study.</p>
+
+<p>[7] I am interested, therefore, in how score-based structure relates to music as performance: in the counterpointing of the two and the consonances and dissonances that arise. But I eschew a false dichotomy between structure and sound, between form and grain, between abstract and experienced, between potential and actual, between synchronic and diachronic.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> The two interpenetrate&#8212;&#8220;the coded voice can always be located on a continuum running between the formal and the phenomenal&#8221; (<a href="#toynbee_2003" id="citation_toynbee_2003_67dc9a0892543">Toynbee 2003</a>, 106)&#8212;and critical issues lie in their dynamic and shifting interface. At the end of this essay I will provide an illustration of this interface, viewed through the lenses of different kinds of <i>knowing. </i></p>
+
+<p>[8] If for the moment we assume the value of investigating relationships between score-based analysis of structure and performance broadly defined, the question of <i>means</i> remains. My approach has been to ask what performers make of the relation between analysis and performance. By performers, I do not mean those who are hybrid theorist- or musicologist- performers, or even those performers who research performance. I mean performers from that large majority who do not make researching performance or systematic theoretical study an explicit or habitual part of what they do.</p>
+
+<p>[9] Exploring this question&#8212;performers vis-&agrave;-vis structure&#8212;is at the heart of my forthcoming book. <i>Performing Knowledge</i> takes twentieth-century works as case studies, each study co-authored by me and a different performer. It presents a meeting of cultures&#8212;that of theorist and that of performer&#8212;with particular pieces as the meeting ground. We explore how the composer harnesses instrumental and physical limitations to create structure; how performers create and define structure; how cultural understanding of structure influences interpretation; how stories emerge from structure; how meaning, temporality, and structure intersect; how text, motive, and rhythmic structure intertwine; how an interpretation emerges from the dialogue between analytical and performance concerns; how performance and analysis conflict; and how structural information affects audience reception of a complex modern piece. (From this list it should be clear that I consider &#8220;structure,&#8221; including &#8220;score-based structure,&#8221; to be emergent&#8212;interpretively constructed, with score, sound, and sense as inputs.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>)</p>
+
+<fig>
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. <i>Throw Down or Shut Up!</i> </p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="leong_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="Leong_Ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Shende <i>Throw Down or Shut Up!</i> opening (score in C)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="leong_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="Leong_Ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></fig>
+
+
+<p>[10] As a card-carrying theorist and an active performer myself, I end with one example of the difference between <i>knowing that</i> and <i>knowing how.</i><sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> <b>Example 2</b> shows my quartet, consisting of saxophone, guitar, percussion, and piano. We play cutting-edge new music. The piece after which we are named, Vineet Shende&#8217;s <i>Throw Down or Shut Up!</i>, opens as shown in <b>Example 3.</b></p>
+
+<p>[11] It&#8217;s a tricky opening, very syncopated. The notated pulse is nowhere present. The piano takes the lead, playing a rhythmic pattern for which the counting is written below the staves: <nobr><u>1</u> 2 <u>&amp;</u> 3 e &amp; <u>a</u> 4 e &amp; <u>a</u> 5 <u>&amp;</u> <u>1</u></nobr>. The other instruments each play a single accented note (or two in the case of the vibraphone) in unison with one of the piano notes. The attacks are extremely exposed, and must be hit simultaneously. We were not succeeding.</p>
+
+<p>[12] Structurally what is happening is quite clear. It&#8217;s a subtractive rhythm: 6 then 5 then 4 then 3 then 2 sixteenth notes between attacks. Since we weren&#8217;t hitting the rhythm together, I (in my wisdom as theorist), aware of empirical studies that suggest that metric subdivisions (such as 3e&amp;<u>a</u>) are less directly controlled than beats,<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> proposed that we make the attacks the beats, that is, that we count the subtractive pattern in 16ths (<u>1</u>23456, <u>1</u>2345, <u>1</u>234, <u>1</u>23, <u>1</u>2, <u>1</u>). My fellow quartet members ignored me politely.</p>
+
+<p>[13] It wasn&#8217;t until we had several performances in which we did not hit those notes together that I realized that I was the problem. Counting the subtractive pattern did not help my accuracy. And as a classically trained pianist, I was &#8220;placing&#8221; the syncopations. My fellow musicians, a jazz saxophonist, a guitarist with much crossover experience, and a percussionist, were all laying the subdivisions down exactly. When I finally took a mini-lesson with my percussionist, and started playing the pattern <i>metrically </i>and precisely&#8212;<i>not</i> as a subtractive pattern (in other words, not according to structure)&#8212;we hit it right on every time.</p>
+
+<p>[14] This example gives rise to several issues. 1) The metrical strategy may have succeeded simply because we were all thinking of the pattern in the same way, rather than because it was, intrinsically, a better method. But 2) my reasoning about metric structure was faulty: cognitively it is simpler to entrain to the notated beat (eighth = 160 bpm, or quarter = 80 bpm), than to make the sixteenth-note subdivision (at sixteenth = 320 bpm) the only referent, especially with relatively large and constantly changing numbers of sixteenths. (See, for example, <a href="#london_2012" id="citation_london_2012_67dc9a08925c6">London 2012</a>, 46&#8211;47.) In any case, the strategy that worked for my quartet did indeed run against the motto&#8217;s subtractive structure.</p>
+
+<p>[15] At issue also is, once again, the score and how it is read. I initially understood the marks on the page to mean something different (&#8220;placed&#8221; syncopations) than my fellow quartet members.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> And my conceptual understanding of the passage (subtractive durations) differed from my colleagues&#8217; focus on metric precision. This simple example raises the scores of issues alluded to earlier: how can a score can be read and understood in different ways by different actors, in different practical circumstances, and in different stylistic traditions? It also brings up an issue basic to chamber-music collaboration: how do the individual players in an ensemble understand the musical notation and its implications for their actions and interactions?</p>
+
+<p>[16] In this case, one might ask whether structural understanding was necessary or helpful: it seemed to hinder ensemble performance. But let me put the question another way. Is an accurate rendition sufficient? Necessary, perhaps (although not even&#8212;think of the wonderful 78s recorded by Cortot in which wrong notes feature frequently), but not sufficient. A phonetically accurate execution, without an understanding (implicit or explicit) of an utterance&#8217;s meaning, surely misses the point. And more pragmatically, concept and action leave audible traces.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> Consider, for example, pianist Philip Thomas&#8217;s remarks on metric notation and its effect on sound, in an article co-authored with Eric Clarke, Nicholas Cook, and Bryn Harrison:</p>
+
+<blockquote>
+    <p>He transcribed a section of a performance into something almost as banal as 6/8 and he transcribed it rhythmically as if Ferneyhough&#8217;s notation had no [<i>sic</i>], was just needlessly complex, and it is a completely ridiculous notion, because it&#8217;s as if rhythmic notation affects duration alone, but of course it doesn&#8217;t, and of course if you played his transcription it would sound completely different from what Ferneyhough had written, the effect would be completely different. (<a href="#clarke_et_al_2005" id="citation_clarke_et_al_2005_67dc9a08925ca">Clarke et al. 2005</a>, 45)</p>
+</blockquote>
+
+<p>Cook follows Thomas&#8217;s statement with this comment: &#8220;It would be different . . . not so much because the mathematical relationships would be different from Ferneyhough&#8217;s, but because it would result in a quite different sort of performance event: the sound would be the trace of a quite different human activity&#8221; (45). The different sound (Thomas) results from a different human activity (Cook), which results from a different notation. One could say the same for Webern&#8217;s hand-crossings in Piano Variations op. 27, or Ravel&#8217;s use of the left hand in his <i>Concerto for the Left Hand. </i>Conceptual, physical, aural&#8212;the three cannot be artificially divorced.</p>
+
+<p>[17] In our endeavors as theorists and practicing musicians, there are different kinds of knowledge: if I may borrow German words, <i>wissen</i> (knowing that), <i>k&ouml;nnen</i> (knowing how), and <i>kennen</i> (knowing, as in knowing a person).<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> In terms of <i>knowing that</i>,<i> </i>one understands <i>that</i> Shende&#8217;s opening motto, which recurs and is transformed throughout the work, is a subtractive rhythm. One also hears <i>that</i> it consists of descending and ascending perfect fourths that converge on the final <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>. In terms of <i>knowing how,</i> our playing together required <i>the ability to</i> precisely attack the subdivisions within the notated <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>5</mn></msubsup></math></nobr> meter.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> However, I would argue that playing the motto exactly together without grasping the sense of convergence articulated by both rhythm and pitch (an aspect of the structure) would be to miss the meaning of the gesture<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup>&#8212;<i>knowing it as one would know a person&#8212;</i>and therefore to impoverish the interpretation.</p>
+
+<p>[18] Counterpointing score-based analysis of structure and performance can bring all three types of knowledge into play. This, in part, is what I think score analysis can contribute to performance&#8212;an understanding that goes beyond intuition, that can inform it, and that can be overruled by it; an understanding itself informed by intuition, musical instincts, and all those undefinable aspects of what makes us musicians.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+    
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Daphne Leong<br>
+	University of Colorado Boulder<br>College of Music<br>301 UCB<br>Boulder, Colorado 80309<br><a href="mailto:daphne.leong@colorado.edu">daphne.leong@colorado.edu</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+    
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_carr_1981" class="flyoverdiv">Carr, David. 1981. &#8220;Knowledge in Practice.&#8221; <i>American Philosophical Quarterly</i> 18 (1): 53&#8211;61.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carr_1981"></a>Carr, David. 1981. &#8220;Knowledge in Practice.&#8221; <i>American Philosophical Quarterly</i> 18 (1): 53&#8211;61.</p><div id="citediv_clarke_et_al_2005" class="flyoverdiv">Clarke, Eric, Nicholas Cook, Bryn Harrison, and Philip Thomas. 2005. &#8220;Interpretation and Performance in Bryn Harrison&#8217;s <i>&ecirc;tre-temps.</i>&#8221; <i>Musicae Scientiae</i> 9 (1): 31&#8211;74.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clarke_et_al_2005"></a>Clarke, Eric, Nicholas Cook, Bryn Harrison, and Philip Thomas. 2005. &#8220;Interpretation and Performance in Bryn Harrison&#8217;s <i>&ecirc;tre-temps.</i>&#8221; <i>Musicae Scientiae</i> 9 (1): 31&#8211;74.</p><div id="citediv_cone_1968" class="flyoverdiv">Cone, Edward T. 1968. <i>Musical Form and Musical Performance.</i> Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1968"></a>Cone, Edward T. 1968. <i>Musical Form and Musical Performance.</i> Norton.</p><div id="citediv_cone_1989" class="flyoverdiv">Cone, Edward T. 1989. &#8220;Three Ways of Reading a Detective Story&#8212;Or a Brahms Intermezzo.&#8221; In <i>Music: A View from Delft, </i>77&#8211;94, edited by Robert P. Morgan. University of Chicago Press. Originally published in <i>The Georgia Review</i> 31/3 (1977): 554&#8211;74.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1989"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1989. &#8220;Three Ways of Reading a Detective Story&#8212;Or a Brahms Intermezzo.&#8221; In <i>Music: A View from Delft, </i>77&#8211;94, edited by Robert P. Morgan. University of Chicago Press. Originally published in <i>The Georgia Review</i> 31/3 (1977): 554&#8211;74.</p><div id="citediv_cook_2003" class="flyoverdiv">Cook, Nicholas. 2003. &#8220;Music as Performance.&#8221; In <i>The Cultural Study of Music: A Critical Introduction,</i> edited by Martin Clayton, Trevor Herbert, Richard Middleton, 204&#8211;14. Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_2003"></a>Cook, Nicholas. 2003. &#8220;Music as Performance.&#8221; In <i>The Cultural Study of Music: A Critical Introduction,</i> edited by Martin Clayton, Trevor Herbert, Richard Middleton, 204&#8211;14. Routledge.</p><div id="citediv_cook_2012" class="flyoverdiv">Cook, Nicholas. 2012. &#8220;Introduction: Refocusing Theory.&#8221; Special Issue, &#8220;Analyzing Performance.&#8221;<i> Music Theory Online </i>18 (1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_2012"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2012. &#8220;Introduction: Refocusing Theory.&#8221; Special Issue, &#8220;Analyzing Performance.&#8221;<i> Music Theory Online </i>18 (1).</p><div id="citediv_cook_2013" class="flyoverdiv">Cook, Nicholas. 2013. <i>Beyond the Score: Music as Performance.</i> Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_2013"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2013. <i>Beyond the Score: Music as Performance.</i> Oxford University Press.</p><div id="citediv_crispin_2013" class="flyoverdiv">Crispin, Darla. 2013. &#8220;From Territories to Transformations: Anton Webern&#8217;s Piano Variations Op. 27 as a Case Study for Research in-and-through Musical Practice.&#8221; In <i>Sound and Score: Essays on Sound, Score and Notation,</i> edited by Paulo de Assis, William Brooks, and Kathleen Coessens, 47&#8211;60. Leuven University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="crispin_2013"></a>Crispin, Darla. 2013. &#8220;From Territories to Transformations: Anton Webern&#8217;s Piano Variations Op. 27 as a Case Study for Research in-and-through Musical Practice.&#8221; In <i>Sound and Score: Essays on Sound, Score and Notation,</i> edited by Paulo de Assis, William Brooks, and Kathleen Coessens, 47&#8211;60. Leuven University Press.</p><div id="citediv_dubiel_1992" class="flyoverdiv">Dubiel, Joseph. 1992. &#8220;Three Essays on Milton Babbitt (Part Three).&#8221; <i>Perspectives of New Music</i> 30 (1): 82&#8211;131.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dubiel_1992"></a>Dubiel, Joseph. 1992. &#8220;Three Essays on Milton Babbitt (Part Three).&#8221; <i>Perspectives of New Music</i> 30 (1): 82&#8211;131.</p><div id="citediv_fantl_2014" class="flyoverdiv">Fantl, Jeremy. 2014. &#8220;Knowledge How.&#8221; In <i>The Stanford Encyclopedia of Philosophy</i> (Fall 2014 Edition), edited by Edward Zalta. <a href="http://plato.stanford.edu/archives/fall2014/entries/knowledge-how/">http://plato.stanford.edu/archives/fall2014/entries/knowledge-how/</a>.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fantl_2014"></a>Fantl, Jeremy. 2014. &#8220;Knowledge How.&#8221; In <i>The Stanford Encyclopedia of Philosophy</i> (Fall 2014 Edition), edited by Edward Zalta. <a href="http://plato.stanford.edu/archives/fall2014/entries/knowledge-how/">http://plato.stanford.edu/archives/fall2014/entries/knowledge-how/</a>.</p><div id="citediv_goehr_1992" class="flyoverdiv">Goehr, Lydia. 1992. <i>The Imaginary Museum of Musical Works.</i> Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="goehr_1992"></a>Goehr, Lydia. 1992. <i>The Imaginary Museum of Musical Works.</i> Oxford University Press.</p><div id="citediv_klein_2004" class="flyoverdiv">Klein, Michael. 2004. &#8220;Chopin&#8217;s Fourth Ballade as Musical Narrative.&#8221; <i>Music Theory Spectrum</i> 26 (1): 23&#8211;55.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klein_2004"></a>Klein, Michael. 2004. &#8220;Chopin&#8217;s Fourth Ballade as Musical Narrative.&#8221; <i>Music Theory Spectrum</i> 26 (1): 23&#8211;55.</p><div id="citediv_leong_forthcoming" class="flyoverdiv">Leong, Daphne. Forthcoming. <i>Performing Knowledge: Twentieth-Century Music in Analysis and Performance</i>.<i> </i>Oxford University Press.<i> </i></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="leong_forthcoming"></a>Leong, Daphne. Forthcoming. <i>Performing Knowledge: Twentieth-Century Music in Analysis and Performance</i>.<i> </i>Oxford University Press.<i> </i></p><div id="citediv_leong_and_korevaar_2005" class="flyoverdiv">Leong, Daphne and David Korevaar. 2005. &#8220;The Performer's Voice: Performance and Analysis in Ravel&#8217;s <i>Concerto pour la main gauche</i>.&#8221; <i>Music Theory Online</i> 11 (3). <a href="http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.leong_korevaar.html">http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.leong_korevaar.html</a>.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="leong_and_korevaar_2005"></a>Leong, Daphne and David Korevaar. 2005. &#8220;The Performer's Voice: Performance and Analysis in Ravel&#8217;s <i>Concerto pour la main gauche</i>.&#8221; <i>Music Theory Online</i> 11 (3). <a href="http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.leong_korevaar.html">http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.leong_korevaar.html</a>.</p><div id="citediv_lewin_1986" class="flyoverdiv">Lewin, David. 1986. &#8220;Music Theory, Phenomenology, and Modes of Perception.&#8221; <i>Music Perception</i> 3 (4): 327&#8211;92.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1986"></a>Lewin, David. 1986. &#8220;Music Theory, Phenomenology, and Modes of Perception.&#8221; <i>Music Perception</i> 3 (4): 327&#8211;92.</p><div id="citediv_london_2012" class="flyoverdiv">London, Justin. 2012. <i>Hearing in Time: Psychological Aspects of Musical Meter</i>. 2nd ed<i>.</i> Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="london_2012"></a>London, Justin. 2012. <i>Hearing in Time: Psychological Aspects of Musical Meter</i>. 2nd ed<i>.</i> Oxford University Press.</p><div id="citediv_nettl_2005" class="flyoverdiv">Nettl, Bruno. 2005. <i>The Study of Ethnomusicology: 31 Issues and Concepts</i>. 2nd ed. University of Illinois Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nettl_2005"></a>Nettl, Bruno. 2005. <i>The Study of Ethnomusicology: 31 Issues and Concepts</i>. 2nd ed. University of Illinois Press.</p><div id="citediv_rink_1994" class="flyoverdiv">Rink, John. 1994. &#8220;Chopin&#8217;s Ballades and the Dialectic: Analysis in Historical Perspective.&#8221; <i>Music Analysis</i> 13 (1): 99&#8211;115.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rink_1994"></a>Rink, John. 1994. &#8220;Chopin&#8217;s Ballades and the Dialectic: Analysis in Historical Perspective.&#8221; <i>Music Analysis</i> 13 (1): 99&#8211;115.</p><div id="citediv_ryle_1949" class="flyoverdiv">Ryle, Gilbert. 1949. &#8220;Knowing How and Knowing That.&#8221; Ch. 2 in <i>The Concept of Mind, </i>25&#8211;61<i>.</i> University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ryle_1949"></a>Ryle, Gilbert. 1949. &#8220;Knowing How and Knowing That.&#8221; Ch. 2 in <i>The Concept of Mind, </i>25&#8211;61<i>.</i> University of Chicago Press.</p><div id="citediv_ryle_1971_2009" class="flyoverdiv">Ryle, Gilbert. [1971] 2009. &#8220;Knowing How and Knowing That.&#8221; In <i>Collected Essays 1929&#8211;1968, vol.2, </i>222&#8211;35. Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ryle_1971_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. [1971] 2009. &#8220;Knowing How and Knowing That.&#8221; In <i>Collected Essays 1929&#8211;1968, vol.2, </i>222&#8211;35. Routledge.</p><div id="citediv_scherzinger_2004" class="flyoverdiv">Scherzinger, Martin. 2004. &#8220;The Return of the Aesthetic: Musical Formalism and Its Place in Political Critique.&#8221; In <i>Beyond Structural Listening? Postmodern Modes of Hearing,</i> edited by Andrew Dell&#8217;Antonio, 252&#8211;78. University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scherzinger_2004"></a>Scherzinger, Martin. 2004. &#8220;The Return of the Aesthetic: Musical Formalism and Its Place in Political Critique.&#8221; In <i>Beyond Structural Listening? Postmodern Modes of Hearing,</i> edited by Andrew Dell&#8217;Antonio, 252&#8211;78. University of California Press.</p><div id="citediv_shaffer_1984" class="flyoverdiv">Shaffer, L. Henry. 1984. &#8220;Timing in Solo and Duet Piano Performances.&#8221; <i>The Quarterly Journal of Experimental Psychology</i> 36 (4): 577&#8211;95.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shaffer_1984"></a>Shaffer, L. Henry. 1984. &#8220;Timing in Solo and Duet Piano Performances.&#8221; <i>The Quarterly Journal of Experimental Psychology</i> 36 (4): 577&#8211;95.</p><div id="citediv_small_1998" class="flyoverdiv">Small, Christopher. 1998. <i>Musicking: The Meanings of Performing and Listening.</i> Wesleyan University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="small_1998"></a>Small, Christopher. 1998. <i>Musicking: The Meanings of Performing and Listening.</i> Wesleyan University Press.</p><div id="citediv_stravinsky_1970" class="flyoverdiv">Stravinsky, Igor. 1970. &#8220;The Performance of Music.&#8221; In <i>Poetics of Music,</i> trans. Arthur Knodel and Ingolf Dahl, 161&#8211;81. Harvard University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stravinsky_1970"></a>Stravinsky, Igor. 1970. &#8220;The Performance of Music.&#8221; In <i>Poetics of Music,</i> trans. Arthur Knodel and Ingolf Dahl, 161&#8211;81. Harvard University Press.</p><div id="citediv_toynbee_2003" class="flyoverdiv">Toynbee, Jason. 2003. &#8220;Music, Culture, and Creativity.&#8221; In <i>The Cultural Study of Music,</i> edited by Martin Clayton, Trevor Herbert, and Richard Middleton, 102&#8211;12. Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="toynbee_2003"></a>Toynbee, Jason. 2003. &#8220;Music, Culture, and Creativity.&#8221; In <i>The Cultural Study of Music,</i> edited by Martin Clayton, Trevor Herbert, and Richard Middleton, 102&#8211;12. Routledge.</p><div id="citediv__" class="flyoverdiv"><h3>Recording</h3></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="_"></a><h3>Recording</h3></p><div id="citediv_flexible_music_2009" class="flyoverdiv">Flexible Music (Haruka Fujii, percussion; Eric Huebner, piano; Timothy Ruedeman, saxophones; Daniel Lippel, guitars). 2009. <i>Flexible Music</i>. New Focus Recordings, FCR105 DDD.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="flexible_music_2009"></a>Flexible Music (Haruka Fujii, percussion; Eric Huebner, piano; Timothy Ruedeman, saxophones; Daniel Lippel, guitars). 2009. <i>Flexible Music</i>. New Focus Recordings, FCR105 DDD.</p>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+    	
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> I am grateful to Joel Lester for his perceptive critique of an earlier version of this essay. I also thank Victoria Tzotzkova, John Rink, and the anonymous readers for their helpful comments.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">I am grateful to Joel Lester for his perceptive critique of an earlier version of this essay. I also thank Victoria Tzotzkova, John Rink, and the anonymous readers for their helpful comments.</div><p><a name="FN1">1.</a> Cook categorizes approaches that are primarily out-of-time (&#8220;spatialised, hierarchical&#8221;) as &#8220;theorist&#8217;s analysis,&#8221; and those that are temporally-oriented, non-systematic, and so on, as &#8220;performer&#8217;s analysis&#8221; (<a href="#cook_2013" id="citation_cook_2013_67dc9a088ab5f">2013</a>, 45&#8211;49). However, many theorists&#8217; analyses unfold in time: David Lewin&#8217;s (<a href="#lewin_1986" id="citation_lewin_1986_67dc9a088ab64">1986</a>) treatment of Schubert&#8217;s &#8220;Morgengruss,&#8221; Michael Klein&#8217;s (<a href="#klein_2004" id="citation_klein_2004_67dc9a088ab67">2004</a>) narrative analysis of Chopin&#8217;s fourth ballade, and Joseph Dubiel&#8217;s (<a href="#dubiel_1992" id="citation_dubiel_1992_67dc9a088ab69">1992</a>) discussion of Babbitt&#8217;s <i><i>Canonical Form,</i></i> among a myriad of other examples.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> See Leong (<a href="#leong_forthcoming" id="citation_leong_forthcoming_67dc9a088ab6b">forthcoming</a>) on scores as &#8220;boundary objects.&#8221;<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> I take this distinction from Bruno Nettl&#8217;s (<a href="#nettl_2005" id="citation_nettl_2005_67dc9a088ab6d">2005</a>, 82) discussion of transcription.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> The notation &#8220;a 2 Clav.&#8221; heads eleven of the variations.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> <a href="#crispin_2013" id="citation_crispin_2013_67dc9a088ab70">Crispin 2013</a> (54&#8211;56) discusses ethical principles implicated in performers&#8217; choices for the Webern hand-crossings; see <a href="#leong_and_korevaar_2005" id="citation_leong_and_korevaar_2005_67dc9a088ab72">Leong and Korevaar 2005</a> ([22] and n17) on Ravel&#8217;s <i>Concerto for the Left Hand</i>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> <a href="#goehr_1992" id="citation_goehr_1992_67dc9a088ab74">Goehr 1992</a> provides a historical exposition of the concept of the musical work, touching also upon the emergence of music analysis (239).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> On the first view, see, for example, <a href="#small_1998" id="citation_small_1998_67dc9a088ab76">Small 1998</a>, 218: &#8220;Music is performance, and pieces, or works, of music . . . exist in order to give performers something to perform. Unperformed, only the instructions for performance exist.&#8221; <a href="#stravinsky_1970" id="citation_stravinsky_1970_67dc9a088ab78">Stravinsky 1970</a> articulates the second view.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> On the last, see Cone <a href="#cone_1989" id="citation_cone_1989_67dc9a088ab7a">1989</a> and <a href="#cone_1968" id="citation_cone_1968_67dc9a088ab7c">1968</a>, 88&#8211;98 (&#8220;On Two Modes of Esthetic Perception&#8221;).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> See also <a href='mto.16.22.2.binder.html'>Benjamin Binder&#8217;s essay</a> in this issue of <i>Music Theory Online</i>.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> This distinction is Gilbert Ryle&#8217;s (<a href="#ryle_1949" id="citation_ryle_1949_67dc9a088ab7e">1949</a>, <a href="#ryle_1971_2009" id="citation_ryle_1971_2009_67dc9a088ab80">2009</a>).<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> See, for example, <a href="#shaffer_1984" id="citation_shaffer_1984_67dc9a088ab82">Shaffer 1984</a>, 580: &#8220;The theory assumes two degrees of freedom in producing musical rhythm, one in timing the metre and the other in timing notes in relation to the metre.&#8221;<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Shende&#8217;s indication, &#8220;With Rhythmic Precision,&#8221; should have informed me otherwise.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Not to mention visual traces in performance.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Thanks to David Barnett for bringing this elegant encapsulation of three ways of knowing to my attention. John Rink (<a href="#rink_1994" id="citation_rink_1994_67dc9a088ab84">1994</a>, 112) refers to the French <i>savoir</i> and <i>conna&icirc;tre</i> in connection to analysis and performance.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> While closely related, <i>knowing how</i> and ability cannot be equated. See, for example, <a href="#carr_1981" id="citation_carr_1981_67dc9a088ab85">Carr 1981</a>, or <a href="#fantl_2014" id="citation_fantl_2014_67dc9a088ab88">Fantl 2014</a>, 2.1.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Or <i>a</i> meaning of the gesture.<br><a href="#FN16REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Cook categorizes approaches that are primarily out-of-time (&#8220;spatialised, hierarchical&#8221;) as &#8220;theorist&#8217;s analysis,&#8221; and those that are temporally-oriented, non-systematic, and so on, as &#8220;performer&#8217;s analysis&#8221; (<a href="#cook_2013" id="citation_cook_2013_67dc9a088ab5f">2013</a>, 45&#8211;49). However, many theorists&#8217; analyses unfold in time: David Lewin&#8217;s (<a href="#lewin_1986" id="citation_lewin_1986_67dc9a088ab64">1986</a>) treatment of Schubert&#8217;s &#8220;Morgengruss,&#8221; Michael Klein&#8217;s (<a href="#klein_2004" id="citation_klein_2004_67dc9a088ab67">2004</a>) narrative analysis of Chopin&#8217;s fourth ballade, and Joseph Dubiel&#8217;s (<a href="#dubiel_1992" id="citation_dubiel_1992_67dc9a088ab69">1992</a>) discussion of Babbitt&#8217;s <i><i>Canonical Form,</i></i> among a myriad of other examples.</div><div id="fndiv2" class="flyoverdiv">See Leong (<a href="#leong_forthcoming" id="citation_leong_forthcoming_67dc9a088ab6b">forthcoming</a>) on scores as &#8220;boundary objects.&#8221;</div><div id="fndiv3" class="flyoverdiv">I take this distinction from Bruno Nettl&#8217;s (<a href="#nettl_2005" id="citation_nettl_2005_67dc9a088ab6d">2005</a>, 82) discussion of transcription.</div><div id="fndiv4" class="flyoverdiv">The notation &#8220;a 2 Clav.&#8221; heads eleven of the variations.</div><div id="fndiv5" class="flyoverdiv"><a href="#crispin_2013" id="citation_crispin_2013_67dc9a088ab70">Crispin 2013</a> (54&#8211;56) discusses ethical principles implicated in performers&#8217; choices for the Webern hand-crossings; see <a href="#leong_and_korevaar_2005" id="citation_leong_and_korevaar_2005_67dc9a088ab72">Leong and Korevaar 2005</a> ([22] and n17) on Ravel&#8217;s <i>Concerto for the Left Hand</i>.</div><div id="fndiv6" class="flyoverdiv"><a href="#goehr_1992" id="citation_goehr_1992_67dc9a088ab74">Goehr 1992</a> provides a historical exposition of the concept of the musical work, touching also upon the emergence of music analysis (239).</div><div id="fndiv7" class="flyoverdiv">On the first view, see, for example, <a href="#small_1998" id="citation_small_1998_67dc9a088ab76">Small 1998</a>, 218: &#8220;Music is performance, and pieces, or works, of music . . . exist in order to give performers something to perform. Unperformed, only the instructions for performance exist.&#8221; <a href="#stravinsky_1970" id="citation_stravinsky_1970_67dc9a088ab78">Stravinsky 1970</a> articulates the second view.</div><div id="fndiv8" class="flyoverdiv">On the last, see Cone <a href="#cone_1989" id="citation_cone_1989_67dc9a088ab7a">1989</a> and <a href="#cone_1968" id="citation_cone_1968_67dc9a088ab7c">1968</a>, 88&#8211;98 (&#8220;On Two Modes of Esthetic Perception&#8221;).</div><div id="fndiv9" class="flyoverdiv">See also <a href='mto.16.22.2.binder.html'>Benjamin Binder&#8217;s essay</a> in this issue of <i>Music Theory Online</i>.</div><div id="fndiv10" class="flyoverdiv">This distinction is Gilbert Ryle&#8217;s (<a href="#ryle_1949" id="citation_ryle_1949_67dc9a088ab7e">1949</a>, <a href="#ryle_1971_2009" id="citation_ryle_1971_2009_67dc9a088ab80">2009</a>).</div><div id="fndiv11" class="flyoverdiv">See, for example, <a href="#shaffer_1984" id="citation_shaffer_1984_67dc9a088ab82">Shaffer 1984</a>, 580: &#8220;The theory assumes two degrees of freedom in producing musical rhythm, one in timing the metre and the other in timing notes in relation to the metre.&#8221;</div><div id="fndiv12" class="flyoverdiv">Shende&#8217;s indication, &#8220;With Rhythmic Precision,&#8221; should have informed me otherwise.</div><div id="fndiv13" class="flyoverdiv">Not to mention visual traces in performance.</div><div id="fndiv14" class="flyoverdiv">Thanks to David Barnett for bringing this elegant encapsulation of three ways of knowing to my attention. John Rink (<a href="#rink_1994" id="citation_rink_1994_67dc9a088ab84">1994</a>, 112) refers to the French <i>savoir</i> and <i>conna&icirc;tre</i> in connection to analysis and performance.</div><div id="fndiv15" class="flyoverdiv">While closely related, <i>knowing how</i> and ability cannot be equated. See, for example, <a href="#carr_1981" id="citation_carr_1981_67dc9a088ab85">Carr 1981</a>, or <a href="#fantl_2014" id="citation_fantl_2014_67dc9a088ab88">Fantl 2014</a>, 2.1.</div><div id="fndiv16" class="flyoverdiv">Or <i>a</i> meaning of the gesture.</div>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+    <hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2016 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+    	
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Senior Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		13219
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

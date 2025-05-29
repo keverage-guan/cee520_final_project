@@ -1,0 +1,437 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 18.3: Peck, Review of Rings</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Steven Rings, <i>Tonality and Transformation</i> (Oxford University Press, 2011)">
+
+    <meta name="citation_author" content="Peck, Robert">
+      
+
+<meta name="citation_publication_date" content="2012/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="18">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Steven Rings, <i>Tonality and Transformation</i> (Oxford University Press, 2011)
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Robert Peck</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: transformational theory, generalized interval systems, transformational networks, tonal analysis, J. S. Bach, Mozart, Brahms<br/><br/>Editor&#8217;s Note: Matthew Shaftel served as guest editor on this review.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.12.18.3/mto.12.18.3.peck.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2012</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 18, Number 3, September 2012 <br> Copyright &#0169; 2012 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+
+<p>[1] <i>Tonality and Transformation</i> (henceforth T&amp;T) by Steven Rings is a remarkable scholarly achievement, and a valuable contribution to the Oxford Studies in Music Theory series. It examines an impressively broad range of topics in tonal music through the lens of transformational theory. Rings&#8217;s clear and engaging exposition makes evident and accessible the book&#8217;s broader objectives, as well its considerable subtleties, while also drawing the reader into its in-depth exploration of theoretical models and analytical examples. Interspersed with short analytical vignettes, the first half of the book puts forth the conceptual framework and transformational technology that is employed in the second half, which consists of four analytical essays that explore complete works (or extensive, self-contained sections of works) by Bach, Mozart, and Brahms. The book also contains a helpful eight-page glossary of technical terms relating to transformational theory and abstract algebra.</p>
+
+<p>[2] T&amp;T fills a surprising lacuna in the music-theoretical literature. It reconciles more familiar aspects of tonal analysis&#8212;including Schenkerian theory and diatonic and chromatic functional harmony&#8212;with transformational theories, bridging the gap that results from &#8220;a degree of antagonism between adherents of the two methods&#8221; (35).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Whereas T&amp;T presupposes a general working knowledge of the former, it includes introductory material relating to the latter (particularly in Chapter 1). It is consequently appropriate for readers who are well trained in tonal analytical methods, but who may not have had much exposure to the substance of, or the underlying mathematics behind, the work of David Lewin and his followers. Whether specialists in transformational theory or not, however, readers will derive a fresh outlook on tonal music from Rings&#8217;s approach.</p>
+
+<p>[3] T&amp;T is certainly not the first book (or article or dissertation) to investigate tonal music from a transformational perspective. Lewin&#8217;s <i>Generalized Musical Intervals and Transformations</i> (<a href="#lewin_1987" id="citation_lewin_1987_67dc9aa1e1349">1987</a>) incorporates several examples from a variety of tonal composers, ranging from Bach to Wagner. The neo-Riemannian branch of transformational theory that Lewin&#8217;s work engendered, furthered by Richard Cohn, Brian Hyer, and other authors, deals nearly exclusively with tonal&#8212;albeit often chromatic&#8212;repertoire. Similarly, many extensions to neo-Riemannian theory, such as Julian Hook&#8217;s dissertation &#8220;Uniform Triadic Transformations&#8221; (<a href="#hook_2002a" id="citation_hook_2002a_67dc9aa1e134c">2002a</a>) and the <i>Journal of Music Theory</i> article to which it led (<a href="#hook_2002b" id="citation_hook_2002b_67dc9aa1e134e">2002b</a>), address primarily tonal repertoire. However, as he points out in the introduction to T&amp;T, Rings&#8217;s work is not about &#8220;connect[ing] neo-Riemannian theory more fruitfully to traditional ideas about tonal music,&#8221; even if that was the volume&#8217;s original intention (1). Instead, it is &#8220;an exploration of the ways in which transformational and GIS technologies may be used to model diverse tonal effects and experiences&#8221; (1). This agenda is a distinguishing feature of Rings&#8217;s contribution, as is the considerable expertise that he brings to it from other disciplines, particularly from philosophy and perception.</p>
+
+<p>[4] For a book like T&amp;T to succeed in its stated regard, it is nevertheless necessary for it to demonstrate how the transformational approach it endorses offers an account of tonal phenomena that adds meaningfully to the present understanding. For example, how do the intervals included in its Generalized Interval System (GIS) relate to and further existing notions of intervals in (tonal) music?<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> What can the theory espoused in the book say about standing problematic or ambiguous harmonic successions in tonal analysis? Is it evident whether the theory it offers is sufficiently general&#8212;and the musical examples it incorporates adequately inclusive of representative situations&#8212;that the reader may apply its concepts usefully elsewhere; or, rather, is it clear and appropriate if these things are singularly defined? In general, it meets these challenges, 
+and Rings situates his original contributions effectively in the framework of current thinking.</p>
+
+<p>[5] A brief introduction opens the book. It establishes the context and purpose of the study, in the process of which it describes some inherent problems with the term &#8220;tonality&#8221; itself. The first three chapters form Part I: Theory and Methodology. Chapter 1 presents a succinct and cogent introduction to Lewinian transformational theory. It describes the elements and concepts behind GISes and transformational networks, and speaks briefly of the special conditions under which they may be viewed as two sides of the same coin. Chapter 1 also includes the first two analytical vignettes: brief excerpts from the Prelude to Bach&#8217;s Cello Suite in G and the second movement of Schubert&#8217;s Piano Sonata, D. 664. It returns to these pieces at the end of the chapter as well, in its comparison of transformational and Schenkerian analytical techniques.</p>
+
+<p>[6] The second chapter presents the fundamental GIS for the remainder of the book, GIS<sub>Tonal</sub>. The space for GIS<sub>Tonal</sub> consists of the eighty-four pairings of seven scale-degree quale and twelve chromatic pitch classes, the so-called &#8220;heard scale degrees&#8221; (43&#8211;44). For instance, the pitch class 7 might serve as scale degree <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> (as in its relation to a tonic pitch class 0). This hearing appears in Rings&#8217;s (sd, pc) notation as (<span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>, 7). That same pitch class might be heard as scale degree <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span> in another context&#8212;i.e., (<span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>, 7)&#8212;or as any other scale degree in various appropriate contexts. Intervals in this GIS also take the form of pairs: ordered sets of scale-degree intervals and pitch-class intervals. For example, (3rd, 2) is the interval from heard scale degree (<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, 0) to (<span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>, 2). That is, (3rd, 2) carries pitch class 0 when it functions as scale degree <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> (as in the key of C major) to pitch class 2 when it acts as scale degree <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span> (as in B-flat major). <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> moves by 3rd to scale degree <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>, and pitch class 0 moves by +2 to 2. Such intervals form a mathematical group that has the structure of a direct product of a cyclic group of order 7 by a cyclic group of order 12, or 
+<img border="0" src="../../gifs/z.png" width="9" height="11">7 &times; 
+<img border="0" src="../../gifs/z.png" width="9" height="11">12. Rings goes on to identify five classes of canonical operations that act on the space of heard scale degrees. These operations may combine in various ways to form group structures: diatonic transposition, chromatic transposition, and real transposition, as well as diatonic inversion and chromatic inversion. The chapter concludes with a brief discussion of some of the formal limitations of the GIS, particularly in combining diatonic and chromatic operations in a single transformational network. At the beginning of the chapter, before launching into the technicalities of GIS<sub>Tonal</sub>, Rings discusses the aural phenomena that give rise to this theoretical construct, a description to which he returns frequently in the course of the chapter, particularly in the analytical vignettes on excerpts from Wagner&#8217;s <i>Parsifal</i>, Mahler&#8217;s <i>Das Lied von der Erde</i>, and Mendelssohn&#8217;s <i>Song without Words</i>, op. 19b, no.1. In this same way, virtually all abstract concepts presented in Part I of the text are linked to attendant aural experience. </p>
+
+<p>[7] Chapter 3 shifts from the observational, GIS-based model of the previous chapter to one more active, based on oriented transformational networks. This change in attitude parallels Lewin&#8217;s transition in GMIT, though to somewhat different ends. Arrows in the transformational networks introduced here reflect tonal motion, leading away from, and ultimately to, the tonic. Rings asks the question (105): &#8220;How might we <i>perform</i> . . . tonic-directed arrows when we are in contact with the relevant music?&#8221;<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> The first part of the chapter situates an answer to this question in the context of &#8220;tonal intention&#8221; (105), the philosophical and historical aspects of which Rings discusses at length. The chapter proceeds with a detailed explanation of basic concepts of graph theory that are relevant to the networks employed, followed by a short discussion of Riemannian functions (not to be confused with neo-Riemannian <i>Schritt</i> and <i>Wechsel</i> operations). Next, the chapter constructs networks in which nodes are populated by (sd, pc) pairs, and arrows are labeled initially in the group of GIS<sub>Tonal</sub> intervals, and later with &#8220;resolving transformations&#8221;: transformations that model the pull of certain heard scale degrees to their intended resolutions (125). Two analytical vignettes follow. The first presents a short excerpt from Brahms&#8217;s Intermezzo, op. 119, no. 2; it juxtaposes (sd, pc) networks that model the kinetics of Riemannian and neo-Riemannian hearings of that passage. The second examines two statements of the &#8220;Rheingold!&#8221; motive from Wagner&#8217;s <i>Das Rheingold</i>: one from Scene 1, and the other from the end of the opera. This vignette uses networks to illustrate the tonal intentions of various scale degrees in these instances of the motive, as well as the relationship of the two passages in their respective orientations to the Rheingold itself and to Valhalla. The chapter concludes with a comparison of event networks (those in which nodes occupy different temporal locations) and spatial networks (those in which arrows are labeled more abstractly), and a revisiting of Schenkerian intentions in light of the previous material.</p>
+
+<p>[8] Part II of T&amp;T contains four analytical essays, each comprising one chapter. Chapter 4 presents the first of these essays; it examines the Fugue in E major from Book II of Bach&#8217;s <i>Well-Tempered Clavier</i>, BWV 878. Rings concentrates primarily on instances of the fugue&#8217;s <i>stile antico</i> subject and the diatonic tetrachord that it outlines, both of which appear in a relatively wide range of diatonic and chromatic settings. Sensitivity to these varying contexts makes this example particularly well suited to analysis using GIS<sub>Tonal</sub>. As Rings states, &#8220;If we listen to Bach&#8217;s fugue in this way, we become attentive to the myriad ways in which its chameleon-like subject can take on the hues of its shifting tonal surroundings&#8221; (158). The discussion offers logical and musical explanations for details of the fugue&#8217;s construction, including its multiple stretti and its form in general. </p>
+
+<p>[9] Chapter 5 presents an analysis of Ferrando&#8217;s aria &#8220;Un&#8217;aura amorosa,&#8221; from Act I of Mozart&#8217;s <i>Cos&igrave; fan tutte</i>. It is the one chapter in Part II that does not contain an annotated score following the text.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Rather than examining the whole aria, the analysis presented here deals primarily with the non-modulatory first section of its simple, A-major ternary form. In particular, it focuses initially on two central features of this section, and later applies salient implications of the analysis to a discussion of the aria as a whole and its place within the opera. In contrast to the primarily horizontal, melodic analysis of the fugue subject in the preceding chapter, and its emphasis on the adaptability of the subject&#8217;s head motive to varying scale-degree contexts, the analysis here addresses issues of greater harmonic ambiguity, especially among the harmonies that support recurrences of the sung <i>Kopft&ouml;ne</i> in the aria&#8217;s first five phrases and the deceptive resolutions that mark the last two of those phrases (relating back to the &#8220;Cos&igrave; fan tutte&#8221; motto from the overture). Rings makes full use of the broad generality of transformational networks to illustrate a variety of facets of the music in his analyses&#8212;ranging from &#8220;a sort of transformational figured bass&#8221; (174) in Figure 5.2 to &#8220;a series of local networks, which unfold like a string of intentional snapshots&#8221; (177) in Figure 5.5. The analysis leads ultimately to some profound insights into the nature of Ferrando&#8217;s emotions and the relationship between Da Ponte&#8217;s libretto and Mozart&#8217;s music.</p>
+
+<p>[10] The last two chapters of T&amp;T explore works by Brahms. Chapter 6 considers the A section of the Intermezzo in A major, op. 118, no. 2, a piece that has previously attracted significant music-theoretical attention&#8212;including from Schenker, underpinnings of whose analysis are frequently brought into dialogue with Rings&#8217;s own hearing. This chapter brings matters of form to the fore, especially regarding repercussions of certain details of the opening &alpha; and &beta; motives (<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>5&#8211;B4&#8211;D5 and <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>5&#8211;B4&#8211;A5, respectively) on the A section&#8217;s lyric binary form (aaba&#8242;). 
+It also addresses aspects of meter more thoroughly than the earlier chapters. 
+For example, Rings demonstrates how the d&eacute;nouement of the b section&rsquo;s metric 
+ambiguity corresponds to a growing harmonic expectation of a downbeat A, both of 
+which are thwarted: &ldquo;At this point [measure 29] the harmony is deflected to D, 
+in a grand apotheosis of the D-instead-of-A idea that has been at work since the 
+opening of the piece. The deflection to D coincides with a return of metric 
+dissonance&rdquo; (196). Schenker gives the onset of a&#8242; at this moment, with the 
+restatement of the &#945; and &#946; motives at pitch. Rings, on the other hand, argues 
+for an alternate hearing that privileges measure 35 with this formal function. 
+Here, &#945; and &#946; are replaced by their images under the diatonic inversion
+<img border="0" src="../../gifs/I21.png" width="12" height="23" align="absbottom"> that maps the heard scale degrees of the motives to one another. Rings goes on to provide a compelling Schenkerian context for this hearing. Chapter 6 also invokes the notion of sd/pc paths introduced in Chapter 2, rather than relying exclusively on GIS<sub>Tonal</sub> intervals. For instance, the resolution of B4 to A5 that follows the piece&#8217;s opening <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>5&#8211;B4 descent is given as (7th, 10), not (2nd<sup>&minus;1</sup>, &minus;2). Ultimately, however, Rings notes, &#8220;Brahms&#8217;s conclusion elegantly demonstrates the algebraic identity of (2nd<sup>&minus;1</sup>, &minus;2) and (7th, 10) within our GIS, as (<span style='font-size:0.8em'><math><mover><mn>2</mn><mo>&#710;</mo></mover></math></span>, B) proceeds to (<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, A) via <i>both</i> paths&#8221; (202).</p>
+
+<p>[11] Chapter 7 presents an analysis of the second movement (&#8220;Adagio&#8221;) of Brahms&#8217;s String Quintet in G major, op. 111, the form of which Rings gives as a set of five variations without a preliminary thematic presentation, in the manner of Gypsy <i>hallgat&oacute;</i> fiddle playing. Each variation contains three modules, labeled here A through C; the subsequent analysis focuses largely on the two-measure motto that characterizes Module A. Rings discusses Schenkerian and Riemannian readings of the motto, with particular emphasis on its tonal ambiguity: is it a back-relating i&ndash;V 
+in the key of D minor, or a forward-oriented iv&ndash;I in the key of A major? Figures 
+7.2(g) and (h) provide heard-scale-degree networks of these two hearings, which 
+retrograde-invert under the diatonic inversion
+<img border="0" src="../../gifs/I1a5a.png" width="34" height="27" align="absbottom">. Rings proceeds to demonstrate similar melodic inversions in the cello line, and, in related terms, [014] trichords in the viola part that derive from the Gypsy scale E&#8211;F&#8211;<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&#8211;A&#8211;<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&#8211;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&#8211;D, which has the same bifocal tonal ambiguity as the motto itself. Variation 1 continues in a manner that pulls toward the interpretation of A as a local tonic. Its Module B incorporates a more Western setting, and Module C presents a return to the <i>style hongrois</i> topic.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> The next two variations deviate little from the forward-oriented-subdominant hearing that Rings proposes for the first variation. Following the massive A dominant in Variation 4, however, the first significant change in the motto&#8217;s orientation occurs. In Figure 7.15, Variation 5 appears as a node in a transformational network, connected by an arrow emanating from Variations 1 and 2 that represents the (retrograding) pitch-class inversion 
+<img border="0" src="../../gifs/Iaa.png" width="15" height="19" align="absbottom">(Ret) (as well as by an arrow from Variation 3 that represents 
+<img border="0" src="../../gifs/Iad.png" width="15" height="19" align="absbottom">(Ret)). Accordingly, this node contains the back-relating i&#8211;V progression that underscored the tonal ambiguity of the movement&#8217;s first two measures. However, Rings demonstrates how the final measures call this hearing into question. Challenging Agawu&#8217;s assertion that ambiguous tonal structures move irrevocably toward clarity, Rings maintains, &#8220;the two hearings are . . . brought into equilibrium&#8212;Brahms makes it impossible for us to choose which intentional structure the motto &#8216;really&#8217; manifests&#8221; (218). A brief afterword follows Chapter 7, in which Rings gives a summarizing account of the preceding analyses, and suggests some possible areas for future work. It returns to the discussion of analytical pluralism from Chapter 1 (in the earlier comparison with Schenkerian theory), furthering its justification for a pluralistic approach to tonal music in particular. </p>
+
+<p>[12] Rings has set a substantial agenda for T&amp;T; it offers a detailed theoretical construct (albeit one patterned largely on previous work in transformational theory), and seeks to demonstrate that apparatus&#8217;s value through application in a variety of analytical examples. Further, Rings argues that a single analytical method cannot capture the myriad facets of tonal experience. Therefore, his exposition also invokes, and makes frequent comparisons with, results that derive from other approaches&#8212;some of which have lengthy and multifaceted heritages of their own. Such a program is a tall order for a book with just under 250 pages; it runs the risk of being either cursory or impenetrable. In fact, Rings is able to accommodate a tremendous amount of information in a relatively compact space. Fortunately, due to his eloquent writing style, T&amp;T does not come across as being dense. Its tone is conversational with an erudite and sophisticated manner. The reader will benefit from multiple readings, and will no doubt extract new insights on each subsequent pass.</p>
+
+<p>[13] Throughout the text, as in the afterword, Rings suggests some areas for further study. In particular, he notes the lack of existing mathematics to explain the transformational networks he employs that include arrows with labels in different groups. He suggests that &#8220;formal extension and clarification of this and other matters can proceed in tandem with analytical application&#8212;the latter need not wait for the former. . . . Those interested in pursuing formal matters in greater depth will deepen our understanding of the &#8216;shape&#8217; of the resulting tonal apperceptions&#8221; (221), stopping short of actually calling for the development of these new mathematics. Instead, the area for future work that Rings emphasizes most is application. The analytical examples included in T&amp;T are only a small sampling of tonal music; a vast array of tonal experiences remains to be explored with these techniques. If the methodology presented here is supple enough&#8212;and this reader believes that it is&#8212;it will add meaningfully to our present understanding of tonality with each mindful application.</p>
+
+<p>[14] No single text can address every secondary avenue suggested by its primary material, and Rings generally does a good job of tying together the many strands of related research that T&amp;T incorporates. Nevertheless, certain areas might have received more attention. For example, a sizeable body of previous work&#8212;including recent work&#8212;in diatonic scale theory examines the extraordinary embedding of the seven-note diatonic collection in the twelve-note chromatic collection. These sets and their relations to one another are of central importance to the space of GIS<sub>Tonal</sub>. However, Rings only briefly mentions some older, related works in the field, seminal though they are: <a href="#clough_and_myerson_1985" id="citation_clough_and_myerson_1985_67dc9aa1e1388">Clough and Myerson 1985</a> and <a href="#clough_and_douthett_1991" id="citation_clough_and_douthett_1991_67dc9aa1e138a">Clough and Douthett 1991</a> (T&amp;T, 45). Another minor criticism has to do with the notation of some GIS members, which lacks the precision that characterizes most of the text. The notation of a heard scale degree situates a scale-degree qualia in the first coordinate of a (sd, pc) pair: for instance, the (sd, pc) pair (<nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><span style='font-size:0.8em'><math><mover><mn>6</mn><mo>&#710;</mo></mover></math></span>, F) in Figure 7.2(h) indicates that the pitch class F serves as the flatted sixth scale degree (in the key of A major). However, the structure of heard-scale-degree space is given earlier in the text as &#x2124;7 &times; &#x2124;12; accordingly, the first coordinate of a (sd, pc) pair has an image in the integers modulo 7. As such, there is no distinction algebraically between inflected versions of any one qualia.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> The notation is residual of a larger, more chromatic set, which is fine in itself, but it does not agree with the description of the structure of the space.</p>
+
+<p>[15] In short, T&amp;T furthers current understandings of both <i>tonality</i> and <i>transformation</i>. In the process, it animates the time-honored approaches to tonal analysis with a new perspective, while also bringing their enduring concepts to the attention of transformational theorists. Moreover, it serves as a model for younger scholars who endeavor to situate their own ideas in relation to long standing and/or newly-emerging discourses. This reader highly recommends T&amp;T to specialists in both tonal theory and transformational theory, as well as to music scholars whose areas of expertise lie in other areas.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Robert Peck<br>
+	Louisiana State University<br>School of Music<br>Baton Rouge, LA 70803<br><a href="mailto:rpeck@lsu.edu">rpeck@lsu.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_clough_and_douthett_1991" class="flyoverdiv">Clough, John, and Jack Douthett. 1991. &#8220;Maximally Even Sets.&#8221; <i>Journal of Music Theory</i> 35, nos. 1&#8211;2: 93&#8211;173.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_douthett_1991"></a>Clough, John, and Jack Douthett. 1991. &#8220;Maximally Even Sets.&#8221; <i>Journal of Music Theory</i> 35, nos. 1&#8211;2: 93&#8211;173.</p><div id="citediv_clough_and_myerson_1985" class="flyoverdiv">Clough, John, and Gerald Myerson. 1985. &#8220;Variety and Multiplicity in Diatonic Systems.&#8221; <i>Journal of Music Theory</i> 29, no. 2: 249&#8211;70.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_myerson_1985"></a>Clough, John, and Gerald Myerson. 1985. &#8220;Variety and Multiplicity in Diatonic Systems.&#8221; <i>Journal of Music Theory</i> 29, no. 2: 249&#8211;70.</p><div id="citediv_hook_2002a" class="flyoverdiv">Hook, Julian. 2002a. &#8220;Uniform Triadic Transformations.&#8221; PhD diss., Indiana University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2002a"></a>Hook, Julian. 2002a. &#8220;Uniform Triadic Transformations.&#8221; PhD diss., Indiana University.</p><div id="citediv_hook_2002b" class="flyoverdiv">Hook, Julian. 2002b. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 46, nos. 1&#8211;2: 57&#8211;126.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2002b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002b. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 46, nos. 1&#8211;2: 57&#8211;126.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Specifically, Rings is speaking here of a certain antagonism between practitioners of Schenkerian and neo-Riemannian theories, though one might argue that this resistance extends frequently to respective devotees of long-standing forms of tonal analysis and transformational theories in general.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> A Generalized Interval System (henceforth GIS) consists of an ordered triple: a set of musical objects, a group of intervals, and a function that relates the former unambiguously to the latter. Specifically regarding this function, one and only one such interval exists between any two elements in the set. For more information, see section 1.2 of the Rings text.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Rings acknowledges that his answer to this question may not necessarily be the same as Lewin&#8217;s.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Figure 5.1 provides an annotated version of the vocal line and (figured) bass for five of the A section&#8217;s phrases, presenting the music on which the chapter focuses.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Rings stops short of offering any further ethnicity-based account of the movement.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> This situation differs structurally from the acceptance of enharmonic equivalence in the letter-name notation of pitch classes in the (sd, pc) pair&#8217;s second coordinate, which does not result in the same imprecision.<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Specifically, Rings is speaking here of a certain antagonism between practitioners of Schenkerian and neo-Riemannian theories, though one might argue that this resistance extends frequently to respective devotees of long-standing forms of tonal analysis and transformational theories in general.</div><div id="fndiv2" class="flyoverdiv">A Generalized Interval System (henceforth GIS) consists of an ordered triple: a set of musical objects, a group of intervals, and a function that relates the former unambiguously to the latter. Specifically regarding this function, one and only one such interval exists between any two elements in the set. For more information, see section 1.2 of the Rings text.</div><div id="fndiv3" class="flyoverdiv">Rings acknowledges that his answer to this question may not necessarily be the same as Lewin&#8217;s.</div><div id="fndiv4" class="flyoverdiv">Figure 5.1 provides an annotated version of the vocal line and (figured) bass for five of the A section&#8217;s phrases, presenting the music on which the chapter focuses.</div><div id="fndiv5" class="flyoverdiv">Rings stops short of offering any further ethnicity-based account of the movement.</div><div id="fndiv6" class="flyoverdiv">This situation differs structurally from the acceptance of enharmonic equivalence in the letter-name notation of pitch classes in the (sd, pc) pair&#8217;s second coordinate, which does not result in the same imprecision.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2012 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="8309988"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="f97b4abf"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/8309988/0/f97b4abf/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

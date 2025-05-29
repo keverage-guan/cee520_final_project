@@ -1,0 +1,1051 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 8.3: Dineen, Figured Bass and Modulation</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Figured Bass and Modulation: The <i>Wiener-Tonschule</i> of Joseph Preindl">
+
+    <meta name="citation_author" content="Dineen, Murray">
+      
+
+<meta name="citation_publication_date" content="2002/10/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="8">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Figured Bass and Modulation: The <i>Wiener-Tonschule</i> of Joseph Preindl
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.02.8.3/mto.02.8.3.dineen.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Murray Dineen</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: history of theory, Preindl, figured bass, modulation, harmony</font></p><p><font size='4'>ABSTRACT: Why and how should a figured-bass treatise account for modulation? These two questions will be addressed with reference to the treatise <i>Wiener-Tonschule; oder Anweisung zum Generalba&szlig;e, zur Harmonie, zum Contrapuncte und der Fugen-lehre</i> (1827), by the Viennese theorist Joseph Preindl (1756&ndash;1823). To answer the question &ldquo;Why?&rdquo;: a figured-bass treatise such as Preindl&rsquo;s might have accounted for modulation as a means to facilitate improvisation of preludes or fantasies, and it might have done so under the developing influence of northern Teutonic theorists of modulation such as Gottfried Weber and Abbe Vogler. To answer the question &ldquo;How?&rdquo;: a figured-bass treatise might account for modulation through a pattern-based approach, but it should not do so through a pivot-chord approach, since the latter presumes an understanding of chordal root harmony that lies beyond the scope of figured bass.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.02.8.3/mto.02.8.3.dineen.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.02.8.3/dineen_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received 9 May 2002</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 8, Number 3, October 2002 <br> Copyright &#0169; 2002 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+<a href="#pt1">[1] Introduction</a></br>
+<a href="#pt2">[2] From the Wiener-Tonschule: Fundamentals</a></br>
+<a href="#pt3">[3] From the Wiener-Tonschule: Modulation</a></br>
+<a href="#pt4">[4] Conclusion</a>
+</p>
+
+<hr>
+
+<h3><b><a name="pt1"></a></b>[1] Introduction </h3>
+<p>[1.1] Why and how should a figured-bass treatise account for modulation? If, 
+by close definition, a figured bass is simply a bass line with appended integers 
+indicating pitches the upper voices should play, and accordingly a treatise on figured 
+bass concerns itself only with the correct realization of such indications, then 
+modulation is irrelevant in both study and application. Modulation belongs to a 
+more abstract, less immediately practical study, such as a <i>Harmonielehre</i> 
+might entail.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> In essence, a figured-bass 
+player merely applies accidentals where appropriate; no understanding of a larger 
+tonal design, such as that implicit in modulation, is required. In a pure figured-bass 
+tradition such as the Viennese <i>Generalba&szlig;lehre</i>, the study of modulation is 
+an anomaly and, like many anomalies, worthy of examination&mdash;the object of this study.
+</p>
+<p>[1.2] I shall examine the discussion of modulation contained in part 1 of the 
+treatise <i>Wiener-Tonschule; oder Anweisung zum Generalba&szlig;e, zur Harmonie, zum 
+Contrapuncte und der Fugen-lehre</i> (1827), by the Viennese theorist, organist, 
+and composer Joseph Preindl (1756&ndash;1823), as edited and published after Preindl&rsquo;s 
+death by Ignaz von Seyfried.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> If one 
+is to look for purity in figured-bass conception in the decades straddling 1800, 
+Viennese theories of <i>Generalba&szlig;lehre</i> would be good places to start, for, 
+as Robert Wason characterizes them, Viennese theorists clung to eighteenth-century 
+concepts and largely eschewed the more speculative developments characteristic of
+<i>Harmonielehren</i> of their Germanic counterparts.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+As a student of Albrechtsberger, Preindl should have written a treatise representing 
+a pure Viennese figured-bass theory, unmarked by extraneous influences such as the
+<i>Harmonielehre</i>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Its very title, 
+however, tells us otherwise, by blending figured bass and harmony. It may be presumed 
+that harmonic theory has had some influence upon Preindl&rsquo;s figured-bass conception. 
+In part, my concern shall be with how a harmonic influence is exerted upon Preindl&rsquo;s 
+treatment of modulation, an influence felt only in an incomplete manner. I shall 
+measure this influence in terms of our present-day concepts of modulation built 
+upon pivot chords and in terms of older Teutonic concepts of modulation by theorists 
+such as Gottfried Weber and Georg Joseph Vogler.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+<p>[1.3] In our modern harmony texts, we often rely upon the economical notion of 
+a pivot chord to explain modulation. We teach our students to find a diatonic or 
+chromatic chord common to both keys involved in a modulation. This pivot serves 
+as a path through which the harmony is led from one key to the other. We often limit 
+pivot harmonies to diatonic triads or seventh chords, and sometimes extend this 
+to include applied chords and ultimately such chromatic chords as the Neapolitan 
+and the augmented sixth. This apparently simple pivot-chord conception entails, 
+however, certain complex ideas of chordal function and chordal classification, ideas 
+that are largely irrelevant to a pure <i>Generalba&szlig;lehre</i> tradition but are the 
+essence of the <i>Harmonielehre</i> or <i>Trait&eacute; de l&rsquo;harmonie</i>. Notable examples 
+in the <i>Harmonielehre</i> tradition are Gottfried Weber&rsquo;s <i>Versuch einer geordneten 
+Theorie der Tonsezkunst</i> and Georg Joseph Vogler&rsquo;s treatises <i>Tonwi&szlig;enschaft 
+und Tonsezkunst</i> and <i>Betrachtungen der Mannheimer Tonschule</i>, where the 
+idea of <i>Mehrdeutigkeit</i> or the multiple meaning of a given chord in several 
+keys is explored: </p>
+<blockquote>
+  <p><nobr>. . .</nobr>the harmony G can appear as C:V, equally as G:I, as D:IV, c:V<nobr>. . .</nobr>[die Harmonie 
+  G bald als C:V, bald als G:I, bald als D:IV, bald als c:V, u.s.w. vorkommt<nobr>. . .</nobr>]<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+</blockquote>
+<p>In this and other passages like it, Weber and his Germanic counterparts establish 
+a foundation for theories of modulation and pivot chords. </p>
+<p>[1.4] The concept of shared harmonies with variant tonal functions has no place, 
+however, in a pure figured-bass tradition, such as that to which Preindl fell heir. 
+As a Viennese theorist, he has minimal recourse to chordal functions: there are 
+no roman-numeral chord indications in his treatise; he refers to but three functions, 
+those of tonic, dominant, and mediant; and when he finally introduces pivotal chords, 
+these are never registered (in one key let alone two) but merely introduced as formulae. 
+Despite these severe lacunae, Preindl does tackle modulation, in what appears to 
+be an addendum, a chapter entitled &ldquo;<i>Vom Pr&auml;ambuliren</i>,&rdquo; in effect a supplement 
+to an otherwise pure figured-bass treatise. </p>
+<p>[1.5] His account of modulation is brief and not particularly successful if measured 
+(albeit anachronistically) against our present standards, or against those of roughly 
+contemporary harmonic theorists such as Weber, or Preindl&rsquo;s Viennese successors 
+such as Simon Sechter, Anton Bruckner, and Arnold Schoenberg. The account is fascinating 
+nonetheless, if only because the first part, framed in terms of figured bass, would 
+work, albeit in a limited fashion, while the second part, which lies closer to the
+<i>Harmonielehre</i>, seems dramatically incomplete and out of context. Preindl 
+bases this figured-bass cum <i>Harmonielehre</i> account largely upon two corresponding 
+approaches: progressions in which the harmony modulates over a fixed-intervallic 
+bass pattern of several measures duration; and pivot-like formulations, in which 
+the harmony modulates directly with the introduction of a pivotal chord. The patterned 
+bass approach seems to grow logically out of figured-bass practice. The pivot-chord 
+approach does not, but derives presumably from other sources, as if Preindl had 
+heard rumor of the new, more northerly Teutonic developments in theory&mdash;Vogler and 
+Weber, for example&mdash;but only rumor. </p>
+<p>[1.6] The following discussion extracts passages from Preindl&rsquo;s treatise in translation 
+and then comments upon these in light of the curious situation of a theory of modulation 
+in a tradition informed largely by figured bass. </p>
+<h3><a name="pt2"></a>[2] From the <i>Wiener-Tonschule</i>: Fundamentals </h3>
+<p>[2.1] The <i>Wiener-Tonschule</i> comprises two volumes, the first devoted to
+<i>Generalba&szlig;</i> and <i>Harmonie</i>, the second to <i>Contrapuncte</i> and <i>
+Fugen-Lehre</i>. The 176 pages of volume 1 address the subjects of interval, key, 
+chords and their inversions, figured-bass indications, ornamentation, cadences, 
+and organ point. Although the subject matter of chords and their inversions is addressed 
+at length, the treatise is not concerned directly with harmonic relationship, apart 
+from a final section, pages 156&ndash;76, entitled &ldquo;<i>Vom Pr&auml;ambuliren</i>,&rdquo; where modulation 
+is considered at length.</p>
+<p>[2.2] Before concentrating upon Preindl&rsquo;s treatment of modulation, it is important 
+to survey the foundation upon which he builds by examining his terms (definitions 
+of such theoretic fundamentals as <i>figured bass</i>, <i>harmony</i>, and <i>function</i> 
+in both modal and chordal senses), his classification of chords, and his treatment 
+of key relationship. In essence, Preindl&rsquo;s principal notion of tonal function is 
+grounded not in chordal relationship but in an older modal conception of the plagal 
+versus authentic classification. He makes a rudimentary distinction between &ldquo;ground&rdquo; 
+bass (the chordal root) and &ldquo;fundamental bass&rdquo; (the lowest note at the moment), 
+and this allows him inversion. But his notion of chordal function is limited to 
+the notes of the triad&mdash;tonic, mediant, and dominant. And rather than speak of chordal 
+roots as functions of scale degrees, he uses letter names instead to describe the 
+&ldquo;ground&rdquo; bass of a given harmony. Let us examine his terms in greater detail.
+</p>
+<p>[2.3] Figured bass and harmony</p>
+<p>[2.3.1] It is essential to note from the outset Preindl&rsquo;s simple definition of
+<i>figured bass</i> [<i>Generalba&szlig;</i>], which bears nothing of truly chordal harmonic 
+concern: </p>
+<blockquote>
+  <p>By the term <i>figured bass</i> we mean generally a low voice above which, 
+  in the remaining accompanying voices, lie tones indicated through characteristic 
+  figures.</p>
+  <p>[Unter der Benennung: Generalba&szlig; versteht man im Allgemeinen eine Grundstimme, 
+  &uuml;ber welcher die in den &uuml;brigen begleitenden Stimmen liegenden T&ouml;ne durch bezeichnete 
+  Zahlen ausgedr&uuml;ckt sind.]{1}<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+</blockquote>
+<p>[2.3.2] Curiously Preindl omits a clear definition of <i>harmony</i>, which should 
+take its own separate section. Instead he continues immediately after defining
+<i>Generalba&szlig;</i> with the following definition of pitch as <i>Ton</i>: </p>
+<blockquote>
+  <p>A tone is, above all, such a sound as can stand in fixed relation to another.
+  </p>
+  <p>[Ton heisst &uuml;berhaupt ein jeder Klang, der gegen einen andern in einem bestimmten 
+  Verh&auml;ltni&szlig;e steht.]{1} </p>
+</blockquote>
+<p>By this excessive economy, harmony is slighted here, especially in a work that 
+unites <i>Harmonie</i> and <i>Generalba&szlig;</i> in its title. Within this curious 
+slight, perhaps, lie the roots of the difficulty we shall encounter shortly in Preindl&rsquo;s 
+treatment of pivotal-chord modulation, in essence the lack of a fully developed 
+concept of harmony encompassing chordal roots and their relation. </p>
+<p>[2.4] Modes and scale-degree function<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+<p>[2.4.1] Preindl cannot draw upon a system of chords related through chordal roots 
+indicated as scale degrees. Accordingly, his definition of function is not introduced 
+with chords but instead in a discussion of scales that draws upon older modal conceptions 
+of function and centricity. Preindl begins by defining keys and scales in terms 
+of Greek modes: </p>
+<blockquote>
+  <p>The Greeks had six principal (authentic) and six secondary (plagal) modes, 
+  the scales of which were distinguished by the position of two semitones. </p>
+  <p>[Die Greichen hatten sechs Haupt- und sechs Nebentonarten, deren Tonleiter 
+  hinsichtlich der Lage der zwey halben T&ouml;ne sich unterschied.]{9} </p>
+</blockquote>
+<p>He proceeds to distinguish among the plagal modes by invoking the old solmization 
+syllables and the position of mi-fa on different scale degrees in the various modes.
+</p>
+<p>[2.4.2] For Preindl, the authentic and plagal forms of these modes differ functionally 
+in terms of tonic [Grundton] and dominant [Unter-quart] points of reference: </p>
+<blockquote>
+  <p>Authentic modes proceed from the tonic, [while] the plagals must begin with 
+  the fourth below, or the dominant. </p>
+  <p>[<nobr>. . .</nobr> [D]ie authentische von dem Grundton (der <i>Tonica</i>) ausging, mu&szlig;te 
+  die plagalische in deren Unter-Quart (der <i>Dominante</i>) beginnen.]{11} </p>
+</blockquote>
+<p>And he underlines the importance of this older, modal conception: </p>
+<blockquote>
+  <p>An understanding of these old scales is an essential fundamental to the <i>
+  Generalba&szlig;</i> performer as organist, since the church chorales of the Protestant 
+  Rite, which the organist is obliged to accompany, are based upon them. These
+  <i>modi authentici et plagales</i> are the foundation of our present keys.</p>
+  <p>[Die Kenntni&szlig; dieser alten Tonleiter ist dem Generalba&szlig;-Spieler, als Organisten, 
+  aus dem Grunde wichtig, weil in den meisten derselben die Kirchen-Chor&auml;le des 
+  protestantischen Ritus gesetzt sind, welche mit der Orgel zu begleiten ihm obliegt. 
+  Diese <i>modi authentici et plagales</i> sind allerdings die Grundlage unserer 
+  heutigen Tages gebr&auml;uchlichen Tonarten.]{12} </p>
+</blockquote>
+<p>The functional conception with which Preindl works, then, is modal in conception, 
+not out of keeping with his Viennese inheritance&mdash;Catholic or Protestant&mdash;but surely 
+of limited means when dealing with a chord-based conception of modulation, as we 
+shall see shortly. </p>
+<p>[2.5] Chords and their classification: <i>Grundba&szlig;</i>, <i>Fundamental-Ba&szlig;</i>, 
+and <i>Grundton</i></p>
+<p>[2.5.1] After briefly introducing the concept of a chord as the sounding of several 
+intervals bound together in a simultaneity or <i>Zussammenklang</i>, Preindl begins 
+a classificatory scheme. Complete chords comprise three, four, five, or more tones. 
+Some of these are what we today call root position [<i>Grunde-</i> or <i>Stamm-Accorde</i>], 
+others are superposed or inverted [<i>versetzte</i> or <i>umgekehrte</i>], and all 
+are, like intervals, consonant or dissonant: </p>
+<blockquote>
+  <p>A chord is formed from the simultaneous sounding of several well measured and 
+  mutually related intervals<nobr>. . .</nobr> [I]n music we determine chords of 3, 4, 5, and 
+  more voices, which can be either in [root position] or inverted, and, like intervals, 
+  either consonant or dissonant.</p>
+  <p>[Aus dem Zusammenklang mehrerer, regelm&auml;&szlig;ig unter einander verbundener Intervalle 
+  entsteht ein Accord<nobr>. . .</nobr> [B]esitzen wir in der Musik drey-, vier-, f&uuml;nf- und 
+  mehrstimmige Accorde, welche theils <i>Grund-</i> oder <i>Stamm-Accorde</i>, theils
+  <i>versetzte</i> oder <i>umgekehrte</i> Accorde, und, gleich den Intervallen, 
+  entweder consonirend (wohllautend) oder dissonirend (&uuml;belklingend) seyn k&ouml;nnen.]{20}
+  </p>
+</blockquote>
+<p>[2.5.2] The <i>Grund-Accorde</i>, or root-position chords, and their inversions 
+are explained in principle and illustrated at length. In principle, the <i>Grund-Accorde</i> 
+are the source from which all other chords flow. They take four shapes: as complete, 
+perfect, and pure triads, major or minor, or as major or minor triads with the addition 
+of a minor seventh. </p>
+<p>[2.5.3] Preindl&rsquo;s definition of inversion depends upon the distinction between 
+what he calls ground and fundamental bass (<i>Grundba&szlig;</i> versus <i>Fundamental-Ba&szlig;is</i>). 
+Preindl&rsquo;s <i>Grundba&szlig;</i> is what we know as root position; his <i>Fundamental-Ba&szlig;is</i> 
+is the lowest tone of a chord, or the <i>Grundton</i>: </p>
+<blockquote>
+  <p>If one takes the third above the ground bass of a pure, harmonic triad as the 
+  fundamental bass, then the three-six [Terzsexten] chord is produced; for example 
+  instead of C in the C-major harmony, E stands as the ground tone [Grundton]. . 
+  .&nbsp; </p>
+  <p>[Wenn man von einem reinen harmonischen Dreyklange die Ober-Terz des Grundba&szlig;es 
+  als Fundamental-Ba&szlig;is annimmt, so entsteht daraus der Terzsexten-Accord; z. B. 
+  anstatt C der C-dur Harmonie E als Grundton<nobr>. . .</nobr>]{23} </p>
+</blockquote>
+<p>To reiterate, for the true, pure <i>Generalba&szlig;lehre</i>, such a distinction is 
+largely irrelevant. Every bass note is simply a <i>Grundton</i>. By invoking <i>
+Grundba&szlig;</i>, Preindl transgresses the bounds of what would be a self-standing figured-bass 
+conception and moves over into the other subject in his title, <i>Harmonielehre</i>.
+</p>
+<p>[2.6] Chords and function</p>
+<p>[2.6.1] In a section entitled, &ldquo;On General Artistic Usages,&rdquo; Preindl ventures 
+again into the area of scale-degree function by identifying tonic, dominant, and 
+mediant tones. Yet, once again, he does not make inroads sufficient to equip him 
+for describing pivot-chord modulation: </p>
+<blockquote>
+  <p><nobr>. . .</nobr> one understands, by the expression <i>tonic</i> [Tonica] always the principal 
+  tone, the first step [<i>Stufe</i>] of that key which the piece is in<nobr>. . .</nobr> The 
+  tone lying a fifth above is called the dominant<nobr>. . .</nobr> The third above the tonic, 
+  because it lies between the tonic and this same fifth, is called the mediant.
+  </p>
+  <p>[<nobr>. . .</nobr> versteht man unter dem Ausdruck: <i>Tonica</i>, immer den hauptton, 
+  d. i. die erste Stufe jener Tonart, in welcher das St&uuml;ck selbst gesetzt ist. . 
+  . . Von dieser aufw&auml;rts gez&auml;hlt, der f&uuml;nfte Ton, hei&szlig;t: die <i>Dominante</i>. 
+  <nobr>. . .</nobr> Die Oberterz der Tonica, weil sie zwischen dieser und derselben Quinte den 
+  Mittelpunct bildet, wird die <i>Mediante</i> genannt.]{30&ndash;31} </p>
+</blockquote>
+<p>No other scale-degree functions are enumerated, which leaves one to wonder if 
+there is some telling confusion on Preindl&rsquo;s part as to the nature and role of scale-degree 
+functions. </p>
+<p>[2.6.2] As noted above, Preindl makes no reference to Roman numerals anywhere 
+in the treatise. Instead, describing an example of arpeggiation, he indicates the 
+harmony by reference to chord letter names. Letter names, in and of themselves however, 
+cannot express function: </p>
+<blockquote>
+  <p>Here we hear all the notes of the first and fourth bars as a C harmony, and 
+  those of the second bar as belonging to F, which the bass A necessitates calling 
+  a sixth chord. The B of the third bar is the first inversion of the seventh chord 
+  over the fundamental G, arranged as a six-five chord.</p>
+  <p>[Hier geh&ouml;ren alle durchgehende Noten des ersten und vierten Tacts zur C-harmonie, 
+  jene des zweyten in den Umfang von F, daraus der Ba&szlig; A den Sext-Accord verlangt; 
+  und das H im dritten Tacte ist die erste Versetzung der Septime &uuml;ber die Grundnote 
+  G, in den Quint-Sext-Accord umgestaltet, und all Nebennoten in demselben enthalten.]{34}
+  </p>
+</blockquote>
+<p>In the treatise, then, there is no indication of systematic functional relationship 
+among these harmonies, such as a roman numeral might indicate. Since pivotal chordal 
+functions are a presupposition in most accounts of harmony and modulation, Preindl 
+must devise other means by which to address the topic. </p>
+<p>[2.7] Key relationship</p>
+<p>[2.7.1] In section 9, &ldquo;On Signatures [Von der Bezifferung],&rdquo; Preindl introduces 
+the issue of key relation. He does so by charting tonal spaces: chords representing 
+keys (locations in space) are linked by intervals (distances), and in particular 
+by interval patterns (a well-defined space measured by regular distances). In and 
+of itself, this kind of tonal space is unremarkable, a commonplace in the customary 
+representation of key signatures. But Preindl will put this spatial conception of 
+key-relation-through-interval-pattern to use later, when he addresses modulation.
+</p>
+<p>[2.7.2] Key signatures are introduced in a series of four-part progressions. 
+First Preindl arranges chords representing keys in perfect fifth relation, as if 
+around the cycle of fifths. Calling these examples &ldquo;row-successions&rdquo; [<i>Reihenfolge</i>], 
+he applies this cyclic presentation to show key relationship in both major and minor 
+keys. </p>
+<p>[2.7.3] In a second, supplementary four-part progression, Preindl sets up a &ldquo;Changing 
+Succession&rdquo; [<i>Wechselfolge</i>] that visits all major and minor keys by means 
+of a different interval pattern, a series of root-position chords with basses descending 
+in alternating major and minor thirds: C major &ndash; A minor &ndash; F major &ndash; D minor &ndash; B-flat major, etc. </p>
+<p>[2.7.4] These two cyclic forms of key representation,<i> Reihenfolge</i> and
+<i>Wechselfolge</i>, give Preindl a model or template for a patterned-bass approach 
+to modulation. This approach is quite in keeping with a figured-bass conception, 
+since, in describing modulatory distance and relation, it relies only upon intervals 
+expressed in a bass melody, and not upon chordal-roots and the concept of pivot 
+chords, which are extraneous to figured bass. Preindl&rsquo;s other modulatory tool&mdash;the 
+pivot chord&mdash;has no such model or template, nor is it so comfortably at home with 
+his figured-bass conception. </p>
+<p>[2.7.5] Let us take stock of the fundamentals Preindl&rsquo;s treatise has given us 
+thus far: a notion of fixed relationship; an incomplete notion of scale-degree function 
+in the modal sense of tonic and dominant finals; a distinction between chordal root 
+and the lowest note of a chord; and another curiously incomplete notion of function 
+based upon tonic, mediant, and dominant, but no others. To this we can add key signatures 
+linked by cyclic intervals. If we compare this with the requirements for a complete, 
+modern discussion of modulation, several items are missing: a systematic and articulate 
+notion of chordal roots as expressions of particular scale degrees in a given key, 
+a notion of key relation based upon common elements such as pivot chords, and the 
+concepts of tonicization and applied chromatic chords in diatonic contexts. Without 
+these items, which, to reiterate, do not belong in a pure figured-bass treatise, 
+Preindl seems hard pressed to elucidate modulation. But elucidate he does, with 
+varying and limited results. </p>
+<h3><a name="pt3"></a>[3] From the <i>Wiener-Tonschule</i>: Modulation </h3>
+<p>[3.1] Modulation is the final subject addressed in the first part of Preindl&rsquo;s 
+treatise. Preindl chooses to consider the subject, not under the rubric <i>modulation</i>, 
+but instead under the topic of improvising preludes, entitled &ldquo;<i>Vom Pr&auml;ambuliren</i>,&rdquo; 
+and fantasies. The Preamble is defined as a category of prelude that precedes the 
+real beginning of a work and the free Fantasy is defined as an extended, thematically 
+worked out Preamble. </p>
+<p>[3.2] To answer our first question, &ldquo;Why modulation in a figured-bass treatise?&rdquo; 
+Preindl notes that the ability to create preludes and fantasies is a necessity, 
+since organists are obliged to do so regularly, before the movements of the Mass, 
+for example. For Preindl, the root of this ability is a self-assuredness in modulation 
+[<i>Modulation</i>], a self-assuredness taught not by a &ldquo;few fixed rules,&rdquo; but rather 
+by practical guidelines, which operate like signposts [<i>Wegweiser</i>]. In essence, 
+modulation (and this modulatory ability) depends upon a certain harmonic propriety 
+[<i>harmonische Richtigkeit</i>] that governs the movement from one key to another:
+</p>
+<blockquote>
+  <p>In order that the ideas be beautiful and noble, the player must be self-assured 
+  in modulation, which means the ability to move from one key to the others with 
+  harmonic propriety. Since this can be done in endless ways, let us not restrict 
+  possibilities by a few fixed rules. Instead only tried and true practical guidelines 
+  shall be set forth here, as signposts.</p>
+  <p>[Abgesehen, da&szlig; die Ideen sch&ouml;n und edel seyn sollen, mu&szlig; auch der Spieler 
+  mit der Modulation innig vertraut seyn; n&auml;hmlich, die F&auml;higkeit besitzen, von 
+  einem Ton in die &uuml;brigen mit harmonischer Richtigkeit behende ausweichen zu k&ouml;nnen. 
+  Da solches auf unendlich verschiedenen Wegen erreicht werden kann, so l&auml;&szlig;t sich 
+  das Erfindungs-Verm&ouml;gen eines jeden Einzelnen durch keine bestimmten Vorschriten 
+  beschr&auml;nken, und nur Resultate bew&auml;hrter Ergahrungsf&auml;tze sollen hier als Wegweiser 
+  aufgestellt werden.]{157} </p>
+</blockquote>
+<p>Modulation, then, entails the movement from one key to another accomplished in 
+a harmonically correct or appropriate manner. But how does one determine such a
+<i>Richtigkeit</i>? </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="dineen_ex01_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.3] As Preindl promises, he teaches modulation through guidelines and by example. 
+Preindl begins with a little modulating Preamble [<i>k&uuml;rzes Pr&auml;ambulum</i>] in C 
+major, &ldquo;wherein the scales of G major, A minor, E minor, D minor, and F major are 
+touched upon,&rdquo; which he recommends be transposed into the twenty-four keys as an 
+exercise [<b>Example 1</b>, {157}]. It must be noted that in this and subsequent exercises nothing is remarked 
+of the force or strength of the modulation, no distinction drawn between lengthy 
+modulation and fleeting tonicization, nor is there mention of close or distant key relation. 
+Keys are simply &ldquo;touched upon [<i>ber&uuml;hrt werden</i>].&rdquo; More important, there is 
+no single pattern or system readily discernable in this opening example, which serves 
+more as a flourish than a signpost.</p>
+<p>[3.4] Soon, however, Preindl begins a more systematic exploration of modulation, 
+one that leaves much unexplained and, accordingly, much room for conjecture. This 
+exploration takes the form of a series of four-part modulating progressions, which 
+can be classified, as noted above, into two large groups&mdash;patterned basses and chromatic 
+pivot chords. These two groups can be broken down further as described in the following 
+sections. </p>
+<p>[3.5] Patterned basses</p>
+<p>[3.5.1] Bass in ascending fourths and descending thirds; pages 158&ndash;61; 18 progressions. 
+The bass follows a pattern of an ascending fourth followed by a descending third, 
+while the soprano moves by ascending conjunct motion. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="dineen_ex02_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="dineen_ex03_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.5.1.1] A diatonic model is established with the first, non-modulating example, 
+which comprises five ascending fourths, with the caution (curiously not observed 
+in the model) to avoid the leap of an augmented fourth: </p>
+<blockquote>
+  <p>If the bass voice rises upward by leaps of a perfect fourth (which, however, 
+  may not be augmented), one can accompany it with complete perfect triads<nobr>. . .</nobr> 
+  . [<b>Example 2</b>, {158}] </p>
+  <p>[Wenn die Ba&szlig;stimmen in reinen Quart-Spr&uuml;ngen&mdash;welche aber nie &uuml;berm&auml;&szlig;ige seyn 
+  d&uuml;rfen&mdash;aufw&auml;rts steigt, kann man mit lauter vollkommenen Dreykl&auml;ngen begleiten<nobr>. . .</nobr> ]{157} </p>
+</blockquote>
+<p>Note that the model is scalar in nature: it entails a stepwise progression through 
+at least a perfect fifth in all parts (the bass line embellished by leaps of a third 
+after every step). Preindl&rsquo;s principal framework in this and the other bass patterns 
+is the scale. </p>
+<p>[3.5.1.2] From this diatonic scalar model, two chromatic models are derived, 
+one adding sharps, the other flats, which take them into the desired new keys, B 
+major and B-flat major respectively [<b>Example 3</b>, {158}]. The basses in both models comprise 
+four ascending fourths, again arranged in the manner of a scale. In these and subsequent 
+examples, the modulations are accomplished (often suddenly) by means of chromatic 
+alteration. Notes of the basic diatonic scale are simply altered chromatically to 
+lead into the desired key. Preindl refers to these modulations as a process of distinguishing 
+[<i>unterscheiden</i>] scales by means of appropriate sharps or flats. He offers 
+the following explanation accordingly: </p>
+<blockquote>
+  <p>If one wants to modulate from one major key to another, one can distinguish 
+  all intervening scales through their appropriate sharps or flats; for example, 
+  from C major to B major <nobr>. . .</nobr> or from C major to B-flat major [Example 3, {158}].</p>
+  <p>[Will man von einer Dur-Tonart in eine andere moduliren, so kann man auch alle 
+  Zwischen-Scalen durch die ihnen zust&auml;ndigen [sharp sign] oder [flat sign] unterschieden; 
+  z. B. von C-dur nach H-dur <nobr>. . .</nobr> oder: von C-dur nach B-dur.]{158} </p>
+</blockquote>
+<p>The meaning of &ldquo;intervening scale&rdquo; is not clear, but implicit is a sense of tonal 
+topography: between C major (no sharps) and B major (5 sharps) lie intermediary 
+keys with 1, 2, 3, and 4 sharps. In modulation, presumably one adds these sharps 
+and in doing so touches upon these intermediary keys. To reiterate: the frame of 
+reference is the diatonic scale. No pivot-chord relationship is implied here, but 
+instead accidentals are merely added until the key signature of goal of modulation 
+is attained. </p>
+<p>[3.5.1.3] In the second part of Example 3, which goes from C to B-flat major, 
+Preindl overshoots his mark, seemingly, by adding A-flat (ostensibly to avoid the 
+tritone): </p>
+<blockquote>
+  <p>Since the key of B-flat major contains only two flats in its key signature, 
+  so the continuation must go from E-flat to A-flat so as to avoid the leap of an 
+  augmented fourth [E-flat to A-natural]<nobr>. . .</nobr></p>
+  <p>[Wiewohl die Tonart B-dur nur zwey B in der Vozeichnung enth&auml;lt, so mu&szlig; die 
+  Forschreitung dennoch von Es nach As <nobr>. . .</nobr> geschehen, um den &uuml;berm&auml;&szlig;igen Quart-Sprung 
+  zu vermeiden.]{158} </p>
+</blockquote>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="dineen_ex04_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="dineen_ex05_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="dineen_ex06_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="dineen_ex07_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="dineen_ex08_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="dineen_ex09_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.5.1.4] Subsequent progressions in this category make minor alteration to these 
+two chromatic models. They truncate the model, thus making the modulations less 
+distant [<b>Example 4</b>, 
+{158}]. Or they introduce their chromaticisms quickly and make their modulations 
+more remote [<b>Example 5</b>, 
+{159}]. Some of them merely embellish their models with neighboring and suspension 
+figures. Others demonstrate the use of enharmonic equivalence, which, for Preindl, 
+meant the enharmonic equivalence of intervals, not merely pitches: </p>
+<blockquote>
+  <p>If one wants to modulate, for example, from D-flat major (with five flats in 
+  the key signature) to B-major (with five sharps), one thinks of C-sharp in lieu 
+  of D-flat as the first tone and adjusts the following chord progression accordingly 
+  [<b>Example 6</b>, {161}]. </p>
+  <p>[Wollte man z. B. von Des-dur (mit f&uuml;nf Been im Schl&uuml;&szlig;el) nach H-dur (mit f&uuml;nf 
+  Kreuzen) moduliren, so denke man statt des ersten Tones: Des sich Cis, und richte 
+  nach der davon auslaufenden Accordenfolge die Quart-Spr&uuml;nge ein<nobr>. . .</nobr>]{161} </p>
+</blockquote>
+<p>In essence, the progressions in this category adapt the basic scalar model of 
+the cyclic bass pattern (and its counterpointed soprano) to various kinds of chromatic 
+alteration. Preindl&rsquo;s <i>Wegweiser</i> as signpost is economic to a fault: let the 
+bass ascend by fourth then descend by third, thus forming an embellished scale fragment; 
+add chromatic alterations so as to move (slowly or rapidly) into the scale of the 
+target key. Having illustrated major-key modulation from C to B and B-flat, Preindl 
+continues onward systematically to apply his model in major-key modulations from 
+C to A, A-flat, G, G-flat, F, E, E-flat, D, and finally D-flat. </p>
+
+<p>[3.5.1.5] The modulatory guidelines established with the first two models [Example 
+3] 
+admit only slight alteration in Preindl&rsquo;s text: for reasons of harshness it is better 
+to exceed the goal of modulation and then fall back an accidental&mdash;go as far as 
+B major, for example, then fall back to E major. Preindl does not speak of this 
+as establishing the key of B major but rather of rising to the dominant B and establishing 
+it by cadence first: </p>
+
+<blockquote>
+  <p>In this last example, it is better and less harsh sounding if one rises up 
+  by the interval of a fourth to the dominant B, and cadences there first. [<b>Example 
+  7</b>, {159}].</p>
+  <p>[In diesem letzten Exempel ist es be&szlig;er, und weniger hart klingend, wenn man 
+  in Quart-Spr&uuml;ngen bis zur Dominant H hinauf steigt, und dort erst cadenzirt.]{159}
+  </p>
+</blockquote>
+<p>Tonicization is implicit here, but without a more refined notion of chordal function 
+(to include applied dominants, for example) Preindl must fall back upon the terms 
+of his model: this is merely the addition of a redundant <i>Quart-Sprung</i>, which 
+produces the effect of mitigating harshness. </p>
+<p>[3.5.2] Bass in descending octave scales; pages 162&ndash;66; 15 progressions. </p>
+<p>[3.5.2.1] Bass and soprano descend an octave through a scale-based pattern of 
+suspensions, which Preindl describes as alternating 2 and <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> harmonies. Again a 
+diatonic, non-modulating model is established in both major and minor:</p>
+<blockquote>
+  <p>Further, one can accompany the complete octave scale with alternating 2 and <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> chords<nobr>. . .</nobr> [<b>Example 8</b>, 
+  {162}]</p>
+  <p>[Ferner kann man herab den ganzen Octavengang mit abwechselnden Secunden- und 
+  Quint-Sexten-Accorden begleiten<nobr>. . .</nobr>]{161} </p>
+</blockquote>
+<p>[3.5.2.2] Preindl then arranges his modulating examples so as to cadence to keys 
+arranged in ascending order, the first one to D-flat major [<b>Example 9</b>, {162}], the second to D major, and so forth, 
+until B major. The descending octave-scale pattern is merely truncated in the later 
+examples, with more elaborate cadences in A-flat, A, B-flat, and B major. </p>
+<p>[3.5.2.3] In these progressions, Preindl adopts the same procedure of substituting 
+chromatic for diatonic pitches so as to lead the harmony to the new key. This entails 
+a rapid chromatic alteration of the diatonic model in scales that terminate in keys 
+with many accidentals, and a more leisurely alteration in keys with fewer inflections. 
+In extreme instances, such as Example 9, the rapid chromatic alteration implies 
+a concept of modulation with chromatic pivot chords (as if, for example, the downbeat 
+were a chromatic chord in the key of the second bar). But no pivot-chord relationship 
+is addressed here, and the scalar frame remains the explicit point of reference.
+</p>
+<p>[3.5.2.4] Chromatic alteration of a patterned octave descent (a variation of 
+the time-honored &ldquo;rule of the octave&rdquo;) is a particularly clear modulatory guideline 
+or <i>Wegweiser</i>. Why Preindl should choose specific embellishment patterns&mdash;such 
+as 2 to <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr>&mdash;is never explained, however. Presumably the student is left to devise 
+other embellishment patterns by using basic modulating scale models and adapting 
+patterns of suspension and anticipation introduced earlier in the treatise. In his 
+favor, one notes again the economy of Preindl&rsquo;s scale-based presentation: let the 
+bass descend by step; add chromatic alterations so as to move into the scale of 
+the target key. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="dineen_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="dineen_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=11&nonav=true"><img border="1" alt="Example 12 thumbnail" src="dineen_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.5.3] Bass in ascending octave scales; pages 166&ndash;68 and page 169; 8 progressions. 
+These progressions take various patterned forms: with suspended sevenths, seconds, 
+and ninths; with the bass in conjunct motion or broken with a pattern of leaping 
+thirds; or simply as alternating root-position and first-inversion chords. Several 
+models are presented [one of which is <b>Example 10</b> {167}]. Again, in some rapid chromatic alterations 
+chromatic pivot chords are implicit, as in the first measure of a modulation to 
+A major, where Preindl adds a gratuitous C-sharp in the bass on beat 3 (gratuitous 
+since the pattern established on the third beats of subsequent bars does not call 
+for this alteration) [<b>Example 11</b>, 
+{168}]. The scalar frame, however, remains the patent frame of reference. </p>
+<p>[3.5.4] Bass in ascending fifths and descending fourths; pages 168&ndash;69; 2 progressions. 
+The bass follows a pattern of an ascending fifth followed by a descending fourth, 
+while the upper voices move largely by descending conjunct motion, with suspended 
+fourths. </p>
+<p>[3.5.5] Bass in descending thirds and ascending seconds; pages 170&ndash;71; 6 progressions. 
+As Preindl describes the model: </p>
+<blockquote>
+  <p>If the bass voice falls by the leap of a third, then one can put a root-position 
+  triad on every downbeat and a <nobr><img border="0" alt="6 3" src="../../gifs/63.gif" width="8" height="17" style="vertical-align:text-top"></nobr> or <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> chord on the upbeat. </p>
+  <p>[Wenn die Grundstimme in Terz-Spr&uuml;ngen herabsteigt, so kann man auf jedem Niederstreich 
+  einen reinen Dreyklang, im Auftact aber reinen Terz-Sexten, oder Quint-Sexten-Accord 
+  anbringen.]{169&ndash;70} </p>
+</blockquote>
+<p>To his diatonic model he adds a variation with suspended ninths resolving over 
+the change of harmony [<b>Example 12</b>, 
+{171}]. </p>
+<p>[3.5.6] Bass in descending octave scales; pages 171&ndash;72; 2 progressions. Bass and 
+soprano descend an octave through a pattern of 7-6 suspensions. </p>
+<p>[3.5.7] Bass in descending fifths and ascending fourths; page 172; 2 progressions. 
+Paired suspensions in upper voices produce a chain of sevenths. </p>
+<p>[3.5.8] In summary (to answer our first question &ldquo;How should a figured-bass treatise 
+account for modulation?&rdquo;), the first part of Preindl&rsquo;s chapter on modulation offers 
+a set of bass patterns, formulaic figured-bass progressions. Their model or template 
+forms are built of diatonic scales. Their modulating forms introduce accidentals 
+into the diatonic models so as to lead to the keys of the modulations. These chromatic 
+scalar patterns can be altered further through extension or truncation to suit the 
+needs of an individual modulation. As modulatory guideposts, they accord with the 
+interval patterns introduced earlier in the treatise in the discussion of key signatures. 
+Moreover, their framework is in keeping with the figured-bass aspect of Preindl&rsquo;s 
+treatise, since the treatise introduces nothing essentially new into the figured-bass 
+formulation and yet remains relatively complete and self-sufficient. In essence, 
+Preindl&rsquo;s patterned-bass signposts work, without leaving us wondering about the 
+completeness of their formulation. The same cannot be said about his second approach.
+</p>
+<p>[3.6] Chromatic pivot-chord modulations</p>
+<p>[3.6.1] The modulations appearing now in the treatise mark a sudden change in 
+Preindl&rsquo;s conception, away from modulatory bass patterns to single chromatic chords 
+operating like pivots. Of these, two general categories can be discerned.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=12&nonav=true"><img border="1" alt="Example 13 thumbnail" src="dineen_ex13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.6.2] The bass moves up by half step; pages 172&ndash;73; 3 progressions. Preindl describes 
+the rising half-step modulation as follows: </p>
+<blockquote>
+  <p>If the bass rises by a half step, then one can proceed directly to the next 
+  key a whole step above by means of a <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> chord [see <b>Example 13</b>, {172}].</p>
+  <p>[Wenn der Ba&szlig; um einen halben Ton steigt, so kann man mit einem Quint-Sext-Accorde 
+  unmittelbar in die n&auml;chste Tonart der gro&szlig;en Secunde gelangen.]{172} </p>
+</blockquote>
+<p>For a theorist equipped with the modern tools of pivot chords, this example is 
+breathtaking. Gone are the lengthy scale-patterned models of the previous examples, 
+to be replaced with a simple pivot-chord formulation. The lengthy (and thus clumsy) 
+framework of the scale framework is jettisoned for a compact pivot conception.
+</p>
+<p>[3.6.3] Entirely missing, however, is an explanation of the familiar pivot-chord 
+principle at work here. Preindl&rsquo;s examples are merely instances; they are not exhaustive 
+or self-contained but rather the single outcomes of a larger overarching conception 
+conspicuously absent from his treatise. A true <i>Harmonielehre</i> would explain 
+the implicit logic behind this example: that the chord in question is the inversion 
+of an applied chord in the old key and is treated as a dominant chord in the new 
+key. It would, for instance, be noted that the same direct progression to the next 
+key [<i>unmittelbar in die n&auml;chste Tonart</i>] could be established with the chord 
+in root position, rather than the <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr>, or in any other inversion. Preindl&rsquo;s emphasis, 
+however, is on the pattern. A <i>Harmonielehre</i> would subordinate the pattern 
+to a logic of chordal-root relation. Preindl, however, teaches only patterns and 
+then leaves the student to extrapolate from these guideposts. Without the supplement 
+of a <i>Harmonielehre</i>, that would be a difficult task. </p>
+<p>[3.6.4] Preindl&rsquo;s second category of chromatic pivot-chord modulations involve 
+a stationary bass, and he describes three such models: </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 14</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=13&nonav=true"><img border="1" alt="Example 14 thumbnail" src="dineen_ex14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 15</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=14&nonav=true"><img border="1" alt="Example 15 thumbnail" src="dineen_ex15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 16</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="dineen_examples.php?id=15&nonav=true"><img border="1" alt="Example 16 thumbnail" src="dineen_ex16_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.6.4.1] The bass remains stationary to become the fifth of a 6/4/3 chord; page 
+173; 3 progressions. In modern terms the chord in question is the <nobr>V<img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr> of the new 
+key, which prepares a modulation down a major second [<b>Example 14</b>, {173}]. </p>
+<p>[3.6.4.2] The bass remains stationary to become the third of a 6/5/3 chord; page 
+173; 6 progressions. The modulatory chord is <nobr>V<img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr>, which prepares a modulation up 
+a minor second [<b>Example 15</b>, {173}]. </p>
+<p>[3.6.4.3] The bass remains stationary and above it are added a minor third, an 
+augmented fourth, and a major sixth; page 175; 4 progressions. The modulatory chord 
+is a diminished <nobr><img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr>, which is approached and resolved with a complexity not seen 
+before in the treatise. Preindl explains it as follows, and illustrates with a progression 
+that modulates from C major to B major: </p>
+<blockquote>
+  <p>Through the dissonant 6 chord, with a minor third and augmented fourth, one 
+  can fall a half tone, but the chord that follows immediately must be held out 
+  so as to emphasize the new root and to render the ear sensitive to the new and 
+  unexpected harmony [<b>Example 16</b>, {175}].</p>
+  <p>[Durch den dissonirenden Sext-Accord, mit der kleinen Terz und &uuml;berm&auml;&szlig;igen 
+  Quarte kann man um einen halben ton herabsteigen; jedoch mu&szlig; der n&auml;chstfolgende 
+  Accord verl&auml;ngert werden, um den neuen Grundton vorzubereiten, und das Geh&ouml;r f&uuml;r 
+  den unerwarteten Harmonie-Wechsel empf&auml;nglich zu machen.]{174&ndash;5} </p>
+</blockquote>
+<p>The modulation relies upon an initial spelling of the 6/4/3 chord as a diminished 
+seventh applied to the chord of <nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>VI in the new key of B major (C, E-flat, F-sharp, 
+A). By moving the bass down a semitone and respelling E-flat enharmonically, Preindl 
+transforms this into an altered I chord, with seventh added to become <nobr>V<sup>7</sup></nobr>/IV (with 
+quite remarkable voice leading between tenor and soprano). Implicit is the <i>Mehrdeutigkeit</i> 
+of the diminished seventh chord as dominant seventh, but Preindl makes no mention 
+of this principle. Curious as well is the fact that he refers to the new <i>Grundton</i>, 
+the bass note, whereas he might have made matters clearer had he drawn attention 
+to a new <i>Grundba&szlig;</i>, or the chordal root. </p>
+<p>[3.6.5] Unlike the patterned-bass approach, this second, implicitly pivot-chord 
+approach seems dramatically incomplete, lacking the explanatory concept of a chordal 
+root capable of registration through <i>Mehrdeutigkeit</i> in two keys. Admittedly 
+the bias we bring&mdash;that of the <i>Harmonielehre</i>&mdash;may prejudice our appraisal 
+unfairly. But given the compact formulation of this second category of examples, 
+and the apparent lack of a precedent in figured-bass practice, this second approach 
+seems anomalous, both in terms of Preindl&rsquo;s first approach and figured-bass practice 
+in general. </p>
+<h3><a name="pt4"></a>[4] Conclusion</h3>
+<p>[4.1] We began this essay with the following questions: why and how should a 
+figured-bass treatise account for modulation? If normally such a treatise concerns 
+itself only with realization, not with larger tonal design, modulation is irrelevant. 
+Accordingly we described Preindl&rsquo;s treatise as anomalous, especially in light of 
+Viennese theories of <i>Generalba&szlig;lehre</i>, a tradition relatively free of the 
+influence of <i>Harmonielehren</i>. Obviously, however, harmonic theory has had 
+some influence upon Preindl. In truth, as he conceived his treatise, Preindl must 
+have asked himself the very questions we began with. </p>
+<p>[4.2] As we have noted, Preindl bases his account largely upon two kinds of approach: 
+bass patterns, in which the bass moves according to a strict design, primarily scalar; 
+and pivot-chord formulations, in which the harmony moves suddenly into the new key. 
+As we noted as well, the patterned-bass approach seems to grow logically out of 
+figured-bass practice, while the pivot-chord approach does not. The latter suggests 
+an incomplete understanding, perhaps under the influence of more northern Teutonic 
+theorists, and a theoretical development going on <i>in situ</i> in Preindl&rsquo;s thought. 
+Let us divide these two approaches in making a final evaluation. </p>
+<p>[4.3] In terms of the intervallic-patterns approach, we noted how Preindl establishes 
+a precedent early in his key-signature <i>Reihenfolge</i> and <i>Wechselfolge</i>, 
+with bass patterns of perfect fifths or major and minor thirds linking keys, a precedent 
+later pressed into service to meet the needs of modulation. We noted how comfortably 
+this would fit into a figured-bass tradition: no ancillary notions, no supplementary 
+concepts would need to be introduced. The theorist says, simply: &ldquo;Much as we linked 
+key signatures together through some systematic device, like the bass moving in 
+fifths, now we shall link whole keys by moving the bass in similar patterns and 
+adding accidentals according to the new key signature.&rdquo; </p>
+<p>[4.4] If there is an auditory principle at work here, it is that the ear recognizes 
+the pattern, which lends continuity to the progression; the progression derives 
+logic from the pattern. Preindl&rsquo;s patterns are bass patterns primarily: accordingly 
+we might go so far as to say the bass is the principal focal point of the logic; 
+the upper-voice patterns complement the bass in confirming the shift of key. This 
+emphasis on the regularity of the bass is, of course, not out of keeping in a figured-bass 
+tradition. </p>
+<p>[4.5] Apparent emphasis on the bass aside, the patterned approach in general 
+accords well with a figured-bass conception. The pattern, like any figured bass, 
+is a given. It exists as an entity beforehand, to be realized in one of many possible 
+forms. Setting aside any bias derived from <i>Harmonielehre</i>, this approach fits 
+seamlessly into the tradition of music-as-realization to which figured-bass practice 
+is heir. This approach would work within a pure Viennese figured-bass conception.
+</p>
+<p>[4.6] The pivot-chord formulation, however, does not fit in so comfortably, and 
+this explains something of our discomfort with this aspect of Preindl&rsquo;s treatment 
+of modulation. Pivot-chord relations are not entities in the same way as figured 
+basses. Figured basses and Preindl&rsquo;s patterns are in essence melodic givens; pivot-chord 
+relations are formulas, more abstract and contingent upon a supplementary conception 
+for their realization. </p>
+<p>[4.7] Preindl, however, treats his pivot chords as if they were bass patterns, 
+and in doing so exposes his limitations. Here we cannot eliminate the bias of our
+<i>Harmonielehre</i>. As noted, his pivot-chord formulations are markedly incomplete: 
+they lack a framing explanation that would distinguish instance (Preindl&rsquo;s example 
+of the modulatory <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr>) from principle (that the chord in question is an applied 
+chord in the old key, and treated as a dominant in the new key, and any inversion 
+would be only an instance of this principle). </p>
+<p>[4.8] To return one final time to our framing question: Why and how should a 
+figured-bass treatise account for modulation? Why? The benefit of Preindl&rsquo;s scalar 
+bass patterns to the student, especially the student faced with creating &ldquo;preambles&rdquo; 
+and &ldquo;fantasies,&rdquo; is clear: learning to improvise a few patterns of this sort, like 
+learning to read a figured bass, is a finite skill, to be applied where requisite. 
+But why did Preindl include pivot-chord like modulations, especially in such an 
+incomplete manner? No doubt individual pivot patterns, like bass patterns, can be 
+plugged in as needed. It would be far more useful, however, to teach the principle 
+of chromatic pivots, and then let the student create the patterns, since the applications 
+are manifold. Did he really think of pivot-chord modulation in a patterned way? 
+Or was he was only just coming to know the work of his northern counterparts, such 
+as Vogler or Weber and could not countenance completely the mind shift&mdash;from pattern 
+to formula&mdash;that the northern theory entailed? Do we read in Preindl&rsquo;s treatise, 
+then, an incomplete coming to terms with this new conception? The question &ldquo;why 
+modulation in a figured-bass treatise?&rdquo; in this regard is not so easily answered 
+(especially when asked in the Viennese context of Schenkerian theory).<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+<p>[4.9] How should a figured-bass treatise account for modulation? From Preindl&rsquo;s 
+treatise, we can argue it could succeed by teaching modulatory patterns. In doing 
+so, a figured-bass treatise would not go far beyond its customary mandate&mdash;working 
+from an extant model or given (like a figured bass itself). From examining Preindl&rsquo;s 
+treatise, however, we might say that a figured-bass treatise should not aim to teach 
+modulation through the use of short pivot-chord patterns. It should not do so, at 
+least, without some supplementary explanation of chordal roots and pivotal relationships 
+in two keys, which would begin to make it more a <i>Harmonielehre</i> than a <i>
+Generalba&szlig;lehre</i>. Which is why and how Preindl&rsquo;s anomalous treatise&mdash;with its
+<i>Anweisung</i> both <i>zum Generalba&szlig;e</i> and <i>zur Harmonie</i>&mdash;is curiously 
+incomplete when it comes to modulation.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Murray Dineen<br>
+	University of Ottawa<br>Department of Music<br>50 University<br>Ottawa, Ontario K1N 6N5<br><a href="mailto:pdineen@uottawa.ca">pdineen@uottawa.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> For a characteristically close definition of figured bass see: Walter Kolneder, <i>Schule des Generalba&szlig;spiels</i> (Wilhelmshaven: Heinrichshofen, 1983), vol. 1, <i>Die Instrumentalmusik</i>, 9; and Carl Dahlhaus, <i>Studies on the Origin of Harmonic Tonality</i>, trans. by Robert O. Gjerdingen (Princeton: Princeton University Press, 1990), 135. See as well the more expansive definition in Joel Lester, <i>Compositional Theory in the Eighteenth Century</i> (Cambridge, Mass.: Harvard University Press, 1992), 87&ndash;89. The fine distinction I am drawing between <i>Generalba&szlig;lehre</i> and <i>Harmonielehre</i> has, of course, not always been so clear cut. See Ulf Thomson, <i>Voraussetzungen und Artungen der &ouml;sterreichischen Generalba&szlig;lehre Zwischen Albrechtsberger und Sechter</i>, Band 8 of <i>Wiener Ver&ouml;ffentlichungen zur Musikwi&szlig;enschaft</i> (Tutzing: Hans Schneider, 1978), 9, and especially 68&ndash;71. See also Manfred Wagner, <i>Die Harmonielehren der ersten H&auml;lfte des 19. Jahrhunderts</i>, Band 38 of <i>Studien zur Musikgeschichte des 19. Jahrhunderts</i> (Regensburg: Gustave Bosse, 1974), 27, item 1.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Joseph Preindl, <i>Wiener-Tonschule; oder Anweisung zum Generalba&szlig;e, zur Harmonie, zum Contrapuncte und der Fugen-lehre</i><nobr>. . .</nobr>, comp. and ed. by Ignaz Ritter von Seyfried, (Vienna: Tobias Haslinger, [1827]).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Robert. W. Wason, <i>Viennese Harmonic Theory from Albrechstberger to Schenker and Schoenberg</i> (Ann Arbor: U.M.I. Research Press, 1985), 5&ndash;9. So, for example, Johann Georg Albrechtsberger&rsquo;s <i>Gr&uuml;ndliche Anweisung zur Composition</i> (Leipzig: Johann Gottlob Immanuel Breitkopf, 1790) can be said to be almost devoid of <i>Harmonielehre</i>, concerned as it is primarily with species counterpoint. Much the same can be said of Albrechtsberger&rsquo;s <i>Kurzgefa&szlig;te Methode den Generalba&szlig; zu erlernen</i> (Vienna: Artaria, [ca. 1792]) and the similar <i>Generalba&szlig;-Schule</i> (Leipzig: Hoffmeister and K&uuml;hnel, [ca. 1804]. (The treatise, <i>J. G. Albrechtsbergers s&auml;mmtliche Schriften &uuml;ber Generalba&szlig;, Harmonie-Lehre, und Tonsetzkunst; zum Selbstunterrichte</i> [Vienna: Anton Strau&szlig;, (ca. 1825)] was edited by Seyfried, and the extensive influence of <i>Harmonielehre</i> in the work may be attributable to its editor.) On the other end of the time period, Simon Sechter&rsquo;s <i>Die Grunds&auml;tze der musikalischen Komposition</i> (Leipzig: Breitkopf und H&auml;rtel, 1853&ndash;54), especially volume 1, <i>Die richtige Folge der Grundharmonien, oder vom Fundamentalba&szlig; und dessen Umkehrungen und Stellvertretern</i>, is a full-blown Viennese <i>Harmonielehre</i>. In between lie treatises such as the <i>Anleitung zum General-Ba&szlig;</i> of Emmanuel Aloys F&ouml;rster (1748&ndash;1823) (Vienna: Artaria, 1823), in which the influence of <i>Harmonielehre</i> can be detected, but not in a significant manner.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> We must note as a caveat Seyfried&rsquo;s role as compiler and editor. A manuscript source of the <i>Wiener Tonschule</i> (Vienna, National Library, Preindl Sm. 5072, 78 p., 3 parts) consists primarily of contrapuntal exercises. The final revised manuscript sent for publication (Preindl Sm. 5119) is in a very different hand. Seyfried&rsquo;s influence upon the treatise may have been significant (as it was presumably on Albrechtsberger&rsquo;s <i>s&auml;mmtliche Schriften</i> [see above]), but, lacking further documentary evidence to the contrary, we shall assume that the bulk of the treatise as published is Preindl&rsquo;s conception.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Gottfried Weber, <i>Versuch einer geordneten Theorie der Tonsezkunst zum Selbstunterriche mit Anmerkungen f&uuml;r Gelehrtere</i> (Mainz: B. Schott, 1817&ndash;21); Georg Joseph Vogler, <i>Tonwi&szlig;enschaft und Tonsezkunst</i> (Mannheim: Kurf&uuml;rstliche Hofbuchdruckerei, 1776 [facsimile edition, Hildesheim: Georg Olms, 1970]), and Vogler, <i>Betrachtungen der Mannheimer Tonschule</i> (Mannheim: 1778&ndash;81 [facsimile edition, Hildesheim: Georg Olms, 1974]).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Weber, <i>Versuch</i>, vol. 1, <i>Grammatik der Tonsezkunst</i>, 271.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Hereafter, citations from Preindl, <i>Wiener Tonschule</i>, will be made directly in the text with the page number enclosed in braces.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> By my usage of <i>function</i>, I follow Preindl&rsquo;s definition of <i>Ton</i> (see above): my <i>function</i> is the fixed relation that would presumably distinguish a <i>Ton</i> from a mere <i>Klang</i>. In terms of Preindl&rsquo;s treatise, this concept of <i>function</i> entails relation to a tonal center or key, something like Daniel Harrison&rsquo;s succinctly defined &ldquo;harmonic attitude:&rdquo; see Daniel Harrison, <i>Harmonic Function in Chromatic Music: A Renewed Dualist Theory and an Account of Its Precedents</i> (Chicago: University of Chicago Press, 1994), 37.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> See Ulf Thomson, <i>Voraussetzungen und Artungen</i>, 22&ndash;27. See as well, John Rothgeb, &ldquo;Schenkerian Theory: Its Implications for the Undergraduate Curriculum,&rdquo; <i>Music Theory Spectrum</i> 3 (1981): 145&ndash;46, and in particular what Rothgeb calls an &ldquo;&rsquo;internal system&rsquo; of organization <nobr>. . .</nobr> that would take harmonic theory into account,&rdquo; a system internal to figured bass. He illustrates this idea by citing Schenker&rsquo;s <i>Generalba&szlig;lehre</i>: &ldquo;<nobr>. . .</nobr> both the assignment and the interpretation of the figures depend upon the [totality of the] composition, and thus upon scale degrees, modulation, form, and so forth, to such an extent that even the theory of scale degrees becomes a latent, supplementary component of figured-bass theory.&rdquo; (146).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> I am much indebted to Phil Stoker for discussions about Preindl and modulation undertaken during a directed readings course at the University of Ottawa and to research grants from the University of Ottawa and the Social Sciences and Humanities Research Council of Canada for a study of figured-bass treatises from Vienna circa 1800.<br><a href="#FN10REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">For a characteristically close definition of figured bass see: Walter Kolneder, <i>Schule des Generalba&szlig;spiels</i> (Wilhelmshaven: Heinrichshofen, 1983), vol. 1, <i>Die Instrumentalmusik</i>, 9; and Carl Dahlhaus, <i>Studies on the Origin of Harmonic Tonality</i>, trans. by Robert O. Gjerdingen (Princeton: Princeton University Press, 1990), 135. See as well the more expansive definition in Joel Lester, <i>Compositional Theory in the Eighteenth Century</i> (Cambridge, Mass.: Harvard University Press, 1992), 87&ndash;89. The fine distinction I am drawing between <i>Generalba&szlig;lehre</i> and <i>Harmonielehre</i> has, of course, not always been so clear cut. See Ulf Thomson, <i>Voraussetzungen und Artungen der &ouml;sterreichischen Generalba&szlig;lehre Zwischen Albrechtsberger und Sechter</i>, Band 8 of <i>Wiener Ver&ouml;ffentlichungen zur Musikwi&szlig;enschaft</i> (Tutzing: Hans Schneider, 1978), 9, and especially 68&ndash;71. See also Manfred Wagner, <i>Die Harmonielehren der ersten H&auml;lfte des 19. Jahrhunderts</i>, Band 38 of <i>Studien zur Musikgeschichte des 19. Jahrhunderts</i> (Regensburg: Gustave Bosse, 1974), 27, item 1.</div><div id="fndiv2" class="flyoverdiv">Joseph Preindl, <i>Wiener-Tonschule; oder Anweisung zum Generalba&szlig;e, zur Harmonie, zum Contrapuncte und der Fugen-lehre</i>. . ., comp. and ed. by Ignaz Ritter von Seyfried, (Vienna: Tobias Haslinger, [1827]).</div><div id="fndiv3" class="flyoverdiv">Robert. W. Wason, <i>Viennese Harmonic Theory from Albrechstberger to Schenker and Schoenberg</i> (Ann Arbor: U.M.I. Research Press, 1985), 5&ndash;9. So, for example, Johann Georg Albrechtsberger&rsquo;s <i>Gr&uuml;ndliche Anweisung zur Composition</i> (Leipzig: Johann Gottlob Immanuel Breitkopf, 1790) can be said to be almost devoid of <i>Harmonielehre</i>, concerned as it is primarily with species counterpoint. Much the same can be said of Albrechtsberger&rsquo;s <i>Kurzgefa&szlig;te Methode den Generalba&szlig; zu erlernen</i> (Vienna: Artaria, [ca. 1792]) and the similar <i>Generalba&szlig;-Schule</i> (Leipzig: Hoffmeister and K&uuml;hnel, [ca. 1804]. (The treatise, <i>J. G. Albrechtsbergers s&auml;mmtliche Schriften &uuml;ber Generalba&szlig;, Harmonie-Lehre, und Tonsetzkunst; zum Selbstunterrichte</i> [Vienna: Anton Strau&szlig;, (ca. 1825)] was edited by Seyfried, and the extensive influence of <i>Harmonielehre</i> in the work may be attributable to its editor.) On the other end of the time period, Simon Sechter&rsquo;s <i>Die Grunds&auml;tze der musikalischen Komposition</i> (Leipzig: Breitkopf und H&auml;rtel, 1853&ndash;54), especially volume 1, <i>Die richtige Folge der Grundharmonien, oder vom Fundamentalba&szlig; und dessen Umkehrungen und Stellvertretern</i>, is a full-blown Viennese <i>Harmonielehre</i>. In between lie treatises such as the <i>Anleitung zum General-Ba&szlig;</i> of Emmanuel Aloys F&ouml;rster (1748&ndash;1823) (Vienna: Artaria, 1823), in which the influence of <i>Harmonielehre</i> can be detected, but not in a significant manner.</div><div id="fndiv4" class="flyoverdiv">We must note as a caveat Seyfried&rsquo;s role as compiler and editor. A manuscript source of the <i>Wiener Tonschule</i> (Vienna, National Library, Preindl Sm. 5072, 78 p., 3 parts) consists primarily of contrapuntal exercises. The final revised manuscript sent for publication (Preindl Sm. 5119) is in a very different hand. Seyfried&rsquo;s influence upon the treatise may have been significant (as it was presumably on Albrechtsberger&rsquo;s <i>s&auml;mmtliche Schriften</i> [see above]), but, lacking further documentary evidence to the contrary, we shall assume that the bulk of the treatise as published is Preindl&rsquo;s conception.</div><div id="fndiv5" class="flyoverdiv">Gottfried Weber, <i>Versuch einer geordneten Theorie der Tonsezkunst zum Selbstunterriche mit Anmerkungen f&uuml;r Gelehrtere</i> (Mainz: B. Schott, 1817&ndash;21); Georg Joseph Vogler, <i>Tonwi&szlig;enschaft und Tonsezkunst</i> (Mannheim: Kurf&uuml;rstliche Hofbuchdruckerei, 1776 [facsimile edition, Hildesheim: Georg Olms, 1970]), and Vogler, <i>Betrachtungen der Mannheimer Tonschule</i> (Mannheim: 1778&ndash;81 [facsimile edition, Hildesheim: Georg Olms, 1974]).</div><div id="fndiv6" class="flyoverdiv">Weber, <i>Versuch</i>, vol. 1, <i>Grammatik der Tonsezkunst</i>, 271.</div><div id="fndiv7" class="flyoverdiv">Hereafter, citations from Preindl, <i>Wiener Tonschule</i>, will be made directly in the text with the page number enclosed in braces.</div><div id="fndiv8" class="flyoverdiv">By my usage of <i>function</i>, I follow Preindl&rsquo;s definition of <i>Ton</i> (see above): my <i>function</i> is the fixed relation that would presumably distinguish a <i>Ton</i> from a mere <i>Klang</i>. In terms of Preindl&rsquo;s treatise, this concept of <i>function</i> entails relation to a tonal center or key, something like Daniel Harrison&rsquo;s succinctly defined &ldquo;harmonic attitude:&rdquo; see Daniel Harrison, <i>Harmonic Function in Chromatic Music: A Renewed Dualist Theory and an Account of Its Precedents</i> (Chicago: University of Chicago Press, 1994), 37.</div><div id="fndiv9" class="flyoverdiv">See Ulf Thomson, <i>Voraussetzungen und Artungen</i>, 22&ndash;27. See as well, John Rothgeb, &ldquo;Schenkerian Theory: Its Implications for the Undergraduate Curriculum,&rdquo; <i>Music Theory Spectrum</i> 3 (1981): 145&ndash;46, and in particular what Rothgeb calls an &ldquo;&rsquo;internal system&rsquo; of organization . . . that would take harmonic theory into account,&rdquo; a system internal to figured bass. He illustrates this idea by citing Schenker&rsquo;s <i>Generalba&szlig;lehre</i>: &ldquo;. . . both the assignment and the interpretation of the figures depend upon the [totality of the] composition, and thus upon scale degrees, modulation, form, and so forth, to such an extent that even the theory of scale degrees becomes a latent, supplementary component of figured-bass theory.&rdquo; (146).</div><div id="fndiv10" class="flyoverdiv">I am much indebted to Phil Stoker for discussions about Preindl and modulation undertaken during a directed readings course at the University of Ottawa and to research grants from the University of Ottawa and the Social Sciences and Humanities Research Council of Canada for a study of figured-bass treatises from Vienna circa 1800.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2002 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Eric Isaacson, Co-Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

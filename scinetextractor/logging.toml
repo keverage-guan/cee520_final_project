@@ -1,0 +1,37 @@
+[loggers]
+keys=root,scinetextractor
+
+[handlers]
+keys=consoleHandler,fileHandler
+
+[formatters]
+keys=simpleFormatter, customFormatter
+
+[logger_root]
+level=ERROR
+handlers=consoleHandler,fileHandler
+
+[logger_scinetextractor]
+level=WARN
+handlers=consoleHandler,fileHandler
+qualname=scinetextractor
+propagate=0
+
+[handler_fileHandler]
+class=FileHandler
+level=WARN
+formatter=customFormatter
+args=('scinetextractor.log', )
+
+[handler_consoleHandler]
+class=StreamHandler
+level=WARN
+formatter=customFormatter
+args=(sys.stdout,)
+
+[formatter_simpleFormatter]
+format=%(asctime)s - %(name)s - %(levelname)s - %(message)s
+
+[formatter_customFormatter]
+format=%(asctime)s - %(message)s
+datefmt=%Y-%m-%d %H:%M:%S

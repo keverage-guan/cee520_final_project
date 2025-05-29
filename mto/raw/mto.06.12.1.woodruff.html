@@ -1,0 +1,1225 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 12.1: Woodruff, Metrical Phase Shifts</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Metrical Phase Shifts in Stravinsky&rsquo;s <i>The Rite of Spring</i>">
+
+    <meta name="citation_author" content="Woodruff, Eliot Ghofur">
+      
+
+<meta name="citation_publication_date" content="2006/02/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="12">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Metrical Phase Shifts in Stravinsky&rsquo;s <i>The Rite of Spring</i>
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.06.12.1/mto.06.12.1.woodruff.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Eliot Ghofur Woodruff</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: meter, phase, periodicity, irregularity, displacement, 
+Roeder, Stravinsky, <i>The Rite of Spring</i>, van den Toorn</font></p><p><font size='4'>ABSTRACT: A metric model is proposed which incorporates 
+different phases of a single meter. Metric irregularities are interpreted in 
+this model as phase shifts. A phase-shift analysis of three problematic passages 
+from Stravinsky&rsquo;s <i>The Rite of Spring</i> reveals a discourse of metric events 
+not bound by sequence. Van den Toorn&rsquo;s concept of metric polarity is invoked 
+although modified to explain the aesthetic impact of these shifts.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.06.12.1/mto.06.12.1.woodruff.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.06.12.1/woodruff_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received October 2005</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 12, Number 1, February 2006 <br> Copyright &#0169; 2006 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><h4>I. Introduction</h4>
+<p>[1.1] Stravinsky embodied in <i>The Rite of Spring</i> an aesthetic experience so 
+profound that it continues to stir us today. In listening to <i>The Rite</i> our 
+attention is drawn to certain combinations of chords, melodies, and movements, 
+which are satisfying in themselves, reshaping traditions of the past, infusing 
+old forms with new spirit. Yet it is hard for us to empathize with the audience 
+who attended <i>The Rite&rsquo;s</i> premiere. In 1913, there was little in the concert 
+repertoire to soften its impact, to prepare the audience. Without the prior 
+knowledge or experience necessary to give such music meaning, how could it have 
+been understood? It is different for us today for we have the advantage of 
+almost a hundred years experience from which to draw when contemplating <i>The 
+Rite</i>. It is from here that we gain admission into its sound world and begin to 
+understand the combinations which make this work unique.</p>
+<p>[1.2] We can also see where earlier attempts to come to grips with Stravinsky&rsquo;s 
+music might have gone astray. Without recourse to this fund of experience, 
+theorists seeking to explain or justify the music inevitably turned toward 
+models of the past to guide them. In the realm of rhythm and meter, this meant a 
+periodic model of meter: a single, steady meter as manifest in the music of the 
+tonal tradition. They were right in attributing periodicity to this model, for 
+periodicity is an intrinsic quality of meter, but wrong in confining meter to a 
+<i>single</i> course of projection.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> This assumption forced Stravinsky&rsquo;s metric 
+invention, full of unexpected twists, into a mould which didn&rsquo;t quite fit. As a 
+result, these twists, or irregularities, were interpreted as deviations from the 
+periodic model, a model whose one-dimensional implications were taken for 
+granted. This view has persisted, and where old forms are used to interpret new 
+expressions, aesthetic appreciation is apt to be misled.</p>
+<p>[1.3] However, in recent research models have emerged in which meter is no 
+longer bound to a single course. In &ldquo;A Theory of Musical Meter&rdquo; William Benjamin 
+proposes that the phenomenon known as elision is counted on two overlapping 
+meters of the same time signature.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Pieter van den Toorn suggests moreover 
+that we hear the foreground irregularities of Stravinsky&rsquo;s music in the context 
+of a steady background meter.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Both authors reconcile cherished notions of 
+periodicity with irregularity by extending meter beyond the confines of a single 
+course. This is fitting, and it is to this cause that the current article is 
+dedicated. The task at hand is to present a model of meter which takes into 
+account the potential phases inherent within meter, and to explore a specific 
+kind of metric interaction implicit in this system &mdash; phase shift. This model is 
+based on the work of John Roeder, who uses pulse streams to illustrate 
+concurrent meters in the works of Schoenberg and Bartok.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The phase-shift 
+model is applied to a number of episodes from <i>The Rite of Spring</i> in which 
+meter and the musical substance in general are governed by a <i>determinant 
+motive</i>&mdash;any musical event central to metric projection. Metric irregularities 
+often arise by way of the displacement of a determinant motive, either by 
+varying the period at which it is repeated, or by altering some aspect of its 
+configuration. But first we step back to look at some of the ideas which 
+contribute to the fund from which we draw. </p>
+<h4>II. Background</h4>
+<p>[2.1] An issue that has long interested theorists is that of hypermetric 
+irregularity, irregularity caused by uneven phrase lengths.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> While most tonal 
+works are periodic at the level of the measure, it is not unusual for such works 
+to break periodicity at the level of the hypermeasure. In attempting to 
+reconcile these breaks with periodicity, theorists have described several 
+processes: two which have figured in the discussion of Stravinsky&rsquo;s music, 
+extension and elision, are briefly considered here. An extension occurs when a 
+hypermeasure exceeds its expected length, the expectation of which is 
+established in the preceding measures.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> 
+Thus a cycle of four-bar phrases interrupted by a five-bar phrase forms a 
+hypermetric irregularity by means of extension. The converse process, 
+contraction, occurs when a hypermeasure is shorter than its expected length. The 
+conclusion drawn is that the extension or contraction of a musical event 
+triggers a corresponding alteration to the meter, effectively adding or deleting 
+a beat from an otherwise steady meter. This is illustrated by enumerating the 
+metric identities yielded by an extension: 1-2-3-4 1-2-3-4-5 1-2-3-4. Metric 
+identity here denotes a number corresponding to the beat projected by an event, 
+the succession of which reveals a pattern of such identities.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+<p>[2.2] The problem with extension is that it is not, strictly speaking, metric. 
+Adding or deleting beats from an otherwise steady meter compromises periodicity, 
+an intrinsic quality of meter. This cut and paste process is more suitably 
+applied to pitch phenomena, phrases, chords, melodies, and the like, whose 
+extension may trigger an irregularity, but it does not follow that meter has 
+been extended in the same way. What is altered, however, is the pattern of 
+metric identity. Confusion arises when theorists, assuming a single meter is in 
+force, read this pattern as the entire meter. The result is a perception of 
+meter as a single, albeit varying course of projection. It can be tempting to 
+view beats as extended or contracted, as long as we acknowledge that they are a 
+surface projection of meter, an effect, rather than the source. Whether dealing 
+with background hypermetric irregularities of tonal music or the more immediate 
+foreground irregularities of twentieth-century music, extension is of little 
+consequence in reconciling periodicity with irregularity. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Elision</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="woodruff_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.3] The second process, elision, involves two phrases which overlap so that 
+the final measure of the first phrase is also the opening measure of the second 
+phrase. The point of overlap between the two phrases has a dual metric identity. 
+The upbeat of the first phrase, count 4, is also the downbeat of the second 
+phrase, count 1, and is interpreted as both simultaneously. In order to 
+reconcile the overlap with periodic meter, Benjamin put forward a model in which 
+the two phrases are counted separately on two meters of the same hypermetric 
+time signature (see 
+<b>Example 1</b>).<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+The first phrase is counted in full from 1 to 4, as is the second, only the 
+second phrase is counted alongside or parallel to the first phrase at the point 
+of overlap. Described by Benjamin as &lsquo;a transformation of a (strictly) metric 
+structure&rsquo;, it preserves the periodic model, but increases the number of meters 
+used to accommodate the irregularity.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+<h4>III. Foreground Irregularities</h4>
+<p>[3.1] Conceptually the tools of extension and elision can be used to interpret 
+foreground irregularities&mdash;those compelling metric disruptions in modern music 
+which occur at the more immediate level of the beat and measure.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> 
+This would 
+correspond to the commonly held view in which &lsquo;metric units are not of uniform 
+length. Instead, they are of variable length, corresponding to expansions or 
+contractions in melodic motives.&rsquo;<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> These &lsquo;metric units of varying lengths&rsquo; 
+are delineated in the score by changing time signatures or by unevenly spaced 
+accents within the framework of a steady meter. In either case, the meter 
+perceived by the listener does not always correspond to the written time 
+signature of the composer, and it is the perceived meter that is the focus of 
+this discussion. The concept of &lsquo;varying metric units&rsquo; is not the premise of any 
+one author but seems to exist in the academic domain by way of default, in lieu 
+of a reasonable alternative. Almost any treatise on modern music will include a 
+discussion of meter along these lines. Needless to say, the idea of &lsquo;varying 
+metric units&rsquo; compromises the periodic model of meter and confines meter to a 
+single, varying course of projection.</p>
+<p>[3.2] This issue is taken up by Gretchen Horlacher in &ldquo;Metric Irregularity in 
+<i>Les Noces</i></i>: The Problem of Periodicity&rdquo;.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> While acknowledging the periodic 
+nature of meter, Horlacher argues an alternative for Stravinsky&rsquo;s music. The 
+case is made through analysis, observing the manipulation of a determinant 
+motive from <i>Les Noces</i> and the disruptive impact it has on periodicity. The 
+motive appears at the outset in stable metric form, projecting a steady meter. 
+However, this meter is subsequently challenged by an &lsquo;untimely&rsquo; entry of the 
+motive which is displaced from the established course. The displacement is made 
+explicit by assigning metric identities to key events within the motive and 
+tracing exactly where these identities contradict the established meter, a point 
+not always evident in the composer&rsquo;s score. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Fixed metric identity and periodicity</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="woodruff_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.3] This contradiction is illustrated in <b>Example 2</b> with a hypothetical 
+motive X, whose four quarter notes (G <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> A) project a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter. We assign 
+each of these notes a 1-2-3-4 metric identity corresponding to the beat they 
+project. The motive is repeated seven beats after the onset of the first entry, 
+arriving on beat 4 of the established meter. In this repetition the motive&rsquo;s 
+1-2-3-4 identity coincides with beats 4-1-2-3 of the steady meter; they no 
+longer align. The question then is &lsquo;Should one assign a new metric identity to a 
+motive in order to continue counting periodically, or break the periodicity in 
+order to preserve the motive&rsquo;s metric identity?&rsquo;<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p>
+<p>[3.4] For Horlacher, metric identity is preserved. Irregularities occur with 
+such persistence in Stravinsky&rsquo;s music that listeners learn to admit breaks in 
+periodicity without disrupting the flow of the meter. Periodicity is compromised 
+in favor of a &lsquo;stop and start meter, one full of interruptions, but still in 
+force.&rsquo;<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> The processes of contraction and elision, fashioned initially for 
+hypermetric irregularity, are cited as the means with which foreground 
+irregularities are accommodated.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> 
+This corresponds then to the commonly held 
+view of irregularities as &lsquo;metric units of varying lengths&rsquo;, lengths determined 
+here by the fixed metric identity of a motive and its displacement. As far as it 
+critically examines the issues, the article is of lasting value, but what 
+Horlacher describes as a &lsquo;stop and start meter&rsquo; is an effect of the invention, 
+not the source.</p>
+<p>[3.5] It would be worth considering at this point why we choose to preserve a 
+motive&rsquo;s metric identity. When has the motive become so important in shaping 
+meter? The motive governs metric projection not in deference to some new 
+principle binding modern music, but simply in the absence of a single steady 
+meter. In <i>The Rite of Spring</i> the orchestral forces seldom unite in the 
+projection of a steady meter. Either different parts act in concert to project 
+shifting metric patterns, or they act independently of each other, projecting 
+different patterns at the same time. These alternatives are identified by van 
+den Toorn as rhythmic/metric types I and II.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> 
+This situation is quite 
+different from that of the tonal tradition whereby the different parts often 
+unite in the projection of a single steady meter. In this case, where a 
+suspension or syncopation in one part challenges the meter, the other parts more 
+or less hold that meter in place; the metric disruptions are local and short 
+lived.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> But while we acknowledge periodicity as a quality of meter, a 
+composer is no more bound to a <i>single</i> meter than to a single diatonic 
+collection. Stravinsky shows no such commitment, and in the absence of a single 
+steady meter, accents&mdash;provided most conspicuously by the motive&mdash;become 
+central in metric projection. Metric identity is fixed not as a matter of 
+course, but under conditions conducive to its retention. A motive, displaced 
+from an established meter for which there is no support, retains metric 
+identity. Thus, for Stravinsky, meter and motive are intimately linked. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Model of foreground/background meters</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="woodruff_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.6] For Pieter van den Toorn issues of displacement and fixed metric identity 
+point to the fact that the metric invention exceeds the confines of a single 
+meter. Having observed a motive&rsquo;s departure from an established meter by means 
+of displacement, van den Toorn notes how successive displacements can 
+effectively transfer the motive <i>back</i> to its original course.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> 
+The 
+displacements which unhinged the motive in the first place eventually &lsquo;cancel 
+out&rsquo;, placing the motive &lsquo;on target&rsquo; with the meter established at the outset. 
+At this point the motive&rsquo;s metric identity and the initial meter realign. For 
+van den Toorn, this suggests that the initial meter is in force throughout in 
+the form of a steady background meter. At times this meter is explicitly 
+projected by an ostinato or accompaniment figure, as in a number of movements 
+from <i>The Soldier&rsquo;s Tale</i>; otherwise it is projected at strategic points, as 
+signaled by the departure and return of the motive, and maintained, perhaps 
+internally, by the listener.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> 
+If motive X were to return to an established 
+meter twelve beats after the onset of an initial statement, as illustrated in 
+<b>Example 3</b>, it would effectively arrive &lsquo;on target&rsquo; with the initial meter, 
+lending substance to the notion of a steady background meter. </p>
+<p>[3.7] In addition to the workings of this model, van den Toorn provides an 
+aesthetic framework within which irregularities start to cohere. Foreground 
+irregularities are neither arbitrary nor a game of chance: their imposition over 
+a steady background meter creates a tension, a heightened presence. This is 
+particularly true for conservative listeners, who &lsquo;cling to an established 
+regularity for as long as possible, and often with the consequence that the 
+effect of conflict or disruption is all the more acutely felt.&rsquo;<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> In this way 
+the seemingly contradictory principles of periodicity and irregularity are 
+brought together: the background periodic meter, established at the outset and 
+reaffirmed at strategic points, acts as a foil to foreground irregularities. 
+This state of conflict is defined as metric polarity, or 
+&lsquo;rhythmic-metric-identity <i>polarities</i>&rsquo; &mdash; polarities between a motive&rsquo;s metric 
+identity and the steady background meter.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> 
+The concept is intriguing, and the implications of the departure and return of a 
+motive to a single meter are not to be dismissed. But it is questionable whether 
+a background meter remains in force throughout where it is not explicitly 
+projected, and if it does, is it of sufficient strength to function as a pole 
+against which foreground irregularities are perceived?<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup></p>
+<h4>IV. Phase-Shift Model</h4>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Four phases of 4/4 meter</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="woodruff_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.1] Foreground irregularities are still not given their due. They are not the 
+product of varying metric units or changing time signatures, nor are they 
+necessarily perceived against a steady background meter. Irregularities arising 
+from the displacement of a determinant motive are interpreted here as shifts in 
+projection of a number of meters&mdash;parallel meters&mdash;whose time signatures are 
+the <i>same</i>, but whose metric patterns are <i>out of phase</i>. Each of these meters 
+is periodic in and of itself, and is identical to other parallel meters in all 
+respects barring metrical alignment: their beats are synchronized, but their 
+1-2-3-4 counts are out of phase. They are in essence different phases of the 
+same meter, and, while they coincide, they never merge. To illustrate, in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> 
+there are four phases of the same meter whose quarter-note beats coincide. The 
+model in <b>Example 4</b> depicts the four phases as parallel lines in graph form. The 
+small bar lines mark the measures of each phase through which the out-of-phase 
+alignment becomes apparent. The implicit 1-2-3-4 count is written in the first 
+complete measure of each phase.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Phase-shift analysis of motive X</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="woodruff_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.2] Depicting the meters side by side does not suggest the simultaneous 
+projection of all phases. If this were the case, every metric identity would 
+sound at once, rendering the model useless for analytic purposes. Neither is it 
+supposed that these meters have any existence independent of the music. Rather, 
+they illustrate the <i>potential</i> phases of a meter within a given context. The 
+phases are projected in accordance with motivic displacement and can be traced 
+as follows: One of the meters is established at the outset by a determinant 
+motive and to this motive we assign the metric identities 1, 2, 3, or 4, 
+corresponding to the beats it projects. The established meter remains in force 
+until such time that the motive is displaced so that its metric identity and the 
+meter&rsquo;s 1-2-3-4 count no longer align. Despite the contradiction, metric 
+identity is retained, forging a shift in projection from the established meter 
+to an out-of-phase meter of the same time signature. The motive&rsquo;s metric 
+identity serves to indicate which phase of meter is set in motion. This newly 
+established meter remains in force until it too is contradicted, at which point 
+it serves as a point of departure for the shift in projection, either back to 
+the initial meter, or to another of the four phases. An irregularity then is the 
+juncture at which the music shifts projection from one phase to another, and as 
+interpreted in this model, is rightly regarded as a <i>phase shift</i>. If the 
+irregularities caused by the displacement of motive X are interpreted as phase 
+shifts, two of the four potential meters are drawn upon. These meters appear 
+above the staff in <b>Example 5</b> and their projection is indicated in cue-size 
+notation. That the motive departs from and returns to the meter established at 
+the outset can be visually apprehended in the model; the first and third 
+statements project the same phase of meter. </p>
+<p>[4.3] To give credit where it is due, the model of out-of-phase meters is 
+identical in principal to Roeder&rsquo;s pulse streams. Roeder prefers the term pulse 
+stream over meter as it connotes the continuous flow of music&rsquo;s time. Roeder 
+demonstrates how different streams of the same pulse&mdash;phases&mdash;can be activated 
+by different strands within a contrapuntal texture. In his own words:</p>
+<blockquote>
+	<p>&lsquo;Essentially the theory represents rhythmic polyphony as two or more concurrent 
+&ldquo;pulse streams&rdquo; created by regularly recurring accents. These pulse streams are 
+considered to be distinct continuities, not &ldquo;levels&rdquo; or groupings of each other, 
+so this approach does not involve meter in the exclusive and hierarchical sense 
+defined by the theorists just mentioned. Rather it analyzes an irregular surface 
+as the sum of several concurrent regular continuities, much as a Fourier 
+transform analyzes a complexly aperiodic sound as the sum of periodic sine 
+	waves.&rsquo;<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup></p>
+</blockquote>
+<p>There are minor differences in how the two models are presented and naturally 
+the observations and conclusions regarding Stravinsky&rsquo;s music differ from those 
+of Bartok and Schoenberg. Roeder links rhythmic process with the music&rsquo;s formal 
+design, paying particular attention to how pulse streams interact within 
+sections, how they articulate boundaries, and how they create continuity. The 
+cues from which accents are drawn may or may not be motivically generated. The 
+present work focuses on passages in which all voices act in concert to project 
+shifting metric patterns. In this &lsquo;single-voice&rsquo; texture only one phase is 
+projected at any point and the phase shifts are allied with the action of a 
+determinate motive. This work also explores the aesthetic rather than the formal 
+implications of the model. It should be noted that an instance of a phase shift 
+similar to that described here is given in Example 1 of Roeder&rsquo;s &ldquo;Rhythmic 
+Process and Form in Bartok&rsquo;s <i>Syncopation</i>.&rdquo;</p>
+<p>[4.4] This model also shares certain similarities with that of Benjamin (see 
+Example 1). Both employ different meters of the same time signature&mdash;phases&mdash;although Benjamin does not use this term. Here the model is extended to embrace 
+all potential phases within a given passage. These meters are depicted side by 
+side because irregularities occur with such persistence in Stravinsky&rsquo;s music 
+that a number of meters can be brought into play over a short period. It is 
+helpful to grasp these meters visually on the hypothetical model: it makes 
+intelligible to the eye what is aurally perceived. Benjamin depicts meters 
+parallel only at the point of overlap, the purpose of which is to demonstrate 
+the dual metric identity of an event at that point. Overlap or dual metric 
+identity does not figure prominently here because the phase shift is not the 
+result of a dovetailing from one phrase or motive to another. In the absence of 
+a steady course of projection, when a motive is displaced with nothing to 
+counter it, its metric identity is retained. As a result, the projection of 
+meter shifts forcibly from one phase to another without overlap, and so without 
+reinterpretation or dual metric identity. Where dual metric identity occurs, it 
+does so because there are conflicting metric cues, but this does not entail an 
+overlap from one statement of the motive to another.</p>
+<h4>V. <i>The Sacrificial Dance </i>I</h4>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Phase-shift analysis of <i>The Sacrificial Dance</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="woodruff_ex6a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[5.1] To apply this model to Stravinsky, rehearsal numbers 149-60+2 of the 
+<i>Sacrificial Dance</i> will be examined, a passage whose complex rhythmic surface 
+veils a simple yet ingenious metric design.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup></a>
+The metric invention here 
+derives from a determinant motive&mdash;a chord&mdash;and its alternating projection of 
+two phases of meter (see <b>Example 6</b>. We can penetrate this invention for the 
+most part by preserving metric identity. The chord, of a sixteenth-note 
+duration, functions as a downbeat and is assigned a count 1 identity. Over an 
+eighth-note pulse the chord projects a steady <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr> meter when repeated at 
+quarter-note periods, a 1-2 succession. However, when the chord is repeated at 
+eighth-note periods, fixed metric identity yields a 1-1 succession; the chord&rsquo;s 
+count 1 identity falls on successive eighth-note beats. This downbeat succession 
+forces a shift in projection from one phase of meter to the other. The 
+irregularities, or phase shifts, come by way of eighth-note repetition of the 
+chord at the expense of the <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr> meter, and the entire passage can be 
+accommodated on two out-of-phase meters, whichever meter aligns with the 
+downbeat identity of the chord at any point. For instance, at numbers 150+2-4 the 
+varied repetition of the chord yields a 1-2 1-2 1-1-2 pattern of identities. The 
+consecutive downbeats at number 150+4, 1-1, indicate a shift in phase. </p>
+<p>[5.2] More intriguing, and problematic from an analytical viewpoint, is that the 
+passage opens with a shift in phase. The first two statements of the chord 
+appear in eighth-note succession and retaining metric identity yields two 
+successive downbeats. The question here is whether it is possible to perceive a 
+shift in phase before the <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr> meter has been established. That the first chord 
+is perceived as a downbeat is self-evident as it begins the passage. In a 
+conventional reading one might interpret the second chord as an upbeat in 
+relation to the first. Note, however, the precision of the articulation, the 
+exact repetition of the chord, and the absence of any other metric cues give 
+weight to fixed metric identity. Under these conditions the second chord, rather 
+than being heard as a continuation of the first, retains its downbeat identity; 
+it resets the meter, shifting the phase and thus denying the opportunity for the 
+first chord to realize a full measure. </p>
+<p>[5.3] However, there is an exception to this fixed interpretation. When the 
+chord is repeated three times in eighth-note succession, fixed metric identity 
+yields a 1-1-1 pattern. A triple succession of downbeats departs from and 
+returns to an established meter within a three-beat period. The listener is 
+provided with conflicting metric cues, one drawn from fixed metric identity 
+(1-1-1) and one drawn from sequent succession (1-2-1), and while we apprehend 
+the shifts in phase, they &lsquo;cancel out&rsquo;. The phase shifts, although still in 
+evidence, are likely to be subsumed here by a single phase of meter. Example 6 
+provides a graphic analysis of the passage as interpreted on two phases of <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr> 
+meter. The lower two staves give the piano reduction of the score (excluding the 
+intermittent entries of solo instruments) whilst the upper two staves present 
+the two phases of <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr> meter. The bracketed note at number 149+3 indicates the first 
+instance of a triple succession of downbeats whose phase shifts are subsumed by 
+a single meter.</p>
+<p>[5.4] It is tempting to assign a principal status to one of the two phases. Such 
+a hierarchy would enable us to treat one phase as <i>the</i> meter, and the other as 
+a counter-meter or syncopation. However there is scant evidence for this 
+interpretation. The action takes place more or less evenly over both phases: a 
+total of forty four and forty beats are projected by the upper and lower phases 
+respectively. We could also expect that if one phase were of principal status, 
+then that phase would figure prominently at the outset. But the passage opens 
+with a phase shift, an irregularity which is likely to &lsquo;throw&rsquo; the listener 
+rather than establish the dominance of a single phase. The music does favor the 
+lower of the two phases between numbers 149-51, but then this preference is 
+reversed from numbers 151-54. Towards the climax at number 161 the shifts become 
+increasingly frequent, yielding four successive downbeats from number 158+2 and 
+five downbeats from number 159. It is difficult to argue the dominance of a single 
+phase in the midst of such agile invention. In fact, to do so, even if one were 
+statistically evident, might be to miss the point.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. <i>Sacrificial Dance</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=7&nonav=true"><img border="1" alt="Example 7 thumbnail" src="woodruff_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[5.5] The graphic analysis constitutes a schema, by means of which the 
+irregularities can be counted and shifts in projection traced. However, with 
+this model something of the overall aesthetic also begins to emerge. At points 
+of irregularity, where the projection of meter shifts from one phase to another, 
+a kinetic impulse is issued not unlike that of syncopation, only more forceful, 
+one wrought by a shift in phase. It is this impulse which imparts vigor to the 
+invention. Now a number of terms could well describe this impulse: phase-shift 
+accent, &lsquo;metrical dissonance&rsquo;,<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup></a>
+	but van den Toorn&rsquo;s &lsquo;metric polarity&rsquo; is 
+particularly apt. However, the concept of foreground/background polarity is 
+modified here apropos of the present model. Remembering that each phase of meter 
+is nothing less than an authentic meter in its own right, each of equal 
+<i>potential</i>, it qualifies then as a pole, being self-contained by virtue of its 
+periodicity, but standing in opposition to other meters by virtue of its 
+out-of-phase alignment. A polarity occurs where projection shifts from one phase 
+of meter to another. The two meters at this juncture are the two poles, the 
+opposition of which is realized by the shift in projection <i>from</i> one pole <i>to</i> 
+the next. It is during the course of the shift that the out-of-phase alignment 
+of the two meters is exposed and a polarity occurs (see <b>Example 7</b>). The two poles then are not 
+heard together but in succession, and thus they are linear in orientation. Once 
+established, the new meter emerges as a point of departure for a further shift 
+in projection to any of the other phases, not necessarily that established at 
+the outset. In this interpretation polarity takes place entirely at the 
+foreground level between different phases of the same meter. If all that is 
+required to apprehend the shift is two meters&mdash;two poles&mdash;and neither of these 
+need be that stated at the outset, then it follows that the apprehension of this 
+phenomenon is not contingent upon a steady background meter. </p>
+<p>[5.6] For van den Toorn the concept of polarity rests upon the background meter, 
+established at the outset and reaffirmed at strategic points, in simultaneous 
+opposition to the foreground irregularities, forming &lsquo;dual, concurrent 
+meters&rsquo;.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup>	Pursuant to the present model, whereby the metric poles are heard 
+in succession, to suggest that the initial meter remains in force after the 
+juncture is to suggest overlap or uncertainty, which would weaken, rather than 
+heighten the effect of displacement. To &lsquo;cling to an established regularity&rsquo; 
+would indicate that the shift had not forcibly occurred with the result that we 
+are unconvinced of the new meter set in motion. Polarity in the <i>Sacrificial 
+Dance</i>, or any of the other passage discussed here, is not a continuing state 
+between two non-aligned meters, one implied, the other projected. Rather it is 
+the fleeting, momentary experience of two self-contained but opposing forces 
+brought into contact via the phase shift. When an established meter is 
+maintained throughout by an ostinato or accompaniment figure, as in a number of 
+movements from <i>The Soldier&rsquo;s Tale</i>, then there is room for talk of 
+foreground/background, metric opposition. One should nevertheless recall that 
+the simultaneous conflict between concurrent meters is closer in design to 
+polymeter in which conflicting meters are heard simultaneously. With such 
+conflict the poles are in vertical, not linear alignment. </p>
+<h4>VI. <i>Ritual of the Two Rival Tribes</i></h4>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. <i>Ritual of the Two Rival Tribes</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=8&nonav=true"><img border="1" alt="Example 8 thumbnail" src="woodruff_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6.1] In the <i>Ritual of the Two Rival Tribes</i> the action takes place entirely in 
+the linear domain. At number 57+4 the determinant motive comprises two pitches, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> 
+and <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, heard in half-note succession a &lsquo;major-ninth&rsquo; apart (<b>Example 8</b>). 
+Together, these pitches project a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter as written, and are assigned the 
+metric identities 1-2 and 3-4 respectively. Note the rhythmic symmetry of the 
+motive; it lends conviction to the projection of <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter. The motive is 
+repeated immediately in the following bar, number 57+5, but altered in 
+contradiction of the established meter. <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is shortened from half-note to 
+quarter-note, and retains only count 1 of its metric identity. <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is thus 
+displaced forward, arriving on the <i>second</i> beat of the bar, but retaining its 
+3-4 identity. The metric pattern yielded in this measure is 1-3-4, which places 
+the irregularity on the second beat of the bar. At this point the early arrival 
+of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&rsquo;s 3 count forces a shift in phase. We experience this shift as a polarity, 
+a kick, issued as the out-of-phase alignment of meters is exposed. In context of 
+the two bars, the metric pattern is 1-2-3-4 1-3-4, with a distinctive shift from 
+1 to 3 in the second bar. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. <i>Ritual of the Two Rival Tribes</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=9&nonav=true"><img border="1" alt="Example 9 thumbnail" src="woodruff_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6.2] Fixed metric identity proves invaluable here in identifying the 1-3-4 
+irregularity. Conventionally a three-beat succession would be read as a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> 
+measure. Indeed it is barred as such and it seems logical to prefer a sequential 
+1-2-3 count. But 1-2-3 and 1-3-4 do not represent the same events, though they 
+span the same length. In context of the preceding <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter, a conventional 
+1-2-3 count represents an incomplete measure. The absence of beat 4 triggers the 
+&lsquo;early&rsquo; arrival of beat 1 in the following bar, effectively displacing that bar 
+one beat forward. This would place the irregularity on the <i>fourth</i> beat, the 
+beginning of the next bar, 1-2-3-4 1-2-3 1-2-3-4. The early arrival of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> then 
+amounts to a syncopation. In contrast, 1-3-4 is not sequential. The absence of 
+beat 2 triggers the &lsquo;early&rsquo; arrival of beats 3 and 4, placing the irregularity 
+on the <i>second</i> beat, much earlier than in a 1-2-3 reading. In this case the 
+middle of the bar is displaced one beat forward and the following bar continues 
+in line with its new course, 1-2-3-4 1-3-4 1-2-3-4. While this 1-3-4 pattern 
+challenges traditional, or sequential, metric thinking, it reflects what the 
+music actually does. The shortening of <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> at number 57+5 has immediate impact, 
+forcing the unexpected arrival of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and breaking the symmetry which defined the 
+meter at the outset. Even the orchestration, heavy brass, marks the &lsquo;early&rsquo; 
+arrival of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>. If the disruption is felt on the second beat, then that is the 
+point of irregularity, rendering a conventional 1-2-3 count unsustainable (see 
+<b>Example 9</b>). The point is stressed not just because this 1-2-3-4 1-3-4 pattern 
+challenges traditional thinking, but because its 1-3 shift is distinctive. This 
+pattern is marked for distinction by Stravinsky who employed it towards the end 
+of <i>The Rite of Spring</i> (see penultimate chapter) and throughout the fourth 
+tableau of <i>The Wedding</i> (<i>Les Noces</i>).<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Phase-shift analysis of the <i>Ritual of the Two Rival Tribes</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=10&nonav=true"><img border="1" alt="Example 10 thumbnail" src="woodruff_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. A comparison of 3/4 and 4/4 metric cycles</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=11&nonav=true"><img border="1" alt="Example 11 thumbnail" src="woodruff_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6.3] The mechanics of this model have been demonstrated where a determinant 
+motive is displaced from an established course. These displacements are wrought 
+by varying the period at which the motive is repeated, as in the <i>Sacrificial 
+Dance</i>, or by altering some aspect of its configuration, as in the <i>Ritual of 
+the Two Rival Tribes</i>. However, the projection of out-of-phase meters is not 
+limited to the action of a determinant motive. Any event which is able to 
+project its metric identity convincingly enough to counter an established meter 
+is able to force such a shift. This is precisely what the entry of the <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> - <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> 
+motive does at number 57+4. Taking for granted the <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter established two bars 
+earlier at number 57+2, the arrival of the <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> - <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> half-note succession seven beats 
+later marks a shift in phase. <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&rsquo;s downbeat identity, count 1, arrives on the 
+upbeat of the established meter, count 4. And while the <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> - <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> motive is still 
+in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>, it is not the same phase in motion at number 57+2. That phase is disrupted 
+by the &lsquo;early&rsquo; arrival of <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, whose downbeat identity signals a phase shift. A 
+polarity is issued at this juncture as the alignment of the two phases is 
+momentarily exposed. The graphic analysis is extended from numbers 57+2 to 58+6 in 
+<b>Example 10</b> and a more complete picture of parallel meters emerges in which 3 
+phases are set in motion. </p>
+
+
+
+<p>[6.4] It is curious that the composer should bar number 57+3 in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>, for the 
+graphic analysis shows the music in this passage employing different phases of 
+<nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> meter. Why the <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> bar? Between the <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> bars at number 57+2 and 57+4 there are 
+only three beats. The intervening <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> bar naturally measures this three-beat 
+period, but does it signal a shift from a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> to a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> meter? According to van 
+den Toorn, the &lsquo;initial 4+3 count at number 57+2 might be heard and understood as 
+an abbreviation of a &lsquo;rational&rsquo; 4+4 count (with, in other words, Block C [<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>] 
+entering a quarter-note beat too soon at number 5[7]+4)&rsquo;.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> 
+If so, then the 1-2-3 
+count at number 57+3 is heard as an incomplete <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> measure, not a complete <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> 
+measure, and as such does not signal an authentic shift to <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>. A 1-2-3 count in 
+<nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> and an incomplete 1-2-3 count in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> are not the same, though they bear the 
+same pattern. <b>Example 11</b> illustrates their difference by invoking Zuckerkandl&rsquo;s 
+cyclic concept of meter, the crux of which is that every beat in a measure has a 
+unique identity according to its position within a metric cycle. 1-2-3 
+represents a complete cycle in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>, but only a three-quarter cycle in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup>  
+It follows from this that the phenomenon of equivalence class that exists 
+between analogous beats of different measures of the same meter does not hold 
+true for different measures of different meters. Count 3 represents a close in 
+<nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>, but a midpoint in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>: they don&rsquo;t hold an identical position within the 
+bar, so they are not &lsquo;functionally equivalent&rsquo;.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup> Just as counts 1-2-3 and 
+1-3-4 are not the same, though spanning the same length, likewise with counts 
+1-2-3 in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> and 1-2-3 (incomplete) in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>. </p>
+<p>[6.5] The distinction between 1-3-4, 1-2-3 in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>, and an incomplete 1-2-3 in 
+<nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>, however subtle, is one on which the present model is predicated. If we 
+reject this distinction, the music submits to forms of analysis based on &lsquo;metric 
+units of varying lengths&rsquo;, a single, changing meter. We are forced then either 
+to interpret the music as ametric&mdash;the absence of periodicity intimates that 
+meter is no longer in force; or to redefine meter, forgoing periodicity as an 
+intrinsic quality, in order to accommodate the invention. But accepting the 
+distinction emancipates us from both propositions, neither of which is 
+satisfactory. This distinction also raises a fundamental question concerning the 
+nature of irregularity: are irregularities ever the result of an authentic 
+change between meters of different time signatures? The immediate answer, as far 
+as motivic displacement in concerned, is no. Despite the assortment of time 
+signatures used to bar the invention, irregularities forged through displacement 
+and conflicting metric identity are not the product of changing time signatures, 
+and should not be regarded as &lsquo;metric units of varying lengths&rsquo;. It is not the 
+time signature, but the phase of meter which alters. This is where the graphic 
+analysis is useful, for it allows us to grasp visually the shifts in projection 
+of the out-of-phase meters. </p>
+<p>[6.6] Nevertheless the analysis does reveal various patterns of metric identity, 
+and on the surface these patterns appear to represent &lsquo;metric units of varying 
+lengths&rsquo;. These units do not, however, measure the same thing, each unit 
+representing the count of a different phase. Belonging then to different phases, 
+the units cannot be correlated as a single entity, as <i>the</i> meter. While we 
+recognize the confusion here is partly semantic, stemming from what we choose to 
+term meter,<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> it is also partly conceptual, the concept of phase being 
+overlooked by all but a few observers.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> It is easy nevertheless to see how 
+this has come to pass. Imagine the out-of-phase meters casting metric identity 
+onto a screen. In shifting from one phase of meter to another, various patterns 
+of metric identity are thrown forth. We measure these patterns to determine the 
+meter, and conclude that meter is composed of varying lengths, <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr>, <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>, <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>5</mn></msubsup></math></nobr> and 
+so on. The surface pattern of metric identities conceals the phases from which 
+they are determined. Varying metric patterns are revealed, such as 1-2-3-4 1-3-4 
+in the <i>Ritual of the Two Rival Tribes</i> or 1-2 1-2 1-1-2 in the <i>Sacrificial 
+Dance</i>, but these are not in themselves the meter. These patterns serve an 
+analytical purpose only as far as they indicate the phase shifts; they otherwise 
+hold nothing more than a surface position within the analysis. </p>
+<p>[6.7] As for Stravinsky&rsquo;s purpose in barring the music as he did, that is beyond 
+the scope of the present article, suffice to say that the written meter does not 
+always correspond with that perceived by the listener. This is not to imply any 
+lack of design on the composer&rsquo;s part but only to acknowledge that the invention 
+transcends the system of notation with which it is written. Like the serial 
+composer forced to present certain tones on the diatonic staff as chromatic 
+alterations of others, though all twelve are considered equal, so too with 
+Stravinsky who recorded the multiple phases of his invention as a single metric 
+continuum. Consider number 57 + 2 and 57 + 5 in the Ritual, in which the metric 
+patterns 1 2 3 (incomplete <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>) and 1 3 4 are both cast in a conventional <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> 
+bar. The shifts in phase are rendered through motivic displacement and made more 
+forceful through articulation and accents. The depth of the composer&rsquo;s insight, 
+however, is masked by the traditional system of notation. </p>
+<h4>VII. <i>The Sacrificial Dance</i> II</h4>
+<p>[7.1] In further illustration of phase shifts the model is applied to one of the 
+most striking examples of meter in Stravinsky&rsquo;s output, the climactic final of 
+<i>The Rite</i>, the closing episode of the <i>Sacrificial Dance</i>. From numbers 186-201 
+the music comprises a number of determinate motives which generate and govern 
+every aspect of the meter. What distinguishes the action here is that 
+irregularities arise not just by the displacement of these motives, but by their 
+juxtaposition. They interlock to produce a variety of intricate metric patterns 
+which challenge conventional metric thinking. However the episode lends itself 
+readily to an analysis of its phase shifts. The design of each motive is 
+distinct. Once the determinate motives and metric identity have been established 
+and plotted in the graphic analysis, the complexities of the passage emerge with 
+new clarity. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. Phase-shift analysis of <i>Sacrificial Dance</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="woodruff_examples.php?id=12&nonav=true"><img border="1" alt="Example 12 thumbnail" src="woodruff_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[7.2] The underlying meter for the episode is 4/16 (<nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>2</mn></msubsup></math></nobr>), and the unit at which 
+the disruptions occur is the sixteenth-note. The invention then is accommodated 
+on four out-of-phase 4/16 meters. Rather than detailing an account of the entire 
+passage, the first two determinant motives are examined together with points of 
+significance, followed by a graphic analysis in <b>Example 12</b>. For the sake of 
+brevity the analysis will extend only as far as number 189+2.</p>
+<p>[7.3] The key to the entire episode, on which much of the analysis is focused, 
+is motive A, the two-note figure of the bass at number 186. Doubled at various 
+points by timpani, tuba, and contrabassoon, the bass is pivotal in determining 
+the downbeats throughout, although it may not receive the same orchestral 
+prominence as other motives. In its determinant form, the motive comprises two 
+pitches, A and C, in eighth-note succession. Over a sixteenth-note pulse they 
+project a 4/16 meter and acquire a metric identity of 1-2 and 3-4 respectively. 
+The rhythmic symmetry of the motive reinforces their 1-2 and 3-4 identities. The 
+accompanying chords of this motive, the &lsquo;right hand&rsquo; at the piano, punctuate the 
+upbeats. These chords are not assigned a fixed metric identity but fill in the 
+gaps in relation to the bass, beats 2 and 4.</p>
+<p>[7.4] Motive A is stated in full at number 186. Cast in a 5/16 bar, the two 
+eighth-notes A and C project a 1-2-3-4 count in 4/16. The final sixteenth note 
+of the bar, A, begins a varied repetition of the motive. However, as its value 
+is halved, A projects only count 1 before the arrival of C with its count 3 &lsquo;too 
+soon&rsquo; in the following bar. This displacement yields a 1-2-3-4 1-3 pattern with 
+the same distinctive 1-3 shift as in the <i>Ritual of the Two Rival Tribes</i>. The 
+sixteenth-note level is shallower here, the meter being cast at the quarter-note 
+level in the <i>Ritual</i>, and it is barred differently to accommodate other events. 
+However, if these passages are heard and compared &lsquo;side by side&rsquo; the 1-3 shift 
+is unmistakable, though more to the ear than the eye. This pattern acquires a 
+certain identity of its own as it is repeated seven times before number 192, each 
+time signaling a 1-3 phase shift.</p>
+<p>[7.5] Motive B at number 186+1 comprises the string&rsquo;s three sixteenth-note chords 
+whose 2-3-4 metric identity coincides with their position within the bar. This 
+proves something of an anomaly for the whole bar, a metric pattern of 3-2-3-4. 
+How can C&rsquo;s 3 count be followed by 2-3-4 of motive B? The fixed metric identity 
+of the bass has been established, so count 3 is defensible. The key is that the 
+metric identity of motive B is not shaped by the events that precede it. The 
+motive itself in its pitch, rhythm, and form, delineates the accents from which 
+we infer metric identity. The three sixteenth-note chords of motive B lead into 
+a restatement of motive A whose downbeat entry in the following bar is 
+unmistakable. The effect of the three notes is of a lead-in, an anacrusis. This 
+gesture is distinct, easily identified by the listener, and so the motive&rsquo;s 
+2-3-4 metric identity exists independently of prior events. The invention here 
+is extreme and the interpretation may test the credulity of some listeners, but 
+is anything to be gained by sacrificing C&rsquo;s fixed 3 identity to preserve a 
+1-2-3-4 periodic count? Periodicity is already preserved, four times over, in 
+the out-of-phase meters.</p>
+<p>[7.6] Motive A and its displacement interlock with motive B in the first two 
+bars, yielding a combined metric pattern of 1-2-3-4 1-3-2 3-4. This pattern 
+embraces a jump from 1 to 3, and a retrogression from 3 to 2. Bearing in mind 
+that non-sequential beats belong to different phases of the same meter, it is 
+not as ametric as it appears. The 1-3-2 succession is the consequence of fixed 
+metric identity, displacement, and juxtaposition. Metric identity is disclosed 
+here in accordance with the events which project it, and although these events 
+tend in sequence, their metric patterns need not. A 1-3-2 succession, impossible 
+on a single periodic model of meter, is entirely plausible in the context of 
+out-of-phase meters.</p>
+<p>[7.7] Stravinsky&rsquo;s timing was impeccable, and it is evident if we extend the 
+analysis into the final measures that a single steady meter does surface towards 
+the end, the same phase on which the episode started. It is doubtful, however, 
+that a steady background meter is founded on these points alone as the phase 
+established at the outset is so brief. These strategic points confirm not the 
+presence of a background meter, but the referential function of a single phase. 
+Commencing and concluding the passage with the same phase could serve to unify 
+or impart closure to the passage. But the action itself takes place more or less 
+equally over all four phases, and the polarity, the thrust of the invention, 
+occurs at the foreground level in linear alignment.</p>
+<h4>VIII. Conclusion</h4>
+<p>[8.1] The attraction of the model proposed here lies in its ability to unify 
+some of the complex metric events of <i>The Rite of Spring</i>. Irregularities 
+arising by way of displacement are cohesively bound on a system of out-of-phase 
+meters of the same time signature. This interpretation spares us from redefining 
+meter, foregoing periodicity as an intrinsic quality, to accommodate the 
+invention. In the broader sense periodicity is not forfeit but intensified: in 
+shifting projection from one phase of meter to another, periodicity is made to 
+conflict with itself. Van den Toorn eloquently describes this process in the 
+following:</p>
+<blockquote>
+	<p>Themes, motives, and chords are repeated not to be developed along 
+	traditional lines but to be displaced. And in seeking thus to displace a 
+	repeated theme, motive, or chord, the composer retains features other than 
+	alignment in order that alignment itself (and its shifts) might be set in 
+	relief.<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup></p>
+</blockquote>
+<p>[8.2] It is clear that in listening to <i>The Rite of Spring</i> we are granted an 
+experience of meter beyond that of the ordinary. Stravinsky portrays a meter not 
+bound by sequence. By unlocking its potential phases, music&rsquo;s time is made to 
+jump forward, remain static, and even reverse. These maneuvers materialize as a 
+result of the manipulation of the determinant motive and the different phases 
+thus set in motion. It is tempting even to speculate a cognitive discord which 
+exists between our conflicting experiences of time passing&mdash;chronometric time&mdash;and that of meter. For, as much as we are drawn into <i>The Rite of Spring</i> and 
+partake of the experience it records, ultimately the clock will reveal that no 
+span of real time has been elided, arrested or reversed. It is a satisfying 
+experience nonetheless, and a measure of the composer&rsquo;s insight into the sound 
+world which is music&rsquo;s domain.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Eliot Ghofur Woodruff<br>
+	University of Canterbury (Postgraduate)<br>School of Music<br>University Drive<br>Christchurch, New Zealand<br><a href="mailto:ghofur.woodruff@gmail.com">ghofur.woodruff@gmail.com</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> A single course of projection refers here to a single 
+periodic meter. The concept of meter as projection is taken from Christopher 
+Hasty, <i>Meter as Rhythm</i>. (New York: Oxford University Press, 1997) and 
+denotes meter &lsquo;as a process internal to the sounds themselves, an experience, 
+rather than something already determined in advance and imposed from without.&rsquo; 
+See Joseph P. Swain, &ldquo;Shifting Metre.&rdquo; <i>Music Analysis</i> 20/1 (2001): 119&ndash;41 
+[122]. This author&rsquo;s use of the term projection is not necessarily in accordance 
+with Hasty&rsquo;s, and while Hasty&rsquo;s concept of meter is refreshing, it is not fully 
+assimilated here. The current model, printed as part of a thesis in 1996, was 
+conceived outside of Hasty&rsquo;s paradigm.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> William Benjamin, &ldquo;A Theory of Musical Meter.&rdquo; <i>Music Perception</i> 1/4 (1984): 
+335&ndash;413 [391&ndash;96].<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> See Pieter C. van den Toorn, <i>The Music of Igor Stravinsky</i>. (New Haven: Yale 
+University Press, 1983) chapter 8, and <i>Stravinsky and &lsquo;The Rite of Spring&rsquo;; The 
+Beginnings of a Musical Language</i>. (Berkley: University of California, 1987), 
+chapter 3.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> The model of pulse streams appears in John Roeder&rsquo;s 
+&ldquo;Interacting Pulse Streams in Schoenberg&rsquo;s Atonal Polyphony.&rdquo; <i>Music Theory Spectrum</i> 16/2 (1994): 
+231&ndash;249, and &ldquo;Pulse Streams and Problems of Grouping and Metrical Dissonance in 
+Bartok&rsquo;s <i>With Drums and Pipes.</i>&rdquo; <i>Music Theory Online</i> 7/1 (2001). A further application 
+is found in an unpublished article &ldquo;Rhythmic Process and Form in Bartok&rsquo;s 
+<i>Syncopation</i>.&rdquo; retrieved Jan 10, 2006, from <a href='http://theory.music.ubc.ca/preprints/syncopation.pdf'>http://theory.music.ubc.ca/preprints/syncopation.pdf</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> For instance: Benjamin 1984, 390&ndash;403, Andrew Imbrie, &ldquo;Extra Measures and Metrical Ambiguity in Beethoven.&rdquo; In <i>Beethoven Studies</i>. Ed. Alan Tyson. (New York: Norton, 1973) [45&ndash;66], Jonathan D. Kramer, <i>The Time of Music; New Meanings, New Temporalities, New Listening Strategies</i>. (New York: Schirmer Books, 1988) [98&ndash;107], Fred Lerdahl, and Ray Jackendoff, <i>A Generative Theory of Tonal Music</i>. (Cambridge: MIT Press, 1983) [99&ndash;104], and Carl Schachter, &ldquo;Aspects of Meter.&rdquo; <i>Music Forum</i> VI (1987):1&ndash;59 [32&ndash;56]. For a comprehensive account of sources of hypermetric irregularity see William Rothstein, <i>Phrase Rhythm in Tonal Music</i>. (New York: Schirmer Books, 1989).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> This definition is paraphrased from Kramer 1987, 102&ndash;3, 
+but the broader picture is more complicated, there being a number of different 
+terms to describe the same or similar things. For example, Benjamin, Horlacher, 
+Kramer, and Rothstein use overlap, elision, and reinterpretation to describe 
+roughly the same process. See Gretchen Horlacher&rsquo;s discussion in &ldquo;Metric Irregularity in <i>Les Noces</i></i>: The Problem of Periodicity.&rdquo; <i>The Journal of Music Theory</i> 39/2 (1995): 285&ndash;309 [291&ndash;94].<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Both van den Toorn and Horlacher prefer descriptive terms when discussing 
+metric identity, such as the &lsquo;over-the-barline, upbeat-downbeat identity.&rsquo; (van 
+den Toorn 1987, 76). This author prefers numbers representing beats as they are 
+provide a greater degree of accuracy in tracing irregularities and the course of 
+projection. David Temperley in <i>The Cognition of Basic Musical Structures</i>. 
+(Cambridge, MA: MIT Press, 2001) [331&ndash;33] goes further in assigning a &lsquo;metric 
+address&rsquo; to an event&mdash;a series of numbers which records the exact location of 
+an event within all metric levels. Of course such numbers are purely abstract 
+but they are a useful tool for analytical purposes. Such a level of abstraction 
+is in truth no different than assigning numbers to pitches and chords, a 
+practice few would question.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Benjamin 1984, 392.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Ibid.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> &lsquo;Theoretically, these three operations [extension, 
+contraction, and elision] can occur on any level, although in tonal music they 
+most often appear as middleground phenomena.&rsquo; (Kramer 1988, 106&ndash;7).<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Joel Lester, <i>Analytic Approaches to Twentieth-Century Music</i>. (New York: 
+W.W. Norton &amp; Company, 1989) [18].<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Horlacher 1995. Horlacher takes a more flexible 
+approach to metric analysis in &ldquo;Bartok&rsquo;s <i>Change of Time</i>: Coming Unfixed.&rdquo; <i>Music Theory Online</i> 7/1 
+(2001).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Horlacher 1995, 289.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Horlacher 1995, 290.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Horlacher uses the terms deletion and reinterpretation.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> A more detailed discussion of these rhythmic/metric 
+types can be found in van den Toorn 1983, 216&ndash;18 or 1987, 99&ndash;101.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Hence Kramer&rsquo;s perception of meter being &lsquo;resistant to 
+change&rsquo; (Kramer 1988, 83); once a steady meter is established, it tends to 
+remain in force throughout a piece.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Van den Toorn 1987, chapter 3.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> The reference to an internalized meter appears in van 
+den Toorn, &ldquo;Stravinsky, <i>Les Noces</i> (<i>Svadebkas</i>), and the Prohibition against Expressive Timing.&rdquo; <i>Journal of Musicology</i> 20/2 (2003): 285&ndash;304 [295].<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Van den Toorn 1987, 67.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Van den Toorn 1983, 215. Concepts of polarity date back to Stravinsky&rsquo;s 
+evocative remarks from the <i>Poetics of Music</i> but take on a more concrete form 
+in Berger&rsquo;s discussion of polarity in relation to the symmetrical properties of 
+the octatonic scale. See Igor Stravinsky, <i>Poetics of Music in the Form of Six 
+Lessons</i>. Trans. Arthur Knodel and Ingolf Dhal. (Cambridge, MA: Harvard 
+University Press, 1947) [36&ndash;40], and Arthur Berger, &ldquo;Problems of Pitch 
+Organization in Stravinsky.&rdquo; <i>Perspective of New Music</i> 2/1 (1963): 11&ndash;42 [25&ndash;26]. Van den Toorn extends Berger&rsquo;s work, tying in also meter, form (block juxtaposition) and melodic style, to elucidate the distinctive identity of Stravinsky&rsquo;s music.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> For Berger the 0/6 axes of the octatonic scale are of &lsquo;equal and thus 
+independent weight&rsquo; which leads to the condition of polarity, namely &lsquo;the denial 
+of priority to a single pitch class precisely for the purpose of not deflecting 
+from the priority of a whole <i>complex sonore</i>.&rsquo; (Berger 1963, 25). By 
+substituting metric identity for &lsquo;pitch class&rsquo; and meter for &lsquo;<i>complex sonore</i>&rsquo;, 
+we arrive at a definition which serves van den Toorn&rsquo;s concept of 
+&lsquo;rhythmic-metric-identity <i>polarities</i>&rsquo;. The question then is whether a steady 
+background meter is of &lsquo;equal and thus independent weight&rsquo; where it is not 
+explicitly projected. Van den Toorn appeals to Andrew Imbrie&rsquo;s 
+radical/conservative distinction (Imbrie 1973, 65) to reason that it might be, 
+because a steady background meter exists more strongly for conservative 
+listeners who continue counting periodically in the face of foreground 
+irregularities.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Roeder 1994: 232&ndash;233. The theorists referred to are 
+Jonathan Kramer, Charles D. Morrison, and Lerdahl and Jackendoff.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> Musical examples are drawn from the Dover edition 
+1989, a reproduction of the Izdatel&rsquo;stvo &ldquo;Muzyka&rdquo; edition, 1965.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> See Harald Krebs, <i>Fantasy Pieces: Metrical Dissonance in the Music of Robert 
+Schumann.</i> (New York: Oxford University Press, 1999) and &ldquo;Some Extensions to 
+the Concept of Metrical Consonance and Dissonance.&rdquo; <i>Journal of Music Theory</i> 31/1 
+(1987): 99&ndash;120. Krebs uses the metaphor of metric dissonance to classify a 
+number of metric effects resulting from varying degrees of alignment between 
+metric levels. The irregularity resulting from motive displacement, described 
+here as a phase shift, would be classified as <i>indirect displacement 
+dissonance</i>.<<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Van den Toorn 1983, 228.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> The distinctive 1-2-3-4 1-3-4 pattern surfaces 
+throughout the fourth tableau of Stravinsky&rsquo;s <i>The Wedding</i>. Consider rehearsal number 91, setting aside for the 
+moment the composer&rsquo;s own barring which introduces the motive as an upbeat 
+syncopation in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>. The bass, taken from its first eighth-note, yields a 
+quarter-note, quarter-note, eighth-note, quarter-note succession, proportionally 
+identical to the half-note, half-note, quarter-note, half-note succession in the 
+<i>Ritual of the Two Rival Tribes</i>, numbers 57+4-5. Over an eighth-note beat, the two 
+quarter-notes (1-2-3-4) establish a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr> meter which is challenged and shifted by 
+the following eighth-note-quarter-note (1-3-4). The listener is able to infer 
+this pattern without reference to a fixed set of pitches or its displacement; 
+the rhythm itself delineates the accents required for its projection.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Van den Toorn 1987, 104.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> Victor Zuckerkandl, <i>Sound and Symbol; Music and the External World</i>. Trans. 
+Willard R. Trask. (London: Routledge &amp; Kegan Paul, 1956) [168&ndash;74].<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Benjamin 1984, 375. Benjamin draws an analogy between 
+equivalence classes in the domain of pitch and that of meter. Beats which hold 
+an identical position in the measure are said to be &lsquo;functionally equivalent&rsquo; 
+between different measures of the same meter.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> If by meter we mean the composer&rsquo;s time signature, 
+then meter does change, and likewise if by meter we mean phase. But if by meter 
+we mean the time signature common to the different phases, then it is the phase 
+which changes, not the meter.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> Already acknowledged in this respect are Benjamin, 
+Roeder, and Krebs. Although they do not use the term phase their models of meter 
+take phase or alignment into account. Van den Toorn also regards alignment as a 
+significant factor in Stravinsky&rsquo;s music. Temperley and Bartlett discuss phase in traditional 
+tonal music, remarking that motivic parallelism is a significant factor in 
+defining metric periods, but not the phase of the meter. See David Temperley and 
+Christopher Bartlette, &ldquo;Parallelism as a Factor in Metrical Analysis.&rdquo; <i>Music Perception</i> 20/2 (2002): 117&ndash;49 [117]. Temperley also mentions <i>The Rite of Spring</i> as a work whose irregularities are governed by &lsquo;motivic parallelisms&rsquo;&mdash;the displaced motives observed by van den Toorn and Horlacher (Temperley 2001, 302).<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> Van den Toorn 2003, 295.<br><a href="#FN33REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">A single course of projection refers here to a single 
+periodic meter. The concept of meter as projection is taken from Christopher 
+Hasty, <i>Meter as Rhythm</i>. (New York: Oxford University Press, 1997) and 
+denotes meter &lsquo;as a process internal to the sounds themselves, an experience, 
+rather than something already determined in advance and imposed from without.&rsquo; 
+See Joseph P. Swain, &ldquo;Shifting Metre.&rdquo; <i>Music Analysis</i> 20/1 (2001): 119&ndash;41 
+[122]. This author&rsquo;s use of the term projection is not necessarily in accordance 
+with Hasty&rsquo;s, and while Hasty&rsquo;s concept of meter is refreshing, it is not fully 
+assimilated here. The current model, printed as part of a thesis in 1996, was 
+conceived outside of Hasty&rsquo;s paradigm.</div><div id="fndiv2" class="flyoverdiv">William Benjamin, &ldquo;A Theory of Musical Meter.&rdquo; <i>Music Perception</i> 1/4 (1984): 
+335&ndash;413 [391&ndash;96].</div><div id="fndiv3" class="flyoverdiv">See Pieter C. van den Toorn, <i>The Music of Igor Stravinsky</i>. (New Haven: Yale 
+University Press, 1983) chapter 8, and <i>Stravinsky and &lsquo;The Rite of Spring&rsquo;; The 
+Beginnings of a Musical Language</i>. (Berkley: University of California, 1987), 
+chapter 3.</div><div id="fndiv4" class="flyoverdiv">The model of pulse streams appears in John Roeder&rsquo;s 
+&ldquo;Interacting Pulse Streams in Schoenberg&rsquo;s Atonal Polyphony.&rdquo; <i>Music Theory Spectrum</i> 16/2 (1994): 
+231&ndash;249, and &ldquo;Pulse Streams and Problems of Grouping and Metrical Dissonance in 
+Bartok&rsquo;s <i>With Drums and Pipes.</i>&rdquo; <i>Music Theory Online</i> 7/1 (2001). A further application 
+is found in an unpublished article &ldquo;Rhythmic Process and Form in Bartok&rsquo;s 
+<i>Syncopation</i>.&rdquo; retrieved Jan 10, 2006, from <a href='http://theory.music.ubc.ca/preprints/syncopation.pdf'>http://theory.music.ubc.ca/preprints/syncopation.pdf</a>.</div><div id="fndiv5" class="flyoverdiv">For instance: Benjamin 1984, 390&ndash;403, Andrew Imbrie, &ldquo;Extra Measures and Metrical Ambiguity in Beethoven.&rdquo; In <i>Beethoven Studies</i>. Ed. Alan Tyson. (New York: Norton, 1973) [45&ndash;66], Jonathan D. Kramer, <i>The Time of Music; New Meanings, New Temporalities, New Listening Strategies</i>. (New York: Schirmer Books, 1988) [98&ndash;107], Fred Lerdahl, and Ray Jackendoff, <i>A Generative Theory of Tonal Music</i>. (Cambridge: MIT Press, 1983) [99&ndash;104], and Carl Schachter, &ldquo;Aspects of Meter.&rdquo; <i>Music Forum</i> VI (1987):1&ndash;59 [32&ndash;56]. For a comprehensive account of sources of hypermetric irregularity see William Rothstein, <i>Phrase Rhythm in Tonal Music</i>. (New York: Schirmer Books, 1989).</div><div id="fndiv6" class="flyoverdiv">This definition is paraphrased from Kramer 1987, 102&ndash;3, 
+but the broader picture is more complicated, there being a number of different 
+terms to describe the same or similar things. For example, Benjamin, Horlacher, 
+Kramer, and Rothstein use overlap, elision, and reinterpretation to describe 
+roughly the same process. See Gretchen Horlacher&rsquo;s discussion in &ldquo;Metric Irregularity in <i>Les Noces</i></i>: The Problem of Periodicity.&rdquo; <i>The Journal of Music Theory</i> 39/2 (1995): 285&ndash;309 [291&ndash;94].</div><div id="fndiv7" class="flyoverdiv">Both van den Toorn and Horlacher prefer descriptive terms when discussing 
+metric identity, such as the &lsquo;over-the-barline, upbeat-downbeat identity.&rsquo; (van 
+den Toorn 1987, 76). This author prefers numbers representing beats as they are 
+provide a greater degree of accuracy in tracing irregularities and the course of 
+projection. David Temperley in <i>The Cognition of Basic Musical Structures</i>. 
+(Cambridge, MA: MIT Press, 2001) [331&ndash;33] goes further in assigning a &lsquo;metric 
+address&rsquo; to an event&mdash;a series of numbers which records the exact location of 
+an event within all metric levels. Of course such numbers are purely abstract 
+but they are a useful tool for analytical purposes. Such a level of abstraction 
+is in truth no different than assigning numbers to pitches and chords, a 
+practice few would question.</div><div id="fndiv8" class="flyoverdiv">Benjamin 1984, 392.</div><div id="fndiv9" class="flyoverdiv">Ibid.</div><div id="fndiv10" class="flyoverdiv">&lsquo;Theoretically, these three operations [extension, 
+contraction, and elision] can occur on any level, although in tonal music they 
+most often appear as middleground phenomena.&rsquo; (Kramer 1988, 106&ndash;7).</div><div id="fndiv11" class="flyoverdiv">Joel Lester, <i>Analytic Approaches to Twentieth-Century Music</i>. (New York: 
+W.W. Norton &amp; Company, 1989) [18].</div><div id="fndiv12" class="flyoverdiv">Horlacher 1995. Horlacher takes a more flexible 
+approach to metric analysis in &ldquo;Bartok&rsquo;s <i>Change of Time</i>: Coming Unfixed.&rdquo; <i>Music Theory Online</i> 7/1 
+(2001).</div><div id="fndiv13" class="flyoverdiv">Horlacher 1995, 289.</div><div id="fndiv14" class="flyoverdiv">Horlacher 1995, 290.</div><div id="fndiv15" class="flyoverdiv">Horlacher uses the terms deletion and reinterpretation.</div><div id="fndiv16" class="flyoverdiv">A more detailed discussion of these rhythmic/metric 
+types can be found in van den Toorn 1983, 216&ndash;18 or 1987, 99&ndash;101.</div><div id="fndiv17" class="flyoverdiv">Hence Kramer&rsquo;s perception of meter being &lsquo;resistant to 
+change&rsquo; (Kramer 1988, 83); once a steady meter is established, it tends to 
+remain in force throughout a piece.</div><div id="fndiv18" class="flyoverdiv">Van den Toorn 1987, chapter 3.</div><div id="fndiv19" class="flyoverdiv">The reference to an internalized meter appears in van 
+den Toorn, &ldquo;Stravinsky, <i>Les Noces</i> (<i>Svadebkas</i>), and the Prohibition against Expressive Timing.&rdquo; <i>Journal of Musicology</i> 20/2 (2003): 285&ndash;304 [295].</div><div id="fndiv20" class="flyoverdiv">Van den Toorn 1987, 67.</div><div id="fndiv21" class="flyoverdiv">Van den Toorn 1983, 215. Concepts of polarity date back to Stravinsky&rsquo;s 
+evocative remarks from the <i>Poetics of Music</i> but take on a more concrete form 
+in Berger&rsquo;s discussion of polarity in relation to the symmetrical properties of 
+the octatonic scale. See Igor Stravinsky, <i>Poetics of Music in the Form of Six 
+Lessons</i>. Trans. Arthur Knodel and Ingolf Dhal. (Cambridge, MA: Harvard 
+University Press, 1947) [36&ndash;40], and Arthur Berger, &ldquo;Problems of Pitch 
+Organization in Stravinsky.&rdquo; <i>Perspective of New Music</i> 2/1 (1963): 11&ndash;42 [25&ndash;26]. Van den Toorn extends Berger&rsquo;s work, tying in also meter, form (block juxtaposition) and melodic style, to elucidate the distinctive identity of Stravinsky&rsquo;s music.</div><div id="fndiv22" class="flyoverdiv">For Berger the 0/6 axes of the octatonic scale are of &lsquo;equal and thus 
+independent weight&rsquo; which leads to the condition of polarity, namely &lsquo;the denial 
+of priority to a single pitch class precisely for the purpose of not deflecting 
+from the priority of a whole <i>complex sonore</i>.&rsquo; (Berger 1963, 25). By 
+substituting metric identity for &lsquo;pitch class&rsquo; and meter for &lsquo;<i>complex sonore</i>&rsquo;, 
+we arrive at a definition which serves van den Toorn&rsquo;s concept of 
+&lsquo;rhythmic-metric-identity <i>polarities</i>&rsquo;. The question then is whether a steady 
+background meter is of &lsquo;equal and thus independent weight&rsquo; where it is not 
+explicitly projected. Van den Toorn appeals to Andrew Imbrie&rsquo;s 
+radical/conservative distinction (Imbrie 1973, 65) to reason that it might be, 
+because a steady background meter exists more strongly for conservative 
+listeners who continue counting periodically in the face of foreground 
+irregularities.</div><div id="fndiv23" class="flyoverdiv">Roeder 1994: 232&ndash;233. The theorists referred to are 
+Jonathan Kramer, Charles D. Morrison, and Lerdahl and Jackendoff.</div><div id="fndiv24" class="flyoverdiv">Musical examples are drawn from the Dover edition 
+1989, a reproduction of the Izdatel&rsquo;stvo &ldquo;Muzyka&rdquo; edition, 1965.</div><div id="fndiv25" class="flyoverdiv">See Harald Krebs, <i>Fantasy Pieces: Metrical Dissonance in the Music of Robert 
+Schumann.</i> (New York: Oxford University Press, 1999) and &ldquo;Some Extensions to 
+the Concept of Metrical Consonance and Dissonance.&rdquo; <i>Journal of Music Theory</i> 31/1 
+(1987): 99&ndash;120. Krebs uses the metaphor of metric dissonance to classify a 
+number of metric effects resulting from varying degrees of alignment between 
+metric levels. The irregularity resulting from motive displacement, described 
+here as a phase shift, would be classified as <i>indirect displacement 
+dissonance</i>.</div><div id="fndiv26" class="flyoverdiv">Van den Toorn 1983, 228.</div><div id="fndiv27" class="flyoverdiv">The distinctive 1-2-3-4 1-3-4 pattern surfaces 
+throughout the fourth tableau of Stravinsky&rsquo;s <i>The Wedding</i>. Consider rehearsal number 91, setting aside for the 
+moment the composer&rsquo;s own barring which introduces the motive as an upbeat 
+syncopation in 44. The bass, taken from its first eighth-note, yields a 
+quarter-note, quarter-note, eighth-note, quarter-note succession, proportionally 
+identical to the half-note, half-note, quarter-note, half-note succession in the 
+<i>Ritual of the Two Rival Tribes</i>, numbers 57+4-5. Over an eighth-note beat, the two 
+quarter-notes (1-2-3-4) establish a 42 meter which is challenged and shifted by 
+the following eighth-note-quarter-note (1-3-4). The listener is able to infer 
+this pattern without reference to a fixed set of pitches or its displacement; 
+the rhythm itself delineates the accents required for its projection.</div><div id="fndiv28" class="flyoverdiv">Van den Toorn 1987, 104.</div><div id="fndiv29" class="flyoverdiv">Victor Zuckerkandl, <i>Sound and Symbol; Music and the External World</i>. Trans. 
+Willard R. Trask. (London: Routledge &amp; Kegan Paul, 1956) [168&ndash;74].</div><div id="fndiv30" class="flyoverdiv">Benjamin 1984, 375. Benjamin draws an analogy between 
+equivalence classes in the domain of pitch and that of meter. Beats which hold 
+an identical position in the measure are said to be &lsquo;functionally equivalent&rsquo; 
+between different measures of the same meter.</div><div id="fndiv31" class="flyoverdiv">If by meter we mean the composer&rsquo;s time signature, 
+then meter does change, and likewise if by meter we mean phase. But if by meter 
+we mean the time signature common to the different phases, then it is the phase 
+which changes, not the meter.</div><div id="fndiv32" class="flyoverdiv">Already acknowledged in this respect are Benjamin, 
+Roeder, and Krebs. Although they do not use the term phase their models of meter 
+take phase or alignment into account. Van den Toorn also regards alignment as a 
+significant factor in Stravinsky&rsquo;s music. Temperley and Bartlett discuss phase in traditional 
+tonal music, remarking that motivic parallelism is a significant factor in 
+defining metric periods, but not the phase of the meter. See David Temperley and 
+Christopher Bartlette, &ldquo;Parallelism as a Factor in Metrical Analysis.&rdquo; <i>Music Perception</i> 20/2 (2002): 117&ndash;49 [117]. Temperley also mentions <i>The Rite of Spring</i> as a work whose irregularities are governed by &lsquo;motivic parallelisms&rsquo;&mdash;the displaced motives observed by van den Toorn and Horlacher (Temperley 2001, 302).</div><div id="fndiv33" class="flyoverdiv">Van den Toorn 2003, 295.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2006 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

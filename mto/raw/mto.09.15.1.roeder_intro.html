@@ -1,0 +1,426 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 15.1: Roeder, Animating the &#8220;Inside&#8221;</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Introduction &nbsp; ">
+
+    <meta name="citation_author" content="Roeder, John">
+      
+
+<meta name="citation_publication_date" content="2009/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="15">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Introduction &nbsp; 
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.09.15.1/mto.09.15.1.roeder_intro.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">John Roeder</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: transformational theory, David Lewin, animation, analysis</font></p><p><font size='4'>ABSTRACT: This brief introduction describes the contributions to this special issue of Music Theory Online and discusses some outstanding issues in transformational theory. The seven essays collectively address those issues by focusing on the analysis of entire pieces or sections, by using computer animation to help convey the attitude Lewin advocates of being &#8220;inside&#8221; the music, and by focusing on diverse recent compositions, revealing connections among them.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.09.15.1/mto.09.15.1.roeder_intro.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received November 2008</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 15, Number 1, March 2009 <br> Copyright &#0169; 2009 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] The impact of David Lewin&#8217;s 1987 <i>Generalized Musical Intervals and Transformations</i> (<i>GMIT</i>)&#8212;the definitive exposition of transformational theory&#8212;is evident from the waves of research it inspired.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> A 1993 conference devoted to Neo-Riemannian theory inspired a special issue of the <i>Journal of Music Theory</i> (42/2) in 1998. Neo-Riemannian theory, which treats triadic transformations and the voice 
+leading associated with them, has since seen productive generalization and application to a variety of music.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Another transformational construct that Lewin advocated, the Klumpenhouwer network, became the subject of a special issue (24/2) of <i>Music Theory Spectrum</i>, and has been the focus of numerous contributions to <i>Music Theory Online</i> over the past two years. Lewin&#8217;s mathematical approach fostered a renewed appreciation of similar treatments of musical structure, contemporary with and antecedent to his work,<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> and has informed more recent theories of chord structure and relations.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The 2003 Mannes Institute for Advanced Studies in Music Theory, by devoting six workshops to various aspects and extensions of transformational theory, recognized all these developments and their importance to the discipline. Yet despite all the attention it has received, there are some important aspects of Lewin&#8217;s work that merit further investigation.</p>
+
+<p>[2] For example, such an abstract theory would not have captured widespread interest had Lewin not applied it, and so justified it, in convincing analyses of entire pieces. <i>GMIT</i> itself does not contain such comprehensive discussions, but they occupy a significant proportion of Lewin&#8217;s legacy, arguably as important as the theory itself.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> In contrast, there is a tendency in the literature towards inventing transformational families that find application in special brief passages, without a deep engagement with complete compositions and all their idiosyncrasies. It seems just as important to construct transformational systems to explain entire pieces as it does to find musical excerpts that instantiate formally interesting systems. In particular, the questions that Lewin&#8217;s analyses raise about the relation of transformational accounts to more traditional accounts of musical form could be better addressed with evidence 
+from more complete analyses.</p>
+
+<p>[3] Lewin&#8217;s treatise is also known for its advocacy of a &#8220;transformational attitude&#8221; through which a listener imagines being &#8220;inside&#8221; the music (<i>GMIT</i>, pages 158&ndash;159). This compelling metaphor has received much commentary,<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> but is hardly conveyed by the static graphs one finds in the printed literature. Only recently have theorists taken advantage of multimedia, notably in this journal, to explore representing transformations as changes within visual spaces, presented in real time.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> The &#8220;attitude&#8221; merits much more investigation and experimentation with video and interactive environments.</p>
+
+<p>[4] A third possible line of investigation is suggested, ironically, by successes in applying triadic-transformation and voice-leading theories to some recent triadic music.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Only some of contemporary practice employs this harmonic style, so it is natural to wonder whether and how well transformational theory can apply to other music of our time. In a workshop I led at the 2003 Mannes Institute, we discovered expressive transformational representations for music by various currently active composers&#8212;Kurt&aacute;g, Ad&egrave;s, Saariaho, and Sheng, as well as Torke, Adams, and P&auml;rt. More such research could expand the scope of the theory, and perhaps provide a unifying point of view for understanding today&#8217;s diverse compositional idioms.</p>
+
+<p>[5] The papers in this special issue, although written and peer-reviewed independently, all address these outstanding issues in transformational theory and analysis. They are perhaps best read as interconnected analytical essays revolving around questions of representation and meaning. Collectively they expand the application of transformational theory into new repertoire and into new contact with other analytical approaches. By way of introduction, I will briefly describe how each article contributes to the overall agenda, and indicate some larger themes and findings that they share.</p>
+
+<p>[6] Two of the essays examine, from different perspectives, some meta-theoretical concerns about transformational analysis. &#8220;Metaphors in Motion&#8221; critiques Lewin&#8217;s claims about &#8220;gestures&#8221; in terms of cognitive theory and in light of two different animated representations of one of his own analyses. &#8220;Constructing Transformational Signification&#8221; establishes some principles for constructing transformation systems and visual representations to maximize what can be said analytically about a piece; along the way, it fleshes out and interrogates the notions of &#8220;agency&#8221; that Lewin advocated but never developed. The other articles, too, share a self-reflective attitude about methodology as they consider various possible representations for the music they analyze.</p>
+
+<p>[7] Since most of the essays treat complete pieces (and the rest treat whole formal structures), they collectively address the relation of transformational representation to musical form, extending the lines of inquiry Lewin began 
+(<a href="#lewin_1993" id="citation_lewin_1993_67dc9af5347d0">Lewin 1993</a>). Of particular interest are the similar solutions they find for representing some basic formative processes. Varied repetition appears as the retracing of similar transformational pathways among different sets of musical objects, and closure is articulated by the complete traversal of a transformational space or subspace. These are demonstrated in textures alluding to traditional forms of various types and sizes&#8212;song, sonata, disguised theme and variations, phrase, double period, and more freely motivic polyphony.</p>
+
+<p>[8] Many of the discussions concern pitch-class structure, so it is perhaps not surprising that many of them settle upon cyclical spaces to represent transformations. But it 
+is nevertheless striking when relations among different sorts of objects in rather disparate music, such as pcs in a P&eacute;pin piano piece, ic5 dyads in an Ad&egrave;s movement, and trichords in a Rochberg string quartet, can all be productively modeled by structurally isomorphic, two-dimensional toroidal networks.  Such cyclical structures also appear in analyses of pieces by Berg and Bryars, although the specific transformations and objects are in each case distinct and special to the contextually relevant musical objects.  To the degree that each of these analyses is individually convincing, the uncovering of such unexpected connections shows how transformational theory can provide a unifying framework for understanding diverse contemporary art music.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+<p>[9] Lastly, each article, in its own way, invites the reader &#8220;inside&#8221; the music via interactive, sound-synchronized computer animations that evoke sensations of characteristic gestures within distinctive musical spaces. These sensations are perhaps most vivid in three interactive environments that the reader can freely explore. This wide range of graphical and 
+animated designs required a variety of software tools for its realization. Along the way, then, these articles demonstrate many techniques of multimedia visualization using Maya, 3ds Max, Director, QuickTime, Flash, and even PowerPoint. The authors designed, and in some cases (Cook, Bor, Lind), realized the examples, but we also benefitted from the programming and artistic talents of Ali AbdulHussein, Andrew Wei, Kate Lau, and Sarah Mah.</p>
+
+<p>[10] In summary, then, I hope that these essays will stand as models, however preliminary, of the analytical possibilities of transformational theory, that they will be seen to continue and expand upon Lewin&#8217;s vision, and, especially, that they will spark further research. I am grateful to the editor of <i>Music Theory Online</i>, Matthew Shaftel, for allowing them to be published together in a single special issue, and to the anonymous readers whose suggestions helped us improve them. Lastly, I extend my thanks to the Social Sciences and Humanities Research Council of Canada for the research grant that supported these projects.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	John Roeder<br>
+	University of British Columbia School of Music<br>6361 Memorial Road<br>Vancouver, B.C.<br>V6T 1Z2 Canada<br><a href="mailto:j.roeder@ubc.ca">j.roeder@ubc.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_callender_2004" class="flyoverdiv">Callender, Clifton. 2004. &#8220;Continuous Transformations.&#8221; <a href='http://www.mtosmt.org/issues/mto.04.10.3/mto.04.10.3.callender.pdf' target='new'><i>Music Theory Online</i> 10.3</a>.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="callender_2004"></a>Callender, Clifton. 2004. &#8220;Continuous Transformations.&#8221; <a href='http://www.mtosmt.org/issues/mto.04.10.3/mto.04.10.3.callender.pdf' target='new'><i>Music Theory Online</i> 10.3</a>.</p><div id="citediv_callender_quinn_and_tymoczko_2008" class="flyoverdiv">Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2008. &#8220;Generalized Voice-Leading Spaces.&#8221; <i>Science</i> 320: 346&#8211;48.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="callender_quinn_and_tymoczko_2008"></a>Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2008. &#8220;Generalized Voice-Leading Spaces.&#8221; <i>Science</i> 320: 346&#8211;48.</p><div id="citediv_capuzzo_2004" class="flyoverdiv">Capuzzo, Guy. 2004. &#8220;Neo-Riemannian Theory and the Analysis of Pop-Rock Music.&#8221; <i>Music Theory Spectrum</i> 26/2: 177&#8211;99.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capuzzo_2004"></a>Capuzzo, Guy. 2004. &#8220;Neo-Riemannian Theory and the Analysis of Pop-Rock Music.&#8221; <i>Music Theory Spectrum</i> 26/2: 177&#8211;99.</p><div id="citediv_cohn_1998" class="flyoverdiv">Cohn, Richard L. 1998. &#8220;Introduction to Neo-Riemannian Theory: A Survey and a Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42/2 (1998): 167&#8211;80.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1998"></a>Cohn, Richard L. 1998. &#8220;Introduction to Neo-Riemannian Theory: A Survey and a Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42/2 (1998): 167&#8211;80.</p><div id="citediv_derfler_2007" class="flyoverdiv">Derfler, Brandon. 2007. &#8220;Single-Voice Transformations&#8212;A Model for Parsimonious 
+Voice-Leading&#8221; Ph.D. dissertation, University of Washington.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="derfler_2007"></a>Derfler, Brandon. 2007. &#8220;Single-Voice Transformations&#8212;A Model for Parsimonious 
+Voice-Leading&#8221; Ph.D. dissertation, University of Washington.</p><div id="citediv_hook_2002" class="flyoverdiv">Hook, Julian. 2002. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 
+46/1&#8211;2: 57&#8211;126.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2002"></a>Hook, Julian. 2002. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 
+46/1&#8211;2: 57&#8211;126.</p><div id="citediv_hook_2008" class="flyoverdiv">Hook, Julian. 2008. &#8220;Key Signature Transformations.&#8221; In <i>Music Theory and Mathematics: Chords, Collections, and Transformations</i>, ed.<i> </i> Jack Douthett et al, 137&#8211;60.&nbsp; Rochester: University of Rochester Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2008"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008. &#8220;Key Signature Transformations.&#8221; In <i>Music Theory and Mathematics: Chords, Collections, and Transformations</i>, ed.<i> </i> Jack Douthett et al, 137&#8211;60.&nbsp; Rochester: University of Rochester Press.</p><div id="citediv_klumpenhouwer_2006" class="flyoverdiv">Klumpenhouwer, Henry. 2006. &#8220;&#8216;In Order to Stay Asleep as Observers&#8217;: The Nature and Origins of Anti-Cartesianism in Lewin&#8217;s Generalized Musical Intervals and Transformations.&#8221; <i>Music Theory Spectrum</i> 
+28/2: 277&#8211;89.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_2006"></a>Klumpenhouwer, Henry. 2006. &#8220;&#8216;In Order to Stay Asleep as Observers&#8217;: The Nature and Origins of Anti-Cartesianism in Lewin&#8217;s Generalized Musical Intervals and Transformations.&#8221; <i>Music Theory Spectrum</i> 
+28/2: 277&#8211;89.</p><div id="citediv_lewin_1973" class="flyoverdiv">Lewin, David. 1973. &#8220;Towards the Analysis of a Schoenberg Song (Op. 15, No. XI).&#8221; <i>Perspectives of New Music</i> 12/1&#8211;2: 43&#8211;86.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1973"></a>Lewin, David. 1973. &#8220;Towards the Analysis of a Schoenberg Song (Op. 15, No. XI).&#8221; <i>Perspectives of New Music</i> 12/1&#8211;2: 43&#8211;86.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven and London: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven and London: Yale University Press.</p><div id="citediv_lewin_1992" class="flyoverdiv">Lewin, David. 1992. &#8220;Some Notes on Analyzing Wagner: The Ring and Parsifal.&#8221; <i>19th-Century Music</i> 16/1 (1992): 49&#8211;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. &#8220;Some Notes on Analyzing Wagner: The Ring and Parsifal.&#8221; <i>19th-Century Music</i> 16/1 (1992): 49&#8211;58.</p><div id="citediv_lewin_1993" class="flyoverdiv">Lewin, David. 1993. Musical<i> Form and Transformation</i>. New Haven and London: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. Musical<i> Form and Transformation</i>. New Haven and London: Yale University Press.</p><div id="citediv_lewin_2008" class="flyoverdiv">Lewin, David. 2008. &#8220;Transformational Considerations in Schoenberg&#8217;s Opus 23, Number 3.&#8221; In <i>Music Theory and Mathematics: Chords, Collections, and Transformations</i>, ed.<i> </i> Jack Douthett et al, 197&ndash;221. Rochester: University of Rochester Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_2008"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008. &#8220;Transformational Considerations in Schoenberg&#8217;s Opus 23, Number 3.&#8221; In <i>Music Theory and Mathematics: Chords, Collections, and Transformations</i>, ed.<i> </i> Jack Douthett et al, 197&ndash;221. Rochester: University of Rochester Press.</p><div id="citediv_mazzola_1990" class="flyoverdiv">Mazzola, Guerino. 1990. <i>Geometrie der T&ouml;ne.</i> Basel: Birkh&auml;user.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mazzola_1990"></a>Mazzola, Guerino. 1990. <i>Geometrie der T&ouml;ne.</i> Basel: Birkh&auml;user.</p><div id="citediv_morris_1987" class="flyoverdiv">Morris, Robert D. 1987. <i>Composition with Pitch Classes</i>. New Haven and London: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1987"></a>Morris, Robert D. 1987. <i>Composition with Pitch Classes</i>. New Haven and London: Yale University Press.</p><div id="citediv_quinn_2006" class="flyoverdiv">Quinn, Ian. 2006. &#8220;General Equal-Tempered Harmony (Introduction and Part 1).&#8221; <i>Perspectives of New Music</i> 44/2: 114&#8211;158.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_2006"></a>Quinn, Ian. 2006. &#8220;General Equal-Tempered Harmony (Introduction and Part 1).&#8221; <i>Perspectives of New Music</i> 44/2: 114&#8211;158.</p><div id="citediv_quinn_2007" class="flyoverdiv">Quinn, Ian. 2007. &#8220;General Equal-Tempered Harmony (Parts 2 and 3).&#8221; <i>Perspectives of New Music</i> 45/1: 4&#8211;63.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_2007"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007. &#8220;General Equal-Tempered Harmony (Parts 2 and 3).&#8221; <i>Perspectives of New Music</i> 45/1: 4&#8211;63.</p><div id="citediv_roeder_2009" class="flyoverdiv">Roeder, John. 2009. &#8220;A Transformational Space for Elliott Carter&#8217;s Recent Complement-Union Music.&#8221; In <i>Proceedings of the First International Conference of the Society of Mathematics and Computation in Music</i>. Heidelberg: Springer Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roeder_2009"></a>Roeder, John. 2009. &#8220;A Transformational Space for Elliott Carter&#8217;s Recent Complement-Union Music.&#8221; In <i>Proceedings of the First International Conference of the Society of Mathematics and Computation in Music</i>. Heidelberg: Springer Verlag.</p><div id="citediv_satyendra_2004" class="flyoverdiv">Satyendra, Ramon. 2004. &#8220;An Informal Introduction to Some Formal Concepts from Lewin&#8217;s Transformational Theory.&#8221; <i>Journal of Music Theory</i> 48/1: 
+99&#8211;141.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="satyendra_2004"></a>Satyendra, Ramon. 2004. &#8220;An Informal Introduction to Some Formal Concepts from Lewin&#8217;s Transformational Theory.&#8221; <i>Journal of Music Theory</i> 48/1: 
+99&#8211;141.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Recognizing its significance to the field, Oxford University Press published a new edition in 2007.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> A review of the content and origin of this branch of transformational theory is presented in <a href="#cohn_1998" id="citation_cohn_1998_67dc9af530c9d">Cohn 1998</a>. A generalization of the theory may be found in <a href="#hook_2002" id="citation_hook_2002_67dc9af530ca1">Hook 2002</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Two significant achievements in this vein were
+<a href="#morris_1987" id="citation_morris_1987_67dc9af530ca4">Morris 1987</a> and <a href="#mazzola_1990" id="citation_mazzola_1990_67dc9af530ca6">Mazzola 1990</a>.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> For example, Lewin&#8217;s ideas inform Ian Quinn&rsquo;s articles on &#8220;General Equal-Tempered Harmony&#8221; (<a href="#quinn_2006" id="citation_quinn_2006_67dc9af530ca9">Quinn 2006</a> and <a href="#quinn_2007" id="citation_quinn_2007_67dc9af530cab">Quinn 2007</a>) and a related 
+large project, <a href="#callender_quinn_and_tymoczko_2008" id="citation_callender_quinn_and_tymoczko_2008_67dc9af530cae">Callender, Quinn, and Tymoczko 2008</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> I am thinking here especially of <a href="#lewin_1973" id="citation_lewin_1973_67dc9af530cb1">Lewin 1973</a>, <a href="#lewin_1992" id="citation_lewin_1992_67dc9af530cb3">Lewin 1992</a>, the four essays in <a href="#lewin_1993" id="citation_lewin_1993_67dc9af530cb5">Lewin 1993</a>, and <a href="#lewin_2008" id="citation_lewin_2008_67dc9af530cb8">Lewin 2008</a>. But there are many others, too.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See, for instance, <a href="#satyendra_2004" id="citation_satyendra_2004_67dc9af530cba">Satyendra 2004</a> and
+<a href="#klumpenhouwer_2006" id="citation_klumpenhouwer_2006_67dc9af530cbd">Klumpenhouwer 2006</a>.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Existing examples of animated transformational analyses in <i>Music Theory Online</i> are cited in my article on &#8220;Constructing Transformational Signification&#8221; in this issue.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> <a href="#callender_2004" id="citation_callender_2004_67dc9af530cc0">Callender 2004</a> analyzes works of Saariaho, Ligeti, and Nancarrow; <a href="#derfler_2007" id="citation_derfler_2007_67dc9af530cc2">Derfler 2007</a> analyzes music by John Adams; Julian Hook cites a passage by Michael Torke in <a href="#hook_2008" id="citation_hook_2008_67dc9af530cc4">Hook 2008</a>. For an application outside of art music, see <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9af530cc6">Capuzzo 2004</a>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> As part of this research project, I constructed animated analyses of other distinctive, recent music. I report on one of them in 
+<a href="#roeder_2009" id="citation_roeder_2009_67dc9af530cc9">Roeder 2009</a>; the associated animation (realized in 3ds Max by Ali AbdulHussein) is posted at <a href='Carterrods.mp4' target='new'>http://theory.music.ubc.ca/~trx/animations/Carterrods.avi</a>. See also my analysis of Arvo P&auml;rt&#8217;s choral work <i>The Beatitudes</i> (realized by Andrew Wei in Flash) at <a href='TheBeatitudes.mp4'>http://theory.music.ubc.ca/~trx/animations/TheBeatitudes.mov</a>.<br><a href="#FN9REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Recognizing its significance to the field, Oxford University Press published a new edition in 2007.</div><div id="fndiv2" class="flyoverdiv">A review of the content and origin of this branch of transformational theory is presented in <a href="#cohn_1998" id="citation_cohn_1998_67dc9af530c9d">Cohn 1998</a>. A generalization of the theory may be found in <a href="#hook_2002" id="citation_hook_2002_67dc9af530ca1">Hook 2002</a>.</div><div id="fndiv3" class="flyoverdiv">Two significant achievements in this vein were
+<a href="#morris_1987" id="citation_morris_1987_67dc9af530ca4">Morris 1987</a> and <a href="#mazzola_1990" id="citation_mazzola_1990_67dc9af530ca6">Mazzola 1990</a>.</div><div id="fndiv4" class="flyoverdiv">For example, Lewin&#8217;s ideas inform Ian Quinn&rsquo;s articles on &#8220;General Equal-Tempered Harmony&#8221; (<a href="#quinn_2006" id="citation_quinn_2006_67dc9af530ca9">Quinn 2006</a> and <a href="#quinn_2007" id="citation_quinn_2007_67dc9af530cab">Quinn 2007</a>) and a related 
+large project, <a href="#callender_quinn_and_tymoczko_2008" id="citation_callender_quinn_and_tymoczko_2008_67dc9af530cae">Callender, Quinn, and Tymoczko 2008</a>.</div><div id="fndiv5" class="flyoverdiv">I am thinking here especially of <a href="#lewin_1973" id="citation_lewin_1973_67dc9af530cb1">Lewin 1973</a>, <a href="#lewin_1992" id="citation_lewin_1992_67dc9af530cb3">Lewin 1992</a>, the four essays in <a href="#lewin_1993" id="citation_lewin_1993_67dc9af530cb5">Lewin 1993</a>, and <a href="#lewin_2008" id="citation_lewin_2008_67dc9af530cb8">Lewin 2008</a>. But there are many others, too.</div><div id="fndiv6" class="flyoverdiv">See, for instance, <a href="#satyendra_2004" id="citation_satyendra_2004_67dc9af530cba">Satyendra 2004</a> and
+<a href="#klumpenhouwer_2006" id="citation_klumpenhouwer_2006_67dc9af530cbd">Klumpenhouwer 2006</a>.</div><div id="fndiv7" class="flyoverdiv">Existing examples of animated transformational analyses in <i>Music Theory Online</i> are cited in my article on &#8220;Constructing Transformational Signification&#8221; in this issue.</div><div id="fndiv8" class="flyoverdiv"><a href="#callender_2004" id="citation_callender_2004_67dc9af530cc0">Callender 2004</a> analyzes works of Saariaho, Ligeti, and Nancarrow; <a href="#derfler_2007" id="citation_derfler_2007_67dc9af530cc2">Derfler 2007</a> analyzes music by John Adams; Julian Hook cites a passage by Michael Torke in <a href="#hook_2008" id="citation_hook_2008_67dc9af530cc4">Hook 2008</a>. For an application outside of art music, see <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9af530cc6">Capuzzo 2004</a>.</div><div id="fndiv9" class="flyoverdiv">As part of this research project, I constructed animated analyses of other distinctive, recent music. I report on one of them in 
+<a href="#roeder_2009" id="citation_roeder_2009_67dc9af530cc9">Roeder 2009</a>; the associated animation (realized in 3ds Max by Ali AbdulHussein) is posted at <a href='Carterrods.mp4' target='new'>http://theory.music.ubc.ca/~trx/animations/Carterrods.avi</a>. See also my analysis of Arvo P&auml;rt&#8217;s choral work <i>The Beatitudes</i> (realized by Andrew Wei in Flash) at <a href='TheBeatitudes.mp4'>http://theory.music.ubc.ca/~trx/animations/TheBeatitudes.mov</a>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2009 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Sean Atkinson, Cara Stroud, and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="4631665"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="33dc619e"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/4631665/0/33dc619e/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

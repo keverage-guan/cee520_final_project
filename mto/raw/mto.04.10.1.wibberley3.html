@@ -1,0 +1,1441 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 10.1: Wibberley, Syntonic Tuning</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Syntonic Tuning: Creating a Model for Accurate Electronic Playback">
+
+    <meta name="citation_author" content="Wibberley, Roger">
+      
+
+<meta name="citation_publication_date" content="2004/02/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="10">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Syntonic Tuning: Creating a Model for Accurate Electronic Playback
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.04.10.1/mto.04.10.1.wibberley.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Roger Wibberley</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Cents, Costeley, equal temperament, Finale, interval ratio, pitchbend, pitchwheel, Pythagorean, Syntonic comma</font></p><p><font size='4'>ABSTRACT: This essay is explicitly &ldquo;educational&rdquo; in the proper sense: 
+although it has a technical focus this is intended to provide the means of 
+re-examining and reassessing one&rsquo;s own cognitive processes. It has often been 
+argued that a proper understanding of early music is hindered by our own 
+inability to &ldquo;hear the music&rdquo; in the way our ancestors did. Our &ldquo;modern&rdquo; ears 
+have (it is often rightly said) become conditioned over time by the sound worlds 
+of later systems of tuning and performance to the extent that our perception of 
+the aesthetics applied to early styles can only be the result of educated 
+guesswork. &ldquo;We cannot know how a Pythagorean performance really sounded (can 
+we?), and our understanding of the soundscape of Just Intonation (JI) is mainly 
+intuitive, backed up perhaps by a complicated theoretical list of mathematical 
+ratios (isn&rsquo;t it?).&rdquo; There is considerably more to a performance than accurate 
+intonation (which is only the starting point) and this essay (along with the 
+previous two) only seeks to explore the particular aspects of performance 
+involving pitch. But the above sense of resignation and capitulation can at 
+least be partly addressed by examining aspects of tuning, and the procedures 
+discussed below will at least provide a means of capturing this single&mdash;albeit 
+crucial&mdash;aspect of performance. Nothing will replace a group of well-equipped 
+and trained singers, but it is my belief that such singers would need a highly 
+specialized training before successfully achieving performances of the kind 
+outlined. Even then, the nature of &ldquo;live performance&rdquo; (however accurate 
+empirically) may still be the victim of only a subjective response from the 
+listener (who is naturally more inclined to trust his or her own preconditioned 
+cognitive responses than the results such singers might produce). This essay, 
+therefore, provides a computer-generated means of evaluation, and the sounds 
+provided are empirically correct in their intonation by all standards proclaimed 
+in theoretical works of the time. The challenge, then, is to develop a 
+self-critical approach in which&mdash;fully knowing that what is being heard <i>is</i> (intonationally) 
+herein the same for us as it was for them&mdash;we can reappraise our own cognition. 
+If any tunings that are created by the application of anything covered in the 
+essay strike the listener as in any way &ldquo;strange,&rdquo; &ldquo;out of tune&rdquo; or &ldquo;unusual,&rdquo; 
+this can be taken confidently as a direct invitation to the listener to 
+reappraise his or her own cognition.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.04.10.1/mto.04.10.1.wibberley3.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.04.10.1/wibberley3_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2003</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 10, Number 1, February 2004 <br> Copyright &#0169; 2004 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] In my previous two essays on Syntonic and Pythagorean 
+tuning, numerous sound files were included together with graphic files showing 
+in visual terms how the various notes in the scores were inflected upwards or 
+downwards in order to fine-tune the harmonies according to the principles 
+explained therein. The objective here is to show how Finale users can apply the 
+same principles and achieve similar results from their own use of Finale.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> 
+What will be included is a downloadable Library file that can be imported into 
+Finale and used as described. When this is applied to scores in the way 
+specified, playback of files will be accurately tuned according to the user&rsquo;s 
+specification. In the case of those who simply wish to apply the file provided, 
+much of the essay can be bypassed. But since an understanding of the principles 
+will enable the application of other tuning systems (such as, for example, 
+quarter-comma meantone), those who might wish to extend their use of tuning 
+systems should follow the essay closely.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+<p>
+[2] My own set-up is unremarkable: a Macintosh 
+iMac running OS 9, together with a still-serviceable Roland D10 keyboard. All 
+the principles and methods outlined in this essay equally apply to PC Windows or 
+other Macintosh set-ups, and the downloadable files provided should work 
+unhindered by any system using Finale from version 3.7.2 (Mac) onwards and 
+equivalent PC Windows versions. Readers will find that a large screen is 
+beneficial (though not essential) when working with scores, and when reading 
+some of the graphic files contained in this essay. The files I have provided 
+have deliberately been created in Finale 3.7.2 for the following reason: while 
+users of later versions will find that their programs automatically apply the 
+appropriate data transfer to these files, had I presented the items only in 
+their newer formats users of early versions would be unable to apply the 
+settings. For this reason I shall present numeric values first according to the 
+system understood by &ldquo;older versions&rdquo; (e.g. 3.7.2), and then explain how these 
+values are modified by &ldquo;newer versions&rdquo; (e.g. Finale 2000 and Finale 2003). 
+Nobody using a newer version will, of course, ever have to work out the new 
+values since the program itself does all the work. When the appropriate library 
+in the downloaded file is Saved, all the changed values will be automatically 
+applied by Finale when the file is loaded. Users of early versions also will be 
+able to Save the library in its still unchanged format. They will find that if 
+they then Load this library (or any music file containing it) into a newer 
+version of Finale, the data transfer will be automatic. </p>
+<p>
+[3] The keyboard that 
+you are using will undoubtedly be configured to play in equal temperament.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+The only way in which pitches that are different from the default pitches (set 
+by the keyboard used) can be generated is by activating the pitchwheel. The 
+pitchwheel will usually be set (by default) to raise or lower the pitch of a 
+note by one octave.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Casual (and even seasoned) users of Finale may be unaware 
+of the power it offers for playback. There is more than one method of asking 
+Finale to alter the pitch of a note it plays from the score, but the method that 
+is to be used here is the most accurate and uses the Staff Expression tool.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+
+
+<p>
+[4] It will be helpful for you to know whether 
+the Finale version you are using is what I shall henceforward call an &ldquo;early 
+version&rdquo; as opposed to a &ldquo;later version.&rdquo; This knowledge will not affect your 
+use of the files provided, but will help you to follow some of the explanations 
+I shall shortly be offering for using the program. Generally an &ldquo;early version&rdquo; 
+can be identified from the composition of the main tool palette. If it contains 
+both Staff and Score Expression icons (the former indicated by the &ldquo;mf&rdquo; symbol 
+and a white note, the latter by an &ldquo;mf&rdquo; symbol alone), this will be an &ldquo;early 
+version.&rdquo; An example is illustrated in 
+<b>Figure 1</b>, as used in Finale 3.7.2. 
+If, 
+however, your main tool palette contains only a single Expression Tool 
+(indicated by an icon bearing only the &ldquo;mf&rdquo; symbol) you will be using a &ldquo;later 
+version.&rdquo; Such palettes are shown in <b>Figures 2</b> (Finale 2000) and <b>3</b> (Finale 
+2003). </p>
+
+<table><tr><td align=top>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Finale 3.7.2 main tool palette containing differing Expression Tools</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="wibberley3_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td align=top>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Finale 2000 main tool palette</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="wibberley3_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td align=top>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Finale 2003 main tool palette</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="wibberley3_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td></tr>
+</table>
+
+<p>
+[5] The Expression tool (both &ldquo;staff&rdquo; and &ldquo;score&rdquo; in early versions) is normally 
+used in order to insert dynamics into the score. It is important that when this 
+method of tuning is used it is always applied to individual notes on a selected 
+staff. This will mean that users of early versions will select the Staff 
+Expression Tool, while users of later versions will prescribe this from the 
+submenus that appear after selecting the common Expression Tool. This will 
+ensure that the marking to be inserted only affects the actual note(s) to be 
+changed. In order at this stage to understand what is going to be done using 
+this tool to provide for pitch changes to individual notes, it will be helpful 
+now to load a Finale file in order to explore the (Staff) Expression tool in the 
+manner to be outlined next. </p>
+<p>
+[6] USERS OF &ldquo;LATER VERSIONS&rdquo; SHOULD HERE SKIP TO 
+[7] below. With a Finale file open, select the Staff Expression tool and click 
+on any note in the score to open the Staff Expression box.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> There will be all 
+the current dynamic markings that are available, although these themselves are 
+not going to be used. Select any of those available and then click the EDIT 
+button. The next box that opens should also contain a section headed &ldquo;Playback 
+Options,&rdquo; but if it does not simply click the button marked &ldquo;Show Playback 
+Options.&rdquo; In the &ldquo;Playback Options&rdquo; window that is now visible there is a 
+drop-down selection menu next to the word &ldquo;Type&rdquo; which allows the user to make 
+various kinds of settings that affect playback. When the drop-down menu is 
+opened the type to be selected is &ldquo;Pitchwheel.&rdquo; Having selected &ldquo;Pitchwheel&rdquo; 
+there is also a &ldquo;Set to&rdquo; radio button that should be selected. A numeric value 
+now needs to be inserted into the box alongside this &ldquo;Set to&rdquo; button. It is at 
+this point that a value can be inserted into the box to specify exactly what the 
+pitchbend value for the particular Staff Expression originally selected will be. 
+This value will determine the pitch inflection of the note to be sounded.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> 
+</p>
+<p>
+[7] USERS OF &ldquo;OLDER VERSIONS&rdquo; SHOULD SKIP TO [8] below. Later versions require 
+the selection of the common Expression Tool (&ldquo;mf&rdquo;). When a note in the 
+previously-opened score is selected the next window displays the current 
+expression marks. Select one, and then click &ldquo;note attached&rdquo; or &ldquo;note 
+expression&rdquo; (according to version). When the &ldquo;Select&rdquo; button is clicked, the 
+next window will present the playback options, and from the &ldquo;Type&rdquo; submenu 
+should be selected &ldquo;pitchwheel.&rdquo; A numeric value needs to be inserted into the 
+adjoining box, and this value will determine the exact pitch inflection that 
+Finale will apply on playback. Now click the various &ldquo;Cancel&rdquo; button to return 
+to the score. </p>
+<p>
+[8] The question is, of course, what should the pitchwheel &ldquo;set 
+to&rdquo; values be? What is required is a completely new library of text expressions, 
+each of which has a programmed pitchbend value that has been accurately created 
+and inserted as described above. More specific understanding of the keyboard 
+pitchwheel and the way Finale operates it is needed, first of all, and then an 
+understanding of how the values to be inserted are calculated. In older versions 
+of Finale the default pitchwheel value is 8192; when the pitchwheel is at its 
+lowest pitch (having been pushed to the left) Finale&rsquo;s pitchwheel value is 0; 
+and when the pitchwheel is at its highest point (being pushed to the right) 
+Finale&rsquo;s value is 16384 (i.e. 8192 multiplied by 2). The range in older versions 
+is therefore 0-8192 and 8192-16384 (the former giving the range of pitches below the default, and the latter those above). In 
+later versions, however, these numbers have been changed, the default value now 
+being set to 0 (zero), and the respective numeric ranges are therefore -8192-0 
+and 0-8192.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> This means that Finale is capable of dividing the interval 
+covered by the pitchwheel (pushed either upwards or downwards) into 8192 equal 
+portions. Although this may seem generous for tuning purposes, it is actually 
+insufficient for the purpose of accurate pitch changes as small as a Syntonic 
+comma as long as the pitch bend set on the keyboard covers a whole octave.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> 
+What is needed is the facility of splitting the interval of a <i>semitone</i> 
+(rather than an octave) into this number of divisions. This will provide the 
+facility for generating pitches accurate to within 1 part in 8192 parts of one 
+semitone. </p>
+<p>
+[9] In order, therefore, to 
+reduce the pitchbend range from an octave to a semitone, the bend setting needs 
+changing <i>on the keyboard</i> itself. Editing the bend value is simple but the 
+procedure depends upon the specification of the keyboard in use.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> Whatever 
+sounds (patches) are going to be used for playback from Finale need individually 
+editing on the keyboard, and the bend value for each needs setting to &ldquo;1.&rdquo;<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> 
+The accuracy that Finale will generate will therefore not be corrupted by 
+incorrect bend settings within the keyboard itself. </p>
+<p>
+[10] 
+What now needs to be provided is a Finale Text Expression file that in effect 
+significantly increases the number of separate pitches available for each 
+octave. The object is to create a tool that enables vocal performance to be 
+simulated, and this is something that was never available on keyboards of fixed 
+pitches.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Since each of the 
+twelve notes available on the keyboard now needs to be capable of delivering at 
+least three different pitches separated by a Syntonic comma, the Text Expression 
+library will need to provide for this. The default scale within which such pitch 
+inflection occurs will, however, be purely Pythagorean since it is from these 
+Pythagorean pitches that comma inflection upwards or downwards has to take 
+place. So in addition to the pure Pythagorean intervals of the 4th, 5th and 
+octave, pure 3rds and 6ths will be added to the system by the facility of 
+modifying as necessary standard Pythagorean pitches by comma inflection. The 
+first stage in constructing this new library of pitches is therefore to devise 
+the values needed for the default Pythagorean scale. </p>
+<h3>
+PYTHAGOREAN TUNING </h3>
+<p>
+[11] I shall henceforward show 
+numeric values for both &ldquo;older&rdquo; and &ldquo;later&rdquo; versions of Finale as follows: 
+&ldquo;later versions&rdquo; will appear in square brackets following the values for &ldquo;older&rdquo; 
+versions. It will always be noted that the values of the former are the same as 
+those of the latter <i>minus 8192</i>.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p>
+<p>
+[12] In constructing the Pythagorean 
+scale each existing note on the equally-tempered MIDI keyboard needs to be 
+allotted an exact mathematical value such that when Finale plays a note with the 
+value defined its pitch will be exactly the one required by the scale. In effect 
+what this library will be doing is retuning the separate pitches of the scale so 
+that they will all have a Pythagorean relationship instead of an 
+equally-tempered one. What needs to be calculated is the exact amount by which 
+each separate note has to be raised or lowered from its equally-tempered default 
+when it is played by Finale. These defaults will all have a pitchwheel value of 
+8192 [0],<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> and the Pythagorean values will therefore be slightly more or less 
+than this value depending upon the position of the note within the scale. A 
+correct way of arriving at exact Pythagorean values is to take a starting note 
+with the default value of 8192 [0], and then a) move upwards through a series of 
+perfect fifths sharpwards, and b) move downwards through a corresponding chain 
+of perfect fifths flatwards. Taking the note &ldquo;C&rdquo; as the starting point, the 
+first deduction will move sharpwards through the fifths ending with A-sharp, while the 
+second deduction will move from the same starting note flatwards through the 
+fifths to end on C-flat. When this process has been completed all the &ldquo;white 
+notes&rdquo; will have their correct pitches, and all the &ldquo;black notes&rdquo; will exist 
+with two pitches separated by a Pythagorean comma. Sharps will thereby lie a 
+major semitone higher than their parent naturals, and flats a major semitone 
+lower than theirs. This will then provide for all the notes required by the 
+combined use of <i>musica recta</i> and <i>musica ficta</i>. The octave will have been 
+provided with 18 notes instead of the usual 12. As we shall see, however, 18 
+notes to the octave will be too few to permit Just Intonation which additionally 
+requires the raising and lowering of these default Pythagorean notes by Syntonic 
+commas. But this is nonetheless the starting point for arriving at the required 
+scale.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></p>
+<p>
+[13] To create 
+precise Pythagorean pitches for the scale, it must be remembered that the notes 
+are initially set on the keyboard to Equal Temperament. As such each note in the 
+score will have a default Finale pitchwheel value of 8192 [0]. Only when this 
+value is, for each separate note, raised or lowered by the exact value required 
+will the Pythagorean scale come into being. And it is only when this new scale 
+has been created that the addition or subtraction of comma values can be made 
+with precision. When this scale, together with the comma values to be applied to 
+it, has been constructed, it will then be possible to edit scores by adding the 
+prescribed playback Text Expressions and achieve a playback in Just Intonation. 
+The first task, therefore, is to construct an accurate Pythagorean scale. </p>
+<p>
+[14] 
+Because the task is to create audible pitches rather than to calculate relative 
+string lengths, it is necessary to work in Cents rather than string length 
+ratios.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Since construction of 
+the Pythagorean scale is (as stated in [11] above) achieved by computing pure 
+fifths in a chain upwards, and then downwards, it is therefore necessary to 
+define the exact number of Cents required between successive notes that lie a 
+fifth apart. Since we already know that by default each equally-tempered 
+semitone contains 100 Cents, and therefore that the equally-tempered fifth 
+contains 700 Cents, all we will need to do is to subtract 700 from the total 
+number of Cents calculated for the interval overall to find the difference 
+between the equally-tempered and the Pythagorean pitches of the note concerned. 
+We shall also need to convert Cents value into pitchwheel value which is very 
+simple: since the equally-tempered semitone (set on the keyboard) has a 
+pitchwheel range of 8192 (being either 0-8192 [-8192-0] or 8192-16384 [0-8192]), 
+it must follow that each Cent has a pitchwheel value of 81.92. When, therefore, 
+the difference in Cents between an equally-tempered and a Pythagorean fifth is 
+calculated, the Cents difference needs to be multiplied by 81.92, and the result 
+added to (when moving upwards) or subtracted from (when moving downwards) the 
+default pitchwheel value of 8192 [0]. This will yield the new pitchwheel value 
+for the note that now lies a Pythagorean fifth above or below the note from 
+which the calculation was made. </p>
+<p>
+[15] All the new pitchwheel settings 
+can easily be calculated when the formula for conversion from string-length 
+ratio to Cents is applied. This formula is very simple: where the interval-ratio 
+required is &ldquo;i&rdquo; and the Cents value sought is &ldquo;c,&rdquo; the conversion is achieved as 
+follows: </p>
+<blockquote>
+  <p>c = log (i) * (1200/log (2)) </p>
+</blockquote>
+<p>
+By applying these principles to calculate 
+the pitchwheel setting for &ldquo;G,&rdquo;<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> and taking &ldquo;C&rdquo; as the starting point with a 
+normal pitchwheel setting of 8192 [0], the value for &ldquo;G&rdquo; will be arrived at as 
+follows: </p>
+<ol type="a">
+  <li>the pitchwheel value of C (8192 [0]) is the starting point; </li>
+  <li>the 
+number of Cents required to arrive at G is log(3:2) X 1200/log 2; </li>
+  <li>the 
+difference between what G would have been (700 Cents greater than C) and what it 
+now is as the result of b) above, is the total Cents value given in b) minus 700 
+(the number of Cents it would have been); </li>
+  <li>this difference is multiplied by 
+81.92 (the pitchwheel value of each Cent); </li>
+  <li>the result of d) above is added to 
+8192 [0] (which would have been the default value). </li>
+</ol>
+<p>The complete formula for 
+this calculation is therefore as follows: </p>
+<blockquote>
+  <p>FOR OLDER VERSIONS: 8192+(((log(3/2)) 
+* ((1200/log(2))-700) * 81.92) = 8352. </p>
+  <p>FOR LATER VERSIONS: 0+(((log(3/2)) * 
+((1200/log(2))-700) * 81.92)=160 </p>
+</blockquote>
+<p>The pitchwheel setting for &ldquo;G&rdquo; is therefore 
+8352 (older versions) or 160 (later versions).<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup></p>
+<p>
+[16] Having now determined the value of the first fifth in the chain sharpwards, 
+the same formula is applied each time the next fifth in the chain is calculated. 
+The only difference will be the starting value. When the G was calculated from 
+the C, the starting value was that for the C (8192 [0]). The result for the G 
+was 8352 [160], and this new result now becomes the starting point for 
+calculating the value for D using otherwise the same formula: </p>
+<blockquote>
+  <p>OLDER 
+VERSIONS: 8352+(((log(3/2)) * ((1200/log(2))-700) * 81.92) = 8512 </p>
+  <p>LATER 
+VERSIONS: 160+(((log(3/2)) * ((1200/log(2))-700) * 81.92) = 320 </p>
+</blockquote>
+<p>
+In then 
+calculating the value for A, the starting point will next be the new value for D 
+(8512 [320]). This process simply continues through the fifths sharpwards as far 
+as D-sharp. </p>
+<p>
+[17] The pitches that remain are those to be calculated in the chain 
+of fifths flatwards from the C. The formula is almost identical, and only the 
+first operand differs (since the movement is now flatwards). The calculation for 
+F will take the value of C as the starting point, and the formula will now be: 
+</p>
+<blockquote>
+  <p>OLDER VERSIONS: 8192-(((log(3/2)) * ((1200/log(2))-700) * 81.92) = 8032 </p>
+  <p>LATER 
+VERSIONS: 0-(((log(3/2)) * ((1200/log(2))-700) * 81.92) = -160 </p>
+</blockquote>
+<p>
+The old starting 
+figure for C (8192 [0]) is now replaced with the new one for F (8032 [-160]) to 
+find the value of B-flat. This process continues flatwards through the fifths 
+until C-flat is reached. When this has been completed, the whole series of 
+Pythagorean pitchwheel settings will have been determined. These are now given 
+below (the figures appearing in square brackets being those that apply to later 
+versions of Finale, and being equivalent in purpose and function to those given 
+first for older versions): </p>
+<blockquote>
+  <p>C: 8192 [0] <br>
+  D: 8512 [320] <br>
+  E: 8832 [640] <br>
+  F: 8032 
+[-160] <br>
+  G: 8352 [160] <br>
+  A: 8672 [480] <br>
+  B: 8992 [800] <br>
+  B-flat: 7872 [-320] <br>
+  E-flat: 
+7712 [-480] <br>
+  A-flat: 7552 [-640] <br>
+  D-flat: 7392 [-800] <br>
+  G-flat: 7232 [-960] <br>
+  C-flat: 
+7072 [-1120] <br>
+  F-sharp: 9152 [960] <br>
+  C-sharp: 9312 [1120] <br>
+  G-sharp: 9472 [1280] 
+<br>
+  D-sharp: 9632 [1440] <br>
+    A-sharp: 9792 [1600] </p>
+</blockquote>
+<p>
+Files created in early versions that 
+are given the first values shown will, when loaded into later versions, have 
+these values automatically changed to those appearing in square brackets. When 
+creating new settings for early and late versions of Finale respectively, care 
+must be taken to ensure that the correct data set is used: older versions using 
+the pitchwheel range of 0-8192-16384, and later versions -8192-0-8192. There are 
+consequently 18 different pitches in this system for each octave. </p>
+<p>
+[18] To create 
+an accurate playback of these values, and achieve true Pythagorean tuning, the 
+procedures outlined in [5] to [7] above should now be followed. In the 
+Expression window of Finale, it would be best to delete all existing expressions 
+(unless you still to wish to use any of them, which is unlikely). For each 
+Pythagorean pitch it is necessary to Create a new Text Expression entry in which 
+is applied a) a convenient name tag, and b) a playback definition in which &ldquo;Pitchwheel&rdquo; 
+is selected from the drop-down menu and the appropriate value (in the list 
+above) typed into the box. The name tag is what will appear in your score when 
+you apply the appropriate Text Expression to each of the notes in turn, and it 
+should be kept clear and simple. The &ldquo;white notes&rdquo; can simply use the letter 
+name (e.g. A, B, C etc.), and the flat notes can be supplied with a &ldquo;b&rdquo; after 
+the letter (e.g. Bb, Gb etc.). The sharps should not however use the hash sign 
+(#) because this is reserved in Finale.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> 
+In this essay, and the supporting files, I have replaced the hash sign with &ldquo;$,&rdquo; 
+so F-sharp is tagged as &ldquo;F$.&rdquo;</p>
+<p>
+[19] Once the new Text Expression library 
+containing the Pythagorean playback values has been completed, each note in the 
+score will need to be supplied with its appropriate Text Expression tag. 
+Although this is labor intensive, it is a labor of love!<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> It is absolutely 
+crucial, however, to make sure that each voice part is programmed by Finale to 
+use a <i>different channel</i> for playback otherwise cross-contamination of playback 
+values will occur.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> The same 
+actual sound (patch) can be used with no ill effect, but different lines must 
+remain assigned to different playback channels. </p>
+
+
+<p>
+[20] In order to illustrate the method of insertion to yield tuned playback, 
+here are provided some screen shots from three different versions of Finale. The 
+music file used (the same in each case) was created by version 3.7.2 (the 
+earliest of the examples) and has been loaded into each version to illustrate 
+the method of insertion. The first note in the highest staff is A, and the task 
+in each case is to insert an instruction to play the note back at its 
+Pythagorean pitch. The music file already has all the Pythagorean values in its 
+active Expression Library (this note is programmed to use a pitch bend value of 
+8672, as indicated in the list of figures in [17] above. <b>Figure 4</b> 
+shows the initial window provided by Finale 3.7.2. This window appeared 
+because the Staff Expression icon in the left box was selected, and the first 
+note in the score was clicked. In this Selection window, the Staff Expression 
+&ldquo;A&rdquo; has now been selected. To discover what its current settings are (and even 
+to edit them) the &ldquo;Edit<nobr>. . .</nobr>&rdquo; button will now be clicked. This now opens the Text 
+Expression Designer window where it can be seen that the current setting is &ldquo;Pitchwheel&rdquo; 
+set to &ldquo;8672.&rdquo;<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> This 
+is shown in <b>Figure 5</b>. Since this is correct, the various windows are now 
+closed by clicking on the appropriate &ldquo;OK&rdquo; or &ldquo;Select&rdquo; buttons, and the letter 
+&ldquo;A&rdquo; now appears above the note in the score. When played back the pitch will be 
+Pythagorean A. </p>
+
+<div>
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Staff Expression Selection window (version 3.7.2)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="wibberley3_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Text Expression Designer window (version 3.7.2)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="wibberley3_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+</div>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Expression Selection window (Finale 2000)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="wibberley3_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>
+[21] In later versions, the methods are 
+similar, but the Pitchwheel value for &ldquo;A&rdquo; that appears after the same file is 
+loaded will now have been converted automatically to &ldquo;480.&rdquo;<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> Figures 6, 7 and 
+8 are screen shots from Finale 2000. <b>Figure 6</b> shows the primary Expression 
+Selection window. The left box shows that the Expression Tool was selected (note 
+the absence now of the Staff Expression tool shown in Figure 4&mdash;choice 
+for insertion as &ldquo;staff&rdquo; or &ldquo;score&rdquo; expression appears in the next window), and 
+the Expression Selection box appeared because the first note in the score was 
+clicked. The expression &ldquo;A&rdquo; has now been selected, and when the &ldquo;Select&rdquo; button 
+is clicked a new &ldquo;Measure-attached Expression Assignment&rdquo; window appears. This 
+is shown in <b>Figure 7</b>. 
+Here it is important to select &ldquo;This Staff Only&rdquo; (thereby making the expression 
+a &ldquo;staff&rdquo; one (as in version 3.7.2) rather than a &ldquo;score&rdquo; one. When the &ldquo;OK&rdquo; 
+button is clicked, the expression &ldquo;A&rdquo; is inserted above the note, and whatever 
+playback value (if any) was given will be activated upon playback. To check what 
+the current settings are (and even to edit them if desired) the &ldquo;Edit<nobr>. . .</nobr>&rdquo; button 
+in the primary window (Figure 6) 
+is selected. This now opens the Text Expression Designer window as shown in <b>Figure 8</b>. Here it can be observed that the Pitchwheel setting is now 
+&ldquo;480&rdquo; showing that Finale has updated the original value of &ldquo;8672&rdquo; and that the 
+setting is correct.</p>
+
+<div>
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Measure-attached Expression Assignment window (Finale 2000)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="wibberley3_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Text Expression Designer window (Finale 2000)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=7&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="wibberley3_fig8_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+</div>
+
+
+<p>
+[22] Equivalent windows used in Finale 
+2003 are shown in <b>Figures 9</b> and <b>
+10</b>. The only obvious differences from Finale 
+2000 are what might be viewed as &ldquo;window dressing&rdquo; differences. For example 
+&ldquo;Note attached&rdquo; (version 2000) has now become &ldquo;Note Expression&rdquo; (version 2003), 
+although the functions are identical. The Text Expression Designer window is 
+identical in function with its 2000 counterpart, and also shows&mdash;as 
+expected&mdash;that the Pitchwheel value stands now at &ldquo;480.&rdquo; </p>
+
+<div>
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. Expression Selection window (Finale 2003)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=8&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="wibberley3_fig9_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. Text Expression Designer (Finale 2003)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=9&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="wibberley3_fig10_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+</div>
+
+
+<p>
+[23] Below are two downloadable Finale files (Example 1 and Example 2).  
+</p>
+<blockquote>
+  <p>Example 1: Josquin Desprez, <i>Ave Maria</i> (excerpt using equal 
+temperament)&nbsp; [<a href="Ex1.zip">Ex1.zip</a> (for PC users)]&nbsp; 
+  [<a href="Ex1.MUS.sit">Ex1.MUS.sit</a> (for Mac users)]<br>
+  Example 2: Josquin Desprez, <i>Ave Maria</i> (excerpt using 
+Pythagorean tuning)&nbsp; [<a href="Ex2.zip">Ex2.zip</a> (for PC users)]&nbsp; 
+  [<a href="Ex2.MUS.sit">Ex2.MUS.sit</a> (for Mac users)]</p>
+</blockquote>
+<p>
+The 
+first is a straight file for playback using four separate channels, and the same 
+patch number for each. You are advised to avoid using any &ldquo;piano&rdquo; sound because 
+our ears are conditioned to assuming that anything sounding like a piano uses 
+Equal Temperament. This might give the illusion that the piece is &ldquo;out of tune&rdquo; 
+when it really is not. Select a melody instrument for playback through channels 
+1, 2, 3 and 4 (a Recorder sound is ideal). The file will not change your 
+keyboard patch settings. This should give a normal playback using equal 
+temperament. The second is an edited version of the first, but now attaches to 
+each note its Pythagorean playback values. The correct Expression library 
+(detailed above) is embedded within the file, so it should simply play the music 
+correctly. But the following checklist should first be made before trying it: 
+</p>
+<p>
+CHECKLIST </p>
+<ol type="a">
+  <li>Have you reset your Pitchbend Range to a value of &ldquo;1&rdquo; on the 
+keyboard? Test the bender manually to ensure that it inflects upwards and 
+downwards by only a <i>semitone</i> for patches you will set for channels 1-4 (the 
+setting used for Examples 1 and 2). If this has not been done, you will quickly 
+find that comedy becomes tragedy! This setting must of course be applied to each 
+and every patch you intend to use for playback. </li>
+  <li>Before playing the file, open 
+the Instrument List window to ensure that your download has retained separate 
+channels for each staff. If not, you will have to assign these staves to 
+different channels using this window. You can, however, use the same patch 
+number for each channel (having, as in a) above, verified the pitch bend setting 
+as being &ldquo;1&rdquo;). Make sure that the &ldquo;Send Patches before Play<nobr>. . .</nobr>&rdquo; box is 
+  checked.</li>
+</ol>
+<h3>
+SYNTONIC TUNING </h3>
+<p>
+[24] As stated earlier, Syntonic tuning is 
+only an inflection of the Pythagorean scale in which Syntonic comma adjustment 
+is applied to particular notes of the tetrachords. Potentially <i>any</i> note of the 
+scale can be adjusted upwards or downwards by a comma depending upon its 
+tetrachordal location and context. For this reason, each note of the Pythagorean 
+scale needs to be provided with complementary values reflecting upward and 
+downward comma adjustment. Indeed this adjustment can sometimes be greater than 
+a single comma over the course of a whole piece, so what needs to be provided 
+for is two or three complementary values for each note sharpwards and flatwards. 
+Where an unavoidable accumulation of commas causes a composition to undergo an 
+audibly significant <i>and irreversible</i> rise or fall in base pitch, the 
+assumption should be that Syntonic tuning is the wrong soundscape for that piece 
+and that Pythagorean tuning was intended by the composer. It is still advisable, 
+however, to provide for a certain number of comma shifts either way, if only to 
+test the effect of Syntonic tuning in such cases and adjudge the impact of the 
+pitch change. </p>
+<p>
+[25] The Syntonic comma is a fixed though non-melodic interval 
+whose ratio is 81:80.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> As such it always gives the same quantifiable 
+inflection when applied to an existing pitch. Whether the inflection is 
+sharpwards or flatwards in no way changes its definition as a quantity. In order 
+to calculate a pitchwheel value for the interval it must first be converted into 
+Cents, and then multiplied by 81.92 (the pitchwheel value for each Cent). 
+Conversion into Cents is via the normal formula for converting from an interval 
+ratio (i): </p>
+<blockquote>
+  <p>LOG(i) * (1200/LOG(2)). </p>
+</blockquote>
+<p>
+Pitchwheel value now requires this to be 
+multiplied by 81.92, and the result is simultaneously added to or subtracted 
+from the pitchwheel value of an already existing note. If, therefore, the 
+pitchwheel value of &ldquo;C minus a Syntonic comma&rdquo; is computed, the formula 
+(starting from 8192 for the C) will be: </p>
+<blockquote>
+  <p>8192-(LOG(81/80) * (1200/LOG(2)) * 81.92 
+= 6430 </p>
+</blockquote>
+<p>
+The result of 6430 will therefore be set for pitches where C is to be 
+lowered by a Syntonic comma. Were it to be raised by a Syntonic comma, the first 
+operand would be changed to a &ldquo;+&rdquo;: </p>
+<blockquote>
+  <p>8192+(LOG(81/80) * (1200/LOG(2)) * 81.92 = 
+9954. </p>
+</blockquote>
+<p>
+This new value of 9954 will consequently be set for notes where C is 
+raised by a Syntonic comma.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11</b>. Pythagorean pitchwheel values with comma shifts (older versions)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=10&nonav=true"><img border="1" alt="Figure 11 thumbnail" src="wibberley3_fig11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b>. Pythagorean pitchwheel values with comma shifts (later versions)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=11&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="wibberley3_fig12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>
+[26] Charts plotting all the pitchwheel 
+values of the Pythagorean scale, together with comma shifts upwards and 
+downwards, are most easily achieved by using a spreadsheet. <b>Figures 11</b> and <b>
+12</b> show complete charts (Figure 11 for older versions, and Figure 12 for 
+later) plotting up to four comma shifts upwards and downwards. It is unlikely 
+that this number will be needed, let alone ever exceeded, although it can be 
+extended if desired. The default value for C (8192 [0]) is the only simple 
+numeric entry contained in these spreadsheets. Every other value has been 
+automatically computed and generated by the insertion of formulae. What will be 
+noted is that all the values in Figure 12 are less&mdash;by a value of 8192&mdash;than the 
+corresponding values in Figure 11. In these the default Pythagorean pitchwheel value 
+of each note is shown in column 2, and the remaining columns list the settings 
+for the comma shifts as indicated at the head of each column. These are the 
+values that need to be programmed into the new Expression library either from 
+Figure 11 or Figure 12 as appropriate. </p>
+<p>
+[27] In creating a complete library of 
+Staff Expressions to give accurate playback, as outlined above, the name tags 
+need to be simple and clear in order to indicate the exact inflections of each 
+note. For this purpose, the library encoded in Example 2 above contained all the 
+Pythagorean pitches and these are identified simply by the letter name of the 
+note concerned. Where there is a flat this is indicated by the &ldquo;b&rdquo; suffix (e.g. 
+Bb), but sharps are shown by the use of the suffix &ldquo;$&rdquo; (e.g. F$) for the reason 
+stated in note 18 above. When this simple library is expanded so as to include 
+all the upward and downward Syntonic comma inflections for every note, the tags 
+need to indicate the base notes as well as the exact inflections. The simplest 
+method of displaying these attributes is to use the letter name of the note, an 
+operand indicating upward or downward inflection (&ldquo;+&rdquo; or &ldquo;-&rdquo;) and a numeral 
+showing the number of comma values by which the note has been inflected. Thus 
+the tag &ldquo;C-1&rdquo; will indicate C lowered by a comma, &ldquo;F$+2&rdquo; the note F-sharp raised 
+by two commas, and &ldquo;Bb+1&rdquo; the note B-flat raised by one comma.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup></p>
+<p>
+[28] Example 3 below is a downloadable 
+Finale file containing the complete active library of pitches displayed above in 
+Figure 11.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></p>
+<blockquote>
+  <p>Example 
+3: Willaert, <i>Sicut erat in principio</i> from Vesper-Psalm 109&nbsp; [<a href="Ex3.zip">Ex3.zip</a> 
+  (for PC users)]&nbsp; [<a href="Ex3.MUS.sit">Ex3.MUS.sit</a> (for Mac users)]</p>
+</blockquote>
+<p>
+The score it displays has already been edited by the insertion of 
+appropriate Staff Expressions in which is encoded the exact pitchwheel values 
+for playback. If you are sure that your keyboard is set to the appropriate Pitch 
+Bend value, and you have verified that the bend is only a semitone upwards and 
+downwards when the pitchwheel is activated, you can play the file back and it 
+should be finely tuned to work in Just Intonation (for which soundscape it was 
+clearly designed and carefully controlled by the composer). Before playing it, 
+make sure that you have allotted appropriate patches to channels 1-4, and that 
+each patch to be used has a pitch bend setting (on the keyboard) of &ldquo;1.&rdquo; In 
+order to apply this library to other scores of your own, you should use the 
+&ldquo;Save Library<nobr>. . .</nobr>&rdquo; command, select the radio button for &ldquo;Text Expressions,&rdquo; and 
+give it a recognizable name (e.g. &ldquo;Syntonic&rdquo;). Once Saved, this library can then 
+be Opened from within any other file created and it will be immediately active. 
+If you intend to use it frequently for new scores, you could even create a 
+template to save time importing the file every time you need it. </p>
+<p>
+[29] This 
+essay has not primarily been offered in order to increase an interest in or 
+awareness of technology, though hopefully those readers who use technology will 
+have benefited from it in some way. The <i>real</i> purpose has rather been to 
+demonstrate that not only is it possible to know that the pitches being created 
+are indeed those understood and used by early musicians, but also that in 
+hearing them with this certain knowledge we can extend our cognitive experience 
+and thereby achieve a much better understanding of the soundscapes that for too 
+long have remained obscure. Pitch, however, is only one part (even though an 
+important one) of this soundscape. Furthermore an understanding of the ways in 
+which these pitches can be recreated through simple technology does not in 
+itself provide the <i>musical</i> understanding necessary to know where and how to 
+apply the pitches that can be generated. Only by the development of a meticulous 
+and clinical approach to comma analysis can the perceptions this yields be 
+realized through the technology that has been created. </p>
+<h3>
+POSTSCRIPT: Guillaume 
+Costeley: <i>Seigneur dieu ta piti&eacute;</i> </h3>
+<p>
+[30] This short postscript will offer a 
+curiosity that demonstrates again Finale&rsquo;s power to provide superfine tunings. 
+While many readers will be familiar with Guillaume Costeley&rsquo;s spiritual chanson
+<i>Seigneur dieu ta piti&eacute;</i>, very few will ever have heard it rendered, as the 
+composer prescribed in his Preface to the 1570 print, in 19-tone equal 
+temperament (19-tet). He there described the use of a keyboard upon which seven 
+extra black keys were to be added.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> 
+The normal black keys were supplemented by a further seven, one lying alongside 
+each existing one, and an extra one being added between B and C, and between E 
+and F. In this system B-sharp was the same keyboard note as C-flat, and E-sharp 
+the same as F-flat. This resulted in nineteen separate notes to each octave, and 
+Costeley prescribed that the interval between each successive note should be 
+one-third of a tone. Diatonic semitones are to be given the interval value of 
+two-thirds of a tone. </p>
+<p>
+[31] It is clear from 
+this description that tones are smaller than standard.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> It must also be the 
+case that minor thirds (equaling five thirds of a tone) are larger than the 
+Pythagorean minor thirds, and that major thirds (equaling four thirds of a 
+tone) must be smaller than the Pythagorean ones. Thirds and sixths will 
+therefore be nearer to the JI intervals, while the fourths and fifths will be 
+slightly dissonant.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup></p>
+<p>
+[32] The programming of a playback for 19-tet is 
+very easy in Finale, since only twenty-one different values have to be provided 
+for (which is only three more than the Pythagorean scale required).<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> Since 
+the octave (1200 Cents) divides into nineteen portions, each one-third step must 
+be equal to 63.15789 Cents. When this scale is allotted Pitchwheel setting, the 
+following values will be found to be correct (again values for the later 
+versions of Finale appearing in square brackets): </p>
+<blockquote>
+  <p>C: 8192 [0] <br>
+  C-sharp: 5174 
+[-3018] <br>
+  D-flat 10348 [2156] <br>
+  D: 7330 [-862] <br>
+  D-sharp: 4312 [-3880] <br>
+  E-flat: 9485 
+[1293] <br>
+  E: 6467 [-1725] <br>
+  E-sharp: 3449 [-4743] <br>
+  F-flat: 11641 [3449] <br>
+  F: 8623 [431] 
+<br>
+  F-sharp: 5605 [-2587] <br>
+  G-flat: 10779 [2587] <br>
+  G: 7761 [-431] <br>
+  G-sharp: 4743 [-3449] 
+<br>
+  A-flat: 9917 [1725] <br>
+  A: 6898 [-1294] <br>
+  A-sharp: 3880 [-4312] <br>
+  B-flat: 9054 [862] <br>
+  B: 
+6036 [-2156] <br>
+  B-sharp: 3018 [-5174] <br>
+  C-flat: 11210 [3018] </p>
+</blockquote>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 13</b>. The 19-tet scale</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=12&nonav=true"><img border="1" alt="Figure 13 thumbnail" src="wibberley3_fig13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>When these values are 
+created as playback data for the text expressions, a 19-note equally-tempered 
+scale can be generated. <b>Figure 13</b> shows such a scale together with the related 
+text expressions that have been configured in this way for playback. When the 
+audio file provided is played, the exact effect of the scale can be heard and 
+each step lies exactly one-third of a tone from its neighbor. </p>
+<p>[33] When these values are applied to the 
+Costeley chanson, they provide a simple and striking opportunity to listen to 
+the piece according to the rare soundscape of 19-tone equal temperament. <b>Figure 14</b> provides a score of the chanson<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> while the attached 
+audio file provides 
+a 19-tone equally-tempered performance simulating an organ.</p>
+
+<table><tr><td>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 14</b>. Guillaume Costeley&rsquo;s spiritual chanson <i>Signeur dieu ta piti&eacute;</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley3_examples.php?id=13&nonav=true"><img border="1" alt="Figure 14 thumbnail" src="wibberley3_fig14a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></td></tr></table>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Roger Wibberley<br>
+	Goldsmiths University of London,<br>Department of Music,<br>New Cross,<br>London SE14 6NW<br><a href="mailto:r.wibberley@gold.ac.uk">r.wibberley@gold.ac.uk</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Of the many available music notation programs, my 
+preference for Finale here is only because it is particularly well suited to 
+combining visual analysis with superfine pitch control. But its method is 
+unique, and files converted into, say, Sibelius will not retain the MIDI 
+settings that have been applied. Although Finale has been upgraded regularly, 
+most of the changes have been designed only to enhance user friendliness and to 
+present better looking windows and scores. The window dressing aside, the 
+functionality of the program has remained fairly stable. But in the specific 
+area to be discussed below later versions of Finale have adopted a slightly 
+different (and perhaps more logical) method of data management. This will be 
+explained in due course.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Readers might like to know that the writer does not 
+regard himself as a technological boffin, and they might perhaps be comforted 
+(or irritated if they expect boffin-style discourse) by the assurance that 
+explanations will be simple and comprehensible.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> If your keyboard provides other preset temperaments such 
+as &ldquo;Pythagorean&rdquo; or &ldquo;Just,&rdquo; you should make sure that it is only set to equal 
+temperament. All the settings that will be provided in this essay take the 
+equally-tempered keyboard as the default. None of the music to be generated will 
+actually use equal temperament of course, but the pitchwheel settings presume 
+this as being the default.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> You can verify this quite simply. Assuming your MIDI 
+keyboard is set up to generate sounds through your speakers, hold down any note 
+and move the pitchwheel fully to the right and then the left. The pitch of the 
+note should rise and fall by a full octave. If it is different this does not 
+matter, and it merely indicates that the default setting has been changed. The 
+setting will again be changed later to another value in any case.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> As will be shown, early versions of Finale provided both 
+Staff Expression and Score Expression tools, while later versions offer only a 
+common and single Expression Tool. In these later versions, setting of the 
+required entry for either &ldquo;Staff&rdquo; or &ldquo;Score&rdquo; is made via various sub menus. The 
+functionality of whatever entry is made remains identical however. A less useful 
+method of pitch control is to open the Midi Tool and edit the pitchbend values 
+of notes that are to be changed. This is far less accurate and anything that is 
+done remains invisible except to the inner workings of the program. The more 
+accurate method outlined here remains visible in the score, and can easily be 
+edited or changed.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> If the score is empty, perhaps because the file is newly 
+created, simply insert a note. Then select the Staff Expression tool icon and 
+click on the note.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Now that the procedure for editing and inserting 
+pitchwheel values has been followed, the various &ldquo;Cancel&rdquo; buttons can be clicked 
+to close down the Staff Expression tool so as to avoid changing the note 
+originally selected. In order to rehearse the procedure again, the instructions 
+given in [6] above can be repeated.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> These are the new values that Finale automatically 
+converts to when a file created in what it recognizes as an &ldquo;older version&rdquo; is 
+loaded into the later version. In such a file, later versions will convert 
+original pitchwheel values of 8192 to 0, 0 to -8192, and 16384 to (+)8192. All 
+resulting values in the later versions will therefore be equivalent to all those 
+in the early version <i>minus 8192</i>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> It is, however, much better than what is provided by the 
+MIDI tool which only splits the same pitchbend interval into 64 equal parts. 
+This is wholly inadequate for pitches of the accuracy required.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> The keyboard User Manual will give the information 
+needed for altering the bend value. On my Roland the bender range can be 
+accessed via the &ldquo;Edit&rdquo; and then the &ldquo;Lower&rdquo; buttons, and found by scrolling 
+through the list with the &ldquo;Display&rdquo; button. When &ldquo;Bender Range&rdquo; is displayed, 
+its value can be set to &ldquo;1&rdquo; with the &ldquo;Value&rdquo; button and the new setting saved 
+using the &ldquo;Write&rdquo; and &ldquo;Enter&rdquo; buttons. Other keyboards will have equivalent 
+methods of making changes to these settings.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> The Bend Range value increments by semitones so that 
+the default value of &ldquo;12&rdquo; yields a pitch bend of a full octave up and down. By 
+changing this setting to &ldquo;1&rdquo; the bend range will be reduced to only a semitone 
+up or down.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Keyboards always adopted &ldquo;compromise&rdquo; tunings although 
+some experiments with split keys were designed to increase the number of pitches 
+available for each octave. This facilitated a differentiation between sharps and 
+flats so as to enable the consistent use of pure thirds on all degrees. 
+Unaccompanied vocal performance, however, did not need to compromise and comma 
+inflection was a normal part of a singer&rsquo;s technique. This might require the 
+same note to vary in pitch (according to context) from its normal Pythagorean 
+position to a comma higher or lower. Frequently, but under tight compositional 
+control, this might be extended at times up to two commas higher or lower than 
+Pythagorean pitch. But such flexibility was completely out of the range of 
+normal keyboards whose tuning (in whatever compromise system was adopted) had to 
+remain entirely fixed for a particular performance.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> I should again stress that files created with older 
+versions are updated automatically when opened by later versions of Finale, but 
+when creating <i>new</i> 
+files in <i>any</i> version the user will need to know which set of values to 
+apply. If the list provided below for &ldquo;older versions&rdquo; is mistakenly used in 
+&ldquo;later versions,&rdquo; Finale&mdash;in blissful ignorance&mdash;will produce extremely bizarre 
+results.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> As stated in [11] above, &ldquo;8192&rdquo; here refers to the 
+default numeric value for &ldquo;older versions&rdquo; and the following &ldquo;[0]&rdquo; that for 
+&ldquo;later.&rdquo;<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> It must be remembered that the Pythagorean scale is 
+the default scale for Just Intonation, and that the tuning of JI arises from the 
+addition/subtraction of the Syntonic comma (81:80) to/ from notes that are 
+modified for consonance purposes. The effect of this modification is to change 
+all the Pythagorean diatonic semitones from minor (256:243) to major (16:15), to 
+narrow all the major thirds and sixths, and to widen all the minor thirds and 
+sixths. But these changes all result from the single application each time of a 
+Syntonic comma adjustment (upwards or downwards) that changes the default 
+Pythagorean pitches concerned.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Theorists who explain the Pythagorean scale do so in 
+terms of sounding length, and this leads to sounding length ratios. Thus, for 
+example, the pure fifth is 3:2, and the octave is 2:1. Although the same ratios 
+are inversely correct for the relative quantities defining the two pitches 
+involved, they do not define the pitches themselves (but only the relative 
+values between them). What is needed here is an unambiguous definition of the <i>actual pitch</i> 
+to be generated for each note defined. This can only be achieved by converting 
+the ratio values into Cents and then calculating the pitch of each note in terms 
+of the number of Cents that make it higher or lower than the default note from 
+which it is computed.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> This value for &ldquo;G&rdquo; will be the same for every &ldquo;G&rdquo; in 
+every octave, and all other respective values obtained for all other notes will 
+be the same for all octaves.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Again the numeric value for later versions is less 
+than for older ones by a total of 8192. This, like all other pitchwheel values, 
+is calculated to the nearest 1 in 8192 parts of a semitone. Equally-tempered 
+fifths have been narrowed from their Pythagorean defaults. Since the pitchwheel 
+value of C is 8192 [0], the restoration of the G to its Pythagorean position 
+will necessarily increase its pitchwheel value. The new value of 8352 [160] has 
+raised the pitch by a pitchwheel value of 160. When this is divided by 81.92 
+(the pitchwheel value for each Cent as shown in [14] above), the difference is 
+found to be 1.953125 Cents<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> If, for example, you indicated F-sharp with the tag 
+&ldquo;F#,&rdquo; Finale would show &ldquo;9152&rdquo; because it would assume that you had asked for 
+the numeric value assigned to be displayed in place of the tag itself.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Experienced Finale users will know that the process of 
+inserting Text Expressions can be simplified and speeded up by the use of 
+metatools. Since most pieces using Pythagorean tuning only have a range of up to 
+nine different pitch classes in each octave, assigning each global pitch to a 
+metatool makes insertion very quick and easy. Other users will simply have to 
+make a separate insertion (via the Staff Expression window) for each and every 
+note in the score.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> In the Instrument List window it will be necessary to 
+assign a different instrument for each staff, and then a different channel. In 
+the &ldquo;Prog.&rdquo; column the same sound patch can be selected if wished.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> This number can, of course, be changed to whatever 
+value you like dependent upon the pitch needed relative to any tuning 
+requirement or system you wish to use. It will be set for the entire piece, 
+however, and the current value is the one needed for its Pythagorean pitch.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> The figure &ldquo;480&rdquo; indicates the same pitch inflection 
+within the 0-8192 numeric range (used by later versions) as does the figure 
+&ldquo;8672&rdquo; within the numeric range 8192-16384 (used by older versions), 
+representing simply an increase in pitch bend of 480 units.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> It is &ldquo;non-melodic&rdquo; since it was considered too small 
+to form a discrete interval in its own right. But when it was added to or 
+subtracted from a larger interval the overall result did yield a new melodic 
+interval. When added to a Pythagorean minor semitone, the result was a major 
+semitone (16:15) which was a distinct interval capable of being leant and 
+performed. Also when it was subtracted from a Pythagorean tone (9:8) the result 
+was the minor tone (10:9) which again was a discrete interval to be learnt and 
+sung. The addition or subtraction of this quantity is what gives rise to the new 
+intervals whose cognition and accurate delivery lies at the heart of the skills 
+required for the accurate performance of Just Intonation.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Both these calculations are, of course, for the older 
+versions of Finale. For the newer versions (which will upgrade existing 
+old-version files automatically) the figure &ldquo;8192&rdquo; will be replaced with &ldquo;0,&rdquo; 
+and the results of the above calculations will be respectively &ldquo;-1762&rdquo; and 
+&ldquo;1762.&rdquo;<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> In order to produce a clean and pure Syntonic 
+intonation, you are strongly advised to eliminate completely any default vibrato 
+that will undoubtedly be set on your MIDI keyboard. Since even the most gentle 
+vibrato is unlikely to create pitch fluctuation of less than a Syntonic comma, 
+it stands to reason that the presence of such vibrato will sabotage any attempt 
+to enter the true sound world of Syntonic tuning. On some keyboards, even the 
+&ldquo;harpsichord&rdquo; patch is infected by vibrato. Removing it is straightforward, but 
+reference should again be made to the User Manual or technical assistance 
+sought.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> If you load it into one of the later versions of 
+Finale, you will find that the values have automatically been updated to those 
+contained in Figure 12 above.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> The issues surrounding this composition are too 
+complex to be discussed here and will form the substance of a future article. 
+But his description of the keyboard upon which he stipulated the chanson could 
+be successfully performed, while remaining in tune throughout, shows it to have 
+been similar to the one discussed by other musicians of the time (notably 
+Vicentino).<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> The tones must be smaller because if the octave equals 
+nineteen intervals of one-third of a tone each there must be at least six and 
+one-third tones in each octave. The Pythagorean octave contains only five tones 
+plus two minor semitones (which is less than six overall). The keyboard tones 
+described by Costeley must therefore be minor tones roughly equivalent to the 
+Syntonic (10:9) minor tones. In compensation for this, the diatonic semitones 
+are large (two-thirds the size of a tone in fact), and these, too, must 
+correspond roughly with the Syntonic diatonic semitones (16:15) although they 
+are marginally larger in size. The occasional use of non-diatonic semitones 
+(used either melodically or arising from close cross relations) provides, 
+according to Costeley&rsquo;s assessment, movement equaling only one-third of a tone.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> In this temperament, the interval of a fifth is 
+perceptibly narrowed (much more so indeed than in 12-tone equal temperament), 
+and the fourths are correspondingly widened by a no less perceptible amount. The 
+overall effect of this temperament is radically different from that of 12-tone 
+equal temperament. In the latter, the effect (as we are used to) is one of 
+tolerably pure fourths and fifths together with pure octaves, upon which have 
+been superimposed distinctly out-of-tune thirds and sixths (to which our ears 
+have now become accustomed). In the former, however, the soundscape is one in 
+which the fourths and fifths are sufficiently out of phase to produce a wavy 
+timbre (similar to a gentle <i>voix celeste</i> organ sound), upon which has now 
+been superimposed strikingly pure thirds and sixths.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> There will need to be twenty-one separate values 
+because the B-sharp/C-flat and E-sharp/F-flat pairs will each need different 
+values for both notes (even though whichever is used will provide the same 
+actual pitch). Sometimes Finale will have to read F-flat, and sometimes E-sharp: 
+the first (= E in 12-tet) will have to be raised from its default pitch while 
+the second (= F in 12-tet) will need to be lowered. Whichever is used in the 
+version edited for keyboard will depend solely upon its diatonic context: if 
+G-flat descends by a diatonic semitone (= two-thirds of a tone) the following 
+pitch will be written as F-flat; but if a D-sharp rises by a diatonic semitone 
+the following note will appear as E-sharp. Finale therefore needs to have both 
+members of each pair provided for.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> The appearance of the score will sometimes look 
+strange, and somehow &ldquo;between the cracks,&rdquo; to those thinking in 12-tone equal 
+temperament. Frequently chords appear as though they need re-enharmonizing. In 
+reality, however, each note is completely pitch-specific and relates to a 
+particular key on the keyboard. Only the single black notes dividing the B/C and 
+E/F pairs have alternative means of notation.<br><a href="#FN32REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Of the many available music notation programs, my 
+preference for Finale here is only because it is particularly well suited to 
+combining visual analysis with superfine pitch control. But its method is 
+unique, and files converted into, say, Sibelius will not retain the MIDI 
+settings that have been applied. Although Finale has been upgraded regularly, 
+most of the changes have been designed only to enhance user friendliness and to 
+present better looking windows and scores. The window dressing aside, the 
+functionality of the program has remained fairly stable. But in the specific 
+area to be discussed below later versions of Finale have adopted a slightly 
+different (and perhaps more logical) method of data management. This will be 
+explained in due course.</div><div id="fndiv2" class="flyoverdiv">Readers might like to know that the writer does not 
+regard himself as a technological boffin, and they might perhaps be comforted 
+(or irritated if they expect boffin-style discourse) by the assurance that 
+explanations will be simple and comprehensible.</div><div id="fndiv3" class="flyoverdiv">If your keyboard provides other preset temperaments such 
+as &ldquo;Pythagorean&rdquo; or &ldquo;Just,&rdquo; you should make sure that it is only set to equal 
+temperament. All the settings that will be provided in this essay take the 
+equally-tempered keyboard as the default. None of the music to be generated will 
+actually use equal temperament of course, but the pitchwheel settings presume 
+this as being the default.</div><div id="fndiv4" class="flyoverdiv">You can verify this quite simply. Assuming your MIDI 
+keyboard is set up to generate sounds through your speakers, hold down any note 
+and move the pitchwheel fully to the right and then the left. The pitch of the 
+note should rise and fall by a full octave. If it is different this does not 
+matter, and it merely indicates that the default setting has been changed. The 
+setting will again be changed later to another value in any case.</div><div id="fndiv5" class="flyoverdiv">As will be shown, early versions of Finale provided both 
+Staff Expression and Score Expression tools, while later versions offer only a 
+common and single Expression Tool. In these later versions, setting of the 
+required entry for either &ldquo;Staff&rdquo; or &ldquo;Score&rdquo; is made via various sub menus. The 
+functionality of whatever entry is made remains identical however. A less useful 
+method of pitch control is to open the Midi Tool and edit the pitchbend values 
+of notes that are to be changed. This is far less accurate and anything that is 
+done remains invisible except to the inner workings of the program. The more 
+accurate method outlined here remains visible in the score, and can easily be 
+edited or changed.</div><div id="fndiv6" class="flyoverdiv">If the score is empty, perhaps because the file is newly 
+created, simply insert a note. Then select the Staff Expression tool icon and 
+click on the note.</div><div id="fndiv7" class="flyoverdiv">Now that the procedure for editing and inserting 
+pitchwheel values has been followed, the various &ldquo;Cancel&rdquo; buttons can be clicked 
+to close down the Staff Expression tool so as to avoid changing the note 
+originally selected. In order to rehearse the procedure again, the instructions 
+given in [6] above can be repeated.</div><div id="fndiv8" class="flyoverdiv">These are the new values that Finale automatically 
+converts to when a file created in what it recognizes as an &ldquo;older version&rdquo; is 
+loaded into the later version. In such a file, later versions will convert 
+original pitchwheel values of 8192 to 0, 0 to -8192, and 16384 to (+)8192. All 
+resulting values in the later versions will therefore be equivalent to all those 
+in the early version <i>minus 8192</i>.</div><div id="fndiv9" class="flyoverdiv">It is, however, much better than what is provided by the 
+MIDI tool which only splits the same pitchbend interval into 64 equal parts. 
+This is wholly inadequate for pitches of the accuracy required.</div><div id="fndiv10" class="flyoverdiv">The keyboard User Manual will give the information 
+needed for altering the bend value. On my Roland the bender range can be 
+accessed via the &ldquo;Edit&rdquo; and then the &ldquo;Lower&rdquo; buttons, and found by scrolling 
+through the list with the &ldquo;Display&rdquo; button. When &ldquo;Bender Range&rdquo; is displayed, 
+its value can be set to &ldquo;1&rdquo; with the &ldquo;Value&rdquo; button and the new setting saved 
+using the &ldquo;Write&rdquo; and &ldquo;Enter&rdquo; buttons. Other keyboards will have equivalent 
+methods of making changes to these settings.</div><div id="fndiv11" class="flyoverdiv">The Bend Range value increments by semitones so that 
+the default value of &ldquo;12&rdquo; yields a pitch bend of a full octave up and down. By 
+changing this setting to &ldquo;1&rdquo; the bend range will be reduced to only a semitone 
+up or down.</div><div id="fndiv12" class="flyoverdiv">Keyboards always adopted &ldquo;compromise&rdquo; tunings although 
+some experiments with split keys were designed to increase the number of pitches 
+available for each octave. This facilitated a differentiation between sharps and 
+flats so as to enable the consistent use of pure thirds on all degrees. 
+Unaccompanied vocal performance, however, did not need to compromise and comma 
+inflection was a normal part of a singer&rsquo;s technique. This might require the 
+same note to vary in pitch (according to context) from its normal Pythagorean 
+position to a comma higher or lower. Frequently, but under tight compositional 
+control, this might be extended at times up to two commas higher or lower than 
+Pythagorean pitch. But such flexibility was completely out of the range of 
+normal keyboards whose tuning (in whatever compromise system was adopted) had to 
+remain entirely fixed for a particular performance.</div><div id="fndiv13" class="flyoverdiv">I should again stress that files created with older 
+versions are updated automatically when opened by later versions of Finale, but 
+when creating <i>new</i> 
+files in <i>any</i> version the user will need to know which set of values to 
+apply. If the list provided below for &ldquo;older versions&rdquo; is mistakenly used in 
+&ldquo;later versions,&rdquo; Finale&mdash;in blissful ignorance&mdash;will produce extremely bizarre 
+results.</div><div id="fndiv14" class="flyoverdiv">As stated in [11] above, &ldquo;8192&rdquo; here refers to the 
+default numeric value for &ldquo;older versions&rdquo; and the following &ldquo;[0]&rdquo; that for 
+&ldquo;later.&rdquo;</div><div id="fndiv15" class="flyoverdiv">It must be remembered that the Pythagorean scale is 
+the default scale for Just Intonation, and that the tuning of JI arises from the 
+addition/subtraction of the Syntonic comma (81:80) to/ from notes that are 
+modified for consonance purposes. The effect of this modification is to change 
+all the Pythagorean diatonic semitones from minor (256:243) to major (16:15), to 
+narrow all the major thirds and sixths, and to widen all the minor thirds and 
+sixths. But these changes all result from the single application each time of a 
+Syntonic comma adjustment (upwards or downwards) that changes the default 
+Pythagorean pitches concerned.</div><div id="fndiv16" class="flyoverdiv">Theorists who explain the Pythagorean scale do so in 
+terms of sounding length, and this leads to sounding length ratios. Thus, for 
+example, the pure fifth is 3:2, and the octave is 2:1. Although the same ratios 
+are inversely correct for the relative quantities defining the two pitches 
+involved, they do not define the pitches themselves (but only the relative 
+values between them). What is needed here is an unambiguous definition of the <i>actual pitch</i> 
+to be generated for each note defined. This can only be achieved by converting 
+the ratio values into Cents and then calculating the pitch of each note in terms 
+of the number of Cents that make it higher or lower than the default note from 
+which it is computed.</div><div id="fndiv17" class="flyoverdiv">This value for &ldquo;G&rdquo; will be the same for every &ldquo;G&rdquo; in 
+every octave, and all other respective values obtained for all other notes will 
+be the same for all octaves.</div><div id="fndiv18" class="flyoverdiv">Again the numeric value for later versions is less 
+than for older ones by a total of 8192. This, like all other pitchwheel values, 
+is calculated to the nearest 1 in 8192 parts of a semitone. Equally-tempered 
+fifths have been narrowed from their Pythagorean defaults. Since the pitchwheel 
+value of C is 8192 [0], the restoration of the G to its Pythagorean position 
+will necessarily increase its pitchwheel value. The new value of 8352 [160] has 
+raised the pitch by a pitchwheel value of 160. When this is divided by 81.92 
+(the pitchwheel value for each Cent as shown in [14] above), the difference is 
+found to be 1.953125 Cents</div><div id="fndiv19" class="flyoverdiv">If, for example, you indicated F-sharp with the tag 
+&ldquo;F#,&rdquo; Finale would show &ldquo;9152&rdquo; because it would assume that you had asked for 
+the numeric value assigned to be displayed in place of the tag itself.</div><div id="fndiv20" class="flyoverdiv">Experienced Finale users will know that the process of 
+inserting Text Expressions can be simplified and speeded up by the use of 
+metatools. Since most pieces using Pythagorean tuning only have a range of up to 
+nine different pitch classes in each octave, assigning each global pitch to a 
+metatool makes insertion very quick and easy. Other users will simply have to 
+make a separate insertion (via the Staff Expression window) for each and every 
+note in the score.</div><div id="fndiv21" class="flyoverdiv">In the Instrument List window it will be necessary to 
+assign a different instrument for each staff, and then a different channel. In 
+the &ldquo;Prog.&rdquo; column the same sound patch can be selected if wished.</div><div id="fndiv22" class="flyoverdiv">This number can, of course, be changed to whatever 
+value you like dependent upon the pitch needed relative to any tuning 
+requirement or system you wish to use. It will be set for the entire piece, 
+however, and the current value is the one needed for its Pythagorean pitch.</div><div id="fndiv23" class="flyoverdiv">The figure &ldquo;480&rdquo; indicates the same pitch inflection 
+within the 0-8192 numeric range (used by later versions) as does the figure 
+&ldquo;8672&rdquo; within the numeric range 8192-16384 (used by older versions), 
+representing simply an increase in pitch bend of 480 units.</div><div id="fndiv24" class="flyoverdiv">It is &ldquo;non-melodic&rdquo; since it was considered too small 
+to form a discrete interval in its own right. But when it was added to or 
+subtracted from a larger interval the overall result did yield a new melodic 
+interval. When added to a Pythagorean minor semitone, the result was a major 
+semitone (16:15) which was a distinct interval capable of being leant and 
+performed. Also when it was subtracted from a Pythagorean tone (9:8) the result 
+was the minor tone (10:9) which again was a discrete interval to be learnt and 
+sung. The addition or subtraction of this quantity is what gives rise to the new 
+intervals whose cognition and accurate delivery lies at the heart of the skills 
+required for the accurate performance of Just Intonation.</div><div id="fndiv25" class="flyoverdiv">Both these calculations are, of course, for the older 
+versions of Finale. For the newer versions (which will upgrade existing 
+old-version files automatically) the figure &ldquo;8192&rdquo; will be replaced with &ldquo;0,&rdquo; 
+and the results of the above calculations will be respectively &ldquo;-1762&rdquo; and 
+&ldquo;1762.&rdquo;</div><div id="fndiv26" class="flyoverdiv">In order to produce a clean and pure Syntonic 
+intonation, you are strongly advised to eliminate completely any default vibrato 
+that will undoubtedly be set on your MIDI keyboard. Since even the most gentle 
+vibrato is unlikely to create pitch fluctuation of less than a Syntonic comma, 
+it stands to reason that the presence of such vibrato will sabotage any attempt 
+to enter the true sound world of Syntonic tuning. On some keyboards, even the 
+&ldquo;harpsichord&rdquo; patch is infected by vibrato. Removing it is straightforward, but 
+reference should again be made to the User Manual or technical assistance 
+sought.</div><div id="fndiv27" class="flyoverdiv">If you load it into one of the later versions of 
+Finale, you will find that the values have automatically been updated to those 
+contained in Figure 12 above.</div><div id="fndiv28" class="flyoverdiv">The issues surrounding this composition are too 
+complex to be discussed here and will form the substance of a future article. 
+But his description of the keyboard upon which he stipulated the chanson could 
+be successfully performed, while remaining in tune throughout, shows it to have 
+been similar to the one discussed by other musicians of the time (notably 
+Vicentino).</div><div id="fndiv29" class="flyoverdiv">The tones must be smaller because if the octave equals 
+nineteen intervals of one-third of a tone each there must be at least six and 
+one-third tones in each octave. The Pythagorean octave contains only five tones 
+plus two minor semitones (which is less than six overall). The keyboard tones 
+described by Costeley must therefore be minor tones roughly equivalent to the 
+Syntonic (10:9) minor tones. In compensation for this, the diatonic semitones 
+are large (two-thirds the size of a tone in fact), and these, too, must 
+correspond roughly with the Syntonic diatonic semitones (16:15) although they 
+are marginally larger in size. The occasional use of non-diatonic semitones 
+(used either melodically or arising from close cross relations) provides, 
+according to Costeley&rsquo;s assessment, movement equaling only one-third of a tone.</div><div id="fndiv30" class="flyoverdiv">In this temperament, the interval of a fifth is 
+perceptibly narrowed (much more so indeed than in 12-tone equal temperament), 
+and the fourths are correspondingly widened by a no less perceptible amount. The 
+overall effect of this temperament is radically different from that of 12-tone 
+equal temperament. In the latter, the effect (as we are used to) is one of 
+tolerably pure fourths and fifths together with pure octaves, upon which have 
+been superimposed distinctly out-of-tune thirds and sixths (to which our ears 
+have now become accustomed). In the former, however, the soundscape is one in 
+which the fourths and fifths are sufficiently out of phase to produce a wavy 
+timbre (similar to a gentle <i>voix celeste</i> organ sound), upon which has now 
+been superimposed strikingly pure thirds and sixths.</div><div id="fndiv31" class="flyoverdiv">There will need to be twenty-one separate values 
+because the B-sharp/C-flat and E-sharp/F-flat pairs will each need different 
+values for both notes (even though whichever is used will provide the same 
+actual pitch). Sometimes Finale will have to read F-flat, and sometimes E-sharp: 
+the first (= E in 12-tet) will have to be raised from its default pitch while 
+the second (= F in 12-tet) will need to be lowered. Whichever is used in the 
+version edited for keyboard will depend solely upon its diatonic context: if 
+G-flat descends by a diatonic semitone (= two-thirds of a tone) the following 
+pitch will be written as F-flat; but if a D-sharp rises by a diatonic semitone 
+the following note will appear as E-sharp. Finale therefore needs to have both 
+members of each pair provided for.</div><div id="fndiv32" class="flyoverdiv">The appearance of the score will sometimes look 
+strange, and somehow &ldquo;between the cracks,&rdquo; to those thinking in 12-tone equal 
+temperament. Frequently chords appear as though they need re-enharmonizing. In 
+reality, however, each note is completely pitch-specific and relates to a 
+particular key on the keyboard. Only the single black notes dividing the B/C and 
+E/F pairs have alternative means of notation.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2004 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,619 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 3.3: Haimo, Linear Analysis</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Linear Analysis&mdash;A Cure for Pitch-Class Set Analysis?:  A Reply">
+
+    <meta name="citation_author" content="Haimo, Ethan T.">
+      
+
+<meta name="citation_publication_date" content="1997/05/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="3">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Linear Analysis&mdash;A Cure for Pitch-Class Set Analysis?:  A Reply
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.97.3.3/mto.97.3.3.haimo.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Ethan T. Haimo</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.97.3.2/mto.97.3.2.latham.html">http://www.mtosmt.org/issues/mto.97.3.2/mto.97.3.2.latham.html</a></font></p><p><font size='4'>KEYWORDS: Latham, Schoenberg, Forte, atonality, set theory</font></p><p><font size='4'>ABSTRACT: Edward Latham reviewed and criticized the author&rsquo;s &ldquo;Atonality, Analysis, and 
+the Intentional Fallacy&rdquo; (<i>Music Theory Spectrum</i> 18.2 [Fall 1996]: 167&ndash;99).  The author 
+replies.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 3, Number 3, May 1997 <br> Copyright &#0169; 1997 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+<div style="text-align:right"><a href="http://www.mtosmt.org/issues/mto.97.3.3/mto.97.3.3.haimo.pdf">PDF Text</a></div>
+<p>[1] In his recent review of my article, &ldquo;Atonality, Analysis, and
+the Intentional Fallacy,&rdquo;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Edward Latham seriously
+misrepresents or distorts my positions, and misreads (or simply
+misunderstands) my arguments.  Since a detailed response to all
+of his criticisms would take an inordinate amount of space, I
+must limit my remarks to the most serious.
+<p>
+
+[2] Although he concedes that my &ldquo;critique of Forte&rsquo;s
+segmentational decisions is perceptive and valid&rdquo; (par. 7) Latham
+proceeds to suggest that my argument is fatally flawed because I
+did not take Forte&rsquo;s recent work into consideration.  Latham goes
+on to state that Forte&rsquo;s article &ldquo;Pitch-Class Set Analysis Today&rdquo;
+(which was discussed at length in my critique) &ldquo;is actually
+Forte&rsquo;s own attempt to signal the <i>end</i> of an initial phase in
+the evolution of pitch-class set theory and the beginning of a
+new phase in which a more sophisticated analytical method might
+be developed&rdquo; (par. 11).  Latham asserts that Forte has
+&ldquo;presented a general outline of such a method in &lsquo;New Approaches
+to Linear Analysis&rsquo;&rdquo; (par. 11) and has expanded upon this idea in
+subsequent writings.  This leads Latham to chide me for not
+discussing a recent article by Forte on Schoenberg&rsquo;s Op. 15: &ldquo;it
+seems rather surprising (and unfortunate) that he chooses to
+ignore this particular article&rdquo; (par. 13).  
+<p>
+
+[3] The clear implication of this line of argument is that my
+critique of Forte&rsquo;s methods of pitch-class set analysis is
+invalid (or at least moot) because Forte&rsquo;s own work has long ago
+satisfactorily addressed the problems I discussed.  In Latham&rsquo;s
+view, pitch-class set analysis of Schoenberg&rsquo;s music remains a
+viable approach because Forte has developed a more sophisticated
+method for its application&mdash;linear analysis&mdash;a method that
+(presumably) is free from the problems raised in my article.  If
+so, then the real problem seems to be my ignorance of (or willful
+disinterest in) the recent theoretical literature, not any
+problems with Forte&rsquo;s (recent) writings.  
+<p>
+
+[4] I beg to differ.  In no way do the articles Latham cites
+satisfactorily address any of the problems that were raised in my
+article.
+<p>
+
+[5] Latham is correct that Forte has developed a new approach
+(linear analysis) for the application of pitch-class set
+analysis.  In recent years, Forte has applied this new idea to a
+wide variety of compositions from the end of the nineteenth and
+beginning of the twentieth centuries.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  However, there is
+nothing in any of these more recent articles to indicate that
+pitch-class set analysis, as preached and practiced in his
+earlier essays, has been replaced by this new method.  Rather, it
+seems abundantly clear that this newer method is being offered as
+a supplement to, not a complete replacement for, the earlier
+idea.  This is particularly evident in that these later articles
+cite the earlier work as authority, not as items that need
+correction.  Normally, when a scholar wishes to correct or
+improve upon his or her earlier scholarship, he or she does so by
+explicitly acknowledging the deficiencies or problems in his or
+her earlier writings.  If Forte had wished to make it clear to
+the scholarly world that the segmentations in his earlier
+applications of pitch-class set analysis were arbitrary and
+inconsistent then he needed to have stated so explicitly.  If
+linear analysis was meant to correct the flaws in earlier methods
+of pitch-class set analysis, Forte should have admitted, for
+example, that Perle and Taruskin were right in their critiques,
+and that what Latham calls the &ldquo;undaunted&rdquo; application of pitch-class set analysis to Schoenberg&rsquo;s music (among others) has, in
+fact, led to serious problems.  Forte then could have gone on to
+state that he had developed a new method of pitch-class analysis
+that successfully addresses those problems&mdash;linear analysis.  To
+my knowledge, Forte has never done this.  In the absence of such
+an acknowledgment, it must be assumed that he stands by his
+earlier work.
+<p>
+
+[6] But it is not just the absence of such a clear acknowledgment
+that shows that Forte stands by his earlier work.  There are
+explicit citations that confirm this to be the case.  For
+example, Latham criticizes me for failing to consider Forte&rsquo;s
+article &ldquo;Pitch-Class Set Genera and the Origin of Modern Harmonic
+Species&rdquo; (1988).  Latham states that this was &ldquo;intended to
+supercede [sic] the K and Kh relations as a means of describing
+the relationships among the different sets employed (or
+discovered, pace Haimo) in a composition, the system of genera is
+clearly a further refinement of pitch-class set theory, and as
+such it, too, needs to be included in any evaluation of the
+theory and its analytical application&rdquo; (par. 14).  If the reader
+had read only Latham&rsquo;s review and did not look up the article
+cited, the reader would undoubtedly conclude that there were some
+important and substantive refinements of pitch-class set theory
+in that article that addressed the problems I identified and
+thereby invalidated my critique.  The reader might also assume
+that Forte&rsquo;s post-genera thinking might very well have led Forte&mdash;
+as Latham suggests&mdash;to revise his analysis of Op. 11, No. 1 and
+include the &ldquo;tonal&rdquo; sets he had studiously omitted in the
+analysis I had critiqued.
+<p>
+
+[7] That is simply not the case.  And the reader can garner just
+how misplaced Latham&rsquo;s criticism is by opening the article in
+question to the page where Forte discusses Schoenberg&rsquo;s Op. 11,
+No. 1 (page 238).  If there are important refinements here that I
+needed to have taken into consideration, then why does Forte
+simply assert about Op. 11, No. 1 that its &ldquo;pitch-class set
+vocabulary <nobr>. . .</nobr> consists of exactly six hexachords, six
+pentachords, two tetrachords, and two trichords&rdquo;?<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  And what
+does Forte give as the source for this assertion?  None other
+than the very article that was the centerpiece of my critique,
+&ldquo;The Magical Kaleidoscope&rdquo;.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  From this one instance (and this
+is merely a representative example) it is clear that Forte stands
+by his previous work and is building new ideas on that
+foundation.
+<p>
+
+[8] That was, of course, the reason why I chose to concentrate my
+critique on the foundation.  Since Forte&rsquo;s subsequent work (as
+well as that of numerous other scholars) is dependent on that
+foundation, a critique of pitch-class set analysis needs to
+concentrate on determining how solid that foundation is.  That,
+in turn, dictated why I concentrated so much attention on
+relatively old articles like &ldquo;Sets and Nonsets&rdquo;.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>  When I
+examined Forte&rsquo;s analysis of Op. 11, No. 1, it was just not clear
+to me what his rationale was for choosing some pitch-class sets
+and excluding others.  There seemed to be no rational reason for
+his choices.  This prompted me to track down this idea and
+determine what were the bases for his selection.  As it happens,
+the only place that this was clearly stated was in &ldquo;Sets and
+Nonsets&rdquo;.
+<p>
+
+[9] But what of Latham&rsquo;s implication that Forte&rsquo;s most recent
+writings deal successfully with the problems raised in my
+article?  Latham finds it &ldquo;surprising (and unfortunate)&rdquo; that I
+chose &ldquo;to ignore&rdquo; (par. 13) Forte&rsquo;s recent analysis of
+Schoenberg&rsquo;s Op. 15.  Again, the implication seems to be that
+whatever problems might have existed before, they have been fixed
+in the recent writing.  If this is so, Latham would be absolutely
+right to criticize my article.
+<p>
+
+[10] Sadly, this is not the case.  It would be well beyond the
+scope of a response to a review to go into the kind of detail
+necessary to make a thorough argument in support of this
+assertion, so I trust the reader will understand if I merely limn
+the outlines of what my argument would be.
+<p>
+
+[11] My critique of Forte&rsquo;s analysis of Op. 11, No. 1 rested on
+the easily verifiable assertion that Forte&rsquo;s method fails his own
+criterion of testability (i.e., using pitch-class set analysis,
+different analysts will not produce analyses that intersect in
+significant ways).  Instead, an objective pitch-class set
+analysis (which is a type two analysis) of Schoenberg&rsquo;s music
+simply yields an unwieldy, random, almost unlimited, mass of
+sets.  The only way that Forte can produce a specific, limited,
+list of sets upon which he claims the work to be based, is by a
+biographical hypothesis (a type one assertion)&mdash;i.e., that
+Schoenberg consciously and intentionally chose a specific number
+of hexachords (six) and pentachords (also six) for numerological
+reasons and that some of the specific sets chosen had clear
+autobiographical or stylistic motivations (e.g., EsCHBEG and
+others).  The documentary record proves this biographical
+hypothesis to be false (because of what is actually in the
+documentary record, not because any and all documents are&mdash;as
+Latham falsely imputes to my &ldquo;seeming naivete&rdquo;&mdash;automatic &ldquo;get
+out of jail free cards&rdquo;).  Therefore, the analysis fails as
+either a type one or a type two statement.
+<p>
+
+[12] Precisely the same problems surface in Forte&rsquo;s analysis of
+Op. 15.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Forte&rsquo;s choice of tetrachords in general, and
+specific tetrachords in particular, as the basic motives of Op.
+15, plainly fails the criterion of testability and thus cannot
+work as a pure type two analysis.  (That is, independent
+analysts, given the same material and using the same method,
+would not come up tetrachords, only tetrachords, and only these
+tetrachords.)  It is hardly coincidental then, that Forte makes
+recourse to various type one assertions to shore up his argument,
+precisely as in the analysis discussed in my article.  Thus,
+Forte sees Schoenberg as slipping musical equivalents of his own,
+of Mathilde Schoenberg&rsquo;s, and of Richard Gerstl&rsquo;s names into the
+music.  In other words, he has tried to justify what should have
+been a pure type two analysis with type one rationalizations. 
+That would be bad enough, but the biographical claims he advances
+are not viable:  occasional letters completely buried in a
+complicated fabric are not ciphers placed there by the composer,
+they are fictions imposed by the analyst on the music.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup><p>
+
+[13] Therefore, for precisely the reasons outlined in my article,
+this recent analysis fails both as either a type one or a type
+two assertion.  It does not (cannot) work on its own;  similarly,
+the biographical hypotheses advanced are patently false. 
+Contrary to Latham&rsquo;s insinuations, nothing in Forte&rsquo;s subsequent
+writings has satisfactorily addressed the problems I raised in my
+discussion of his analysis of Op. 11, No. 1.
+<p>
+
+[14] Unfortunately, this type of criticism&mdash;criticism by
+insinuation&mdash;is endemic in the review.  Throughout his review,
+Latham stoops to sarcasm and scorn, but, tellingly (as detailed
+in the case discussed in paragraphs 9&ndash;13, above), he fails to
+back up his criticisms with relevant facts.  Thus he states that
+I present &ldquo;a tidy, if not entirely objective, encapsulation&rdquo;,
+without identifying what lacked objectivity in my encapsulation. 
+He sarcastically dismisses the facsimiles I included in my
+article by stating that I produce &ldquo;several handsome plates of
+very official-looking sketch materials,&rdquo; (par. 2) but does not
+address the extraordinarily revealing contents of those sketches
+(my Plate 3 proves that Schoenberg was blissfully unaware of
+anything resembling pitch-class sets until as late as 1926). 
+Moreover, he hints that there is something terribly wrong in my
+using the analysis of Op. 11 No. 1 from &ldquo;The Magical
+Kaleidoscope&rdquo; and not the later version from &ldquo;Pitch Class Set
+Analysis Today&rdquo; (par. 7).  Indeed, I am alleged to have admitted
+that the later version contains much more information.  Of
+course, he does not offer a single, substantive reason why this&mdash;
+even if true&mdash;would make any difference in the argument I
+presented.  And he couldn&rsquo;t, since the version I used <i>was</i> the
+more detailed version.  (Need I add that Forte himself cites the
+&ldquo;The Magical Kaleidoscope&rdquo; version and not the &ldquo;Pitch Class Set
+Analysis Today&rdquo; version in &ldquo;Pitch-Class Set Genera&rdquo;?)  
+<p>
+
+[15] If Latham disagrees with my argument, he should stick to the
+issues and should not demean himself and the cause he supports by
+resorting to groundless insinuations, misplaced sarcasm, unseemly
+ridicule, and unsubstantiated accusations.  That he felt obliged
+to do so suggests that he has a very weak case and knows it.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Ethan T. Haimo<br>
+	University of Notre Dame<br>Department of Music<br>University of Notre Dame<br>Notre Dame, IN 46556<br><a href="mailto:ethan.t.haimo.1@nd.edu">ethan.t.haimo.1@nd.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Edward D. Latham, Review of Ethan Haimo&rsquo;s Article &ldquo;Atonality,
+Analysis, and the Intentional Fallacy,&rdquo; <i>Music Theory Spectrum</i>
+18.2 (Fall 1996): 167&ndash;199;  <i>Music Theory Online</i> 3.2 (1997).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> The article that first outlined this method is:  Allen Forte,
+&ldquo;New Approaches to Linear Analysis,&rdquo; <i>Journal of the American
+Musicological Society</i> 41.2 (Summer 1988): 315&ndash;48.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Allen Forte, &ldquo;Pitch-Class Set Genera and the Origin of the
+Modern Harmonic Species,&rdquo; <i>Journal of Music Theory</i> 32.2 (Fall
+1988): 187&ndash;270.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Allen Forte, &ldquo;The Magical Kaleidoscope: Schoenberg&rsquo;s First
+Atonal Masterwork, Opus 11, No. 1,&rdquo; <i>Journal of the Arnold
+Schoenberg Institute</i> 5.2 (November 1981): 127&ndash;68.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Allen Forte, &ldquo;Sets and Nonsets in Schoenberg&rsquo;s Atonal Music,&rdquo;
+<i>Perspectives of New Music</i> 11 (1972): 43&ndash;64.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Allen Forte, &ldquo;Concepts of Linearity in Schoenberg&rsquo;s Atonal
+Music:  A Study of the Opus 15 Song Cycle,&rdquo; <i>Journal of Music
+Theory</i> 36.2 (Fall 1992): 285&ndash;382.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> It is revealing to compare the fictitious ciphers imposed by
+Forte on Schoenberg&rsquo;s music with genuine ciphers placed in a
+composition by a composer of Schoenberg&rsquo;s circle.  See Barbara
+Dalen, &ldquo;&lsquo;Freundschaft, Liebe, und Welt&rsquo;:  the secret programme of
+the Chamber Concerto,&rdquo; <i>The Berg Companion</i>, ed. Douglas Jarman,
+123&ndash;140.  Dalen makes an absolutely airtight case for the ciphers
+she finds, backed up by clear, unequivocal, documentary and
+musical evidence.  Forte has no such support.<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Edward D. Latham, Review of Ethan Haimo&rsquo;s Article &ldquo;Atonality,
+Analysis, and the Intentional Fallacy,&rdquo; <i>Music Theory Spectrum</i>
+18.2 (Fall 1996): 167&ndash;199;  <i>Music Theory Online</i> 3.2 (1997).</div><div id="fndiv2" class="flyoverdiv">The article that first outlined this method is:  Allen Forte,
+&ldquo;New Approaches to Linear Analysis,&rdquo; <i>Journal of the American
+Musicological Society</i> 41.2 (Summer 1988): 315&ndash;48.</div><div id="fndiv3" class="flyoverdiv">Allen Forte, &ldquo;Pitch-Class Set Genera and the Origin of the
+Modern Harmonic Species,&rdquo; <i>Journal of Music Theory</i> 32.2 (Fall
+1988): 187&ndash;270.</div><div id="fndiv4" class="flyoverdiv">Allen Forte, &ldquo;The Magical Kaleidoscope: Schoenberg&rsquo;s First
+Atonal Masterwork, Opus 11, No. 1,&rdquo; <i>Journal of the Arnold
+Schoenberg Institute</i> 5.2 (November 1981): 127&ndash;68.</div><div id="fndiv5" class="flyoverdiv">Allen Forte, &ldquo;Sets and Nonsets in Schoenberg&rsquo;s Atonal Music,&rdquo;
+<i>Perspectives of New Music</i> 11 (1972): 43&ndash;64.</div><div id="fndiv6" class="flyoverdiv">Allen Forte, &ldquo;Concepts of Linearity in Schoenberg&rsquo;s Atonal
+Music:  A Study of the Opus 15 Song Cycle,&rdquo; <i>Journal of Music
+Theory</i> 36.2 (Fall 1992): 285&ndash;382.</div><div id="fndiv7" class="flyoverdiv">It is revealing to compare the fictitious ciphers imposed by
+Forte on Schoenberg&rsquo;s music with genuine ciphers placed in a
+composition by a composer of Schoenberg&rsquo;s circle.  See Barbara
+Dalen, &ldquo;&lsquo;Freundschaft, Liebe, und Welt&rsquo;:  the secret programme of
+the Chamber Concerto,&rdquo; <i>The Berg Companion</i>, ed. Douglas Jarman,
+123&ndash;140.  Dalen makes an absolutely airtight case for the ciphers
+she finds, backed up by clear, unequivocal, documentary and
+musical evidence.  Forte has no such support.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1997 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Lee A. Rothfarb, General Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

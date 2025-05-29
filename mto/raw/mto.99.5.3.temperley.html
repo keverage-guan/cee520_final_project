@@ -1,0 +1,895 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 5.3: Temperley, Review of Musical Languages</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Joseph Swain, <i>Musical Languages</i> <br>New York: W.W. Norton &amp; Company, 1997.">
+
+    <meta name="citation_author" content="Temperley, David">
+      
+
+<meta name="citation_publication_date" content="1999/05/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="5">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Joseph Swain, <i>Musical Languages</i> <br>New York: W.W. Norton &amp; Company, 1997.
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.99.5.3/mto.99.5.3.temperley.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">David Temperley</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: music, language, phonology, syntax, semantics, metaphor</font></p><p><font size='4'>ABSTRACT: Joseph Swain&rsquo;s <i>Musical Languages</i> is a systematic comparison of music
+and language, examining possible musical parallels to linguistic concepts such as
+phonology, syntax, meaning and metaphor, and also comparing music and language in terms of
+the role of context and the nature of historical change. <i>Musical Languages</i> is
+open-minded, cogent, and full of interesting ideas. Some of the parallels drawn between
+music and language seem overstated, while some differences are exaggerated; and some of
+Swain&rsquo;s positions, though quite reasonable, are not as well-defended as they could be.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.99.5.3/mto.99.5.3.temperley.pdf">PDF text </a></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 5, Number 3, May 1999 <br> Copyright &#0169; 1999 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1.1] On cursory inspection, the book that Joseph Swain&rsquo;s <i>Musical Languages</i>
+brings to mind most readily is Leonard Bernstein&rsquo;s <i>The Unanswered Question</i>. <i>The
+Unanswered Question</i>, based on six lectures Bernstein gave at Harvard in 1973, is an
+ambitious and all-embracing attempt to explain music in linguistic terms. Bernstein argues
+for profound musical parallels to the linguistic levels of phonology, syntax, and
+semantics (these being the topics of the first three lectures), and finds analogs to many
+other linguistic phenomena along the way: phonemes, morphemes, parts of speech (nouns,
+verbs, and adjectives), syntactic transformations (deletion, negation and interrogation),
+rhetorical devices (alliteration and chiasmus), and metaphor, among others. Like
+Bernstein, Swain begins with three chapters on phonology, syntax and semantics; and the
+question Swain poses, in his first sentence, as the underlying concern of his
+book&mdash;&ldquo;How is music like language, and so what if it is?&rdquo;&mdash;might have served
+equally well for Bernstein&rsquo;s. </p>
+
+<p>[1.2] This resemblance between Swain&rsquo;s book and Bernstein&rsquo;s is probably unfortunate. <i>The
+Unanswered Question</i> has not been well-received in scholarly musical circles; the
+relatively few references to it that can be found are mostly derisory.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> And in truth,
+Bernstein&rsquo;s book is an extremely problematic one. It comes across as a prolonged
+brainstorm, in which Bernstein throws out a series of superficial parallels between music
+and language, but rarely stops to consider whether they really hold up. (His insistence on
+viewing motivic relationships as &ldquo;Chomskian transformations&rdquo; is one especially
+problematic example.) Bernstein seems interested only in how music is like language, not
+how it isn&rsquo;t; and this gives the book a very one-sided, agenda-driven feel. But
+prospective readers of <i>Musical Languages</i> should not be deterred by fears of <i>The
+Unanswered Question II</i>. Indeed, the great virtue of Swain&rsquo;s book is that it is <i>not</i>
+agenda-driven in this way. <i>Musical Languages</i>, as Swain&rsquo;s first sentence suggests,
+is indeed a systematic study of the parallels between music and language; Swain considers
+many of the same parallels that Bernstein does, and many others besides (and here he has
+the advantage of 25 years of research in both music and linguistics since Bernstein&rsquo;s
+book). But at every step he carefully considers whether the parallel can be sustained; and
+in many cases he concludes that it cannot, or at least not without serious qualification.
+&nbsp; </p>
+
+<p>[1.3] If undertaken open-mindedly, as Swain&rsquo;s book is, a study of the parallels between
+music and language is an extremely worthwhile and timely endeavor. For, despite general
+(and justified) skepticism about glib claims that &ldquo;music is a language&rdquo;, the
+fact is that analogies between music and language are a vital part of current musical
+thought and discourse, perhaps more so than they have ever been. Recent examples include
+Cooper and Meyer&rsquo;s theory of rhythm, based on prosody; the semiotic work of Nattiez and
+others; the &ldquo;generative&rdquo; theory of Lerdahl and Jackendoff, inspired in part by
+theoretical linguistics; and the work of Newcomb, Maus and others in the area of musical
+narrative.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Language has proven to be an immensely rich source of ideas for scholars of music,
+and there is every reason to continue to look to it for inspiration.&nbsp; </p>
+
+<p>[1.4] Parallels between music and language are of particular interest from the point of
+view of music cognition. It is generally assumed that music takes advantage of capacities
+of the brain for certain kinds of perceptual and cognitive processing. The question then
+arises, where do these capacities come from? One possibility is that they evolved in the
+service of music itself; another possibility is that they originally arose for other
+purposes, and were borrowed by music at a later stage. Among the obvious candidates for
+these &ldquo;other purposes&rdquo; is language. For example, recent research has shown that
+intonation patterns in speech play a vital role in communication with infants (who of
+course have not yet mastered other aspects of language);<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> this raises the
+possibility that our great sensitivity to pitch later in life, which has little obvious
+practical value, may be a remnant of an important infant ability. In this way, finding
+parallels between music and language can shed light on the cognitive basis of music. Where
+parallels with language are not found, that is interesting too, because it means we have
+to look elsewhere in explaining music&rsquo;s cognitive origins.</p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[2.1] <i>Musical Languages</i> is organized as a series of essays examining different
+aspects of the music-language analogy; the essays are largely self-contained, and are best
+considered one by one. It should be noted that the book is chiefly concerned with Western
+art music of the &ldquo;common-practice&rdquo; period, although passing references are made
+to other kinds of music. </p>
+
+<p>[2.2] Swain begins by exploring the parallels between music and language at the
+phonological level. Both linguistic and musical systems are built from a small inventory
+of discrete, categorically perceived units: phonemes in language, pitches in music. In
+both cases, these units are perceived instantly and automatically, though they are by no
+means cleanly distinguished in the acoustical signal. However, the parallel is not as
+straightforward as it first seems: are notes of the same pitch-class in different octaves
+the same &ldquo;phoneme,&rdquo; or different? What about two notes of the same pitch but
+different timbre (violin versus clarinet)&mdash;are these phonemically the same, despite the
+great musical importance that timbre may have? Swain tentatively proposes that pitch and
+rhythm are the essential phonemic properties of notes, while timbre is analogous to
+intonation and stress in language. Another issue Swain raises is
+&ldquo;arbitrariness.&rdquo; Phonemes in language are generally held to be &ldquo;logical
+primitives,&rdquo; possessing no meaning on their own. In the case of notes, however, Swain
+finds this doubtful; surely the timbre of a note is a meaningful aspect. (Using timbre as
+an example is a bit confusing here, since Swain had earlier suggested that timbre was not
+a phonemic property of notes.) But even the arbitrariness of phonemes in language is open
+to question, he argues; for example, most words beginning with /sl/ are pejorative,
+suggesting that phonemes themselves may carry subtle meanings. </p>
+
+<p>[2.3] There is much insight and good sense in Swain&rsquo;s discussion of phonological
+parallels between music and language. However, there is more to be said about this issue,
+particularly the question of arbitrariness. </p>
+
+<p>[2.4] In the most general sense, arbitrariness has to do with the relation between the
+form of something and its functional properties (by this I simply mean the properties of
+the thing that relate to its function in the larger system). The functional properties of
+a word in a language are semantic (it has a meaning) and syntactic (it is a member of some
+syntactic category: noun, verb, etc.). Words are comprised of phonemes; however, you
+cannot predict, or figure out from general principles, the semantic or syntactic
+properties of a word from the phonemes that make it up. (Strictly speaking, we should
+speak about morphemes here, not words, a morpheme being an indivisible unit of meaning;
+for example, the word &ldquo;speaking&rdquo; has two morphemes, &ldquo;speak&rdquo; and
+&ldquo;ing.&rdquo; However, words often correspond to morphemes; thus speaking of words
+instead of morphemes, as Swain himself does, seems to be a reasonable oversimplification.)
+One could imagine a language where phonemes themselves had meanings&mdash;/s/ meant
+&ldquo;animate object&rdquo;, /p/ meant &ldquo;large&rdquo;, etc.&mdash;and the meaning of a word
+arose from the meanings of its phonemes; but that is clearly not the case, at least in
+English. It is true, as Swain points out, that there are a few cases where phonemes appear
+to be correlated with semantic properties, such as /sl/; but these are exceptional
+curiosities. From a computational point of view&mdash;that is, from the point of view of the
+workings of a system (human or artificial) that uses language&mdash;what this means is that the
+properties of words cannot be figured out as they are heard, but must simply be stored in
+some kind of giant &ldquo;mental lexicon.&rdquo; This is the essence of arbitrariness. While
+the meaning of a word is arbitrary, the meaning of a sentence is not; it arises in a
+principled way from the words that comprise it. Hence we can generally figure out the
+meaning of a sentence we have not heard before, but not, generally, new words (without the
+benefit of context). (Another useful concept from linguistics here is
+&ldquo;productivity:&rdquo; phonemes are not generally used productively, in that they
+cannot normally be combined to form novel words, whereas words can be used productively to
+form novel sentences.)</p>
+
+<p>[2.5] Now consider the relation of notes to phonemes. Let us assume, for the moment,
+that pitch is the sole phonemic property of notes; every note is an instance of a pitch,
+just as every occurrence of a phoneme is an instance of that phoneme. Just as phonemes
+combine to make words, notes can be combined&mdash;to make a motive, for example. Motives then
+have properties of certain kinds, just as words do. (Let us ignore, for now, whether these
+properties are best considered syntactic or semantic.) For example, a motive has a certain
+contour and certain harmonic and tonal implications, among other things. These properties
+of a motive are not arbitrary, however; they follow in a rule-governed way from the
+pitches it contains. The proof of this is that we are generally able to understand new
+motives&mdash;to recognize their tonal (and other) properties&mdash;that we have not heard before.
+This, then, is a crucial difference between pitches and phonemes that Swain does not
+mention. </p>
+
+<p>[2.6] This point has a further implication. Although words are comprised of phonemes,
+there is little reason to attribute syntactic or semantic properties directly to phonemes;
+we could only do so by listing all the words to which each phoneme contributed. But since
+the properties of a motive arise in a principled way from its pitches, there is more
+justification in that case for attributing properties to pitches themselves. Every motive
+that begins with D4 has an (at least potential) implication of a D harmony, and so on.
+Thus we might well say that D4 itself carries this implication. For this reason, one might
+argue that the proper counterpart to pitches is words, not phonemes. However, there is a
+difference here as well. The properties of pitches&mdash;for example, the harmonic implications
+of D4&mdash;are not arbitrary, but arise in a principled way from the acoustic form of pitches,
+specifically their heights. (One could imagine a musical language where the properties of
+pitches were arbitrary and had to be learned for each pitch, but this is clearly not the
+case.) In short, pitches are like words (and unlike phonemes) in having properties that
+give rise in a rule-governed way to the properties of larger units that contain them; but
+while the properties of words are themselves arbitrary, the properties of pitches are not.
+</p>
+
+<p>[2.7] None of this conflicts in any fundamental way with Swain&rsquo;s view of musical
+phonology. Swain is in fact inconclusive about whether notes are a satisfactory analog to
+phonemes, and if so, what properties of notes are phonemic. As noted earlier, Swain
+himself argues that a note may have &ldquo;meaning&rdquo; (the term &ldquo;meaning&rdquo; is
+problematic here; I would rather say that a note has properties which give rise in
+rule-governed ways to the properties of larger units that contain it). While Swain uses
+the example of timbre, my point is that even pitch is a &ldquo;meaning&rdquo;-ful property
+in this way (and rhythm as well, incidentally). In short, Swain does not seem to fully
+appreciate the non-arbitrariness of the relation between a motive&rsquo;s properties and the
+pitches that comprise it; at the same time, he understates the arbitrariness of this
+relation in the case of words and phonemes, by focusing on exceptional cases like /sl/. In
+this sense the pitch-phoneme analogy is somewhat more problematic than he acknowledges. </p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[3.1] Turning to syntax, Swain observes that the term is used quite widely among music
+theorists, though with little agreement or specificity as to its meaning; and the
+situation is not helped by the fact that linguists, too, often give rather vague
+definitions of syntax. (One recent survey defines syntax as the study of &ldquo;the ways
+words can be combined to form phrases and sentences.&rdquo;<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>) Swain begins by
+presenting the idea of a syntactic system as one that generates all the well-formed
+utterances of a language; as he notes, this is not an idea with obvious applicability to
+music. He goes on to a penetrating discussion of the role syntax actually plays in
+language, and what musical analogs might be found for it. First, syntax &ldquo;controls the
+flow of information.&rdquo; In languages, syntactic rules provide cues as to what word is
+coming next, allowing us to absorb the incoming stream of information more easily. In
+music, Swain suggests, syntactic rules (such as rules of harmony) serve a similar
+function, providing a hierarchical system for grouping notes together. (Here, the
+linguistic counterpart to notes seems to have shifted from phonemes to words. Swain
+probably should have drawn attention to this; as I argued above, however, words are in
+some ways a better parallel to notes than are phonemes.) This argument, though
+interesting, is not entirely convincing. It suggests that syntax is merely a way of
+increasing the comprehensibility of the information that is there; surely it is more than
+that. Swain&rsquo;s second argument, by contrast, is compelling. As he notes, syntactic
+structure in languages conveys vital information about the relations between words.
+&ldquo;If the semantic aspects of content words express things, actions, and states in the
+world, the syntactic relations among those words convey the relations among those things,
+actions, and states&rdquo; (page 24). It is syntax that tells us, for example, that &ldquo;the
+ball hit the boy&rdquo; means something different from &ldquo;the boy hit the ball.&rdquo; In
+this case, Swain argues, there is no real parallel in music. In music, the role of syntax
+is rather different: to regulate relations of tension and resolution. In discussions of a
+Josquin motet and a movement from Bach&rsquo;s Goldberg Variations, Swain shows how various
+kinds of tension&mdash;melodic, harmonic, textural, and metrical&mdash;contribute to the music&rsquo;s
+overall effect.&nbsp; </p>
+
+<p>[3.2] One problem here is that Swain is not very clear about what constitutes syntax in
+music. He tells us what it does&mdash;it allows the hierarchical grouping of events, and
+&ldquo;mediates the relation of tension and resolution&rdquo;&mdash;but not what it is. It
+appears that syntax is the structures that give rise to the kinds of hierarchical grouping
+and tension-resolution patterns that Swain discusses: harmonic structure, metrical
+structure, phrase structure, and contrapuntal structure (the grouping of events into
+lines), perhaps among others. (One might also consider motivic structure&mdash;the network of
+motivically related segments in a piece&mdash;to be an aspect of syntax, but Swain appears not
+to do so (page 32); I will remain non-committal on this issue here.) I think Swain is right
+in locating musical syntax in these kinds of structures. A better account could be given,
+however, of why these structures are analogous to syntax in language. </p>
+
+<p>[3.3] As Swain notes, the essential role of syntax in language is in expressing the
+relations between words. In this way, syntactic processing can be seen as an intermediate
+stage between phonological processing (identitifying phonemes and words) and semantic
+processing (comprehending meaning). Consider the parallel of harmonic structure with
+linguistic syntax. A harmonic structure is formed from the notes of a piece; it then
+contributes in important ways to the piece&rsquo;s higher-level effects and implications
+(whether we call these &ldquo;meanings&rdquo; is beside the point for now). For example, a
+harmonic structure indicates patterns of tension and resolution, a sense of a journey
+through some kind of harmonic (and tonal) space, emotional connotations connected with
+major and minor and the like, and large-scale structural cues such as cadences; harmonic
+progressions may also have extramusical associations, for example, a Flamenco progression
+suggesting something Spanish. A similar argument could be made for other structures such
+as a meter. In both language and music, then, we begin with small, discrete units; from
+them, we generate intermediate structures; and from these, we form some kind of
+higher-level understanding. The basis for calling harmony and meter &ldquo;syntax,&rdquo; by
+this view, is simply that they are intermediate structures between a lower phonological
+representation and a higher level of understanding. Now, there are a number of important
+differences between linguistic syntax and musical syntax, as I have defined it here.
+Harmony and meter would seem to be qualitatively quite different from linguistic syntax
+(at least as the latter is commonly understood in linguistics); one might argue also that
+while syntactic structures in language are simply a means to an end, those in music
+(whether &ldquo;meaningful&rdquo; or not) are really an end in themselves, contributing
+directly to the value and interest of a piece. The point is that the parallel does provide
+some basis, and I think a reasonable basis, for describing certain kinds of musical
+structure as &ldquo;syntactic.&rdquo; </p>
+
+<p>[3.4] Swain&rsquo;s view of what the syntactic structures of music are&mdash;though not as clearly
+stated or well-defended as it could be&mdash;seems basically reasonable. Swain is right, also,
+that the main role of syntax in language&mdash;expressing the relationships between words&mdash;has
+no real counterpart in music. However, I am not persuaded by Swain&rsquo;s argument that the
+main role of musical syntax is to mediate patterns of tension and resolution. In my view,
+tension-resolution is only one among a number of higher-level effects arising from musical
+syntactic structures; I see no reason why it should be privileged over others. </p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[4.1] Swain&rsquo;s discussion of semantics begins with a conundrum. Music certainly seems to
+mean something. To deny this would be to claim that the way music is matched with text or
+dramatic action is unimportant&mdash;any music should be equally appropriate for any situation;
+and this is clearly not the case. On the other hand, there is such wide disagreement on
+exactly what pieces mean&mdash;for example, on the emotional connotations of a piece&mdash;that any
+meaning music might have seems quite different from the precise meaning of language. (I
+would take issue with Swain here. Is there really so much disagreement over musical
+meaning&mdash;emotional connotations, for example? If two listeners disagree over whether a
+passage expresses &ldquo;sublime confidence,&rdquo; is it because they disagree about the
+meaning of the music, or the meaning of &ldquo;sublime confidence&rdquo;?) Swain proposes a
+way out of this dilemma in the concept of &ldquo;semantic range.&rdquo; He notes that most
+words&mdash;even seemingly straightforward words like &ldquo;floor&rdquo;&mdash;have a wide range of
+possible meanings; the exact meaning intended is made clear by the context. In the same
+way, he argues, a musical gesture or idea has a range of possible meanings; when combined
+with a particular text or dramatic situation, its meaning becomes much more specific.
+Given its text, the music of &ldquo;For Unto Us A Child Is Born&rdquo; from Handel&rsquo;s <i>Messiah</i>
+connotes angels and triumph; given a different text, it could connote something else, but
+it could never connote grief and misery, because this is outside its semantic range.
+(Notice that the counterpart of words is back to motives again&mdash;although Swain makes the
+excellent point that motives are not discrete in the way that words are; whether something
+is an instance of a motive is a matter of more-or-less, not all-or-nothing. He might have
+pointed out also, that, whereas a linguistic message is usually clearly and exhaustively
+divided up into words, a musical message is often <i>not</i> clearly segmented into
+motives; is it not always clear what constitutes a motive, and much music arguably does
+not involve motives at all. This is another way that words are more like notes than
+motives.) </p>
+
+<p>[4.2] The semantic range of a word or motive, then, is a permanent attribute which is
+used to narrow down its possible meanings in a given situation. The question is, how do
+people know what the semantic range of a word or motive is? Here again, the notion of
+arbitrariness is essential; and this time Swain is clearer about it, although still not as
+clear as he could be. The meanings (semantic ranges) of words are arbitrary, he notes, and
+this means that they must be learned, one by one, by demonstration or in some other way.
+The semantic ranges of musical motives are generally not arbitrary; this is why we are
+able to figure out the semantic range of a new motive that we haven&rsquo;t heard before.
+Presumably we do this with the aid of some general principles which govern the semantic
+ranges of musical motives. (These principles may themselves be conventional and
+arbitrary&mdash;for example that major is happy and minor is sad; but they are general
+principles nonetheless.) Swain seems to be aware of all this, but never quite says it.
+Interestingly, Swain points to one case&mdash;the leitmotif of Siegmund questioning Br&uuml;nnhilde
+in Wagner&rsquo;s <i>Die Walk&uuml;re</i>&mdash;where the music does not seem to be particularly
+appropriate for the situation in any way; in this case, he suggests, the meaning of the
+motive is essentially arbitrary, since it does not follow the usual general principles. </p>
+
+<p>[4.3] Swain&rsquo;s &ldquo;semantic range&rdquo; idea is interesting and suggestive. However,
+he is somewhat unclear on the fundamental question of what musical meaning actually is. At
+times, he tends towards the view I expressed earlier: that meaning in music&mdash;or at least,
+the best analogy to meaning in music&mdash;is simply the higher-level effects of structures
+such as harmony. &ldquo;The meaning of a syntactic event <nobr>. . .</nobr> is what the syntax
+creates, what effect on the understanding community of listeners it has, among other
+things&rdquo; (page 66); &ldquo;how a composition creates effects in listeners is the
+beginning of meaning&rdquo; (page 69). As noted earlier, Swain sees tension and resolution as
+centrally important among these syntactic effects. Elsewhere, however, &ldquo;meaning&rdquo;
+seems to refer specifically to refer to extramusical references: leitmotifs, word
+painting, and the &ldquo;topics&rdquo; characteristic of classical-period music (fanfares
+and the like). &ldquo;The meaning of a passage or a piece, while an important aspect of its
+character and identity, is hardly ever the single overwhelming factor in its success&rdquo;
+(page 68); here Swain is referring to extramusical meanings, as opposed to things like
+tension and resolution. Either definition could be defended, but there seems to be some
+inconsistency here. </p>
+
+<p>[4.4] One possible objection to attributing meaning to musical effects and implications
+is that they are not propositional. Swain seems concerned about this, arguing that while
+linguistic meaning is normally propositional, musical meaning (even the
+&ldquo;extramusical&rdquo; kind) hardly ever is. But is this really true? If we hear storm
+music in an opera, this surely expresses a proposition&mdash;&ldquo;there is a storm
+coming&rdquo;&mdash;just as surely as if a character came onstage and expressed the proposition
+in words; and doesn&rsquo;t the music of &ldquo;For Unto Us A Child Is Born&rdquo; express at
+least the proposition &ldquo;Something joyful is happening&rdquo;? As Swain points out,
+linguistic meaning is often not propositional either. He might have observed, further,
+that even when it is, it is often extremely vague and indeterminate. When Lennon and
+McCartney write,</p>
+
+<blockquote>
+  <p>I give her all my love<br>
+  That&rsquo;s all I do<br>
+  And if you saw my love<br>
+  You&rsquo;d love her too<br>
+  And I love her<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+</blockquote>
+
+<p>the propositional content could hardly be fuzzier: who is speaking, who is being spoken
+about, what is the situation? Almost all that is being conveyed is &ldquo;somebody loves
+somebody else;&rdquo; and this much is arguably conveyed by the music itself. Any difference in propositional concreteness between music and language is surely only a matter of degree. </p>
+
+<p>[4.5] Another issue in musical semantics concerns emotion: assuming that music relates
+to emotion in some way (and Swain clearly believes it does), what is the nature of this
+relation, and is it a kind of meaning? Swain treats this issue only in passing, though it
+has received much attention in music theory and aesthetics.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Despite these
+various caveats, I do not wish to seem overly negative about Swain&rsquo;s discussion of
+meaning. It is not necessary to give a precise definition of musical meaning to discuss it
+usefully and insightfully, as he shows. We should bear in mind, also, that there is
+nothing like an adequate, widely-accepted definition of &ldquo;meaning&rdquo; in language,
+covering all kinds of linguistic meaning from everyday conversation to poetry. In view of
+this, it is perhaps unfair to expect a conclusive answer as to whether music has meaning.
+For the most part, Swain&rsquo;s discussion of musical semantics is sensible, original, and
+convincing.&nbsp; </p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[5.1] Having presented the three levels of phonology, syntax, and semantics, Swain
+turns his attention in the fourth chapter to the way they interact. Here he also adds a
+fourth level&mdash;the &ldquo;pragmatic&rdquo; level, which in linguistics refers to knowledge
+about the situation and the speaker&rsquo;s intentions. In language, Swain observes, the four
+levels are inextricably intertwined. Our higher-level knowledge about the world and the
+situation exerts constant &ldquo;top-down&rdquo; influence on lower levels: whether we hear
+a word as a noun or verb, or even whether we hear one phoneme or another
+(&ldquo;nature&rdquo; or &ldquo;Nietzsche&rdquo;). We try to interpret things in the most
+reasonable way, making as much sense out of the situation as possible. In a discussion of
+Beethoven&rsquo;s Violin Concerto, Swain applies these principles to music perception. The same
+pitch can be either <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> or <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, depending on the situation; the perceptual decision between
+the two requires consideration of the entire context, and may shift from one
+interpretation to another in light of subsequent events. Our expectations about what we
+will hear influence our perceptions as well; in many cases, the genre of a piece (and by
+this Swain means chiefly its instrumentation) is a major factor in these expectations. In
+Beethoven&rsquo;s violin concerto, Swain argues, it is sublimely appropriate that the conflict
+between <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, so central to the piece, is ultimately resolved by the solo violin.</p>
+
+<p>[5.2] Swain turns next to the issue of metaphor. There is a consensus among students of
+metaphor that it must involve two things: first, &ldquo;some concept <nobr>. . .</nobr> is
+transferred or grafted on to another concept;&rdquo; second, &ldquo;the graft suggests some
+similarity between the concepts that is &lsquo;discovered&rsquo; or &lsquo;constructed&rsquo; by the perceiver at
+the same time that it suggests something semantically strange about the graft, a &lsquo;patent falsehood or even absurdity in taking the conjunction literally&rsquo;&rdquo; (page 99). Swain then
+presents a definition of musical metaphor: &ldquo;a passage whose &lsquo;absurdity&rsquo; or
+incongruity is syntactic; a passage that performs strangely in its context, controlling
+tension and creating articulations in ways unaccustomed and yet comprehensible&rdquo; (page 100). Swain goes on to discuss several examples of musical metaphors. In the dialogue
+between Orfeo and the messenger bringing news of Euridice&rsquo;s death in Monteverdi&rsquo;s <i>L&rsquo;Orfeo</i>,
+the sudden harmonic shifts to G minor convey Orfeo&rsquo;s emotional distress. In the B minor
+fugue from Book I of Bach&rsquo;s <i>Well-Tempered Clavier</i>, a very slow underlying
+harmonic rhythm (a rhythm of half-notes, in a Largo tempo) turns out to be appropriate for
+the unusually large scale of the composition. </p>
+
+<p>[5.3] In the move from the consensual definition of metaphor to Swain&rsquo;s own definition
+of the musical case, something seems to get lost. Swain&rsquo;s musical metaphor retains the
+sense of something strange or absurd; but where is the sense of grafting one concept onto
+another? This concern arises also in the examples Swain gives. The very slow harmonic
+rhythm of Bach&rsquo;s fugue may well be strange. But for what is it a metaphor? The moves to G
+minor in <i>L&rsquo;Orfeo</i> are strange as well, yet right for the situation, as they
+express Orfeo&rsquo;s emotional state; but is this metaphorical, and if so, is any kind of
+musical expression metaphorical? By Swain&rsquo;s definition, it seems that a musical metaphor
+is simply something that is in a way strange, but in another way makes sense and seems
+appropriate. This is surely an important phenomenon in music&mdash;perhaps it is much of what
+makes music interesting; but it seems too broad to be equated with metaphor. </p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[6.1] In the final three chapters, Swain broadens his view of the music-language
+comparison, considering how music is like language in terms of its interaction with its
+larger cultural context and the way it changes over time. Swain begins with a chapter on
+&ldquo;artificial languages,&rdquo; languages deliberately created by a single individual:
+these include Esperanto, computer languages, and&mdash;in the musical domain&mdash;serialism. (The
+Ars nova is also discussed in this context, but Swain seems less certain about its status
+as an artificial language.) Swain&rsquo;s main point here seems to be that composers who use
+artificial languages run the risk that audiences will not understand their music&mdash;a
+somewhat obvious point, although Swain largely avoids heaping blame on one side or the
+other, which is a commendable achievement in itself. </p>
+
+<p>[6.2] Much more stimulating is the following chapter, in which Swain discusses the
+evolution of musical languages. While change in verbal languages comes from many sources,
+one very important phenomenon is &ldquo;trading relationships.&rdquo; When change occurs in
+some aspect of a language, this may result in a loss of information which must be
+counteracted by change in some other aspect. For example, it used to be that case
+information in English (whether a noun is subject or object) was communicated by
+inflectional endings. As the inflections began to drop out, case information had to be
+conveyed in some other way; this resulted in the development of fixed rules of word order
+(subject-verb-object), which previously had varied rather freely. As another example,
+Chinese used to distinguish between voiced and unvoiced consonants (for example, /b/
+versus /p/ and /d/ versus /t/). This distinction gradually disappeared; but the syllables
+that had been distinguished in this way came to be distinguished in another way, namely in
+the tones of the following vowels (a distinction that was latent anyway, since vowels
+after unvoiced consonants naturally tend to be pitched slightly higher than those after
+voiced consonants). Are there analogs in music? Swain argues that there are. In
+Renaissance music, he suggests, stylized cadences&mdash;7&ndash;6 suspension cadences, with the
+penultimate soprano note raised a half-step, where necessary, to create a
+&ldquo;leading-tone&rdquo;&mdash;served to provide an easily recognizable cue to phrase endings.
+From this developed the <nobr>V<sup>7</sup></nobr>-I cadence, a gesture whose pitch content was so distinctive
+that the strict rhythmic conventions of the Renaissance cadence were no longer necessary.
+Likewise, he argues, it is no accident that the rise of genres such as the string quartet
+and the symphony&mdash;lacking the solo-ripieno contrast of the Baroque concerto&mdash;coincided
+with a new interest in the possibilities of large-scale tonal contrast; with one kind of
+contrast no longer available, something new had to be found to take its place. As Swain
+notes, it is sometimes difficult to be certain about the causal relationship in such cases
+(did the rise of the string quartet cause greater interest in large-scale tonal contrast,
+vice versa, or both?); but that some kind of trading relationship is involved seems fairly
+clear. </p>
+
+<p>[6.3] While I am not qualified to comment on Swain&rsquo;s linguistic examples, the
+&ldquo;trading-relationship&rdquo; idea is a fascinating one which does indeed seem
+applicable to music. Let me suggest a third example. In jazz, one finds a much broader
+vocabulary of chords than in &ldquo;common-practice&rdquo; tonal music: triads are
+elaborated not only with sevenths (major or minor), but with added sixths, ninths, and
+elevenths, with various alterations and in various combinations. Yet there is much less
+variety of inversion than in classical music; the chords of jazz tunes (as represented in
+lead sheets, for example) are overwhelmingly in root position. Here again, there is a
+trade-off. The notes C-E-<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, in that order from low to high, clearly form a C<sup>7 9 <nobr><span style= 'letter-spacing:-1px'> <span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>13</sup>;
+but arranged in a different order they could undoubtedly form other things (such as <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><sup>7 9 <nobr><span style= 'letter-spacing:-0.8px'> <span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>11</sup>), and if such inversions were permitted, a great deal of harmonic ambiguity could
+result. The greater freedom in chord extensions has to be counteracted by a loss in
+freedom of inversion if the essential information&mdash;the root of the chord&mdash;is to be
+conveyed. Of course, in some varieties of jazz&mdash;especially more modern jazz&mdash;the bass
+plays with considerable freedom; a variety of inversions are in fact used; and the result
+is, indeed, a great deal of harmonic confusion! In a way, this supports my argument:
+combining extensional and inversional freedom leads to harmonic ambiguity. But it shows
+that we must be careful in assuming that harmonic information must always be clearly
+conveyed; in some circumstances, apparently, this requirement is relaxed. </p>
+
+<p>[6.4] Exploring musical change leads us to the question of style, and Swain&rsquo;s final
+chapter examines the relationship between musical style and musical language. Swain begins
+with a critique of Leonard Meyer&rsquo;s theory of style as &ldquo;a replication of
+patterning.&rdquo; Swain rejects Meyer&rsquo;s approach on the grounds that it seems to be
+interested only in what is common among pieces, neglecting what is unique. I am quite
+unable to understand this objection. Surely the term &ldquo;style&rdquo; does refer to what
+is common among a number of pieces; surely it does not in any way deny the importance of
+what is unique; surely we must understand the commonalities of a style in order to
+appreciate how certain pieces deviate from these commonalities. As an alternative to
+Meyer&rsquo;s theory, Swain advocates a view based on a remark of Charles Rosen: &ldquo;A style
+may be described figuratively as a way of exploiting and focusing a language.&rdquo;
+&ldquo;Focusing a language,&rdquo; in Swain&rsquo;s view, seems to mean simply coordinating its
+elements in an effective way: in other words, using it well. Though Swain&rsquo;s analyses are,
+as always, interesting and insightful, this is not one of the more persuasive chapters of
+the book. </p>
+
+<p align="center">*&nbsp;&nbsp;&nbsp; *&nbsp;&nbsp;&nbsp; *</p>
+
+<p>[7.1] Surveying Swain&rsquo;s various answers to his underlying question&mdash;&ldquo;How is music
+like language?&rdquo;&mdash;and my responses to them, I find many areas where I agree and a few
+where I do not. In some cases the parallels with language are overstated; the
+phoneme-pitch analogy is more problematic than he makes it out to be, and the role of
+metaphor in music is, at least, not convincingly demonstrated. In other cases, Swain seems
+to understate the parallel; for example, he seems overly pessimistic about music&rsquo;s
+capacity for propositional meaning. At the broadest level, though, his conclusions as to
+the similarities and differences between music and language seem largely correct. And
+whether or not one agrees with him on a particular issue, one always feels&mdash;to return to
+my opening point about <i>Musical Languages</i>&mdash;that he is approaching it with an open
+mind. </p>
+
+<p>[7.2] Though I mostly agree with Swain as to the basic parallels between music and
+language, I often wish he had been clearer about his positions and the reasons for them.
+In particular, he seems ambivalent about the parallels between pitches and phonemes, words
+and phonemes, and words and motives, switching back and forth between them at different
+times. As I have argued in this review, there are merits and problems with each of these
+analogies. Pitches are like phonemes in that they are small, categorically perceived
+units, and each musical &ldquo;language&rdquo; seems to involve only a small number of them.
+However, pitches are like words, and not like phonemes, in that they have properties which
+give rise in rule-governed ways to the properties of larger units. In terms of meaning,
+the word-motive parallel seems more plausible than the word-phoneme parallel; the
+properties of a pitch seem too atomic and abstract to really be considered
+&ldquo;meaning,&rdquo; whereas the properties of a motive (a leitmotif, for example)
+sometimes are not. However, motives are not discrete the way words are, and music is not
+completely made up of motives the way that language is completely made up of words. Given
+that each of these analogies has points in its favor, Swain&rsquo;s ambivalence between them is
+fully justified. But he might have been more explicit about his reasoning. Perhaps he
+avoided such rigorous discussions, in part, in the interest of making the book
+entertaining and accessible&mdash;a goal that he certainly achieved. </p>
+
+<p>[7.3] The book is greatly enhanced by its many and varied references to linguistic and
+musical research&mdash;not to mention psychology, philosophy, literary criticism, and other
+things. I should note, also, that Swain&rsquo;s analyses are invariably musical, perceptive, and
+full of contagious enthusiasm for the music. </p>
+
+<p>[7.4] Whether one is more struck by the differences or the similarities between music
+and language is perhaps largely a matter of perspective; whether one considers music to be
+a kind of language (a question on which Swain wisely remains non-committal), even more so.
+In any case, this book serves as an excellent introduction to the many sides of the
+music-language analogy. The question of &ldquo;how is music like language&rdquo; is a hugely
+important one, and Swain&mdash;like Bernstein before him&mdash;is to be credited for tackling it
+head-on. It is a question that eminently deserves to be asked, and asked repeatedly, <i>at
+least</i> every 25 years.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	David Temperley<br>
+	Ohio State University<br>School of Music<br>Weigel Hall<br>Columbus, OH 43210<br><a href="mailto:temperley.1@osu.edu">temperley.1@osu.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> See, for example, Fred Lerdahl and Ray Jackendoff, <i>A
+Generative Theory of Tonal Music</i> (Cambridge: MIT Press, 1983), 329; and Jean-Jacques
+Nattiez, <i>Music and Discourse</i>, translated by Carolyn Abbate (Princeton: Princeton
+University Press, 1990), 112.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Grosvener Cooper and Leonard Meyer, <i>The Rhythmic Structure of
+Music</i> (Chicago: University of Chicago Press, 1960); Nattiez, <i>Music and Discourse</i>,
+cited above; Lerdahl and Jackendoff, <i>A Generative Theory of Tonal Music</i>, cited
+above; Anthony Newcomb, &ldquo;Schumann and Late Eighteenth-Century Narrative
+Strategies,&rdquo; <i>19th-Century Music</i> 11.2 (1987): 164&ndash;74; and Fred Maus,
+&ldquo;Music as Narrative,&rdquo; <i>Indiana Theory Review</i> 12.1 (1991): 1&ndash;34.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Sandra Trehub, Laurel Trainor, and Anna Unyk, &ldquo;Music and
+Speech Processing in the First Year of Life&rdquo; in <i>Advances in Child Development and
+Behavior</i>, vol. 24, ed. Hayne W. Reese, (San Diego: Academic Press, 1993), 1&ndash;35.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Andrew Radford, <i>Syntactic Theory and the Structure of English</i>
+(Cambridge: Cambridge University Press, 1997), 1.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> From the Beatles song, &ldquo;And I Love Her.&rdquo;<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Authors who have explored this issue include Suzanne Langer,
+Leonard Meyer, and Peter Kivy. An excellent survey of work in this area is found in
+Malcolm Budd, <i>Music and the Emotions</i> (London: Routledge &amp; Kegan Paul, 1985).<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">See, for example, Fred Lerdahl and Ray Jackendoff, <i>A
+Generative Theory of Tonal Music</i> (Cambridge: MIT Press, 1983), 329; and Jean-Jacques
+Nattiez, <i>Music and Discourse</i>, translated by Carolyn Abbate (Princeton: Princeton
+University Press, 1990), 112.</div><div id="fndiv2" class="flyoverdiv">Grosvener Cooper and Leonard Meyer, <i>The Rhythmic Structure of
+Music</i> (Chicago: University of Chicago Press, 1960); Nattiez, <i>Music and Discourse</i>,
+cited above; Lerdahl and Jackendoff, <i>A Generative Theory of Tonal Music</i>, cited
+above; Anthony Newcomb, &ldquo;Schumann and Late Eighteenth-Century Narrative
+Strategies,&rdquo; <i>19th-Century Music</i> 11.2 (1987): 164&ndash;74; and Fred Maus,
+&ldquo;Music as Narrative,&rdquo; <i>Indiana Theory Review</i> 12.1 (1991): 1&ndash;34.</div><div id="fndiv3" class="flyoverdiv">Sandra Trehub, Laurel Trainor, and Anna Unyk, &ldquo;Music and
+Speech Processing in the First Year of Life&rdquo; in <i>Advances in Child Development and
+Behavior</i>, vol. 24, ed. Hayne W. Reese, (San Diego: Academic Press, 1993), 1&ndash;35.</div><div id="fndiv4" class="flyoverdiv">Andrew Radford, <i>Syntactic Theory and the Structure of English</i>
+(Cambridge: Cambridge University Press, 1997), 1.</div><div id="fndiv5" class="flyoverdiv">From the Beatles song, &ldquo;And I Love Her.&rdquo;</div><div id="fndiv6" class="flyoverdiv">Authors who have explored this issue include Suzanne Langer,
+Leonard Meyer, and Peter Kivy. An excellent survey of work in this area is found in
+Malcolm Budd, <i>Music and the Emotions</i> (London: Routledge &amp; Kegan Paul, 1985).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1999 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Rebecca Flore and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

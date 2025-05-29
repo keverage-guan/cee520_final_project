@@ -1,0 +1,663 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+    
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 30.4: Peiris, Embedded Music Theory</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Embedded Music Theory: Oral Poetry, Rhythmic Language, and Drumming in Sri Lanka">
+
+    <meta name="citation_author" content="Peiris, Eshantha">
+      
+<meta name="citation_publication_date" content="2024/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="30">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+  
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+  <article>
+
+<div id="content">
+<a name="Beginning"></a>
+			
+	<h1 style="width:900px; margin-top:1em">Embedded Music Theory: Oral Poetry, Rhythmic Language, and Drumming in Sri Lanka<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+
+	
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Eshantha Peiris</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Translation, Implicit theory, Oral poetry, Vernacular music, Drumming</font></p><p><font size='4'>ABSTRACT: Around the world, music theory is commonly understood as knowledge cultivated by specialist musicians and scholars. It is also assumed to require analytical terminology supplemented with visual representations. However, even in performance traditions less concerned with explicit formulations of musical processes, musical theorizations can be embedded in the minds of the performers and their audiences. This article aims to broaden common understandings of music theory through the lens of orally transmitted ritualistic verses from Sri Lanka, which are sung or recited along with drumming. Versions of these Sinhala verses have been previously published in Sedaraman, J.E. 2008 [1964]. <i>Uḍaraṭa Näṭum Kalāva</i> [The Art of Up-country Dance] (Colombo: M.D. Gunasena). Transliterations and translations of these verses are presented alongside audio recordings of performances (some including video), to illustrate the ways in which the oral transmission and performance of such lyrics involves different modes of theorizing&mdash;such as knowledge of how conventional poetic meters can be sung, shared understandings of how to interpret vocables as drum strokes, and the association of different drum timbres with cosmological references. The article provides socio-historical context for the verses, details their form, explains the underlying conventions of versification, and analyzes the relationship between recited syllables and drum strokes, while highlighting the various processes of theorizing that undergird them.
+  <br><br>PEER REVIEWER: Garrett Field</font></p><p><small>DOI: 10.30535/mto.30.4.20</small></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="https://mtosmt.org/issues/mto.24.30.4/mto.24.30.4.peiris.pdf">PDF text </a> | <a href="https://mtosmt.org/issues/mto.24.30.4/peiris_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 30, Number 4, December 2024 <br> Copyright &#0169; 2024 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><h2>Introduction</h2>
+
+<p>[0.1] Around the world, music theory is commonly understood as knowledge cultivated by specialist musicians and scholars. It is also assumed to require analytical terminology supplemented with visual representations. However, even in performance traditions less concerned with explicit formulations of musical processes, musical theorizations can be embedded in the minds of the performers and their audience.
+</p><p>[0.2] This article aims to broaden common understandings of music theory through the lens of orally transmitted ritualistic verses from Sri Lanka, which are sung or recited along with drumming. I have chosen to present audio recordings of these verses being performed (some including video), along with transliterations and translations, to illustrate the ways in which the oral transmission and performance of such lyrics involves different modes of theorizing&mdash;such as knowledge of how conventional poetic meters can be sung, shared understandings of how to interpret vocables as drum strokes, and the association of different drum timbres with cosmological references.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> In what follows, I provide socio-historical context for the verses, detail their form, explain the underlying conventions of versification, and analyze the relationship between recited syllables and drum strokes, while highlighting the various processes of theorizing that undergird them.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p> <h2>1. Historical Contexts for Sinhala Oral Poetry</h2>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. A page from J.E. Sedaraman&rsquo;s “Uḍaraṭa N&auml;ṭum Kal&amacr;va&rdquo; (2008 [1964]), showing three Sinhala quatrains (recognizable from the formatting that isolates the syllable at the end of each line) paired with stanzas of mostly non-lexical vocables</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="peiris_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[1.1] In 1964, the Sri Lankan hereditary ritualist J.E. Sedaraman published a book in Sinhala, &ldquo;Uḍaraṭa Näṭum Kalāva&rdquo; (&ldquo;the Art of Up-country Dance&rdquo;), containing the lyrics of hundreds of ritual quatrains that had previously existed in oral tradition (<a href="#guruge_2008_&#91;1964&#93;" id="citation_guruge_2008_&#91;1964&#93;_67dc99061b15e">Guruge 2008 &#91;1964&#93;</a>, i). As shown in <b>Example 1</b>, he paired many of these quatrains with stanzas of mostly non-lexical vocables, which model rhythm patterns that are to be played on a drum.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  </p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Muddanave Sunil (center) preparing to lead a group of <i>g&auml;ṭa beraya</i> drummers in a <i>Bera P&omacr;ya H&emacr;visi</i> ritual in Mavanella, Sri Lanka</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="peiris_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[1.2] Today, the melodies and rhythms that were associated with these verses are largely unknown (along with the protocols for the rituals in which they were once performed). However, there are a few senior hereditary ritualists who recall how some of them were performed. This article draws on two such sets of verses, as performed by hereditary ritualist Muddanave Sunil and his disciples.
+</p><p>[1.3] Muddanave Sunil (<b>Example 2</b>) hails from a caste-based lineage of male dancer-drummer ritualists, which has roots traceable to the seventeenth and eighteenth centuries.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> During those centuries, when written material was not readily accessible to the Sri Lankan general populace, many forms of knowledge (including ritual esoterica) were embedded in verse (Sin. <i>kavi</i>) and transmitted orally through singing.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> The poetic meters and rhyme schemes of these verses likely helped dancer-drummer ritualists to compose and memorize them.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Verses such as the ones featured here were sung to drum accompaniment in Sinhalese Buddhist rituals such as the <i>Bera Pōya Hēvisi</i>, which were performed to propitiate deities and bring prosperity to the village while entertaining the attendant devotees with displays of competitive showmanship.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>
+</p><p>[1.4] The supernatural characters and mythological contexts referenced in these oral verses (e.g., the primordial king Maha Sammata and the deities Sakra and Panchasikha) would have been familiar to listeners from the well-known Buddhist narratives found in ancient literary chronicles such the <i>Mahavaṃsa</i>.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> This supports the idea that in many cases, &ldquo;the oral and literate are mixed, interrelated, or overlaid&rdquo; (<a href="#saussy_2016" id="citation_saussy_2016_67dc99061b17b">Saussy 2016</a>, 59).<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> The mythological stories featured in these verses are also consistent with long-established Sinhalese Buddhist cosmological worldviews, and arguably served to give value and meaning to the dancing, singing, and drumming associated with religious rituals.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p><p>[1.5] In these verses, one finds the beliefs that the sound of drums, the traditional drum repertoire played by humans, and the associated dances are linked to the origins of the universe and to the movements of celestial objects, and also that the sounding of drum timbres can serve as a tribute to the supernatural. Taken in the context of the broader repertoire performed by these ritualists, the various numbers mentioned in the verses would have been recognized as having numerological significance, functioning as a form of analogical explanation (<a href="#peiris_2020" id="citation_peiris_2020_67dc99061b183">Peiris 2020</a>, 171&ndash;76). More esoterically, the voicing of particular combinations of long and short syllables<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> in sung and recited texts (and by extension, in drum patterns) was believed to have resonance with astrological movements, thus having potential to trigger positive or negative real-world consequences (<a href="#peiris_2022" id="citation_peiris_2022_67dc99061b189">Peiris 2022</a>, 9&ndash;14).
+</p> <h2>2. Guide to the Featured Repertoire</h2>
+
+<p>[2.1] The first set of sung verses presented here&mdash;in Paragraphs 2.2 and 2.5&mdash;belongs to the genre known as<i> däkum ata</i>, which is performed as an &ldquo;offering of sound&rdquo; (<i>śabda pūjāva</i>) during a <i>Bera Pōya Hēvisi</i> ritual.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Each line in these verses contains eighteen poetic morae.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> Although this repertoire is more closely associated with <i>dawula</i> drums (<b>Example 3</b>), in the recording featured here&mdash;split between <b>Video 1 </b>and <b>2</b>&mdash;they are performed with <i>gäṭa beraya</i> drums (<b>Example 4</b>). The performers begin by singing two verses with Sinhala words (Paragraph 2.2, Video 1) using a stock melody commonly heard in the tradition, accompanied by a stock accompaniment pattern on the drums.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+ <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. A <i>dawula</i> drum played by the drummer Lakshman Polgolla</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="peiris_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. <i>G&auml;ṭa beraya</i> drummers performing at a ritual in Mavanella, Sri Lanka</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="peiris_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table> <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 1</b>. Two <i>d&auml;kum ata</i> verses with Sinhala words</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=4&nonav=true"><img border="1" alt="Video 1 thumbnail" src="peiris_video_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 2</b>. <i>D&auml;kum ata</i> stanzas with bera pada (drum vocable phrases)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=5&nonav=true"><img border="1" alt="Video 2 thumbnail" src="peiris_video_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td></tr></table>
+
+<p>[2.2] The following is a transliteration and translation of the opening quatrains of a Sinhala <i>däkum ata</i> poem (Video 1), with the names of drum strokes indicated in bold: </p>
+<p><i><b>tat</b>-ki akura kāṭada namaskārayaki?
+<br><b>jit</b>-ki akura kāṭada namaskārayaki?
+<br><b>ton</b>-ki akura kāṭada namaskārayaki?
+<br><b>nam</b>-ki akura kāṭada namaskārayaki?</i></p>
+
+<p>Unto whom is the syllable <b><i>tat</b></i> a salutation?<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup><br>Unto whom is the syllable <b><i>jit</b></i> a salutation?
+<br>Unto whom is the syllable <b><i>ton</b></i> a salutation?
+<br>Unto whom is the syllable<b> <i>nam</i> </b>a salutation?</p>
+
+<p><i><b>tat</b>-ki akura muniduṭa namaskārayaki
+<br><b>jit</b>-ki akura deviduṭa namaskārayaki
+<br><b>ton</b>-ki akura rajuhaṭa namaskārayaki
+<br><b>nam</b>-ki akura guruhaṭa namaskārayaki</i></p>
+
+<p>The syllable <b><i>tat</i></b> is a salutation unto the Buddha.
+<br>The syllable <i><b>jit</b></i> is a salutation unto the deities.
+<br>The syllable <i><b>ton</b></i> is a salutation unto the monarch.
+<br>The syllable <i><b>nam</b></i> is a salutation unto the teacher.</p>
+
+<p>[2.3] The text of this <I>däkum ata</i> piece in which the narrator witnesses/salutes their superiors is reminiscent of the historical practice of <i>däkum</i> (literally, &ldquo;seeing&rdquo;) in eighteenth-century Sri Lanka. In this tradition, tenants of a feudal lord would gather to pay respect to him by presenting gifts (<a href="#obeyesekere_1967" id="citation_obeyesekere_1967_67dc99061b1c5">Obeyesekere 1967</a>, 220) as part of &ldquo;a chain of <i>däkum</i> ceremonies binding subordinates of various types to superordinate personnel above them who in turn paid homage to persons of superior rank&rdquo; (<a href="#roberts_2004" id="citation_roberts_2004_67dc99061b1c8">Roberts 2004</a>, 61). Given how the patterning of the pantheon in Sinhalese-Buddhist cosmology can be seen to resemble some of the relational principles of the historical state (<a href="#obeyesekere_1966" id="citation_obeyesekere_1966_67dc99061b1cb">Obeyesekere 1966</a>), it is not surprising that this &ldquo;offering of sound&rdquo; given to the supernatural Buddha and deities (along with the monarch and teacher) reflects the tribute-paying <I>däkum</i> practices of the mundane world.
+</p><p>[2.4] This is followed by the singing of stanzas that consist of <i>bera pada</i> (drum vocable phrases)&mdash;except for the last two words of each stanza, which are Sinhala (Paragraph 12, Video 2).<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Then begins a sequence of phrase reduction, in which new stanzas are formed using phrases excerpted from the four initial stanzas.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> The entire set of <i>bera pada</i> stanzas is then sung again, but this time, following each of these stanzas, the timbral-rhythmic pattern modelled by these vocables is replicated on the drums. The piece ends with a concluding wish in Sinhala that forms its own line of verse.
+</p><p>[2.5] The following is a transliteration (and translation, where applicable) of the vocable stanzas of the <i>däkum ata</i> poem (Video 2), with the names of drum strokes indicated in bold:
+<p><i><b>tat</b> jek kinaṃ takaṭa kaḍataka jeṃgu jeṃ takaṭa
+<br><b><i>tat</i></b> takaṭa &ndash; muni dakin</i> (1)<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup></p>
+
+<p>[vocables. . .] &ndash; witness<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> the Buddha</p>
+
+<p><b><i>jit</b> jek kinaṃ takaṭa kaḍataka jeṃgu jeṃ takaṭa
+<br><b>jit</b> takaṭa &ndash; devi dakin (2)</i> </p>
+
+<p>[vocables. . .] &ndash; witness the deities</p>
+
+<p><i><b>ton</b> jek kinaṃ takaṭa kaḍataka jeṃgu jeṃ takaṭa
+<br><b>ton</b> takaṭa raja dakin (3)</i>  </p>
+
+<p>[vocables. . .] &ndash; witness the monarch</p>
+
+<p><b><i>nam</b> jek kinaṃ takaṭa kaḍataka jeṃgu jeṃ takaṭa
+<br><b>nam</b> takaṭa guru dakin (4)</i></p>
+
+<p>[vocables. . .] &ndash; witness the teacher</p>
+
+<p><i><b>tat</b> takaṭa muni dakin</i> (1&rsquo;)
+<i><br><b>jit</b> takaṭa devi dakin</i>(2&rsquo;)
+<i><br><b>ton</b> takaṭa raja dakin</i> (3&rsquo;)
+<i><br><b>nam</b> takaṭa guru dakin</i> (4&rsquo;)</p>
+
+<p>[vocables. . .] &ndash; witness the Buddha
+<br>[vocables. . .] &ndash; witness the deities
+<br>[vocables. . .] &ndash; witness the monarch
+<br>[vocables. . .] &ndash; witness the teacher</p>
+
+<p><i><b>tat</b> dakin <b>jit</b> dakin
+<br><b>ton</b> dakin <b>nam</b> dakin</i></p>
+
+<p>Witness <i><b>tat</b></i>; witness <i><b>jit</b></i>;
+<br>Witness <i><b>ton</b></i>; witness <i><b>nam</b></i></p>
+
+<p><i>muni<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> dakin</i> (1&rsquo;&rsquo;) <i>devi dakin</i> (2&rsquo;&rsquo;)
+<br><i>raja dakin</i> (3&rsquo;&rsquo;) <i>guru dakin</i> (4&rsquo;&rsquo;)</p>
+
+<p>Witness the Buddha, witness the deities
+<br>Witness the monarch, witness the teacher</p>
+
+<p><i>dakin dakin matu met munituman dakin</i></p>
+
+<p>Witness, witness, witness the Maitreya Buddha in the future.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup></p>
+
+<p>[2.6] The second set of sung verses (transliterated and translated at the end of this article in Paragraphs 6.1&ndash;6.8, and performed by Muddanave Sunil in Audio 1&ndash;8; see section 6 below) consists of eight verses that belong to the category of <i>upat kavi</i> (origin verses). <i>Upat kavi</i> are rarely performed today; however, in the past they were often sung of chanted as introductory prefaces during rituals (Muddanave Sunil, pers. comm.). They typically detail the (often supernatural) origins of things of spiritual significance, such as deities (<a href="#kulatillake_1976b" id="citation_kulatillake_1976b_67dc99061b1d7">Kulatillake 1976b</a>, 3&ndash;4), types of repertoires (<a href="#karunaratne_2008" id="citation_karunaratne_2008_67dc99061b1da">Karunaratne 2008</a>, 23; <a href="#sykes_2018" id="citation_sykes_2018_67dc99061b1de">Sykes 2018</a>, 58&ndash;59), and drums (<a href="#sedaraman_2008_1964" id="citation_sedaraman_2008_1964_67dc99061b1e2">Sedaraman 2008 [1964]</a>, 37&ndash;42).
+</p><p>[2.7] Verses 1&ndash;3 (Audio 1&ndash;7) of the <i>upat kavi</i> ascribe primordial, supernatural origins to the four primary drum timbres associated with <i>gäṭa beraya</i> and <i>dawula</i> drums. Verses 4&ndash;7 (Audio 4&ndash;7) each focus on one of these respective drum timbres, and are paired with a stanza of vocables that is recited and imitated on the drum one phrase at a time. Verse 8 (Audio 8) offers a conclusion.
+</p><h2>3. Theories of Poetic Meter</h2>
+
+<p>[3.1] As with many pre-modern forms of poetry, these verses were intended to be sung and listened to, not published and read silently. Theories of poetic meter and rhyme scheme have been part of literary discourse for centuries (<a href="#hallisey_2003" id="citation_hallisey_2003_67dc99061b1e5">Hallisey 2003</a>, 723&ndash;38); the value given to these ideas of sonic patterning is reflected in the fact that sung Sinhala poetry was prized as much for its sonic aesthetics (<i>ṣ́abda rasa</i>) as its semantic aesthetics (<i>artha rasa</i>).<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup></p><p>[3.2] The Sinhala verses in both the <i>däkum ata</i> (Paragraph 2.2) and the <i>upat kavi</i> (Paragraphs 6.1&ndash;6.8) follow the cyclic format known as <i>sivpada</i> (Sin. quatrain), in which each line of poetry contains an approximately equal number of morae and ends with <i>eli-väṭa</i> (Sin. rhyming/assonant phonemes). As mentioned, the Sinhala <i>däkum ata</i> verses (Paragraph 2.2) contain eighteen morae per line. As defined in the thirteenth-century poetic treatise <i>Elu Saňdäs Lakuna</i> (&ldquo;Characteristics of Sinhala Poetic Meter&rdquo;), this poetic meter is named <i>Samudraghōṣa</i> (Sin. sound of the ocean) (<a href="#sorata_2004" id="citation_sorata_2004_67dc99061b1eb">Sorata 2004</a>, 56). While the <i>Samudraghōṣa</i> poetic meter has been used in many genres of Sinhala versification (<a href="#makulloluwa_2009" id="citation_makulloluwa_2009_67dc99061b20b">Makulloluwa 2009</a>, 33&ndash;49), musicologist C. de S. Kulatillake has observed that it is rare in ritual repertoire (<a href="#kulatillake_1976b" id="citation_kulatillake_1976b_67dc99061b20f">Kulatillake 1976b</a>, 9), making this example rather unusual. The <i>upat kavi</i> Sinhala verses (at the end of this article) feature a variation on the <i>sivpada</i> format: while each line contains twenty-six morae, following the line-ending rhyme at the end of lines 1 and 3 of the quatrain, there is an extra two-morae word that leads into the next line.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> In keeping with traditional performance practice, Muddanave Sunil&rsquo;s performance of these verses includes introductory drumming before each verse is sung and a drummed interlude between the second and third lines of the stanza.
+</p>
+
+<p>[3.3] While the poetic meter itself provides the nominal quantity of morae in each line, in sung performance, certain prescribed syllables are elongated with a melisma, for example in the rhyming syllable at the end of each line in the Sinhala verses featured here. These caesurae that are added into the poetic meter during performance are known as <i>yati</i>. While this sung elongation of syllables veils the rhythm implied by the poetic meter, the rhythmic structure of the melody remains closely tied to the poetic meter, as the melody (Sin. <i>tanuva</i>) needs to accommodate all the syllables in the text. While oral poets may have not consciously engaged with literary theories of <i>yati</i> when deciding which syllables to elongate in performance, the act of choosing which stock melody to use to sing a verse requires an implicit analytic understanding of how the morae in the poetic text are grouped. </p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. The fourth drum-syllable stanza of the <i>d&auml;kum ata</i> piece (Video 3, transcribed in Example 6) written as a couplet (each line starting with the syllable <i>nam</i>), with the morae numbered according to the conventions of Sinhala poetic scansion to show the irregular patterning</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=6&nonav=true"><img border="1" alt="Example 5 thumbnail" src="peiris_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></fig>
+
+<p>[3.4] In contrast with the Sinhala <i>sivpada</i> verses, which contain a similar number of morae in each line, the patterning of morae in the <i>bera pada</i> stanzas is irregular; this is particularly evident in the recited texts that are paired with the <i>upat kavi</i> (transliterated in Paragraphs 6.4&ndash;6.7). However, such irregularity can also be constrained; for example, in the <i>däkum ata</i>, all the sung stanzas of <i>bera pada</i> share the same (irregular) morae pattern&mdash;namely, twenty-two morae in the first line and ten in the second, as shown in <b>Example 5</b>. This is to be expected since each stanza only differs by one &ldquo;word,&rdquo; but it also suggests that the <i>bera pada</i> have likely been composed with an irregular poetic meter in mind. This irregularity is particularly apparent in performance (<b>Video 3</b>) because the musical rhythm corresponds closely to the syllabic rhythm inherent in the text, with one mora performed as one musical pulse (except for the four morae ka-ḍa-ta-ka, which are sung within two pulses).<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> <b>Example 6</b> is an approximate transcription of the fourth drum-syllable stanza of the <i>däkum ata</i> (as sung to a stock melody by Lakshman Polgolla), followed by a transcription of the replication of that syllabic rhythm on the <i>gäṭa beraya</i> drums. (The transcription key for the drum strokes is shown in <b>Example 7</b>). In contrast with the <i>bera pada</i> of the <i>d&auml;kum ata</i> (Paragraph 2.5, Video 3), the <i>bera pada</i> in the <i>upat kavi</i> (Paragraphs 6.4&ndash;6.7, Audio 4&ndash;7) are performed in a more metrically free manner, although the relative lengths between the shorter syllables (one mora) and longer syllables (two morae) are largely maintained.
+</p>
+
+ <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 3</b>. The fourth drum-syllable stanza (bera pada) of the d�kum ata piece.</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=7&nonav=true"><img border="1" alt="Video 3 thumbnail" src="peiris_video_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td><td width=50></td><td valign='top' width=50%></td></tr></table>
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Approximate transcription of the fourth drum-syllable stanza (as sung to a stock melody by Lakshman Polgolla), followed by a transcription of the replication of that on the <i>g&auml;ṭa beraya</i> drums</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=8&nonav=true"><img border="1" alt="Example 6 thumbnail" src="peiris_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p> <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Transcription key for the four primary drum strokes/timbres of the <i>g&auml;ṭa beraya</i> drum</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=9&nonav=true"><img border="1" alt="Example 7 thumbnail" src="peiris_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[3.5] It should be noted that not all historical Sinhala poetic meters feature the equal quantities of morae characteristic of <i>sivpada</i> quatrains. In contrast, poetic meters labelled as <i>gī</i> (blank verse) were known for having different amounts of morae between lines in a couplet (<a href="#kulatillake_1976b" id="citation_kulatillake_1976b_67dc99061b22e">Kulatillake 1976b</a>, 3). Further, there is historical precedent for regular <i>sivpada</i> verses being paired with irregular <i>gī</i> verses,<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> suggesting that the pairing of Sinhala <i>sivpada</i> quatrains with irregular non-lexical phrases might indeed have been following an established technique of poetry composition.
+</p>
+
+
+<h2>4. Spoken syllabic models for drumming</h2>
+
+<p>[4.1] On two-headed drums such as the <i>gäṭa beraya</i>, each drumhead can be struck in a way that allows it to resonate or struck in a way that dampens the vibration; ritualist drummers recognize these four strokes as producing four distinct timbres (Examples 6 and 7). These four strokes (and associated timbres) are termed &ldquo;seed syllables&rdquo; (<i>bīja akṣara</i>) and they are named as follows: <i>tat</i>&mdash;a damped stroke on the lower drumhead (<b>Example 8</b>; see also <b>Video 4</b>), <i>dit</i> (or <i>dik</i> or <i>jit</i>)&mdash;a damped stroke on the higher drumhead (<b>Example 9</b>; see also <b>Video 5</b>), <i>ton</i> (or <i>tom</i> or <i>toṃ</i>)&mdash;an undamped stroke on the lower drumhead (<b>Example 10</b>; see also <b>Video 6</b>), and <i>nam</i> (or <i>naṃ</i>)&mdash;an undamped stroke on the higher drumhead (<b>Example 11</b>; see also <b>Video 7</b>).<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> In terms of their relationship to the timbres that they index, the labels <i>tat, dit, ton</i>, and <i>nam</i> could be understood as onomatopoeic icons: for example, the names of the two damped strokes (<i>tat</i> and <i>dit</i>) end with oral stops (i.e., consonants that stop all airflow), the names of the undamped/resonant strokes (<i>ton</i> and <i>nam</i>) end with nasals (i.e., stopped consonants that allow air to continue through the nose), and the name of the lowest pitched timbre (<i>ton</i>) has a &ldquo;deeper&rdquo; vowel (i.e., a vowel with a relatively low second formant) than the others.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> The videos linked in the captions of Examples 8&ndash;11 show repeated iterations of these four strokes being performed on the <i>gäṭa beraya</i> by Muddanave Sunil.
+</p>
+
+ <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Playing <i>tat</i></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=10&nonav=true"><img border="1" alt="Example 8 thumbnail" src="peiris_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Playing <i>dit</i></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=11&nonav=true"><img border="1" alt="Example 9 thumbnail" src="peiris_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table> <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 4</b>. The drum stroke <i>tat</i>, demonstrated by Muddanave Sunil.</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=12&nonav=true"><img border="1" alt="Video 4 thumbnail" src="peiris_video_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 5</b>. The drum stroke <i>dit</i>, demonstrated by Muddanave Sunil.</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=13&nonav=true"><img border="1" alt="Video 5 thumbnail" src="peiris_video_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td></tr></table> <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Playing <i>ton</i></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=14&nonav=true"><img border="1" alt="Example 10 thumbnail" src="peiris_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Playing <i>nam</i></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=15&nonav=true"><img border="1" alt="Example 11 thumbnail" src="peiris_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table> <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 6</b>. The drum stroke <i>ton</i>, demonstrated by Muddanave Sunil.</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=16&nonav=true"><img border="1" alt="Video 6 thumbnail" src="peiris_video_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 7</b>. The drum stroke <i>nam</i>, demonstrated by Muddanave Sunil.</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="peiris_examples.php?id=17&nonav=true"><img border="1" alt="Video 7 thumbnail" src="peiris_video_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to watch video)</font></p></td></tr></table>
+<p>[4.2] While the <i>upat kavi</i> translated here (at the end of this article in Paragraphs 6.1&ndash;6.8) ascribe the four seed syllables primordial, supernatural origins, the <i>däkum ata</i> verses (Paragraph 2.2) prescribe these syllables&mdash;<i>tat, dit, ton</i>, and <i>nam</i>&mdash;as ritual salutations to the Buddha, deities, monarch, and teacher respectively. For reasons perhaps linked to their ritual significance, ritualists also use the four seed syllables as a basis for classification, categorizing pieces in the drum and dance repertoire based on the drum timbre with which they begin (<a href="#sedaraman_1966" id="citation_sedaraman_1966_67dc99061b27e">Sedaraman 1966</a>, 17).
+</p><p>[4.3] As with many drumming traditions from around the world, musical phrases played on the <i>gäṭa beraya</i> drum are represented by spoken phrases of <i>bera pada</i> (drum vocable phrases), which function as &ldquo;oral notation.&rdquo; While the four primary drum timbres are referred to in the <i>däkum ata</i> and <i>upat kavi</i> Sinhala verses by their seed syllable names (i.e., <i>tat, dit, ton</i>, and <i>nam</i>), spoken <i>bera pada</i> draw on a much larger vocabulary of drum vocables&mdash;which for the most part index the same four primary drum timbres.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> This extended vocabulary of spoken syllables is known as <i>garbha akṣara</i> (Sin. womb syllables).<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> Like the names of the seed syllables, the spoken sounds of many womb syllables loosely resemble the timbres of the corresponding <i>gäṭa beraya</i> drum strokes, however, the resemblances are far from systematic.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup></p>
+
+<p>[4.4] How do <i>gäṭa beraya</i> drummers translate recited <i>bera pada</i> into strokes on the drum? One strategy is simply to draw on one&rsquo;s existing knowledge gained from oral and aural assimilation and/or explicit teaching. For example, <i>ta-ka-ṭa ku-jiṃ</i> is a typical drum vocable phrase (comprised of womb syllables) known by all <i>gäṭa beraya</i> drummers. Trained drummers would know from experience to play this phrase on a drum using the stroke sequence <i>tat-dit-dit ton-nam</i>; i.e., using all four seed syllable timbres.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> In contrast, the <i>bera pada</i> that follow the <i>däkum ata</i> Sinhala verses contain drum vocables associated with <i>dawula</i> drums (e.g., <i>jeṃgu jeṃ</i>) as well as actual Sinhala words with referential meaning (e.g., <i>guru dakin</i>, meaning &ldquo;witness the teacher&rdquo;), and the <i>bera pada</i> that follow the <i>upat kavi</i> Sinhala verses use non-lexical phrases that are mostly not part of the established drum vocabulary (e.g., <i>kunḍala kura kata</i>). In these cases, interpreting these timbral-rhythmic phrases as drum strokes on a <i>gäṭa beraya</i> requires informed creativity.
+</p><p>[4.5] By now, it should be clear to readers that the Sinhala verses in the <i>däkum ata</i> and <i>upat kavi</i> poems embed conventional syllable structures (through poetic meter and rhyme scheme) and analogical explanations (through relating drum strokes to the supernatural), and that the durational patterning of the recited <i>bera pada</i> models the rhythm patterns that are to be replicated on the drum. These are all techniques of composition (with underlying theories) that were employed during the creation of this repertoire. However, the existence of unconventional <i>bera pada</i> (such as <i>muni dakin</i> and <i>kunḍala kura kata</i>) that need to be creatively reinterpreted as drum strokes/timbres raises the following question: how might <i>gäṭa beraya</i> drummers be actively theorizing while performing this repertoire, especially if they are hearing the recited <i>bera pada</i> for the first time while a ritual is in progress (as is sometimes the case)?
+</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 8</b>. Excerpt from the <i>d�kum ata</i> stanzas.</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=18&nonav=true"><img border="1" alt="Video 8 thumbnail" src="peiris_video_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p> <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. Transcription of an excerpt of the <i>d&auml;kum ata</i> stanzas, showcasing the imitation of spoken syllables as drum timbres, with the seed syllable names in bold</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peiris_examples.php?id=19&nonav=true"><img border="1" alt="Example 12 thumbnail" src="peiris_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[4.6] Although not all music scholars agree that theories can be non-verbal, tacit, and/or implicit,<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> we can think of the drum patterns played here as an outcome of theorizing if we define a theory as, &ldquo;a conception or mental scheme of something to be done, or of the method of doing it; a systematic statement of rules or principles to be followed&rdquo; (OED online, s.v. theory). To be able to create a drum pattern based on a spoken phrase such as &ldquo;<i>guru dakin</i>,&rdquo; a drummer must access a schema&mdash;learned through observation during lessons and performances&mdash;that suggests appropriate options for which drum strokes to use to play the pattern. Methods for doing this are not explicitly taught (to my knowledge); however, I have observed that, in many cases where spoken syllables precede drumming, <i>gäṭa beraya</i> drummers consistently interpret certain phonemes as modeling particular drum timbres, as evident in the following excerpt from the <i>däkum ata</i> stanzas (<b>Video 8</b>, transcribed in <b>Example 12</b>).
+</p>
+<p>[4.7] The second word in each line&mdash; <i>takaṭa</i>&mdash;is, as mentioned, a standard motif that is typically played on the drum using the stroke sequence <i>tat-dit-dit</i>, indicated with box 1 in Example 12. Unsurprisingly, the first words in each line&mdash;<i>tat, jit, ton</i>, and <i>nam</i>&mdash;are respectively interpreted as the four primary drum strokes that they normally index, as indicated in Example 12 with boxes 2, 3, 4, and 5.<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup> Where the drummers need to creatively access their shared schematic knowledge is when interpreting the Sinhala phrases &ldquo;<i>muni dakin</i>,&rdquo; &ldquo;<i>devi dakin</i>,&rdquo; &ldquo;<i>raja dakin</i>,&rdquo; and &ldquo;<i>guru dakin</i>.&rdquo; Some noteworthy techniques are as follows:<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup></p><ul><li>The sound &ldquo;<i>in</i>&rdquo; (found in the word &ldquo;<i>dakin</i>&rdquo;) is played as an undamped stroke on the high drumhead (i.e., <i>nam</i>), indicated with box 6 in Example 12.
+</li><li>The vowel &ldquo;<i>u</i>&rdquo; is played as an undamped stroke on the low drumhead, indicated with box 7 in Example 12.
+</li><li>The consonant &ldquo;<i>r</i>&rdquo; is played as a quick double stroke (played by rotating the wrist) on the high drumhead, indicated with box 8 in Example 12.
+</li></ul><p>[4.8] As with the names of seed syllables, the above-mentioned syllables could be considered icons, in that the drum strokes imitate the timbres of the phonemes. For example, &ldquo;<i>in</i>&rdquo; features a &ldquo;bright&rdquo; vowel (with a relatively high second formant) with a nasal consonant and is played on the higher drumhead whose overtones give it a &ldquo;nasal&rdquo; quality. And &ldquo;<i>u</i>&rdquo; is a &ldquo;deep&rdquo; vowel (with a relatively low second formant) which is imitated on the lower drumhead. I posit that the conceptual mechanism that enables this creative translation from spoken phrase to drum phrase is indeed a theory shared among practitioners, albeit an unverbalized, implicit one.
+
+</p><h2>5. Conclusion</h2>
+
+<p>[5.1] Through my transliteration, translation, and recording of Sinhala <i>däkum ata</i> and <i>upat kavi</i> verses, I have demonstrated some of the ways in which musicians in Sri Lanka have employed established techniques of versification to embed and disseminate ritual knowledge. I have further shown how every step in the process&mdash;from composition to performance&mdash;has involved musicians making decisions about how best to communicate this knowledge through the medium of patterned sound, in ways familiar and stimulating to the target audience. Given that these decisions involve choosing between culturally acceptable alternatives, I argue that these processes are all forms of theorizing, although they may vary in their levels of formalization.  <sup><a name="FN35REF" href="#FN35" id="footnote35">(35)</a></sup></p><p>[5.2] As with the Middle East, East Asia, and Europe, South Asia is home to speculative music theoretical traditions of ancient origin (<a href="#rowell_1992" id="citation_rowell_1992_67dc99061b2b7">Rowell 1992</a>) and to sophisticated traditions of concert musics (such as Hindustani and Karnatak music), which carry their own discourses and evolving conventions of composition. In contrast, the theory-like phenomena highlighted here&mdash;such as the use of poetic meters and rhyme schemes, the use of analogical explanations, and the translating of spoken vocables into drum rhythms and timbres&mdash;may seem far removed from the philosophical analyses of professional scholars. However, I posit that taking seriously vernacular traditions of functional musics&mdash;such as Muddanave Sunil&rsquo;s ritual-based music&mdash;will enable us to look beyond the cultural and intellectual prestige of explicitly formulated theories of art music to become more aware of the diverse ways in which humans have sought to prescribe, document, transmit, describe, and explain their musics as an integral and consistent part of their worldviews. This will afford us a more complete picture of what music theorizing can encompass.
+</p>
+
+<h2><b>6. Bījākṣara Upat Kavi (Origin Verses of Seed Syllables)<sup><a name="FN36REF" href="#FN36" id="footnote36">(36)</a></sup> (Audio 1&ndash;8)</b></h2>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 1</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex1.mp3" type="audio/mpeg"><source src="peiris_audio_ex1.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.1] Origin Verse 1 [Audio 1]
+<br><i>sa<b>dā</b> sapiri maha sammata raja saha &ndash; viṣnu da isuru sura<b>n</b>   &ndash; ema
+<br>vi<b>dā</b>na kara giya sudam sabhāvaṭa &ndash; näṭum balana vilasi<b>n</b>
+<br>e<b>dā</b> esakpura divanalu pirivara &ndash; gāndharva esura<b>n</b>     &ndash; dev
+<br>so<b>ňdā</b> enaradevi piligena divanalu &ndash; nerta paṭan ganimi<b>n</b></i>
+</p>
+<p>The eternally bountiful king Maha Sammata<sup><a name="FN37REF" href="#FN37" id="footnote37">(37)</a></sup> and (the elite deities) Vishnu and Ishwara<br>
+ordered the assembly of devotees to observe the dances;<br>
+that day the assembly of divine dancers and musicians in the abode of the deity Sakra<br>
+began the dances and presented them from the deities to the humans
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 2</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex2.mp3" type="audio/mpeg"><source src="peiris_audio_ex2.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.2] Origin Verse 2 [Audio 2]
+<br><i>pa<b>ṃca</b>sikhaya devi ran berayak gena (x2) &ndash; sak raja peradiga ma<b>yi</b>   &ndash; siṭa
+<br>sa<b>ṃka</b>nāda pim̌ba takāre mul koṭa (x2) &ndash;<i>tat</i>yana tāle yoda<b>yi</b>
+<br>pu<b>nsa</b>ňda men siṭi sammata raja eya (x2) &ndash; däka sit prīti una<b>yi</b>    &ndash; ema
+<br>su<b>nda</b>ra rajugē dakunu pasin siṭa (x2) &ndash; sabba bamunu ugani<b>yi</b></i>
+</p>
+
+
+<p>The deity Panchasikha took a golden drum (while Sakra stayed in the east) and<br>
+blew the conch shell beginning with [the sound] &ldquo;<i>ta</i>,&rdquo; using [creating?] the rhythm &ldquo;<i>tat</i>;&rdquo;<br>
+King Maha Sammata&mdash;who looked like the full moon&mdash;saw this and was delighted;<br>
+[the rhythm of <i>tat</i>] was learned by the brahmin named Sabba who stayed on the right side of the beautiful king
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 3</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex3.mp3" type="audio/mpeg"><source src="peiris_audio_ex3.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.3] Origin Verse 3 [Audio 3]
+<br><i>o<b>nna</b> assannaṭa mula siṭa silpaya nertaya mula mehem<b>ayi</b>     &ndash; tava
+<br>bi<b>nna</b> novannaṭa dahamē saha isivākiyavala liviv<b>ayi</b>
+<br>sa<b>nna</b> solō gī vena vena kīvat (x2) &ndash; nerta mulē mehem<b>ayi</b>     &ndash; ema
+<br>sa<b>mma</b>ta mula siṭa pävatī gena ena (x2) &ndash; häṭiyaṭa pada getuv<b>ayi</b></i>
+</p>
+<p>Listen from the very beginning; this is the origin of the craft of dancing.<br>
+Ishwara wrote it down so that the teachings would not be further divided/destroyed<br>
+Though slokas, songs, and commentaries may say otherwise, this is the true origin of dance<br>
+The verses/patterns were woven together in the way that they have come down since the primordial time of king Maha Sammata
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 4</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex4.mp3" type="audio/mpeg"><source src="peiris_audio_ex4.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.4] Origin Verse 4 (Tat) [Audio 4]
+<br><i>sǟ<b>ma</b> silpa dat sabba bamunu tema maha sammata mula<b>dī</b>     &ndash;dev
+<br>lō<b>ma</b> suran kala nertaya rajuhaṭa däkum tabā pähä<b>dī</b>
+<br>sō<b>ma</b> dinaya sita näkata edā tava kaṭaka rǟ sada pǟ<b>dī</b>     &ndash;meya
+<br>pǟ<b>ma</b> palamu tava<i>tat</i>yana padayaṭa varna noyek , bä<b>ndī</b></i>
+</p>
+
+
+<p>The brahmin Sabba who knows every art, presented to the king Maha Sammata as a homage,<br>
+the dance that pleased the entire world of deities;<br>
+it was an auspicious time when the crescent moon came out on the night of the zodiac period of Cancer<br>
+when this happened, other colors [timbres?] became tied to the first sound &ldquo;<i>tat</i>&rdquo;<sup><a name="FN38REF" href="#FN38" id="footnote38">(38)</a></sup></p>
+
+<p><i>[bera pada:]
+<br><u>ta</u>kkru<u>tā</u>kiṭa <u>ta</u>laṃgu <u>tā</u>kiṭa<sup><a name="FN39REF" href="#FN39" id="footnote39">(39)</a></sup><br>teyi teyi tarkiṭa krata hrata targat
+<br><u>ta</u>kitala hatitat hatakita <u>ta</u>harta <u>tā</u></i>
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 5</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex5.mp3" type="audio/mpeg"><source src="peiris_audio_ex5.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.5] Origin Verse 5 (<b><i>Dik</b></i>) [Audio 5]
+<br><i>k<b>āla</b>candra saha mitra nämati yasa cūlōdara bamu<b>nā</b>    &ndash; devu
+<br>s<b>āla</b> näṭum sata palamu ugattā sabba bamunu veti<b>nā</b>
+<br>p<b>ālā</b> däkumaṭa ravidina kuṃburäsa anurē näkatada yodā ge<b>nā</b>  &ndash; soňda
+<br>t<b>āla</b>ya dik yana pada kara bhēdaya nätuwayi varna ye<b>nā</b></i>
+</p>
+<p>Brahmins named Chūlōdara, Kālachandra, and Mitra<br>
+first learned seven divine dances from the brahmin Sabba<br>
+paying homage on the day of the sun (Sunday); at the auspicious astrological time &ldquo;<i>anura</i>&rdquo; during the zodiac period of Aquarius<br>
+they danced divisions [variations?] with color [other timbres?] based on the tone &ldquo;<i>dik</i>&rdquo;
+</p>
+<p>[bera pada:]
+<br><i><u>diṃ</u>ga draviḍa <u>di</u>ḍa
+<br><u>dik</u>a dadita natari
+<br>dīna dōmat
+<br><u>dik</u>atari gurulaḍi
+<br>druta dhedī <u>dik</u>uňdat
+<br><u>jik</u>utaku <u>jit</u></i>
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 6</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex6.mp3" type="audio/mpeg"><source src="peiris_audio_ex6.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.6] Origin Verse 6 (<b><i>Toṃ</i></b>) [Audio 6]
+<br><i>dawu<b>l</b> bhēri horanǟ nāsinnam däkki mepasa gatt<b>ay</b>i     &ndash; räňgu
+<br>laka<b>l</b> mepas dena gadam̌ba suransē naralova nertakal<b>ayi</b>
+<br>nima<b>l</b> niriňdu haṭa kividina tunaturusiharäsa yodä gen<b>ayi</b>    &ndash;mema
+<br>tumu<b>l</b> ṣilpa pada toṃ yana tālaya varna rajuṭa pǟvayi</i>
+</p>
+<p>Taking the five instruments&mdash;<i>dawula</i> drum,<sup><a name="FN40REF" href="#FN40" id="footnote40">(40)</a></sup> other drums, <i>horanǟwa</i>,<sup><a name="FN41REF" href="#FN41" id="footnote41">(41)</a></sup> <i>nāgasinnam</i>,<sup><a name="FN42REF" href="#FN42" id="footnote42">(42)</a></sup> and <i>däkkiya</i><sup><a name="FN43REF" href="#FN43" id="footnote43">(43)</a></sup> drum<br>
+The five divine musicians presented the dances in the human world<br>
+It was given to the pure king, on the day of Mars (Tuesday) at the triple auspicious time of &ldquo;<i>uturupal</i>,&rdquo; &ldquo;<i>uturupuṭupa</i>,&rdquo; and &ldquo;<i>utursala</i>&rdquo; during the zodiac period of Leo<br>
+Through this whole art, the characteristics of the rhythm of &ldquo;<i>toṃ</i>&rdquo; were danced/showed to the king
+</p>
+<p><i>[bera pada:]
+<br><u>toṃ</u> tari <u>toňga</u> tari
+<br>tōdikitānam
+<br>tolīkēta <u>toňg</u>a
+<br>khētājavitā
+<br>vēḍunu ruttuṃ
+<br><u>toṃ</u>tula trayi trayi
+<br><u>toṃ</u> naṃ gitkiṭa <u>toṃ</u></i>
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 7</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex7.mp3" type="audio/mpeg"><source src="peiris_audio_ex7.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.7] Origin Verse 7 (<b>Naṃ</b>) [Audio 7]
+<br><i>ṣab<b>da</b> paṃca pada paṃca tāla saha sural abhina yod<b>alā</b>      &ndash; tava
+<br>lad<b>da</b> esilpaya budadina mulayada mituna räsin lak<b>alā</b>
+<br>sud<b>da</b> me silpaya maha narapati saha pirisaṭa penn<b>ālā</b>      &ndash; naňda
+<br>ṣab<b>da</b> gigum kara naṃ yana tālaya siv väni vara gas<b>alā</b></i>
+</p>
+<p>The genres <i>surala, abhina</i>, the five rhythms and tunes, and other sonic offerings<br>
+were presented on the day of Mercury (Wednesday) at the auspicious astrological time of &ldquo;<i>mula</i>&rdquo; during the zodiac period of Gemini<br>
+This pure art was shown to the great leader and their crowd<br>
+The sound of the tone &ldquo;<i>naṃ</i>&rdquo; reverberated when hit (played) for the fourth time
+</p>
+<p><i>[bera pada:]
+<br><u>naň</u>gina bhrana gidiḍa
+<br>kunḍala kura kata
+<br>kukuňda kukuňda <u>naṃ</u>ga
+<br>krallat takkaḍa
+<br>neyina kalēnaṃ
+<br>arula kirula <u>naṃ</u>gaḍa <u>naṃ</u></i>
+</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Audio 8</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="peiris_audio_ex8.mp3" type="audio/mpeg"><source src="peiris_audio_ex8.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></fig>
+
+<p>[6.8] Origin Verse 8 [Audio 8]
+<br><i>tat jit to<b>n</b> nam bhēdat ättē vattaṃ satara ta<b>mā</b>      &ndash; pera
+<br>suran ati<b>n</b> maha sammata mula siṭa genā sabba utu<b>mā</b>
+<br>suran raju<b>n</b> saha budun mudun koṭa vena vena bhēda yo<b>mā</b>  &ndash; meya
+<br>b&auml;lun satu<b>n</b> sura sit pinavannaṭa häkivē danu niya<b>mā</b></i>
+</p>
+<p>The classification of [drum strokes] <i>tat, jit, ton,</i> and<i>nam</i>is part of the four sections [of a ceremonial drumming piece?]<br>
+Was brought by Sabba from the hands of the deities in the primordial times of king Maha Sammata<br>
+Different sections are dedicated to the deities, to the king, and to the Buddha<br>
+Know that all being who witness this will have their minds gratified
+</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+     
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+  
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Eshantha Peiris<br>
+	University of British Columbia<br>Department of Music<br>Vancouver, BC,<br>Canada<br><a href="mailto:eshantha@mail.ubc.ca">eshantha@mail.ubc.ca</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+  
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_blum_2023" class="flyoverdiv">Blum, Stephen. 2023. <i>Music Theory in Ethnomusicology</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="blum_2023"></a>Blum, Stephen. 2023. <i>Music Theory in Ethnomusicology</i>. Oxford University Press.</p><div id="citediv_brown_1965" class="flyoverdiv">Brown, Robert. 1965. &ldquo;The Mṛdan̄ga: A Study of Drumming in South India.&rdquo; PhD diss., University of California at Los Angeles.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brown_1965"></a>Brown, Robert. 1965. &ldquo;The Mṛdan̄ga: A Study of Drumming in South India.&rdquo; PhD diss., University of California at Los Angeles.</p><div id="citediv_deegalle_2006" class="flyoverdiv">Deegalle, Mahinda. 2006. <i>Buddhism, Conflict and Violence in Modern Sri Lanka</i>. Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="deegalle_2006"></a>Deegalle, Mahinda. 2006. <i>Buddhism, Conflict and Violence in Modern Sri Lanka</i>. Routledge.</p><div id="citediv_guruge_2008_&#91;1964&#93;" class="flyoverdiv">Guruge, Ananda W.P. 2008. &#91;1964&#93;. Introduction. In <i>Uḍaraṭa Näṭum Kalāva</i> &#91;The Art of Up-country Dance&#93;, by J.E. Sedaraman, i-v. M.D. Gunasena.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guruge_2008_&#91;1964&#93;"></a>Guruge, Ananda W.P. 2008. &#91;1964&#93;. Introduction. In <i>Uḍaraṭa Näṭum Kalāva</i> &#91;The Art of Up-country Dance&#93;, by J.E. Sedaraman, i-v. M.D. Gunasena.</p><div id="citediv_hallisey_2003" class="flyoverdiv">Hallisey, Charles. 2003. &ldquo;Works and Persons in Sinhala Literary Culture.&rdquo; In <i>Literary Cultures in History: Reconstructions from South Asia</i>, edited by Sheldon Pollock, 689&ndash;746. University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hallisey_2003"></a>Hallisey, Charles. 2003. &ldquo;Works and Persons in Sinhala Literary Culture.&rdquo; In <i>Literary Cultures in History: Reconstructions from South Asia</i>, edited by Sheldon Pollock, 689&ndash;746. University of California Press.</p><div id="citediv_karunaratne_2008" class="flyoverdiv">Karunaratne, Udeni Kudabanda. 2008. <i>Uḍaraṭa Nartana Shilpīngē Pärani Gāyanā</i> &#91;The Old Songs of Up-country Dancers&#93;. S. Godage and Brothers.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="karunaratne_2008"></a>Karunaratne, Udeni Kudabanda. 2008. <i>Uḍaraṭa Nartana Shilpīngē Pärani Gāyanā</i> &#91;The Old Songs of Up-country Dancers&#93;. S. Godage and Brothers.</p><div id="citediv_kulatillake_1976a" class="flyoverdiv">Kulatillake, C. de S. 1976a. A <i>Background to Sinhala Traditional Music of Sri Lanka</i>. Department of Cultural Affairs. <a href='https://dds.crl.edu/crldelivery/13278'> https://dds.crl.edu/crldelivery/13278</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kulatillake_1976a"></a>Kulatillake, C. de S. 1976a. A <i>Background to Sinhala Traditional Music of Sri Lanka</i>. Department of Cultural Affairs. <a href='https://dds.crl.edu/crldelivery/13278'> https://dds.crl.edu/crldelivery/13278</a></p><div id="citediv_kulatillake_1976b" class="flyoverdiv">Kulatillake. 1976b. <i>Metre, Melody, and Rhythm in Sinhala Music. 2</i>. Sri Lanka Broadcasting Corporation. <a href='https://dds.crl.edu/item/94776'> https://dds.crl.edu/item/94776</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kulatillake_1976b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1976b. <i>Metre, Melody, and Rhythm in Sinhala Music. 2</i>. Sri Lanka Broadcasting Corporation. <a href='https://dds.crl.edu/item/94776'> https://dds.crl.edu/item/94776</a></p><div id="citediv_kulatillake_2013_&#91;1982&#93;" class="flyoverdiv">Kulatillake. 2013. &#91;1982&#93; <i>Daha-ata Vannama</i> &#91;Eighteen <i>Vannamas</i>&#93;. Ministry of Cultural Affairs.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kulatillake_2013_&#91;1982&#93;"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2013. &#91;1982&#93; <i>Daha-ata Vannama</i> &#91;Eighteen <i>Vannamas</i>&#93;. Ministry of Cultural Affairs.</p><div id="citediv_makulloluwa_1996_1962" class="flyoverdiv">Makulloluwa, W. B. 1996. &#91;1962&#93; <i>Hela Gī Maga</i> &#91;The Way of Sinhalese Song&#93;. Department of Cultural Affairs.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="makulloluwa_1996_1962"></a>Makulloluwa, W. B. 1996. &#91;1962&#93; <i>Hela Gī Maga</i> &#91;The Way of Sinhalese Song&#93;. Department of Cultural Affairs.</p><div id="citediv_makulloluwa_2009" class="flyoverdiv">Makulloluwa. 2009. &#91;1969&#93; <i>Samudurugosa Virita</i> [the Samudurugosa Meter]. In <i>Mānavavaṃṣ́a saṃgīta vimarṣ́ana</i> [Ethnomusicological Investigations], edited by P.D. Ranjith Fernando, W.A. Nishoka Sandarawan, and Dhammika Dissanayake, 33&ndash;49. University of Visual and Performing Arts.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="makulloluwa_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2009. &#91;1969&#93; <i>Samudurugosa Virita</i> [the Samudurugosa Meter]. In <i>Mānavavaṃṣ́a saṃgīta vimarṣ́ana</i> [Ethnomusicological Investigations], edited by P.D. Ranjith Fernando, W.A. Nishoka Sandarawan, and Dhammika Dissanayake, 33&ndash;49. University of Visual and Performing Arts.</p><div id="citediv_obeyesekere_1966" class="flyoverdiv">Obeyesekere, Gananath. 1966. &ldquo;The Buddhist Pantheon in Ceylon and its Extensions.&rdquo; <i>Anthropological Studies in Theravada Buddhism</i> 13: 1&ndash;26.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="obeyesekere_1966"></a>Obeyesekere, Gananath. 1966. &ldquo;The Buddhist Pantheon in Ceylon and its Extensions.&rdquo; <i>Anthropological Studies in Theravada Buddhism</i> 13: 1&ndash;26.</p><div id="citediv_obeyesekere_1967" class="flyoverdiv">Obeyesekere. 1967. <i>Land Tenure in Village Ceylon.</i> Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="obeyesekere_1967"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1967. <i>Land Tenure in Village Ceylon.</i> Cambridge University Press.</p><div id="citediv_oxford_2024" class="flyoverdiv">Oxford English Dictionary. n.d. Accessed April 12, 2024. <a href='https://www.oed.com'> https://www.oed.com</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="oxford_2024"></a>Oxford English Dictionary. n.d. Accessed April 12, 2024. <a href='https://www.oed.com'> https://www.oed.com</a></p><div id="citediv_paranavitana_1956" class="flyoverdiv">Paranavitana, Senarat. 1956. <i>Sigiri Graffiti</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="paranavitana_1956"></a>Paranavitana, Senarat. 1956. <i>Sigiri Graffiti</i>. Oxford University Press.</p><div id="citediv_peiris_2020" class="flyoverdiv">Peiris, Eshantha. 2020. &ldquo;The Gäṭa Beraya Drumming Tradition of Sri Lanka.&rdquo; PhD diss., University of British Columbia. <a href='https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0394161'> https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0394161</a> </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="peiris_2020"></a>Peiris, Eshantha. 2020. &ldquo;The Gäṭa Beraya Drumming Tradition of Sri Lanka.&rdquo; PhD diss., University of British Columbia. <a href='https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0394161'> https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0394161</a> </p><div id="citediv_peiris_2022" class="flyoverdiv">Peiris. 2022. &ldquo;Vocal Models and Musical Rhythm in Sri Lanka.&rdquo; <i>Analytical Approaches to World Music 10</i> (1). <a href='https://journal.iftawm.org/previous/2022-volume-10-number-1/10-1-peiris-2/'> https://journal.iftawm.org/previous/2022-volume-10-number-1/10-1-peiris-2/</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="peiris_2022"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2022. &ldquo;Vocal Models and Musical Rhythm in Sri Lanka.&rdquo; <i>Analytical Approaches to World Music 10</i> (1). <a href='https://journal.iftawm.org/previous/2022-volume-10-number-1/10-1-peiris-2/'> https://journal.iftawm.org/previous/2022-volume-10-number-1/10-1-peiris-2/</a></p><div id="citediv_reed_2010" class="flyoverdiv">Reed, Susan Anita. 2010. <i>Dance and the Nation: Performance, Ritual, and Politics in Sri Lanka</i>. University of Wisconsin Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="reed_2010"></a>Reed, Susan Anita. 2010. <i>Dance and the Nation: Performance, Ritual, and Politics in Sri Lanka</i>. University of Wisconsin Press.</p><div id="citediv_roberts_2004" class="flyoverdiv">Roberts, Michael. 2004. <i>Sinhala Consciousness in the Kandyan Period 1590s to 1815</i>. Vijitha Yapa Publications.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roberts_2004"></a>Roberts, Michael. 2004. <i>Sinhala Consciousness in the Kandyan Period 1590s to 1815</i>. Vijitha Yapa Publications.</p><div id="citediv_rowell_1992" class="flyoverdiv">Rowell, Lewis. 1992. <i>Music and Musical Thought in Early India</i>. University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rowell_1992"></a>Rowell, Lewis. 1992. <i>Music and Musical Thought in Early India</i>. University of Chicago Press.</p><div id="citediv_saussy_2016" class="flyoverdiv">Saussy, Haun. 2016. <i>The Ethnography of Rhythm: Orality and its Technologies</i>. Verbal Arts: Studies in Poetics. Fordham University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="saussy_2016"></a>Saussy, Haun. 2016. <i>The Ethnography of Rhythm: Orality and its Technologies</i>. Verbal Arts: Studies in Poetics. Fordham University Press.</p><div id="citediv_sedaraman_1966" class="flyoverdiv">Sedaraman, J.E. 1966. <i>Uḍaraṭa Tāla Shāstraya</i> [The Art of Up-country Tala]. Gunasena.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sedaraman_1966"></a>Sedaraman, J.E. 1966. <i>Uḍaraṭa Tāla Shāstraya</i> [The Art of Up-country Tala]. Gunasena.</p><div id="citediv_sedaraman_2008_1964" class="flyoverdiv">Sedaraman. 2008 [1964]. <i>Uḍaraṭa Näṭum Kalāva</i> [The Art of Up-country Dance]. M.D. Gunasena.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sedaraman_2008_1964"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008 [1964]. <i>Uḍaraṭa Näṭum Kalāva</i> [The Art of Up-country Dance]. M.D. Gunasena.</p><div id="citediv_sorata_2004" class="flyoverdiv">Sorata, Weliwitiye. 2004 [1963]. <i>Elu Saňdäs Lakuna</i> [Characteristics of Sinhala Poetic Metre]. Vidyodaya Pirivena Past Pupils Association.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sorata_2004"></a>Sorata, Weliwitiye. 2004 [1963]. <i>Elu Saňdäs Lakuna</i> [Characteristics of Sinhala Poetic Metre]. Vidyodaya Pirivena Past Pupils Association.</p><div id="citediv_sykes_2018" class="flyoverdiv">Sykes, Jim. 2018. &ldquo;On the Sonic Materialization of Buddhist History: Drum Speech in Southern Sri Lanka.&rdquo; <i>Analytical Approaches to World Music 6</i> (2). <a href='https://iftawm.org/journal/oldsite/articles/2018a/Sykes_AAWM_Vol_6_2b.html'> https://iftawm.org/journal/oldsite/articles/2018a/Sykes_AAWM_Vol_6_2b.html</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sykes_2018"></a>Sykes, Jim. 2018. &ldquo;On the Sonic Materialization of Buddhist History: Drum Speech in Southern Sri Lanka.&rdquo; <i>Analytical Approaches to World Music 6</i> (2). <a href='https://iftawm.org/journal/oldsite/articles/2018a/Sykes_AAWM_Vol_6_2b.html'> https://iftawm.org/journal/oldsite/articles/2018a/Sykes_AAWM_Vol_6_2b.html</a></p><div id="citediv_wolf_2014" class="flyoverdiv">Wolf, Richard K. 2014. <i>The Voice in the Drum: Music, Language, and Emotion in Islamicate South Asia</i>. University of Illinois Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wolf_2014"></a>Wolf, Richard K. 2014. <i>The Voice in the Drum: Music, Language, and Emotion in Islamicate South Asia</i>. University of Illinois Press.</p>
+     
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+  	
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> This article would not have been possible without Muddanave Sunil&mdash;a living repository of ritual knowledge, Pabalu Wijegoonawardane&mdash;who facilitated the audio recording with Muddanave Sunil in Sri Lanka and provided valuable feedback on the translations, and Isuru Kumarasinghe, who made the audio recordings. Special thanks are also due to Garrett Field, for his insightful suggestions offered through the collaborative peer review process.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">This article would not have been possible without Muddanave Sunil&mdash;a living repository of ritual knowledge, Pabalu Wijegoonawardane&mdash;who facilitated the audio recording with Muddanave Sunil in Sri Lanka and provided valuable feedback on the translations, and Isuru Kumarasinghe, who made the audio recordings. Special thanks are also due to Garrett Field, for his insightful suggestions offered through the collaborative peer review process.</div><p><a name="FN1">1.</a> I have digitally edited the recordings in collaboration with the performer Muddanave Sunil, to best represent the way he wanted them to be heard. Transliterations are based on the ALA-LC romanization table for Sinhala: <a href='https://www.loc.gov/catdir/cpso/romanization/sinhales.pdf'> https://www.loc.gov/catdir/cpso/romanization/sinhales.pdf</a>. Bear in mind that some &ldquo;a&rdquo; vowels are pronounced as &ldquo;a,&rdquo; whereas other &ldquo;a&rdquo; vowels are pronounced as a shwa; Sinhala orthography does not distinguish between these two sounds.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> My observations here complement the extended arguments that I have made elsewhere regarding the relationship between sung poetry, drum vocables, and drumming in Sri Lanka (<a href="#peiris_2022" id="citation_peiris_2022_67dc990616c52">Peiris 2022</a>).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Examples of such verse-pairs can be found in the verse-genres named <i>tālama, savudama</i>, and <i>däkum ata</i>. The following is a translation of the introductory blurb at the top of the page in Example 1:
+&ldquo;We also see that the <i>savudama</i> is a type of singing that brings amusement. We see that there was a practice among drummers and dancers of singing and dancing <i>savudamas</i> competitively. In these competitions they formed the <i>savudamas</i> so that they could upstage each other. From these we get the <i>änumpada</i> (verses of criticizing) repertoire found in upcountry [i.e., central Sri Lankan] villages. Many of these are too provincial/unsophisticated to even be published. We show here sixty-four famous <i>savudamas</i> that were used in deity worship in ancient times.&rdquo;<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> For socio-historical context on this caste-based lineage, see Reed (<a href="#reed_2010" id="citation_reed_2010_67dc990616c59">2010</a>, 79&ndash;84). I do not use the caste name here, as many ritualists today prefer to distance themselves from its historically negative connotations.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> As musicologist C. de S. Kulatillake notes, &ldquo;even the fundamentals of music and also dance have been laid down in sivpada [quatrain] verses&rdquo; (<a href="#kulatillake_1976b" id="citation_kulatillake_1976b_67dc990616c5c">1976b</a>, 5).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> As anthropologist Michael Roberts argues, &ldquo;in its purely oral modality of chant, song or poem, the communicative power of these messages [. . .] derives from their tune. [. . .] The simple metrical representation was a mnemonic device that assisted memorisation of extended tracts of poetry&rdquo; (<a href="#roberts_2004" id="citation_roberts_2004_67dc990616c5e">2004</a>, 23). For a summary of broader ethnomusicological perspectives on processes of formulaic &ldquo;oral composition,&rdquo; see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c60">2023</a>, 91).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Sinhalese-Buddhism (i.e., the practices of Buddhists of Sinhalese ethnicity) in Sri Lanka is generally perceived to include two strands of belief: a high regard for the canonical Buddhist doctrine as recorded in ancient Pali texts and belief in supernatural powers/beings that directly impact one&rsquo;s fortunes in this life. Sinhalese Buddhist cosmology is by no means a unitary belief system, but rather an umbrella term that is useful for referring to the many layers of historical convictions that have driven the actions of Sinhala-speaking Buddhists in Sri Lanka. For contrasting interpretations of the history and focus of <i>Bera Pōya Hēvisi</i> rituals, see Sykes (<a href="#sykes_2018" id="citation_sykes_2018_67dc990616c62">2018</a>, 47&ndash;48) and Peiris (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c64">2020</a>, 178&ndash;79).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The <i>Mahavaṃsa</i>&mdash;which chronicles histories of early rulers&mdash;was first compiled around the sixth century. Even though the <i>Mahavaṃsa</i> and other chronicles are &ldquo;literary&rdquo; in nature, and they contain verses in the scriptural language Pali rather than a commonly understood vernacular dialect, it is likely that their contents were circulated and interpreted orally in the context of Buddhist preaching in Sri Lanka over the centuries (<a href="#deegalle_2006" id="citation_deegalle_2006_67dc990616c66">Deegalle 2006</a>, 8).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> For a discussion of some of the contrasting scholarly views on orality, aurality, and literacy, see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c68">2023</a>, 52&ndash;53).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> For translations of a variety of other historical Sinhala oral verses, see Kulatillake (<a href="#kulatillake_1976a" id="citation_kulatillake_1976a_67dc990616c6a">1976a</a>, 19&ndash;25, <a href='https://dds.crl.edu/crldelivery/13278'> https://dds.crl.edu/crldelivery/13278</a>)<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Sinhala is a mora-timed language. A short syllable is one mora long, while a long syllable takes up two morae.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Another version of this <i>däkum ata</i> poem is transliterated in Sykes (<a href="#sykes_2018" id="citation_sykes_2018_67dc990616c6c">2018</a>, 60&ndash;61). As Sykes noted in a <i>Bera Pōya Hēvisi</i> ritual of a different regional tradition, &ldquo;the drumming alternates between verbally recited drum speech, drum words played on a drum (with no hint of a pulse), and sung poetry in a mixture of Sinhala, Sanskrit, Pali, and a Tamil-sounding drum language&rdquo; (ibid., 3).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> My English translation also contains eighteen morae per line; however, this is of little significance since English is a stress-timed (rather than mora-timed) language.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> The unrehearsed nature of the recorded performance is typical of such rituals. The loosely coordinated timing of the drumming is characteristic of ritual drumming and could be considered an aesthetic choice.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> I have translated <i>namaskāra</i> as &ldquo;salutation&rdquo; rather than &ldquo;greeting&rdquo; to emphasize the superordinate status of those being greeted.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> While Muddanave Sunil is leading the ensemble, the performance of this <i>däkum ata</i> is led by Lakshman Polgolla.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> I draw attention to this reducing phrase structure in my transliteration, for example, indicating progressively shorter versions of the same phrase as (1), (1&rsquo;), and (1&rsquo;&rsquo;) respectively. Similar techniques of phrase reduction are also found in traditional drum compositions (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c6e">Peiris 2020</a>, 75&ndash;79), and were also likely applied spontaneously by performers in the past (<a href="#kulatillake_2013_&#91;1982&#93;" id="citation_kulatillake_2013_&#91;1982&#93;_67dc990616c6f">Kulatillake 2013 &#91;1982&#93;</a>, 14).<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> I have included numbers here to draw attention to the structure in which the phrases are increasingly truncated in successive verses. For example, (1&rsquo;) is a truncated version of (1), and (1&rsquo;&rsquo;) is an even shorter version.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> &ldquo;Witness&rdquo; (<i>dakin</i>) is the verb form of the gerund &ldquo;appearance&rdquo; (<i>däkum</i>). Given that <i>däkum</i> could refer to a tribute-paying ceremony, <i>dakin</i> could also be translated as &ldquo;pay tribute to.&rdquo;<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> During the second time around, the order of words becomes switched to the following, likely by mistake: <i>raja dakin, muni dakin, devi dakin, guru dakin.</i><br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> In Buddhist eschatology, <i>Maitreya Buddha</i> is the future Buddha of this world.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> The <i>Elu Saňdäs Lakuna</i> has been influential among poets since the thirteenth century. For an overview of the different types of poetic meters that have been historically used for Sinhala poetry, see Kulatillake (<a href="#kulatillake_1976a" id="citation_kulatillake_1976a_67dc990616c72">1976a</a>, 1&ndash;14) and Makulloluwe (<a href="#makulloluwa_1996_1962" id="citation_makulloluwa_1996_1962_67dc990616c74">[1962]</a>, in Sinhala).<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> For this recording, Muddanave Sunil chose to showcase a few different melodies. Fitting the text to the melody used for Verse 2 requires that the first part of each line is sung twice, which distorts the nominal number of morae per line.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> In other words, most of the short syllables last for one musical pulse, and the long syllables last for two pulses.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> For example, Sīgiri graffiti nos. 247 and 661 (scribbled by medieval tourists at the ruined palace complex of Sīgiriya in Sri Lanka) both contain a <i>sivpada</i> verse followed by a <i>gī</i> verse (<a href="#paranavitana_1956" id="citation_paranavitana_1956_67dc990616c75">Paranavitana 1956</a>, clxxxviii).<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> On the <i>gäṭa beraya</i>, the damped strokes do not have an identifiable pitch (i.e., the overtones produced are inharmonic); however, even damped strokes on the two drumheads can perceived as producing respectively &ldquo;lower&rdquo; and &ldquo;higher&rdquo; sounds because they vibrate at different fundamental frequencies. The undamped (i.e., resonant) drum strokes do have identifiable pitches; however, these pitch identities are not so strong that (for instance) they need to match the pitch of singing; compositionally, undamped drum strokes are treated as timbral rather than pitch categories. When playing a damped stroke on one drumhead, drummers often simultaneously dampen the other drumhead.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> These names <i>tat, dit, ton,</i> and <i>nam</i> are also used to refer the four primary strokes on other drums historically used in Sri Lanka such the <i>dawula, tammäṭṭama, mattalam,</i> and <i>tavil</i>; they also &ldquo;appear in recognizable form in all the diverse styles of barrel drumming, ancient and modern, all over India&rdquo; (<a href="#brown_1965" id="citation_brown_1965_67dc990616c77">Brown 1965</a>, 105), and are similar to the drum syllables <i>ta, di, tom,</i> and <i>nam</i> found in the thirteenth-century Sanskrit treatise <i>Saṅgītaratnākara</i> and the tenth-century Tamil treatise <i>Mattaḷaviyal</i>.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> As with many other South Asian performance traditions, this repertoire of drum vocable phrases is shared by dancers&mdash;who use them to represent combinations of dance movements.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> While womb syllables are commonly understood to index the timbres associated with the four seed syllables, Sedaraman defines sixteen different womb syllables that are to be sounded using subtly different playing techniques (<a href="#sedaraman_1966" id="citation_sedaraman_1966_67dc990616c79">1966</a>, 7&ndash;8).<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> For a general discussion regarding the connection between mnemonic syllables and percussion timbres in the broader context of South Asia, see Wolf (<a href="#wolf_2014" id="citation_wolf_2014_67dc990616c7b">2014</a>, 20&ndash;22). Speaking of vocables more generally, Blum notes that &ldquo;names with an iconic relation to the sound frequently stand for both the sound and how to produce it,&rdquo; arguing that […] sets of names for timbres linked to actions result from analytical thinking that labels attributes of an event&rsquo;s successive phases in combinations musicians need to learn and remember&rdquo; (<a href="#blum_2023" id="citation_blum_2023_67dc990616c7c">2023</a>, 111).<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> This explanation is a bit oversimplified; while <i>ta-ka-ṭa</i> is indeed performed with the timbre sequence <i>tat-dit-dit</i>, the two <i>dit</i> strokes are performed with different hand motions (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c7e">Peiris 2020</a>, 67&ndash;69).<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> For a discussion on the various types of theorizing recognized by ethnomusicologists, see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c80">2023</a>, 52&ndash;59).<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> A similar process of interpreting versions of the seed syllables as primary drum strokes happens in the non-lexical stanzas that follow the <i>upat kavi</i> verses. For example, since Origin Verse 4 (Paragraph 6.4) is about the stroke <i>tat</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>ta</i> or <i>tā</i> (underlined in the transliteration); these syllables would be interpreted on the drum with a <i>tat</i> stroke. Since Origin Verse 5 (Paragraph 6.5) is about the stroke <i>dit (jit)</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>d</i> or <i>j</i>; these syllables would be interpreted on the drum with a <i>dit</i> stroke (underlined in the transliteration). Since Origin Verse 6 (Paragraph 6.6) is about the stroke <i>tom</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>to</i> or <i>tō</i>; these syllables would be interpreted on the drum with a <i>toṃ</i> stroke (underlined in the transliteration). Since Origin Verse 7 (Paragraph 6.7) is about the stroke <i>naṃ</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>na</i>; these syllables would be interpreted on the drum with a <i>naṃ</i> stroke (underlined in the transliteration).<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> As I have described elsewhere (<a href="#peiris_2022" id="citation_peiris_2022_67dc990616c82">Peiris 2022</a>, 4&ndash;6) in terms of &ldquo;drumming as surrogate speech,&rdquo; a subset of these same musicians used these same techniques when performing a different type of piece (known as &ldquo;<i>tālama</i>&rdquo;) at a different <i>Bera Pōya Hēvisi</i> ritual.<br><a href="#FN34REF">Return to text</a></p><p><a name="FN35">35.</a> As Blum argues, &ldquo;All humans theorize as we reflect on relationships we perceive or imagine in our various worlds and compare alternate courses of action, remembering or imagining their distinctive features and possible uses, and weighing possible reasons for unsatisfactory performances. We are theorizing when we analyze parts of a whole and reflect on their interrelations, when we recognize analogies or resemblances and ponder their implications, and when we evaluate new possibilities as ecological and social conditions change&rdquo; (<a href="#blum_2023" id="citation_blum_2023_67dc990616c83">2023</a>, 1).<br><a href="#FN35REF">Return to text</a></p><p><a name="FN36">36.</a> In these <i>upat kavi</i>, I have bolded the syllables belonging to the same rhyming class, to draw attention to the sonic patterning of assonance within the poetic meter. As detailed in endnote 33, I have underlined the vocables that would be interpreted on the drum using the seed syllable with the same (or similar) name.<br><a href="#FN36REF">Return to text</a></p><p><a name="FN37">37.</a> In the chronicle <i>Mahavaṃsa</i>, Maha Sammata is the primordial king of the universe.<br><a href="#FN37REF">Return to text</a></p><p><a name="FN38">38.</a> <i>Varna</i> in Sinhala usually refers to colors, but &ldquo;timbres&rdquo; makes sense to me in this context.<br><a href="#FN38REF">Return to text</a></p><p><a name="FN39">39.</a> Following the end of each line of <i>bera pada</i>, the rhythm/timbral pattern of the vocables is imitated on the drum.<br><a href="#FN39REF">Return to text</a></p><p><a name="FN40">40.</a> Double-headed cylindrical drum.<br><a href="#FN40REF">Return to text</a></p><p><a name="FN41">41.</a> Small quadruple-reed shawm.<br><a href="#FN41REF">Return to text</a></p><p><a name="FN42">42.</a> Larger shawm.<br><a href="#FN42REF">Return to text</a></p><p><a name="FN43">43.</a> Hour-glass shaped variable-tension drum.<br><a href="#FN43REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">I have digitally edited the recordings in collaboration with the performer Muddanave Sunil, to best represent the way he wanted them to be heard. Transliterations are based on the ALA-LC romanization table for Sinhala: <a href='https://www.loc.gov/catdir/cpso/romanization/sinhales.pdf'> https://www.loc.gov/catdir/cpso/romanization/sinhales.pdf</a>. Bear in mind that some &ldquo;a&rdquo; vowels are pronounced as &ldquo;a,&rdquo; whereas other &ldquo;a&rdquo; vowels are pronounced as a shwa; Sinhala orthography does not distinguish between these two sounds.</div><div id="fndiv2" class="flyoverdiv">My observations here complement the extended arguments that I have made elsewhere regarding the relationship between sung poetry, drum vocables, and drumming in Sri Lanka (<a href="#peiris_2022" id="citation_peiris_2022_67dc990616c52">Peiris 2022</a>).</div><div id="fndiv3" class="flyoverdiv">Examples of such verse-pairs can be found in the verse-genres named <i>tālama, savudama</i>, and <i>däkum ata</i>. The following is a translation of the introductory blurb at the top of the page in Example 1:
+&ldquo;We also see that the <i>savudama</i> is a type of singing that brings amusement. We see that there was a practice among drummers and dancers of singing and dancing <i>savudamas</i> competitively. In these competitions they formed the <i>savudamas</i> so that they could upstage each other. From these we get the <i>änumpada</i> (verses of criticizing) repertoire found in upcountry [i.e., central Sri Lankan] villages. Many of these are too provincial/unsophisticated to even be published. We show here sixty-four famous <i>savudamas</i> that were used in deity worship in ancient times.&rdquo;</div><div id="fndiv4" class="flyoverdiv">For socio-historical context on this caste-based lineage, see Reed (<a href="#reed_2010" id="citation_reed_2010_67dc990616c59">2010</a>, 79&ndash;84). I do not use the caste name here, as many ritualists today prefer to distance themselves from its historically negative connotations.</div><div id="fndiv5" class="flyoverdiv">As musicologist C. de S. Kulatillake notes, &ldquo;even the fundamentals of music and also dance have been laid down in sivpada [quatrain] verses&rdquo; (<a href="#kulatillake_1976b" id="citation_kulatillake_1976b_67dc990616c5c">1976b</a>, 5).</div><div id="fndiv6" class="flyoverdiv">As anthropologist Michael Roberts argues, &ldquo;in its purely oral modality of chant, song or poem, the communicative power of these messages [. . .] derives from their tune. [. . .] The simple metrical representation was a mnemonic device that assisted memorisation of extended tracts of poetry&rdquo; (<a href="#roberts_2004" id="citation_roberts_2004_67dc990616c5e">2004</a>, 23). For a summary of broader ethnomusicological perspectives on processes of formulaic &ldquo;oral composition,&rdquo; see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c60">2023</a>, 91).</div><div id="fndiv7" class="flyoverdiv">Sinhalese-Buddhism (i.e., the practices of Buddhists of Sinhalese ethnicity) in Sri Lanka is generally perceived to include two strands of belief: a high regard for the canonical Buddhist doctrine as recorded in ancient Pali texts and belief in supernatural powers/beings that directly impact one&rsquo;s fortunes in this life. Sinhalese Buddhist cosmology is by no means a unitary belief system, but rather an umbrella term that is useful for referring to the many layers of historical convictions that have driven the actions of Sinhala-speaking Buddhists in Sri Lanka. For contrasting interpretations of the history and focus of <i>Bera Pōya Hēvisi</i> rituals, see Sykes (<a href="#sykes_2018" id="citation_sykes_2018_67dc990616c62">2018</a>, 47&ndash;48) and Peiris (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c64">2020</a>, 178&ndash;79).</div><div id="fndiv8" class="flyoverdiv">The <i>Mahavaṃsa</i>&mdash;which chronicles histories of early rulers&mdash;was first compiled around the sixth century. Even though the <i>Mahavaṃsa</i> and other chronicles are &ldquo;literary&rdquo; in nature, and they contain verses in the scriptural language Pali rather than a commonly understood vernacular dialect, it is likely that their contents were circulated and interpreted orally in the context of Buddhist preaching in Sri Lanka over the centuries (<a href="#deegalle_2006" id="citation_deegalle_2006_67dc990616c66">Deegalle 2006</a>, 8).</div><div id="fndiv9" class="flyoverdiv">For a discussion of some of the contrasting scholarly views on orality, aurality, and literacy, see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c68">2023</a>, 52&ndash;53).</div><div id="fndiv10" class="flyoverdiv">For translations of a variety of other historical Sinhala oral verses, see Kulatillake (<a href="#kulatillake_1976a" id="citation_kulatillake_1976a_67dc990616c6a">1976a</a>, 19&ndash;25, <a href='https://dds.crl.edu/crldelivery/13278'> https://dds.crl.edu/crldelivery/13278</a>)</div><div id="fndiv11" class="flyoverdiv">Sinhala is a mora-timed language. A short syllable is one mora long, while a long syllable takes up two morae.</div><div id="fndiv12" class="flyoverdiv">Another version of this <i>däkum ata</i> poem is transliterated in Sykes (<a href="#sykes_2018" id="citation_sykes_2018_67dc990616c6c">2018</a>, 60&ndash;61). As Sykes noted in a <i>Bera Pōya Hēvisi</i> ritual of a different regional tradition, &ldquo;the drumming alternates between verbally recited drum speech, drum words played on a drum (with no hint of a pulse), and sung poetry in a mixture of Sinhala, Sanskrit, Pali, and a Tamil-sounding drum language&rdquo; (ibid., 3).</div><div id="fndiv13" class="flyoverdiv">My English translation also contains eighteen morae per line; however, this is of little significance since English is a stress-timed (rather than mora-timed) language.</div><div id="fndiv14" class="flyoverdiv">The unrehearsed nature of the recorded performance is typical of such rituals. The loosely coordinated timing of the drumming is characteristic of ritual drumming and could be considered an aesthetic choice.</div><div id="fndiv15" class="flyoverdiv">I have translated <i>namaskāra</i> as &ldquo;salutation&rdquo; rather than &ldquo;greeting&rdquo; to emphasize the superordinate status of those being greeted.</div><div id="fndiv16" class="flyoverdiv">While Muddanave Sunil is leading the ensemble, the performance of this <i>däkum ata</i> is led by Lakshman Polgolla.</div><div id="fndiv17" class="flyoverdiv">I draw attention to this reducing phrase structure in my transliteration, for example, indicating progressively shorter versions of the same phrase as (1), (1&rsquo;), and (1&rsquo;&rsquo;) respectively. Similar techniques of phrase reduction are also found in traditional drum compositions (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c6e">Peiris 2020</a>, 75&ndash;79), and were also likely applied spontaneously by performers in the past (<a href="#kulatillake_2013_&#91;1982&#93;" id="citation_kulatillake_2013_&#91;1982&#93;_67dc990616c6f">Kulatillake 2013 &#91;1982&#93;</a>, 14).</div><div id="fndiv18" class="flyoverdiv">I have included numbers here to draw attention to the structure in which the phrases are increasingly truncated in successive verses. For example, (1&rsquo;) is a truncated version of (1), and (1&rsquo;&rsquo;) is an even shorter version.</div><div id="fndiv19" class="flyoverdiv">&ldquo;Witness&rdquo; (<i>dakin</i>) is the verb form of the gerund &ldquo;appearance&rdquo; (<i>däkum</i>). Given that <i>däkum</i> could refer to a tribute-paying ceremony, <i>dakin</i> could also be translated as &ldquo;pay tribute to.&rdquo;</div><div id="fndiv20" class="flyoverdiv">During the second time around, the order of words becomes switched to the following, likely by mistake: <i>raja dakin, muni dakin, devi dakin, guru dakin.</i></div><div id="fndiv21" class="flyoverdiv">In Buddhist eschatology, <i>Maitreya Buddha</i> is the future Buddha of this world.</div><div id="fndiv22" class="flyoverdiv">The <i>Elu Saňdäs Lakuna</i> has been influential among poets since the thirteenth century. For an overview of the different types of poetic meters that have been historically used for Sinhala poetry, see Kulatillake (<a href="#kulatillake_1976a" id="citation_kulatillake_1976a_67dc990616c72">1976a</a>, 1&ndash;14) and Makulloluwe (<a href="#makulloluwa_1996_1962" id="citation_makulloluwa_1996_1962_67dc990616c74">[1962]</a>, in Sinhala).</div><div id="fndiv23" class="flyoverdiv">For this recording, Muddanave Sunil chose to showcase a few different melodies. Fitting the text to the melody used for Verse 2 requires that the first part of each line is sung twice, which distorts the nominal number of morae per line.</div><div id="fndiv24" class="flyoverdiv">In other words, most of the short syllables last for one musical pulse, and the long syllables last for two pulses.</div><div id="fndiv25" class="flyoverdiv">For example, Sīgiri graffiti nos. 247 and 661 (scribbled by medieval tourists at the ruined palace complex of Sīgiriya in Sri Lanka) both contain a <i>sivpada</i> verse followed by a <i>gī</i> verse (<a href="#paranavitana_1956" id="citation_paranavitana_1956_67dc990616c75">Paranavitana 1956</a>, clxxxviii).</div><div id="fndiv26" class="flyoverdiv">On the <i>gäṭa beraya</i>, the damped strokes do not have an identifiable pitch (i.e., the overtones produced are inharmonic); however, even damped strokes on the two drumheads can perceived as producing respectively &ldquo;lower&rdquo; and &ldquo;higher&rdquo; sounds because they vibrate at different fundamental frequencies. The undamped (i.e., resonant) drum strokes do have identifiable pitches; however, these pitch identities are not so strong that (for instance) they need to match the pitch of singing; compositionally, undamped drum strokes are treated as timbral rather than pitch categories. When playing a damped stroke on one drumhead, drummers often simultaneously dampen the other drumhead.</div><div id="fndiv27" class="flyoverdiv">These names <i>tat, dit, ton,</i> and <i>nam</i> are also used to refer the four primary strokes on other drums historically used in Sri Lanka such the <i>dawula, tammäṭṭama, mattalam,</i> and <i>tavil</i>; they also &ldquo;appear in recognizable form in all the diverse styles of barrel drumming, ancient and modern, all over India&rdquo; (<a href="#brown_1965" id="citation_brown_1965_67dc990616c77">Brown 1965</a>, 105), and are similar to the drum syllables <i>ta, di, tom,</i> and <i>nam</i> found in the thirteenth-century Sanskrit treatise <i>Saṅgītaratnākara</i> and the tenth-century Tamil treatise <i>Mattaḷaviyal</i>.</div><div id="fndiv28" class="flyoverdiv">As with many other South Asian performance traditions, this repertoire of drum vocable phrases is shared by dancers&mdash;who use them to represent combinations of dance movements.</div><div id="fndiv29" class="flyoverdiv">While womb syllables are commonly understood to index the timbres associated with the four seed syllables, Sedaraman defines sixteen different womb syllables that are to be sounded using subtly different playing techniques (<a href="#sedaraman_1966" id="citation_sedaraman_1966_67dc990616c79">1966</a>, 7&ndash;8).</div><div id="fndiv30" class="flyoverdiv">For a general discussion regarding the connection between mnemonic syllables and percussion timbres in the broader context of South Asia, see Wolf (<a href="#wolf_2014" id="citation_wolf_2014_67dc990616c7b">2014</a>, 20&ndash;22). Speaking of vocables more generally, Blum notes that &ldquo;names with an iconic relation to the sound frequently stand for both the sound and how to produce it,&rdquo; arguing that […] sets of names for timbres linked to actions result from analytical thinking that labels attributes of an event&rsquo;s successive phases in combinations musicians need to learn and remember&rdquo; (<a href="#blum_2023" id="citation_blum_2023_67dc990616c7c">2023</a>, 111).</div><div id="fndiv31" class="flyoverdiv">This explanation is a bit oversimplified; while <i>ta-ka-ṭa</i> is indeed performed with the timbre sequence <i>tat-dit-dit</i>, the two <i>dit</i> strokes are performed with different hand motions (<a href="#peiris_2020" id="citation_peiris_2020_67dc990616c7e">Peiris 2020</a>, 67&ndash;69).</div><div id="fndiv32" class="flyoverdiv">For a discussion on the various types of theorizing recognized by ethnomusicologists, see Blum (<a href="#blum_2023" id="citation_blum_2023_67dc990616c80">2023</a>, 52&ndash;59).</div><div id="fndiv33" class="flyoverdiv">A similar process of interpreting versions of the seed syllables as primary drum strokes happens in the non-lexical stanzas that follow the <i>upat kavi</i> verses. For example, since Origin Verse 4 (Paragraph 6.4) is about the stroke <i>tat</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>ta</i> or <i>tā</i> (underlined in the transliteration); these syllables would be interpreted on the drum with a <i>tat</i> stroke. Since Origin Verse 5 (Paragraph 6.5) is about the stroke <i>dit (jit)</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>d</i> or <i>j</i>; these syllables would be interpreted on the drum with a <i>dit</i> stroke (underlined in the transliteration). Since Origin Verse 6 (Paragraph 6.6) is about the stroke <i>tom</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>to</i> or <i>tō</i>; these syllables would be interpreted on the drum with a <i>toṃ</i> stroke (underlined in the transliteration). Since Origin Verse 7 (Paragraph 6.7) is about the stroke <i>naṃ</i>, many of its vocable phrases for reciting (including the initial and final syllables) begin with <i>na</i>; these syllables would be interpreted on the drum with a <i>naṃ</i> stroke (underlined in the transliteration).</div><div id="fndiv34" class="flyoverdiv">As I have described elsewhere (<a href="#peiris_2022" id="citation_peiris_2022_67dc990616c82">Peiris 2022</a>, 4&ndash;6) in terms of &ldquo;drumming as surrogate speech,&rdquo; a subset of these same musicians used these same techniques when performing a different type of piece (known as &ldquo;<i>tālama</i>&rdquo;) at a different <i>Bera Pōya Hēvisi</i> ritual.</div><div id="fndiv35" class="flyoverdiv">As Blum argues, &ldquo;All humans theorize as we reflect on relationships we perceive or imagine in our various worlds and compare alternate courses of action, remembering or imagining their distinctive features and possible uses, and weighing possible reasons for unsatisfactory performances. We are theorizing when we analyze parts of a whole and reflect on their interrelations, when we recognize analogies or resemblances and ponder their implications, and when we evaluate new possibilities as ecological and social conditions change&rdquo; (<a href="#blum_2023" id="citation_blum_2023_67dc990616c83">2023</a>, 1).</div><div id="fndiv36" class="flyoverdiv">In these <i>upat kavi</i>, I have bolded the syllables belonging to the same rhyming class, to draw attention to the sonic patterning of assonance within the poetic meter. As detailed in endnote 33, I have underlined the vocables that would be interpreted on the drum using the seed syllable with the same (or similar) name.</div><div id="fndiv37" class="flyoverdiv">In the chronicle <i>Mahavaṃsa</i>, Maha Sammata is the primordial king of the universe.</div><div id="fndiv38" class="flyoverdiv"><i>Varna</i> in Sinhala usually refers to colors, but &ldquo;timbres&rdquo; makes sense to me in this context.</div><div id="fndiv39" class="flyoverdiv">Following the end of each line of <i>bera pada</i>, the rhythm/timbral pattern of the vocables is imitated on the drum.</div><div id="fndiv40" class="flyoverdiv">Double-headed cylindrical drum.</div><div id="fndiv41" class="flyoverdiv">Small quadruple-reed shawm.</div><div id="fndiv42" class="flyoverdiv">Larger shawm.</div><div id="fndiv43" class="flyoverdiv">Hour-glass shaped variable-tension drum.</div>
+     
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+  <hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2024 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+     
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+  	
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Aidan Brych, Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		897		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

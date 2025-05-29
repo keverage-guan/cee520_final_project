@@ -1,0 +1,919 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 13.1: Neidh&ouml;fer, Bruno Maderna&rsquo;s Serial Arrays</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Bruno Maderna&rsquo;s Serial Arrays">
+
+    <meta name="citation_author" content="Neidh&ouml;fer, Christoph">
+      
+
+<meta name="citation_publication_date" content="2007/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="13">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Bruno Maderna&rsquo;s Serial Arrays
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.07.13.1/mto.07.13.1.neidh&ouml;fer.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Christoph Neidh&ouml;fer</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: integral serialism, array, matrix, twelve-tone, compositional process, filter technique, magic square, Latin square, Maderna, Nono, <i>Improvvisazione N. 1,</i> <i>Musica su due dimensioni</i>, <i>Serenata N. 2</i>, Darmstadt</font></p><p><font size='4'>ABSTRACT: A central figure at the Darmstadt Summer Courses for New Music in the 1950s, Bruno Maderna (1920&#8211;73) pioneered a type of serialism that was as deeply rooted in the contrapuntal tradition of the past, as it was committed to the exploration of new avenues in musical expression. This article investigates the serial arrays that lie at the core of his works written between 1951 and 1956. The constructive principles behind Maderna&#8217;s tone rows are explained, as are the ways in which he subjected them to order permutations that he represented graphically in matrices, tabulating order positions and pitch-class space. The article further examines how Maderna&#8217;s matrices served as the source for his rhythmic language. With evidence from the sketch materials and other sources, the analyses show how Maderna designed his serial arrays in response to what he considered to have been the shortcomings of the twelve-tone technique.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.07.13.1/mto.07.13.1.neidhofer.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.07.13.1/neidhofer_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received February 2007</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 13, Number 1, March 2007 <br> Copyright &#0169; 2007 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] A central figure of the post-war generation of young Italian serial composers, Bruno Maderna (1920&#8211;73) championed a musical aesthetic that was as deeply rooted in the past as it was committed to the exploration of new compositional techniques and new avenues in musical expression. Closely affiliated with the Darmstadt Summer Courses for New Music since 1949, Maderna held the modernist view that music follows a continuous historical development and hence there could be no return to older musical styles. &#8220;Music is a continuous movement like human life,&#8221; he explained in a lecture he wrote in 1953&#8211;54, rejecting neo-classicism, neo-romanticism, and other &#8220;neo&#8221; aesthetics as being too limited in their narrow, na&iuml;ve views of earlier music, and as lacking involvement with the present.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  
+&#8220;But these images [of earlier musical periods],&#8221; he continued, &#8220;are precisely only images and not a general reconsideration of music as human expression.&#8221;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  Instead, Maderna called for the exploration of new compositional techniques and expressive means in a progressive musical language that assimilated elements of the old in the new. 
+
+ 
+
+<p>[2] Maderna strongly believed that musical expression should be grounded in structural frameworks that in some way reflected life in its continuous development and mutation.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>He found serial techniques to serve him best in this regard: a chosen material&#8212;a pitch-class series, a series of durations, etc.&#8212;could be transformed by way of serial permutations, usually to the extent that the original version of the material was no longer recognizable. To this end Maderna developed a rich palette of compositional strategies, quickly moving beyond the basic twelve-tone operations employed by the composers of the Second Viennese School and their followers. In addition, he gradually extended serial principles to a number of musical dimensions (such as rhythm, pitch register, and orchestration), and developed his own version of integral serialism. 
+
+ 
+
+<p>[3] This article examines Maderna&#8217;s serial techniques from the period 1951&#8211;56, during which time his compositional language reached its first maturity. Focusing on excerpts from three central works from the period&#8212;<i>Improvvisazione N. 1 
+</i>(1951&#8211;52), <i>Musica su due dimensioni </i>(1952), and <i>Serenata N. 2</i> (1953&#8211;54, rev. 56)&#8212;the article investigates the serial arrays that lie at the core of Maderna&#8217;s 
+compositional procedures. The arrays will be studied in the context of the 
+compositional process, as documented in his sketch materials.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>
+Maderna&#8217;s sketches provide us with a clear picture of his compositional strategies, although not every stage of the creative process is documented.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Serial features in <i>Improvvisazione N. 1</i>, <i>Musica su due dimensioni</i>, and <i>Serenata N. 2 </i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="neidhofer_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+	<p>[4] <b>Example 1</b> itemizes in the top row the serial features commonly found in Maderna&#8217;s music from the period. The entries below each heading identify serial devices employed in each of the three works discussed in this article. The shaded fields highlight materials that will be analyzed in the examples to follow. As we shall see, Maderna generally constructed his serial materials in the order listed from left to right, without using every serial device in every work. At the bottom of the example I have marked the distinct stages of the compositional process, which generally unfolded as follows: 
+
+ 
+
+<blockquote>
+	<p>Stage 1) Maderna first designed one or several pitch series, twelve-tone or otherwise.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Some series were constructed from the two sizes of a (non-perfect) diatonic interval (e.g., series built from a succession of major and minor seconds). 
+	<p>Stage 2) The order of the pitch classes in the series was then permuted, represented graphically in a succession of matrices, as discussed shortly. The permutations were guided by numeric values taken from a number table, often a magic or Latin square. 
+	<p>Stage 3) Rhythmic values were assigned to the pitch-class materials following serial principles. Those principles may or may not have been related to the serial permutations in the pitch-class domain. 
+	<p>Stage 4) Starting in 1953&#8211;54, Maderna often fed the pitch-class and rhythmic materials through filters, canceling some of these materials. 
+	<p>Stages 5) and 6) During the final scoring process Maderna frequently 
+	determined pitch register and orchestration via serial principles as well.
+
+</blockquote>
+<p style="text-align: center"><b>Definition and Notation of Maderna&#8217;s Serial Arrays</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Types&nbsp;of&nbsp;serial&nbsp;arrays</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="neidhofer_ex2a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[5] Following Morris 1987, we shall define an array as &#8220;a two-dimensional arrangement of rows and columns which intersect in positions.&#8221;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> 
+The positions may contain numerical values or other designated symbols. Numerical values may be defined as musical objects or may be used for the serial transformations of such objects. Although mathematicians make no strict distinction between &#8220;array&#8221; and &#8220;matrix,&#8221; we shall presently reserve the latter term for a specific notation that tabulates pitch-class successions in a time-point grid, in distinction to other kinds of arrays.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> <b>Example 2</b> provides an overview of the types of serial arrays found in the works discussed in this article. 
+</p>
+<p>[6] Example 2a illustrates the notation of Maderna&#8217;s common pitch-class array. We shall call this type of array 
+<i>matrix</i>.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> Each of the twelve rows of the matrix represents one pitch class, with 1 = A, 2 = B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">,<nobr> . . . </nobr>12 = G<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">. The twelve columns project a succession of time points, read chronologically from left to right. Maderna represents a twelve-tone series or any other type of (ordered or partially ordered) set by placing dots in the corresponding positions of the matrix. The succession of dots connected with straight lines in the example, read from left to right, defines the twelve-tone series used in 
+<i>Improvvisazione N. 1</i> (B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">&ndash;A&ndash;D&ndash;F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">&ndash;C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">&ndash;C&ndash;F&ndash;E&ndash;B&ndash;E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">&ndash;A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">&ndash;G), to be discussed below. Maderna&#8217;s matrices are not always squares; they could use fewer than twelve pitch classes, and a larger or smaller number of time points. In addition, each row and column could contain more than one dot or none at all (if, for example, the succession omits or duplicates any pitch classes). 
+</p>
+	<p>[7] The content of Example 2a could also be represented in a one-dimensional array, as shown in Example 2b. Each position contains one pitch class; the array defines the exact order of the pitch classes in the twelve-tone series. The representation, as such never used by Maderna, simply translates ordinary staff notation into letter notation (compare with Example 3 below). The distinction between Examples 2a and b&#8212;both of which tabulate the same twelve-tone series&#8212;is conceptually significant, however. Example 2a assigns the individual members of the series to twelve different
+<i>lynes</i>, whereas Example 2b represents the series in one single <i>lyne</i>.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> As we shall see, Maderna may realize different lynes with different instruments. 
+
+ 
+
+<p>[8] The entries in an array can also tabulate pitches, rather than pitch classes, as shown in the one-dimensional array of Example 2c (compare with Example 8 below). Example 2d shows another one-dimensional array that contains empty positions as well as positions filled with single pitch classes or unordered pitch-class sets. As we shall see, this array is derived from the matrix of Example 2a by way of an elaborate permutation procedure (to be discussed in Examples 4&#8211;6 below). 
+
+ 
+
+<p>[9] Example 2e illustrates another type of array. The individual letters in the 12&#215;12 grid can be assigned specific pitch classes, or they could be substituted by numbers to be interpreted as rhythmic values or to be used for serial permutations. Often, as here, such arrays form Latin squares: all rows and columns (and in the present case also both main diagonals) contain each of n letters (or numbers) exactly once. Maderna also uses magic squares, defined as grids of size n&#215;n, whose cells hold values 1 to n<sup>2</sup> such that the rows, columns, and main diagonals add up to the same sum. In addition, he may also use rectangular arrays or other types of squares that are not magic or Latin squares. We shall now examine the construction of Maderna&#8217;s serial arrays and their compositional realizations for each of the three works in turn.
+
+<p style="text-align: center"><b><i>Improvvisazione N. 1</i> (1951&#8211;52)</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. <i>Improvvisazione N. 1</i>, twelve-tone series (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="neidhofer_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+						
+<p>[10] <b>Example 3</b> transcribes Maderna&#8217;s sketch for the twelve-tone series 
+used in this work for orchestra.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> 
+The twelve pitches of the series are labeled A through N, with the first 
+trichord, central hexachord, and last trichord bracketed.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Below the series Maderna analyzes the succession of intervals, identified by their diatonic labels (&#8220;2-&#8221; = minor second, &#8220;5&#8221; = perfect fifth, &#8220;3+&#8221; = major third). The purpose of Maderna&#8217;s labels is to show that the intervals form a palindrome, illustrated by the brackets below. Since the intervals that appear in symmetrical order positions in the pitch series (i.e. the first and last interval, the second and penultimate interval, etc.) have the same size 
+<i>and</i> direction, the series is retrograde-inversionally symmetrical. While the retrograde-inversional symmetry pertains to the series as a 
+<i>pitch</i>-<i>class</i> series, that symmetry is also clearly visible (and audible) in the actual 
+<i>pitch</i> representation of Maderna&#8217;s sketch. As we shall see again 
+						later, Maderna always thinks of a series 
+						initially as a succession of pitches, 
+						rather than as a sequence of abstract pitch classes. 
+						This is also evident from Maderna&#8217;s listing of all 
+						the pitches in ascending order on the right of Example 
+						3. Since the series in its pitch representation is retrograde-inversionally 
+symmetrical, the registral distribution of the pitches is inversionally 
+symmetrical. This is shown by Maderna&#8217;s interval labels on the right margin: the pitch collection projects a major second (&#8220;2+&#8221;) at the bottom and top, and minor seconds in between. As demonstrated below, Maderna will later map the series onto other symmetrical registers as well, exploiting their properties in his orchestration.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. <i>Improvvisazione N. 1</i>, matrices 1&ndash;12&nbsp; (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="neidhofer_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[11] At the next stage of the compositional process Maderna subjects the twelve-tone series to a process of order permutation, using a technique he developed in 1949.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> As can be seen in the transcribed sketch of <b>Example 4</b>, Maderna represents the twelve-tone series and its permutations in a series of matrices. The first of these is the one from Example 2a above, with an additional three dots that are not connected by straight lines (to which we shall return later). All dots represent pitch classes, rather than pitches. Since the series is its own retrograde-inversion under RI<sub>D</sub><sup>D#</sup> and since D/D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop"> also lie midway in the vertical arrangement of the pitch classes in the matrix (6 = D, 7 = D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">), the retrograde-inversional symmetry of the series produces an RI-symmetrical picture.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup>  The lower case letters to the very left of the first matrix indicate the order of entry of the twelve pitch classes: &#8220;a&#8221; next to 2 means that 2 (B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">) is the first pitch class of the series, &#8220;b&#8221; next to 1 means that 1 (A) is the second pitch class, etc. </p>
+
+	<p>[12] Following their first appearance in the series, the dots are shifted horizontally to the right into the following matrices. Each dot is moved an individual number of positions, with the result that the overall order of the pitch classes is permuted. As Maderna&#8217;s connecting lines between dots in the second and following matrices illustrate, completely new graphic shapes, and hence completely new pitch-class successions arise. These successions no longer relate to the original series via any of the canonic twelve-tone operations.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> Whereas the original series in the first matrix has a dot in every column, in the following matrices some columns remain empty while others contain more than one dot. In Maderna&#8217;s transformational procedure each dot of the original series in the first matrix is moved twelve times, each time 
+<i>skipping</i> a certain number of order positions (columns). </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. <i>Improvvisazione N. 1</i>, number square (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="neidhofer_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+				<p>[13] The number values for the skips are taken from another array, the number square transcribed in <b>Example 5</b>. Each row, column, and diagonal contains values 5 and 14 twice each and 6, 8, 9, 10, 11, 12, 13, and 25 once.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Maderna marks with arrows the twelve paths chosen for the serial transformations in Example 4. For instance, arrow &#8220;a&#8221; in Example 5 selects the diagonal that runs from the top left to the bottom right, with values 14, 14, 5, 11, etc. These values determine the shifts for the dots in the second row (marked &#8220;a&#8221;) of the matrices in Example 4. The first dot in this row, in the first column of matrix 1, is initially shifted to the right by skipping over 14 columns, ending up in column 4 of matrix 2. It is then shifted by skipping over another 14 columns, ending up in column 7 of matrix 3, and so forth. Arrow &#8220;b&#8221; in Example 5 selects the diagonal that runs from the top right to the bottom left. Its succession of numbers determines the shifts for the dots in the top row (&#8220;b&#8221;) of the matrices in Example 4. And so forth for the remaining ten rows of the matrices. </p>
+
+<p>[14] While each dot of the original series is shifted the same number of times (twelve times), the identity of the original series is completely obliterated after its first appearance. The original series will eventually resurface in its original form, however: since the numbers in each row, column, and diagonal of the number square in Example 5 add up to the same sum (132), the thirteenth dot in each row of the matrices will occur exactly 144 positions after its first appearance in the series of the first matrix (132 positions skipped plus the 12 positions occupied by the dots). Thus the thirteenth dots in all rows taken together will reproduce the original series. This takes place twelve full matrices after the first statement of the series (after 144 positions = 12 matrices), that is, in the thirteenth matrix, which Maderna elides with the first. The original series in the first matrix is thus doubly accounted for, starting and closing the permutation cycle.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. <i>Improvvisazione N. 1</i>, matrix 11 in staff notation (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="neidhofer_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. <i>Improvvisazione N. 1</i>, measures 36&ndash;39, final version</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="neidhofer_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. <i>Improvvisazione N. 1</i>, register plan for measures 36&#8211;39 (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="neidhofer_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+					<p>[15] Next in the compositional process Maderna transcribes the content of all matrices into staff notation. <b>Example 6</b> excerpts his transcription of the eleventh matrix.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> The twelve successive events correspond to the twelve columns of the matrix. Each pitch class is shown by a stemless note-head. Each empty column from the matrix is represented by a quarter rest. This material is realized in measures 36&#8211;39 of the final version, the beginning of the waltz section shown in <b>Example 7</b>.
+
+					<p>
+					[16] Maderna translates each order position of Example 6 into an eighth note in Example 7 for a total of four measures of 3/8. The points of attack are thus determined directly by the serial permutations in the matrix. The durations of the individual pitches are also read directly off the matrix: every pitch class is assigned the duration of an eighth note unless it recurs again later in the matrix, in which case it will be sustained until its second appearance. This is the case for E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"><sub>5</sub>/F<sub>5</sub> (oboes) and B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"><sub>3</sub> (trombone).<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> Of these, E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"><sub>5</sub> is the only pitch that is reattacked, and the only one to enter after the onset of the time point, on the last sixteenth of measure 39. The four measures of the excerpt now form a single phrase with three pitches sustained and the strings and flute adding short two-note gestures.
+</p>
+					<p>
+
+					[17] How, then, does Maderna assign pitch register and orchestration? The sketch transcribed in <b>Example 8</b> illustrates. On the left, Maderna takes the original twelve-tone series from Example 3 and inverts its contour. The succession of pitch classes is preserved, but the directed pitch intervals of the original series are replaced in Example 8 by their complements within the octave, moving in the opposite direction. The first descending minor second in Example 3 becomes an ascending major seventh in Example 8, and so forth. Since not only the pitch-class succession but also the contour of the original pitch series (Example 3) is RI-symmetrical, the derived version in Example 8 also projects an RI-symmetrical contour. This new version defines a new pitch collection that is itself again inversionally symmetrical, as illustrated by Maderna&#8217;s intervallic analysis on the right (&#8220;3-&#8221; = minor third, &#8220;4&#8221; = perfect fourth, etc.). This new pitch collection now serves as a template for the waltz phrase in Example 7; the pitch-class material obtained from matrix 11 (Example 6) is assigned to the registers of Example 8. Not all twelve pitches of Example 8 are sounded in Example 7 because matrix 11 does not contain all twelve pitch classes.</p>
+
+			<p>[18] Maderna&#8217;s beams in Example 8 partition the series into four distinct registral segments. The highest and lowest four pitches are each grouped together; the four pitches in the middle range are divided into two adjacent dyads, D<sub>5</sub>&ndash;C<sub>5</sub> and F<sub>5</sub>&ndash;E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"><sub>5</sub>. As a result, the partitioning of the series is symmetrical. As indicated by the added instrument labels (in square brackets), Maderna assigns the highest and lowest four pitches to the strings, with the addition of trombone in the lowest group, and the two dyads in the central register to the woodwinds (flute and oboe respectively).<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> 
+The orchestration reflects the serial symmetry of the pitch collection.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> </p>
+
+ 
+
+<p>[19] As this brief analysis of the compositional process for an excerpt from
+<i>Improvvisazione N. 1 </i>shows, Maderna abandons the traditional twelve-tone operations&#8212;which preserve the intervals of a series under transposition, inversion, retrogradation, or any combination thereof&#8212;in favor of a new technique of serial permutation that completely obliterates the identity of the original series. Maderna&#8217;s musical language thus shares with the twelve-tone music of his predecessors the unifying element of a series while creating a musical surface that avoids repetition at all costs. In addition, Maderna&#8217;s serial array leads to a new concept of counterpoint and harmony. Harmony no longer results from a superposition of different contrapuntal layers (such as when several series unfold simultaneously) or from a verticalization of segments from a series. Rather, harmony arises directly from the serial permutations themselves: in Example 4, the permutation (horizontal shifting) of the dots (pitch classes) assigns them to specific columns in specific matrices. The permutation is an operation on the order positions occupied by each pitch class, with each being shifted following a unique pattern of displacement (no two pitch classes are shifted the same number of positions in the same order). A simultaneity arises when different pitch classes occur in the same column. The number of pitch classes per column fluctuates greatly. The matrices do not suggest a specific number of contrapuntal voices. Rather, the counterpoint we hear in 
+<i>Improvvisazione N. 1</i> is an <i>interpretation</i> of the matrices; by associating certain pitch classes with each other through register and orchestration&#8212;themselves based on serial permutation (contour inversion of the original pitch series)&#8212;Maderna creates a texture with clearly articulated, distinct instrumental voices. 
+
+ 
+
+<p>[20] <i>Improvvisazione N. 1 </i>is one of the earliest works to use the permutation technique illustrated thus far. In the compositions to follow Maderna expands the technique in conjunction with a number of other features, including 
+
+ 
+
+<ol>
+	<li><i>multiple series:</i> a work may use more than one series. Often, the different series are developed from a small pool of intervals, as discussed below in an early draft for 
+	<i>Musica su due dimensioni.</i></li>
+	<li><i>other kinds of number tables:</i> in addition to Latin squares of size 12&#215;12, Maderna uses number tables of various other types and dimensions (such as a magic square of size 9&#215;9 in S<i>erenata N. 2</i> and a number table of size 12&#215;16 in 
+	<i>Musica su due dimensioni,</i> discussed below). 
+
+ 
+	<li><i>more elaborate rhythmic schemes</i>: instead of assigning the same basic note value to every column (time point) of a matrix, Maderna may choose more complex rhythmic materials, themselves often subjected to serial permutations.
+
+
+ 
+	<li><i>filter technique:</i> filters serve to adjust the pitch-class and rhythmic structure by shortening or eliminating individual pitch classes or by breaking longer note values into shorter ones (such as in<i> Serenata N. 2</i>). 
+
+ 
+</ol>
+
+	<p>[21] These features present Maderna with a wide variety of choices, allowing him to control the outcome of his serial machinery with a great deal of flexibility, as we shall see in the following excerpts from <i>Musica su due dimensioni </i>and <i>Serenata N. 2.</i> </p>
+
+<p style="text-align: center"><b><i>Musica su due dimensioni </i>(1952)</b></p>
+
+	<p>[22] <i>Musica su due dimensioni</i> (1952) for flute, cymbal, and tape is Maderna&#8217;s first electro-acoustic work and one of the first works ever to pair acoustic instruments with a prerecorded tape part.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> A second, completely different work for flute and tape with the same title dates from 1958.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup>  As is evident from the sketch materials and Maderna&#8217;s correspondence, 
+	<i>Musica su due dimensioni </i>(1952) had originally been planned as a large-scale work that included a number of other instruments as well, but its forces were reduced for reasons of time and practicality.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> As a result, only some of the preparatory materials documented in the sketches found their way into the final version of the work. Unlike
+	<i>Improvvisazione N. 1</i>, <i>Musica su due dimensioni</i> uses several twelve-tone series, each generated from a predetermined pool of intervals. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. <i>Musica su due dimensioni, </i>construction of four twelve-tone series A-D (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="neidhofer_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. <i>Musica su due dimensioni,</i> the six permutations of three interlocking interval successions (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="neidhofer_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. <i>Musica su due dimensioni,</i> series [a] and three derivations [b]-[d] (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="neidhofer_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+ 
+<p>[23] The sketch transcribed in <b>Example 9</b> shows how Maderna creates a set of four series, labeled in the lower part A through D, each of which uses only two kinds of melodic intervals, ascending or descending. Series A, for instance, is generated from ascending and descending major and minor sixths exclusively. Each of the four series A-D is thus derived from a pool of four directed intervals. Each pool of intervals is in turn selected from the nine-tone row listed at the top. This row establishes a melodic pattern that uses each of the two sizes of the non-perfect diatonic intervals smaller than an octave exactly once, that is, a major and minor sixth, second, third, and seventh once each. The ordered trichords formed by successive intervals of the same diatonic type&#8212;that is, the three pitches projecting successive sixths, the three pitches forming successive seconds, etc.&#8212;are then integrated in the four series A through D below. For instance, the first three pitches of the nine-note row at the top provide the fourth through sixth pitches of series A. And so forth&#8212;with octave transpositions&#8212;for series B, C, and D.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup></p>
+
+					<p >[24] Evidently, series A through D are intended to be twelve-tone. But as it turns out, series A does not fulfill this requirement as it contains both G<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop"> and A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">, omitting E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">. To the right, on the second staff, Maderna fixes the problem by constructing another series, changing the distribution of major and minor sixths. This series is now twelve-tone, marked &#8220;Buono.&#8221; The sketch also bears witness to the evocative character of Maderna&#8217;s serial construction. At the top of the sketch, he reflects upon the generative process: &#8220;NASCE LA SERIE &#8211; strani, flebili, dolce funerei richiami &#8211; nella notte&#8221; (the series is born&#8212;strange, faint, soft, mournful calls&#8212;at night).<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> 
+In addition to series A-D Maderna derives a further twelve twelve-tone series from the same pool of intervals, at times including one tritone and a fourth and/or fifth. The corresponding sketches (not shown here) are titled &#8220;LA SERIE SI SVILUPPA&#8221; and &#8220;SERIE SVILUPP. al rovescio&#8221; (the series develops / series developing in reverse). The original nine-note row at the top of Example 9 thus serves as the generator for sixteen twelve-tone series. Unlike what we have seen in 
+<i>Improvvisazione N. 1</i>, these series are not subjected to further permutation, however.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> Instead, Maderna develops another series, derived from a different pool of intervals, that is then subjected to his permutation procedure. </p>
+					
+<p>[25] <b>Example 10</b> transcribes the first sketch for this new series, in which Maderna works out the six permutations of three interlocking interval successions.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> The three successions are {2+, 2+, 2+, 2+}, {5, 4, 3-, 2+}, and {4, 3-, 2+, 5}, resulting at [1] in the overall interval pattern {2+, 5, 4, 2+, 4, 3-, 2+, 3-, 2+, 2+, 2+, 5 }. Maderna realizes this pattern as shown at [a] in Example 11, using the intervals&#8212;ascending or descending&#8212;to build a twelve-tone series. The twelfth interval is used as the &#8220;wrap-around.&#8221; Maderna is blessed with considerable luck here: not all of the six interval patterns [1]&#8211;[6] in Example 10 can be realized as twelve-tone series.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> 
+In addition, the directed pitch-class intervals at [a] in <b>Example 11</b> add up to 0 mod12, hence allowing for the wrap-around. Series [b] rotates I<sub>4</sub> of series [a] at order position 9, [c] rotates P<sub>4</sub> of [a] at order position 6, and [d] rotates I<sub>3</sub> of [a] at order position 3.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup> Maderna will only use [a] and [b] further in the compositional process, subjecting each to the kind of order permutation we saw earlier in
+<i>Improvvisazione N. 1</i>. We shall examine the process for series [a] here. </p>
+
+<p>[26] <b>Example 12</b> transcribes the matrices that tabulate the permutations of this series. The series itself appears in the first matrix, represented by the dots connected by straight lines. No sketch survives that documents how Maderna determined the permutations in the following matrices, but the principle is easily reconstructed, as shown in <b>Example 13</b>. Each column of the table lists the values used for the shifts of the pitch class shown at the top. For instance, the first dot in the first matrix of Example 12 (pitch class C), is first moved to the right by skipping over 11 empty positions, then 15, then 9, etc., following the values in the first column of Example 13 (read from top to bottom). And so forth for the remaining pitch classes. </p>
+
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. <i>Musica su due dimensioni, </i>matrices for series [a] (sketch)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=11&nonav=true"><img border="1" alt="Example 12 thumbnail" src="neidhofer_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b>. <i>Musica su due dimensioni,</i> number table (reconstruction)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=12&nonav=true"><img border="1" alt="Example 13 thumbnail" src="neidhofer_ex13_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 14</b>. <i>Musica su due dimensioni,</i> orchestration of matrices 15 and 16 (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=13&nonav=true"><img border="1" alt="Example 14 thumbnail" src="neidhofer_ex14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 15</b>. <i>Musica su due dimensioni, </i>opening (ultimately all performed on the melochord)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=14&nonav=true"><img border="1" alt="Example 15 thumbnail" src="neidhofer_ex15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 16</b>. <i>Musica su due dimensioni,</i> assignment of rhythmic values in measures 1&ndash;17</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=15&nonav=true"><img border="1" alt="Example 16 thumbnail" src="neidhofer_ex16_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[27] The array of Example 13 is not a magic or Latin square. Each row contains a different set of numbers (adding up to various sums). Each column, on the other hand, contains a different arrangement of the same set of 16 values: values 9 and 11 occur four times, value 10 three times, value 12 twice, and values 13, 14, and 15 once each. The sum of all values, for each column, is 176. This means that in Example 12 the permutational procedure will ultimately map the original series in the first matrix onto itself via a wrap-around: each dot of the original series in the first matrix is moved a total of 192 positions to the right (176 positions skipped plus the 16 positions occupied by the dots = 192), that is, a total of 16 matrices (192 = 16*12). The first matrix serves simultaneously as the seventeenth matrix, closing the permutation cycle.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup></p>
+
+<p>[28] Following the transcription of the sixteen matrices in Example 12 into staff notation (not shown here), Maderna separates the pitch-class materials into three discrete instrumental layers. The beginning of the corresponding sketch is transcribed in <b>Example 14</b>. On the top staff, Maderna copies out the content of matrices 16 (retrograde) and 15 (recto). Underneath, he distributes the pitch-class material among three instruments, two acoustic (flute and piano) and one electronic (&#8220;El.&#8221;). The electronic instrument used is the melochord, a keyboard instrument that offers a variety of timbres to be recorded on tape.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> The pitches are distributed over a wide range. The temporal order follows the one given in the matrices; no rhythms are assigned as of yet. </p>
+			
+<p>[29] <b>Example 15</b> transcribes the opening of the unpublished full score in which rhythms, dynamics, and tempo are fully worked out. No sketches survive that document Maderna&#8217;s rhythmic and dynamic choices. The dynamics appear to have been freely chosen. The rhythmic values, on the other hand, follow a pattern in which each pitch class (with the exception of D) always occurs with the same note value. A total of five different values are used, each of which is a multiple of a quarter note, as shown in <b>Example 16</b>.<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup> 
+The pitch material, as orchestrated in Example 14, is realized in Example 15 such that the flute always holds a pitch preceding a general pause until it is reached (the &#8220;general pauses&#8221; are the quarter rests in Example 14, resulting from empty columns in the matrices). The same holds for the melochord (&#8220;El.&#8221;) before the first two general pauses.<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup> The onset of these pitches, and hence of those that precede them, is thus calculated backwards from the general pauses. Overall, Maderna takes the opportunity to turn what could be realized mostly as a single line (see first staff of Example 14) into a texture that projects single pitches as well as simultaneities in Example 15 (via the orchestration of Example 14). Following the second general pause in measure 5 of Example 15, the third &#8220;phrase&#8221; in measures 6 (with pickup) to 9 is realized as a single line of 
+<i>Klangfarbenmelodie</i>, moving from one instrument to another.<sup><a name="FN35REF" href="#FN35" id="footnote35">(35)</a></sup> 
+In the final version of the work, contrary to the instrumentation indicated, the score of Example 15 is performed entirely on the melochord 
+and recorded on tape.<sup><a name="FN36REF" href="#FN36" id="footnote36">(36)</a></sup> </p> 
+
+<p>[30] Maderna&#8217;s work in the studio, first at Werner Meyer-Eppler&#8217;s institute in Bonn in 1952 and later at the 
+<i>Studio di fonologia musicale</i> in Milan (which officially opened in 1955), had a profound impact on his compositional strategies. In 1954 Maderna started to subject his serial arrays to a device often used in the studio: the filter. This tool allowed him to control the outcome of his serial processes more flexibly by readjusting the materials of his arrays. Maderna did this either on an ad hoc basis&#8212;freely shortening or removing materials&#8212;or more formally with the help of further serial procedures, as in the second part of
+<i>Serenata N. 2,</i> to which we shall now turn. </p>
+
+
+<p style="text-align: center"><b><i>Serenata N. 2 </i>(1953&#8211;54/56)</b> </p>
+
+ 
+
+<p>[31] <i>Serenata N. 2,</i> scored for eleven instruments, was premiered in 1954 and revised two years later for its publication by Edizioni Suvini Zerboni.<sup><a name="FN37REF" href="#FN37" id="footnote37">(37)</a></sup> The first part of the work, which we will not discuss here, builds a serial array from an eleven-tone series, omitting pitch class B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"> throughout.<sup><a name="FN38REF" href="#FN38" id="footnote38">(38)</a></sup> The second part is divided into four sections (24, 25, 23, and 39 measures in length), each of which uses a different collection of nine pitch classes.<sup><a name="FN39REF" href="#FN39" id="footnote39">(39)</a></sup> The permutations of the pitch-class and rhythmic materials in each section are determined via different readings of the same two squares, shown in <b>Examples 17</b> and <b>18</b>. </p>
+
+               <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 17</b>. <i>Serenata N. 2,</i> Latin square (sketch)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=16&nonav=true"><img border="1" alt="Example 17 thumbnail" src="neidhofer_ex17_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 18</b>. <i>Serenata N. 2,</i> magic square (sketch)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=17&nonav=true"><img border="1" alt="Example 18 thumbnail" src="neidhofer_ex18_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+ 
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 19</b>. <i>Serenata N. 2</i>, array for measures 183&ndash;207 (reconstruction)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=18&nonav=true"><img border="1" alt="Example 19 thumbnail" src="neidhofer_ex19_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+			<p>[32] Both are of size 9&#215;9. Each row, column, and diagonal of the Latin square in Example 17 contains the first nine letters of the alphabet exactly once, each time in a different permutation. The magic square in Example 18 contains the values 1 through 81 once each, with the values in each row, column, and diagonal adding up to the same sum 369.<sup><a name="FN40REF" href="#FN40" id="footnote40">(40)</a></sup> Maderna uses Example 17 to determine the pitch-class permutations and Example 18 to generate the rhythmic structure of each of the four sections. We shall examine here the compositional process for the second section (measures 183&#8211;207). 
+
+			<p>[33] <b>Example 19</b> identifies the pitch-class and rhythmic content of the array used in this section.<sup><a name="FN41REF" href="#FN41" id="footnote41">(41)</a></sup> 
+Maderna assigns the nine pitch classes (shown in ascending order at the top) to the letters A through I, and enters them into the Latin square of Example 17, rotated 90 degrees counterclockwise.<sup><a name="FN42REF" href="#FN42" id="footnote42">(42)</a></sup> Each row, column, and diagonal of the array in Example 19 contains each of the nine pitch classes exactly once. Each position is then assigned a durational value with the help of the magic square in Example 18. <b>Example 20</b> transcribes the beginning of the corresponding sketch. </p>
+
+                 <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 20</b>. <i>Serenata N. 2,</i> beginning of array for measures 183&#8211;207 realized (sketch)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=19&nonav=true"><img border="1" alt="Example 20 thumbnail" src="neidhofer_ex20_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 21</b>. <i>Serenata N. 2, </i>paths chosen in the magic square of Example 18</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=20&nonav=true"><img border="1" alt="Example 21 thumbnail" src="neidhofer_ex21_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+<p>[34] The nine lynes of the array in Example 19 are notated in Example 20 in score format in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr>. The numerical value added in square brackets underneath each attack shows the duration of the notated pitch (-class), counted in multiples of sixteenth notes.<sup><a name="FN43REF" href="#FN43" id="footnote43">(43)</a></sup> The durational values are taken from the magic square of Example 18, reproduced again in <b>Example 21</b> with the corresponding paths marked.<sup><a name="FN44REF" href="#FN44" id="footnote44">(44)</a></sup> Note that Maderna does not assign the same duration to the same pitch class in Example 20. Rather, for each lyne of Example 20 Maderna selects a different path through the magic square in Example 21.<sup><a name="FN45REF" href="#FN45" id="footnote45">(45)</a></sup> Except for the fifth, the nine paths do not follow straight lines along rows, columns, or diagonals of the square, thereby selecting values that add up to different sums. For this reason, the nine lynes starting together in Example 20 will end at different times later in the sketch (not shown here).<sup><a name="FN46REF" href="#FN46" id="footnote46">(46)</a></sup>&nbsp; 
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 22</b>. <i>Serenata N. 2,</i> filter values for measures 183&#8211;207 (reconstruction)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=21&nonav=true"><img border="1" alt="Example 22 thumbnail" src="neidhofer_ex22_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[35] Unlike the pitch-class arrays (matrices) in  <i>Improvvisazione N. 1</i> and 
+<i>Musica su due dimensioni</i> (Examples 4 and 12), the array of Example 19 has an entry in every field, leaving no room for rests. Hence, the nine lynes in Example 20 are filled with sound at all times. In order to lighten the (still abstract) structure, Maderna sends it through a filter that shortens every sound by the length whose value is indicated above the staff. For instance, the first pitch (-class) in lyne 1, E, is to be shortened at the end by 5 sixteenths, as marked above the staff in the fourth measure. Whereas each notated pitch (-class) in the example (and the rest of the sketch) has a unique duration, between 1 and 81 sixteenths, Maderna uses only nine different values for the filters, as summarized in <b>Example 22</b>.<sup><a name="FN47REF" href="#FN47" id="footnote47">(47)</a></sup><p>[36] The values form a succession of decreasing numbers, skipping over one value at the beginning (12, 10, 9, 8,<nobr> . . . </nobr>3 sixteenths). The values are assigned to the first nine letters of the alphabet as shown. Maderna&#8217;s assignment of the filter values to the pitch classes in each lyne of Example 20 is again guided by the Latin square of Example 17, this time rotated 90 degrees clockwise. The letter in italics following the letter in Roman typeface above each pitch (-class) of Example 20 indicates the filter value applied to the end of that pitch (-class). Reading the letters in italics down the first measure of Example 20 produces the succession of letters in the ninth row of Example 17 (G, B, I, F, etc.); the second letter in italics in each lyne of Example 20, read from the top to bottom (C, D, H, A, etc.) produces the entries in the eighth row of Example 17, and so forth. The Latin square in Example 17, in different rotations, thus guides two aspects of Example 20, the order of the pitch classes and the assignment of the filter values. The time intervals between successive attacks in each lyne (i.e. the note values before they were subjected to the filter), on the other hand, are guided by the magic square in Example 18 (and shown again in Example 21). </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 23</b>. <i>Serenata N. 2,</i> array with rests entered (sketch)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=22&nonav=true"><img border="1" alt="Example 23 thumbnail" src="neidhofer_ex23_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 24</b>. <i>Serenata N. 2,</i> final version, measures 183&#8211;88</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="neidhofer_examples.php?id=23&nonav=true"><img border="1" alt="Example 24 thumbnail" src="neidhofer_ex24_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[37] <b>Example 23</b> transcribes Maderna&#8217;s sketch in which the individual note values have now been adjusted according to the filter values from Example 20. A filter value may be greater than the duration assigned to an individual pitch class, in which case the pitch class is filtered out entirely. This is the case, for instance, at the sixteenth note E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"> in measure 4 of the sixth lyne (Example 20), whose assigned filter value is a dotted eighth. The filter eliminates the pitch altogether (see measure 4 of the sixth lyne in Example 23).<sup><a name="FN48REF" href="#FN48" id="footnote48">(48)</a></sup> The adjusted array of Example 23 now forms the basis for the final version. </p>
+
+ 
+
+<p>[38] Maderna orchestrates the individual entries of Example 23 by circling each pitch class with one of three colors, indicated in my transcription with solid horizontal brackets (pitch classes circled in black pencil in the original), dotted brackets (pitch classes circled in red pencil), and with unbracketed pitch classes (circled in blue pencil in the original). The pitch classes circled in black pencil (solid brackets) are assigned to the wind instruments, those circled in red and blue pencil to the strings, harp, and piano.<sup><a name="FN49REF" href="#FN49" id="footnote49">(49)</a></sup> <b>Example 24</b> reproduces the final score of the beginning of this section (measures 183&#8211;88). </p>
+
+
+<p>[39] The excerpt fixes each of the nine pitch classes in register.<sup><a name="FN50REF" href="#FN50" id="footnote50">(50)</a></sup> 
+In the first measure (measure 183), the nine lynes from the array of Example 23 are distributed among the five wind instruments. The flute and clarinets realize several lynes each (Example 24), filtering them further by moving back and forth between them in a kind of compound melody. The resulting arpeggiations give the passage a rhythmic profile not guided by serial principles: the arpeggiations occur within the total time spans assigned (serially) to the pitches, but reattack them freely. In general, the superimposed arpeggiations subdivide the quarter or half beat differently. Since in addition the onset of a new event can fall on any sixteenth within the beat, one no longer hears a clearly articulated meter.</p>
+												
+<p style="text-align: center"><b>Conclusion</b></p>
+
+<p>[40] The foregoing analyses highlight the central role Maderna&#8217;s serial arrays played in the creative process. But, as is clear from annotations in the sketches (such as in Example 9) and from his comments on his compositional technique in the lecture mentioned at the beginning of this article, his arrays also have meaning beyond mere practical concerns. In Maderna&#8217;s view, the continuous permutation of pitch-class and rhythmic materials is a reflection of life itself: 
+
+ 
+
+<blockquote>
+	<p>&#8220;A return [of previous material] has to happen under different 
+	conditions. The voyage of Ulysses is a famous example. It teaches us that 
+	there can be no return, and that life, in its eternal becoming, changes 
+	continually. Hence, why should one not have a technique that resembles the 
+	technique of life in its becoming?&#8221;<sup><a name="FN51REF" href="#FN51" id="footnote51">(51)</a></sup> 
+</blockquote>
+<p>[41] Maderna&#8217;s arrays are a response to, and critique of, the dodecaphony of the Second Viennese School and Luigi Dallapiccola (and hence of his own earlier twelve-tone music): 
+
+ 
+
+<blockquote>
+	<p>&#8220;What I did not like about twelve-tone theory is the principle by which, once a series is given, it has to reappear in its entirety, continuously, vertically and horizontally, for the sake of consistency in the musical discourse.<nobr> . . . </nobr>Slowly but surely I proceeded to the study of serial [per]mutation, 
+	until I succeeded in developing more and more complex and rigorous systems 
+	of mutation.&#8221;<sup><a name="FN52REF" href="#FN52" id="footnote52">(52)</a></sup></blockquote>
+<p>[42] Maderna considers such systems&#8212;his serial arrays&#8212;to be <i>objective</i>. Far from being restrictive, the systems provide him with the structural framework from which individual expression can arise: 
+
+ 
+
+<blockquote>
+	<p>&#8220;It is evident that a composer achieves more, as a creator, through a 
+	synthesis of technique and its application as an expression of his/her own 
+	time. What I personally find very important in Schoenberg is above all 
+	precisely this understanding of the importance of objective technique in 
+	contrast to the individuality of expression.&#8221;<sup><a name="FN53REF" href="#FN53" id="footnote53">(53)</a></sup> 
+</blockquote>
+<p>[43] For Maderna, it is the objective materials and procedures&#8212;matrices, magic and Latin squares, number tables, etc.&#8212;that give rise to musical expression.<sup><a name="FN54REF" href="#FN54" id="footnote54">(54)</a></sup> 
+But the objective materials have no expressive quality per se. Expression arises only once the materials are compositionally realized. The compositional process entails a dialectic between the &#8220;objectivity&#8221; of the material and the &#8220;subjectivity&#8221; of its realization. The material is objective in the sense that the principles behind the pitch-class permutations, rhythmic transformations, register plans, etc. are independently verifiable. Their elaboration is subjective, in that beyond the serial processes the composer&#8217;s choices are not bound by specific rules. 
+
+ 
+
+<p>[44] Theodor W. Adorno voiced concern over the extension of serial principles 
+to an increasing number of musical dimensions, because he believed that the 
+objective side would take over the subjective one.<sup><a name="FN55REF" href="#FN55" id="footnote55">(55)</a></sup> 
+Adorno&#8217;s assessment stands in stark contrast to what Maderna (and other Darmstadt composers) believed and experienced. As Maderna put it in 1965,   
+
+ 
+
+<blockquote>
+	<p>&#8220;I have my own grammatical system. It arises from the principle of serialism and is sufficiently flexible. Above all it is sufficiently 
+	<i>abstract</i> to allow me complete freedom in realizing my musical imagination&#8212;which is not at all abstract&#8212;in a thousand ways.&#8221;<sup><a name="FN56REF" href="#FN56" id="footnote56">(56)</a></sup></blockquote>
+<p>[45] As the above analyses of the generative process have shown, the dialectic between compositional objectivity and subjectivity not only pertains to the commitment to serial mechanisms, on one hand, and the freedom of choice during their compositional realization, on the other, but also enters the construction of the serial machinery itself. The serial mechanisms are objective&#8212;because they are independently verifiable&#8212;but the 
+<i>choice</i> of the particular mechanisms and of the basic materials they elaborate (such as the pitch-class series, rhythmic values, etc.) is subjective, because they are freely selected. All in all, subjective choices lead to, and interact with, objective procedures throughout the creative process.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Christoph Neidh&ouml;fer<br>
+	McGill University<br>Schulich School of Music, Department of Theory<br>555 Sherbrooke Street West<br>Montreal, Quebec H3A 1E3 CANADA<br><a href="mailto:christoph.neidhofer@mcgill.ca">christoph.neidhofer@mcgill.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_adorno_1964-1966" class="flyoverdiv">Adorno, Theodor W. 1964/1966. &#8220;Difficulties.&#8221; In <i>Essays on Music. </i>Selected, with Introduction, Commentary, and Notes by Richard Leppert, new translations by Susan H. Gillespie. Berkeley and Los Angeles: University of California Press, 2002, 644&#8211;79.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adorno_1964-1966"></a>Adorno, Theodor W. 1964/1966. &#8220;Difficulties.&#8221; In <i>Essays on Music. </i>Selected, with Introduction, Commentary, and Notes by Richard Leppert, new translations by Susan H. Gillespie. Berkeley and Los Angeles: University of California Press, 2002, 644&#8211;79.</p><div id="citediv_baroni_and_dalmonte_1985" class="flyoverdiv">Baroni, Mario, and Rossana Dalmonte, editors. 1985. <i>Bruno Maderna documenti. </i>Milan: Edizioni Suvini Zerboni.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="baroni_and_dalmonte_1985"></a>Baroni, Mario, and Rossana Dalmonte, editors. 1985. <i>Bruno Maderna documenti. </i>Milan: Edizioni Suvini Zerboni.</p><div id="citediv_berio_1989" class="flyoverdiv">Berio, Luciano. 1989. 
+<i>Studi su Bruno Maderna. </i>Milan: Edizioni Suvini Zerboni.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="berio_1989"></a>Berio, Luciano. 1989. 
+<i>Studi su Bruno Maderna. </i>Milan: Edizioni Suvini Zerboni.</p><div id="citediv_berio_1985" class="flyoverdiv">Berio, Luciano. 1985. 
+<i>Two Interviews with Rossana Dalmonte and B&acute;lint Andr&aacute;s Varga.</i> Translated and edited by David Osmond-Smith. New York and London: Marion Boyars.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="berio_1985"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1985. 
+<i>Two Interviews with Rossana Dalmonte and B&acute;lint Andr&aacute;s Varga.</i> Translated and edited by David Osmond-Smith. New York and London: Marion Boyars.</p><div id="citediv_borio_2004" class="flyoverdiv">Borio, Gianmario. 2004. &#8220;Tempo e ritmo nelle composizioni seriali. 1952&#8211;1956.&#8221; In 
+<i>Le musiche degli anni cinquanta </i>(Archivio Luigi Nono, Studi II, 2003). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 61&#8211;115.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="borio_2004"></a>Borio, Gianmario. 2004. &#8220;Tempo e ritmo nelle composizioni seriali. 1952&#8211;1956.&#8221; In 
+<i>Le musiche degli anni cinquanta </i>(Archivio Luigi Nono, Studi II, 2003). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 61&#8211;115.</p><div id="citediv_borio_1999" class="flyoverdiv">Borio, Gianmario. 1999. &#8220;Sull&#8217;interazione fra lo studio degli schizzi e l&#8217;analisi dell&#8217;opera.&#8221; In 
+<i>La nuova ricerca sull&#8217;opera di Luigi Nono</i> (Archivio Luigi Nono, Studi I). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 1&#8211;21.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="borio_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. &#8220;Sull&#8217;interazione fra lo studio degli schizzi e l&#8217;analisi dell&#8217;opera.&#8221; In 
+<i>La nuova ricerca sull&#8217;opera di Luigi Nono</i> (Archivio Luigi Nono, Studi I). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 1&#8211;21.</p><div id="citediv_borio_1997" class="flyoverdiv">Borio, Gianmario. 1997. &#8220;Kontinuit&auml;t der Moderne? Zur Pr&auml;senz der fr&uuml;hen Neuen Musik in Darmstadt.&#8221; In <i>Im Zenit der Moderne. Die Internationalen Ferienkurse f&uuml;r Neue Musik Darmstadt 1946&#8211;1966.</i> Edited by Gianmario Borio and Hermann Danuser. Vol. 1. Freiburg: Rombach, 141&#8211;283.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="borio_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. &#8220;Kontinuit&auml;t der Moderne? Zur Pr&auml;senz der fr&uuml;hen Neuen Musik in Darmstadt.&#8221; In <i>Im Zenit der Moderne. Die Internationalen Ferienkurse f&uuml;r Neue Musik Darmstadt 1946&#8211;1966.</i> Edited by Gianmario Borio and Hermann Danuser. Vol. 1. Freiburg: Rombach, 141&#8211;283.</p><div id="citediv_brindle_1959" class="flyoverdiv">Brindle, Reginald Smith. 1959. &#8220;Italy.&#8221; <i>The Musical Quarterly</i> 45: 388&#8211;92.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brindle_1959"></a>Brindle, Reginald Smith. 1959. &#8220;Italy.&#8221; <i>The Musical Quarterly</i> 45: 388&#8211;92.</p><div id="citediv_fearn_1990" class="flyoverdiv">Fearn, Raymond. 1990. 
+<i>Bruno Maderna. </i>Chur: Harwood Academic Publishers.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fearn_1990"></a>Fearn, Raymond. 1990. 
+<i>Bruno Maderna. </i>Chur: Harwood Academic Publishers.</p><div id="citediv_fein_2001" class="flyoverdiv">Fein, Markus. 2001. 
+<i>Die musikalische Poetik Bruno Madernas: Zum &#8220;seriellen&#8221; Komponieren zwischen 1951 und 1955. 
+</i>Frankfurt am Main: Peter Lang.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fein_2001"></a>Fein, Markus. 2001. 
+<i>Die musikalische Poetik Bruno Madernas: Zum &#8220;seriellen&#8221; Komponieren zwischen 1951 und 1955. 
+</i>Frankfurt am Main: Peter Lang.</p><div id="citediv_fein_2000" class="flyoverdiv">Fein, Markus. 2000. &#8220;Im Dialog mit dem Material. Anmerkungen zur &#8216;Filtertechnik&#8217; in Bruno Madernas
+<i>Serenata N. 2</i> (1953&#8211;54/56).&#8221; <i>Mitteilungen der Paul Sacher Stiftung</i> 13: 33&#8211;37.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fein_2000"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000. &#8220;Im Dialog mit dem Material. Anmerkungen zur &#8216;Filtertechnik&#8217; in Bruno Madernas
+<i>Serenata N. 2</i> (1953&#8211;54/56).&#8221; <i>Mitteilungen der Paul Sacher Stiftung</i> 13: 33&#8211;37.</p><div id="citediv_ghersi_1988" class="flyoverdiv">Ghersi, Italo. 1988. 
+<i>Matematica dilettevole e curiosa. </i>5th edition. Milan: Hoepli.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ghersi_1988"></a>Ghersi, Italo. 1988. 
+<i>Matematica dilettevole e curiosa. </i>5th edition. Milan: Hoepli.</p><div id="citediv_guerrero_2006" class="flyoverdiv">Guerrero, Jeannie Ma. 2006. &ldquo;<a href= 'http://www.mtosmt.org/issues/mto.06.12.1/mto.06.12.1.guerrero_frames.html'>Serial Intervention in Nono&#8217;s <i>Il canto sospeso.</i></a>&rdquo; <i>Music Theory Online</i> 12.1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guerrero_2006"></a>Guerrero, Jeannie Ma. 2006. &ldquo;<a href= 'http://www.mtosmt.org/issues/mto.06.12.1/mto.06.12.1.guerrero_frames.html'>Serial Intervention in Nono&#8217;s <i>Il canto sospeso.</i></a>&rdquo; <i>Music Theory Online</i> 12.1.</p><div id="citediv_karlen_and_romito_1990" class="flyoverdiv">Karlen, Ren&eacute;, and Maurizio Romito. 1990. 
+<i>Bruno Maderna Musikmanuskripte</i> (Inventare der Paul Sacher Stiftung 6). Winterthur: Amadeus.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="karlen_and_romito_1990"></a>Karlen, Ren&eacute;, and Maurizio Romito. 1990. 
+<i>Bruno Maderna Musikmanuskripte</i> (Inventare der Paul Sacher Stiftung 6). Winterthur: Amadeus.</p><div id="citediv_kassler_1967" class="flyoverdiv">Kassler, Michael. 1967. &#8220;Toward a Theory That Is the Twelve-Note-Class System.&#8221; <i>Perspectives of New Music</i> 5/2: 1&#8211;80.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kassler_1967"></a>Kassler, Michael. 1967. &#8220;Toward a Theory That Is the Twelve-Note-Class System.&#8221; <i>Perspectives of New Music</i> 5/2: 1&#8211;80.</p><div id="citediv_maderna_2001" class="flyoverdiv">Maderna, Bruno. 2001. 
+<i>Musica su due dimensioni  per flauto e nastro magnetico (1952). </i>Edited by Nicola Scaldaferri. Milan: Edizioni Suvini Zerboni.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_2001"></a>Maderna, Bruno. 2001. 
+<i>Musica su due dimensioni  per flauto e nastro magnetico (1952). </i>Edited by Nicola Scaldaferri. Milan: Edizioni Suvini Zerboni.</p><div id="citediv_maderna_1965" class="flyoverdiv">Maderna, Bruno. 1965. &#8220;La r&eacute;volution dans la continuit&eacute;.&#8221;<i>Preuves</i> 15/177: 28&#8211;29.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_1965"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1965. &#8220;La r&eacute;volution dans la continuit&eacute;.&#8221;<i>Preuves</i> 15/177: 28&#8211;29.</p><div id="citediv_maderna_1959" class="flyoverdiv">Maderna, Bruno. 1959. &#8220;Introduzione al concerto del 4. 9. 1959.&#8221; In Baroni and Dalmonte 1985, 85&#8211;86.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_1959"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1959. &#8220;Introduzione al concerto del 4. 9. 1959.&#8221; In Baroni and Dalmonte 1985, 85&#8211;86.</p><div id="citediv_maderna_1957" class="flyoverdiv">Maderna, Bruno. 1957. <i>Serenata N. 2. </i>Milan: Edizioni Suvini Zerboni.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_1957"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1957. <i>Serenata N. 2. </i>Milan: Edizioni Suvini Zerboni.</p><div id="citediv_maderna_1953&#8211;5" class="flyoverdiv">Maderna, Bruno. 1953&#8211;54. [Lecture without title]. Reprinted in Italian with French translation in Verzina 2003, 38&#8211;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_1953&#8211;5"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1953&#8211;54. [Lecture without title]. Reprinted in Italian with French translation in Verzina 2003, 38&#8211;58.</p><div id="citediv_maderna_1952" class="flyoverdiv">Maderna, Bruno. 1952. <i>Improvvisazione N. 1.</i> Milan: Edizioni Suvini Zerboni.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maderna_1952"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1952. <i>Improvvisazione N. 1.</i> Milan: Edizioni Suvini Zerboni.</p><div id="citediv_manzoni_1958" class="flyoverdiv">Manzoni, Giacomo. 1958. &#8220;Bruno Maderna.&#8221; 
+<i>Die Reihe</i> 4: 113&#8211;18.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="manzoni_1958"></a>Manzoni, Giacomo. 1958. &#8220;Bruno Maderna.&#8221; 
+<i>Die Reihe</i> 4: 113&#8211;18.</p><div id="citediv_mead_1994" class="flyoverdiv">Mead, Andrew. 1994. 
+<i>An Introduction to the Music of Milton Babbitt. </i>Princeton: Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mead_1994"></a>Mead, Andrew. 1994. 
+<i>An Introduction to the Music of Milton Babbitt. </i>Princeton: Princeton University Press.</p><div id="citediv_mila_1976" class="flyoverdiv">Mila, Massimo. 1976. 
+<i>Maderna Musicista Europeo. </i>Turin: Giulio Einaudi.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mila_1976"></a>Mila, Massimo. 1976. 
+<i>Maderna Musicista Europeo. </i>Turin: Giulio Einaudi.</p><div id="citediv_montecchi_1989" class="flyoverdiv">Montecchi, Giordano. 1989. &#8220;Il lavoro di precomposizione in Serenata N. 2.&#8221; In Baroni and Dalmonte 1989, 109&#8211;37.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="montecchi_1989"></a>Montecchi, Giordano. 1989. &#8220;Il lavoro di precomposizione in Serenata N. 2.&#8221; In Baroni and Dalmonte 1989, 109&#8211;37.</p><div id="citediv_morris_1987" class="flyoverdiv">Morris, Robert D. 1987. 
+<i>Composition with Pitch-Classes: A Theory of Compositional Design. </i>New Haven and London: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1987"></a>Morris, Robert D. 1987. 
+<i>Composition with Pitch-Classes: A Theory of Compositional Design. </i>New Haven and London: Yale University Press.</p><div id="citediv_nielinger_2006" class="flyoverdiv">Nielinger, Carola. 2006. &#8220;&#8216;The Song Unsung&#8217;: Luigi Nono&#8217;s 
+<i>Il canto sospeso.</i>&#8221; <i>Journal of the Royal Musical Association </i>131/1: 83&#8211;150.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nielinger_2006"></a>Nielinger, Carola. 2006. &#8220;&#8216;The Song Unsung&#8217;: Luigi Nono&#8217;s 
+<i>Il canto sospeso.</i>&#8221; <i>Journal of the Royal Musical Association </i>131/1: 83&#8211;150.</p><div id="citediv_noller_1992" class="flyoverdiv">Noller, Joachim. 1992. &#8220;Musica su due dimensioni e l&#8217;unidimensionalit&agrave; della musica nuova: sul concetto di dimensione e sulla concezione di due dimensioni.&#8221; 
+<i>Quaderni della civica scuola di musica </i>10/21&#8211;22: 65&#8211;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="noller_1992"></a>Noller, Joachim. 1992. &#8220;Musica su due dimensioni e l&#8217;unidimensionalit&agrave; della musica nuova: sul concetto di dimensione e sulla concezione di due dimensioni.&#8221; 
+<i>Quaderni della civica scuola di musica </i>10/21&#8211;22: 65&#8211;69.</p><div id="citediv_rizzardi_2004" class="flyoverdiv">Rizzardi, Veniero. 2004. &#8220;La &#8216;nuova scuola veneziana&#8217;. 1948&#8211;1951.&#8221; In 
+<i>Le musiche degli anni cinquanta </i>(Archivio Luigi Nono, Studi II, 2003). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 1&#8211;59.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rizzardi_2004"></a>Rizzardi, Veniero. 2004. &#8220;La &#8216;nuova scuola veneziana&#8217;. 1948&#8211;1951.&#8221; In 
+<i>Le musiche degli anni cinquanta </i>(Archivio Luigi Nono, Studi II, 2003). Edited by Gianmario Borio, Giovanni Morelli, and Veniero Rizzardi. Florence: Leo S. Olschki, 1&#8211;59.</p><div id="citediv_scaldaferri_2001" class="flyoverdiv">Scaldaferri, Nicola. 2001. &#8220;Introduction.&#8221; In Maderna 2001, vii&#8211;xix.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scaldaferri_2001"></a>Scaldaferri, Nicola. 2001. &#8220;Introduction.&#8221; In Maderna 2001, vii&#8211;xix.</p><div id="citediv_scaldaferri_1997" class="flyoverdiv">Scaldaferri, Nicola. 1997. 
+<i>Musica nel laboratorio elettroacustico. </i>Lucca: LIM.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scaldaferri_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. 
+<i>Musica nel laboratorio elettroacustico. </i>Lucca: LIM.</p><div id="citediv_ungeheuer_1992" class="flyoverdiv">Ungeheuer, Elena. 1992. 
+<i>Wie die elektronische Musik &#8220;erfunden&#8221; wurde<nobr> . . . </nobr>.</i> Mainz: Schott.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ungeheuer_1992"></a>Ungeheuer, Elena. 1992. 
+<i>Wie die elektronische Musik &#8220;erfunden&#8221; wurde<nobr> . . . </nobr>.</i> Mainz: Schott.</p><div id="citediv_verzina_2003" class="flyoverdiv">Verzina, Nicola. 2003. 
+<i>Bruno Maderna. &Eacute;tude historique et critique. </i>Paris: L&#8217;Harmattan.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="verzina_2003"></a>Verzina, Nicola. 2003. 
+<i>Bruno Maderna. &Eacute;tude historique et critique. </i>Paris: L&#8217;Harmattan.</p><div id="citediv_weber_1978" class="flyoverdiv">Weber, Horst. 1978. &#8220;Form und Satztechnik in Bruno Madernas Streichquartett.&#8221; In 
+<i>Die Stellung der italienischen Avantgarde in der Entwicklung der neuen Musik</i> (Symposion des Instituts f&uuml;r Wertungsforschung, Graz 1975), <i>Miscellanea del Cinquantenario. </i>Milan: Edizioni Suvini Zerboni, 206&#8211;15.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="weber_1978"></a>Weber, Horst. 1978. &#8220;Form und Satztechnik in Bruno Madernas Streichquartett.&#8221; In 
+<i>Die Stellung der italienischen Avantgarde in der Entwicklung der neuen Musik</i> (Symposion des Instituts f&uuml;r Wertungsforschung, Graz 1975), <i>Miscellanea del Cinquantenario. </i>Milan: Edizioni Suvini Zerboni, 206&#8211;15.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Earlier versions of this paper were presented at the 2004 Annual Meeting of the Music Theory Society of New York State in Rochester NY and the 2004 Annual Meeting of the Society for Music Theory in Seattle.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Earlier versions of this paper were presented at the 2004 Annual Meeting of the Music Theory Society of New York State in Rochester NY and the 2004 Annual Meeting of the Society for Music Theory in Seattle.</div><p><a name="FN1">1.</a> &#8220;La musica &egrave; un movimento continuo come l&#8217;uomo.&#8221; <a href="#maderna_1953&#8211;5" id="citation_maderna_1953&#8211;5_67dc9b24c800a">Maderna 1953&#8211;5</a>, 38. This lecture, preserved in a typescript without title in the Bruno Maderna Collection of the Paul Sacher Foundation in Basel, Switzerland, was probably never read in public (<a href="#verzina_2003" id="citation_verzina_2003_67dc9b24c800e">Verzina 2003</a>, 36). Translations from Italian and French sources are mine.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> &#8220;Ma queste immagini sono appunto solo immagini e non una rassegna generale della musica come espressione dell&#8217;uomo.&#8221; 
+Ibid.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Ibid., 46.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Maderna&#8217;s sketches are housed in the Bruno Maderna 
+Collection of the Paul Sacher Foundation and (mostly in photocopies) in the 
+Archivio Bruno Maderna at the University of Bologna, Italy. I wish to thank the 
+Paul Sacher Foundation for a research grant that enabled me to study Maderna&#8217;s 
+sketches from the period. My thanks go to Johanna Blask, Carlos Chanf&oacute;n, 
+Isabelle Equilino, Sabine H&auml;nggi-Stampfli, Henrike Hoffmann, Petra Kupfer, Felix 
+Meyer, Ulrich Mosch, Robert Piencikowski, Tina Kilvio T&uuml;scher, and to the 
+Foundation&#8217;s research coordinator, Prof. Hermann Danuser. I also wish to thank 
+the two anonymous reviewers for MTO for their generous comments and suggestions, 
+and Sebastiano Bisciglia for his help with the musical examples. My 
+transcriptions of Maderna&#8217;s sketches are reproduced by kind permission from the 
+Paul Sacher Foundation.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> As will be demonstrated, missing links in the sketch 
+materials can be reconstructed based on a general knowledge of Maderna&#8217;s 
+working methods.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> The two pitch series used in <i>Serenata N. 2 </i>are eleven- and nine-tone. Maderna also used series derived from tonal melodies, as for example in 
+<i>Quattro Lettere</i> (1953), where the series for each movement was taken from one of the four phrases of the partisan song &#8220;Fischia il vento.&#8221; 
+The diatonic series contain pitch repetitions.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> <a href="#morris_1987" id="citation_morris_1987_67dc9b24c8011">Morris 1987</a>, 339.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> For this reason, my use of the term &#8220;matrix&#8221; deviates 
+from <a href="#morris_1987" id="citation_morris_1987_67dc9b24c8013">Morris 1987</a> (339), who reserves the term &#8220;for special two-dimensional 
+tables of numbers.&#8221; For Morris, &#8220;matrices are not usually compositional objects&#8221; 
+(Ibid.).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Maderna&#8217;s student Renzo dall&#8217;Oglio (1925&#8211;2003), in an interview with Gianmario Borio and Veniero Rizzardi in 1994, credits Maderna with the invention of this type of array (non-commercial video recording kept at the Archivio Luigi Nono in Venice). Maderna and his friends summarily called the matrix, the other types of tables discussed below, and the permutation procedures performed in these arrays &#8220;quadrato/quadrati&#8221; (<a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8015">Rizzardi 2004</a>, 33). My choice of the term &#8220;matrix&#8221; follows <a href="#borio_2004" id="citation_borio_2004_67dc9b24c8016">Borio 2004</a>, 109. <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8018">Fein 2001</a> and <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8019">Rizzardi 2004</a> use &#8220;square&#8221; (&#8220;Punktquadrat&#8221; and &#8220;quadrato&#8221; respectively). In her recent study of similar notations and procedures in Luigi Nono&#8217;s 
+<i>Il canto sospeso</i> (1955&#8211;56), Jeannie Guerrero refers to the configuration as &#8220;Position-Grid&#8221; (<a href="#guerrero_2006" id="citation_guerrero_2006_67dc9b24c801b">Guerrero 2006</a>, paragraph 24).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> <i>Lynes</i> are the rows of an array (matrix). The term 
+<i>lyne</i> was first introduced in <a href="#kassler_1967" id="citation_kassler_1967_67dc9b24c801d">Kassler 1967</a>, 14. See also <a href="#mead_1994" id="citation_mead_1994_67dc9b24c801e">Mead 1994</a>, 20 and 31&#8211;34.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> <i>Improvvisazione N. 1</i> was premiered on February 18, 1952 in Hamburg by the Sinfonieorchester des Nordwestdeutschen Rundfunks (NWDR), 
+conducted by the composer.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Note that the Italian alphabet omits J and K. <i>Improvvisazione N. 1 
+</i>is dedicated to Maderna&#8217;s second wife Beata Christina K&ouml;penik. Another notation of the series, not shown here, indicates that Maderna derived the first two pitches from Beata&#8217;s name (&#8220;Be&#8221; = B<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'>, &#8220;A,&#8221; &#8220;T&#8221; = rest, &#8220;A,&#8221; with the rest and second A eventually eliminated). See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8020">Fein 2001</a>, 15.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8022">Rizzardi 2004</a>, 32. This technique was first analyzed in the works of Maderna and Nono in the early 1990s by Gianmario Borio and Veniero Rizzardi, who termed it &#8220;tecnica degli spostamenti&#8221; (<a href="#borio_1999" id="citation_borio_1999_67dc9b24c8023">Borio 1999</a>, 2004, <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8025">Rizzardi 2004</a>). Selected serial charts for 
+<i>Improvvisazione N. 1</i> (including my Examples 2a, 2e, 5, and the first four matrices of Example 4) have been discussed before by Fein (<a href="#fein_2001" id="citation_fein_2001_67dc9b24c8028">2001</a>, 15&#8211;27) and Rizzardi (<a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c802a">2004</a>, 31&#8211;46). 
+<i>Improvvisazione N. 1</i> was likely the second work in which Maderna used the kinds of serial matrices to be discussed. He probably employed them for the first time in
+<i>Studi per il &#8220;Llanto&#8221; di G. Lorca, </i>an unfinished composition for tenor, flute, and guitar, that cannot be dated with certainty. <a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c802b">Fearn 1990</a>, 345, and <a href="#karlen_and_romito_1990" id="citation_karlen_and_romito_1990_67dc9b24c802d">Karlen and Romito 1990</a>, 22, date 
+<i>Studi</i> &#8220;1950&ndash;1952?&#8221;<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> The graphic representation of the series maps onto 
+itself if the matrix is rotated by 180 degrees.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Under transposition, the graphic shape of a given 
+pitch-class series would remain the same, moved up or down in the matrix (and 
+&#8220;wrapped around&#8221; its edges). A pitch-class series is retrograded by mirroring it 
+around a vertical axis of the matrix and inverted by flipping it around a 
+horizontal axis.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Maderna&#8217;s sketch also shows how he assigned 
+number values to letters, which in turn allows for the reconstruction of the 
+original Latin square in Example 2e, itself not preserved in the sketches (A=14, 
+B=14, C=5, D=11, E=25, F=10, G=6, H=9, I=8, L=13, M=5, N=12).<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> The elision accounts for the first two unconnected 
+dots in the first matrix. They are the penultimate dots in their respective rows 
+before &#8220;catching up&#8221; with the original series. The third unconnected dot (in the 
+tenth column of the first matrix) results from the first shift of that pitch 
+class F<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'>.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> The array is the one shown earlier in Example 2d.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> The technique of sustaining a pitch beyond its 
+assigned duration and until its next occurrence in the matrix is featured 
+prominently later in the string parts of the fourth movement from Luigi Nono&#8217;s
+<i>Il canto sospeso</i> (1955&#8211;56). See <a href="#guerrero_2006" id="citation_guerrero_2006_67dc9b24c802f">Guerrero 2006</a>, paragraph 27, and <a href="#nielinger_2006" id="citation_nielinger_2006_67dc9b24c8031">Nielinger 2006</a>, 102.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Maderna&#8217;s sketch transcribed in Example 8 lists a different instrumentation for a different section of the work. I have adjusted that information in the square brackets.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Maderna&#8217;s orchestration assigns each lyne of the eleventh matrix (Example 4) that contains dots to a specific instrument. The flute and first violin play two lynes 
+(pitch classes) each.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> See <a href="#maderna_1959" id="citation_maderna_1959_67dc9b24c8032">Maderna 1959</a>, <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8034">Baroni and Dalmonte 1985</a>, 205, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8035">Scaldaferri 2001</a>, viii. The work was premiered on July 21, 1952 by Severino Gazzelloni (flute) and Romolo Grano (percussion) at the Ferienkurse f&uuml;r Neue Musik in Darmstadt. Maderna produced the tape part with the assistance of Werner Meyer-Eppler at the 
+<i>Institut f&uuml;r Phonetik</i> of the University of Bonn.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> For the history of the work from 1952 see <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8037">Baroni and Dalmonte 1985</a>, 205, Baroni and Dalmonte 1989, 62&#8211;63, <a href="#noller_1992" id="citation_noller_1992_67dc9b24c8038">Noller 1992</a>, 65&#8211;66, <a href="#scaldaferri_1997" id="citation_scaldaferri_1997_67dc9b24c803a">Scaldaferri 1997</a>, 59&#8211;61, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c803b">Scaldaferri 2001</a>, vii&#8211;x.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> <a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c803d">Fearn 1990</a>, 69&#8211;70 and 78&#8211;83, <a href="#noller_1992" id="citation_noller_1992_67dc9b24c803e">Noller 1992</a>, 65&#8211;66, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c803f">Scaldaferri 2001</a>, viii. None of these authors analyzes the sketches.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> The open note-heads in Example 9 appear in red pencil 
+(filled-in) in the original.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Series A (revised) through D use hexachords whose 
+interval vectors are saturated with the interval classes that correspond to the 
+intervals chosen for each series. Series A (revised) and C use hexachord 6-20, 
+the hexachordal set class with the largest content of interval classes 3 and 4 
+(realized as major and minor sixths in series A and major and minor thirds in 
+series C). The hexachords of series B and D belong to set class 6-1, the 
+hexachordal set class with the largest content of interval classes 1 and 2 
+(realized as major and minor seconds in series B and major and minor sevenths in 
+series D). Maderna&#8217;s choice is interesting in light of the fact that other hexachord set classes could have been used as well for the generation of series built from the same kinds of intervals. Maderna&#8217;s choice of 6-20 (<i>Ode to Napoleon</i> hexachord) and 6-1 (chromatic hexachord) was probably motivated by his study of the music of the Second Viennese School. Nono used the series from Schoenberg&#8217;s
+<i>Ode to Napoleon Buonaparte</i> in 1949&#8211;50 in <i>Variazioni canoniche sulla serie dell&#8217;op. 41 di Arnold Sch&ouml;nberg.</i><br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> Following a continuity draft (probably intended for 
+the tape part) that superimposes four series at a time, Maderna abandons this 
+material altogether.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> As before, added information that does not appear in 
+the original sketch is shown in square brackets.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> It is impossible to produce twelve-tone series 
+	with patterns [2], [3], [4], and [6]. For instance, pattern [2] only 
+	produces non-duplicating series of at most eight pitch classes, as 
+	illustrated in the following diagram. All pitch-class successions shown 
+	below the double line (to be read from left to right) end with a pitch-class 
+	duplication, shown in italics. Thus, if we ignore the last entry in each 
+	row, we obtain all possible non-duplicating pitch-class successions that can 
+	be generated with the sequence of intervals from pattern [2] shown above the 
+	double line. &#8220;Ascending&#8221; and &#8220;descending&#8221; intervals are indicated by
+	<img border='0' src='arrow_up.gif' width='10' height='15'> and
+	<img border='0' src='arrow_down.gif' width='10' height='15'> respectively. 
+	The table is exhaustive.</p> <p style='text-align: left'>
+<img border='0' src='footnote_29.gif'><br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> The twelve order positions are counted 0 through 11.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> The dot in the second column of the first matrix not 
+connected by lines spills over from the end of the example.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> The melochord was invented by Harald Bode in 1949. The instrument used for 
+<i>Musica su due dimensioni</i> was built for Werner Meyer-Eppler&#8217;s <i>Institut f&uuml;r Phonetik</i> at the University of Bonn where Maderna produced the tape part. The melochord spans five octaves, and can also be used to produce impulses and to filter sounds from an external source. See <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8041">Scaldaferri 2001</a>, xi, and <a href="#ungeheuer_1992" id="citation_ungeheuer_1992_67dc9b24c8042">Ungeheuer 1992</a>, 133&ndash;35.<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> Maderna uses another partitioning of the aggregate for 
+the assignment of durations in the following section of measures 17&ndash;26 (not shown). A 
+and F are assigned the note value of a dotted half, D<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'> five eighths, C/D/E/F<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'>/A<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'> a half note, and B<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'>/B/E<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'>/G/G<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'>/F<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'> 
+a quarter.<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> Maderna moves the second pitch of the piano part in 
+Example 14 (B2) into the melochord part in Example 15 (measures 3&ndash;4).<br><a href="#FN34REF">Return to text</a></p><p><a name="FN35">35.</a> In Maderna&#8217;s manuscript of Example 15 the quarter rests marked with an arrow in measures 2, 5, 10, and 13 (the &#8220;general pauses&#8221;) appear in red pencil. The notes in the melochord (&#8220;El.&#8221;) marked &#8220;suono&#8221; are written in blue pencil in the original. They designate the moment when the melochord timbre has reached the pitch indicated (&#8220;suono&#8221;).<br><a href="#FN35REF">Return to text</a></p><p><a name="FN36">36.</a> <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8044">Scaldaferri 2001</a>, xi. The tape part contains part of the first 63 measures of the manuscript full score&#8212;the beginning of which is shown in Example 15&#8212;moving through the pitch-class materials of the 16 matrices in Example 12, omitting measures 45&#8211;60 (<a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8045">Scaldaferri 2001</a>, xi). This is followed by a section for flute solo that moves through the first eight matrices (not shown here) that permute series [b] from Example 11. On the recording of the Darmstadt premiere (as described in <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8046">Scaldaferri 2001</a>, xi) this section is followed by what appears to be a flute improvisation on Maderna&#8217;s scoring of matrices 9&ndash;13 of series [b] (not shown here). The work concludes with a section for tape solo.<br><a href="#FN36REF">Return to text</a></p><p><a name="FN37">37.</a> The world premiere took place on April 10, 1954 at a 
+concert of <i>Domaine Musical</i> in Paris, Hermann Scherchen conducting. The German premiere took place at the Darmst&auml;dter Landestheater in April 1956, Hans Zanotelli conducting, at which time Maderna revised the work for publication. See <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8048">Baroni and Dalmonte 1985</a>, 216&#8211;17, and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8049">Fein 2001</a>, 28&#8211;32. 
+<i>Serenata N. 2 </i>has been discussed on several occasions in the literature (<a href="#manzoni_1958" id="citation_manzoni_1958_67dc9b24c804b">Manzoni 1958</a>, <a href="#brindle_1959" id="citation_brindle_1959_67dc9b24c804c">Brindle 1959</a>, <a href="#mila_1976" id="citation_mila_1976_67dc9b24c804d">Mila 1976</a>, 26&#8211;31, <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c804f">Montecchi 1989</a>, <a href="#fein_2000" id="citation_fein_2000_67dc9b24c8050">Fein 2000</a> and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8052">2001</a>, 29&#8211;99). Since the sketch materials became accessible only in the late 1980s, the only studies to examine them are <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c8053">Montecchi 1989</a> and <a href="#fein_2000" id="citation_fein_2000_67dc9b24c8055">Fein 2000</a> and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8056">2001</a>. Both authors discuss the Latin and magic squares of Examples 17 and 18 (without making the terminological distinction). My analysis supplements theirs based on my own study of the sketch materials, and with a focus on Maderna&#8217;s 
+construction of his serial arrays. The sketches of Examples 20 and 23 are 
+reproduced here for the first time.<br><a href="#FN37REF">Return to text</a></p><p><a name="FN38">38.</a> For a detailed examination of the first part, see <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8058">Fein 2001</a>, 29&ndash;61.<br><a href="#FN38REF">Return to text</a></p><p><a name="FN39">39.</a> The four sections are measures 159&ndash;182, 183&ndash;207, 208&ndash;230, 
+and 231&ndash;269.<br><a href="#FN39REF">Return to text</a></p><p><a name="FN40">40.</a> See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8059">Fein 2001</a>, 63. The magic square in Example 18 
+is constructed using a method derived from that of De la Loub&egrave;re. The succession 1-n<sup>2</sup> follows the NW-SE diagonals, starting with 1 in the central column (column V, row VI). The succession wraps around the edges; once all positions of a (wrapped-around) diagonal are filled, the succession continues two diagonals below. As Veniero Rizzardi has pointed out, Maderna likely owned the book 
+<i>Matematica dilettevole e curiosa</i> by Italo Ghersi that contains a chapter and appendix on magic squares. The method of De la Loub&egrave;re is discussed on pages 294&#8211;5 of the fifth edition still available today (<a href="#ghersi_1988" id="citation_ghersi_1988_67dc9b24c805b">Ghersi 1988</a>). See <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c805c">Rizzardi 2004</a>, 33.<br><a href="#FN40REF">Return to text</a></p><p><a name="FN41">41.</a> There is no sketch of Maderna&#8217;s that shows this; 
+the content of Example 19 is derived from the sketch whose beginning is 
+transcribed in Example 20 below.<br><a href="#FN41REF">Return to text</a></p><p><a name="FN42">42.</a> The collection of nine pitch classes is taken from a 
+sketch in which Maderna removes various trichords from the complete aggregate, 
+creating various nine-pitch-class subsets, each listed in ascending order as at 
+the top of Example 19.<br><a href="#FN42REF">Return to text</a></p><p><a name="FN43">43.</a> Maderna&#8217;s staff notation shows pitches, not 
+pitch classes, obviously, but as is evident from what follows, Maderna clearly 
+thinks in terms of pitch classes here.<br><a href="#FN43REF">Return to text</a></p><p><a name="FN44">44.</a> See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c805e">Fein 2001</a>, 66.<br><a href="#FN44REF">Return to text</a></p><p><a name="FN45">45.</a> For the sake of clarity, I have underlined the first 
+and last value on each path.<br><a href="#FN45REF">Return to text</a></p><p><a name="FN46">46.</a> This property is also discussed in <a href="#fein_2001" id="citation_fein_2001_67dc9b24c805f">Fein 2001</a>, 66.<br><a href="#FN46REF">Return to text</a></p><p><a name="FN47">47.</a> Maderna&#8217;s technique of shortening pitch durations or eliminating pitches altogether has been widely noted in the String Quartet of 1955 (<a href="#manzoni_1958" id="citation_manzoni_1958_67dc9b24c8061">Manzoni 1958</a>, 115, <a href="#weber_1978" id="citation_weber_1978_67dc9b24c8062">Weber 1978</a>, 207&#8211;14, <a href="#berio_1985" id="citation_berio_1985_67dc9b24c8064">Berio 1985</a>, 68, <a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c8065">Fearn 1990</a>, 97, <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8066">Fein 2001</a>, 183&#8211;204), and has variously been termed &#8220;suspension of the material&#8221; (&#8220;Materialsuspension,&#8221; Fein), &#8220;technique of omission&#8221; (&#8220;Auslassungstechnik,&#8221; Fein), &#8220;filter&#8221; (Berio, Fein), and &#8220;spacing-out&#8221; (Fearn). <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c8068">Montecchi 1989</a>, 137, first mentions the use of filters (&#8220;filtraggio&#8221;) in the second part of 
+<i>Serenata N. 2,</i> without further analysis. With the help of the sketches, 
+<a href="#fein_2000" id="citation_fein_2000_67dc9b24c8069">Fein 2000</a> provides the first detailed analysis of the technique for the final 
+section (measures 231&ndash;69, using multiple filters). In addition, <a href="#fein_2001" id="citation_fein_2001_67dc9b24c806b">Fein 2001</a>, 66&ndash;77, 
+discusses the use of the technique in the two preceding sections, measures 183&ndash;207 
+and 208&ndash;30, presenting a full analysis for measures 208&ndash;30 (multiple filters).<br><a href="#FN47REF">Return to text</a></p><p><a name="FN48">48.</a> Also eliminated for the same reason (filter values 
+equal to or longer than the pitch durations) are the D<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'> 
+in measure 6, lyne 4, the D in measures 3&#8211;4, lyne 6, and the E in measure 6, lyne 8.<br><a href="#FN48REF">Return to text</a></p><p><a name="FN49">49.</a> Nowhere in the sketches does Maderna specify the color 
+code, but it can be inferred from two sketches (not shown here) that follow 
+Example 23. They establish the orchestration of the final version. It is not 
+clear what kind of distinction between red and blue Maderna had in mind, as both 
+colors are assigned to the same instrumental forces.<br><a href="#FN49REF">Return to text</a></p><p><a name="FN50">50.</a> The fixed pitch collection is B<sub>2</sub>, C<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'><sub>3</sub>, G<img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='texttop'><sub>3</sub>, B<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'><sub>4</sub>, E<img border='0' src='../../gifs/flat.gif' width='7' height='18' align='texttop'><sub>5</sub>, E<sub>5</sub>, F<sub>5</sub>, D<sub>6</sub>, G<sub>6</sub>. 
+It lasts until measure 195.<br><a href="#FN50REF">Return to text</a></p><p><a name="FN51">51.</a> &#8220;Un ritorno deve potersi compiere in condizioni diverse. &Egrave; celebre il viaggio d&#8217;Ulisse. Esso insegna che non vi pu&ograve; essere un ritorno, che la vita nel suo eterno divenire muta continuamente. Ora perch&eacute; non si doveva possedere una tecnica che alla tecnica della vita nel suo divenire assomigliasse?&#8221; <a href="#maderna_1953&#8211;5" id="citation_maderna_1953&#8211;5_67dc9b24c806c">Maderna 1953&#8211;5</a>, 46. As is evident from our analyses, however, the analogy is limited in light of the cyclicity of Maderna&#8217;s 
+permutation procedures: they ultimately do bring us back to the original series.<br><a href="#FN51REF">Return to text</a></p><p><a name="FN52">52.</a> &#8220;Quello che non mi piaceva della teoria dodecafonica 
+era il principio che una volta data una serie questa dovesse, per necessit&eacute; di 
+conseguenza nel discorso musicale, riapparire nella sua integrit&eacute; continuamente 
+sia verticalmente che orizzontalmente.<nobr> . . . </nobr>Lentamente ma sicuramente procedetti 
+allo studio nelle mutazioni della serie sino che giunsi elaborare sistemi sempre 
+pi&ugrave; complessi e rigorosi di mutazioni.&#8221; Ibid.<br><a href="#FN52REF">Return to text</a></p><p><a name="FN53">53.</a> &#8220;&Egrave; evidente che un compositore vale pi&ugrave; come creatore 
+di una sintesi tra mezzo e applicazione, in quanto espressione della sua epoca 
+contemporanea. Ci&ograve; che io personalmente in Schoenberg trovo soprattutto valido &egrave; 
+appunto questa esatta comprensione dell&#8217;importanza del mezzo obiettivo in 
+contrasto con l&#8217;individualit&eacute; dell&#8217;espressione.&#8221; Ibid., 38&ndash;39.<br><a href="#FN53REF">Return to text</a></p><p><a name="FN54">54.</a> &#8220;<nobr> . . . </nobr>the expressive continuity is likewise assured by 
+the rigorous systematization of the mutations.&#8221; (&#8220;<nobr> . . . </nobr>la continuit&agrave; espressiva 
+viene ugualmente assicurata dalla rigorosa sistemazione delle mutazioni.&#8221;) 
+Ibid., 46.<br><a href="#FN54REF">Return to text</a></p><p><a name="FN55">55.</a> &#8220;Compositional subject and compositional objectivity face each other 
+across an abyss.<nobr> . . . </nobr>Composers frequently capitulate to the means, which they must 
+utilize without really composing with them.&#8221; <a href="#adorno_1964-1966" id="citation_adorno_1964-1966_67dc9b24c806e">Adorno 1964/1966</a>, 649&ndash;50.<br><a href="#FN55REF">Return to text</a></p><p><a name="FN56">56.</a> &#8220;J&#8217;ai mon 
+propre syst&egrave;me grammatical, qui rel&egrave;ve du principe s&eacute;riel, et qui est 
+suffisamment souple, surtout suffisamment <i>abstrait</i> pour me laisser toute libert&eacute; 
+d&#8217;y incarner de mille mani&egrave;res mon imagination musicale, qui n&#8217;est nullement 
+abstraite.&#8221; <a href="#maderna_1965" id="citation_maderna_1965_67dc9b24c806f">Maderna 1965</a>, 28. Italics in the original.<br><a href="#FN56REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">&#8220;La musica &egrave; un movimento continuo come l&#8217;uomo.&#8221; <a href="#maderna_1953&#8211;5" id="citation_maderna_1953&#8211;5_67dc9b24c800a">Maderna 1953&#8211;5</a>, 38. This lecture, preserved in a typescript without title in the Bruno Maderna Collection of the Paul Sacher Foundation in Basel, Switzerland, was probably never read in public (<a href="#verzina_2003" id="citation_verzina_2003_67dc9b24c800e">Verzina 2003</a>, 36). Translations from Italian and French sources are mine.</div><div id="fndiv2" class="flyoverdiv">&#8220;Ma queste immagini sono appunto solo immagini e non una rassegna generale della musica come espressione dell&#8217;uomo.&#8221; 
+Ibid.</div><div id="fndiv3" class="flyoverdiv">Ibid., 46.</div><div id="fndiv4" class="flyoverdiv">Maderna&#8217;s sketches are housed in the Bruno Maderna 
+Collection of the Paul Sacher Foundation and (mostly in photocopies) in the 
+Archivio Bruno Maderna at the University of Bologna, Italy. I wish to thank the 
+Paul Sacher Foundation for a research grant that enabled me to study Maderna&#8217;s 
+sketches from the period. My thanks go to Johanna Blask, Carlos Chanf&oacute;n, 
+Isabelle Equilino, Sabine H&auml;nggi-Stampfli, Henrike Hoffmann, Petra Kupfer, Felix 
+Meyer, Ulrich Mosch, Robert Piencikowski, Tina Kilvio T&uuml;scher, and to the 
+Foundation&#8217;s research coordinator, Prof. Hermann Danuser. I also wish to thank 
+the two anonymous reviewers for MTO for their generous comments and suggestions, 
+and Sebastiano Bisciglia for his help with the musical examples. My 
+transcriptions of Maderna&#8217;s sketches are reproduced by kind permission from the 
+Paul Sacher Foundation.</div><div id="fndiv5" class="flyoverdiv">As will be demonstrated, missing links in the sketch 
+materials can be reconstructed based on a general knowledge of Maderna&#8217;s 
+working methods.</div><div id="fndiv6" class="flyoverdiv">The two pitch series used in <i>Serenata N. 2 </i>are eleven- and nine-tone. Maderna also used series derived from tonal melodies, as for example in 
+<i>Quattro Lettere</i> (1953), where the series for each movement was taken from one of the four phrases of the partisan song &#8220;Fischia il vento.&#8221; 
+The diatonic series contain pitch repetitions.</div><div id="fndiv7" class="flyoverdiv"><a href="#morris_1987" id="citation_morris_1987_67dc9b24c8011">Morris 1987</a>, 339.</div><div id="fndiv8" class="flyoverdiv">For this reason, my use of the term &#8220;matrix&#8221; deviates 
+from <a href="#morris_1987" id="citation_morris_1987_67dc9b24c8013">Morris 1987</a> (339), who reserves the term &#8220;for special two-dimensional 
+tables of numbers.&#8221; For Morris, &#8220;matrices are not usually compositional objects&#8221; 
+(Ibid.).</div><div id="fndiv9" class="flyoverdiv">Maderna&#8217;s student Renzo dall&#8217;Oglio (1925&#8211;2003), in an interview with Gianmario Borio and Veniero Rizzardi in 1994, credits Maderna with the invention of this type of array (non-commercial video recording kept at the Archivio Luigi Nono in Venice). Maderna and his friends summarily called the matrix, the other types of tables discussed below, and the permutation procedures performed in these arrays &#8220;quadrato/quadrati&#8221; (<a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8015">Rizzardi 2004</a>, 33). My choice of the term &#8220;matrix&#8221; follows <a href="#borio_2004" id="citation_borio_2004_67dc9b24c8016">Borio 2004</a>, 109. <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8018">Fein 2001</a> and <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8019">Rizzardi 2004</a> use &#8220;square&#8221; (&#8220;Punktquadrat&#8221; and &#8220;quadrato&#8221; respectively). In her recent study of similar notations and procedures in Luigi Nono&#8217;s 
+<i>Il canto sospeso</i> (1955&#8211;56), Jeannie Guerrero refers to the configuration as &#8220;Position-Grid&#8221; (<a href="#guerrero_2006" id="citation_guerrero_2006_67dc9b24c801b">Guerrero 2006</a>, paragraph 24).</div><div id="fndiv10" class="flyoverdiv"><i>Lynes</i> are the rows of an array (matrix). The term 
+<i>lyne</i> was first introduced in <a href="#kassler_1967" id="citation_kassler_1967_67dc9b24c801d">Kassler 1967</a>, 14. See also <a href="#mead_1994" id="citation_mead_1994_67dc9b24c801e">Mead 1994</a>, 20 and 31&#8211;34.</div><div id="fndiv11" class="flyoverdiv"><i>Improvvisazione N. 1</i> was premiered on February 18, 1952 in Hamburg by the Sinfonieorchester des Nordwestdeutschen Rundfunks (NWDR), 
+conducted by the composer.</div><div id="fndiv12" class="flyoverdiv">Note that the Italian alphabet omits J and K. <i>Improvvisazione N. 1 
+</i>is dedicated to Maderna&#8217;s second wife Beata Christina K&ouml;penik. Another notation of the series, not shown here, indicates that Maderna derived the first two pitches from Beata&#8217;s name (&#8220;Be&#8221; = B, &#8220;A,&#8221; &#8220;T&#8221; = rest, &#8220;A,&#8221; with the rest and second A eventually eliminated). See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8020">Fein 2001</a>, 15.</div><div id="fndiv13" class="flyoverdiv"><a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8022">Rizzardi 2004</a>, 32. This technique was first analyzed in the works of Maderna and Nono in the early 1990s by Gianmario Borio and Veniero Rizzardi, who termed it &#8220;tecnica degli spostamenti&#8221; (<a href="#borio_1999" id="citation_borio_1999_67dc9b24c8023">Borio 1999</a>, 2004, <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c8025">Rizzardi 2004</a>). Selected serial charts for 
+<i>Improvvisazione N. 1</i> (including my Examples 2a, 2e, 5, and the first four matrices of Example 4) have been discussed before by Fein (<a href="#fein_2001" id="citation_fein_2001_67dc9b24c8028">2001</a>, 15&#8211;27) and Rizzardi (<a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c802a">2004</a>, 31&#8211;46). 
+<i>Improvvisazione N. 1</i> was likely the second work in which Maderna used the kinds of serial matrices to be discussed. He probably employed them for the first time in
+<i>Studi per il &#8220;Llanto&#8221; di G. Lorca, </i>an unfinished composition for tenor, flute, and guitar, that cannot be dated with certainty. <a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c802b">Fearn 1990</a>, 345, and <a href="#karlen_and_romito_1990" id="citation_karlen_and_romito_1990_67dc9b24c802d">Karlen and Romito 1990</a>, 22, date 
+<i>Studi</i> &#8220;1950&ndash;1952?&#8221;</div><div id="fndiv14" class="flyoverdiv">The graphic representation of the series maps onto 
+itself if the matrix is rotated by 180 degrees.</div><div id="fndiv15" class="flyoverdiv">Under transposition, the graphic shape of a given 
+pitch-class series would remain the same, moved up or down in the matrix (and 
+&#8220;wrapped around&#8221; its edges). A pitch-class series is retrograded by mirroring it 
+around a vertical axis of the matrix and inverted by flipping it around a 
+horizontal axis.</div><div id="fndiv16" class="flyoverdiv">Maderna&#8217;s sketch also shows how he assigned 
+number values to letters, which in turn allows for the reconstruction of the 
+original Latin square in Example 2e, itself not preserved in the sketches (A=14, 
+B=14, C=5, D=11, E=25, F=10, G=6, H=9, I=8, L=13, M=5, N=12).</div><div id="fndiv17" class="flyoverdiv">The elision accounts for the first two unconnected 
+dots in the first matrix. They are the penultimate dots in their respective rows 
+before &#8220;catching up&#8221; with the original series. The third unconnected dot (in the 
+tenth column of the first matrix) results from the first shift of that pitch 
+class F.</div><div id="fndiv18" class="flyoverdiv">The array is the one shown earlier in Example 2d.</div><div id="fndiv19" class="flyoverdiv">The technique of sustaining a pitch beyond its 
+assigned duration and until its next occurrence in the matrix is featured 
+prominently later in the string parts of the fourth movement from Luigi Nono&#8217;s
+<i>Il canto sospeso</i> (1955&#8211;56). See <a href="#guerrero_2006" id="citation_guerrero_2006_67dc9b24c802f">Guerrero 2006</a>, paragraph 27, and <a href="#nielinger_2006" id="citation_nielinger_2006_67dc9b24c8031">Nielinger 2006</a>, 102.</div><div id="fndiv20" class="flyoverdiv">Maderna&#8217;s sketch transcribed in Example 8 lists a different instrumentation for a different section of the work. I have adjusted that information in the square brackets.</div><div id="fndiv21" class="flyoverdiv">Maderna&#8217;s orchestration assigns each lyne of the eleventh matrix (Example 4) that contains dots to a specific instrument. The flute and first violin play two lynes 
+(pitch classes) each.</div><div id="fndiv22" class="flyoverdiv">See <a href="#maderna_1959" id="citation_maderna_1959_67dc9b24c8032">Maderna 1959</a>, <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8034">Baroni and Dalmonte 1985</a>, 205, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8035">Scaldaferri 2001</a>, viii. The work was premiered on July 21, 1952 by Severino Gazzelloni (flute) and Romolo Grano (percussion) at the Ferienkurse f&uuml;r Neue Musik in Darmstadt. Maderna produced the tape part with the assistance of Werner Meyer-Eppler at the 
+<i>Institut f&uuml;r Phonetik</i> of the University of Bonn.</div><div id="fndiv23" class="flyoverdiv">For the history of the work from 1952 see <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8037">Baroni and Dalmonte 1985</a>, 205, Baroni and Dalmonte 1989, 62&#8211;63, <a href="#noller_1992" id="citation_noller_1992_67dc9b24c8038">Noller 1992</a>, 65&#8211;66, <a href="#scaldaferri_1997" id="citation_scaldaferri_1997_67dc9b24c803a">Scaldaferri 1997</a>, 59&#8211;61, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c803b">Scaldaferri 2001</a>, vii&#8211;x.</div><div id="fndiv24" class="flyoverdiv"><a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c803d">Fearn 1990</a>, 69&#8211;70 and 78&#8211;83, <a href="#noller_1992" id="citation_noller_1992_67dc9b24c803e">Noller 1992</a>, 65&#8211;66, and <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c803f">Scaldaferri 2001</a>, viii. None of these authors analyzes the sketches.</div><div id="fndiv25" class="flyoverdiv">The open note-heads in Example 9 appear in red pencil 
+(filled-in) in the original.</div><div id="fndiv26" class="flyoverdiv">Series A (revised) through D use hexachords whose 
+interval vectors are saturated with the interval classes that correspond to the 
+intervals chosen for each series. Series A (revised) and C use hexachord 6-20, 
+the hexachordal set class with the largest content of interval classes 3 and 4 
+(realized as major and minor sixths in series A and major and minor thirds in 
+series C). The hexachords of series B and D belong to set class 6-1, the 
+hexachordal set class with the largest content of interval classes 1 and 2 
+(realized as major and minor seconds in series B and major and minor sevenths in 
+series D). Maderna&#8217;s choice is interesting in light of the fact that other hexachord set classes could have been used as well for the generation of series built from the same kinds of intervals. Maderna&#8217;s choice of 6-20 (<i>Ode to Napoleon</i> hexachord) and 6-1 (chromatic hexachord) was probably motivated by his study of the music of the Second Viennese School. Nono used the series from Schoenberg&#8217;s
+<i>Ode to Napoleon Buonaparte</i> in 1949&#8211;50 in <i>Variazioni canoniche sulla serie dell&#8217;op. 41 di Arnold Sch&ouml;nberg.</i></div><div id="fndiv27" class="flyoverdiv">Following a continuity draft (probably intended for 
+the tape part) that superimposes four series at a time, Maderna abandons this 
+material altogether.</div><div id="fndiv28" class="flyoverdiv">As before, added information that does not appear in 
+the original sketch is shown in square brackets.</div><div id="fndiv29" class="flyoverdiv">It is impossible to produce twelve-tone series 
+	with patterns [2], [3], [4], and [6]. For instance, pattern [2] only 
+	produces non-duplicating series of at most eight pitch classes, as 
+	illustrated in the following diagram. All pitch-class successions shown 
+	below the double line (to be read from left to right) end with a pitch-class 
+	duplication, shown in italics. Thus, if we ignore the last entry in each 
+	row, we obtain all possible non-duplicating pitch-class successions that can 
+	be generated with the sequence of intervals from pattern [2] shown above the 
+	double line. &#8220;Ascending&#8221; and &#8220;descending&#8221; intervals are indicated by
+	 and
+	 respectively. 
+	The table is exhaustive. 
+</div><div id="fndiv30" class="flyoverdiv">The twelve order positions are counted 0 through 11.</div><div id="fndiv31" class="flyoverdiv">The dot in the second column of the first matrix not 
+connected by lines spills over from the end of the example.</div><div id="fndiv32" class="flyoverdiv">The melochord was invented by Harald Bode in 1949. The instrument used for 
+<i>Musica su due dimensioni</i> was built for Werner Meyer-Eppler&#8217;s <i>Institut f&uuml;r Phonetik</i> at the University of Bonn where Maderna produced the tape part. The melochord spans five octaves, and can also be used to produce impulses and to filter sounds from an external source. See <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8041">Scaldaferri 2001</a>, xi, and <a href="#ungeheuer_1992" id="citation_ungeheuer_1992_67dc9b24c8042">Ungeheuer 1992</a>, 133&ndash;35.</div><div id="fndiv33" class="flyoverdiv">Maderna uses another partitioning of the aggregate for 
+the assignment of durations in the following section of measures 17&ndash;26 (not shown). A 
+and F are assigned the note value of a dotted half, D five eighths, C/D/E/F/A a half note, and B/B/E/G/G/F 
+a quarter.</div><div id="fndiv34" class="flyoverdiv">Maderna moves the second pitch of the piano part in 
+Example 14 (B2) into the melochord part in Example 15 (measures 3&ndash;4).</div><div id="fndiv35" class="flyoverdiv">In Maderna&#8217;s manuscript of Example 15 the quarter rests marked with an arrow in measures 2, 5, 10, and 13 (the &#8220;general pauses&#8221;) appear in red pencil. The notes in the melochord (&#8220;El.&#8221;) marked &#8220;suono&#8221; are written in blue pencil in the original. They designate the moment when the melochord timbre has reached the pitch indicated (&#8220;suono&#8221;).</div><div id="fndiv36" class="flyoverdiv"><a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8044">Scaldaferri 2001</a>, xi. The tape part contains part of the first 63 measures of the manuscript full score&#8212;the beginning of which is shown in Example 15&#8212;moving through the pitch-class materials of the 16 matrices in Example 12, omitting measures 45&#8211;60 (<a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8045">Scaldaferri 2001</a>, xi). This is followed by a section for flute solo that moves through the first eight matrices (not shown here) that permute series [b] from Example 11. On the recording of the Darmstadt premiere (as described in <a href="#scaldaferri_2001" id="citation_scaldaferri_2001_67dc9b24c8046">Scaldaferri 2001</a>, xi) this section is followed by what appears to be a flute improvisation on Maderna&#8217;s scoring of matrices 9&ndash;13 of series [b] (not shown here). The work concludes with a section for tape solo.</div><div id="fndiv37" class="flyoverdiv">The world premiere took place on April 10, 1954 at a 
+concert of <i>Domaine Musical</i> in Paris, Hermann Scherchen conducting. The German premiere took place at the Darmst&auml;dter Landestheater in April 1956, Hans Zanotelli conducting, at which time Maderna revised the work for publication. See <a href="#baroni_and_dalmonte_1985" id="citation_baroni_and_dalmonte_1985_67dc9b24c8048">Baroni and Dalmonte 1985</a>, 216&#8211;17, and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8049">Fein 2001</a>, 28&#8211;32. 
+<i>Serenata N. 2 </i>has been discussed on several occasions in the literature (<a href="#manzoni_1958" id="citation_manzoni_1958_67dc9b24c804b">Manzoni 1958</a>, <a href="#brindle_1959" id="citation_brindle_1959_67dc9b24c804c">Brindle 1959</a>, <a href="#mila_1976" id="citation_mila_1976_67dc9b24c804d">Mila 1976</a>, 26&#8211;31, <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c804f">Montecchi 1989</a>, <a href="#fein_2000" id="citation_fein_2000_67dc9b24c8050">Fein 2000</a> and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8052">2001</a>, 29&#8211;99). Since the sketch materials became accessible only in the late 1980s, the only studies to examine them are <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c8053">Montecchi 1989</a> and <a href="#fein_2000" id="citation_fein_2000_67dc9b24c8055">Fein 2000</a> and <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8056">2001</a>. Both authors discuss the Latin and magic squares of Examples 17 and 18 (without making the terminological distinction). My analysis supplements theirs based on my own study of the sketch materials, and with a focus on Maderna&#8217;s 
+construction of his serial arrays. The sketches of Examples 20 and 23 are 
+reproduced here for the first time.</div><div id="fndiv38" class="flyoverdiv">For a detailed examination of the first part, see <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8058">Fein 2001</a>, 29&ndash;61.</div><div id="fndiv39" class="flyoverdiv">The four sections are measures 159&ndash;182, 183&ndash;207, 208&ndash;230, 
+and 231&ndash;269.</div><div id="fndiv40" class="flyoverdiv">See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8059">Fein 2001</a>, 63. The magic square in Example 18 
+is constructed using a method derived from that of De la Loub&egrave;re. The succession 1-n2 follows the NW-SE diagonals, starting with 1 in the central column (column V, row VI). The succession wraps around the edges; once all positions of a (wrapped-around) diagonal are filled, the succession continues two diagonals below. As Veniero Rizzardi has pointed out, Maderna likely owned the book 
+<i>Matematica dilettevole e curiosa</i> by Italo Ghersi that contains a chapter and appendix on magic squares. The method of De la Loub&egrave;re is discussed on pages 294&#8211;5 of the fifth edition still available today (<a href="#ghersi_1988" id="citation_ghersi_1988_67dc9b24c805b">Ghersi 1988</a>). See <a href="#rizzardi_2004" id="citation_rizzardi_2004_67dc9b24c805c">Rizzardi 2004</a>, 33.</div><div id="fndiv41" class="flyoverdiv">There is no sketch of Maderna&#8217;s that shows this; 
+the content of Example 19 is derived from the sketch whose beginning is 
+transcribed in Example 20 below.</div><div id="fndiv42" class="flyoverdiv">The collection of nine pitch classes is taken from a 
+sketch in which Maderna removes various trichords from the complete aggregate, 
+creating various nine-pitch-class subsets, each listed in ascending order as at 
+the top of Example 19.</div><div id="fndiv43" class="flyoverdiv">Maderna&#8217;s staff notation shows pitches, not 
+pitch classes, obviously, but as is evident from what follows, Maderna clearly 
+thinks in terms of pitch classes here.</div><div id="fndiv44" class="flyoverdiv">See also <a href="#fein_2001" id="citation_fein_2001_67dc9b24c805e">Fein 2001</a>, 66.</div><div id="fndiv45" class="flyoverdiv">For the sake of clarity, I have underlined the first 
+and last value on each path.</div><div id="fndiv46" class="flyoverdiv">This property is also discussed in <a href="#fein_2001" id="citation_fein_2001_67dc9b24c805f">Fein 2001</a>, 66.</div><div id="fndiv47" class="flyoverdiv">Maderna&#8217;s technique of shortening pitch durations or eliminating pitches altogether has been widely noted in the String Quartet of 1955 (<a href="#manzoni_1958" id="citation_manzoni_1958_67dc9b24c8061">Manzoni 1958</a>, 115, <a href="#weber_1978" id="citation_weber_1978_67dc9b24c8062">Weber 1978</a>, 207&#8211;14, <a href="#berio_1985" id="citation_berio_1985_67dc9b24c8064">Berio 1985</a>, 68, <a href="#fearn_1990" id="citation_fearn_1990_67dc9b24c8065">Fearn 1990</a>, 97, <a href="#fein_2001" id="citation_fein_2001_67dc9b24c8066">Fein 2001</a>, 183&#8211;204), and has variously been termed &#8220;suspension of the material&#8221; (&#8220;Materialsuspension,&#8221; Fein), &#8220;technique of omission&#8221; (&#8220;Auslassungstechnik,&#8221; Fein), &#8220;filter&#8221; (Berio, Fein), and &#8220;spacing-out&#8221; (Fearn). <a href="#montecchi_1989" id="citation_montecchi_1989_67dc9b24c8068">Montecchi 1989</a>, 137, first mentions the use of filters (&#8220;filtraggio&#8221;) in the second part of 
+<i>Serenata N. 2,</i> without further analysis. With the help of the sketches, 
+<a href="#fein_2000" id="citation_fein_2000_67dc9b24c8069">Fein 2000</a> provides the first detailed analysis of the technique for the final 
+section (measures 231&ndash;69, using multiple filters). In addition, <a href="#fein_2001" id="citation_fein_2001_67dc9b24c806b">Fein 2001</a>, 66&ndash;77, 
+discusses the use of the technique in the two preceding sections, measures 183&ndash;207 
+and 208&ndash;30, presenting a full analysis for measures 208&ndash;30 (multiple filters).</div><div id="fndiv48" class="flyoverdiv">Also eliminated for the same reason (filter values 
+equal to or longer than the pitch durations) are the D 
+in measure 6, lyne 4, the D in measures 3&#8211;4, lyne 6, and the E in measure 6, lyne 8.</div><div id="fndiv49" class="flyoverdiv">Nowhere in the sketches does Maderna specify the color 
+code, but it can be inferred from two sketches (not shown here) that follow 
+Example 23. They establish the orchestration of the final version. It is not 
+clear what kind of distinction between red and blue Maderna had in mind, as both 
+colors are assigned to the same instrumental forces.</div><div id="fndiv50" class="flyoverdiv">The fixed pitch collection is B2, C3, G3, B4, E5, E5, F5, D6, G6. 
+It lasts until measure 195.</div><div id="fndiv51" class="flyoverdiv">&#8220;Un ritorno deve potersi compiere in condizioni diverse. &Egrave; celebre il viaggio d&#8217;Ulisse. Esso insegna che non vi pu&ograve; essere un ritorno, che la vita nel suo eterno divenire muta continuamente. Ora perch&eacute; non si doveva possedere una tecnica che alla tecnica della vita nel suo divenire assomigliasse?&#8221; <a href="#maderna_1953&#8211;5" id="citation_maderna_1953&#8211;5_67dc9b24c806c">Maderna 1953&#8211;5</a>, 46. As is evident from our analyses, however, the analogy is limited in light of the cyclicity of Maderna&#8217;s 
+permutation procedures: they ultimately do bring us back to the original series.</div><div id="fndiv52" class="flyoverdiv">&#8220;Quello che non mi piaceva della teoria dodecafonica 
+era il principio che una volta data una serie questa dovesse, per necessit&eacute; di 
+conseguenza nel discorso musicale, riapparire nella sua integrit&eacute; continuamente 
+sia verticalmente che orizzontalmente. . . . Lentamente ma sicuramente procedetti 
+allo studio nelle mutazioni della serie sino che giunsi elaborare sistemi sempre 
+pi&ugrave; complessi e rigorosi di mutazioni.&#8221; Ibid.</div><div id="fndiv53" class="flyoverdiv">&#8220;&Egrave; evidente che un compositore vale pi&ugrave; come creatore 
+di una sintesi tra mezzo e applicazione, in quanto espressione della sua epoca 
+contemporanea. Ci&ograve; che io personalmente in Schoenberg trovo soprattutto valido &egrave; 
+appunto questa esatta comprensione dell&#8217;importanza del mezzo obiettivo in 
+contrasto con l&#8217;individualit&eacute; dell&#8217;espressione.&#8221; Ibid., 38&ndash;39.</div><div id="fndiv54" class="flyoverdiv">&#8220; . . . the expressive continuity is likewise assured by 
+the rigorous systematization of the mutations.&#8221; (&#8220; . . . la continuit&agrave; espressiva 
+viene ugualmente assicurata dalla rigorosa sistemazione delle mutazioni.&#8221;) 
+Ibid., 46.</div><div id="fndiv55" class="flyoverdiv">&#8220;Compositional subject and compositional objectivity face each other 
+across an abyss. . . . Composers frequently capitulate to the means, which they must 
+utilize without really composing with them.&#8221; <a href="#adorno_1964-1966" id="citation_adorno_1964-1966_67dc9b24c806e">Adorno 1964/1966</a>, 649&ndash;50.</div><div id="fndiv56" class="flyoverdiv">&#8220;J&#8217;ai mon 
+propre syst&egrave;me grammatical, qui rel&egrave;ve du principe s&eacute;riel, et qui est 
+suffisamment souple, surtout suffisamment <i>abstrait</i> pour me laisser toute libert&eacute; 
+d&#8217;y incarner de mille mani&egrave;res mon imagination musicale, qui n&#8217;est nullement 
+abstraite.&#8221; <a href="#maderna_1965" id="citation_maderna_1965_67dc9b24c806f">Maderna 1965</a>, 28. Italics in the original.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2007 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

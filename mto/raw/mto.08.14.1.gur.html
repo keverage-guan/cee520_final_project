@@ -1,0 +1,1387 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 14.1: Gur, Body, Forces, and Paths</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Body, Forces, and Paths: Metaphor and Embodiment in Jean-Philippe 
+	Rameau&#8217;s Conceptualization of Tonal Space">
+
+    <meta name="citation_author" content="Gur, Golan">
+      
+
+<meta name="citation_publication_date" content="2008/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="14">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Body, Forces, and Paths: Metaphor and Embodiment in Jean-Philippe 
+	Rameau&#8217;s Conceptualization of Tonal Space
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.08.14.1/mto.08.14.1.gur.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Golan Gur</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: metaphor, Rameau, analysis, harmonic theory, Mark Johnson, George 
+Lakoff, cognitive science, Roger Scruton, tonal motion, linguistic theory, 
+embodied meaning, image schema, mental representation, discourse</font></p><p><font size='4'>ABSTRACT: Studies by George Lakoff and Mark Johnson in the field of cognitive linguistics 
+give rise to a theory of meaning that bestows a central role on metaphorical 
+thinking and the body. This essay explores the ramifications of physical 
+embodiment on Jean-Philippe Rameau&#8217;s conceptualization of tonal harmony. My 
+examination will show that Johnson&#8217;s theory of the bodily basis of metaphor is 
+not sufficiently adequate to account for all the aspects of Rameau&#8217;s harmonic 
+theory, and additional sources for metaphorical projection should be taken into 
+account for its full rendering.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.08.14.1/mto.08.14.1.gur.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.08.14.1/gur_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received October 2007</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 14, Number 1, March 2008 <br> Copyright &#0169; 2008 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center"><b>1. Introduction</p></b>
+
+<p> 
+[1.1] The most influential account of the nature of musical meaning is probably 
+to be found in Eduard Hanslick&#8217;s <i>Vom Musikalisch-Sch&ouml;nen</i> of 1854. In this famous 
+essay, the music critic argues that the meaning of music lies in its form rather 
+than in its affective aspects. He criticizes the romantic aesthetics that take 
+emotion to be an authority in matters of art and suggests that the unique beauty 
+of music should be investigated using the methods of the natural sciences. In 
+his words, he aims &#8220;to get alongside the thing itself, seeking whatever among 
+our thousandfold flickering impressions and feelings may be enduring and 
+objective.&#8221;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> That being said, he goes on to assert that in music the stable and 
+objective factors are the &#8220;tonal moving forms&#8221; that are present in musical 
+composition independent of the listener or observer who perceives them. To be 
+sure, Hanslick does not deny the ability of music to arouse feelings but this 
+ability, in his opinion, has no relation to artistic value. Music is pure form 
+and therefore one should evaluate its significance in terms of its technical 
+means.
+<p> 
+[1.2] To a great extent, Hanslick&#8217;s assumption regarding the objective nature of 
+the musical structure defines the interests of music theorists up to the present 
+day.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> In recent years, however, an alternative view of the nature of formalistic 
+preoccupation with music has emerged. The studies of the linguist George Lakoff 
+and the philosopher Mark Johnson in the field of cognitive linguistics were 
+conducive in this development. In a series of publications, both joint and 
+independent,<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> they propose a theory of meaning that bestows a central role on 
+metaphorical thinking and the body.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> This theory undermines the objectivist 
+notion of musical meaning as something that is inherent in the music itself and 
+suggests a new framework for the analytical discussion of music, as well as a 
+refreshing perspective on traditional theoretical models. 
+<p> 
+[1.3] This essay focuses on Johnson&#8217;s theory of embodied meaning and its 
+application to eighteenth-century harmonic theory. First, I will discuss the 
+role of metaphor in Roger Scruton&#8217;s aesthetics of music and the work of Lakoff 
+and Johnson on metaphor, which supports some of Scruton&#8217;s conclusions. Later, I 
+will present the theory of embodied meaning and explore the ramifications of 
+physical embodiment on musical thinking through a close inspection of 
+Jean-Philippe Rameau&#8217;s conceptualization of tonal harmony. This examination will 
+emphasize the interplay between metaphors of various sources in Rameau&#8217;s musical 
+discourse.
+
+<p style="text-align: center"><b>2. Metaphor and Music as an Intentional Object</p></b>
+
+<p> 
+[2.1] In his article &#8220;Understanding Music,&#8221; the neo-Kantian philosopher Roger 
+Scruton claims that the understanding of music <i>as music</i> necessarily involves 
+metaphorical thinking, a claim that is based on an assumption regarding 
+experience and its verbal representation.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Scruton says that the descriptive 
+language of listeners discloses the concepts and categories they apply while 
+listening to music. Accordingly, he distinguishes between two forms of 
+understanding reflected in the difference between the description of material 
+(or acoustic) characteristics of sound and <i>musical</i> description: scientific 
+understanding, and a type of understanding that he calls, following the 
+phenomenologists, &#8220;intentional understanding.&#8221;<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Scientific understanding 
+approaches the world as a material object and seeks to explain it in terms of 
+causal connections; intentional understanding, on the other hand, considers the 
+world as it appears to our direct awareness (in Husserl&#8217;s idiom, <i>Lebenswelt</i>) and 
+brings to light only those connections and relations that are already implied in 
+one way or another by our concepts. &#8220;Because all our perception is informed by 
+concepts,&#8221; says Scruton, &#8220;and those concepts in their turn determine our 
+understanding and practical reasoning, a critic or philosopher can bring system to an appearance, by drawing out the 
+implications of the concepts through which it is described. This description 
+need not be one that the person who perceives with understanding can provide. 
+But when he understands it, he will recognize it immediately as a description of 
+the experience that is his.&#8221;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup><p> 
+[2.2] Musical understanding is thus a special case of intentional understanding.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>			As such, it is dependent on our intellectual abilities, education, concepts, 
+analogies and expectations, whose origins are in the musical culture. The 
+understanding that we acquire from this culture is not expressed only in the way 
+we think of music, but also in the way we hear it. This is reflected in the way 
+we hear, for instance, the change of a note in a phrase as &#8220;melodic motion&#8221;; 
+when we perceive a note as being &#8220;low&#8221; or &#8220;high&#8221;; or when we interpret a 
+combination of individual notes as &#8220;harmony.&#8221; In all these cases, the object of 
+the description is not material fact but a phenomenal aspect of our musical 
+experience. This idiosyncrasy leads Scruton to the conclusion that music belongs 
+exclusively to the intentional sphere and not to the scientific realm.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup><p> 
+[2.3] Scruton invokes metaphor in order to account for the intentional character 
+of musical experience. What appears in all the above mentioned cases, in which 
+auditory events are understood in terms of musical categories, is metaphorical 
+transference, that is, taking concepts from one domain and applying them to 
+another. At the basis of our musical understanding, Scruton argues, lies a 
+complex system of metaphor that causes us to hear tones (as opposed to sounds) 
+as being in motion. Scruton rejects various suggestions according to which this 
+motion is in fact literal;<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup>			yet, he stresses that one cannot dispense with it. 
+The metaphor of space and motion within it is an integral part of the 
+intentional object of our musical understanding and without it a true 
+description of musical experience is not possible.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>			Therefore, he establishes, 
+against the traditional formalistic view, that &#8220;any analysis of music must be an 
+exercise in intentional rather than scientific understanding.&#8221;<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>			His conclusion 
+finds empirical confirmation in the cognitive studies of Lakoff and Johnson who 
+claim in <i>Metaphors We Live By</i> (<a href="#lakoff_and_johnson_1980" id="citation_lakoff_and_johnson_1980_67dc9b066b3b2">1980</a>) that metaphor is the <i>modus operandi</i> of our 
+thought as a whole.
+
+<p style="text-align: center"><b>3. Metaphor and the Construction of Meaning</p></b>
+
+<p> 
+[3.1] Lakoff and Johnson begin by drawing attention to the fact that metaphor is 
+not restricted to literary usage, as is often supposed, but it is actually a 
+prevalent element in ordinary language as well. Consider for instance the 
+expression &#8220;I have no time,&#8221; suggesting that time is a material thing, or &#8220;your 
+claim is indefensible,&#8221; assuming that the claim is taking part in a battle. Such 
+expressions are so much a part of our daily speech that we tend to forget that 
+they are really metaphorical. But metaphor is not just a matter of words. From 
+the discovery of the frequency of metaphor in day-to-day language, Lakoff and Johnson go on to argue that metaphor structures and defines our conceptual 
+system, and, as a result, also has an effect on our behavior. Their claim is 
+supported by analysis of linguistic expressions that reveal a shared 
+deep-structure called &#8220;conceptual metaphor.&#8221; I shall demonstrate this through 
+the conceptual metaphor LOVE IS A JOURNEY.<p> 
+[3.2] It is well known that love is an emotion or a feeling, not a &#8220;journey&#8221; in 
+the literal sense of the word. Nevertheless, we tend to describe this emotion 
+and its development in terms of a &#8220;journey.&#8221; We say of those who are in love 
+that they are in a state of &#8220;smooth sailing&#8221;; or that they are &#8220;on the rocks&#8221;; 
+they are likely to &#8220;pass through the years&#8221; or to &#8220;go their separate ways&#8221;; they 
+might &#8220;get stuck in a rut&#8221; or find that their relationship is &#8220;going nowhere.&#8221; 
+Underlying all these expressions is an association of the emotion of love with a 
+journey. LOVE IS A JOURNEY is therefore a conceptual metaphor that defines a 
+broad range of linguistic metaphors.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup><br>
+<br>
+[3.3] The example of LOVE IS A JOURNEY proves that we systematically borrow 
+terms from one domain, a &#8220;source domain,&#8221; in order to clarify aspects of 
+another, the &#8220;target domain,&#8221; with the first domain usually being concrete and 
+familiar (a journey, for instance) while the second is abstract and ambiguous 
+(such as love).<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup>			This phenomenon indicates the metaphorical character of our 
+conceptual system, and influences our functioning; our concepts, which are 
+partly metaphorical, structure our perceptions, our behavior, and the way we 
+communicate with one another. It can be assumed that in a society in which love 
+is understood primarily as &#8220;war&#8221; and not as a &#8220;journey,&#8221; successful couplehood 
+would have a different meaning from the one we are familiar with. I will examine 
+this somewhat monolithic interpretation of metaphor more closely in my 
+discussion of Rameau&#8217;s harmonic theory.
+
+<p style="text-align: center"><b>4. Musical Space and Orientational Metaphors</p></b>
+
+<p> 
+[4.1] In the case of LOVE IS A JOURNEY, a certain concept has been structured 
+metaphorically in terms of another concept. Another type of metaphorical concept 
+is one that organizes a whole system of concepts with respect to one another. 
+Lakoff and Johnson call these cases &#8220;orientational metaphors&#8221; because most of 
+them have to do with spatial orientations such as up-down, in-out, front-back, 
+on-off, deep-shallow, central-peripheral. These spatial orientations arise from 
+the way our bodies are constructed and function in our physical environment. 
+Orientational metaphors give a concept spatial orientation. A number of 
+orientational metaphors and some linguistic expressions derived from them 
+follow:
+<p> 
+HAPPY IS UP; SAD IS DOWN<br>
+I&#8217;m feeling <i>up</i>. That <i>boosted</i> my spirits. My spirits <i>rose</i>. You&#8217;re in 
+<i>high</i> 
+spirits. Thinking about her always gives me a <i>lift</i>. I&#8217;m feeling <i>down</i>. I&#8217;m 
+<i>depressed</i>. He&#8217;s really <i>low</i> these days. I fell into a <i>depression</i>. My spirits 
+<i>sank</i>.<p> 
+HEALTH AND LIFE ARE UP; SICKNESS AND DEATH ARE DOWN<br>
+He&#8217;s at the <i>peak</i> of health. Lazarus <i>rose</i> from the dead. He&#8217;s in 
+<i>top</i> shape. As to 
+his health, he&#8217;s <i>up</i> there. He <i>fell</i> ill. He&#8217;s <i>sinking</i> fast. He came 
+<i>down</i> with the 
+flu. His health is <i>declining</i>. He <i>dropped</i> dead.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup><p> 
+[4.2] Orientational metaphors are evident in our ideas about musical space as 
+well. Like Scruton, Lawrence Zbikowski, a theorist influenced by Lakoff and 
+Johnson, points out that our characterization of the relative height of a pitch 
+does not rest on empirical data related to actual location in space, but on 
+metaphorical transference; there is no literal significance to the statement 
+that D4 on the piano is &#8220;higher&#8221; than C3; after all, both of them are located on 
+the same horizontal plane of the keys.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup>			The same applies to &#8220;vertical&#8221; 
+instruments: to play the &#8220;higher&#8221; D4 on the cello, we have to slide our left 
+hand downwards, in such a way that in fact brings it closer to the ground. Zbikowski&#8217;s conclusion is that our culturally induced conceptualization of 
+musical space is based on the conceptual metaphor PITCH RELATIONSHIPS ARE 
+RELATIONSHIPS IN VERTICAL SPACE which maps spatial orientations such as 
+&#8220;up-down&#8221; onto the pitch continuum.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup>			The cognitive theory of metaphor therefore 
+confirms Scruton&#8217;s fundamental insight regarding the metaphorical character of 
+musical understanding and paves the way towards its explanation.
+
+<p style="text-align: center"><b>5. Image Schemas and Physical Embodiment</p></b>
+
+<p> 
+[5.1] Metaphorical transference plays a central role in the constitution of 
+meaning but in itself is insufficient to provide a comprehensive explanation of 
+the nature of our understanding. Immediately, questions arise: Why does the 
+metaphorical mapping happen to be from a concrete domain to an abstract one? How 
+is the understanding of the source domain possible in the first place? In <i>The 
+Body in the Mind</i>, Mark Johnson approaches these questions with a surprising 
+suggestion, one with far-reaching implications for the philosophical discussion 
+of the problem of body and mind: the ultimate grounding of our understanding, he 
+claims, lies in the body, in its movements and orientations.<p> 
+[5.2] According to Johnson, our perception of the world involves image schemas, 
+which are experiential gestalts emerging from fixed patterns of our physical 
+activity.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup>			Image schemas operate at a pre-conceptual level and provide the 
+fundamental framework on which concepts and relationships that are essential to 
+metaphor are based. The hypothesis of image schemas whose source is physical 
+explains the direction taken by metaphorical mapping (from the concrete to the 
+abstract), and offers a platform for understanding the constraints that 
+determine our understanding of reality. In order to better comprehend the notion 
+of image schemas, two examples will be presented below: the path schema and the 
+force schema. The diagrams are for demonstration purposes only&#8212;to concretize 
+the principal elements of the schemas; they imply nothing about mental pictures 
+or representations we &#8220;carry&#8221; in our heads.
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Johnson&rsquo;s path schema</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="gur_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+[5.3] As in any image schema, the path schema (<b>Figure 1</b>) has an inner logic or 
+structure loyal to its source in physical experience. Paths are a very familiar 
+thing for us. There is a path that leads from the bedroom to the bathroom, from 
+the fridge to the kitchen table, from the Earth to the Moon, from the master&#8217;s 
+degree to the doctorate, and from the doctorate to a professorship; some of 
+these paths are real and some exist only metaphorically. In which case, they all 
+share a recurring image-schematic pattern with a definite internal structure: 
+(1) a source, or starting point; (2) a goal, or end-point; and (3) a sequence of 
+contiguous locations connecting the source with the goal. 
+</p>
+<p>
+			[5.4] As a consequence of these parts and their relations, the path schema has 
+certain typical characteristics: </p>
+<ol>
+	<li type=a>Continuity. Because the beginning and end 
+points of a path are connected by a series of contiguous locations, it follows 
+that, if you start at point A and move along a path to a further point B, then 
+you have passed through all the intermediate points in between. </li>
+	<li type=a>Directionality. Paths are not inherently directional&#8212;a path connecting point A 
+with point B does not necessarily go in one direction. However, since human 
+beings have purposes in traversing paths, they tend to experience them as 
+directional. </li>
+	<li type=a>Temporality. I start at point A (the source) at time T<font size="1">1</font>, and 
+move to point B (the goal) at time T<font size="1">2</font>. In this way, there is a time line mapped 
+onto the path. Such a linear spatialization of time gives rise to one important 
+way we understand temporality.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup></ol>
+<p>[5.5] While the path schema drives from our experience of paths, the second, the 
+force schema, derives from our experience of forceful activity. Johnson says:</p>
+<blockquote>
+	<p>In order to survive as organisms, we must interact with our environment. All 
+such causal interaction requires the exertion of <i>force</i>, either as we act upon 
+other objects, or as we are acted upon by them. Therefore, in our efforts at 
+comprehending our experience, structures of force come to play a central role.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup></p>
+</blockquote>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Johnson&rsquo;s force schemas</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="gur_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[5.6] The force schema is in fact a number of image schemas that constitute a 
+radial category, that is, a category that contains a prototype or typical member 
+and a number of less typical members.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> Johnson lists the following features of 
+the force schema prototype: (1) interaction; (2) vector or directionality; (3) 
+path of motion; (4) origins or sources; (5) degrees of power or intensity; and 
+(6) a structure or sequence of causality. <b>Figure 2</b> shows the visual 
+representations of the most common members of the force schema category: 
+compulsion, blockage, diversion, removal of restraint, enablement, and 
+attraction. The solid lines represent actual force vectors and broken lines 
+represent potential force vectors. In all the illustrated schemas, some elements 
+of the prototype are maintained, but others may change.
+</p>
+
+<p>[5.7] The path schema and the force schema offer a basis for a wide variety of 
+metaphorical interpretations in different fields, among them, as Janna Saslaw 
+has shown expansively, the field of music theory.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> In what follows, I will 
+examine the role of the path schema and the force schema in Jean-Philippe 
+Rameau&#8217;s <i>Trait&eacute; de l&#8217;Harmonie</i> of 1722, while taking issue with 
+Lakoff and Johnson&rsquo;s theory of embodied meaning and its assumptions.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> My examination will 
+show that the hypothesis of image-schema is not sufficiently adequate to account 
+for all the aspects of Rameau&#8217;s theory, and additional sources for metaphorical 
+projection should be taken into account for its full rendering.</p>
+
+<p style="text-align: center"><b>6. Metaphor and Embodiment in Rameau&#8217;s <i>Trait&eacute; de l&#8217;Harmonie</i></p></b>
+
+<p>[6.1] Rameau&#8217;s musical conception includes both the force schema and the path 
+schema.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> Both are expressed in his general view of music as 
+an interaction between 
+physical entities we call chords following one another in temporal succession.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> 
+Chords and the relationships between them play a central role in Rameau&#8217;s 
+musical thinking. He conceives harmony as the cause of voice leading, not its 
+product. Chord progressions govern the melodic events and facilitate the course 
+of music. In Book 2 of the <i>Trait&eacute;</i>, he says:</p>
+<blockquote>
+	<p>Harmony then is generated first, and it is from harmony that the rules of melody 
+must be derived; indeed, this is what we do by taking separately the 
+aforementioned harmonic intervals, and forming from them a fundamental 
+progression which is still not a melody. But when these intervals are put 
+together above one of their component sounds, they naturally follow a diatonic 
+course.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup></p>
+</blockquote>
+<p>[6.2] According to Rameau, the source of harmony in music is the undivided 
+string.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> Its division produces the perfect chord (<i>accord parfait</i>) 
+or &#8220;consonant harmony&#8221;;<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> 
+the addition of a third above it produces the seventh chord, or &#8220;dissonant 
+harmony.&#8221; All harmony is based on the perfect chord, the seventh chord, or an 
+inversion of either of them.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> The voice leading is guided by the progression 
+between these sonorities which are structured as self-contained, yet 
+functionally related, entities. Thus, Rameau&#8217;s conception of musical motion 
+invokes the force schema and the path schema by means of two conceptual 
+metaphors: HARMONIES ARE OBJECTS IN INTERACTION and HARMONIC PROGRESSION IS 
+PATH. These define Rameau&#8217;s approach to cadences, dissonances and other aspects 
+of composition.</p>
+<p>[6.3] Before we proceed, it is necessary, however, to examine the actual 
+relationships between these metaphors and Rameau&#8217;s theory. As previously noted, 
+Johnson&#8217;s theory of conceptual metaphors posits that the body is the ultimate 
+source of metaphor with embodied image schemas working as a limiting framework for 
+concepts. This hypothesis is not without difficulties when applied to Rameau&#8217;s 
+harmonic theory. For one, it is unable to account for all of Rameau&#8217;s 
+theoretical concepts.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup>			The problem we face in attempting to apply Johnson&#8217;s 
+hypothesis to Rameau&#8217;s theory, and to music theory in general, is twofold: on the 
+one hand, there is an obvious need to account for all the peculiarities of a 
+theoretical model if one is not to avoid its special features; on the other 
+hand, the metaphor theory will lose much of its explanatory force if it cannot 
+be proven that musical conceptions are constructed by metaphorical operations in 
+any systematic way. In order to solve this problem, I will attempt to 
+distinguish between those aspects of Rameau&#8217;s theory that are presumably 
+grounded in embodied experience, and those which seem to suggest other, or 
+additional, sources for their projection.</p>
+<p>[6.4] Rameau&#8217;s harmonic theory cannot be adequately understood without his 
+notion of inversion. As is well known, one of Rameau&#8217;s central tenets is that 
+certain harmonies are in fact &#8220;inversions&#8221; of some chord or other consisting of a 
+pile of thirds.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup>			At the bottom of this pile is the fundamental tone, or the root, 
+of the chord. A succession of root tones gives rise to the &#8220;fundamental bass&#8221; (<i>basse-fondamentale</i>), 
+the theoretical bass line that clarifies the harmonic progression. As Allan 
+Keiler has observed, this part has two conceptual aspects: on the one hand, it 
+may appear as an actual voice in the musical texture; on the other, it serves as 
+an underlying structural foundation that explains the other parts.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup>			The notion of 
+&#8220;inversion&#8221; is a metaphorical concept (chords are not objects to be inverted), 
+consistent with Rameau&#8217;s conceptualization of chords as objects in space.</p>
+<p>[6.5] Though the notes of the fundamental bass can appear anywhere in the 
+musical texture, Rameau insists that the fundamental bass is &#8220;always the lowest 
+and deepest part.&#8221;<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup>			In support of his claim, he quotes from Gioseffo Zarlino&#8217;s<i> Le institutioni harmonische</i>, interpreting the Italian theorist&#8217;s &#8220;bass&#8221; as 
+fundamental bass:</p>
+<blockquote>
+	<p>Just as the earth is the foundation for the other elements, so does the bass 
+have the property of sustaining, establishing, and strengthening the other 
+parts. It is thus taken as the basis and foundation of harmony and is called the 
+bass&#8212;the basis and support, so to speak <nobr>. . .</nobr> if the bass were to disappear, 
+the whole piece of music will be filled with dissonance and confusion.<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup></p>
+</blockquote>
+<p>Rameau&#8217;s employment of the quotation from Zarlino suggests that the fundamental 
+bass, whether or not it occurs as an actual voice, supports all the harmonic and 
+melodic events and determines the functional relations between the chords. Like 
+the earth, the fundamental bass functions as a coordinating force which keeps 
+everything above it in harmony.</p>
+<p>[6.6] Rameau argues that the progression of the fundamental bass is based on the 
+structure of the vertical sonorities. Arnold Schoenberg once described the &#8220;two 
+or more dimensional space in which musical ideas are presented&#8221; as a &#8220;unit.&#8221;<sup><a name="FN35REF" href="#FN35" id="footnote35">(35)</a></sup>
+He 
+was referring to the notion that the totality of events in a composition, 
+whether melodic, rhythmic, or harmonic, derive from the same source and reveal 
+their structural meaning through their interaction.
+
+</p>
+<p>
+
+[6.7] Rameau applies a similar notion of unity to the relation between chords 
+and the fundamental bass. In his view, the progression of the fundamental bass 
+and the chord structures are based on the same divisions of the monochord. As he 
+says: 
+
+</p>
+<blockquote>
+	<p>When we give a progression to the part representing this undivided string [i.e. 
+the fundamental bass], it can only proceed by those consonant intervals obtained 
+from the first divisions of this string. Each sound will consequently harmonize 
+with the sound preceding it. As each can bear in its turn a chord similar to the 
+chord obtained from the first divisions, it will easily represent the undivided 
+string, the source and foundation of the chord.<sup><a name="FN36REF" href="#FN36" id="footnote36">(36)</a></sup></p>
+</blockquote>
+<p>
+
+Rameau conceptualizes musical space as a homogeneous field in which the 
+intervals of the harmonic progression derive from the structures of the vertical 
+sonorities. He maintains that the most natural progression of the fundamental 
+bass is carried out in those intervals from which the chords are constructed, 
+the third and the fifth.<sup><a name="FN37REF" href="#FN37" id="footnote37">(37)</a></sup></p>
+<p>[6.8] The equation of the vertical structures of the chords with the horizontal 
+progressions of the fundamental bass contradicts our experience of physical 
+space as well as the phenomenal character of music.<sup><a name="FN38REF" href="#FN38" id="footnote38">(38)</a></sup> From 
+a bodily perspective, 
+moving along a horizontal path would seem to be vastly different from moving up 
+against the force of gravity. Similar structural differentiation exists also 
+among parts in a musical texture. Under normal conditions, musical space is not 
+at all homogenous but rather fraught with formal distinctions, which might 
+suggest a deeper connection with gravity. Manfred Bukofzer once noted that &#8220;It 
+is no mere metaphor if tonality is explained in terms of gravitation. Both 
+tonality and gravitation were discoveries of the baroque period made at exactly 
+the same time.&#8221;<sup><a name="FN39REF" href="#FN39" id="footnote39">(39)</a></sup></p>
+<p>[6.9] Admittedly, Bukofzer&#8217;s aim was to point out two analogous manifestations 
+of the Baroque culture in order to emphasize its essential coherence; yet the 
+suggestion is significant here for pointing out the hierarchical nature of both 
+musical and physical spaces. The experience of high and low in music has already 
+been indicated. It is important to note that in the context of tonal music this 
+distinction has consequences for the functional significance of the parts in the 
+texture. There is no question of the importance of the bass part, in comparison 
+to other parts, in establishing harmonic sense and directionality. Rameau&#8217;s 
+geometrical view of musical space clearly does not admit such distinctions 
+despite his appeal to the metaphor of the fundamental bass as &#8220;earth.&#8221;</p>
+<p>[6.10] Given Rameau&#8217;s acknowledgment of the importance of the bass as the 
+carrier of harmony, it might be interesting to ask why he adheres to a 
+conception of musical space that runs contrary to both experiential space and 
+aural perception of tonal music. Put differently, what is the source of Rameau&#8217;s 
+notion of musical space? According to the theory of embodied meaning, the choice 
+of a source domain for metaphorical mapping is determined by body-based 
+experience which correlates a concrete source domain with an abstract target 
+domain. &#8220;Schemas that structure our bodily experience preconceptually,&#8221; says 
+Lakoff, &#8220;have a basic logic. Preconceptual structure correlations in experience 
+motivate metaphors that map that logic onto abstract domains.&#8221;<sup><a name="FN40REF" href="#FN40" id="footnote40">(40)</a></sup> The contradiction 
+between Rameau&#8217;s view of musical space and our common experience of physical 
+space suggests an alternative basis for metaphorical mapping.
+
+</p>
+<p> [6.11] As recent studies of Rameau&#8217;s harmonic theory have demonstrated, the 
+notion of musical space introduced in the <i>Trait&eacute;</i> is based on the Cartesian view 
+that construes physical space as a two or three-dimensional undifferentiated 
+field.<sup><a name="FN41REF" href="#FN41" id="footnote41">(41)</a></sup> This suggests a cultural source in the form of a scientific model for Rameau&#8217;s notion, rather than one which is grounded in concrete musical and 
+physical experience. The affinity between his and Schoenberg&#8217;s view of musical 
+space by no means implies otherwise; Schoenberg&#8217;s compositional conception has 
+been a subject for dispute rather than agreement.<sup><a name="FN42REF" href="#FN42" id="footnote42">(42)</a></sup> From this case, it is clear 
+that selected source domains of metaphorical mapping can contradict expectations 
+derived from common experiences, and even arise from abstract domains such as 
+scientific theories. 
+
+</p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. A. Irregular cadence from the tonic note to its dominant. B. Irregular cadence from the fourth note to its tonic</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="gur_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[6.12] Though the 
+			fundamental bass can move in different ways, Rameau ascribes 
+central importance to cadences. In his harmonic theory, the cadence is not 
+(necessarily) a closing gesture, but a specific progression of the fundamental 
+bass. He recognizes two types of cadences:<sup><a name="FN43REF" href="#FN43" id="footnote43">(43)</a></sup> the &#8220;perfect cadence,&#8221; a leap of a 
+fifth down or a fourth up (from dominant to tonic), the first chord being a 
+seventh and the second a triad;<sup><a name="FN44REF" href="#FN44" id="footnote44">(44)</a></sup> and the &#8220;irregular cadence,&#8221; a leap of fifth up 
+or a fourth down (from tonic to dominant or from the subdominant to the tonic) 
+with the first chord being an added-sixth chord (<b>Figure 3</b>).<sup><a name="FN45REF" href="#FN45" id="footnote45">(45)</a></sup> Both kinds of cadences 
+may appear anywhere in the phrase. Music, according to Rameau, is nothing but a 
+chain of cadences in different inversions and variations. In terms of the path 
+schema, they connect adjacent points along the path, and guarantee the 
+continuity of the harmonic process.  
+</p>
+
+<p> [6.13] In the <i>Trait&eacute;</i>, Rameau explains the cadential progressions of the 
+fundamental bass other than by third and fifth due to &#8220;license&#8221; (Rameau&#8217;s 
+term for deviation from the norm). In later writings, however, he proposes that 
+the progression of a second between the subdominant (or added sixth chord) and 
+dominant (V) is a result of &#8220;double usage&#8221; (<i>double emploi</i>). The subdominant, he 
+suggests, can be interpreted as a chord on the fourth scale degree, or, 
+alternatively, as the first inversion of a seventh chord on the second degree 
+(II<img border="0" src="../../gifs/65.gif" width="7" height="16">), depending on the context. In a typical cadential progression (in 
+modern terms: I-IV-V-I), the subdominant will function as an added-sixth chord 
+in relation to the tonic and as a second degree first-inversion chord in 
+relation to the dominant. In this way, Rameau establishes a fifth relation with the 
+chords both preceding and following the subdominant.
+
+</p>
+<p> [6.14] At first sight, Rameau&#8217;s speculative notion of the double usage was meant 
+to force the subdominant chord into the scheme of fifth-based progressions. To 
+that extent, however, it is revealing for the systematicity of his metaphor of 
+musical motion. In Rameau&#8217;s theory, cadential progressions function as a model, 
+or a basic category. Music is nothing but a series of continuous cadential progressions, 
+and a digression from this model calls for correctives. The notion of &#8220;double 
+usage&#8221; makes it possible for Rameau not only to &#8220;assimilate&#8221; the problematic 
+aspect of the subdominant into his theory, but also to reinforce the metaphor of 
+harmonic motion as path consisting of interlocking cadences.</p>
+<p> [6.15] Rameau&#8217;s concept of cadences also indicates structuring by the force 
+schema. He claims that each cadence has its typical dissonance: for the perfect 
+cadence it is the seventh of the dominant, and for the irregular cadence, the 
+added-sixth (<i>sixte ajout&eacute;</i>) of the first chord, which forms a dissonance with the 
+fifth of the bass. In both instances, the dissonance generates the force that 
+propels the chords towards their resolution.
+
+</p>
+<p> [6.16] Rameau extended this idea to all the harmonic progressions in order to 
+explain the kinetic character of music.<sup><a name="FN46REF" href="#FN46" id="footnote46">(46)</a></sup> &#8220;Far from dissonance being an 
+embarrassment in composition,&#8221; he says, &#8220;it facilitates its course;&#8221;<sup><a name="FN47REF" href="#FN47" id="footnote47">(47)</a></sup> elsewhere 
+he refers to the seventh chord of the perfect cadence, saying that &#8220;It seems 
+that dissonance is needed here in order that its harshness should make the rest 
+which follows more desired.&#8221;<sup><a name="FN48REF" href="#FN48" id="footnote48">(48)</a></sup>
+For Rameau, the dissonance is not an exceptional 
+event but a condition for musical continuity. Dissonances, he claims, even if 
+they are not actually present, are present implicitly and drive the music 
+forward.<sup><a name="FN49REF" href="#FN49" id="footnote49">(49)</a></sup> 
+</p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Compulsion schema</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="gur_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6.17] Rameau&#8217;s view of the function of dissonance attests to the influence of 
+another contemporary intellectual model on his harmonic theory, that is, 
+mechanistic philosophy. For him, dissonances work as a mechanistic force that 
+pushes each chord to the following one. Significantly, this view is compatible 
+with the compulsion schema (<b>Figure 4</b>) which complements his cultural source in a 
+way that suggests mutual support between the physical experience of force and 
+his deliberate choice of this intellectual model as a framework for his theory. 
+Rameau&#8217;s metaphor of dissonance as force is both a metaphorical elaboration of a 
+concept derived from prevalent eighteenth-century scientific ideas and an embodied 
+source domain.</p>
+		
+<p> 
+
+[6.18] Rameau concretizes his view through an analogy between the behavior of 
+dissonances and that of colliding objects.<sup><a name="FN50REF" href="#FN50" id="footnote50">(50)</a></sup> In the &#8220;Supplement&#8221; part of the 
+<i>Trait&eacute;</i>, Rameau quotes two propositions from a text on physics by Ignace-Gaston 
+Pardies, a famous seventeenth century physician:
+
+</p>
+<blockquote>
+	<p><i>A moving body meeting another body which is at rest gives the body at rest all 
+its motion and remains immobile itself.<br>A hard body which strikes an immovable body will be reflected together with its 
+motion.</i><sup><a name="FN51REF" href="#FN51" id="footnote51">(51)</a></sup></p>
+</blockquote>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Rameau&rsquo;s analysis</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="gur_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+
+[6.19] Rameau attempts to show that the first effect parallels that of the 
+prepared dissonance, and the second, that of the unprepared dissonance. To do 
+so, he analyzes two progressions, the first containing perfect cadences, the 
+second with irregular ones. His analysis is presented in <b>Figure 5</b>. The slanted 
+lines between pitches indicate the direction of the dissonances. The notes marked B are prepared 
+dissonances, those marked F are unprepared. To see the similar effect of the 
+collision between physical bodies and dissonances, Rameau asks us to notice that 
+&#8220;dissonance B is at rest when consonance A strikes it (<i>la frapper</i>).&#8221; And he 
+continues:
+
+</p>
+<blockquote>
+	<p>Immediately after the collision [<i>choc</i>], the consonance becomes immobile and 
+obliges the dissonance to pass to C. This is effectively the place to which the 
+consonance itself could have passed but can no longer do so, since the 
+dissonance has taken its place. The consonance seems to have given all its 
+motion to the dissonance. Then, Consonance D, which seems to be unshakable [<i>in&eacute;branlable</i>], 
+after having received a strike from dissonance F, obliges it to return to G, 
+from where it started. The dissonance here seems to be reflected with all its 
+motion, after having struck an immovable consonance.<sup><a name="FN52REF" href="#FN52" id="footnote52">(52)</a></sup></p>
+</blockquote>		
+
+
+<p> 
+
+[6.20] Rameau&#8217;s analysis clarifies in a far more tangible way than any 
+theoretical statement his perception of music as a forceful activity. At the 
+same time, the mechanistic-compulsive nature of the entire harmonic process 
+attests to his view of music as having a defined structure of causality. Such a 
+structure is an additional element of the force schema.
+
+</p>
+<p> 
+
+[6.21] Rameau&#8217;s conceptualization of the dissonance also includes the element of 
+vector or directionality of the same schema. Our experience of force involves 
+directional motion of an object in space. For Rameau, I surmise, the mobile 
+object is the chord, which &#8220;moves&#8221; to the following chord, repeating this 
+process up to the final tonic. The whole process is activated by the dissonance, 
+music&#8217;s source of force. As a musical event that demands a defined and agreed 
+upon resolution, the dissonance is responsible for the directionality of the 
+harmonic progression.
+
+</p>
+<p> 
+
+[6.22] Rameau&#8217;s view of musical motion as a whole is predicated upon the 
+dissonance as a source of tension. The preparation and resolution of all types 
+of dissonance, he argues, is identical to that of the seventh of the dominant 
+seventh chord: &#8220;The rules concerning dissonance should always be derived from 
+the fundamental bass and from the fundamental seventh chord. We shall see, 
+furthermore, that the seventh chord alone reigns in all the different dissonant 
+chords we may use.&#8221;<sup><a name="FN53REF" href="#FN53" id="footnote53">(53)</a></sup> In his view, each seventh chord contains at least one of the 
+following two types of dissonance: &#8220;minor dissonance,&#8221; produced by the addition 
+of a minor third above the fifth of the chord in root position (i.e. a minor 
+seventh above the tonic) and &#8220;major dissonance,&#8221; referring to the leading tone. 
+(Rameau noted that the chord presently known as the dominant seventh chord 
+contains a dissonant interval, a tritone, between its seventh and the leading 
+tone.) Because both these tones demand a clearly marked resolution, the first 
+downwards, and the second upwards, Rameau interprets both as dissonances.</p>
+
+<div style="width:360px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Chain of seventh chords</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="gur_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+[6.23] In order to explain how these rules apply to other types of dissonance, 
+for instance, &#8220;suspensions,&#8221; Rameau introduced a new concept in music theory: 
+supposition. This term refers to a process in which a part is added either a 
+third or a fifth below the fundamental bass of a dissonant chord, in order to 
+explain various dissonances as &#8220;major dissonance&#8221; or as &#8220;minor dissonance&#8221; above 
+the chord in the supposition.<sup><a name="FN54REF" href="#FN54" id="footnote54">(54)</a></sup> Being based on the same harmonic formation, real 
+or theoretical, all dissonances behave in an identical way. Ideally, music, in Rameau&#8217;s view, is structured as a chain of seventh chords which resolve one into 
+the other in a regular manner (<b>Figure 6</b>).<sup><a name="FN55REF" href="#FN55" id="footnote55">(55)</a></sup> The ideal chain of seventh chords ends 
+on the tonic. As the only chord that does not contain the kinetic element of 
+dissonance, the tonic is the starting and ultimate ending point of every 
+harmonic path. At the same time, it is also the conclusion of the mechanistic 
+process activated by the dissonance.</p>
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Removal of restraint schema</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="gur_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="gur_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p> 
+
+[6.24] Finally, the qualitative difference between the tonic and all other 
+chords implies the element of the degree of power or intensity essential for the 
+prototypical force schema. From the distinction between &#8220;dynamic&#8221; chords that 
+contain dissonances and a &#8220;static&#8221; tonic, it appears that Rameau&#8217;s system admits 
+at least two levels of intensity: the first, active tension produced within the 
+phrase by progression between chords that are not the tonic, and, second, the 
+total lack of tension intrinsic to the tonic. To these, one might add a third, 
+intermediate level that results from the deceptive cadence which delays the 
+musical flow by a temporary interruption, but does not bring it to a standstill: 
+ &#8220;If we change the progression of one of the sounds in the first chord of a 
+perfect cadence, we shall undoubtedly interrupt the conclusion.&#8221;<sup><a name="FN56REF" href="#FN56" id="footnote56">(56)</a></sup> The deceptive 
+cadence is apparently parallel to the case in which a temporary physical 
+obstacle interferes with the advancement of a moving object, thereby invoking 
+the removal of restraint schema (<b>Figure 7</b>). This schema, like the aforementioned 
+force schemas, resonates with Rameau&#8217;s contemporary scientific notion of 
+mechanistic causation.
+
+<p style="text-align: center"><b>7. Conclusion</p></b>
+
+<p> 
+
+[7.1] This paper has focused on the metaphorical character of our musical 
+understanding and investigated the influence of physical embodiment on Rameau&#8217;s 
+harmonic theory as this is expressed in the application of two image schemas: 
+force and path. These provide a basis for metaphorical interpretations that bear 
+on his conceptualization of harmonic processes. The path schema is expressed in 
+Rameau&#8217;s view of harmonic progression as a directional and continuous process 
+that begins and ends at specified points; the force schema is indicated by his 
+view of the chords as entities in interaction, of the dissonance as a source of 
+force, and the complete harmonic process as a structure of causality. These two 
+schemas are essential to Rameau&#8217;s theory and to other systematic conceptualizations of 
+music as well.
+
+</p>
+<p> 
+
+[7.2] But to what extent are Rameau&#8217;s ideas the product of universal physical 
+experience and to what extent are they based on individual choice and cultural 
+influences? Or, to formulate the question in psychological terminology, what 
+part is played by nature and what by nurture? According to the theory of 
+embodied meaning, the choice of a specific verbal representation of reality is 
+not arbitrary but based on an underlying image schema that best fits the event 
+or experience to be represented.<sup><a name="FN57REF" href="#FN57" id="footnote57">(57)</a></sup> As we saw, however, the range of application of 
+each schema and the degree of its systematization may change from case to case 
+in accordance with personal and cultural preferences. Moreover, the force and 
+path schemas interact in Rameau&#8217;s harmonic theory with additional sources for 
+metaphorical projection. Most notable was Rameau&#8217;s attempt to bring the 
+scientific notions of his time to the theoretical discourse of music, which 
+resulted in a certain perspective on musical space and tonal motion.
+
+</p>
+<p> 
+
+[7.3] This paper advocates a pluralistic approach to metaphor, one which 
+acknowledges that metaphorical mapping can draw on a variety of sources 
+simultaneously. For Rameau, the choice to conceptualize harmony in terms of the 
+path and force schemas derives, apparently, from the temporal character of music 
+that invites a discussion in terms of path on the one hand, and the mechanistic 
+philosophy of the Enlightenment that encourages images of force and motion on 
+the other. Yet, even if such a separation is feasible in theory, we have seen 
+how, in reality, the various components of the two schemas, and concepts 
+deriving from Rameau&#8217;s intellectual models, combine with one another, rendering 
+any separation between them artificial.
+
+</p>
+<p> 
+
+[7.4] As an attempt to explain an aspect of reality, Rameau&#8217;s theory offers a 
+good example of the fact that the borders between nature and culture, between 
+subjective and objective meaning, and between literal and figurative description 
+are not as clear as is commonly accepted. The new awareness of the metaphorical 
+character of musical discourse and thought may not radically change the way 
+music has been and continues to be discussed and analyzed, but it certainly 
+raises profound questions about the relation between music and other fields of 
+our experience.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Golan Gur<br>
+	Ludwig Maximilian University<br>Institut f&uuml;r Musikwissenschaft<br>Christoph-Probst-Str. 16, app. 00-08<br>80805 Munich<br>Germany<br><a href="mailto:golan.gur@campus.lmu.de">golan.gur@campus.lmu.de</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_alverson_1991" class="flyoverdiv">Alverson, Hoyt. 1991. &#8220;Metaphor and Experience: Looking Over the Notion of Image Schema.&#8221; In <i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, edited by James W. Fernandez, 94&#8211;116. California: Stanford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="alverson_1991"></a>Alverson, Hoyt. 1991. &#8220;Metaphor and Experience: Looking Over the Notion of Image Schema.&#8221; In <i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, edited by James W. Fernandez, 94&#8211;116. California: Stanford University Press.</p><div id="citediv_babbitt_1972" class="flyoverdiv">Babbitt, Milton. 1972. &#8220;Past and Present Concepts of the Nature and Limits of Music.&#8221; In <i>Perspectives in Contemporary Music</i>, edited by Benjamin Boretz and Edward T. Cone, 3&#8211;9. New York: W.W. Norton and Company Inc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="babbitt_1972"></a>Babbitt, Milton. 1972. &#8220;Past and Present Concepts of the Nature and Limits of Music.&#8221; In <i>Perspectives in Contemporary Music</i>, edited by Benjamin Boretz and Edward T. Cone, 3&#8211;9. New York: W.W. Norton and Company Inc.</p><div id="citediv_bell_2002" class="flyoverdiv">Bell, Andy. 2002. <i>Debates in Psychology</i>. London: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bell_2002"></a>Bell, Andy. 2002. <i>Debates in Psychology</i>. London: Routledge.</p><div id="citediv_black_1955" class="flyoverdiv">Black, Max. 1955. &#8220;Metaphor.&#8221; <i>Proceedings of the Aristotelian Society </i>55: 273&#8211;94.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="black_1955"></a>Black, Max. 1955. &#8220;Metaphor.&#8221; <i>Proceedings of the Aristotelian Society </i>55: 273&#8211;94.</p><div id="citediv_black_1977" class="flyoverdiv">Black, Max. 1977. &#8220;More about Metaphor.&#8221; <i>Dialectica</i> 31: 431&#8211;57.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="black_1977"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1977. &#8220;More about Metaphor.&#8221; <i>Dialectica</i> 31: 431&#8211;57.</p><div id="citediv_brower_1997-8" class="flyoverdiv">Brower, Candace. 1997/8. &#8220;Pathway, Blockage, and Containment in Density 21.5.&#8221; <i>Theory and Practice</i> 22/23: 35&#8211;54.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brower_1997-8"></a>Brower, Candace. 1997/8. &#8220;Pathway, Blockage, and Containment in Density 21.5.&#8221; <i>Theory and Practice</i> 22/23: 35&#8211;54.</p><div id="citediv_bukofzer_1947" class="flyoverdiv">Bukofzer, Manfred. 1947. <i>Music in the Baroque Era</i>. New York: W. W. Norton &amp; Company.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bukofzer_1947"></a>Bukofzer, Manfred. 1947. <i>Music in the Baroque Era</i>. New York: W. W. Norton &amp; Company.</p><div id="citediv_christensen_1993" class="flyoverdiv">Christensen, Thomas. 1993. <i>Rameau and Musical Thought in the Enlightenment</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="christensen_1993"></a>Christensen, Thomas. 1993. <i>Rameau and Musical Thought in the Enlightenment</i>. Cambridge: Cambridge University Press.</p><div id="citediv_christensen_1987" class="flyoverdiv">Christensen, Thomas. 1987. &#8220;Rameau&#8217;s &#8216;L&#8217;Art de la Basse Fondamentale.&#8217;&#8221; <i>Music Theory Spectrum</i> 9: 18&#8211;41.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="christensen_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. &#8220;Rameau&#8217;s &#8216;L&#8217;Art de la Basse Fondamentale.&#8217;&#8221; <i>Music Theory Spectrum</i> 9: 18&#8211;41.</p><div id="citediv_clifton_1983" class="flyoverdiv">Clifton, Thomas. 1983. <i>Music as Heard: A Study in Applied Phenomenology</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clifton_1983"></a>Clifton, Thomas. 1983. <i>Music as Heard: A Study in Applied Phenomenology</i>. New Haven: Yale University Press.</p><div id="citediv_cohen_2001" class="flyoverdiv">Cohen, David E. 2001. &#8220;&#8216;The Imperfect Seeks its Perfection&#8217;: Harmonic Progression, Directed Motion, and Aristotelian Physics.&#8221; <i>Music Theory Spectrum</i> 23.2: 139&#8211;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohen_2001"></a>Cohen, David E. 2001. &#8220;&#8216;The Imperfect Seeks its Perfection&#8217;: Harmonic Progression, Directed Motion, and Aristotelian Physics.&#8221; <i>Music Theory Spectrum</i> 23.2: 139&#8211;69.</p><div id="citediv_cook_1990" class="flyoverdiv">Cook, Nicholas. 1990. <i>Music, Imagination, and Culture</i>. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_1990"></a>Cook, Nicholas. 1990. <i>Music, Imagination, and Culture</i>. Oxford: Oxford University Press.</p><div id="citediv_cook_1998" class="flyoverdiv">Cook, Nicholas. 1998. <i>Analysing Musical Multimedia</i>. Oxford: Clarendon Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. <i>Analysing Musical Multimedia</i>. Oxford: Clarendon Press.</p><div id="citediv_cook_2001" class="flyoverdiv">Cook, Nicholas. 2001. &#8220;Theorizing Musical Meaning.&#8221; <i>Music Theory Spectrum</i> 23.2: 170&#8211;95.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. &#8220;Theorizing Musical Meaning.&#8221; <i>Music Theory Spectrum</i> 23.2: 170&#8211;95.</p><div id="citediv_cook_2002" class="flyoverdiv">Cook, Nicholas. 2002. &#8220;Epistemologies of Music Theory.&#8221; In <i>The Cambridge History of Western Music Theory</i>, edited by Thomas Christensen, 78&#8211;105. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002. &#8220;Epistemologies of Music Theory.&#8221; In <i>The Cambridge History of Western Music Theory</i>, edited by Thomas Christensen, 78&#8211;105. Cambridge: Cambridge University Press.</p><div id="citediv_cox_1999" class="flyoverdiv">Cox, Arnie. 1999. &#8220;The Metaphorical Logic of Musical Motion and Space.&#8221; Ph.D. dissertation, University of Oregon.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cox_1999"></a>Cox, Arnie. 1999. &#8220;The Metaphorical Logic of Musical Motion and Space.&#8221; Ph.D. dissertation, University of Oregon.</p><div id="citediv_crane_1995" class="flyoverdiv">Crane, Tim. 1995. <i>The Mechanical Mind: A Philosophical Introduction to Minds, Machines and Mental Representation</i>. London: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="crane_1995"></a>Crane, Tim. 1995. <i>The Mechanical Mind: A Philosophical Introduction to Minds, Machines and Mental Representation</i>. London: Routledge.</p><div id="citediv_cumming_1994" class="flyoverdiv">Cumming, Naomi. 1994. &#8220;Metaphor in Roger Scruton&#8217;s Aesthetics of Music.&#8221; In <i>Theory, Analysis and Meaning in Music</i>, edited by Anthony Pople, 3&#8211;28. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cumming_1994"></a>Cumming, Naomi. 1994. &#8220;Metaphor in Roger Scruton&#8217;s Aesthetics of Music.&#8221; In <i>Theory, Analysis and Meaning in Music</i>, edited by Anthony Pople, 3&#8211;28. Cambridge: Cambridge University Press.</p><div id="citediv_dahlhaus_1990" class="flyoverdiv">Dahlhaus, Carl. 1990. <i>Studies on the Origin of Harmonic Tonality</i>, translated by Robert O. Gjerdingen. New Jersey: Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dahlhaus_1990"></a>Dahlhaus, Carl. 1990. <i>Studies on the Origin of Harmonic Tonality</i>, translated by Robert O. Gjerdingen. New Jersey: Princeton University Press.</p><div id="citediv_dahlhaus_1986" class="flyoverdiv">Dahlhaus, Carl. 1986. &#8220;Ist Rameaus Trait&eacute; de l&#8217;harmonie eine Harmonielehre?&#8220; <i>Musiktheorie</i> 1: 123&#8211;27.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dahlhaus_1986"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1986. &#8220;Ist Rameaus Trait&eacute; de l&#8217;harmonie eine Harmonielehre?&#8220; <i>Musiktheorie</i> 1: 123&#8211;27.</p><div id="citediv_eitan_and_granot_2006" class="flyoverdiv">Eitan, Zohar and Roni Y. Granot. 2006. &#8221;&#8216;How Music Moves:&#8217; Musical Parameters and Listener&#8217;s Images of Motion.&#8220; <i>Music Perception</i> 23.3: 221&#8211;47.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="eitan_and_granot_2006"></a>Eitan, Zohar and Roni Y. Granot. 2006. &#8221;&#8216;How Music Moves:&#8217; Musical Parameters and Listener&#8217;s Images of Motion.&#8220; <i>Music Perception</i> 23.3: 221&#8211;47.</p><div id="citediv_guck_1991" class="flyoverdiv">Guck, Marion A. 1991. &#8220;Two Types of Metaphoric Transfer.&#8221; In <i>Metaphor: A Musical Dimension</i>, edited by Jamie C. Kassler, 1&#8211;12. Sydney: Currency Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guck_1991"></a>Guck, Marion A. 1991. &#8220;Two Types of Metaphoric Transfer.&#8221; In <i>Metaphor: A Musical Dimension</i>, edited by Jamie C. Kassler, 1&#8211;12. Sydney: Currency Press.</p><div id="citediv_hanslick_1986" class="flyoverdiv">Hanslick, Eduard. 1986. <i>On the Musically Beautiful: A Contribution towards the Revision of the Aesthetics of Music</i> (1854), edited and translated by Geoffrey Payzant. Indiana: Hackett Publishing Company.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hanslick_1986"></a>Hanslick, Eduard. 1986. <i>On the Musically Beautiful: A Contribution towards the Revision of the Aesthetics of Music</i> (1854), edited and translated by Geoffrey Payzant. Indiana: Hackett Publishing Company.</p><div id="citediv_hatten_1995" class="flyoverdiv">Hatten Robert S. 1995. &#8220;Metaphor in Music.&#8221; In <i>Musical Signification: Essays in the Semiotic Theory and Analysis of Music</i>, edited by Eero Tarasti, 373&#8211;91. Berlin: Mouton de Gruyter.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hatten_1995"></a>Hatten Robert S. 1995. &#8220;Metaphor in Music.&#8221; In <i>Musical Signification: Essays in the Semiotic Theory and Analysis of Music</i>, edited by Eero Tarasti, 373&#8211;91. Berlin: Mouton de Gruyter.</p><div id="citediv_johnson_1987" class="flyoverdiv">Johnson, Mark. 1987. <i>The Body in the Mind.</i> Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="johnson_1987"></a>Johnson, Mark. 1987. <i>The Body in the Mind.</i> Chicago: The University of Chicago Press.</p><div id="citediv_keiler_1981" class="flyoverdiv">Keiler, Allan. 1981. &#8220;Music as Metalanguage: Rameau&#8217;s Fundamental Bass.&#8221; In <i>Music Theory: Special Topics</i>, edited by Richmond Browne, 83&#8211;100. New York: Academic Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="keiler_1981"></a>Keiler, Allan. 1981. &#8220;Music as Metalanguage: Rameau&#8217;s Fundamental Bass.&#8221; In <i>Music Theory: Special Topics</i>, edited by Richmond Browne, 83&#8211;100. New York: Academic Press.</p><div id="citediv_kerman_1985" class="flyoverdiv">Kerman, Joseph. 1985. <i>Contemplating Music: Challenges to Musicology</i>. Cambridge: Harvard University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kerman_1985"></a>Kerman, Joseph. 1985. <i>Contemplating Music: Challenges to Musicology</i>. Cambridge: Harvard University Press.</p><div id="citediv_lakoff_and_johnson_1980" class="flyoverdiv">Lakoff, George and Mark Johnson. 1980. <i>Metaphors We Live By</i>. Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_and_johnson_1980"></a>Lakoff, George and Mark Johnson. 1980. <i>Metaphors We Live By</i>. Chicago: The University of Chicago Press.</p><div id="citediv_lakoff_1993" class="flyoverdiv">Lakoff, George. 1993. &#8220;The Contemporary Theory of Metaphor.&#8221; In <i>Metaphor and Thought</i>, edited by Andrew Ortony, 202&#8211;51. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_1993"></a>Lakoff, George. 1993. &#8220;The Contemporary Theory of Metaphor.&#8221; In <i>Metaphor and Thought</i>, edited by Andrew Ortony, 202&#8211;51. Cambridge: Cambridge University Press.</p><div id="citediv_lakoff_1987" class="flyoverdiv">Lakoff, George. 1987. <i>Women, Fire, and Dangerous Things: What Categories Reveal About the Mind</i>. University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. <i>Women, Fire, and Dangerous Things: What Categories Reveal About the Mind</i>. University of Chicago Press.</p><div id="citediv_lakoff_1999" class="flyoverdiv">Lakoff, George. 1999. <i>Philosophy in the Flesh: the Embodied Mind and its Challenge to Western Thought</i>. New York: Basic Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. <i>Philosophy in the Flesh: the Embodied Mind and its Challenge to Western Thought</i>. New York: Basic Books.</p><div id="citediv_larson_1997-8" class="flyoverdiv">Larson, Steve. 1997/8. &#8220;Musical Forces and Melodic Patterns.&#8221; <i>Theory and Practice</i> 22/23: 55&#8211;71.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="larson_1997-8"></a>Larson, Steve. 1997/8. &#8220;Musical Forces and Melodic Patterns.&#8221; <i>Theory and Practice</i> 22/23: 55&#8211;71.</p><div id="citediv_larson_1993" class="flyoverdiv">Larson, Steve. 1993. &#8220;Scale-Degree Function: A Theory of Expressive Meaning and Its Application to Aural Skills Pedagogy.&#8221; <i>Journal of Music Theory Pedagogy</i> 7: 69&#8211;84.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="larson_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. &#8220;Scale-Degree Function: A Theory of Expressive Meaning and Its Application to Aural Skills Pedagogy.&#8221; <i>Journal of Music Theory Pedagogy</i> 7: 69&#8211;84.</p><div id="citediv_lerdahl_and_jackendoff_1983" class="flyoverdiv">Lerdahl, Fred and Ray Jackendoff. 1983. <i>A Generative Theory of Tonal Music</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lerdahl_and_jackendoff_1983"></a>Lerdahl, Fred and Ray Jackendoff. 1983. <i>A Generative Theory of Tonal Music</i>. Cambridge: Cambridge University Press.</p><div id="citediv_lerdahl_1988" class="flyoverdiv">Lerdahl, Fred. 1988. &#8220;Cognitive Constrains on Compositional Systems.&#8221; In <i>Generative Processes in Music</i>, edited by John A. Sloboda, 231&#8211;259. Oxford: Clarendon Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lerdahl_1988"></a>Lerdahl, Fred. 1988. &#8220;Cognitive Constrains on Compositional Systems.&#8221; In <i>Generative Processes in Music</i>, edited by John A. Sloboda, 231&#8211;259. Oxford: Clarendon Press.</p><div id="citediv_lester_1992" class="flyoverdiv">Lester, Joel. 1992. <i>Compositional Theory in the Eighteenth-Century</i>. Cambridge: Harvard University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lester_1992"></a>Lester, Joel. 1992. <i>Compositional Theory in the Eighteenth-Century</i>. Cambridge: Harvard University Press.</p><div id="citediv_lester_2002" class="flyoverdiv">Lester, Joel. 2002. &#8220;Rameau and Eighteenth-Century Harmonic Theory.&#8221; In <i>The Cambridge History of Western Music Theory</i>, edited by Thomas Christensen, 753&#8211;77. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lester_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002. &#8220;Rameau and Eighteenth-Century Harmonic Theory.&#8221; In <i>The Cambridge History of Western Music Theory</i>, edited by Thomas Christensen, 753&#8211;77. Cambridge: Cambridge University Press.</p><div id="citediv_lewin_1978" class="flyoverdiv">Lewin, David. 1978. &#8220;Two Interesting Passages in Rameau&#8217;s Trait&eacute; de l&#8217;Harmonie.&#8221; <i>In Theory Only</i> 4.3: 3&#8211;11.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1978"></a>Lewin, David. 1978. &#8220;Two Interesting Passages in Rameau&#8217;s Trait&eacute; de l&#8217;Harmonie.&#8221; <i>In Theory Only</i> 4.3: 3&#8211;11.</p><div id="citediv_lewin_1986" class="flyoverdiv">Lewin, David. 1986. &#8220;Music Theory, Phenomenology, and Modes of Perception.&#8221; <i>Music Perception </i>3.4: 327&#8211;92.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1986"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1986. &#8220;Music Theory, Phenomenology, and Modes of Perception.&#8221; <i>Music Perception </i>3.4: 327&#8211;92.</p><div id="citediv_lidov_1987" class="flyoverdiv">Lidov, David. 1987. &#8220;Mind and Body in Music.&#8221; <i>Semiotica</i> 66.1: 66&#8211;97.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lidov_1987"></a>Lidov, David. 1987. &#8220;Mind and Body in Music.&#8221; <i>Semiotica</i> 66.1: 66&#8211;97.</p><div id="citediv_lochhead_1988-9" class="flyoverdiv">Lochhead, Judy. 1988/89. &#8220;The Metaphor of Musical Motion: Is There an Alternative?.&#8221; <i>Theory and Practice</i> 14/15: 83&#8211;103.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lochhead_1988-9"></a>Lochhead, Judy. 1988/89. &#8220;The Metaphor of Musical Motion: Is There an Alternative?.&#8221; <i>Theory and Practice</i> 14/15: 83&#8211;103.</p><div id="citediv_maus_1988" class="flyoverdiv">Maus, Fred Everett. 1988. &#8220;Music as Drama.&#8221; <i>Music Theory Spectrum </i>10: 56&#8211;73.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="maus_1988"></a>Maus, Fred Everett. 1988. &#8220;Music as Drama.&#8221; <i>Music Theory Spectrum </i>10: 56&#8211;73.</p><div id="citediv_meyer_1956" class="flyoverdiv">Meyer, Leonard. 1956. <i>Emotion and Meaning in Music</i>. Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="meyer_1956"></a>Meyer, Leonard. 1956. <i>Emotion and Meaning in Music</i>. Chicago: The University of Chicago Press.</p><div id="citediv_moran_2000" class="flyoverdiv">Moran, Dermot. 2000. <i>Introduction to Phenomenology</i>. London: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moran_2000"></a>Moran, Dermot. 2000. <i>Introduction to Phenomenology</i>. London: Routledge.</p><div id="citediv_nietzsche_1992" class="flyoverdiv">Nietzsche, Friedrich. 1992. &#8220;On Truth and Lies in a Nonmoral Sense.&#8221; In <i>Philosophy and Truth: Selections from Nietzsche&#8217;s Notebooks of the early 1870&#8217;s</i>, edited and translated by Daniel Breazeale, 79&#8211;97. New Jersey: Humanities Press International, Inc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nietzsche_1992"></a>Nietzsche, Friedrich. 1992. &#8220;On Truth and Lies in a Nonmoral Sense.&#8221; In <i>Philosophy and Truth: Selections from Nietzsche&#8217;s Notebooks of the early 1870&#8217;s</i>, edited and translated by Daniel Breazeale, 79&#8211;97. New Jersey: Humanities Press International, Inc.</p><div id="citediv_quinn_1991" class="flyoverdiv">Quinn, Naomi. 1991. &#8220;The Cultural Basis of Metaphor.&#8221; In <i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, edited by James W. Fernandez, 56&#8211;93. California: Stanford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_1991"></a>Quinn, Naomi. 1991. &#8220;The Cultural Basis of Metaphor.&#8221; In <i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, edited by James W. Fernandez, 56&#8211;93. California: Stanford University Press.</p><div id="citediv_rameau_1971" class="flyoverdiv">Rameau, Jean-Philippe. 1971. <i>Treatise on Harmony</i> (1722), translated by Philip Gossett. New York: Dover Publication Inc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rameau_1971"></a>Rameau, Jean-Philippe. 1971. <i>Treatise on Harmony</i> (1722), translated by Philip Gossett. New York: Dover Publication Inc.</p><div id="citediv_ricoeur_1977" class="flyoverdiv">Ricoeur, Paul. 1977. <i>The Rule of Metaphor: Multi-Disciplinary Studies of the Creation of Meaning in Language</i>, translated by R. Czerny, K. McLaughlin and J. Costello. Toronto: University of Toronto Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ricoeur_1977"></a>Ricoeur, Paul. 1977. <i>The Rule of Metaphor: Multi-Disciplinary Studies of the Creation of Meaning in Language</i>, translated by R. Czerny, K. McLaughlin and J. Costello. Toronto: University of Toronto Press.</p><div id="citediv_ryle_1949" class="flyoverdiv">Ryle, Gilbert. 1949. <i>The Concept of Mind</i>. Barnes &amp; Noble, Inc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ryle_1949"></a>Ryle, Gilbert. 1949. <i>The Concept of Mind</i>. Barnes &amp; Noble, Inc.</p><div id="citediv_saslaw_1996" class="flyoverdiv">Saslaw, Janna. 1996. &#8220;Forces, Containers, and Paths: The Role of Body-Derived Image Schemas in the Conceptualization of Music.&#8221; <i>Journal of Music Theory</i> 40.2: 217&#8211;43.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="saslaw_1996"></a>Saslaw, Janna. 1996. &#8220;Forces, Containers, and Paths: The Role of Body-Derived Image Schemas in the Conceptualization of Music.&#8221; <i>Journal of Music Theory</i> 40.2: 217&#8211;43.</p><div id="citediv_saslaw_1997-8" class="flyoverdiv">Saslaw, Janna. 1997/8. &#8220;Life Forces: Conceptual Structures in Schenker&#8217;s <i>Free Composition</i> and Schoenberg&#8217;s <i>The Musical Idea</i>.&#8221; <i>Theory and Practice</i> 22/23: 17&#8211;23.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="saslaw_1997-8"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997/8. &#8220;Life Forces: Conceptual Structures in Schenker&#8217;s <i>Free Composition</i> and Schoenberg&#8217;s <i>The Musical Idea</i>.&#8221; <i>Theory and Practice</i> 22/23: 17&#8211;23.</p><div id="citediv_scruton_1987" class="flyoverdiv">Scruton, Roger. 1987. &#8220;Analytical Philosophy and the Meaning of Music.&#8221; <i>The Journal of Aesthetics and Art Criticism</i>: 169&#8211;76.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scruton_1987"></a>Scruton, Roger. 1987. &#8220;Analytical Philosophy and the Meaning of Music.&#8221; <i>The Journal of Aesthetics and Art Criticism</i>: 169&#8211;76.</p><div id="citediv_scruton_1983" class="flyoverdiv">Scruton, Roger. 1983. &#8220;Understanding Music.&#8221; In <i>The Aesthetic Understanding: Essays in the Philosophy of Art and Culture</i>. London: Methuen.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scruton_1983"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1983. &#8220;Understanding Music.&#8221; In <i>The Aesthetic Understanding: Essays in the Philosophy of Art and Culture</i>. London: Methuen.</p><div id="citediv_scruton_1997" class="flyoverdiv">Scruton, Roger. 1997. <i>The Aesthetics of Music</i>. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scruton_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. <i>The Aesthetics of Music</i>. Oxford: Oxford University Press.</p><div id="citediv_snyder_2000" class="flyoverdiv">Snyder, Bob. 2000. <i>Music and Memory: An Introduction</i>. Cambridge: MIT Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="snyder_2000"></a>Snyder, Bob. 2000. <i>Music and Memory: An Introduction</i>. Cambridge: MIT Press.</p><div id="citediv_spitzer_2004" class="flyoverdiv">Spitzer, Michael. 2004. <i>Metaphor and Musical Thought</i>. Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="spitzer_2004"></a>Spitzer, Michael. 2004. <i>Metaphor and Musical Thought</i>. Chicago: The University of Chicago Press.</p><div id="citediv_thomson_1991" class="flyoverdiv">Thomson, William. 1991. <i>Schoenberg&#8217;s Error</i>. Philadelphia: University of Pennsylvania Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="thomson_1991"></a>Thomson, William. 1991. <i>Schoenberg&#8217;s Error</i>. Philadelphia: University of Pennsylvania Press.</p><div id="citediv_zbikowski_1997" class="flyoverdiv">Zbikowski, Lawrence. 1997. &#8220;Conceptual Models and Cross-Domain Mapping: New Perspectives on Theories of Music and Hierarchy.&#8221; <i>Journal of Music Theory</i> 41: 193&#8211;225.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_1997"></a>Zbikowski, Lawrence. 1997. &#8220;Conceptual Models and Cross-Domain Mapping: New Perspectives on Theories of Music and Hierarchy.&#8221; <i>Journal of Music Theory</i> 41: 193&#8211;225.</p><div id="citediv_zbikowski_1998" class="flyoverdiv">Zbikowski, Lawrence. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.1/mto.98.4.1.zbikowski_essay.html'>Metaphor and Music Theory: Reflections from Cognitive Science</a>.&#8221; <i>Music Theory Online</i> 4.1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.1/mto.98.4.1.zbikowski_essay.html'>Metaphor and Music Theory: Reflections from Cognitive Science</a>.&#8221; <i>Music Theory Online</i> 4.1.</p><div id="citediv_zbikowski_2002" class="flyoverdiv">Zbikowski, Lawrence. 2002. <i>Conceptualizing Music: Cognitive Structure, Theory, and Analysis</i>. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002. <i>Conceptualizing Music: Cognitive Structure, Theory, and Analysis</i>. Oxford: Oxford University Press.</p><div id="citediv_zbikowski_1997-8" class="flyoverdiv">Zbikowski, Lawrence. 1997/8. &#8220;<i>Des Herzraums Aschied</i>: Mark Johnson&#8217;s Theory of Embodied Knowledge and Music Theory.&#8221; <i>Theory and Practice</i> 22/23: 1&#8211;16.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_1997-8"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997/8. &#8220;<i>Des Herzraums Aschied</i>: Mark Johnson&#8217;s Theory of Embodied Knowledge and Music Theory.&#8221; <i>Theory and Practice</i> 22/23: 1&#8211;16.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> I would like to thank the reviewers of MTO for 
+their insightful comments and suggestions.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">I would like to thank the reviewers of MTO for 
+their insightful comments and suggestions.</div><p><a name="FN1">1.</a> Eduard Hanslick, <i>On the Musically Beautiful</i> (1854), trans. and ed. Geoffrey Payzant 
+(Indianapolis: Hackett Publishing Company, 1986), 1.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> 	In an attempt to explain 
+the attraction that systematic analysis holds for theorists, Joseph Kerman 
+suggests that this derives from an affinity to the positivistic ideal of 
+scientific knowledge. See: Joseph Kerman, <i>Contemplating Music</i> (Cambridge: 
+Harvard University Press, 1985), 31&#8211;59.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> See: George Lakoff and Mark Johnson, 
+<i>Metaphors We Live By</i> (Chicago: The University of Chicago Press, 1980), and 
+<i>Philosophy in the Flesh: The Embodied Mind and its Challenge to Western Thought</i> 
+(New York: Basic Books, 1999); Mark Johnson, <i>The Body in the Mind</i> (Chicago: The 
+University of Chicago Press, 1987); George Lakoff, <i>Women, Fire, and Dangerous 
+Things: What Categories Reveal about the Mind?</i> (Chicago: The University of 
+Chicago Press, 1987).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> This theory has proved itself fruitful for the works of 
+Lawrence Zbikowski, Michael Spitzer, Janna Saslaw, Steve Larson, Candace Brower 
+and other music theorists of a psychological bent who have adopted it as a basis 
+for meta-theoretical accounts of musical discourse. See: Lawrence Zbikowski, 
+&#8220;Conceptual Models and Cross-Domain Mapping: New Perspectives on Theories of 
+Music and Hierarchy,&#8221; <i>Journal of Music Theory</i> 41 (1997): 193&#8211;225, &ldquo;<a href='http://www.mtosmt.org/issues/mto.98.4.1/mto.98.4.1.zbikowski_essay.html'>Metaphor 
+and Music Theory: Reflections from Cognitive Science</a>,&rdquo; <i>Music Theory 
+Online</i> 4.1 (1998), 
+<i>Conceptualizing Music: Cognitive Structure, Theory, and Analysis</i> (Oxford: Oxford 
+University Press, 2002), and &#8220;<i>Des Herzraums Aschied</i>: Mark Johnson&#8217;s Theory of 
+Embodied Knowledge and Music Theory,&#8221; <i>Theory and Practice</i> 22/23 (1997/8): 1&#8211;16; 
+Michael Spitzer, <i>Metaphor and Musical Thought </i>(Chicago: The University of 
+Chicago Press, 2004); Janna Saslaw, &#8220;Forces, Containers, and Paths: The Role of 
+Body-Derived Image Schemas in the Conceptualization of Music,&#8221; <i>Journal of Music 
+Theory</i> 40.2 (1996): 217&#8211;43, and &#8220;Life Forces: Conceptual Structures in 
+Schenker&#8217;s <i>Free Composition</i> and Schoenberg&#8217;s <i>The Musical Idea</i>,&#8221; 
+<i>Theory and 
+Practice</i> 22/23 (1997/8): 17&#8211;23; Candace Brower, &#8220;Pathway, Blockage, and 
+Containment in Density 21.5,&#8221; <i>Theory and Practice</i> 22/23 (1997/8): 35&#8211;54.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Roger 
+Scruton, &#8220;Understanding Music,&#8221; in <i>The Aesthetic Understanding: Essays in the 
+Philosophy of Art and Culture</i> (London: Methuen, 1983).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> For a comprehensive, 
+though not uncontroversial, study of musical experience from a phenomenological 
+point of view, see: Thomas Clifton, <i>Music as Heard: A Study in Applied 
+Phenomenology</i> (New Haven: Yale University Press, 1983). For another 
+phenomenological approach, see: David Lewin, &#8220;Music Theory, Phenomenology, and 
+Modes of Perception,&#8221; <i>Music Perception</i> 3.4 (1986): 327&#8211;92. For an expanded 
+discussion of music and intentional understanding, see: Roger Scruton, <i>The 
+Aesthetics of Music</i> (Oxford: Oxford University Press, 1997), 221&#8211;25.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> &#8220;Understanding Music,&#8221; 90.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Naomi Cumming claims that Scruton takes a 
+positivistic position and criticizes him on two problematic points that are 
+involved in this position: the first, the assumption that it is possible to 
+distinguish clearly between metaphorical and literal language; the second, the 
+complementary distinction between material object and intentional object. Her 
+criticism focuses mainly on the implications of Scruton&#8217;s position on fields 
+other than music. See: Naomi Cumming, &#8220;Metaphor in Roger Scruton&#8217;s Aesthetics of 
+Music,&#8221; <i>Theory, Analysis and Meaning in Music</i>, ed. Anthony Pople (Cambridge: 
+Cambridge University Press, 1994). 3&#8211;28.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> &#8220;Understanding Music,&#8221; 86.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Scruton 
+mentions Carroll C. Part&#8217;s attempts to explain the experience of musical motion 
+by reference to the strain on the larynx as it ascends the scale.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> &#8220;Understanding 
+Music,&#8221; 97.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Ibid, 99.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> George Lakoff and Mark Johnson, <i>Metaphors We Live By</i>, 
+7&#8211;13.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Ibid, 44&#8211;5.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Ibid, 15.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> I use the pitch designation of the American Society 
+of Acousticians.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Lawrence M. Zbikowski, &#8220;Metaphor and Music Theory,&#8221; 4.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Mark 
+Johnson, <i>The Body in the Mind</i>, 2.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Ibid, 114.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Ibid, 42.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> See: Janna Saslaw, &#8220;Life 
+Forces,&#8221; 18.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Janna Saslaw, &#8220;Forces, Containers, and Paths,&#8221; 217&#8211;43, and &#8220;Life 
+Forces,&#8221; 17&#8211;23.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> For the most part, I used Philip Gossett&#8217;s reliable translation 
+of Rameau&#8217;s <i>Trait&eacute;</i> (<i>Treatise on Harmony</i> [New York: Dover Publications Inc., 
+1971]) with only slight alterations. However, since Rameau&#8217;s exact wording is of 
+critical importance here, I have added the original French in the footnotes. The 
+reader is encouraged to consult both sources.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> For further discussion of the 
+cognitive aspects of Rameau&#8217;s theory, see: Lawrence Zbikowski, <i>Conceptualizing 
+Music</i>, 119&#8211;26, and Michael Spitzer, <i>Metaphor and Musical Thought</i>, 215&#8211;16.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Thomas 
+Christensen, <i>Rameau and Musical Thought in the Enlightenment</i> (Cambridge: 
+Cambridge University Press, 1993), 106.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Gossett, 152&#8211;3. &#8220;l&#8217;Harmonie est donc 
+engendre&eacute; la premiere: Ainsi, c&#8217;est d&#8217;elle qu&#8217;il faut absolument tirer les 
+Regles de la Melodie, comme nous le faisons aussi, en prenant &agrave; part ces 
+Intervals harmoniques, dont nous venons de parler, pour en former une 
+progression fondamentale, qui n&#8217;est point encore Melodie: Mais ces Intervals mis 
+ensemble au-dessus de l&#8217;un des Sons qui les composent, suivant naturellement une 
+route diatonique, qui leur est determin&eacute; par leur progression m&ecirc;me.&#8221; 
+Jean-Philippe Rameau, <i>Trait&eacute; de L&#8217;Harmonie</i> (Paris, 1722), 139.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> Ibid, 60.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Rameau 
+does not use the term &#8220;triad.&#8221;<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> Joel Lester, <i>Compositional Theory in the 
+Eighteenth-Century</i> (Cambridge: Harvard University Press, 1992), 100.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> In recent 
+years, Johnson&#8217;s model of cognitive semantics has been subjected to criticism 
+from various perspectives. See: James W. Fernandez (Ed.), <i>Beyond Metaphor: The 
+Theory of Tropes in Anthropology</i> (California: Stanford University Press, 1991). 
+Among music scholars, Michel Spitzer, noted an &#8220;alarming trend&#8221; among music 
+theorists to apply Lakoff and Johnson&#8217;s theory without sufficient &#8220;reflection on 
+the philosophical undercarriage.&#8221; See: Michael Spitzer, 62.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> Rameau believed he 
+was the first to discover that certain sonorities are &#8220;inversions&#8221; of a chord 
+consisting of thirds. However, it is well known today that the idea of 
+inversion was already familiar to seventeenth century German theorists. His 
+real innovation was the application of it to the seventh chord, and turning it 
+into an effective instrument for the explanation of harmonic progressions 
+through its elaboration to the idea of the fundamental bass. See: Lester, 
+96&#8211;100.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> Allan Keiler, &#8220;Music as Metalanguage: Rameau&#8217;s Fundamental Bass,&#8221; 
+<i>Music 
+Theory: Special Topics</i>, ed. Richmond Browne (New York: Academic Press, 1981); 
+and Lester, 105&#8211;6.<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> Gossett, 59. &#8220;On appelle basse, la partie o&ugrave; regne ce Son 
+fundamental, parce qu&#8217;il est to&ucirc;jours le plus grave, et plus bas.&#8221; <i>Trait&eacute;</i>, 49.<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> Gossett, 59. &#8220;[D]e m&ecirc;me que la terre sert de fondement aux autres-&eacute;lemens, de m&ecirc;me 
+aussi la basse a la propriet&eacute; de fo&ucirc;tenir, d&#8217;&eacute;tablir et de fortifier les autres 
+parties; de sorte qu&#8217;elle est prise pour la base et pour le fondement de 
+l&#8217;Harmonie, d&#8217;o&ugrave; elle est appell&eacute;e Basse, comme qui diroit le base et la 
+so&ucirc;tient ... pareillement si la basse venoit &agrave; manquer, toute le piece de 
+musique seroit remplie de dissonances et de confusion.&#8221; <i>Trait&eacute;</i>, 49.<br><a href="#FN34REF">Return to text</a></p><p><a name="FN35">35.</a> Arnold 
+Schoenberg, &#8220;Composition with Twelve Tones,&#8221; <i>Style and Idea</i>, ed. Leonard Stein, 
+trans. Leo Black (Los Angeles: University of California Press, 1975), 220.<br><a href="#FN35REF">Return to text</a></p><p><a name="FN36">36.</a> Gossett, 60. &#8220;[D]e sorte que si nous pouvons donner une progression &agrave; la partie 
+que nous represente cette corde entiere, ce ne peut &ecirc;tre qu&#8217;en la faisant 
+proceder par ces intervals consonans que nous rendent les premieres divisions de 
+cette corde, ainsi chaque Son s&#8217;accordera to&ucirc;jours avec celuy qui l&#8217;aura 
+precede, et chacun pouvant porter &agrave; son tour un accord pareil &agrave; celuy que nous 
+avons rec&ucirc; de ces premieres divisions, nous representera sans difficult&eacute; la 
+corde entiere qui est le principe &amp; le fondement de cet accord.&#8221; <i>Trait&eacute;</i>, 50. For 
+discussion of the relation between chord structure and progression of the 
+fundamental bass, see: David Lewin, &#8220;Two Interesting Passages in Rameau&#8217;s
+<i>Trait&eacute; 
+de l&#8217;Harmonie</i>,&#8221; in <i>Theory Only</i> 4.3 (1978): 3&#8211;11.<br><a href="#FN36REF">Return to text</a></p><p><a name="FN37">37.</a> Gossett, 249. <i>Trait&eacute;</i>, 227.<br><a href="#FN37REF">Return to text</a></p><p><a name="FN38">38.</a> I 
+would like to thank one of the anonymous readers of this article for encouraging 
+me to delve more deeply into this issue.<br><a href="#FN38REF">Return to text</a></p><p><a name="FN39">39.</a> Manfred F. Bukofzer, <i>Music in the 
+Baroque Era</i> (New York: W. W. Norton &amp; Company, 1947), 12.<br><a href="#FN39REF">Return to text</a></p><p><a name="FN40">40.</a> George Lakoff, <i>Women, 
+Fire, and Dangerous Things</i> (Chicago: University of Chicago Press, 1987), 278.<br><a href="#FN40REF">Return to text</a></p><p><a name="FN41">41.</a> For expansive research on Rameau&#8217;s appropriation of the scientific theories of 
+his time and especially Cartesian views of nature and space, see: Thomas 
+Christensen, <i>Rameau and Musical Thought in the Enlightenment</i>. And also: Nicholas 
+Cook, &#8220;Epistemologies of Music Theory,&#8221; in <i>The Cambridge History of Western 
+Music Theory</i> (Cambridge: Cambridge University Press, 2002).<br><a href="#FN41REF">Return to text</a></p><p><a name="FN42">42.</a> For a particularly 
+pertinent discussion, see: Fred Lerdahl, &#8220;Cognitive Constraints on Compositional 
+Systems,&#8221; in <i>Generative Processes in Music</i>, edited by John A. Sloboda (Oxford: 
+Clarendon Press, 1988), 231&#8211;259, and William Thomson, <i>Schoenberg&#8217;s Error</i> 
+(Philadelphia: University of Pennsylvania Press, 1991).<br><a href="#FN42REF">Return to text</a></p><p><a name="FN43">43.</a> In addition to the 
+&#8220;deceptive&#8221; cadence to be discussed below.<br><a href="#FN43REF">Return to text</a></p><p><a name="FN44">44.</a> <i>Trait&eacute;</i>, 54&#8211;55, 63.<br><a href="#FN44REF">Return to text</a></p><p><a name="FN45">45.</a> Ibid, 
+240&#8211;45. Rameau posits that the first chord of the irregular cadence is often 
+accompanied by an added-sixth. For Rameau, the fundamental bass of the F-A-C-D 
+chord in Fig. 3b is not D but F, which accounts for the fifth relationship 
+between it and the following chord, C.<br><a href="#FN45REF">Return to text</a></p><p><a name="FN46">46.</a> In this respect Rameau&#8217;s view of harmony 
+retains an affinity to contrapuntal theory of the late Middle Ages. See: Carl 
+Dahlhaus, <i>Studies on the Origin of Harmonic Tonality</i>, trans. Robert O. 
+Gjerdingen (New Jersey: Princeton University Press, 1990), 29; and David E. 
+Cohen, &#8220;&#8216;The Imperfect Seeks its Perfection&#8217;: Harmonic Progression, Directed 
+Motion, and Aristotelian Physics,&#8221; <i>Music Theory Spectrum</i> 23.2 (2001): 139&#8211;69.<br><a href="#FN46REF">Return to text</a></p><p><a name="FN47">47.</a> Gossett, 217. &#8220;Bien loin que la Dissonance doive embarrasser dans la 
+Composition, elle en facilite au contraire les voyes.&#8221; <i>Trait&eacute;</i>, 197.<br><a href="#FN47REF">Return to text</a></p><p><a name="FN48">48.</a> Gossett, 62. 
+&#8220;Il semble que la dissonance soit necessaire icy, pour faire souhaiter avec plus 
+d&#8217;ardeur par sa duret&eacute;, le repos qui la suit&#8221; <i>Trait&eacute;</i>, 53.<br><a href="#FN48REF">Return to text</a></p><p><a name="FN49">49.</a> Rameau developed this idea mainly in his later 
+writings. See: Lester, 135&#8211;40.<br><a href="#FN49REF">Return to text</a></p><p><a name="FN50">50.</a> This part was added by Rameau apparently after he had 
+already submitted the text for printing. See: Christensen, 108&#8211;9.<br><a href="#FN50REF">Return to text</a></p><p><a name="FN51">51.</a> Gossett, 79. &#8220;Un Corps mobile rencontrant un autre corps en 
+repos, lui donne tout son mouvement, et demeure lui-m&ecirc;me immobile. Un coprs dur 
+venant &agrave; frapper sur un autre corps in&eacute;branlable, se refl&eacute;chit avec tout son 
+mouvement.&#8221; <i>Trait&eacute;</i>, &ldquo;Supplement,&rdquo; 6.<br><a href="#FN51REF">Return to text</a></p><p><a name="FN52">52.</a> In this quotation, the original French 
+supports my reading better than Gosset&#8217;s translation. Gossett, 79&#8211;80. &#8220;Pour bien 
+juger de l&#8217;effet dont il s&#8217;agit; il n&#8217;y a qu&#8217;&agrave; remarquer dans cet example, que 
+la Dissonance B, est en repos, pendant que la Consonance A, vient la frapper, et 
+qu&#8217;incontinent apr&egrave;s le choc, cette Consonance demeurant immobile, oblige cette 
+Disonance de passer &agrave; C, qui est effectivement le lieu o&ugrave; la Consonance auroit 
+p&ugrave; passer; mais elle ne le peut plus d&egrave;s que la Dissonance prend sa place; de 
+sorte qu&#8217;il semble que pour lors la Consonance lui donne tout son mouvement. 
+Ensuite la Consonance D, qui paro&icirc;t in&eacute;branlable, apr&egrave;s avoir re&ccedil;u le choc de la 
+Dissonance F, l&#8217;oblige de retourner &agrave; G, d&#8217;o&ugrave; elle &eacute;toit partie: de sorte qu&#8217;il 
+semble encore ici que la Dissonance se r&eacute;flechisse avec tout son mouvement, 
+apr&egrave;s avoir frapp&eacute; sur la Consonance in&eacute;branlable.&#8221; <i>Trait&eacute;</i>, 
+&ldquo;Supplement,&rdquo; 7.<br><a href="#FN52REF">Return to text</a></p><p><a name="FN53">53.</a> Gossett, 255. &#8220;C&#8217;est to&ucirc;jours de n&ocirc;tre Basse-fondamentale et de n&ocirc;tre Accord fondamental de la Septi&eacute;me, que nous devons tirer les Regles qui regardent les 
+Dissonances; aussi nous allons voir que le seul Accord de Septi&eacute;me regne dans 
+tous les differens Accords dissonans que l&#8217;on peut employer.&#8221; <i>Trait&eacute;</i>, 
+235.<br><a href="#FN53REF">Return to text</a></p><p><a name="FN54">54.</a> See: 
+Lester, 108&#8211;14.&nbsp;<br><a href="#FN54REF">Return to text</a></p><p><a name="FN55">55.</a> Christensen, 129.<br><a href="#FN55REF">Return to text</a></p><p><a name="FN56">56.</a> Gossett, 71. &#8220;Si nous changeons la progression 
+de l&#8217;un des Sons compris dans le premier accord d&#8217;un cadence parfait; il est 
+certain que nous en interromprons la conclusion.&#8221; <i>Trait&eacute;</i>, 
+61.<br><a href="#FN56REF">Return to text</a></p><p><a name="FN57">57.</a> See also: Hoyt Alverson, &#8220;Metaphor and Experience: Looking Over the Notion of Image Schema,&#8221; in 
+<i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, ed. James W. 
+Fernandez (California: Stanford University Press, 1991), 104.<br><a href="#FN57REF">Return to text</a></p><p><a name="FN58">58.</a> About Rameau and the 
+philosophy of the Enlightenment, see: Thomas Christensen, <i>Rameau and Musical 
+Thought in the Enlightenment</i>. And also: Nicholas Cook, &#8220;Epistemologies of Music 
+Theory,&#8221; in <i>The Cambridge History of Western Music Theory </i>(Cambridge: Cambridge 
+University Press, 2002), 84&#8211;8.<br><a href="#FN58REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Eduard Hanslick, <i>On the Musically Beautiful</i> (1854), trans. and ed. Geoffrey Payzant 
+(Indianapolis: Hackett Publishing Company, 1986), 1.</div><div id="fndiv2" class="flyoverdiv">	In an attempt to explain 
+the attraction that systematic analysis holds for theorists, Joseph Kerman 
+suggests that this derives from an affinity to the positivistic ideal of 
+scientific knowledge. See: Joseph Kerman, <i>Contemplating Music</i> (Cambridge: 
+Harvard University Press, 1985), 31&#8211;59.</div><div id="fndiv3" class="flyoverdiv">See: George Lakoff and Mark Johnson, 
+<i>Metaphors We Live By</i> (Chicago: The University of Chicago Press, 1980), and 
+<i>Philosophy in the Flesh: The Embodied Mind and its Challenge to Western Thought</i> 
+(New York: Basic Books, 1999); Mark Johnson, <i>The Body in the Mind</i> (Chicago: The 
+University of Chicago Press, 1987); George Lakoff, <i>Women, Fire, and Dangerous 
+Things: What Categories Reveal about the Mind?</i> (Chicago: The University of 
+Chicago Press, 1987).</div><div id="fndiv4" class="flyoverdiv">This theory has proved itself fruitful for the works of 
+Lawrence Zbikowski, Michael Spitzer, Janna Saslaw, Steve Larson, Candace Brower 
+and other music theorists of a psychological bent who have adopted it as a basis 
+for meta-theoretical accounts of musical discourse. See: Lawrence Zbikowski, 
+&#8220;Conceptual Models and Cross-Domain Mapping: New Perspectives on Theories of 
+Music and Hierarchy,&#8221; <i>Journal of Music Theory</i> 41 (1997): 193&#8211;225, &ldquo;<a href='http://www.mtosmt.org/issues/mto.98.4.1/mto.98.4.1.zbikowski_essay.html'>Metaphor 
+and Music Theory: Reflections from Cognitive Science</a>,&rdquo; <i>Music Theory 
+Online</i> 4.1 (1998), 
+<i>Conceptualizing Music: Cognitive Structure, Theory, and Analysis</i> (Oxford: Oxford 
+University Press, 2002), and &#8220;<i>Des Herzraums Aschied</i>: Mark Johnson&#8217;s Theory of 
+Embodied Knowledge and Music Theory,&#8221; <i>Theory and Practice</i> 22/23 (1997/8): 1&#8211;16; 
+Michael Spitzer, <i>Metaphor and Musical Thought </i>(Chicago: The University of 
+Chicago Press, 2004); Janna Saslaw, &#8220;Forces, Containers, and Paths: The Role of 
+Body-Derived Image Schemas in the Conceptualization of Music,&#8221; <i>Journal of Music 
+Theory</i> 40.2 (1996): 217&#8211;43, and &#8220;Life Forces: Conceptual Structures in 
+Schenker&#8217;s <i>Free Composition</i> and Schoenberg&#8217;s <i>The Musical Idea</i>,&#8221; 
+<i>Theory and 
+Practice</i> 22/23 (1997/8): 17&#8211;23; Candace Brower, &#8220;Pathway, Blockage, and 
+Containment in Density 21.5,&#8221; <i>Theory and Practice</i> 22/23 (1997/8): 35&#8211;54.</div><div id="fndiv5" class="flyoverdiv">Roger 
+Scruton, &#8220;Understanding Music,&#8221; in <i>The Aesthetic Understanding: Essays in the 
+Philosophy of Art and Culture</i> (London: Methuen, 1983).</div><div id="fndiv6" class="flyoverdiv">For a comprehensive, 
+though not uncontroversial, study of musical experience from a phenomenological 
+point of view, see: Thomas Clifton, <i>Music as Heard: A Study in Applied 
+Phenomenology</i> (New Haven: Yale University Press, 1983). For another 
+phenomenological approach, see: David Lewin, &#8220;Music Theory, Phenomenology, and 
+Modes of Perception,&#8221; <i>Music Perception</i> 3.4 (1986): 327&#8211;92. For an expanded 
+discussion of music and intentional understanding, see: Roger Scruton, <i>The 
+Aesthetics of Music</i> (Oxford: Oxford University Press, 1997), 221&#8211;25.</div><div id="fndiv7" class="flyoverdiv">&#8220;Understanding Music,&#8221; 90.</div><div id="fndiv8" class="flyoverdiv">Naomi Cumming claims that Scruton takes a 
+positivistic position and criticizes him on two problematic points that are 
+involved in this position: the first, the assumption that it is possible to 
+distinguish clearly between metaphorical and literal language; the second, the 
+complementary distinction between material object and intentional object. Her 
+criticism focuses mainly on the implications of Scruton&#8217;s position on fields 
+other than music. See: Naomi Cumming, &#8220;Metaphor in Roger Scruton&#8217;s Aesthetics of 
+Music,&#8221; <i>Theory, Analysis and Meaning in Music</i>, ed. Anthony Pople (Cambridge: 
+Cambridge University Press, 1994). 3&#8211;28.</div><div id="fndiv9" class="flyoverdiv">&#8220;Understanding Music,&#8221; 86.</div><div id="fndiv10" class="flyoverdiv">Scruton 
+mentions Carroll C. Part&#8217;s attempts to explain the experience of musical motion 
+by reference to the strain on the larynx as it ascends the scale.</div><div id="fndiv11" class="flyoverdiv">&#8220;Understanding 
+Music,&#8221; 97.</div><div id="fndiv12" class="flyoverdiv">Ibid, 99.</div><div id="fndiv13" class="flyoverdiv">George Lakoff and Mark Johnson, <i>Metaphors We Live By</i>, 
+7&#8211;13.</div><div id="fndiv14" class="flyoverdiv">Ibid, 44&#8211;5.</div><div id="fndiv15" class="flyoverdiv">Ibid, 15.</div><div id="fndiv16" class="flyoverdiv">I use the pitch designation of the American Society 
+of Acousticians.</div><div id="fndiv17" class="flyoverdiv">Lawrence M. Zbikowski, &#8220;Metaphor and Music Theory,&#8221; 4.</div><div id="fndiv18" class="flyoverdiv">Mark 
+Johnson, <i>The Body in the Mind</i>, 2.</div><div id="fndiv19" class="flyoverdiv">Ibid, 114.</div><div id="fndiv20" class="flyoverdiv">Ibid, 42.</div><div id="fndiv21" class="flyoverdiv">See: Janna Saslaw, &#8220;Life 
+Forces,&#8221; 18.</div><div id="fndiv22" class="flyoverdiv">Janna Saslaw, &#8220;Forces, Containers, and Paths,&#8221; 217&#8211;43, and &#8220;Life 
+Forces,&#8221; 17&#8211;23.</div><div id="fndiv23" class="flyoverdiv">For the most part, I used Philip Gossett&#8217;s reliable translation 
+of Rameau&#8217;s <i>Trait&eacute;</i> (<i>Treatise on Harmony</i> [New York: Dover Publications Inc., 
+1971]) with only slight alterations. However, since Rameau&#8217;s exact wording is of 
+critical importance here, I have added the original French in the footnotes. The 
+reader is encouraged to consult both sources.</div><div id="fndiv24" class="flyoverdiv">For further discussion of the 
+cognitive aspects of Rameau&#8217;s theory, see: Lawrence Zbikowski, <i>Conceptualizing 
+Music</i>, 119&#8211;26, and Michael Spitzer, <i>Metaphor and Musical Thought</i>, 215&#8211;16.</div><div id="fndiv25" class="flyoverdiv">Thomas 
+Christensen, <i>Rameau and Musical Thought in the Enlightenment</i> (Cambridge: 
+Cambridge University Press, 1993), 106.</div><div id="fndiv26" class="flyoverdiv">Gossett, 152&#8211;3. &#8220;l&#8217;Harmonie est donc 
+engendre&eacute; la premiere: Ainsi, c&#8217;est d&#8217;elle qu&#8217;il faut absolument tirer les 
+Regles de la Melodie, comme nous le faisons aussi, en prenant &agrave; part ces 
+Intervals harmoniques, dont nous venons de parler, pour en former une 
+progression fondamentale, qui n&#8217;est point encore Melodie: Mais ces Intervals mis 
+ensemble au-dessus de l&#8217;un des Sons qui les composent, suivant naturellement une 
+route diatonique, qui leur est determin&eacute; par leur progression m&ecirc;me.&#8221; 
+Jean-Philippe Rameau, <i>Trait&eacute; de L&#8217;Harmonie</i> (Paris, 1722), 139.</div><div id="fndiv27" class="flyoverdiv">Ibid, 60.</div><div id="fndiv28" class="flyoverdiv">Rameau 
+does not use the term &#8220;triad.&#8221;</div><div id="fndiv29" class="flyoverdiv">Joel Lester, <i>Compositional Theory in the 
+Eighteenth-Century</i> (Cambridge: Harvard University Press, 1992), 100.</div><div id="fndiv30" class="flyoverdiv">In recent 
+years, Johnson&#8217;s model of cognitive semantics has been subjected to criticism 
+from various perspectives. See: James W. Fernandez (Ed.), <i>Beyond Metaphor: The 
+Theory of Tropes in Anthropology</i> (California: Stanford University Press, 1991). 
+Among music scholars, Michel Spitzer, noted an &#8220;alarming trend&#8221; among music 
+theorists to apply Lakoff and Johnson&#8217;s theory without sufficient &#8220;reflection on 
+the philosophical undercarriage.&#8221; See: Michael Spitzer, 62.</div><div id="fndiv31" class="flyoverdiv">Rameau believed he 
+was the first to discover that certain sonorities are &#8220;inversions&#8221; of a chord 
+consisting of thirds. However, it is well known today that the idea of 
+inversion was already familiar to seventeenth century German theorists. His 
+real innovation was the application of it to the seventh chord, and turning it 
+into an effective instrument for the explanation of harmonic progressions 
+through its elaboration to the idea of the fundamental bass. See: Lester, 
+96&#8211;100.</div><div id="fndiv32" class="flyoverdiv">Allan Keiler, &#8220;Music as Metalanguage: Rameau&#8217;s Fundamental Bass,&#8221; 
+<i>Music 
+Theory: Special Topics</i>, ed. Richmond Browne (New York: Academic Press, 1981); 
+and Lester, 105&#8211;6.</div><div id="fndiv33" class="flyoverdiv">Gossett, 59. &#8220;On appelle basse, la partie o&ugrave; regne ce Son 
+fundamental, parce qu&#8217;il est to&ucirc;jours le plus grave, et plus bas.&#8221; <i>Trait&eacute;</i>, 49.</div><div id="fndiv34" class="flyoverdiv">Gossett, 59. &#8220;[D]e m&ecirc;me que la terre sert de fondement aux autres-&eacute;lemens, de m&ecirc;me 
+aussi la basse a la propriet&eacute; de fo&ucirc;tenir, d&#8217;&eacute;tablir et de fortifier les autres 
+parties; de sorte qu&#8217;elle est prise pour la base et pour le fondement de 
+l&#8217;Harmonie, d&#8217;o&ugrave; elle est appell&eacute;e Basse, comme qui diroit le base et la 
+so&ucirc;tient ... pareillement si la basse venoit &agrave; manquer, toute le piece de 
+musique seroit remplie de dissonances et de confusion.&#8221; <i>Trait&eacute;</i>, 49.</div><div id="fndiv35" class="flyoverdiv">Arnold 
+Schoenberg, &#8220;Composition with Twelve Tones,&#8221; <i>Style and Idea</i>, ed. Leonard Stein, 
+trans. Leo Black (Los Angeles: University of California Press, 1975), 220.</div><div id="fndiv36" class="flyoverdiv">Gossett, 60. &#8220;[D]e sorte que si nous pouvons donner une progression &agrave; la partie 
+que nous represente cette corde entiere, ce ne peut &ecirc;tre qu&#8217;en la faisant 
+proceder par ces intervals consonans que nous rendent les premieres divisions de 
+cette corde, ainsi chaque Son s&#8217;accordera to&ucirc;jours avec celuy qui l&#8217;aura 
+precede, et chacun pouvant porter &agrave; son tour un accord pareil &agrave; celuy que nous 
+avons rec&ucirc; de ces premieres divisions, nous representera sans difficult&eacute; la 
+corde entiere qui est le principe &amp; le fondement de cet accord.&#8221; <i>Trait&eacute;</i>, 50. For 
+discussion of the relation between chord structure and progression of the 
+fundamental bass, see: David Lewin, &#8220;Two Interesting Passages in Rameau&#8217;s
+<i>Trait&eacute; 
+de l&#8217;Harmonie</i>,&#8221; in <i>Theory Only</i> 4.3 (1978): 3&#8211;11.</div><div id="fndiv37" class="flyoverdiv">Gossett, 249. <i>Trait&eacute;</i>, 227.</div><div id="fndiv38" class="flyoverdiv">I 
+would like to thank one of the anonymous readers of this article for encouraging 
+me to delve more deeply into this issue.</div><div id="fndiv39" class="flyoverdiv">Manfred F. Bukofzer, <i>Music in the 
+Baroque Era</i> (New York: W. W. Norton &amp; Company, 1947), 12.</div><div id="fndiv40" class="flyoverdiv">George Lakoff, <i>Women, 
+Fire, and Dangerous Things</i> (Chicago: University of Chicago Press, 1987), 278.</div><div id="fndiv41" class="flyoverdiv">For expansive research on Rameau&#8217;s appropriation of the scientific theories of 
+his time and especially Cartesian views of nature and space, see: Thomas 
+Christensen, <i>Rameau and Musical Thought in the Enlightenment</i>. And also: Nicholas 
+Cook, &#8220;Epistemologies of Music Theory,&#8221; in <i>The Cambridge History of Western 
+Music Theory</i> (Cambridge: Cambridge University Press, 2002).</div><div id="fndiv42" class="flyoverdiv">For a particularly 
+pertinent discussion, see: Fred Lerdahl, &#8220;Cognitive Constraints on Compositional 
+Systems,&#8221; in <i>Generative Processes in Music</i>, edited by John A. Sloboda (Oxford: 
+Clarendon Press, 1988), 231&#8211;259, and William Thomson, <i>Schoenberg&#8217;s Error</i> 
+(Philadelphia: University of Pennsylvania Press, 1991).</div><div id="fndiv43" class="flyoverdiv">In addition to the 
+&#8220;deceptive&#8221; cadence to be discussed below.</div><div id="fndiv44" class="flyoverdiv"><i>Trait&eacute;</i>, 54&#8211;55, 63.</div><div id="fndiv45" class="flyoverdiv">Ibid, 
+240&#8211;45. Rameau posits that the first chord of the irregular cadence is often 
+accompanied by an added-sixth. For Rameau, the fundamental bass of the F-A-C-D 
+chord in Fig. 3b is not D but F, which accounts for the fifth relationship 
+between it and the following chord, C.</div><div id="fndiv46" class="flyoverdiv">In this respect Rameau&#8217;s view of harmony 
+retains an affinity to contrapuntal theory of the late Middle Ages. See: Carl 
+Dahlhaus, <i>Studies on the Origin of Harmonic Tonality</i>, trans. Robert O. 
+Gjerdingen (New Jersey: Princeton University Press, 1990), 29; and David E. 
+Cohen, &#8220;&#8216;The Imperfect Seeks its Perfection&#8217;: Harmonic Progression, Directed 
+Motion, and Aristotelian Physics,&#8221; <i>Music Theory Spectrum</i> 23.2 (2001): 139&#8211;69.</div><div id="fndiv47" class="flyoverdiv">Gossett, 217. &#8220;Bien loin que la Dissonance doive embarrasser dans la 
+Composition, elle en facilite au contraire les voyes.&#8221; <i>Trait&eacute;</i>, 197.</div><div id="fndiv48" class="flyoverdiv">Gossett, 62. 
+&#8220;Il semble que la dissonance soit necessaire icy, pour faire souhaiter avec plus 
+d&#8217;ardeur par sa duret&eacute;, le repos qui la suit&#8221; <i>Trait&eacute;</i>, 53.</div><div id="fndiv49" class="flyoverdiv">Rameau developed this idea mainly in his later 
+writings. See: Lester, 135&#8211;40.</div><div id="fndiv50" class="flyoverdiv">This part was added by Rameau apparently after he had 
+already submitted the text for printing. See: Christensen, 108&#8211;9.</div><div id="fndiv51" class="flyoverdiv">Gossett, 79. &#8220;Un Corps mobile rencontrant un autre corps en 
+repos, lui donne tout son mouvement, et demeure lui-m&ecirc;me immobile. Un coprs dur 
+venant &agrave; frapper sur un autre corps in&eacute;branlable, se refl&eacute;chit avec tout son 
+mouvement.&#8221; <i>Trait&eacute;</i>, &ldquo;Supplement,&rdquo; 6.</div><div id="fndiv52" class="flyoverdiv">In this quotation, the original French 
+supports my reading better than Gosset&#8217;s translation. Gossett, 79&#8211;80. &#8220;Pour bien 
+juger de l&#8217;effet dont il s&#8217;agit; il n&#8217;y a qu&#8217;&agrave; remarquer dans cet example, que 
+la Dissonance B, est en repos, pendant que la Consonance A, vient la frapper, et 
+qu&#8217;incontinent apr&egrave;s le choc, cette Consonance demeurant immobile, oblige cette 
+Disonance de passer &agrave; C, qui est effectivement le lieu o&ugrave; la Consonance auroit 
+p&ugrave; passer; mais elle ne le peut plus d&egrave;s que la Dissonance prend sa place; de 
+sorte qu&#8217;il semble que pour lors la Consonance lui donne tout son mouvement. 
+Ensuite la Consonance D, qui paro&icirc;t in&eacute;branlable, apr&egrave;s avoir re&ccedil;u le choc de la 
+Dissonance F, l&#8217;oblige de retourner &agrave; G, d&#8217;o&ugrave; elle &eacute;toit partie: de sorte qu&#8217;il 
+semble encore ici que la Dissonance se r&eacute;flechisse avec tout son mouvement, 
+apr&egrave;s avoir frapp&eacute; sur la Consonance in&eacute;branlable.&#8221; <i>Trait&eacute;</i>, 
+&ldquo;Supplement,&rdquo; 7.</div><div id="fndiv53" class="flyoverdiv">Gossett, 255. &#8220;C&#8217;est to&ucirc;jours de n&ocirc;tre Basse-fondamentale et de n&ocirc;tre Accord fondamental de la Septi&eacute;me, que nous devons tirer les Regles qui regardent les 
+Dissonances; aussi nous allons voir que le seul Accord de Septi&eacute;me regne dans 
+tous les differens Accords dissonans que l&#8217;on peut employer.&#8221; <i>Trait&eacute;</i>, 
+235.</div><div id="fndiv54" class="flyoverdiv">See: 
+Lester, 108&#8211;14.&nbsp;</div><div id="fndiv55" class="flyoverdiv">Christensen, 129.</div><div id="fndiv56" class="flyoverdiv">Gossett, 71. &#8220;Si nous changeons la progression 
+de l&#8217;un des Sons compris dans le premier accord d&#8217;un cadence parfait; il est 
+certain que nous en interromprons la conclusion.&#8221; <i>Trait&eacute;</i>, 
+61.</div><div id="fndiv57" class="flyoverdiv">See also: Hoyt Alverson, &#8220;Metaphor and Experience: Looking Over the Notion of Image Schema,&#8221; in 
+<i>Beyond Metaphor: The Theory of Tropes in Anthropology</i>, ed. James W. 
+Fernandez (California: Stanford University Press, 1991), 104.</div><div id="fndiv58" class="flyoverdiv">About Rameau and the 
+philosophy of the Enlightenment, see: Thomas Christensen, <i>Rameau and Musical 
+Thought in the Enlightenment</i>. And also: Nicholas Cook, &#8220;Epistemologies of Music 
+Theory,&#8221; in <i>The Cambridge History of Western Music Theory </i>(Cambridge: Cambridge 
+University Press, 2002), 84&#8211;8.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2008 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Cara Stroud and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="3513466"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="2e14b3c3"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/3513466/0/2e14b3c3/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

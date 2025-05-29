@@ -1,0 +1,926 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.9: Rahn, From Similarity to Distance</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="From Similarity to Distance; From Simplicity to
+Complexity; From Pitches to Intervals; From Description to
+Causal Explanation">
+
+    <meta name="citation_author" content="Rahn, Jay">
+      
+
+<meta name="citation_publication_date" content="1994/07/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="9">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">From Similarity to Distance; From Simplicity to
+Complexity; From Pitches to Intervals; From Description to
+Causal Explanation
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.94.0.9/mto.94.0.9.rahn.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Jay Rahn</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: similarity, proximity, structure, simplicity,
+complexity, pitch, interval, psychoacoustics, Gestalt,
+behaviorism, psychology, perception, logic, definition,
+theorem, proof, postulate, John Rahn, Jay Rahn, Nelson
+Goodman, nominalism, individual, part, whole, platonism,
+number, set, description, explanation</font></p><p><font size='4'>ABSTRACT: Words and phrases specifying similarity and
+distance abound in musical discourse. This essay explores
+such pitch-predicates as &ldquo;matches&rdquo;, &ldquo;is in the vicinity of&rdquo;, and
+&ldquo;is closer to<nobr> . . . </nobr>than to&rdquo;. Sought here are ways in which pitch
+and pitch-interval predicates might be inter-connected logically.
+Within a nominalist framework, an orderly progression from pitch-
+to pitch-interval-predicates can be proven and interpreted
+in terms of simplicity. Also indicated are connections
+between the present formulation and issues of (i) dimension-
+ality and explanation in psychoacoustics, Gestalt psychology,
+and behaviorism, and (ii) nominalism and the &ldquo;numerological
+fallacy&rdquo; in music theory.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.94.0.9/mto.94.0.9.rahn.pdf">PDF text </a></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 9, July 1994 <br> Copyright &#0169; 1994 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><b>KEY TO LOGIC SYMBOLS:</b></p>
+ 
+<p>(x)(....) = for any thing, x, ....<br>
+.... &#8596; .... = .... if and only if ....; .... iff ....<br>
+.... v .... = .... and/or ....; (vel; inclusive or)<br>
+.... . .... = both .... and ....<br>
+-.... = not ....; it is not the case that ....<br>
+.... &#8594; .... = if ...., then ....<br>
+(:Ex)(....) = there is at least one thing, x, such that ....<br>
+...+... = ...plus...; all the parts of individual..., as well
+      as all the parts of individual... (including any parts
+      common to both ... and ...); the sum of individuals ...
+      and ... (which is, itself, an individual)</p>
+ 
+<p style="text-align: center"><b>[0] Introduction</b></p>
+ 
+<p>[0.0]  Words and phrases specifying similarity and distance
+abound in musical discourse. For example: (i) two notes or
+tones (or even passages or pieces) are often characterized as
+matching, being the same, like each other, or similar in pitch
+(or pitch-structure), and (ii) pairs of sounds are frequently
+described as differing, contrasting, or being  remote, far
+apart, or distant&mdash;all these, in varying degrees or amounts
+(e.g., somewhat, extremely, etc.). Between twosomes that are
+precisely the same in some respect, and those which are
+exceedingly distant, one recognizes intermediate cases. One
+asserts, for instance, that two sound-events, a and b, are (i&rsquo;)
+next, or adjacent, to each other (i.e., neighbours, in some
+sense), or (i&rsquo;&rsquo;) closer, or nearer, to one another (i.e., than a
+and/or b are/is to yet another sound-event, c).</p>
+ 
+<p>[0.1] &ldquo;Common sense&rdquo; acknowledges as orderly, or linear, a
+progression from sameness (i), through adjacency (i&rsquo;), to
+relative proximity (i&rsquo;&rsquo;), and onward to remoteness (ii). Things
+that do not match, differ. Of those that differ, the closest are
+those that are adjacent. And among non-adjacent things, one
+can distinguish degrees of distance. Despite the continuity of
+this progression, common sense also acknowledges that
+sameness is &ldquo;qualitative,&rdquo; whereas distance is &ldquo;quantitative.&rdquo;
+Nonetheless, one might contend that things which are
+relatively similar are also relatively close in some
+&ldquo;dimension&rdquo; (e.g., pitch), and that, within a single dimension,
+far-apart things are very dissimilar.</p>
+ 
+<p>[0.2] Particular traditions of musical thought (e.g., in
+psychoacoustics) comprehend similarity and distance as polar
+opposites along single continua (e.g., scaled or gradated in
+difference-limens or mels: cf. <a href="#stevens_and_davis_1983" id="citation_stevens_and_davis_1983_67dc9bf2d518d">Stevens and Davis 1983</a>, 76&ndash;98).
+By contrast, other lines of musical inquiry (e.g., inspired by
+Gestalt psychology: cf. <a href="#koehler_1947" id="citation_koehler_1947_67dc9bf2d5193">Koehler 1947</a>, 84&ndash;85 and 117&ndash;18)
+dichotomize in this regard, understanding similarity (or
+sameness) and proximity (or distance) as distinct principles
+of perceptual organization or grouping.</p>
+ 
+<p>[0.3] The present study probes the notion that, in such a
+musical dimension as pitch, there might be continuity between
+similarity and distance. The investigative strategy undertaken
+here is to pursue, until an impasse is reached (if at all), the
+possibility that there might be an unbroken progression from
+similarity to distance. In the development that follows, I try
+to clarify ways in which one might distinguish (or not) pitches
+from intervals. Attempted is the formulation of a common
+groundwork for dealing with similarity and distance in pitch.
+As far as possible, pitch- and interval-predicates are defined
+in terms of a single, maximally economical, basic, primitive
+predicate, so that (i) necessary, logical connections between
+predicates can be proven, or (but only if need be) postulated&mdash;albeit, one seeks, in a maximally coherent manner, and
+(ii) stages or gradations between similarity and distance (e.g.,
+comprising next-to and closer-to relations) can be identified
+clearly. A further tactic adopted in this account construes
+predicates of similarity and distance in terms of simplicity
+and complexity (i.e., &ldquo;structure&rdquo;) and emphasizes, in this
+connection, relations between parts and wholes and between
+statements that can be true of a single thing and statements
+that only can be true of more than one thing.</p>
+ 
+<p>[0.4] The formulation of pitch that follows does not involve
+numerical modeling (i.e., as such). In this way, an effort is
+made here to prevent, or at least forestall, systematically and
+fundamentally, lapses in discourse that might produce instances of the &ldquo;numerological  fallacy.&rdquo; As John Rahn notes at the
+outset of his exposition of the &ldquo;integer model of pitch&rdquo; (<a href="#rahn_1980" id="citation_rahn_1980_67dc9bf2d51ba">1980</a>,
+19):</p>
+<blockquote><nobr> . . . </nobr>all sorts of things can be proven true of integers&mdash;see any
+book on number theory. It does <i>not</i>  follow that, because we
+are using integers to name pitches (or grapes, [etc.]), all those
+things that are true of integers are going to be true of pitches
+(or grapes, [etc.]). We must carefully determine the limits of
+similarity between integers (with their structure) and pitches
+(with their possible structures). To do otherwise would be to
+fall into the <i>numerological fallacy</i>.</blockquote>
+ 
+<p>[0.5] To this end, instead of being framed in terms of numbers,
+the following formulation is cast in terms of things that are
+neither numbers nor sets; that is, what follows is cast in a
+nominalist outlook (for which, see <a href="#goodman_1966" id="citation_goodman_1966_67dc9bf2d51bd">Goodman 1966</a>) and accordingly framed in terms of &ldquo;individuals,&rdquo; as well as predicates
+that specify relations between, or among, such individuals. In
+this sense, general music-theoretical traditions that form an
+immediate background to the present study are Aristoxenian
+rather than Pythagorean, nominalist rather than platonist.</p>
+ 
+<p>[0.6] An idea that guides the present exposition is that two
+things might constitute a relatively simple whole, and, correspondingly, be relatively similar, or close, to one another, to
+the extent that they are described in terms that can be used to
+describe a single thing. Initial stages of the subsequent account involve relations of matching, adjacency, and proximity,
+and explore a sense in which these correspond, respectively, to
+situations of increasing complexity.</p>
+ 
+<p style="text-align: center"><b>[1] Matching</b></p>
+ 
+<p>[1.0] If two things match in pitch, they form a simpler pair
+than if, all other aspects being the same, they had differed in
+pitch. The criterion, or benchmark, is a single, inherently
+pitched thing, which (i) cannot differ, in pitch, or pitch-wise,
+from itself, and (ii) if inherently pitched, necessarily is the
+same, in pitch, as itself. Concerning (ii), one can define an
+inherently pitched thing as follows:<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+<p>DEFINITION: (x)(IPx &#8596; xPRx)<br>
+For any thing, x, x is inherently pitched if and only if x is
+pitch-related to x (i.e., to itself).</p>
+ 
+<p>[1.1] The two-place predicate &ldquo;is pitch-related to&rdquo; can be
+defined in the following way:</p>
+<p>DEFINITION: (x)(y)(xPRy &#8596; xAHy v yAHx)<br>
+For any thing, x, and any thing, y, x is pitch-related to y if
+and only if x is at least as high as y and/or y is at least as
+high as x (cf. <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d51c5">Rahn 1992</a>, 164&ndash;65).</p>
+ 
+<p>[1.2] The predicate &ldquo;matches, in pitch,&rdquo; can be defined as
+follows:</p>
+<p>DEFINITION: (x)(y)(xMPy &#8596; xAHy . yAHx)<br>
+For any thing, x, and any thing, y, x matches, in pitch, y if
+and only if x is at least as high as y and y is at least as high
+as x (cf. <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d51c8">Rahn 1992</a>, 167).</p>
+ 
+<p>[1.3] From these definitions, one can prove the following
+theorem:</p>
+<p>THEOREM: (x)(IPx &#8596; xMPx)</p>
+<p>Proof:  (x)(IPx &#8596; xPRx)<br>
+(x)(xPRx &#8596; xAHx v xAHx)<br>
+(x)(xAHx v xAHx &#8596; -(-xAHx . -xAHx))<br>
+(x)(-(-xAHx . -xAHx) &#8596; -(-xAHx))<br>
+(x)(-(-xAHx) &#8596; xAHx)<br>
+(x)(xAHx &#8596; xAHx . xAHx)<br>
+(x)(xAHx . xAHx &#8596; xMPx)&mdash;i.e., MP is reflexive for any
+inherently pitched thing.</p>
+ 
+<p>[1.4] The other portion (i) of the criterion arises directly
+from the following definition for pitch-difference:</p>
+<p>DEFINITION: (x)(y)(xDPy &#8596; xPRy . -xMPy)
+For any things, x and y, x differs, in pitch, from y if and only
+if x is pitch-related to y and x does not match, in pitch, y (cf.
+ibid., 172).</p>
+ 
+<p>[1.5] As a relation, pitch-matching is proven (above) to be
+reflexive for any inherently pitched thing whatever. As well,
+pitch-matching has been proven, in an earlier study, to be
+symmetric for any pair of things whatever (i.e., pitched or non-pitched, inherently so, or not: ibid., 168):</p>
+<p>THEOREM: (x)(y)(xMPy &#8596; yMPx)</p>
+ 
+<p>[1.6] Additionally, it can be proven that if any two things, x
+and y, match, in pitch, then each is pitch-related to the other
+even if &ldquo;they&rdquo; are precisely the same thing (i.e., even if x=y):</p>
+<p>THEOREM: (x)(y)(xMPy &#8594; xPRy . yPRx)</p>
+ 
+<p>[1.7] If, amidst the &ldquo;booming, buzzing confusion&rdquo; of Nature, one
+acts in an AH-manner, that is, if one &ldquo;hears&rdquo; certain things &ldquo;as&rdquo;
+being at least as high as others (or even as themselves), an
+immediate consequence of the energy expended in such an act
+of hearing is that one&rsquo;s world divides into things that are
+entirely unpitched and things that are inherently, and/or non-inherently, pitched. The single inherently pitched things are
+heard as matching themselves in pitch. Such singletons constitute a template, or model, for pitch-simplicity, or pitch-singleness; pitch-matching necessarily holds within inherently
+pitched things (i.e., &ldquo;severally&rdquo;, e.g., within each of the two
+inherently pitched things of a pair) but might not hold between
+or among them (i.e., &ldquo;jointly&rdquo;, e.g., between the two inherently
+pitched things of such a pair). Two inherently pitched things
+that match pitchwise constitute a simpler pair than two that do
+not match in pitch, at least with respect to pitch, all other
+factors being equal.</p>
+ 
+<p>[1.8] &ldquo;A pitch&rdquo; can be regarded merely as a sum of all, and only,
+certain things that match each other in pitch (cf. <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d51cb">Rahn 1992</a>, 165 on
+&ldquo;pitch-identity wholes&rdquo; and Goodman 1966 on sums of individuals, which, as sums, are, themselves, individuals). Unless
+there were at least one instance of non-matching, or difference, in pitch, between two of them, then all pitched things
+would be heard as matching in pitch. In such a situation of
+universal non-differentiation in pitch (i.e., obtaining between
+any and all pitched things), all pitched things would be heard
+as &ldquo;parts&rdquo; of &ldquo;a&rdquo; single &ldquo;pitch&rdquo;. That is, only &ldquo;one pitch&rdquo; would
+be heard and would comprise all, and only, the pitched things.</p>
+ 
+<p>[1.9] Behaviorally, however, it is generally advantageous for a
+listener that hears pitchwise to hear with optimum pitch
+acuity (e.g., relative to an immediate biological niche), that
+is, to hear as few things as possible as matching in pitch. To be
+sure, each inherently pitched thing necessarily matches itself
+in pitch. But in such an instance, pitch-matching is just
+another name for pitched-ness. Pitch-matching relations are not
+effectively significant, or important, for a listener, unless
+they hold between non-identical things (i.e., between, for instance, acts of hearing, x and y, where -(x=y)).</p>
+ 
+<p style="text-align: center"><b>[2] Vicinity</b></p>
+ 
+<p>[2.0] In the present formulation, every inherently pitched thing
+is regarded as being &ldquo;in its own pitch vicinity.&rdquo; As well, all
+things that match each other in pitch, whether inherently
+pitched or not, are  held to be pitch &ldquo;neighbors.&rdquo; This general
+sense of pitch-neighborhood or -vicinity is conveyed as follows:</p>
+<p>DEFINITION: (x)(z)(xIPVz &#8596; xNMTJHTz v zNMTJHTx)<br>
+For any things, x and z, x is in the pitch-vicinity of z
+if and only if x is no more than just higher than z and/or z is
+no more than just higher than x.</p>
+<p>DEFINITION: (x)(z)(xNMTJHTz &#8596; xAHz . -(:Ey)(xHTy . yHTz))<br>
+For any things, x and z, x is no more than just higher than z if
+and only if x is at least as high as z and there is no thing, y,
+such that x is higher than y and y is higher than z.</p>
+<p>DEFINITION: (x)(y)(xHTy &#8596; xAHy . -yAHx)<br>
+For any things, x and y, x is higher than y if and only if x is
+at least as high as y and y is not at least as high as x.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+ 
+<p>[2.1] It can be shown that xMPz is a special case of xIPVz only
+if there is no &ldquo;intervening&rdquo; thing, y. Such a situation would
+arise in an instance of &ldquo;Shepard&rsquo;s tones&rdquo; (cf. <a href="#shepard_1964" id="citation_shepard_1964_67dc9bf2d51e9">Shepard 1964</a>),
+where, arranged in &ldquo;descending&rdquo; semitones, the first might be
+heard as matching the thirteenth, and yet as higher than the
+twelfth, which would be heard as higher than the thirteenth.
+Important to emphasize is that the &ldquo;illusion&rdquo; of Shepard&rsquo;s tones
+depends on temporal succession and is not merely a matter of
+pitch, as might be a (hypothetical) Shepard&rsquo;s &ldquo;sonority&rdquo;. In the
+present formulation, matching in a vicinity is linear, not
+cyclic, and a pitch-vicinity comprises not only pitch-proximity,
+but concomitant temporal closeness too.</p>
+ 
+<p>[2.2] If xIPVz and x does not match z pitchwise, then xHTz or
+zHTx. Such cases are similarly linear, and involve always an
+HT-relation. Such an HT-relation constitutes a significant articulation in the continuity from matching to distance, for no
+thing whatever can be higher than itself. In this way, vicinity-relations straddle singleness and multitude.</p>
+ 
+<p>[2.3] The present sort of distinction, i.e., between matching and
+vicinity, arises &ldquo;for free,&rdquo; as it were, once such a predicate
+as AH is let loose in the world. The differences in definition
+between matching and vicinity involve, in their respective
+formulations, merely differences in their patterning of quantifiers, conjunctions, modifiers, individual-variables, and the
+AH predicate. If one hears in an AH manner, opportunities to
+make such a distinction can arise (if the world is, in fact,
+truly characterized according to first-order logic).</p>
+ 
+<p>[2.4] Defining vicinity relations widens the net of simplicity
+that can be caught in a formulation. Single inherently pitched
+things (even single inherently pitched sums of individuals,
+which are themselves individuals) supply a criterion for
+asserting the simplicity of pairs of things, whether the things
+are individuals and/or sums of individuals, and whether the
+pairs are, pitch-wise, both matching and neighbors, or merely
+neighbors. The relatively weak, indeterminate specification
+that pitch-vicinity things (x and z in the definition) need
+merely be pitch-related (insofar as xAHz and/or zAHx), rather
+than, say, different in pitch (i.e., by virtue of one being
+higher than the other), widens the net considerably.</p>
+ 
+<p style="text-align: center"><b>[3] Interiority</b></p>
+ 
+<p>[3.0] Concerning the following succession of letters: a b c,
+one can say, informally, that a is closer to b than (it, i.e., a,
+is) to c, and conversely, that c is closer to b than to a. As
+well, informally, b is closer to a than a is to c, b is closer
+to c than c is to a, b is closer to the sum of a and c (i.e.,
+a+b) than a is to c, and so forth. Abbreviating the first two
+statements as aCb, and cCb,a, respectively, one can characterize
+closeness relations in the larger succession: a b c d, as follows:
+aCb,c; aCb,d; aCc,d; bCc,d; cCb,a; dCb,a; dCc,a; dCc,b; aCb+c,d,
+and dCb+c,a.</p>
+ 
+<p>[3.1] A corresponding pitch-predicate, &ldquo;is, in pitch, at least
+as close to<nobr> . . . </nobr>as to&rdquo;, can be defined as follows:</p>
+<p>DEFINITION: (x)(y)(z)(xPACy,z &#8596; xPOSy,z)<br>
+For any things, x, y, and z, x is, in pitch, at least as close to
+y as (x is) to z if and only if x is, in pitch, on the opposite
+side of y from z.</p>
+<p>DEFINITION: (x)(y)(z)(xPOSy,z &#8596; xHSy,z v zHSy,x)<br>
+For any things, x, y, and z, x is, in pitch, on the opposite side
+of y from z if and only if x is on the high side of y from z
+and/or z is on the high side of y from x.</p>
+<p>DEFINITION: (x)(y)(z)(xHSy,z &#8596; xAHy . yAHz . xAHz)<br>
+For any things, x, y, and z, x is on the high side of y from z if
+and only if x is at least as high as y, y is at least as high as
+z, and x is at least as high as z.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+ 
+<p>[3.2] Pitch-closeness and pitch-sidedness of this sort can be
+formulated in terms of things that comprise, or include,
+pitchwise, other things (or themselves), as follows:</p>
+<p>DEFINITION: (x)(y)(z)(x+zCPy &#8596; xPOSy,z)<br>
+For any things, x, y, and z, the sum of x and z comprises, pitch-wise, y if and only if x is, in pitch, on the opposite side of y
+from z.</p>
+ 
+<p>[3.3] The partially-ordered character of pitch-comprising
+relations can be provided for in terms of pitch-interiority (or
+pitch-insideness):</p>
+<p>DEFINITION: (w)(x)(y)(z)(x+yPIw+z &#8596; w+zCPx . w+zCPy)<br>
+For any things, w, x, y, and z, the sum of x and y is, pitchwise,
+inside, or interior to, the sum of w and z if and only if the sum
+of w and z comprises, pitchwise, x, and the sum of w and z
+comprises, pitchwise, y.</p>
+ 
+<p>[3.4] As well, one can prove that things which form pitch-,
+pitch-matching, and pitch-vicinity relations constitute
+pitch-interiority relations, but not necessarily <i>vice versa</i>.
+For example, within a pitch-interiority framework, possible situations involve xHTy, yHTz, and xHTz, and xHTy, yHTz, and xMPy
+(the latter corresponding to a moment of &ldquo;dis-illusion-ment&rdquo; in
+hearing Shepard&rsquo;s tones).</p>
+ 
+<p style="text-align: center"><b>[4] Possible Steps Toward Interval Predicates</b></p>
+ 
+<p>[4.0] Interiority relations exhaust the farthest reaching possibilities for specifying degrees of pitch-distance within the
+AH-dimension. Whereas one can acknowledge (i.e., for any w, x,
+y, and z&mdash;see above) that w+z is more inclusive than w+y or
+x+z, one cannot specify, in the most general way, whether w is
+more distant from y than x is from z, or w is farther from x
+than y is from z, or w forms a larger interval with x than x
+forms with y, etc., except, for example, by (i) specifying that
+all non-matching vicinity-pairs are equidistant (i.e., taking
+non-matching vicinity as the &ldquo;unit&rdquo; or &ldquo;degree&rdquo; of pitch
+gradation), or (ii) resorting to a predicate other than AH.</p>
+ 
+<p>[4.1] Plausible predicates to perform such functions include &ldquo;is
+at least as large as&rdquo;, &ldquo;is at least as much larger than<nobr> . . . </nobr>as
+<nobr> . . . </nobr>is than&rdquo;, &ldquo;is at least as much higher than<nobr> . . . </nobr>as<nobr> . . . </nobr>is
+than&rdquo;, and &ldquo;is at least as much larger than its next to largest
+part, as<nobr> . . . </nobr>is than its next to largest part&rdquo;&mdash;cf. Jay Rahn
+1994b, where the arguments might be individual-variables (e.g.,
+w, x, y, z, above) or sums of individual-variables, which are
+themselves individual-variables (e.g., w+x, w+y,<nobr> . . . </nobr>, above).
+Each such predicate can be regarded as introducing a novel
+&ldquo;dimension&rdquo; into a formulation (e.g., a dimension of pitch-interval, pitch-proportion, or pitch-proportionateness&mdash;as distinguished from pitch). And each can yield matching, vicinity, and
+interiority relations in its respective dimension.</p>
+ 
+<p>[4.2] Alternatively, one could &ldquo;count&rdquo; overlapping vicinity-pairs by, for example, (i) defining a special case of pitch-vicinity, namely, discrete pitch neighborhood:</p>
+<p>DEFINITION: (x)(y)(xDPNy &#8596; xIPVy . xDPy)<br>
+For any things, x and y, x is a discrete pitch-neighbor of y
+if and only if x is in the pitch vicinity of y, and x differs, in
+pitch, from y, and (ii) applying the label &ldquo;pairwise twofold&rdquo; to
+the sums of such discrete-vicinity pairs as w+x and x+y (i.e.,
+w+x+y) and x+y and y+z (i.e., x+y+z), the label &ldquo;pairwise three-fold&rdquo; for the sum of such a pair as w+x, x+y, and y+z (i.e.,
+w+x+y+z), etc. Such a formulation could suffice in certain situations (e.g., where the semitone functioned as the DPN unit, in
+total-chromatic pieces, or passages). However, much music, if not
+most, is not totally chromatic. Instead, diatonic and pentatonic
+works, for example, are generally &ldquo;gapped&rdquo; (i.e., relative to the
+twelve-semitone collection, or aggregate). In order to specify
+that, for instance, E&ndash;F was half as large as F&ndash;G, or as much
+smaller than F&ndash;G as G&ndash;<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> was than <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;D, would require
+such a postulate as the following:<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+<p>POSTULATE: (x)(y)(z)(xDPNy . yDPz . zPOSy,x . -yDPNz &#8596;<br>
+(:Ey&rsquo;)(y&rsquo;POSy,x . zPOSy&rsquo;,y . yDPNy&rsquo;))</p>
+ 
+<p>[4.3] Nonetheless, among things that are partially ordered in
+pitch, one can specify certain degrees of proximity based on
+discrete-vicinity, or &ldquo;unit,&rdquo; relations&mdash;for example, as
+follows:</p>
+<p>DEFINITION: (x)(y)(z)(x+zJLPy+z &#8596; xDPNy . zPOSy,x)<br>
+For any things, x, y, and z, the sum of x and y is just (i.e., by
+one &ldquo;unit&rdquo;) larger, in pitch, than the sum of y and z if and only
+if x is a discrete pitch-neighbor of y, and z is, pitchwise, on
+the opposite side of y from x.</p>
+ 
+<p style="text-align: center"><b>[5] Challenges of Nominalism</b></p>
+ 
+<p>[5.0] As Nelson Goodman indicates (1966, 41), &ldquo;To reconstruct
+in the language of individuals [i.e., as distinguished from sets
+and numbers, as such] all of mathematics that is <i>worth
+saving</i>  is a formidable task that need not concern us here. It
+will be enough to consider typical arithmetical statements
+used in ordinary discourse [my emphasis].&rdquo; At the conclusion of
+his subsequent preliminary survey of ways in which mathematical statements can be &ldquo;de-numerated&rdquo;, and &ldquo;dis-membered&rdquo; (my
+terms&mdash;to which one could add &ldquo;de-generated&rdquo;), Goodman
+stresses (<a href="#goodman_1966" id="citation_goodman_1966_67dc9bf2d520a">1966</a>, 45) that the &ldquo;effort to carry out a constructive nominalism is still so young that no one can say exactly
+where the limits of translatability lie. We have seen above
+that some statements that look hopelessly platonistic yield to
+nominalistic translation and the full resources available to the
+nominalist have not by any means been fully exhausted as yet.&rdquo;</p>
+ 
+<p>[5.1] More recent studies have attempted non-numerical renderings of mathematics on quite a large scale (notably, <a href="#field_1980" id="citation_field_1980_67dc9bf2d520d">Field 1980</a> and <a href="#hellman_1989" id="citation_hellman_1989_67dc9bf2d5210">Hellman 1989</a>, the former not without controversy).
+However great their eventual success might be, attempts at
+modeling music by means of nominalistic formulations, or,
+alternatively, by means of the mathematics of sets and
+numbers, should be assessed not only systematically and
+philosophically, but also by considering seriously what is
+&ldquo;worth saving&rdquo; in accounts of music. Arguably, pitchedness
+(inherent or not), matching, vicinity, and interiority, none of
+which presumes an intervallic dimension, i.e., distinct from
+the AH-dimension, are worth saving. Nonetheless, after more
+than two millenia of music theory, it is still not entirely clear
+just what else is worth saving for a theory of pitch&mdash;or how
+it might best be saved.</p>
+ 
+<p style="text-align: center"><b>[6] From Description to Causal Explanation</b></p>
+ 
+<p>[6.0] Quite surely, insights of Gestalt psychology into musical
+structure are worth saving in music theory. However, whereas
+Gestalt approaches provide valuable descriptions of musical
+activity, the explanatory status of such accounts is generally
+questionable (cf. <a href="#skinner_1974" id="citation_skinner_1974_67dc9bf2d5213">Skinner 1974</a>, 29 and 71&ndash;75 on &ldquo;topography&rdquo;
+or mere description, as contrasted with causal explanations of
+behavior). Nevertheless, the Gestalt principles of similarity
+and proximity, drawn here into a single account, can be
+outfitted with causal force by construing as reinforcing the
+sorts of simplicity considered in the present study (cf. also
+<a href="#rahn_1994a" id="citation_rahn_1994a_67dc9bf2d5215">Rahn 1994a</a>).</p>
+ 
+<p>[6.1] For example, things (i.e., stimuli) that are heard as
+matching pitchwise can be considered to constitute the
+immediate reinforcers of acts (i.e., responses) of hearing
+things, in general, in an AH-manner. By virtue of being heard as
+matching in pitch, such stimuli as x and y immediately become
+a pair of things that have been heard as matching pitchwise.
+Such a pair is a reinforcing stimulus, or reinforcer, for the
+relevant acts of &ldquo;hearing as.&rdquo; Such acts can be designated x&rsquo;
+and y&rsquo;, as in the following, behavioral postulate:</p>
+<p>POSTULATE: (x)(y)(xHAHy &#8596; (:Ex&rsquo;)(:Ey&rsquo;)(x&rsquo;Hx . y&rsquo;Hy . x&rsquo;AHy&rsquo;))<br>
+For any things, x and y, x is heard as being at at least as high
+as y if and only if there is at least one thing, x&rsquo;, and there
+is at least one thing, y&rsquo;, such that x&rsquo; is a hearing of (i.e.,
+an act of hearing, or an auditory response to) x, y&rsquo; is a
+hearing of y, and x&rsquo; is at least as high as y&rsquo;.</p>
+ 
+<p>[6.2] The latter postulate distinguishes between stimuli and
+responses and can be considered to occupy a territory that
+straddles descriptive music theory and the causal formulations
+of behaviorism. In this postulate, the HAH- and AH-predicates
+are morphologically identical. Each merely orders pairs of
+things; that is, neither involves presumptions, or axioms, of
+reflexivity, symmetry, etc., and both presume only that the
+distinction between xy and yx might be significant within its
+respective (HAH- or AH-) &ldquo;dimension&rdquo;. Accordingly, one can
+reason about HAH-things in a manner quite parallel to ways, outlined above, for reasoning about AH-things.</p>
+ 
+<p>[6.3] The preceding postulate can be replaced and extended in
+significance by the following:<br>
+POSTULATE: (x)(y)(xMPy &#8596;<br>
+     (:Ex&rsquo;)(:Ey&rsquo;)(x&rsquo;SHx . y&rsquo;SHy . x&rsquo;HAHy&rsquo; . y&rsquo;HAHx&rsquo; . x&rsquo;+y&rsquo;Rx+y))<br>
+For any thing, x, and any thing, y, x matches, in pitch, y if and
+only if there is at least one thing, x&rsquo;, and there is at least
+one thing, y&rsquo;, such that x&rsquo; stimulates the hearing of x, y&rsquo;
+stimulates the hearing of y, x&rsquo; is heard as being at least as
+high as y&rsquo;, y&rsquo; is heard as being at least as high as x&rsquo;, and the
+sum of x&rsquo; and y&rsquo; reinforces the sum of x and y.
+ 
+<p>[6.4] Fashioning nominalistically an account of reinforcement
+presents formidable challenges (cf. <a href="#rahn_1993" id="citation_rahn_1993_67dc9bf2d5219">Rahn 1993</a>). Among
+these is distinguishing between earlier and later instances, or
+portions, of stimuli and responses. That reinforcement often
+develops in a curvilinear manner can also be problematic. Just
+as one can eat too much, beyond a certain point one can be
+satiated by repetition and other kinds of similarity. As boredom sets in, sorts of stimuli that formerly had been reinforcing become aversive. One way of preventing something from
+becoming &ldquo;too much of a good thing&rdquo; involves rendering it less
+thing-like: less simple, less &ldquo;singular&rdquo;. Between the extreme
+possibilities of a world where (i) every inherently pitched
+thing differed in pitch from every other and (ii) every (inherently or non-inherently) pitched thing matched pitchwise
+every other (including itself), lies a region in which music has
+specialized. Moreover, music has specialized in a world where
+salience is sought and reinforced.</p>
+ 
+<p>[6.5] Stimuli that are heard as pitchwise matching constitute
+reinforcers of acts of pitchwise hearing. Stimuli that escape or
+&ldquo;e-lude&rdquo; the net of matching-relation simplicity might be caught
+by the discrete-vicinity net. Those that elude discrete-vicinity
+might be trapped by relations of interiority, which can, in turn,
+vary in their degrees of simplicity. Moreover, interiority-simplicity can been shown to abound generally in the middles of
+things, i.e., of individual-sums. That the highest degree of proportionateness between things that differ in (e.g., pitch-intervallic) size arguably obtains between a thing and its (precise)
+half indicates the possibility of coherent continuity in a progression of simplicity reinforcement that might extend beyond AH-relations into the &ldquo;truly intervallic&rdquo;. And that highest and
+lowest things stand out, are salient, or &ldquo;edgy&rdquo;, not only derives
+from the general paucity of adjacency or interiority relations
+in which they participate but also renders them &ldquo;excellent,&rdquo;
+&ldquo;privileged,&rdquo; &ldquo;prime&rdquo; candidates for &ldquo;resolution,&rdquo; that is, for
+being heard, by way of other, simplifying relations, as (proper)
+parts of relatively simple, reinforcing wholes (e.g., as the
+soprano-bass &ldquo;skeleton&rdquo; of a complex texture, or as the &ldquo;exo-skeleton&rdquo; (my term) of a &ldquo;contour&rdquo;&mdash;on which see <a href="#morris_1993" id="citation_morris_1993_67dc9bf2d5234">Morris 1993</a>).</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Jay Rahn<br>
+	York University (Canada)<br>Atkinson College<br>Fine Arts Department<br>4700 Keele Street<br>North York, Ontario M3J 1P3<br><a href="mailto:relation@vm1.yorku.ca">relation@vm1.yorku.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_field_1980" class="flyoverdiv">Field, Hartry. 1980. <i>Science without Numbers: A Defence of
+Nominalism</i>. Princeton, NJ: Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="field_1980"></a>Field, Hartry. 1980. <i>Science without Numbers: A Defence of
+Nominalism</i>. Princeton, NJ: Princeton University Press.</p><div id="citediv_goodman_1966" class="flyoverdiv">Goodman, Nelson. 1966. <i>The Structure of Appearance</i>. Indianapolis: Bobbs-
+Merrill.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="goodman_1966"></a>Goodman, Nelson. 1966. <i>The Structure of Appearance</i>. Indianapolis: Bobbs-
+Merrill.</p><div id="citediv_goodman_1961" class="flyoverdiv">Goodman, Nelson. 1961. <i>Science and Simplicity</i>. Washington, D.C.:
+Voice of America (repr. in Nelson Goodman. 1972. <i>Problems and
+Projects</i>. Indianapolis: Bobbs-Merrill. 337&ndash;46).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="goodman_1961"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1961. <i>Science and Simplicity</i>. Washington, D.C.:
+Voice of America (repr. in Nelson Goodman. 1972. <i>Problems and
+Projects</i>. Indianapolis: Bobbs-Merrill. 337&ndash;46).</p><div id="citediv_hellman_1989" class="flyoverdiv">Hellman, Geoffrey. 1989. <i>Mathematics without Numbers: Towards a
+Modal-Structural Interpretation</i>. Oxford: Clarendon Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hellman_1989"></a>Hellman, Geoffrey. 1989. <i>Mathematics without Numbers: Towards a
+Modal-Structural Interpretation</i>. Oxford: Clarendon Press.</p><div id="citediv_koehler_1947" class="flyoverdiv">Koehler, Wolfgang. 1947. <i>Gestalt Psychology</i>. New York: Liveright
+(repr. New York: New American Library).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="koehler_1947"></a>Koehler, Wolfgang. 1947. <i>Gestalt Psychology</i>. New York: Liveright
+(repr. New York: New American Library).</p><div id="citediv_morris_1993" class="flyoverdiv">Morris, Robert D. 1993. &ldquo:New Directions in the Analysis of Musical Contour.&rdquo; <i>Music Theory Spectrum</i> 15, 2: 205&ndash;28.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1993"></a>Morris, Robert D. 1993. &ldquo:New Directions in the Analysis of Musical Contour.&rdquo; <i>Music Theory Spectrum</i> 15, 2: 205&ndash;28.</p><div id="citediv_rahn_1994a" class="flyoverdiv">Rahn, Jay. 1994a. &ldquo;Outline of a Causal Theory of Music.&rdquo; Paper presented at Graduate Music Theory Colloquium, Eastman School of
+Music. Rochester. February.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1994a"></a>Rahn, Jay. 1994a. &ldquo;Outline of a Causal Theory of Music.&rdquo; Paper presented at Graduate Music Theory Colloquium, Eastman School of
+Music. Rochester. February.</p><div id="citediv_rahn_1994b" class="flyoverdiv">Rahn, Jay. 1994b. &ldquo;A Non-Numerical Predicate of Wide Applicability
+for Intervallic Relations in Music.&rdquo; Paper presented at the Simposion International de Muzicologie: Muzica si Matematica, Bucharest. May.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1994b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1994b. &ldquo;A Non-Numerical Predicate of Wide Applicability
+for Intervallic Relations in Music.&rdquo; Paper presented at the Simposion International de Muzicologie: Muzica si Matematica, Bucharest. May.</p><div id="citediv_rahn_1993" class="flyoverdiv">Rahn, Jay. 1993. &ldquo;A Nominalist Formulation of Basic Terms in Radical
+Behaviorist Theory.&rdquo; unpub. ms. Toronto: the author (formulations
+distributed in 10pp. handout of Jay Rahn. &ldquo;Imaginary Entities in
+a Phenomenal Theory of Music.&rdquo; Paper presented at Annual Conference of Society for Music Perception and Cognition. University
+of Pennsylvania. Philadelphia. June).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. &ldquo;A Nominalist Formulation of Basic Terms in Radical
+Behaviorist Theory.&rdquo; unpub. ms. Toronto: the author (formulations
+distributed in 10pp. handout of Jay Rahn. &ldquo;Imaginary Entities in
+a Phenomenal Theory of Music.&rdquo; Paper presented at Annual Conference of Society for Music Perception and Cognition. University
+of Pennsylvania. Philadelphia. June).</p><div id="citediv_rahn_1992" class="flyoverdiv">Rahn, Jay. 1992. &ldquo;An Advance on a Theory for All Music: At-Least-As Predicates for Pitch, Time, and Loudness.&rdquo; <i>Perspectives of New
+Music</i> 30, 1: 158&ndash;83.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. &ldquo;An Advance on a Theory for All Music: At-Least-As Predicates for Pitch, Time, and Loudness.&rdquo; <i>Perspectives of New
+Music</i> 30, 1: 158&ndash;83.</p><div id="citediv_rahn_1980" class="flyoverdiv">Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Longman.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1980"></a>Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Longman.</p><div id="citediv_shepard_1964" class="flyoverdiv">Shepard, Roger N. 1964. &rdquo;Circularity in Judgments of Relative
+Pitch.&rdquo; <i>Journal of the Acoustical Society of America</i> 36, 2346&ndash;53.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shepard_1964"></a>Shepard, Roger N. 1964. &rdquo;Circularity in Judgments of Relative
+Pitch.&rdquo; <i>Journal of the Acoustical Society of America</i> 36, 2346&ndash;53.</p><div id="citediv_skinner_1974" class="flyoverdiv">Skinner, B.F. 1974. <i>About Behaviorism</i>. New York: Vintage.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="skinner_1974"></a>Skinner, B.F. 1974. <i>About Behaviorism</i>. New York: Vintage.</p><div id="citediv_stevens_and_davis_1983" class="flyoverdiv">Stevens, Stanley Smith and Hallowell Davis. 1983. <i>Hearing: Its
+Psychology and Physiology</i>. 2nd ed. New York: American Institute
+of Physics for the Acoustical Society of America.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stevens_and_davis_1983"></a>Stevens, Stanley Smith and Hallowell Davis. 1983. <i>Hearing: Its
+Psychology and Physiology</i>. 2nd ed. New York: American Institute
+of Physics for the Acoustical Society of America.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> In this and following formulations, such a phrase as &ldquo;is
+inherently pitched&rdquo;  can be replaced by such phrases as &ldquo;is
+heard as inherently pitched&rdquo;, &ldquo;is heard as being inherently
+pitched&rdquo;, etc.&mdash;see below. Note also that inherent pitchedness
+here differs from pitchedness, which, in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d391a">Rahn 1992</a>, 165,
+is a &ldquo;property&rdquo; of any thing, x, if and only if there is at least
+one thing, y, such that x is pitch-related to y. The subsequent
+theorems claimed in the latter study which depend on this
+definition of pitched (P) things can be proven for inherently
+pitched (IP) things.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> As defined here, IPV is more general (i.e., is less determi-
+nate) than NP (&ldquo;is next, in pitch, to&rdquo;), as defined in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d391f">Rahn 1992</a>,
+172. E.g., for any things, x and y, xIPVy might hold even if
+xHTy, but xHTy excludes the possibility of xNPy.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> As defined here, PAC is more general than NICP (&ldquo;is non-
+intervallically closer, in pitch, to<nobr> . . . </nobr>than to&rdquo;) in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d3921">Rahn 1992</a>,
+172&ndash;73.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Postulates are regarded here as asserting the existence of
+at least one thing, whereas definitions do not make such an
+ontological claim (cf. <a href="#goodman_1961" id="citation_goodman_1961_67dc9bf2d3922">Goodman 1961</a>, 6&mdash;or Goodman 1972,
+343&ndash;44).<br><a href="#FN4REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">In this and following formulations, such a phrase as &ldquo;is
+inherently pitched&rdquo;  can be replaced by such phrases as &ldquo;is
+heard as inherently pitched&rdquo;, &ldquo;is heard as being inherently
+pitched&rdquo;, etc.&mdash;see below. Note also that inherent pitchedness
+here differs from pitchedness, which, in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d391a">Rahn 1992</a>, 165,
+is a &ldquo;property&rdquo; of any thing, x, if and only if there is at least
+one thing, y, such that x is pitch-related to y. The subsequent
+theorems claimed in the latter study which depend on this
+definition of pitched (P) things can be proven for inherently
+pitched (IP) things.</div><div id="fndiv2" class="flyoverdiv">As defined here, IPV is more general (i.e., is less determi-
+nate) than NP (&ldquo;is next, in pitch, to&rdquo;), as defined in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d391f">Rahn 1992</a>,
+172. E.g., for any things, x and y, xIPVy might hold even if
+xHTy, but xHTy excludes the possibility of xNPy.</div><div id="fndiv3" class="flyoverdiv">As defined here, PAC is more general than NICP (&ldquo;is non-
+intervallically closer, in pitch, to . . . than to&rdquo;) in <a href="#rahn_1992" id="citation_rahn_1992_67dc9bf2d3921">Rahn 1992</a>,
+172&ndash;73.</div><div id="fndiv4" class="flyoverdiv">Postulates are regarded here as asserting the existence of
+at least one thing, whereas definitions do not make such an
+ontological claim (cf. <a href="#goodman_1961" id="citation_goodman_1961_67dc9bf2d3922">Goodman 1961</a>, 6&mdash;or Goodman 1972,
+343&ndash;44).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1994 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Natalie Boisvert, Cynthia Gonzales, and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

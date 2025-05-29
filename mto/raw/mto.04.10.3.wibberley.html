@@ -1,0 +1,818 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 10.3: Wibberley, Models for Chord Doubling</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Models for Chord Doubling (and Spacing): Which Ones Don&rsquo;t We Need?">
+
+    <meta name="citation_author" content="Wibberley, Roger">
+      
+
+<meta name="citation_publication_date" content="2004/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="10">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Models for Chord Doubling (and Spacing): Which Ones Don&rsquo;t We Need?
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.04.10.3/mto.04.10.3.wibberley.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Roger Wibberley</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.aarden_hippel.php">http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.aarden_hippel.php</a></font></p><p><font size='4'>KEYWORDS: Bach, chorale, spacing, voice-leading</font></p><p><font size='4'>ABSTRACT: This Commentary will discuss some aspects of the model recently 
+presented by Bret Aarden and Paul T. von Hippel in <i>MTO 10.2</i> in their 
+article &ldquo;<a href='http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.aarden_hippel.php'>Rules for Chord Doubling (and Spacing): Which Ones Do We Need?</a>&rdquo;. Their 
+model will hereinafter be called the OSU Model. Any language&mdash;written or spoken&mdash;is a code. Through this code the ideas of the originator can be understood by the recipient, and any
+language thus learnt becomes a suitable and effective medium for
+scientific or artistic intellectual communication. In this respect the language
+of tonal music is no different from any other language. As a medium it
+has its own syntax and structure. But as with any other language its
+effectiveness as a means of discourse rests upon the assumption
+that the syntax used by the originator (here the composer) is the same
+as that to be understood by the recipient (here the listener or
+the performer). In an age such as ours&mdash;far removed from the musical
+syntax used by those living and working in the age of Bach, Mozart
+and Haydn&mdash;we can only approach the ideas communicated by those
+of the distant past by revealing exactly what is encoded in the notes they
+wrote: these are all we have. To understand them is not obvious,
+self-evident or in any way instinctive to us who live in the 21st
+Century, and neither could it be. In order to decode such music we must
+ourselves relearn the code employed. We may then be able to
+understand not only how they used the syntax, but (arguably more urgently)
+why and when they employed it in the ways they did.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.04.10.3/mto.04.10.3.wibberley.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.04.10.3/wibberley_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2004</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 10, Number 3, September 2004 <br> Copyright &#0169; 2004 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] It is my belief that a meaningful understanding of any composer&rsquo;s 
+model rests upon the forensic identification of three clear 
+attributes: Motive, Means and Opportunity. Of these, we can simply 
+view each surviving written musical note (in whatever context) as an 
+instance of Opportunity: whatever may have been the reason (or 
+Motive) for writing it, and whatever may have been the factors that 
+bear upon using it in that way (these constituting the Means), its 
+consequent use stemming from these two attributes marked the 
+Opportunity evidenced by its committal to paper. Within this 
+unbreakable chain of creative activity&mdash;which begins with a Motive&mdash;Opportunity can be seen only as the final link.
+<p>[2] The difficulty with any model, including the OSU Model, is that 
+statistical information alone can only record countless numbers of 
+individual opportunities. In this instance the OSU Model has sampled 
+2643 four-part triads from Bach&rsquo;s chorale harmonizations, together 
+with 960 four-part triads from the string quartets of Haydn and 
+Mozart. Through an analysis of the note-doubling and chord-spacing 
+tendencies that have been recorded and processed by this model, clear 
+principles for &ldquo;correct&rdquo; spacing and doubling can&mdash;it is believed&mdash;be codified. Yet these principles or &ldquo;rules&rdquo; can only provide an 
+abstract insight into the composer&rsquo;s Means (i.e. his specific 
+technical articulations) that identify each individual Opportunity 
+(i.e. each specific recorded instance of triad notation). No such 
+model can explore a composer&rsquo;s actual reason or Motive for realizing 
+an opportunity in the way he did.
+
+</p>
+
+<p>[3] What I am suggesting is that a composer&rsquo;s choice of note doubling 
+or chord spacing (or anything else for that matter) was never made 
+simply in order to follow established rules and procedures. Rather 
+each choice was made only because it was a composer&rsquo;s &ldquo;preferred 
+solution&rdquo; that was deemed <i>at that moment</i> to be aesthetically and 
+artistically the best available. As soon as musical practice is 
+described in terms of &ldquo;rules&rdquo; we immediately step away from the 
+language of the musician and become engaged with that of the 
+theorist. What therefore begins life as an artistic musical 
+expression then simply ends up trapped in the world of 
+&ldquo;theorist-speak.&rdquo;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> I should therefore like to examine the workings 
+of the OSU Model, and to consider exactly what its pronouncements 
+reveal. This examination will, I think, have more to say about the 
+Model than about the music it tries to analyze.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="wibberley_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4] The first procedure, therefore, must be to test the OSU Model in 
+order to probe its brain. For this purpose I clicked on the sidebar 
+headed &ldquo;Can you beat the computer?&rdquo; and then selected one of each 
+pair of radio buttons. The result that was returned can be viewed as 
+<b>Figure 1</b>.
+
+</p>
+
+<p>
+[5] As readers will notice, I decided&mdash;irrespective of whatever 
+chords had been presented&mdash;automatically to select alternately the 
+first then the second of each alternate pair (i.e. for the first pair 
+I selected chord 1, for the second pair chord 2, for the third pair 
+chord 1 and so on). My score of &ldquo;60%&rdquo; (being above average) in no way 
+therefore resulted from musical decision-making. Indeed had I decided 
+at the outset to select chords in the opposite order (i.e. starting 
+with chord 2, then chord 1 etc.) my score would have been only &ldquo;40%.&rdquo; 
+What is of greater interest, however, is to note that the OSU Model&rsquo;s 
+own score was only &ldquo;50%&rdquo; verifiable when each of its own decisions 
+is compared with what is stated as being &ldquo;The correct answer.&rdquo; By 
+&ldquo;The correct answer&rdquo; (which must therefore be not only predetermined 
+by the OSU Model, but also then rendered independent from its own 
+adjudication, even though the raw data that define it are contained 
+within the same Model) we have to assume that the &ldquo;correctness&rdquo; of 
+each example rests solely upon its authority as having been 
+specifically <i>selected</i> as a real composed chord. The alternative 
+choice in each case is by analogy &ldquo;incorrect&rdquo; not because it does not 
+also exist in the repertory as a composed chord, but rather because 
+it did not happen to be the <i>actual</i> composed chord chosen for the 
+test (being instead a randomly reconstituted version of that chord). 
+One, however, is stated as being &ldquo;correct&rdquo; while the other must 
+therefore be inferred as &ldquo;incorrect.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>
+</p>
+<p>[6] This particular example of &ldquo;theorist-speak&rdquo; has therefore 
+introduced two new technical terms that need urgent qualification: 
+&ldquo;correct&rdquo; and (by inference) &ldquo;incorrect.&rdquo; Unless they are so qualified 
+and clarified a confusion in the minds of students will immediately 
+exist. They will perhaps take the words at face value (not 
+understanding that these words are themselves merely code) and then 
+mistakenly believe that certain chord spacings and doublings are 
+empirically correct merely because they (the students) have 
+misunderstood what is here meant by the coded word &ldquo;correct.&rdquo; Perhaps 
+the greater hazard is presented by the inference that certain triadic 
+configurations are (by default) incorrect. Again taken at face value, 
+the use of the coded (but here only deductively inferred) term 
+&ldquo;incorrect&rdquo; may lead students to assume that such configurations are 
+to be avoided. This, again, is because the student will have failed 
+to understand that the inferred term &ldquo;incorrect&rdquo; means absolutely 
+<i>not</i> that the particular chord was not freely used by the composers, 
+but only (and merely) that the particular test did not select it as 
+the raw material from which a restructured version was created. It is 
+therefore obvious, surely, that the OSU Model is being neither 
+prescriptive nor proscriptive. Nobody can possibly know which 
+particular chords actually were the pre-selected &ldquo;correct,&rdquo; 
+&ldquo;composed&rdquo; chords as opposed to being those that were 
+computer-generated alternative versions of the same. Indeed the OSU 
+Model&mdash;even though it obviously begins its operation by knowing 
+which are which&mdash;is even itself denied such knowledge at the point 
+of its own adjudication. The danger is, surely, that we might be led 
+to believe that the OSU Model&rsquo;s own judgment is likely to be 
+significantly (or at all) better than our own. But is it, and if so 
+where is the evidence?
+
+</p>
+<p>[7] As Figure 1 demonstrates, the Model scored only 50% as against my 
+own 60%. Yet it must be remembered that my score resulted from no 
+musical decision-making whatsoever. Had I seen fit to indulge in 
+this, I might well have managed a higher score&mdash;who knows? What is 
+particularly alarming, however, is that the Model was apparently 
+unable to avoid getting 50% of its own answers &ldquo;wrong.&rdquo;  As the Model 
+states, a score of 50% is the target score when chords are chosen 
+only randomly; but here the Model was supposed to be making informed judgments.  I am no more  impressed by the authors&rsquo; claim that a 
+Model score of 70% is acceptable, especially since this is only 10% 
+better than a score I have achieved on the basis of zero musical 
+judgment and insight.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Such a score also presupposes that the 
+Model&rsquo;s failure to avoid getting as many as 30% of its own answers 
+wrong is &ldquo;acceptable.&rdquo; Is this credible?
+
+</p>
+<p>[8] The starting point must be an examination of some of the numerous 
+instances where those chords deemed (inferentially) to be &ldquo;incorrect&rdquo; 
+are to be found in the actual surviving music. Unlike the OSU Model, 
+we may then be in a position to perceive through the &ldquo;opportunities&rdquo; 
+presented some tangible &ldquo;motives&rdquo; that explain the &ldquo;means.&rdquo; It will 
+also elevate (of necessity) the status of those chords from 
+&ldquo;incorrect&rdquo; to that of &ldquo;correct&rdquo; (since the examples now to be given 
+will also be actual &ldquo;composed&rdquo; examples). These have currently been 
+denied to the OSU Model even though they freely exist in the 
+repertory alongside the others.
+
+</p>
+<p>[9] For this examination I have decided to restrict myself to the 
+Bach chorale harmonizations, but have little doubt that a similarly 
+fruitful exercise could be undertaken also with reference to the 
+quartet repertory. In what follows, therefore, only the first five 
+examples (i.e. the first row of chords) from Figure 1 will be 
+re-appraised.
+
+</p>
+<p>[10] The Model recognizes that key is important (and therefore the 
+tests all state the keys within which given triads are deemed to 
+exist). A particular triad can therefore be properly assessed only in 
+relation to the prevailing key within which it is used. The triad 
+f-c'-f'-a'' is, for example, likely to exist because of particular 
+voice-leading and harmonic requirements when it functions within the 
+key of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major that differ from those applying to C major. Also the 
+relationship of chord spacing to tonal and voice-leading functions 
+may differ according to key since in certain keys the equivalent 
+spacing may result in poor vocal range. For these reasons it is 
+important to respect the keys that apply to each of the examples.
+
+</p>
+<p>[11] I should submit, however, that key is not intrinsically <i>so</i> 
+important that the harmonic, chord-spacing and voice-leading syntax 
+used for a chorale in (say) <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major will be in any way different 
+from that used in the key of (say) D major (lying only a semitone 
+lower in pitch). Both keys have effectively identical vocal ranges, 
+both are major keys, and the tonal language in both must basically be 
+identical. On the other hand, I should assume that the chord spacing 
+for a chorale in G major <i>must</i> differ from that used in C major 
+(which lies a fifth lower in pitch). If that used in the second is 
+merely a replication of that found in the first, it is obvious that 
+either the upper voices will be too high in pitch, or the lower too 
+low. Under these conditions, therefore, one should expect to find a 
+difference in the way chords are configured.
+
+</p>
+<p>[12] In Figure 1, three simultaneous choices are unanimously selected 
+for the first pair of chords (but all for totally different reasons): 
+first, the Model indicates by the red shading that the first chord of 
+the pair was the &ldquo;correct&rdquo; chord (i.e. the one actually taken as a 
+&ldquo;composed&rdquo; chord, its knowledge of this fact being then independent 
+from its own subsequent adjudication); second, the OSU Model selected 
+it as being the more likely of the two to have been &ldquo;composed&rdquo; (being 
+at that point unaware that it had previously been entered in any case 
+as &ldquo;correct&rdquo;); third, I chose it purely because for that one I 
+selected the first (in a system of pragmatic alternate selections). 
+We all agreed (for very different reasons) that the first chord was 
+&ldquo;correct.&rdquo; But what about the second?
+
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Riemenschneider 5: Wasserfl&uuml;ssen Babylon (mm. 10&ndash;14)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=1&nonav=true"><img border="1" alt="Example 1 thumbnail" src="wibberley_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[13] The three independent reasons why the second chord was 
+&ldquo;incorrect&rdquo; are: first, the Model indicates that the first was indeed 
+&ldquo;correct&rdquo; (knowing initially that it was the given chord from which 
+it then recomposed the notes to arrive at for the second); second, 
+the Model (being, after that, rendered  innocent to the previous 
+facts) adjudicated that the layout of the first was &ldquo;better&rdquo; than the 
+second; and third, I selected the first because (and only because) it 
+was the first chord. (For the next one I shall have pragmatically 
+selected the second.) The conclusion is therefore undoubtedly that 
+the second chord is &ldquo;incorrect.&rdquo; But as can now be seen below in 
+<b>Example 1</b>, it occurs quite unashamedly and routinely as a &ldquo;composed&rdquo; 
+chord deliberately chosen by Bach (in preference to all others) as 
+being the most suitable for the purpose.
+</p>
+<p>[14] Why, therefore, did Bach place the alto on a', thereby creating 
+the large gap between the two inner voices (which obviously offended 
+the OSU Model)? Only by understanding his motive (rather than merely 
+perceiving his means) can this question be answered. But the OSU 
+Model is not equipped to adjudicate upon the motive, being capable 
+only of noting the means and thereby recording yet another 
+opportunity (in this case perhaps a rare one). An answer can be 
+arrived at by understanding that here the <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the tenor voice is 
+not merely a passing tone between two chords (A minor and G major), 
+but is indeed a crucial harmony tone creating a modulation back to G 
+major. As such it functions as the leading tone within a 
+first-inversion leading-tone triad in which the third (a) is here 
+doubled in preference to either of the other notes (the root <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and 
+the fifth c). To have doubled the <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> would have been poor (and the 
+article correctly stresses that doubled leading tones are avoided for 
+voice-leading reasons); and to have doubled the c (by leaving the 
+alto on the same note as it occupied in the previous chord) would 
+have imposed poor voicing with the tenor (yielding pseudo-parallels). 
+This surely explains &ldquo;why&rdquo; this configuration (despite the Model&rsquo;s 
+prejudices) is here undoubtedly the most correct, preferred one. So 
+the dubious status accorded to it by the Model is only dubious 
+because a) the other one was the Model&rsquo;s starting point, and b) the 
+Model had no means of judging a circumstance under which this 
+configuration might be preferable.
+
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Riemenschneider 34: Er barm&rsquo; dich (mm. 6&ndash;8)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=2&nonav=true"><img border="1" alt="Example 2 thumbnail" src="wibberley_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[15] Returning to Figure 1, the second pair of chords shows the model 
+to have made an &ldquo;incorrect&rdquo; choice. This is because it did not know 
+(as I also did not) that in fact it was the second of the pair that 
+had been provided as the composed data. (The Model did, of course, 
+originally &ldquo;know&rdquo; this, but only before it was then instructed to 
+forget it in order to make an impartial adjudication.) But as <b>Example 2</b> below shows, the configuration chosen (&ldquo;incorrectly&rdquo;) by the Model 
+also freely occurs. Within the context provided here, the layout and spacing is the only 
+obvious one. While this chorale could be said to be in A minor, it 
+really belongs to the kind described within the article as &ldquo;modal&rdquo; 
+rather than &ldquo;tonal.&rdquo; It might be argued, therefore, that when this 
+chord arrives the passing tonality is really F major rather than A 
+minor. Nonetheless its function is part of an overall modulation from 
+A minor to D minor. The apparent tonality of C major (at the 
+beginning of the phrase) results only from the modal character which, 
+within a tonal context of A minor, makes C major harmony freely 
+available.
+
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Riemenschneider 29: Freu&rsquo; dich sehr, o meine Seele (mm. 5&ndash;8)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=3&nonav=true"><img border="1" alt="Example 3 thumbnail" src="wibberley_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[16] The third pair of chords in Figure 1 provides two configurations 
+that, without question, are both completely routine and as likely to 
+be found. While the second is &ldquo;correct&rdquo; (being the actual given one) 
+both I and the Model have selected the first (being therefore 
+&ldquo;incorrect&rdquo;). The Model has performed more poorly than I have 
+however, because while my selection was deliberately made without 
+exercising any musical judgment at all, its was supposed to be a 
+musically-preferred selection. But as can be seen below in <b>Example 3</b>, 
+both chords are freely used. The &ldquo;correct&rdquo; chord appears on the third beat of measure 1, while the 
+&ldquo;incorrect&rdquo; one becomes the ultimate goal of the whole phrase (i.e. 
+the final chord). Who could possibly deny that this &ldquo;incorrect&rdquo; chord 
+is the only one that clearly fulfils all the voice-leading, melodic 
+and harmonic requirements of the phrase? What actual choice (as such) 
+is therefore offered by the Model? Like completing a lottery ticket, 
+the hope can only be (for whatever amusement purpose) that the final 
+guess will miraculously concur with the programmer&rsquo;s unknown (and 
+unknowable) random selection.
+
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Riemenschneider 239: Den Vater dort oben (mm. 5&ndash;6)&mdash;transposed</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=4&nonav=true"><img border="1" alt="Example 4 thumbnail" src="wibberley_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Riemenschneider 4: Es ist das Heil uns kommen her (mm. 6&ndash;8)&mdash;transposed</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="wibberley_examples.php?id=5&nonav=true"><img border="1" alt="Example 5 thumbnail" src="wibberley_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[17] The fourth pair of chords shown in Figure 1 again offers little 
+means for making an informed choice, since either chord can (and 
+does) freely occur in the repertory. Particular usage arises only 
+from the voice-leading requirements at any particular moment, and 
+there is no basis for believing that the second chord (here deemed 
+the &ldquo;correct&rdquo; one) is any more likely than the first. Indeed the OSU 
+Model has adjudicated that the first is the more likely, thereby 
+being both implicitly &ldquo;incorrect&rdquo; (since the second chord is deemed 
+&ldquo;correct&rdquo;) and factually incorrect (in that it is, in reality, no 
+more likely to be found than the second). As <b>Example 4</b> below shows, 
+the &ldquo;incorrect&rdquo; first chord is the one deliberately chosen by Bach 
+himself.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> 
+</p>
+
+<p>[18] In the fifth pair of chords offered by Figure 1, the first looks 
+decidedly unpromising despite being shown as &ldquo;correct.&rdquo; The chorale 
+source is not identified, but there are clearly various possibilities 
+for using this configuration in a manner that yields natural voice 
+leading. As the Model indicates (&ldquo;incorrectly&rdquo;) by its preference, 
+the second chord is a more likely distribution of the notes since 
+here it is the root that is doubled rather than the third, and 
+(unlike the first chord) the space between alto and tenor is only a 
+fourth as opposed to an eleventh. Unsurprisingly, therefore, one does 
+not have to look far to find its free use by Bach, as shown below in 
+<b>Example 5</b>.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> 
+
+
+</p>
+<p>[19] So how did the Model perform overall in these five chorale 
+extracts, and what does this say about its value as a tool?
+
+</p>
+<p>[20] To be honest, its performance was in my view of only limited 
+value: it only &ldquo;correctly&rdquo; identified the first &ldquo;correct&rdquo; chord, 
+while it failed for the other four (giving a staggering 80% failure 
+rate). But we must not be too harsh for these failings, any more than 
+I deserve to be congratulated for having conversely managed for the 
+same extracts a success rate of 80% (having managed by pure accident 
+to identify four of the &ldquo;correct&rdquo; chords). While the informed (or 
+uninformed) judgment of a person can be correlated with that 
+person&rsquo;s state of knowledge and experience (or in my case, in this 
+instance, sheer luck), a computer&rsquo;s performance is limited only by 
+the nature and scope of the data given to it in the first place. We 
+know that these data consisted of 2643 four-voice triads, but we do 
+not know (and neither can the OSU Model know) upon what basis this 
+selection was made. Was it representative, and if so how?
+
+</p>
+<p>[21] To provide some idea of scale, let us suppose (for the sake of 
+argument only) that on average each chorale consists of (say) four 
+phrases, and that each phrase has a minimum of (say) eight chords. 
+(This might at least serve as a notional benchmark only.) This should 
+mean that within the 371 four-voice chorales found in Riemenschneider 
+(alone) there will be (on this basis only) at least 11872 chords. It 
+would, in my view, therefore be necessary for the data input to 
+contain an absolute minimum of all these 11872 chords, together with 
+whatever program instructions are necessary to process the 
+information in a meaningful and useful way. The Model&rsquo;s judgment 
+that one chord configuration is &ldquo;better&rdquo; than another would then at 
+least be the result of a rational statistical evaluation. The results 
+currently being generated (as in Figure 1) seem only tangentially 
+connected with the broad range of data available, and more to stem 
+from certain kinds of evaluative parameters implanted within the 
+Model. It is not clear to me exactly how the  2643 sampled chords 
+(only) feed into the evaluative process itself.
+
+</p>
+<p>[22] Within the language of tonal music, the music is of course not 
+the end product of chord spacing. The exact opposite is the case: 
+chord spacing is the end product of musical judgment. The difficulty 
+with the OSU Model (or indeed any similar model) is that &ldquo;musical 
+judgment&rdquo; inhabits a totally different universe from that inhabited 
+by &ldquo;computer science.&rdquo; It stands to reason therefore that this Model 
+can be of only limited assistance to those who strive to unlock what 
+is encoded in the notes left to us by composers such as Bach, Haydn 
+and Mozart (indeed any composer living at any time). It might (and 
+does) provide evidence of some of the opportunities, and gives 
+insight into some of the means. But only when, at a purely human 
+level, actual <i>musical judgment</i> is perceptible (and recoverable) 
+can the works of these old masters (including their motives) be 
+meaningfully understood.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Roger Wibberley<br>
+	Goldsmiths University of London<br>Department of Music<br>New Cross, London SE14 6NW<br><a href="mailto:r.wibberley@gold.ac.uk">r.wibberley@gold.ac.uk</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> I do not use the term &ldquo;theorist-speak&rdquo; in a pejorative sense, 
+but rather in order to draw a clear distinction between the prospective minds of 
+composers (on the one hand) and the retrospective constructions of theorists (on 
+the other). In the sometimes strange twilight world of the latter, it is 
+tempting to assume (by default) that <i>actual composers</i> were somehow 
+rule-bound (in a manner that we might perhaps wish our students to be). As 
+Aarden and von Hippel so eloquently put it in [10], &ldquo;The difference between 
+composed and random triads was that random triads were innocent of rules for 
+doubling or spacing.&rdquo; The implication here is that composers were guilty of 
+restricting their activity so as to comply with predetermined regulations, and 
+that such phenomena as chord spacing were simply the result of applying such 
+rules. In reality the opposite was the case: chord spacing (and every other 
+structural aspect of a composition) was the outcome <i>only</i> of a purely 
+musical judgment that sprang from an artistic motive. Rules as such were only 
+ever a way of subsequently explaining the procedures that earlier composers 
+seemed (for artistic purposes) to have adopted. They have always provided 
+students through the ages with a simple and useful way of approaching and 
+understanding musical practices no longer current or familiar, but they have 
+seldom permitted access to the minds and artistic motivations of composers of 
+the past.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> This calls to mind a lottery game in which numbers are to be 
+chosen in the hope that an unforeseeable match with randomly-selected balls will 
+bring untold riches.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The authors state in [15] that &ldquo;<nobr>. . .</nobr> much higher accuracy may 
+be unattainable, since the random triads are often quite plausible.&rdquo; While some 
+may take this as a compliment to the Model&rsquo;s standard of performance (at least 
+in managing to generate plausible random triads) others of us will be inclined 
+to see it as a weakness both of the Model itself, and of the very status of the 
+rules it purports to identify.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> In order to fulfill the requirements of the Model, this 
+chorale has been transposed down from C major to A major. We need not worry that 
+in doing so the bass now has to reach low <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, especially since in the original 
+key the bass is required to sing even lower (low C). The point being made is 
+that when the key is rendered as A major, this configuration is perfectly 
+normal. This particular layout, in this particular instance, marks the very 
+moment moreover when Bach completed a definitive modulation back to the home key 
+(A major in this transposed version).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> In order once more to bring the example into alignment with 
+the Model, this extract has also been transposed into the predicated key of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> 
+major. The use of this configuration for beat 2 is surely as natural as it is 
+inevitable.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> This might then improve the 
+performance of students who (as reported by Aarden and von Hippel in [1]) are 
+&ldquo;struggling to remember and apply the rules, taking perhaps half an hour to 
+harmonize a 3- or 4-bar diatonic melody.&rdquo; If they were taught that composers did 
+not compose in order to apply rules, but rather in order to communicate coherent 
+musical ideas, they might find that through an understanding and re-creation of 
+those ideas the rules might more or less take care of themselves.<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">I do not use the term &ldquo;theorist-speak&rdquo; in a pejorative sense, 
+but rather in order to draw a clear distinction between the prospective minds of 
+composers (on the one hand) and the retrospective constructions of theorists (on 
+the other). In the sometimes strange twilight world of the latter, it is 
+tempting to assume (by default) that <i>actual composers</i> were somehow 
+rule-bound (in a manner that we might perhaps wish our students to be). As 
+Aarden and von Hippel so eloquently put it in [10], &ldquo;The difference between 
+composed and random triads was that random triads were innocent of rules for 
+doubling or spacing.&rdquo; The implication here is that composers were guilty of 
+restricting their activity so as to comply with predetermined regulations, and 
+that such phenomena as chord spacing were simply the result of applying such 
+rules. In reality the opposite was the case: chord spacing (and every other 
+structural aspect of a composition) was the outcome <i>only</i> of a purely 
+musical judgment that sprang from an artistic motive. Rules as such were only 
+ever a way of subsequently explaining the procedures that earlier composers 
+seemed (for artistic purposes) to have adopted. They have always provided 
+students through the ages with a simple and useful way of approaching and 
+understanding musical practices no longer current or familiar, but they have 
+seldom permitted access to the minds and artistic motivations of composers of 
+the past.</div><div id="fndiv2" class="flyoverdiv">This calls to mind a lottery game in which numbers are to be 
+chosen in the hope that an unforeseeable match with randomly-selected balls will 
+bring untold riches.</div><div id="fndiv3" class="flyoverdiv">The authors state in [15] that &ldquo;. . . much higher accuracy may 
+be unattainable, since the random triads are often quite plausible.&rdquo; While some 
+may take this as a compliment to the Model&rsquo;s standard of performance (at least 
+in managing to generate plausible random triads) others of us will be inclined 
+to see it as a weakness both of the Model itself, and of the very status of the 
+rules it purports to identify.</div><div id="fndiv4" class="flyoverdiv">In order to fulfill the requirements of the Model, this 
+chorale has been transposed down from C major to A major. We need not worry that 
+in doing so the bass now has to reach low C&#x266f;, especially since in the original 
+key the bass is required to sing even lower (low C). The point being made is 
+that when the key is rendered as A major, this configuration is perfectly 
+normal. This particular layout, in this particular instance, marks the very 
+moment moreover when Bach completed a definitive modulation back to the home key 
+(A major in this transposed version).</div><div id="fndiv5" class="flyoverdiv">In order once more to bring the example into alignment with 
+the Model, this extract has also been transposed into the predicated key of B&#x266d; 
+major. The use of this configuration for beat 2 is surely as natural as it is 
+inevitable.</div><div id="fndiv6" class="flyoverdiv">This might then improve the 
+performance of students who (as reported by Aarden and von Hippel in [1]) are 
+&ldquo;struggling to remember and apply the rules, taking perhaps half an hour to 
+harmonize a 3- or 4-bar diatonic melody.&rdquo; If they were taught that composers did 
+not compose in order to apply rules, but rather in order to communicate coherent 
+musical ideas, they might find that through an understanding and re-creation of 
+those ideas the rules might more or less take care of themselves.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2004 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

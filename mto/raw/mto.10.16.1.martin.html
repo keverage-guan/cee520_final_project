@@ -1,0 +1,557 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 16.1: Martin, Harmonic Progression in Twine</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Harmonic Progression in Magnus Lindberg&#8217;s <i>Twine</i>">
+
+    <meta name="citation_author" content="Martin, Ed">
+      
+
+<meta name="citation_publication_date" content="2010/02/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="16">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Harmonic Progression in Magnus Lindberg&#8217;s <i>Twine</i>
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Ed Martin</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Magnus Lindberg, piano, harmonic progression, harmony, chaconne, 12-tone, dodecaphonic</font></p><p><font size='4'>ABSTRACT: In the 1980s and early 1990s, Magnus Lindberg (b. 1958) developed a sophisticated harmonic system to organize progressions of dodecaphonic chords centering on his innovative use of chaconne.  This article delves into Lindberg&#8217;s harmonic system by analyzing an early work in which it is fully developed: <i>Twine</i> (1988) for solo piano.  I will discuss the construction of the composer&#8217;s dodecaphonic chords, show the inventive techniques by which he applies chaconne to systematically arrange these harmonies into progressions, and demonstrate how these progressions define the large-scale formal structure of <i>Twine</i>.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.10.16.1/mto.10.16.1.martin.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.10.16.1/martin_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received January 2009</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 16, Number 1, February 2010 <br> Copyright &#0169; 2010 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center"><b>Introduction</b></p>
+
+<p>[1] In the 1980s and early 1990s, Finnish composer Magnus Lindberg (b. 1958) developed a distinct and sophisticated harmonic system for arranging dodecaphonic chords into recurring progressions centering on his inventive use of chaconne.  While much has been written about the composer&#8217;s work on a surface level&mdash;including its dazzling orchestration, intricate patterns and figures, and sheer power&#8212;and several authors have mentioned the composer&#8217;s use of chaconne, this article will delve into the composer&#8217;s underlying harmonic system by analyzing an early work in which it is fully realized: <i>Twine</i> (1988) for solo piano.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  I will discuss the construction of Lindberg&#8217;s dodecaphonic chords and illustrate how he applies his innovations to the chaconne technique to systematically arrange these harmonies into progressions.  I will then demonstrate how the composer methodically deviates from his established harmonic framework in the second half of the piece and discuss the ramifications of this process on the work&rsquo;s large-scale formal structure.</p>
+
+<p>[2] The manner by which Lindberg arranges 12-tone aggregates into progressions is certainly a signature of his style.   Two 12-tone aggregates are considered to be the same chord only if their lowest pitches and the vertical interval structures above those pitches are identical.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> The chord (i.e. the distinct vertical arrangement of the twelve tones) appearing in measures 1&#8211;2 of <i>Twine</i>, for example, returns at three structurally significant moments in the piece (measure 12, measure 86, and measure 158).  Harmonic progression, then, is not the result 
+of pitch-class changes from one moment to the next, but rather relies solely on the registral redistribution of the twelve tones.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. <i>Twine</i>, measures 1&#8211;11</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="martin_ex1small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge, see the rest, and listen)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. The main progression of eight PSCs</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="martin_ex2small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Pitch properties of <i>Twine&#8217;s</i> eight PSCs</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=2&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="martin_fig1small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3] Each of Lindberg&#8217;s compositions employing this unique harmonic system has a main progression of primary structural chords (PSCs) at its core.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> <i>Twine</i> opens with its main progression of eight PSCs (PSC 1&#8211;8) in measures 1&#8211;11 (shown in 
+<b>Examples 1 and 2</b>).  I will incorporate color into the musical examples and figures below to clearly differentiate each of the eight PSCs and highlight relationships between them and their derivative chords.  The eight PSCs will be associated with the following colors: 1. orange, 2. blue, 3. yellow, 4. red, 5. green, 6. brown, 7. purple, and 8. light blue.  A distinguishing characteristic of Lindberg&#8217;s PSCs is symmetry: each is built symmetrically with respect to its vertical arrangement of intervals around an &#8220;odd-numbered&#8221; axis (i.e. a minor second, a minor third, etc).  Secondary harmonies (those that are not PSCs) may or may not exhibit this type of symmetry.  Lindberg&#8217;s interest in 12-tone chords can certainly be traced back to his studies 
+at the Sibelius Academy with Paavo Heininen, a dodecaphonic composer and his mentor.  Their symmetrical quality, on the other hand, may be considered a continuing homage to another composer who incorporated symmetrical sonorities: Witold Lutoslawski.  Lindberg&#8217;s admiration for the composer is clearly evident in the title of his large orchestral work <i>Aura: In Memoriam Witold Lutoslawski</i>, one of his few compositions to include such a dedication.</p>
+
+<p>[4] Lindberg generates an array of interrelated secondary chord progressions&#8212;described by Julian Anderson as &#8220;large reservoirs of distinct but related harmonic fields&#8221; (<a href="#anderson_1992" id="citation_anderson_1992_67dc9ae6b7ae1">Anderson 1992</a>, 566)&#8212;from pitch-related characteristics of the main progression of PSCs by applying his innovations to the chaconne technique.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> 
+			<b>Figure 1</b> describes each PSC using select pitch-related characteristics that I will refer to over the course of this discussion.  PSC 1, for example, exhibits the following characteristics: it spans the middle of the piano&#8217;s range, its boundary pitches are D2 and F6, its axis is C4-G4<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>, and the hexachord on either side of its axis belongs to the set class (012346).   As I will discuss in detail, the composer establishes harmonic connections throughout <i>Twine</i> by applying specific techniques to build secondary chord progressions exhibiting the main progression&#8217;s sequence of pitch-related properties.  For example, the main progression&#8217;s sequence of set classes, (012346), (012367), (013469), etc., can be traced through some secondary progressions.  Other secondary progressions share numerous common tones with the main progression.  All of the secondary progressions, to some degree, exhibit the main progression&#8217;s register contour (as observed by each chord&#8217;s boundary pitches).  In effect, each secondary chord progression may be considered a variation of the main progression of PSCs.</p>
+			
+<p style="text-align: center"><b>Innovations to the Chaconne Technique</b></p>
+
+<p>[5] Chaconne is the basic principle by which Lindberg organizes harmonies into progressions. When asked how he applies chaconne to his music, the composer replied: &#8220;I built a series of chords that comprised somehow the skeleton of the whole work. They are omnipresent, they give the work form and identity&#8221; (<a href="#e&ouml;tv&ouml;s_1994" id="citation_e&ouml;tv&ouml;s_1994_67dc9ae6b7ae5">E&ouml;tv&ouml;s 1994</a>, 40). The traditional definition of the term accurately describes the succession of harmonies in <i>Twine</i>, but only to a point.  At its core, the work is built on four successive instances of the main progression of eight PSCs (the &#8220;skeleton&#8221; of <i>Twine</i>) but the PSCs are not merely repeated as a harmonic ostinato. The composer&#8217;s innovations to the chaconne technique arise from the methods he implements to systematically insert new harmonies and progressions between the PSCs, thus greatly expanding the influence of 
+the main progression.</p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. The overall harmonic framework of <i>Twine</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=3&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="martin_fig2small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. An illustration of Lindberg&#8217;s expansion of chaconne using a sequence of chord properties</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=4&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="martin_fig3small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. An illustration of Lindberg&#8217;s expansion of chaconne using the interpolation technique</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=5&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="martin_fig4small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. An illustration of Lindberg&#8217;s expansion of chaconne using the &#8220;freeze&#8221; technique</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=6&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="martin_fig5small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. The harmonic structure of <i>Twine</i>, measures 1&#8211;80</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=7&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="martin_fig6small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6] I use the terms <i>direct progression</i> and <i>indirect progression</i> to describe the composer&#8217;s innovations to the chaconne technique.  A direct progression is one in which two PSCs appear adjacent to one another, while an indirect progression is one in which other material is inserted between two PSCs, resulting in secondary chord progressions.
+			<i>Twine</i> is cast in an overall two-part form (measures 1&#8211;85 and 
+			measures 86&#8211;157), closing with a very brief codetta (measures 158&#8211;160).   Part 1 opens with a direct progression through all eight PSCs, continues with an indirect progression through these chords, and ends with a short closing section containing no PSCs.   Part 2, in contrast, opens with a predominantly indirect progression though the main chords, continues with a predominantly direct progression, and ends with a closing section containing no PSCs.  Part 2, as illustrated in 
+			<b>Figure 2</b>, contains several deviations from the rigid harmonic framework established in part 1.  These deviations, including the absence of an interpolation between PSC 4 and PSC 5 in the predominantly indirect progression and the addition of an interpolation between PSC 4 and PSC 5 in the predominantly direct progression, will be discussed in detail below.</p>
+			<p>[7] A close examination of <i>Twine&#8217;s</i> two indirect progressions reveals Lindberg&#8217;s innovations to the traditional chaconne technique.   The expansion of the 
+			main progression of PSCs into each of the two indirect progressions is achieved through the employment of three distinct techniques. One technique involves applying the cyclic nature of the chaconne not to the actual PSCs themselves, but to pitch-related characteristics of those chords such as boundary pitches, set classes, or select pitches.  This process results in a repeating <i>sequence of chord properties</i> from which Lindberg generates progressions of new harmonies resembling the work&#8217;s main progression and each other. A second technique is referred to by Julian Anderson as <i>interpolation</i>: the insertion of a new element between existing elements (<a href="#e&ouml;tv&ouml;s_1994" id="citation_e&ouml;tv&ouml;s_1994_67dc9ae6b7af6">E&ouml;tv&ouml;s 1994</a>, 16). When applied to his chaconne technique, interpolation refers to the insertion of a progression of new harmonies between two adjacent PSCs. The interpolating progression often functions as a gradual transformation between the two surrounding PSCs or a PSC and another harmonic entity. A third technique involves the juxtaposition of a work&#8217;s main progression of PSCs with a sustained or continuously reiterated chord from that progression. John Warnaby describes such 
+			a passage as exhibiting harmonic &#8220;counterpoint&#8221; (<a href="#warnaby_1992" id="citation_warnaby_1992_67dc9ae6b7b05">Warnaby 1992</a>, 29). In my discussion with Lindberg, he simply, and quite evocatively, called this technique &#8220;freeze&#8221; (<a href="#lindberg_2005" id="citation_lindberg_2005_67dc9ae6b7b07">Lindberg 2005</a>). These three techniques are illustrated below in 
+<b>Figures 3, 4, and 5</b>.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+<p>[8] Before discussing specific examples of each technique, one other term must be introduced. <i>Position</i> describes any chord&#8217;s relationship to the main progression of PSCs, and often describes relationships within secondary chord progressions as well (the exception being interpolating chord progressions that do not adhere to the pitch-related patterns of the main progression).  A chord residing in position <i>n</i> is either the PSC <i>n</i> or a new chord sharing certain pitch-related properties with PSC <i>n</i> (which may include register, any number of common tones, boundary notes, and/or set class). For example, any chord occupying position 2 is either PSC 2 or exhibits properties of PSC 2.  Additionally, PSC 2 will normally be preceded by a chord with properties of PSC 1 or PSC 1 itself, and will likely be followed by a chord resembling PSC 3 or PSC 3 
+itself. A chord in any given position may share one or several pitch-related characteristics with its corresponding PSC.</p>
+			
+<p style="text-align: center"><b>Sequence of Chord Properties</b></p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+
+<p>[9] Following the opening direct progression of PSCs (measures 1&#8211;11), part 1&#8217;s indirect progression (measures 12&#8211;80) contains eight secondary chord progressions, one for each PSC, and is built entirely on a sequence of chord properties in which the PSCs function on both a local and a global level.  At the local level, each of the eight new secondary progressions constituting the indirect progression contain eight dodecaphonic chords occupying positions 1 through 8 respectively in that progression.  Each of the eight PSCs appears in its corresponding position in each successive progression.  On a global level, the PSC residing in each secondary progression influences pitch-related properties of all other chords in that progression.  For example, each individual chord in measures 21&#8211;27, the second component progression of the indirect progression, is influenced by pitch-related properties of PSC 2.  
+<b>Figure 6</b> illustrates the harmonic framework of part 1&#8217;s direct and indirect progressions.</p>
+			
+<p>[10] A broad look at the indirect progression of part 1 reveals the composer&#8217;s cyclic application of the main progression&#8217;s register contour: the boundary pitches of the chord in each position are drawn toward those of the corresponding PSC.  
+<b>Figure 7</b> illustrates the register contour of the main progression of PSCs by showing each chord&#8217;s highest and lowest pitches.  
+<b>Figure 8</b> shows a register contour illustrating the average high and low pitches residing in each position of part 1&#8217;s indirect progression.  A comparison of these two contours shows that the indirect progression&#8217;s component chord progressions share the main progression&#8217;s general register contour: each takes a similar route through the pitch space by climbing to its highest point in the fourth position and descending to its lowest point in the seventh.   The similarities between these two contours reveal, on a large scale, the results of Lindberg&#8217;s generative process throughout part 1.</p>
+
+<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Register contour of the main progression of PSCs</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="martin_examples.php?id=8&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="martin_fig7small.jpg"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Register contour illustrating the average high and low pitches residing in each position of part 1&#8217;s indirect progression</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="martin_examples.php?id=9&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="martin_fig8small.jpg"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+
+<div style="width:350px;float:right;border:none;margin-left:30px"><br>
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. <i>Twine</i>, measures 60&#8211;68</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=10&nonav=true"><img border="1" alt="Example 3 thumbnail" src="martin_ex3small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge, see the rest, and listen)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. An illustration showing the common tones shared between each secondary chord and its corresponding PSC in measures 50&#8210;59</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=11&nonav=true"><img border="1" alt="Example 4 thumbnail" src="martin_ex4small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. A register contour derived by averaging the high and low boundary pitches from all chords in each of the eight positions in part 1&#8217;s indirect progression, measures 12&#8210;80</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=12&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="martin_fig9small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. An illustration showing the common tones shared between each secondary chord and its corresponding PSC and all of the secondary chords and PSC 6 in measures 60&#8210;68</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=13&nonav=true"><img border="1" alt="Example 5 thumbnail" src="martin_ex5small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[11] A closer examination of the component progressions of part 1&#8217;s indirect progression reveals how the composer applies the chaconne technique to other pitch-related properties.  The sequence of set classes associated with the main progression of PSCs (see Figure 1 above), for example, often dictates the manner in which the indirect progression&#8217;s 12-tone aggregates are partitioned.  Lindberg applies this sequence by partitioning 12-tone aggregates into two groups of six pitches, each belonging to the set class associated with the corresponding PSC.  The clearest example of this process occurs in measures 60&#8211;68, the sixth component progression of the indirect progression (<b>Example 3</b>).  Notice PSC 6 resides in the sixth position. The chord occupying position 1 is divided into two gestures, each belonging to the set class associated with PSC 1: (012346).  The chord in position 2 is divided into two overlapping gestures containing the PSC 2&#8217;s set class: (012367).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> With the exception of position 4, Lindberg carries this process through to the end of the progression.  This set-class relationship, along with the register contour, creates a strong link between the main progression and measures 60&#8211;68.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+			<p>[12] Common tones also tie secondary harmonies to their corresponding PSCs.  The fifth secondary progression (measures 50&#8211;59), shown in 
+<b>Example 4</b>, offers a clear example.  The chords in positions 1 and 2 share five pitches with PSCs 1 and 2; the chord in position 3 shares six pitches with PSC 3; the chord in position 4 only shares three pitches (the fewest of this progression) with PSC 4; PSC 5 occupies position 5; and the chords found in positions 6, 7, and 8 have six, four, and five tones in common with their corresponding PSCs respectively.  These common tones contribute to the register similarities between the main progression and each secondary progression; notice that each chord&#8217;s lowest pitch, with the exception of the chord in position four, is identical to the lowest pitch of the corresponding PSC.</p>
+		
+<div style="width:450px;float:right;border:none;margin-left:30px"><br>
+</div>
+
+<p>[13] As mentioned above, the relationship between the main progression of PSCs and part 1&#8217;s indirect progression exists not only on a local level within each secondary progression, but also on a global level unifying the entire indirect progression: the PSC residing in each of the eight secondary progressions functions as a &#8220;center of gravity,&#8221; drawing all pitches in that secondary progression toward the PSC.  The global influence of the PSCs in part 1 can be observed by examining the overall register contour and common tones.   If the indirect progression is taken as a whole, the overall tessitura occupied by the chain of secondary progressions exhibits the same register contour as the main progression of PSCs.  In other words, the individual chords in each secondary progression, while still maintaining the contour of the main progression on a local level, are all drawn toward the PSC residing in that progression. 
+			<b>Figure 9</b> shows a contour derived by taking the mean of the boundary pitches of all chords found in each of the eight secondary progressions.  A comparison of this contour with that of the main progression (shown above in Figure 7) illustrates this relationship: the main progression of PSCs ascends to PSC 4 and descends to PSC 7 just as the indirect progression as a whole gradually ascends to the fourth progression and descends to the seventh.  Additionally, further examination of the secondary progressions shows that common tones are often shared between each component chord and the PSC residing in that progression.    An examination of the sixth secondary progression from this perspective, shown in 
+			<b>Example 5</b>, reveals that the entire progression is infused with tones from PSC 6, creating, along with its overall range, a global connection to that chord.</p>
+
+<p style="text-align: center"><b>The Interpolation Technique</b></p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+</div>
+
+<p>[14] Lindberg applies his interpolating and freeze techniques in the second half of <i>Twine</i>, which consists of a 
+predominantly indirect progression (measures 86&#8211;121), a predominantly direct progression (measures 132&#8211;150), and a short closing section (measures 151&#8211;157).  Part 2 opens with PSC 1 in measure 86, an interpolating progression of eight new dodecaphonic chords in measures 87&#8211;91, and PSC 2 in measure 92 (<b>Example 6</b>).  As mentioned above, interpolating progressions often function as gradual transformations.  In this case, PSC 1 is gradually transformed into the low, 12-tone cluster found in measure 91 beats 3&#8211;4 preceding PSC 2.  The process by which PSC 1 is transformed, as illustrated in 
+<b>Example 7</b>, is based on its component pitches: the lowest pitch of each chord in the interpolating progression remains D1 (PSC 1&#8217;s lowest pitch), while the highest pitch of each consecutive chord is the same as each successively lower pitch from PSC 1.  The first interpolating chord&#8217;s highest pitch is the same as the next to highest pitch from PSC 1: A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">5. The second interpolating chord&#8217;s highest pitch is the same as the third to highest pitch of PSC 1: G<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">5.  Lindberg continues this process through the remaining six chords of the interpolating progression resulting in an extension of PSC 1&#8217;s influence up to the entrance of PSC 2 in measure 92.</p>
+  
+	<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. <i>Twine</i>, measures 86&#8211;92</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="martin_examples.php?id=14&nonav=true"><img border="1" alt="Example 6 thumbnail" src="martin_ex6small.jpg"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and hear the audio)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. An illustration showing the interpolating progression in measures 86&#8210;91</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="martin_examples.php?id=15&nonav=true"><img border="1" alt="Example 7 thumbnail" src="martin_ex7small.jpg"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td></tr></table>
+<p style="text-align: center"><b>The Freeze Technique</b></p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. <i>Twine</i>, measures 104&#8211;111</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=16&nonav=true"><img border="1" alt="Example 8 thumbnail" src="martin_ex8small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge, see the rest and hear the audio)</font></p>	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. An illustration showing Lindberg&#8217;s use of the freeze technique in measures 104&#8210;110</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=17&nonav=true"><img border="1" alt="Example 9 thumbnail" src="martin_ex9small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[15] The freeze technique can be observed in part 2&#8217;s second, third, fifth, and seventh progressions in which PSCs 2, 3, 5, and 7 respectively are juxtaposed with pitches foreign to those chords.  It should be noted that Lindberg&#8217;s application of the freeze technique in <i>Twine</i> is more sophisticated than in later works: in <i>Twine</i> he does not simply juxtapose the main progression with a sustained PSC, but 
+carefully combines the two progressions that create the new 12-tone chords.  Part 2&#8217;s third 
+secondary progression (measures 104&#8211;111, shown in 
+<b>Example 8</b>) provides the clearest example of this technique.  An instance of PSC 3 precedes this progression in measure 104 and beginning on beat 4 of that measure, six of PSC 3&#8217;s pitches (C4, D4, F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">4, A4, B4, and E<img border="0" src="../../gifs/flat.gif" align="texttop">5) are sustained through measure 110 with the sostenuto pedal. 
+These six pitches are also frequently reiterated and consistently differentiated with staccatos.  
+They are highlighted with yellow boxes in Example 8 and 
+<b>Example 9</b>.  The progression that follows (measures 105&#8211;111) consists of eight positions, each corresponding to one of the eight PSCs.  Positions 1&#8211;2 and 4&#8211;8 
+contain seven new chords, each a summation of the six sustained pitches and some 
+or all of the remaining notes required to complete the 12-tone aggregate.  The sonority in each position is comprised of six pitches from PSC 3, which are always C4, D4, F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">4, A4, B4, and E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">5, and 
+members of the complementary set C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">, E, F, G, A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">, and B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"> (or their enharmonic equivalents), occupying the same register in which they appear in their corresponding PSC.  For example, the first chord of this progression is an amalgamation of the sustained hexachord and its six complementary tones occupying the register in which they appear in PSC 1: C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop">3, E3, F6, G4, A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">5, and B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">3.  Lindberg&#8217;s application of the freeze technique results in a progression exhibiting properties of the main progression of PSCs on a local level and properties of PSC 3 on a global level, thus extending the influence of PSC 3 for eight measures.</p>   
+
+<p style="text-align: center"><b>Large-Scale Form</b></p>
+
+<p>[16] Lindberg has stated that he is &#8220;a bit classical, in the sense that ... [he has] ... faith in equilibrium as a goal&#8221;(<a href="#cody_2000" id="citation_cody_2000_67dc9ae6b7b43">Cody 2000</a>, 34). In another interview, 
+he describes classicism as &#8220;certainly a taste for balance, for the drama in the balance of the form&#8221; (<a href="#e&ouml;tv&ouml;s_1994" id="citation_e&ouml;tv&ouml;s_1994_67dc9ae6b7b45">E&ouml;tv&ouml;s 1994</a>, 44). His innovative use of chaconne allows him to compose large formal structures that exhibit these traits by exploiting its cyclic nature to create expectation and formal balance on both a local and global level.  The formal &#8220;drama&#8221; that he 
+references is achieved when he ignores or alters the harmonic logic that he so carefully assembles, thus disrupting 
+the overall structure with formal dissonances that may or may not be resolved later in the piece.</p>
+
+<div style="width:350px;float:right;border:none;margin-left:30px">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. The formal structure of part 2, measures 86&#8211;160</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="martin_examples.php?id=18&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="martin_fig10small.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[17] A striking and significant difference between the first and second parts of <i>Twine</i> can be observed in the extent to which Lindberg alters the harmonic framework established by the opening direct progression of PSCs.  The underlying harmonic skeleton of part 1 is very rigid.  The direct progression proceeds through the eight PSCs without interruption, followed by an indirect progression that fits neatly into a structure composed of eight new progressions (containing PSCs 1 through 8, respectively) that each exhibit properties of the main progression.  The short closing section that follows in measures 80&#8211;85 continues to adhere to the underlying harmonic structure.  Compared to part 1, part 2 is notably less rigid: at several points, Lindberg adds or omits chords and entire progressions based on the strict harmonic scheme established in part 1.   In my discussion with the composer, he compared part 2 of <i>Twine</i> to a classical development section, stating that these 
+			kinds of sections often do not develop material but just &#8220;mix it up&#8221; (<a href="#lindberg_2005" id="citation_lindberg_2005_67dc9ae6b7b4a">Lindberg 2005</a>). The harmonic structure of part 2, as illustrated in 
+<b>Figure 10</b>, is certainly &#8220;mixed up&#8221; when compared to part 1, but this expression simply does not convey the careful and deliberate manner by which Lindberg reorders the material.  The composer deviates from the rigid harmonic structure established in part 1 at four particular moments in part 2.  By the work&#8217;s conclusion, however, he 
+			balances out these changes with four additional alterations.  In effect, Lindberg devises a formal problem for himself 
+			and then composes a solution.</p>
+
+<p>[18] The first digression from the rigid harmonic framework established in part 1 occurs at the onset of part 2 with the interpolating progression in measures 86&#8211;91.  This progression, discussed above and shown in examples 16 and 17, does not resemble the main progression of PSCs and is the first to deviate from the sequence of chord properties that delineates the harmonic structure of part 1.  The cyclic register contour of part 1 is replaced by a gradual transformation based only on the interval structure of PSC 1.  This deviation immediately distinguishes the underlying harmonic structure of part 2 from that of part 1.</p>
+
+<p>[19] The second deviation in part 2 is the absence of an interpolation centering on PSC 4. Lindberg deviates from the established harmonic framework by proceeding from a progression centering on PSC 3 in measures 105&#8211;110, to PSC 3 itself in measure 111, to PSC 4 in measure 112, to a progression built around PSC 5 beginning in measure 115.  In effect, the composer momentarily inserts a direct progression between PSCs 3 and 4 into the 
+predominantly indirect progression that opens part 2.  Lindberg departs from his established harmonic framework a third time leading into measure 132 by omitting both PSC 8 and a secondary progression centering on PSC 8. The fourth and most significant digression is the absence of PSC 1 at the beginning of part 2&#8217;s direct progression, which begins with PSC 2.  The omission of PSC 1 at this point in the piece is especially intriguing because the climax of the entire work occurs in measures 132&#8211;134.  Lindberg creates a large-scale formal disruption at the loudest and most active moment of the work.</p>
+
+<p>[20] These four digressions are answered by further alterations in the conclusion of the piece 
+that restore the work&#8217;s formal balance in the context of part 1&#8217;s rigid harmonic framework.  The first 
+alteration is the insertion of an interpolating progression into part 2&#8217;s 
+predominantly direct progression between PSCs 4 and 5 (measures 137&#8211;140).  The nature of this interpolating progression is very similar to the interpolation between PSCs 1 and 2 at the beginning of part 2 (measures 87&#8211;91); in 
+both cases, the interpolations are based on the register properties of the main chord that precedes 
+them.  The insertion of a brief interpolating progression based on the properties of PSC 4 in the midst of 
+a predominantly direct progression is significant: it balances out the absence of a fourth secondary progression 
+at measure 113 between PSC 3 and PSC 5.</p>
+
+<p>[21] Following the conclusion of the direct progression, which adheres to the chaconne between PSCs 4&#8211;8 in measures 141&#8211;145, Lindberg inserts a brief interpolation followed by 
+a second instance of PSC 8 in measure 150.  The additional PSC 8 in measure 150 and the interpolation that precedes it in measures 146&#8211;149 remedies the omission of an eighth secondary progression from the indirect progression 
+in measures 86&#8211;131.</p>
+
+<p>[22] The second PSC 8 is followed by a short closing section in measures 151&#8211;157 that is very similar in both content and texture to that of part 1: both contain progressions of eight block chords that exhibit the register contour of the main progression.  While the closing section from part 1 consists of only one progression, Lindberg expands the closing section in part 2 to include two progressions that gradually converge on the middle register of the piano.  Part 2 closes with two additional cluster chords in measures 155&#8211;156, the latter of which is centered on middle C.  While the expansion of the closing section cannot be linked to any specific deviation from the underlying structure in part 2, it may simply result from a general attempt by Lindberg to increase the length of part 2, balancing out the omission of material from the indirect progression.</p>
+
+<p>[23] <i>Twine</i> closes with a very brief codetta, measures 158&#8211;159, consisting of PSC 1 followed by seven new 12-tone chords.  The codetta compensates for two deviations in part 2: the interpolation between PSCs 1 and 2 in measures 87&#8211;91 and omission of PSC 1 at the climax of the work.  Recall that the interpolation in measures 87&#8211;91 is one of the few moments that does not exhibit pitch-related properties of the main progression of PSCs.  Lindberg balances out this discrepancy in the codetta by closing the work with a brief progression that opens with PSC 1 and 
+that does adhere to the main sequence of chord properties.  Lindberg&#8217;s treatment of the main progression of PSCs in <i>Twine</i> comes full circle: part 1 establishes formal stability by strictly adhering to the underlying harmonic framework; the beginning of part 2 deviates from this framework resulting in formal dissonance; and 
+the conclusion of the work reestablishes its formal stability by reaffirming the harmonic framework.  Lindberg&#8217;s comparison of part 2 to a development section is entirely appropriate: it highlights the section&#8217;s unstable nature caused by its carefully &#8220;mixed up&#8221; parts.  The classical aspect of <i>Twine's</i> formal structure lies in the composer&#8217;s use of chaconne to build a formal skeleton that he can both depart from and return to, 
+thus creating and resolving formal dissonances. </p>
+
+<p style="text-align: center"><b>Conclusion</b></p>
+
+<p>[24] Magnus Lindberg has developed a sophisticated system for the purpose of achieving harmonic unity.  His use of chaconne enables him to create a cyclic harmonic foundation that he composes into, around, and through.   Even a brief glance at the musical examples presented above, however, will give the reader a sense of the complex, information-packed surface level of Lindberg&#8217;s music (though the composer has consciously aimed for more clarity in recent years).  While the bulk of this discussion has focused on the underlying harmonic system, 
+we may still question the degree to which the listener is aware of the harmonic 
+structure that underpins this (or any) work.</p>
+
+<p>[25] Lindberg addresses this issue in a conversation with Tony Lundman in which the composer states, &#8220;... the actual structure of the work is not important to the process of listening&#8221; (<a href="#lundman_2002" id="citation_lundman_2002_67dc9ae6b7b58">Lundman 2002</a>, 17). I am compelled to disagree with the composer on this point; while the listener would be amiss to concentrate solely on the underlying structure of a work, the structure is certainly integral to the process of listening.  
+When untethered, Lindberg&#8217;s characteristically complex surface textures may be perceived as diffuse and lacking in focus.  His systematically generated harmonic structures, however, ground these textures, giving them directed motion toward logical harmonic goals that 
+are always present but never overt.  Consequently, Lindberg has become quite skilled 
+at managing very large formal schemes. While <i>Twine</i> 
+is only eight minutes in length, the work begun in the solo piano piece led to such monumental compositions as the twenty-five minute <i>Joy</i> (1990), the thirty minute <i>Concerto for Orchestra</i> (2003), and his largest work to date, the forty-minute <i>Aura: In Memoriam Witold Lutoslawski</i> (1994).</p>
+
+<p>[26] Regarding <i>Aura</i>, Anderson (<a href="#anderson_2004" id="citation_anderson_2004_67dc9ae6b7b59">Anderson 2004</a>, 208) has thoughtfully described its final cadence as &#8220;unassertively inevitable.&#8221;  In other words, to Anderson the listener, it feels just right. Moments such as 
+this, spawned from the carefully crafted, long-range harmonic schemes developed in <i>Twine</i>, permeate Lindberg&#8217;s recent music. Ultimately, it is these moments that have allowed his music to attain a level of accessibility rarely encountered by such modern and innovative work, and 
+they may help to explain his popularity with conductors and audiences alike.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Ed Martin<br>
+	University of Wisconsin Oshkosh<br>Department of Music<br>800 Algoma Blvd. <br>Oshkosh, WI 54901<br><a href="mailto:martine@uwosh.edu">martine@uwosh.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_anderson_1992" class="flyoverdiv">Anderson, Julian. 1992. &#8220;The Spectral Sounds of Magnus Lindberg.&#8221; <i>Musical Times</i> 133: 565&#8211;7.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anderson_1992"></a>Anderson, Julian. 1992. &#8220;The Spectral Sounds of Magnus Lindberg.&#8221; <i>Musical Times</i> 133: 565&#8211;7.</p><div id="citediv_anderson_2004" class="flyoverdiv">Anderson, Julian. 2004. &#8220;Sibelius and Contemporary Music.&#8221; In <i>A Cambridge Companion to Sibelius</i>, ed. Daniel M. Grimley. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anderson_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &#8220;Sibelius and Contemporary Music.&#8221; In <i>A Cambridge Companion to Sibelius</i>, ed. Daniel M. Grimley. Cambridge: Cambridge University Press.</p><div id="citediv_anderson_1998" class="flyoverdiv">Anderson, Martin. 1998. &#8220;The Large Spans.&#8221; <i>Nordic Sounds</i> 2: 9&#8211;13.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anderson_1998"></a>Anderson, Martin. 1998. &#8220;The Large Spans.&#8221; <i>Nordic Sounds</i> 2: 9&#8211;13.</p><div id="citediv_brabocz_1993" class="flyoverdiv">Brabocz, Marta. 1993. &#8220;La Musique Contemporaine Finlandaise:  Conception Gestuelle de la 
+Macrostructure. Kaija Saariaho et Magnus Lindberg.&#8221; <i>Les Cahiers du CIREM</i> 26-27: 155&#8211;168.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brabocz_1993"></a>Brabocz, Marta. 1993. &#8220;La Musique Contemporaine Finlandaise:  Conception Gestuelle de la 
+Macrostructure. Kaija Saariaho et Magnus Lindberg.&#8221; <i>Les Cahiers du CIREM</i> 26-27: 155&#8211;168.</p><div id="citediv_cody_2000" class="flyoverdiv">Cody, Joshua and Kirk Noreen. 2000. &#8220;Magnus Lindberg in Conversation: Moving Between 
+Extremes.&#8221; <i>Musical Times</i> 141: 33&#8211;37.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cody_2000"></a>Cody, Joshua and Kirk Noreen. 2000. &#8220;Magnus Lindberg in Conversation: Moving Between 
+Extremes.&#8221; <i>Musical Times</i> 141: 33&#8211;37.</p><div id="citediv_e&ouml;tv&ouml;s_1994" class="flyoverdiv">E&ouml;tv&ouml;s, P&eacute;ter. 1994. <i>Magnus Lindberg</i>. Ensemble Intercontemporain, CD program notes. Ad&egrave;s &#8211; Paris: 
+IRCAM.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="e&ouml;tv&ouml;s_1994"></a>E&ouml;tv&ouml;s, P&eacute;ter. 1994. <i>Magnus Lindberg</i>. Ensemble Intercontemporain, CD program notes. Ad&egrave;s &#8211; Paris: 
+IRCAM.</p><div id="citediv_h&auml;yrynen_1998" class="flyoverdiv">H&auml;yrynen, Antti. 1998. &#8220;High Tide for Magnus Lindberg.&#8221; <i>Finnish Music Quarterly</i> 1:48&#8211;54.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="h&auml;yrynen_1998"></a>H&auml;yrynen, Antti. 1998. &#8220;High Tide for Magnus Lindberg.&#8221; <i>Finnish Music Quarterly</i> 1:48&#8211;54.</p><div id="citediv_howell_2006" class="flyoverdiv">Howell, Tim. 2006. <i>After Sibelius: Studies in Finnish Music</i>. Burlington and Aldershot: Ashgate.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="howell_2006"></a>Howell, Tim. 2006. <i>After Sibelius: Studies in Finnish Music</i>. Burlington and Aldershot: Ashgate.</p><div id="citediv_karttunen_1996" class="flyoverdiv">Karttunen, Antero. 1996. &#8220;The Music of Our Time.&#8221; <i>Finnish Music Quarterly</i> 4 (1996): 31&#8211;63.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="karttunen_1996"></a>Karttunen, Antero. 1996. &#8220;The Music of Our Time.&#8221; <i>Finnish Music Quarterly</i> 4 (1996): 31&#8211;63.</p><div id="citediv_korhonen_1995" class="flyoverdiv">Korhonen, Kimmo. 1995. &#8220;Young Composers of the 1990's: Buffeted by the Winds of 
+Change.&#8221; <i>Finnish Music Quarterly</i> 2: 16&#8211;18.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="korhonen_1995"></a>Korhonen, Kimmo. 1995. &#8220;Young Composers of the 1990's: Buffeted by the Winds of 
+Change.&#8221; <i>Finnish Music Quarterly</i> 2: 16&#8211;18.</p><div id="citediv_lindberg_2005" class="flyoverdiv">Lindberg, Magnus. 2005. Interview by Ed Martin. 6 October, Los Angeles.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lindberg_2005"></a>Lindberg, Magnus. 2005. Interview by Ed Martin. 6 October, Los Angeles.</p><div id="citediv_long_1999" class="flyoverdiv">Long, Stephen. 1999. &#8220;Magnus Lindberg&#8217;s Recent Orchestral Music.&#8221; <i>Tempo</i> 208: 2&#8211;8.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="long_1999"></a>Long, Stephen. 1999. &#8220;Magnus Lindberg&#8217;s Recent Orchestral Music.&#8221; <i>Tempo</i> 208: 2&#8211;8.</p><div id="citediv_lundman_2002" class="flyoverdiv">Lundman, Tony. 2002. &#8220;Music with Muscle.&#8221; <i>Nordic Sounds</i> 4: 14&#8211;19.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lundman_2002"></a>Lundman, Tony. 2002. &#8220;Music with Muscle.&#8221; <i>Nordic Sounds</i> 4: 14&#8211;19.</p><div id="citediv_martin_2005" class="flyoverdiv">Martin, Edward. 2005. &#8220;Harmonic Progression in the Music of Magnus Lindberg.&#8221; DMA diss., University of Illinois at Urbana-Champaign.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="martin_2005"></a>Martin, Edward. 2005. &#8220;Harmonic Progression in the Music of Magnus Lindberg.&#8221; DMA diss., University of Illinois at Urbana-Champaign.</p><div id="citediv_m&auml;kel&auml;_1992" class="flyoverdiv">M&auml;kel&auml;, Tomi. 1992. &#8220;Magnus Lindberg: Changing Style.&#8221; <i>Finnish Music Quarterly</i> 3: 46&#8211;48.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="m&auml;kel&auml;_1992"></a>M&auml;kel&auml;, Tomi. 1992. &#8220;Magnus Lindberg: Changing Style.&#8221; <i>Finnish Music Quarterly</i> 3: 46&#8211;48.</p><div id="citediv_nieminen_1996" class="flyoverdiv">Nieminen, Risto. 1996. <i>Magnus Lindberg</i>. Translated by Nick Le Quesne. Helsinki: Helsinki University Printing House, 1996.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nieminen_1996"></a>Nieminen, Risto. 1996. <i>Magnus Lindberg</i>. Translated by Nick Le Quesne. Helsinki: Helsinki University Printing House, 1996.</p><div id="citediv_otonkoski_1991" class="flyoverdiv">Otonkoski, Lauri. 1991. &#8220;Marea: Beauty of Structure, Richness of Expression.&#8221; <i>Finnish Music Quarterly</i> 2: 20&#8211;24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="otonkoski_1991"></a>Otonkoski, Lauri. 1991. &#8220;Marea: Beauty of Structure, Richness of Expression.&#8221; <i>Finnish Music Quarterly</i> 2: 20&#8211;24.</p><div id="citediv_warnaby_1992" class="flyoverdiv">Warnaby, John. 1992. &#8220;The Music of Magnus Lindberg.&#8221; <i>Tempo</i> 181: 25&#8211;30.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="warnaby_1992"></a>Warnaby, John. 1992. &#8220;The Music of Magnus Lindberg.&#8221; <i>Tempo</i> 181: 25&#8211;30.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> A discussion of chaconne in Magnus Lindberg&#8217;s orchestral work Marea is found in <a href="#otonkoski_1991" id="citation_otonkoski_1991_67dc9ae6b5a2e">Otonkoski 1991</a>.  Julian Anderson (<a href="#anderson_1992" id="citation_anderson_1992_67dc9ae6b5a34">1992</a>) also mentions. John Warnaby (<a href="#warnaby_1992" id="citation_warnaby_1992_67dc9ae6b5a36">1992</a>) discusses chaconne in Lindberg&#8217;s early works and cites its role in the orchestral work Kinetics. Stephen Long (<a href="#long_1999" id="citation_long_1999_67dc9ae6b5a38">1999</a>) refers to the composer&#8217;s use of chaconne in the orchestral works Kinetics and Fresco. Tim Howell (<a href="#howell_2006" id="citation_howell_2006_67dc9ae6b5a3a">2006</a>) discusses balance in Lindberg&#8217;s Kinetics, Aura, and the Clarinet Concerto in his book.  Howell mentions chaconne as one method by which the composer achieves formal balance, but does not go into detail.  These sources do not offer an in-depth discussion of Lindberg&#8217;s innovations to the chaconne technique or its role in generating large-scale formal structures.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> In the author&#8217;s discussion with Lindberg and in other interviews, the composer describes his dodecaphonic pitch collections as &#8220;chords&#8221; or &#8220;harmonies&#8221; even though they are frequently partitioned into two or more vertical sonorities or melodic gestures.  I have chosen to employ Lindberg&#8217;s terminology, rather than adopt other terms such as &#8220;harmonic fields&#8221; (used by <a href="#anderson_1992" id="citation_anderson_1992_67dc9ae6b5a3c">Anderson 1992</a>), because it highlights his conception of these pitch collections.  The composer acknowledges that his harmonic system is steeped in the tradition of Western tonal music.  His use of the terms &#8220;chord&#8221; and &#8220;harmony&#8221; is revealing; it suggests that he regards his dodecaphonic pitch collections as sonorities that can be strung together in progressions in the same manner as tertian harmonies are in common practice tonal music.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Lindberg&#8217;s other compositions employing the harmonic system discussed in this article, variations on the system, or further innovations to the system include <i>Kraft</i> movement II (1985), <i>Ur</i> (1986), <i>Kinetics</i> (1989), <i>Marea</i> (1990), <i>Joy</i> (1990), <i>Steam Boat Bill Junior</i> (1990), <i>Duo Concertante</i> (1992), <i>Aura: In Memoriam Witold Lutoslawski</i> (1994), <i>Fresco</i> (1998), <i>Parada</i> (2001) and his <i>Concerto for Orchestra</i> (2003).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> The computer has played an important role in several aspects of Lindberg&#8217;s compositional process since the early 1980s, the most notable being its use in generating harmonies. He used the IRCAM computer software Patchwork (which has since evolved into Open Music) to generate large arrays of harmonies from which he composed <i>Twine</i>. The details of Lindberg&#8217;s use of this software lie outside the scope of this article: I will analyze the resulting chords and relationships between them, not the specific methods by which they were generated using Patchwork.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> C4 is middle C.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See the author&#8217;s doctoral dissertation (<a href="#martin_2005" id="citation_martin_2005_67dc9ae6b5a3e">Martin 2005</a>) for an in-depth discussion of these three techniques in more recent works such as <i>Kinetics</i> for orchestra (1989), <i>Marea</i> for orchestra (1990), <i>Steamboat Bill Jr.</i> for clarinet and cello (1990), and <i>Fresco</i> for orchestra (1998).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> It is important to note that the chords in adjacent positions sometimes overlap with one another.  For example, the A2 in measure 61 completes the 12-tone aggregate from measure 60 and the first half of beat 3 in measure 62 alternates between pitches from the harmonies in the positions two and three.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Note, however, that in this particular progression, the chords in positions 3 and 5 contain higher notes than the chord in position 4. Local deviations from the underlying harmonic structure, such as this, do occur at certain points throughout the piece.<br><a href="#FN8REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">A discussion of chaconne in Magnus Lindberg&#8217;s orchestral work Marea is found in <a href="#otonkoski_1991" id="citation_otonkoski_1991_67dc9ae6b5a2e">Otonkoski 1991</a>.  Julian Anderson (<a href="#anderson_1992" id="citation_anderson_1992_67dc9ae6b5a34">1992</a>) also mentions. John Warnaby (<a href="#warnaby_1992" id="citation_warnaby_1992_67dc9ae6b5a36">1992</a>) discusses chaconne in Lindberg&#8217;s early works and cites its role in the orchestral work Kinetics. Stephen Long (<a href="#long_1999" id="citation_long_1999_67dc9ae6b5a38">1999</a>) refers to the composer&#8217;s use of chaconne in the orchestral works Kinetics and Fresco. Tim Howell (<a href="#howell_2006" id="citation_howell_2006_67dc9ae6b5a3a">2006</a>) discusses balance in Lindberg&#8217;s Kinetics, Aura, and the Clarinet Concerto in his book.  Howell mentions chaconne as one method by which the composer achieves formal balance, but does not go into detail.  These sources do not offer an in-depth discussion of Lindberg&#8217;s innovations to the chaconne technique or its role in generating large-scale formal structures.</div><div id="fndiv2" class="flyoverdiv">In the author&#8217;s discussion with Lindberg and in other interviews, the composer describes his dodecaphonic pitch collections as &#8220;chords&#8221; or &#8220;harmonies&#8221; even though they are frequently partitioned into two or more vertical sonorities or melodic gestures.  I have chosen to employ Lindberg&#8217;s terminology, rather than adopt other terms such as &#8220;harmonic fields&#8221; (used by <a href="#anderson_1992" id="citation_anderson_1992_67dc9ae6b5a3c">Anderson 1992</a>), because it highlights his conception of these pitch collections.  The composer acknowledges that his harmonic system is steeped in the tradition of Western tonal music.  His use of the terms &#8220;chord&#8221; and &#8220;harmony&#8221; is revealing; it suggests that he regards his dodecaphonic pitch collections as sonorities that can be strung together in progressions in the same manner as tertian harmonies are in common practice tonal music.</div><div id="fndiv3" class="flyoverdiv">Lindberg&#8217;s other compositions employing the harmonic system discussed in this article, variations on the system, or further innovations to the system include <i>Kraft</i> movement II (1985), <i>Ur</i> (1986), <i>Kinetics</i> (1989), <i>Marea</i> (1990), <i>Joy</i> (1990), <i>Steam Boat Bill Junior</i> (1990), <i>Duo Concertante</i> (1992), <i>Aura: In Memoriam Witold Lutoslawski</i> (1994), <i>Fresco</i> (1998), <i>Parada</i> (2001) and his <i>Concerto for Orchestra</i> (2003).</div><div id="fndiv4" class="flyoverdiv">The computer has played an important role in several aspects of Lindberg&#8217;s compositional process since the early 1980s, the most notable being its use in generating harmonies. He used the IRCAM computer software Patchwork (which has since evolved into Open Music) to generate large arrays of harmonies from which he composed <i>Twine</i>. The details of Lindberg&#8217;s use of this software lie outside the scope of this article: I will analyze the resulting chords and relationships between them, not the specific methods by which they were generated using Patchwork.</div><div id="fndiv5" class="flyoverdiv">C4 is middle C.</div><div id="fndiv6" class="flyoverdiv">See the author&#8217;s doctoral dissertation (<a href="#martin_2005" id="citation_martin_2005_67dc9ae6b5a3e">Martin 2005</a>) for an in-depth discussion of these three techniques in more recent works such as <i>Kinetics</i> for orchestra (1989), <i>Marea</i> for orchestra (1990), <i>Steamboat Bill Jr.</i> for clarinet and cello (1990), and <i>Fresco</i> for orchestra (1998).</div><div id="fndiv7" class="flyoverdiv">It is important to note that the chords in adjacent positions sometimes overlap with one another.  For example, the A2 in measure 61 completes the 12-tone aggregate from measure 60 and the first half of beat 3 in measure 62 alternates between pitches from the harmonies in the positions two and three.</div><div id="fndiv8" class="flyoverdiv">Note, however, that in this particular progression, the chords in positions 3 and 5 contain higher notes than the chord in position 4. Local deviations from the underlying harmonic structure, such as this, do occur at certain points throughout the piece.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2010 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Sean Atkinson, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="5597286"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="4fa65c30"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/5597286/0/4fa65c30/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

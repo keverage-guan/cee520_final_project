@@ -1,0 +1,471 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 20.3: Ewell, The Parameter Complex</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="The Parameter Complex in the Music of Sofia Gubaidulina">
+
+    <meta name="citation_author" content="Ewell, Philip A.">
+      
+
+<meta name="citation_publication_date" content="2013/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="20">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">The Parameter Complex in the Music of Sofia Gubaidulina
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Philip A. Ewell</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: expression parameter, Gubaidulina, Kholopova, Parameter Complex, Russian music, Russian music theory</font></p><p><font size='4'>ABSTRACT: Although the music of Sofia Gubaidulina is well known, it has received little analytical attention. Approximately twenty-five years ago her friend and colleague Valentina Kholopova worked out a system for analyzing Gubaidulina&#8217;s music. Kholopova shows that the composer usually groups together five so-called expression parameters (EP): articulation and methods of sound production, melody, rhythm, texture, and compositional writing. Moreover, each EP has either a consonant or a dissonant function; rarely does Gubaidulina mix the two functions. These ten parameters&#8212;five EPs functioning as either dissonant or consonant expressions&#8212;form what Kholopova calls the Parameter Complex in Gubaidulina&#8217;s music. In this article I examine these topics, using Gubaidulina&#8217;s <i>Concordanza</i> and Ten Preludes for Solo Cello as exemplars.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.14.20.3/mto.14.20.3.ewell.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.14.20.3/ewell_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2014</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 20, Number 3, September 2013 <br> Copyright &#0169; 2013 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Though her compositions are well known and widely performed, little analytical work has been done on the music of Sofia Gubaidulina (b. 1931). Roughly twenty-five years ago her friend and colleague Valentina Kholopova devised a system for analyzing Gubaidulina&#8217;s music. The system is briefly mentioned in Kholopova&#8217;s monograph on the composer (<a href="#kholopova_1996" id="citation_kholopova_1996_67dc9a4cb301a">1996</a>) and more thoroughly laid out in Kholopova&#8217;s &#8220;Parametr ekspressii v muzykal&#8217;nom iazyke Sofii Guba&#301;dulino&#301;&#8221; (The Expression Parameter in the Music of Sofia Gubaidulina) (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb3021">1999</a>).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Kholopova has shown that Gubaidulina usually groups together five types of expression parameters (hereafter EP: in Russian, <i>parametr ekspressii</i>): articulation and methods of sound production, melody, rhythm, texture, and compositional writing.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Further, each of these parameters can function in one of two ways: as a consonant EP or a dissonant EP. An example of a consonant articulation EP would be a legato marking, while a contrasting dissonant articulation EP would be a staccato marking.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Rarely does Gubaidulina mix the consonant and dissonant functions. These ten parameters&#8212;five EPs functioning as either dissonant or consonant expressions&#8212;form what Kholopova calls the Parameter Complex (<i>kompleks parametrov</i>) in Gubaidulina&#8217;s music.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> I begin my article, which falls squarely under the rubric of &#8220;analysis for performance,&#8221; by further discussing Kholopova&#8217;s analytical ideas. Then I consider Kholopova&#8217;s analysis of Gubaidulina&#8217;s <i>Concordanza</i>, after which I present my own analysis of two of Gubaidulina&#8217;s Ten Preludes for Solo Cello. Finally, I demonstrate the interpretive efficacy of the Parameter Complex by performing part of Gubaidulina&#8217;s Seventh Prelude for Unaccompanied Cello.</p>
+
+<p style="text-align:center"><b>The Expression Parameter</b></p>
+
+<p>[2] Kholopova begins by defining the EP:</p>
+
+<blockquote><p>The &#8220;Expression Parameter&#8221; is so named because its elements are very immediate in emphasis and directly convey a musical-emotional expression. Despite its name, it belongs not to the category of musical character but, rather, to that of musical composition, standing in an array of such concepts as harmony, rhythm, and texture. (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb302e">1999</a>, 153&#8211;54)</p></blockquote>
+
+<p>She continues:</p>
+
+<blockquote><p>At the basis of the EP lie those elements of music that are not yet recognized as structural in the history of composition: the devices of articulation and the methods of sound production, which in the past have pertained to the performer and not the composer. Several elements of melody, rhythm, and texture&#8212;organized in a specific fashion&#8212;are associated with these devices of articulation. That it has a clear functional organization, similar to how classical harmony is organized by &#8220;T, S, D&#8221; functions, serves as an indicator and guarantee of the EP&#8217;s existence. (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb3033">1999</a>, 154)</p></blockquote>
+
+<p>[3] Kholopova immediately describes the EP as a structural component of composition, thus elevating the status of elements that have historically not been considered structural in music. She also suggests in this quotation that the first EP, &#8220;devices of articulation and the methods of sound production,&#8221; relates to the next three EPs, &#8220;melody,&#8221; &#8220;rhythm,&#8221; and &#8220;texture,&#8221; in various ways. For example, an articulative device such as a ricochet bowing may be associated with a certain rhythmic figure, since such thrown bowings often involve quick quintuplets or sextuplets. Kholopova raises the importance of the performer in the musical process since the performer must take ownership of certain structural elements of the composition and, as such, is an integral part of the composition&#8217;s success.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Her use of the term &#8220;function&#8221; (<i>funktsiia</i>) is important in that she is equating her EPs with one of the most important aspects of musical structure, namely, functionality. In other words, she is building a case for viewing the EP on equal terms with harmony, melody, rhythm, and texture.</p>
+
+<p style="text-align:center"><b><i>Concordanza</i></b></p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Parameter Complex for Gubaidulina&#8217;s <i>Concordanza</i> (1971), by Kholopova (1999, 154)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="ewell_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[4] In her analysis of Gubaidulina&#8217;s <i>Concordanza</i> (1971) for chamber ensemble, Kholopova provides a Parameter Complex (see <b>Example 1</b>) that features the five consonant and five dissonant EPs for the piece. The EP groupings help the performer make sense of the work. Kholopova claims that there are two layers (<i>slo&#301;</i>) in <i>Concordanza</i>, one that corresponds directly to &#8220;consonance,&#8221; the piece&#8217;s namesake, and the other to &#8220;dissonance&#8221;; these layers are the consonant and dissonant EPs (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb30ae">1999</a>, 155).</p>
+
+<p>[5] By simply identifying the EPs, however, Kholopova has said nothing about the large-scale structure of <i>Concordanza</i>. To grapple with such broader ideas she draws on the work of the Soviet musicologist Viktor Bobrovski&#301; and his notion of large-scale themes in twentieth-century music. He called these themes, variously, &#8220;dramaturgical themes,&#8221; &#8220;superthemes,&#8221; or &#8220;macrothemes&#8221; (cited in <a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4cb30b1">Kholopova 2011</a>, 123).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Bobrovski&#301;&#8217;s macrotheme&#8212;which can span an entire movement or an entire composition, though with possible breaks&#8212;generates the formal structure of the piece. Though such a theme may have more traditional melodic and rhythmic elements, it more likely is articulative or textural in nature. Thus it is possible to think of the EPs as part of the macrothematic structure. By tracing the consonant and dissonant functions of the parameter complex and by linking each to a macrotheme, Kholopova is able to map a piece&#8217;s large-scale form via the interaction of the consonant and dissonant macrothemes.</p>
+
+<p>[6] Below is an extended passage in which she defines the concept:</p>
+
+<blockquote><p>If we analyze the form of Gubaidulina&#8217;s <i>Concordanza</i> traditionally, in terms of themes, we find a through composition &#8220;a, b, c, d, e, f, g . . . ,&#8221; with a small reprise of &#8220;a&#8221; at the end. Such a composition would seem formless and weakly organized. However, when we examine the piece in terms of the EPs and their functions, we discover a wonderful unity of form with just two contrasting layers, which result in &#8220;macrothemes.&#8221; A macrotheme, . . . in contrast to the normal classical theme, stretches from the beginning to the end of the composition, albeit with possible breaks. Thus, instead of a formless multithematic structure, a functionally organized bithematic structure&#8212;corresponding to the consonant-dissonant-EP functional pair&#8212;is revealed. During <i>Concordanza</i>, two macrothemes variously interact with each other, arriving at quiet and dynamic culminations and, ultimately, the dissonant theme impacts the consonant theme, in the last section with the thematic reprise of &#8220;a.&#8221; (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb30b4">1999</a>, 155)</p></blockquote>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Kholopova&#8217;s EP Analysis of Gubaidulina&#8217;s <i>Concordanza</i> (entire piece, rehearsal numbers on top, with my English annotations) (1999, 155)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="ewell_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[7] <b>Example 2</b> shows Kholopova&#8217;s macrothematic graph of <i>Concordanza</i>.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> If you follow the graph in Example 2 as you listen to the piece you can see how it works with the music. For instance, the opening is made up of consonant EPs (part of Macrotheme 2), played by legato woodwinds, until the pizzicato bass enters at rehearsal 2, which is shown as a dissonant EP (part of Macrotheme 1) on the graph. The graph also shows how the two macrothemes can happen concurrently (e.g., from rehearsals 3 to 6) or separately (e.g., from the beginning to rehearsal 2 with the consonant macrotheme or from rehearsals 2 to 3 with the dissonant macrotheme). Furthermore, at rehearsal 14 there is a &#8220;quiet culmination&#8221; (a culmination of the consonant EPs, played by bowed strings, basses with stopped strings and violins with harmonics), and at rehearsal 22 there is a &#8220;dynamic culmination&#8221; (a culmination of the dissonant EPs, played by the whole chamber orchestra with various dissonant EPs). During the quiet culmination there are <i>pp</i> cymbal strikes, which are represented on the graph as three slivers of dissonant EPs shown between rehearsals 14 and 16. Usually, one macrotheme moves abruptly to the other, as at rehearsals 2, 11, 12, 13, 16, 22, 27, and 29. Sometimes, however, there is overlap between the two macrothemes, for instance between rehearsals 22 and 25 when the music moves more gradually from one macrotheme to the other. Kholopova also shows how the dissonant EPs invade the space of the consonant macrotheme between rehearsal numbers 11 and 12 and after rehearsal 29. This ending at rehearsal 29, which she calls a &#8220;reprise&#8211;coda,&#8221; represents a &#8220;collision&#8221; (<i>stolknovenie</i>) between consonance and dissonance (<a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4cb30f9">2011</a>, 125).</p>
+
+<p>[8] From a performance standpoint, Kholopova&#8217;s graph is important for several reasons. The square brackets on top of the graph link significant moments in the bithematic structure together. Because these brackets always conjoin with rehearsal numbers, a conductor will always know where the significant moments are; for example, knowing that the music between rehearsals 16 and 20 is a single dissonant span lets performers know not to make any large breaks in this section. Further, the consonant/dissonant divide suggests to performers how to highlight contrasting elements that might otherwise be harder to convey. The quiet and dynamic culminations guide performers to emphasize the two most extreme moments of <i>Concordanza</i>. Finally, by looking at the graph one can better gauge the balance between dissonance and consonance on the whole. In other words, the graph allows performers to more easily envisage the composition as a complete unit and then make appropriate decisions in terms of which parts to bring out and which to perhaps deemphasize.</p>
+
+<p>[9] Kholopova claims that, with <i>Concordanza</i>, the EP became Gubaidulina&#8217;s favorite method for composing. Further, Kholopova says:</p>
+
+<blockquote><p>The functional EP system itself gets developed in Gubaidulina&#8217;s music. In particular, the &#8220;consonant expression&#8221; splits into &#8220;perfect&#8221; and &#8220;imperfect&#8221; consonances, while the &#8220;dissonant expression&#8221; splits into &#8220;perfect&#8221; and &#8220;imperfect&#8221; dissonances. In separate voices it&#8217;s possible to have a gradual modulation from &#8220;consonance&#8221; to &#8220;dissonance,&#8221; and vice versa. (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb310a">1999</a>, 156)</p></blockquote>
+
+<p>With this, a &#8220;modulation&#8221; from one extreme to the other is possible:</p>
+
+	<p style="text-align:center">Perf. Cons. EP &rarr; Imp. Cons. EP &rarr;  Imp. Diss. EP &rarr; Perf. Diss. EP</p>
+
+<p>[10] Kholopova concludes that this system offers a structural backdrop for Gubaidulina&#8217;s music, and that the EP and the Parameter Complex show a new dimension in music. Finally, she claims that this system could be applied to music of other twentieth-century composers for whom timbre, texture, and color were paramount.</p>
+
+<p>[11] In his biography of Gubaidulina, Michael Kurtz observes that <i>Concordanza</i> represented a watershed moment for the composer. The compositional techniques were new and she began to invest them with spiritual significance. For example, Kurtz discusses the evolving nature of her compositional output by relating her spirituality to the &#8220;staccato&#8221; and &#8220;legato&#8221; EPs identified by Kholopova:</p>
+
+<blockquote><p><i>Concordanza</i> stands at the beginning of a new chapter in Gubaidulina&#8217;s creative work, regarding both technique . . . and her general religious and spiritual attitude toward her work as a composer. In later years Gubaidulina often said that art has a religious function, that in the &#8220;staccato&#8221; of life it must restore the &#8220;legato.&#8221; Art is the <i>re-ligio</i> (connection) to God in our fragmented, quotidian life. The religious intensity and drama that had found direct expression through the existential situation in her earlier cantatas now began to shape the music itself, which in all its dimensions suggests religious feeling and religious intention. Titles like <i>Concordanza</i> and notations such as <i>staccato</i> and <i>legato</i> took on connotations suggesting the religious dimension. (<a href="#kurtz_2007" id="citation_kurtz_2007_67dc9a4cb310c">2007</a>, 95&#8211;96)</p></blockquote>
+
+<p style="text-align:center"><b>Ten Preludes for Solo Cello</b></p>
+
+<p>[12] The Ten Preludes for Solo Cello came right on the heels of <i>Concordanza</i>. Originally written as Ten Etudes in 1974 for the cellist Grigori&#301; Pekker of the Novosibirsk Conservatory, each piece explores different cellistic EPs. Not a fan of contemporary music, Pekker was surprised by Gubaidulina&#8217;s etudes and shelved them. Later, the cellist Vladimir Tonkha of the Kazan Conservatory premiered the etudes in 1977, and renamed them &#8220;preludes&#8221;; the ten vignettes have existed as such ever since.</p>
+
+<p>[13] Kholopova writes, &#8220;Gubaidulina&#8217;s Ten Preludes are built on different types of <i>musical expressions</i>, which enrich their compositional technique&#8221; (<a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4cb310e">2011</a>, 137; her italics). Gubaidulina herself says, &#8220;These miniatures, which evoke polar opposites in the sphere of sound production on a string instrument, are little scenes in which the heroes are: (1) certain aspects of string instrumentation, (2) methods of sound production, and (3) various bowings. . . . In almost all of the pieces the opposites interact in pairs&#8221; (cited in <a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4cb310f">Kholopova 2011</a>, 137). Here are the titles of the preludes:</p>
+
+<ol>
+    <li>Staccato&#8212;Legato</li>
+    <li>Legato&#8212;Staccato</li>
+    <li>Con sordino&#8212;Senza sordino</li>
+    <li>Ricochet</li>
+    <li>Sul ponticello, ordinario, sul tasto</li>
+    <li>Flagioletti</li>
+    <li>Al taco&#8212;Da punta d&#8217;arco</li>
+    <li>Arco&#8212;Pizzicato</li>
+    <li>Pizzicato&#8212;Arco</li>
+    <li>Senza arco, senza pizzicato</li>
+</ol>
+
+<p>Preludes 1, 2, 3, 7, 8, and 9 feature paired EPs. Moreover, Preludes 1 and 2 and Preludes 8 and 9 are repeated pairs in reverse form. Preludes 4 and 6 are single-EP preludes, while Prelude 5 is a tripartite-EP prelude. Finally, Prelude 10 features no right hand at all, only the left hand making sounds on the fingerboard, and can thus be thought of as a single-EP prelude. As Kurtz suggests, after <i>Concordanza</i> Gubaidulina did indeed start to think of &#8220;staccato&#8221; and &#8220;legato&#8221; in broader terms&#8212;as more than mere articulations. One might even think of these two terms as metonyms for &#8220;dissonant EP&#8221; and &#8220;consonant EP,&#8221; respectively.</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Gubaidulina, Prelude No. 1 for Solo Cello (1974), measures 1&#8211;41</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="ewell_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[14] <b>Example 3</b> shows the first 41 measures of Prelude 1, &#8220;Staccato&#8212;Legato,&#8221; whose title indicates the main EP of the movement. What the performer must do in approaching this piece is think not only of the titular EP pairing, but also of the piece&#8217;s entire Parameter Complex. Other possible EPs for Prelude 1 include dynamics, fermatas, meters, contour, the numbers of notes in groupings, grouping and spacing of rests, conjunct or disjunct motion, and what string to play.</p>
+
+<p>[15] One must group all EPs into consonant and dissonant functions to pull off a convincing performance. The opening staccato EP lasts for 35 measures. The first clear motion to the legato EP is in measure 36. Notably, the dynamic at that point is an unadulterated <i>f</i>, whereas leading up to that point the dynamics were softer. Thus, the <i>f</i> dynamic would be included in the consonant EP column with &#8220;legato,&#8221; while the <i>p</i> dynamic would be part of the dissonant &#8220;staccato&#8221; column. In this fashion one can create a Parameter Complex for the prelude. As these observations demonstrate, context is paramount in the Parameter Complex. It may seem counterintuitive to call <i>f</i> &#8220;consonant&#8221; and <i>p</i> &#8220;dissonant&#8221; in any analysis but, with respect to contrasting EPs, this is clearly the case in Prelude 1.  Significantly, Kholopova says nothing about any EPs that are consistent throughout all of Gubaidulina&#8217;s output, though one can surmise that &#8220;legato&#8221; is always consonant and &#8220;staccato&#8221; is always dissonant.</p>
+
+<p>[16] In his article, &#8220;The Importance of Bodily Gesture in Sofia Gubaidulina&#8217;s Music for Low Strings,&#8221; Michael Berry says:</p>
+
+<blockquote><p>Sofia Gubaidulina is one of many composers whose music features an increased attention to the body. . . . In some instances, I would argue that practical bodily gestures&#8212;those movements of the body that are concerned with producing sound from one&#8217;s instrument&#8212;are actually more important to the work than the resulting sounds. (<a href="#berry_2009" id="citation_berry_2009_67dc9a4cb3153">Berry 2009</a>, [2])</p></blockquote>
+
+<p>Berry goes on to talk about the difference between &#8220;practical&#8221; and &#8220;expressive&#8221; gestures in performing Gubaidulina&#8217;s music for low strings. Below, I argue that this distinction can be part of the Parameter Complex.</p>
+
+<fig>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Parameter Complex, Gubaidulina&#8217;s Prelude No. 7 for Solo Cello (1974)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="ewell_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Gubaidulina, Prelude No. 7 for Solo Cello (1974), measures 1&#8211;35</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="ewell_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p><br>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video Example 6</b>. Prelude 7 Demonstration</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="ewell_examples.php?id=5&nonav=true"><img border="1" alt="Video Example 6 thumbnail" src="ewell_video6.jpg"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch)</font></p></fig>
+
+<p>[17] In <b>Example 4</b> I created a Parameter Complex for Prelude 7, whose first thirty-five measures are shown in <b>Example 5</b>. I have not included &#8220;rhythm&#8221; or &#8220;compositional writing&#8221; in the complex since there is but one rhythm in one meter in a non-aleatoric setting for the prelude. In deciphering the prelude&#8217;s title, &#8220;Al taco&#8212;da punta d&#8217;arco&#8221; (From the frog to the tip of the bow), one must determine whether the repeated down bows right at the beginning are consonant or dissonant. I have chosen the latter for three reasons: the piece ends on all up bows, and Gubaidulina has a penchant for ending pieces on a consonance; the opening features irregular five-note groups in a duple meter, which can be considered dissonant in this context; and there are accents on the quintuplets, which also points to a possible dissonant expression.</p>
+
+<p>[18] <b>Example 6</b> provides a video demonstration of measures 1&#8211;35 of Prelude 7. It should be clear from the video that by jumping back and forth from the tip to the frog of the bow, I am privileging Berry&#8217;s &#8220;expressive&#8221; gesture over any &#8220;practical&#8221; gesture (which would undoubtedly be easier to play). By playing the piece with a Parameter Complex in mind, I believe I am giving a more convincing performance, closer to the composer&#8217;s intentions, than one that strictly considers the main EP for the piece.</p>
+
+<p>[19] What is more, my interpretation of the isolated down and up bows allows for the possibility of crucifixion symbolism. About her <i>Seven Words</i> for cello, bayan, and strings, which she dedicated to Vladimir Tonkha, Gubaidulina says:</p>
+
+<blockquote><p>As a specific feature of <i>Seven Words</i> (1982), I would point to the symbols of the cross.  There are many crosses of different kinds: for example, numerous extensions and narrowings of the musical space in the cello part. . . . The crucial thing for me was the idea of the crucifixion. I like very much the idea of instrumental symbolism, when the instrument itself, its nature and individuality, hints at or implies a certain meaning. . . . I wanted to find the idea of the cross in the instruments themselves. The first thing that came to mind, obviously, was the &#8220;crucifixion&#8221; of a string. This idea is employed throughout the entire composition, from the very beginning. (<a href="#lukomsky_1998" id="citation_lukomsky_1998_67dc9a4cb328f">Lukomsky 1998</a>, 20)</p></blockquote>
+
+<p>If one envisions the strings of the cello, which are of course vertical as the cellist plays, it is easy to imagine that the leaping from frog to tip with the bow against the backdrop of the four strings resembles the crucifixion symbol or &#8220;crossing oneself&#8221; that is prominent in many branches of Christianity. Even though the preludes&#8217; premiere predates <i>Seven Words</i> by seven years, it is entirely possible that Gubaidulina thought of crucifixion in Prelude 7 as the cellist leaps from frog to tip across the vertical strings and that it is proper to play the piece as I have in Example 6.</p>
+
+<p style="text-align:center"><b>Conclusion</b></p>
+
+<p>[20] The following quotation summarizes Kholopova&#8217;s main conclusions about the EP and the Parameter Complex:</p>
+
+<blockquote><p>The EP is but one of many parameters that organize contemporary music, . . . Organizing musical form along with different parameters, the EP sometimes appears at a background level of structure, as in <i>Concordanza</i>. . . . The rise of the EP is a sign of a continually progressing movement in the language of contemporary music. But if progress in European music was traditionally connected with harmony, then the EP, not being from the realm of harmony strictly speaking, shows the different dimensions of music. . . . The EP in European music first manifested itself as a system in the music of Anton Webern.  In one fashion or another it is present, aside from the work of Gubaidulina, in the compositions of many contemporary composers, . . . which allows us to acknowledge the existence of this new musical parameter. (<a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4cb3291">1999</a>, 159&#8211;60)</p></blockquote>
+
+<p>Notably, she mentions that the EP got its start with the music of Webern, a composer often cited as one of the most influential pioneers in twentieth-century compositional techniques.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> She goes to great pains to show how Gubaidulina&#8217;s music is structured, not fragmented, and&#8212;more importantly, in her opinion&#8212;unified. Kholopova has given the performer a wonderful way of organizing the many contrasting aspects of Gubaidulina&#8217;s music. A consideration of the Parameter Complex is sure to lead to much more refined performances of her works.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Philip A. Ewell<br>
+	Hunter College<br>Department of Music<br>695 Park Avenue<br>New York, NY 10065<br><a href="mailto:pewell@hunter.cuny.edu">pewell@hunter.cuny.edu</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_berry_2009" class="flyoverdiv">Berry, Michael. 2009. <a href="http://mtosmt.org/issues/mto.09.15.5/mto.09.15.5.berry.html">&#8220;The Importance of Bodily Gesture in Sofia Gubaidulina&#8217;s Music for Low Strings.&#8221;</a> <i>Music Theory Online</i> 15, no. 5.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="berry_2009"></a>Berry, Michael. 2009. <a href="http://mtosmt.org/issues/mto.09.15.5/mto.09.15.5.berry.html">&#8220;The Importance of Bodily Gesture in Sofia Gubaidulina&#8217;s Music for Low Strings.&#8221;</a> <i>Music Theory Online</i> 15, no. 5.</p><div id="citediv_bobrovski&#301;_1970" class="flyoverdiv">Bobrovski&#301;, Viktor. 1970. <i>O peremennosti funktsii muzykal'no&#301; formy</i> (On the variability of function in musical form). Moscow: Muzyka.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bobrovski&#301;_1970"></a>Bobrovski&#301;, Viktor. 1970. <i>O peremennosti funktsii muzykal'no&#301; formy</i> (On the variability of function in musical form). Moscow: Muzyka.</p><div id="citediv_bobrovski&#301;_1978" class="flyoverdiv">Bobrovski&#301;, Viktor.  1978. <i>Funktsional'nye osnovy muzykal'no&#301; formy</i> (The functional bases of musical form). Moscow: Muzyka.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bobrovski&#301;_1978"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  1978. <i>Funktsional'nye osnovy muzykal'no&#301; formy</i> (The functional bases of musical form). Moscow: Muzyka.</p><div id="citediv_ewell_2013" class="flyoverdiv">Ewell, Philip.  2013. &#8220;Russian Pitch-Class Set Analysis and the Music of Anton Webern.&#8221; <i>Gamut: Online Journal of the Music Theory Society of the Mid-Atlantic</i> 6, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ewell_2013"></a>Ewell, Philip.  2013. &#8220;Russian Pitch-Class Set Analysis and the Music of Anton Webern.&#8221; <i>Gamut: Online Journal of the Music Theory Society of the Mid-Atlantic</i> 6, no. 1.</p><div id="citediv_kholopova_1973" class="flyoverdiv">Kholopova, Valentina. 1973. &#8220;Ob odnom printsipe khromatiki v muzyke XX veka&#8221; (On one principle of chromaticism in twentieth-century music). In <i>Problemy muzykal&#8217;no&#301; nauki</i> (Problems of musical science), 2nd installment, 331&#8211;44. Moscow: Sovetski&#301; Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_1973"></a>Kholopova, Valentina. 1973. &#8220;Ob odnom printsipe khromatiki v muzyke XX veka&#8221; (On one principle of chromaticism in twentieth-century music). In <i>Problemy muzykal&#8217;no&#301; nauki</i> (Problems of musical science), 2nd installment, 331&#8211;44. Moscow: Sovetski&#301; Kompozitor.</p><div id="citediv_kholopova_1996" class="flyoverdiv">Kholopova, Valentina.  1996. <i>Sofiia Guba&#301;dulina. S interv&#8217;iu S. Guba&#301;dulino&#301;&#8212;E. Restan&#8217;o</i> (Sofia Gubaidulina, with an interview of Gubaidulina by E. Restagno). Moscow: Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_1996"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  1996. <i>Sofiia Guba&#301;dulina. S interv&#8217;iu S. Guba&#301;dulino&#301;&#8212;E. Restan&#8217;o</i> (Sofia Gubaidulina, with an interview of Gubaidulina by E. Restagno). Moscow: Kompozitor.</p><div id="citediv_kholopova_1999" class="flyoverdiv">Kholopova, Valentina.  1999. &#8220;Parametr ekspressii v muzykal&#8217;nom iazyke Sofii Guba&#301;dulino&#301;&#8221; (The expression parameter in the music of Sofia Gubaidulina)<i>. Moscow Forum.</i>  International Conference Proceedings, vol. 25: 153&#8211;60. Moscow: Moscow Conservatory.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  1999. &#8220;Parametr ekspressii v muzykal&#8217;nom iazyke Sofii Guba&#301;dulino&#301;&#8221; (The expression parameter in the music of Sofia Gubaidulina)<i>. Moscow Forum.</i>  International Conference Proceedings, vol. 25: 153&#8211;60. Moscow: Moscow Conservatory.</p><div id="citediv_kholopova_2011" class="flyoverdiv">Kholopova, Valentina.  2011.  Sofiia Guba&#301;dulina: Monografiia (Sofia Gubaidulina: A monograph). 3rd edition. Moscow: Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_2011"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  2011.  Sofiia Guba&#301;dulina: Monografiia (Sofia Gubaidulina: A monograph). 3rd edition. Moscow: Kompozitor.</p><div id="citediv_kholopova_and_kholopov_1984" class="flyoverdiv">Kholopova, Valentina, and Yuri Kholopov. 1984. <i>Anton Vebern: Zhizn&#8217; i tvorchestvo</i> (Anton Webern: Life and work). Moscow: Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_and_kholopov_1984"></a>Kholopova, Valentina, and Yuri Kholopov. 1984. <i>Anton Vebern: Zhizn&#8217; i tvorchestvo</i> (Anton Webern: Life and work). Moscow: Kompozitor.</p><div id="citediv_kholopova_and_kholopov_1999" class="flyoverdiv">Kholopova, Valentina, and Yuri Kholopov.  1999. <i>Muzyka Veberna</i> (The music of Webern). Moscow: Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_and_kholopov_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  1999. <i>Muzyka Veberna</i> (The music of Webern). Moscow: Kompozitor.</p><div id="citediv_kurtz_2007" class="flyoverdiv">Kurtz, Michael. 2007. <i>Sofia Gubaidulina: A Biography</i>. Translated from German by Christoph K. Lohmann. Bloomington: Indiana University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kurtz_2007"></a>Kurtz, Michael. 2007. <i>Sofia Gubaidulina: A Biography</i>. Translated from German by Christoph K. Lohmann. Bloomington: Indiana University Press.</p><div id="citediv_lukomsky_1998" class="flyoverdiv">Lukomsky, Vera, and Sofia Gubaidulina. 1998. &#8220;My Desire Is Always to Rebel, to Swim against the Stream!&#8221; <i>Perspectives of New Music</i> 36, no. 1: 5&#8211;41.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lukomsky_1998"></a>Lukomsky, Vera, and Sofia Gubaidulina. 1998. &#8220;My Desire Is Always to Rebel, to Swim against the Stream!&#8221; <i>Perspectives of New Music</i> 36, no. 1: 5&#8211;41.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> I would like to thank Valentina Kholopova, on whose work this paper is based, for her help with this topic and for our many wonderful conversations. I would also like to thank Ellon Carpenter and Inessa Bazayev for their work in putting together &ldquo;Perspectives on Twentieth-Century Russian Theory.&rdquo;<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">I would like to thank Valentina Kholopova, on whose work this paper is based, for her help with this topic and for our many wonderful conversations. I would also like to thank Ellon Carpenter and Inessa Bazayev for their work in putting together &ldquo;Perspectives on Twentieth-Century Russian Theory.&rdquo;</div><p><a name="FN1">1.</a> All translations from Russian to English are my own. I have used the transliteration system of the Library of Congress, which can be found in the <i>Chicago Manual of Style</i> (16th ed.), on page 568, Table 11.3.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> &#8220;Compositional writing&#8221; (<i>kompozitorski&#301; tekct</i>) simply refers to whether the music is precisely notated or aleatoric.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> It is hard to say how consistent the EPs and their two potential functions are in Kholopova&#8217;s system, for the simple reason that she has not applied it extensively. It seems that the five EPs are consistent while their functions are contextual: there are never more than the five parameters but whether a pizzicato articulation, for example, is consonant or dissonant depends on how it is used in the composition at hand.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> This term appears in neither <a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4caf400">Kholopova 1999</a> nor <a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4caf404">Kholopova 2011</a>; I learned of it from my discussions with Kholopova. She wanted to give the five types of expressions, existing in two functions each, a name that would encapsulate them in their entirety, so she devised the term <i>komplekc parametrov</i> (parameter complex).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Of course, the performer is a necessary part of any composition&#8217;s success. What Kholopova is suggesting is that the performer take on more responsibility for that success in performing Gubaidulina&#8217;s music.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Bobrovski&#301; (1906&#8211;1979) worked on the functional organization of musical form, primarily, and on problems of dramaturgy in music. See Bobrovski&#301; <a href="#bobrovski&#301;_1970" id="citation_bobrovski&#301;_1970_67dc9a4caf409">1970</a> and <a href="#bobrovski&#301;_1978" id="citation_bobrovski&#301;_1978_67dc9a4caf40b">1978</a>.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Here are two YouTube links that include complete recordings of Gubaidulina&#8217;s <i>Concordanza</i>: <br><a href="https://www.youtube.com/watch?v=MDRDkljsuRw">https://www.youtube.com/watch?v=MDRDkljsuRw</a>; and <a href="https://www.youtube.com/watch?v=4cY73PPnQJc">https://www.youtube.com/watch?v=4cY73PPnQJc</a>.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Kholopova has written extensively on Webern (see <a href="#kholopova_1973" id="citation_kholopova_1973_67dc9a4caf40d">Kholopova 1973</a> and Kholopova and Kholopov <a href="#kholopova_and_kholopov_1984" id="citation_kholopova_and_kholopov_1984_67dc9a4caf410">1984</a> and <a href="#kholopova_and_kholopov_1999" id="citation_kholopova_and_kholopov_1999_67dc9a4caf412">1999</a>). For more on her work on Webern, see <a href="#ewell_2013" id="citation_ewell_2013_67dc9a4caf414">Ewell 2013</a>.<br><a href="#FN8REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">All translations from Russian to English are my own. I have used the transliteration system of the Library of Congress, which can be found in the <i>Chicago Manual of Style</i> (16th ed.), on page 568, Table 11.3.</div><div id="fndiv2" class="flyoverdiv">&#8220;Compositional writing&#8221; (<i>kompozitorski&#301; tekct</i>) simply refers to whether the music is precisely notated or aleatoric.</div><div id="fndiv3" class="flyoverdiv">It is hard to say how consistent the EPs and their two potential functions are in Kholopova&#8217;s system, for the simple reason that she has not applied it extensively. It seems that the five EPs are consistent while their functions are contextual: there are never more than the five parameters but whether a pizzicato articulation, for example, is consonant or dissonant depends on how it is used in the composition at hand.</div><div id="fndiv4" class="flyoverdiv">This term appears in neither <a href="#kholopova_1999" id="citation_kholopova_1999_67dc9a4caf400">Kholopova 1999</a> nor <a href="#kholopova_2011" id="citation_kholopova_2011_67dc9a4caf404">Kholopova 2011</a>; I learned of it from my discussions with Kholopova. She wanted to give the five types of expressions, existing in two functions each, a name that would encapsulate them in their entirety, so she devised the term <i>komplekc parametrov</i> (parameter complex).</div><div id="fndiv5" class="flyoverdiv">Of course, the performer is a necessary part of any composition&#8217;s success. What Kholopova is suggesting is that the performer take on more responsibility for that success in performing Gubaidulina&#8217;s music.</div><div id="fndiv6" class="flyoverdiv">Bobrovski&#301; (1906&#8211;1979) worked on the functional organization of musical form, primarily, and on problems of dramaturgy in music. See Bobrovski&#301; <a href="#bobrovski&#301;_1970" id="citation_bobrovski&#301;_1970_67dc9a4caf409">1970</a> and <a href="#bobrovski&#301;_1978" id="citation_bobrovski&#301;_1978_67dc9a4caf40b">1978</a>.</div><div id="fndiv7" class="flyoverdiv">Here are two YouTube links that include complete recordings of Gubaidulina&#8217;s <i>Concordanza</i>: <br><a href="https://www.youtube.com/watch?v=MDRDkljsuRw">https://www.youtube.com/watch?v=MDRDkljsuRw</a>; and <a href="https://www.youtube.com/watch?v=4cY73PPnQJc">https://www.youtube.com/watch?v=4cY73PPnQJc</a>.</div><div id="fndiv8" class="flyoverdiv">Kholopova has written extensively on Webern (see <a href="#kholopova_1973" id="citation_kholopova_1973_67dc9a4caf40d">Kholopova 1973</a> and Kholopova and Kholopov <a href="#kholopova_and_kholopov_1984" id="citation_kholopova_and_kholopov_1984_67dc9a4caf410">1984</a> and <a href="#kholopova_and_kholopov_1999" id="citation_kholopova_and_kholopov_1999_67dc9a4caf412">1999</a>). For more on her work on Webern, see <a href="#ewell_2013" id="citation_ewell_2013_67dc9a4caf414">Ewell 2013</a>.</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2013 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Senior Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		20202
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

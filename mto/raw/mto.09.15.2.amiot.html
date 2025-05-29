@@ -1,0 +1,1038 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 15.2: Amiot, Discrete Fourier Transform and Bach's Good Temperament</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Discrete Fourier Transform and Bach&rsquo;s Good Temperament">
+
+    <meta name="citation_author" content="Amiot, Emmanuel">
+      
+
+<meta name="citation_publication_date" content="2009/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="15">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Discrete Fourier Transform and Bach&rsquo;s Good Temperament
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.09.15.2/mto.09.15.2.amiot.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Emmanuel Amiot</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: temperament, tuning, Fourier transform, Lehman, J.S. Bach, 
+<i>Wohltemperierte Klavier </i></font></p><p><font size='4'>ABSTRACT: The statement by Bradley Lehman that the scribble at the beginning of the first page of 
+the WTC shows how 
+J.S. Bach
+tuned his harpsichord is much disputed. The use of a mathematical and rather abstract characterization of major scales
+puts forward a quality of the Lehman temperament that singles it out among all competing temperaments, thereby
+sustaining his claim.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.09.15.2/mto.09.15.2.amiot.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.09.15.2/amiot_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received September 2008</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 15, Number 2, June 2009 <br> Copyright &#0169; 2009 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<h3><b>Introduction
+
+</b>
+</h3>
+<p> <b>0.1 Lehman&#8217;s hypothesis</b> </p>
+<p>[0.1.1] In two papers published in 2005 (<a href="#lehman_2005a" id="citation_lehman_2005a_67dc9aeec9625">2005a</a>,
+<a href="#lehman_2005b" id="citation_lehman_2005b_67dc9aeec9628">2005b</a>), Bradley Lehman introduced the view that the recipe for the long-lost temperament of Johann Sebastian Bach had in fact been lying for all to see&#8212;not unlike Poe&#8217;s 
+<i>Purloined Letter</i>&#8212;as a scribbling on the front page of the autograph edition of 
+<i>Das Wohltemperirte Clavier</i>, the &#8220;Well-Tempered Clavier&#8221; (henceforth abbreviated as 
+the WTC). As Lehman&#8217;s own learned comparisons with many previously known tunings make clear, this is a vexed question, and his &#8220;discovery&#8221; aroused a number of refutations, on various grounds. 
+
+</p>
+<p>[0.1.2] Lehman&#8217;s homepage, with abundant discussions and links, is accessible by 
+<a style="text-decoration:none" target="_blank" href="http://www.larips.com">clicking here</a>. Here is a short summary of his interpretation of picture 
+1. 
+
+Let us recall the gist of the problem of tuning. Twelve just fifths (frequency ratio 3/2) amount to seven octaves plus a Pythagorean comma. Using eleven just fifths leaves a &#8220;wolf,&#8221; e.g. one ugly fifth, and all tonalities featuring this fifth will sound wrong. The abstract solution is equal temperament, wherein all fifths are reduced by one twelfth of a comma, but then all intervals are out of tune, and all scales sound (equally) disharmonious. The problem of tuning thus consists of adjusting 
+the different fifth sizes, aiming at a temperament wherein all tonalities sound well. This is exactly the meaning of &#8220;Wohl Temperirte&#8221; as Bach explains it on the first page of 
+the WTC. 
+According to Lehman, the picture before the text (see <strong>Figure 1</strong>) gives the 
+directions for such a temperament. </p>
+
+<div style="width:800px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Bach&rsquo;s diagram on the first page of the WTC</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="amiot_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[0.1.3] First the picture must be turned over (flipped upside-down); now consider all those loops as directives on how to tune successive fifths, beginning with F-C. The small inner loops represent nudges, slight moves of the tuning-pin.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> There are either 2, 0 or 1 nudges. The total is 13 nudges (=2+2+2+2+2+0+0+0+1+1+1), suggesting that each nudge should be one thirteenth of the Pythagorean comma<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> in order to get 
+around the circle of fifths smoothly. Eventually, the circle of fifths begins with five short fifths (like numerous generalized meantone temperaments), carries on with three pure fifths and ends with intermediate-size fifths. 
+It is fairly simple to realize in practice, in accordance with the well-known 
+fact (or legend) that Bach tuned a harpsichord in a quarter of an hour. Lehman 
+made a movie showing the tuning of an octave on YouTube,
+<a style="text-decoration:none" target="_blank" href="http://www-personal.umich.edu/~bpl/larips/videos.html">accessible here</a>. The three different sizes of fifths are hard to distinguish when played alone; Lehman&#8217;s videos are much more explicative.</p>
+<p> <b>0.2. Why it is unprovable . . . </b> 
+</p>
+<p>[0.2.1] The unsolvable problem of tuning has been well understood since Ptolemaios at least: twelve just fifths are slightly in excess of seven octaves, (3&#8725;2)<sup>12</sup> &#8776; 129.75 > 2<sup>7</sup> = 128, and more generally, there is no way any number of fifths can equal some number of octaves, as the equation (3&#8725;2)<sup><i>n</i></sup> = 2<sup><i>p</i></sup> admits no solutions in integers
+<i>n</i>, <i>p</i> > 0. Fiddling with the sizes of fifths introduces problems with other &#8220;pure&#8221; intervals, like the major third, 
+which should ideally be close to 5/4. 
+
+</p>
+<p>[0.2.2] There can be no ideal solution, since a number of different desirable properties 
+compete with one another. Hence the musicological debate on the quality of Lehman&#8217;s temperament (henceforth called LT) might go on for ever, as proponents of any other temperament will put forward (usually in good faith) diverse qualities,<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> often sporting personal preferences instead of facts (see for instance the acerbic [<a href="#lindley_and_ortgies_2006" id="citation_lindley_and_ortgies_2006_67dc9aeec96fc">Lindley and Ortgies 2006</a>] and its refutation by Lehman). 
+</p>
+<p> <b>0.3 . . . or is it ?</b> 
+</p>
+<p>[0.3.1] We need some objective quality to assess a temperament, preferably addressing the 
+<i>whole</i> collection of major (and minor) scales&#8212;as Bach did, allowing arbitrary modulation in the composition, e.g. tuning the harpsichord once and for all before playing through the 24 tonalities in 
+the WTC. 
+
+</p>
+<p>[0.3.2] The present paper puts forward a geometric quality of temperaments, measured with a single number (the 
+<i>Musical Sameness of Scales</i>, or MSS); as it happens, the comparison of values of MSS for the different tunings in competition so far singles out LT as a clear winner, 
+<i>primus inter pares</i>. 
+
+</p>
+<p>[0.3.3] This MSS makes use of the Discrete Fourier Transform (DFT), a mathematical tool whose relevance to major scales was discovered very recently (<a href="#quinn_2004" id="citation_quinn_2004_67dc9aeec970f">Quinn 2004</a>; <a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec9710">Amiot 2007</a>). Despite its technicality, the MSS puts forward a musical quality that Bach would have found desirable. 
+
+</p>
+<p>[0.3.4] Its discovery was serendipitous, and has nothing to do with Bach and 
+the WTC. I was investigating 
+the DFT of major scales for purely theoretical reasons, but 
+endeavored to try it on unequal temperaments as an illustration for the Helmholtz &#8220;Klang und Ton&#8221; workshop in Berlin 
+(May 2007). I came across Lehman&#8217;s story while browsing the internet, and included it in my list of various temperaments out of curiosity. Computing values of DFT for all major scales in all these temperaments, I noticed an exceptional quality of LT, only equaled by Werckmeister&#8217;s IV, or septenarius.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The notion of MSS was formulated in order to sum up this quality in a single number, for the sake of simplicity. 
+
+</p>
+<p>[0.3.5] Of course, I do not claim that the best temperaments (musically speaking) are just the ones with the greatest MSS. For instance, equal temperament gives an infinite value for MSS, but nowadays specialists agree on the fact that the equal temperament was abhorrent to Bach, as it still is to baroque musicians. The computation of MSS should come 
+<i>after</i> all musicological arguments, enabling one to choose among temperaments already acknowledged as musically interesting. 
+
+</p>
+<p>[0.3.6] Readers are invited at this point to listen to the pleasant sound of the recordings in LT, which can be found on 
+<a style="text-decoration: none" target="_blank" href="http://www-personal.umich.edu/~bpl/larips/videos.html">this page</a>. Together with the record value of MSS, this makes a convincing case for Lehman&#8217;s hypothesis. But arguments, like a razor,<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> cut both ways: some lesser known temperament might achieve a better MSS than LT. 
+
+Readers are strongly invited to test the temperaments they like best against LT with the formula for MSS given in section 
+1. The computation is possible even with a pocket calculator (especially if it manages complex numbers) and only takes a few lines of programming with a computer. For instance, some alternative interpretations of Bach&#8217;s scribble have been offered, and the values of MSS for these temperaments are of interest. 
+
+</p>
+<p>[0.3.7] On the other hand, should some other temperament with a greater MSS supersede LT one day, the fact will remain that most or all temperaments reportedly in use around Bach&#8217;s time have a much smaller MSS, and this will remain a significant hallmark of LT. 
+</p>
+<h3 style="text-align: center"><b>1. Sameness of Scales in a Temperament
+
+</b> 
+</h3>
+<p>[1.0.1] I fear it is impossible to appreciate the import of the MSS value without some attempt at understanding the math behind it: most of the strength of the argument derives from Theorem 1. I have made use of footnotes and 
+appendices in order to lighten the reading as much as possible. 
+
+</p>
+<p>[1.0.2] Roughly speaking, the DFT defined below enables one to appraise how close a scale<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> is to the mathematical paradigm of a regular polygon. This makes musical sense, because the largest DFT values 
+<i>characterize</i> the major scales. As it happens, the distribution of these values calculated for the 12 major scales exhibits a very special feature in the case of LT. 
+
+</p>
+<p>[1.0.3] The next subsection (1.1) attempts a non-technical description. Readers averse to mathematics are invited to read it and then skip to section 
+2, with tables of values of MSS for a number of temperaments. The precise definitions leading to the MSS are given in the sequel of this section 
+(1.2&#8211;1.4), but the truly technical parts (the proofs of the Lemma and Theorem) 
+are confined to the last section (3.2). 
+
+</p>
+<p>[1.0.4] I hope that most readers will go through the whole section, thus 
+getting the gist of the argument, even if understanding the actual proofs 
+requires some training in that prolific branch of mathematics called harmonic 
+analysis. The complexity of the diatonic underlies the major scale and is hence responsible for a large part of the beauty of western classic music and the fulfilling emotions that we experience with it. 
+</p>
+<p><b>1.1. Major scales are regular heptagons (almost) </b> 
+</p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Video 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=1&nonav=true"><img border="1" alt="Video 1 thumbnail" src="amiot_vid1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></div>
+
+<p>[1.1.1] Consider the C major scale in fifth order: F C G D A E B. A tone-deaf person might not perceive that the interval between the extreme notes, B-F, is smaller than the other fifths. After all, the difference is the smallest possible inside the twelve tone universe, e.g. a semitone (or augmented prime). This means that the sequence of seven notes in the major scale is as close as can be, in the twelve-note ambient universe, to a completely regular sequence (a perfectly regular sequence is the whole tone scale, for instance). This can be seen graphically 
+in <b>Video 1</b> (the major scale is in blue and the nearest heptagon is in red)</strong>. 
+
+</p>
+<p>[1.1.2] The mathematical tool that measures such regularities is the Fourier Transform (rigorously defined in the next subsection). It enables 
+one to simplify considerably the data for periodic phenomena: in the domain of sound, for instance, a sound file recording one note played by a musical instrument can be summarized by a few figures giving the Fourier coefficients, which are in this case the weights of the different overtones. In the study of scales, we use a slightly simplified version, called the Discrete Fourier Transform. 
+
+</p>
+<p>[1.1.3] For a perfectly regular scale, like the whole-tone, the value <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1) of this Fourier Transform would be equal to 1, or 100%. The major scales are the twelve seven-note scales with the greatest value of this 
+<i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1)&#8212;not 100%, but about 98%. This is the most important point about <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1): it characterizes the major scales among all possible seven-note scales. 
+
+</p>
+<p>[1.1.4] Now, in unequal temperaments, all scales are different, if only slightly. Hence, for each tonality A, we compute a different value of <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1). The MSS is then defined as a measure of the discrepancy of the twelve values of <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1) for the twelve major scales: the higher the value of MSS, the closer the values of <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1) are to one another. 
+
+</p>
+<p>[1.1.5] For high values of MSS, we expect all (major) scales to be equally close to their abstract model. Indeed, an infinite value of MSS means an equal temperament, wherein all scales sound identically. Hence, MSS can be taken as a measure of how much a temperament achieves Bach&#8217;s goal, 
+where all tonalities coexist peacefully inside the same temperament. 
+
+</p>
+<p><b>1.2. Discrete Fourier Transform of a Scale </b> 
+</p>
+<p>[1.2.1] Research on the DFT of scales originated in the preparation of the John Clough Memorial Days in Chicago (July 2005), organized by Richard Cohn and David Clampitt. 
+There, Ian Quinn&#8217;s ground-breaking dissertation (<a href="#quinn_2004" id="citation_quinn_2004_67dc9aeec9727">2004</a>), wherein he rekindled an original idea of the late David Lewin 
+(<a href="#lewin_1959" id="citation_lewin_1959_67dc9aeec9729">1959</a>), aroused interest in 
+DFT among several researchers. Fresh developments may be found in 
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec972b">Amiot 2007</a>. But a slightly 
+different track, initiated a few months later by Thomas Noll, led to the present 
+indicator of sameness of scales: 
+
+</p>
+<p><b>Definition 1</b>. <i>Let all notes inside an octave be given by a real number between 0 and 1; this means 
+choosing a reference note (say C) and measuring all intervals from there in cents/1200. Then the Discrete Fourier Transform of a scale  = 
+</i>(<i>a</i><sub>1</sub>,<i>a</i><sub>2</sub>,...<i>a<sub>n</sub></i>) 
+<img border="0" src="amiot/C.gif" width="12" height="10" align="middle"> [0,1]<i> is the map 
+
+</i> 
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/def1.gif" width="388" height="55"></p>
+<p>&nbsp;&nbsp; (<i>it is the Fourier Transform of the map </i>
+<img border="0" src="amiot/eq1.gif" width="75" height="15"> ).<i> The values </i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub>(0), <i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(1) ...<i><sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub></i>(n - 1)<i> are the 
+<u>Fourier coefficients</u> of scale </i>
+<img border="0" src="amiot/A.gif" width="15" height="13">. 
+</p>
+<p>[1.2.2] For instance, the (equal) tempered C major scale would be <i>C<sub>M</sub></i> = (0, 1&#8725;6, 1&#8725;3, 5&#8725;12, 7&#8725;12, 3&#8725;4, 11&#8725;12) and its DFT is 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq2.gif"></p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Major scales are best approximations of regular heptagons</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="amiot_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[1.2.3] It may be useful to recall that the Fourier Transform is in general a tool for checking the periodicities of a given phenomenon. Here, it is easily seen that the map <sub>
+<img border="0" src="amiot/fa.gif" align="baseline"></sub> is defined from the cyclic group with 
+<i>n</i> elements <img border="0" src="amiot/Zn.gif" align="baseline" width="19" height="15"> to the field 
+<img border="0" src="amiot/C2.gif" width="12" height="12"> of complex numbers.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> The notes can be visualized 
+as the points <img border="0" src="amiot/eq3.gif" width="39" height="15"> on the unit circle, which is the quotient structure of frequencies modulo octave: see 
+<strong>Figure 2</strong>. 
+
+
+<p><b>1.3. DFT and Maximal Evenness</b></p>
+<p><b>Lemma 1</b>. |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| = 1 
+<img border="0" src="amiot/arr.gif" width="29" height="10">
+<img border="0" src="amiot/A.gif" width="15" height="13"> is a &#8220;regular polygon,&#8221; i.e. 
+
+</p>
+			<p style="text-align: center">
+			<img border="0" src="amiot/eq4.gif" width="348" height="41"></p>
+			<p><i>&nbsp;&nbsp; For any other scale, for any t,</i> 
+			|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| &#8804; 1. 
+</p>
+
+
+<p>[1.3.1] The first case  
+			|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| = 1 occurs for instance when  
+<img border="0" src="amiot/A.gif" width="15" height="13"> is a whole tone scale (in equal temperament), or an augmented triad, or diminished seventh. But of course a seven note scale in a (decent) twelve note temperament cannot be a regular polygon, as 12 cannot be divided into 7 equal integral parts (see 
+Figure 2). Still, the best approximations of regular polygons are musically interesting scales: 
+
+</p>
+<p><b>Theorem 1</b>. <i>Let
+<img border="0" src="amiot/S.gif" width="12" height="12"> be the set of scales of n notes chosen in some equal temperament with m notes (m > n), meaning 
+
+</i> 
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq5.gif" width="257" height="24"></p>
+<p><i>&nbsp;&nbsp;&nbsp;Then the scales in  with biggest value of 
+</i>|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)|<i> are the Maximally Even Sets</i>. 
+</p>
+<p>[1.3.2] What are Maximally Even Sets? The ME Sets were defined in
+<a href="#clough_and_myerson_1985" id="citation_clough_and_myerson_1985_67dc9aeec9731">Clough and Myerson 1985</a> and extended in
+<a href="#clough_and_douthett_1991" id="citation_clough_and_douthett_1991_67dc9aeec9732">Clough and Douthett 1991</a>. A recent and thorough paper on their features is
+<a href="#douthett_and_krantz_2007" id="citation_douthett_and_krantz_2007_67dc9aeec9735">Douthett and Krantz 2007</a>, and the connection with DFT, discovered in 
+<a href="#quinn_2004" id="citation_quinn_2004_67dc9aeec9736">Quinn 2004</a>, is investigated in <a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec9737">Amiot 2007</a>. The proofs of the above Lemma and Theorem are relegated to the 
+appendix, together with technical definitions. For the moment let it suffice to mention that 
+</p>
+<ol>
+	<li>Informally, a ME set is the &#8220;most regular&#8221; repartition of <i>n</i> notes in a given temperament. 
+	</li>
+	<li>ME sets (in equal temperament) are musically prominent scales: for instance the pentatonic, whole tone, major and octatonic scales all are ME sets in twelve tone temperament. 
+	</li>
+	<li>In several cases, including the major (and pentatonic) scales, this Maximal Evenness implies the &#8220;generated&#8221; quality, e.g. the major scale is generated by consecutive fifths.
+
+</li>
+</ol>
+<p>This means that in a given context (here an equal-tempered chromatic ambient universe) the size of |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| measures the
+<i>regularity</i> of the scale, i.e. its closeness to a regular polygon. The above theorem, as the next proposition, can bear some degree of approximation,<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> and hence both still stand in all common tunings, which are close to equal temperament. 
+
+</p>
+<p>[1.3.3] However, we only need the case of 7-note ME sets in 12-tone temperaments: 
+
+</p>
+<p><b>Proposition 1</b>. <i>In 12 tone equal temperament, the Maximally Even 
+Scales with 7 notes </i>(<i>e.g. the seven-note scales </i>  
+<img border="0" src="amiot/A.gif" width="15" height="13"><i> with greatest value of 
+</i>|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| ) <i>are 
+precisely the 12 major scales.</i>
+</p>
+<p>[1.3.4] 
+
+Now we can see that |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| really measures the closeness of 7-note scale    
+<img border="0" src="amiot/A.gif" width="15" height="13"> to the theoretical regular heptagon, which appears as a common goal, a Platonic model, that major scales strive to approximate as best they can: this is the meaning of the last proposition.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+<p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. DFT of a major scale and a chromatic 7-note scale</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=3&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="amiot_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[1.3.5] 
+
+From now on, all we need to remember is this meaning of |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)|. For instance, if scale   
+<img border="0" src="amiot/A.gif" width="15" height="13"> is a regular heptagon (say a &#8220;whole-tone scale&#8221; in 14-note equal temperament) then 
+|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| = 1; for any major scale A in 12-tone equal temperament, 
+|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| &#8776; 0.988846. This is a fundamental feature of major scales and not a mere curio: a basic fact about DFT, Parseval&#8217;s formula, states that &#8721; 
+<sub>t=0...n-1 </sub>|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)|<sup>2</sup> = 1 = 100%. Hence, when 
+|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| evaluates around 0.98 for a major scale, it means that almost all the energy of the scale is concentrated in this coefficient, as all other Fourier coefficients are negligible. In the case of other, random, seven-note scales, the energy is spread between the seven coefficients: for a chromatic succession of 7 notes, 
+|<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| is roughly 0.74; see 
+<strong>Figure 3</strong> (the scale with the highest peak is the diatonic; the other one is a random collection of seven notes). It is also worth considering the scales with second best value of |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)|, which are quite different from major scales ([0234568], e.g. G<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, A<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, B, C, C<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, D, E). 
+</p>
+
+<p>[1.3.6] We are now ready to define the sameness coefficient of scales (MSS) inside a given temperament. 
+
+</p>
+<p><b>1.4. Sameness Coefficient</b></p>
+<p>[1.4.1] A temperament is simply a collection of 12 tones, i.e. a subset  
+<img border="0" src="amiot/T.gif" width="13" height="12"> of [0,1] with 12 elements. Henceforth we will only consider scales with seven notes, that is to say ordered sequences of seven elements of  
+<img border="0" src="amiot/T.gif" width="13" height="12">. Let us assume that the elements of  
+<img border="0" src="amiot/T.gif" width="13" height="12"> are given in order: 
+
+</p>
+<p><b>Definition 2</b>. <i>A temperament, or tuning, is an ordered sequence of twelve different notes: 
+
+
+</i>
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq6.gif" width="217" height="21"></p>
+<p><b>Definition 3</b><i>. A major scale in temperament </i>
+<img border="0" src="amiot/T.gif" width="13" height="12"><i>is a sequence of the 
+form </i>
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq7.gif" width="326" height="25"></p>
+<p><i>where &#945; is a constant and the k<sub>i</sub>s are the indexes of the standard C major scale: 
+0,2,4,5,7,9,11</i></p>
+<p>Example: say <i>&#945;</i> = 5, we get the notes <i>a<sub>i</sub></i> with <i>i</i> = 5, 7, 9, 10, 12 = 0, 14 = 2, 16 = 4, i.e. F major. 
+
+</p>
+<p>[1.4.2] This enables us to compute |<img border="0" src="amiot/Faa.gif" width="30" height="16" align="middle">(1)| for all 
+<i>&#945;</i> = 0...11, i.e. for the 12 major scales in  
+<img border="0" src="amiot/T.gif" width="13" height="12">. For instance, taking for  
+<img border="0" src="amiot/T.gif" width="13" height="12"> the so-called 
+Pythagorean tuning with the &#8220;wolf fifth&#8221; between A<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font> and F, we get the following values for all major scales (in semitone order): 
+
+</p>
+<p style="text-align: center">0.9891; 0.9891; 0.9856; 0.9927; 0.9856; 0.9915; 0.9856; 0.9856; 0.9915; 0.9856; 0.9927; 0.9856</p>
+<p>[1.4.3] Notice that all scales that do not contain the wolf fifth are isometrical, and hence share the same absolute value of the Fourier coefficient. The most striking fact about these values is their closeness to 1, which reflects the characterization of ME sets in 
+Theorem 1. But the most important feature in a given temperament is the distribution of these values, which are exceptionally 
+<i>close to one another</i> in the case of LT. In order to visualize this phenomenon more easily, we define 
+
+</p>
+<p><b>Definition 4</b>. <i>The <u>Major Scale Sameness</u> (MSS) of temperament  
+</i>  
+<img border="0" src="amiot/T.gif" width="13" height="12"><i> is the inverse of the biggest discrepancy between values of coefficients 
+</i>|<img border="0" src="amiot/Faa.gif" width="30" height="16" align="middle">(1)|<i> for all twelve major scales in  
+</i>  
+<img border="0" src="amiot/T.gif" width="13" height="12"><i>: </i>
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq9.gif" width="327" height="51"></p>
+<p>[1.4.4] This quantity is highest when all values of |<img border="0" src="amiot/Faa.gif" width="30" height="16" align="middle">(1)| (for all 12 major scales) are the closest, i.e. when all major scales are almost equally similar to the ideal (theoretical) model of the regular heptagon. For instance for Pythagorean tuning, we get a maximum (resp. minimum) value of 0.9927 (resp. 0.9856) and hence 
+MSS (Pyth) =&nbsp;
+<img border="0" src="amiot/eq10.gif" width="190" height="34" align="middle"> &#8776; 
+140. </p>
+<p>[1.4.5] For LT, no major scale comes higher than |<img border="0" src="amiot/Faa.gif" width="30" height="16" align="middle">(1)|&nbsp; = 0.991, but none comes lower than 0.987, so the MSS is particularly high:
+MSS (LT) =&nbsp;
+<img border="0" src="amiot/eq11.gif" width="102" height="34" align="middle"> &#8776; 
+250 (actually a little more; see 
+Figure 5 below).
+</p>
+<p><b>1.5. Musical relevance: playing in all tonalities</b></p>
+<p>[1.5.1] Most analyses of different temperaments, including Lehman&#8217;s, put forward some particular intervals. The MSS coefficient on the other hand is comprehensive: it gives a measure of the sameness of 
+<i>all</i> major scales in    
+<img border="0" src="amiot/T.gif" width="13" height="12">. Though it tells nothing about the closeness of E-G<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font> to the pure third, it is well in tune with Bach&#8217;s own project in 
+the WTC.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> A tuning with high MSS means that ALL major scales are similarly close to the theoretical heptagon, i.e. similarly &#8220;good.&#8221; Or should one say, &#8220;wohl&#8221;? 
+<a target="ex_window" onClick="newwindow('amiot_examples.php?id=1',900,600); return false;" href="amiot_examples.php?id=1">Video 1</a> shows all diatonic scales in LT, together with their closest heptagons. It can be observed that though the 12 scales differ among themselves, they are quite similar in the way they resemble the regular heptagon: this is what MSS is all about. 
+</p>
+<h3 style="text-align: center">2. Comparison of MSS for different tunings
+
+</h3>
+<p>[2.0.1] This section is devoted to numerical results, i.e. tables of values of MSS. 
+
+</p>
+<p><b>2.1. Tables</b></p>
+<p>[2.1.1] Let us begin with a computer program for the computation of MSS on a given      
+<img border="0" src="amiot/T.gif" width="13" height="12">. It is convenient to put the values of the 12 elements of      
+<img border="0" src="amiot/T.gif" width="13" height="12"> in some table: 
+
+</p>
+<p style="text-align: center">    
+<img border="0" src="amiot/T.gif" width="13" height="12"> = {<i>t</i><sub>0</sub>,
+<i>t</i><sub>1</sub>, ... <i>t</i><sub>11</sub>}</p>
+<p>To do this, take any table of a temperament in cents and divide by 1200 to get the
+<i>a<sub>i</sub></i>s. This will be the input of the function that computes the MSS. Now we loop through the twelve major scales: 
+For <i>&#945;</i> = 0 to 11, compute the scale <i>&#945;</i> and its first Fourier coefficient
+<i>c<sub>&#945;</sub></i>: 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq12.gif" width="440" height="59"></p>
+<p>Lastly, find the minimum and the maximum in those 12 values; subtract the 
+former from the latter, and take the inverse<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> of the result:
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq13.gif" width="253" height="47"></p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. A program for computing MSS</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=4&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="amiot_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.1.2] 
+
+  <strong>Figure 4</strong> gives this algorithm in Mathematica<sup>&reg;</sup>, for scales with any number <i>n</i> of notes. 
+</p>
+
+
+<p>[2.1.3] In <strong>Table 1</strong>, consecutive fifths are given in cents from the origin; so in 
+the program 
+listed in Figure 4, the variable <font face="Arial" size="2">gamme</font> had to be divided by 1200. All origins (A) have been set to the same value, 0. Of course, different origins can be given for each tuning, but this is equivalent to some rotation on the circle of notes, and the quantity MSS, being geometric in essence, is invariant under such transformations.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup></p>
+
+<div style="width:800px; float: left">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Values of MSS for different tunings</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=5&nonav=true"><img border="1" alt="Table 1 thumbnail" src="amiot_table1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.1.4] I selected only a few elements in the extensive family of meantone 
+tunings. Lindley&#8217;s tunings are tabulated from Lindley and 
+Ortgies&#8217;s acerbic refutation (see <a href="#lindley_and_ortgies_2006" id="citation_lindley_and_ortgies_2006_67dc9aeec975e">Lindley and Ortgies 2006</a>): the first two are built respectively with sevenths of Pythagorean and syntonic comma, and the last is the tuning used in the Michaelstein 
+conference (this one found favor with Lehman). Similarly, I added the Sparschuh 
+tuning and the previous Lehman proposition (dated 1994) as possible competitors, other interpretations of the scribble being, of course, of particular interest. 
+
+</p>
+<p>[2.1.5] I hope that through the process of chain-quotation, the exact values of these tunings have been preserved. As the computations have been carried through the professional software Mathematica<sup>&reg;</sup>, with 64 bit arithmetic, we can hope to be rid of the rounding errors that blemished several controversies, and that resulted from incompatible unit conventions and inadequate software (Excel<sup>&reg;</sup>). 
+
+</p>
+<p>[2.1.6] It is quite clear on these values that LT achieves by far the best value of MSS 
+among temperaments prior to WTC, except for Werckmeister 
+4<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> which reaches almost equal value. It is interesting to see which classical tunings figure well in this table: Kirnberger&#8217;s are in good standing, 
+and so is Valloti, but it is notable that the Pythagorean tuning supersedes Zarlino and the meantone temperaments. Remember that MSS measures a closeness between major scales, not the quality of, for instance, the twelve fifths. 
+
+</p>
+<p>[2.1.7] Graphic comparison of a few TeTs is available in
+<a style="text-decoration: none" target="_blank" href="http://canonsrythmiques.free.fr/movies/SomeTeTs.mov">this movie</a>, where one can see the value of all Fourier coefficients changing with the different diatonic scales. The value of the leading coefficient
+<i>a</i><sub>1</sub> is apparent as the radius of a golden disk, whose size varies more or less according to the chosen TeT.
+
+</p>
+<p><b>2.2. Minor scales</b></p>
+<p>[2.2.1] As watchful readers will have noticed, the MSS has so far left aside half of 
+the WTC: 
+J.S. Bach also wrote preludes and fugues in all 
+<i>minor</i> tonalities. MSS is originally a measure of &#8220;diatonicity&#8221;: could it also be used for testing minor scales? If by &#8220;minor,&#8221; one should understand the harmonic minor scale, then the theoretical relevance is poor.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> But this natural assumption, taught to every kid in music school, has long been challenged by specialists.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> Perhaps the most &#8220;natural&#8221; form of the minor is also diatonic, meaning that MSS is relevant both for minor and major tonalities. 
+
+</p>
+<p>[2.2.2] It might be interesting, though, to try this comparison on other familiar scales, like the ascending melodic minor [023579a]. 
+
+</p>
+<p><b>2.3. First five fifths equal</b></p>
+<p>[2.3.1] Permutations of the values of the different fifths of LT can be 
+tried. The result is illuminating. As we have already discussed, an optimal value of MSS <nobr>(= &#8734;)</nobr> is attainable, in equal temperament. This is not realistic, as most musicologists now agree that equal temperament was as abhorrent to Bach as it was to many, before and afterwards. 
+
+</p>
+<p>[2.3.2] So it should come as no surprise that some possible (nonequal) temperaments improve the value of MSS. 
+This is the case for Werckmeister IV, which, though rational-valued, is a close approximation to equal temperament.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> I found several such tunings 
+by trying all permutations of the values of fifths that Lehman attributed to the three different kinds of loops in Bach&#8217;s scribble. For instance, the one which corresponds to the sequence of adjustments 0, -2, -2, -2, 1, -2, 1, -1, 0, -1, 0, -2,<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> has a much higher value of MSS. 
+
+</p>
+<p>[2.3.3] Such artifacts are generally very close to equal temperament. I did not recognize any known tuning in them, though learned readers might. 
+
+</p>
+<p>[2.3.4] But strikingly again, LT is still a winner when these permutations are confined to the six last fifths, i.e. when we keep the first five fifths equal: here I am discussing adjustments of the form -2, -2, 
+-2, -2, -2 followed by any permutation of 0, 0, 0, -1, -1, -1. This must be relevant, as it was and still is common practice to start the tuning of a keyboard instrument by five equal fifths (often slightly shorter than a pure fifth), thus tuning equally the Guidonian hexachord FCGDAE. I certainly did, long before I ever heard of Bradley Lehman. This is true of all meantone tunings, for instance, and also very obvious for a musician accustomed to tonal music, since it is still desirable to have many equal fifths inside the scale(s) he or she plays in. Many harpsichord, organ, or piano-forte playing readers will acknowledge that they begin their own tunings by equal fifths between F-C-G-D-A-E. See below a discussion of O&rsquo;Donnell&#8217;s objection, though 
+(<a href="#o&rsquo;donnell_2006" id="citation_o&rsquo;donnell_2006_67dc9aeec9763">2006</a>).
+</p>
+<p><b>2.4. Other values of the wiggles</b></p>
+<p>[2.4.1] One weak point of Lehman&#8217;s proposition is his arbitrary calibration of the wiggles as multiples of PC/12 (PC = a 
+Pythagorean comma). On the other hand, changing this value ever so slightly falls within the approximation involved in any practical tuning&#8212;this is not exact science! On investigation, I tried variants of LT, replacing the unit PC/12, or 
+1.955 cents, by values close to it. The value of MSS can thus be increased slightly: if the fundamental wiggle is reduced to 2.16 cents, MSS reaches 278.7 instead of 260. This is the best possible improvement in that direction, with 
+
+</p>
+<p style="text-align: center">    
+<img border="0" src="amiot/T.gif" width="13" height="12"> = {0; 95.685; 196.71; 
+297.795; 393.42; 498.105; 593.73; 698.355; 797.64; 895.065; 997.95; 1091.78}</p>
+<p>[2.4.2] Of course, a difference of 0.165 cents is hardly perceptible by ear&#8212;it is roughly a 
+150th of a comma! It is only the different order of fifths, the geometry of the scale, and not the change of comma, that explains the record value of MSS; the different value of the comma in Lehman&#8217;s first proposition in 1994 (labeled Lehman94 in 
+Table 1) has nothing to do with its poor value of MSS. 
+</p>
+<p><b>2.5. Other interpretations of the wiggles</b></p>
+<p>[2.5.1] Some have questioned the <i>original note</i> of the tuning: is it F&#8212;a common practice&#8212;or do some further curlicues along the scribble (look again at 
+  <strong style="font-weight: 400"><a target="ex_window" onClick="newwindow('amiot_fig1.html',900,450); return false;" style="text-decoration:none" href="amiot_fig1.html">Figure 1</a></strong>) indicate the position of C, or D, or some other note? As far as the MSS is concerned, this is irrelevant, as a &#8220;well tempered&#8221; instrument will remain so even if the tuning is transposed, in the sense that all tonalities still sound well. Of course it would be nice to know 
+<i>exactly</i> Bach&#8217;s tuning (giving <i>specific</i> different 
+colors, i.e. <i>Affekt</i>, to different tonalities) but MSS cannot discriminate between tunings there, as it is invariant under a change of origin of the tuning.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> 
+
+Similarly, MSS cannot help us decide whether turning around the page (as Lehman did) is permitted, or mandatory: the inversion of a tuning shares the same geometric values,<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> and the sequence of wiggles (-1, -1, -1, 0, 0, 0, -2, -2, -2, -2, -2) has the same MSS as LT&#8212;a nice feature for 
+contrapuntalists. In other words, using Lehman&#8217;s recipe with fourths instead of fifths yields exactly the same value of MSS. 
+
+</p>
+<p>[2.5.2] MSS can help, though, to discuss whether the wiggles mean consecutive 
+fifths or consecutive semitones. This is a strong argument, as O&#8217;Donnell points 
+out (<a href="#o&rsquo;donnell_2006" id="citation_o&rsquo;donnell_2006_67dc9aeec9772">O&rsquo;Donnell 2006</a>) that the order of tonalities in 
+the WTC is given in semitones not in fifths&#8212;but Chopin, for instance, did 
+the opposite in his 
+<i>Preludes</i>, which clearly refer to the WTC. Indeed, MSS makes a fair case for O&#8217;Donnell&#8217;s proposed tunings, as seen from the values of MSS in 
+<b>Table 2</b>, computed from Lehman&#8217;s comprehensive answer to O&#8217;Donnell:
+
+</p>
+
+<div style="width:800px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. MSS for O&rsquo;Donnell-like tunings</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=6&nonav=true"><img border="1" alt="Table 2 thumbnail" src="amiot_table2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.5.3] Several falsifications, in the sense of Popper, have been tried. In each case, LT emerges a winner. It is clearly a very special temperament, not only in its closeness to Equal Temperament, but in the homogeneity of all 24 scales. This constitutes a strong vindication of Lehman&#8217;s claim. 
+</p>
+<h3 style="text-align: center">3. Conclusion and perspectives
+
+</h3>
+<p>[3.0.1] The MSS criterion arguably puts emphasis on the sameness of fifths <i>inside</i> the temperament. This goes some way towards explaining why permutations of the wiggles fail to improve MSS, when the first five are kept identical (see subsection 2.3); it also explains the fair value of MSS for Pythagorean (Ptolemaic) tuning, for instance. But this argument has 
+its limits, as the discussion on all permutations of the wiggles proves. Still, it is quite important musically, as keyboard 
+instrument players will readily agree, to find in <i>any</i> major scale a sequence of 3 (and preferably more) identical fifths in a row. This makes it easier to tune together with string instruments, for instance. 
+
+</p>
+<p>[3.0.2] Apart from aesthetic and other indefinitely debatable arguments, the computation of MSS gives a steadfast comparison point for tunings aimed at tonal music. Of course, it should not be considered as the sole criterion for the quality of a tuning&#8212;for instance, equal temperament would then be unbeatable, and Pythagorean tuning would be better than Kirnberger&#8217;s&#8212;but it does make sense to use it, among other criteria, to compare tunings 
+<i>already</i> short-listed for historical and musical reasons. 
+
+</p>
+<p>[3.0.3] A limitation to the discriminating power of MSS is its indifference towards isometric transformations. Starting the tuning with C or F<font size="4"><img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font> or any note does not change the value of MSS, neither does tuning in fourths instead of fifths, i.e. reversing the cycle of fifths. This last point is one that raised much discussion: is Lehman right in turning around the first page of 
+the WTC? As we discussed previously, MSS brings no answer there. But consideration of the 
+<i>phase</i> of the Fourier coefficients (and not only of <i>module</i>), or maybe scrutiny of other Fourier coefficients (e.g. 
+<img border="0" src="amiot/fa.gif" width="22" height="14" align="middle">(0)), might help refine the analysis (I am indebted to Thomas Noll for these suggestions). 
+
+Other measures of the <i>sameness</i> of scales inside a given temperament might, and should, be proposed, as this criterion makes sense when considering 
+the WTC.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> For one thing, the MSS is designed primarily for comparison of the major scales, and perhaps some other measurement should give equal standing to the minor scale in some form. 
+
+</p>
+<p>[3.0.4] The computations made for this paper are by no means exhaustive, and I hope that some other researchers will complete them. I intentionally refrained, though, from computing MSS on many tunings that either fall far from Bach&#8217;s universe or appear too arbitrary. Should some major tuning be lacking in this analysis, it is because I was not aware of its existence. 
+
+Some independent computations&#8212;independent from the author&#8217;s&#8212;have 
+confirmed that LT has a greater value than most of 60 Baroque (or earlier) 
+temperaments.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup></p>
+<p>[3.0.5] A puzzling case is Werckmeister 4, a serious challenger of LT for the value of MSS. It stems from most modern authorities that the relationship 
+of Bach to Werckmeister was more about counterpoint than tuning, but maybe this fresh evidence will rekindle interest in the notion that Bach shared at least some of Werckmeister&#8217;s original ideas about tuning. 
+
+</p>
+<p>[3.0.6] My modest intention was to add some nonsubjective evidence to the discussion of Lehman&#8217;s hypothesis. In the present state of the calculations in Table 
+1, the MSS criterion strongly supports Lehman&#8217;s theory. Maybe further efforts in the same line will help refine his claim&#8212;or crown some other tuning that I cannot foresee. 
+</p>
+<h3 style="text-align: center">Appendix: the mathematics of MSS</h3>
+<p><b>3.1. Proof of lemma</b></p>
+<p><i>Proof</i>. From Parseval&#8217;s identity (see below), if |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1)| = 1 then for all t
+<img border="0" src="amiot/ne.gif" width="13" height="16" align="middle"> 1, <sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(t) = 0. Hence by inverse Fourier transform (Plancherel&#8217;s theorem) the elements of  
+<img border="0" src="amiot/A.gif" width="15" height="13"> are given by 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq14.gif" width="347" height="48"></p>
+<p>which puts them on a regular <i>n</i>-gon. 
+</p>
+<p>The other assertion |<sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(<i>t</i>)| &#8804; 1 is a consequence of Parseval&#8217;s identity: 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq15.gif" width="346" height="46"></p>
+<p style="text-align: right">&#9633;</p>
+<p><b>3.2. Proof of theorem</b></p>
+<p>[3.2.1] I give the proof of the theorem in the simpler case<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup>			when the number of notes <i>n</i> is coprime with the cardinality of the temperament, 
+<i>m</i>. In this paper we have <i>n</i> = 7, <i>m</i> = 12. In such cases, a ME set is 
+<i>generated</i> (<a href="#clough_and_myerson_1985" id="citation_clough_and_myerson_1985_67dc9aeec9785">Clough and Myerson 1985</a>), i.e. the indexes of its notes are in arithmetic sequence modulo 
+<i>m</i>, with a ratio <i>f</i> of the sequence that is the multiplicative inverse of 
+<i>n</i> mod <i>m</i>. In the case <i>n </i>= 7, <i>m</i> = 12, this expresses the fact that the major scale is a sequence of fifths, i.e. (0, 7, 7 + 7 &#8801; 2, 9, 4, 11, 6) or any transposition thereof. The ratio
+<i>f </i>= 7 is the inverse of <i>n</i> = 7: it checks <i>f</i> &times; <i>n</i> = 7 &times; 7 = 1 + 4 &times; 12 &#8801; 1 mod 12. 
+
+</p>
+<p><i>Proof</i>. I begin with pointing out that the map (<i>k</i>,<i> j</i>)
+<img border="0" src="amiot/arr2.gif" width="18" height="11"> <i>n </i>&times; <i>k</i> -
+<i>m</i> &times; <i>j</i> is one-to-one (and onto) from 
+<img border="0" src="amiot/Zm.gif" width="22" height="15" align="middle"> &times;
+<img border="0" src="amiot/Zn.gif" width="19" height="15" align="middle"> to 
+<img border="0" src="amiot/Znxm.gif" width="40" height="14" align="middle">, where 
+<img border="0" src="amiot/Zp.gif" width="18" height="16" align="middle"> stands for the cyclic group with 
+<i>p</i> elements. This morphism (it is well defined, and obviously linear) of 
+<img border="0" src="amiot/Z.gif" width="11" height="12">-modules is injective: 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq16.gif" width="784" height="48"></p>
+<p>using Gauss&#8217;s lemma (<i>m</i> divides <i>n k</i> but is coprime with <i>n</i>, hence divides 
+<i>k</i>, similarly for <i>n</i>); and hence bijective because the cardinalities of both domain and codomain are finite and equal. 
+</p>
+<p>[3.2.2] This enables us to choose <i>n</i> couples (<i>k</i><sub>0</sub>, 0), (<i>k</i><sub>1</sub>, 1) ... (k<sub><i>n</i>-1</sub>,
+<i>n</i> - 1) in 
+<img border="0" src="amiot/Zm.gif" width="22" height="15" align="middle"> &times;
+<img border="0" src="amiot/Zn.gif" width="19" height="15" align="middle"> with 
+<i>n k<sub>j</sub> - mj <img border="0" src="amiot/E.gif" width="9" height="10">
+</i>{0, 1, ... <i>n</i> - 1} (mod <i>m</i>) &times; <i>n</i>, (choosing <i>j</i> first then 
+<i>k<sub>j</sub></i>) hence  
+<img border="0" src="amiot/eq17.gif" width="52" height="37" align="middle"> stays between 0 and  
+<img border="0" src="amiot/eq18.gif" width="86" height="36" align="middle">
+</p>
+<p>[3.2.3] 
+
+Hence the vectors occurring in the computation of <sub><img border="0" src="amiot/fa.gif" align="baseline"></sub>(1), i.e. the 
+<img border="0" src="amiot/eq19.gif" width="72" height="22">, are as close together as possible. This maximizes their sum, as the cosines of their projections on the direction of their sum get as close to 1 as possible. This is proved by the following &#8220;huddling lemma,&#8221; whose general form may be found in
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec9786">Amiot 2007</a>. 
+
+</p>
+<p><b>Lemma 2</b>. <i>Let </i>
+<img border="0" src="amiot/eq20.gif" width="56" height="17">, <i>j </i>= 1 ...
+<i>n</i> <i>be n different m<sup>th</sup> roots of unity. Their sum has length at most  
+<img border="0" src="amiot/eq21.gif" width="106" height="51" align="middle"> i.e. the maximum value is obtained when all these points are huddled together</i>. 
+
+</p>
+
+<div style="width:800px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. The sum increases when the points are closer</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="amiot_examples.php?id=7&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="amiot_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+</strong>
+<p><i>Proof</i>. Put S = &#8721; 
+<img border="0" src="amiot/eq20.gif" width="56" height="17">. Then |<img border="0" src="amiot/S.gif" width="12" height="12">|&#8805; Re 
+<img border="0" src="amiot/S.gif" width="12" height="12"> = &#8721;cos(2<i>k<sub>j
+</sub></i>&#960; &#8725; <i>m</i>). Say for instance that<i> n</i> is odd: then there are exactly 
+<i>n</i> integers between  
+<img border="0" src="amiot/eq22.gif" width="40" height="34" align="middle"> and 
+<img border="0" src="amiot/eq23.gif" width="40" height="34" align="middle">. 
+
+</p>
+<p>[3.2.4] Unless the <i>k<sub>j </sub></i>are precisely these integers, there exists some 
+<i>j</i><sub>0</sub> with |<i>k<sub>j</sub></i><sub>0</sub>| >  
+<img border="0" src="amiot/eq24.gif" width="52" height="35" align="middle"> and a value 
+<i>k</i>&#8242;  <img border="0" src="amiot/E.gif" width="9" height="10"> [<img border="0" src="amiot/eq22.gif" width="40" height="34" align="middle">,
+<img border="0" src="amiot/eq23.gif" width="40" height="34" align="middle">] that is not one of the 
+<i>k<sub>j</sub></i>. As 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq25.gif" width="239" height="27"></p>
+<p>the sum of cosines is increased when <i>k</i>&#8242; is substituted to <i>k<sub>j</sub></i><sub>0</sub>. This can be done till all the 
+<i>k<sub>j</sub></i>s are in [<img border="0" src="amiot/eq22.gif" width="40" height="34" align="middle">,
+<img border="0" src="amiot/eq23.gif" width="40" height="34" align="middle">], and as there are 
+<i>n</i> such <i>k<sub>j</sub></i>s, they must be the <i>n</i> consecutive integers lying in this range. Then Re 
+<img border="0" src="amiot/S.gif" width="12" height="12"> is at last maximal, 
+and so is |<img border="0" src="amiot/S.gif" width="12" height="12">| = Re 
+<img border="0" src="amiot/S.gif" width="12" height="12"> (this last equality is now true by symmetry). The case &#8220;<i>n</i> even&#8221; is a little trickier but similar and will be left to the reader, as this paper only needs a proof when 
+<i>n</i> = 7, <i>m</i> = 12.&nbsp;&nbsp;
+</p>
+<p style="text-align: right">&#9633;</p>
+<p>[3.2.5] We return to the proof of the theorem. The lemma proves that the maximum configuration occurs when 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq26.gif" width="428" height="24"></p>
+<p>Multiplying by <i>f</i> = <i>n</i><sup>-1</sup> mod <i>m</i> yields 
+
+</p>
+<p style="text-align: center">
+<img border="0" src="amiot/eq27.gif" width="383" height="36"></p>
+<p>i.e. an arithmetic progression with ratio <i>f.</i> The most general case is obtained by translation (i.e. a transposition, musically speaking) of this one. 
+</p>
+<p style="text-align: right">&#9633; 
+</p>
+<p style="text-align: center"><b>Acknowledgements
+
+</b>
+</p>
+<p>I am indebted to the members of the American new wave of musicologists who renewed the interest in the study of scales, through the novel notions of ME sets, and later Well Formed Scales: the late J. Clough, G. Myerson, J. Douthett, N. Carey and particularly David Clampitt who, together with Richard Cohn, kindled my interest in the topic by inviting me to the John Clough Memorial Days; to Ian Quinn whose fascinating work on &#8220;chord quality&#8221; revived David Lewin&#8217;s idea on Discrete Fourier Transform and gave me a starting point for fruitful research; and to Thomas Noll who shrewdly perceived that DFT could be extended to non equal temperaments with a slightly different formula, and also gave me the incentive to explore this alley when he invited me to the Helmholtz &#8220;Klang und Ton&#8221; workshop in Berlin. I also thank Bill Sethares, a great specialist of Fourier Transform for consonance issues, for his useful advice and encouragements. Last but not least, my wife helped me tremendously with the wording of this paper, despite its technicality. 
+</p>
+<p><i>This paper is dedicated to the memory of Marcel Mesnage, who unfortunately 
+did not live to see it. A delicate composer, computer wizard, and pioneer 
+researcher, he was first and foremost a delicious man. </i> 
+</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Emmanuel Amiot<br>
+	Prof. in CPGE, Perpignan<br>1, rue du Centre<br>F 66570 St Nazaire<br><a href="mailto:manu.amiot@free.fr">manu.amiot@free.fr</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_amiot_2007" class="flyoverdiv">Amiot, Emmanuel. 2007. David Lewin and Maximally Even Sets. <i>Journal of Mathematics and Music</i> 1 (3): 157&ndash;72.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="amiot_2007"></a>Amiot, Emmanuel. 2007. David Lewin and Maximally Even Sets. <i>Journal of Mathematics and Music</i> 1 (3): 157&ndash;72.</p><div id="citediv_carey_and_clampitt_1989" class="flyoverdiv">Carey, Norman, and David Clampitt. 1989. Aspects of Well Formed Scales. <i>Music Theory Spectrum</i> 11 (2): 187&ndash;206.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carey_and_clampitt_1989"></a>Carey, Norman, and David Clampitt. 1989. Aspects of Well Formed Scales. <i>Music Theory Spectrum</i> 11 (2): 187&ndash;206.</p><div id="citediv_clough_and_douthett_1991" class="flyoverdiv">Clough, John, and Jack Douthett. 1991. Maximally Even Sets. <i>Journal of Music Theory</i> 35: 93&ndash;173.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_douthett_1991"></a>Clough, John, and Jack Douthett. 1991. Maximally Even Sets. <i>Journal of Music Theory</i> 35: 93&ndash;173.</p><div id="citediv_clough_and_myerson_1985" class="flyoverdiv">Clough, John, and Gerald Myerson. 1985. Variety and Multiplicity in Diatonic Systems. <i>Journal of Music Theory</i> 29: 249&ndash;70.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_myerson_1985"></a>Clough, John, and Gerald Myerson. 1985. Variety and Multiplicity in Diatonic Systems. <i>Journal of Music Theory</i> 29: 249&ndash;70.</p><div id="citediv_douthett_and_krantz_2007" class="flyoverdiv">Douthett, Jack, and Richard Krantz. 2007. Maximally Even Sets and Configurations: Common Threads in Mathematics, Physics, and Music. <i>Journal of Combinatorial Optimization</i> 14 (4): 385&ndash;410. <a target='_blank' href='http://www.springerlink.com/content/g1228n7t44570442'>http://www.springerlink.com/content/g1228n7t44570442</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="douthett_and_krantz_2007"></a>Douthett, Jack, and Richard Krantz. 2007. Maximally Even Sets and Configurations: Common Threads in Mathematics, Physics, and Music. <i>Journal of Combinatorial Optimization</i> 14 (4): 385&ndash;410. <a target='_blank' href='http://www.springerlink.com/content/g1228n7t44570442'>http://www.springerlink.com/content/g1228n7t44570442</a></p><div id="citediv_lehman_2005a" class="flyoverdiv">Lehman, Bradley. 2005a. Bach&rsquo;s Extraordinary Temperament: Our Rosetta Stone&ndash;1. <i>Early Music</i> 33: 3&ndash;24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lehman_2005a"></a>Lehman, Bradley. 2005a. Bach&rsquo;s Extraordinary Temperament: Our Rosetta Stone&ndash;1. <i>Early Music</i> 33: 3&ndash;24.</p><div id="citediv_lehman_2005b" class="flyoverdiv">Lehman, Bradley. 2005b. Bach&rsquo;s Extraordinary Temperament: Our Rosetta Stone&ndash;2. <i>Early Music</i> 33: 211&ndash;32.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lehman_2005b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005b. Bach&rsquo;s Extraordinary Temperament: Our Rosetta Stone&ndash;2. <i>Early Music</i> 33: 211&ndash;32.</p><div id="citediv_lewin_1959" class="flyoverdiv">Lewin, David. 1959. Re: Intervallic Relations Between Two Collections of Notes. <i>Journal of Music Theory</i> 3: 298&ndash;301.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1959"></a>Lewin, David. 1959. Re: Intervallic Relations Between Two Collections of Notes. <i>Journal of Music Theory</i> 3: 298&ndash;301.</p><div id="citediv_lindley_and_ortgies_2006" class="flyoverdiv">Lindley, Mark, and Ibo Ortgies. November 2006. Bach-style Keyboard Tuning. <i>Early Music</i> 34: 613&ndash;24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lindley_and_ortgies_2006"></a>Lindley, Mark, and Ibo Ortgies. November 2006. Bach-style Keyboard Tuning. <i>Early Music</i> 34: 613&ndash;24.</p><div id="citediv_o&rsquo;donnell_2006" class="flyoverdiv">O&rsquo;Donnell, John. November 2006. Bach&rsquo;s Temperament, Occam&rsquo;s Razor, and the Neidhardt Factor. <i>Early Music</i> 34: 625&ndash;34.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="o&rsquo;donnell_2006"></a>O&rsquo;Donnell, John. November 2006. Bach&rsquo;s Temperament, Occam&rsquo;s Razor, and the Neidhardt Factor. <i>Early Music</i> 34: 625&ndash;34.</p><div id="citediv_quinn_2004" class="flyoverdiv">Quinn, Ian. 2004. A Unified Theory of Chord Quality in Equal Temperaments. Ph.D. dissertation, Eastman School of Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_2004"></a>Quinn, Ian. 2004. A Unified Theory of Chord Quality in Equal Temperaments. Ph.D. dissertation, Eastman School of Music.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Counterclockwise, i.e. decreasing the size of the fifth.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Lehman uses one twelfth of a comma, which is indistinguishable in practice.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> For instance, many pages have been written about the quality of the single third E-G<a><font size='4'><img border='0' src='../../gifs/sharp.gif' width='7' height='18' align='top'></font></a> in LT versus other ways of tuning; but the overall number of nice &#8220;tertiam minorem,&#8221; as Bach calls them, might also be considered of equal or greater importance than that of major thirds, or the size of whole tones, or any other plausible feature of a given temperament.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> In the rectified version, assuming the value 176/196 in the division of the monochord should be read as 175/196, as many have corrected.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Occam&#8217;s razor? See
+<a href="#o&rsquo;donnell_2006" id="citation_o&rsquo;donnell_2006_67dc9aeec6538">O&rsquo;Donnell 2006</a>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Meaning a sequence of notes in a given temperament.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Adding <i>n</i> to <i>t</i> does not change the value of 
+</a> <sub>
+<img border='0' src='amiot/fa.gif' align='baseline'></sub></a>(t).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The DFT is a continuous map: if |<sub><img border='0' src='amiot/fa.gif' align='baseline'></sub>(1)| 
+  > |<img border='0' src='amiot/fb.gif' align='baseline' width='22' height='14'>(1)| 
+  in equal temperament, the small modifications of arguments  
+<img border='0' src='amiot/A.gif' width='15' height='13'> and  
+<img border='0' src='amiot/B.gif' width='11' height='13'> 
+  resulting from nudging some notes away from their equal tempered position, will only slightly disturb the values 
+|<sub><img border='0' src='amiot/fa.gif' align='baseline'></sub>(1)|, |<img border='0' src='amiot/fb.gif' align='baseline' width='22' height='14'>(1)| and the inequality will still stand.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Obviously this appears as a mathematical feature, not a musical one. The fact that the major scale is Maximally Even is highly relevant to tonal functions. This is discussed in the literature on ME sets and the reader is invited to consult the references given in the bibliography.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Admittedly Bach does mention major and minor thirds on the front page, 
+<i>plus</i> tones and semi tones (see Figure 1), but he insists on the possibility of playing
+<i>all</i> these intervals in <i>all</i> 24 tonalities.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> In order to facilitate comparison.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Incidentally, it is also invariant under inversion (which amounts to reversing the lists), as the inverse of any major scale is also a major scale.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> I wonder whether this temperament ever had practical importance&#8212;who ever managed to tune a 196/139 interval by ear?<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Still I felt compelled to compute the mSS, the equivalent of MSS for harmonic minor scales, and rather strangely, it concurs with Table 1.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> &#8220;It may be of some interest that Johann Sebastian Bach in his manual on thorough bass (reprinted in Phillip Spitta&#8217;s biography of Bach as Appendix XII to Vol. VII) expressly states the identity of the minor mode with the Aeolian system&#8221; (p. 46, Heinrich Schenker [<i>Harmony</i>], Oswald Jonas, ed., Elisabeth Mann Borghese, trans. 1954, reprinted MIT Press 1973).<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Hearing the WTC in this tuning should be an interesting experience, considering it is so far the only competitor to LT 
+<i>for MSS</i>.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Whereas LT gives -2, -2, -2, -2, -2, 0, 0, 0, -1, -1, -1[, 0]. The unit chosen by Lehman is a twelfth of a 
+Pythagorean comma.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Transposition, in the musical sense, does not change the absolute value of the DFT.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> The DFT is turned into its conjugate. See
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec653d">Amiot 2007</a>.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> For instance, some Haussdorf distance between polygons up to isometric transformations.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> I want to thank Thomas Dent, a careful reader of an earlier version of my published paper in MTO 15.2,  for pointing out a numerical blunder that affected several values in Tables 1 and 2. They have been corrected as of October 11, 2009. Fortunately, the conclusion that the Major Scale Similarity of the temperament proposed by B. Lehman is greater than almost all previous temperaments is still valid. I certainly hope that musicologists will compute their own values for MSS, and that this approach becomes a standard tool for appreciating the quality of a temperament.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> It still stands in the most general case, following the framework of
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec653f">Amiot 2007</a>.<br><a href="#FN22REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Counterclockwise, i.e. decreasing the size of the fifth.</div><div id="fndiv2" class="flyoverdiv">Lehman uses one twelfth of a comma, which is indistinguishable in practice.</div><div id="fndiv3" class="flyoverdiv">For instance, many pages have been written about the quality of the single third E-G<a></a> in LT versus other ways of tuning; but the overall number of nice &#8220;tertiam minorem,&#8221; as Bach calls them, might also be considered of equal or greater importance than that of major thirds, or the size of whole tones, or any other plausible feature of a given temperament.</div><div id="fndiv4" class="flyoverdiv">In the rectified version, assuming the value 176/196 in the division of the monochord should be read as 175/196, as many have corrected.</div><div id="fndiv5" class="flyoverdiv">Occam&#8217;s razor? See
+<a href="#o&rsquo;donnell_2006" id="citation_o&rsquo;donnell_2006_67dc9aeec6538">O&rsquo;Donnell 2006</a>.</div><div id="fndiv6" class="flyoverdiv">Meaning a sequence of notes in a given temperament.</div><div id="fndiv7" class="flyoverdiv">Adding <i>n</i> to <i>t</i> does not change the value of 
+</a> 
+</a>(t).</div><div id="fndiv8" class="flyoverdiv">The DFT is a continuous map: if |(1)| 
+  > |(1)| 
+  in equal temperament, the small modifications of arguments  
+ and  
+ 
+  resulting from nudging some notes away from their equal tempered position, will only slightly disturb the values 
+|(1)|, |(1)| and the inequality will still stand.</div><div id="fndiv9" class="flyoverdiv">Obviously this appears as a mathematical feature, not a musical one. The fact that the major scale is Maximally Even is highly relevant to tonal functions. This is discussed in the literature on ME sets and the reader is invited to consult the references given in the bibliography.</div><div id="fndiv10" class="flyoverdiv">Admittedly Bach does mention major and minor thirds on the front page, 
+<i>plus</i> tones and semi tones (see Figure 1), but he insists on the possibility of playing
+<i>all</i> these intervals in <i>all</i> 24 tonalities.</div><div id="fndiv11" class="flyoverdiv">In order to facilitate comparison.</div><div id="fndiv12" class="flyoverdiv">Incidentally, it is also invariant under inversion (which amounts to reversing the lists), as the inverse of any major scale is also a major scale.</div><div id="fndiv13" class="flyoverdiv">I wonder whether this temperament ever had practical importance&#8212;who ever managed to tune a 196/139 interval by ear?</div><div id="fndiv14" class="flyoverdiv">Still I felt compelled to compute the mSS, the equivalent of MSS for harmonic minor scales, and rather strangely, it concurs with Table 1.</div><div id="fndiv15" class="flyoverdiv">&#8220;It may be of some interest that Johann Sebastian Bach in his manual on thorough bass (reprinted in Phillip Spitta&#8217;s biography of Bach as Appendix XII to Vol. VII) expressly states the identity of the minor mode with the Aeolian system&#8221; (p. 46, Heinrich Schenker [<i>Harmony</i>], Oswald Jonas, ed., Elisabeth Mann Borghese, trans. 1954, reprinted MIT Press 1973).</div><div id="fndiv16" class="flyoverdiv">Hearing the WTC in this tuning should be an interesting experience, considering it is so far the only competitor to LT 
+<i>for MSS</i>.</div><div id="fndiv17" class="flyoverdiv">Whereas LT gives -2, -2, -2, -2, -2, 0, 0, 0, -1, -1, -1[, 0]. The unit chosen by Lehman is a twelfth of a 
+Pythagorean comma.</div><div id="fndiv18" class="flyoverdiv">Transposition, in the musical sense, does not change the absolute value of the DFT.</div><div id="fndiv19" class="flyoverdiv">The DFT is turned into its conjugate. See
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec653d">Amiot 2007</a>.</div><div id="fndiv20" class="flyoverdiv">For instance, some Haussdorf distance between polygons up to isometric transformations.</div><div id="fndiv21" class="flyoverdiv">I want to thank Thomas Dent, a careful reader of an earlier version of my published paper in MTO 15.2,  for pointing out a numerical blunder that affected several values in Tables 1 and 2. They have been corrected as of October 11, 2009. Fortunately, the conclusion that the Major Scale Similarity of the temperament proposed by B. Lehman is greater than almost all previous temperaments is still valid. I certainly hope that musicologists will compute their own values for MSS, and that this approach becomes a standard tool for appreciating the quality of a temperament.</div><div id="fndiv22" class="flyoverdiv">It still stands in the most general case, following the framework of
+<a href="#amiot_2007" id="citation_amiot_2007_67dc9aeec653f">Amiot 2007</a>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2009 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Cara Stroud and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="4855601"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="113e09fb"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/4855601/0/113e09fb/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

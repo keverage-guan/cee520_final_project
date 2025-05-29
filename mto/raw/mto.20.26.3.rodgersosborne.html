@@ -1,0 +1,847 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 26.3: Rodgers, Prolongational Closure</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Prolongational Closure in the Lieder of Fanny Hensel">
+
+    <meta name="citation_author" content="Rodgers, Stephen">
+    <meta name="citation_author" content="Osborne, Tyler">
+    
+<meta name="citation_publication_date" content="2020/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="26">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+			
+	<h1 style="width:900px; margin-top:1em">Prolongational Closure in the Lieder of Fanny Hensel<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+
+	
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Stephen Rodgers</a> and 
+			<a style="color:black" href="#AUTHORNOTE2">Tyler Osborne</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: cadence, closure, prolongational closure, Fanny Hensel, Lieder, text-music relations, William Caplin</font></p><p><font size='4'>ABSTRACT: In this article we explore Fanny Hensel&rsquo;s songs that end without cadences but instead with what William Caplin (2018) calls &ldquo;prolongational closure.&rdquo; These songs, most of which come from the 1820s, are some of the earliest examples of piece-ending prolongational closure in the repertoire and thus offer important models for understanding how the technique was deployed by later composers. We propose three types of prolongational closure, drawn from a study of Hensel&rsquo;s works&mdash;<span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> fill, dominant substitution, and early pedal&mdash;and suggest that Hensel&rsquo;s fascination with non-cadential endings offers yet more evidence that she was one of the most inventive composers in the first half of the nineteenth century.</font></p><p><small>DOI: 10.30535/mto.26.3.8</small></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="https://mtosmt.org/issues/mto.20.26.3/mto.20.26.3.rodgers_osborne.pdf">PDF text </a> | <a href="https://mtosmt.org/issues/mto.20.26.3/rodgers_osborne_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received June 2019</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 26, Number 3, September 2020 <br> Copyright &#0169; 2020 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<blockquote>The rhetoric of nineteenth-century music in particular shows that the strategy by which a composer takes leave of his audience is of fundamental importance to the work&rsquo;s total effect. (<a href="#agawu_1987" id="citation_agawu_1987_67dc9972c4710">Agawu 1987</a>, 2)</blockquote>
+
+<blockquote>The weakening of closure in Romantic music is associated with the wistful yearning for transcendence, the hope that what appears to be fragmentary in the material world will turn out to be whole in the world of the spirit. (<a href="#ferris_2000" id="citation_ferris_2000_67dc9972c4713">Ferris 2000</a>, 121)</blockquote>
+
+<p>[1] These two passages speak to a special quality of early Romantic music that distinguishes it from Classical music: a different approach to &ldquo;taking leave&rdquo; (indeed, an elevation of leave-taking, so that the end of a work is crucial to its &ldquo;total effect&rdquo;); an interest in &ldquo;weakening&rdquo; moments of closure and thereby heightening our desire for a more complete resolution that seems to lie beyond the final bar line. That the earlier of these quotations comes from 1987 shows that none of this is breaking news: many musicians who have performed and studied the music to which these authors refer&mdash;Chopin and Robert Schumann&mdash;will no doubt have sensed that these composers tend to end things differently from their Classical forbears. But how exactly they do that has become a topic of intense interest in recent years. As scholars of the new <i>Formenlehre</i> have made a &ldquo;Romantic turn&rdquo; (<a href="#vande_moortele_2017" id="citation_vande_moortele_2017_67dc9972c4716">Vande Moortele 2017</a>, 1) and begun to ponder what typifies nineteenth-century formal practice in general, they have devoted increasing attention to determining what typifies nineteenth-century <i>closure</i> in particular.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+
+<p>[2] Foremost among these scholars is William Caplin. In a recent article, &ldquo;Beyond the Classical Cadence: Thematic Closure in Early Romantic Music&rdquo; (<a href="#caplin_2018" id="citation_caplin_2018_67dc9972c471d">2018</a>), he considers the &ldquo;fate&rdquo; of the Classical cadence in the hands of the first generation of Romantic composers and outlines seven stylistic characteristics that shape how closure happens in their music. One of the most striking of those characteristics is what Caplin calls &ldquo;prolongational closure,&rdquo; a term he uses to describe situations, rare to nonexistent in Classical music but increasingly common in Romantic music, where themes end not with <i>cadential</i> progressions but instead with <i>prolongational</i> ones (<a href="#caplin_2018" id="citation_caplin_2018_67dc9972c471f">2018</a>, 14&ndash;16).<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> A cadential progression confirms a tonality with an authentic cadence or a half cadence (which, for Caplin, must involve root-position dominants and tonics). A prolongational progression, by contrast, prolongs a harmony with some sort of subordinate harmony or harmonies; quite often this means embellishing a tonic chord with an inverted dominant, although there are other possibilities (<a href="#caplin_1998" id="citation_caplin_1998_67dc9972c4723">Caplin 1998</a>, 25&ndash;26). A note on terminology: the term &ldquo;prolongational&rdquo; of course brings to mind Schenkerian analysis&mdash;and indeed Caplin&rsquo;s concept of prolongational progressions relies to some extent on hierarchical thinking, in that the dominant harmony in, say, a I&ndash;V\(\substack{6\\5}\)&ndash;I prolongational progression is less structural than the tonics that surround it. Yet there is one key difference between Caplin&rsquo;s and Schenkerians&rsquo; use of the term &ldquo;prolongational&rdquo;: Caplin&rsquo;s prolongations are smaller in scale. His prolongational progressions span no more than a few measures, appearing most often at the beginning of a theme or perhaps in the middle of it; for this reason, phrases that close with cadences do not articulate prolongational progressions, in Caplin&rsquo;s sense, but the smaller phrase units that precede these cadences do. Cadential progressions and prolongational progressions, in other words, are mutually exclusive.</p>
+
+<p>[3] Prolongational <i>closure</i>, then, involves replacing a cadential progression with a prolongational one&mdash;or, in other words, ending a theme with a progression that &ldquo;should&rdquo; have appeared at the beginning or in the middle. In practical terms, this normally means preceding a tonic arrival with something other than a root-position V or V<sup>7</sup>: an inverted V chord, a leading-tone chord, or some other chord that is plainly not a root-position dominant. The theme closes with a tonic, but that tonic is only weakly articulated. We say &ldquo;The <i>theme</i> closes with a tonic&rdquo; rather than &ldquo;The <i>piece</i> closes with a tonic&rdquo; because, for Caplin, prolongational closure is a strategy that early Romantic composers deploy in the middles of their pieces, not at their ends. &ldquo;Unlike classical practice,&rdquo; he writes, &ldquo;prolongational closure in the [early] Romantic style may take place at the level of the simple <i>theme</i> (the eight-measure A section), but the final closure of broader formal units still requires an authentic cadence&rdquo; (<a href="#caplin_2018" id="citation_caplin_2018_67dc9972c473f">2018</a>, 16). Only in the later nineteenth century, Caplin notes, does prolongational closure begin to appear at the ends of pieces; in his forthcoming book <i>Cadence: A Study of Closure in Tonal Music</i>, he writes that whereas in early Romantic music, &ldquo;a passage concluded by a prolongational progression eventually yields to some final closure using a cadential progression, a complete thematic unit of a later nineteenth-century piece, even the final one of a work, may exclusively feature prolongational closure at its end&rdquo; (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972c4745">Forthcoming</a>, chap. 9).</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Hensel&rsquo;s Lieder that end with prolongational closure</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="rodgers_ex01_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[4] Fanny Hensel&rsquo;s music is something of an exception to this rule. Examples of piece-ending prolongational closure can be found throughout her oeuvre, but especially in her solo Lieder. A survey of her published and unpublished Lieder reveals several examples in which a song ends without any cadence whatsoever&mdash;that is, without a perfect authentic cadence, an imperfect authentic cadence, a half cadence, or even a plagal cadence.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> <b>Example 1</b> lists these songs, along with information about the type of prolongational closure they contain&mdash;of which more below. (The example indicates not only the catalogue number for each song and when each song was composed but also where each song can be found, especially since several have not been published.)<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> It&rsquo;s not just the fact that these pieces end with prolongational closure that makes them intriguing, however; it&rsquo;s the manner in which they do so, the specific techniques they employ to effect a non-cadential ending. This is where Hensel&rsquo;s prolongationally closed songs have a lot to teach us. They represent some of the earliest examples of piece-ending prolongational closure in the repertoire&mdash;most of these songs come from the 1820s&mdash;and thus offer important models for understanding how the technique was deployed by later composers. </p>
+
+<p>[5] This is the primary aim of our article: to propose three different types of prolongational closure, extracted from a study of Hensel&rsquo;s music. These are (1) <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span><i>-fill</i> prolongational closure, in which the bass line arrives on <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> and then, rather than resolve by leap to <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, fills the gap between <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> and <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> with a stepwise descent or ascent; (2) <i>dominant-substitution</i> prolongational closure, in which a root-position dominant is replaced by another chord at the moment of structural closure, so that an authentic cadence is undermined; and (3) <i>early-pedal</i> prolongational closure, in which an unexpected tonic pedal is inserted before the moment of structural closure, so that the chords that would otherwise articulate a cadential progression are functionally obscured. Our hope is that these types might prove valuable to those interested in exploring how other composers use the technique&mdash;not only because they give us new names for musical phenomena, but also because they help us to hear those phenomena in new ways. A secondary aim, more specific to Hensel, is to explore yet another facet of her innovative musical language. In recent years, as more of her work has been analyzed, the hallmarks of her musical aesthetic have become more apparent&mdash;and arguably the most striking is her inventive approach to harmony and tonality.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Her fascination with prolongational closure is only one aspect of that approach, but it offers yet more evidence of her originality, another plank in support of the argument that she was one of the most inventive composers in the first half of the nineteenth century.</p>
+
+<h2>Three Types of Prolongational Closure</h2>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill prolongational closure in Grieg, &ldquo;Ase&rsquo;s Death&rdquo;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="rodgers_ex02_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[6] Caplin doesn&rsquo;t outline different types of prolongational closure in his writings on the topic. That said, many of the examples of prolongational closure that he references are of the <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill type. <b>Example 2</b>, drawn from Caplin&rsquo;s forthcoming book <i>Cadence: A Study of Closure in Tonal Music</i>, provides a typical case&mdash;the opening theme of Grieg&rsquo;s &ldquo;Ase&rsquo;s Death,&rdquo; from the <i>Peer Gynt Suite No. 1</i>. The consequent phrase, writes Caplin, &ldquo;seems as though it were going to effect perfect authentic cadential closure, but after arriving on the cadential dominant in the middle of m. 7, pulls back down to bring a stepwise descent from <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> to <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, thus effecting prolongational closure for this period-like theme&rdquo; (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972c4801">Forthcoming</a>, chap. 9).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Grieg, &ldquo;Ase&rsquo;s Death,&rdquo; with analytic overlay</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="rodgers_ex03_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[7] Curiously, our survey of Hensel&rsquo;s Lieder reveals no <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill examples.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Instead, we find the two other types of prolongational closure: dominant substitution and early pedal.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> In these two types, unlike in the <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill type, the bass line never engages with <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> as the bass note of a dominant harmony.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> It&rsquo;s not that a structural dominant arrives and is connected, with a stepwise thread, to a structural tonic, but rather that no structural dominant arrives at all.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> In this sense, dominant-substitution and early-pedal prolongational closure might be viewed as even more removed from Classical cadential norms, which privilege the polarity of I and V, than <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill prolongational closure. Indeed, from a Schenkerian perspective, the consequent phrase of &ldquo;Ase&rsquo;s Death&rdquo; could well be analyzed as articulating rather than avoiding an authentic cadence, as our analytic overlay in <b>Example 3</b> suggests: a normative cadential bass line is &ldquo;there,&rdquo; one might say; it is just embellished by linear motion at the foreground.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Hensel, &ldquo;&Uuml;ber allen Gipfeln ist Ruh,&rdquo; ending</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="rodgers_ex04_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[8] By contrast, consider the final phrase of Hensel&rsquo;s song &ldquo;&Uuml;ber allen Gipfeln ist Ruh&rdquo; (1835) (<b>Example 4</b>). The bass line descends from E3 to E2, and thus of course passes through <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>, but this <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> supports not a dominant but a <i>secondary</i> dominant, a passing chord between two iv chords. The only way to make this passage conform to a typical Schenkerian cadential bass line is to imply a B in m. 34. Hence the idea of substitution: rather than stating a structural dominant and prolonging it, as Grieg does, Hensel avoids a structural dominant and swaps it with something else (in this case a sonority containing <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, A, and E, which could be labeled as a ii<sup>7</sup> chord despite its clear dominant function).<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup></p>
+
+<p>[9] <b>Example 5</b> shows, in abstract form, how dominant-substitution prolongational closure tends to happen. A normative I&ndash;ii<sup>6</sup>&ndash;V<sup>7</sup>&ndash;I progression (<b>Example 5a</b>) is modified (<b>Example 5b</b>) so that vii<sup>o</sup>\(\substack{4\\3}\) substitutes for V<sup>7</sup>. (The progression vii<sup>o</sup>\(\substack{4\\3}\)&ndash;I could of course be described as quasi-plagal, since the bass goes <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>. Yet we have found it useful to distinguish this kind of prolongational progression&mdash;which projects a hint of dominant function, with the presence of <span style='font-size:0.8em'><math><mover><mn>2</mn><mo>&#710;</mo></mover></math></span> and <span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span>&mdash;from the more &ldquo;purely&rdquo; plagal progression IV&ndash;I.)<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> In <b>Example 6</b> we provide another realization of dominant-substitution prolongational closure. <b>Example 6a</b> shows a I&ndash;vi&ndash;IV&ndash;V<sup>7</sup>&ndash;I progression over a largely descending bass line, and <b>Example 6b</b> shows the same progression with V\(\substack{4\\3}\) substituted for V<sup>7</sup>, thus continuing the bass descent. (This abstract progression bears some resemblance to the actual progression in &ldquo;&Uuml;ber allen Gipfeln ist Ruh&rdquo;; note that here, too, <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> in the bass does not support a structural dominant harmony, as it does in the <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill examples.)</p>
+
+ <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Dominant-substitution prolongational closure<br><br></p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="rodgers_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="rodgers_ex05_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Another realization of dominant-substitution prolongational closure</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="rodgers_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="rodgers_ex06_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Early-pedal prolongational closure</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="rodgers_ex07_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[10] <b>Example 7</b> shows a progression involving early-pedal prolongational closure. In <b>Example 7a</b> a normative progression begins with a tonic expansion, passes through ii<sup>6</sup>, and then ends with a V<sup>7</sup>&ndash;I cadence. In <b>Example 7b</b> the upper three voices are unchanged, but the bass&rsquo;s G arrives on the downbeat of the second measure and persists through the excerpt&rsquo;s final cadence. In this type of prolongational closure a root-position dominant is not so much avoided (as in the dominant-substitution type) as obscured: a tonic pedal muddies an otherwise clear structural dominant harmony.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> Caplin has written that pedal points are the &ldquo;most perceptually forceful way of prolonging a harmony&rdquo; (<a href="#caplin_1998" id="citation_caplin_1998_67dc9972c4865">1998</a>, 25). The paradox of early-pedal prolongational closure is that this forceful progression does not follow a forceful cadence: a progression that &ldquo;should&rdquo; fall <i>after</i> the end of a theme instead falls at the <i>end</i> of a theme.</p>
+
+<p>[11] Playing through Examples 5, 6, and 7, one cannot help but notice that the differences between the left and right progressions are slight: an altered bass pitch here, an added chromatic pitch there; an early arrival on <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> here, a more linear bass line there. But the effects of these slight differences are profound, and the main effect is to significantly weaken the syntactical strength of these moments of musical closure. In the context of actual songs, this effect can be particularly powerful, leaving one with the palpable feeling that final cadences (and the feelings associated with them&mdash;relief, reunion, rest, and so on) lie just beyond one&rsquo;s grasp. The four analyses below aim to demonstrate as much. In keeping with Examples 5, 6, and 7, which show how moments of prolongational closure deviate from normative cadential models, our analytical approach often involves creating recompositions of Hensel&rsquo;s songs, hypothetical versions that provide cadences where her actual songs do not. Comparing the hypothetical and the actual, the cadential and the non-cadential, vividly shows how Hensel avoids obvious routes in favor of more adventurous harmonic journeys.</p>
+
+<h2>&ldquo;An die Entfernte&rdquo; (1823): Dominant Substitution</h2>
+<p>[12] The poetic speaker of Goethe&rsquo;s &ldquo;An die Entfernte&rdquo; (To the Distant Beloved) cannot fathom that he has lost his beloved, in part because his mind persists in conjuring memories of her in words and in tones. Yet no matter how much he searches for her, and cries out for her in song, he cannot bring her back.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<table style="margin-left:50px">
+	<tr>
+		<td>So hab&rsquo; ich wirklich dich verloren?</td>
+		<td>Have I really lost you?</td>
+	</tr>
+	<tr>
+		<td>Bist du, o Sch&ouml;ne, mir entflohn?</td>
+		<td>Have you fled from me, fairest love?</td>
+	</tr>
+	<tr>
+		<td>Noch klingt in den gewohnten Ohren</td>
+		<td>Every word, every tone</td>
+	</tr>
+	<tr>
+		<td>Ein jedes Wort, ein jeder Ton.</td>
+		<td>Still sounds in my well-accustomed ears.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>So wie des Wandrers Blick am Morgen</td>
+		<td>As in the morning the traveler&rsquo;s gaze</td>
+	</tr>
+	<tr>
+		<td>Vergebens in die L&uuml;fte dringt,</td>
+		<td>Searches the heavens in vain</td>
+	</tr>
+	<tr>
+		<td>Wenn, in dem blauen Raum verborgen,</td>
+		<td>When, concealed in the blue firmament,</td>
+	</tr>
+	<tr>
+		<td>Hoch &uuml;ber ihm die Lerche singt:</td>
+		<td>The lark sings high above him:</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>So dringet &auml;ngstlich hin und wieder</td>
+		<td>So my gaze searches anxiously back and forth</td>
+	</tr>
+	<tr>
+		<td>Durch Feld und Busch und Wald mein Blick;</td>
+		<td>Through field, thicket and woodland;</td>
+	</tr>
+	<tr>
+		<td>Dich rufen alle meine Lieder:</td>
+		<td>All my songs call out to you:</td>
+	</tr>
+	<tr>
+		<td>&bdquo;O komm, Geliebte, mir zur&uuml;ck!&rdquo;</td>
+		<td>&ldquo;Come back to me, beloved!&rdquo;<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></td>
+	</tr>
+</table>
+
+<p>[13] Hensel&rsquo;s setting of Goethe&rsquo;s poem has never been published, but like many of her other unpublished songs, it is available in manuscript form via the digital collection of the Staatsbibliothek zu Berlin (<a href='https://digital-beta.staatsbibliothek-berlin.de/'>https://digital-beta.staatsbibliothek-berlin.de/</a>). The song is in simple strophic form. This in itself carries expressive connotations, since the repetitive form underlines the persistence of the protagonist&rsquo;s efforts to search for his beloved, as well as the relentlessness of the words and tones that only remind him of her absence. Still, as appropriate as the overall strophic form may be to the poetic scenario, it&rsquo;s what happens <i>within</i> each strophe that shows Hensel&rsquo;s special sensitivity to the emotional nuances of the text. She heightens the poem&rsquo;s sense of uncertainty and disorientation by evading expected moments of closure, and she does this not just at the end of the strophes but throughout them.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Hensel, &ldquo;An die Entfernte,&rdquo; opening strophe recomposed</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="rodgers_ex08_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p> <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Hensel, &ldquo;An die Entfernte,&rdquo; opening strophe as written</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="rodgers_ex09_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+
+<p>[14] The easiest way to see how she does this is to compare what she <i>actually</i> does with what she <i>might</i> have done. <b>Example 8</b> shows a recomposition of the opening strophe, which retains Hensel&rsquo;s melodies and rhythms but changes some of her harmonies so as to provide moments of clear closure where she avoids them. <b>Example 9</b>&mdash;the opening strophe as Hensel actually composed it&mdash;sounds more uneasy than our hypothetical version, in large part because Hensel avoids expected harmonic resolutions. (Though the song has not been published, it has been recorded. For an excellent performance by Tobias Berndt and Alexander Fleischer, see <a href="#hensel_2015" id="citation_hensel_2015_67dc9972c4892">Hensel 2015</a>. A YouTube version can be found at <a href='https://www.youtube.com/watch?v=eDqr5l8RX4w'>https://www.youtube.com/watch?v=eDqr5l8RX4w</a>.) Measure 3 leads not to an E-minor tonic (as in our recomposed version) but to a C-major chord. The same is true of m. 6, only now in the context of A minor: the E<sup>7</sup> chord of m. 5 resolves not to A minor but to F major. These deceptive resolutions sound like the musical equivalents of the questions at the end of the first two lines (&ldquo;Have I really lost you? / Have you fled from me, fairest love?&rdquo;). The deceptive move to an F-major chord in m. 6 initiates a long stepwise ascent in the bass (shown with the arrow in Example 9), which leads all the way to C on the downbeat of m. 10&mdash;a chromatic climb that ratchets up the tension. This lower-voice ascent is matched by an upper-voice ascent, as the vocal melody moves in parallel tenths with the bass. One imagines the protagonist&rsquo;s heart racing faster, his pain and panic increasing with each rising step.</p>
+
+<p>[15] All this upward motion is what makes the two other differences between Examples 8 and 9&mdash;the Neapolitan on the downbeat of the penultimate measure and the vii<sup>o</sup>\(\substack{4\\3}\)&ndash;i prolongational progression that follows it, in which a leading-tone chord substitutes for a root-position dominant&mdash;so startling. The bass line&rsquo;s leap <i>downward</i> to G at the end of m. 10 and, even more, the vocal melody&rsquo;s sagging motion to <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> on the downbeat of the next measure signal a waning of energy, a moment of exhaustion&mdash;which the final bass notes and harmonies only reinforce. The bass G rises to A on the downbeat of m. 11, supporting the Neapolitan, but by that point, addled by the constant ringing in his ears, the protagonist&rsquo;s energy is all but depleted; the bass A cannot find the strength to rise (as it &ldquo;should&rdquo;) to B and so instead stays where it is, before falling wearily to the tonic. </p>
+
+<p>[16] This moment of closure is key to Hensel&rsquo;s interpretation of the poem and her characterization of its speaker. It suggests that the protagonist&rsquo;s pain, and his memories of his beloved encapsulated in the words and tones that he hears, will continue unceasingly&mdash;that he will remain in an unresolved state, just as the song does. Yet just as important as the presence of this non-cadential ending is the specific manner in which Hensel realizes it. Another composer might have set the last lines of the opening stanza in such a way as to suggest that they induce a kind of mania, or feverish agitation. But Hensel reads the poem differently: her protagonist experiences not frenzy but fatigue, not mania but listlessness. </p>
+
+<h2>&ldquo;Der Sprosser&rdquo; (1826): Early Pedal</h2>
+<p>[17] &ldquo;Der Sprosser&rdquo; (The Thrush Nightingale) is also a song about pain, but in this case it is a pain brought about not by a longing for an actual beloved but instead by a desire for a nonexistent one, and the pain is a little more on the surface. Indeed, one of the main points we will make is that by inserting early tonic pedals where one doesn&rsquo;t expect them, Hensel creates dissonant sonorities that are musical signs of the pain the protagonist feels.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup></p>
+
+<p>[18] The poetic speaker encounters a nightingale that sings a sad song, yearning for its beloved. He feels a connection with the bird, for he too yearns for someone, and he too sings a sad song&mdash;but, as he says, &ldquo;no sweet bride hears it&rdquo;: he feels love in his heart, but he has no one to share it with. At the end of the poem the nightingale is reunited with its beloved, but the protagonist remains alone.</p>
+
+<table style="margin-left:50px">
+	<tr>
+		<td>Was zieht mit leis&rsquo; verklung&rsquo;nem Beben[,]<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup></td>
+		<td>What moves with softly fading trembling</td>
+	</tr>
+	<tr>
+		<td>Was weht mit weichem Fl&ouml;tenton</td>
+		<td>What wafts with soft flute-like tones</td>
+	</tr>
+	<tr>
+		<td>Als wollt&rsquo; es auf zum Himmel schweben,</td>
+		<td>As if it would float to heaven,</td>
+	</tr>
+	<tr>
+		<td>Als tr&uuml;gen Engel es davon?</td>
+		<td>As if angels bore it hence?</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Das sind des Sprossers Liebesklagen,</td>
+		<td>Those are the plaints of the thrush nightingale,</td>
+	</tr>
+	<tr>
+		<td>Es &uuml;berstr&ouml;mt das kleine Herz[;]</td>
+		<td>His little heart overflows;</td>
+	</tr>
+	<tr>
+		<td>Er hat nicht Worte es zu sagen,</td>
+		<td>He has no words to utter it,</td>
+	</tr>
+	<tr>
+		<td>In T&ouml;nen spricht sein tiefer Schmerz.</td>
+		<td>His deep pain speaks through tones.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Ich habe[,] Armer[,] dich verstanden,</td>
+		<td>Poor thing, I have understood you;</td>
+	</tr>
+	<tr>
+		<td>Dem Liebchen galt der Sehnsucht laut.</td>
+		<td>The sound of your yearning is directed at your beloved.</td>
+	</tr>
+	<tr>
+		<td>Auch meiner zieht nach fernen Landen[,]</td>
+		<td>Mine, too, travels to distant lands,</td>
+	</tr>
+	<tr>
+		<td>Doch h&ouml;rt ihn keine s&uuml;&szlig;e Braut.</td>
+		<td>But no sweet bride hears it.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Doch horch! was jauchzt da in den Bl&auml;ttern[,]</td>
+		<td>But hark! what rejoices there in the foliage,</td>
+	</tr>
+	<tr>
+		<td>Was jubelt da aus voller Brust?</td>
+		<td>What exults out of an overfull breast?</td>
+	</tr>
+	<tr>
+		<td>U[nd] t&ouml;nt mit immer hellerm Schmettern</td>
+		<td>And resounds with ever brighter blaring</td>
+	</tr>
+	<tr>
+		<td>In nie empfundner sel&rsquo;ger Lust?</td>
+		<td>In never yet experienced beatific joy?</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Das sind des Sprossers Jubellieder[;]</td>
+		<td>Those are the thrush nightingale&rsquo;s songs of exultation;</td>
+	</tr>
+	<tr>
+		<td>Es &uuml;berstr&ouml;mt das kleine Herz[,]</td>
+		<td>The little heart overflows.</td>
+	</tr>
+	<tr>
+		<td>Es hallt die Lust in T&ouml;nen wieder,</td>
+		<td>Joy resounds in tones;</td>
+	</tr>
+	<tr>
+		<td>Sie ziehen dankend himmelw&auml;rts[.]</td>
+		<td>They ascend gratefully toward heaven.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Du hast dein Liebchen nun gefunden,</td>
+		<td>You have now found your beloved;</td>
+	</tr>
+	<tr>
+		<td>Sie h&ouml;rte[,] holder S&auml;nger[,] dich,</td>
+		<td>Fair singer, she heard you.</td>
+	</tr>
+	<tr>
+		<td>Ihr jubelt beide nun verbunden,</td>
+		<td>Now both of you rejoice united,</td>
+	</tr>
+	<tr>
+		<td>Und ich, ich weine still f&uuml;r mich.</td>
+		<td>And I, I weep quietly alone.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup></td>
+	</tr>
+</table>
+
+<p>[19] Like &ldquo;An die Entfernte,&rdquo; &ldquo;Der Sprosser&rdquo; has never been published. Unlike &ldquo;An die Entfernte,&rdquo; it has also never been recorded; one hopes that performers will take the opportunity to share this wonderful song with the world. &ldquo;Der Sprosser&rdquo; is in ABA'B' form: section A comprises the first two stanzas of the poem, section B the third stanza, section A' the fourth and fifth stanzas, and section B' the sixth stanza. There are three moments of prolongational closure in the song: the end of section A (on the text &ldquo;In T&ouml;nen spricht sein tiefer Schmerz&rdquo; [His deep pain speaks through tones]), the comparable end of A' (on &ldquo;Sie ziehen dankend himmelw&auml;rts&rdquo; [They ascend gratefully toward heaven]), and the end of B' (on &ldquo;Und ich, ich weine still f&uuml;r mich&rdquo; [And I, I weep quietly alone]). Only section B ends with a proper cadence: a PAC in the tonic C major. The end of the song thus sounds like a distorted version of the end of B&mdash;a cadence gone awry, a passage left open-ended.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Hensel, &ldquo;Der Sprosser,&rdquo; section A</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="rodgers_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[20] The A section, shown in <b>Example 10</b>, is a sixteen-bar period with an eight-bar antecedent that leads to a HC and an eight-bar consequent that does <i>not</i> lead to a PAC, not even to an IAC, but instead to a moment of prolongational closure. Here, as is the case in all three of the song&rsquo;s prolongational endings, the non-cadential close is the result of a persistent pedal tone: Hensel arrives on a minor i chord in m. 15 but instead of moving the bass to <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span> in m. 16 (when the chord shifts to F minor) and to <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> in m. 17 (when the dominant approaches) she sticks on <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, refusing to relinquish it.</p>
+
+<p>[21] What is the expressive effect of arriving on <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> and not letting it go? First, the repeated bass Cs (with the same pitch sounding eleven times in a row from mm. 15&ndash;18) are like the tones that speak the nightingale&rsquo;s (and by extension, the protagonist&rsquo;s) sorrow; the resonant, insistent low Cs are like pulsations of pain. Second, because the C persists, the sonorities at the end of the section are particularly dissonant, and the penultimate sonority in this passage (a B fully diminished-seventh chord over a clashing C) becomes a recurring sound in the song&mdash;we would go so far as to call it the song&rsquo;s &ldquo;pain chord.&rdquo; Its chromatic pitch, <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, is also a recurring element, a &ldquo;promissory note&rdquo; that appears first as the enharmonic equivalent <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in m. 2, then as <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> a measure later, and again as <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> at the end of m. 5.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> If the chord is a jolt of pain, the pitch is a pinprick, a premonition of what is to come.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Hensel, &ldquo;Der Sprosser,&rdquo; section B</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="rodgers_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p> <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. Hensel, &ldquo;Der Sprosser,&rdquo; section B&apos;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=11&nonav=true"><img border="1" alt="Example 12 thumbnail" src="rodgers_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[22] <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> returns in the next section of the song (section B, shown in <b>Example 11</b>), appearing as the highest note thus far, atop the melisma in m. 28, on the word &ldquo;s&uuml;&szlig;e&rdquo; (sweet). But it is not accompanied by the so-called &ldquo;pain chord&rdquo;: this section ends with a clear PAC&mdash;and, in fact, the only authentic cadence in the song.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> The presence of cadential closure at the end of B makes the absence of cadential closure at the end of B' all the more arresting. At first, section B' (<b>Example 12</b>) retraces B&rsquo;s steps fairly faithfully: the section likewise starts by tonicizing F minor (iv), with only a slightly modified melody, and thereafter moves to a ii<sup>&oslash;</sup>\(\substack{6\\5}\) and a secondary dominant of V (compare mm. 24&ndash;25 of Example 11, which go ii<sup>&oslash;</sup>\(\substack{6\\5}\)&ndash;V\(\substack{6\\5}\)/V, with mm. 54&ndash;55 of Example 12, which go ii<sup>&oslash;</sup>\(\substack{6\\5}\)&ndash;vii<sup>o</sup>\(\substack{6\\5})/V\). But here is where things go astray. Instead of leading to a structural dominant in m. 56, as she had in m. 26, Hensel leads to a tonic. This is the tonic pedal that intrudes where one would expect <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> in the bass. And once the tonic pitch arrives, it stays. As was the case at the end of the A section, C continues beneath a series of shifting harmonies&mdash;including two instances of the characteristic &ldquo;pain chord&rdquo;&mdash;and beneath an even more elaborate melisma on &ldquo;weine&rdquo; (weep), which culminates, appropriately enough, in a high <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. Here again, the pulsating Cs are the sonic equivalent of the pain that the protagonist cannot escape, the immutable fact that instead of singing to a partner, he can only cry to himself.</p>
+
+<h2>&ldquo;Fichtenbaum und Palme&rdquo; (1838): Early Pedal with Tonal Pairing</h2>
+<p>[23] Like &ldquo;Der Sprosser,&rdquo; &ldquo;Fichtenbaum und Palme&rdquo; (The Spruce Tree and the Palm Tree) also ends with early-pedal prolongational closure. (This song has been published and recorded. See <a href="#hensel_1993" id="citation_hensel_1993_67dc9972c4903">Hensel 1993</a>, vol. 2 for a copy of the entire score. For a lovely recording by Christina H&ouml;gman and Roland P&ouml;ntinen, see <a href="#h&ouml;gman_&_p&ouml;ntinen_1996" id="citation_h&ouml;gman_&_p&ouml;ntinen_1996_67dc9972c4909">H&ouml;gman & P&ouml;ntinen 1996</a>. A YouTube version can be found at <a href='https://www.youtube.com/watch?v=D9Qbep6U1Aw'>https://www.youtube.com/watch?v=D9Qbep6U1Aw</a>.) The difference is that the close of this song is not just harmonically open-ended, in that it avoids cadential closure, but also tonally open-ended, in that it ends with a tonic triad that sounds in part like a dominant of the subdominant. In an article from a collection of essays on Hensel&rsquo;s songs, Tyler Osborne (<a href="#osborne_2021" id="citation_osborne_2021_67dc9972c490d">2021</a>) explores Hensel&rsquo;s use of tonic/subdominant &ldquo;tonal pairing,&rdquo; focusing on her songs &ldquo;Die &Auml;olsharfe auf dem Schlosse zu Baden&rdquo; (1826) and &ldquo;Vorwurf&rdquo; (1846). &ldquo;Fichtenbaum und Palme&rdquo; is another song in which the subdominant challenges the supremacy of the tonic&mdash;so much so, in fact, that the final tonic sounds in part like the dominant of the subdominant, suspended between two different tonal functions. The song&rsquo;s &ldquo;weak&rdquo; prolongational ending enhances this feeling of suspension, making the ending of the song sound even more unsettled.</p>
+
+<p>[24] Heine&rsquo;s poem is about a spruce tree that longs for a new home in warmer lands inhabited by palm trees. The first stanza describes the spruce, standing atop a mountain and sleeping under a blanket of snow. The second stanza describes the spruce&rsquo;s dream: it longs to trade places with the palm tree that lives in a warmer climate. Yet in the last two lines (a typically Heine-esque <i>Stimmungsbruch</i>, or &ldquo;break of mood&rdquo;) one learns that the palm is no happier than the spruce.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup></p>
+
+<table style="margin-left:50px">
+	<tr>
+		<td>Ein Fichtenbaum steht einsam,</td>
+		<td>A spruce tree stands lonely,</td>
+	</tr>
+	<tr>
+		<td>Im Norden auf kahler H&ouml;h&rsquo;;</td>
+		<td>In the north, on a naked height.</td>
+	</tr>
+	<tr>
+		<td>Ihn schl&auml;fert; mit wei&szlig;er Decke</td>
+		<td>And drowses; a white blanket</td>
+	</tr>
+	<tr>
+		<td>Umh&uuml;llen ihn Eis und Schnee.</td>
+		<td>Enshrouds it in ice and snow.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Er tr&auml;umt von einer Palme,</td>
+		<td>It dreams of a palm tree,</td>
+	</tr>
+	<tr>
+		<td>Die, fern im Morgenland,</td>
+		<td>Which, far away in the east,</td>
+	</tr>
+	<tr>
+		<td>Einsam und schweigend trauert</td>
+		<td>Grieves lonely and silent</td>
+	</tr>
+	<tr>
+		<td>Auf brennender Felsenwand.</td>
+		<td>On a blazing wall of rock.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup></td>
+	</tr>
+</table>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b>. Hensel, &ldquo;Fichtenbaum und Palme,&rdquo; section A</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=12&nonav=true"><img border="1" alt="Example 13 thumbnail" src="rodgers_ex13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[25] Hensel sets the poem in two contrasting sections (AB) followed by a return that combines elements of both (C).<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> Section A, shown in <b>Example 13</b>, corresponds with the first stanza, section B with the second stanza, and section C with a repetition of the second stanza. The A section evokes the stationary, solitary spruce tree with a persistent tonic pedal. As the spruce drifts off to sleep, the song moves to the submediant key (beginning at m. 4), hinting at the tree&rsquo;s discontent. This key is more implied than fully realized, however, since Hensel pointedly evades a C-minor authentic cadence in mm. 6&ndash;7, as the bass slides down to <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. Yet the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-major tonic is just as insecure. In fact, the A section closes not with an authentic cadence in the home key but with a plagal cadence (mm. 8&ndash;9), foreshadowing the tonal pairing that will emerge more prominently later in the song. The lack of authentic cadential closure in any key robs the music of a sense of goal-directedness; like the spruce tree that is rooted to one spot, unable to do anything but dream of warmer lands, the music is rooted to the tonic, unable to create any real sense of tonal motion.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 14</b>. Hensel, &ldquo;Fichtenbaum und Palme,&rdquo; section B</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=13&nonav=true"><img border="1" alt="Example 14 thumbnail" src="rodgers_ex14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p> <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 15</b>. Hensel, &ldquo;Fichtenbaum und Palme,&rdquo; end of section B recomposed</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=14&nonav=true"><img border="1" alt="Example 15 thumbnail" src="rodgers_ex15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[26] As an image of the palm tree emerges, Hensel also places this tree in its own unique musical landscape: in the distant key of B major (enharmonically, <nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>VI), in a higher register of the piano, and with a much more active accompaniment. (See <b>Example 14</b>.) Still, despite the distance between the spruce&rsquo;s and palm&rsquo;s tonal regions, those regions are handled similarly: neither is secured with an authentic cadence. Section B ends with vii<sup>o</sup>\(\substack{4\\3}\)&ndash;I in B major (mm. 27&ndash;28), using the same kind of dominant-substitution prolongational closure that &ldquo;An die Entfernte&rdquo; does. The vii<sup>o</sup>\(\substack{4\\3}\)&ndash;I progression could have been written as a V<sup>7</sup>&ndash;I progression, leading to a PAC. A recomposition (<b>Example 15</b>) shows how the passage would sound if it ended with an authentic cadence. Hensel&rsquo;s actual version harks back to the <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> bass motion that ended section A; indeed, because of the tonicization of E minor in m. 26&ndash;27, the B-major chord at the end of this section, like the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-major chord at the end of the previous section, sounds at once like a tonic and a dominant of the subdominant. For both of these reasons&mdash;the lack of cadential closure and the weakening of the B-major tonic due to tonal pairing&mdash;the A and B sections are more similar than they first seem. Not only the poem but also the music suggests that the trees are not so different after all.</p>
+
+<p>[27] After this, Hensel repeats Heine&rsquo;s second stanza, setting it to musical material that blends aspects of the previous two sections (<b>Example 16</b>). Motives reminiscent of the spruce&rsquo;s environment return to the piano, while the vocal melody reflects the palm&rsquo;s active lines. In contrast with the other sections, section C does not establish a tonic from the start; instead, a third tonal pairing treads the line between the tonic and the subdominant. An <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> pedal returns in the piano&rsquo;s right hand, but <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> minor is even more prevalent than it was in the A section. In mm. 30&ndash;31, the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> pedal descends from the right to the left hand, where it will remain until the end. This is the early tonic pedal that creates a moment of prolongational rather than cadential closure. Following the iv&ndash;I bass motion in m. 30, <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> sounds beneath the remaining harmonies, which outline a pre-dominant&ndash;dominant&ndash;tonic progression: V<sup><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>9</sup>/iv&ndash;iv&ndash;vii<sup>o</sup>7&ndash;I.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> Again, it need not have been this way. <b>Example 17</b> recomposes the ending of the song, so that it concludes with a more conventional PAC; essentially, this means writing a more functional bass line that clearly projects the underlying functional progression, and turning m. 31 from a vii<sup>o7</sup> (over an <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> pedal) into a V<sup>7</sup>.</p>
+
+ <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 16</b>. Hensel, &ldquo;Fichtenbaum und Palme,&rdquo; section C</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="rodgers_examples.php?id=15&nonav=true"><img border="1" alt="Example 16 thumbnail" src="rodgers_ex16_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 17</b>. Hensel, &ldquo;Fichtenbaum und Palme,&rdquo; end of section C recomposed</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="rodgers_examples.php?id=16&nonav=true"><img border="1" alt="Example 17 thumbnail" src="rodgers_ex17_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td></tr></table>
+<p>[28] Why does Hensel repeat the second stanza, with its depiction of the pine tree, and recast it as an amalgamation of the A and B sections, with a tonic pedal that persists to the very end? One way of answering this question is to consider how the final moment of prolongational closure relates to the song&rsquo;s previous moments of closure, and also to the <i>Stimmungsbruch</i> of Heine&rsquo;s final couplet. Recall that a plagal cadence concludes section A, which depicts the spruce&rsquo;s musical landscape. Although the tonic/subdominant tonal pairing weakens this cadence&rsquo;s sense of finality, the close is still cadential. As the song shifts to the warmer lands of the pine tree (section B), Hensel further weakens the section&rsquo;s moment of closure: glimmers of section A&rsquo;s plagal cadence remain, with the <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> bass motion, yet a vii<sup>o</sup>\(\substack{4\\3}\) appears instead of a iv chord. The tonic/subdominant tonal pairing in this section of course introduces additional ambiguity. In short, in the first two sections of the song, the tonal pairing gradually creeps in, just as the close of these sections is gradually weakened. By contrast, section C is immediately overtaken by tonal pairing, and leads to the most ambiguous moment of closure in the song: a prolongational progression over a static pedal point, which seems at once to express tonic and dominant function.</p>
+
+<p>[29] Hensel challenges cadential closure in each of these sections and in so doing captures the dissatisfaction of the spruce and the palm, which, like the music, cannot find rest. Yet the real marvel of her song is that these undermined cadences create an expressive trajectory, an ever-more-palpable weakening not just of cadential articulation but of tonal identity. The result is a sort of musical <i>Stimmungsbruch</i>&mdash;a breaking not just of mood but also of closure and key&mdash;that matches and amplifies the one in Heine&rsquo;s poem. The greatest irony, perhaps, is that section C&rsquo;s anticipated cadence is undermined by the tonic pitch: just as the spruce tree wakes from its dream still on the frigid mountainside, so does the piece end where it began, rooted to the spot but without a true resolution.</p>
+
+<h2>&ldquo;Marias Klage&rdquo; (1826): An Ambiguous Case</h2>
+<p>[30] In proposing three types of prolongational closure our aim has not been merely to provide different ways of labeling non-cadential endings but to invite different ways of hearing those endings. The three types are best seen as possible descriptors, not rigid categories that pieces are either &ldquo;in&rdquo; or &ldquo;not in.&rdquo; It stands to reason, therefore, that some pieces might be amenable to more than one description; some prolongational endings may seem to flirt with two different types, leaving themselves open to different, even contradictory, interpretations. We close by analyzing just such a song (and yet another unpublished and unrecorded one): &ldquo;Marias Klage&rdquo; (Maria&rsquo;s Lament).<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup></p>
+
+<p>[31] Similar to Goethe&rsquo;s &ldquo;An die Entfernte,&rdquo; Johann Heinrich  Vo&szlig;&rsquo;s &ldquo;Marias Klage&rdquo; is a first-person narrative in which the poetic speaker (here clearly a woman) struggles to accept the loss of her lover. The newlywed woman&rsquo;s husband has been lost at sea; he receives no ceremony, no last respects, and no proper burial. The widow&rsquo;s unbearable grief consumes her, until death beckons her away during the night so that she can be reunited with her beloved.</p>
+
+<table style="margin-left:50px">
+	<tr>
+		<td>Flie&szlig;t, o Thr&auml;nen, netzt den Schleier,</td>
+		<td>Flow, o tears, moisten the veil,</td>
+	</tr>
+	<tr>
+		<td>Flie&szlig;t aufs Brautgeschenk hinab,</td>
+		<td>Flow down upon the bridal gift,</td>
+	</tr>
+	<tr>
+		<td>Das beim Abschied j&uuml;ngst mein Treuer</td>
+		<td>That upon parting my love recently gave me</td>
+	</tr>
+	<tr>
+		<td>Mir mit Ku&szlig; und Thr&auml;nen gab!</td>
+		<td>With kisses and tears!</td>
+	</tr>
+	<tr>
+		<td>Wiederkehr und Hochzeitsfeier,</td>
+		<td>Your return and the wedding ceremony,</td>
+	</tr>
+	<tr>
+		<td>J&uuml;ngling, schwand mit dir ins Grab!</td>
+		<td>Young one, disappeared with you into the grave!</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Nein, versenkt im w&uuml;sten Meere,</td>
+		<td>No, sunk in the wild seas,</td>
+	</tr>
+	<tr>
+		<td>Wogt dein Lieb um Klipp&rsquo; und Bank,</td>
+		<td>Your love surges around cliffs and banks,</td>
+	</tr>
+	<tr>
+		<td>Unbestattet, ohne Z&auml;hre,</td>
+		<td>Unburied, without tears,</td>
+	</tr>
+	<tr>
+		<td>Ohne Lied und Glockenklang;</td>
+		<td>Without song and tolling bells;</td>
+	</tr>
+	<tr>
+		<td>Traurig dir zur lezten Ehre</td>
+		<td>To pay you last respects</td>
+	</tr>
+	<tr>
+		<td>Scholl des Meers und Sturms Gesang.</td>
+		<td>The sea and storm&rsquo;s song will resound sadly.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Jetzt am fernen Strande klaget</td>
+		<td>Now, here on a distant shore</td>
+	</tr>
+	<tr>
+		<td>Dich dein armes M&auml;dchen hier;</td>
+		<td>Your poor girl mourns you;</td>
+	</tr>
+	<tr>
+		<td>Wann es nachtet, wann es taget,</td>
+		<td>When darkness falls, when day breaks,</td>
+	</tr>
+	<tr>
+		<td>Nimmer ruht der Jammer mir;</td>
+		<td>My misery never ceases;</td>
+	</tr>
+	<tr>
+		<td>Kein Gedank&rsquo; und Wunsch behaget,</td>
+		<td>No thought and desire would please me</td>
+	</tr>
+	<tr>
+		<td>Als vereint zu sein mit dir.</td>
+		<td>As much as being united with you.</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Ausgeduldet! Kurze Dauer</td>
+		<td>Enough with suffering! My life and my pain</td>
+	</tr>
+	<tr>
+		<td>Hat mein Leben und mein Schmerz!</td>
+		<td>Will end soon!</td>
+	</tr>
+	<tr>
+		<td>Aus des Elends dunkler Trauer</td>
+		<td>Out of the misery of dark mourning</td>
+	</tr>
+	<tr>
+		<td>La&szlig; mich aufschaun himmelw&auml;rts!</td>
+		<td>Let me gaze heavenward!</td>
+	</tr>
+	<tr>
+		<td>O mich labt ein s&uuml;&szlig;er Schauer;</td>
+		<td>Oh, I am refreshed with a sweet chill;</td>
+	</tr>
+	<tr>
+		<td>Dort im Himmel wohnt mein herz!</td>
+		<td>There in heaven lies my heart!</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td><!-- Empty row -->
+	</tr>
+	<tr>
+		<td>Manche Nachterscheinung deutet,</td>
+		<td>Some apparition of night signals</td>
+	</tr>
+	<tr>
+		<td>Selber bald werd&rsquo; ich verbl&uuml;hn:</td>
+		<td>That soon I myself shall fade:</td>
+	</tr>
+	<tr>
+		<td>Dumpfer Hall von Glocken l&auml;utet,</td>
+		<td>Muffled echoes of ringing bells</td>
+	</tr>
+	<tr>
+		<td>Bahr&rsquo; und Leichenfolger ziehn.</td>
+		<td>Are followed by the bier and the funeral procession.</td>
+	</tr>
+	<tr>
+		<td>Komm, o Tod, der hin mich leitet,</td>
+		<td>Come, o death, who leads me there</td>
+	</tr>
+	<tr>
+		<td>Ihn zu schaun, auf ewig Ihn!</td>
+		<td>To behold him, forever him!<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></td>
+	</tr>
+</table>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 18</b>. Hensel, &ldquo;Marias Klage,&rdquo; section A</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=17&nonav=true"><img border="1" alt="Example 18 thumbnail" src="rodgers_ex18_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[32] Hensel arranges  Vo&szlig;&rsquo;s text into five sections, one for each of the five stanzas: ABB'A'C.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> The A section consists of a period with sentential antecedent and consequent (mm. 1&ndash;8), followed by a sentential phrase (mm. 9&ndash;12) that modulates to <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major (<b>Example 18</b>). The period and the subsequent sentential phrase both end with normative cadences: an IAC in the tonic in m. 8 and a PAC in the relative major in m. 12.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup></p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 19</b>. Hensel, &ldquo;Marias Klage,&rdquo; section B</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=18&nonav=true"><img border="1" alt="Example 19 thumbnail" src="rodgers_ex19_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[33] The ensuing B section and its varied repetition (mm. 14&ndash;41; <b>Example 19</b>) disrupt the cadential stability encountered so far. The second stanza opens with an arresting image of the bridegroom&rsquo;s love surging around cliffs and banks, as though the raging seas were expressing his sadness. Hensel evokes the surging currents by heightening the chromaticism, fluctuating between G minor and C minor, and&mdash;not least&mdash;avoiding authentic cadences entirely. The music is as restless as the sea and the emotions associated with it. B ends with an off-balance six-bar phrase (mm. 22&ndash;27)&mdash;the first deviation from four-bar regularity in the song. A harmonic surprise underlines the moment of disruption: instead of following the ii<sup>6</sup> in m. 25 with a dominant, and then with either a HC or an AC, Hensel lands violently on a <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> diminished-seventh chord and stalls, prolonging it for an additional two measures before B' begins. The text here is &ldquo;Traurig dir zur lezten Ehre / Scholl des Meeres und Sturms Gesang&rdquo; (To pay you last respects / The sea and storm&rsquo;s song will resound sadly); Hensel finds a perfect musical metaphor for the endless lament, the &ldquo;sea and storm&rsquo;s song&rdquo; that rages without end, by elongating the key words &ldquo;Meeres&rdquo; and Sturms&rdquo; with expressive melismas, and by undercutting an expected cadence.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 20</b>. Hensel, &ldquo;Marias Klage,&rdquo; section C</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=19&nonav=true"><img border="1" alt="Example 20 thumbnail" src="rodgers_ex20_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[34] Following a varied repetition of B' and A (corresponding to stanzas three and four, respectively), the song shifts dramatically to <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major and remains there for the duration. (<b>Example 20</b> shows Hensel&rsquo;s setting of the final stanza: section C, mm. 60&ndash;75.) In this stanza the speaker is drawn toward heaven, led on by the muffled sound of distant bells. The piano plays its own bell-like tones, sounding above an unstable second-inversion <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> tonic played <i>una corda</i>. The lowest voice of the piano meanders around F (in mm. 60&ndash;63), as if the music were in a state of suspended animation, awaiting the transfiguration to come. Slowly, however, it makes its way to <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>,, finally settling on the tonic pitch just before the poetic speaker pleads with death to rescue her (&ldquo;Komm, o Tod<nobr> . . . </nobr>&rdquo;), and staying there until the final bar.</p>
+
+<p>[35] Given this fact, one might be inclined to see the song&rsquo;s ending as an instance of early-pedal prolongational closure. According to this reading, Hensel could have written a PAC in <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major in m. 73, but the persistent pedal tone undermines the would-be cadence, and the song ends instead with a prolongational progression. Several aspects of the final nine measures support such a reading. The musical features of this section are in keeping with Hensel&rsquo;s characteristic closing gestures&mdash;in particular the vocal highpoint and melisma leading to <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> in mm. 72&ndash;73&mdash;suggesting perhaps that this is no coda but rather a passage that leads to the song&rsquo;s structural close (albeit a prolongational one rather than a cadential one). Furthermore, from a poetic perspective, it makes sense to align that structural close with the promise of the lovers&rsquo; reunion in heaven, conveyed in the final two lines (&ldquo;Come, o death, who leads me there / To behold him, forever him!&rdquo;). In this light, the otherworldliness of mm. 67&ndash;75 evokes the peace the widow will shortly find upon reuniting with her husband&mdash;a peace that Hensel musically conveys with a static tonic pitch that remains as other harmonies pass overhead.</p>
+
+<p>[36] From another perspective, however, one might argue that for  Vo&szlig;&rsquo;s poetic subject, it is in fact death itself&mdash;evocatively conveyed by the third and fourth lines of the stanza (&ldquo;Muffled echoes of ringing bells / Are followed by the bier and the funeral procession&rdquo;)&mdash;that signals the end, and that the promise of a reunion of husband and wife, expressed in the final two lines, signifies a new beginning. Hensel&rsquo;s handling of earlier stanzas lends support to this interpretation. In each of the previous stanzas, she places clear moments of closure at the end of line 4: a G-minor IAC in m. 8, a G-minor HC in m. 21, another G-minor HC in m. 36, and another G-minor IAC in m. 54. In each case, these clear moments of closure separate the initial four lines from the final two lines, which conclude either with a cadence in a different key (such as the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> cadence at the end of stanzas 1 and 3) or without a cadence at all (such as the diminished-seventh chords at the end of stanzas 2 and 4). If one applies a similar structure to the final stanza, one would expect the cadence to occur four lines into the stanza (m. 67). According to this reading, the vii<sup>o7</sup>&ndash;I progression in mm. 66&ndash;67 is the song&rsquo;s structural close, with vii<sup>o7</sup> substituting for a root-position domainant, and what follows is an ethereal coda&mdash;funereal bells that fade into the distance as the widow is guided back to her husband.</p>
+
+<p>[37] For our part, we lean toward treating m. 73 as the piece&rsquo;s structural ending, and thus regarding it as the product of an early pedal. Still, as much as this interpretation may be aesthetically consistent with other songs by Hensel, and with other parts of this song, the substitution interpretation is also evocative, since it suggests that the sudden shift from an address to the beloved to an address to death itself is a pivotal moment in the song, an act that separates all that follows it from all that preceded it. The most important point&mdash;which applies not just to this song but to all of the songs we have discussed in this article&mdash;is that prolongational closure profoundly complicates, and thereby enriches, one&rsquo;s sense for how endings &ldquo;work&rdquo; structurally, expressively, musically, and poetically. As a listener one therefore has to work even harder to fathom their many, often paradoxical meanings.</p>
+
+<h2>Conclusion</h2>
+<p>[38] In keeping with the overall topic of this article (endings that are not decisively final), we close not with hard-and-fast conclusions but with some more open-ended suggestions about where this research might lead, some thoughts about what might lie beyond the &ldquo;double bar&rdquo; of this essay. Two paths suggest themselves, one having to do with Hensel&rsquo;s music specifically and the other with Romantic music more generally.</p>
+
+<p>[39] Among Hensel&rsquo;s many compositional talents&mdash;her freedom with melody, her sensitivity to the flow of language, her gift for text painting, her knack for writing evocatively for the piano&mdash;her sense for endings is particularly strong. Her decisions to end pieces with rhetorically strong PACs, with rhetorically weak PACs, with post-cadential material, without post-cadential material, with plagal cadences, with half cadences, or with no cadences were not accidental; they were born out of a careful consideration of the expressive context in which those endings occurred, and the possible meanings those endings could convey. Readers will perhaps have noticed that all of the songs analyzed in this article are settings of poems that deal in some way with a lack of emotional closure: the protagonist of &ldquo;An die Entfernte&rdquo; cannot quite believe he has lost his beloved and hopes she will return; the protagonist of &ldquo;Der Sprosser&rdquo; is looking for someone who will love him back; the pine tree in &ldquo;Fichtenbaum und Palme&rdquo; longs for a sun-drenched existence that it cannot have; and the poetic speaker of &ldquo;Marias Klage&rdquo; waits anxiously for a release from this life and a reunion with her departed beloved. To be sure, not every Hensel song that lacks emotional closure also lacks cadential closure. Nor is the reverse true: not every song that lacks cadential closure also lacks emotional closure. But the conjoining of these features in these songs&mdash;and in several other songs that we did not discuss&mdash;shows that prolongational closure (however Hensel would have described the phenomenon) was anything but an abstract device; it meant something to her, and part of our job as analysts is to determine what it might have meant: what strategies she used to carry it out and how those strategies relate to the specific contexts in which the technique appears.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 21</b>. Robert Schumann&rsquo;s late Lieder that end with prolongational closure</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rodgers_examples.php?id=20&nonav=true"><img border="1" alt="Example 21 thumbnail" src="rodgers_ex21_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[40] As for what these songs can teach us about the music of other Romantic composers: because they are such early examples of piece-ending prolongational closure, they can provide an important tool for understanding how and why later composers used this technique. To take one example: Robert Schumann is famous for the equivocal, ambiguous, or otherwise unorthodox conclusions of his songs&mdash;what David Ferris has aptly termed Schumann&rsquo;s technique of &ldquo;open ending,&rdquo; in which &ldquo;there is closure at the end of the song, but its conclusiveness is compromised in some way&rdquo; (<a href="#ferris_2000" id="citation_ferris_2000_67dc9972c49d6">2000</a>, 106). Approaching Schumann&rsquo;s songs with an awareness of these three types of prolongational closure can reveal even more about how exactly Schumann creates these open-ended effects, and how he uses prolongational closure in distinctive ways&mdash;ways that differ from Hensel&rsquo;s. Consider, for instance, that piece-ending prolongational closure is virtually nonexistent in Schumann&rsquo;s songs composed before around 1849, yet it abounds in his late songs. Thus far we have found only one bona fide example of prolongational closure in Schumann&rsquo;s <i>Liederjahr</i> songs: the last four bars of &ldquo;Wer machte dich so krank?&rdquo; (from op. 35) feature the progression V<sup>7</sup>&ndash;vi&ndash;V\(\substack{6\\5}\)&ndash;I, where the gap between <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span> and <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> is filled in stepwise.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup> (For examples of late Schumann songs that end with prolongational closure, see <b>Example 21</b>.) Consider also that Schumann seems to favor the dominant-substitution type of prolongational closure, whereas Hensel favors the early-pedal type. What this suggests is that there is much to be gained from teasing out the different but related closing strategies employed by different but related nineteenth-century composers, the various <i>idiolects of ending</i> (not just Hensel&rsquo;s but also Felix Mendelssohn&rsquo;s, Robert Schumann&rsquo;s, Clara Schumann&rsquo;s, Schubert&rsquo;s, and Chopin&rsquo;s) that make up the Romantic era&rsquo;s broader <i>language of ending</i>. As scholars of nineteenth-century music continue to explore the many ways that the formal tendencies of Romantic composers differ from those of their Classical predecessors, they should also remain alert to the diversity of formal&mdash;and closural&mdash;practices within the Romantic era itself, and even within the early Romantic era. Our hope is that a nuanced discussion of the rich, varied, and powerful closing technique of prolongational closure&mdash;and of Hensel&rsquo;s pathbreaking use of it&mdash;can be part of that endeavor.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Stephen Rodgers<br>
+	University of Oregon<br>School of Music and Dance<br>1225 University of Oregon<br>Eugene, OR 97403<br><a href="mailto:ser@uoregon.edu">ser@uoregon.edu</a><br><br><a name='AUTHORNOTE2'></a>Tyler Osborne<br>
+			University of Oregon<br>School of Music and Dance<br>1225 University of Oregon<br>Eugene, OR 97403<br><a href="mailto:kentono@uoregon.edu">kentono@uoregon.edu</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_agawu_1987" class="flyoverdiv">Agawu, Kofi. 1987. &ldquo;Concepts of Closure in Chopin&rsquo;s Opus 28.&rdquo; <i>Music Theory Spectrum</i> 9 (1): 1&ndash;17.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="agawu_1987"></a>Agawu, Kofi. 1987. &ldquo;Concepts of Closure in Chopin&rsquo;s Opus 28.&rdquo; <i>Music Theory Spectrum</i> 9 (1): 1&ndash;17.</p><div id="citediv_binder_2013" class="flyoverdiv">Binder, Benjamin. 2013. &ldquo;Robert, Clara and the Transformation of Poetic Irony in Schumann&rsquo;s Lieder: The Case of &lsquo;Dein Angesicht.&rsquo;&rdquo; <i>Nineteenth-Century Music Review</i> 10 (1): 1&ndash;28.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="binder_2013"></a>Binder, Benjamin. 2013. &ldquo;Robert, Clara and the Transformation of Poetic Irony in Schumann&rsquo;s Lieder: The Case of &lsquo;Dein Angesicht.&rsquo;&rdquo; <i>Nineteenth-Century Music Review</i> 10 (1): 1&ndash;28.</p><div id="citediv_caplin_1998" class="flyoverdiv">Caplin, William E. 1998. <i>Classical Form: A Theory of Formal Functions for the Instrumental Music of Haydn, Mozart, and Beethoven</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_1998"></a>Caplin, William E. 1998. <i>Classical Form: A Theory of Formal Functions for the Instrumental Music of Haydn, Mozart, and Beethoven</i>. Oxford University Press.</p><div id="citediv_caplin_2004" class="flyoverdiv">Caplin, William E. 2004. &ldquo;The Classical Cadence: Conceptions and Misconceptions.&rdquo; <i>Journal of the American Musicological Society</i> 57 (1): 51&ndash;118.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &ldquo;The Classical Cadence: Conceptions and Misconceptions.&rdquo; <i>Journal of the American Musicological Society</i> 57 (1): 51&ndash;118.</p><div id="citediv_caplin_2008" class="flyoverdiv">Caplin, William E. 2008. &ldquo;Schoenberg&rsquo;s &lsquo;Second Melody&rsquo;, or, &lsquo;Meyer-ed&rsquo; in the Bass.&rdquo; In <i>Communication in Eighteenth-Century Music</i>, ed. Danuta Mirka and Kofi Agawu Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_2008"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008. &ldquo;Schoenberg&rsquo;s &lsquo;Second Melody&rsquo;, or, &lsquo;Meyer-ed&rsquo; in the Bass.&rdquo; In <i>Communication in Eighteenth-Century Music</i>, ed. Danuta Mirka and Kofi Agawu Cambridge University Press.</p><div id="citediv_caplin_2013" class="flyoverdiv">Caplin, William E. 2013. &ldquo;Teaching Classical Form: Strict Categories vs. Flexible Analyses.&rdquo; <i>Dutch Journal of Music Theory</i> 18 (3): 119&ndash;35.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_2013"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2013. &ldquo;Teaching Classical Form: Strict Categories vs. Flexible Analyses.&rdquo; <i>Dutch Journal of Music Theory</i> 18 (3): 119&ndash;35.</p><div id="citediv_caplin_2018" class="flyoverdiv">Caplin, William E. 2018. &ldquo;Beyond the Classical Cadence: Thematic Closure in Early Romantic Music.&rdquo; <i>Music Theory Spectrum</i> 40 (1): 1&ndash;26.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_2018"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2018. &ldquo;Beyond the Classical Cadence: Thematic Closure in Early Romantic Music.&rdquo; <i>Music Theory Spectrum</i> 40 (1): 1&ndash;26.</p><div id="citediv_caplin_forthcoming" class="flyoverdiv">Caplin, William E. Forthcoming. <i>Cadence: A Study of Closure in Tonal Music</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_forthcoming"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. Forthcoming. <i>Cadence: A Study of Closure in Tonal Music</i>. Oxford University Press.</p><div id="citediv_cone_1982" class="flyoverdiv">Cone, Edward T. 1982. &ldquo;Schubert&rsquo;s Promissory Note: An Exercise in Musical Hermeneutics.&rdquo; <i>19th-Century Music</i> 5 (3): 233&ndash;41.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1982"></a>Cone, Edward T. 1982. &ldquo;Schubert&rsquo;s Promissory Note: An Exercise in Musical Hermeneutics.&rdquo; <i>19th-Century Music</i> 5 (3): 233&ndash;41.</p><div id="citediv_ferris_2000" class="flyoverdiv">Ferris, David. 2000. <i>Schumann&rsquo;s Eichendorff</i> Liederkreis <i>and the Genre of the Romantic Cycle</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ferris_2000"></a>Ferris, David. 2000. <i>Schumann&rsquo;s Eichendorff</i> Liederkreis <i>and the Genre of the Romantic Cycle</i>. Oxford University Press.</p><div id="citediv_head_2007" class="flyoverdiv">Head, Matthew. 2007. &ldquo;Genre, Romanticism and Female Authorship: Fanny Hensel's &lsquo;Scottish&rsquo; Sonata in G Minor (1843).&rdquo; <i>Nineteenth-Century Music Review</i> 4 (2): 67&ndash;88.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="head_2007"></a>Head, Matthew. 2007. &ldquo;Genre, Romanticism and Female Authorship: Fanny Hensel's &lsquo;Scottish&rsquo; Sonata in G Minor (1843).&rdquo; <i>Nineteenth-Century Music Review</i> 4 (2): 67&ndash;88.</p><div id="citediv_hellwiig-unruh_2000" class="flyoverdiv">Hellwig-Unruh, Renate. 2000. <i>Fanny Hensel: Thematisches Verzeichnis der Kompositionen</i>. Edition Kunzelmann.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hellwiig-unruh_2000"></a>Hellwig-Unruh, Renate. 2000. <i>Fanny Hensel: Thematisches Verzeichnis der Kompositionen</i>. Edition Kunzelmann.</p><div id="citediv_hensel_1846" class="flyoverdiv">Hensel, Fanny. 1846. <i>Sechs Lieder f&uuml;r eine Stimme mit Begleitung des Pianoforte</i>. Bote & Bock.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hensel_1846"></a>Hensel, Fanny. 1846. <i>Sechs Lieder f&uuml;r eine Stimme mit Begleitung des Pianoforte</i>. Bote & Bock.</p><div id="citediv_hensel_1993" class="flyoverdiv">Hensel, Fanny. 1993. <i>Ausgew&auml;hlte Lieder f&uuml;r Singstimme und Klavier</i>. Edited by Annette Maurer. 2 vols. Breitkopf & H&auml;rtel.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hensel_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. <i>Ausgew&auml;hlte Lieder f&uuml;r Singstimme und Klavier</i>. Edited by Annette Maurer. 2 vols. Breitkopf & H&auml;rtel.</p><div id="citediv_hensel_2015" class="flyoverdiv">Hensel, Fanny. 2015. <i>Fanny Hensel: Goethe-Lieder</i>. Tobias Berndt (baritone) and Alexander Fleischer (piano). Recorded January&ndash;February 2011. Querstand 1509, Compact Disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hensel_2015"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2015. <i>Fanny Hensel: Goethe-Lieder</i>. Tobias Berndt (baritone) and Alexander Fleischer (piano). Recorded January&ndash;February 2011. Querstand 1509, Compact Disc.</p><div id="citediv_h&ouml;gman_&_p&ouml;ntinen_1996" class="flyoverdiv">H&ouml;gman, Christina (soprano) and Roland P&ouml;ntinen (piano). 1996. <i>Clara Schumann, Fanny Mendelssohn, Alma Mahler: Lieder</i>. Recorded May 1996. Bis 738, Compact Disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="h&ouml;gman_&_p&ouml;ntinen_1996"></a>H&ouml;gman, Christina (soprano) and Roland P&ouml;ntinen (piano). 1996. <i>Clara Schumann, Fanny Mendelssohn, Alma Mahler: Lieder</i>. Recorded May 1996. Bis 738, Compact Disc.</p><div id="citediv_horton_2017" class="flyoverdiv">Horton, Julian. 2017. &ldquo;Criteria for a Theory of Nineteenth-Century Sonata Form.&rdquo; <i>Music Theory and Analysis</i> 4 (2): 147&ndash;91.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horton_2017"></a>Horton, Julian. 2017. &ldquo;Criteria for a Theory of Nineteenth-Century Sonata Form.&rdquo; <i>Music Theory and Analysis</i> 4 (2): 147&ndash;91.</p><div id="citediv_hyland_2009" class="flyoverdiv">Hyland, Anne M. 2009. &ldquo;Rhetorical Closure in the First Movement of Schubert&rsquo;s Quartet in C major, D. 46: A Dialogue with Deformation.&rdquo; <i>Music Analysis</i> 28 (1): 111&ndash;42.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hyland_2009"></a>Hyland, Anne M. 2009. &ldquo;Rhetorical Closure in the First Movement of Schubert&rsquo;s Quartet in C major, D. 46: A Dialogue with Deformation.&rdquo; <i>Music Analysis</i> 28 (1): 111&ndash;42.</p><div id="citediv_lewin_2006" class="flyoverdiv">Lewin, David. 2006. <i>Studies in Music with Text</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_2006"></a>Lewin, David. 2006. <i>Studies in Music with Text</i>. Oxford University Press.</p><div id="citediv_malin_2010" class="flyoverdiv">Malin, Yonatan. 2010. <i>Songs in Motion: Rhythm and Meter in the German Lied</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="malin_2010"></a>Malin, Yonatan. 2010. <i>Songs in Motion: Rhythm and Meter in the German Lied</i>. Oxford University Press.</p><div id="citediv_ng_2011" class="flyoverdiv">Ng, Samuel. 2011. &ldquo;Rotation as Metaphor: Fanny Hensel&rsquo;s Formal and Tonal Logic Reconsidered.&rdquo; <i>Indiana Theory Review</i> 29 (2): 31&ndash;70.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ng_2011"></a>Ng, Samuel. 2011. &ldquo;Rotation as Metaphor: Fanny Hensel&rsquo;s Formal and Tonal Logic Reconsidered.&rdquo; <i>Indiana Theory Review</i> 29 (2): 31&ndash;70.</p><div id="citediv_nobile_2011" class="flyoverdiv">Nobile, Drew. 2011. &ldquo;Form and Voice Leading in Early Beatles Songs.&rdquo; <i>Music Theory Online</i> 17 (3). <a href='https://mtosmt.org/issues/mto.11.17.3/mto.11.17.3.nobile.html'>https://mtosmt.org/issues/mto.11.17.3/mto.11.17.3.nobile.html</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nobile_2011"></a>Nobile, Drew. 2011. &ldquo;Form and Voice Leading in Early Beatles Songs.&rdquo; <i>Music Theory Online</i> 17 (3). <a href='https://mtosmt.org/issues/mto.11.17.3/mto.11.17.3.nobile.html'>https://mtosmt.org/issues/mto.11.17.3/mto.11.17.3.nobile.html</a></p><div id="citediv_osborne_2021" class="flyoverdiv">Osborne, Tyler. 2021. &ldquo;&lsquo;You too may change&rsquo;: Tonal Pairing of the Tonic and Subdominant in Two Songs by Fanny Hensel.&rdquo; In <i>The Songs of Fanny Hensel</i>, ed. Stephen Rodgers. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="osborne_2021"></a>Osborne, Tyler. 2021. &ldquo;&lsquo;You too may change&rsquo;: Tonal Pairing of the Tonic and Subdominant in Two Songs by Fanny Hensel.&rdquo; In <i>The Songs of Fanny Hensel</i>, ed. Stephen Rodgers. Oxford University Press.</p><div id="citediv_perrey_2002" class="flyoverdiv">Perrey, Beate Julia. 2002. <i>Schumann&rsquo;s</i> Dichterliebe <i>and Early Romantic Poetics: Fragmentation of Desire</i>. Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="perrey_2002"></a>Perrey, Beate Julia. 2002. <i>Schumann&rsquo;s</i> Dichterliebe <i>and Early Romantic Poetics: Fragmentation of Desire</i>. Cambridge University Press.</p><div id="citediv_rodgers_2011a" class="flyoverdiv">Rodgers, Stephen. 2011a. &ldquo;Fanny Hensel&rsquo;s Lied Aesthetic.&rdquo; <i>Journal of Musicological Research</i> 30 (3): 175&ndash;201.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rodgers_2011a"></a>Rodgers, Stephen. 2011a. &ldquo;Fanny Hensel&rsquo;s Lied Aesthetic.&rdquo; <i>Journal of Musicological Research</i> 30 (3): 175&ndash;201.</p><div id="citediv_rodgers_2011b" class="flyoverdiv">Rodgers, Stephen. 2011b. &ldquo;Thinking (and Singing) in Threes: Triple Hypermeter and the Songs of Fanny Hensel.&rdquo; <i>Music Theory Online</i> 17 (1). <a href='https://mtosmt.org/issues/mto.11.17.1/mto.11.17.1.rodgers.html'>https://mtosmt.org/issues/mto.11.17.1/mto.11.17.1.rodgers.html</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rodgers_2011b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2011b. &ldquo;Thinking (and Singing) in Threes: Triple Hypermeter and the Songs of Fanny Hensel.&rdquo; <i>Music Theory Online</i> 17 (1). <a href='https://mtosmt.org/issues/mto.11.17.1/mto.11.17.1.rodgers.html'>https://mtosmt.org/issues/mto.11.17.1/mto.11.17.1.rodgers.html</a></p><div id="citediv_rodgers_2018" class="flyoverdiv">Rodgers, Stephen. 2018. &ldquo;Fanny Hensel&rsquo;s Schematic Fantasies; or, The Art of Beginning.&rdquo; In <i>Analytical Essays on Music by Women Composers</i>, eds. Laurel Parsons and Brenda Ravenscroft, 151&ndash;74. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rodgers_2018"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2018. &ldquo;Fanny Hensel&rsquo;s Schematic Fantasies; or, The Art of Beginning.&rdquo; In <i>Analytical Essays on Music by Women Composers</i>, eds. Laurel Parsons and Brenda Ravenscroft, 151&ndash;74. Oxford University Press.</p><div id="citediv_rodgers_2021a" class="flyoverdiv">Rodgers, Stephen. 2021a. &ldquo;Plagal Cadences in Fanny Hensel&rsquo;s Songs.&rdquo; In <i>The Songs of Fanny Hensel</i>, ed. Stephen Rodgers. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rodgers_2021a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2021a. &ldquo;Plagal Cadences in Fanny Hensel&rsquo;s Songs.&rdquo; In <i>The Songs of Fanny Hensel</i>, ed. Stephen Rodgers. Oxford University Press.</p><div id="citediv_rodgers_2021b" class="flyoverdiv">Rodgers, Stephen, ed. 2021b. <i>The Songs of Fanny Hensel</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rodgers_2021b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>, ed. 2021b. <i>The Songs of Fanny Hensel</i>. Oxford University Press.</p><div id="citediv_schmalfeldt_2011" class="flyoverdiv">Schmalfeldt, Janet. 2011. <i>In the Process of Becoming: Analytic and Philosophical Perspectives on Form in Early Nineteenth-Century Music</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2011"></a>Schmalfeldt, Janet. 2011. <i>In the Process of Becoming: Analytic and Philosophical Perspectives on Form in Early Nineteenth-Century Music</i>. Oxford University Press.</p><div id="citediv_smith_2016" class="flyoverdiv">Smith, Peter H. 2016. &ldquo;Cadential Content and Cadential Function in the First-Movement Expositions of Schumann&rsquo;s Violin Sonatas.&rdquo; <i>Music Theory and Analysis</i> 3 (1): 27&ndash;57.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="smith_2016"></a>Smith, Peter H. 2016. &ldquo;Cadential Content and Cadential Function in the First-Movement Expositions of Schumann&rsquo;s Violin Sonatas.&rdquo; <i>Music Theory and Analysis</i> 3 (1): 27&ndash;57.</p><div id="citediv_stokes_2005" class="flyoverdiv">Stokes, Richard. 2005. <i>The Book of Lieder: The Original Texts of Over 1000 Songs</i>. Faber & Faber.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stokes_2005"></a>Stokes, Richard. 2005. <i>The Book of Lieder: The Original Texts of Over 1000 Songs</i>. Faber & Faber.</p><div id="citediv_suurp&auml;&auml;_2016" class="flyoverdiv">Suurp&auml;&auml;, Lauri. 2016. &ldquo;Endings without Resolution: The Slow Movement and Finale of Schumann&rsquo;s Second Symphony.&rdquo; In <i>Explorations in Schenkerian Analysis</i>, eds. David Beach and Su Yin Mak, 177&ndash;97. University of Rochester Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="suurp&auml;&auml;_2016"></a>Suurp&auml;&auml;, Lauri. 2016. &ldquo;Endings without Resolution: The Slow Movement and Finale of Schumann&rsquo;s Second Symphony.&rdquo; In <i>Explorations in Schenkerian Analysis</i>, eds. David Beach and Su Yin Mak, 177&ndash;97. University of Rochester Press.</p><div id="citediv_todd_2010" class="flyoverdiv">Todd, R. Larry. 2010. <i>Fanny Hensel: The Other Mendelssohn</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="todd_2010"></a>Todd, R. Larry. 2010. <i>Fanny Hensel: The Other Mendelssohn</i>. Oxford University Press.</p><div id="citediv_vande_moortele_2017" class="flyoverdiv">Vande Moortele, Steven. 2017. <i>The Romantic Overture and Musical Form from Rossini to Wagner</i>. Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="vande_moortele_2017"></a>Vande Moortele, Steven. 2017. <i>The Romantic Overture and Musical Form from Rossini to Wagner</i>. Cambridge University Press.</p><div id="citediv_wigmore_1988" class="flyoverdiv">Wigmore, Richard. 1988. <i>Schubert: The Complete Song Texts</i>. Schirmer.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wigmore_1988"></a>Wigmore, Richard. 1988. <i>Schubert: The Complete Song Texts</i>. Schirmer.</p><div id="citediv_wollenberg_2007" class="flyoverdiv">Wollenberg, Susan. 2007. &ldquo;Fanny Hensel&rsquo;s Op. 8, No. 1: A Special Case of &lsquo;multum in parvo&rsquo;?&rdquo; <i>Nineteenth-Century Music Review</i> 4 (2): 101&ndash;17.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wollenberg_2007"></a>Wollenberg, Susan. 2007. &ldquo;Fanny Hensel&rsquo;s Op. 8, No. 1: A Special Case of &lsquo;multum in parvo&rsquo;?&rdquo; <i>Nineteenth-Century Music Review</i> 4 (2): 101&ndash;17.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Special thanks to Janet Schmalfeldt for her insightful comments on an earlier draft of this article. Thanks also to the two anonymous reviewers for their helpful suggestions, and to the Oregon Humanities Center for providing a fellowship that supported the completion of the article.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Special thanks to Janet Schmalfeldt for her insightful comments on an earlier draft of this article. Thanks also to the two anonymous reviewers for their helpful suggestions, and to the Oregon Humanities Center for providing a fellowship that supported the completion of the article.</div><p><a name="FN1">1.</a> For other recent work that explores closure in Romantic music, see <a href="#hyland_2009" id="citation_hyland_2009_67dc9972b79d2">Hyland 2009</a>; <a href="#schmalfeldt_2011" id="citation_schmalfeldt_2011_67dc9972b79d6">Schmalfeldt 2011</a>, 227&ndash;57; <a href="#smith_2016" id="citation_smith_2016_67dc9972b79d8">Smith 2016</a>; <a href="#suurp&auml;&auml;_2016" id="citation_suurp&auml;&auml;_2016_67dc9972b79da">Suurp&auml;&auml; 2016</a>; and <a href="#horton_2017" id="citation_horton_2017_67dc9972b79dc">Horton 2017</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Caplin also discusses the concept of prolongational closure in his forthcoming book, <i>Cadence: A Study of Closure in Tonal Music</i> (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972b79e0">Forthcoming</a>, chap. 9) and in <a href="#caplin_2013" id="citation_caplin_2013_67dc9972b79e2">Caplin 2013</a>. For his explanation of the difference between cadential, prolongational, and sequential progressions, see <a href="#caplin_1998" id="citation_caplin_1998_67dc9972b79e4">Caplin 1998</a>, 24&ndash;31. See also <a href="#caplin_2004" id="citation_caplin_2004_67dc9972b79e5">Caplin 2004</a>, 69&ndash;72.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> In Caplinian fashion, we define authentic cadences as those involving root-position V&ndash;root-position I and half cadences as those ending on root-position dominants (or, as is increasingly common in the nineteenth century, root-position V<sup>7</sup> chords&mdash;what Janet Schmalfeldt [<a href="#schmalfeldt_2011" id="citation_schmalfeldt_2011_67dc9972b79e7">2011</a>, 202&ndash;3] refers to as &ldquo;nineteenth-century half cadences&rdquo;).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> &ldquo;H-U&rdquo; in the example refers to the catalogue numbers found in <a href="#hellwiig-unruh_2000" id="citation_hellwiig-unruh_2000_67dc9972b79ea">Hellwiig-Unruh 2000</a>. Readers interested in searching the digital collection of the Staatsbibiothek zu Berlin (which contains a growing number of Hensel manuscripts) can find the collection at <a href='https://digital-beta.staatsbibliothek-berlin.de/'>https://digital-beta.staatsbibliothek-berlin.de/</a><br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> The amount of analytical work on Hensel&rsquo;s music has grown considerably in recent years. For some representative examples, see <a href="#rodgers_2011a" id="citation_rodgers_2011a_67dc9972b79ec">Rodgers 2011a</a>, <a href="#rodgers_2011b" id="citation_rodgers_2011b_67dc9972b79ee">2011b</a>, and <a href="#rodgers_2018" id="citation_rodgers_2018_67dc9972b79f0">2018</a>; <a href="#malin_2010" id="citation_malin_2010_67dc9972b79f2">Malin 2010</a>, chap. 3 (69&ndash;93); <a href="#wollenberg_2007" id="citation_wollenberg_2007_67dc9972b79f4">Wollenberg 2007</a>; <a href="#head_2007" id="citation_head_2007_67dc9972b79f6">Head 2007</a>; <a href="#ng_2011" id="citation_ng_2011_67dc9972b79f7">Ng 2011</a>; and the chapters in <a href="#rodgers_2021b" id="citation_rodgers_2021b_67dc9972b79f9">Rodgers 2021b</a>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> For other examples, see the penultimate thematic unit, <i>Un pochettino largamento</i>, in the finale of Sibelius&rsquo;s Fifth Symphony and the end of Grieg&rsquo;s song &ldquo;First Meeting,&rdquo; both of which Caplin discusses in his forthcoming book (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972b79fb">Forthcoming</a>, chap. 9). We thank Caplin for providing us with a copy of this as-yet-unpublished chapter.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> We have found only two <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill examples in her instrumental music: Klavierst&uuml;ck (Andante con moto), H-U 146 (fill in mm. 57&ndash;58); and the third movement of her String Quartet in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, H-U 277 (fill in mm. 173&ndash;81). Interestingly, prolongational closure appears more frequently in Hensel&rsquo;s Lieder than in her instrumental works. Other examples include Klavierst&uuml;ck (Andante con espressione), H-U 181 (early pedal in m. 90); Klavierst&uuml;ck, H-U 202 (early pedal in m. 81); Sonata for Piano in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, third movement (Largo molto), H-U 246 (dominant substitution in m. 53); and Klavierst&uuml;ck, H-U 405 (early pedal in m. 55).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Dominant-substitution prolongational closure is not to be confused with one of Caplin&rsquo;s types of prolongational progressions, which uses what he calls &ldquo;substitute chords&rdquo; (<a href="#caplin_1998" id="citation_caplin_1998_67dc9972b79ff">1998</a>, 25&ndash;26). As Caplin uses the term, it refers to chords such as vi and iii, which share two common tones with I and can thus participate in the prolongation of tonic harmony. &ldquo;Substitute chords,&rdquo; in short, are chords that take the place of a prolonged harmony. In dominant-substitution prolongational closure, on the other hand, a chord takes the place of a cadential dominant.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> A few of the examples Caplin discusses could be described as the dominant-substitution type: for example, the eight-measure A section in the &ldquo;Valse noble,&rdquo; from Robert Schumann&rsquo;s <i>Carnaval</i>, which ends V\(\substack{6\\5}\)&ndash;I (unlike the A' section, which ends V<sup>7</sup>&ndash;I) (<a href="#caplin_2018" id="citation_caplin_2018_67dc9972b7a01">2018</a>, 14&ndash;16); mm. 13&ndash;15 and 42&ndash;44 of Felix Mendelssohn&rsquo;s <i>Song without Words</i>, op. 19, no. 1, in which the penultimate dominant of the theme appears in inverted form on a downbeat and is then embellished by a root-position dominant before resolving to the tonic (2018, 15, n. 41; 16, n. 44); and the opening antecedent phrase of Mozart&rsquo;s Piano Sonata in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, K. 282, third movement, which ends V\(\substack{6\\5}\)&ndash;I rather than V<sup>7</sup>&ndash;I, thus avoiding an IAC (<a href="#caplin_2013" id="citation_caplin_2013_67dc9972b7a04">2013</a>, 123&ndash;24). None of his examples, however, correspond with the early-pedal type that we propose here.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Drawing upon Caplin&rsquo;s work on bass-line melodies (<a href="#caplin_2008" id="citation_caplin_2008_67dc9972b7a06">2008</a>), one could say that in <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-fill prolongational closure the bass line engages with the melodic goal of the &ldquo;cadential stream&rdquo; (i.e., <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>), whereas the other types of prolongational closure may not really engage with the cadential stream at all but instead belong solely to the &ldquo;prolongational stream&rdquo;&mdash;bass melodic motions that center on <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>. Even if the bass lines of dominant-substitution and early-pedal prolongational closure do engage with notes that belong to both streams (i.e., <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#770;</mo></mover></math></span>, <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>, or <span style='font-size:0.8em'><math><mover><mn>6</mn><mo>&#710;</mo></mover></math></span>), the point is that they tend not to shift fully into the cadential stream.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> One might also choose to hear the close of this song as quasi-plagal, considering the metrically strong iv chord in m. 33. For a discussion of this song&rsquo;s overall avoidance of tonic harmony, see <a href="#rodgers_2011a" id="citation_rodgers_2011a_67dc9972b7a0a">Rodgers 2011a</a>, 188&ndash;94.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> In a forthcoming article on plagal cadences in Hensel&rsquo;s songs, Rodgers describe the vii<sup>o</sup>\(\substack{4\\3}\)&ndash;I progression as a &ldquo;diminished plagal cadence&rdquo; (<a href="#rodgers_2021a" id="citation_rodgers_2021a_67dc9972b7a0c">2021a</a>).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> The effect of early-pedal prolongational closure is similar to what Drew Nobile (<a href="#nobile_2011" id="citation_nobile_2011_67dc9972b7a0e">2011</a>)&mdash;writing about a very different repertoire&mdash;has called the &ldquo;cadential I&rdquo; in popular music, where a root-position I chord functions like a cadential 6/4. The difference is that in the pop examples Nobile discusses the &ldquo;cadential I&rdquo; is normally followed by a root-position V chord, whereas in the examples we discuss, the pedal persists through the end of the piece or passage.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Throughout this article we refer to poetic speakers with masculine pronouns, the main reason being that all of the poets but one are men, and the one female poet&mdash;Henriette von Hulsen, author of &ldquo;Der Sprosser&rdquo;&mdash;writes her poem from the perspective of a male protagonist. The one exception, where we describe the poetic speaker as a woman, is Johann Henrich Voß&rsquo;s &ldquo;Marias Klage,&rdquo; which is clearly written from a woman&rsquo;s point of view. R. Larry Todd suggests that the poetic persona of Hensel&rsquo;s &ldquo;An die Entfernte&rdquo; may be a particular man: her future husband Wilhelm, who, five months before she wrote the song, departed for Italy, where he would spend five years studying painting, separated from Fanny. The poem&rsquo;s opening lines, writes Todd, &ldquo;must have resonated meaningfully for Fanny. Here, symbolically, Wilhelm addresses the <i>Entfernte</i>, Fanny, who answers from the piano&rdquo; (<a href="#todd_2010" id="citation_todd_2010_67dc9972b7a10">2010</a>, 75).<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> The translation comes from <a href="#wigmore_1988" id="citation_wigmore_1988_67dc9972b7a12">Wigmore 1988</a>, 41.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> &ldquo;An die Entfernte&rdquo; is one of three unpublished songs that we discuss in this article. (The others are &ldquo;Der Sprosser&rdquo; and &ldquo;Marias Klage.&rdquo;) Some readers may naturally wonder if these songs are therefore somewhat incomplete&mdash;if their &ldquo;weak,&rdquo; prolongational endings are not so much aesthetic choices on Hensel&rsquo;s part as signs that these songs were awaiting &ldquo;stronger&rdquo; endings in further revised versions. This is not the case. All evidence suggests that these three songs&mdash;and, indeed, nearly all of Hensel&rsquo;s unpublished songs, which make up the majority of her output&mdash;are finished works: almost without exception, they feature double bars, and they proceed through to the ends of their respective poems. Furthermore, the majority of Hensel&rsquo;s unpublished songs end with clear-cut PACs&mdash;suggesting that the prolongational closes of these songs were no accident.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> In the upper-right corner of the first page of the song&rsquo;s manuscript&mdash;next to the date: July 24, 1826&mdash;Hensel writes one underlined word: &ldquo;Selt.&rdquo; In all likelihood, that refers to Amalia von Selt, which was the pseudonym of Henriette von H&uuml;lsen, a woman who lived in Berlin and published a number of short stories in periodicals in the 1820s. Whether Hensel knew von H&uuml;lsen, and how she found the poem, is unclear. The poem, alas, appears in none of von H&uuml;lsen&rsquo;s available stories, so we can&rsquo;t be sure where exactly Hensel came across it.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> We use brackets to show punctuation marks that do not appear in Hensel&rsquo;s manuscript but that make grammatical sense in the poem. Since we have not been able to find a printed version of H&uuml;lsen&rsquo;s poem, we cannot be sure what punctuation she used&mdash;but we have made our best guess.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> We are grateful to Harald Krebs for providing us with his translation of this poem.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> See <a href="#cone_1982" id="citation_cone_1982_67dc9972b7a14">Cone 1982</a>.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Why Hensel provides a cadence here but nowhere else is not entirely clear, although one could argue that the reference to a &ldquo;sweet bride&rdquo; (marked <i>dolce</i>, evoking momentary serenity here, though tinged with dissonance over the pedal) demands more stable-sounding music, despite the fact that the speaker of course laments that he has no sweet bride with which to sing.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> For more on Heine&rsquo;s technique of <i>Stimmungsbruch</i> and its relevance to musical settings of his poems, see <a href="#perrey_2002" id="citation_perrey_2002_67dc9972b7a16">Perrey 2002</a>, 78&ndash;79. On the history of the term in Heine scholarship, see <a href="#binder_2013" id="citation_binder_2013_67dc9972b7a18">Binder 2013</a>, 5, n. 17.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> The translation is adapted from Richard Stokes <a href="#stokes_2005" id="citation_stokes_2005_67dc9972b7a1a">2005</a>, 142.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> Larry Todd describes &ldquo;Fichtenbaum und Palme&rdquo; as an ABA' form, noting that Hensel &ldquo;imposed on Heine&rsquo;s binary pair (<i>AB</i>) a ternary division&rdquo; (<a href="#todd_2010" id="citation_todd_2010_67dc9972b7a1c">2010</a>, 224) Todd also suggests, as do we, that the contrasting moods of sections A and B evoke the contrasting geographical locations of the spruce and the palm (223&ndash;24).<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Another possible interpretation would be to hear the iv&ndash;I progression in m. 29 as the song&rsquo;s structural cadence&mdash;a bona fide plagal cadence. We prefer to hear the downbeat of m. 31 as the structural close, however, because this is where the poem reaches its structural close: mm. 30&ndash;31 provide the crucial verb &ldquo;trauert&rdquo; (grieves) that describes the palm (&ldquo;It dreams of a palm tree, / Which <nobr>. . .</nobr> / Grieves <nobr>. . .</nobr> / On a blazing wall of rock&rdquo;). The ending of this song is reminiscent of the ambivalent endings of some of Bach&rsquo;s preludes from the <i>Well-Tempered Clavier</i>, which likewise strongly tonicize the subdominant&mdash;and which Hensel knew intimately. Think, for example, of the close of the preludes in C major, C minor, and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> minor, from the first book of that set, with structural PACs that land not on a tonic triad but on V<sup>7</sup> of the subdominant, followed by a tonicization of this key above a tonic pedal. Think also of the close of the prelude in E major, also from book 1, which is the only prelude among the forty-eight to end not with a cadence but with a moment of prolongational closure (vii<sup>o</sup>\(\substack{4\\3}\)&ndash;I). All of this suggests that Bach&rsquo;s music might have been a source of influence in Hensel&rsquo;s experiments with &ldquo;weakened&rdquo; moments of closure.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Readers can find a copy of the manuscript in the digital collection of the Staatsbibliothek zu Berlin (<a href='https://digital-beta.staatsbibliothek-berlin.de/'>https://digital-beta.staatsbibliothek-berlin.de/</a>).<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a>  The translation is our own.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Vo&szlig;&rsquo;s poem in fact has six stanzas, but Hensel omits the third stanza in her setting.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> The cadences correspond with the exclamation points that mark the end of the poem&rsquo;s complete sentences: musical and poetic syntax, in other words, are aligned. This may help to explain why Hensel opts to end the antecedent phrase without a proper HC but instead with a vii<sup>o7</sup>. Line 2 (the end of the antecedent) closes with a comma and is followed by a dependent clause; the lack of cadential closure at the end of the antecedent underlines the lack of poetic closure at the end of the first couplet.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Another potential example is &ldquo;Auf einer Burg&rdquo; (from the op. 39 <i>Liederkreis</i>); if one hears the song as being in E Phrygian rather than in A minor, one could argue that it ends with dominant-substitution prolongational closure: Gr+6 built on F leading to an E-major chord. For a Phrygian reading of the song, see Lewin (<a href="#lewin_2006" id="citation_lewin_2006_67dc9972b7a1f">2006</a>, 167&ndash;79).<br><a href="#FN30REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">For other recent work that explores closure in Romantic music, see <a href="#hyland_2009" id="citation_hyland_2009_67dc9972b79d2">Hyland 2009</a>; <a href="#schmalfeldt_2011" id="citation_schmalfeldt_2011_67dc9972b79d6">Schmalfeldt 2011</a>, 227&ndash;57; <a href="#smith_2016" id="citation_smith_2016_67dc9972b79d8">Smith 2016</a>; <a href="#suurp&auml;&auml;_2016" id="citation_suurp&auml;&auml;_2016_67dc9972b79da">Suurp&auml;&auml; 2016</a>; and <a href="#horton_2017" id="citation_horton_2017_67dc9972b79dc">Horton 2017</a>.</div><div id="fndiv2" class="flyoverdiv">Caplin also discusses the concept of prolongational closure in his forthcoming book, <i>Cadence: A Study of Closure in Tonal Music</i> (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972b79e0">Forthcoming</a>, chap. 9) and in <a href="#caplin_2013" id="citation_caplin_2013_67dc9972b79e2">Caplin 2013</a>. For his explanation of the difference between cadential, prolongational, and sequential progressions, see <a href="#caplin_1998" id="citation_caplin_1998_67dc9972b79e4">Caplin 1998</a>, 24&ndash;31. See also <a href="#caplin_2004" id="citation_caplin_2004_67dc9972b79e5">Caplin 2004</a>, 69&ndash;72.</div><div id="fndiv3" class="flyoverdiv">In Caplinian fashion, we define authentic cadences as those involving root-position V&ndash;root-position I and half cadences as those ending on root-position dominants (or, as is increasingly common in the nineteenth century, root-position V7 chords&mdash;what Janet Schmalfeldt [<a href="#schmalfeldt_2011" id="citation_schmalfeldt_2011_67dc9972b79e7">2011</a>, 202&ndash;3] refers to as &ldquo;nineteenth-century half cadences&rdquo;).</div><div id="fndiv4" class="flyoverdiv">&ldquo;H-U&rdquo; in the example refers to the catalogue numbers found in <a href="#hellwiig-unruh_2000" id="citation_hellwiig-unruh_2000_67dc9972b79ea">Hellwiig-Unruh 2000</a>. Readers interested in searching the digital collection of the Staatsbibiothek zu Berlin (which contains a growing number of Hensel manuscripts) can find the collection at <a href='https://digital-beta.staatsbibliothek-berlin.de/'>https://digital-beta.staatsbibliothek-berlin.de/</a></div><div id="fndiv5" class="flyoverdiv">The amount of analytical work on Hensel&rsquo;s music has grown considerably in recent years. For some representative examples, see <a href="#rodgers_2011a" id="citation_rodgers_2011a_67dc9972b79ec">Rodgers 2011a</a>, <a href="#rodgers_2011b" id="citation_rodgers_2011b_67dc9972b79ee">2011b</a>, and <a href="#rodgers_2018" id="citation_rodgers_2018_67dc9972b79f0">2018</a>; <a href="#malin_2010" id="citation_malin_2010_67dc9972b79f2">Malin 2010</a>, chap. 3 (69&ndash;93); <a href="#wollenberg_2007" id="citation_wollenberg_2007_67dc9972b79f4">Wollenberg 2007</a>; <a href="#head_2007" id="citation_head_2007_67dc9972b79f6">Head 2007</a>; <a href="#ng_2011" id="citation_ng_2011_67dc9972b79f7">Ng 2011</a>; and the chapters in <a href="#rodgers_2021b" id="citation_rodgers_2021b_67dc9972b79f9">Rodgers 2021b</a>.</div><div id="fndiv6" class="flyoverdiv">For other examples, see the penultimate thematic unit, <i>Un pochettino largamento</i>, in the finale of Sibelius&rsquo;s Fifth Symphony and the end of Grieg&rsquo;s song &ldquo;First Meeting,&rdquo; both of which Caplin discusses in his forthcoming book (<a href="#caplin_forthcoming" id="citation_caplin_forthcoming_67dc9972b79fb">Forthcoming</a>, chap. 9). We thank Caplin for providing us with a copy of this as-yet-unpublished chapter.</div><div id="fndiv7" class="flyoverdiv">We have found only two 5&#710;-1&#710;-fill examples in her instrumental music: Klavierst&uuml;ck (Andante con moto), H-U 146 (fill in mm. 57&ndash;58); and the third movement of her String Quartet in E&#x266d; major, H-U 277 (fill in mm. 173&ndash;81). Interestingly, prolongational closure appears more frequently in Hensel&rsquo;s Lieder than in her instrumental works. Other examples include Klavierst&uuml;ck (Andante con espressione), H-U 181 (early pedal in m. 90); Klavierst&uuml;ck, H-U 202 (early pedal in m. 81); Sonata for Piano in E&#x266d; major, third movement (Largo molto), H-U 246 (dominant substitution in m. 53); and Klavierst&uuml;ck, H-U 405 (early pedal in m. 55).</div><div id="fndiv8" class="flyoverdiv">Dominant-substitution prolongational closure is not to be confused with one of Caplin&rsquo;s types of prolongational progressions, which uses what he calls &ldquo;substitute chords&rdquo; (<a href="#caplin_1998" id="citation_caplin_1998_67dc9972b79ff">1998</a>, 25&ndash;26). As Caplin uses the term, it refers to chords such as vi and iii, which share two common tones with I and can thus participate in the prolongation of tonic harmony. &ldquo;Substitute chords,&rdquo; in short, are chords that take the place of a prolonged harmony. In dominant-substitution prolongational closure, on the other hand, a chord takes the place of a cadential dominant.</div><div id="fndiv9" class="flyoverdiv">A few of the examples Caplin discusses could be described as the dominant-substitution type: for example, the eight-measure A section in the &ldquo;Valse noble,&rdquo; from Robert Schumann&rsquo;s <i>Carnaval</i>, which ends V\(\substack{6\\5}\)&ndash;I (unlike the A' section, which ends V7&ndash;I) (<a href="#caplin_2018" id="citation_caplin_2018_67dc9972b7a01">2018</a>, 14&ndash;16); mm. 13&ndash;15 and 42&ndash;44 of Felix Mendelssohn&rsquo;s <i>Song without Words</i>, op. 19, no. 1, in which the penultimate dominant of the theme appears in inverted form on a downbeat and is then embellished by a root-position dominant before resolving to the tonic (2018, 15, n. 41; 16, n. 44); and the opening antecedent phrase of Mozart&rsquo;s Piano Sonata in E&#x266d; major, K. 282, third movement, which ends V\(\substack{6\\5}\)&ndash;I rather than V7&ndash;I, thus avoiding an IAC (<a href="#caplin_2013" id="citation_caplin_2013_67dc9972b7a04">2013</a>, 123&ndash;24). None of his examples, however, correspond with the early-pedal type that we propose here.</div><div id="fndiv10" class="flyoverdiv">Drawing upon Caplin&rsquo;s work on bass-line melodies (<a href="#caplin_2008" id="citation_caplin_2008_67dc9972b7a06">2008</a>), one could say that in 5&#710;&ndash;1&#710;-fill prolongational closure the bass line engages with the melodic goal of the &ldquo;cadential stream&rdquo; (i.e., 5&#710;), whereas the other types of prolongational closure may not really engage with the cadential stream at all but instead belong solely to the &ldquo;prolongational stream&rdquo;&mdash;bass melodic motions that center on 1&#710;. Even if the bass lines of dominant-substitution and early-pedal prolongational closure do engage with notes that belong to both streams (i.e., 3&#770;, 4&#710;, or 6&#710;), the point is that they tend not to shift fully into the cadential stream.</div><div id="fndiv11" class="flyoverdiv">One might also choose to hear the close of this song as quasi-plagal, considering the metrically strong iv chord in m. 33. For a discussion of this song&rsquo;s overall avoidance of tonic harmony, see <a href="#rodgers_2011a" id="citation_rodgers_2011a_67dc9972b7a0a">Rodgers 2011a</a>, 188&ndash;94.</div><div id="fndiv12" class="flyoverdiv">In a forthcoming article on plagal cadences in Hensel&rsquo;s songs, Rodgers describe the viio\(\substack{4\\3}\)&ndash;I progression as a &ldquo;diminished plagal cadence&rdquo; (<a href="#rodgers_2021a" id="citation_rodgers_2021a_67dc9972b7a0c">2021a</a>).</div><div id="fndiv13" class="flyoverdiv">The effect of early-pedal prolongational closure is similar to what Drew Nobile (<a href="#nobile_2011" id="citation_nobile_2011_67dc9972b7a0e">2011</a>)&mdash;writing about a very different repertoire&mdash;has called the &ldquo;cadential I&rdquo; in popular music, where a root-position I chord functions like a cadential 6/4. The difference is that in the pop examples Nobile discusses the &ldquo;cadential I&rdquo; is normally followed by a root-position V chord, whereas in the examples we discuss, the pedal persists through the end of the piece or passage.</div><div id="fndiv14" class="flyoverdiv">Throughout this article we refer to poetic speakers with masculine pronouns, the main reason being that all of the poets but one are men, and the one female poet&mdash;Henriette von Hulsen, author of &ldquo;Der Sprosser&rdquo;&mdash;writes her poem from the perspective of a male protagonist. The one exception, where we describe the poetic speaker as a woman, is Johann Henrich Voß&rsquo;s &ldquo;Marias Klage,&rdquo; which is clearly written from a woman&rsquo;s point of view. R. Larry Todd suggests that the poetic persona of Hensel&rsquo;s &ldquo;An die Entfernte&rdquo; may be a particular man: her future husband Wilhelm, who, five months before she wrote the song, departed for Italy, where he would spend five years studying painting, separated from Fanny. The poem&rsquo;s opening lines, writes Todd, &ldquo;must have resonated meaningfully for Fanny. Here, symbolically, Wilhelm addresses the <i>Entfernte</i>, Fanny, who answers from the piano&rdquo; (<a href="#todd_2010" id="citation_todd_2010_67dc9972b7a10">2010</a>, 75).</div><div id="fndiv15" class="flyoverdiv">The translation comes from <a href="#wigmore_1988" id="citation_wigmore_1988_67dc9972b7a12">Wigmore 1988</a>, 41.</div><div id="fndiv16" class="flyoverdiv">&ldquo;An die Entfernte&rdquo; is one of three unpublished songs that we discuss in this article. (The others are &ldquo;Der Sprosser&rdquo; and &ldquo;Marias Klage.&rdquo;) Some readers may naturally wonder if these songs are therefore somewhat incomplete&mdash;if their &ldquo;weak,&rdquo; prolongational endings are not so much aesthetic choices on Hensel&rsquo;s part as signs that these songs were awaiting &ldquo;stronger&rdquo; endings in further revised versions. This is not the case. All evidence suggests that these three songs&mdash;and, indeed, nearly all of Hensel&rsquo;s unpublished songs, which make up the majority of her output&mdash;are finished works: almost without exception, they feature double bars, and they proceed through to the ends of their respective poems. Furthermore, the majority of Hensel&rsquo;s unpublished songs end with clear-cut PACs&mdash;suggesting that the prolongational closes of these songs were no accident.</div><div id="fndiv17" class="flyoverdiv">In the upper-right corner of the first page of the song&rsquo;s manuscript&mdash;next to the date: July 24, 1826&mdash;Hensel writes one underlined word: &ldquo;Selt.&rdquo; In all likelihood, that refers to Amalia von Selt, which was the pseudonym of Henriette von H&uuml;lsen, a woman who lived in Berlin and published a number of short stories in periodicals in the 1820s. Whether Hensel knew von H&uuml;lsen, and how she found the poem, is unclear. The poem, alas, appears in none of von H&uuml;lsen&rsquo;s available stories, so we can&rsquo;t be sure where exactly Hensel came across it.</div><div id="fndiv18" class="flyoverdiv">We use brackets to show punctuation marks that do not appear in Hensel&rsquo;s manuscript but that make grammatical sense in the poem. Since we have not been able to find a printed version of H&uuml;lsen&rsquo;s poem, we cannot be sure what punctuation she used&mdash;but we have made our best guess.</div><div id="fndiv19" class="flyoverdiv">We are grateful to Harald Krebs for providing us with his translation of this poem.</div><div id="fndiv20" class="flyoverdiv">See <a href="#cone_1982" id="citation_cone_1982_67dc9972b7a14">Cone 1982</a>.</div><div id="fndiv21" class="flyoverdiv">Why Hensel provides a cadence here but nowhere else is not entirely clear, although one could argue that the reference to a &ldquo;sweet bride&rdquo; (marked <i>dolce</i>, evoking momentary serenity here, though tinged with dissonance over the pedal) demands more stable-sounding music, despite the fact that the speaker of course laments that he has no sweet bride with which to sing.</div><div id="fndiv22" class="flyoverdiv">For more on Heine&rsquo;s technique of <i>Stimmungsbruch</i> and its relevance to musical settings of his poems, see <a href="#perrey_2002" id="citation_perrey_2002_67dc9972b7a16">Perrey 2002</a>, 78&ndash;79. On the history of the term in Heine scholarship, see <a href="#binder_2013" id="citation_binder_2013_67dc9972b7a18">Binder 2013</a>, 5, n. 17.</div><div id="fndiv23" class="flyoverdiv">The translation is adapted from Richard Stokes <a href="#stokes_2005" id="citation_stokes_2005_67dc9972b7a1a">2005</a>, 142.</div><div id="fndiv24" class="flyoverdiv">Larry Todd describes &ldquo;Fichtenbaum und Palme&rdquo; as an ABA' form, noting that Hensel &ldquo;imposed on Heine&rsquo;s binary pair (<i>AB</i>) a ternary division&rdquo; (<a href="#todd_2010" id="citation_todd_2010_67dc9972b7a1c">2010</a>, 224) Todd also suggests, as do we, that the contrasting moods of sections A and B evoke the contrasting geographical locations of the spruce and the palm (223&ndash;24).</div><div id="fndiv25" class="flyoverdiv">Another possible interpretation would be to hear the iv&ndash;I progression in m. 29 as the song&rsquo;s structural cadence&mdash;a bona fide plagal cadence. We prefer to hear the downbeat of m. 31 as the structural close, however, because this is where the poem reaches its structural close: mm. 30&ndash;31 provide the crucial verb &ldquo;trauert&rdquo; (grieves) that describes the palm (&ldquo;It dreams of a palm tree, / Which . . . / Grieves . . . / On a blazing wall of rock&rdquo;). The ending of this song is reminiscent of the ambivalent endings of some of Bach&rsquo;s preludes from the <i>Well-Tempered Clavier</i>, which likewise strongly tonicize the subdominant&mdash;and which Hensel knew intimately. Think, for example, of the close of the preludes in C major, C minor, and E&#x266d; minor, from the first book of that set, with structural PACs that land not on a tonic triad but on V7 of the subdominant, followed by a tonicization of this key above a tonic pedal. Think also of the close of the prelude in E major, also from book 1, which is the only prelude among the forty-eight to end not with a cadence but with a moment of prolongational closure (viio\(\substack{4\\3}\)&ndash;I). All of this suggests that Bach&rsquo;s music might have been a source of influence in Hensel&rsquo;s experiments with &ldquo;weakened&rdquo; moments of closure.</div><div id="fndiv26" class="flyoverdiv">Readers can find a copy of the manuscript in the digital collection of the Staatsbibliothek zu Berlin (<a href='https://digital-beta.staatsbibliothek-berlin.de/'>https://digital-beta.staatsbibliothek-berlin.de/</a>).</div><div id="fndiv27" class="flyoverdiv"> The translation is our own.</div><div id="fndiv28" class="flyoverdiv">Vo&szlig;&rsquo;s poem in fact has six stanzas, but Hensel omits the third stanza in her setting.</div><div id="fndiv29" class="flyoverdiv">The cadences correspond with the exclamation points that mark the end of the poem&rsquo;s complete sentences: musical and poetic syntax, in other words, are aligned. This may help to explain why Hensel opts to end the antecedent phrase without a proper HC but instead with a viio7. Line 2 (the end of the antecedent) closes with a comma and is followed by a dependent clause; the lack of cadential closure at the end of the antecedent underlines the lack of poetic closure at the end of the first couplet.</div><div id="fndiv30" class="flyoverdiv">Another potential example is &ldquo;Auf einer Burg&rdquo; (from the op. 39 <i>Liederkreis</i>); if one hears the song as being in E Phrygian rather than in A minor, one could argue that it ends with dominant-substitution prolongational closure: Gr+6 built on F leading to an E-major chord. For a Phrygian reading of the song, see Lewin (<a href="#lewin_2006" id="citation_lewin_2006_67dc9972b7a1f">2006</a>, 167&ndash;79).</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2020 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Fred Hosken, Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		7447		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

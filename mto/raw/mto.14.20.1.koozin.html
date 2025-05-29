@@ -1,0 +1,398 @@
+ 
+ 
+
+<head>
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 20.1: Koozin, Evolving Content and Design</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="History and Future of <I>MTO</I>: Evolving Content and Design">
+
+    <meta name="citation_author" content="Koozin, Timothy">
+      
+
+<meta name="citation_publication_date" content="2014/02/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="20">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">History and Future of <I>MTO</I>: Evolving Content and Design
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Timothy Koozin</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: <I>MTO</I>, history of theory, performance and analysis, popular music, aesthetic framing</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.14.20.1/mto.14.20.1.koozin.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.14.20.1/koozin_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received January 2014</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 20, Number 1, February 2014 <br> Copyright &#0169; 2014 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+</head>
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1a</b>. John Covach, &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.covach.art' target='_blank'>Destructuring Cartesian Dualism in Musical Analysis</a>&#8221; (1994)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=0&nonav=true"><img border="1" alt="Example 1a thumbnail" src="koozin_ex1asmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1b</b>. Richard Littlefield, &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.littlefield.html' target='_blank'>The Silence of the Frames</a>&#8221; (1996)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=1&nonav=true"><img border="1" alt="Example 1b thumbnail" src="koozin_ex1bsmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1c</b>. Elizabeth Sayrs, &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.1/mto.03.9.1.sayrs.html'  target='_blank'>Narrative Metaphor, and Conceptual Blending in &#8216;The Hanging Tree&#8217;</a>&#8221; (2003)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=2&nonav=true"><img border="1" alt="Example 1c thumbnail" src="koozin_ex1csmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1d</b>. Richard cohn, &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.cohn_frames.html'  target='_blank'>A Tetrahedral Graph of Tetrachordal Voice-Leading Space</a>&#8221; (2003)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=3&nonav=true"><img border="1" alt="Example 1d thumbnail" src="koozin_ex1dsmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1e</b>. William Rothstein, &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.rothstein_frames.html'  target='_blank'>Like Falling off a Log: Rubato in Chopin�s Prelude in A-flat Major (op. 28, no. 17)</a>&#8221; (2005)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=4&nonav=true"><img border="1" alt="Example 1e thumbnail" src="koozin_ex1esmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1f</b>. John Covach, &#8220;<a href='http://mtosmt.org/issues/mto.13.19.3/mto.13.19.3.covach.php'  target='_blank'>To MOOC or Not To MOOC</a>&#8221; (2013)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="koozin_examples.php?id=5&nonav=true"><img border="1" alt="Example 1f thumbnail" src="koozin_ex1fsmall.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[1] In this essay, I will discuss how topical areas and presentational strategies have evolved as authors leverage the technological capacities of <I>MTO</I>. With the capacity to make articles and critical commentaries widely available in a short amount of time, <I>MTO</I> has attracted writers interested in articulating new methodologies, forging new interdisciplinary connections, and reevaluating our evolving identity as a scholarly society. Changes from fixed texts to multimedia and interactivity have evolved together with shifts in values and ideology.  <b>Examples 1a-f</b> provide a sampling of article views representative of <I>MTO</I>&#8217;s evolving design. A broadening in musical repertoires and analytical approaches has paralleled developments in digital media design, fostered by the flexibility <I>MTO</I> offers as an open-access medium for publication authored and produced by scholars. In this brief retrospective view spanning the history of <I>MTO</I>, it is inevitable that I will barely scratch the surface in commenting on a few articles while leaving other important contributions unmentioned. For this, I apologize in advance.
+	</p>
+
+<p style="text-align: center;">
+<b>Web Environments, Musical Worlds, and the &#8220;Silence of the Frames&#8221;</b></p>
+
+<p>[2] Several of the most prolific <I>MTO</I> authors have written thoughtfully on the changing landscape of music theory as it relates to other disciplines. Janet Schmalfeldt&#8217;s six articles in <I>MTO</I> published between 1998 and 2010 (<a href="#schmalfeldt_1998" id="citation_schmalfeldt_1998_67dc9a636edd1">1998</a>, <a href="#schmalfeldt_2004" id="citation_schmalfeldt_2004_67dc9a636edd5">2004</a>, <a href="#schmalfeldt_2005" id="citation_schmalfeldt_2005_67dc9a636edd7">2005</a>, <a href="#schmalfeldt_2010a" id="citation_schmalfeldt_2010a_67dc9a636edd9">2010a</a>, <a href="#schmalfeldt_2010b" id="citation_schmalfeldt_2010b_67dc9a636eddb">2010b</a>, <a href="#schmalfeldt_2010c" id="citation_schmalfeldt_2010c_67dc9a636eddd">2010c</a>) articulate a growing awareness of how musical analysis can be informed by performance and enriched through consideration of broader cultural and historical contexts. Patrick McCreless, in five articles spanning 1996 to 2011 (<a href="#mccreless_1996a" id="citation_mccreless_1996a_67dc9a636eddf">1996a</a>, <a href="#mccreless_1996b" id="citation_mccreless_1996b_67dc9a636ede1">1996b</a>, <a href="#mccreless_1998" id="citation_mccreless_1998_67dc9a636ede3">1998</a>, <a href="#mccreless_2000" id="citation_mccreless_2000_67dc9a636ede5">2000</a>, <a href="#mccreless_2011" id="citation_mccreless_2011_67dc9a636ede7">2011</a>), traces how our Society grappled with the New Musicology critique in the late 1990s and continued to evolve in relation to other musical and scholarly communities. A wide range of studies in musical meaning can be traced from phenomenological approaches (<a href="#covach_1994" id="citation_covach_1994_67dc9a636ede9">Covach 1994</a>, <a href="#littlefield_1996" id="citation_littlefield_1996_67dc9a636edeb">Littlefield 1996</a>) and critical theory (<a href="#killam_1994" id="citation_killam_1994_67dc9a636eded">Killam 1994</a>, <a href="#krims_1994" id="citation_krims_1994_67dc9a636edef">Krims 1994</a>) to cognitive theory (<a href="#london_1993" id="citation_london_1993_67dc9a636edf1">London 1993</a>, <a href="#zbikowski_1995" id="citation_zbikowski_1995_67dc9a636edf2">Zbikowski 1995</a>) and semiotic approaches (<a href="#agawu_1996" id="citation_agawu_1996_67dc9a636edf4">Agawu 1996</a>, <a href="#roeder_1993" id="citation_roeder_1993_67dc9a636edf6">Roeder 1993</a>, <a href="#monelle_2000" id="citation_monelle_2000_67dc9a636edf7">Monelle 2000</a>). The first writers for <I>MTO</I> formulated positions on future directions for music theory and recognized <I>MTO</I> as a logical platform for articulating those positions. These early articles were rich in philosophical introspection. Interestingly, <I>MTO</I> writers were directly concerned with syntactic, semantic, and intertextual issues in music often described through words that would also come to be understood as the stuff of HTML web design: <i>network, frame, code, text, image.</i> Engaged in the substance of their discussions, they did not always exhibit self-awareness as creators of the newly emerging phenomenon of hypertext. But now, the body of work from the early years of <I>MTO</I> forms a powerful example of evolving web-based scholarship. 
+
+</p><p> [3] There was urgency during <I>MTO</I>&#8217;s first decade to repond to the challenges posed by new musicologists, to show that analysis of a musical work&#8217;s internal relationships was compatible with investigations of larger contextualizations of musical meaning. In his 1996 article, &#8220;<a href="http://www.mtosmt.org/issues/mto.96.2.4/mto.96.2.4.agawu.html" target="_blank">Analyzing Music Under the New Musicological Regime</a>,&#8221; Kofi Agawu explored connections and mutual compatibilities in theory and musicology, citing examples from a vast range of innovative music-theoretical inquiries already under way that could not be dismissed as a merely formalist enterprise. Agawu defended our close readings of musical works with Adorno&#8217;s statement that analysis is &#8220;the prerequisite for an adequate performance&#8221; and aesthetic theories on music are &#8220;inconceivable without analysis.&#8221;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>   
+
+</p><p> [4] As a newly emerging design platform, the Web promoted a conscious engagement with text, images, sounds, and framing containers that would shape substance as well as style, offering opportunities to develop innovative formats for expressing analysis and theoretical approaches while opening a broader field of potential in the aesthetic objects we might choose to examine. Earlier <I>MTO</I> articles provided philosophical grounding for this work through inquiries into how we frame musical experience and knowledge in general. Thoughtful early writings that formulated understandings of the interior virtual world of the musical imagination included John Covach&#8217;s &#8220;<a href="http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.covach.art" target="_blank">Destructuring Cartesian Dualism in Musical Analysis</a>&#8221; (<a href="#covach_1994" id="citation_covach_1994_67dc9a636edfc">1994</a>). Covach posits that musical understanding arises when we are able to situate a particular piece within a musical world, and musical meaning arises as we appreciate the particular way in which the work is situated. The transparent background that constitutes a musical world is further illuminated in Richard Littlefield&#8217;s article &#8220;<a href="http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.littlefield.html" target="_blank">The Silence of the Frames</a>&#8221; (<a href="#littlefield_1996" id="citation_littlefield_1996_67dc9a636edfe">1996</a>). Littlefield draws from Immanuel Kant and Jacques Derrida in questioning how art is contextualized such that it appears as a &#8220;work.&#8221; In his nuanced reading of Edward T. Cone&#8217;s (<a href="#cone_1968" id="citation_cone_1968_67dc9a636ee00">1968</a>)<i> Musical Form and Musical Performance,</i> Littlefield engages with issues of aesthetic framing. The frame enshrines the work, but ideally, a good frame seems to disappear. As Derrida states, &#8220;There is framing, but the frame does not exist.&#8221;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>   Musical framing by silence implies the mental act of comprehension, in separating an inner musical world from all externals. Implied in this is the idea that all music analysis taps into a romantic idealized world of vicarious identification with the artist. 
+</p><p>[5] Littlefield&#8217;s article generated a significant amount of buzz on the SMT-list, raising questions about musical structure and closure while challenging judgments of what constitutes an artwork. But further, it brings into consideration the moving target of what we choose to analyze and how we frame our inquiries into musical structures and processes. Part of our interest in graphic analysis, audio clips, and hyperlinked web pages, connected like so many neural nets, may stem from a romantic aesthetic that seeks to make the idealized and imagined inner world of the musical work more concrete and tangible. 
+
+</p><p style="text-align: center;"><b>Web Media and the Analytical Object</b></p>
+
+<p>[6] Building on the dialogue of ideas expressed in the early plain-text <I>MTO</I> articles, multimedia articles emerged in the late 1990s.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>   The capacity to focus on specific performances through study of audio and video has been invaluable in <I>MTO</I> studies devoted to analysis and performance, popular music, and film music. Graphic renderings and animation have been integrated in approaches to visualization of musical processes, notably in transformational theory and in studies of rhythm. Following after the incorporation of MIDI audio files in 1996 and RealAudio files in 1998, it became possible to integrate audio and video with graphics and text in a more unified design by the early 2000s. Writers were drawn to <I>MTO</I> as a medium in which they could discuss specific audio and video excerpts. In articles including Mark Butler&#8217;s study of electronic dance music (<a href="#butler_2001" id="citation_butler_2001_67dc9a636ee11">2001</a>), Rebecca Leydon&#8217;s &#8220;Towards a Typology of Minimalist Tropes&#8221; (<a href="#leydon_2002" id="citation_leydon_2002_67dc9a636ee13">2002</a>), and Elizabeth Sayrs&#8217;s study of music in the Western film, The Hanging Tree (<a href="#sayrs_2003" id="citation_sayrs_2003_67dc9a636ee15">2003</a>), the audio/video element is essential as an object of analysis. Also from this period is Diane Urista&#8217;s pedagogy article employing video to illustrate kinesthetic approaches to music theory pedagogy (<a href="#urista_2003" id="citation_urista_2003_67dc9a636ee17">2003</a>).
+</p><p> [7] Writers have artfully rendered geometries of transformational space through animation. In <a href="#cohn_2003" id="citation_cohn_2003_67dc9a636ee19">2003</a>, Richard Cohn modeled parsimonious and transpositionally combinatorial relations through three-dimensional graphic renderings and QuickTime VR; and Nancy Rogers and Michael Buchler created moving diagrams in animated GIF format to illustrate analogies between the cyclic patterns of square dancing and pitch transformation in atonal music (<a href="#rogers_and__buchler_2003" id="citation_rogers_and__buchler_2003_67dc9a636ee1c">2003</a>). John Roeder and company provided a whole volume with animated transformational modeling in <a href="#roeder_2009" id="citation_roeder_2009_67dc9a636ee1d">2009</a>. In this special volume, titled &#8220;Animating the &#8216;Inside,&#8217;&#8221; David Lewin&#8217;s advocacy of a &#8220;transformational attitude&#8221;&#8212;a compelling metaphor by which a listener imagines being &#8220;inside&#8221; the music&#8212;is offered as a context for the authors&#8217; representations of musical transformations spanning whole musical works, modeled as animated real-time changes within virtual spaces.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  
+</p><p> [8] Many <I>MTO</I> studies have exemplified how analysis can be informed by performances and through collaborations with performers. An appreciation of analysis as performance reminds us that all musical analyses have a performative element that can be foregrounded through the use of media. To cite only one example, William Rothstein documents the tactile exploration of Chopin&#8217;s music at the piano as he explicates principles of rubato in &#8220;Like Falling off a Log: Rubato in Chopin's Prelude in A-flat Major (op. 28, no. 17)&#8221; (<a href="#rothstein_2005" id="citation_rothstein_2005_67dc9a636ee21">2005</a>). The <I>MTO</I> special issues, <i>Performance and Analysis: Views from Theory, Musicology, and Performance</i> <a href="http://www.mtosmt.org/issues/mto.05.11.1/toc.11.1.html" target="_blank">(11.1, 2005)</a> and <i>Analyzing Performance </i><a href="http://www.mtosmt.org/issues/mto.12.18.1/toc.18.1.html" target="_blank">(18.1, 2012)</a> are notable accomplishments in this area.
+</p><p> [9] <I>MTO</I> proved to be a useful platform for presenting new analytical approaches as we expanded further into new repertoires. This work would be relevant in addressing the need, articulated by David Neumeyer in the first <I>MTO</I> article, to promote greater inclusiveness and challenge a prevailing &#8220;ideology of masterwork culture&#8221; (1993, [19]). Two songs by Dolly Parton are discussed in Rosemary Killam&#8217;s (<a href="#killam_1994" id="citation_killam_1994_67dc9a636ee22">1994</a>) explication of feminist theories, also published in <I>MTO</I>&#8217;s first volume of issues. In noting this, I am reminded of how <I>MTO</I> has been at the forefront in publishing influential articles on the analysis of popular music. As Peter Kaminsky observed in <a href="#kaminsky_2000" id="citation_kaminsky_2000_67dc9a636ee24">2000</a>, the &#8220;boomers&#8221; were having their revenge and a string of highly influential <I>MTO</I> articles on analysis of popular music followed. To mention several, Walter Everett (<a href="#everett_2004" id="citation_everett_2004_67dc9a636ee26">2004</a>), Allen Moore (<a href="#moore_2005" id="citation_moore_2005_67dc9a636ee30">2005</a>), Lori Burns (<a href="#burns_2005" id="citation_burns_2005_67dc9a636ee32">2005</a>), and Matthew Butterfield (<a href="#butterfield_2006" id="citation_butterfield_2006_67dc9a636ee34">2006</a>) published foundational studies focusing, respectively, on harmony, text setting, vocal expression, and rhythmic timing in popular music. I would also mention the 2010 &#8220;Africa and Beyond&#8221; <a href="http://www.mtosmt.org/issues/mto.10.16.4/toc.16.4.html" target="_blank">(Volume 16.4)</a> issue and the 2012 Festschrift dedicated to Steve Larson <a href="http://www.mtosmt.org/issues/mto.12.18.3/toc.18.3.html" target="_blank">(Volume 18.3)</a> as noteworthy volumes of exceptional breadth, with wide-ranging explorations of varied repertoires including Non-Western music and jazz. 
+
+</p><p> [10] As I reflect on my years as editor of <I>MTO</I>, and the full scope of volumes that came before, during, and after, I am most struck by the collaborative environment <I>MTO</I> has provided for the creative &#8220;framing&#8221; of our scholarly work. The mentoring role of editorial board members, who have anonymously provided encouragement and critical feedback cannot be overstated. I also wish to take this opportunity to acknowledge the invaluable contribution of Managing Editor, Brent Yorgason. His work over many years has been indispensible to the design, content, and ever-steady progress of the Journal. 
+</p><p> [11] Today&#8217;s mobile connectivity is driving more open pathways for dynamically framing information. In recent years, <I>MTO</I> webinars have offered new dimensions of interactivity and colloquy with potential to further transform the content and design of our research. John Covach&#8217;s (<a href="#covach_2013" id="citation_covach_2013_67dc9a636ee36">2013</a>) article on MOOCs (Massive Open Online Courses) provides a perspective on innovative instructional technology that may extend the reach of our teaching while challenging established instructional approaches.
+</p><p> [12] To think deeply about music is to form metaphors. We are drawn to technological tools that aid in communicating our close involvement with musical works and musical processes. Digital media extends our creativity in rendering visible our inner virtual worlds of musical experience, while also shaping pathways we navigate in our inquiry. As Judith Lochhead observed in <I>MTO</I> in <a href="#lochhead_1998" id="citation_lochhead_1998_67dc9a636ee38">1998</a>, quoting from Heidegger, &#8220;technology, in essence, reveals a world in a certain way.&#8221;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>   Through a dynamic collaboration of authorship, editorial mentoring, and technical design, <I>MTO</I> has provided a powerful platform for the creative framing of ideas that continues to evolve. </p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Timothy Koozin<br>
+	Moores School of Music<br>University of Houston<br>120 School of Music Bldg         <br>Houston, Texas 77204-4017<br><a href="mailto:Timothy.Koozin@mail.uh.edu">Timothy.Koozin@mail.uh.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_adorno_1982" class="flyoverdiv">Adorno, T. W. 1982. &#8220;On the Problem of Musical Analysis.&#8221; <i>Music Analysis</i> 1: 169&#8211;87.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adorno_1982"></a>Adorno, T. W. 1982. &#8220;On the Problem of Musical Analysis.&#8221; <i>Music Analysis</i> 1: 169&#8211;87.</p><div id="citediv_agawu_1996" class="flyoverdiv">Agawu, Kofi. 1996. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.4/mto.96.2.4.agawu.html' target='_blank'>Analyzing Music Under the New Musicological Regime</a>.&#8221; <i>Music Theory Online </i>2, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="agawu_1996"></a>Agawu, Kofi. 1996. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.4/mto.96.2.4.agawu.html' target='_blank'>Analyzing Music Under the New Musicological Regime</a>.&#8221; <i>Music Theory Online </i>2, no. 4.</p><div id="citediv_burns_2005" class="flyoverdiv">Burns, Lori. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.burns.html' target='_blank'>Feeling the Style: Vocal Gesture and Musical Expression in Billie Holiday, Bessie Smith, and Louis Armstrong.</a>&#8221; <i>Music Theory Online </i>11, no. 3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="burns_2005"></a>Burns, Lori. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.3/mto.05.11.3.burns.html' target='_blank'>Feeling the Style: Vocal Gesture and Musical Expression in Billie Holiday, Bessie Smith, and Louis Armstrong.</a>&#8221; <i>Music Theory Online </i>11, no. 3.</p><div id="citediv_butler_2001" class="flyoverdiv">Butler, Mark J. 2001. &#8220;<a href='http://www.mtosmt.org/issues/mto.01.7.6/mto.01.7.6.butler.html' target='_blank'>Turning the Beat Around: Reinterpretation, Metrical Dissonance, and Asymmetry in Electronic Dance Music.</a>&#8221; <i>Music Theory Online </i>7, no. 6. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="butler_2001"></a>Butler, Mark J. 2001. &#8220;<a href='http://www.mtosmt.org/issues/mto.01.7.6/mto.01.7.6.butler.html' target='_blank'>Turning the Beat Around: Reinterpretation, Metrical Dissonance, and Asymmetry in Electronic Dance Music.</a>&#8221; <i>Music Theory Online </i>7, no. 6. </p><div id="citediv_butterfield_2006" class="flyoverdiv">Butterfield, Matthew W. 2006. &#8220;<a href='http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.butterfield.html' target='_blank'>The Power of Anacrusis: Engendered Feeling in Groove-Based Musics.</a>&#8221; <i>Music Theory Online</i> 12, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="butterfield_2006"></a>Butterfield, Matthew W. 2006. &#8220;<a href='http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.butterfield.html' target='_blank'>The Power of Anacrusis: Engendered Feeling in Groove-Based Musics.</a>&#8221; <i>Music Theory Online</i> 12, no. 4.</p><div id="citediv_cone_1968" class="flyoverdiv">Cone, Edward T. 1968. <i>Musical Form and Musical Performance.</i> New York: W. W. Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1968"></a>Cone, Edward T. 1968. <i>Musical Form and Musical Performance.</i> New York: W. W. Norton.</p><div id="citediv_cohn_2003" class="flyoverdiv">Cohn, Richard. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.cohn_frames.html' target='_blank'>A Tetrahedral Graph of Tetrachordal Voice-Leading Space.</a>&#8221; <i>Music Theory Online </i>9, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_2003"></a>Cohn, Richard. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.cohn_frames.html' target='_blank'>A Tetrahedral Graph of Tetrachordal Voice-Leading Space.</a>&#8221; <i>Music Theory Online </i>9, no. 4.</p><div id="citediv_covach_1994" class="flyoverdiv">Covach, John. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.covach.art' target='_blank'>Destructuring Cartesian Dualism in Musical Analysis</a>&#8221; <i>Music Theory Online </i>0, no. 11.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="covach_1994"></a>Covach, John. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.covach.art' target='_blank'>Destructuring Cartesian Dualism in Musical Analysis</a>&#8221; <i>Music Theory Online </i>0, no. 11.</p><div id="citediv_covach_2013" class="flyoverdiv">Covach, John. 2013. &#8220;<a href='http://mtosmt.org/issues/mto.13.19.3/mto.13.19.3.covach.php' target='_blank'>To MOOC or Not To MOOC?</a>&#8221; <i>Music Theory Online </i>19, no. 3. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="covach_2013"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2013. &#8220;<a href='http://mtosmt.org/issues/mto.13.19.3/mto.13.19.3.covach.php' target='_blank'>To MOOC or Not To MOOC?</a>&#8221; <i>Music Theory Online </i>19, no. 3. </p><div id="citediv_derrida_1987" class="flyoverdiv">Derrida, Jacques. 1987. <i>The Truth in Painting,</i> trans. Geoff Bennington and Ian McLeod. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="derrida_1987"></a>Derrida, Jacques. 1987. <i>The Truth in Painting,</i> trans. Geoff Bennington and Ian McLeod. Chicago: University of Chicago Press.</p><div id="citediv_everett_2004" class="flyoverdiv">Everett, Walter T. 2004.  &#8220;<a href='http://www.mtosmt.org/issues/mto.04.10.4/mto.04.10.4.w_everett.html' target='_blank'>Making Sense of Rock's Tonal Systems.</a>&#8221; <i>Music Theory Online </i>10, no. 4. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="everett_2004"></a>Everett, Walter T. 2004.  &#8220;<a href='http://www.mtosmt.org/issues/mto.04.10.4/mto.04.10.4.w_everett.html' target='_blank'>Making Sense of Rock's Tonal Systems.</a>&#8221; <i>Music Theory Online </i>10, no. 4. </p><div id="citediv_heidegger_1962" class="flyoverdiv">Heidegger, Martin. 1962.  <i>The Question Concerning Technology and Other Essays,</i> trans. William Lovitt. New York: Garland Publishing.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="heidegger_1962"></a>Heidegger, Martin. 1962.  <i>The Question Concerning Technology and Other Essays,</i> trans. William Lovitt. New York: Garland Publishing.</p><div id="citediv_ihde_1983" class="flyoverdiv">Ihde, Don. 1983. <i>Existential Technics.</i> Albany: SUNY Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ihde_1983"></a>Ihde, Don. 1983. <i>Existential Technics.</i> Albany: SUNY Press.</p><div id="citediv_johnson_1995" class="flyoverdiv">Johnson, Timothy. 1995. &#8220;<a href='http://www.mtosmt.org/issues/mto.95.1.3/mto.95.1.3.johnson.art.html' target='_blank'>The Computer Presentation of Musical Research: A Case Study.</a>&#8221;<i>Music Theory Online </i>1, no. 3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="johnson_1995"></a>Johnson, Timothy. 1995. &#8220;<a href='http://www.mtosmt.org/issues/mto.95.1.3/mto.95.1.3.johnson.art.html' target='_blank'>The Computer Presentation of Musical Research: A Case Study.</a>&#8221;<i>Music Theory Online </i>1, no. 3.</p><div id="citediv_kaminsky_2000" class="flyoverdiv">Kaminsky, Peter M. 2000. &#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.3/mto.00.6.3.kaminsky.html' target='_blank'>Revenge of the Boomers: Notes on the Analysis of Rock Music</a>&#8221; <i>Music Theory Online </i>6, no. 3. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kaminsky_2000"></a>Kaminsky, Peter M. 2000. &#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.3/mto.00.6.3.kaminsky.html' target='_blank'>Revenge of the Boomers: Notes on the Analysis of Rock Music</a>&#8221; <i>Music Theory Online </i>6, no. 3. </p><div id="citediv_killam_1994" class="flyoverdiv">Killam, Rosemary. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.8/mto.94.0.8.killam.art' target='_blank'>Feminist Theories&#8211;Process and Continua.</a>&#8221; <i>Music Theory Online </i>0, no. 8. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="killam_1994"></a>Killam, Rosemary. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.8/mto.94.0.8.killam.art' target='_blank'>Feminist Theories&#8211;Process and Continua.</a>&#8221; <i>Music Theory Online </i>0, no. 8. </p><div id="citediv_krims_1994" class="flyoverdiv">Krims, Adam. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.krims.art' target='_blank'>Bloom, Post-Structuralism(s), and Music Theory.</a>&#8221; <i>Music Theory Online </i>0, no. 11.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krims_1994"></a>Krims, Adam. 1994. &#8220;<a href='http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.krims.art' target='_blank'>Bloom, Post-Structuralism(s), and Music Theory.</a>&#8221; <i>Music Theory Online </i>0, no. 11.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven and London: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven and London: Yale University Press.</p><div id="citediv_leydon_2002" class="flyoverdiv">Leydon, Rebecca. 2002. &#8220;<a href='http://www.mtosmt.org/issues/mto.02.8.4/mto.02.8.4.leydon.html' target='_blank'>Towards a Typology of Minimalist Tropes.</a>&#8221; <i>Music Theory Online </i>8, no. 4. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="leydon_2002"></a>Leydon, Rebecca. 2002. &#8220;<a href='http://www.mtosmt.org/issues/mto.02.8.4/mto.02.8.4.leydon.html' target='_blank'>Towards a Typology of Minimalist Tropes.</a>&#8221; <i>Music Theory Online </i>8, no. 4. </p><div id="citediv_littlefield_1996" class="flyoverdiv">Littlefield, Richard. 1996. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.littlefield.html' target='_blank'>The Silence of the Frames.</a>&#8221; <i>Music Theory Online</i> 2, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="littlefield_1996"></a>Littlefield, Richard. 1996. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.littlefield.html' target='_blank'>The Silence of the Frames.</a>&#8221; <i>Music Theory Online</i> 2, no. 1.</p><div id="citediv_lochhead_1998" class="flyoverdiv">Lochhead, Judith I. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.lochhead.html' target='_blank'>Retooling the Technique</a>&#8221; <i>Music Theory Online </i>4, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lochhead_1998"></a>Lochhead, Judith I. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.lochhead.html' target='_blank'>Retooling the Technique</a>&#8221; <i>Music Theory Online </i>4, no. 2.</p><div id="citediv_london_1993" class="flyoverdiv">London, Justin. 1993.&#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.2/mto.93.0.2.london.art' target='_blank'>Loud Rests and Other Strange Metric Phenomena (or, Meter as Heard)</a>&#8221; <i>Music Theory Online </i>0, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="london_1993"></a>London, Justin. 1993.&#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.2/mto.93.0.2.london.art' target='_blank'>Loud Rests and Other Strange Metric Phenomena (or, Meter as Heard)</a>&#8221; <i>Music Theory Online </i>0, no. 2.</p><div id="citediv_mccreless_1996a" class="flyoverdiv">McCreless, Patrick. 1996a. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.mccreless.html' target='_blank'>Review of Jean-Jacques Nattiez, Wagner Androgyne: A Study in Interpretation</a>&#8221; <i>Music Theory Online </i>2, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccreless_1996a"></a>McCreless, Patrick. 1996a. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.1/mto.96.2.1.mccreless.html' target='_blank'>Review of Jean-Jacques Nattiez, Wagner Androgyne: A Study in Interpretation</a>&#8221; <i>Music Theory Online </i>2, no. 1.</p><div id="citediv_mccreless_1996b" class="flyoverdiv">McCreless, Patrick. 1996b. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.2/mto.96.2.2.mccreless.html' target='_blank'>Contemporary Music Theory and the New Musicology: An Introduction.</a>&#8221; <i>Music Theory Online</i> 2, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccreless_1996b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1996b. &#8220;<a href='http://www.mtosmt.org/issues/mto.96.2.2/mto.96.2.2.mccreless.html' target='_blank'>Contemporary Music Theory and the New Musicology: An Introduction.</a>&#8221; <i>Music Theory Online</i> 2, no. 2.</p><div id="citediv_mccreless_1998" class="flyoverdiv">McCreless, Patrick. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.mccreless.html' target='_blank'>Music Theory as Community: A Perspective from the Late &#8217;90&#8217;s.</a>&#8221; <i>Music Theory Online </i>4, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccreless_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.mccreless.html' target='_blank'>Music Theory as Community: A Perspective from the Late &#8217;90&#8217;s.</a>&#8221; <i>Music Theory Online </i>4, no. 2.</p><div id="citediv_mccreless_2000" class="flyoverdiv">McCreless, Patrick. 2000. &#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.3/mto.00.6.3.mccreless.html' target='_blank'>Music Theory and Historical Awareness.</a>&#8221; <i>Music Theory Online </i>6, no. 3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccreless_2000"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000. &#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.3/mto.00.6.3.mccreless.html' target='_blank'>Music Theory and Historical Awareness.</a>&#8221; <i>Music Theory Online </i>6, no. 3.</p><div id="citediv_mccreless_2011" class="flyoverdiv">McCreless, Patrick. 2011. &#8220;<a href='http://www.mtosmt.org/issues/mto.11.17.1/mto.11.17.1.mccreless.html' target='_blank'>Ownership, In Music and Music Theory</a>&#8221; <i>Music Theory Online </i>17, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccreless_2011"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2011. &#8220;<a href='http://www.mtosmt.org/issues/mto.11.17.1/mto.11.17.1.mccreless.html' target='_blank'>Ownership, In Music and Music Theory</a>&#8221; <i>Music Theory Online </i>17, no. 1.</p><div id="citediv_monelle_2000" class="flyoverdiv">Monelle, Raymond. 2000.&#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.2/mto.6.2.monelle.html' target='_blank'>Martinez&#8217;s Concept of &#8216;Intrinsic Semiosis&#8217; (Commentary on Martinez, <I>MTO</I> 6.1).</a>&#8221; <i>Music Theory Online </i>6, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="monelle_2000"></a>Monelle, Raymond. 2000.&#8220;<a href='http://www.mtosmt.org/issues/mto.00.6.2/mto.6.2.monelle.html' target='_blank'>Martinez&#8217;s Concept of &#8216;Intrinsic Semiosis&#8217; (Commentary on Martinez, <I>MTO</I> 6.1).</a>&#8221; <i>Music Theory Online </i>6, no. 2.</p><div id="citediv_moore_2005" class="flyoverdiv">Moore, Allan F. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.4/mto.05.11.4.moore.html' target='_blank'>The Persona-Environment Relation in Recorded Song.</a>&#8221; <i>Music Theory Online </i>11, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_2005"></a>Moore, Allan F. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.4/mto.05.11.4.moore.html' target='_blank'>The Persona-Environment Relation in Recorded Song.</a>&#8221; <i>Music Theory Online </i>11, no. 4.</p><div id="citediv_neumeyer_1993" class="flyoverdiv">Neumeyer, David. 1993. &#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.1/mto.93.0.1.neumeyer.art' target='_blank'>Schoenberg at the Movies: Dodecaphony and Film.</a>&#8221; <i>Music Theory Online </i>0, no. 1. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="neumeyer_1993"></a>Neumeyer, David. 1993. &#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.1/mto.93.0.1.neumeyer.art' target='_blank'>Schoenberg at the Movies: Dodecaphony and Film.</a>&#8221; <i>Music Theory Online </i>0, no. 1. </p><div id="citediv_roeder_1993" class="flyoverdiv">Roeder, John. 1993. &#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.5/mto.93.0.5.roeder.art' target='_blank'>Toward a Semiotic Evaluation of Music Analyses.</a>&#8221; <i>Music Theory Online </i>0, no. 5. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roeder_1993"></a>Roeder, John. 1993. &#8220;<a href='http://www.mtosmt.org/issues/mto.93.0.5/mto.93.0.5.roeder.art' target='_blank'>Toward a Semiotic Evaluation of Music Analyses.</a>&#8221; <i>Music Theory Online </i>0, no. 5. </p><div id="citediv_roeder_2009" class="flyoverdiv">Roeder, John. 2009. &#8220;<a href='http://www.mtosmt.org/issues/mto.09.15.1/mto.09.15.1.roeder_intro.html' target='_blank'>Introduction.</a>&#8221; <i>Music Theory Online </i>15, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roeder_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2009. &#8220;<a href='http://www.mtosmt.org/issues/mto.09.15.1/mto.09.15.1.roeder_intro.html' target='_blank'>Introduction.</a>&#8221; <i>Music Theory Online </i>15, no. 1.</p><div id="citediv_rogers_and__buchler_2003" class="flyoverdiv">Rogers, Nancy and Michael Buchler. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.rogers_buchler_frames.pdf' target='_blank'>Square Dance Moves and Twelve-Tone Operators: Isomorphisms and New Transformational Models.</a>&#8221; <i>Music Theory Online </i>9, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rogers_and__buchler_2003"></a>Rogers, Nancy and Michael Buchler. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.rogers_buchler_frames.pdf' target='_blank'>Square Dance Moves and Twelve-Tone Operators: Isomorphisms and New Transformational Models.</a>&#8221; <i>Music Theory Online </i>9, no. 4.</p><div id="citediv_rothstein_2005" class="flyoverdiv">Rothstein, William. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.rothstein_frames.html' target='_blank'>Like Falling off a Log: Rubato in Chopin's Prelude in A-flat Major (op. 28, no. 17).</a>&#8221; <i>Music Theory Online </i>11, no. 1. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rothstein_2005"></a>Rothstein, William. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.rothstein_frames.html' target='_blank'>Like Falling off a Log: Rubato in Chopin's Prelude in A-flat Major (op. 28, no. 17).</a>&#8221; <i>Music Theory Online </i>11, no. 1. </p><div id="citediv_sayrs_2003" class="flyoverdiv">Sayrs, Elizabeth. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.1/mto.03.9.1.sayrs.html' target='_blank'>Narrative, Metaphor, and Conceptual Blending in &#8216;The Hanging Tree.&#8217;</a>&#8221; <i>Music Theory Online </i>9, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sayrs_2003"></a>Sayrs, Elizabeth. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.1/mto.03.9.1.sayrs.html' target='_blank'>Narrative, Metaphor, and Conceptual Blending in &#8216;The Hanging Tree.&#8217;</a>&#8221; <i>Music Theory Online </i>9, no. 1.</p><div id="citediv_schmalfeldt_1998" class="flyoverdiv">Schmalfeldt, Janet. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.schmalfeldt.html' target='_blank'>On Keeping the Score.</a>&#8221; <i>Music Theory Online </i>4, no. 2. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_1998"></a>Schmalfeldt, Janet. 1998. &#8220;<a href='http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.schmalfeldt.html' target='_blank'>On Keeping the Score.</a>&#8221; <i>Music Theory Online </i>4, no. 2. </p><div id="citediv_schmalfeldt_2004" class="flyoverdiv">Schmalfeldt, Janet. 2004. &#8220;<a href='http://www.mtosmt.org/issues/mto.04.10.1/mto.04.10.1.schmalfeldt.html' target='_blank'>Coming Home.</a>&#8221; <i>Music Theory Online </i>10, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &#8220;<a href='http://www.mtosmt.org/issues/mto.04.10.1/mto.04.10.1.schmalfeldt.html' target='_blank'>Coming Home.</a>&#8221; <i>Music Theory Online </i>10, no. 4.</p><div id="citediv_schmalfeldt_2005" class="flyoverdiv">Schmalfeldt, Janet. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.schmalfeldt.html' target='_blank'>Response (to the Special Issue on Performance and Analysis).</a>&#8221; <i>Music Theory Online </i>11, no. 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2005"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005. &#8220;<a href='http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.schmalfeldt.html' target='_blank'>Response (to the Special Issue on Performance and Analysis).</a>&#8221; <i>Music Theory Online </i>11, no. 1.</p><div id="citediv_schmalfeldt_2010a" class="flyoverdiv">Schmalfeldt, Janet. 2010a. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt3.html' target='_blank'>One More Time on Beethoven&#8217;s &#8220;Tempest,&#8221; From Analytic and Performance Perspectives: A Response to William E. Caplin and James Hepokoski.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2010a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2010a. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt3.html' target='_blank'>One More Time on Beethoven&#8217;s &#8220;Tempest,&#8221; From Analytic and Performance Perspectives: A Response to William E. Caplin and James Hepokoski.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</p><div id="citediv_schmalfeldt_2010b" class="flyoverdiv">Schmalfeldt, Janet. 2010b. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt1.html' target='_blank'>Response to Carissa Reddick.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2010b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2010b. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt1.html' target='_blank'>Response to Carissa Reddick.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</p><div id="citediv_schmalfeldt_2010c" class="flyoverdiv">Schmalfeldt, Janet. 2010c. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt2.html' target='_blank'>Response to Mike Cheng-Yu Lee.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schmalfeldt_2010c"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2010c. &#8220;<a href='http://www.mtosmt.org/issues/mto.10.16.2/mto.10.16.2.schmalfeldt2.html' target='_blank'>Response to Mike Cheng-Yu Lee.</a>&#8221; <i>Music Theory Online </i>16, no. 2.</p><div id="citediv_urista_2003" class="flyoverdiv">Urista, Diane J. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.3/mto.03.9.3.urista_frames.html' target='_blank'>Beyond Words: The Moving Body as a Tool for Musical Understanding.</a>&#8221; <i>Music Theory Online </i>9, no. 3. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="urista_2003"></a>Urista, Diane J. 2003. &#8220;<a href='http://www.mtosmt.org/issues/mto.03.9.3/mto.03.9.3.urista_frames.html' target='_blank'>Beyond Words: The Moving Body as a Tool for Musical Understanding.</a>&#8221; <i>Music Theory Online </i>9, no. 3. </p><div id="citediv_zbikowski_1995" class="flyoverdiv">Zbikowski, Lawrence. 1995. &#8220;<a href='http://www.mtosmt.org/issues/mto.95.1.4/mto.95.1.4.zbikowski.art.html' target='_blank'>Theories of Categorization and Theories of Music.</a>&#8221; <i>Music Theory Online </i>1, no. 4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_1995"></a>Zbikowski, Lawrence. 1995. &#8220;<a href='http://www.mtosmt.org/issues/mto.95.1.4/mto.95.1.4.zbikowski.art.html' target='_blank'>Theories of Categorization and Theories of Music.</a>&#8221; <i>Music Theory Online </i>1, no. 4.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> <a href="#adorno_1982" id="citation_adorno_1982_67dc9a63645ee">Adorno 1982</a> (169&#8211;87), quoted in <a href="#agawu_1996" id="citation_agawu_1996_67dc9a63645f7">Agawu 1996</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> <a href="#derrida_1987" id="citation_derrida_1987_67dc9a63645fb">Derrida 1987</a> (39),  quoted in <a href="#littlefield_1996" id="citation_littlefield_1996_67dc9a63645ff">Littlefield 1996</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> When hypertext was in its infancy and lack of bandwidth was a barrier in building rich aural-graphic environments online, some of us rendered our musical worlds on CD-ROMs. A series of articles in <I>MTO</I> by Dave Headlam, Timothy Johnson, Alexander R. Brinkman, and Elizabeth W. Marvin were extremely helpful in documenting work in this area. Timothy Johnson (<a href="#johnson_1995" id="citation_johnson_1995_67dc9a6364605">1995</a>) discusses my musical studies on CD-ROM published by W. W. Norton.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> <a href="#lewin_1987" id="citation_lewin_1987_67dc9a6364609">Lewin 1987</a> (158&#8211;59), quoted in <a href="#roeder_2009" id="citation_roeder_2009_67dc9a636460c">Roeder 2009</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> <a href="#heidegger_1962" id="citation_heidegger_1962_67dc9a636460f">Heidegger 1962</a>, quoted in <a href="#ihde_1983" id="citation_ihde_1983_67dc9a6364612">Ihde 1983</a> (32&#8211;33). Judith Lochhead (<a href="#lochhead_1998" id="citation_lochhead_1998_67dc9a6364616">1998</a>) draws upon the writings of Don Ihde and Heidegger in discussing how technologies may serve to creatively &#8220;reveal&#8221; the world, asserting that an analogous revelatory function may be found in ways that discourse in musical analysis may shape experiential engagement with sound.<br><a href="#FN5REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv"><a href="#adorno_1982" id="citation_adorno_1982_67dc9a63645ee">Adorno 1982</a> (169&#8211;87), quoted in <a href="#agawu_1996" id="citation_agawu_1996_67dc9a63645f7">Agawu 1996</a>.</div><div id="fndiv2" class="flyoverdiv"><a href="#derrida_1987" id="citation_derrida_1987_67dc9a63645fb">Derrida 1987</a> (39),  quoted in <a href="#littlefield_1996" id="citation_littlefield_1996_67dc9a63645ff">Littlefield 1996</a>.</div><div id="fndiv3" class="flyoverdiv">When hypertext was in its infancy and lack of bandwidth was a barrier in building rich aural-graphic environments online, some of us rendered our musical worlds on CD-ROMs. A series of articles in <I>MTO</I> by Dave Headlam, Timothy Johnson, Alexander R. Brinkman, and Elizabeth W. Marvin were extremely helpful in documenting work in this area. Timothy Johnson (<a href="#johnson_1995" id="citation_johnson_1995_67dc9a6364605">1995</a>) discusses my musical studies on CD-ROM published by W. W. Norton.</div><div id="fndiv4" class="flyoverdiv"><a href="#lewin_1987" id="citation_lewin_1987_67dc9a6364609">Lewin 1987</a> (158&#8211;59), quoted in <a href="#roeder_2009" id="citation_roeder_2009_67dc9a636460c">Roeder 2009</a>.</div><div id="fndiv5" class="flyoverdiv"><a href="#heidegger_1962" id="citation_heidegger_1962_67dc9a636460f">Heidegger 1962</a>, quoted in <a href="#ihde_1983" id="citation_ihde_1983_67dc9a6364612">Ihde 1983</a> (32&#8211;33). Judith Lochhead (<a href="#lochhead_1998" id="citation_lochhead_1998_67dc9a6364616">1998</a>) draws upon the writings of Don Ihde and Heidegger in discussing how technologies may serve to creatively &#8220;reveal&#8221; the world, asserting that an analogous revelatory function may be found in ways that discourse in musical analysis may shape experiential engagement with sound.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2014 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Carmel Raz, Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		15451
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

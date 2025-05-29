@@ -1,0 +1,717 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+<!-- syntax highlighting -->
+<script type="text/javascript" src="../../scripts/shCore.js"></script>
+<script type="text/javascript" src="../../scripts/shBrushPython.js"></script>
+<link rel="stylesheet" type="text/css" href="../../scripts/shCore.css" media="all" />
+<link rel="stylesheet" type="text/css" href="../../scripts/shThemeDefault.css" media="all" />
+<style type="text/css">
+    code { font-size: 90%; }
+.auto-style1 {
+	text-align: center;
+}
+</style>
+
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 19.3: Tymoczko, Review of Cuthbert, Music21</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Michael Cuthbert, <i>Music21: a Toolkit for Computer-aided Musicology</i> (<a href='http://web.mit.edu/music21/'>http://web.mit.edu/music21/</a>)">
+
+    <meta name="citation_author" content="Tymoczko, Dmitri">
+      
+
+<meta name="citation_publication_date" content="2013/08/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="19">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Michael Cuthbert, <i>Music21: a Toolkit for Computer-aided Musicology</i> (<a href='http://web.mit.edu/music21/'>http://web.mit.edu/music21/</a>)
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Dmitri Tymoczko</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: music21, python, corpus studies, algorithmic composition, computer-assisted analysis</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.13.19.3/mto.13.19.3.tymoczko.pdf">PDF text </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received June 2013</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 19, Number 3, August 2013 <br> Copyright &#0169; 2013 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-- ----------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] <a href="http://web.mit.edu/music21/">Music21</a> is Michael Cuthbert&#8217;s library of programs (&#8220;modules&#8221;) allowing the Python computer language to read, write, and manipulate musical scores.  Having used it for about a year, I am convinced that it will play an important role in music theory&#8217;s future.  I strongly recommend it to anyone interested in algorithmic composition, computer-assisted analysis (of both single scores and larger corpora), or what could be called &#8220;bog-standard music-theoretical computation&#8221; (e.g. &#8220;list the all-interval sets contained in equal-tempered scales with less than 45 notes&#8221;).  Indeed, the first piece of advice I give to beginning theory graduate students is &#8220;learn music21.&#8221; We may be waiting for our Siegfried, but we have found his Nothung.</p>
+
+<p>Click here for <a href="#sidebar1" id="sidebar1ref">SIDEBAR 1</a>, a very brief introduction to Python.</p>
+
+<p>[2] It is, to be sure, also a source of frustration: for the foreseeable future music21 will remain a work in progress, somewhat in the way that medieval cathedrals were built over centuries.  But there is a growing and supportive community of users, and Cuthbert, who leads a team of paid, student, and volunteer software developers, is incredibly responsive to that community&#8217;s needs, producing software updates almost monthly.  (The documentation has also been extensively revised since I learned the program.)  In a real sense, to use music21 is to collaborate in its development.  For those who are patient enough to deal with the occasional bug or unexpected behavior, it provides unparalleled tools for analyzing and creating music.</p>
+
+<p>[3] What can you do with music21?  Let me answer by describing what I have done in the last year.  (1) I built a Roman numeral analyzer that can analyze simple tonal (or quasi-tonal) scores such as Bach chorales and Morley madrigals, using it to analyze hundreds of scores freely available on the internet.  I then wrote a different music21 program to compare the first program&#8217;s output to my own handmade analyses, determining that my analyzer is about 82% accurate.  (Which is to say that it gets the key right about 90% of the time, and, given the correct key, gets the chord right 90% of the time.)  A third program proofreads my analyses, identifying those places where the pitches indicated by the Roman numeral are not found in the score. (Readers can access this comparator by sending a blank email to <a href="mailto:chorales@princeton.edu">chorales@princeton.edu</a>.) (2) I wrote a program that, given a score and a Roman-numeral analysis (including one produced by my program), can label the nonharmonic tones&#8212;or produce a new score in which these tones have been replaced by the appropriate harmonic tones.  (3)  I wrote a series of programs that combine information from scores and harmonic analyses, so that I can ask (a) which notes are doubled in particular chords (&#8220;does Bach typically double the bass in a first-inversion triad?&#8221;), (b) what voice leadings are used with particular progressions (e.g. &#8220;how does scale degree 4 typically move in vii&deg;<sup>6</sup>&#8211;I?&#8221;), (c) what sorts of parallels appear on various reductional levels (including the musical surface and the &#8220;reduced&#8221; scores produced by removing nonharmonic tones), and various other related questions.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> (4) I&#8217;ve used it in various compositional contexts, constructing scores that exemplify interesting musical processes (e.g. fractal music based on the logistic equation, or infinite canons based on Cliff Callender&#8217;s (<a href="#callender_2012" id="citation_callender_2012_67dc9a776494f">2012</a>) brilliant musical interpretation of the logarithmic spiral).  If these are projects that appeal to you, then music21 is the sort of thing you will like.</p>
+
+<p>[4] I think of music21 as being composed of two parts.  The first is infrastructure, routines for reading, writing, and manipulating musical scores, while the second consists of a higher-level analytical toolkit&#8212;generating a Roman numeral from a chord and key, putting chords into normal form, checking for parallel fifths, identifying scales containing a given pitch or chord, and so on.  Of the two, the first is in my opinion the most valuable.  In large part, this is due to the inherent strength of Python itself&#8212;given the basic infrastructure in music21, it is not terribly hard to write your own routines to put chords into normal form or identify them by Roman numeral.  In fact, you should expect to do some of this, since (for instance) your desired normal-form algorithm may diverge from the program&#8217;s &#8220;out-of-the-box&#8221; behavior.  Should the algorithm handle floating-point numbers or just integers?  How should multisets be treated?  Which precise variant of normal-forming should be used?  No toolkit can satisfy every need, and to the extent that it tries it will become bloated.  More on that in a moment.</p>
+
+<p>[5] The great thing about music21, from the standpoint of infrastructure, is its ability to understand all the common formats for representing musical data.  First and foremost, it can read and write 
+MusicXML, which serves as a kind of &#8220;lingua franca&#8221; spoken by all the major notation programs.  This means that music21 can return its results <i>as music</i>, constructing new scores that (for instance) contain all examples of a specific harmonic or melodic progression in a particular corpus; it can also store its &#8220;data&#8221; (which is to say, pieces of music) as 
+MusicXML files, which can then be printed and edited just like any other score.  (Music21 can also use Python&#8217;s &#8220;pickling&#8221; capability to store its own internal data structures.)  Beyond this, music21 can read MIDI files, &#8220;kern files&#8221; (David Huron&#8217;s older text-based format, which has been used to encode a large corpus of scores&#8212;mostly available online); &#8220;ABC notation&#8221; (another notation format, popular for folk music) my own &#8220;romantext&#8221; format for encoding Roman numeral harmonic analyses; David Temperley&#8217;s variant format used in his popular-music corpus; and a good many other formats besides.  Since music21 users can access the immense amount of symbolic music data on the web, large-scale corpus analysis is suddenly much, much easier.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  (Not too long ago, corpus studies required an enormous amount of data entry, and often utilized project-specific formats&#8212;limiting your ability to share this data with others.)  This flexibility is a tremendous triumph for Cuthbert and collaborators, exemplifying the open, idealistic pluralism of the internet&#8217;s higher self.</p>
+
+<p>[6] The infrastructure also provides basic tools for creating and manipulating musical information: music21 has data structures representing pitches, notes (pitches combined with durations), chords, scales, keys, text expressions, dynamic expressions, clefs, figured-bass parts, twelve-tone rows, measures, musical parts, and many other items as well.  Python (and hence music21) is an &#8220;object-oriented&#8221; language, so these data structures are bundled together with operations that can be applied to them.  Thus, for example, various objects&#8212;from pitches to key signatures&#8212;can be transposed by calling their &#8220;<code>.transpose</code>&#8221; method.  These methods are generally quite comprehensive, and I have always found myself able to achieve my goals, though not always as quickly as I might like.</p>
+
+<p>[7] The fundamental object of music21 is the &#8220;stream,&#8221; an extremely abstract data structure that allows (basically) any piece of information to be stored at any particular &#8220;offset,&#8221; or point in time.  (In general, offsets are measured in quarter-note units, though this interpretation is not enforced by the program.)  Thus for example, I can make a simple score as follows:</p>
+
+<pre class="brush: python">
+>>> from music21 import *           # import all the music21 routines
+>>> s = stream.Stream()             # create a new stream and call it &#8220;s&#8221;
+>>> s.insert(0, note.Note('C4'))    # insert Note C4 at offset 0 in s
+>>> s.insert(1, note.Note('D4'))    # insert Note D4 at offset 1 in s
+>>> s.show()                        # show the result
+</pre>
+
+<p>(Click here for <a href="#sidebar2" id="sidebar2ref">SIDEBAR 2</a>, on Python conventions.)  This opens my notation program (Finale) and displays the following score.</p>
+<p class="auto-style1">
+<img alt="Tymoczko Example 1" height="79" src="tymoczko_ex1.png" width="220"></p>
+
+
+<p>(Note that music21 has added some defaults: a time signature of 4/4, and quarter-length durations for each note.  In real applications, I would typically provide this information myself.)  Alternatively, I could examine the underlying data by showing the music21 stream in text format:</p>
+
+<pre class="brush: python">
+>>> s.show('text')    # call the 'show' method with parameter 'text'
+</pre>
+
+<p>which prints out:</p>
+
+<pre class="brush: python">
+{0.0} &lt;music21.note.Note C>
+{1.0} &lt;music21.note.Note D>
+</pre>
+
+<p>Indicating that the stream has the note C at offset 0 and the note D at offset 1.</p>
+
+<p>[8] Learning music21 in large part involves coming to terms with the idiosyncrasies of the &#8220;<code>Stream</code>&#8221; object.  In my experience, there are four.  First, a single musical object (note, measure, etc.) can belong to multiple streams.  While this flexibility is in principle admirable, it can lead to unexpected behavior:</p>
+
+<pre class="brush: python">
+>>> n1 = note.Note('C4')    # create a Note 'C4'
+>>> s1 = stream.Stream()    # create an empty Stream
+>>> s1.insert(0, n1)        # insert the note at offset 0
+>>> print n1.offset         # get its offset
+0.0
+>>> s2 = stream.Stream()    # create a second empty stream
+>>> s2.insert(5, n1)        # insert the same note at offset 5
+>>> print n1.offset         # check its offset
+5.0
+</pre>
+
+<p>[9] The issue here is that there is a fundamental difference between &#8220;absolute&#8221; attributes of the object (such as the pitch of some note, or the length of a duration) and &#8220;context-dependent&#8221; attributes such as its offset&#8212;a difference that was not clearly explained in the documentation when I learned the program.  Technically, music21 objects have an &#8220;<code>activeSite</code>&#8221; attribute that points to the <code>Stream</code> in which they are currently considered to reside; inserting a note into a new <code>Stream</code> changes its context or <code>activeSite</code>.  Learning to manipulate the <code>activeSite</code> is fundamental, but rather obscurely documented:</p>
+
+<pre class="brush: python">
+>>> n1.activeSite = s1      # set the activeSite to stream s1
+>>> print n1.offset         # check note n1&#8217;s offset
+0.0                         # aha! Back to 0!
+>>> n1.activeSite == s2     # is n1&#8217;s activeSite stream s2?
+False
+>>> n1.activeSite == s1     # is it s1?
+True
+>>> n1.activeSite = s2      # change the activeSite to s2
+>>> print n1.offset         # check the offset now
+5.0
+</pre>
+
+<p>Previously, built-in music21 routines would change a note&#8217;s activeSite without warning, creating extremely hard-to-fix bugs.  That problem now seems to have been solved.</p>
+
+<p>[10] Second, streams are typically massively hierarchical, composed of many &#8220;substreams&#8221; nested inside one another.  Thus a &#8220;<code>Score</code>&#8221; (a kind of stream), will contain &#8220;<code>Parts</code>&#8221; (another kind of stream), which will contain &#8220;<code>Measures</code>&#8221; (yet another kind of stream), which may have &#8220;<code>Voices</code>&#8221; (a kind of stream for dealing with multiple lines of music on a single staff, analogous to Finale&#8217;s &#8220;layers&#8221; or &#8220;voices&#8221;) which will themselves have notes, rhythms, clefs, time signatures, and all the other basic data you are interested in.  To find a particular musical object, you need to access the right level of hierarchy, and this can take some work.  (Click <a href="#sidebar3" id="sidebar3ref">SIDEBAR 3</a> for an example.)  Music21 has a method for &#8220;flattening&#8221; streams, but this creates its own problems, since it returns a <i>new</i> stream rather than giving you access to the original, hierarchical version&#8212;thereby inviting all the complications of the previous paragraph.  As of this writing, music21 is transitioning toward a new method of dealing with hierarchy (involving the Stream.recurse method) but this is still in progress.  In any case, the massively imbricated hierarchy can confuse even experienced users.</p>
+
+<p>[11] A third idiosyncrasy is that that music21 stores data in its own abstract format, but typically communicates with the outside world by way of 
+MusicXML.  The divergence between internal data and MusicXML can lead to confusion, as in the following code.</p>
+
+<pre class="brush: python">
+>>> from music21 import *           # import all the music21 routines
+>>> s = stream.Stream()             # create a new stream and call it &#8220;s&#8221;
+>>> s.insert(0, note.Note('C4'))    # insert Note C4 at offset 0 in s
+>>> s.insert(2, note.Note('D4'))    # insert Note D4 at offset 2 in s
+>>> s.show('text')                  # show the result as text
+{0.0} &lt;music21.note.Note C&gt;
+{2.0} &lt;music21.note.Note D&gt;
+>>> s.show()                        # show the result in notation
+</pre>
+
+
+<p class="auto-style1">
+<img alt="Tymoczko Example 2" height="81" src="tymoczko_ex2.png" width="216"></p>
+<p>The problem is that our score has a &#8220;gap,&#8221; an empty space between the end of the first note and the beginning of the second.  (Since we didn&#8217;t give our notes any duration, they have been assigned the default length of one quarter note, which means that the stream contains nothing in the beat between the end of the first note and the start of the second.)  This &#8220;gap&#8221; is perfectly acceptable to music21, but not to notation programs such as Finale.  Accordingly, somewhere in the translation process from music21&#8217;s internal representation to 
+MusicXML (as interpreted by Finale), the note gets moved from the third beat to the second.  (Perhaps a better default behavior would be for music21 to insert the appropriate rest, or extend the duration of the first note.)  One can spend many frustrating hours wondering why a note that is at offset 2, in music21, shows up in Finale at offset 1.  The answer is that music21 translates its own internal representation into 
+MusicXML before sending it out to the notation program.</p>
+
+<p>[12] The final idiosyncrasy is in many ways the opposite of the third.  While music21 in principle has its own internal data format, in which almost any data can be placed at any offset, in practice it tends to hew pretty closely to the 
+MusicXML specification.  Consequently, music is not necessarily stored in the way a theorist would expect.  Take for instance the vexing matter of mid-measure repeats.  To the musician, the following passage has a repeat bar occurring three quarters of the way through measure 2:</p>
+<p class="auto-style1">
+<img alt="Tymoczko Example 3" height="75" src="tymoczko_ex3.png" width="367"></p>
+
+<p>But in music21 (as in all the major notation programs) this passage involves four separate measures.  Measure 0 is a 1/4 &#8220;pickup&#8221; measure not included in the numbering scheme; measure 1 is a standard 4/4 measure.  Measure 2 is a 3/4 measure with a repeat bar at the end, in which the time signature is suppressed.  It is then followed by an unnumbered 1/4 measure with suppressed time signature.  All of this is reasonable enough from the standpoint of a notation program&#8217;s private data format, not meant to be directly accessible to users, but it is a true headache for the analyst.  Essentially it means that one cannot simply &#8220;retrieve measure 2&#8221; (or figure out what measure offset 8 is found in) without a fair amount of computation.  I have worked with Cuthbert to try to build some useful routines here, but there is still more to do.  (Cuthbert himself wants to support mid-measure repeats eventually, bringing music21 into line with the conceptual structure of the music.)  Ironically, then, this is a place where music21 uses an internal representation that, for a theorist, is <i>too close</i> to 
+MusicXML.  It would be more convenient to have the internal data represent the logical structure of the music, rather than the pragmatic needs of a notation program.</p>
+
+<p>[13] This brings me to three complaints about music21.  First, the documentation can be somewhat spotty, and particularly challenging for those who are new to Python or object-oriented programming languages more generally.  (I would have benefitted greatly, when I was starting, from a brief review such as this.)  Writing code is more fun than documenting it, and as a result crucial bits of the program remain mysterious.  (The documentation is full of endearing notes like &#8220;TO DO: EXPLAIN THIS&#8221; or, more ominously, &#8220;TO DO: BUG.&#8221;)  Since Python is an interpreted language, one can always read the source code, but that will be hardest for those beginners who need the most help.  For newcomers, the 
+<a href="https://groups.google.com/forum/#!forum/music21list">music21 email list</a> is the place to go.</p>
+
+<p>[14] My second complaint is that music21 can be very slow.  Certain operations, such as reading a score or processing Roman numerals, will take much longer than you expect.  Consider, for example, the simple task of identifying a scale containing a given set of pitches.  Music21 has a built-in method to accomplish this task (the deriveAll method of the ConcreteScale class), but I found it too slow for my purposes; as a result, I ended up writing a streamlined routine that works much faster.  (Granted, this was not hard&#8212;my code, shown in <a href="#sidebar4" id="sidebar4ref">SIDEBAR 4</a>, involves all of 25 lines, and could be compressed even further.)  The deeper issue here is that there is an inherent trade-off between flexibility and speed, and Cuthbert, in designing music21, has almost always erred on the side of flexibility.  As a result, one often needs to leave the computer running overnight when processing large amounts of data.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+
+<p>[15] My final, and partially aesthetic, complaint is that the program has a slightly cluttered feel.  For me, the chief value of music21 lies in its core functions of reading, writing, and performing basic manipulations on musical scores.  But music21 also contains countless somewhat cutesy music-theoretical tools.  (Many of these, one senses, arose as projects manageable enough to be given to undergraduate assistants.)  In my experience, a number of the bells and whistles do not ring or blow as advertised&#8212;for example, an early version of the software promised to translate between various numbering systems for the Bach chorales, but used a very partial list of chorales; similarly, the initial version of the &#8220;romanNumeralFromChord&#8221; routine would often produce incomprehensible gibberish.  (As of this writing, the list of chorales remains somewhat incomplete while the program continues to have trouble parsing Roman numerals for augmented sixths.)   From the user&#8217;s point of view, incomplete or semi-functional routines are often worse than nothing at all: I have wasted hours writing code, on the assumption that a certain music21 routine would work correctly, only to discover that I was relying on semifunctional software.  This leads to tedious detours where one rewrites some part of music21 so that it works right.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[16] In general, then, I have often found myself wishing that music21 sacrificed some of its breadth, and that more attention had been spent making the core routines faster, more reliable, and completely documented.  Related to this is the worry that some of music21&#8217;s flexibility is more notional than real: while the program has been designed for the widest possible range of users, including twelve-tone and minimalist composers, I suspect that its current community of users is more circumscribed in its interests, with corpus analysis the most common activity.  It might have been nice to optimize the core routines first, building out more specialized capabilities as the need arose.</p>
+
+<p>[17] Having said that, I feel obligated to recognize Cuthbert&#8217;s enormous and selfless labors.  A project like music21 fits uncomfortably into our standard scholarly categories: inherently not subject to peer review, it is the product of the same effort that would be required to produce a gigantic scholarly monograph (or perhaps several of the same).  Yet tools like music21 are unquestionably central to the future of music theory, greatly expanding the scope of music-theoretical possibility.   It is, consequently, critical that our field find ways of supporting these efforts.  MIT, where Cuthbert teaches, is to be commended for nurturing this vital, twenty-first-century work.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+
+<p>[18] Twenty years ago, David Huron released his &#8220;humdrum toolkit,&#8221; a set of tools and data structures for analyzing music.  This work, while wonderful in its way, now feels somewhat dated&#8212;particularly in comparison to modern successors like music21.  The switch from Unix scripts to Python is in itself a substantial improvement, providing a powerful and readable cross-platform programming environment.  Equally significant is the advent of 
+MusicXML, which allows music21 to function as part of an integrated ecosystem that includes notation programs, internet databases, software samplers, and virtually all the other tools of contemporary computer music.  These tools have effectively lowered the barriers to a whole range of analytical and compositional activities, providing access to the huge amount of music on the web.  One hopes that this will in turn open the doors for a new generation of thinkers who are equally sophisticated musically, theoretically, and computationally.  Indeed, an unintended consequence of Cuthbert&#8217;s work is to forge a new road into music theory, one that begins in computer science rather than composition or performance.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Dmitri Tymoczko<br>
+	Princeton University<br>310 Woolworth Center<br>Princeton, NJ 08544<br><a href="mailto:dmitri@princeton.edu">dmitri@princeton.edu</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_callender_2012" class="flyoverdiv">Callender, Clifton. 2012. &#8220;Maximally Self-Similar Melodies and Canons with Infinite Solutions.&#8221; Paper presented at the national meeting of the Society for Music Theory, New Orleans, Louisiana, November 1&#8211;4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="callender_2012"></a>Callender, Clifton. 2012. &#8220;Maximally Self-Similar Melodies and Canons with Infinite Solutions.&#8221; Paper presented at the national meeting of the Society for Music Theory, New Orleans, Louisiana, November 1&#8211;4.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The answers to these questions are: (a) Bach usually doubles the bass note, even in first inversion triads (except V<sup>6</sup>, of course); (b) in vii&deg;<sup>6</sup>&#8211;I, scale degree 4 typically moves upward to scale degree 5, rather than &#8220;resolving&#8221; to the third; and (c) for the most part, parallels appear in the background only when they are masked by suspensions at the foreground level.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> In fact, the program can even load scores by URL, so you don&#8217;t have to keep the data on your hard drive.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> To be sure, there are various ways of speeding up music21, including caching data (facilitated by Python &#8220;pickling&#8221;), installing faster versions of Python such as PyPy, or utilizing cluster-computing.  Still, I worry that some core routines take longer than they should.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Ironically, the original version of the code in SIDEBAR 4 provides an example: because of a known bug with the interval.subtract method, the routine would not work if an input scale contained an augmented unison as the second note.  However, the closely related &#8220;interval.complement&#8221; turned out to be bug-free.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Worse yet, free software development is inherently a slightly masochistic endeavor.  Software is something that needs to <i>work</i>, and users necessarily depend on it in a way they don&#8217;t depend on &#8220;mere&#8221; scholarly writing; as a result, they often respond to bugs with grumpiness and frustration, despite the fact that they haven&#8217;t paid for the program.<br><a href="#FN5REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The answers to these questions are: (a) Bach usually doubles the bass note, even in first inversion triads (except V6, of course); (b) in vii&deg;6&#8211;I, scale degree 4 typically moves upward to scale degree 5, rather than &#8220;resolving&#8221; to the third; and (c) for the most part, parallels appear in the background only when they are masked by suspensions at the foreground level.</div><div id="fndiv2" class="flyoverdiv">In fact, the program can even load scores by URL, so you don&#8217;t have to keep the data on your hard drive.</div><div id="fndiv3" class="flyoverdiv">To be sure, there are various ways of speeding up music21, including caching data (facilitated by Python &#8220;pickling&#8221;), installing faster versions of Python such as PyPy, or utilizing cluster-computing.  Still, I worry that some core routines take longer than they should.</div><div id="fndiv4" class="flyoverdiv">Ironically, the original version of the code in SIDEBAR 4 provides an example: because of a known bug with the interval.subtract method, the routine would not work if an input scale contained an augmented unison as the second note.  However, the closely related &#8220;interval.complement&#8221; turned out to be bug-free.</div><div id="fndiv5" class="flyoverdiv">Worse yet, free software development is inherently a slightly masochistic endeavor.  Software is something that needs to <i>work</i>, and users necessarily depend on it in a way they don&#8217;t depend on &#8220;mere&#8221; scholarly writing; as a result, they often respond to bugs with grumpiness and frustration, despite the fact that they haven&#8217;t paid for the program.</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<hr />
+
+<h3><a id="sidebar1">SIDEBAR 1</a></h3>
+
+<p>[1] Python is a very popular and relatively recent programming language, available for free on virtually any operating system, and&#8212;conveniently enough&#8212;preinstalled on Macintosh computers.  It is a high-level interpreted language, which means it is convenient but slow.  Python contains powerful tools for manipulating complex data structures such as lists and dictionaries, all of which can be recursively nested, so that one can construct (for example) very large lists of dictionaries of dictionaries of lists.  Best of all, Python has extensions that can do virtually anything you would ever want.  Do you want your program to send you an email after it has analyzed all the Bach chorales?  Do you need access to the operating system&#8217;s clipboard?  Or to calculate some statistical functions?  Would you like to make a graph of some interesting musical statistics, save the graph as a PDF, and open that PDF in some other application?  There are libraries to do all of these things, and virtually anything else you can imagine.</p>
+
+<p>[2] Like happy families, computer programming languages are all essentially the same; users will therefore have little difficulty learning Python if they are familiar with some language like Basic, Pascal, or C.  There are however a few Pythonic idiosyncrasies.  The first, and most notorious, is that in <em>Python </em><i>indentation is syntactical, determining the scope of definitions and loops</i>.  As a result the following lines of code produce different outputs:</p>
+
+<div style="float:left;width:49%;margin-right:10px;">
+<pre class="brush: python">
+c = 0
+for i in range(0, 5):
+  print i
+  c = c + i
+print c
+</pre>
+</div>
+<div style="float:left;width:49%;">
+<pre class="brush: python">
+c = 0
+for i in range(0, 5):
+  print i
+c = c + i
+print c
+</pre>
+</div>
+<div style="clear:both"></div>
+
+
+<p>In the code on the left, the addition is within the scope of the loop, and the program leaves the variable <i>c</i> equal to 10, or 0 + 1 +  2 + 3 + 4 (ranges in Python do not include their upper bounds).  In the code on the right, the addition is outside of the loop, and the program leaves <i>c</i> with a value of 4 (the highest value of <i>i</i> attained in the loop).  This takes some getting used to, since programmers are accustomed to thinking of whitespace as meaningless; indentation errors can be the source of hard-to-find bugs.</p>
+
+<p>[3] A second unusual feature of Python is that assignment statements are always treated <i>referentially</i>. That is, a statement like &#8220;<code>a = b</code>&#8221; does not typically <i>copy</i> the contents of <i>b</i> to the memory location <i>a</i>, but rather leaves 
+<em>a</em> pointing to the same memory location pointed to by <i>b</i>.  This can lead to some nonintuitive behavior, as in:</p>
+
+<div style="float:left;width:49%;margin-right:10px;">
+<pre class="brush: python">
+l = [1, 2, 3, 4]
+m = l
+l.append(5)
+print m
+</pre>
+</div>
+<div style="float:left;width:49%;">
+<pre class="brush: python">
+l = [1, 2, 3, 4]
+m = l
+l = l + [5]
+print m
+</pre>
+</div>
+<div style="clear:both"></div>
+
+
+<p>The code on the left prints <code>[1, 2, 3, 4, 5]</code>, while the seemingly identical code on the right prints <code>[1, 2, 3, 4]</code>.  On the left, what happens is that the variable <i>m</i> points to the memory location pointed to by <i>l</i>, which contains the list <code>[1, 2, 3, 4]</code>.  That list is then extended via the statement &#8220;<code>l.append</code>,&#8221; whose result is deposited at the same location in memory.  When we examine this location with &#8220;<code>print m</code>&#8221; we see the longer list.  By contrast, the code on the right, having pointed <i>m</i> to the memory location containing <code>[1, 2, 3, 4]</code> then creates a <i>new</i> list, in a new memory location, by appending the list <code>[5]</code> to <code>[1, 2, 3, 4]</code>, pointing the variable <i>l</i> to this new location.  (The different behavior of the <code>.append</code> method and the &#8220;+&#8221; operation is idiomatic, something you just have to learn.)  This new pointing-of-<em>l</em> does not affect the previous pointing-of-<em>m</em>.  Hence, when we print <i>m</i> we are looking at the memory location containing the previous list <code>[1, 2, 3, 4]</code>.</p>
+
+<p><a href="#sidebar1ref">Return to text</a></p>
+
+<hr />
+
+<h3><a id="sidebar2">SIDEBAR 2</a></h3>
+
+<p>[1] Python has a number of data types including integers, floating-point numbers, strings, lists and dictionaries.  Lists are identified by square brackets and are referenced by order position, numbering from 0:</p>
+
+<pre class="brush: python">
+>>> myList = [1, 2, 'apple', 4]
+>>> print myList[3]
+4
+</pre>
+
+<p>Dictionaries, which are identified by curly braces, are a bit like lists, except their elements are referenced by a <i>key</i> rather than an index.</p>
+
+<pre class="brush: python">
+>>> myDict = {'firstKey': 1, 'secondKey': 2, 3: 3, 'forgottenThing': 'HELP!'}
+>>> print myDict['firstKey']
+1
+</pre>
+
+<p>Lists and dictionaries can be embedded within one another, leading to very complex data structures.  For instance, in my work I record the locations of voice-leadings in the Bach chorales; this involves a list containing dictionaries whose elements are dictionaries whose elements are lists whose elements are lists.</p>
+
+<pre class="brush: python">
+>>> myData = [{'IV6 -> I': {'[0, 4, 7] -> [-1, -2, 0]': [[15, 5], [16, 83]]}}, {}]
+</pre>
+
+<p>Thus to query all the locations of some particular voice leading, one writes:</p>
+
+<pre class="brush: python">
+>>> print myData[0]['IV6 -> I']['[0, 4, 7] -> [-1, -2, 0]']
+[[15, 5], [16, 83]]
+</pre>
+
+<p>The first parameter is a mode index (0 for major, 1 for minor), the second gives the chord progression we are interested in (here <code>IV6 -> I</code>), the third specifies an upper-voice voice-leading pattern (here, we are looking for a complete major triad in the upper voices, with the root moving down by semitone and the third moving down by two semitones, with the fifth held constant).  The output is a list of lists, with the first value in each sublist being the chorale number, and the second value being the measure number.  For the newcomer this sort of recursion can be a bit confusing.  Happily, Python can work with gigantic data structures so that one can easily store the locations of all the voice leadings found in the Bach chorales.</p>
+
+<p>[2] In Python, one typically manipulates objects by calling their <i>methods</i>, which is done by appending the method name to the object name, separated by a period.  To append the number 5 to the end of <code>myList</code>, for example, one writes:</p>
+
+<pre class="brush: python">
+>>> myList.append(5)
+</pre>
+
+<p>Here, we call the &#8220;append&#8221; method of the object &#8220;<code>myList</code>,&#8221; instructing it to add 5 to the end of the current list.  Python has a large number of built-in methods for manipulating its data-types, making it particularly easy to work with strings, lists, and dictionaries.</p>
+
+<p>[3] It is worth noting that Python programmers tend to reserve capitalized names for <i>classes</i> (roughly: data structures combined with methods that can be applied to the data) rather than <i>methods</i> (roughly: executable subroutines) or <i>modules</i> (collections of methods and classes).  This can confuse the uninitiated.  For instance, to find the interval between two notes, we can write:</p>
+
+<pre class="brush: python">
+>>> a = pitch.Pitch('C4')
+>>> b = pitch.Pitch('F4')
+>>> i1 = interval.notesToInterval(a, b)
+>>> print i1.semitones
+5
+</pre>
+
+<p>The seemingly redundant &#8220;<code>pitch.Pitch</code>&#8221; is used to create instances of the class <code><i>Pitch</i></code> (capitalized, indicating a data structure representing an actual pitch) which is defined in music21&#8217;s &#8220;<code>pitch</code>&#8221; submodule (uncapitalized; a collection of methods and classes).  We then pass these two <code>Pitch</code>es to the <i>method</i> &#8220;<code>notesToInterval</code>&#8221;; this returns an instance of the class &#8220;<code>Interval</code>,&#8221; representing the interval from <i>a</i> to <i>b</i>.  (Here the prefix &#8220;<code>interval</code>&#8221; labels the music21 submodule containing the &#8220;<code>notesToInterval</code>&#8221; routine; note that the label &#8220;<code>notesToInterval</code>&#8221; leaves the first letter uncapitalized, indicating that it is a method.)  Alternatively, we could create an <code>Interval</code> object directly by writing:</p>
+
+<pre class="brush: python">
+>>> i1 = interval.Interval('P4')     # create an Interval representing a perfect fourth
+</pre>
+
+<p>Again, the redundancy indicates that the &#8220;<code>Interval</code>&#8221; class (capitalized) is found within the &#8220;<code>interval</code>&#8221; submodule (uncapitalized).</p>
+
+<p><a href="#sidebar2ref">Return to text</a></p>
+
+<hr />
+
+<h3><a id="sidebar3">SIDEBAR 3</a></h3>
+
+<p>[1] For instance, to get the first note of the top voice of Monteverdi&#8217;s first Book 3 madrigal, one writes:</p>
+
+<pre class="brush: python">
+>>> myScore = corpus.parse('madrigal.3.1.mxl')  # read the score into music21
+>>> print myScore[14][1][37]                    # print element 37 of element 1 of element 14
+</pre>
+
+<p>(Note that the scores for books 3 and 4 of the madrigals are included with the program, along with a sizeable corpus of other scores.)  Here, the top hierarchical layer, referenced by the first number in brackets (i.e. <code>myScore[<i>x</i>]</code>), contains the individual <code>Parts</code> (substreams), as well as a number of text boxes, some metadata, and other assorted information.  The second hierarchical layer, referenced by the second number in brackets (i.e. <code>myScore[14][<i>y</i>]</code>, contains the measures (substreams) in a single <code>Part</code> along with its instrument definition.  Finally, the third hierarchical layer (<code>myScore[14][1][<i>z</i>]</code>) contains not just the actual notes in a particular method but also clefs, key signatures, measure-based text expressions, etc.</p>
+
+<p>[2] Of course, in this case, one could get the first note in the first measure of the first part by writing:</p>
+
+<pre class="brush: python">
+>>> print myScore.parts[0].measure(1).notes[0]
+</pre>
+
+<p>But using measure numbers in this way is quite risky, due to the problems created by unnumbered pickup measures, mid-measure repeats, second endings, and so forth.  See the main text for more on this.</p>
+
+<p><a href="#sidebar3ref">Return to text</a></p>
+
+<hr />
+
+<h3><a id="sidebar4">SIDEBAR 4</a></h3>
+
+<p>[1] Here is the music21 code I wrote to find scales containing a given set of pitches; it is substantially faster than music21&#8217;s built-in version.  The code has two subroutines.  The first (<code>scale_from_letternames_init</code>) allows the user to input the scales that she would like to search for; it converts a list of pitches into a list of <i>intervals from a given note to the tonics of scales containing it</i>.  (Intervals, following music21 convention, are represented by strings in a natural way, with <code>'P1'</code> representing the perfect unison, <code>'m2'</code> the minor second, <code>'M2'</code> the major second, and so on.)  Thus the major scale becomes <code>['P1', 'm2', 'm3', 'P4', 'P5', 'm6', 'm7']</code> since the note C is contained within C major, <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, F major, etc.  These interval lists are stored in the global variable &#8220;<code>storedScales</code>,&#8221; a list of lists of strings representing interval names.</p>
+
+<p>[2] The second routine (<code>scale_from_letternames</code>) takes an incoming list of pitches and uses the global &#8220;<code>storedScales</code>&#8221; variable to quickly compute a list of scales containing all of those pitches.  This is a simple matter of transposing each note by each of the stored intervals and computing the intersection of the result.  For this I use Python&#8217;s &#8220;<code>Set</code>&#8221; data type.</p>
+
+<pre class="brush: python">
+from music21 import *
+majInts = ['P1', 'm2', 'm3', 'P4', 'P5', 'm6', 'm7']        # intervals to tonics of scales containing a given note
+melMinInts = ['P1', 'm2', 'm3', 'P4', 'P5', 'M6', 'm7']     # ... aka inversions of the scale around its tonic
+harmMinInts = ['P1', 'm2', 'M3', 'P4', 'P5', 'M6', 'm7']
+
+storedScales = [majInts, melMinInts, harmMinInts]           # global variable for the scales we are considering
+
+def scale_from_letternames_init(newScale, reset=False):     # converts a list of pitches into a list of intervals
+  global storedScales                                       # inverted around tonic note, for use in scale finding
+  if reset:
+    storedScales = []
+  if newScale:
+    tempScale = ['P1']
+    for x in newScale[1:]:
+      octaveComplement  = interval.notesToInterval(newScale[0], x).complement.name
+      tempScale.append(octaveComplement)
+    storedScales.append(tempScale)
+
+def scale_from_letternames(myPitches):
+  global storedScales
+  results = []
+  for myScale in storedScales:
+    acceptableScales = set([myPitches[0].transpose(x).name for x in myScale])
+    for i in range(1, len(myPitches)):
+      newTonics = [myPitches[i].transpose(x).name for x in myScale]
+      acceptableScales = acceptableScales &amp; set(newTonics)
+    results.append(acceptableScales)
+  return results
+</pre>
+
+<p><a href="#sidebar4ref">Return to text</a></p>
+
+<script type="text/javascript">
+SyntaxHighlighter.all();
+</script>
+
+   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2013 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="9250777"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="31c67164"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/9250777/0/31c67164/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

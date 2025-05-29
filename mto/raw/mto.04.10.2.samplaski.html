@@ -1,0 +1,990 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 10.2: Samplaski, Interval-Classes</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Interval-Classes and Psychological Space">
+
+    <meta name="citation_author" content="Samplaski, Art">
+      
+
+<meta name="citation_publication_date" content="2004/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="10">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Interval-Classes and Psychological Space
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.04.10.2/mto.04.10.2.samplaski.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Art Samplaski</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: interval-class, similarity, atonal music, empirical studies, multidimensional scaling, music cognition, music psychology</font></p><p><font size='4'>ABSTRACT: Multidimensional scaling (MDS) analysis was applied to data on interval similarity (confusability) obtained in a study to help improve 
+aural
+skills pedagogy. A three-dimensional geometric configuration was derived, indicating an interaction of interval size, interval-type, and class of 
+acoustical dissonance (perfect vs. imperfect 
+consonances vs. dissonances). The &ldquo;classical&rdquo; ordering 
+of interval-classes from pitch-class set theory can be derived from a particular rotation/projection of the derived 
+configuration onto the plane. This offers support for 
+the idea that interval-class has validity as a 
+psychological construct, but the strong grouping of interval-classes by dissonance-class in the complete configuration suggests that interval-classes cannot be treated as independent of each other.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.samplaski.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.04.10.2/samplaski_examples.pdf">PDF examples </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received May 2004</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 10, Number 2, June 2004 <br> Copyright &#0169; 2004 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] The concept of interval class (ic)&mdash;the grouping together of pairs of
+inversionally-related intervals, e.g., minor 2nd and major 7th, into single
+categories&mdash;is fundamental to theories of non-tonal music. Much journal 
+space has been taken up with articles in which interval-classes are a basic 
+structural construct, and many of the proposed functions for measuring the 
+similarity of non-tonal sonorities rely on the concept by basing their 
+calculations of similarity on the interval-class vectors (icvs) of the set-classes.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Such discussions have tended to treat interval-class purely as a 
+structural idea, however, and not been concerned with whether the concept 
+has any reality as a psychological construct. Neither does such discussion 
+address the related question of what interrelationships the various  
+interval-classes might have with each other, assuming that the concept has 
+psychological validity in the first place.
+
+
+<p>[2] While most writers seem to believe that ics are the appropriate level of 
+abstraction for discussing the function of intervals in atonal musical 
+structures, a few have begun to consider alternatives. Marcus Castr&eacute;n, for 
+example, has suggested a partial separation of ic components, which he terms 
+<i>registrally-ordered intervals</i> (ro-intervals); under this scheme, the two 
+components of each interval-class are still paired but maintain separate 
+identities by acknowledging differences in function in musical contexts, 
+smaller intervals having more to do with melodic situations and larger 
+intervals operating in a harmonic realm. Olli V&auml;is&auml;l&auml; has used the concept  
+for 
+an interesting analysis of Schoenberg&rsquo;s op. 19, no. 2, allowing him to argue  
+for 
+a late-tonal interpretation of the piece.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> At least one author has brought  
+up 
+the question of the relationships between interval-classes: Eric Isaacson 
+sounded a cautionary note in this journal in 1996, wondering, &ldquo;[D]o we hear 
+ic1 and ic2 as being equal in dissimilarity to, say, ic1 and ic5? Might  
+their 
+similarity be affected by factors such as relative consonance and 
+dissonance?&rdquo;<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> In her dissertation of two years earlier, Diana Stammers had 
+already found some empirical evidence that different ics were treated 
+differently by listeners.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Thus, 
+there seems to be a strong need for more extensive empirical work to determine 
+whether interval-class as defined by music theory has psychological validity. 
+</p>
+
+
+<p>[3] The number of empirical studies about non-tonal sonorities and the  
+factors 
+influencing the perceived similarities among them is still very small,  
+despite 
+the overwhelming importance of this issue in the music-theoretic 
+community.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> This is a problem for 
+those who believe that theories of the structure of music should have some 
+connection to how music is actually perceived. These empirical studies by and 
+large have been concerned with issues of similarity between non-tonal chords as 
+holistic objects. This is a higher level of structure than interval-class 
+itself, although a level that is certainly influenced by how interval-class 
+might or might not operate in a psychological sense. To make any direct 
+investigations about interval-class as a psychological construct requires 
+empirical study at a more basic level, that of the similarity of intervals by 
+themselves. Again, nearly no empirical studies have been taken on this subject, 
+even though the issue of interval similarity has obvious pedagogical 
+implications for aural skills curricula. (Similarity is strongly related to 
+confusability, since similar items are more likely to be confused than 
+dissimilar ones. Thus, better knowledge of interval similarity could help 
+teachers optimize classroom drill time for interval identification skills.)</p>
+
+
+<p>[4] Similarity data can be obtained in several direct or indirect ways.  
+First, one 
+can simply ask subjects to rate the similarity of two intervals on, say, a  
+5-point 
+or 7-point scale. Second, one can present triples of intervals and ask  
+subjects 
+whether interval A sounds more like interval B or interval C&mdash;this is called 
+&ldquo;triadic comparison,&rdquo; and has nothing to do with triads in functional  
+tonality. 
+Third, one can use confusion data, where the similarity of intervals A and B 
+is a function of how often A is mistakenly identified as B.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> 
+In all cases, however, a large matrix of data will be generated, and humans are 
+ill-equipped for analyzing masses of numbers. Some form of numerical 
+visualization technique is needed to help the researcher see patterns in the 
+data, and such computational techniques have been developed over the last forty 
+years. </p>
+
+
+<p>[5] Multidimensional scaling (MDS) is the most important of these 
+visualization techniques; it is a numerical method that solves the problem, 
+given the inter-city distance matrix from a road atlas, derive the relative 
+geometric locations of the cities.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Similarity data is run through an MDS 
+program, and the different dimensions of the resulting geometric 
+configuration are then interpreted as factors determining the similarity of  
+the 
+objects involved. If interval-class has some existence as a psychological 
+construct, then in any MDS solution of interval similarity data the minor  
+2nd 
+and major 7th should situate near each other, in at least some of the 
+dimensions, and likewise for other pairs of ic-components. We can also use 
+MDS to directly compare empirical data to predictions of alternative 
+theoretical models (for example, an interaction of interval-class and  
+interval-size, something akin to Castr&eacute;n&rsquo;s ro-intervals) by generating similarity 
+matrices for those models and comparing the resulting geometries to that 
+produced by the actual data. </p>
+
+
+<p>[6] Only a handful of articles on interval similarity have appeared. Some of 
+the earlier works, by Ortmann and by Jeffries, present results in ways that 
+preclude obtaining similarity matrices that could be used as input to an MDS 
+program; a much earlier study by von Maltzew did provide quantitative data 
+on interval identification but was concerned only with interval recognition  
+at 
+the uppermost extremes of human hearing (in the highest octave on the 
+piano or above) and is thus not very relevant to typical musical  
+experience.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+Two independent studies on interval similarity appeared in the 1970s, one by 
+Reiner Plomp and colleagues and the other by Rosemary Killam and colleagues. 
+Both generated usable matrices of confusion data, although neither group applied 
+MDS analysis and only the paper by Killam et al. was concerned with the 
+music-theoretic&mdash;and specifically pedagogical&mdash;implications of interval 
+confusability. I shall return to discuss these later in this essay.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+
+<p>[7] In the spring of 2002, I obtained confusion data on intervals from a  
+sample of 
+27 undergraduate music majors at the Ithaca College School of Music, in a 
+study to help improve aural skills pedagogy. The subjects all had had  
+classroom training on 
+the simple intervals (less than an octave); 18 had completed or exempted 
+through third-term (chromatic tonal) or fourth-term (twentieth-century) 
+aural skills. The subjects listened to sound files of the various simple 
+intervals played on a computer using a pseudo-clarinet timbre, presented in 
+three different presentation modes (harmonic, ascending melodic, and 
+descending melodic), and at ten different transposition levels (top note of  
+the 
+interval in the range <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>4 to F5), for a total of 330 experimental trials per 
+subject (11 intervals x 3 modes x 10 levels). Each harmonic interval sounded 
+for .75 sec., while the components of the melodic intervals sounded for .5  
+sec. 
+each with a .25 sec. gap between them. To forestall any systematic effects  
+across 
+trials, each subject was given the trials in a different random order, with 
+several constraints between consecutive trials imposed on such orders: 1) no 
+same interval; 2) no same presentation mode; and 3) no common tone 
+between any interval members. After hearing a trial, the subjects clicked on 
+one of 11 on-screen buttons to identify the interval type heard. They were  
+told 
+that while they should strive for correct identifications, they needed to  
+make 
+&ldquo;snap judgments&rdquo; and not try to analyze what they had just heard. They had 
+8.5 sec. within which to make a response, else a missing value was marked 
+and the next trial commenced. Trials were presented in blocks of 20; while a 
+subject could not stop during a block, they could take as long a break  
+between 
+blocks as they wished (and indeed were strongly encouraged to do so as often 
+as needed, given the repetitiveness of the task!). Also, each experimental 
+session was limited to 30 minutes, to further reduce any potential for 
+cognitive fatigue.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Animation of derived MDS configuration</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="samplaski_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch animation)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Schematic diagram of MDS configuration</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="samplaski_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. One possible planar projection of MDS configuration</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="samplaski_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[8] The resulting confusion data were aggregated in a couple of ways (by 
+transposition level, by presentation mode, and by both) and analyzed using 
+several different techniques, including MDS. A number of interesting results 
+with implications for aural skills pedagogy were obtained; these have been 
+reported elsewhere<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> and are not 
+germane to this discussion, so I shall not repeat them here. For present 
+purposes, the implications of the MDS analysis for atonal theory are of 
+interest. </p>
+
+
+<p>[9] Based on goodness-of-fit analysis, three-dimensional solutions were 
+obtained for the data aggregated across all presentation modes and 
+transposition levels, as well as for the matrices for each individual 
+presentation mode, again aggregated across all transposition levels. Other 
+analysis indicated that transposition level of itself was not a factor in  
+shaping 
+error rates, so no discussion is given for the data as separated by  
+pitch-level. 
+<b>Figure 1</b> shows the actual derived configuration for the aggregated data as a 
+rotating .GIF file, allowing the reader to get a direct visceral sense of  
+its 
+geometry. <b>Figure 2</b> 
+shows a simplified and stationary schematic diagram of the configuration. </p>
+
+
+<p>[10] The intervals group along three arcs, forming what can be termed an 
+&ldquo;octant right-triangle&rdquo; on the surface of a sphere&mdash;think of a triangle on  
+the 
+globe with one vertex at the North Pole and the other two along the Equator 
+at zero and ninety degrees longitude, respectively. Along one side of this 
+triangle are the intervals less than a tritone, while along a second side  
+are the 
+intervals greater than a tritone; the tritone itself lies at about the  
+midpoint of 
+the remaining side. If we were to project this triangle onto a Euclidean  
+plane, 
+as in <b>Figure 3</b>, 
+ 
+then one axis of that planar projection could be easily interpreted as  
+&ldquo;interval 
+size in semitones.&rdquo; Meanwhile, the various dissonances (the 2nds, tritone, 
+and 7ths) all group along that third side of the triangle, with the perfect 
+consonances clustered near the opposite vertex; the imperfect consonances 
+occur at approximately the midpoints of the connecting sides.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> On the 
+planar projection of Figure 3, the other axis could then be easily  
+interpreted as 
+&ldquo;dissonance-class.&rdquo; Since the different types of 2nds, 3rds, 6ths, and 7ths 
+cluster strongly together, some effect of &ldquo;diatonic interval type&rdquo; appears  
+to 
+operate as well. Thus, the interpretation of the derived configuration is an 
+interaction of interval-size, interval-type, and dissonance-class.</p>
+
+
+<p>[11] Note that this interpretation has not led to three independent factors, 
+each determining one of the Euclidean axes of the configuration. In fact, 
+attempting to do so leads to awkward (at best) formulations for the two axes 
+that do not involve the dissonance-classes. The interaction interpretation 
+given above, by contrast, appears to be clear and readily accounts for the 
+features of the configuration. Keep in mind that the projection operation of 
+the previous paragraph was done only to aid in understanding the nature of 
+the three-dimensional configuration. Such a projection is not a legitimate 
+operation in the sense of trying to reduce the number of dimensions needed 
+for the configuration, even though in essence the configuration &ldquo;is&rdquo; two 
+dimensional if we were operating in spherical geometry rather than 
+Euclidean geometry&mdash;all MDS algorithms involve a Euclidean space. If one 
+wants to see what sort of two-dimensional configuration is produced by the 
+algorithm, one must have the algorithm compute such a configuration <i>ab 
+initio.</i> Doing so for this data yields a noticeably different topology, as  
+shown 
+in <b>Figure 4</b>. 
+ 
+</p>
+
+
+<p>[12] Three-dimensional configurations were also obtained for the matrices  
+for 
+the various presentation modes by themselves. These configurations have 
+the same overall topology as the aggregate data, with a few variations 
+occurring in the clustering of individual pairs of intervals (e.g., minor and  
+Major 3rd; Major 3rd &amp; Perfect 4th); the tritone is the most volatile in terms of  
+moving 
+around the various configurations, clustering closer to the 6ths when 
+descending. 
+</p>
+
+<div>
+
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Actual 2-D configuration of confusion data</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="samplaski_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="samplaski_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Planar projection of MDS configuration allowing derivation of &ldquo;classical&rdquo; interval-classes</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="samplaski_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="samplaski_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table></div>
+
+<p>[13] Of particular interest, we can derive the &ldquo;classical&rdquo; set of  
+interval-classes 
+from this configuration by a particular Euclidean planar projection of the 
+configuration, shown in <b>Figure 5</b>. 
+ 
+On this projection, ic6 lies on an axis of symmetry; the members of the  
+other ics can be read off directly with increasing distance from that axis.  
+Because we 
+can find such a projection, this study thus provides some empirical support 
+for the idea of interval-class as operating in psychological space. Remember 
+again, however, that as a projection this does not tell the whole story, for 
+which we must refer back to the complete configuration. 
+</p>
+
+
+<p>[14] As a check against the predictions of various theoretical  
+possibilities, MDS 
+was applied to similarity matrices developed for models based on: interval-class only; interval-size only; acoustical dissonance only; and  
+interval-class 
+plus interval size. The topologies of all of the resulting configurations  
+were 
+obviously different than that for the actual data. 
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Stereoscopic view of configuration derived from data in Killam et al. (1975), with octave removed from data</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="samplaski_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Stereoscopic view of configuration derived from data in Killam et al. (1975), with octave included</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="samplaski_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[15] As another comparison, the confusion matrices for the above-mentioned 
+studies by Plomp et al. and Killam et al. were also analyzed by MDS. Both of 
+those studies had included the octave as one of the intervals studied,  
+unlike 
+the current study; therefore, the data from those studies were analyzed in  
+two 
+ways&mdash;with the octave removed from consideration, and with it included. 
+When the octave was omitted, the resulting topologies were fairly similar to 
+that produced by the current data; when it was included, some non-trivial  
+re-alignments took place. <b>Figure 6</b> provides a stereoscopic view of the 
+configuration for Killam et al.&rsquo;s data with the octave removed, while <b>Figure 7</b> gives a stereoscopic view of the configuration when the octave was 
+included.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> It is not clear why 
+such realignments occur in the configuration when the octave is included; one 
+initial speculation would be, some sort of conflict took place between factors 
+of acoustical dissonance and overall interval size, but this would be just a 
+guess. </p>
+
+
+<p>[16] The rule of thumb for MDS studies is that data from a minimum of about 
+30 subjects is needed in order to ensure a reliable solution. The current  
+study 
+falls just below that threshold, and thus begins to raise concerns about 
+whether we should put any faith in the configuration obtained. Likewise, 
+neither Killam et al.&rsquo;s nor Plomp et al.&rsquo;s studies meet this threshold.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> 
+It is because all three configurations have the same overall topology (when the 
+octave is excluded from consideration in the latter two) that it is possible to 
+have any confidence in the current results; more thorough replications with 
+larger subject samples are, of course, clearly needed. Also, it is critical that 
+replications systematically include octaves and compound intervals: given that 
+the configurations for the other studies change when the octave is included in 
+the MDS analysis, we cannot assume that no new factors will appear when larger 
+intervals are included.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> 
+Furthermore, some means of including types of musical contexts will be necessary 
+eventually, as opposed to testing similarity only in context-free situations as 
+was done in all of the above studies: it would not be very surprising to learn 
+that interval (and by extension, interval-class) similarity might change if a 
+listener first heard several pieces dominated by whole-tone or octatonic 
+textures rather than diatonic or chromatic tonal harmonies.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></p>
+
+
+<p>[17] These MDS results have some mixed implications for atonal theory. 
+Interval-class <i>does</i> appear to have some validity as a psychological 
+construct, given that the pattern of &ldquo;classical&rdquo; interval-classes can be  
+derived 
+from the configuration. The very strong grouping of intervals by dissonance-class suggests that the different interval classes cannot be treated as  
+being 
+independent of each other for assessing chord similarity, however. Should 
+the current results be supported by replications, then similarity functions  
+that 
+use the icv as the basis for their calculations will need revision in order  
+to 
+take these relationships into account. Of such functions, Scott and  
+Isaacson&rsquo;s 
+ANGLE measure is the best pre-positioned for any upgrade, since they already 
+discuss how to alter the calculation of the function to take correlations of  
+ics 
+into account.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup></p>
+
+
+<p>[18] The idea that interval-classes cluster into several groups should not  
+be 
+particularly onerous. Indeed, the observed clustering matches a well-established taxonomy in music theory, of perfect consonances, imperfect 
+consonances, and dissonances, so any resulting modification of atonal theory 
+will likely align it more closely to certain ideas for tonal theory. This  
+may 
+seem to fly in the face of a basic aesthetic stance in atonal theory,  
+though, in 
+that there seems to be an unwritten rule among most atonal theorists that 
+&ldquo;all intervals are created equal (but separate);&rdquo; to group interval-classes  
+in 
+a way so explicitly associated with functional tonality would appear to 
+undermine all the work that has gone into developing atonal theory as an 
+analytical subdiscipline entirely separate from tonal theory. Any such fear  
+is a 
+red herring, however. As Fred Lerdahl has stated on more than one occasion, 
+&ldquo;One does not hear <i>Elektra</i> and <i>Erwartung</i> in entirely different ways. The 
+historical development from tonality to atonality (and back) is richly 
+continuous. Theories of tonal and atonal music should be comparably 
+linked.&rdquo;<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> Further studies 
+on the perceptual grouping of interval-class components, including how the 
+octave and compound intervals fit into the overall picture, will help us develop 
+such a linkage.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Art Samplaski<br>
+	P. O. Box 4971<br>Ithaca, NY 14852<br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Literature reviews of many such functions can be found in Marcus Castr&eacute;n, 
+<i>RECREL: A Similarity Measure for Set-Classes </i>(Helsinki: Sibelius Academy, 
+1994), Eric J. Isaacson, &ldquo;Similarity of Interval-Class Content between Pitch-Class Sets: The IcVSIM Relation,&rdquo; <i>Journal of Music Theory</i> 34 (1990): 
+1&ndash;28, and Damon Scott and Eric J. Isaacson, &ldquo;The Interval Angle: A Similarity 
+Measure for Pitch-Class Sets,&rdquo; <i>Perspectives of New Music</i> 36(2) (1998): 
+107&ndash;142.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Marcus Castr&eacute;n, &ldquo;Joukkoluokitukseen perustuva sointuluokitus: 
+perusperiaatteet ja esimerkkej&auml; sovellusmahdollisuuksista&rdquo; [Chord 
+Classification Based on Set Classification: Basic Principles and Examples of 
+Applicational Possibilities], <i>S&auml;vellys ja musiikinteoria</i> 7 (1997): 6&ndash;25,  
+and 
+&ldquo;Pairs of Chords as Objects Illuminating Set-Class Similarity: Some 
+Viewpoints and a Computer-Assisted Procedure to Create Test Materials for 
+Listener Experiments,&rdquo; <i>Electronic Journal of Music Theory and Analysis</i> 
+vol.1, no.2 (2000), <a href='http://www.musictheoryresources.com'>www.musictheoryresources.com</a>; Olli V&auml;is&auml;l&auml;, &ldquo;Concepts 
+of Harmony and Prolongation in Schoenberg&rsquo;s Op. 19/2,&rdquo; <i>Music Theory Spectrum</i> 
+21 (1999): 230&ndash;59.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Eric J. Isaacson, &ldquo;Issues in the Study of Similarity in Atonal Music,&rdquo; <i>Music 
+Theory Online</i> vol. 2.7, 1996, paragraph 11.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Diana Stammers, &ldquo;Set Theory in the Perception of Atonal Pitch Relations&rdquo; (Ph.D. 
+diss., Cambridge University, 1994). Major and minor 3rds were treated by her 
+listeners as being closely related and confusable, whereas the two types of 2nds 
+were considered distinct. She attributed this to prior learning from exposure to 
+classical tonality, in which the two types of thirds have similar structural 
+roles but the two types of seconds do not.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Cheryl L. Bruner, &ldquo;The Perception of Contemporary Pitch Structures,&rdquo; <i>Music 
+Perception </i>2 (1984): 25&ndash;39; Don B. Gibson, &ldquo;The Aural Perception of 
+Non-Traditional Chords in Selected Theoretical Relationships: A Computer-Generated Experiment,&rdquo; <i>Journal of Research in Music Education</i> 34 (1986): 
+5&ndash;23, &ldquo;The Aural Perception of Similarity in Nontraditional Chords Related by 
+Octave Equivalence,&rdquo; <i>Journal of Research in Music Education </i>36 (1988): 
+5&ndash;17, and &ldquo;The Effects of Pitch and Pitch-Class Content on the Aural Perception 
+of Dissimilarity in Complementary Hexachords,&rdquo; <i>Psychomusicology</i> 12 (1993): 58&ndash;72; Tuire Kuusi, 
+<i>Set-Class and Chord: 
+Examining Connection between Theoretical Resemblance and Perceived 
+Closeness </i>(Helsinki: Sibelius Academy, 2001), &ldquo;Semantic Differential as a 
+Method for Collecting Estimations of Chords,&rdquo; in <i>Proceedings of the 5th 
+Triennial ESCOM Conference </i>(2003), and &ldquo;The Role of Set-Class Identity in 
+the Estimation of Chords,&rdquo; <i>Music Theory Online</i> vol. 9.3, 2003; Roger C. 
+Lane, &ldquo;A Multidimensional Scaling Study of Seven Theoretical Indices of 
+Intervallic Similarity and Musicians&rsquo; Perceptions among Twenty-One Pitch-Class Sets with Implications for Music Teaching and Learning&rdquo; (Ph.D. diss, 
+University of North Carolina, Greensboro, 1997); Panayotis Mavromatis and 
+Virginia Williamson, &ldquo;Towards a Perceptual Model for Categorizing Atonal 
+Sonorities&rdquo; (paper presented at the Society of Music Theory meeting,  
+Atlanta, 
+GA, 1999); Jana K. Millar, &ldquo;The Aural Perception of Pitch-Class Relations: A 
+Computer-Assisted Investigation&rdquo; (Ph.D. diss., North Texas State University, 
+1984); Art Samplaski, &ldquo;The Perceived Similarity 
+of Some Non-Tonal Tetrachords Compared to Predictions of Selected 
+Twentieth-Century Chord Classification Systems,&rdquo; presentation at the 2000 
+meeting of the Society for Music Perception and Cognition, Toronto, Ontario, 
+and &ldquo;The Relative Perceptual Salience of Tn and TnI,&rdquo; <i>Music 
+Perception</i> 21 (2004): 545&ndash;59; and Virginia Williamson and Panayotis  
+Mavromatis, &ldquo;Similarity in Atonal Music Theory: A Perceptual Study&rdquo; (paper 
+presented at the Society for Music Perception and Cognition meeting, Cambridge, 
+MA, 1997), and &ldquo;Categorizing Atonal Sonorities: Multidimensional Scaling, 
+Tree-Fitting, and Clustering Compared&rdquo; (paper presented at the Society for Music 
+Perception and Cognition meeting, Evanston, IL, 1999).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> For other types of problems, other methods of data collection are also possible, 
+e.g., consumer product preference ratings.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> There is an entire family of MDS models for different situations, with differing 
+limitations and requirements; a related set of techniques called cluster 
+analysis also provides for visualization of similarity by generating tree 
+diagrams instead of geometric configurations. See Joseph B. Kruskal and Myron 
+Wish, <i>Multidimensional Scaling,</i> Sage University Paper Series on 
+Quantitative Applications in the Social Sciences, Series no. 07&ndash;011 (Newbury 
+Park, CA and London: Sage Publications, 1978), for a basic introduction. Their 
+short monograph discusses both the underlying mathematics as well as various 
+important methodological issues that will not be discussed in this essay; such 
+issues include determining the appropriate number of dimensions for the derived 
+configurations (i.e., are three dimensions needed to adequately describe the 
+relationships between the objects under investigation, or will two suffice?), 
+and how to deal with any underlying asymmetries in the data (e.g., in a tonal 
+context I&rarr;V will almost certainly be rated differently than V&rarr;I). I am 
+currently finishing preparation on an article illustrating a different 
+application of MDS for music-theoretic analysis that will include a detailed but 
+non-technical tutorial about such issues.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> T. Jeffries, &ldquo;The Effects of Order of Presentation and Knowledge of Results on 
+the Aural Recognition of Melodic Intervals,&rdquo; <i>Journal of Research in Music 
+Education</i> 15 (1967): 179&ndash;90; Catrina von Maltzew, &ldquo;Das Erkennen 
+sukzessiv gebener musikalischer Intervalle in den &auml;usseren Tonregionen,&rdquo; 
+<i>Zeitschrift f&uuml;r Psychologie</i> 64 (1913): 161&ndash;257; and Otto Ortmann, &ldquo;Notes  
+on 
+Interval Discrimination,&rdquo; <i>Peabody Bulletin</i> vol. 28, no. 2 (1932): 45&ndash;46. Ortmann provides only qualitative bar graphs of confusion data for two intervals 
+(i.e., he gives no indication as to whether the vertical axes should be 
+interpreted as percentage of times the played interval was identified as this, 
+that, or the other answer&mdash;and if so, what percentage&mdash;or as numbers of times it 
+was so identified). Jeffries was concerned with how the presence of particular 
+intervals before and after a target interval in specific melodic contexts 
+affected how the target was identified; he presents his results in a couple of 
+ways, but they again are qualitative, not quantitative, tables and diagrams.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Rosemary N. Killam, Paul V. Lorton, Jr., and Earl D. Schubert, &ldquo;Interval 
+Recognition: Identification of Harmonic and Melodic Intervals,&rdquo; <i>Journal of 
+Music Theory</i> 18 (1975): 213&ndash;234; R[einer] Plomp, W. Wagenaar, and A. M. 
+Mimpen, &ldquo;Musical Interval Recognition with Simultaneous Tones,&rdquo; 
+<i>Acustica</i> 29 (1973): 101&ndash;109. 
+One slightly earlier study (W. J. M. Levelt, J. P. van der Geer, and  
+R[einer] 
+Plomp, &ldquo;Triadic Comparisons of Musical Intervals,&rdquo; <i>British Journal of 
+Mathematical and Statistical Psychology</i> 19 [1966]: 163&ndash;179) actually carried 
+out MDS analysis of data obtained by the triadic comparison method for intervals 
+sounded as pure tones and as complex tones; that analysis appeared to show some 
+support for the hypothesis of interval-class as a psychological construct. In my 
+opinion, however, their paper contains significant methodological problems, 
+which would be beyond the scope of the present article to critique in detail; 
+the citation is given for those readers wishing to consult the work for 
+themselves.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Thirty additional duplicate trials were inserted into the generated random 
+orders, subject to the same constraints between consecutive trials, as a check 
+for subjects&rsquo; self-consistency. There were thus 360 trials (18 blocks of 20) in 
+total. One additional subject was eliminated from consideration for failing this 
+check.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Art Samplaski, &ldquo;Interval and Interval-Class Similarity: Results from a Confusion 
+Study,&rdquo; poster presentation at the 2003 meeting of the Society for Music 
+Perception and Cognition, Las Vegas, NV; manuscript submitted for publication.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> The subsidiary arc drawn between the imperfect consonances on the schematic 
+diagram in <a target='ex_window' href='samplaski_fig2.html' onClick='newwindow('samplaski_fig2.html',500,450); return false;'>Figure 2</a> is to aid visualization. It is parallel to the arc along 
+which the dissonances lie.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> The configurations derived from Plomp et al.&rsquo;s data are not shown 
+because of the minimal time for which their stimuli sounded&mdash;they did four 
+experimental runs of stimuli with durations of 120, 60, 30, and 15(!) 
+milliseconds respectively, only the longest of which is relevant to actual 
+musical situations. Plomp et al. were concerned with how interval recognition 
+degraded as stimulus duration was reduced, rather than any possible implications 
+for theories of musical structure. It is thus all the more remarkable that the 
+configuration for their data bears any resemblance at all to the other two.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Killam et al. used a sample of 15 undergraduate music majors; they tested at two 
+transposition levels rather than the ten used in the present study, using an 
+organ timbre; the stimuli were presented in two durations, of 100 and 200 
+milliseconds. As in the present study, intervals were presented in all three 
+presentation modes; while the authors provide some analysis separated by 
+presentation mode, they only presented an aggregate confusion matrix. Plomp et al. used a sample of 15 music students; they used sine tones and 
+sawtooth waves as timbres; the intervals were presented such that either the 
+high or low notes of the intervals were always middle C or the C above, or else 
+centered within that octave to the extent possible. The various intervals were 
+thus presented different numbers of times (octaves could only be presented as C4 
+to C5 and major 7ths could only be presented with C as one component, while the 
+other intervals were presented in three different forms); while they detail some 
+efforts to reduce any bias caused by such lopsidedness, their paper remains 
+problematic.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Indeed, given that in a number of undergraduate aural skills programs music 
+majors receive little or no training on the recognition of compound intervals, 
+it is entirely possible that such MDS configurations could be chaotic jumbles if 
+population samples of only undergraduates are used. This is a worst-case 
+scenario, of course, but we have no way <i>a priori</i> to know what results 
+might occur.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Again, we cannot be certain that this <i>would</i> be the case, although it may 
+seem like a perfectly plausible scenario. In making pronouncements about 
+empirical situations, there is no substitute for collecting actual data. Because 
+the number of factors that might influence the results, and their possible 
+interactions, proliferate rapidly in imbedded-context situations, it is more 
+difficult to develop well-designed studies of such types&mdash;context-free studies 
+must first be carried out to provide a baseline for follow-up research.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Scott and Isaacson, <i>op. cit.,</i> pages 136&ndash;39.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> The most recent such statement is <i>Tonal Pitch Space</i> (New York: Oxford 
+University Press, 2001), page 351.<br><a href="#FN18REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Literature reviews of many such functions can be found in Marcus Castr&eacute;n, 
+<i>RECREL: A Similarity Measure for Set-Classes </i>(Helsinki: Sibelius Academy, 
+1994), Eric J. Isaacson, &ldquo;Similarity of Interval-Class Content between Pitch-Class Sets: The IcVSIM Relation,&rdquo; <i>Journal of Music Theory</i> 34 (1990): 
+1&ndash;28, and Damon Scott and Eric J. Isaacson, &ldquo;The Interval Angle: A Similarity 
+Measure for Pitch-Class Sets,&rdquo; <i>Perspectives of New Music</i> 36(2) (1998): 
+107&ndash;142.</div><div id="fndiv2" class="flyoverdiv">Marcus Castr&eacute;n, &ldquo;Joukkoluokitukseen perustuva sointuluokitus: 
+perusperiaatteet ja esimerkkej&auml; sovellusmahdollisuuksista&rdquo; [Chord 
+Classification Based on Set Classification: Basic Principles and Examples of 
+Applicational Possibilities], <i>S&auml;vellys ja musiikinteoria</i> 7 (1997): 6&ndash;25,  
+and 
+&ldquo;Pairs of Chords as Objects Illuminating Set-Class Similarity: Some 
+Viewpoints and a Computer-Assisted Procedure to Create Test Materials for 
+Listener Experiments,&rdquo; <i>Electronic Journal of Music Theory and Analysis</i> 
+vol.1, no.2 (2000), <a href='http://www.musictheoryresources.com'>www.musictheoryresources.com</a>; Olli V&auml;is&auml;l&auml;, &ldquo;Concepts 
+of Harmony and Prolongation in Schoenberg&rsquo;s Op. 19/2,&rdquo; <i>Music Theory Spectrum</i> 
+21 (1999): 230&ndash;59.</div><div id="fndiv3" class="flyoverdiv">Eric J. Isaacson, &ldquo;Issues in the Study of Similarity in Atonal Music,&rdquo; <i>Music 
+Theory Online</i> vol. 2.7, 1996, paragraph 11.</div><div id="fndiv4" class="flyoverdiv">Diana Stammers, &ldquo;Set Theory in the Perception of Atonal Pitch Relations&rdquo; (Ph.D. 
+diss., Cambridge University, 1994). Major and minor 3rds were treated by her 
+listeners as being closely related and confusable, whereas the two types of 2nds 
+were considered distinct. She attributed this to prior learning from exposure to 
+classical tonality, in which the two types of thirds have similar structural 
+roles but the two types of seconds do not.</div><div id="fndiv5" class="flyoverdiv">Cheryl L. Bruner, &ldquo;The Perception of Contemporary Pitch Structures,&rdquo; <i>Music 
+Perception </i>2 (1984): 25&ndash;39; Don B. Gibson, &ldquo;The Aural Perception of 
+Non-Traditional Chords in Selected Theoretical Relationships: A Computer-Generated Experiment,&rdquo; <i>Journal of Research in Music Education</i> 34 (1986): 
+5&ndash;23, &ldquo;The Aural Perception of Similarity in Nontraditional Chords Related by 
+Octave Equivalence,&rdquo; <i>Journal of Research in Music Education </i>36 (1988): 
+5&ndash;17, and &ldquo;The Effects of Pitch and Pitch-Class Content on the Aural Perception 
+of Dissimilarity in Complementary Hexachords,&rdquo; <i>Psychomusicology</i> 12 (1993): 58&ndash;72; Tuire Kuusi, 
+<i>Set-Class and Chord: 
+Examining Connection between Theoretical Resemblance and Perceived 
+Closeness </i>(Helsinki: Sibelius Academy, 2001), &ldquo;Semantic Differential as a 
+Method for Collecting Estimations of Chords,&rdquo; in <i>Proceedings of the 5th 
+Triennial ESCOM Conference </i>(2003), and &ldquo;The Role of Set-Class Identity in 
+the Estimation of Chords,&rdquo; <i>Music Theory Online</i> vol. 9.3, 2003; Roger C. 
+Lane, &ldquo;A Multidimensional Scaling Study of Seven Theoretical Indices of 
+Intervallic Similarity and Musicians&rsquo; Perceptions among Twenty-One Pitch-Class Sets with Implications for Music Teaching and Learning&rdquo; (Ph.D. diss, 
+University of North Carolina, Greensboro, 1997); Panayotis Mavromatis and 
+Virginia Williamson, &ldquo;Towards a Perceptual Model for Categorizing Atonal 
+Sonorities&rdquo; (paper presented at the Society of Music Theory meeting,  
+Atlanta, 
+GA, 1999); Jana K. Millar, &ldquo;The Aural Perception of Pitch-Class Relations: A 
+Computer-Assisted Investigation&rdquo; (Ph.D. diss., North Texas State University, 
+1984); Art Samplaski, &ldquo;The Perceived Similarity 
+of Some Non-Tonal Tetrachords Compared to Predictions of Selected 
+Twentieth-Century Chord Classification Systems,&rdquo; presentation at the 2000 
+meeting of the Society for Music Perception and Cognition, Toronto, Ontario, 
+and &ldquo;The Relative Perceptual Salience of Tn and TnI,&rdquo; <i>Music 
+Perception</i> 21 (2004): 545&ndash;59; and Virginia Williamson and Panayotis  
+Mavromatis, &ldquo;Similarity in Atonal Music Theory: A Perceptual Study&rdquo; (paper 
+presented at the Society for Music Perception and Cognition meeting, Cambridge, 
+MA, 1997), and &ldquo;Categorizing Atonal Sonorities: Multidimensional Scaling, 
+Tree-Fitting, and Clustering Compared&rdquo; (paper presented at the Society for Music 
+Perception and Cognition meeting, Evanston, IL, 1999).</div><div id="fndiv6" class="flyoverdiv">For other types of problems, other methods of data collection are also possible, 
+e.g., consumer product preference ratings.</div><div id="fndiv7" class="flyoverdiv">There is an entire family of MDS models for different situations, with differing 
+limitations and requirements; a related set of techniques called cluster 
+analysis also provides for visualization of similarity by generating tree 
+diagrams instead of geometric configurations. See Joseph B. Kruskal and Myron 
+Wish, <i>Multidimensional Scaling,</i> Sage University Paper Series on 
+Quantitative Applications in the Social Sciences, Series no. 07&ndash;011 (Newbury 
+Park, CA and London: Sage Publications, 1978), for a basic introduction. Their 
+short monograph discusses both the underlying mathematics as well as various 
+important methodological issues that will not be discussed in this essay; such 
+issues include determining the appropriate number of dimensions for the derived 
+configurations (i.e., are three dimensions needed to adequately describe the 
+relationships between the objects under investigation, or will two suffice?), 
+and how to deal with any underlying asymmetries in the data (e.g., in a tonal 
+context I&rarr;V will almost certainly be rated differently than V&rarr;I). I am 
+currently finishing preparation on an article illustrating a different 
+application of MDS for music-theoretic analysis that will include a detailed but 
+non-technical tutorial about such issues.</div><div id="fndiv8" class="flyoverdiv">T. Jeffries, &ldquo;The Effects of Order of Presentation and Knowledge of Results on 
+the Aural Recognition of Melodic Intervals,&rdquo; <i>Journal of Research in Music 
+Education</i> 15 (1967): 179&ndash;90; Catrina von Maltzew, &ldquo;Das Erkennen 
+sukzessiv gebener musikalischer Intervalle in den &auml;usseren Tonregionen,&rdquo; 
+<i>Zeitschrift f&uuml;r Psychologie</i> 64 (1913): 161&ndash;257; and Otto Ortmann, &ldquo;Notes  
+on 
+Interval Discrimination,&rdquo; <i>Peabody Bulletin</i> vol. 28, no. 2 (1932): 45&ndash;46. Ortmann provides only qualitative bar graphs of confusion data for two intervals 
+(i.e., he gives no indication as to whether the vertical axes should be 
+interpreted as percentage of times the played interval was identified as this, 
+that, or the other answer&mdash;and if so, what percentage&mdash;or as numbers of times it 
+was so identified). Jeffries was concerned with how the presence of particular 
+intervals before and after a target interval in specific melodic contexts 
+affected how the target was identified; he presents his results in a couple of 
+ways, but they again are qualitative, not quantitative, tables and diagrams.</div><div id="fndiv9" class="flyoverdiv">Rosemary N. Killam, Paul V. Lorton, Jr., and Earl D. Schubert, &ldquo;Interval 
+Recognition: Identification of Harmonic and Melodic Intervals,&rdquo; <i>Journal of 
+Music Theory</i> 18 (1975): 213&ndash;234; R[einer] Plomp, W. Wagenaar, and A. M. 
+Mimpen, &ldquo;Musical Interval Recognition with Simultaneous Tones,&rdquo; 
+<i>Acustica</i> 29 (1973): 101&ndash;109. 
+One slightly earlier study (W. J. M. Levelt, J. P. van der Geer, and  
+R[einer] 
+Plomp, &ldquo;Triadic Comparisons of Musical Intervals,&rdquo; <i>British Journal of 
+Mathematical and Statistical Psychology</i> 19 [1966]: 163&ndash;179) actually carried 
+out MDS analysis of data obtained by the triadic comparison method for intervals 
+sounded as pure tones and as complex tones; that analysis appeared to show some 
+support for the hypothesis of interval-class as a psychological construct. In my 
+opinion, however, their paper contains significant methodological problems, 
+which would be beyond the scope of the present article to critique in detail; 
+the citation is given for those readers wishing to consult the work for 
+themselves.</div><div id="fndiv10" class="flyoverdiv">Thirty additional duplicate trials were inserted into the generated random 
+orders, subject to the same constraints between consecutive trials, as a check 
+for subjects&rsquo; self-consistency. There were thus 360 trials (18 blocks of 20) in 
+total. One additional subject was eliminated from consideration for failing this 
+check.</div><div id="fndiv11" class="flyoverdiv">Art Samplaski, &ldquo;Interval and Interval-Class Similarity: Results from a Confusion 
+Study,&rdquo; poster presentation at the 2003 meeting of the Society for Music 
+Perception and Cognition, Las Vegas, NV; manuscript submitted for publication.</div><div id="fndiv12" class="flyoverdiv">The subsidiary arc drawn between the imperfect consonances on the schematic 
+diagram in <a target='ex_window' href='samplaski_fig2.html' onClick='newwindow('samplaski_fig2.html',500,450); return false;'>Figure 2</a> is to aid visualization. It is parallel to the arc along 
+which the dissonances lie.</div><div id="fndiv13" class="flyoverdiv">The configurations derived from Plomp et al.&rsquo;s data are not shown 
+because of the minimal time for which their stimuli sounded&mdash;they did four 
+experimental runs of stimuli with durations of 120, 60, 30, and 15(!) 
+milliseconds respectively, only the longest of which is relevant to actual 
+musical situations. Plomp et al. were concerned with how interval recognition 
+degraded as stimulus duration was reduced, rather than any possible implications 
+for theories of musical structure. It is thus all the more remarkable that the 
+configuration for their data bears any resemblance at all to the other two.</div><div id="fndiv14" class="flyoverdiv">Killam et al. used a sample of 15 undergraduate music majors; they tested at two 
+transposition levels rather than the ten used in the present study, using an 
+organ timbre; the stimuli were presented in two durations, of 100 and 200 
+milliseconds. As in the present study, intervals were presented in all three 
+presentation modes; while the authors provide some analysis separated by 
+presentation mode, they only presented an aggregate confusion matrix. Plomp et al. used a sample of 15 music students; they used sine tones and 
+sawtooth waves as timbres; the intervals were presented such that either the 
+high or low notes of the intervals were always middle C or the C above, or else 
+centered within that octave to the extent possible. The various intervals were 
+thus presented different numbers of times (octaves could only be presented as C4 
+to C5 and major 7ths could only be presented with C as one component, while the 
+other intervals were presented in three different forms); while they detail some 
+efforts to reduce any bias caused by such lopsidedness, their paper remains 
+problematic.</div><div id="fndiv15" class="flyoverdiv">Indeed, given that in a number of undergraduate aural skills programs music 
+majors receive little or no training on the recognition of compound intervals, 
+it is entirely possible that such MDS configurations could be chaotic jumbles if 
+population samples of only undergraduates are used. This is a worst-case 
+scenario, of course, but we have no way <i>a priori</i> to know what results 
+might occur.</div><div id="fndiv16" class="flyoverdiv">Again, we cannot be certain that this <i>would</i> be the case, although it may 
+seem like a perfectly plausible scenario. In making pronouncements about 
+empirical situations, there is no substitute for collecting actual data. Because 
+the number of factors that might influence the results, and their possible 
+interactions, proliferate rapidly in imbedded-context situations, it is more 
+difficult to develop well-designed studies of such types&mdash;context-free studies 
+must first be carried out to provide a baseline for follow-up research.</div><div id="fndiv17" class="flyoverdiv">Scott and Isaacson, <i>op. cit.,</i> pages 136&ndash;39.</div><div id="fndiv18" class="flyoverdiv">The most recent such statement is <i>Tonal Pitch Space</i> (New York: Oxford 
+University Press, 2001), page 351.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2004 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

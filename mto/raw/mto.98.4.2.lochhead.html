@@ -1,0 +1,955 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 4.2: Lochhead, Retooling the Technique</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Retooling the Technique">
+
+    <meta name="citation_author" content="Lochhead, Judith">
+      
+
+<meta name="citation_publication_date" content="1998/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="4">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Retooling the Technique
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.98.4.2/mto.98.4.2.lochhead.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Judith Lochhead</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: analysis, technique, technology, Don Ihde</font></p><p><font size='4'>ABSTRACT: Recent debates about new directions in music scholarship
+have sometimes focused on technical language and its use in musical
+analysis.  This essay puts some perspective on that debate from the
+vantage of the philosophy of technology.  Following the ideas of
+Martin Heidegger and Don Ihde about the &ldquo;ontological priority&rdquo; of
+technology with respect to science, the essay argues that the
+technical language of music has a basis in &ldquo;making&rdquo; music and must be
+&ldquo;retooled&rdquo; to apply to the more experiential concerns of recent
+musicological and theoretical research.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.lochhead.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 4, Number 2, March 1998 <br> Copyright &#0169; 1998 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Last spring I was chatting with a colleague from Theater Arts
+before a ceremonial function at my University.  My colleague told me
+how much he enjoyed socializing with musicians because &ldquo;we&rdquo; like to
+eat good food and drink good wine, and because conversation with
+musicians does not get bogged down in those critical issues that
+concern people in the fine and dramatic arts.  Then he added: &ldquo;The
+only things one can say about music in any meaningful sense are
+technical.&rdquo;
+</p> 
+
+<p>[2] Our conversation ended at this point, cut short by the beginning 
+of the  ceremony.  While I never pursued an opportunity to discuss 
+further with my colleague just what he meant by the comment, taken 
+at face value it raises a number of issues for both musicians and 
+musician/scholars who deal in &ldquo;technique&rdquo; everyday but who also strive 
+to create something distinct from technique.  While appreciating the 
+praise given to my professional and social group (we are fun, I know), 
+I find it both annoying and intriguing that this fellow arts educator 
+thinks that we musicians can not meaningfully apply conceptual meaning 
+to musical sound.  The underlying message here seems to be this:  We 
+can make music and we can perform it, but we can not &ldquo;say&rdquo; anything 
+meaningful about pieces that is not about the making.
+</p>
+
+<p>[3] While my colleague&rsquo;s comment was not intended as a manifesto about
+how linguistic expression can or cannot &ldquo;capture&rdquo; the significance of
+any of the arts&mdash;theater, fine arts, dance, literature, or music&mdash;the
+attitude it communicates is not in any sense new.  Put in a positive
+light, his statement could mean that music &ldquo;transcends&rdquo; the messiness
+of semantic meaning and that any attempt to conceptualize it is a
+violation of something insusceptible to verbal expression.  Put in a
+negative light, it could mean that music admits only and merely a
+practical knowledge and cannot be accessed by linguistic
+conceptuality, that human capacity which has been used to set us apart
+from &ldquo;less intelligent&rdquo; creatures.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Since technique is understood
+both as limitation and liberation, we might well wonder how both
+attitudes arise.
+</p>
+
+<p>[4] The philosopher Stanley Cavell, in his essay &ldquo;Music Discomposed,&rdquo;
+articulated this &ldquo;doubleness&rdquo; of technique over 30 years ago.  He
+wrote: 
+</p>
+<blockquote>
+The serious attempt to articulate a response to a piece of
+music where more than reverie, has characteristically stimulated
+mathematics or metaphysics&mdash;as though music has never quite become one
+of the facts of life, but shunts between an overwhelming directness
+and an overweening mystery.  Is this because music, as we know it, is
+the newest of the great arts and just has not had the time to learn to
+criticize itself; or because it inherently resists verbal 
+transcriptions?  Whatever the cause, the absence of humane music
+criticism seems particularly striking against the fact that music has,
+among the arts, the most, perhaps the only, systematic and precise
+vocabulary for the description and analysis of its objects.  Somehow
+that possession must itself be a liability<nobr> . . . </nobr><sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></blockquote>
+<p>
+Themes similar to
+those mentioned above emerge from Cavell&rsquo;s thought: music resists
+&ldquo;verbalization,&rdquo; its technical language is highly developed, and its
+highly developed technique is a &ldquo;liability.&rdquo;  &ldquo;Technique&rdquo; emerges in
+the thought of a great many critics as a powerful tool that either
+allows or prevents certain kinds of discourse or thought.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+
+<p>[5] With regard to music, the term technique can refer to a number of
+different things. Technique refers to the practical knowledge required
+to produce musical sounds on instruments or with the voice and to the
+practical knowledge needed for reading musical notation.  Often, but
+not always, the techniques required for reading music notation are
+learned in conjunction with learning to play an instrument or sing.
+Another meaning of technique occurs in the context  of music theory.  
+For instance, textbooks of the sort used for beginning theory courses 
+often have technique in the title:  <i>Techniques and Materials of Tonal 
+Music</i> or <i>Materials and Techniques of Twentieth-Century Music</i>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The pairing of &ldquo;techniques&rdquo; with &ldquo;materials&rdquo; in these two titles 
+suggests that technique refers to the procedures by which basic 
+materials are used in a practical sense.  The teaching of basic theory 
+then shows how to use the materials of music, often through study 
+of how those materials have been used compositionally by others.
+</p>
+
+<p>[6] Technique, then, is a skill referring to praxis.  If I say that the
+soloist&rsquo;s performance of Berg&rsquo;s Violin Concerto was technically
+unflawed, I make an assessment regarding the player&rsquo;s physical skill
+in producing the sounds.  A &ldquo;technical&rdquo; description of a piece of
+music indicates how the materials of music have been used, approaching
+the musical object from the perspective of a system that accounts for
+a musical practice.
+</p>
+
+<p>[7] A sense of the practical pervades our thinking about music
+analysis also, as Ian Bent&rsquo;s characterization of music analysis
+suggests: &ldquo;Analysis is the means of answering directly the question
+&lsquo;How does it work?&rsquo;&rdquo;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>  Elucidation of &ldquo;how a piece works&rdquo; requires,
+in Bent&rsquo;s terms, &ldquo;resolution of a musical structure into<nobr> . . . </nobr>constituent
+elements, and the investigation of the functions of those elements
+within that structure.&rdquo;<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> In other words, analysis entails a
+determination of the constituent &ldquo;materials&rdquo; and shows the techniques
+by which the materials are used in a given work.  While there is an
+overlap between what a &ldquo;technical description&rdquo; and an analysis will
+demonstrate, we expect an analysis to &ldquo;go beyond&rdquo; the simple
+description, to tell more about function and thus to delve into realms
+of meaning that move beyond the particular.  But my point is that both
+&ldquo;technical description&rdquo; and &ldquo;analysis&rdquo; have a basis in the practical,
+in simply &ldquo;what happens.&rdquo;
+</p>
+
+<p>[8] &ldquo;Technical descriptions&rdquo; and technique-based analysis have been
+the subject of criticism over the last 20 years for a variety of
+reasons.  For instance:</p>
+
+<blockquote>
+
+     Joseph Kerman: &ldquo;The vision of these analyst-critics was and is of
+     a perfect, organic relation among all the analyzable parts of a 
+     musical masterpiece<nobr> . . . </nobr>[A]nalysis exists for the purpose of 
+     demonstrating organicism, and organicism exists for the purpose of 
+     validating a certain body of works of art<nobr> . . . </nobr>The true intellectual 
+     milieu of analysis is not science but ideology.&rdquo;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>     </blockquote>
+
+     <blockquote>Leo Treitler: &ldquo;Formalist analysis<nobr> . . . </nobr>declares [the historical context
+     and the interpretive tradition built up around a piece] to be 
+     irrelevant to the analysis of the work.&rdquo;<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>     </blockquote>
+
+     <blockquote>Susan McClary: &ldquo;It has become heretical [for music theorists] to
+     address the signifying practices of say Bach or Beethoven for at 
+     least two interrelated reasons: first, their present day prestige 
+     in the modernist academy hinges on the abstract patterns of order 
+     in their music rather than on signification; second, the argument 
+     that their music likewise is nothing but abstract constructs in 
+     turn helps legitimize the avant-garde [here understood as composers 
+     of high modernist music of mid-twentieth century].&rdquo;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>
+</blockquote>
+
+<p>[9] In summary, the technique-based analytic approaches are
+problematic because they 1) conceal the conceptual and ideological
+underpinnings of their accounts of what music does, 2) take an
+exclusionary approach to musical explanation, eliminating the
+historical and critical context that surrounds understanding, and 3)
+ignore the expressive, or &ldquo;signifying,&rdquo; features of musical meaning.
+&ldquo;Technique&rdquo; per se is not the subject of these criticisms.  However,
+since it plays a crucial role in the practices not only of &ldquo;formalist&rdquo;
+or &ldquo;abstract&rdquo; analysis but further in the teaching and learning of a
+&ldquo;basic&rdquo; language through which we talk about music, productive
+understanding of the issues facing music scholars nowadays requires
+consideration of &ldquo;technique.&rdquo;
+</p>  
+
+<p>[10] I approach the topic of &ldquo;technique&rdquo; from the vantage of
+philosophical thought about a related concept: technology.  The
+philosopher Don Ihde has written extensively about how humans use
+technology, either in an everyday setting or in science.  Building
+upon the ideas of Martin Heidegger and of other, more recent authors,
+such as Lewis Mumford and Lynn White Jr., he shows how technologies in
+the form of tools and scientific instruments are employed by humans to
+achieve a variety of tasks, from the most mundane task of chopping
+wood with an ax to the more complex goal of observing the formation of
+stars in distant galaxies.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> In either case, the technology&mdash;the ax
+or the telescope&mdash;is something used by humans to achieve a certain
+task.
+</p>
+
+<p>[11] Of particular concern to Ihde, and to Heidegger before him, is
+the question of the relation between science as mode of intellectual
+inquiry and the tools used to pursue that inquiry.  The standard or
+&ldquo;idealist&rdquo; account of the relation between technology and science
+&ldquo;holds that science precedes and founds technology.&rdquo;  In this view,
+science provides &ldquo;insight into the laws of nature, a conceptual system
+at the formal and abstract level, and the ability to apply this
+knowledge to the material realm<nobr> . . . </nobr>&rdquo;<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Technology in this sense is
+the practical application of knowledge gained from the conceptual
+realm of science, and science is understood as both &ldquo;historically and
+ontologically&rdquo; prior to technology.
+</p>
+
+<p>[12] Ihde develops an alternate view that considers technology
+ontologically prior to science, basing his position on insights from
+Martin Heidegger.  In his 1954 essay, &ldquo;The Question Concerning
+Technology,&rdquo; Heidegger considers a broader sense of technology than
+might be typical in recent understandings of the term, as Ihde points
+out: &ldquo;Technology&mdash;more precisely the essence of technology&mdash;is a
+certain way of experiencing, relating to, and organizing the way
+humans relate to the natural world.&rdquo;<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Such an understanding of
+technology reverts to older meanings of this and other related terms.
+</p>
+
+<p>[13] According to Ihde, Heidegger distinguishes three definitions of the
+term &ldquo;technology.&rdquo;  One is the standard or idealist definition mentioned 
+earlier. The other two derive  more directly from the Greek word <i>techne</i>, 
+which is the also the root of technique.  Heiddegger&rsquo;s second definition 
+implicates a two-pronged sense of the Greek term: &ldquo;techne is both a name 
+for the activities and skills of a craftsman and for the arts of both mind 
+and hand, but also is linked to creative making, [that is to] poiesis.&rdquo;<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> 
+This meaning is implicated in current uses of the term technique when
+referring to the performer&rsquo;s or the composer&rsquo;s &ldquo;technique.&rdquo;  In each of 
+these modern instances of the term, practical or &ldquo;craft-like&rdquo; actions are 
+associated with &ldquo;creative&rdquo; making.
+</p>
+
+<p>[14] Heidegger&rsquo;s third and &ldquo;ultimate&rdquo; definition &ldquo;makes of
+Technology a mode of truth or revealing (aletheia).  Technology,
+in essence, reveals a world in a certain way.<nobr> . . . </nobr>It allows us to
+see, to order, to relate to the world in a particular way<nobr> . . . </nobr>[and
+as] a mode of relating to the world<nobr> . . . </nobr>becomes the dominant and
+primary way in which we understand that world.&rdquo;<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<p>[15] In such a conception, a technology or a technique may be understood 
+as a &ldquo;tool&rdquo; that &ldquo;shapes&rdquo; the world in a particular way.  As a tool, a 
+technology or technique is based in praxis and has the purpose of 
+&ldquo;revealing&rdquo;  the world&mdash;but this &ldquo;revealing,&rdquo; more than simple discovery,
+is creative.  It is in this sense of &ldquo;creative revealing&rdquo; that 
+Heidegger understands it as ontologically prior to science.
+</p>
+
+<p>[16] While arguing for the ontological priority of technology,
+Heidegger also observed an essential circularity in human
+investigations of an experienced world.  In his &ldquo;The Question
+Concerning Technology,&rdquo; Heidegger demonstrates this circularity with
+respect to experimental physics:
+</p>
+
+<blockquote>
+
+     Modern physics is not experimental physics because it applies
+     apparatus to the questioning of nature.  Rather the reverse is 
+     true.  Because physics, indeed already as pure theory, sets 
+     nature up to exhibit itself as a coherence of forces calculable 
+     in advance, it therefore orders its experiments precisely for 
+     the purpose of asking whether and how nature reports itself 
+     when set up this way.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>
+</blockquote>
+
+<p>Heidegger&rsquo;s observation of this essential circularity offers not
+a criticism but rather an elucidation of the ramifications of
+technology&rsquo;s ontological priority.
+</p>
+
+<p>[17] These ideas about technology as a &ldquo;creative revealing&rdquo; illuminate
+some of the recent issues surrounding musical analysis.  As suggested
+earlier, two related types of technique figure in musical practice.
+First, performance techniques&mdash;for instrument or voice&mdash;are the means
+of projecting in audible form musical sound.  They are the practical
+means by which performers create not simply sound but &ldquo;music.&rdquo;
+Second, and more central to present concerns, foundational musical
+concepts such as those articulated in beginning music theory texts are
+techniques by which musicians &ldquo;know&rdquo; a world of sound.  The basic
+terms of pitch, rhythm, timbre, texture, dynamics, form, etc. are the
+practical means by which musicians &ldquo;shape&rdquo; or &ldquo;reveal&rdquo; music itself,
+and this revealing fundamentally &ldquo;shapes&rdquo; experiential engagement with
+sound.  The fundamental musical terms with which we engage musical
+sound are not &ldquo;applied to&rdquo; a free-standing experience but are the
+means through which experience emerges. Furthermore, in their
+revelatory function, such terms establish the conditions for &ldquo;higher
+level&rdquo; modes of musical explanation; or in other words, these
+technical terms and their related concepts are ontologically prior to
+analytic interpretation.
+</p>
+
+<p>[18] When considering the technical language that forms a basis for
+thinking about music, we must take account of for whom such technical
+language &ldquo;reveals&rdquo; the world in the senses of both poiesis (creation)
+and aletheia (truth).  A brief return to philosophical issues can help
+illuminate this matter.  While Heidegger&rsquo;s thinking about the
+ontological priority of technology and its relation to scientific
+practice applies primarily to Western culture, Ihde&rsquo;s work on these
+issues has engaged differences across geographical and historical
+cultures.  For instance, he has noted how Polynesian navigational
+practices are &ldquo;sedimented in a variant understanding of the world.&rdquo;<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Using no instruments to navigate their travels in the Pacific,
+the ancient Polynesians employed &ldquo;a complex system of perceptual
+observations carried on through a secret tradition<nobr> . . . </nobr>&rdquo;  This practice
+was embedded in a belief that the ocean is a &ldquo;deity&rdquo; who was the
+&ldquo;source of nurture and support<nobr> . . . </nobr>&rdquo;<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> Ihde&rsquo;s observation of cultural
+difference provides a model for taking account of reactions to
+&ldquo;technical&rdquo; explanations of music.
+</p>
+
+<p>[19] For instance, consider this complaint about the use of technical
+language in writing about music.  In a New York Times review of Joseph
+Swain&rsquo;s <i>Musical Languages</i>, Douglas R.  Hofstadter argues that &ldquo;the
+structural language of harmony theory&rdquo; does not &ldquo;get<nobr> . . . </nobr>at music&rsquo;s
+essential content.&rdquo; He goes further to note that the reading of
+passages employing &ldquo;harmony-theory terminology&rdquo; leave him 
+&ldquo;numbed.&rdquo;<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> Though Hofstadter claims to have taken one semester of 
+musictheory, the technical language &ldquo;reveals&rdquo; little or nothing of 
+the music for him.
+</p>
+
+<p>[20] Compare this example with a newspaper account of a recent scientific
+discovery:  the Hubble &ldquo;photographs&rdquo; of colliding galaxies.  <i>Newsday</i>, a 
+New York City-area newspaper, characterized the event this way:
+</p>
+
+<blockquote>
+
+    The Hubble Space Telescope has photographed a pair of colliding 
+    galaxies<nobr> . . . </nobr>[which are] merging into one huge elliptical galaxy.<nobr> . . . </nobr> 
+    The photos show the  heart-shaped core of the colliding Antennae 
+    galaxies, about 63 million light years away<nobr> . . . </nobr><sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup>
+</blockquote>
+
+<p>This press account does not use highly technical language, but our 
+understanding of what &ldquo;is happening&rdquo; 63 million light years away 
+depends on technologies with which most people in our culture 
+typically have experience.  The operation of a telescope and the idea 
+of a photograph are well-known and comprehensible phenomena for us.  
+We have a clear experiential sense of what they can &ldquo;reveal&rdquo; about 
+the world.
+</p>
+
+<p>[21] The photos enabled by the Hubble Telescope make &ldquo;real&rdquo; for us
+something that none of us will experience directly, but the technology 
+does allow us to experience &ldquo;instrumentally&rdquo; the colliding galaxies.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup>  
+In the case of music, Swain&rsquo;s technology&mdash;his technical discourse&mdash;
+does not allow the reviewer to experience the music through the
+&ldquo;instrumentality&rdquo; of the language, even though it refers to a potentially 
+palpable experience.  Unlike the technology of the professional scientist 
+which enables an instrumentally-mediated experience  of something palpably
+unexperienceable, the technology of the professional musician seems
+functionally to obscure something that is a feature of most people&rsquo;s everyday 
+experience.
+</p>
+
+<p>[22] The reviewer&rsquo;s complaints about technical language are not
+unusual, and the general ease with which such complaints are made
+outside a professional community of musicians suggests that the
+techniques of this terminology do not operate for large segments of
+contemporary U. S.  society.  While the revelatory function of a
+technique depends on its intersubjective operation, such operation may
+not be universal, as Ihde&rsquo;s remarks on Polynesian navigation suggest.
+The operation or non-operation of the revelatory function of a
+technique depends on 1) practical engagement with the technique itself
+and 2) &ldquo;sedimented&rdquo; beliefs about music.
+</p>
+
+<p>[23] First, for many listeners in the United States today who are
+untrained in the praxis of making music&mdash;either instrumentally,
+vocally, or compositionally and with some knowledge of musical
+notation&mdash;technical accounts of music at either a low- or high-level
+of explanation may seem like a &ldquo;foreign language.&rdquo;  A technique-based
+account of music will likely not have a revelatory function for such
+listeners because they have no practical engagement with the
+technique. Those of us who attempt the teaching of what we might think
+of as mid-level concepts about music, such concepts as rhythmic or
+pitch organization, without being able to teach in any serious way
+musical notation or performance itself, may well recognize the
+problem.  Teaching concepts such as meter and harmony without
+associated practical instruction in &ldquo;making&rdquo; is difficult at best
+because students have no low-level knowledge that will adequately
+support more conceptual, and primarily verbal, types of understanding.
+</p>
+
+<p>[24] Second, in the absence of a practice-oriented technique, many
+listeners have developed strategies for experiential apprehension of
+music that follow from sedimented beliefs about music as, for
+instance, affect and entertainment.  For such listeners, language
+related either to feelings of sentiment and bodily motion or to
+enjoyment play a more direct revelatory function.
+</p>
+
+<p>[25] The &ldquo;failure&rdquo; of a technique-based writing to reveal its musical
+world to those 1) with no practical engagement with the technique and
+2) who have developed alternate listening strategies does not mean
+that a professional musician&rsquo;s use of technical language reveals a
+musical world devoid of expressive content and beauty.  Rather, for the
+professional invested in the technique, emotion and beauty are engaged
+through its terms.  Within a musical community of practicing musicians
+which includes performers, scholars, composers, and critics, the
+technical language derives from a musical praxis of making&mdash;performing
+and composing.  That language then becomes the basis for our
+perceptual engagement with musical sound and for the more explanatory
+modes of understanding, most notably that of music analysis.  Put
+another way, the praxis at a low level enables what may be observed
+and experienced at a more complex level: technology precedes science.
+</p>
+
+<p>[26] This observation allows us to understand why a technique-based
+language about music both does and doesn&rsquo;t have a revelatory function,
+that function depending on whether a listener is trained in a musical
+practice of making.  It does not explain criticisms of technique-based
+analysis within a community of professional musicians (scholars,
+performers, creators, composers).  When questions of the value or
+drawbacks of technical language occur within this community the stakes
+are much higher since technical language is so central to the
+professionals&rsquo;s ability to make the musical object &ldquo;sit still.&rdquo;  On
+one hand, the professional community needs some sort of descriptive
+language&mdash;a technical language of some sort&mdash;to be able to &ldquo;say&rdquo;
+anything about what happens.  Whether dealing with musical symbol or
+sound, discussion of music must be framed by some discourse which, no
+matter whether terminological or symbolic, has conceptual content
+that, to use Heidegger&rsquo;s terms, &ldquo;reveals the musical world&rdquo; in a
+certain way.  On the other hand, the technical descriptive language is
+often viewed as something to &ldquo;go beyond,&rdquo; either go beyond in the
+sense of achieving higher levels of theoretical understanding or go
+beyond in the sense of attaining a humane interpretive understanding.
+In each of these senses of &ldquo;going beyond,&rdquo; technique breaks off from
+&ldquo;more conceptual&rdquo; and verbally-formulated modes of understanding.
+This &ldquo;breaking off&rdquo; recalls Heidegger&rsquo;s observations about the
+relation of technology to science, to what Ihde has called the
+&ldquo;technics-theory distinction.&rdquo;  Heidegger&rsquo;s critique of this
+distinction and Ihde&rsquo;s observations on the role of a &ldquo;variant
+understanding of the world&rdquo; and its sedimentation in praxis shed light
+on issues facing the professional community of music scholars.
+</p>
+
+<p>[27] First, we must recognize that the highly sophisticated technique
+for musical description and modes of musical explanation deriving from
+it have been, as Cavell suggests, &ldquo;systematic and precise&rdquo; and even
+further successful and productive.  As a &ldquo;technology&rdquo; in Heidegger&rsquo;s
+sense, this discourse about music reveals a rich, multi-faceted world
+of musical sound.  The world it discloses reflects a praxis of making
+involving issues of notation, performance, and creation.  Criticism of
+this discourse focuses on what it does not reveal: a &ldquo;humane&rdquo; critical
+understanding, historical and critical contexts, and expressive
+meaning.  If understood in terms of Heidegger&rsquo;s commentary on the
+relation of technique and theory, the so-called &ldquo;failure&rdquo; of
+technique-based discourse is not an issue of does not but rather one
+of can not.  The technical language we use for descriptive purposes
+has its source in the &ldquo;making&rdquo; of musical sound and in capturing the
+musical object so as to make it sit still.  From this perspective of
+making and capturing, the technical language is successful and
+productive.  
+</p>
+
+<p>[28] If the perspective itself changes, however, then the technical
+language may fail.  Or in Ihde&rsquo;s terms, if a &ldquo;variant understanding of
+the world&rdquo; operates, the practice of technical explanation will cease
+to have a revelatory function.  Recent criticisms of the technical
+language and of the higher-level analyses it has supported within the
+professional community reflect such a change of perspective, a
+perspective which itself is embedded in larger intellectual shifts.
+</p>
+
+<p>[29] The twentieth century has witnessed a philosophical turning from
+issues of &ldquo;what the world is&rdquo; to &ldquo;what the world is for us,&rdquo; in other
+words, from issues of the objective existence of things to the
+apprehension of things by humans as culturally and historically
+situated beings.  Charles Taylor, arguing for Heidegger&rsquo;s pivotal role
+in this turn, puts the matter this way.  Heidegger
+</p>
+
+<blockquote>
+
+      struggle[d]<nobr> . . . </nobr>to recover an understanding of the agent [the
+      thinking agent] as engaged, as embedded in a culture, a form 
+      of life, a &lsquo;world&rsquo; of involvements, ultimately to understand 
+      the agent as embodied.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup>
+</blockquote>
+
+<p>The twentieth century&rsquo;s refocusing on humans as thinking &ldquo;agents&rdquo; in 
+the world as known to them extends to ideas as diverse as Freud&rsquo;s 
+&ldquo;unconscious,&rdquo; Einstein&rsquo;s &ldquo;relativity,&rdquo; and Heisenberg&rsquo;s &ldquo;uncertainty&rdquo; 
+as well as to the philosophical positions, for instance, of Heidegger,
+Merleau-Ponty, Sartre, Ricoeur, Gadamer, Derrida, Foucault, Rorty, and 
+so on.
+</p>
+
+<p>[30] Current interest in music as experienced by listeners, in
+listening-oriented criticism and explanation, has fostered not only 
+an interest in understanding music in terms of its historical and
+critical contexts and expressive meanings but also in the nature of
+musical perception and in the diverse ways that music is apprehended
+by listeners from differing cultural, historical, or experiential
+bases.  And, it has resulted, ironically, in both a criticism of the 
+technical language for what it &ldquo;does not&rdquo; reveal and attempts to make 
+this language reveal &ldquo;musical worlds&rdquo; it does not support.  If this 
+turn toward the experiential domain is to delve into higher, more
+conceptual explanations of musical meaning, such explanations will
+need to be supported by a lower level technique that supports it.  In
+other words, this &ldquo;variant understanding of a world of music&rdquo; requires
+a retooling of the technique in order to reveal &ldquo;precisely&rdquo; and
+&ldquo;productively&rdquo; this dimension of the musical phenomenon.
+</p>
+
+<p>[31] Retooling of the technical language requires a rethinking of the
+fundamental terms, concepts, and symbols that allow us as 
+professionals to make the musical object &ldquo;sit still&rdquo; and to &ldquo;say&rdquo;
+anything about what happens.  Such a rethinking requires not only
+development of a new descriptive terminology&mdash;a new or revitalized
+technical language&mdash;that supports higher level conceptual thinking
+from an experiential perspective but also investigation of the ways
+that lower-level technical language currently supports experiential
+associations of affect and meaning.  Like a technique deriving from
+issues of creating, a musical technique retooled to meet the demands
+of the experiential turn of the twentieth century has to build upon
+the practical terms of experiential engagement, whether they be the
+actions of making or of listening.  Retooling of the techniques of our
+descriptive language about music will allow not only an appropriate
+and productive response to the changing goals of musical research but,
+as Heidegger puts it, will enable higher levels of understanding&mdash;the
+science&mdash;within this experiential &ldquo;understanding of the world.&rdquo;</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Judith Lochhead<br>
+	State University of New York at Stony Brook<br>Department of Music<br>Stony Brook, New York 11794&ndash;5475<br><a href="mailto:jlochhead@notes.cc.sunysb.edu">jlochhead@notes.cc.sunysb.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Thanks to Sarah Fuller for her insightful and quick comments on
+an earlier version of this essay.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Thanks to Sarah Fuller for her insightful and quick comments on
+an earlier version of this essay.</div><p><a name="FN1">1.</a> It is interesting to note here that &ldquo;scientists&rdquo; recently reported
+finding a portion of monkeys&rsquo;s brains that is enlarged in ways similar
+to an analogous enlarged portion of human brains.  The enlargement in
+humans has long been attributed to language acquisition, a cognitive
+capability thought to distinguish humans from other species.
+Discovery of a similar enlargement would suggest that monkeys have a
+similar capability for language or that there is no discernible
+physical site that indicates language capability (<i>New York Times</i>,
+Tuesday, January 13, 1998: F3).  If music is thought to be inaccessible
+to linguistic thought, then it must be a &ldquo;less intelligent&rdquo; or perhaps
+&ldquo;primitive&rdquo; form of human activity.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Stanley Cavell, <i>Must We Mean What We Say?</i> (New York: Cambridge
+University Press, 1977 [1969]), 185&ndash;6.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Both Joseph Kerman and Leo Treitler refer to Cavell&rsquo;s observation 
+in subsequent articles: see Kerman, &ldquo;How We Got into Analysis, 
+and How to Get Out,&rdquo; <i>Critical Inquiry</i> 7.2 (1980): 321, and Treitler, 
+&ldquo;&lsquo;To Worship That Celestial Sound&rsquo;: Motives for Analysis,&rdquo; <i>Journal
+of Musicology</i> 1.2 (1982): 153, where he refers not only to Cavell but 
+also to  another philosopher/critic, Peter Kivy, who makes much the 
+same observation in <i>The  Corded Shell</i> (Princeton: Princeton University 
+Press, 1980).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Thomas Benjamin, Michael Horvit, Robert Nelson.  <i>Techniques
+and Materials of Tonal Music:  With an Introduction to
+Twentieth-century Techniques</i> (Boston:  Houghton Mifflin, 1986).
+Stefan Kostka, <i>Materials and Techniques of Twentieth-century
+Music</i> (Englewood Cliffs, NJ:  Prentice Hall, 1990).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Ian Bent,  <i>Analysis</i> (New York: Norton &amp; Co., 1980): 5.  [Parts of 
+this book were published first as an article in the <i>New Grove Dictionary 
+of Music and Musicians</i> (London: The Macmillan Press).]<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Bent, <i>Analysis</i>: 1.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Kerman, &ldquo;How We Got Into Analysis,&rdquo; 314&ndash;5.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Treitler, &ldquo;&lsquo;To Worship That Celestial Sound&rsquo;,&rdquo; 162.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Susan McClary, &ldquo;Terminal Prestige: The Case of Avant-Garde Music,&rdquo;
+<i>Keeping Score: Music, Disciplinarity, Culture</i>, eds. David Schwarz, 
+Anahid Kassabian, and Lawrence Siegel (Charlottesville: University of 
+Virginia Press, 1997 [1989]): 62.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Martin Heidegger, &ldquo;The Question Concerning Technology,&rdquo; <i>The 
+Question Concerning Technology and Other Essays</i>, trans. William 
+Lovitt (New York: Garland Publishing, 1977); Lewis Mumford, <i>Technics 
+and Civilization</i> (New York: Harcourt, Brace, and Co., 1936); Lynn 
+White, Jr., <i>Medieval Technology and Social Change</i> (New York: Oxford
+University Press, 1962).<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Don Ihde, <i>Existential Technics</i> (Albany: SUNY Press, 1983): 27.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Ihde, <i>Existential Technics</i>, 29. Heidegger delivered his ideas
+initially in lectures.  The first lecture presenting his ideas was 
+given in 1949 under the title &ldquo;Das Gestell&rdquo; [translated as &ldquo;Enframing&rdquo;].  
+Heidegger expanded the essay and delivered lectures in 1954 and 1955 
+under the title &ldquo;The Question Concerning Technology.&rdquo;  The essay was 
+first published in 1954 in <i>Vortraege und Aufsaetze</i> (Pfullingen:  
+Guenther Neske).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Ihde, <i>Existential Technics</i>, 32.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Ihde, <i>Existential Technics</i>, 32&ndash;33.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Heidegger, &ldquo;The Question Concerning Technology,&rdquo; 21.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Ihde, <i>Existential Technics</i>, 43.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Ihde, <i>Existential Technics</i>, 42&ndash;3.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Douglas R. Hofstadter, &ldquo;Semantics in C Major,&rdquo; <i>New York Times Book
+Review</i>, October 12, 1997: 28 [Reviewing Joseph Swain, <i>Musical 
+Languages</i> (New York: Norton, 1997)].<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> <i>Newsday</i>, Wednesday, October 22, 1997: A7.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Don Ihde writes about &ldquo;instrumental&rdquo; experience in several places 
+but notably in <i>Technology and the Lifeworld: From Garden to Earth</i>
+(Bloomington: Indiana University Press, 1990).  Ihde&rsquo;s work focuses on
+how our knowledge and experience of the world is mediated by various
+types of technologies, including instruments of various sorts:
+telescopes, musical instruments, tools, and so on.  Ihde points out
+that unless there is a failure in its performance or use, the
+instrument will recede experientially&mdash;that is, we are not
+experientially aware of its presence; however, while it recedes from
+direct awareness, the instrument still has an affect on the nature of
+the experience.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Charles Taylor, &ldquo;Engaged agency and background in Heidegger,&rdquo; <i>The
+Cambridge Companion to Heidegger</i>, ed. Charles B. Guignon (New York:
+Cambridge University Press, 1993): 318.<br><a href="#FN21REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">It is interesting to note here that &ldquo;scientists&rdquo; recently reported
+finding a portion of monkeys&rsquo;s brains that is enlarged in ways similar
+to an analogous enlarged portion of human brains.  The enlargement in
+humans has long been attributed to language acquisition, a cognitive
+capability thought to distinguish humans from other species.
+Discovery of a similar enlargement would suggest that monkeys have a
+similar capability for language or that there is no discernible
+physical site that indicates language capability (<i>New York Times</i>,
+Tuesday, January 13, 1998: F3).  If music is thought to be inaccessible
+to linguistic thought, then it must be a &ldquo;less intelligent&rdquo; or perhaps
+&ldquo;primitive&rdquo; form of human activity.</div><div id="fndiv2" class="flyoverdiv">Stanley Cavell, <i>Must We Mean What We Say?</i> (New York: Cambridge
+University Press, 1977 [1969]), 185&ndash;6.</div><div id="fndiv3" class="flyoverdiv">Both Joseph Kerman and Leo Treitler refer to Cavell&rsquo;s observation 
+in subsequent articles: see Kerman, &ldquo;How We Got into Analysis, 
+and How to Get Out,&rdquo; <i>Critical Inquiry</i> 7.2 (1980): 321, and Treitler, 
+&ldquo;&lsquo;To Worship That Celestial Sound&rsquo;: Motives for Analysis,&rdquo; <i>Journal
+of Musicology</i> 1.2 (1982): 153, where he refers not only to Cavell but 
+also to  another philosopher/critic, Peter Kivy, who makes much the 
+same observation in <i>The  Corded Shell</i> (Princeton: Princeton University 
+Press, 1980).</div><div id="fndiv4" class="flyoverdiv">Thomas Benjamin, Michael Horvit, Robert Nelson.  <i>Techniques
+and Materials of Tonal Music:  With an Introduction to
+Twentieth-century Techniques</i> (Boston:  Houghton Mifflin, 1986).
+Stefan Kostka, <i>Materials and Techniques of Twentieth-century
+Music</i> (Englewood Cliffs, NJ:  Prentice Hall, 1990).</div><div id="fndiv5" class="flyoverdiv">Ian Bent,  <i>Analysis</i> (New York: Norton &amp; Co., 1980): 5.  [Parts of 
+this book were published first as an article in the <i>New Grove Dictionary 
+of Music and Musicians</i> (London: The Macmillan Press).]</div><div id="fndiv6" class="flyoverdiv">Bent, <i>Analysis</i>: 1.</div><div id="fndiv7" class="flyoverdiv">Kerman, &ldquo;How We Got Into Analysis,&rdquo; 314&ndash;5.</div><div id="fndiv8" class="flyoverdiv">Treitler, &ldquo;&lsquo;To Worship That Celestial Sound&rsquo;,&rdquo; 162.</div><div id="fndiv9" class="flyoverdiv">Susan McClary, &ldquo;Terminal Prestige: The Case of Avant-Garde Music,&rdquo;
+<i>Keeping Score: Music, Disciplinarity, Culture</i>, eds. David Schwarz, 
+Anahid Kassabian, and Lawrence Siegel (Charlottesville: University of 
+Virginia Press, 1997 [1989]): 62.</div><div id="fndiv10" class="flyoverdiv">Martin Heidegger, &ldquo;The Question Concerning Technology,&rdquo; <i>The 
+Question Concerning Technology and Other Essays</i>, trans. William 
+Lovitt (New York: Garland Publishing, 1977); Lewis Mumford, <i>Technics 
+and Civilization</i> (New York: Harcourt, Brace, and Co., 1936); Lynn 
+White, Jr., <i>Medieval Technology and Social Change</i> (New York: Oxford
+University Press, 1962).</div><div id="fndiv11" class="flyoverdiv">Don Ihde, <i>Existential Technics</i> (Albany: SUNY Press, 1983): 27.</div><div id="fndiv12" class="flyoverdiv">Ihde, <i>Existential Technics</i>, 29. Heidegger delivered his ideas
+initially in lectures.  The first lecture presenting his ideas was 
+given in 1949 under the title &ldquo;Das Gestell&rdquo; [translated as &ldquo;Enframing&rdquo;].  
+Heidegger expanded the essay and delivered lectures in 1954 and 1955 
+under the title &ldquo;The Question Concerning Technology.&rdquo;  The essay was 
+first published in 1954 in <i>Vortraege und Aufsaetze</i> (Pfullingen:  
+Guenther Neske).</div><div id="fndiv13" class="flyoverdiv">Ihde, <i>Existential Technics</i>, 32.</div><div id="fndiv14" class="flyoverdiv">Ihde, <i>Existential Technics</i>, 32&ndash;33.</div><div id="fndiv15" class="flyoverdiv">Heidegger, &ldquo;The Question Concerning Technology,&rdquo; 21.</div><div id="fndiv16" class="flyoverdiv">Ihde, <i>Existential Technics</i>, 43.</div><div id="fndiv17" class="flyoverdiv">Ihde, <i>Existential Technics</i>, 42&ndash;3.</div><div id="fndiv18" class="flyoverdiv">Douglas R. Hofstadter, &ldquo;Semantics in C Major,&rdquo; <i>New York Times Book
+Review</i>, October 12, 1997: 28 [Reviewing Joseph Swain, <i>Musical 
+Languages</i> (New York: Norton, 1997)].</div><div id="fndiv19" class="flyoverdiv"><i>Newsday</i>, Wednesday, October 22, 1997: A7.</div><div id="fndiv20" class="flyoverdiv">Don Ihde writes about &ldquo;instrumental&rdquo; experience in several places 
+but notably in <i>Technology and the Lifeworld: From Garden to Earth</i>
+(Bloomington: Indiana University Press, 1990).  Ihde&rsquo;s work focuses on
+how our knowledge and experience of the world is mediated by various
+types of technologies, including instruments of various sorts:
+telescopes, musical instruments, tools, and so on.  Ihde points out
+that unless there is a failure in its performance or use, the
+instrument will recede experientially&mdash;that is, we are not
+experientially aware of its presence; however, while it recedes from
+direct awareness, the instrument still has an affect on the nature of
+the experience.</div><div id="fndiv21" class="flyoverdiv">Charles Taylor, &ldquo;Engaged agency and background in Heidegger,&rdquo; <i>The
+Cambridge Companion to Heidegger</i>, ed. Charles B. Guignon (New York:
+Cambridge University Press, 1993): 318.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1998 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

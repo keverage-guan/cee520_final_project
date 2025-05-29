@@ -1,0 +1,701 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 1.2: Demske, Computational Model of 
+Similarity Analysis</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="On Considering a Computational Model of 
+Similarity Analysis">
+
+    <meta name="citation_author" content="Demske, Thomas R.">
+      
+
+<meta name="citation_publication_date" content="1995/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="1">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">On Considering a Computational Model of 
+Similarity Analysis
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.95.1.2/mto.95.1.2.demske.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Thomas R. Demske</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: similarity, REL, clustering, decision, post-tonal analysis</font></p><p><font size='4'>ABSTRACT: A clustering program is proposed for identifying salient
+similarity relationship trends within populations of pitch-class sets
+abstracted in post-tonal analysis.  That program requires an
+evaluation component, but attempts to define one are frustrated.  The
+similarity relation itself is too abstract to imply guidelines for its
+own application, and other potential criteria resist formal
+implementation.  Even less rigorous applications of the more commonly
+used tools in post-tonal analysis are susceptible to the concerns
+raised here.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.95.1.2/mto.95.1.2.demske.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.95.1.2/demske_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 1, Number 2, March 1995 <br> Copyright &#0169; 1995 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] A few months ago, I considered applying conceptual clustering
+techniques to identify context-specific similarity relations among
+pitch-class sets.  That project quickly stalled for lack of suitable
+evaluation criteria, a problem which I take as the subject of this
+essay.  The issues here are not necessarily new, but they are
+persistent.  Recent SMT e-list interest in formal analysis suggests
+the timeliness of reviewing these issues now from an applicational
+standpoint.</p>
+
+<p>[2] Many fields use clustering to establish meaningful distinctions
+within arbitrary data sets.  The data are events described as n-tuples
+and interpreted as points in n-dimensional space.  Points lying closer
+together according to some distance specification &ldquo;cluster&rdquo; into
+groups distinguished by boundaries.  Clustering comes in many flavors.
+The conceptual clustering model in <a href="#michalski_and_stepp_1983" id="citation_michalski_and_stepp_1983_67dc9be6c413f">Michalski and Stepp 1983</a> is
+interesting because it determines cluster membership, not only through
+predefined metrics, but also by the resultant shape of the cluster&mdash;its &ldquo;conceptual cohesiveness.&rdquo;  Conceptual clusters are
+context-specific, in that events cohere on the basis of their
+relationships to other events in the data set.</p>
+
+<p>[3] I was first attracted to conceptual clustering through ongoing
+research into melodic grouping in piano scores, an early stage of
+which is documented in <a href="#demske_1993" id="citation_demske_1993_67dc9be6c4142">Demske 1993</a>.  Clustering is fruitfully
+applied there to isolate and address causes of rule base misfire.
+Might the technique also prove useful in post-tonal analysis, despite
+the far more diffuse nature of the problem domain?  Given a collection
+of pitch-class set segmentations abstracted from a composition, the
+clustering implementation would &ldquo;learn&rdquo; the most salient, structural
+trends particular to that population.</p>
+
+<p>[4] Cluster membership indicates relatedness, an idea which is
+fundamental in pitch-class set analysis.  Most analytical assertions
+eventually require boundaries in a conceptual space to distinguish one
+or more sets (or sets of sets, etc.) from others.  Mainstream
+analytical set theory tends to recognize only a few types of musically
+motivated boundaries.  These account for the familiar TnI set classes,
+transformational partitionings, &ldquo;referential&rdquo; collections and their
+subsets, and so forth.  In all cases, kinship and contrast between
+objects disposed respectively on one or both sides of a boundary
+provide the potential for a syntax.  This simple duality can spawn
+sophisticated arguments about form, association, and process.</p>
+
+<p>[5] &ldquo;Similarity&rdquo; in pitch-class set theory refers narrowly to special
+inclusion-based relationships.  These are commonly understood as
+reflecting degrees of context-free, &ldquo;aural similitude&rdquo; (<a href="#morris_1980" id="citation_morris_1980_67dc9be6c4145">Morris 1980</a>),
+although some writers avoid any perceptual interpretation <a href="#forte_1973" id="citation_forte_1973_67dc9be6c4146">Forte 1973</a>.  <a href="#isaacson_1990" id="citation_isaacson_1990_67dc9be6c4148">Isaacson 1990</a> surveys several similarity functions proposed
+over the years, while offering his own &ldquo;IcVSIM&rdquo; as an alternative.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> 
+Most similarity functions take two sets as arguments and return a
+single, usually scaled value determined through subset counts;
+Morris&rsquo;s ASIM, Rahn&rsquo;s ATMEMB, and Lewin&rsquo;s REL are perhaps the best
+known examples (<a href="#morris_1980" id="citation_morris_1980_67dc9be6c414c">Morris 1980</a>; <a href="#rahn_1980" id="citation_rahn_1980_67dc9be6c414d">Rahn 1980</a>; <a href="#lewin_1980" id="citation_lewin_1980_67dc9be6c414f">Lewin 1980</a>).</p>
+
+<p>[6] Similarity functions seem an ideal test bed for clustering because
+of the apparent simplicity with which they model distance in set-class
+space.  However, conceptual clustering is a learning algorithm.
+Without a means for evaluating prospective clusters, the algorithm&rsquo;s
+output will likely make little sense.  How might similarity-based
+clusters be evaluated, assuming the identification of &ldquo;salient trends&rdquo;
+as a loosely-defined goal?</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="demske_fig1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[7] I use Lewin&rsquo;s REL here for illustration, although other similarity
+index functions would work as well.  Consider a pivot, P = {0147}, and
+two target sets, T1 = {01369} and T2 = {047a}.  REL(P,T1) = 0.783 and
+REL(P,T2) = 0.636.  Drawing a boundary around all sets Y such that
+0.783 &gt;= REL(P,Y) &gt; 0.636, P and T1 cluster together on one side,
+while T2 falls on the other.  This boundary might be treated like any
+other in analysis. However, nothing in the interpretation of REL
+compels us to draw any particular boundary.  Assume another set T3 =
+{0134}, where REL(P,T3) = 0.529.  We could keep our original boundary,
+or now draw a new one separating P, T1, and T2 from T3.  In fact, we
+could draw a boundary separating P from all of the target sets, or
+another which includes P and the targets all on one side.  <b>Figure 1</b>
+shows the relationships just described, with vertical bars indicating
+potential boundary sites (the vee is explained later):
+
+<p>[8] Comparing REL values tells us only where boundaries may be drawn,
+not where they should be drawn.  Barring <i>ad hoc</i> provisions in the
+interpretation, all sets are similar with respect to each other.  Only
+the degree of similarity varies.  This makes it difficult to evaluate
+competing clusters, such as those distinguished by alternately drawing
+boundaries through the third and fourth vertical bars in Figure 1 above.
+An <i>a priori</i> cutoff point X would help, whereby only targets T with
+REL(P,T) &gt;= X are considered &ldquo;similar&rdquo; in an absolute sense.  (TnI
+&ldquo;equivalence&rdquo; supports analogous appeals to the absolute.)  But could
+such a point be meaningfully determined here?  Statistical analysis of
+how the REL values at issue are disposed around an average or mean
+begs another question: are all of REL&rsquo;s returns with respect to a
+given pivot commensurable in a meaningful way (I am not sure that they
+are), or are they merely indications of a partial ordering?</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="demske_fig2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="demske_fig3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="demske_fig4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[9] Other boundary ambiguities must be considered.  We can compare two
+returns of REL only when an instance of the same set class appears in
+both calls.  <a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c4248">Rahn 1989</a> demonstrates this tangentially with his DATM
+function, derived from ATMEMB, but the same applies to REL and
+comparable similarity index functions.  That argument common to both
+calls is the pivot, P.  <b>Figures 2&ndash;4</b> show how the potential
+boundaries change when our old target sets are cycled through P.
+{01369} is the pivot at Figure 2. Unlike the situation earlier at Figure 1, {047a} and {0147} at Figure 2
+will always appear on the same side of a boundary.  Compared to
+Figure 1, taking {047a} as the pivot at Figure 3 means that {047a} and
+{0134} can no longer be grouped as a pair apart from {01369} and
+{0147}. In Figure 4, it suddenly becomes possible to place the pairs, {0134} and
+{01369}, and {0147} and {047a}, on opposite sides of a boundary.
+
+<p>[10] Figures 1&ndash;4 together represent a tiny bubble in that
+&ldquo;(staggeringly complex) network of relations&rdquo; revealed by functions
+like REL (<a href="#rahn_1980" id="citation_rahn_1980_67dc9be6c424a">Rahn 1980</a>, 494).  The downside to this attractive notion is
+that it means more potential conflicts among REL-derived clusters.  Is
+{0147} more related to {01369} than it is to {047a}?  Expressed
+through the totality of REL returns in Figures  1&ndash;4, the answer is yes
+and no.  For example, {0147} and {01369} cluster together without
+{047a} under the boundary drawn through the vee at Figure 1, while
+{0147} and {047a} cluster together without {01369} under the two
+boundaries drawn through the vees at Figure 2.</p>
+<p>[11] Critical REL returns are interpreted directly at Figure 1 and
+indirectly at Figure 2, suggesting that one criterion for evaluating
+conflicting clusters might be to prefer the more musically intuitive
+one.  &ldquo;Intuition&rdquo; is difficult to pin down, however.  For example,
+<a href="#rahn_1980" id="citation_rahn_1980_67dc9be6c424c">Rahn 1980</a> claims special intuitive status for ATMEMB, but others may
+find the notion of &ldquo;mutual embedding&rdquo; less compelling.  All else being
+equal, ATMEMB(A,B) remains constant so long as the sum of EMB(/X/,A)
+and EMB(/X/,B) remains constant, and so long as neither term equals
+zero.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> This means A and B can differ considerably in the number of X
+types they separately include, and yet still return high ATMEMB
+values.  REL seems more &ldquo;intuitive&rdquo; in this respect because it takes
+the product of EMB(/X/,A) and EMB(/X/,B).  While REL(A,B) still
+increases along with either one of EMB(/X/,A) and EMB(/X/,B) (assuming
+nonzero values), it does so more quickly when <i>both</i> subterms
+increase.  This makes sense, since we would expect&mdash;in the abstract&mdash;that two sets with convergent inclusion capabilities will have more
+&ldquo;aural similitude&rdquo; than two sets which diverge in their capabilities.</p>
+
+<p>[12] The mechanics of ATMEMB, REL, and comparable functions present
+other potential barriers to intuition.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> But those pale in comparison
+to the problems which arise when similarity function returns are
+viewed in their totality.  Assume two sets WT1 = {0246} and WT2 =
+{0248}.  Considered in isolation, REL(WT1,WT2) = 0.846 bespeaks
+urgency, emphasizing the difference in &ldquo;aural similitude.&rdquo;  That
+changes by adding CHR = {0123} to the mix.  WT1 and WT2 now seem quite
+similar, by virtue of their relationship to CHR: an absence of odd
+interval classes binds the wholetone sets together.  Relationships are
+thus colored by other relationships.  In Rahn&rsquo;s vast network, where
+everything is connected, the result is a flat, homogeneous black (or
+white, depending on perspective).  But when only a portion of the
+network is considered, glimmers of color surface, forming
+kaleidoscopic patterns of arbitrary complexity.  Tracking those
+patterns can strain intuition mightily.</p>
+
+<p>[13] So, who is to say whether the direct relation described in
+paragraph 10 above is more intuitive than, and thus necessarily takes
+precedence over, the indirect one?  <a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c424f">Rahn 1989</a> briefly explores the
+idea of following only &ldquo;paths &lsquo;of least resistance&rsquo;&rdquo; through a
+network, while <a href="#block_and_douthett_1994" id="citation_block_and_douthett_1994_67dc9be6c4251">Block and Douthett 1994</a> offer a new way to focus on
+specific paths.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> But neither indicates whether certain paths should
+generally be preferred over others, given an arbitrary collection of
+sets.  Both <a href="#hindemith_1942" id="citation_hindemith_1942_67dc9be6c4254">Hindemith 1942</a> and <a href="#friedmann_1990" id="citation_friedmann_1990_67dc9be6c4256">Friedmann 1990</a> informally consider
+interval class 1 content as being especially determinative of chord quality.  
+Perhaps those paths reflecting aspiration toward high semitone counts&mdash;
+REL hierarchies based on chromatic pivots&mdash;are therefore to be preferred
+<i>a priori</i>.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="demske_fig5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="demske_fig6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="demske_fig7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[14] Such concerns raise the inevitable issue of perception.
+Evaluating similarity clusters with perceptual criteria is complicated
+because we can attend to the same music in many different ways.
+Still, there are limits.  <b>Figure 5</b> graphically displays similarity
+relations between successive piano chords in the first movement of
+Messiaen&rsquo;s <i>Quatour pour le fin du temps</i>.  The piano part is a
+recurring sequence of 29 chords set to a rhythmic ostinato of 17
+durations; chord 30 is thus the same as chord 1.  Higher ASIM, ATMEMB,
+and REL values plotted on the graph indicate greater similarity.
+(ASIM is adjusted to facilitate comparison with the other functions.)
+Figure 5 shows the three functions diverging in their values, but mostly
+agreeing about peaks, valleys, and plateaus.  The relation expressed
+in moving from chord 1 to 2 appears above point 2 on the x axis; that
+from chord 2 to 3 appears above point 3; etc.  The middle chord in
+each three-chord succession is the pivot, while the two flanking
+chords are the targets.</p>
+
+<p>[15] The graph resembles a &ldquo;harmonic fluctuation&rdquo; analysis (<a href="#hindemith_1942" id="citation_hindemith_1942_67dc9be6c426e">Hindemith 1942</a>), and should capture a comparable aspect under the most obvious
+interpretation of the similarity relationship.  However, and despite
+great effort in attending, I can discern no correspondence at all
+between musical transitions in the <i>Quatour</i> and those represented
+symbolically on the graph.  For example, the strong contrast that
+Figure 5 reports between chords 15 and 16 simply does not conform to
+Messiaen&rsquo;s smooth realization.  Taking this perception into account
+suggests preferring a boundary through the vee at <b>Figure 6</b>. This is not entirely satisfactory, however, even allowing for the wide
+disparity in REL values.  To my ear, the move between Messiaen&rsquo;s
+chords 16 and 17 is in fact more striking than that between his chords
+15 and 16.  Perhaps a boundary should therefore separate chords 15 and
+16 from chord 17.  The REL scheme of Figure  6 cannot accomodate that
+boundary, so another pivot is required. (see <b>Figure 7</b>).
+
+<p>[16] The pivot in Figure 7 no longer coincides with the original point
+of transition, a fact which obscures the harmonic fluctuation
+interpretation of similarities.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Perhaps this shows harmonic
+fluctuation to be an insufficient standard for perceptual cluster
+evaluation.  That in turn suggests another complication when appealing
+to perceptual criteria.  Exactly how similarity relationships might
+inform perception is speculative.  Gradations of &ldquo;smooth&rdquo; chord
+succession, strength of motivic association, and degree of harmonic
+contrast in form delineation are only the first potential
+manifestations which spring to mind.  The idea that any formal
+evaluation procedure could embrace all of the possibilities seems
+untenable.  On what bases would a partial set of possibilities be
+selected for implementation?  Since the different criteria may address
+different&mdash;and possibly conflicting&mdash;aspects of perception, how
+would the application of one criterion be coordinated with that of
+another?</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=7&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="demske_fig8small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[17] Apart from the manner in which similarities shape perception,
+there is the further question of the extent to which they do so.  For
+example, strong contrast is perceived in moving between Messiaen&rsquo;s
+chords 6 and 7, despite the initial plateau of Figure 5.  This implies
+drawing a boundary through the vee at <b>Figure 8</b>, even though that is not
+an allowed boundary site. Nothing in the micro-network of REL relationships among Messiaen&rsquo;s 29
+chords will support this boundary, since chords 6 and 8 are members of
+the same set class.  Clearly, competing factors inaccessible to
+similarity functions and the pitch-class set model in general
+influence perception enormously.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> In order to realistically evaluate
+similarity clusters according to perception, we must first have a
+means of isolating and gauging the influence of these factors.</p>
+
+<p>[18] Such a means does not appear to be forthcoming at present, given
+current knowledge about music perception.  Implementing practical
+event structures and distance functions whose resultant clusterings
+satisfy general perceptual criteria is thus but a dim hope.  We cannot
+expect a simple automaton processing high-level abstractions to have
+much to do with perception.  For now at least, the place for
+perceptual criteria remains in cautiously selecting input and very
+carefully weighing output.</p>
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=8&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="demske_fig9small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=9&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="demske_fig10small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=10&nonav=true"><img border="1" alt="Figure 11 thumbnail" src="demske_fig11small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="demske_examples.php?id=11&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="demske_fig12small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[19] Analytical music theory usually holds a less naive view of
+context than that described in the chord-by-chord scenario above.
+Relationships not immediately perceptible can nevertheless inform
+musical structure.  This suggests another possible evaluation
+criterion: goodness of fit between a boundary and an analytical goal.
+The clustering program could take as input segmentations together with
+an analytical paradigm.  For example, a short movement strongly
+projects the large-scale succession of pitch-class sets shown at
+<b>Figure 9</b>. The analyst wants to emphasize that the movement is through-composed.
+A REL clustering solution appears at <b>Figure 10</b>, with two boundaries
+indicating progressive motion away from the opening set in &ldquo;similarity
+space.&rdquo;</p>
+
+<p>[20] The boundaries of Figure 10 are a good fit to the analytical
+description, but they are not a completely honest fit.  <b>Figure 11</b> shows
+another REL clustering of the same sets. The single boundary here at least suggests a different form, the
+symmetrical, ternary structure distinguished by outer sections equally
+distant from B in similarity space (<b>Figure 12</b>). The goodness of fit criterion now appears suspicious, in that the
+analyst receives only supportive solutions, and is shielded from
+possibly damaging ones.</p>
+
+<p>[21] REL and comparable similarity functions are not used much in
+analysis today.  Still, my basic concerns extend beyond a particular
+function and its potential for rigorous application in a computer
+model.  Post-tonal analyses typically involve countless decisions
+about boundaries, ranging from relatively low-level segmentation
+selections to high-level identifications of referential collections in
+refractory textures.  The decisions interact and motivate one another
+freely across all levels of description, and often depend on abstract
+criteria whose perceptual relevance and provability is speculative.
+We all slip, sometimes conspicuously: dubious examples of &ldquo;composed
+out&rdquo; sets in undergraduate textbooks; untempered enthusiasm for a
+single octad class underlying a composer&rsquo;s entire output.  Exuberant
+flexibility is essential to the post-tonal analytical dialectic.  But
+I suggest checking it occasionally by asking what constraints we would
+impose on a machine approaching the same decisions.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Thomas R. Demske<br>
+	Connecticut College<br>Department of Music<br>270 Mohegan Avenue<br>New London, CT  06320<br>USA<br><a href="mailto:trdem@conncoll.edu">trdem@conncoll.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_block_and_douthett_1994" class="flyoverdiv">Block, Steven and Jack Douthett. 1994. &ldquo;Vector Products and
+Intervallic Weighting.&rdquo; <i>Journal of Music Theory</i> 38/1: 21&ndash;41.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="block_and_douthett_1994"></a>Block, Steven and Jack Douthett. 1994. &ldquo;Vector Products and
+Intervallic Weighting.&rdquo; <i>Journal of Music Theory</i> 38/1: 21&ndash;41.</p><div id="citediv_demske_1993" class="flyoverdiv">Demske, Thomas R. 1993. &ldquo;Recognizing Melodic Motion in Piano Scores:
+Rules and Contexts.&rdquo; Ph.D. diss., Yale University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="demske_1993"></a>Demske, Thomas R. 1993. &ldquo;Recognizing Melodic Motion in Piano Scores:
+Rules and Contexts.&rdquo; Ph.D. diss., Yale University.</p><div id="citediv_forte_1973" class="flyoverdiv">Forte, Allen. 1973. <i>The Structure of Atonal Music</i>.  New Haven: Yale
+University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_1973"></a>Forte, Allen. 1973. <i>The Structure of Atonal Music</i>.  New Haven: Yale
+University Press.</p><div id="citediv_friedmann_1990" class="flyoverdiv">Friedmann, Michael L. 1990. <i>Ear Training for Twentieth-Century
+Music</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="friedmann_1990"></a>Friedmann, Michael L. 1990. <i>Ear Training for Twentieth-Century
+Music</i>. New Haven: Yale University Press.</p><div id="citediv_hindemith_1942" class="flyoverdiv">Hindemith, Paul. 1942. <i>The Craft of Musical Composition</i>,
+v. 1. Trans. Arthur Mendel. New York: Associated Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hindemith_1942"></a>Hindemith, Paul. 1942. <i>The Craft of Musical Composition</i>,
+v. 1. Trans. Arthur Mendel. New York: Associated Music.</p><div id="citediv_isaacson_1990" class="flyoverdiv">Isaacson, Eric J. 1990. &ldquo;Similarity of Interval-Class Content Between
+Pitch-Class Sets: The ICVSIM Relation.&rdquo;  <i>Journal of Music Theory</i>
+34: 1&ndash;28.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="isaacson_1990"></a>Isaacson, Eric J. 1990. &ldquo;Similarity of Interval-Class Content Between
+Pitch-Class Sets: The ICVSIM Relation.&rdquo;  <i>Journal of Music Theory</i>
+34: 1&ndash;28.</p><div id="citediv_lewin_1980" class="flyoverdiv">Lewin, David. 1980. &ldquo;A Response to a Response: On Pcset Relatedness.&rdquo;
+<i>Perspectives of New Music</i> 18/2: 498&ndash;502.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1980"></a>Lewin, David. 1980. &ldquo;A Response to a Response: On Pcset Relatedness.&rdquo;
+<i>Perspectives of New Music</i> 18/2: 498&ndash;502.</p><div id="citediv_lewin_1977" class="flyoverdiv">Lewin, David. 1977.  &ldquo;Forte&rsquo;s Interval Vector, My Interval
+Function, and Regener&rsquo;s Common-Note Function.&rdquo;  <i>Journal of Music
+Theory</i> 21/2: 194&ndash;237.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1977"></a>Lewin, David. 1977.  &ldquo;Forte&rsquo;s Interval Vector, My Interval
+Function, and Regener&rsquo;s Common-Note Function.&rdquo;  <i>Journal of Music
+Theory</i> 21/2: 194&ndash;237.</p><div id="citediv_michalski_and_stepp_1983" class="flyoverdiv">Michalski, Ryszard S. and Robert. E. Stepp. 1983.  &ldquo;Learning from
+Observation: Conceptual Clustering.&rdquo; In <i>Machine Learning: An
+Artificial Intelligence Approach</i>, R. Michalski, J. Carbonell, and
+T. Mitchell, eds. Palo Alto, CA: Tioga Publishing Company.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="michalski_and_stepp_1983"></a>Michalski, Ryszard S. and Robert. E. Stepp. 1983.  &ldquo;Learning from
+Observation: Conceptual Clustering.&rdquo; In <i>Machine Learning: An
+Artificial Intelligence Approach</i>, R. Michalski, J. Carbonell, and
+T. Mitchell, eds. Palo Alto, CA: Tioga Publishing Company.</p><div id="citediv_morris_1980" class="flyoverdiv">Morris, Robert. 1980. &ldquo;A Similarity Index for Pitch-Class Sets.&rdquo;
+Perspectives of New Music 18/2: 445&ndash;460.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1980"></a>Morris, Robert. 1980. &ldquo;A Similarity Index for Pitch-Class Sets.&rdquo;
+Perspectives of New Music 18/2: 445&ndash;460.</p><div id="citediv_rahn_1989" class="flyoverdiv">Rahn, John. 1989. &ldquo;Toward a Theory for Chord Progression.&rdquo; <i>In Theory
+Only</i> 11/1,2: 1&ndash;10.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1989"></a>Rahn, John. 1989. &ldquo;Toward a Theory for Chord Progression.&rdquo; <i>In Theory
+Only</i> 11/1,2: 1&ndash;10.</p><div id="citediv_rahn_1980" class="flyoverdiv">Rahn, John. 1980. &ldquo;Relating Sets.&rdquo; <i>Perspectives of New Music</i>
+18/2: 483&ndash;498.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1980"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1980. &ldquo;Relating Sets.&rdquo; <i>Perspectives of New Music</i>
+18/2: 483&ndash;498.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Isaacson has also written a handy, inexpensive, and well-documented program which calculates the values of various similarity functions for arbitrary sets.  DOS and Windows versions are available.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> The embedding function EMB(/q/,r) countsthe multiplicity of q-type sets included in set r; see <a href="#lewin_1977" id="citation_lewin_1977_67dc9be6c123d">Lewin 1977</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Blind subset polling is a basic source of such barriers.  Two REL calls with the same pivot may yield identical results, and yet differ with respect to the types of subsets counted.  Ignoring the degree of this difference when comparing REL value spreads strikes me as questionable.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Block and Douthett&rsquo;s (<a href="#block_and_douthett_1994" id="citation_block_and_douthett_1994_67dc9be6c1244">1994</a>) &ldquo;vector product&rdquo; parts with other similarity measures in that the pivot argument is not a set, but rather an arbitrarily specified standard of subset content.  What was once merely a &ldquo;staggeringly complex&rdquo; network of relationships is now potentially infinite.  Otherwise, vector product similarities continue to admit the same critique voiced here with respect to REL.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Hindemith (<a href="#hindemith_1942" id="citation_hindemith_1942_67dc9be6c1246">1942</a>) types chords according to intrinsic intervallic properties, which is very roughly analogous to holding one particular set of ideals as a constant pivot argument to REL.  Consequently, variance between pivot and point of transition would not conflict with Hindemith&rsquo;s absolutist conception of harmonic fluctuation.  The relativistic conception pursued here in the interpretation of Figure 5 conforms more closely to that implied in Rahn&rsquo;s (<a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c1249">1989</a>) &ldquo;theory of chord progression.&rdquo;<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Rahn (<a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c124b">1989</a>) presupposes a &ldquo;theory of instances&rdquo; to account for discrepancies between the heard surface and DATM&rsquo;s predictions. That theory remains incomplete.<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Isaacson has also written a handy, inexpensive, and well-documented program which calculates the values of various similarity functions for arbitrary sets.  DOS and Windows versions are available.</div><div id="fndiv2" class="flyoverdiv">The embedding function EMB(/q/,r) countsthe multiplicity of q-type sets included in set r; see <a href="#lewin_1977" id="citation_lewin_1977_67dc9be6c123d">Lewin 1977</a>.</div><div id="fndiv3" class="flyoverdiv">Blind subset polling is a basic source of such barriers.  Two REL calls with the same pivot may yield identical results, and yet differ with respect to the types of subsets counted.  Ignoring the degree of this difference when comparing REL value spreads strikes me as questionable.</div><div id="fndiv4" class="flyoverdiv">Block and Douthett&rsquo;s (<a href="#block_and_douthett_1994" id="citation_block_and_douthett_1994_67dc9be6c1244">1994</a>) &ldquo;vector product&rdquo; parts with other similarity measures in that the pivot argument is not a set, but rather an arbitrarily specified standard of subset content.  What was once merely a &ldquo;staggeringly complex&rdquo; network of relationships is now potentially infinite.  Otherwise, vector product similarities continue to admit the same critique voiced here with respect to REL.</div><div id="fndiv5" class="flyoverdiv">Hindemith (<a href="#hindemith_1942" id="citation_hindemith_1942_67dc9be6c1246">1942</a>) types chords according to intrinsic intervallic properties, which is very roughly analogous to holding one particular set of ideals as a constant pivot argument to REL.  Consequently, variance between pivot and point of transition would not conflict with Hindemith&rsquo;s absolutist conception of harmonic fluctuation.  The relativistic conception pursued here in the interpretation of Figure 5 conforms more closely to that implied in Rahn&rsquo;s (<a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c1249">1989</a>) &ldquo;theory of chord progression.&rdquo;</div><div id="fndiv6" class="flyoverdiv">Rahn (<a href="#rahn_1989" id="citation_rahn_1989_67dc9be6c124b">1989</a>) presupposes a &ldquo;theory of instances&rdquo; to account for discrepancies between the heard surface and DATM&rsquo;s predictions. That theory remains incomplete.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1995 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Cara Stroud and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

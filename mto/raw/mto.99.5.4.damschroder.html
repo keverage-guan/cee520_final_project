@@ -1,0 +1,592 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 5.4: Damschroder, Review of Unfoldings</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Carl Schachter, <i>Unfoldings: Essays in Schenkerian Theory and Analysis</i>,
+ed. by Joseph N. Straus (Oxford:  Oxford University Press, 1999)">
+
+    <meta name="citation_author" content="Damschroder, David A.">
+      
+
+<meta name="citation_publication_date" content="1999/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="5">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Carl Schachter, <i>Unfoldings: Essays in Schenkerian Theory and Analysis</i>,
+ed. by Joseph N. Straus (Oxford:  Oxford University Press, 1999)
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.99.5.4/mto.99.5.4.damschroder.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">David A. Damschroder</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Schachter, Schenker, analysis, essays, theory, music</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.99.5.4/mto.99.5.4.damschroder.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 5, Number 4, September 1999 <br> Copyright &#0169; 1999 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] As a young student I often explored the music stacks of my
+college library. Small though its book collection was, I
+discovered there an astonishing world of information&mdash;a panoply
+of routes for my future development as a musician. A heavy,
+peculiarly wide, dark blue volume called <i>Counterpoint in Composition</i> intrigued me particularly. Though much that it
+contained was familiar, in its final chapter it seemed to go
+berserk: solid and dotted beams connected long spans of notes,
+some noteheads lacked stems altogether, and Roman numerals
+appeared with alarming infrequency. I astutely concluded that I
+had a lot more to learn, that none of my current mentors could
+help me, and that bizarre graphs such as these <i>might</i> some day
+become a focus of my musical life. The younger co-author of that
+book was, of course, Carl Schachter. And though others guided my
+journey through the foothills of Schenkerian theory, ultimately
+Schachter must count as one of my and of every Schenkerian&rsquo;s
+mentors, for the scope and brilliance of his writings in that
+field have been unmatched, at least since 1935.</p>
+
+<p>[2] Laudably, Schachter has devoted himself to two separate
+audiences of readers. With Felix Salzer in <i>Counterpoint in Composition</i> (1969), and with Edward Aldwell in
+<i>Harmony and
+Voice Leading</i> (1978), he has endeavored to provide the best
+possible guidance and insight for the larger community of
+musicians in the inaugural phase of their theoretical study. And,
+in a steady stream of well-crafted essays spanning several
+decades, he has made generous offerings of his knowledge and
+skill for the community of scholars and teachers who pursue the
+Schenkerian perspective. It is this latter community to whom
+Oxford University Press&rsquo;s compendium, <i>Unfoldings: Essays in
+Schenkerian Theory and Analysis</i> (edited by Joseph N. Straus), is
+directed.</p>
+
+<p>[3] Straus has arranged the essays in four categories: Rhythm and
+Linear Analysis (the three celebrated <i>Music Forum</i> articles),
+Schenkerian Theory (&ldquo;Either/Or,&rdquo; &ldquo;Analysis by Key: Another Look
+at Modulation,&rdquo; &ldquo;The Triad as Place and Action,&rdquo; and a review of
+Oster&rsquo;s translation of <i>Free Composition</i>), Words and Music
+(samplings from Schubert and Mozart), and Analytical Monographs
+(a Bach fugue and Chopin&rsquo;s <i>Fantasy</i>, Op. 49). And there is a
+stimulating bonus: the book begins with a wide-ranging dialogue
+between editor and author. A list of Schachter&rsquo;s publications and
+an index conclude the volume. Since many of the essays were
+originally published during the 1970s or 1980s and may be
+difficult to obtain in their original incarnation, this
+undertaking is most welcome.</p>
+
+<p>[4] For those not acquainted with Schenker&rsquo;s method, this volume
+is not a very good place to start. Assumptions regarding
+terminology and notation would make for frustrating reading. For
+those with some experience, however, these essays are among the
+most rewarding material one could study beyond Schenker&rsquo;s own
+writings. A few of the essays might enhance a beginner&rsquo;s course,
+but most are for more mature practitioners.</p>
+
+<p>[5] I am not inclined to use this space for airing perceived
+faults with Schachter&rsquo;s graphs or arguments. Any analyst of
+Schachter&rsquo;s stature will do things which make other analysts
+scratch their heads, though in this case the increased blood
+supply around the brain might lead one to realize that Schachter
+is probably right. Instead I would like to explore the essence of
+Schachter&rsquo;s particular gift as a thinker and writer by annotating
+a few striking sentences from among the essays in the compendium.</p>
+
+<blockquote>
+
+<p> &ldquo;One can be pretty sure that giraffes did not become
+plentiful in the zoological gardens of China&rdquo; (pages 192&ndash;193)</p>
+
+</blockquote>
+
+<p>[6]
+Schachter is fascinating to read, not only because he raises his
+readers to a most stimulating intellectual plane, but also
+because he is so elegant and humane. Here he is arguing subtly
+against the view of some unnamed analysts who reject the notion
+of fundamental lines descending from scale degree 5. He compares
+such analysts to a Chinese emperor who, upon encountering a
+giraffe, mandates: &ldquo;It ought not to exist!&rdquo; But if the emperor
+will take a good look at nature&mdash;or if such analysts will take a
+good look at the repertoire&mdash;it will be observed that, in fact,
+such creatures do exist.</p>
+
+<blockquote>
+
+<p> &ldquo;Learning to analyze means learning to hear in depth; a good
+analysis is always verifiable by the educated ear.&rdquo; (page 19)&nbsp;</p>
+
+<p> &ldquo;If
+the analysis has been successful it leads to hearing that is
+incomparably clearer and more comprehensive than it had been
+before; it never leads to abstraction without sensory content.&rdquo;
+(page 35)&nbsp;</p>
+
+</blockquote>
+
+<p>[7] Receptivity to musical expression is not simply an innate talent.
+One&rsquo;s capacity for making sense of music can be augmented through
+study. For a few, the starting point of natural talent may be set
+very high. But for most people, even most people who devote their
+lives to the pursuit of music, developing an &ldquo;educated ear&rdquo; is a
+lifelong process. Every word that Schachter writes is intended to
+foster that endeavor.</p>
+
+<blockquote>
+
+<p> &ldquo;I do not wish to draw out the subject of duration to
+unendurable lengths&rdquo; (page 28)&nbsp;</p>
+
+<p> &ldquo;Of course the name
+itself&mdash;&lsquo;Luise&rsquo;&mdash;sounds more like whispering leaves and water than,
+say, &lsquo;Katinka&rsquo; would.&rdquo; (page 211)&nbsp;</p>
+
+</blockquote>
+
+<p>[8] How refreshing to read an analyst with a twinkle in his eyes!</p>
+
+<blockquote>
+
+<p> &ldquo;If the ideas elaborated in this article and the analyses
+that illustrate them reveal anything significant about musical
+rhythm and meter, they are testimony to the continuing creative
+force that emanates from the work of our greatest music theorist,
+Heinrich Schenker.&rdquo; (page 116)&nbsp;</p>
+
+</blockquote>
+
+<p>[9] Humility is an attribute not necessarily associated with
+Schenkerians. Yet when reading Schachter, Schachter begins to
+disappear. It is the composer&rsquo;s world&mdash;and the interface between
+that world and Schenker&rsquo;s perspective&mdash;that we inhabit. Even
+when, as here, Schachter is expanding that perspective in new
+ways, it is the original theory&mdash;and its continuity with
+eighteenth- and nineteenth-century practice&mdash;that shines through.</p>
+
+<blockquote>
+
+<p> &ldquo;I doubt that this symmetry is accidental, though I can&rsquo;t
+prove that it is not.&rdquo; (page 61)</p>
+
+<p>&ldquo;An irreducible residue of
+personal opinion remains in any metrical analysis of a piece
+which<nobr> . . . </nobr>lends itself to more than one plausible
+interpretation.&rdquo; (page 101)&nbsp;</p>
+
+</blockquote>
+
+<p>[10] Schachter accepts that the analytical enterprise is speculative,
+and despite the uncanny precision of his presentations, he
+acknowledges that there are unknowable elements. After all,
+Schenkerian analysis addresses issues that were never articulated
+in words or symbols during the period of composition. Schachter
+hopes to persuade his readers that certain ways of thinking about
+a piece are more insightful than other ways. Yet there are limits
+concerning what can be accomplished.</p>
+
+<blockquote>
+
+<p> &ldquo;[Anticipating <nobr><img border="0" alt="6 4" src="../../gifs/64.gif" width="8" height="15" style="vertical-align:text-top"></nobr>s] are hardly ever mentioned in theory
+books.&ldquo; Footnote: &ldquo;But see Edward Aldwell and Carl Schachter, <i>Harmony and Voice
+Leading</i>.&rdquo; (pages 73 and 78)</p>
+
+</blockquote>
+
+<p>[11] Like Schenker, Schachter can express exasperation concerning
+standard textbooks. Unlike Schenker, he has contributed
+significantly towards a solution.</p>
+
+<blockquote>
+
+<p> &ldquo;The performer must take care to project measures 29&ndash;30 as
+an upbeat to the II<sup>6</sup> in measure 31.&rdquo; (page 74)</p>
+
+</blockquote>
+
+<p>[12] Those who perform music and those who speculate about it
+generally pursue quite different regimens of training. Given the
+colossal and ever-increasing pressures within both fields, it
+might seem foolish to hope that many would devote significant
+energies to an auxiliary agenda, particularly one as daunting as
+Schenkerian analysis. Nevertheless Schachter expects that
+performers will be among his readers. Because performed art
+requires continual re-creation, a class of practitioners who can
+make sense of what music notation implies must thrive. Music
+analysis&mdash;especially Schenkerian analysis and, here, Schachter&rsquo;s
+metric enhancement&mdash;is the systematic study of those
+implications. Every performer is the potential recipient of
+Schachter&rsquo;s insights. Though many performers never develop a
+sophistication in music theory that would allow them to ponder
+their art at the level of these essays, those who do will find in
+Schachter an enthusiastic ally.</p>
+
+<blockquote>
+
+<p> &ldquo;For many reasons, I find it difficult to contemplate this
+song for the keyboard [Chopin, Prelude in E Minor] without
+attributing to it a programmatic character&mdash;I hear it as a vision
+of death, perhaps the imagination of one&rsquo;s own death.<nobr> . . . </nobr>
+Needless to say, I don&rsquo;t require anybody&mdash;not even my
+students&mdash;to believe in this program, but I find that many people
+do seem to have an emotional reaction to the piece that would be
+compatible with its being strongly tinged with grief, mourning,
+and the thought of death.&rdquo; (pages 163, 165)</p>
+
+</blockquote>
+
+<p>[13] On a superficial level, Schenker&rsquo;s procedures may seem to reduce
+meaning out of a musical work. Schachter knows that that is not
+the case, and with characteristic eloquence he ponders musical
+meaning and, through the medium of analysis, offers insights into
+the means by which a composer imbues a work with a specific
+sentiment.</p>
+
+<blockquote>
+
+<p> &ldquo;Viewed purely as a &lsquo;theoretical&rsquo; work, <i>Der freie Satz</i>
+falls short of <i>Kontrapunkt</i> in comprehensiveness, consistency,
+and elegance.&rdquo; (page 185)&nbsp;</p>
+
+<p> &ldquo;I don&rsquo;t know why Schenker includes all
+of the levels beyond the first in Part III [of <i>Der freie Satz</i>],
+but I believe that it is because these levels (as he describes
+them) can contain prolongational events characteristic of the
+foreground as well as those &lsquo;transferred&rsquo; from the background and
+the first level of middleground.&rdquo; (page 186)</p>
+
+<p>&ldquo;This position has
+occasioned a good deal of misunderstanding, probably because
+Schenker&rsquo;s explanations are inadequate and confusing.&rdquo; (page 201)</p>
+
+</blockquote>
+
+<p>[14] Schachter understands Schenker&rsquo;s theory as few others do. He
+knows the writings intimately, in both German and English. He has
+pondered the various nuances of change that occurred in
+Schenker&rsquo;s thought over the course of his career, and is
+sensitive to lingering difficulties. This comprehensive immersion
+by one great mind in the work of another gives a special
+authority. Schachter can be critical without seeming negative. He
+can offer hunches that ring true. In the midst of a contemporary
+culture that glamorizes the newfangled, Schachter has pursued
+with steadfast devotion an inherited perspective, one which,
+through his own contributions, has continued to evolve
+dynamically.</p>
+
+<p>[15] Though the eleven essays in <i>Unfoldings</i> reveal only a part
+of Schachter&rsquo;s contribution to musical thought in the last third
+of the twentieth century, this convenient and inviting volume
+assures that his impact will persist well into the future. As
+long as there are inhabitants of the planet who care about the
+musical heritage of the eighteenth and nineteenth centuries,
+Schachter will remain a trusted and inspiring mentor.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	David A. Damschroder<br>
+	120 Donald N. Ferguson Hall<br>University of Minnesota<br>2106 4th St. S.<br>Minneapolis, MN, 55455<br><a href="mailto:damsc001@maroon.tc.umn.edu">damsc001@maroon.tc.umn.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1999 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

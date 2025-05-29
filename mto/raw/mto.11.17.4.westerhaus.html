@@ -1,0 +1,432 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 17.4: Westerhaus, Review of Horlacher, Building Blocks</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Gretchen Horlacher, <i>Building Blocks: Repetition and Continuity in the Music of Stravinsky</i> (New York: Oxford University Press, 2011)">
+
+    <meta name="citation_author" content="Westerhaus, Andrew">
+      
+
+<meta name="citation_publication_date" content="2011/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="17">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Gretchen Horlacher, <i>Building Blocks: Repetition and Continuity in the Music of Stravinsky</i> (New York: Oxford University Press, 2011)
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Andrew Westerhaus</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Horlacher, Stravinsky, Block, Repetition, Continuity, Analysis, Ordered Succession, Sketch Study, Ostinato, Stutter, Superimposition, Strata, <i>The Rite of Spring</i>, <i>Three Pieces for String Quartet</i>, <i>Les Noces</i>, <i>Pulcinella</i>, <i>Symphonies of Wind Instruments</i>, <i>Apollon musag&egrave;tes (Apollo)</i>, <i>Symphony of Psalms</i>, <i>Pers&eacute;phone</i>, <i>Symphony in Three Movements</i></font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.11.17.4/mto.11.17.4.westerhaus.pdf">PDF text </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2011</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 17, Number 4, December 2011 <br> Copyright &#0169; 2011 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+
+<p>[1] In the field of Stravinsky studies, there has recently been a growing trend toward the use of sketches as an aid to music analysis, due in no small part to the increased availability of the composer&#8217;s manuscripts and source materials.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Drawing upon her extensive experience with Stravinsky&#8217;s compositional materials, Gretchen Horlacher has found consistencies in the composer&#8217;s creative process, deftly reconstructing how he began with brief musical models (&#8220;blocks&#8221;) that served as points of departure for numerous methods of development and variation.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> In <i>Building Blocks</i>, Horlacher presents this research, setting forth an inventive analytical method for Stravinsky&#8217;s music with meticulous readings of the composer&#8217;s sketches and scores.</p>
+
+<p>[2] <i>Building Blocks</i> is centered around pieces from Stravinsky&#8217;s early (&#8220;Russian&#8221;) and middle (&#8220;Neoclassical&#8221;) periods, ranging from <i>The Rite of Spring</i> (1913) to the <i>Symphony in Three Movements</i> (1946). Throughout the works surveyed, Horlacher focuses on two contrasting attributes of Stravinsky&#8217;s music: repetitive musical techniques that embody the qualities of discontinuity and stasis (such as ostinati, superimposition, and the assemblage of musical fragments, practices designated by the author as &#8220;radical&#8221;), versus the more continuous procedures that engage conventions in common-practice tonal music (such as melodic linearity and phrase syntax, traits Horlacher describes as &#8220;traditional&#8221; [33]). The author argues that previous studies have focused excessively on one extreme versus the other, and as an alternative, she develops these two operational strands into a holistic and balanced approach. Termed &#8220;ordered succession,&#8221; Horlacher&#8217;s analytical method draws attention to the threads of continuity in Stravinsky&#8217;s repetitive musical materials, a perspective that she contends is essential for understanding the many ways in which Stravinsky&#8217;s music challenges traditional conceptions of temporality.</p>
+
+<p>[3] <i>Building Blocks</i> is organized into five chapters, each of which fleshes out the notion of ordered succession in a variety of musical contexts. Chapter 1 informally rehearses the book&#8217;s analytical method by highlighting how the seeming repetitiveness in the first movement of Stravinsky&#8217;s <i>Three Pieces for String Quartet</i> (1914) is nevertheless driven by an underlying 
+progressive strategy. Horlacher borrows the chapter&rsquo;s subtitle, &ldquo;A shaking and 
+cracking of dancing bones,&rdquo; from poet Amy Lowell, who was inspired by this music 
+to imagine peasants dancing awkwardly out of sync with one another. Similarly, 
+Horlacher tracks the playful intrusion of the second violin earlier and earlier 
+into the musical texture, finding in Stravinsky&rsquo;s sketches a process of 
+experimentation with this motive against the other contrapuntal lines. To close 
+the chapter, Horlacher extrapolates from the two defining features of an 
+ostinato&mdash;namely, order and repetition&mdash;to suggest that Stravinsky&rsquo;s music, which 
+is so highly dependent on ostinati, is ideally suited to engaging in the interplay between connection and discontinuity.</p>
+
+<p>[4] Chapter 2 (&ldquo;Connecting the Blocks&rdquo;) represents the conceptual core of the 
+book, in which Horlacher formally expounds the theory of ordered succession to 
+track the progress of a musical fragment over the course of a piece. She 
+considers how often a fragment is iterated, the order in which its varied 
+reiterations occur, how it alternates with contrasting motives, and when its 
+iterations cease. Ordered succession can also measure the relations between 
+musical fragments, including situations where reiterations are interrupted or 
+noncontiguous, and where boundaries are detached, overlapped, or blurred. 
+Horlacher asserts that ordered succession derives from Stravinsky&rsquo;s own 
+compositional practice, demonstrating how the composer was obsessed with the shaping, order, and assembly of musical fragments 
+in the <i>Rite of Spring</i> sketches.</p>
+
+<p>[5] Ordered succession draws upon a long-standing convention of graphic display in Stravinsky studies, but Horlacher&#8217;s model is certainly the most formalized in this tradition.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> In an ordered succession analysis, one parses a score and arranges the sections such that repeated musical fragments are vertically aligned on the page, drawing attention to the phrase structure of an initial block and its variations in both contiguous and non-contiguous reiterations. There are particular sorts of continuity to be distinguished, such as foreground melodic connections (demonstrated in quasi-Schenkerian notation), the gradual unfurling of a motivic pattern (such as the filling of a melodic &#8220;gap&#8221;), or shared pitch classes between contiguous musical passages. In sum, ordered succession allows one to locate the changes made to a musical fragment in subsequent repetitions so as to highlight the kinds of activity (or lack thereof) in a musical passage. A remarkable attribute of ordered succession is its flexibility to suit numerous musical circumstances, which the author demonstrates with two analyses of the &#8220;Mystic Circles&#8221; music (<i>Rite of Spring</i>) that respectively prioritize the melody and accompaniment.</p> 
+
+<p>[6] Chapter 3 (&#8220;Stravinsky&#8217;s Stutter&#8221;) focuses on the role of ordered succession in a single melody. To measure the evolution of a repeated fragment over time, the author proposes five parameters that govern melodies: scope, distinctiveness, frequency and contiguity of presentation, boundaries between iterations, and the nature and degree of variation. Horlacher engages these parameters through four extended analyses, beginning first with two brief melodies that grow into larger forms in contrasting ways (&#8220;Evocation&#8221; from the <i>Rite of Spring</i> and the <i>Symphony of Psalms</i>, I). Next, Horlacher focuses on the notion of melodic confinement in a passage from the <i>Symphony in Three Movements</i>, reconstructing its conceptual development from an intriguing sketch-leaf that demonstrates the composer&#8217;s preoccupation with musical blocks (also found on the book&#8217;s dust jacket). The chapter concludes with an analysis of the &#8220;Spring Rounds&#8221; (<i>Rite of Spring</i>), which the author hears as a deliberate expansion beyond melodic boundaries; she also shows how Stravinsky&#8217;s sketches depict a process of moving from short undifferentiated repetitions toward a deliberately ordered series of phrases. Additionally, Horlacher attempts to draw parallels between ordered succession and Russian folk practice, specifically citing Yevgeniya E. Linyova&#8217;s ethnographic work (which Stravinsky knew) to suggest that the composer&#8217;s particular brand of repetition and variation had roots in Russian folk song.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[7] In the book&#8217;s two remaining chapters, Horlacher investigates ordered succession in more complex musical environments. Chapter 4 (&#8220;Multiple Melodies&#8221;) concerns Stravinsky&#8217;s superimposed musical textures, which the author examines in two large categories: &#8220;within superimpositions&#8221; (or, the <i>vertical</i> relationship between two or more lines according to Fuxian intervallic distinctions, voice-leading interactions, and cadential gestures, as well as their metrical coordination), and &#8220;between superimpositions&#8221; (or, the <i>horizontal</i> dimension, including both cyclic and sporadic iterations).<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> To explore these categories, the analyses in chapter 4 apply ordered succession to superimposed textures, first featuring examples of &#8220;continuous repetition&#8221; (the closing of <i>Pulcinella</i>, the &#8220;Apotheosis&#8221; of <i>Apollo</i>, and the <i>Symphony of Psalms</i>, III), followed by examples of &#8220;discontinuous repetition&#8221; (<i>Symphony in Three Movements</i>, I, and the second tableau of <i>Les Noces</i>). Finally, chapter 5 explores ordered succession as it plays out across the <i>Symphonies of Wind Instruments</i>, a piece virtually synonymous with discontinuity and radical formal design. Yet, Horlacher argues that there is continuity to be found in the sequential ordering of thematic fragments over the course of the piece, showing how Stravinsky linked themes in numerous ways in the sketches.</p>
+
+<p>[8] <i>Building Blocks</i> contains a number of excellent analytical and theoretical insights and I wish I could cite more of them here. Horlacher firmly situates her project in the field by drawing upon existing methodologies such as Schenkerian theory, sketch studies, Taruskin&#8217;s work on neonationalism, van den Toorn&#8217;s octatonic and rhythmic-metric models, and Hasty&#8217;s work on musical temporality. She adeptly employs these approaches to buttress her unique analytical position while carefully sidestepping the conceptual baggage that each methodology might bring to this repertoire. Yet Horlacher&#8217;s most significant achievement, in my opinion, is that ordered succession encourages a <i>processive</i> mode of listening: Horlacher hears directionality within the discontinuities of Stravinsky&#8217;s music as it gradually unfolds toward the ultimate completion of its inherent tensions. As opposed to mechanical, static, and isolated moments in time, Stravinsky&#8217;s music emerges as developing, active, and dynamic.</p>
+
+<p>[9] There are a few conceptual and procedural problems in the book that I must address. My first concern has to do with Horlacher&#8217;s notion of the term &#8220;block.&#8221; It is perhaps the central concept in a book titled <i>Building Blocks</i>, yet a concise definition is absent from the book. As I understand it, a &#8220;block&#8221; is a syntactic musical pattern that is fragmentary or isolated in some way and does not connect with other musical elements in its immediate context; yet the author only gradually demonstrates what she means by this term, and the issue might have been clarified in the preface by an acknowledgement of its many conceptual implications in Stravinsky&#8217;s music. Moreover, as the term appears widely throughout the Stravinsky literature (often in the familiar locution of &#8220;block juxtaposition&#8221;), this seems like a missed opportunity for conceptual clarification.</p>
+
+<p>[10] A more pressing issue concerns the abundance of sketch resources employed throughout the book. Nearly every extended analysis includes recourse to Stravinsky&#8217;s working materials, and while it is admirable that the methodology is rooted in Stravinsky&#8217;s compositional habits, the analyses are often structured so as to seek proof in the sketches. My concern with this tendency is the (likely unintended) implication that the composer&#8217;s own strategy in composing a given musical passage should serve as the basis for an ordered succession analysis. For those who want to engage with Horlacher&#8217;s analytical model, is ordered succession possible without attempting to understand the composer&#8217;s own goals first? Are alternate hearings, other than those apparently intended by Stravinsky, viable within this framework? Horlacher&#8217;s tendency to invoke sketches for analytical confirmation undermines the wider potential that I believe her methodology embodies. As I see it, the great strength of ordered succession is its ability to account for musical process, and what the field of Stravinsky studies has needed&#8212;particularly in the analysis of the composer&#8217;s &#8220;Neoclassical&#8221; music&#8212;is a holistic and flexible model that can confront both the quasi-tonal continuities and the more fragmentary characteristics of this music. Ordered succession is wonderfully suited toward this task, and it need not be burdened by excessive reliance on Stravinsky&#8217;s sketches.</p>
+
+<p>[11] I should also mention some minor complaints, such as inconsistencies in some of the ordered successions that might imply a lack of analytical rigor.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Additionally, Horlacher could have explored her theoretical distinctions in greater depth by integrating the various parameters governing melodies and superimpositions into the analytical passages.</p>
+
+<p>[12] Finally, the book unfortunately suffers from numerous typographical and editorial errors, the most vexing of which concern the musical examples, which range widely in size, overall clarity, and legibility; these errors often detract from the rich analytical points that the author makes.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> For ease of reference, the musical examples for <i>Building Blocks</i> should be made available electronically on a website and hosted by Oxford University Press.</p>
+
+<p>[13] To conclude, I would like to consider briefly the wider implications of <i>Building Blocks</i> for the field of Stravinsky studies. First, Horlacher&#8217;s focus on the interactive nature of repetition and continuity encourages a more nuanced and integrated understanding of Stravinsky&#8217;s music than that found in previous scholarship. The author&#8217;s work with Stravinsky&#8217;s sketches also reshapes our understanding of the composer&#8217;s own view of musical structure, demonstrating why the term &#8220;block&#8221; has been used so widely in connection with his music and why it is so apt. As an analytical model highly informed by the composer&#8217;s musical language and compositional techniques, ordered succession can be a powerful heuristic device for appreciating and wrestling with Stravinsky&#8217;s creative methods. Yet the most promising feature of ordered succession is the way it prioritizes musical process over structure, encouraging us to listen for long-term musical goals even in Stravinsky&#8217;s most repetitious passages. A wonderful blend of analysis, reception, and musical meaning, <i>Building Blocks</i> is an important contribution to the Stravinsky literature, and anyone interested in this repertoire&#8212;whether they are performers, conductors, students, or scholars&#8212;should find Horlacher&#8217;s analytical model persuasive.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Andrew Westerhaus<br>
+	The University of Chicago<br>Department of Music<br>1010 East 59th Street<br>Chicago, Illinois 60637<br><a href="mailto:westeraj@uchicago.edu">westeraj@uchicago.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_baltensperger_and_meyer_1991" class="flyoverdiv">Baltensperger, Andr&eacute; and Felix Meyer, eds. 1991. <i>Igor Strawinsky: Symphonies d&#8217;Instruments &agrave; Vent. Faksimileausgabe des Particells und der Partitur der Erstfassung (1920)</i>. Winterthur: Paul Sacher Stiftung / Amadeus Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="baltensperger_and_meyer_1991"></a>Baltensperger, Andr&eacute; and Felix Meyer, eds. 1991. <i>Igor Strawinsky: Symphonies d&#8217;Instruments &agrave; Vent. Faksimileausgabe des Particells und der Partitur der Erstfassung (1920)</i>. Winterthur: Paul Sacher Stiftung / Amadeus Verlag.</p><div id="citediv_boucourechliev_1987" class="flyoverdiv">Boucourechliev, Andr&eacute;. 1987. <i>Stravinsky</i>. Translated by Martin Cooper. New York: Holmes & Meier.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="boucourechliev_1987"></a>Boucourechliev, Andr&eacute;. 1987. <i>Stravinsky</i>. Translated by Martin Cooper. New York: Holmes & Meier.</p><div id="citediv_boulez_1953" class="flyoverdiv">Boulez, Pierre. 1953. &#8220;Stravinsky demeure.&#8221; In <i>Musique russe</i>, edited by Pierre Souvtchinsky, I: 151&#8211;224. Paris: Presses Universitaires de France.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="boulez_1953"></a>Boulez, Pierre. 1953. &#8220;Stravinsky demeure.&#8221; In <i>Musique russe</i>, edited by Pierre Souvtchinsky, I: 151&#8211;224. Paris: Presses Universitaires de France.</p><div id="citediv_boulez_1991" class="flyoverdiv">Boulez, Pierre. 1991. &#8220;Stravinsky Remains.&#8221; In <i>Stocktakings from an Apprenticeship</i>, edited by Paule Th&eacute;venin and Stephen Walsh, 55&#8211;110. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="boulez_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. &#8220;Stravinsky Remains.&#8221; In <i>Stocktakings from an Apprenticeship</i>, edited by Paule Th&eacute;venin and Stephen Walsh, 55&#8211;110. New York: Oxford University Press.</p><div id="citediv_carr_2005" class="flyoverdiv">Carr, Maureen A., ed. 2005. <i>Stravinsky&#8217;s</i> Histoire du soldat<i>: a Facsimile of the Sketches</i>. Middleton: A-R Editions.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carr_2005"></a>Carr, Maureen A., ed. 2005. <i>Stravinsky&#8217;s</i> Histoire du soldat<i>: a Facsimile of the Sketches</i>. Middleton: A-R Editions.</p><div id="citediv_carr_2010" class="flyoverdiv">Carr, Maureen A. 2010. <i>Stravinsky&#8217;s</i> Pulcinella<i>: a Facsimile of the Sources and Sketches</i>. Middleton: A-R Editions.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carr_2010"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2010. <i>Stravinsky&#8217;s</i> Pulcinella<i>: a Facsimile of the Sources and Sketches</i>. Middleton: A-R Editions.</p><div id="citediv_cone_1962" class="flyoverdiv">Cone, Edward T. 1962. &#8220;Stravinsky: The Progress of a Method.&#8221; <i>Perspectives of New Music</i> 1, no. 1: 18&#8211;26. Reprinted in <i>Perspectives on Schoenberg and Stravinsk</i>y, ed. Benjamin Boretz and Edward T. Cone, 155&#8211;64. 1986. Princeton: Princeton University Press. And in Edward T. Cone, <i>Music: A View from Delft</i>, 293&#8211;301. 1989. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1962"></a>Cone, Edward T. 1962. &#8220;Stravinsky: The Progress of a Method.&#8221; <i>Perspectives of New Music</i> 1, no. 1: 18&#8211;26. Reprinted in <i>Perspectives on Schoenberg and Stravinsk</i>y, ed. Benjamin Boretz and Edward T. Cone, 155&#8211;64. 1986. Princeton: Princeton University Press. And in Edward T. Cone, <i>Music: A View from Delft</i>, 293&#8211;301. 1989. Chicago: University of Chicago Press.</p><div id="citediv_danuser_meyer_and_mosch_1994" class="flyoverdiv">Danuser, Hermann, Felix Meyer, and Ulrich Mosch, eds. 1994. <i>Igor Strawinsky Trois Pi&egrave;ces Pour Quatuor &agrave; Cordes: Skizzen, Fassungen, Dokumente, Essays</i>. Winterthur: Paul Sacher Stiftung / Amadeus Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="danuser_meyer_and_mosch_1994"></a>Danuser, Hermann, Felix Meyer, and Ulrich Mosch, eds. 1994. <i>Igor Strawinsky Trois Pi&egrave;ces Pour Quatuor &agrave; Cordes: Skizzen, Fassungen, Dokumente, Essays</i>. Winterthur: Paul Sacher Stiftung / Amadeus Verlag.</p><div id="citediv_horlacher_1990" class="flyoverdiv">Horlacher, Gretchen. 1990. &#8220;Superimposed Strata in the Music of Igor Stravinsky.&#8221; Ph.D. diss., Yale University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_1990"></a>Horlacher, Gretchen. 1990. &#8220;Superimposed Strata in the Music of Igor Stravinsky.&#8221; Ph.D. diss., Yale University.</p><div id="citediv_horlacher_1992" class="flyoverdiv">Horlacher, Gretchen. 1992. &#8220;The Rhythms of Reiteration: Formal Development in Stravinsky&#8217;s Ostinati.&#8221; <i>Music Theory Spectrum</i> 14, no. 2: 171&#8211;87.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. &#8220;The Rhythms of Reiteration: Formal Development in Stravinsky&#8217;s Ostinati.&#8221; <i>Music Theory Spectrum</i> 14, no. 2: 171&#8211;87.</p><div id="citediv_horlacher_1995" class="flyoverdiv">Horlacher, Gretchen. 1995. &#8220;Metric Irregularity in Les Noces: The Problem of Periodicity.&#8221; <i>Journal of Music Theory</i> 39.2: 285&#8211;309.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_1995"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1995. &#8220;Metric Irregularity in Les Noces: The Problem of Periodicity.&#8221; <i>Journal of Music Theory</i> 39.2: 285&#8211;309.</p><div id="citediv_horlacher_1999" class="flyoverdiv">Horlacher, Gretchen. 1999. &#8220;Sketches and Superimposition in Stravinsky&#8217;s Symphony of Psalms.&#8221; <i>Mitteilungen der Paul Sacher Stiftung </i> 12: 22&#8211;26.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. &#8220;Sketches and Superimposition in Stravinsky&#8217;s Symphony of Psalms.&#8221; <i>Mitteilungen der Paul Sacher Stiftung </i> 12: 22&#8211;26.</p><div id="citediv_horlacher_2001" class="flyoverdiv">Horlacher, Gretchen. 2001. &#8220;Running in Place: Sketches and Superimposition in Stravinsky&#8217;s Music.&#8221; <i>Music Theory Spectrum</i> 23, no. 2: 196&#8211;216.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. &#8220;Running in Place: Sketches and Superimposition in Stravinsky&#8217;s Music.&#8221; <i>Music Theory Spectrum</i> 23, no. 2: 196&#8211;216.</p><div id="citediv_horlacher_2011" class="flyoverdiv">Horlacher, Gretchen. 2011. <i>Building Blocks: Repetition and Continuity in the Music of Stravinsky</i>. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="horlacher_2011"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2011. <i>Building Blocks: Repetition and Continuity in the Music of Stravinsky</i>. New York: Oxford University Press.</p><div id="citediv_kholopova_1971" class="flyoverdiv">Kholopova, Valentina Nikolaevna. 1971. &#8220;Neregulyarno-aktsentnaya ritmika, yeyo znacheniye dlya v&iuml;razitel&#8217;nosti i formoobrazovaniya proizvedeniy I. Stravinskogo.&#8221; In <i>Vopros&iuml; ritma v tvorchestve kompozitorov pervoy polovin&iuml; XX veka</i>, 194&#8211;243. Moscow: Muz&iuml;ka.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kholopova_1971"></a>Kholopova, Valentina Nikolaevna. 1971. &#8220;Neregulyarno-aktsentnaya ritmika, yeyo znacheniye dlya v&iuml;razitel&#8217;nosti i formoobrazovaniya proizvedeniy I. Stravinskogo.&#8221; In <i>Vopros&iuml; ritma v tvorchestve kompozitorov pervoy polovin&iuml; XX veka</i>, 194&#8211;243. Moscow: Muz&iuml;ka.</p><div id="citediv_linyova_1904&#8211;09" class="flyoverdiv">Linyova Lineff, Yevgeniya Eduardovna. 1904&#8211;09. <i>Velikorusskiye pesni v narodnoy garmonizatsii</i>. 2 vols. St. Petersburg: Imperatorskaya Akademiya Nauk. English translation: <i>The Peasant Songs of Great Russia as They Are in the Folk&#8217;s Harmonization: Collected and Transcribed from Phonograms by Eugenie Lineff</i>. St. Petersburg: Imperial Academy of Science, 1905&#8211;12.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="linyova_1904&#8211;09"></a>Linyova Lineff, Yevgeniya Eduardovna. 1904&#8211;09. <i>Velikorusskiye pesni v narodnoy garmonizatsii</i>. 2 vols. St. Petersburg: Imperatorskaya Akademiya Nauk. English translation: <i>The Peasant Songs of Great Russia as They Are in the Folk&#8217;s Harmonization: Collected and Transcribed from Phonograms by Eugenie Lineff</i>. St. Petersburg: Imperial Academy of Science, 1905&#8211;12.</p><div id="citediv_meyer_1994" class="flyoverdiv">Meyer, Felix. 1994. &#8220;Form und Struktur in den <i>Trois Pi&egrave;ces</i>. Analytische Ann&auml;herungen.&#8221; In Danuser, Meyer, and Mosch 1994, 47&#8211;60.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="meyer_1994"></a>Meyer, Felix. 1994. &#8220;Form und Struktur in den <i>Trois Pi&egrave;ces</i>. Analytische Ann&auml;herungen.&#8221; In Danuser, Meyer, and Mosch 1994, 47&#8211;60.</p><div id="citediv_savenko_2001" class="flyoverdiv">Savenko, Svetlana Il&#8217;inichna. 2001. <i>Mir Stravinskogo</i>. Moscow: Kompozitor.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="savenko_2001"></a>Savenko, Svetlana Il&#8217;inichna. 2001. <i>Mir Stravinskogo</i>. Moscow: Kompozitor.</p><div id="citediv_stravinsky_and_craft_1969" class="flyoverdiv">Stravinsky, Igor and Robert Craft. 1969. <i>The Rite of Spring: Sketches, 1911&#8211;1913</i>. London: Boosey & Hawkes.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stravinsky_and_craft_1969"></a>Stravinsky, Igor and Robert Craft. 1969. <i>The Rite of Spring: Sketches, 1911&#8211;1913</i>. London: Boosey & Hawkes.</p><div id="citediv_stravinsky_et_al_1985" class="flyoverdiv">Stravinsky, Igor, Louyis Cyr, Jean-Jacques Eigeldinger, and Pierre Wissmer. 1985. <i>L&#8217;Oiseau de Feu: Facsimil&eacute; du Manuscrit Saint-P&eacute;tersbourg, 1909&#8211;1910</i>. Gen&egrave;ve: Minkoff.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stravinsky_et_al_1985"></a>Stravinsky, Igor, Louyis Cyr, Jean-Jacques Eigeldinger, and Pierre Wissmer. 1985. <i>L&#8217;Oiseau de Feu: Facsimil&eacute; du Manuscrit Saint-P&eacute;tersbourg, 1909&#8211;1910</i>. Gen&egrave;ve: Minkoff.</p><div id="citediv_taruskin_1996" class="flyoverdiv">Taruskin, Richard. 1996. <i>Stravinsky and the Russian Traditions: a Biography of the Works Through Mavra</i>. Berkeley and Los Angeles: University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="taruskin_1996"></a>Taruskin, Richard. 1996. <i>Stravinsky and the Russian Traditions: a Biography of the Works Through Mavra</i>. Berkeley and Los Angeles: University of California Press.</p><div id="citediv_van_den_toorn_1988" class="flyoverdiv">Van den Toorn, Pieter C. 1988. &#8220;Stravinsky Rebarred.&#8221; <i>Music Analysis</i> 7, no. 2: 165&#8211;95.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="van_den_toorn_1988"></a>Van den Toorn, Pieter C. 1988. &#8220;Stravinsky Rebarred.&#8221; <i>Music Analysis</i> 7, no. 2: 165&#8211;95.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The largest repository for Stravinsky&#8217;s source materials is the Paul Sacher Stiftung in Basel, Switzerland. Facsimile editions of the composer&#8217;s sketches and manuscripts are available for the following works: <i>The Rite of Spring</i> (<a href="#stravinsky_and_craft_1969" id="citation_stravinsky_and_craft_1969_67dc9aba350b8">Stravinsky and Craft 1969</a>), <i>The Firebird</i> (<a href="#stravinsky_et_al_1985" id="citation_stravinsky_et_al_1985_67dc9aba350bc">Stravinsky et. al. 1985</a>), <i>Symphonies of Wind Instruments</i> (<a href="#baltensperger_and_meyer_1991" id="citation_baltensperger_and_meyer_1991_67dc9aba350be">Baltensperger and Meyer 1991</a>), <i>Three Pieces for String Quartet</i> (<a href="#danuser_meyer_and_mosch_1994" id="citation_danuser_meyer_and_mosch_1994_67dc9aba350c0">Danuser, Meyer, and Mosch 1994</a>), <i>A Soldier&#8217;s Tale</i> (<a href="#carr_2005" id="citation_carr_2005_67dc9aba350c2">Carr 2005</a>), and <i>Pulcinella</i> (<a href="#carr_2010" id="citation_carr_2010_67dc9aba350c4">Carr 2010</a>).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Horlacher&#8217;s previous research on Stravinsky&#8217;s sketch materials has included <a href="#horlacher_1999" id="citation_horlacher_1999_67dc9aba350c6">Horlacher 1999</a> and <a href="#horlacher_2001" id="citation_horlacher_2001_67dc9aba350c7">Horlacher 2001</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The most famous example in this methodological line has to be <a href="#cone_1962" id="citation_cone_1962_67dc9aba350c9">Cone 1962</a>. Other examples include: <a href="#boulez_1953" id="citation_boulez_1953_67dc9aba350cb">Boulez 1953</a> (English trans., <a href="#boulez_1991" id="citation_boulez_1991_67dc9aba350cc">Boulez 1991</a>; see, among others, Exx. 1 and 3); <a href="#boucourechliev_1987" id="citation_boucourechliev_1987_67dc9aba350ce">Boucourechliev 1987</a> (see esp. 77); <a href="#van_den_toorn_1988" id="citation_van_den_toorn_1988_67dc9aba350d0">Van den Toorn 1988</a> (see esp. Exx. 2, 4, and 21); <a href="#meyer_1994" id="citation_meyer_1994_67dc9aba350d1">Meyer 1994</a> (see esp. 57); Horlacher&#8217;s own analysis of the &#8220;March&#8221; from <i>Renard</i>, in <a href="#horlacher_1995" id="citation_horlacher_1995_67dc9aba350d3">Horlacher 1995</a> (see esp. 279); and <a href="#taruskin_1996" id="citation_taruskin_1996_67dc9aba350d5">Taruskin 1996</a>, 1582. Additional examples of this sort can also be found in Russian musicology; see, for instance, <a href="#kholopova_1971" id="citation_kholopova_1971_67dc9aba350d8">Kholopova 1971</a>, 194&#8211;243; and <a href="#savenko_2001" id="citation_savenko_2001_67dc9aba350d9">Savenko 2001</a>, esp. 117, 172&#8211;75, 204, and 207&#8211;8. Savenko has suggested that her use of a similar analytical methodology, and likely that found in V.N. Kholopova&#8217;s work, originates in the teachings and unpublished theoretical work of Yuriy N. Kholopov on melodic fragmentation in Stravinsky&#8217;s music (personal correspondence with Prof. Savenko, May 2011).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> <a href="#linyova_1904&#8211;09" id="citation_linyova_1904&#8211;09_67dc9aba350db">Linyova 1904&#8211;09</a>; cited in <a href="#taruskin_1996" id="citation_taruskin_1996_67dc9aba350dd">Taruskin 1996</a>, 727. Both Russian and English versions of Linyova&#8217;s text are now available online through Google Books; see <a href="http://books.google.com/ebooks?id=W93WAAAAMAAJ">http://books.google.com/ebooks?id=W93WAAAAMAAJ</a>, <a href="http://books.google.com/ebooks?id=yUdLAAAAYAAJ">http://books.google.com/ebooks?id=yUdLAAAAYAAJ</a>, and <a href="http://books.google.com/ebooks?id=lVf14QPG0kwC">http://books.google.com/ebooks?id=lVf14QPG0kwC</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Readers familiar with Horlacher&#8217;s past work will no doubt notice that her conception of a &#8220;cycle&#8221; is developed from earlier presentations in <a href="#horlacher_1990" id="citation_horlacher_1990_67dc9aba350df">Horlacher 1990</a> and <a href="#horlacher_1992" id="citation_horlacher_1992_67dc9aba350e2">1992</a>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> For instance, Ex. 3.6 contains two identical lines in staves 5 and 10 on the page, but they receive entirely different foreground reductions. Are these differences based upon metrical factors that conform to Stravinsky&#8217;s barlines (which were themselves notationally fluid)? Or do these hearings imply separate threads of continuity?<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> To mention a few such errors, the plates in Fig. 1.1 occur in a different order in the sketchbook (see <a href="#danuser_meyer_and_mosch_1994" id="citation_danuser_meyer_and_mosch_1994_67dc9aba350e4">Danuser, Meyer, and Mosch 1994</a>, Igor Strawinsky: <i>Trois Pi&egrave;ces Pour Quatuor &Agrave; Cordes</i>, 107&#8211;10); Exx. 2.2 and 3.1 contain incorrect Cyrillic characters; Exx. 3.15, 3.17, and 4.2 are illegible; and Fig. 2.1 is generally unclear (do the squiggly lines correlate with pitch height? dynamic level? tempo?) and does not correspond completely with the text (squares seem to be missing from the category &#8220;ordered succession between noncontiguous blocks&#8221;).<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The largest repository for Stravinsky&#8217;s source materials is the Paul Sacher Stiftung in Basel, Switzerland. Facsimile editions of the composer&#8217;s sketches and manuscripts are available for the following works: <i>The Rite of Spring</i> (<a href="#stravinsky_and_craft_1969" id="citation_stravinsky_and_craft_1969_67dc9aba350b8">Stravinsky and Craft 1969</a>), <i>The Firebird</i> (<a href="#stravinsky_et_al_1985" id="citation_stravinsky_et_al_1985_67dc9aba350bc">Stravinsky et. al. 1985</a>), <i>Symphonies of Wind Instruments</i> (<a href="#baltensperger_and_meyer_1991" id="citation_baltensperger_and_meyer_1991_67dc9aba350be">Baltensperger and Meyer 1991</a>), <i>Three Pieces for String Quartet</i> (<a href="#danuser_meyer_and_mosch_1994" id="citation_danuser_meyer_and_mosch_1994_67dc9aba350c0">Danuser, Meyer, and Mosch 1994</a>), <i>A Soldier&#8217;s Tale</i> (<a href="#carr_2005" id="citation_carr_2005_67dc9aba350c2">Carr 2005</a>), and <i>Pulcinella</i> (<a href="#carr_2010" id="citation_carr_2010_67dc9aba350c4">Carr 2010</a>).</div><div id="fndiv2" class="flyoverdiv">Horlacher&#8217;s previous research on Stravinsky&#8217;s sketch materials has included <a href="#horlacher_1999" id="citation_horlacher_1999_67dc9aba350c6">Horlacher 1999</a> and <a href="#horlacher_2001" id="citation_horlacher_2001_67dc9aba350c7">Horlacher 2001</a>.</div><div id="fndiv3" class="flyoverdiv">The most famous example in this methodological line has to be <a href="#cone_1962" id="citation_cone_1962_67dc9aba350c9">Cone 1962</a>. Other examples include: <a href="#boulez_1953" id="citation_boulez_1953_67dc9aba350cb">Boulez 1953</a> (English trans., <a href="#boulez_1991" id="citation_boulez_1991_67dc9aba350cc">Boulez 1991</a>; see, among others, Exx. 1 and 3); <a href="#boucourechliev_1987" id="citation_boucourechliev_1987_67dc9aba350ce">Boucourechliev 1987</a> (see esp. 77); <a href="#van_den_toorn_1988" id="citation_van_den_toorn_1988_67dc9aba350d0">Van den Toorn 1988</a> (see esp. Exx. 2, 4, and 21); <a href="#meyer_1994" id="citation_meyer_1994_67dc9aba350d1">Meyer 1994</a> (see esp. 57); Horlacher&#8217;s own analysis of the &#8220;March&#8221; from <i>Renard</i>, in <a href="#horlacher_1995" id="citation_horlacher_1995_67dc9aba350d3">Horlacher 1995</a> (see esp. 279); and <a href="#taruskin_1996" id="citation_taruskin_1996_67dc9aba350d5">Taruskin 1996</a>, 1582. Additional examples of this sort can also be found in Russian musicology; see, for instance, <a href="#kholopova_1971" id="citation_kholopova_1971_67dc9aba350d8">Kholopova 1971</a>, 194&#8211;243; and <a href="#savenko_2001" id="citation_savenko_2001_67dc9aba350d9">Savenko 2001</a>, esp. 117, 172&#8211;75, 204, and 207&#8211;8. Savenko has suggested that her use of a similar analytical methodology, and likely that found in V.N. Kholopova&#8217;s work, originates in the teachings and unpublished theoretical work of Yuriy N. Kholopov on melodic fragmentation in Stravinsky&#8217;s music (personal correspondence with Prof. Savenko, May 2011).</div><div id="fndiv4" class="flyoverdiv"><a href="#linyova_1904&#8211;09" id="citation_linyova_1904&#8211;09_67dc9aba350db">Linyova 1904&#8211;09</a>; cited in <a href="#taruskin_1996" id="citation_taruskin_1996_67dc9aba350dd">Taruskin 1996</a>, 727. Both Russian and English versions of Linyova&#8217;s text are now available online through Google Books; see <a href="http://books.google.com/ebooks?id=W93WAAAAMAAJ">http://books.google.com/ebooks?id=W93WAAAAMAAJ</a>, <a href="http://books.google.com/ebooks?id=yUdLAAAAYAAJ">http://books.google.com/ebooks?id=yUdLAAAAYAAJ</a>, and <a href="http://books.google.com/ebooks?id=lVf14QPG0kwC">http://books.google.com/ebooks?id=lVf14QPG0kwC</a>.</div><div id="fndiv5" class="flyoverdiv">Readers familiar with Horlacher&#8217;s past work will no doubt notice that her conception of a &#8220;cycle&#8221; is developed from earlier presentations in <a href="#horlacher_1990" id="citation_horlacher_1990_67dc9aba350df">Horlacher 1990</a> and <a href="#horlacher_1992" id="citation_horlacher_1992_67dc9aba350e2">1992</a>.</div><div id="fndiv6" class="flyoverdiv">For instance, Ex. 3.6 contains two identical lines in staves 5 and 10 on the page, but they receive entirely different foreground reductions. Are these differences based upon metrical factors that conform to Stravinsky&#8217;s barlines (which were themselves notationally fluid)? Or do these hearings imply separate threads of continuity?</div><div id="fndiv7" class="flyoverdiv">To mention a few such errors, the plates in Fig. 1.1 occur in a different order in the sketchbook (see <a href="#danuser_meyer_and_mosch_1994" id="citation_danuser_meyer_and_mosch_1994_67dc9aba350e4">Danuser, Meyer, and Mosch 1994</a>, Igor Strawinsky: <i>Trois Pi&egrave;ces Pour Quatuor &Agrave; Cordes</i>, 107&#8211;10); Exx. 2.2 and 3.1 contain incorrect Cyrillic characters; Exx. 3.15, 3.17, and 4.2 are illegible; and Fig. 2.1 is generally unclear (do the squiggly lines correlate with pitch height? dynamic level? tempo?) and does not correspond completely with the text (squares seem to be missing from the category &#8220;ordered succession between noncontiguous blocks&#8221;).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2011 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="7508639"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="bc7c47e1"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/7508639/0/bc7c47e1/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

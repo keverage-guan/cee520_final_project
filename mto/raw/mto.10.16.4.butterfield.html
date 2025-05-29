@@ -1,0 +1,511 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 16.4: Butterfield, Variant Timekeeping Patterns</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Variant Timekeeping Patterns and Their Effects in Jazz Drumming">
+
+    <meta name="citation_author" content="Butterfield, Matthew W.">
+      
+
+<meta name="citation_publication_date" content="2010/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="16">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Variant Timekeeping Patterns and Their Effects in Jazz Drumming
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Matthew W. Butterfield</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: jazz drumming, comping, metric dissonance, polyrhythm, cross-rhythm, ride rhythm</font></p><p><font size='4'>ABSTRACT: In accompanying improvising soloists, jazz drummers must both maintain a steady pulse in conjunction with the bassist and generate intensity and excitement by means of irregular, improvised accompaniment patterns known as &#8220;comping.&#8221;  Timekeeping and comping practices are generally conceived in opposition, with the former understood as &#8220;solid&#8221; and the latter as &#8220;liquid.&#8221;  This essay shows how one modern jazz drummer employs variants of common timekeeping patterns in a more &#8220;liquid&#8221; way to generate motional energy through the strategic production of metric dissonance at key moments within a performance.  In this way, timekeeping patterns may be understood not as extraneous to rhythmic intensification, but as integral to it.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.10.16.4/mto.10.16.4.butterfield.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.10.16.4/butterfield_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2010</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 16, Number 4, December 2010 <br> Copyright &#0169; 2010 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] In its role as accompaniment, the jazz rhythm section is charged with sustaining an engaging rhythmic groove and with generating intensity and excitement in support of an improvising soloist.  Drummers play an 
+especially vital role in this process.  Their principal ensemble function throughout jazz history has generally been timekeeping but, since the advent of modern jazz drumming during the bebop period, the more irregular, improvised accompaniment patterns known as &#8220;comping&#8221; have grown increasingly important.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+
+<p>[2] Much of the literature on jazz drumming suggests an opposition between the timekeeping and comping functions&#8212;an opposition drummer Michael Carvin has eloquently characterized in terms of &#8220;solid&#8221; and &#8220;liquid&#8221; components, respectively (quoted in <a href="#monson_1996" id="citation_monson_1996_67dc9acfd7b9a">Monson 1996</a>, 55).  On the &#8220;solid&#8221; side, drummers generally employ the ride cymbal and/or hi-hat for timekeeping.  On these instruments, they perform repeated patterns intended quite simply to articulate a steady pulse and to provide a temporal referent for the rest of the ensemble, much like the bell pattern of West African drum ensembles.  By contrast, in the &#8220;liquid&#8221; domain, drummers &#8220;comp&#8221; on the other instruments of the drum kit, especially the snare drum, in order to generate intensity in support of (and often in dialogue with) an improvising soloist.  Timekeeping and comping take place simultaneously, of course.  Drummers maintain near-continuous timekeeping patterns on the ride cymbal with their right hands (assuming right-handedness) while their left hands comp freely on the snare, tom-toms, and crash cymbals, adding various figures and accents as necessary in accordance with their expressive purposes at any given moment.  Good comping procedures facilitate control over the flow of motional energy during a performance and, if successful, help the soloist build and develop his or her solo and drive it towards a dramatic climax.  Max Roach&#8217;s accompaniment of Clifford Brown&#8217;s trumpet solo 
+in &#8220;Pent-Up House&#8221; is exemplary.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  Roach begins sparsely, providing nothing more than simple timekeeping on the hi-hat and ride cymbals through the first part of the solo.  As it progresses, his comping rhythms become increasingly dense, loud, and complex until Brown&#8217;s solo concludes amid a cascade of cymbal crashes, syncopated snare chops, drum rolls, and &#8220;bombs&#8221; dropped 
+by the bass drum.</p>
+
+<p>[3] In this framework, rhythmic interest in the drum part clearly lies in the highly variable &#8220;liquid&#8221; domain of comping.  By contrast, &#8220;solid&#8221; timekeeping on the ride cymbal and hi-hat must be understood as mundane, inert, and largely ineffectual with respect to the intensification of motional energy behind an improvising soloist, since its principal purpose is merely to serve as a sort of clock for the ensemble.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> I would like to suggest, however, that varied timekeeping patterns played on the ride cymbal in particular can be instrumental in generating motional energy through the strategic production of metric dissonance at key moments 
+during a performance.  To this end, I will examine some of the ways in which one particular drummer, Steve Davis, employs various timekeeping patterns on the ride cymbal to generate energy and intensity through nine choruses of accompaniment 
+in a performance of Miles Davis&#8217;s &#8220;Tune Up&#8221; from a Jamey Aebersold &#8220;Play-A-Long&#8221; recording.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[4] My choice of this recording has less to do with the decisiveness or genius of Davis&#8217;s performance&#8212;though he is unquestionably a brilliant drummer&#8212;than with ease of transcription.  Quite frankly, it is relatively simple to filter out the drum part in an Aebersold recording, whereas the added interference of other instruments on recordings of full ensembles makes it difficult to isolate and notate the many nuances of drum-set performance.  I should also add that my analysis of Davis&#8217;s accompaniment largely ignores the interactive play that is very much at the heart of rhythm section accompaniment.  I do not mean to imply that a drummer&#8217;s decisions regarding accompaniment are unrelated to events transpiring in the soloist&#8217;s line or in the piano and bass parts.  I mean only to emphasize some of the effects that specific timekeeping procedures have in and of themselves, independent of the interactive processes of jazz rhythm section performance.  My aim is selective and not comprehensive&#8212;I do not intend to offer here a complete explanation of Davis&#8217;s performance decisions, nor do I intend to theorize about modern jazz drumming in general.</p> 
+<div style="width:420px;float:right;border:none;margin-left:30px">
+
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. The ride rhythm</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="butterfield_ex1_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[5] The &#8220;ride rhythm&#8221;&#8212;the classic &#8220;ding-CHICK-a-ding&#8221; pattern played on the ride cymbal with the hi-hat snapped shut on the backbeats&#8212;has served as the standard timekeeping pattern in most forms of &#8220;straight-ahead&#8221; jazz since the 1940s.  As I have shown elsewhere (<a href="#butterfield_2006" id="citation_butterfield_2006_67dc9acfd7cc3">Butterfield 2006</a>), this pattern, by its very design, generates considerable forward momentum through the operation of anacrusis at multiple levels of rhythmic structure.  
+<b>Example 1</b> illustrates and summarizes this claim, drawing terminology and analytical symbology from Christopher Hasty&#8217;s <i>Meter as Rhythm</i> (<a href="#hasty_1997" id="citation_hasty_1997_67dc9acfd7cc6">1997</a>).  A simple string of quarter notes on the ride cymbal, where enough context is assumed to establish 4/4 meter and to define the downbeats as such, produces no special rhythmic effects, as shown in 
+Example 1a.  Each downbeat operates as a beginning [|] and the upbeats, all other things being equal, serve as continuations [\]&#8212;each one completes the quarter-note duration promised on the preceding downbeat and renders more definite the potential for the becoming of a half-note duration.</p>
+
+<p>[6] The addition of the hi-hat snapped closed with the foot pedal on the backbeats, as shown in 
+Example 1b, transforms the rhythm.  The accented quality of the hi-hat, as well 
+as the brevity of its actual sounding duration relative to the longer ride cymbal strike that precedes it, generates anacrusis [/] on the backbeats and thereby directs motional energy into the ensuing downbeat.  Thus the rhythm shown in 
+Example 1b has a greater quality of forward propulsion than that shown in 
+Example 1a.</p>
+
+<p>[7] The standard ride rhythm pattern, shown in Example 1c, adds a short tap on the ride cymbal on the &#8220;ands&#8221; of beats 2 and 4.  The virtue of this pattern is that it produces anacrusis at two critical levels of rhythmic structure:  1) on the backbeats as a result of the hi-hat strikes, as discussed in relation to 
+Example 1b, and 2) on the short taps due to their brevity in relation to the long taps that precede them and their proximity to the long downbeats that follow.  As a result, anacrustic propulsion from the backbeats is released into the downbeats, generating wave upon wave of motional energy behind the more varied rhythmic events that take place in other parts of the ensemble.</p>
+
+<p>[8] As Paul Berliner has observed, most drummers employ variants of the basic ride rhythm pattern either to sustain interest or to individualize their timekeeping styles (<a href="#berliner_1994" id="citation_berliner_1994_67dc9acfd7cc8">1994</a>, 617-622).  Generally, such variations are quite minor and may not be registered by the casual listener.  Example 1d shows one of the more extreme variants, which I shall call a &#8220;reversal.&#8221;  Here, the eighth-note pairs occur on beats 1 and 3 rather than 2 and 4.  This leads to durational cumulation (i.e., movement from a short duration to a longer one) and hence closure on the backbeats, such that 
+each functions more to continue the duration begun on the previous quarter-note beat rather than as 
+an anacrusis anticipating the ensuing one.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Consequently, reversal figures generate less forward propulsion than the standard ride rhythm pattern, and jazz drummers seldom use them for more than a single bar at a time.  Rather, reversals tend to appear in isolation 
+where they function as unexpected disruptions in the forward flow of energy 
+generated by the standard ride rhythm pattern, or in the context of extended 
+patterns of two to four bars, to be discussed further below.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Ride rhythm variant families</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="butterfield_ex2_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[9] <b>Example 2</b> presents a typology of ride rhythm variants commonly used by jazz drummers.  The type A family consists of the standard ride rhythm pattern (A<sup>1</sup>) and its most basic variants (A<sup>2</sup> and A<sup>3</sup>).  The type B family consists of reversal patterns.  Type C includes various hybrid patterns, of which types C<sup>3</sup> and C<sup>4</sup> appear to be most common.  Type C<sup>3</sup> simply offers a string of eighth notes at the end of the bar, and this generates added motion into the downbeat of the ensuing bar.  Type C<sup>4</sup> offers a reversal (type B<sup>2</sup>) coupled with its &#8220;correction&#8221; at the end of the bar.  Finally, the neutral type D consists of a series of straight quarter notes with hi-hat played on the backbeats&#8212;the same pattern that was discussed in 
+Example 1b.  It is less a variant of the ride rhythm itself than a stripped-down timekeeping pattern with backbeat accents.</p>
+
+<p>[10] Each of the variant types shown in Example 2 exhibits a distinct movement profile, which can be extrapolated from the discussion of 
+Example 1.  That is, each pattern directs motional energy with varying degrees of force either towards the completion of a present duration (continuation) or towards the onset of a new beginning (anacrusis).</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Ride rhythm variant usage by Steve Davis in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=2&nonav=true"><img border="1" alt="Table 1 thumbnail" src="butterfield_table1_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[11] <b>Table 1</b> shows the frequency of each variant type and each variant family employed by drummer Steve Davis in his nine choruses of accompaniment 
+in &#8220;Tune Up.&#8221;  Each chorus consists of 32 bars in 4/4 meter, and thus there are 288 measures in total.  Davis plays time in all but the final two bars, however, so there are 286 measures at issue in Table 1.  As expected, type A<sup>1</sup>, the standard ride rhythm pattern, is the most common form, though Davis employs the neutral type D almost as often.  Among the other variants, types A<sup>2</sup> and A<sup>3</sup> occur most often, followed by the reversal type B<sup>3</sup>, which Davis uses almost as frequently as all of the type C hybrids combined.  Nineteen measures (about 6.6% of the total) are unclassifiable. These are instances where Davis abandons ride-cymbal timekeeping patterns altogether for more elaborate fills or figures, usually in anticipation of a structural downbeat&#8212;what Berliner has called &#8220;structural markers.&#8221;</p>
+ 
+<p>[12] When grouped by family, it can be seen from Table 1 that the type A family is by far the most common, followed by the neutral type D, and then the family of type B reversals, which surprisingly outnumber the type C hybrids. Perhaps equally as surprising, however, is the fact that Davis employs the type A family only about half the time, and not more.  This variability suggests that for him, the ride rhythm is in fact not rigidly &#8220;solid,&#8221; and that instead there is significant overlap between the drummer&#8217;s timekeeping and comping functions.  In other words, timekeeping processes are more fluid in Davis&#8217;s accompaniment style, and since each variant type shown in 
+Example 2 exhibits its own motional properties, variability in the ride cymbal part contributes to the management of motional energy over the course of a performance.</p>
+<p>[13] This fluidity becomes more obvious when Davis&#8217;s ride rhythm variants are considered over time, as shown in 
+<b>Figure 1</b>.  Davis begins his performance using the type A family between 65&#8211;75% of the time through the first three choruses.  Type A use declines rather precipitously after that, however, though it still remains the dominant type, 
+as it is generally employed over 40% of the time through the remaining choruses.  Meanwhile, use of the more neutral type D increases through the middle choruses.  This corresponds to an increase in the use of activity on the snare drum, tom-toms, and crash cymbals&#8212;in other words, an increase in the density of &#8220;liquid&#8221; comping events in choruses 
+four through six, as shown in
+<b>Figure 2</b>.  This suggests that use of a simpler pattern on the ride cymbal facilitates more elaborate comping patterns in the rest of the drum kit.  What energy is lost from the absence of eighth notes on the &#8220;ands&#8221; of beats 2 and 4 is made up for in terms of the flexibility gained 
+from more &#8220;fluidity&#8221; and the increased density of comping events.</p>
+	<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Ride rhythm variant usage per chorus in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="butterfield_examples.php?id=3&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="butterfield_fig1_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Total number of non-ride cymbal/hi-hat comping events per chorus in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="butterfield_examples.php?id=4&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="butterfield_fig2_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>			
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			<br>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Common ride cymbal pattern for a jazz waltz</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=5&nonav=true"><img border="1" alt="Example 3 thumbnail" src="butterfield_ex3_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Three prototypical uses of the jazz waltz figure in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=6&nonav=true"><img border="1" alt="Example 4 thumbnail" src="butterfield_ex4_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[14] Of greatest interest in Figure 1 is that a decline in type D usage in choruses 
+seven through nine is met with an increase in type B variants.  This is perhaps surprising, since type B reversals 
+typically exhibit less forward motional energy than other patterns, yet Davis employs them more towards the end of the performance when greater intensity is generally required.  
+However, this increase in type B use is merely apparent; it arises from an 
+increase in larger two to four bar patterns involving cross-rhythmic figures in these choruses.  Specifically, in these passages Davis plays the three-beat figure shown in 
+<b>Example 3</b> on the ride cymbal&#8212;one of the common ride cymbal patterns for a jazz waltz&#8212;against the four-beat meter maintained on the hi-hat, in the bass line, and in the rest of the ensemble.  This generates what Harald Krebs (<a href="#krebs_1999" id="citation_krebs_1999_67dc9acfd7cef">1999</a>) terms a &#8220;grouping dissonance,&#8221; one result of which is an increased instance of type B reversals.  
+<b>Example 4</b> illustrates three basic prototypes for Davis&#8217;s use of the jazz waltz figure in this performance, and I shall draw on Krebs&#8217;s terminology and symbology to explain the kinds of metric dissonance each involves.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+
+<p>[15] Example 4a shows a sequence of different ride rhythm types that result from application of the jazz waltz figure in the context of 4/4 meter.  The jazz waltz figure, each iteration of which is shown bracketed above the staff, generates a 3-layer (i.e., a repeated pattern three quarter notes in length).  Meanwhile, continued use of 
+the hi-hat on the backbeats generates a 2-layer nested within a larger 4-layer defined by the harmonic rhythm maintained by bass and piano (not shown here).  This results in a grouping dissonance of G4/3 (1=quarter).  The sequence of ride rhythm types, shown below the staff, results from this process, and this helps to explain the increased instance of type B reversals&#8212;especially type B<sup>3</sup>&#8212;in the last few choruses of this performance.</p>
+
+<p>[16] Example 4b shows the same pattern supplemented by a snare drum hit on the offbeat eighth note in the middle of the jazz waltz figure.  Again, the waltz figure generates a grouping dissonance of G4/3 (1=quarter).  Here, however, the 
+salient timbre of the snare drum generates a distinct rhythmic layer that stands out against the jazz waltz figure played on the ride cymbal.  It generates an additional 3-layer displaced against the waltz figure by three eighth notes, hence a displacement dissonance D6+3 (1=eighth).  Moreover, against the 4/4 meter maintained by bass and piano, the effect in the snare drum is a syncopated cross-rhythm.</p>
+
+<p>[17] In Example 4c another snare drum hit is added, this time at the beginning of each iteration of the jazz waltz figure on the ride cymbal.  Here, the displacement dissonance seen in 
+Example 4b is replaced by a grouping dissonance between the snare drum and the jazz waltz figure&#8212;a G3/2 (1=eighth).  This is nested within the larger dissonance G4/3 (1=quarter) produced between the jazz waltz figure and the 4/4 meter maintained by bass and piano.  At the same time, to the extent that the snare drum stands out as its own layer, it also produces a dissonance G3/2 (1=eighth) against the 4/4 meter maintained by bass and piano.</p>
+
+<p>[18] Metric dissonances such as those illustrated in Example 4 are generally anacrustic in nature since, as with most dissonance, they draw listeners&#8217; expectations toward the moment of resolution.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> The longer such dissonances are sustained before resolution, the more intense the anacrusis becomes.  This results in greater dramatic tension and more forward drive.  Consequently, Davis&#8217;s use of metric dissonance over increasingly long spans in the last few choruses of &#8220;Tune Up&#8221; works to generate considerable tension against the normative 4/4 meter sustained in the rest of the rhythm section, and with it, an intensification of the forward-propulsive quality of the performance.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Some instances of the jazz waltz cross-rhythm in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=7&nonav=true"><img border="1" alt="Example 5 thumbnail" src="butterfield_ex5_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[19] On occasion, Davis employs one or another of these prototypes in their &#8220;pure&#8221; form corresponding to their appearance in 
+Example 4 (see <b>Example 5</b>).  Example 5a, for instance, shows a fairly typical usage of the prototype illustrated in 
+Example 4b.   The pattern here is quite brief&#8212;there are only three iterations, and on the third, an accented snare hit either replaces or masks the ride cymbal strike that should sound with it, but the effect is the same.  On other occasions, however, Davis uses the snare drum more strategically to generate motional energy locally in relation to other factors, as in 
+Example 5b.  Here, Davis reserves snare drum hits for the final iteration of the pattern.  This enhances the dissonant quality of the F<sup>7</sup> harmony, generating additional momentum that is then released with the harmonic resolution to B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"> and the simultaneous resolution of the cross-rhythm in 
+measure 43.  A similar case is shown in 
+Example 5c, where Davis expands the cross-rhythm with a fourth iteration of the jazz waltz figure.  Here, there is more snare activity in the middle of the sequence&#8212;in other words, there is a shift from the prototype shown in 
+Example 4b to the one shown in 4c, and then back again.  Snare events transpire more rapidly in 
+measure 94 (every three eighth notes rather than six), creating a sense of acceleration and hence an intensification of motional energy under the dominant A<sup>7</sup>.  The cross-rhythm in the ride cymbal continues into the next bar, but the snare hit there arrives &#8220;late&#8221; in terms of the 3-layer (1=eighth) generated in 
+measure 95, reflecting a deceleration&#8212;a modest relaxation&#8212;under the tonic D.  The snare hit in 
+measure 96 then lands &#8220;early&#8221;&#8212;just five eighth notes later instead of six&#8212;but squarely on beat 2, normalizing or resolving the lingering effects of metric dissonance produced by the jazz waltz pattern in the preceding bars.  The type B<sup>3</sup> reversal pattern in the ride cymbal in 
+measure 96 leads to closure on beat 4 at the end of the bar, wrapping up not just the 
+four-bar phrase, but the entire 32-bar chorus.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. More extended uses of the jazz waltz cross-rhythm in &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=8&nonav=true"><img border="1" alt="Example 6 thumbnail" src="butterfield_ex6_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[20] <b>Example 6</b> shows two passages involving a more extended use of the jazz waltz cross-rhythm.  In 
+Example 6a, which shows the final twelve bars of the eighth chorus, two brief cross-rhythmic excursions in 
+measures 245&#8211;247 and measures 248&#8211;249 precede the expanded cross-rhythmic passage of 
+measures 249&#8211;255.  The extended length of this metric dissonance generates a cumulative tension that erupts into a dramatic drum roll on the snare to mark the end of the chorus and prepare the structural downbeat at the top of the next chorus.  Example 6b shows a passage from the seventh chorus with a similarly extended metric dissonance, but here Davis adds a syncopation in the sixth iteration (measure 209) by withholding the final cymbal stroke of the waltz figure.  He repeats the syncopation on the eighth iteration, this time more dramatically by shifting to the crash cymbal, which rings through 
+measure 211.  The seventh and ninth iterations, which follow the syncopated ones, are relatively unembellished.  They serve to restabilize the jazz waltz figure following the destabilizing syncopations, as 
+if Davis were pausing to gather his strength after each of these iterations in anticipation of the final surge of energy culminating in the powerful crash cymbal strike to close the fill at the conclusion of the passage in 
+measure 213.</p>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. The jazz waltz figure at the end of &#8220;Tune Up&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="butterfield_examples.php?id=9&nonav=true"><img border="1" alt="Example 7 thumbnail" src="butterfield_ex7_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[21] <b>Example 7</b> shows the final 16 bars of the performance.  The complexity of the drum part is remarkable here, as is the complete absence of the standard ride rhythm pattern (type A<sup>1</sup>).  Instead, amid a variety of syncopated blasts on the crash cymbals, Davis incorporates three distinct sequences of the jazz waltz cross-rhythm pattern.  The first one (measures 274&#8211;276) is fairly straightforward, though brief.  Its main feature is the G3/2 (1=eighth) dissonance generated in the snare drum against the jazz waltz figure&#8212;an instance of the prototype illustrated in 
+Example 4c.  The second one (measures 277&#8211;280) is initiated with a syncopation on the crash cymbal, and then continues for three additional iterations involving the same G3/2 (1=eighth) dissonance.  Here, however, Davis switches from the snare drum to the tom-toms for some of those hits, and this generates additional movement 
+that is lacking when the pattern is played on the snare drum alone.  He does the same thing in the third sequence (measures 281&#8211;284), but provides an additional syncopation.  Thus each sequence of the jazz waltz cross-rhythm in this passage builds on the last, progressively increasing metric tension that is released only with the relatively square two-bar fill leading into the final cadence in 
+measure 287.
+
+<p style="text-align: center"><b>*	*	*	*	*</b></p>
+
+<p>[22] These examples drawn from Steve Davis&#8217;s performance of &#8220;Tune Up&#8221; suggest that timekeeping in jazz drumming can in fact be a rather fluid process.  As with effective comping procedures, the strategic variation of timekeeping patterns can serve to shape the flow of motional energy over the course of a performance, especially when they incorporate cross-rhythms against the prevailing meter.  In the last few choruses of &#8220;Tune Up,&#8221; Davis uses the three-beat jazz waltz figure on the ride cymbal, coupled with additional metric dissonances supplied on the snare drum, to generate tension and energy.  In this way, the timekeeping pattern is not extraneous to rhythmic intensification; 
+rather it is integral to it.  Thus, aside from providing a &#8220;solid&#8221; foundation for the time in a jazz performance, variant timekeeping patterns can serve as a more &#8220;liquid&#8221; resource 
+that drummers may exploit to supplement conventional comping procedures in order 
+to build intensity behind an improvising soloist.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Matthew W. Butterfield<br>
+	Department of Music<br>Franklin & Marshall College<br>P.O. Box 3003<br>Lancaster, PA 17604-3003<br><a href="mailto:matthew.butterfield@fandm.edu">matthew.butterfield@fandm.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_berliner_1994" class="flyoverdiv">Berliner, Paul. 1994. <i>Thinking in Jazz: The Infinite Art of Improvisation</i>. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="berliner_1994"></a>Berliner, Paul. 1994. <i>Thinking in Jazz: The Infinite Art of Improvisation</i>. Chicago: University of Chicago Press.</p><div id="citediv_brown_1990" class="flyoverdiv">Brown, Anthony. 1990. &#8220;Modern Jazz Drumset Artistry.&#8221; <i>The Black Perspective in Music</i> 18: 39&#8211;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brown_1990"></a>Brown, Anthony. 1990. &#8220;Modern Jazz Drumset Artistry.&#8221; <i>The Black Perspective in Music</i> 18: 39&#8211;58.</p><div id="citediv_butterfield_2006" class="flyoverdiv">Butterfield, Matthew W. 2006. &#8220;The Power of Anacrusis: Engendered Feeling in Groove-Based Musics.&#8221; <a href="http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.butterfield.html" target="new"><i>Music Theory Online</i> 12.4.</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="butterfield_2006"></a>Butterfield, Matthew W. 2006. &#8220;The Power of Anacrusis: Engendered Feeling in Groove-Based Musics.&#8221; <a href="http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.butterfield.html" target="new"><i>Music Theory Online</i> 12.4.</a></p><div id="citediv_butterfield_2010" class="flyoverdiv">Butterfield, Matthew W. 2010. &#8220;Participatory Discrepancies and the Perception of Beats in Jazz.&#8221; <i>Music Perception</i> 27/3: 157&#8211;175.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="butterfield_2010"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2010. &#8220;Participatory Discrepancies and the Perception of Beats in Jazz.&#8221; <i>Music Perception</i> 27/3: 157&#8211;175.</p><div id="citediv_hasty_1997" class="flyoverdiv">Hasty, Christopher F. 1997. <i>Meter as Rhythm</i>. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hasty_1997"></a>Hasty, Christopher F. 1997. <i>Meter as Rhythm</i>. New York: Oxford University Press.</p><div id="citediv_hodson_2007" class="flyoverdiv">Hodson, Robert. 2007. <i>Interaction, Improvisation, and Interplay in Jazz</i>. New York: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hodson_2007"></a>Hodson, Robert. 2007. <i>Interaction, Improvisation, and Interplay in Jazz</i>. New York: Routledge.</p><div id="citediv_keil_1966" class="flyoverdiv">Keil, Charles. 1966. &#8220;Motion and Feeling Through Music.&#8221; <i>Journal of Aesthetics and Art Criticism</i> 24: 337&#8211;349.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="keil_1966"></a>Keil, Charles. 1966. &#8220;Motion and Feeling Through Music.&#8221; <i>Journal of Aesthetics and Art Criticism</i> 24: 337&#8211;349.</p><div id="citediv_keil_1987" class="flyoverdiv">Keil, Charles. 1987. &#8220;Participatory Discrepancies and the Power of Music.&#8221; <i>Cultural Anthropology</i> 2/3: 275&#8211;283.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="keil_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. &#8220;Participatory Discrepancies and the Power of Music.&#8221; <i>Cultural Anthropology</i> 2/3: 275&#8211;283.</p><div id="citediv_korball_2000" class="flyoverdiv">Korall, Burt. 2000. &#8220;Jazz Drumming.&#8221; In <i>The Oxford Companion to Jazz</i>, edited by B. Kirchner. Oxford and New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="korball_2000"></a>Korall, Burt. 2000. &#8220;Jazz Drumming.&#8221; In <i>The Oxford Companion to Jazz</i>, edited by B. Kirchner. Oxford and New York: Oxford University Press.</p><div id="citediv_krebs_1999" class="flyoverdiv">Krebs, Harald. 1999. <i>Fantasy Pieces: Metrical Dissonance in the Music of Robert Schumann</i>. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krebs_1999"></a>Krebs, Harald. 1999. <i>Fantasy Pieces: Metrical Dissonance in the Music of Robert Schumann</i>. Oxford: Oxford University Press.</p><div id="citediv_monson_1996" class="flyoverdiv">Monson, Ingrid. 1996. <i>Saying Something: Jazz Improvisation and Interaction</i>. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="monson_1996"></a>Monson, Ingrid. 1996. <i>Saying Something: Jazz Improvisation and Interaction</i>. Chicago: University of Chicago Press.</p><div id="citediv_narmour_1990" class="flyoverdiv">Narmour, Eugene. 1990. <i>The Analysis and Cognition of Basic Melodic Structures</i>. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="narmour_1990"></a>Narmour, Eugene. 1990. <i>The Analysis and Cognition of Basic Melodic Structures</i>. Chicago: University of Chicago Press.</p><div id="citediv_pr&ouml;gler_1995" class="flyoverdiv">Pr&ouml;gler, J. A. 1995. &#8220;Searching for Swing: Participatory Discrepancies in the Jazz Rhythm Section.&#8221; <i>Ethnomusicology</i> 39/1: 21&#8211;54.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pr&ouml;gler_1995"></a>Pr&ouml;gler, J. A. 1995. &#8220;Searching for Swing: Participatory Discrepancies in the Jazz Rhythm Section.&#8221; <i>Ethnomusicology</i> 39/1: 21&#8211;54.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> For explanations of drummers&#8217; roles and responsibilities, as well as historical overviews of the development of jazz drumming practices, see <a href="#brown_1990" id="citation_brown_1990_67dc9acfd548a">Brown 1990</a>; <a href="#berliner_1994" id="citation_berliner_1994_67dc9acfd548e">Berliner 1994</a>, 324&#8211;332; <a href="#monson_1996" id="citation_monson_1996_67dc9acfd5490">Monson 1996</a>, 51&#8211;66; <a href="#korball_2000" id="citation_korball_2000_67dc9acfd5492">Korball 2000</a>, 681&#8211;695; and <a href="#hodson_2007" id="citation_hodson_2007_67dc9acfd5493">Hodson 2007</a>, 30&#8211;32.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> &#8220;Pent-Up House&#8221; is recorded on <i>Sonny Rollins Plus Four</i>, Prestige 7038.  It is also included on the <i>Smithsonian Collection of Classic Jazz</i>, Vol. IV.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> There has been, of course, much discussion about the energy generated by asynchronous timing in the &#8220;hookup&#8221; between the drummer&#8217;s ride cymbal beat and the quarter-note pulse maintained in a walking bass line.  See, for example, <a href="#keil_1966" id="citation_keil_1966_67dc9acfd5496">Keil 1966</a>, <a href="#keil_1987" id="citation_keil_1987_67dc9acfd5498">1987</a>; and <a href="#pr&ouml;gler_1995" id="citation_pr&ouml;gler_1995_67dc9acfd549a">Pr&ouml;gler 1995</a>.  However, research presented in <a href="#butterfield_2010" id="citation_butterfield_2010_67dc9acfd549c">Butterfield 2010</a> indicates that the consequences of such &#8220;participatory discrepancies&#8221; have probably been overstated.  Their effects are actually quite subtle and considerably less consequential than events that transpire in the syntactical domain.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Jamey Aebersold Jazz Series, Vol. 7: Miles Davis.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> For a concise explanation of Hasty&#8217;s terms &#8220;beginning,&#8221; &#8220;continuation,&#8221; and &#8220;anacrusis&#8221; as they apply to the present example, see <a href="#butterfield_2006" id="citation_butterfield_2006_67dc9acfd549e">Butterfield 2006</a>, para. 6&#8211;16.  See also <a href="#hasty_1997" id="citation_hasty_1997_67dc9acfd54a0">Hasty 1997</a>, 69&#8211;76 and 103&#8211;129 for a comprehensive exposition of these terms and concepts.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> On &#8220;durational cumulation&#8221; and its effects on the production of closure, see <a href="#narmour_1990" id="citation_narmour_1990_67dc9acfd54a2">Narmour 1990</a>, 105&#8211;112.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> See in particular <a href="#krebs_1999" id="citation_krebs_1999_67dc9acfd54a3">Krebs 1999</a>, 22&#8211;39 and 59&#8211;61.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Dissonance can, of course, stand alone with no need of resolution.  At issue is whether the norm is relatively dissonant or consonant.  Dissonance exhibits motional energy when context stipulates a fairly specific target of resolution.<br><a href="#FN8REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">For explanations of drummers&#8217; roles and responsibilities, as well as historical overviews of the development of jazz drumming practices, see <a href="#brown_1990" id="citation_brown_1990_67dc9acfd548a">Brown 1990</a>; <a href="#berliner_1994" id="citation_berliner_1994_67dc9acfd548e">Berliner 1994</a>, 324&#8211;332; <a href="#monson_1996" id="citation_monson_1996_67dc9acfd5490">Monson 1996</a>, 51&#8211;66; <a href="#korball_2000" id="citation_korball_2000_67dc9acfd5492">Korball 2000</a>, 681&#8211;695; and <a href="#hodson_2007" id="citation_hodson_2007_67dc9acfd5493">Hodson 2007</a>, 30&#8211;32.</div><div id="fndiv2" class="flyoverdiv">&#8220;Pent-Up House&#8221; is recorded on <i>Sonny Rollins Plus Four</i>, Prestige 7038.  It is also included on the <i>Smithsonian Collection of Classic Jazz</i>, Vol. IV.</div><div id="fndiv3" class="flyoverdiv">There has been, of course, much discussion about the energy generated by asynchronous timing in the &#8220;hookup&#8221; between the drummer&#8217;s ride cymbal beat and the quarter-note pulse maintained in a walking bass line.  See, for example, <a href="#keil_1966" id="citation_keil_1966_67dc9acfd5496">Keil 1966</a>, <a href="#keil_1987" id="citation_keil_1987_67dc9acfd5498">1987</a>; and <a href="#pr&ouml;gler_1995" id="citation_pr&ouml;gler_1995_67dc9acfd549a">Pr&ouml;gler 1995</a>.  However, research presented in <a href="#butterfield_2010" id="citation_butterfield_2010_67dc9acfd549c">Butterfield 2010</a> indicates that the consequences of such &#8220;participatory discrepancies&#8221; have probably been overstated.  Their effects are actually quite subtle and considerably less consequential than events that transpire in the syntactical domain.</div><div id="fndiv4" class="flyoverdiv">Jamey Aebersold Jazz Series, Vol. 7: Miles Davis.</div><div id="fndiv5" class="flyoverdiv">For a concise explanation of Hasty&#8217;s terms &#8220;beginning,&#8221; &#8220;continuation,&#8221; and &#8220;anacrusis&#8221; as they apply to the present example, see <a href="#butterfield_2006" id="citation_butterfield_2006_67dc9acfd549e">Butterfield 2006</a>, para. 6&#8211;16.  See also <a href="#hasty_1997" id="citation_hasty_1997_67dc9acfd54a0">Hasty 1997</a>, 69&#8211;76 and 103&#8211;129 for a comprehensive exposition of these terms and concepts.</div><div id="fndiv6" class="flyoverdiv">On &#8220;durational cumulation&#8221; and its effects on the production of closure, see <a href="#narmour_1990" id="citation_narmour_1990_67dc9acfd54a2">Narmour 1990</a>, 105&#8211;112.</div><div id="fndiv7" class="flyoverdiv">See in particular <a href="#krebs_1999" id="citation_krebs_1999_67dc9acfd54a3">Krebs 1999</a>, 22&#8211;39 and 59&#8211;61.</div><div id="fndiv8" class="flyoverdiv">Dissonance can, of course, stand alone with no need of resolution.  At issue is whether the norm is relatively dissonant or consonant.  Dissonance exhibits motional energy when context stipulates a fairly specific target of resolution.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2010 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Sean Atkinson, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="6414143"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="07b54c1a"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/6414143/0/07b54c1a/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

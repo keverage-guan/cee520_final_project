@@ -1,0 +1,600 @@
+ 
+ 
+
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 20.1: Bugallo, Harmonic and Non-Harmonic Temporal Structures</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="<i>Harmonic</i> and <i>Non-Harmonic</i> Temporal Structures in Nancarrow&#8217;s Study No. 47 for Player Piano">
+
+    <meta name="citation_author" content="Bugallo, Helena">
+      
+
+<meta name="citation_publication_date" content="2014/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="20">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em"><i>Harmonic</i> and <i>Non-Harmonic</i> Temporal Structures in Nancarrow&#8217;s Study No. 47 for Player Piano
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Helena Bugallo</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Conlon Nancarrow, Studies for Player Piano, Study No. 47, player piano, notation, tempo templates, pitch-time isomorphism, rhythm, rhythmic harmony, temporal dissonance, temporal proportions, player-piano roll, punching score, isorhythm, tempo canon, acceleration, deceleration, structural syncopation, Henry Cowell.</font></p><p><font size='4'>ABSTRACT: This article presents a critical score and a rhythmic analysis of Conlon Nancarrow&#8217;s Study No. 47 for player piano. A work representative of the composer&#8217;s technical and aesthetic interests in his late productive years, Study No. 47 has been available only on recording until now. The score is based on both Nancarrow&#8217;s short-handed manuscript of the piece&#8212;the so-called <i>punching score</i>&#8212;and his original player-piano roll. Merging information from both sources, it introduces a new type of notation&#8212;combining both traditional and graphic aspects&#8212;especially developed for Nancarrow&#8217;s late output. The score and the analysis are preceded, and contextualized, by a discussion on the development of Nancarrow&#8217;s temporal thinking both theoretically, under the influence of Henry Cowell, and practically through his sustained and exclusive work for decades with the player piano. Special attention is given to Nancarrow&#8217;s usage of <i>tempo templates</i>, with a proposed classification into <i>harmonic </i>and <i>non-harmonic</i>. Study No. 47 is also framed historically within the context of five other related pieces, all associated at some point with Study No. 45.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.14.20.1/mto.14.20.1.bugallo.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.14.20.1/bugallo_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received July 2013</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 20, Number 1, March 2014 <br> Copyright &#0169; 2014 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-- - - - - - - - - - - - ARTICLE BODY (begin) - - - - - - - - - - - - - - - - - - -->
+
+<blockquote><p>When I started working with player pianos, the whole idea of temporal relationships expanded into much more than I had originally thought.</p>
+<p style="margin-left:3em">&#8212; Nancarrow</p>
+</blockquote>
+
+<p style="text-align:center"><b>Introduction</b></p>
+
+<p>[1.1] Conlon Nancarrow (1912&#8211;1997) authored the largest and most original body of work ever written for the player piano. His interest in this unusual medium was rooted in childhood memories: &#8220;We had a player piano in the house when I was a child, and I was fascinated by this thing that would play all these fantastic things by itself. And so from then I had this way in the back of my mind&#8212;I wasn&#8217;t thinking of composing at that age, of course, but it fascinated me&#8221; (<a href="#gagne_and_caras_1982" id="citation_gagne_and_caras_1982_67dc9a5bd8bb6">Gagne and Caras 1982</a>, 292). The idea of using the instrument to compose came indeed much later. In 1939, Nancarrow read Henry Cowell&#8217;s <i>New Musical Resources&#8212;</i>a book that would prove tremendously influential for his future as a composer (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a5bd8bba">Cowell 1930</a>). In this highly imaginative and prophetic treatise, Cowell discusses both rhythmic and pitch relationships in terms of harmonic ratios. In an attempt to expand rhythmic usages&#8212;which he presents as markedly underdeveloped in Western European music in comparison to harmony and counterpoint&#8212;he discusses and demonstrates several simultaneous temporal subdivisions applied at the beat, measure, and tempo levels, and even proposes a new notational system for his novel &#8220;rhythmic harmonies.&#8221;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Furthermore, he suggests the player piano as an ideal medium for realizing some of the resulting rhythmic configurations: &#8220;Some of the rhythms developed through the present acoustical investigation could not be played by any living performer; but these highly engrossing rhythmical complexes could easily be cut on a player-piano roll&#8221; (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a5bd8bbf">Cowell 1930</a>, 64&#8211;65). The fundamental ideas of the treatise made a deep and long-lasting impression on Nancarrow. Half a century after his first encounter with the book, he asserted: &#8220;<i>New Musical Resources</i> is probably the most influence [<i>sic</i>] of anything I&#8217;ve ever read in music. In fact, I just reread it [. . .] [T]here are still a lot of ideas in there that haven&#8217;t been carried out&#8221; (<a href="#gann_1995" id="citation_gann_1995_67dc9a5bd8bc1">Gann 1995</a>, 43). Nancarrow embraced, and applied in his own way, many of the book&#8217;s concepts, particularly those on rhythm. Ultimately, it was Cowell&#8217;s casual remark about the player piano&#8217;s capabilities&#8212;and Nancarrow&#8217;s reaction to it&#8212;that allowed the bridge between theory and practice to materialize.</p>
+
+<p>[1.2] Nancarrow emigrated for political reasons from his native USA to Mexico in 1940. Discouraged by several negative experiences with performers, he turned to the player piano later that decade. The medium was well fitted for the type of rhythm and speed challenges already posed by his music. It also stood as a plausible escape from the dependence on interpreters and their limitations. In 1947, after receiving a small family inheritance, he traveled to New York searching for his first player piano and punching machine (<a href="#gann_1995" id="citation_gann_1995_67dc9a5bd8bd5">Gann 1995</a>, 43).<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Finding a punching machine was not easy, and the composer finally hired a metal worker to copy a manual model that he borrowed from the roll company QRS, then based in the Bronx. Back in Mexico, he experimented with the new medium. Initially, he was interested in using a player piano to control a mechanical percussion orchestra. The project never succeeded, but it took much of the composer&#8217;s energies in the late 1940s and early 1950s. By the time Nancarrow abandoned this project, his series of Studies had already begun.</p>
+
+<p>[1.3] Nancarrow&#8217;s exclusive dedication to the player piano, between 1948 and 1984, resulted in a collection of over fifty Studies, some of them with several movements. As the numbers of the Studies rose, the music grew more sophisticated and idiomatic for the mechanical medium. In 1989, Nancarrow said: &#8220;The first fifteen or twenty studies were just feeling my way [. . .] while learning what those player pianos could do: how fast they could repeat a note and how many notes they could hold down at one time. A hundred different things, which took some time to get used to&#8221; (<a href="#duckworth_1995" id="citation_duckworth_1995_67dc9a5bd8bd8">Duckworth 1995</a>, 46). His work developed with the medium and became, after 
+a certain point, inseparable from it. His initial interest in expanding the possibilities in the temporal domain remained alive throughout the years and was fed by the capabilities of the 
+instrument. Each piece posed a new temporal challenge, reaching a maximum degree of elaboration in his mature works.</p>
+
+<p>[1.4] This article focuses on one of these mature works, Study No. 47. The piece combines a number of Nancarrow&#8217;s favorite constructive techniques, including isorhythm, tempo canon, large-scale acceleration and deceleration, and structural syncopation. It is a revealing synthesis of many of his life-long technical concerns expressed in terms of his mature musical language. This fascinating piece has been available only on recording until now. Unfortunately, this is also the case 
+with Studies No. 22, No. 34, and all the late works following Study No. 41. This deficiency, which has seriously limited the study and understanding of a crucial portion of Nancarrow&#8217;s legacy, is partially amended here with the inclusion of a <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">critical score</a> and analysis of Study No. 47. Lacking a fair copy from the composer, the score was realized according to his shorthand manuscript of the piece&#8212;the so-called <i>punching score</i>&#8212;and his original player-piano roll, both housed at the Conlon Nancarrow Collection of the Paul Sacher Foundation in Basel, Switzerland. Merging information from both sources, the score introduces a new type of notation&#8212;combining both traditional and graphic aspects&#8212;especially developed for Nancarrow&#8217;s late output. The score and the analysis are preceded by a discussion of the sources and Nancarrow&#8217;s two chief working methods. Temporal matters lie at the center of this discussion and also constitute the focus of the subsequent analysis.</p>
+
+<p style="text-align:center"><b>The Sources: Player-Piano Rolls and Punching Scores</b></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Reading of a Player-Piano Roll</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="bugallo_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[2.1] Player-piano rolls are made out of thin paper, wound around a hard-plastic reel. The width of the paper is standardized at 11.25 inches and the length is variable, with the maximum possible length approaching 100 feet. The roll notation is analogous to traditional staff notation in the 
+use of two different axes to represent pitch and time, although with the registers reversed (see <b>Figure 1</b>). Pitch is determined by a note&#8217;s placement along the paper&#8217;s width (Y), and rhythm by a note&#8217;s relative location and extension along the paper&#8217;s length (X). Each of the eighty-three notes available in Nancarrow&#8217;s pianos (B0 to A7) has a specific place along Y. Seven additional positions at both sides of the roll serve to trigger dynamic levels&#8212;independently for treble and bass&#8212;as well as pedal actions. A single hole denotes a short staccato attack and a row of consecutive holes along X produces a sustained sound. As opposed to the discrete positions for the Y axis, the X axis operates in a continuum. It is completely idiomatic for the player piano to articulate attacks at any point in time and to handle extremely subtle durational variations.</p>
+
+<p>[2.2] Nancarrow punched the rolls of his Studies manually. Two different working methods can be clearly discerned in the original rolls. Under the first method, 
+employed up to and including Study no. 21, the composer performed the punching in reference to the built-in ratchet device of his punching machine, inserting one hole at a time. Due to this external reference, the original rolls typically show no additional information besides the work&#8217;s name, the tempo indication, and the paper perforations. The punching scores of these early Studies, on the other hand, contain drawings of evenly-spaced vertical strokes&#8212;here named <i>divisions</i>&#8212;coinciding either with the machine&#8217;s notches or with multiples of them. These divisions are normally grouped every six units to facilitate orientation. Rather soon, the composer found himself limited by the fixed indentations of the machine, having to place holes in between them to achieve the desired temporal proportions and rhythms. The original player-piano rolls reveal that he had to do this as early as in Studies No. 6, No. 9, No. 15, and No. 18 (<a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bd8cb4">Bugallo 2004</a>, 65&#8211;75). Cumbersome indeed, must have been the punching of Study No. 21, in which departures from the machine&#8217;s indentations, by &frac12; and &frac14; of a notch, are practically constant.</p>
+
+<p>[2.3] Seeking a more flexible approach to musical time, as well as a more effective way to produce the rolls, Nancarrow modified the machine after Study No. 21. He added an extension that enabled him to punch four holes at a time, as opposed to the previous single perforations, and cancelled the machine&#8217;s indented system. Having lost this external reference, he began to draw temporal divisions directly into the roll. For such drawings, he manufactured rulers of many sizes and lengths, made out of either paper or thin cardboard:</p>
+
+<blockquote><p>When I write a piece with a certain tempo relationship, I make strips. So when I draw it out, I&#8217;ve already worked out the relationships of, let&#8217;s say, two things. So I have a strip for this and a strip for that. I keep all these things even though I very seldom go back to the same relationship. But I have a whole stack of things that I have used. And I have a whole stack of different acceleration ratios that I also keep. Occasionally I use part of some of those things for other things. But yes, there&#8217;s a big collection of them. (<a href="#duckworth_1995" id="citation_duckworth_1995_67dc9a5bd8cb6">Duckworth 1995</a>, 43)</p></blockquote>
+
+<p>With the free combination of his &#8220;tempo templates,&#8221; as he 
+sometimes called the strips, Nancarrow gained complete rhythmic liberty. He penciled the divisions of the chosen templates on the roll and perforated it according to these markings. Due to their annotations, the rolls produced under this second method are unique documents, which have escaped successful reproduction until now. The punching scores after Study No. 21 usually include the same tempo templates drawn in the rolls, although written less carefully and often in an incomplete manner. The musical notation in these documents is typically proportional and 
+in shorthand.</p>
+
+<p style="text-align:center"><b>Classification of the Tempo Templates: Harmonic and Non-Harmonic</b></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Template &#8220;Transposition&#8221; at the Octave</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="bugallo_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Proportions for the Justly-Tuned Chromatic Scale Given by Cowell</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="bugallo_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[3.1] Nancarrow kept his tempo templates organized in a cabinet with numerous labeled drawers. His labels suggest a classification in two groups: <i>harmonic</i> and <i>non-harmonic</i>.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> The <i>harmonic templates</i> are defined by their evenly-spaced divisions. Influenced by Cowell&#8217;s rhythmic theories, Nancarrow gave these templates the names of specific pitches, ranging from C1 to C8. Knowing the dimension of the units in one template, it is possible to infer all 
+of the others. For example, the units of the C4-template equal approximately 13 millimeters. The &#8220;transposition&#8221; of this template one octave higher (2:1) produces units twice as small (6.5 millimeters), and one octave lower (1:2) twice as large (26 millimeters). <b>Figure 2</b> illustrates the relative dimension of the units in the C3, C4, and C5 templates. Moreover, Nancarrow derived the relative size of his harmonic templates directly from a table given in <i>New Musical Resources</i> (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a5bd8dd1">Cowell 1930</a>, 107). The contents of the table (reproduced in <b>Figure 3</b>) represent the proportion of the twelve contiguous pitches of the justly-tuned chromatic scale in relation to a fundamental C.</p>
+
+<p>[3.2] Nancarrow usually combined his harmonic templates in order to produce diverse temporal &#8220;harmonies.&#8221; Different 
+from Cowell, he was not interested in articulating the majority of the divisions in the templates in order to enact temporal relationships with rhythmic clarity.  He rather understood such harmonies as a given temporal space 
+within which he composed the music. He either polarized the components of this temporal space&#8212;usually through the use of canon or contrasting musical objects&#8212;or wove such components together to form musical layers of high rhythmic complexity. Besides his labeling system for the harmonic templates, Nancarrow&#8217;s interest in implementing isomorphic relationships between tempo proportions and pitch intervals was actually more limited than Cowell&#8217;s. Still, Studies No. 23, No. 28, and No. 30, exemplify such isomorphisms.</p>
+
+<p>[3.3] The <i>non-harmonic templates</i> are defined by their unevenly-spaced divisions. The most common kind within this category are the <i>accelerando</i> and the <i>ritardando</i> templates, where the divisions get progressively closer together or further apart from each other 
+respectively. In most cases, the composer defined the decrease or increase of the template units in terms of a fixed percentage. The denomination &#8220;1% accel.,&#8221; for example, means that each unit in this template is one percent smaller than the previous one. Nancarrow introduced this sort of template&#8212;producing geometric acceleration&#8212;as soon as he modified the machine. Study No. 22 is subtitled &#8220;Canon 1%: 1&frac12;%: 2&frac14;%,&#8221; indicating the independent acceleration rates applied to the three canonic voices. A further example of geometric acceleration is Study No. 27 (Canon 5%: 6%: 8%: 11%). In some cases, however, the decrease or increase in the template units departs from a fixed percentage. Study No. 47, to be considered in detail below, is one example.</p>
+
+<p>[3.4] Also under the category of <i>non-harmonic</i> are the so-called &#8220;f 15&#8221; templates. These templates, a late invention of the composer, are defined by a pattern of fifteen irregular durations, which Nancarrow called the &#8220;spastic rhythm&#8221; (Gann 1995, 256). He explained the way in which he arrived at it:</p>
+
+<blockquote><p>I don&#8217;t remember all the details, but I played around with tempo relations, taking a collage from all of them, parts of them. I remember I took a bunch of templates and started putting them together, purely intuitively, and finally came up with that proportion that I liked. If you wanted to notate that rhythm, you could only notate it as I did. (<a href="#gann_1995" id="citation_gann_1995_67dc9a5bd8dd3">Gann 1995</a>, 257)</p></blockquote>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Approximate Dimensions for the Units of the f 15 Templates</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=3&nonav=true"><img border="1" alt="Table 1 thumbnail" src="bugallo_table1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Concordance Between the Templates Bb3 and f 15(a)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=4&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="bugallo_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Approximate Proportions Between the Different Sizes of the Template f 15</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=5&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="bugallo_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>In most cases, Nancarrow articulated every division of this template and repeated it successively. He utilized the template in eight different sizes, each labeled with a letter subscript between parentheses (a-, a, b, c, d, e, f, and g, from smallest to largest). <b>Table 1</b> lists approximate dimensions for the units contained in each size.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> It is likely that the initial version of the &#8220;spastic rhythm&#8221; was f 15<sub>(a)</sub>. The composer employed this template throughout Study No. 45a, in combination with the harmonic template Bb3. Seven units from Bb3 equal the total length of f 15(a). <b>Figure 4</b> illustrates this concordance. This is the only instance found in which there is a clear periodic convergence between this irregular rhythm and another accompanying template. The &#8220;transposition&#8221; intervals generating the other seven sizes approximate simple ratios. Considering the templates&#8217; total length, the sizes of a-, a, b, d, and f get very close to growing by the octave proportion 2:1 (i.e., 5.22, 10.13, 21.07, 41.83, and 81.72 centimeters). The remaining sizes c and e also suggest an octave relationship (i.e., 29.87 and 59.6 centimeters).  Moreover, c and a hint at the 3:1 proportion (29.87 and 10.13 centimeters), as do b and e (21.07 and 59.6 centimeters)&#8212;the two f 15 templates utilized in Study No. 47. Finally g suggests the 4:3 ratio with respect to f. <b>Figure 5</b> illustrates the insinuated relationships. Although the actual proportions are not identical to those in the figure, it is tempting to speculate that Nancarrow might have begun with such 
+a &#8220;harmonic&#8221; scheme, departing from it slightly as he drew the actual templates. The fact that the templates themselves are not very accurately drawn is evident from the data presented in Table 1. Comparing the different columns one finds plenty of proportional discrepancies among analogous units in different sizes. These inconsistencies, certainly unusual for the composer, might relate to the way in which he was planning to utilize these templates. Except for the case of f 15(a) and Bb3 in Study No. 45a, the alignment of the &#8220;spastic rhythm&#8221; with other templates does not seem to be a matter of relevance. Much to the contrary, the f 15-templates tend to portray not only rhythmic irregularity but also a basic non-coordination with the surrounding musical context, as it is the case of Study No. 47.</p>
+
+<p style="text-align:center"><b>Study No. 47 in Context: the <i>Betty Freeman Suite</i></b></p>
+
+<p>[4.1] Study No. 47 was originally the concluding movement of the largest work Nancarrow ever conceived for the player piano: the first version of Study No. 45. The piece was commissioned by Betty Freeman and received its premiere at the Monday Evening Concerts in Los Angeles, on January 30, 1984.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> The composer originally intended to name this multi-movement work the <i>Betty Freeman Suite</i>, but he eventually changed the title to Study No. 45 upon request of the dedicatee herself. The piece consisted of five movements, played <i>attacca</i> on a tape. Dissatisfied with the results, Nancarrow wrote to Freeman three weeks after the premiere:</p>
+
+<blockquote><p>About [the] # 45 piece, I had originally thought of a suite of five separate pieces. I don&#8217;t know when I got the idea of having them continuous. I had never heard them that way until the night of the concert. In any case it doesn&#8217;t work. I am going to have to make definitive endings for three of the pieces, so it will be a suite of five more or less independent pieces. I hope you don&#8217;t mind.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p></blockquote>
+
+<p>The modification of the original Study No. 45 was, at the end, much more radical than initially intended. The first and the last movements became independent pieces: Studies No. 46 and No. 47 respectively. The order of the second and the third movements was reversed to form, together with a newly-added concluding movement, the definitive Study No. 45 (a, b, and c). In this way, the third movement of the original work became the first of the definitive one, which led to the removal of a short transition, designed originally to lead into the fourth movement. This fourth movement, or No. 45d, was withdrawn and remained out of Nancarrow&#8217;s catalogue until its appearance on CD in 2009.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> It is only recently that the identity and the order of all the movements in the original <i>Suite</i> have been clarified (<a href="#bugallo_2012" id="citation_bugallo_2012_67dc9a5bd8f55">Bugallo 2012</a>). Research on the primary sources, in combination with documentary recordings of the piece, made this possible.</p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Tempo Templates in Studies No. 45 (a, b, and c), No. 45d, No. 46, and No. 47</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=6&nonav=true"><img border="1" alt="Table 2 thumbnail" src="bugallo_table2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[4.2] Despite its short life, the <i>Betty Freeman Suite</i> was musically and theoretically remarkable. Nancarrow&#8217;s attempt to integrate the five movements under a single arch, not only through playing them continuously but also by means of a series of thematic and structural connections, was unprecedented. All the movements showed links to jazz, variously evoking boogie-woogie, blues, and ragtime almost as openly as in some of the composer&#8217;s early works, although in a distorted manner. The use of the same or related tempo templates also bound the movements structurally. <b>Table 2</b> summarizes the harmonic and non-harmonic templates utilized in all those pieces related at some point to Study No. 45, both in their definitive versions and in the original suite form. It is worth 
+noting that Nancarrow utilized the f 15 template <i>only</i> in this group of pieces, for which he created it. Study No. 47 (originally entitled No. 45e) is the most sophisticated piece in the group. Its various constructive techniques, as well as the simultaneous and successive use of the multiple tempo templates listed in Table 2, will be considered in turn, in the context of the piece&#8217;s individual sections.</p>
+
+<p style="text-align:center"><b>General Introduction to the Score of Study No. 47</b></p>
+
+<table align="left"><tr><td>  <p style="text-align: center; margin-top:0em">Nancarrow, Study no. 47, 
+  Critical Score<br><p style="text-align: center"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0"><img border="1" alt="score thumbnail" src="bugallo_section1small.png"></a></p><p style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p>
+</td></tr></table>
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Punching Score of <i>Study</i> No. 47, page 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=7&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="bugallo_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></fig>
+
+<p>[5.1] The <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">score of Study No. 47</a> presented here is based both on Nancarrow&#8217;s original player-piano roll and on his punching score of the piece. <b>Figure 6</b> shows a reproduction of the first page of the punching score, and it includes a recording.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Some portions of this document remain missing, and therefore Sections 6 and 7 are derived solely from the roll. The following discussion makes frequent reference to both documents, indicating from where the information was taken as well as explaining occasional deviations from them. In addition to combining elements from both sources, the score incorporates notational practices observed in other works that Nancarrow prepared for publication. The tempo indication reflects the first Wergo recording of the piece, made under the composer&#8217;s supervision (<a href="#nancarrow_1988" id="citation_nancarrow_1988_67dc9a5bd903d">Nancarrow 1988</a>).</p>
+
+<p style="text-align:center"><i>Sections and Score Layout</i></p>
+
+<p>[5.2] Study No. 47 is organized in eight sections. In the roll, the sections 
+are physically distinguished by different pieces&mdash;and kinds&mdash;of paper held 
+together with adhesive tape. Sections 1, 4, and 6 are punched on a brownish, 
+apparently older paper. The remaining sections use white paper, although the hue 
+of Section 8 is slightly different. In the punching score, each section begins 
+on a new page. The sections in the critical score presented here are numbered according to Nancarrow&#8217;s documents. The distinction of subsections (e.g., 2a, 2b, 2c, etc.) is an editorial addition aimed at showing significant articulation points in the music. The page layout also reflects aspects of the piece&#8217;s structure.</p>
+
+<p style="text-align:center"><i>A Combined Notation</i></p>
+
+<p>[5.3] In an attempt to condense all relevant information from both the punching score and the roll, the score combines two types of notation&#8212;staff and template&#8212;that are complementary. The staff notation indicates pitch, voice leading, dynamics, pedal, and certain aspects of articulation in a traditional manner. Rhythm is expressed proportionally, by means of the spacing of the notes along the staves. The tempo templates above each system indicate the actual time-subdivisions on which the rhythm is based (see for example score <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">Section 1</a>). The proportional size of these templates is maintained throughout. The correspondence of each note-stem with a specific point in the templates is shown by vertical alignment. When the music articulates only some divisions from the templates, this is indicated in one of two ways: (1) with a cross on the template&#8217;s attack point (Section 1) or (2) with a thick horizontal line marking the beginning and duration of either a sound (<a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=7',1000,1000); return false;" href="bugallo_score_examples.php?id=7">Section 5</a>) or a gesture (<a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=10',1000,1000); return false;" href="bugallo_score_examples.php?id=10">Section 6</a>).</p>
+
+<p style="text-align:center"><i>Template Denominations and Numbering</i></p>
+
+<p>[5.4] Nancarrow drew the tempo templates fully in the roll and partially in the punching score, but the templates&#8217; labels (i.e., G3, C4, E4, etc.) appear in both documents (see Figure 6). The association of each staff with a specific template is indicated in the score through these denominations, placed on the left margin of the staves at the beginning of each section&#8212;or subsection when necessary. The numbers given to the template divisions in the score reflect either the roll or the punching score, and sometimes both documents (see Section 1).</p>
+
+<p style="text-align:center"><i>Number of Staves</i></p>
+
+<p>[5.5] Some of the study&#8217;s single musical layers are spread out over several staves in the punching score. For example, the staccato accompaniment in Section 1 occupies three staves. The inclusion of the full tempo templates in the score allows condensing these multiple staves into a single staff, to more clearly present register and musical continuity visually (compare Figure 6 and <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">Section 1</a>).</p>
+
+<p style="text-align:center"><i>Clefs and Accidentals</i></p>
+
+<p>[5.6] The clefs in the score were chosen to avoid the excessive use of ledger lines, and do not necessarily reflect those in the punching score. Each accidental applies only to the following note.</p>
+
+<p style="text-align:center"><i>Articulation</i></p>
+
+<p>[5.7] The study contains three types of articulation: legato, staccato, and tenuto. The roll shows a consistent realization of these articulations. Legato notes are expressed in the score by horizontal lines linking one attack to the following (e.g., melody in <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">Section 1</a>). Although these lines are missing in some portions of the punching score (see Figure 1), they symbolize legato in numerous other Studies prepared for publication by the composer (e.g., Studies No. 8 and No. 27). In the roll, the legato articulation is achieved by overlapping two consecutive sounds by at least 1 hole. When the same pitch is repeated, such overlap is technically impossible, unless the pedal is utilized. The player piano&#8212;like the piano&#8212;necessitates a brief release of the key before it can be effectively rearticulated. This release usually occupies the space of 2 or 3 holes in the roll. Staccato notes are indicated in the score as detached eighth notes with a staccato dot (e.g., accompaniment in <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0">Section 1</a>). The eighth-note figures reflect the notation in the punching score (see Figure 6), but the staccato markings have been added to differentiate this articulation from the longer tenuto. In those places where the eighth notes are beamed together (i.e., the rapid arpeggios of <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=10',1000,1000); return false;" href="bugallo_score_examples.php?id=10">Section 6</a> and <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=13',1000,1000); return false;" href="bugallo_score_examples.php?id=13">Section 7</a>) the articulation is also staccato. The staccato attacks are always as short as possible, namely 1 hole in the roll. Tenuto notes are represented in the score as detached eighth notes with a tenuto line (<a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=6',1000,1000); return false;" href="bugallo_score_examples.php?id=6">Section 4</a> and <a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=9',1000,1000); return false;" href="bugallo_score_examples.php?id=9">Section 5c</a>). In the roll, this articulation is always assigned the same duration: 4 consecutive, equidistant holes. The tenuto articulation is not indicated in the punching score.</p>
+
+<p style="text-align:center"><i>Dynamics</i></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 3</b>. Dynamic Levels in Nancarrow&#8216;s Rolls</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=8&nonav=true"><img border="1" alt="Table 3 thumbnail" src="bugallo_table3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 4</b>. Dynamic Indications in Different Documents of Study No. 47</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=9&nonav=true"><img border="1" alt="Table 4 thumbnail" src="bugallo_table4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[5.8] The Ampico reproducing mechanism, with which Nancarrow&#8217;s player pianos were equipped, offers seven different dynamic levels, applicable independently to each half of the keyboard.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> These levels are operated by perforating holes in tracks 2, 4, and 6 of the roll, alone or in combination. A perforation in track 7 cancels the previously active dynamic, bringing it down to the lowest possible level, given also by default when none of the dynamic tracks is activated. <b>Table 3</b> lists the roll commands for each dynamic level. The hyphens in the track labels (e.g., &#8211;2&#8211;, 6&#8211;4, etc.) reflect the composer&#8217;s notation in some of his punching scores. The table also shows a translation of the player-piano commands into traditional dynamic markings. These correspondences, however, are not absolute and certainly not applicable in every case. When the density is extremely high&#8212;as in many of the Studies&#8212;the power of suction within the mechanism diminishes, causing dynamics to drop. Taking into account perceptive phenomena as well as the technical characteristics of the medium, Nancarrow used the dynamic commands in the roll very flexibly. For example, he utilized the command &#8211;6&#8211;, supposedly in the middle of his available range and therefore a theoretical <i>mf</i>, to match different score dynamics, such as <i>mp</i> (Study No. 20), <i>mf</i>  (Study No. 47), and even <i>f </i>(Study No. 48). One must be cautious, therefore, in translating the roll commands into fixed dynamics and vice versa.</p>
+
+<p>[5.9] <b>Table 4</b> summarizes the dynamic indications in the different documents of Study No. 47. The surviving portions of the punching score show dynamics only in Sections 4 and 5. These markings, compared with their corresponding roll commands, served to define the dynamic scale upon which the markings in the score are based (corresponding in this case with Table 3). It is worth noticing the different dynamic commands found in the roll for treble and bass in Sections 5a and 5c. This differentiation, also reflected in the score, is rare for Nancarrow and only present in his late output.</p>
+
+<p style="text-align:center"><i>Pedal</i></p>
+
+<p>[5.10] The pedal markings are all based on the roll. The <i>una corda</i> pedal is depressed throughout Section 4 (systems 55&#8211;70) and the damper pedal appears at the end of Section 5c (systems 92&#8211;93).</p>
+
+<p style="text-align:center"><i>Summary of Templates</i></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Harmonic Templates Utilized in Study No. 47</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=10&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="bugallo_ex7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 5</b>. Durations in the Accel./Rit. Templates of Study No. 47</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=11&nonav=true"><img border="1" alt="Table 5 thumbnail" src="bugallo_table5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[5.11] <b>Figure 7</b> shows all the harmonic templates drawn in the roll of Study No. 47, arranged from largest to smallest. The grouping of these templates denotes a special emphasis on the proportion 3:4:5 or, in other words, the major triad in second inversion (i.e., G3/C4/E4, <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/C7, and C7/F7/A7). The actual musical implementation of these templates sometimes suggests a different &#8220;octave&#8221; for them. This is why the score occasionally departs from the drawings in Figure 7 (each case is discussed in the context of its individual section).</p>
+
+<p>[5.12] Study No. 47 makes use of two types of non-harmonic templates: &#8220;accel./rit.&#8221; used in a fixed size, and &#8220;f 15&#8221; represented by two sizes. The accel./rit. templates appear in Section 5 and Section 6. They contain the same thirteen durations, arranged either in decreasing (accel.) or increasing (rit.) order. Nancarrow labeled these durations with the numbers 1 to 13 at their insertion point in the roll&#8212;a practice kept in the score. The first column of <b>Table 5</b> lists the values in millimeters for the thirteen durations in the accel. template (the values for the rit. template are the same, but read from bottom to top). The second and third columns show that the decrease between consecutive durations is not constant, neither in absolute terms (arithmetic) nor as a percentage (geometric). The last two columns list what the durations would have been in the case of consistent arithmetic or geometric decreases. These values assume that the extreme durations 13 (216 millimeters) and 1 (37 millimeters) are maintained. The accel./rit template utilized in Study No. 47 (first column) could be interpreted as a loose merge of both arithmetic and geometric values (fourth and fifth columns). While duration 12 approximates the arithmetic template, durations 10, 9, and 8 match almost exactly the geometric one. From this point on, the durations lie somewhere in between arithmetic and geometric values, but closer to the latter.</p>
+
+<p>[5.13] Study No. 47 contains two different sizes of the f 15-template. Section 4 features f 15<sub>(e)</sub> and Section 7 uses the smaller f 15<sub>(b)</sub>. These templates stand roughly in the proportion 3:1 (see Table 1 and Figure 5). In both cases, all the divisions of the template are musically articulated and the resulting &#8220;spastic rhythm&#8221; repeated successively (see systems 55&#8211;70 and 113&#8211;129). The 3:1 diminution affecting this rhythm between Sections 4 and Section 7 hints at a relevant proportional relationship at a formal level.</p>
+
+<p style="text-align:center"><b>Temporal Structures in the Individual Sections</b></p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 1</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=0',1000,1000); return false;" href="bugallo_score_examples.php?id=0"><img border="1" alt="score thumbnail" src="bugallo_section1small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[6.1]<b> Section 1</b> (systems 1&#8211;16) is based on the G3, C4, E4, and Bb5 templates, which converge every 3, 4, 5, and 14 units, respectively. Nancarrow numbered the convergence-points throughout the section in both the roll and the punching score. In what follows, this numeration will be loosely interpreted as &#8220;measure&#8221; counting, and labeled on the left of the converging templates that occur above the musical systems.</p>
+
+<p>[6.2] The staccato accompaniment (bottom staff) jumps unpredictably among the G3/C4/E4-divisions. It consists of low octaves in alternation with higher major triads. Tenney has remarked that this bass sounds &#8220;like a deranged ragtime accompaniment&#8221; (<a href="#tenney_1999" id="citation_tenney_1999_67dc9a5bd9260">Tenney 1999</a>, 49), which immediately brings to mind the &#8220;disordered&#8221; boogie-woogie bass of Study No. 44.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> Although the pitches in the accompaniment change constantly, the same rhythm &#8212;except for minor exceptions&#8212;restarts every 19 measures. This <i>talea</i>, stated three complete and one incomplete times, determines the page layout of the score (compare the bass rhythm in systems 1&#8211;5, 6&#8211;10, 11&#8211;15, and 16). The isorhythm created by the repetition of this <i>talea</i> is not perceived as such, not only because of its irregular design but also due to the constant renewal of the pitch material in the accompaniment.</p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Template Continuity and Musical Elision Between Sections 1 and 2</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=12&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="bugallo_ex8small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[6.3] The legato melodic octaves in the upper staff&#8212;which I will call &#8220;Theme A&#8221;&#8212;follow a steady pulsation determined by the addition of eleven <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5-units (<i>ca.</i> MM 91 in the <a href="#nancarrow_1988" id="citation_nancarrow_1988_67dc9a5bd92e0">1988</a> Wergo recording). Nancarrow numbered the melody beats in ascending order in the roll, and in both ascending and descending order in the punching score (see Figure 6). The regressive count starts at 77, which places the final note of the theme (1), at the beginning of Section 2a (see first attack on system 17, upper staff). The elision between the sections is carried out smoothly, largely due to their common Bb5-template. The final note from the melody, however, is delayed by three units from its expected location and its place taken by the staccato bass articulating a V&#8211;I cadence. This displacement, although subtle, contributes to a musically elegant shift from one section to the next. <b>Figure 8</b> illustrates the template continuity between sections as well as the displacement of the final melody attack by 3 units of Bb5 (see arrow in the figure).</p>
+
+<p>[6.4] One may consider the periodic convergence of the G3/C4/E4-templates (i.e., the bass &#8220;measures&#8221;) as regular tacit pulsations, which stand in a 14:11 relationship with the explicit pulsations of Theme A. Since the theme proceeds at MM 91, the tacit pulsations of the accompaniment equal MM 71.5. Both pulsations meet every 11 measures (e.g., see the two aligned F-octaves in system 3 of Section 1). This periodicity determines a rather distant&#8212;or &#8220;dissonant&#8221;&#8212;temporal relationship between melody and accompaniment, which contributes to the &#8220;deranged&#8221; quality noted by Tenney.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 2</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=1',1000,1000); return false;" href="bugallo_score_examples.php?id=1"><img border="1" alt="score thumbnail" src="bugallo_section2small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[7.1]<b> Section 2</b> (systems 17&#8211;36) contains the same group of templates as the previous section, but their association with melodic and accompanimental functions is reversed.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Sections 2b, 2c, and 2d are rhythmically identical and musically analogous; the score layout reflects these parallelisms. The 19-measure <i>talea</i> corresponding with each page in Section 1 defines the rhythm of a recurring melody in these three subsections.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> In Section 2b, the tune is staccato and harmonized with parallel major triads; in Section 2c, it shifts to legato octaves; and in Section 2d, it combines both triads and octaves.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> The tune is accompanied by a staccato bass&#8212;strangely evocative of boogie woogie&#8212;based on non-periodic groupings of 2 and 3 units of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5. In Section 2d, the single notes of this bass become octaves jumping up and down the keyboard. Sections 2b, 2c, and 2d are related by transposition, beginning respectively on F, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, and C. This I&#8211;IV&#8211;V harmonic scheme leads to a resolution on F (I) in the following section.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> In the roll (as well as in the score), the &#8220;measure&#8221; counting of these three subsections is continuous, beginning at 1 with Section 2b and ending at 57 with Section 2d.</p>
+
+<p>[7.2] Section 2a duplicates the jumping octaves and the measure numbers of Section 2d (38&#8211;57). It is partially missing in the punching score (perhaps Nancarrow never wrote it out completely), and is punched on a separate piece of paper in the roll. These facts suggest that Section 2a was inserted in the piece at a relatively late stage during the compositional process.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 3</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=5',1000,1000); return false;" href="bugallo_score_examples.php?id=5"><img border="1" alt="score thumbnail" src="bugallo_section3small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[8.1]<b> Section 3 </b>(systems 37&#8211;54) begins as a three-voice tempo canon that eventually develops into free counterpoint. One of the main shortcomings of the roll notation is its lack of voice-leading indications. This limitation is particularly problematic in this section, where the three voices (all equally staccato) jump unpredictably throughout the keyboard, crossing frequently.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> At this point, the roll looks like a collection of randomly-distributed dots. It would have been nearly impossible to write out Section 3 without referring to the punching score.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. Roll Templates in Section 3</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=13&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="bugallo_ex9small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[8.2] <b>Figure 9</b> illustrates the templates utilized in the roll for this section. Each voice in the canon is attached to a different template. The minimum subdivision for the slowest voice is defined by 2 units of E4 (indicated with brackets in Figure 9), and for the other two voices by single units of G3 and C4 respectively. Thus the slower voice suggests a template whose divisions are twice as large, or one octave lower. This is why I have replaced the original E4-template with E3 in the score (Section 3).<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> The resulting template combination shows the correct 5:6:8 tempo proportion among the three voices (given by the major triad in <i>first</i> inversion). The canon begins with a trochaic rhythm, which suggests groupings of three template units in each voice. These groupings are confirmed by the numbers assigned to each template by the composer. The breathing marks at the end of Section 3 (system 54) stand for an unmeasured portion of the roll (roughly equivalent to 4 units of C4), which lies where the two pieces of paper containing Sections 3 and 4 join.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 4</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=6',1000,1000); return false;" href="bugallo_score_examples.php?id=6"><img border="1" alt="score thumbnail" src="bugallo_section4small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge, see the rest, and listen)</font></p></fig>
+
+<p>[9.1]<b> Section 4</b> (systems 55&#8211;70) features the opening Theme A, but played three octaves lower, quietly, and tenuto. (The score includes a link to Audio for the beginning of Section 4.) In the roll, Nancarrow named the template assigned to the bass &#8220;11 of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5&#8221; (events occur once every eleven units of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5), and he marked up only those divisions coinciding with the attacks. In the score, I have chosen to show every division of the Bb5-template, partly with the purpose of illustrating its complete independence from the accompanying f 15<sub>(e)</sub>. The number of attacks for Theme A reaches 78 in this section (instead of the original 77) due to the insertion of an additional note at pulse 7 (system 56). 
+As in Section 1, Theme A determines the length of the section. In this case, however, the last note happens <i>within</i> the section (system 70), with the beginning of the following section placed exactly where a potential seventy-ninth attack would occur.</p>
+
+<p>[9.2] Section 4 also features a new melody in the treble, based on the &#8220;spastic rhythm&#8221; in the size f 15<sub>(e)</sub>. The template is repeated successively, defining a <i>talea</i> contained in the melody five complete and one incomplete times. In each statement the <i>talea </i>is partitioned differently by the articulations in the melody. For example, the legato notes in system 55, separate the first two durations of f 15 from the following three. The partition of f 15 durations in the five <i>taleae</i> is as follows:</p>
+
+<table align=left style="margin:0 auto">
+<tr><td>T. 1</td><td style="padding: 0 1em">2+3+2+3+3+2</td> <td>= 15 durations</td></tr>
+<tr><td>T. 2</td><td style="padding: 0 1em">3+3+3+3+3</td>   <td>= 15 durations</td></tr>
+<tr><td>T. 3</td><td style="padding: 0 1em">3+2+4+5+1--</td> <td>= 15 durations</td></tr>
+<tr><td>T. 4</td><td style="padding: 0 1em">--2+3+4+3+3</td> <td>= 15 durations</td></tr>
+<tr><td>T. 5</td><td style="padding: 0 1em">4+3+2+3+3=</td>  <td>= 15 durations</td></tr>
+</table><p>&nbsp;</p>
+
+<p>The majority of these partitions spell, or contain, the trichord [013], also prominent in Theme A and, especially, in the following two sections. Much of the musical interest in Section 4 comes from the contrast between the bass&#8217;s immutable regularity and the apparently free, almost improvisatory quality of the treble. Nancarrow achieved this quality not only through the rhythmic irregularity of the f 15 template, but also through the various groupings of its durations in the melody.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 5</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=7',1000,1000); return false;" href="bugallo_score_examples.php?id=7"><img border="1" alt="score thumbnail" src="bugallo_section5small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge, see the rest, and listen)</font></p></fig>
+
+
+<p>[10.1] For the upper voices in <b>Section 5</b> (systems 71&#8211;93), Nancarrow utilized the template denominations <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/C7 and C7/F7/A7, first successively (Sections 5a and 5b) and later superimposed (Section 5c). His template drawings in the roll, however, show divisions eight times as large, or three octaves lower. (An explanation for this discrepancy is to be found in Section 6.) Following the roll&#8217;s drawings and also taking into account the way in which the templates are musically implemented, I have replaced the original denominations with <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>3/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>3/C4 (Section 5a) and C4/F4/A4 (Section 5b) in the score.</p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. Rhythm of Upper Voices in Section 5a</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=14&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="bugallo_ex10small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[10.2] The upper staff in Section 5a (systems 71&#8211;78) contains three voices. (Audio is provided for the beginning of 5a.) Each voice articulates fixed pitches in relation to a specific template. For instance, the opening G octave is always connected to the <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>3 template and always sustains for 2 units of this template. The same applies to the octaves F and Ab, in relation to the <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>3 and C4 templates, respectively. The three voices combine to form a three-note melody, strongly reminiscent of the trichordal interplays of Study No. 20. The notes are initially heard one at a time, in apparently random order. As the section progresses they become closer together and eventually begin to overlap. The varying amount of overlap, determined by the releases, becomes of musical interest at this point, recalling the earlier &#8220;study in durations.&#8221;<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> <b>Figure 10</b> illustrates the rhythm of this composite melody. In the roll, Nancarrow numbered every other division in each harmonic template. The numbered pulsations retain the 3:4:5 proportion among the three voices, but articulated at half speed. Although the notes in the melody usually coincide with these pulsations, sometimes they are displaced from them (see for example the third note in the upper staff of system 71). These occasional syncopations contribute to the metrical uncertainty of the passage. The composite melody in Section 5a is accompanied by legato major triads following the divisions of the ritardando template. This template is temporally displaced (or structurally &#8220;syncopated&#8221;) in relation to the other templates: it enters after Section 5a has begun (system 71) and extends into the following subsection (system 79). Thus, temporally, the chords form a completely independent musical layer.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 5b</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=8',1000,1000); return false;" href="bugallo_score_examples.php?id=8"><img border="1" alt="score thumbnail" src="bugallo_section5bsmall.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p>
+  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 5c</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=9',1000,1000); return false;" href="bugallo_score_examples.php?id=9"><img border="1" alt="score thumbnail" src="bugallo_section5csmall.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[10.3] <b>Section 5b</b> (systems 79&#8211;84) restates the melody of Section 5a, but transposed up a perfect fourth and played a &#8220;major sixth&#8221; faster. The triads in the accompaniment carry over into 5b, but become progressively faster according to the accelerando template. The end of this subsection has the addition of a long sustained chord (systems 83&#8211;84). In the roll, the template drawings disappear during this chord. In the score, I have kept them because they determine the release of the different chord sounds.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup></p>
+
+<p>[10.4] <strong>Section 5c</strong> (systems 85&#8211;93) presents the melodic material from the previous two subsections in a converging tempo canon at the proportion 3:5. In addition to the accompanying major triads, an extra layer of tenuto octaves occurs in the bass. As the triads accelerate the octaves decelerate, and vice versa.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> At the end of this subsection there is also a sustained chord, this time held with the damper pedal (system 92). The notes of the chord release all at once, leading to a modulating arpeggio that serves as a bridge into the following section.</p>
+
+<p>[10.5] Section 5 is reminiscent of Study No. 20 in more than one way. The traits in common include a similar melodic deployment of the [013] trichords, the transposition of the successive trichords at the perfect fourth, the harmonic combination of such trichords, the emphasis on durations, and the lack of a perceivable pulsation. The reminiscent character of the section is further emphasized by its dynamics. The treble in Sections 5a and 5c is at a lower dynamic level than the bass, and the melody thus sounds removed and somewhat melancholic.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> Yet, by means of its obvious recurrence in each subsection, the melody acquires thematic weight in Study No. 47. Conversely, there are no memorable &#8220;themes&#8221; in Study No. 20, which remains more abstract and evasive in this regard.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 6</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=10',1000,1000); return false;" href="bugallo_score_examples.php?id=10"><img border="1" alt="score thumbnail" src="bugallo_section6small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[11.1]<b> Section 6 </b>(systems 94&#8211;112) exhibits many parallels with Section 5. As far as the upper voices are concerned, Sections 6a and 6b are quasi-literal transpositions of 5a and 5b, ornamented with fast arpeggios. For these embellished versions, Nancarrow <i>did</i> utilize the small units of <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>6/C7 and C7/F7/A7 to spell out major arpeggios spanning five octaves (see system 94). Thus it seems possible that the composer conceived this section before the previous, continuing to use the templates of Section 6 for Section 5. The darker, apparently older paper of Section 6 in the roll supports this hypothesis.</p>
+
+<p>[11.2] Instead of combining the melodic material from the previous two subsections through canon, Section 6c (systems 107&#8211;12) recombines the same pitches and their assigned durations in a free manner, leading to new melodic and rhythmic results. The arpeggios of Section 6 are joined by quintuple octaves played staccato and either ritardando or accelerando. The minor third spelled by these octaves in the first two subsections becomes a <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> pedal in Section 6c.</p>
+
+<p>[11.3] Nancarrow&#8217;s numbering of the harmonic templates every 16 units throughout Section 6 (see system 94), indicate that the pulsations in each voice remain the same as in the previous section. But if tempo is expressed primarily through durations in Section 5, in Section 6 it is manifested through speed. One can readily perceive that the arpeggios articulating the lower-pitched templates are slightly slower, which leads to exciting results, especially when the arpeggios begin to superimpose. In system 112, as the arpeggios overlap with each other, the study reaches its maximum velocity: <i>ca. </i>171 attacks per second.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 7</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=13',1000,1000); return false;" href="bugallo_score_examples.php?id=13"><img border="1" alt="score thumbnail" src="bugallo_section7small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge, see the rest, and listen)</font></p>
+  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11</b>. Relationship Between the Templates Bb5 and C8</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=15&nonav=true"><img border="1" alt="Figure 11 thumbnail" src="bugallo_ex11small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[12.1] <b>Section 7</b> (systems 113&#8211;29) contains an ornamented version of the opening Theme A (Section 1). (Audio is provided for the beginning of Section 7.) 
+As in Section 6, the ornaments consist of major arpeggios spanning several octaves. These arpeggios articulate the units of the smallest template yet: C8.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> The timing between the attack point of one arpeggio and that of the following one, effectively reproduces the theme&#8217;s original pulsation. Dealing with a different template, Nancarrow approximated this pulsation as closely as possible by inserting the arpeggios every 49, 50, or 51 C8-units. Between pulses 1 and 14, he distributed the attacks in the C8 template as follows: 51, 49, 51, 50, 50, 50, 51, 50, 51, 50, 50, 50, and 51 units. This distribution yields an average distance of 50.30 units, which matches the original &#8220;11-of-<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5&#8221; pulsation extremely closely. <b>Figure 11</b> illustrates the relationship between the templates in question. After pulse number 14, Nancarrow ceased to draw all the C8-divisions in the roll, only marking those relevant to the arpeggios. Based on measurements taken from the roll, I have chosen to repeat cyclically the spacing of the initial 14 pulses in the score (i.e., 51, 49, 50, . . . , and 51 units).</p>
+
+<p>[12.2] The horizontal thick lines following the numbered pulses in the C8-template of Section 7 always encompass 18 units (systems 113&#8211;29).<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> The consistent length of the lines reflects Nancarrow&#8217;s drawings in the roll, but does not necessarily account for the lengths of the arpeggios. Initially, the arpeggios contain nineteen notes (six complete octaves), but they are eventually reduced to eighteen or even fifteen notes chiefly because, due to the melody&#8217;s contour, the top end of the arpeggios sometimes falls out of the range of the instrument.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> For example, the arpeggios in beats 13&#8211;16 span five octaves plus a fifth, and those in beats 17&#8211;20 only five octaves. Regardless of the register covered, the speed of the arpeggios remains linked to the C8-divisions. The fact that the arpeggios with fewer notes finish before the others has been taken into account graphically in the score.</p>
+
+<p>[12.3] Similarly to Section 6, the arpeggios are accompanied by multiple octaves played staccato. The tension in this section rises, however, by means of the largely chromatic movement of the octaves and their irregular rhythm, based on f 15<sub>(b)</sub>. This template defines a <i>talea</i> that recurs thirteen complete and one incomplete times during Section 7. As in Section 4, however, the f 15 <i>talea</i> is not perceivable as such because of the template&#8217;s slippery rhythm as well as the unpredictable contour of the series of pitches that it articulates.</p>
+
+<fig>  <p style="text-align: center; margin-top:0em;width:400px">Nancarrow, Study no. 47, <b>Section 8</b><br><p style="text-align: center;width:400px"><a target="score_window" onClick="newvideowindow('bugallo_score_examples.php?id=14',1000,1000); return false;" href="bugallo_score_examples.php?id=14"><img border="1" alt="score thumbnail" src="bugallo_section8small.png"></a></p><p style="text-align: center;width:400px"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[13]<b> Section 8</b> (systems 130&#8211;45) returns to Theme A, unornamented, and in the 77-note version of Section 1. The theme is deployed as a three-voice tempo canon, with the voices converging at the end of the piece. The backward numeration of the templates in this section reflects both the roll and the punching score. The first voice to enter follows a pulsation determined by 4 units of E4, the second by 3 of C4, and the third by 2 of G3. The resulting proportion ruling the canon is 15:16:18&#8212;a temporal realization of the composer&#8217;s favorite [013] trichord (!). The final flourish of the study (system 145) bears no template indication in Nancarrow&#8217;s documents. I deduced its association with the C8-divisions from the arpeggio&#8217;s angle in the roll, which matches the inclination of those in Section 7, although with the intermediate thirds and fifths omitted.</p>
+
+<p style="text-align:center"><b>Overview of Temporal Relationships (Harmonic Templates)</b></p>
+
+<fig>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b>. Triadic Template Combinations and their Temporal Proportions</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=16&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="bugallo_ex12small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 13</b>. Groupings of Template Units and Metronome Markings</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bugallo_examples.php?id=17&nonav=true"><img border="1" alt="Figure 13 thumbnail" src="bugallo_ex13small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[14.1] The combination of harmonic templates spelling a major triad is clearly predominant in Study No. 47, ruling Sections 1, 2, 3, 5, 6, and 8 of the piece. <b>Figure 12 </b>summarizes the triadic template combinations, indicating also the temporal relationships they create within and between sections. The &#8220;b&#8221; part of the figure shows the same triads in staff notation (the labels <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>/C have been replaced with <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/C for a more convenient harmonic spelling). Some of the proportions shown in the figure emerge clearly while others remain subdued. The proportion 3:5, for example, is musically underlined within Sections 5 and 6, both sequentially (a and b subsections) and simultaneously (c subsections). The proportion 1:8 is also clear, and expressed by the analogous melodic materials in Sections 5 and 6. This proportion allows the shift of focus from <i>durations</i> in Section 5 to <i>speed</i> in the ornamented Section 6.</p>
+
+<p>[14.2] Nancarrow derived further temporal relationships from these triadic template combinations by grouping their divisions in different manners. These groupings&#8212;indicated by the composer with numbers on the templates&#8212;are summarized in <b>Figure 13</b>. The figure also shows metronome markings for the resulting pulsations.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> Some of the pulsations remain the same (1:1) or are doubled (2:1) in different sections, creating strong temporal links at a formal level. As shown in the figure&#8217;s bottom box, these links extend also to Sections 4 and 7, which feature the steady pulsation of Theme A (MM 91). Sections 7 and 8 reproduce almost exactly this pulsation (MM 91.52 and MM 89.37). The fact that Theme A is also played faster in Section 8 (MM 95.33 in the middle canonic voice) connects the theme temporally to other sections, although in a retrospective manner.</p>
+
+<p style="text-align:center"><b>Concluding Remarks</b></p>
+
+<p>[15.1] Tempo templates, both harmonic and non-harmonic, became a fundamental component of Nancarrow&#8217;s working method after Study No. 21. The impact of these templates on the development of his musical language is substantial. The election and drawing of the templates preceded&#8212;or rather initiated&#8212;the compositional process, defining the grounds upon which the music&#8217;s temporal structures are based.</p>
+
+<p>[15.2] Study No. 47 relies on certain combinations of harmonic templates which, transposed and inverted, conform to the basic temporal &#8220;harmony&#8221; of the piece. Further proportions arise from diverse groupings of the template units. These groupings translate into tempos that run through the work, creating connections among similar as well as disparate materials. Finally, the non-harmonic templates contribute their own relative tempo (f 15<sub>(b)</sub> as opposed to f 15<sub>(e)</sub>) and periodicity (<i>taleae</i>) to the study&#8217;s temporal fabric. These templates support independent musical layers interacting in different manners with those based on the harmonic templates.</p>
+
+<p>[15.3] Through decades of work with the player piano, Nancarrow&#8217;s temporal thinking became conditioned by his primordial constructive tool, the tempo templates, and so did his musical language. Further exploration of the templates, as drawn in the original documents, is likely to deepen our understanding of the composer&#8217;s interest in tempo and, more broadly, of his conception of musical time.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Helena Bugallo<br>
+	Pianist and musicologist<br>Lenzgasse 3<br>Basel 4056<br>Switzerland<br><a href="mailto:hbugallo@yahoo.com">hbugallo@yahoo.com</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_bugallo_2004" class="flyoverdiv">Bugallo, Helena. 2004. &#8220;Selected Studies for Player Piano by Conlon Nancarrow: Sources, Working Methods and Compositional Strategies.&#8221; PhD diss., University of Buffalo.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bugallo_2004"></a>Bugallo, Helena. 2004. &#8220;Selected Studies for Player Piano by Conlon Nancarrow: Sources, Working Methods and Compositional Strategies.&#8221; PhD diss., University of Buffalo.</p><div id="citediv_bugallo_2012" class="flyoverdiv">Bugallo, Helena. 2012. Liner notes to <i>Conlon Nancarrow, Late and Unknown: Works on Rolls</i>. Wergo WER 67542. Compact disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bugallo_2012"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2012. Liner notes to <i>Conlon Nancarrow, Late and Unknown: Works on Rolls</i>. Wergo WER 67542. Compact disc.</p><div id="citediv_cowell_1930" class="flyoverdiv">Cowell, Henry. 1930. <i>New Musical Resources. </i>New York: Alfred A. Knopf. Reprinted in 1996 with notes and an accompanying essay by David Nicholls, Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cowell_1930"></a>Cowell, Henry. 1930. <i>New Musical Resources. </i>New York: Alfred A. Knopf. Reprinted in 1996 with notes and an accompanying essay by David Nicholls, Cambridge: Cambridge University Press.</p><div id="citediv_duckworth_1995" class="flyoverdiv">Duckworth, William. 1995. <i>Talking Music: Conversations With John Cage, Philip Glass, Laurie Anderson, and Five Generations of American Experimental Composers.</i> New York: Schirmer Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="duckworth_1995"></a>Duckworth, William. 1995. <i>Talking Music: Conversations With John Cage, Philip Glass, Laurie Anderson, and Five Generations of American Experimental Composers.</i> New York: Schirmer Books.</p><div id="citediv_gagne_and_caras_1982" class="flyoverdiv">Gagne, Cole and Tracy Caras. 1982. &#8220;Conlon Nancarrow,&#8221; in <i>Soundpieces: Interviews with American Composers</i>. Metuchen, NJ, and London: Scarecrow Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gagne_and_caras_1982"></a>Gagne, Cole and Tracy Caras. 1982. &#8220;Conlon Nancarrow,&#8221; in <i>Soundpieces: Interviews with American Composers</i>. Metuchen, NJ, and London: Scarecrow Press.</p><div id="citediv_gann_1995" class="flyoverdiv">Gann, Kyle. 1995. <i>The Music of Conlon Nancarrow</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gann_1995"></a>Gann, Kyle. 1995. <i>The Music of Conlon Nancarrow</i>. Cambridge: Cambridge University Press.</p><div id="citediv_garland_1982" class="flyoverdiv">Garland, Peter. 1982. &#8220;Conlon Nancarrow: Chronicle of a Friendship.&#8221; In <i>Americas: Essays on American Music and Culture (1973&#8211;80)</i>. Santa Fe: Soundings Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="garland_1982"></a>Garland, Peter. 1982. &#8220;Conlon Nancarrow: Chronicle of a Friendship.&#8221; In <i>Americas: Essays on American Music and Culture (1973&#8211;80)</i>. Santa Fe: Soundings Press.</p><div id="citediv_nancarrow_1988" class="flyoverdiv">Nancarrow, Conlon. 1988. <i>Conlon Nancarrow: Studies for Player Piano</i>. Wergo WER 69072, 1999. 5 compact discs. Includes all <i>Studies</i> and <i> Tango?</i></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nancarrow_1988"></a>Nancarrow, Conlon. 1988. <i>Conlon Nancarrow: Studies for Player Piano</i>. Wergo WER 69072, 1999. 5 compact discs. Includes all <i>Studies</i> and <i> Tango?</i></p><div id="citediv_nancarrow_2009" class="flyoverdiv">Nancarrow, Conlon. 2009. <i>Conlon Nancarrow: Original Compositions and Transcriptions for Player Piano</i>. Musikproduktion Dabringhaus und Grimm, MDG 645 1309&#8211;2, compact disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nancarrow_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2009. <i>Conlon Nancarrow: Original Compositions and Transcriptions for Player Piano</i>. Musikproduktion Dabringhaus und Grimm, MDG 645 1309&#8211;2, compact disc.</p><div id="citediv_nancarrow_2012" class="flyoverdiv">Nancarrow, Conlon. 2012. <i>Conlon Nancarrow, Late and Unknown: Works on Rolls</i> (recorded on the composer&#8217;s original player pianos). Wergo WER 67542, compact disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nancarrow_2012"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2012. <i>Conlon Nancarrow, Late and Unknown: Works on Rolls</i> (recorded on the composer&#8217;s original player pianos). Wergo WER 67542, compact disc.</p><div id="citediv_nicholls_1990" class="flyoverdiv">Nicholls, David. 1990. <i>American Experimental Music, 1890&#8211;1940</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nicholls_1990"></a>Nicholls, David. 1990. <i>American Experimental Music, 1890&#8211;1940</i>. Cambridge: Cambridge University Press.</p><div id="citediv_tenney_1999" class="flyoverdiv">Tenney, James. 1999. Liner notes to <i>Conlon Nancarrow: Studies for Player Piano</i>. Wergo WER 69072, compact disc.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tenney_1999"></a>Tenney, James. 1999. Liner notes to <i>Conlon Nancarrow: Studies for Player Piano</i>. Wergo WER 69072, compact disc.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> This article is based on Chapter 5, portions of Chapters 1 and 2, and Appendix B of my doctoral dissertation (Bugallo 2004). The primary sources discussed in the article are housed at the Conlon Nancarrow Collection of the Paul Sacher Foundation in Basel, Switzerland. I am most thankful to Johanna Blask and Carlos Chanf&oacute;n for their valuable assistance and, especially, to Dr. Felix Meyer for his generous support and contributions during my research visits to the Foundation. The manuscript featured in Figure 6 and the letter quotation in paragraph 4.1 are reproduced here with the Foundation&#8217;s kind permission. I am also indebted to Wolfgang Heisig for his careful reading of my score of Study No. 47 and for his suggested corrections. The score appears here with kind permission from Schott Music International. Finally, I wish to thank Daphne Leong (<i>MTO</i> reviewer) and the journal&#8217;s editorial staff for their thoughtful comments and suggestions.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">This article is based on Chapter 5, portions of Chapters 1 and 2, and Appendix B of my doctoral dissertation (Bugallo 2004). The primary sources discussed in the article are housed at the Conlon Nancarrow Collection of the Paul Sacher Foundation in Basel, Switzerland. I am most thankful to Johanna Blask and Carlos Chanf&oacute;n for their valuable assistance and, especially, to Dr. Felix Meyer for his generous support and contributions during my research visits to the Foundation. The manuscript featured in Figure 6 and the letter quotation in paragraph 4.1 are reproduced here with the Foundation&#8217;s kind permission. I am also indebted to Wolfgang Heisig for his careful reading of my score of Study No. 47 and for his suggested corrections. The score appears here with kind permission from Schott Music International. Finally, I wish to thank Daphne Leong (<i>MTO</i> reviewer) and the journal&#8217;s editorial staff for their thoughtful comments and suggestions.</div><p><a name="FN1">1.</a>   Cowell&#8217;s proposed method of notation includes special note-shapes for &#8220;third-notes&#8221; (triangle), &#8220;fifth-notes&#8221; (square), &#8220;seventh-notes&#8221; (diamond), and so forth up to &#8220;fifteenth-notes.&#8221; See notational table in <a href="#cowell_1930" id="citation_cowell_1930_67dc9a5bcea3d">Cowell 1930</a>, 58. The system was never implemented successfully, since Cowell himself added &#8220;tuplets&#8221; to the scores he wrote in this manner in order to clarify the meaning of the diverse note-shapes. Examples of its usage are the Quartet Romantic (1917), the Quartet Euphometric (1919), and the piano piece Fabric (1920), (<a href="#nicholls_1990" id="citation_nicholls_1990_67dc9a5bcea42">Nicholls 1990</a>, 142).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a>   Peter Garland has placed this trip in 1948 (<a href="#garland_1982" id="citation_garland_1982_67dc9a5bcea45">Garland 1982</a>, 169). However, there is plenty of circumstantial evidence suggesting the earlier date. During this trip&#8212;his last one to the United States for the following thirty-six years&#8212;he actually met Cowell (Gann 1995, 44).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a>   I made this distinction first in my dissertation (<a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea47">Bugallo 2004</a>, 86).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a>   The measurements average several readings of the same templates in the original rolls of Studies No. 45, No. 46, and No. 47. Gann has listed elsewhere the dimensions of the f 15(d) template (<a href="#gann_1995" id="citation_gann_1995_67dc9a5bcea48">Gann 1995</a>, 257). His values, slightly different from the ones presented here, are based on measurements taken from a Xerox of the punching score of Study No. 45c. The template drawings in the punching scores are generally less accurate than those in the rolls.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a>   Prior to Study No. 45, Freeman commissioned Studies No. 42 and No. 44, both premiered at the same series on November 2, 1981 and December 6, 1982, respectively. Of the three events, Nancarrow attended only the 1984 premiere of Study No. 45.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a>   Nancarrow to Freeman, letter from February 24, 1984, &#8220;Conlon Nancarrow Collection,&#8221; Paul Sacher Foundation.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a>   There are two recordings of this piece available to date (Nancarrow <a href="#nancarrow_2009" id="citation_nancarrow_2009_67dc9a5bcea4c">2009</a> and <a href="#nancarrow_2012" id="citation_nancarrow_2012_67dc9a5bcea4e">2012</a>).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a>   All the sound files in the paper belong to <a href="#nancarrow_2012" id="citation_nancarrow_2012_67dc9a5bcea50">Nancarrow 2012</a>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a>   Nancarrow never used the crescendo/decrescendo functions offered by the Ampico system. He favored instead the use of discrete dynamic steps, often coinciding with, and underlying, sectional changes.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a>   A discussion on the accompaniment of Study No. 44 is to be found in <a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea52">Bugallo 2004</a>, 146. A similar impression of disarray is conveyed by the &#8220;boogie bass&#8221; in Studies No. 45a and No. 45c, and by the ostinato in Study No. 45b.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a>   The change causes the placement of the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5-template underneath the other templates in the score (systems 22&#8211;36)&#8212;an arrangement also found in the roll.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a>   A slight variation is to be found in the third &#8220;measure&#8221; of the <i>talea</i>.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a>   Nancarrow voiced the tune in 2d by making the internal notes of the chords staccato (1 hole) and the octaves legato&#8212;a common practice in many of the Studies.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a>   The block transposition of entire sections following a I&#8211;IV&#8211;V harmonic pattern is characteristic of some of the early jazz-influenced Studies, such as Studies No. 2 and No. 3. The pattern is also found in the other movements of the original <i>Betty Freeman Suite</i>, especially Study No. 45b.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a>   This texture is anticipated in the accompaniment of Sections 2a and 2d.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a>   The scoring of Section 3 in three staves was taken from the punching score. This scoring clarifies the counterpoint but does not represent graphically the voices&#8217; frequent crossing. An alternative and perhaps better solution would have been to score the whole section in four staves representing the entire keyboard range, and to write each voice with a different color to make the crossings apparent.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a>   This also explains the placement of E4 underneath the other two lower-pitched templates in the roll (see Figure 9).<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a>   Descriptive name given by Nancarrow to Study No. 20. Chapter 3 of my dissertation contains a comprehensive analysis of this work (<a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea55">Bugallo 2004</a>, 94&#8211;125).<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a>   I deduced the exact release points by measuring the roll. The same applies to the end of Section 5c.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a>   Section 5c uses only values 1 to 10 of the accel. and rit. templates.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a>   This distance disappears with the final arpeggio in system 93, where all the registers become suddenly equally bright in anticipation of the following <i>ff</i> section.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a>   The label of this template is not given in Nancarrow&#8217;s documents, but I deduced it from the size of its divisions.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a>   This explains the composer&#8217;s choice of grouping the C8-units every 6 (6 &times; 3 = 18).<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a>   The highest note in Nancarrow&#8217;s pianos is A7.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a>   The metronome markings are based on the initial tempo indication (&#8220;11 of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5&#8221; = 91) and do not take into account the &#8220;acceleration effect&#8221; of mechanical reproduction.<br><a href="#FN25REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">  Cowell&#8217;s proposed method of notation includes special note-shapes for &#8220;third-notes&#8221; (triangle), &#8220;fifth-notes&#8221; (square), &#8220;seventh-notes&#8221; (diamond), and so forth up to &#8220;fifteenth-notes.&#8221; See notational table in <a href="#cowell_1930" id="citation_cowell_1930_67dc9a5bcea3d">Cowell 1930</a>, 58. The system was never implemented successfully, since Cowell himself added &#8220;tuplets&#8221; to the scores he wrote in this manner in order to clarify the meaning of the diverse note-shapes. Examples of its usage are the Quartet Romantic (1917), the Quartet Euphometric (1919), and the piano piece Fabric (1920), (<a href="#nicholls_1990" id="citation_nicholls_1990_67dc9a5bcea42">Nicholls 1990</a>, 142).</div><div id="fndiv2" class="flyoverdiv">  Peter Garland has placed this trip in 1948 (<a href="#garland_1982" id="citation_garland_1982_67dc9a5bcea45">Garland 1982</a>, 169). However, there is plenty of circumstantial evidence suggesting the earlier date. During this trip&#8212;his last one to the United States for the following thirty-six years&#8212;he actually met Cowell (Gann 1995, 44).</div><div id="fndiv3" class="flyoverdiv">  I made this distinction first in my dissertation (<a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea47">Bugallo 2004</a>, 86).</div><div id="fndiv4" class="flyoverdiv">  The measurements average several readings of the same templates in the original rolls of Studies No. 45, No. 46, and No. 47. Gann has listed elsewhere the dimensions of the f 15(d) template (<a href="#gann_1995" id="citation_gann_1995_67dc9a5bcea48">Gann 1995</a>, 257). His values, slightly different from the ones presented here, are based on measurements taken from a Xerox of the punching score of Study No. 45c. The template drawings in the punching scores are generally less accurate than those in the rolls.</div><div id="fndiv5" class="flyoverdiv">  Prior to Study No. 45, Freeman commissioned Studies No. 42 and No. 44, both premiered at the same series on November 2, 1981 and December 6, 1982, respectively. Of the three events, Nancarrow attended only the 1984 premiere of Study No. 45.</div><div id="fndiv6" class="flyoverdiv">  Nancarrow to Freeman, letter from February 24, 1984, &#8220;Conlon Nancarrow Collection,&#8221; Paul Sacher Foundation.</div><div id="fndiv7" class="flyoverdiv">  There are two recordings of this piece available to date (Nancarrow <a href="#nancarrow_2009" id="citation_nancarrow_2009_67dc9a5bcea4c">2009</a> and <a href="#nancarrow_2012" id="citation_nancarrow_2012_67dc9a5bcea4e">2012</a>).</div><div id="fndiv8" class="flyoverdiv">  All the sound files in the paper belong to <a href="#nancarrow_2012" id="citation_nancarrow_2012_67dc9a5bcea50">Nancarrow 2012</a>.</div><div id="fndiv9" class="flyoverdiv">  Nancarrow never used the crescendo/decrescendo functions offered by the Ampico system. He favored instead the use of discrete dynamic steps, often coinciding with, and underlying, sectional changes.</div><div id="fndiv10" class="flyoverdiv">  A discussion on the accompaniment of Study No. 44 is to be found in <a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea52">Bugallo 2004</a>, 146. A similar impression of disarray is conveyed by the &#8220;boogie bass&#8221; in Studies No. 45a and No. 45c, and by the ostinato in Study No. 45b.</div><div id="fndiv11" class="flyoverdiv">  The change causes the placement of the B&#x266d;5-template underneath the other templates in the score (systems 22&#8211;36)&#8212;an arrangement also found in the roll.</div><div id="fndiv12" class="flyoverdiv">  A slight variation is to be found in the third &#8220;measure&#8221; of the <i>talea</i>.</div><div id="fndiv13" class="flyoverdiv">  Nancarrow voiced the tune in 2d by making the internal notes of the chords staccato (1 hole) and the octaves legato&#8212;a common practice in many of the Studies.</div><div id="fndiv14" class="flyoverdiv">  The block transposition of entire sections following a I&#8211;IV&#8211;V harmonic pattern is characteristic of some of the early jazz-influenced Studies, such as Studies No. 2 and No. 3. The pattern is also found in the other movements of the original <i>Betty Freeman Suite</i>, especially Study No. 45b.</div><div id="fndiv15" class="flyoverdiv">  This texture is anticipated in the accompaniment of Sections 2a and 2d.</div><div id="fndiv16" class="flyoverdiv">  The scoring of Section 3 in three staves was taken from the punching score. This scoring clarifies the counterpoint but does not represent graphically the voices&#8217; frequent crossing. An alternative and perhaps better solution would have been to score the whole section in four staves representing the entire keyboard range, and to write each voice with a different color to make the crossings apparent.</div><div id="fndiv17" class="flyoverdiv">  This also explains the placement of E4 underneath the other two lower-pitched templates in the roll (see Figure 9).</div><div id="fndiv18" class="flyoverdiv">  Descriptive name given by Nancarrow to Study No. 20. Chapter 3 of my dissertation contains a comprehensive analysis of this work (<a href="#bugallo_2004" id="citation_bugallo_2004_67dc9a5bcea55">Bugallo 2004</a>, 94&#8211;125).</div><div id="fndiv19" class="flyoverdiv">  I deduced the exact release points by measuring the roll. The same applies to the end of Section 5c.</div><div id="fndiv20" class="flyoverdiv">  Section 5c uses only values 1 to 10 of the accel. and rit. templates.</div><div id="fndiv21" class="flyoverdiv">  This distance disappears with the final arpeggio in system 93, where all the registers become suddenly equally bright in anticipation of the following <i>ff</i> section.</div><div id="fndiv22" class="flyoverdiv">  The label of this template is not given in Nancarrow&#8217;s documents, but I deduced it from the size of its divisions.</div><div id="fndiv23" class="flyoverdiv">  This explains the composer&#8217;s choice of grouping the C8-units every 6 (6 &times; 3 = 18).</div><div id="fndiv24" class="flyoverdiv">  The highest note in Nancarrow&#8217;s pianos is A7.</div><div id="fndiv25" class="flyoverdiv">  The metronome markings are based on the initial tempo indication (&#8220;11 of B&#x266d;5&#8221; = 91) and do not take into account the &#8220;acceleration effect&#8221; of mechanical reproduction.</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2014 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		14677
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

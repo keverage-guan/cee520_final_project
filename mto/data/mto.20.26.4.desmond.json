@@ -1,0 +1,869 @@
+{
+    "title": "Computer-aided Analysis of Sonority in the French Motet Repertory, ca. 1300–1350",
+    "date": "2020/12/01",
+    "volume": "26",
+    "issue": "4",
+    "authors": [
+        "Desmond, Karen",
+        "Hopkins, Emily",
+        "Howes, Samuel",
+        "Cumming, Julie E."
+    ],
+    "abstract": "This article analyzes the distribution of three- and four-voice vertical sonorities in a repertoire of Frenchars antiquaandars novamotets. Rather than selecting the subjectively important sonorities within a piece—an effort that would rely on the analyst’s judgment of the overarching contrapuntal goals—this study uses computational musicological methods to analyze and categorize the distribution of sonorities across individual motets and groups of motets that occur at regular time intervals across the course of the compositions. This study offers some preliminary observations and conclusions about sonority usage in the late medieval French motet repertoire.",
+    "keywords": [
+        "medieval motets",
+        "sonority",
+        "digital musicology",
+        "Montpellier Codex",
+        "Roman de Fauvel",
+        "Ivrea Codex"
+    ],
+    "doi": "10.30535/mto.26.4.2",
+    "received": "December 2018",
+    "pdf": "https://mtosmt.org/issues/mto.20.26.4/mto.20.26.4.desmond.pdf",
+    "author_info": [
+        {
+            "name": "Karen Desmond",
+            "university": "Brandeis University",
+            "address": "Department of Music, 415 South St, Waltham, MA 02453, USA",
+            "email": "kdesmond@brandeis.edu"
+        },
+        {
+            "name": "Emily Hopkins",
+            "university": "McGill University",
+            "address": "Schulich School of Music, 555 Sherbrooke St W, Montreal, QC H3A 1E3, Canada",
+            "email": "emily.hopkins@mcgill.ca"
+        },
+        {
+            "name": "Samuel Howes",
+            "university": "McGill University",
+            "address": "Schulich School of Music, 555 Sherbrooke St W, Montreal, QC H3A 1E3, Canada",
+            "email": "samuel.howes@mail.mcgill.ca"
+        },
+        {
+            "name": "Julie E. Cumming",
+            "university": "McGill University",
+            "address": "Schulich School of Music, 555 Sherbrooke St W, Montreal, QC H3A 1E3, Canada",
+            "email": "julie.cumming@mcgill.ca"
+        }
+    ],
+    "citations": {
+        "albrecht_and_huron_2014": "Albrecht, Joshua and David Huron. 2014. “A Statistical Approach to Tracing the Historical Development of Major and Minor Pitch Distributions, 1400–1750.” Music Perception 31 (3): 223–43.",
+        "apfel_1982": "Apfel, Ernst. 1982. Diskant und Kontrapunkt in der Musiktheorie des 12. bis 15. Jahrhunderts . Heninrichshofen’s Verlag.",
+        "arlt_1982": "Arlt 1982. “Aspekte der Chronologie und des Stilwandels im franzosischen Lied des 14. Jahrhunderts.” In Aktuelle Fragen der musikbezogenen Mittelalterforschung: Texte zu einem Basler Kolloquium des Jahres 1975 , ed. Wulf Arlt and Max Haas, 193–280. Amadeus.",
+        "bain_2003": "Bain, Jennifer. 2003. “Theorizing the Cadence in the Music of Machaut.” Journal of Music Theory 47 (2): 325–62.",
+        "bain_2005": "Bain, Jennifer. 2005. “Tonal Structure and the Melodic Role of Chromatic Inflections in the Music of Machaut.” Plainsong and Medieval Music 14 (1): 59–88.",
+        "bain_2008": "Bain, Jennifer. 2008. “‘Messy Structure’? Multiple Tonal Centers in the Music of Machaut.” Music Theory Spectrum 30 (2): 195–237.",
+        "bell_2003": "Bell, Nicolas. 2003. The Las Huelgas Music Codex. A Companion Study to the Facsimile . Testimonio Compaǹia Editorial.",
+        "bent_1998": "Bent, Margaret. 1998. “The Grammar of Early Music: Preconditions for Analysis.” In Tonal Structures in Early Music , ed. Christle Collins Judd, 15–59. Garland.",
+        "bent_2002": "Bent, Margaret. 2002. Counterpoint, Composition, and Musica Ficta . Routledge.",
+        "bent_2009": "Bent, Margaret. 2009. “Naming of Parts: Notes on the Contratenor, c. 1350–1450.” In Uno gentile et subtile ingenio: Studies in Renaissance Music in Honour of Bonnie J. Blackburn , ed. M. Jennifer Bloxam, Gioia Filocamo, and Leofranc Holford-Strevens, 1–12. Brepols.",
+        "bradley_and_desmond_2018": "Bradley, Catherine A. and Karen Desmond, eds. 2018. The Montpellier Codex: The Final Fascicle. Contents, Contexts, Chronologies . The Boydell Press.",
+        "bragard_1955–73": "Bragard, Roger, ed. 1955–73. Jacobi Leodiensis Speculum musicae . Corpus scriptorum de musica 3. American Institute of Musicology.",
+        "canguilhem_2011": "Canguilhem, Philippe. 2011. “Singing upon the Book According to Vicente Lusitano.” Translated by Alexander Stalarow. Early Music History 30: 55–103.",
+        "catalunya_2015": "Catalunya, David. 2015. “The Las Huelgas Codex Revisited: Dating and Scribal Aspects.” Paper presented at the Medieval and Renaissance Music International Conference , Brussels, July 6–9, 2015.",
+        "coussemaker_1963": "Coussemaker, Edmond de, ed. [1864–76] 1963. Scriptorum de musica medii aevi. Novam seriem a Gerbertina alteram collegit nuncque primum edidit E. de Coussemaker . 4 vols. Reprint, G. Olms.",
+        "crocker_1962": "Crocker, Richard L. 1962. “Discant, Counterpoint and Harmony.” Journal of the American Musicological Society 15 (1): 1–21.",
+        "cumming_2013a": "Cumming, Julie E. 2013a. “From Two-part Framework to Movable Module.” In Medieval Music in Practice Studies in Honor of Richard Crocker , ed. Judith A. Peraino, 177–215. American Institute of Musicology.",
+        "cumming_2013b": "Cumming, Julie E. 2013b. “Renaissance Improvisation and Musicology.” Music Theory Online 19 (2). http://mtosmt.org/issues/mto.13.19.2/mto.13.19.2.cumming.php",
+        "desmond_2018a": "Desmond, Karen. 2018a. Music and the moderni, 1300–50: The ars nova in Theory and Practice . Cambridge University Press.",
+        "desmond_2018b": "Desmond, Karen. 2018b. “‘One is the loneliest number . . . ’: The Semibreve Stands Alone.” Early Music 46 (3): 403–16.",
+        "desmond_2018c": "Desmond, Karen. 2018c. “Texture, Rhythm, and Stylistic Groupings in Montpellier’s Eighth Fascicle Motets.” In The Montpellier Codex: The Final Fascicle. Contents, Contexts, Chronologies , ed. Catherine A. Bradley and Karen Desmond. The Boydell Press.",
+        "everist_2007": "Everist, Mark. 2007. “Motet, French Tenors and the Polyphonic Chanson ca. 1300.” Journal of Musicology 24 (3): 365–406.",
+        "fuller_1986": "Fuller, Sarah. 1986. “On Sonority in Fourteenth-Century Polyphony: Some Preliminary Reflections.” Journal of Music Theory 30 (1): 35–70.",
+        "fuller_1987": "Fuller, Sarah. 1987. “Line, ‘Contrapunctus’ and Structure in a Machaut Song.” Music Analysis 6 (1/2): 37–58.",
+        "fuller_1992": "Fuller, Sarah. 1992. “Tendencies and Resolutions: The Directed Progression in Ars Nova music.” Journal of Music Theory 36 (2): 229–57.",
+        "fuller_2002": "Fuller, Sarah. 2002. “ Organum–discantus–contrapunctus in the Middle Ages.” In The Cambridge History of Western Music Theory , ed. Thomas Christensen, 477–502. Cambridge University Press.",
+        "fuller_2013": "Fuller, Sarah. 2013. “Contrapunctus, Dissonance, Regulation, and French Polyphony of the Fourteenth century.” Medieval Music in Practice: Studies in Honor of Richard Crocker , ed. Judith A. Peraino, 113–52. American Institute of Musicology.",
+        "hartt_2007": "Hartt, Jared C. 2007. “Sonority, Syntax, and Line in the Three–Voice Motets of Guillaume de Machaut.” PhD diss., Washington University in St. Louis.",
+        "hartt_2010": "Hartt, Jared C. 2010. “Rehearing Machaut’s Motets: Taking the Next Step in Understanding Sonority.” Journal of Music Theory 54 (2): 179–234.",
+        "hartt_2017": "Hartt, Jared C. 2017. “The Problem of the Vitry Corpus: Sonority, Kinship, Attribution.” Music Theory & Analysis 4 (2): 192–228.",
+        "kügle_2019": "Kügle, Karl. 2019. Manuscript Ivrea, Biblioteca Capitolare 115: Introductory Study and Facsimile Edition . LIM.",
+        "leach_2000a": "Leach, Elizabeth Eva. 2000a. “Counterpoint as an Interpretative Tool: The Case of Guillaume de Machaut’s De toutes flours (B31).” Music Analysis 19 (3): 321–51.",
+        "leach_2000b": "Leach, Elizabeth Eva. 2000b. “Counterpoint and Analysis in Fourteenth–Century Song.” Journal of Music Theory 44 (1): 45–79.",
+        "leach_2001": "Leach, Elizabeth Eva. 2001. “Machaut’s Ballades with Four Voices.” Plainsong and Medieval Music 10 (1): 47–79.",
+        "mckinnon_1998": "McKinnon, James, ed. 1998. Strunk’s Source Readings in Music History . Vol. 2, The Early Christian Period and the Latin Middle Ages . Leo Treitler, general editor. Revised edition. W. W. Norton.",
+        "michels_1972": "Michels, Ulrich, ed. 1972. Johannis de Muris Notitia artis musicae et Compendium musicae practicae; Petrus de Sancto Dionysio Tractatus de musica . Corpus scriptorum de musica 17. American Institute of Musicology.",
+        "pesce_1990": "Pesce, Dolores. 1990. “A Case for Coherent Pitch Organization in the Thirteenth-Century Double Motet.” Music Analysis 9 (3): 287–318.",
+        "pesce_2018": "Pesce, Dolores. 2018. “Montpellier, Fascicle 8 PORTARE Motets and Tonal Exploration.” In The Montpellier Codex: The Final Fascicle. Contents, Contexts, Chronologies . Edited by Catherine Bradley and Karen Desmond, 233–53. The Boydell Press.",
+        "plumley_2013": "Plumley, Yolanda. 2013. The Art of Grafted Song: Citation and Allusion in the Age of Machaut . Oxford University Press.",
+        "reaney_and_gilles_1974": "Reaney, Gilbert and André Gilles, eds. 1974. Franconis de Colonia Ars cantus mensurabilis . Corpus Scriptorum de Musica 18. American Institute of Musicology.",
+        "reimer_1972": "Reimer, Erich, ed. 1972. Johannes de Garlandia, De mensurabili musica. Kritische Edition mit Kommentar und Interpretation der Notationslehre . 2 vols. Beihefte zum Archiv für Musikwissenschaft 10–11. Franz Steiner.",
+        "roesner_avril_and_regalado_1990": "Roesner, Edward H., François Avril, and Nancy Freeman Regalado, eds. 1990. Le Roman de Fauvel in the Edition of Mesire Chaillou de Pesstain: A Reproduction in Facsimile of the Complete Manuscript, Paris, Bibliothèque Nationale, Fonds Français 146 . Broude Brothers.",
+        "sachs_1974": "Sachs, Karl-Jurgen. 1974. Der Contrapunctus im 14. und 15. Jahrhundert. Untersuchungen zum Terminus, zur Lehre und zu den Quellen . Beihefte zum Archiv für Musikwissenschaft 13. Franz Steiner.",
+        "schubert_2002": "Schubert, Peter. 2002. “Counterpoint Pedagogy in the Renaissance.” In The Cambridge History of Western Music Theory , ed. Thomas Christensen, 503–33. Cambridge University Press.",
+        "stone_1996": "Stone, Anne. 1996. “Glimpses of the Unwritten Tradition in Some ‘Ars Subtilior’ Works.” Musica Disciplina 50: 59–93.",
+        "wegman_1996": "Wegman, Rob C. 1996. “From Maker to Composer: Improvisation and Musical Authorship in the Low Countries, 1450–1500.” Journal of the American Musicological Society 49 (3): 409–79.",
+        "wegman_2014": "Wegman, Rob C. 2014. “What is Counterpoint?” In Improvising Early Music , ed. Dirk Moelants. Geschriften van het Orpheus Instituut (Collected Writings of the Orpheus Institute), vol. 11, 9–68. Leuven University Press.",
+        "white_2014": "White, Christopher. 2014. “Changing Styles, Changing Corpora, Changing Tonal Models.” Music Perception 21 (3): 244–53.",
+        "wolf_1913–14": "Wolf, Johannes. 1913–14. “Ein Beitrag zur Diskantlehre des 14. Jahrhunderts.” Sammelbände der Internationalen Musikgesellschaft , 15 (3): 505–34.",
+        "zayaruznaya_2018": "Zayaruznaya, Anna. 2018. “New Voices for Vitry.” Early Music 46 (3): 375–92."
+    },
+    "footnotes": {
+        "FN0": {
+            "text": "* We wish to thank Cory McKay, Finn Upham, and the anonymous readers of Music Theory Online for their invaluable comments and suggestions on drafts of this article. This research is support in part by the Social Sciences and Humanities Research Council of Canada.",
+            "citations": []
+        },
+        "FN1": {
+            "text": "1. Exceptions are Hartt 2007 and 2017 , which discuss the three-voice motets of Machaut ( 2007 ) and sonority practice in a selection of three-voice motets attributed to Philippe de Vitry ( 2017 ).",
+            "citations": [
+                "hartt_2007",
+                "hartt_2017",
+                "hartt_2007",
+                "hartt_2017"
+            ]
+        },
+        "FN2": {
+            "text": "2. There are far fewer studies of vertical sonorities in thirteenth-century motets, but see Pesce 1990 and 2018 .",
+            "citations": [
+                "pesce_1990",
+                "pesce_2018"
+            ]
+        },
+        "FN3": {
+            "text": "3. A note on motet names: the first time a motet is mentioned in the text, the full incipits of each voice part will be given. In subsequent mentions, a shortened version of the title derived from the first one or two words of the two upper voice parts will be used. In the charts, the labels will cite only the incipit from the motetus voice. The full titles of the motets and the chart labels are listed in Appendix 1.",
+            "citations": []
+        },
+        "FN4": {
+            "text": "4. The medieval theory sources are the subject of book-length studies in Apfel 1982 and Sachs 1974 . For a clear summary of contrapunctus rules as disseminated in the treatises, see Fuller 2002 . Studies that examine fourteenth-century music through the lens of counterpoint teaching include: Arlt 1982 ; Bain 2003 , 2005 , Bain 2008 ; Bent 1998 , 2002 , 2009 ; Fuller 1986 , 1987 , 1992 , 2002 , 2013 ; Hartt 2007 , 2010 ; Leach 2000a , 2000b , 2001 ; Stone 1996 ; and Wegman 2014 .",
+            "citations": [
+                "apfel_1982",
+                "sachs_1974",
+                "fuller_2002",
+                "arlt_1982",
+                "bain_2003",
+                "bain_2005",
+                "bain_2008",
+                "bent_1998",
+                "bent_2002",
+                "bent_2009",
+                "fuller_1986",
+                "fuller_1987",
+                "fuller_1992",
+                "fuller_2002",
+                "fuller_2013",
+                "hartt_2007",
+                "hartt_2010",
+                "leach_2000a",
+                "leach_2000b",
+                "leach_2001",
+                "stone_1996",
+                "wegman_2014"
+            ]
+        },
+        "FN5": {
+            "text": "5. Recent studies have demonstrated how these rules informed the widespread practice of improvised polyphony. See in particular Canguilhem 2011 , Cumming 2013a , Schubert 2002 , and Wegman 1996 .",
+            "citations": [
+                "canguilhem_2011",
+                "cumming_2013a",
+                "schubert_2002",
+                "wegman_1996"
+            ]
+        },
+        "FN6": {
+            "text": "6. For Crocker’s “chords” see Crocker 1962 , 12. On the persistence of the two-part framework in Renaissance polyphony, see Cumming 2013b .",
+            "citations": [
+                "crocker_1962",
+                "cumming_2013b"
+            ]
+        },
+        "FN7": {
+            "text": "7. Leach 2000b outlines a very useful method for using counterpoint teachings in the analysis of fourteenth-century songs that begins with the identification of the progression of dyads produced by the cantus-tenor duet. In music of more than two voices, each voice pair is analysed separately: “considering the three-part sounding whole as two overlaid tenor duets (and, in addition, an upper-voice pair)” (64). She distinguishes her method from Fuller’s approach, who “for three-part counterpoint has developed a way of classifying sonorities as expansions of two-part sonorities” (66). Leach summarizes the difference between their two approaches as follows: “Fuller’s method leads her to identify as directed progressions in three-part music only those which happen in all three parts,” which may not reveal progressions such as the “chaining” that Leach describes in Machaut’s Je ne cuit pas (Ballade no. 14) (64–69).",
+            "citations": [
+                "leach_2000b"
+            ]
+        },
+        "FN8": {
+            "text": "8. The reductions are described as “an idealized distillation of a structural framework that exists beneath the surface fluctuations of motivic figure and melodic line” (47).",
+            "citations": []
+        },
+        "FN9": {
+            "text": "9. Crocker 1962 outlines the two-part discant classifications of several late medieval theorists, and also discusses the three-part writing described in the Ars discantus once attributed to Jean des Murs. See also Fuller 2002 . For further discussion of late medieval rules of counterpoint, especially as they might relate to improvisation of counterpoint in the fourteenth century, including a discussion of Petrus frater dictus palma ociosa’s treatise, see Stone 1996 .",
+            "citations": [
+                "crocker_1962",
+                "fuller_2002",
+                "stone_1996"
+            ]
+        },
+        "FN10": {
+            "text": "10. Franco’s original text reads: “Item intelligendum est quod in omnibus modis utendum est semper concordantiis in principio perfectionis” ( Reaney and Gilles 1974 , 73).",
+            "citations": [
+                "reaney_and_gilles_1974"
+            ]
+        },
+        "FN11": {
+            "text": "11. In referring to Pelinski’s “Ruhepunkte” and “Ruheklänge,” Fuller describes the use of sonorities of a relatively long duration that function as “resting-points” and which composers deployed for this particular quality: “The holds, on the other hand, freeze the music on a sound that is detached without notice from its surrounding sound brings no specific local action to completion” ( 1986 , 56–57). She also adds that Machaut’s motets Faus Samblant and Bone pastor have “an unusual density of resting points” (57).",
+            "citations": [
+                "fuller_1986"
+            ]
+        },
+        "FN12": {
+            "text": "12. An unsupervised machine-learning-based approach to this corpus would have the computer learn from the corpus to create the categories by clustering instances based on their statistical properties. For exemplary studies that use machine learning models to derive categories from a corpus, see Albrecht and Huron 2014 , and White 2014 .",
+            "citations": [
+                "albrecht_and_huron_2014",
+                "white_2014"
+            ]
+        },
+        "FN13": {
+            "text": "13. On the dating of the eighth fascicle of the Montpellier Codex, see Bradley and Desmond 2018 , 4, and the essays by Curran, Baltzer, and Stones in the same volume. On the 1317–22 copying date for Paris, Bibliothèque nationale de France, f. fr. 146, see Roesner, Avril, and Regalado 1990 , 48–49. On the copying date of the Ivrea Codex, see Kügle 2019 , 24.",
+            "citations": [
+                "bradley_and_desmond_2018",
+                "roesner_avril_and_regalado_1990"
+            ]
+        },
+        "FN14": {
+            "text": "14. The most recent scholarship on the copying dates of the two other large fourteenth-century codices that transmit a large collection of ars antiqua motets—the Turin Codex (Turin, Biblioteca Real, Vari 42 [formerly part of E. X. 73/ H. 59]) and the Las Huelgas Codex (Burgos, Monasterio de Las Huelgas, II [formerly IX])—places their copying dates later than both the eighth fascicle of the Montpellier Codex and the Roman de Fauvel manuscript. For a summary of the scholarship on the date of the Turin Codex and a possible dating in the 1330s, see Everist 2007 , 370–71. On Las Huelgas, see the companion essay to the facsimile edition by Nicolas Bell ( 2003 , 37), where he favors a date towards the end of the first quarter of the fourteenth century, and Catalunya 2015 for a slightly later dating.",
+            "citations": [
+                "everist_2007",
+                "bell_2003",
+                "catalunya_2015"
+            ]
+        },
+        "FN15": {
+            "text": "15. In addition, digitally encoded versions of Machaut’s motets are not yet publicly available.",
+            "citations": []
+        },
+        "FN16": {
+            "text": "16. Desmond 2018a focuses on the same group of motets. The explanation for the repertoire choice is outlined in Appendix 1, and the concordances for each motet listed (241–45).",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN17": {
+            "text": "17. On the ars antiqua repertoire that features syllabic semibreves, see Desmond 2018c .",
+            "citations": [
+                "desmond_2018c"
+            ]
+        },
+        "FN18": {
+            "text": "18. Impudenter/Virtutibus/[TENOR]/CT. , being a later addition to the Brussels rotulus, is included instead in the IvTrem group.",
+            "citations": []
+        },
+        "FN19": {
+            "text": "19. Desmond 2018a posits that, at least with respect to their notation, the repertoire copied in the Roman de Fauvel manuscript might have more in common with the ars antiqua than the ars nova (15–16). See also the discussion of some of the old-fashioned aspects of the FauvBr motet Tribum que non abhorruit/Quoniam secta/MERITO in chapter 2, and the discussion of Fauv’s notation in chapter 4.",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN20": {
+            "text": "20. Also suggestive of the centrality of the IvTrem ars nova repertoire is the fact that, of the thirty motets found in either the Brussels rotulus or in the group copied in both Ivrea manuscript and the Trémoïlle index, fifteen are cited in music theory treatises, and most of the thirty have several concordances in the surviving fragmentary manuscripts ( Desmond 2018a , 242). The motet Douce playsence/Garison selon nature/NEUMA was not included in our analysis, because its frequent sectional changes of mensuration made it impossible to fix the value of the breve offset, which continually switches between eight and twelve quarter notes.",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN21": {
+            "text": "21. For the digital editions and MEI files, see Measuring Polyphony: Digital Encodings of Late Medieval Music. Karen Desmond, Project Director. https://measuringpolyphony.org/ . For the Sibelius and MusicXML files, see https://github.com/MeasuringPolyphony .",
+            "citations": []
+        },
+        "FN22": {
+            "text": "22. Hartt describes his taxonomy as a “taxonomy of sonority that may describe the surface features of Machaut’s three-voice motets” ( 2010 , 198).",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN23": {
+            "text": "23. As Fuller states, “one fourteenth-century teacher cautions that any third participant, if discanting below the cantus, becomes the guide to the consonances above” ( 1986 , 40). On his refined taxonomy and the relationship to Fuller’s see Hartt 2010 , 187–203.",
+            "citations": [
+                "fuller_1986",
+                "hartt_2010"
+            ]
+        },
+        "FN24": {
+            "text": "24. This is from the treatise Cum notum sit on the effect of interval type, as quoted in Hartt 2010 , 186 (which acknowledges that it is adapted from Fuller 1986 , 44).",
+            "citations": [
+                "hartt_2010",
+                "fuller_1986"
+            ]
+        },
+        "FN25": {
+            "text": "25. Hartt ( 2010 ) has a slightly different aim than Fuller, and he is also interested in categorizing dissonant sonorities more fully. He writes that his system accounts for all the “consonant and dissonant sonority types that occur on the surface of Machaut’s motets” (225).",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN26": {
+            "text": "26. Hartt ( 2010 ) acknowledges the difference between these sonorities in his subclassifications of each sonority type, which he distinguishes by a subscript letter or number. For example, his subclassifications of the Imperfect sonority has a sonority composed of a single imperfect interval ( Imperfect-(I) ); a sonority composed of two identical imperfect intervals ( Imperfect-I ); a sonority comprised of an imperfect interval and its compound ( Imperfect-I 1 ); and two different imperfect intervals  ( Imperfect-I 2 ) (188). Hartt’s subdivision takes account of the criterion of diversitas described in the “Quicumque voluerit” treatise. The subcategories acknowledge the differences between the number of different pitch classes a sonority contains—for example, if the two upper voices have the same pitch class, they are classified as having nulla diversitas —and also with respect to the quality of some intervals between the upper voices (i.e., if they are considered sweet [ dulce ] or discordant [ discors ]; see especially the tables on 188 and 200). In addition, Hartt takes into account the different sound that a compound interval such as a tenth will give to a sonority, versus its simple reduced form, the third.",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN27": {
+            "text": "27. Hartt makes the important distinction that while a contrapunctus must be consonant, sonorities can be consonant or dissonant: “Because of their discord, [dissonances] are not used in counterpoint, but in cantus fractibili in smaller notes. When a semibreve or a tempus is divided into more notes, that is, in three parts, then one of these parts can be in the discordant species’ ( 2010 , 182; original appears in the anonymous treatise Ars contrapunctus secundum Philippum de Vitriaco , [1864–76] 1963 , 3:27a). Fuller ( 1986 , 42) also mentions dissonant sonorities, but notes that theorists do not formally admit dissonances into what they consider to be contrapunctus .",
+            "citations": [
+                "hartt_2010",
+                "coussemaker_1963",
+                "fuller_1986"
+            ]
+        },
+        "FN28": {
+            "text": "28. Interval spacing is an important aspect of a sonority’s sound ( Hartt 2010 , 181), and further expansions of the analytical methodology outlined here could differentiate (as Hartt’s does) between compound and simple intervals.",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN29": {
+            "text": "29. See Crocker 1962 , 13–14, on the comments in various treatises regarding the reckoning of concords from the lowest-sounding voice. The lowest-sounding voice is not always the tenor, as is the case in the FauvBr motet Tribum/Quoniam .",
+            "citations": [
+                "crocker_1962"
+            ]
+        },
+        "FN30": {
+            "text": "30. Hartt’s ( 2010 ) classifications only consider three-voice sonorities.",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN31": {
+            "text": "31. This is very different, then, from Hartt’s ( 2010 ) approach. For example: “Each encountered discord needs to be treated individually, checked against the manuscripts, and evaluated vis-à-vis the overall melodic, sonorous, and textual contexts. In the end, some instances will inevitably require subjective judgement on the part of the analyst” (199).",
+            "citations": [
+                "hartt_2010"
+            ]
+        },
+        "FN32": {
+            "text": "32. Rodan is based on the VIS-Framework, which is a toolkit for music analysis developed as part of the ELVIS project ( https://elvisproject.ca/ ) and later extended as part of the SIMSSA Project ( http://www.simssa.ca ) by Christopher Antila, Jamie Klassen, Alexander Morgan, Reiner Kramer, and Ryan Bannon.",
+            "citations": []
+        },
+        "FN33": {
+            "text": "33. In the Offset Indexer settings, “1” is equivalent to a quarter note. In this repertoire, the beat or pulse of a piece is most often equivalent to the breve in the original medieval notation. In the modern transcriptions used for this analysis, depending on the original mensuration, a breve was transcribed as a value worth 8, 12, or occasionally 18 quarter notes, thus the offset for the breve in Rodan was set to either 8, 12, or 18. To find the sonorities that occur at the beginning of the medieval long, the offset in Rodan was set at either 16, 24, 36, or 54 again, depending on the mensuration of the original notation.",
+            "citations": []
+        },
+        "FN34": {
+            "text": "34. To view the digital edition of this motet and transcription that preserves the original medieval note values, see https://measuringpolyphony.org/display.html?/assets/mensural/bona_MENSURAL.mei.",
+            "citations": []
+        },
+        "FN35": {
+            "text": "35. See https://github.com/MeasuringPolyphony/mp-sonority-analysis .",
+            "citations": []
+        },
+        "FN36": {
+            "text": "36. To capture the sonorities at the beginning of each medieval longa , the offset was set to 36 quarter notes, since this motet is in perfect modus and there are three medieval breves to each long (i.e., 3 x 12 quarter notes). Note that while the tenor voice is in imperfect modus , Desmond ( 2018a , 210–12) argued that the experiential mensuration for the motet as a whole is perfect modus , which is the mensuration of the motetus voice. Contemporary theorists also identified Colla/Bona as a perfect modus motet. See [4.11] below.",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN37": {
+            "text": "37. As will be discussed in [4.11], Colla/Bona is an example of a motet whose voices are notated with different mensurations: the motetus is clearly in perfect modus , whereas the tenor is notated in imperfect modus . As is argued in [4.11] and in the scholarly literature cited there, we contend that the experiential mensuration of Colla/Bona is perfect modus .",
+            "citations": []
+        },
+        "FN38": {
+            "text": "38. The Python scripts are also available at https://github.com/MeasuringPolyphony/mp-sonority-analysis .",
+            "citations": []
+        },
+        "FN39": {
+            "text": "39. The aggregated dataset is available here: https://docs.google.com/spreadsheets/d/e/2PACX-1vSAtvLrG2n10V1BoWvA6-TRn3WPOGuTWDD0P0jrsK9lpvvtAzlEw9C-kagqweyOUAy6yLAWKUDs4s2R/pubhtml .",
+            "citations": []
+        },
+        "FN40": {
+            "text": "40. Note that in the graphs that follow, the motet labels are derived from either the work number in the Montpellier Codex (for the Mo8 motets) or from the first word or words of the motetus voice (for the FauvBr and IvTrem motets).",
+            "citations": []
+        },
+        "FN41": {
+            "text": "41. The standard error for the mixed category at modus onset for IvTrem is 2%, while the mean for mixed sonorities at modus onset is 8% in Mo8 and 10% in FauvBr . The mean value for imperfect sonorities at modus onset is 3% in the Mo8 group and 4% in the FauvBr group. See also [4.7] for further discussion of the increase in mixed sonorities in the IvTrem group, which in part is due to the presence of five four-voice motets in this group, although this small number of motets does not fully account for the striking difference in sonority type.",
+            "citations": []
+        },
+        "FN42": {
+            "text": "42. The titles of these motets are as follows: Se je chante/Bien doi amer/ET SPERA(BIT) ( Mo8 , no. 311), Dieus, comment puet/Vo vair/(TENOR) ( Mo8 , no. 314), Se je sui/Jolietement/OMNES ( Mo8 , no. 316).",
+            "citations": []
+        },
+        "FN43": {
+            "text": "43. Motets with faster-moving top voices are often described in the scholarly literature as “Petronian,” after the composer Petrus de Cruce, who is associated with some of them. However, here “stratified” texture is used to describe motets that have faster-moving upper voices that declaim the text in syllabic semibreves, but do not necessarily have the four or more semibreves per breve associated with the Petrus de Cruce repertory. In Mo8 , motets with four or more semibreves per breve are nos. 317, 332, and 338. Stratified textures, on the other hand, where the triplum moves in syllabic semibreves consistently, and each of the three voices moves at a greater rate of speed, comprises a larger group of motets in Mo8 and are listed in [4.7].",
+            "citations": []
+        },
+        "FN44": {
+            "text": "44. To view the digital edition of this motet and transcription that preserves the original note values, see, https://measuringpolyphony.org/display.html?/assets/mensural/316_MENSURAL.mei .",
+            "citations": []
+        },
+        "FN45": {
+            "text": "45. For the motet titles that correspond to these numbers, see Appendix 1.",
+            "citations": []
+        },
+        "FN46": {
+            "text": "46. This includes the three so-called “Petronian” motets of the Montpellier Codex’s eighth fascicle that have more than three semibreves per breve, nos. 317, 332, 338.",
+            "citations": []
+        },
+        "FN47": {
+            "text": "47. To view the digital edition of this motet and transcription that preserves the original medieval note values, see https://measuringpolyphony.org/display.html?/assets/mensural/hugo_MENSURAL.mei .",
+            "citations": []
+        },
+        "FN48": {
+            "text": "48. For the evidence dating Apollinis/Zodiacum and Apta/Flos to ca. 1350 or later, see Desmond 2018a , 4 and 48. On the date of Mon chant/Qui , see Plumley 2013 , 231–39.",
+            "citations": [
+                "desmond_2018a",
+                "plumley_2013"
+            ]
+        },
+        "FN49": {
+            "text": "49. Zayaruznaya 2018 , 380, highlights the four-voice works of Vitry and Machaut that feature contrasting modus between the voices.",
+            "citations": [
+                "zayaruznaya_2018"
+            ]
+        },
+        "FN50": {
+            "text": "50. In the motetus, there are dots of perfection regularly added to longs, breve rests that follow longs, and breves that must be interpreted as altered breves. Since the triplum mostly proceeds in breves and semibreves, and all its longs are imperfect, it is difficult to say whether it is organized in imperfect or perfect modus .",
+            "citations": []
+        },
+        "FN51": {
+            "text": "51. To view the digital edition of this motet and transcription that preserves the original medieval note shapes, see https://measuringpolyphony.org/display.html?/assets/mensural/rex_quem_MENSURAL.mei .",
+            "citations": []
+        },
+        "FN52": {
+            "text": "52. If one looks at the contrapuntal writing between the voices and at the placement of the directed progressions, the contratenor’s perfect modus measure does seem to have a prominent role in this motet’s mensural organization. See Desmond 2018a , 229–33.",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN53": {
+            "text": "53. All these files may be accessed on the project’s Github site: https://github.com/MeasuringPolyphony/mp-sonority-analysis .",
+            "citations": []
+        },
+        "FN54": {
+            "text": "54. Recall that not all motets from these sources were the subject of this study: we attempted to identify the newer motets from the eighth fascicle of the Montpellier Codex (23 motets) and the Roman de Fauvel (18 motets), and a subset from the Ivrea Codex (21) that likely constitutes a central repertory of the established ars nova. See [2.3] above.",
+            "citations": []
+        },
+        "FN55": {
+            "text": "55. See chapters 2, 4, and 6 of Desmond 2018a .",
+            "citations": [
+                "desmond_2018a"
+            ]
+        },
+        "FN56": {
+            "text": "56. Scholarly consensus already places Zodiacum , Portio , and Flos ca. 1350 or later, see fn. 48.",
+            "citations": []
+        },
+        "FN57": {
+            "text": "57. Petre/Lugentium was not considered in this study, because it was not copied in the Tremoïlle manuscript.",
+            "citations": []
+        }
+    },
+    "paragraphs": [
+        {
+            "0": {
+                "text": "I. Introduction",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "1.1": {
+                "text": "[1.1] The fourteenth-century ars nova is important for the history of composition in western Europe primarily due to the confluence of two interrelated aspects of musical language: namely, a newly expanded rhythmic vocabulary and a codification of the rules for creating two-part counterpoint ( contrapunctus ). Sarah Fuller observes: Ars nova rhythmic practices, based on a greatly expanded temporal domain, engendered clear harmonic distinctions born of extreme differences in duration coupled with precise phrase modeling. In fact, the tendency to magnify selected sonorities is already apparent in motets associated with Petrus de Cruce and his circle in which held chords stand out in bold relief at phrase endings. An issue-oriented history of compositional technique might indeed claim that a primary task of fourteenth-century composers was to develop control over new harmonic resources forced to the fore by novel rhythmic practices . ( 1986 , 38; italics added) That is to say, probably as a result of the possibilities of a new rhythmic vocabulary, composers began to organize and conceptualize the contrapuntal framework in a new way. Modern analyses of sonority in fourteenth-century music, however, tend to de-emphasize consideration of the relationship between sonority choice and the rhythmic unfolding of a composition. Most studies concentrate on identifying the progression of significant sonorities—that is, on uncovering composers’ manipulations of the syntax that informs sonority choice. In addition, this scholarship tends to focus on compositions written around the 1340s or later, and almost exclusively on the secular songs of Guillaume de Machaut. (1) The analysis of sonority in music written in the period immediately prior to Machaut’s activity, and prior to the codification and widespread dissemination of contrapunctus theory, has received little attention to date. (2)",
+                "footnotes": [
+                    "FN1",
+                    "FN2"
+                ],
+                "citations": [
+                    "fuller_1986"
+                ]
+            }
+        },
+        {
+            "1.2": {
+                "text": "[1.2] The present article analyzes the distribution of sonority as it relates to rhythm across a repertoire of French three- and four-voice motets composed in the years just before and during the emergence and establishment of the ars nova , that is, roughly spanning the decades from ca. 1300–1350. (3) The syntax or progression of one sonority to another is not considered; our focus is on identifying and quantifying the types of sonority deployed at regularly occurring timepoints within the metrical organization of specific motets and groups of motets, regardless of the function of the particular sonority within the contrapuntal framework. In so doing, this study foregrounds an aspect of composition that Fuller (in the passage quoted above) contends was fundamental to how contrapunctus developed during the fourteenth century—that is, the ways in which the placement of particular sonority types was related to metrical position. Rather than subjectively selecting the “significant” sonorities within a piece—an effort that would rely on the analyst’s perception of the overarching contrapuntal goals—we use computational musicological methods to analyze, count, and categorize the distribution of sonority types across individual motets and groupings of these motets, and examine how the distribution of sonority types aligns with the metrical organization of these compositions. While perhaps a crude and simplistic measurement, especially when considered in comparison to the detailed observation and judgement of a skilled human analyst, this analysis by computer gives a sense of just how “perfect” or “dissonant,” for example, the overall sound of a motet is as it progresses through time. A computer-based analysis also allows for the rapid comparison of sonority usage in a large number of motets in order to track trends in distribution across the course of a single motet, and across larger and smaller sub-groupings within the repertoires selected for study.",
+                "footnotes": [
+                    "FN3"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "1.3": {
+                "text": "[1.3] That relatively consistent theories of two-part counterpoint informed both improvisatory and compositional practice in Europe by the middle of the fourteenth century has been established in several studies. (4) The two-part contrapuntal framework, termed contrapunctus , is first described in treatises from the 1330s: Petrus frater dictus palma ociosa’s 1336 treatise regards the two-part framework as an established phenomenon. The centrality of the two-part framework persisted through the fifteenth and sixteenth centuries. (5) Most notated polyphony of the later Middle Ages, however, is written for three or four voice parts. Almost sixty years ago, Richard Crocker ( 1962 ) demonstrated that medieval two-part writing is not linear: two-part polyphony is not the successive layering of two melodies, but rather was devised as a progression of a series of two-part intervals. It follows that three- and four-part writing in the later Middle Ages was conceived (and perceived) at least to some degree as the consecutive succession of three- or four-part sonorities (Crocker calls them “chords”), even if one pair of voices in the texture may have priority structurally and was composed first. (6) Example 1 . Voice-reduction graph of Machaut’s Bone pastor / Bone pastor / BONE PASTOR from Fuller 1986, 62 (click to enlarge)",
+                "footnotes": [
+                    "FN4",
+                    "FN5",
+                    "FN6"
+                ],
+                "citations": [
+                    "crocker_1962"
+                ]
+            }
+        },
+        {
+            "1.4": {
+                "text": "[1.4] Fourteenth-century singers learned how to add a voice in counterpoint to another voice by following rules regarding allowable progressions of intervals—such as avoiding parallel perfect intervals, or resolving an imperfect interval to the closest perfect interval—and then adding embellishments to this two-part framework. Furthermore, fourteenth-century composers crafted polyphony in the same way that they had learned to sing: Fuller, for example, demonstrates how the active surfaces of fourteenth-century polyphony may be distinguished from what she terms the “skeletal frame of essential consonances” ( Fuller 1986 , 38). While analytical approaches vary to some degree, most analyses of fourteenth-century polyphony produce voice-reduction-style graphs, which outline the skeletal contrapuntal progressions and eliminate repetitions of vertical sonorities, passing tones, and dissonances. (7) Fuller’s analysis of the first talea of Machaut’s motet Bone pastor (Motet 18) offers one example of this method ( Example 1 ). A reduction (or “background syntax”) of the vertical sonorities is shown in the analysis labeled “c.” Here the 24-breve talea is essentially reduced to the opening vertical sonority of each half of the talea and the directed progressions at the talea’s midpoint and close (62). Such analyses that distinguish the surface details from the contrapuntal framework serve a variety of purposes—for example, revealing the correct application of musica ficta through an analysis of the contrapuntal progressions, which is essential to the establishment of the musical text ( Fuller 1986 , Leach 2000b ); describing how the perception of a song’s form or “shape” can change through the composer’s manipulation of the tonal center ( Bain 2008 ); or even, informed by a thorough understanding of a composer’s contrapuntal practice, uncovering scribal error in the transmission of particular works ( Leach 2000b ).",
+                "footnotes": [
+                    "FN7"
+                ],
+                "citations": [
+                    "fuller_1986",
+                    "fuller_1986",
+                    "leach_2000b",
+                    "bain_2008",
+                    "leach_2000b"
+                ]
+            }
+        },
+        {
+            "1.5": {
+                "text": "[1.5] Fuller proposed that it was the fourteenth-century’s move towards the rhythmic stratification of voices in the motet, combined with the greater variety of rhythmic durations, that led to this elaboration of the contrapuntal framework. Fuller contrasts this temporal extension of individual sonorities to thirteenth-century compositional processes, where the active surface and the framework were one and the same ( 1986 , 38). (8) As mentioned, Fuller’s analysis of Machaut’s Bone pastor/Bone pastor/BONE PASTOR (Example 1) identifies just two harmonic goals over the course of 24 breves: the directed progressions that resolve on perfect sonorities at breves 9–10 and 18–19. By contrast, thirteenth-century theorists discuss “harmonic goals” (resolutions to perfect intervals such as the unison, perfect fifth, and octave) that often align with each metrical unit (n.b., the fundamental metrical unit in the thirteenth and early fourteenth centuries is the longa , which is comprised of two or three short notes, breves , equivalent to one tempus each). (9) The anonymous Discantus positio vulgaris (ca. 1230–40) states: “Let it be known further that all odd notes, when consonant, are more consonant than even notes, and when dissonant, are less dissonant than even” ( McKinnon 1998 , 110). That is to say, intervals or sonorities that fall at the onset of the longa ought to be more consonant than those that do not, and if dissonant sonorities are placed on the onset of the longa , they ought to be less dissonant than those that occur elsewhere. In his description of discant, Johannes de Garlandia (ca. 1240–60) notes that the consonances termed perfect always fall at the beginning of the modal unit ( Reimer 1972 , 76). And Franco of Cologne, writing ca. 1280, states that perfect consonances mark the beginnings of the fundamental metrical unit, which Franco termed a “perfection”: “Be it also understood that in all the modes concords are always to be used at the beginning of a perfection” ( McKinnon 1998 , 131). (10) Theorists continue to emphasize the relationship of vertical sonority to the metrical framework in the fourteenth century. In 1336, Petrus frater dictus palma ociosa, for example, writes that “two or more pitches reach the ear in combinations governed by modus and tempus ” (italics added), and he organizes his music examples, which outline the elaborations of the contrapuntal framework, according to the twelve metrical combinations of modus , tempus , and prolatio ( Wolf 1913–14 , 507).",
+                "footnotes": [
+                    "FN8",
+                    "FN9",
+                    "FN10"
+                ],
+                "citations": [
+                    "fuller_1986",
+                    "mckinnon_1998",
+                    "reimer_1972",
+                    "mckinnon_1998"
+                ]
+            }
+        },
+        {
+            "1.6": {
+                "text": "[1.6] Nonetheless, most modern analyses that investigate the skeletal contrapuntal framework tend to downplay their consideration of a composition’s metrical organization and the rhythmic durations of specific sonorities. For example, the reductive charts in the studies of Fuller ( 1986 , 1992 ) and Elizabeth Eva Leach ( 2000a , 2000b , 2001 ) often feature stemless note heads that indicate the perfect, imperfect, and dissonant intervals, omitting any graphic element that reflects the sonority’s duration. Fuller sometimes numbers the breve units, however, and/or organizes her graphs according to the isorhythmic structure. Jared Hartt ( 2010 , 205–6), as a counterexample, includes several examples where the sonority reductions are marked with bar lines. But while an analyst may or may not include graphic elements that reflect rhythmic aspects in their figures or music examples, these features do still inform their analyses. For example, in her contrapuntal analysis of Machaut’s ballades, Leach comments that Machaut “frequently pits contrapuntal value against temporal value but preserves a sense of hierarchy in terms of metrical position, that is dissonances on strong beats tend to be short and those in weaker parts of the mensural unit may be long” ( 2000b , 50). And Fuller cautions against focusing exclusively on the syntactic structure of the counterpoint, since other elements are also important: “voice-leading, duration, position within a phrase or mensural unit, pitch degree” ( 1986 , 47). (11)",
+                "footnotes": [
+                    "FN11"
+                ],
+                "citations": [
+                    "fuller_1986",
+                    "fuller_1992",
+                    "leach_2000a",
+                    "leach_2000b",
+                    "leach_2001",
+                    "hartt_2010",
+                    "leach_2000b",
+                    "fuller_1986"
+                ]
+            }
+        },
+        {
+            "1.7": {
+                "text": "[1.7] The present study, then, does two things. First, we present some basic, computationally derived data about the number and types of sonorities used and discuss how the placement of specific sonority types align with the metrical organization. We consider motets that date roughly from the turn of the thirteenth century to ca. 1350, thus including works that directly precede the mid-century focus of previous studies, and that bridge the change in compositional procedure Fuller proposes. Second, since the motets are chosen from five central French manuscripts that have informed historical narratives about stylistic development in the fourteenth century, each frequently held up as representative of a particular “turning-point” in music history, we test some historical and theoretical assumptions about the differences and similarities between these manuscripts’ motets.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "1.8": {
+                "text": "[1.8] What this study does not do, however, is produce bespoke sophisticated analyses of counterpoint and sonority that are the domain of human musicologists. Some caveats, then, need to be explicitly set forth. Since we focused on sonorities that were used at specific timepoints during compositions and asked the computer to count those, meaningful sonorities within the contrapuntal framework that occurred outside of these timepoints were not counted. Similarly, if dissonances occur on these specific timepoints, regardless of whether a human analyst might consider this dissonance a “passing” dissonance, the computer still counted it. All of this will be explained in detail below. Finally, it is important to note that this study came about in the context of investigating the possibilities afforded to us by the built-in tools of particular computer software, which are mostly fairly basic tools for counting intervals in symbolic music files. We adopt a heuristic approach, defining categories of sonority based on previous musicological scholarship, rather than trying to build an unsupervised machine learning program that might derive these categories from the corpus. (12) We also grouped the motets in our repertoire according to the manuscript sources in which they were copied, which allows us to observe trends within and between these predetermined groups. In other words, our model knows a priori the categories under investigation.",
+                "footnotes": [
+                    "FN12"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "1.9": {
+                "text": "[1.9] Section II outlines some influential descriptions and classifications of vertical sonorities in late medieval theory and in modern scholarship, and presents the classification system we deploy here. Section III explains the computational methods used to collect and analyze the sonority data, and Section IV presents the findings of our analysis, offering some preliminary observations and conclusions about sonority usage in the late medieval French motet repertoire. II. Classifications of vertical sonorities Criteria for selecting the repertoire",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "2.1": {
+                "text": "[2.1] As mentioned in [1.2], this study examines a representative sample of sixty-two three- and four-voice motets from the French repertoire dating from ca. 1300–1350––that is, a repertory that in the historical narrative bridges the so-called “old art” of music ( ars antiqua ) and the “new art” ( ars nova ). The sample comprises (1) twenty-three motets from the eighth and last fascicle of the Montpellier Codex, probably copied in the 1300s or 1310s, but transmitting a repertoire that spans late thirteenth- and early fourteenth-century styles (hereafter referred to as the Mo8 group); (2) eighteen motets probably composed in the first two decades of the fourteenth century and copied in the interpolated Roman de Fauvel manuscript (Paris, Bibliothèque nationale de France, f. fr. 146, copied ca. 1317–22), and/or in the Brussels Rotulus (Brussels, Bibliothèque royale de Belgique, Ms. 19606, copied ca. 1330) (hereafter the FauvBr group); and (3) a selection of twenty-one motets, probably composed in the middle decades of the fourteenth century and copied in the Ivrea Codex (Ivrea, Biblioteca capitolare, Ms. 115, copied in the late 1370s, 1380s and 1390s), and listed in the index of the incomplete Trémoïlle manuscript (Paris, Bibliothèque nationale de France, nouvelle acquisition française 23190) (hereafter the IvTrem group). (13)",
+                "footnotes": [
+                    "FN13"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.2": {
+                "text": "[2.2] Why these manuscripts and these motets? First, with the exception of the manuscripts of Machaut’s collected works, relatively few complete codices of French polyphony survive from the period in question: in addition to the five sources mentioned in the previous paragraph (three codices, one rotulus, and one index of a lost codex), most of the other sources that transmit French polyphony with repertoire from the first half of the fourteenth century are fragment scraps. On the other hand, relatively few of the extant fragmentary manuscripts contain works that do not have concordances in one of these five sources. Thus this selection is representative of the French motet repertoire dating from the first half of the fourteenth century, or at least of what survives today. (14) The argument could be made that Machaut’s motets ought to be included, since at least nineteen of his motets were composed before ca. 1350. We decided, however, that since the Machaut motets would comprise a relatively large group of works by a single composer, their inclusion had the potential to skew the data. (15)",
+                "footnotes": [
+                    "FN14",
+                    "FN15"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.3": {
+                "text": "[2.3] Second, from our narrowed down list of sources, whose copying dates are noted above, we wanted to choose the motets likely composed in the first half of the fourteenth century, since the dates of composition can substantially differ from dates of copying. (16) The eighth fascicle of the Montpellier Codex, the Roman de Fauvel manuscript, and the Brussels Codex contain motets of different styles, some of which musicologists generally regard as older (i.e., composed in the thirteenth century, or at least imitating a thirteenth-century style), and some as newer—that is, composed in the first decade or two of the fourteenth century. In order to make this selection, rather than relying on a possibly subjective understanding of motet style, motets were chosen on the basis of a notational feature that might flag a “newer” style, namely syllabic semibreves (that is, text syllables set to single semibreves) in any voice part. (17) Twenty-three motets in the eighth fascicle of the Montpellier Codex fit this criteria (the Mo8 group), as did eighteen more of the motets copied in the Roman de Fauvel manuscript and/or the Brussels rotulus (the FauvBr group). (18) Thus the Mo8 group includes some of the newest motets within the Montpellier Codex that might be still classified as ars antiqua , including all of those within the fascicle that are in an experimental notational style now called “Petronian.” Many of the motets of the Roman de Fauvel in the FauvBr group have been characterized in many music history textbooks as representative of the “new art of music” ( ars nova ) that was criticized at length by Jacobus in book VII of his Speculum musicae , but which some more recent studies view as more “transitional.” (19) Some lesser-known motets are also in the FauvBr group. Finally, cross-referencing the motets that are concordant between the Ivrea manuscript and the Trémoïlle index returns a selection of motets, most of which probably date from the 1330s and 1340s—the established “ ars nova ”—and include most of the motets by Philippe de Vitry or motets attributed to him (the IvTrem group). (20) The three groupings— Mo8 , FauvBr , and IvTrem —are roughly the same size (23, 18, 21 motets respectively). One might expect that these sixty-two motets would reflect three (perhaps overlapping) phases of compositional practice with respect to vertical sonority during the first half of the fourteenth century, mapping (very generally) onto the historical designations ars antiqua —transitional— ars nova .",
+                "footnotes": [
+                    "FN16",
+                    "FN17",
+                    "FN18",
+                    "FN19",
+                    "FN20"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.4": {
+                "text": "[2.4] A third consideration in our selection of repertoire was that it had to be publicly available in symbolic notation. These sixty-two motets had previously been encoded for the digital editions presented on the Measuring Polyphony website; downloadable files of the encodings are also available on the project’s Github page. (21) The full list of motets examined in this article is given in Appendix 1 . Classifying fourteenth-century sonorities Example 2 . Categorization of sonorities according to Fuller 1986 and Hartt 2010 (click to enlarge)",
+                "footnotes": [
+                    "FN21"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.5": {
+                "text": "[2.5] The next step was to employ a standardized classification for vertical sonorities of three or four parts. Given the lack of descriptions in fourteenth-century contrapunctus manuals of sonorities composed of more than two voices, both Fuller and Hartt propose new taxonomies to describe three- and four-voice sonorities in fourteenth-century compositions (see Example 2 ). (22) The classifications used in the present analysis build on both authors’ taxonomies, with certain modifications. Our aim was to develop a heuristic model that would classify large numbers of intervals according to these predetermined models (with some refinements, as described below). Fuller extrapolates a classification for vertical sonorities from medieval descriptions of two-part intervals, which consider the quality of the intervals above the lowest-sounding pitch; Hartt positions his taxonomy as an expansion and refinement of the taxonomy set forth by Fuller. (23) The quality of concord exists along a continuum from perfect—the most stable, and sweet-sounding sonority—to dissonant—the most unstable, and harsh-sounding sonority. (24) One fourteenth-century treatise addresses three-part vertical sonorities (“Quicumque voluerit duos contrapuncti,” Coussemaker [1864–76] 1963 , 3:92b–93b); this author also takes into consideration the intervals between the upper voices. Hartt uses this text as a basis for the schema he outlines. (25) Example 3 . Rules for our categorizations of sonorities that expands on Fuller 1986 and Hartt 2010 (click to enlarge)",
+                "footnotes": [
+                    "FN22",
+                    "FN23",
+                    "FN24",
+                    "FN25"
+                ],
+                "citations": [
+                    "coussemaker_1963"
+                ]
+            }
+        },
+        {
+            "2.6": {
+                "text": "[2.6] Example 2 highlights the key differences between the classifications of Fuller and Hartt, which are specifically found in their descriptions of “Mixed,” “Imperfect,” and “Doubly imperfect” sonorities (see Example 3 for our classification system, which draws on both Fuller and Hartt). Fuller’s “Imperfect” category can encompass two quite different sounding sonorities—for example, a unison or octave combined with an imperfect interval; and a sonority composed of a third and a fifth. (In addition, four-voice sonorities may have an octave compound of the imperfect interval.) Hartt differentiates between these two sorts of sonorities, and would classify the first as “Imperfect” and the second as “Mixed.” On the other hand, his broader classification of “Imperfect” does not account for the “special sound” that Fuller’s classification includes to distinguish sonorities that contain two different imperfect intervals (i.e., a third combined with a sixth), since his “Imperfect” category embraces both sonorities composed of a single imperfect interval and sonorities composed of two different imperfect intervals. (26) Example 4 . ( a ) Fuller: — / Hartt: Imperfect (a-c-c’); ( b ) Fuller: Imperfect / Hartt: Mixed (a-a’-c’); ( c ) Fuller: Imperfect / Hartt: Imperfect-I (a-a-c) (click to enlarge)",
+                "footnotes": [
+                    "FN26"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.7": {
+                "text": "[2.7] Some specific examples will help clarify these divergences. Hartt’s system, for example, would classify the sonority a-c-c’ as “Imperfect-I 1 ,” because it comprises an imperfect interval (third: a-c) plus its compound (tenth: a-c’) ( Example 4a ). Hartt’s system would classify the sonority a-a’-c’ as “Mixed-I P ,” because it has one perfect interval (octave: a-a’) and one imperfect interval (tenth: a’-c’) above the lowest pitch ( Example 4b ). Both sonorities sound fairly similar to the ear, however, and both include an imperfect interval and an octave (though only Example 4b has a perfect interval above the lowest pitch). Fuller’s system, on the other hand, would classify Example 4b as “Imperfect.” Example 4a cannot be labelled in Fuller’s classification system, because it reduces compound intervals to simple intervals; both imperfect intervals are treated as the same interval (a-c: third). Fuller’s classifications are also ambiguous with respect to doublings. The sonority shown in Example 4c , with the lowest voice doubled, is “Imperfect” in both Fuller and Hartt’s classification, because it has both a perfect interval (a-a: unison) and an imperfect interval (a-c: third) above the lowest note, even though it essentially sounds the same as a single two-part imperfect interval, like the reduction of Example 4a.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "2.8": {
+                "text": "[2.8] In the process of translating these sonority classifications into rules that can be used by the computer, certain voice doublings and combinations of intervals needed to be accounted for in a more consistent way. The categories proposed for this study (outlined in Example 3) merge the classifications of Fuller and Hartt (outlined in Example 2), but also add further nuance with respect to voice doublings and interval combinations. Following Fuller, we included a “Doubly imperfect” type. Following Hartt, we included a type for “Dissonant” sonorities. (27) All compound intervals are reduced to simple intervals. (28) In computing the sonority types (further described in Section III below), once the “Dissonant” sonorities were counted, only intervals against the lowest-sounding note in a sonority were counted. (29) Example 5 . ( a ) Doubly imperfect: f-a-d-a’; ( b ) Mixed: f-a-d-f’; ( c ) Imperfect: f-a-a-a’; ( d ) Imperfect: f-f-a-a’ (click to enlarge)",
+                "footnotes": [
+                    "FN27",
+                    "FN28",
+                    "FN29"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "2.9": {
+                "text": "[2.9] Our classification also had to accommodate sonorities in four-voice textures and the octave intervals that frequently occur in four-voice writing. We added one further specification to Fuller’s classification of “Doubly imperfect” sonorities (sonorities with two imperfect intervals), as Examples 5a–d make clear. (30) If the fourth voice doubles one of the upper voices at the octave in a “Doubly imperfect” sonority, such as f-a-d-a’ (Example 5a), the sonority probably still ought to be classified as “Doubly imperfect.” But if the fourth voice doubles the lowest-sounding voice an octave above, as in the example f-a-d-f’ (Example 5b), the octave is counted as a perfect interval (because it sounds against the lowest voice), and this mix of perfect and imperfect intervals results in a “Mixed” sonority. Thus the extra criterion “and no perfect intervals above the lowest sounding voice ” was added to both the “Imperfect” and “Doubly imperfect” categories (see again Example 3). Without this specification, we would observe far fewer imperfect sonorities in four voices; with this specification Example 5c is classified as “Imperfect,” as is Example 5d, since the unison doubling with the lowest voice is not counted as a perfect interval for this purpose. That is to say, in four-voice music, if we had required all three intervals above the lowest voice to be of the same type, “Imperfect” could become a very restrictive category since it requires no perfect intervals (else the classification is “Mixed”) and only one kind of imperfect interval (else the classification is “Doubly imperfect”). III. Counting and classifying vertical sonorities using the computer",
+                "footnotes": [
+                    "FN30"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.1": {
+                "text": "[3.1] The question we asked is the following: With respect to the metrical organization of a composition or group of compositions, what is the frequency of each sonority type? Syntax, the order and specific way in which a particular sonority progresses to another sonority (i.e., the voice leading), is not considered here, nor is pitch location a concern: the simple question addresses the prevalence of sonority types with respect to the metrical organization. (31) In this way, we can get a general sense of the sound-quality of a composition (for example, whether there is a predominance of perfect sonorities), and we can observe trends regarding the deployment of sonorities with respect to mensural organization over the chronological timespan of the repertoire. Example 6 . The Rodan workflow takes an XML file as input, processes it through three indexers, and outputs a CSV file (click to enlarge)",
+                "footnotes": [
+                    "FN31"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.2": {
+                "text": "[3.2] To automatically count all the intervals above the lowest-sounding voice, we used the Rodan Client, a graphical user interface (GUI) for building and running music analysis workflows, developed primarily by Ryan Bannon within the context of the Single Interface for Music Score Searching and Analysis Project. (32) A simple workflow ( Example 6 ) was built in Rodan to run a composition or group of compositions through a set of analytical steps called “indexers,” each of which processes or filters the music data in some way to give us the information we want. Some indexers have user-specified settings (like the Offset Indexer ), while others (like the Note/Rest Indexer ) do not. In our workflow, the Note/Rest Indexer makes a list of all the pitches and rhythmic values in a composition. The Offset Indexer then narrows down this list according to a user-specified “offset,” which is a numerical representation of some rhythmic value in the composition. Most compositions were analyzed using two different offsets: one to isolate the intervals sounding at the beginning of every breve (the tempus mensural unit), and the other to isolate intervals that fall on the beginning of the medieval longa (i.e., the modus mensural unit). (33) The final workflow step, the Vertical Interval Indexer , delivers all of the intervallic information in the form of a spreadsheet or CSV file. Each composition was fed to Rodan as a symbolic music file (in this case, a MusicXML file), which is a machine-readable version of the score obtained from a notation program like Sibelius or MuseScore. Example 7 . Colla iugo / Bona condit / LIBERA ME , first talea (breves 1–12) (click to enlarge)",
+                "footnotes": [
+                    "FN32",
+                    "FN33"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.3": {
+                "text": "[3.3] How these indexers work is best demonstrated by stepping through an example. Philippe de Vitry’s motet Colla iugo/Bona condit/LIBERA ME is one of Vitry’s most popular motets, copied in at least nine music manuscripts, including in the Ivrea Codex. The first talea is given as Example 7 . (34) Example 8 . Excerpt from the beginning of the Rodan-generated CSV file of the IvTrem motet Colla iugo / Bona condit (click to enlarge) When we ran Colla iugo/Bona condit through the three indexers of the Rodan Client workflow, the software generated a CSV file, the beginning of which is illustrated in Example 8 (note that the generated CSV files for each motet at both offsets are available on our project’s Github page). (35) To capture sonorities that occur on each medieval breve, we set the offset to 12 quarter notes, since in our modern transcription of this motet, each medieval breve is transcribed as a modern dotted breve, which is 12 quarter notes long. (36) The first column of the CSV file lists these offsets, which are the “time points” at which our observations were made. This motet has three voices, which are represented in the CSV file as numbers (0, 1, 2) from highest to lowest. Columns two to four thus return the intervals for each possible pair of voices: triplum and motetus (0,1), triplum and tenor (0,2) and motetus and tenor (1,2). The interval size is indicated by the number in each cell (all compound intervals are reduced to simple intervals), and the quality is indicated by letters “P” for perfect, “M” for Major, “m” for minor, “d” for diminished, and “A” for Augmented. For example, the first sonority of the piece is comprised of a perfect fourth (P4) between the triplum and motetus (e-a’), an octave (P8) between the triplum and tenor (a-a’), and a perfect fifth (P5) between the motetus and tenor (a-e). The sonority on the seventh breve (at offset 72) is a major sixth (M6) between the triplum and motetus (c-a’), a major tenth   between the triplum and tenor (F-a’)—which, since we reduce compound intervals to simple intervals, is recorded as a major third (M3)—and a perfect fifth between the motetus and tenor (F-c) (compare the dashed boxes marked on Example 7 and Example 8).",
+                "footnotes": [
+                    "FN34",
+                    "FN35",
+                    "FN36"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.4": {
+                "text": "[3.4] As mentioned, each motet was run through the workflow twice: once to output the sonorities that occur at the beginning of each perfect modus unit (i.e., the first, fourth, seventh, tenth breves and so on), and once more to output the sonorities that occur on every medieval breve. (37) Thus, two CSV files were generated for each motet. Example 9 . Order (from top to bottom) in which we filtered the CSV files output by the Rodan workflow, using a Python script, in order to categorize the sonorities (click to enlarge)",
+                "footnotes": [
+                    "FN37"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.5": {
+                "text": "[3.5] The data in these 124 CSV files were then aggregated and sorted using one of two additional Python scripts, depending on the number of voices. (38) The first script categorized sonorities for each row in the CSV file, based on the classification scheme outlined above in Example 3. The script cycles through the order given in the algorithm summarized in Example 9 . At moments where there was not at least one vertical interval (two sounding voices), the sonority type was categorized as “Rest or solo”; any sonority containing a diminished or augmented interval, or a second, seventh, or fourth of any quality was classified as “Dissonant”; any sonority containing only perfect intervals as “Perfect”; any sonority containing both a fifth and a sixth as “Dissonant”; remaining sonorities containing any perfect interval as “Mixed”; sonorities containing both a third and a sixth as “Doubly imperfect”; and then remaining sonorities (those containing only imperfect intervals) as “Imperfect.” A second script adapted the same algorithm to work with four-voice motets. (39)",
+                "footnotes": [
+                    "FN38",
+                    "FN39"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "3.6": {
+                "text": "[3.6] In three-voice motets, there are only two textures that generate a measurable sonority type: (1) all three voices sounding, or (2) two voices sounding and one voice resting. As soon as two or more voices are resting, the category for the given time point becomes “Rest or solo,” as there are no vertical intervals produced. In four-voice motets, there are usually at least two voices sounding, so very few time points were labelled “Rest or solo.” Many of the sonorities measured in the four-voice motets were identical in texture to those of the three-voice motets: three voices sounding and one voice resting, yielding two intervals (measured above the lowest-sounding voice). If all four voices were sounding, our scheme would simply tabulate a third interval (which may or may not change the categorization of the sonority). This additive method could potentially be extrapolated to deal with any number of voices. Example 10 . Aggregation of sonorities in Colla iugo / Bona condit / LIBERA ME (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "3.7": {
+                "text": "[3.7] To illustrate by way of the specific example of Vitry’s Colla iugo/Bona condit/LIBERA ME described above: the Python script classified the sonority on the first breve of Colla iugo/Bona condit/LIBERA ME (P4, P8, P5) as a “Perfect” (P) sonority because it contains only perfect intervals, and it classified the sonority on the fifth breve (m3, P5, M3) as a “Mixed” (M) sonority because it contains at least one perfect and one imperfect interval. Example 10 shows the sonority types counted by the Python script for the entire motet, a collection of data we term its “Sonority Profile.” The first row displays the sonorities occurring on each medieval breve; the second row, the sonorities occurring at the beginning of each modus unit (in the case of this motet, the modus is perfect; i.e., there are three breves in each modus unit). The third row, the sonority counts for the secondary breves (i.e., the second and third breves of each modus unit), is obtained by subtracting the second row from the first. Once sonority profiles like these were generated for each motet, we aggregated these data in a variety of ways to evaluate trends in the repertoire as a whole. By automating both the classification and the counting of the different types of sonorities, we could quickly consider the sonority profiles for individual pieces, as well as for larger groupings of pieces, such as the entire repertoire, the Mo8 group, or a subset of it. IV. Analysis of results General observations",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "4.1": {
+                "text": "[4.1] Using these aggregated data for each piece, for the repertoire as a whole, and for subsets of the repertoire, the types of sonorities that are deployed at specific metrical intervals can be tracked (at the onset of each long, on all breves, and on breves in secondary positions), and the trends in these distributions observed. Note that this analysis ignores any sonorities that occur in between the breve pulses. The percentage of sonority types over the course of a piece can be derived from the sonority profile for each piece. For example, in Colla iugo/Bona condit/LIBERA ME (see the counts for each sonority type given in Example 10), 78% of the sonorities that sound at the beginning of each longa ( modus unit) are perfect (i.e., 35 out of a total of 45) and 62% of the sonorities sounding on every breve (82 of 133) are perfect. What we observed in the aggregated data for each motet group is that each of the three groups has certain tendencies with respect to the deployment and percentages of sonority types (i.e., where certain categories of sonority tend to be used), and that specific deviances within these groups offer insight into existing narratives about the stylistic development of the motet during this period. A graphical representation of the sonority profiles for each motet—at modus onset and on the secondary breves—is given in Appendix 2 . (40) Example 11 . Bar graph with standard error bars that displays the means for each motet group ( Mo8 , FauvBr , IvTrem ) for each sonority category at modus onset (click to enlarge)",
+                "footnotes": [
+                    "FN40"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.2": {
+                "text": "[4.2] Our first observations center on the differences between the three groups of motets ( Mo8 , FauvBr , IvTrem ) in their deployment of sonorites on modus onsets (i.e., on the first breve of each modus unit). Example 11 illustrates the distributions of our six sonority categories on modus onsets for each of the three groups. The Mo8 and FauvBr groups are the most similar to one another: for the Perfect, Mixed, and Imperfect categories, the mean values are very similar in these two groups (also note that the standard error bars for Mo8 and FauvBr do not overlap with the standard error bars for IvTrem in these categories). The mean values for the percentage of perfect sonorities on modus onsets are notably high in the Mo8 and FauvBr groups, compared to any other sonority category for any group of motets (at 80% and 78% respectively); whereas the mean value for the percentage of perfect sonorities on modus onsets in the IvTrem group is much lower, at 62%. Very frequently then, for motets in the Mo8 and FauvBr groups, the sonority sounding at the beginning of a modus unit is perfect. On the other hand, the proportions of both mixed and imperfect sonorities on modus onsets is much higher in the IvTrem group (at 19% and 8% respectively) than in either the Mo8 or FauvBr group. For Mo8 and FauvBr , mixed or imperfect sonorities sounding on modus onsets are relatively rare. (41) The relatively high mean for dissonant sonorities in the Mo8 group on modus onsets (6%) will be explored momentarily. Taken together at a glance, the visual appearance of the data in Example 11 for each of the Mo8 and FauvBr motet groups is quite similar, while the visual appearance of the IvTrem data stands apart. Example 12 . Bar graphs with standard error bars that display the means for each motet group ( Mo8 , FauvBr , IvTrem ) for each sonority category at modus onset, and for the secondary breves of each modus unit (click to enlarge)",
+                "footnotes": [
+                    "FN41"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.3": {
+                "text": "[4.3] Example 12 provides a separate bar graph for each motet group, and each graph now includes bars for the sonorities on secondary breves. This allows the comparison of the distribution of sonority categories on modus onsets versus the distribution on secondary breves. A much larger difference in the distribution of perfect sonorities on modus onsets versus on secondary breves is observed in the Mo8 (80% vs. 45%) and FauvBr groups (78% vs. 51%), whereas the difference is smaller in the IvTrem group (62% vs. 51%). In all three groups, dissonant sonorities are more common on secondary breves than on modus onsets, and the highest overall mean for dissonant sonorities is found in the Mo8 group on secondary breves. In all three groups, the distribution of mixed sonorities is relatively similar for both modus onsets and secondary breves, while the mean value for imperfect sonorities for all three groups is quite a bit higher for secondary breves than for modus onsets. Again, the overall visual appearance of the graphs in Example 12 shows that the means of Mo8 and FauvBr are more similar to one another than to those of the IvTrem group. Example 13 . Bar graph of percentage of perfect sonorities at modus onset across all three motet groups ( Mo8 , FauvBr , IvTrem ) (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "4.4": {
+                "text": "[4.4] To examine the data from another perspective, Example 13 shows the aggregated data for all of the motets is visualized in one bar graph and sorted according to the percentage of perfect sonorities on modus onsets, in order to see if certain motets tend to cluster together (with respect to this single criterion), rather than relying on the pre-ordained groupings according to manuscript collection that were used to create the graphs in Examples 11 and 12. Example 13 thus allows for a birds-eye view of the trend in the usage of perfect sonorities on modus onsets with respect to the entire repertoire, and of the overlap between the three groups of motets. The predominance of the black bars ( IvTrem group) near the bottom of the graph shows how the IvTrem motets cluster together with respect to their smaller percentage of perfect sonorities on modus onsets, whereas the Mo8 and FauvBr motets (white and gray bars) mostly overlap, although there is a definite cluster of FauvBr motets in the middle of this graph (gray bars). Some individual motets stand out: the IvTrem motet Colla iugo/Bona condit (“Bona”) is quite a bit higher than the black IvTrem cluster at the bottom of the graph, as are two other IvTrem motets ( Zolomina zelus/Nazarea que decora/AVE MARIA and the four-voice Impudenter circumvivi/Virtutibus Laudabilis/[CONTRATENOR]/[TENOR] ); similarly, three Mo8 motets (nos. 311, 314, and 316) each are found much lower on this bar graph than the majority of the Mo8 motets that hover towards the top (white bar cluster). (42) Considering specific motets or groups of motets Example 14 . Bar graph with standard error bars that displays the means for each motet group ( Mo8 , FauvBr , IvTrem ) for each sonority category at modus onset (click to enlarge)",
+                "footnotes": [
+                    "FN42"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.5": {
+                "text": "[4.5] On the other hand, returning to our pre-determined groupings and visualizing the distribution of sonority types on modus onsets for each of the three groups of motets (as outlined in [4.2] and Example 11), Example 14 compares an individual composition to the other motets within the manuscript in which it is copied. As was noted above in the discussion of Example 13, some individual motets in the IvTrem group, in terms of their deployment of perfect sonorities on modus onsets, appear to cluster with the FauvBr group, rather than with the rest of the IvTrem group (see, for example, the motet Colla iugo/Bona condit (“IvTrem – Bona”) in Example 13). Example 14 collapses the Imperfect and Doubly imperfect sonority categories (I/DI), since these sonorities occur far less frequently on modus onsets. This graph shows that the distribution of sonorities in Colla iugo/Bona condit (the black bar) aligns more closely with the mean values for the FauvBr motet group (in light gray), than with the IvTrem motets (dark gray). The mean values for perfect and imperfect sonorities in Colla iugo/Bona condit are exactly the same as in the FauvBr group (78% and 4% respectively). At 78%, the percentage of perfect sonorities on modus onsets for Colla iugo/Bona condit is also very close to the mean value for the Mo8 group (80%), but it is quite distant from the mean value for the IvTrem group (the standard error for the IvTrem group for perfect sonorities on modus onsets is 3%). The value for mixed sonorities on modus onsets in Colla iugo/Bona condit (13%) is also closer to the FauvBr group (11%) than it is to the IvTrem group (19%), though just outside the standard error of the FauvBr group (1%). Finally, the low frequency of I/DI sonorities in Colla iugo/Bona condit is comparable to that of the Mo8 motets. If Colla iugo/Bona condit manifests a more old-fashioned approach to sonority that is more similar to the approaches found generally in the FauvBr motets (rather than to those found in the IvTrem motets)—that is, still tied to a predominant usage of perfect sonorites on modus onsets—it may indeed be one of the older motets copied in the Ivrea and Trémoïlle codices, perhaps composed as early as ca. 1320. This early dating is supported by a recent analysis that proposed that Colla iugo/Bona condit was originally composed in a notation closer to the extended Franconian notation found in the Fauvel manuscript (BnF f. fr. 146) rather than the ars nova notation in which it is copied in the Ivrea Codex ( Desmond 2018b ). Motets in Mo8 with a “stratified” texture Example 15 . Se ie sui liés et chantans / Jolietement / OMNES ( Mo8 , no. 316), longs 4–17 (click to enlarge)",
+                "footnotes": [],
+                "citations": [
+                    "desmond_2018b"
+                ]
+            }
+        },
+        {
+            "4.6": {
+                "text": "[4.6] Digging further into the data, we can make more observations on specific motets. For this example, we examine the Mo8 motet Se ie sui lies/Iolietement/OMNES (no. 316), which is striking in terms of its percentage of dissonant sonorities (31 %) found on modus onsets (first breves of the modus unit) in comparison to the mean value for the Mo8 group (6 %). Example 15 shows the preponderance of dissonant sonorities in one passage from this motet, marked with a “D” below the lower stave, including several that occur on modus onsets (marked with dashed boxes). Se ie sui lies/Jolietement ( Mo8 , no. 316) is one of a group of motets within the eighth fascicle of the Montpellier Codex that is characterized by its so-called “stratified” texture. (43) That is to say, all three voices have a different level of rhythmic activity: the triplum voice sings a much longer poem that is declaimed in mostly syllabic style on semibreves (in groups of two or three per breve), while the motetus declaims its shorter poem mostly in longs and breves, and the tenor moves mostly in longs. (44) While it is true that a contrapunctus analysis would certainly eliminate several of these dissonances as “passing” and attribute them to the fast-moving nature of the triplum voice, the analysis of sonority profiles undertaken here, which does not eliminate dissonant sonorities, serves to highlight the prevalence of these mensurally accented dissonances and suggests that they were an integral aesthetic of this motet style. Example 16 . Sonority categories at modus onset for the individual Mo8 motets that have a  “stratified” texture shown in comparison to the mean value for the entire Mo8 group (click to enlarge)",
+                "footnotes": [
+                    "FN43",
+                    "FN44"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.7": {
+                "text": "[4.7] Separating out the subset of motets from the Mo8 group that have the same sort of stratified texture as Se ie sui/Jolietement ( Mo8 nos. 305, 307, 311, 314, 317, 330, 332, 338) demonstrates that the characteristics observed above for Se ie sui/Jolietement are also present in several motets within this subgroup, although to a lesser extent. Example 16 provides a visualization of the sonority profiles of the motets with a stratified texture compared against the mean values for the Mo8 group as a whole. The mixed, imperfect, and doubly imperfect categories are collapsed into a single segment on the bar graph (M/I/DI), and the rest/solo category is eliminated in order to show more plainly the distinction between perfect, non-perfect, and dissonant sonorities in this group of motets. The majority of these stratified motets have fewer perfect sonorities on modus onsets, more “non-perfect” sonorities in general, and a relatively high level of dissonance, compared to the Mo8 group as a whole. (45) In addition to Se ie sui/Jolietement , nos. 311, 330 and 332 have a dissonance percentage on modus onsets that is significantly higher than the mean value for the Mo8 group (the mean for the dissonance category on modus onsets for Mo8 is 6%, and the standard error is 1%), and five of the nine (nos. 307, 311, 314, 316, 332) have a lower percentage of perfect sonorities on first breves than the mean for the group. Example 12 showed that the Mo8 group as a whole had a high level of dissonance with respect to sonority types on secondary breves (with a mean value of 25%), in contrast to its dissonance level on modus onsets (the beginning of the mensural perfections), which are the least dissonant (mean value of 6%). Because there are so many more notes in the upper voices within this group of stratified motets, (46) there is a relatively higher incidence of (possibly passing) dissonances, although they are still mensurally emphasized by virtue of their occurrence on the onsets of the modus unit (see again Example 15 for this type of part-writing). Mixed sonorities in the IvTrem motets Example 17 . Cum statua Nabucodonasor / Hugo, Hugo, princeps invidie / TENOR CUM STATUA , longs 1–10 (click to enlarge)",
+                "footnotes": [
+                    "FN45",
+                    "FN46"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.8": {
+                "text": "[4.8] As was mentioned earlier, we observed a general uptick in the use of mixed sonorities in the IvTrem motets (Example 11 showed the mean value for mixed sonorities sounding on modus onsets was 8% in Mo8 , 10% in FauvBr , and 21% in the IvTrem group). Example 17 shows the opening of a three-voice IvTrem motet, Cum statua Nabucodonasor/Hugo, Hugo, princeps invidie/TENOR CUM STATUA , where the higher frequency of mixed sonorities (“M”) is observed (15% of the breve sonorities are classified as “mixed” over the course of the entire motet). (47) Digging deeper into the IvTrem group, if the three-voice motets are separated out from the four-voice motets, an even greater difference is seen in the percentage of mixed sonorities: the mean value for mixed sonorities sounding on the modus unit onsets is 16% of all sonorities in the three-voice motets (closer to but still higher than in FauvBr ), and in the four-voice motets this percentage rises to 30%. In the four-voice IvTrem motet Ida capillorum/Portio nature precellentis geniture/[TENOR]/[CONTRATENOR] , probably the newest motet in the repertoire selected for this study, mixed sonorities on the onsets of the modus unit actually surpass the number of perfect sonorities (48% mixed vs. 25% perfect). There are two further IvTrem motets in addition to Ida capillorum/Portio nature for which the percentage of perfect sonorities on the onsets of the modus unit is less than 50%, namely, Post missarum/Post misse/[TENOR]/[CONTRATENOR] , and Apta caro/Flos virginum/[ALMA REDEMPTORIS] ). When sonorities on all breves are considered, the mean for perfect sonorities on all breves of the three-voice IvTrem motets is 56%, and 17% for mixed, while in the four-voice group perfect sonorities have a mean value of 49%, and 31% for mixed. Perhaps a growing familiarity and appreciation of the sound quality of mixed sonorities in four-voice motets (mixed sonorities are often necessary in four-voice textures in order to avoid undue unisons between voices or parallel perfect intervals) prompted a concomitant rise in their use in three-voice textures. The lack of differentiation, however, between the sonority types deployed on modus onsets and those deployed on secondary breves in the IvTrem motets is likely reflective of another stylistic change in the mid-fourteenth century motet: the general slowing-down of the breve tempus . Mensural organization around the breve vs. around the long Example 18 . The percentage of the perfect sonorities on first breves of the modus unit compared to perfect sonorities on secondary breves in the IvTrem motets (click to enlarge)",
+                "footnotes": [
+                    "FN47"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.9": {
+                "text": "[4.9] When the pulse slows down, the metrical organization comes to be perceived around the tempus unit (the breve), rather than the modus unit (the long), which is how the Mo8 and FauvBr motets were organized metrically. With the caveat that the sample size here is small, how is this trend reflected in our data? If a subset of the IvTrem motets were moving towards organization around the tempus rather than modus unit, we might expect to find less of a difference between the sonority profiles on the first breves of the modus unit, versus the secondary breves of the modus unit. Recall the huge difference between the percentage of sonorities that are perfect sonorities found on modus onsets versus on secondary breves in both Mo8 and FauvBr motets (for the Mo8 group, the mean value for perfect sonorities on modus onsets was 80% vs. 45% on secondary; for the FauvBr group, it was 78% vs. 51%; see Example 11). Example 18 has two bar graphs that visualize this trend in the IvTrem group: the first graph is of the imperfect modus motets (where the modus unit, the long, is binary and comprised of two breves), and the second graph is of the perfect modus motets (where the modus unit, the long, is ternary and comprised of three breves). These graphs illustrate the difference between the percentage of perfect sonorities on first breves, compared to the percentage of perfect sonorities on the secondary breves. The graphs are sorted according to the difference between the percentage of perfect sonorities on the modus onsets versus on the secondary breves. If the slowing-down of the breve indeed represents a more recent stylistic development, we might expect the motets towards the right of each of these graphs to be comparatively newer. In these motets, there is minimal difference between where a composer deploys perfect sonorities, whether on modus onsets or on secondary breves. In the IvTrem group, there are nine motets towards the right of both of these graphs where this difference is 10% or less. Scholarly consensus already dates three of these— Apollinis eclipsatur/Zodiacum signis lustrantibus/IN OMNEM TERRAM , Ida capillorum/Portio nature , and Apta caro plumiis, ingenii/Flos virginum, decus et species/[ALMA REDEMPTORIS] )—to ca. 1350 or even later; and the motet Mon chant en plaint/Qui doloreus onques n’a cogneü/TRISTIS EST ANIMA MEA has a relatively firm terminus post quem of 1337. (48) Specific notational features may indicate that Impudenter circumvivi/Virtutibus laudabilis is also comparatively recent ( Desmond 2018a , 157). While there is no clear consensus on the compositional dates of the remaining four motets, perhaps the motets’ similar sonority profiles suggest a similar time frame of composition—that is, in the 1340s or 1350s ( Cum statua/Hugo, Fortune/Ma dolour , Almifonis melos cum vocibus/Rosa sine culpa spina/[TENOR] , and O canenda/Rex quem ). Further computational investigation of this subgroup could look at the sonority profiles of the IvTrem motets with respect to sonorities that occur at the semibreve offset, and the trends in sonority distribution at this further subdivision of the breve. Motets with conflicting mensurations between the voices Example 19 . Motets in the IvTrem group that have mixed mensurations between the voices (click to enlarge)",
+                "footnotes": [
+                    "FN48"
+                ],
+                "citations": [
+                    "desmond_2018a"
+                ]
+            }
+        },
+        {
+            "4.10": {
+                "text": "[4.10] Within the group of IvTrem motets is a subset of motets in which one voice sings in a different mensuration (mensural organization) from the other voices ( Example 19 ). This experimental technique appears to have been explored by several ars nova composers, and was a characteristic feature of the new style. (49) While Jacobus, author of Speculum musicae , railed against modern compositions where perfect and imperfect mensurations were sung simultaneously by different voices ( Bragard 1955–73 , 7:58), Jean des Murs, in his Compendium artis musicae , simply described songs of two categories, one regular, one irregular: Est autem regularis cantus, dum perfectiones simul incipientes continuando pariter terminantur: irregularis est, dum non . . . Contigit autem aliquando duos cantus esse per se et absolute regulares, qui sunt irregulares ad invicem comparati, dum contra perfectum canitur imperfectum. ( Michels 1972 , 101) But it is a regular song when perfections beginning together through their equal continuation are terminated [together]: a song is irregular, when they do not . . . Sometimes the two songs [voices] are by themselves absolutely regular, but irregular when compared to one another, when against perfect is sung imperfect. (translated by Desmond)",
+                "footnotes": [
+                    "FN49"
+                ],
+                "citations": [
+                    "michels_1972"
+                ]
+            }
+        },
+        {
+            "4.11": {
+                "text": "[4.11] The tenor of the three-voice motet Colla iugo/Bona condit , for example, has notational features that clearly indicate imperfect modus for this voice (i.e., its imperfect long rests). The motetus, however, has notational features that imply it is organized in perfect modus . (50) Given this combination of mensurations between the voices, one might ask whether a listener or performer would have perceived Colla iugo/Bona condit as organized in twos or threes. Theorists of the time cited Colla iugo/Bona condit as an example of a perfect modus motet, despite its tenor notation. Example 20 . Bar graph of sonority percentages that compare the motets with mixed mensurations (click to enlarge)",
+                "footnotes": [
+                    "FN50"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "4.12": {
+                "text": "[4.12] To assess whether there might be one overarching mensural organization within the motets listed in Example 19 that have conflicts of modus (as notated) between the voices, we identified the sonorities on modus onsets with the Rodan Client both ways: first, as if the modus was perfect in all three voices, and then as if it was imperfect in all three voices. The results of this analysis are shown in Example 20 . The results suggest that the overall mensuration of the motet follows the mensuration of the motetus voice, if the percentage of perfect sonorities on modus onsets is considered a reliable indicator of mensural organization. In Colla iugo/Bona condit , for example, a higher proportion of perfect sonorities coincides with the first breves of perfect- modus units (this is the mensuration of the motetus) rather than imperfect- modus units (the mensuration of the tenor). This is true of the remaining motets listed in Example 19, with the one exception of Fortune/Ma dolour , which has fewer perfect sonorities and more mixed sonorities when analyzed according to the motetus voice’s perfect- modus mensuration. Example 21 . O canenda / Rex quem / REX REGUM / [CONTRATENOR] , breves 1–14 (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "4.13": {
+                "text": "[4.13] The four-voice O canenda/Rex quem is somewhat exceptional given its relatively unusual mensuration scheme. In Example 20, only the first section of this motet was considered, since O canenda/Rex quem has a second section that is in diminution (where the unit of mensural organization is reduced to the breve unit). In this first ( integer valor ) section of O canenda/Rex quem (labeled here “Part I”), the contratenor is notated in perfect modus ; all the other voices are in imperfect modus . The beginning of this motet is given as Example 21 . (51) The contratenor part begins with a breve rest, and the onset of its first complete modus unit begins on the second breve of the motet, after the other voices have already entered. Since the onset of the contratenor’s perfect modus units begins on the second breve of each talea , the first breves of the contratenor part versus the first breves of the other three voices occur at staggered time points. The first coincidence of modus onset in all four voices is on the fifth breve of the motet, and thereafter at every sixth breve (thus at breve 5, breve 11, breve 17, etc., marked in Example 21 with dashed boxes) ( Desmond 2018a , 229–32). This offset perhaps accounts for the relatively high percentage of dissonance when the sonorities are counted according to the contratenor’s mensuration (see the large black section [representing dissonant sonorities] of the bar graph in Example 20 for “Rex quem - Part I [ modus P]”). Taking the dissonance percentage into account, if one was to consider the implications of sonority placement alone in judging the experiential mensuration of this motet, the overall mensuration of O canenda/Rex quem appears to be imperfect modus . (52) V. Conclusion",
+                "footnotes": [
+                    "FN51",
+                    "FN52"
+                ],
+                "citations": [
+                    "desmond_2018a"
+                ]
+            }
+        },
+        {
+            "5.1": {
+                "text": "[5.1] Many more questions could be addressed using the methods described above. Further analysis and manipulation of this data could potentially answer questions such as these: What trends might be observed in the use of doubly imperfect (DI) sonorities? If the contratenor is removed from consideration in the four-voice motets, how might the sonority profile change? Would these profiles more closely match the three-voice IvTrem group, and would the overall percentage of mixed sonorities decrease? Are the sonority profiles more similar for pieces in the same mensuration? What about the differences or similarities between the sonority profiles of motets that are based on chant tenors versus song tenors, or between those motets that use a longer versus a shorter repeating segment of tenor pitches ( color )? What trends might be observed if another set of sonority profiles were generated with the Offset Indexer in the Rodan Client with the offset set to the semibreve, especially for the IvTrem group? All of the digitally encoded music files, the CSV output from running the Rodan Client workflows, the aggregated data, and the processing scripts have been made publicly available on GitHub, along with clear and accessible documentation to allow for further exploration of this repertoire. (53) We invite readers to use these tools and data in their own investigations and analyses, and to use the tools on other motets: for example, by creating encodings of the Machaut motets, or the remaining Montpellier or Fauvel motets that were not included in this study.",
+                "footnotes": [
+                    "FN53"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "5.2": {
+                "text": "[5.2] In some ways, developing these algorithms for a computer is similar to the teaching process. Unlike a human student, however, the computer will not pick up on and reproduce unarticulated assumptions, and needs explicit instructions for each step of the process. In turn, the necessity of developing these explicit instructions caused us to query and interrogate some implicit assumptions that we held and that we observed in the literature, with respect to the different gradations of sonority between the extremes of perfect and dissonant. While tallying up sonorities using a computer program can in some ways be a coarse approach to this repertoire (for example, the fact that on-beat passing dissonances are counted as part of the sonority and thus get tallied as “dissonant” sonorities), it does allow for a relatively rapid overview of a large number of works in a greater variety of ways and more systematically, than if the results were tallied by hand.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "5.3": {
+                "text": "[5.3] Histories of the French motet have tended to articulate a line of development from the ars antiqua style towards what is viewed as the fundamentally new style of the Fauvel motets, which then coalesces into the ars nova motet, of which the Ivrea Codex is a representative source. This study has demonstrated that in terms of sonority, at least, more nuance in the telling of this story is warranted. In almost every respect, the FauvBr motets studied here are much closer to the newest of the Montpellier motets (our Mo8 group) than to the IvTrem group in terms of their deployment of sonority. (54) For the Mo8 motets under consideration here, the treatment of sonority is dominated by the almost ubiquitous arrival on a perfect sonority at the onset of the modus unit. A higher degree of dissonance is tolerated on secondary breves, as is seen most strikingly in the Montpellier motet Dieus, comment puet li cuers durer/Vo vair oel m’ont espris/TENOR ( Mo8 , no. 314). A further reason for the higher dissonance in the Mo8 group as a whole is the higher number of dissonant sonorities in general found in the subset of motets that have a faster-moving triplum and a stratified texture, comprising both the Petronian motets, and the additional small group of motets in the eighth fascicle that use syllabic semibreves extensively. The deployment of mixed sonorities in the FauvBr group of motets is only very slightly higher than that found in Mo8 group, and in the deployment of imperfect sonorities the statistics are basically identical. This observation regarding sonority in these two groups of motets is in accord with recent research that places the production of the eighth fascicle of the Montpellier Codex in close temporal proximity to the production of the Roman de Fauvel manuscript (see again [2.1]). In the IvTrem group, a much higher proportion of mixed consonances are found at the onset of the modus units than is found in either Mo8 or FauvBr , which is in line with Jacobus’s comment in book VII of his Speculum musicae that ars nova composers use many more imperfect consonances ( Bragard 1955–73 , 7:24). When Jacobus speaks of the ars nova , he might have had in mind the FauvBr motet repertoire, but it is more likely that he is describing motets closer to the established ars nova repertoire copied in both the Ivrea and Tremoïlle codices and many more (now) fragmentary sources (many of have been attributed to Philippe de Vitry). (55) The rise of mixed sonorities in the IvTrem motets was hypothesized here as exemplifying two trends in the ars nova : a rise in preference for mixed sonorities in general (especially when a fourth voice is added), and a general slowing-down of the breve as the century progressed, so that rather than the long, the breve serves as the primary organizational unit in a small number of the IvTrem motets considered here. While there is not enough evidence here to suggest a possible dating and/or chronology of the IvTrem motets based on sonority alone, the trend in the deployment of sonority offers corroborating evidence that the nine motets Impudenter/Virtutibus , Fortune/Ma dolour , O canenda/Rex quem , Apollinis/Zodiacum , Ida capillorum/Portio , Cum statua/Hugo , Almifonis/Rosa , Mon chant/Qui , and Apta/Flos may be among the later motets of the group studied here. (56)",
+                "footnotes": [
+                    "FN54",
+                    "FN55",
+                    "FN56"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "5.4": {
+                "text": "[5.4] Two significant developments coincided with the composition of the IvTrem repertoire considered here. The first is the codification and dissemination of the ars nova theories on mensural notation of Jean des Murs and Philippe de Vitry. The second is the dissemination of a set of rules governing correct contrapuntal practice in two-part writing, possibly first written down by Petrus dictus Palma ociosa in 1336. To some extent, within what Fuller terms the “greatly expanded temporal domain” (1986, 37), the rules for contrapunctus freed composers from needing to articulate their compositions around the arrival on a perfect sonority at the onset of each long, and instead offered a framework for a more flexible part writing that did not need to be tied to the organization of the recurring modus unit, particularly useful when many of these ars nova compositions played with superimposition of conflicting mensurations. Rob Wegman has noted the significant change in contrapuntal treatment that can be seen from a comparison of the Fauvel motet Firmissime/Adesto (ca. 1315, possibly by Philippe de Vitry), which “moves firmly and unabashedly in parallel fifths and octaves,” and the Ivrea motet Petre Clemens/Lugentium siccentur/[TENOR] (written by Philippe de Vitry in 1342), where “the parallel fifth-octave sounds that made up the substance of the earlier motet have completely disappeared” (2014, 29–31). (57) With Petre/Lugentium , Wegman continues, we “are a lot closer to the kind of three-part unmeasured counterpoint that we find in the treatise of Petrus de Palma ociosa” (30). The data outlined in this study is not sufficient, of course, to support broad conclusions about the change in part-writing in motets during this period: a more in-depth analysis—which could also be carried out computationally—would examine every slice of the polyphonic texture (not just at the offset of the breve or long, but every time a new sonority is articulated). It should also incorporate specific information about voice leading (i.e., pitch names), in order to reach conclusions about changes in the contrapuntal treatment of pairs of voices during this half-century. For now, the data and analysis outlined here supports two main findings: that 1) there was a definitive and stark change in the deployment of sonority in the central repertoire of motets found in both the Ivrea and Tremoïlle codices, and 2) that, at least in terms of their sonority type and relationship to the rhythmic unfolding of their compositions, the later motets of the Montpellier Codex and the later motets copied in the Roman de Fauvel are a good deal more similar than has hitherto been supposed.",
+                "footnotes": [
+                    "FN57"
+                ],
+                "citations": []
+            }
+        }
+    ],
+    "mto": true,
+    "category": "articles",
+    "source": "mto/raw/mto.20.26.4.desmond.html",
+    "data": "mto/data/mto.20.26.4.desmond.json"
+}

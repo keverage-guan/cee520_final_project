@@ -1,0 +1,1007 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.10: Robison, Modifying Interval-Class Vectors</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Modifying Interval-Class Vectors of Large Collections
+        to Reflect Registral Proximity Among Pitches">
+
+    <meta name="citation_author" content="Robison, Brian">
+      
+
+<meta name="citation_publication_date" content="1994/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="10">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Modifying Interval-Class Vectors of Large Collections
+        to Reflect Registral Proximity Among Pitches
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.94.0.10/mto.94.0.10.robison.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Brian Robison</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: harmony, set theory</font></p><p><font size='4'>ABSTRACT: The twelve-tone operations of transposition and
+inversion reduce all 12-note collections to one set-class,
+all 11-note collections to one set-class, and all ten-note
+collections to one of six set-classes.  Yet throughout this
+century, composers have organized large collections in
+different ways to produce distinctly characteristic
+intervallic content.  I propose here a modified version of
+Allen Forte&rsquo;s interval-class vector to preserve some
+indication of registral proximity among pitches, assigning
+fractional counts to intervals greater than six semitones
+in order to derive interval-class vectors which distinguish
+different sets of a given set-class.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.94.0.10/mto.94.0.10.robison.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.94.0.10/robison_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 10, September 1994 <br> Copyright &#0169; 1994 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] The following work-in-progress attempts to bridge an
+analytic gap between order and disorder: between symmetric
+pitch matrices or interval cycles on the one hand, and
+asymmetric, all-interval structures (often labeled as
+&ldquo;ad hoc&rdquo;) on the other.  Although this discussion treats
+only large collections, the technique proposed is
+sufficiently general to apply to sets of any cardinality.
+The calculation of modified interval-class (ic) vectors
+for individual pitch sets (as opposed to pitch-class sets)
+requires computer implementation; Appendix 2 lists the
+structured BASIC program used to generate the ic vectors
+given in Appendix 1.</p>
+
+<p style="text-align: center"><b>Sets and Set-Classes</b></p>
+
+<p>[2] Pitch-class (pc) set theory provides powerful
+abstractive tools for relating pitch collections by
+operations such as transposition and inversion.  However,
+these same operations reduce all 12-note collections to one
+set-class, all 11-note collections to one set-class, and all
+ten-note collections to one of six set-classes distinguished
+by the interval-class of the excluded pc pair.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>Especially when expssed as chords in close or relatively
+even spacing, such large collections often do not lend
+themselves to perceptually clear segmentation into subsets
+with more distinctive ic vectors.</p>
+
+<p>[3] Throughout this century, composers have organized large
+collections in different ways to produce distinctly
+characteristic intervallic content.  These range from the
+consistent use of one or two ic&rsquo;s between vertically
+adjacent chord-tones, especially in vertically symmetrical
+arrangement, as in the music of the late Witold
+Lutoslawski<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Olivier Messiaen<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>, and others<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>, to
+&ldquo;all-interval&rdquo; constructions, typically asymmetrical, as is
+often the case in verticalizations of 12-tone rows.</p>
+
+<p>[4] pviously proposed functions which distinguish
+different members of a given set-class, such as Chapman&rsquo;s
+&ldquo;above-bass&rdquo; ic vector<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> and Morris&rsquo;s INT(n) function<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>,
+provide detailed information about relationships among
+pitches; however, as set cardinality increases, this detail
+proliferates geometrically to become unwieldy in practice.</p>
+
+<p style="text-align: center"><b>A Geometric Analogy</b></p>
+<p>[5] Many of the difficulties described above result from the
+conventional mapping of pitch space to pitch-class space, by
+which one completely collapses the helix of the former onto
+the circle of the latter.  However, for most objects of
+dimension D, one can choose among multiple projections to a
+space of dimension D-1.  For example, a cube can project
+onto a plane as any of the following:
+<ol>
+  <li>a single square,</li>
+  <li>two intersecting squares, with corresponding sides
+parallel and corresponding vertices connected, or</li>
+  <li>a regular hexagon with opposing vertices connected.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></li>
+</ol>
+
+<p>[6] Each repsentation has its merits and limitations.  The
+first pserves right angles and equal lengths of some edges,
+but effectively obscures the original&rsquo;s three-dimensional
+character.  The second pserves all parallelisms and most
+angles and lengths, but distorts others.  The third
+pserves all parallelisms and repsents all edges as equal
+in length, but distorts all angles (some become 60 degrees,
+others 120 degrees).</p>
+
+<p>[7] Returning to the helical model of the pitch continuum,
+there are likewise several possible approaches.  Viewed from
+the side, the helix appears as a sinusoid.  This sinusoidal
+projection pserves registral position but distorts
+relative distances (e.g. some semitones appear longer than
+others).  As mentioned pviously, the circular projection
+pserves interval-class relationships but eliminates
+all information regarding registral position.</p>
+
+<p style="text-align: center"><b>Interval-Class Vectors with Fractional Values</b></p>
+
+<p>[8] I propose here a modified version of Allen Forte&rsquo;s ic 
+vector<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> which provides some indication of registral
+proximity among pitches; in the geometric analogy above,
+it corresponds roughly to viewing the helix from above, but
+with some element of depth perception.  By assigning
+fractional counts to intervals greater than six semitones,
+we can derive ic vectors which distinguish different
+voicings of any given pc collection.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+<p>[9] Within each ic, the smallest interval receives a value
+of one;  successively larger intervals are counted at
+successively smaller values, as shown below for three
+decrement schemes: one linear, one moderately exponential,
+and one strongly exponential.  The linear scheme uses a
+steady decrement of .05, which maintains non-zero values
+for intervals within a limit of ten octaves (corresponding
+to the conventional range of human hearing).  The
+exponential schemes are based on reciprocals of <i>e</i><sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup>raised to 1/5 and 1/2 the index of transposition (see table
+below).  In all of these, the conventional ic vector is
+taken as expssing dissonant maxima<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>, which the
+composer can emphasize or attenuate by means of registral
+disposition.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup></p>
+<PRE>                Fractional interval counts</PRE>
+<PRE>                        -------- Decrement schemes -------</PRE>
+<PRE>Interval                   (a)         (b)         (c)
+   in        Index of     Linear    Moderately   Strongly
+semitones    transpos.                 exp.        exp.
+----------  ----------  ----------  ----------  ----------
+  1 -  6         0         1.0         1.0         1.0
+  7 - 12         1          .95         .819        .607
+ 13 - 18         2          .9          .670        .368
+ 19 - 24         3          .85         .549        .223
+ 25 - 30         4          .8          .449        .135
+ 31 - 36         5          .75         .368        .082
+ 37 - 42         6          .7          .301        .050
+ 43 - 48         7          .65         .247        .030
+   etc.         etc.       etc.        etc.        etc.</PRE>
+
+<p style="text-align: center"><b>Variation Sets</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Selected voicings of collection 8&ndash;24 [4 6 4 7 4 3]</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="robison_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="robison_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Selected voicings of collection 12&ndash;1 [12 12 12 12 12 6]</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="robison_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="robison_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[10] <b>Example 1</b> provides ten different voicings of 8-24,
+displaying varying degrees of symmetry, varying numbers
+of ic&rsquo;s as adjacencies, and varying ic&rsquo;s emphasized as
+adjacencies.  The first three are Messiaen&rsquo;s <i>accord de
+resonance</i> and two of its inversions.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>  1d and 1e
+emphasize ic&rsquo;s 1 and 2; 1f emphasizes perfect fourths,
+while 1g manifests augmented triads in close spacing.
+1h, 1i, and 1j psent several all-interval constructions.
+For 1a and 1c, the fractional ic vectors (Appendix 1:
+Tables 1a, 1b, 1c) reflect the tertial structure&rsquo;s relative
+emphasis by proximity of ic3 over ic1.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup>  Like
+conventional vectors, they fail to distinguish 1a from 1c.
+However, unlike conventional vectors, and unlike Chapman&rsquo;s
+and Morris&rsquo;s functions, they do distinguish between 1d and
+1e, which contain identical vertical sequences of
+pitch-classes.</p>
+
+
+<p>[11] The exponential schemes psent more dramatic
+distinctions than linear ones, as the fractional ic vectors
+(Appendix 1: Tables 2a, 2b, 2c) for the 12-note sonorities
+in <b>Example 2</b> illustrate.  Again, the voicings vary in regard
+to symmetry and restriction of ic&rsquo;s as adjacencies.  Note
+that the greater decrements for highly compound intervals
+produce a wider range of possible values in any given
+position in the vector.  For example, compare the ic6 values
+in the vectors for the first five sonorities alone
+(vertically symmetrical 12-note chords with only ic3 and ic5
+as adjacencies, spanning comparable registers).  The linear
+scheme produces values between 5 and 6, the moderately
+exponential scheme produces values between 3.28 and 6,
+and the strongly exponential scheme produces values between
+1.57 and 6.  Fractional vectors derived with strongly
+exponential decrements thus approach a vector calculated by
+counting adjacencies alone.</p>
+
+<p style="text-align: center"><b>Preliminary Implications for Analysis</b></p>
+
+<p>[12] To ensure meaningful comparison, it&rsquo;s important that an
+analyst apply either the same scheme or closely comparable
+ones to all collections in a given context.  Conservative 
+linear decrement schemes distinguish different voicings of
+a given pc-set, but their vectors are still closer to each
+other than they are to those of other pc-sets, and even to
+those of voicings of other sets which display highly similar
+adjacency structures.  In contrast, the exponential schemes
+produce vectors in which the intervallic cardinality (i.e.
+the sum of the terms of the ic vector) of a chord
+distributed over a wide range approximates that of a much
+smaller conventional collection.  In extreme cases, pitch
+sets which belong to different pc-set-classes but which
+share certain adjacency structures could generate vectors
+which are closer to each other than to those of other
+members of their own pc-set-classes, as measured by
+numerical methods such as Isaacson&rsquo;s IcVSIM function.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></p>
+
+<p>[13] However, I do not psume to suggest any standard
+scheme, since the pferred size and nature of intervallic
+decrements will vary among individuals and among
+repertoires.  To return to the geometric analogy, these
+variations correspond to differences among individual
+perceptions of the relative spacing of the helix&rsquo;s coils and
+the resulting degree to which aural &ldquo;perspective&rdquo; attenuates
+the dissonance of highly compound intervals.  In addition,
+aspects of timbre and orchestration often motivate different
+perceptual distances; consider the difference in relative
+dissonance of any one of the sonorities above as performed
+on a harpsichord, clavichord, piano, or organ, or as played
+by bowed strings, muted, <i>ppp</i>, or brass choir, <i>fff</i>.
+As with any other feature of analysis, one should note
+explicitly the information which one chooses to sacrifice
+for the sake of brevity and clarity.</p>
+<hr>
+<p style="text-align: center"><b>Appendix 1: Tables</b></p>
+<p>Table 1a</p>
+<p>Fractional interval-class vectors of
+the 10 voicings of 8&ndash;24 in Example 1
+(linear decrements)
+</p>
+<PRE>        4       6       4       7       4       3</PRE>
+<PRE>a       3.6     5.65    3.95    6.6     3.75    2.9</PRE>
+<PRE>b       3.7     5.6     4       6.5     3.7     3</PRE>
+<PRE>c       3.6     5.65    3.95    6.6     3.75    2.9</PRE>
+<PRE>d       4       5.95    4       6.9     3.9     3</PRE>
+<PRE>e       3.8     5.35    3.7     5.8     3.2     2.5
+
+</PRE>
+<PRE>f       3.8     5.1     3.3     6.0     4       3</PRE>
+<PRE>g       3.5     5.45    3.5     6.9     3.5     2.8</PRE>
+<PRE>h       3.7     5.65    3.8     6.3     3.6     2.7</PRE>
+<PRE>i       3.35    5.05    3.6     6.2     3.8     2.5</PRE>
+<PRE>j       3.75    5.4     3.55    6.3     3.75    2.9</PRE>
+<p>==============================</p>
+<p>Table 1b</p>
+<p>Fractional interval-class vectors of
+the 10 voicings of 8-24 in Example 1
+(moderately exponential decrements)
+</p>
+<PRE>        4       6       4       7       4       3       </PRE>
+<PRE>a       2.71    4.80    3.82    5.71    3.19    2.67</PRE>
+<PRE>b       2.98    4.71    4       5.29    3.10    3</PRE>
+<PRE>c       2.71    4.80    3.82    5.71    3.19    2.67</PRE>
+<PRE>d       4       5.82    4       6.64    3.64    3</PRE>
+<PRE>e       3.34    4.26    3.01    3.75    1.86    1.57
+
+</PRE>
+<PRE>f       3.27    3.49    2.00    4.09    4       3</PRE>
+<PRE>g       2.44    4.20    2.54    6.64    2.59    2.34</PRE>
+<PRE>h       3.04    4.80    3.37    4.85    2.86    2.12</PRE>
+<PRE>i       2.24    3.49    2.86    4.67    3.34    1.75</PRE>
+<PRE>j       3.16    4.20    2.67    4.85    3.19    2.67</PRE>
+<p>====================</p>
+<p>Table 1c</p>
+<p>Fractional interval-class vectors of
+the 10 voicings of 8&ndash;24 in Example 1
+(strongly exponential decrements)
+</p>
+<PRE>        4       6       4       7       4       3</PRE>
+<PRE>a       1.57    3.56    3.61    4.57    2.44    2.37</PRE>
+<PRE>b       1.95    3.57    4       3.53    2.45    3</PRE>
+<PRE>c       1.57    3.56    3.61    4.57    2.44    2.37</PRE>
+<PRE>d       4       5.61    4       6.21    3.21    3</PRE>
+<PRE>e       2.74    3.13    2.10    1.72    .67     .64
+
+</PRE>
+<PRE>f       2.43    1.84    .72     2.00    4       3</PRE>
+<PRE>g       1.18    2.54    1.48    6.21    1.67    1.74</PRE>
+<PRE>h       2.20    3.56    2.83    3.16    2.06    1.50</PRE>
+<PRE>i       1.16    2.10    2.06    3.02    2.74    1.19</PRE>
+<PRE>j       2.34    2.79    1.73    3.16    2.44    2.37
+</PRE>
+<p>==============================</p>
+<p>Table 2a</p>
+<p>Fractional interval-class vectors
+of the 15 voicings of 12-1
+provided in Example 2
+(linear decrements)
+</p>
+<PRE>        12      12      12      12      12       6</PRE>
+<PRE>a       10.35    9.7    10.55   11.2    10.35    5.0</PRE>
+<PRE>b       10.3    10.5    11.05   10.4    10.8     5.4</PRE>
+<PRE>c       10.45    9.7    10.85   11.2    10.55    5.0</PRE>
+<PRE>d       10.65   10.1    11.05   11.2    10.75    5.2</PRE>
+<PRE>e       10.5    10.4    11.85   10.4    10.5     6</PRE>
+<PRE>                                                 </PRE>
+<PRE>f       10.55   10.1    10.75   11.2    11.05    5.2</PRE>
+<PRE>g       10.4    10.55   10.85   10.5    11.05    5.5</PRE>
+<PRE>h       10.75   10.1    10.65   10       9.45    4.8</PRE>
+<PRE>i       10.15    9.7    10.75   11      10.45    5</PRE>
+<PRE>j       10.5    10.6    11.85   10.6    10.5     6</PRE>
+<PRE>                                                 </PRE>
+<PRE>k       10.55   10.7    11.1    10.8    11.05    5.3</PRE>
+<PRE>l       10.95   10.85   10.9    10.6    11       5.6</PRE>
+<PRE>m        9.10    8.90    9.15    9.15    8.9     4.4</PRE>
+<PRE>n       10.5    10.65   11.25   10.6    10.7     5.7</PRE>
+<PRE>o       10.65   10.6    11.1    10.55   10.5     5.4</PRE>
+<p>==============================</p>
+<p>Table 2b</p>
+<p>Fractional interval-class vectors
+of the 15 voicings of 12-1
+provided in Example 2
+(moderately exponential decrements)
+</p>
+<PRE>        12      12      12      12      12       6</PRE>
+<PRE>a        7.30    5.80    8.02    9.23    9.00    3.28</PRE>
+<PRE>b        7.48    7.41    9.26    7.59    8.40    4.24</PRE>
+<PRE>c        7.53    5.80    8.99    9.23    8.00    3.28</PRE>
+<PRE>d        7.97    6.58    9.45    9.23    8.39    3.80</PRE>
+<PRE>e        7.66    7.20   11.46    7.27    7.67    6
+
+</PRE>
+<PRE>f        7.77    6.58    8.45    9.23    9.36    3.80</PRE>
+<PRE>g        7.26    7.77    9.00    7.65    8.96    4.57</PRE>
+<PRE>h        8.47    6.58    8.45    7.15    5.66    2.70</PRE>
+<PRE>i        6.79    5.92    8.79    8.88    7.53    3.50</PRE>
+<PRE>j        7.38    7.81    11.46   7.27    7.67    6
+
+</PRE>
+<PRE>k        7.57    8.21    9.26    8.41    9.55    3.80</PRE>
+<PRE>l        8.77    8.60    8.85    7.83    9.07    4.79</PRE>
+<PRE>m        7.97    8.00    8.45    7.70    7.30    3.80</PRE>
+<PRE>n        7.75    7.81    9.86    7.92    8.35    5.12</PRE>
+<PRE>o        7.88    7.96    9.53    7.76    7.84    4.42</PRE>
+<p>==============================</p>
+<p>Table 2c</p>
+<p>Fractional interval-class vectors
+of the 15 voicings of 12-1
+provided in Example 2
+(strongly exponential decrements)
+</p>
+<PRE>        12      12      12      12      12       6</PRE>
+<PRE>a        3.95    2.35    5.58    6.32    7.52    1.57</PRE>
+<PRE>b        4.65    3.85    7.40    4.64    5.74    3.01</PRE>
+<PRE>c        4.30    2.35    7.26    6.32    5.62    1.57</PRE>
+<PRE>d        4.86    2.91    8.04    6.32    5.90    2.54</PRE>
+<PRE>e        4.54    3.55   10.82    3.86    4.68    6
+
+</PRE>
+<PRE>f        4.73    2.91    6.15    6.32    7.58    2.54</PRE>
+<PRE>g        3.76    4.63    7.36    4.64    6.19    3.64</PRE>
+<PRE>h        5.75    2.91    6.65    4.47    2.55     .81</PRE>
+<PRE>i        3.20    2.53    7.08    6.36    4.28    2.37</PRE>
+<PRE>j        3.69    4.63   10.82    4.82    4.09    6
+
+</PRE>
+<PRE>k        4.08    5.51    7.15    5.48    8.22    1.97</PRE>
+<PRE>l        6.12    6.04    6.77    4.62    6.91    3.87</PRE>
+<PRE>m        4.86    5.02    6.40    4.78    4.74    2.54</PRE>
+<PRE>n        4.78    4.47    8.41    4.87    5.94    4.50</PRE>
+<PRE>o        4.62    5.06    7.94    4.73    5.17    3.55
+</PRE>
+<hr>
+<p style="text-align: center"><b>Appendix 2: The FRACTION Program</b></p>
+<PRE>DECLARE SUB EnterPitches ()
+DECLARE SUB FractionalCounts ()
+DECLARE SUB ShowVector ()</PRE>
+<PRE>DIM SHARED Quant
+DIM SHARED IntClass</PRE>
+<PRE>DIM SHARED PitchArray(3, 30)
+  &lsquo;Thirty is an arbitrary value, selected because
+  &lsquo;  BASIC does not allow matrices of variable dimension.
+  &lsquo;If analyzing collections of more than 30 pitches,
+  &lsquo;  substitute a larger value in this dimension statement.</PRE>
+<PRE>DIM SHARED IcMatrix(12, 6)</PRE>
+<PRE>DEF fnPitchClassOrder (p, q)
+ </PRE>
+<PRE>  &lsquo;This function enables the FractionalCount routine
+  &lsquo;  to assign fractional counts to their proper positions
+  &lsquo;  in the interval-class matrix.
+ </PRE>
+<PRE>  IF IntClass = 6 THEN
+    SELECT CASE p
+      CASE IS &lt; q
+        fnPitchClassOrder = p
+      CASE IS &gt; q
+        fnPitchClassOrder = q
+      END SELECT
+    EXIT DEF
+  END IF
+  SELECT CASE p
+    CASE IS = (q + IntClass) MOD 12
+      fnPitchClassOrder = q
+    CASE ELSE
+      fnPitchClassOrder = p
+  END SELECT
+END DEF
+
+</PRE>
+<PRE>&lsquo;Program Fraction</PRE>
+<PRE>  &lsquo;This program calculates interval-class vectors
+  &lsquo;  using fractional interval-class counts
+  &lsquo;  to reflect emphasis by registral proximity.
+ </PRE>
+<PRE>  DO
+    CLEAR
+    CALL EnterPitches
+    CALL FractionalCounts
+    CALL ShowVector
+    PRINT &ldquo;      &rdquo;
+    INPUT &ldquo;Process another collection&rdquo;; Response$
+      IF Response$ = &ldquo;n&rdquo; THEN EXIT DO
+  LOOP
+END</PRE>
+<PRE>SUB EnterPitches
+  &lsquo;This routine accepts pitch data as ordered pairs
+  &lsquo;  of pitch-class (in integer notation)
+  &lsquo;  and register (according to the ASA scheme).
+  &lsquo;It then converts each pair to a position
+  &lsquo;  for calculating intervals.
+  CLS
+  INPUT &ldquo;Enter the number of pitches in the collection: &rdquo;; Quant
+  PRINT &ldquo;Enter each pitch as an ordered pair (pitch-class, register)&rdquo;
+  FOR i = 1 TO Quant
+    PRINT &ldquo;  Pitch No.&rdquo;; i;
+    INPUT PitchArray(1, i), PitchArray(2, i)
+    PitchArray(3, i) = 12 * PitchArray(2, i) + PitchArray(1, i)
+  NEXT i
+END SUB</PRE>
+<PRE>SUB FractionalCounts
+ </PRE>
+<PRE>  &lsquo;This routine calculates intervals and assigns their
+  &lsquo;  fractional counts to an interval-class matrix.</PRE>
+<PRE>  FOR v = 1 TO Quant - 1
+    FOR w = v + 1 TO Quant
+      Interval = ABS(PitchArray(3, v) - PitchArray(3, w))
+      IntClass = Interval MOD 12
+      Index = 2 * ((Interval - IntClass) / 12)
+        IF IntClass &gt; 6 THEN
+          IntClass = 12 - IntClass
+          Index = Index + 1
+        END IF
+      Delta = Index * .05
+      Fraction = 1 - Delta
+  &lsquo;The above two lines implement the linear decrement
+  &lsquo;  scheme discussed in the article text.
+  &lsquo;For moderately exponential decrements, replace them
+  &lsquo;  with the single line</PRE>
+<PRE>  &lsquo;   Fraction = 1/(2.718281828# ^ (Index/5))</PRE>
+<PRE>  &lsquo;For strongly exponential decrements, replace them
+  &lsquo;  with the single line</PRE>
+<PRE>  &lsquo;   Fraction = 1/(2.718281828# ^ (Index/2))</PRE>
+<PRE>      r = fnPitchClassOrder(PitchArray(1, v), PitchArray(1, w))
+        IF Fraction &gt; IcMatrix(r + 1, IntClass) THEN
+          IcMatrix(r + 1, IntClass) = Fraction
+        END IF
+    NEXT w
+  NEXT v
+END SUB</PRE>
+<PRE>SUB ShowVector</PRE>
+<PRE>  &lsquo;This routine sums the fractional counts for each
+  &lsquo;  interval-class, producing the fractional IcVector.
+ </PRE>
+<PRE>  PRINT &ldquo;Fractional IcVector = &rdquo;;
+  DIM sum(6)
+  FOR m = 1 TO 6
+    sum(m) = 0
+    FOR n = 1 TO 12
+      sum(m) = sum(m) + IcMatrix(n, m)
+    NEXT n
+    PRINT sum(m);
+  NEXT m
+END SUB
+</PRE>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Brian Robison<br>
+	Music Department<br>Lincoln Hall<br>Cornell University<br>Ithaca, New York 14853<br><a href="mailto:bcr2@cornell.edu">bcr2@cornell.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Specifically, these &ldquo;saturated&rdquo; set-classes are:
+<table style='width:200px'>  
+<tr>
+  <td>12&ndash;1</td>
+  <td>[12 12 12 12 12 6]</td>
+</tr>
+<tr>
+  <td>11&ndash;1</td>
+  <td>[10 10 10 10 10 5]</td>
+</tr>
+<tr>
+  <td>10&ndash;1</td>
+  <td>[9 8 8 8 8 4]</td>
+</tr>
+<tr>
+  <td>10&ndash;2</td>
+  <td>[8 9 8 8 8 4]</td>
+</tr>
+<tr>
+  <td>10&ndash;3</td>
+  <td>[8 8 9 8 8 4]</td>
+</tr>
+<tr>
+  <td>10&ndash;4</td>
+  <td>[8 8 8 9 8 4]</td>
+</tr>
+<tr>
+  <td>10&ndash;5</td>
+  <td>[8 8 8 8 9 4]</td>
+</tr>
+<tr>
+  <td>10&ndash;6</td>
+  <td>[8 8 8 8 8 5]</td>
+</tr>
+</table>
+<p>Note that, among set-classes of cardinality 10, the vectors
+show a <i>higher</i> value for the &ldquo;excluded&rdquo; pc pair (i.e. by
+reflexivity, the excluded pair removes only one instance
+of its own ic, but two instances of every other ic).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Steven Stucky, <i>Lutoslawski and his music</i> (Cambridge:
+Cambridge University Press, 1981), 114&ndash;119.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Some of these collections arise from interval cycles
+(as in the chord of alternating fourths and tritones which
+repeatedly appears in the first movement of his
+<i>Turangalila-symphonie</i>), others from the inherent
+symmetries of his modes of limited transposition (Messiaen:
+<i>Technique de mon langage musical</i>, Paris: A. Leduc, 1944.).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Two prominent early collections of limited adjacencies
+are the 12-note chords that accompany the deaths of the
+title characters in Alban Berg&rsquo;s <i>Wozzeck</i> (ic&rsquo;s 3 and 4,
+symmetric) and <i>Lulu</i> (ic&rsquo;s 1, 5, and 6, asymmetric).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Chapman, Alan.  &ldquo;Some intervallic aspects of pitch-
+class set relations.&rdquo; <i>Journal of music theory</i> 25 (1981):
+275&ndash;290.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Morris, Robert. <i>Composition with pitch classes:
+A theory of compositional design</i>.  New Haven: Yale
+University Press, 1987.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> For the sake of simplicity, these examples assume
+parallel perspective in projection (i.e. no vanishing
+point!).  Of course, the introduction of one or more
+vanishing points further multiplies the variety of possible
+projections.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Because the system outlined by Forte in <i>The structure
+of atonal music</i> (New Haven: Yale University Press, 1973)
+has become a lingua franca among theorists, it provides a
+valuable framework in which to build.  Thus, the counting
+schemes outlined below all produce ic vectors of six values
+ranging from [0 0 0 0 0 0] for the empty set-class to
+[12 12 12 12 12 6] for the complete aggregate with all 66
+possible intervals occurring in their most compact forms
+(due to duplication of pitch-classes).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Although these fractional counts resemble membership
+functions of fuzzy sets, as set forth by Lotfi Zadeh in his
+article &ldquo;Fuzzy sets,&rdquo; <i>Information and control</i> 8 (1965),
+pp. 338&ndash;353, I do not mean them to imply a reduced degree
+of ic membership for compound intervals!  Rather, they
+denote degrees of membership in the fuzzy set of <i>close
+intervals</i>, summed by ic as six scalar cardinalities to
+produce an ic vector.  By extension, the fractional vectors
+do not imply reduced set-class membership for sets widely
+dispersed in register, but only lesser membership in the
+fuzzy set of <i>closely-spaced sonorities</i>.  For a lucid
+review of basic concepts of traditional (&ldquo;crisp&rdquo;) set theory
+and fuzzy set theory, see George J. Klir and Tina A. Folger:
+<i>Fuzzy sets, uncertainty, and information</i> (Englewood
+Cliffs: Prentice-Hall, 1988), 1&ndash;21.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> <i>e</i> is the base of the system of natural logarithms,
+approximately 2.718 in value.  The choice of <i>e</i> as a basis
+for these exponential schemes is purely arbitrary.
+Empirical research in the perceived distances of compound
+intervals may suggest alternate decrement functions.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Here &ldquo;dissonant&rdquo; refers loosely to the acoustical
+phenomenon of critical bandwidth, corresponding to the
+colloquial notion that a minor second is &ldquo;crunchier&rdquo; than a
+major seventh, and so on.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Thus, in order to preserve the bounds described in 
+note (7) above, in collections containing more than one
+pitch of a given pc, the algorithm implemented in the
+<i>Fraction</i> program (Appendix 2) always chooses the more
+compact form of a given pc pair, e.g. for the collection
+{C4,D4,B4,C5} under the linear scheme above, the ic vector
+is [1 1 .95 0 0 0].<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Messiaen, <i>Technique de mon langage musical</i>, Vol. 2, 
+Exx. 208, 209, 210.  I&rsquo;ve transposed Messiaen&rsquo;s Ex. 209
+so that it shares the same pitch classes with the
+collections of Ex. 1a and 1d&ndash;1j.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> That is, these two sonorities each (enharmonically)
+contain fairly compact versions of ic3 (three minor thirds
+and one major sixth), vs. compound versions of ic1 (no minor
+seconds, two major sevenths, one minor ninth, and one major
+fourteenth).<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Isaacson, Eric.  &ldquo;Similarity of interval-class content
+between pitch-class sets: The IcVSIM function.&rdquo; <i>Journal of
+music theory</i> 34 (1990), 1&ndash;28.<br><a href="#FN15REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Specifically, these &ldquo;saturated&rdquo; set-classes are:
+  
+
+  12&ndash;1
+  [12 12 12 12 12 6]
+
+
+  11&ndash;1
+  [10 10 10 10 10 5]
+
+
+  10&ndash;1
+  [9 8 8 8 8 4]
+
+
+  10&ndash;2
+  [8 9 8 8 8 4]
+
+
+  10&ndash;3
+  [8 8 9 8 8 4]
+
+
+  10&ndash;4
+  [8 8 8 9 8 4]
+
+
+  10&ndash;5
+  [8 8 8 8 9 4]
+
+
+  10&ndash;6
+  [8 8 8 8 8 5]
+
+
+Note that, among set-classes of cardinality 10, the vectors
+show a <i>higher</i> value for the &ldquo;excluded&rdquo; pc pair (i.e. by
+reflexivity, the excluded pair removes only one instance
+of its own ic, but two instances of every other ic).</div><div id="fndiv2" class="flyoverdiv">Steven Stucky, <i>Lutoslawski and his music</i> (Cambridge:
+Cambridge University Press, 1981), 114&ndash;119.</div><div id="fndiv3" class="flyoverdiv">Some of these collections arise from interval cycles
+(as in the chord of alternating fourths and tritones which
+repeatedly appears in the first movement of his
+<i>Turangalila-symphonie</i>), others from the inherent
+symmetries of his modes of limited transposition (Messiaen:
+<i>Technique de mon langage musical</i>, Paris: A. Leduc, 1944.).</div><div id="fndiv4" class="flyoverdiv">Two prominent early collections of limited adjacencies
+are the 12-note chords that accompany the deaths of the
+title characters in Alban Berg&rsquo;s <i>Wozzeck</i> (ic&rsquo;s 3 and 4,
+symmetric) and <i>Lulu</i> (ic&rsquo;s 1, 5, and 6, asymmetric).</div><div id="fndiv5" class="flyoverdiv">Chapman, Alan.  &ldquo;Some intervallic aspects of pitch-
+class set relations.&rdquo; <i>Journal of music theory</i> 25 (1981):
+275&ndash;290.</div><div id="fndiv6" class="flyoverdiv">Morris, Robert. <i>Composition with pitch classes:
+A theory of compositional design</i>.  New Haven: Yale
+University Press, 1987.</div><div id="fndiv7" class="flyoverdiv">For the sake of simplicity, these examples assume
+parallel perspective in projection (i.e. no vanishing
+point!).  Of course, the introduction of one or more
+vanishing points further multiplies the variety of possible
+projections.</div><div id="fndiv8" class="flyoverdiv">Because the system outlined by Forte in <i>The structure
+of atonal music</i> (New Haven: Yale University Press, 1973)
+has become a lingua franca among theorists, it provides a
+valuable framework in which to build.  Thus, the counting
+schemes outlined below all produce ic vectors of six values
+ranging from [0 0 0 0 0 0] for the empty set-class to
+[12 12 12 12 12 6] for the complete aggregate with all 66
+possible intervals occurring in their most compact forms
+(due to duplication of pitch-classes).</div><div id="fndiv9" class="flyoverdiv">Although these fractional counts resemble membership
+functions of fuzzy sets, as set forth by Lotfi Zadeh in his
+article &ldquo;Fuzzy sets,&rdquo; <i>Information and control</i> 8 (1965),
+pp. 338&ndash;353, I do not mean them to imply a reduced degree
+of ic membership for compound intervals!  Rather, they
+denote degrees of membership in the fuzzy set of <i>close
+intervals</i>, summed by ic as six scalar cardinalities to
+produce an ic vector.  By extension, the fractional vectors
+do not imply reduced set-class membership for sets widely
+dispersed in register, but only lesser membership in the
+fuzzy set of <i>closely-spaced sonorities</i>.  For a lucid
+review of basic concepts of traditional (&ldquo;crisp&rdquo;) set theory
+and fuzzy set theory, see George J. Klir and Tina A. Folger:
+<i>Fuzzy sets, uncertainty, and information</i> (Englewood
+Cliffs: Prentice-Hall, 1988), 1&ndash;21.</div><div id="fndiv10" class="flyoverdiv"><i>e</i> is the base of the system of natural logarithms,
+approximately 2.718 in value.  The choice of <i>e</i> as a basis
+for these exponential schemes is purely arbitrary.
+Empirical research in the perceived distances of compound
+intervals may suggest alternate decrement functions.</div><div id="fndiv11" class="flyoverdiv">Here &ldquo;dissonant&rdquo; refers loosely to the acoustical
+phenomenon of critical bandwidth, corresponding to the
+colloquial notion that a minor second is &ldquo;crunchier&rdquo; than a
+major seventh, and so on.</div><div id="fndiv12" class="flyoverdiv">Thus, in order to preserve the bounds described in 
+note (7) above, in collections containing more than one
+pitch of a given pc, the algorithm implemented in the
+<i>Fraction</i> program (Appendix 2) always chooses the more
+compact form of a given pc pair, e.g. for the collection
+{C4,D4,B4,C5} under the linear scheme above, the ic vector
+is [1 1 .95 0 0 0].</div><div id="fndiv13" class="flyoverdiv">Messiaen, <i>Technique de mon langage musical</i>, Vol. 2, 
+Exx. 208, 209, 210.  I&rsquo;ve transposed Messiaen&rsquo;s Ex. 209
+so that it shares the same pitch classes with the
+collections of Ex. 1a and 1d&ndash;1j.</div><div id="fndiv14" class="flyoverdiv">That is, these two sonorities each (enharmonically)
+contain fairly compact versions of ic3 (three minor thirds
+and one major sixth), vs. compound versions of ic1 (no minor
+seconds, two major sevenths, one minor ninth, and one major
+fourteenth).</div><div id="fndiv15" class="flyoverdiv">Isaacson, Eric.  &ldquo;Similarity of interval-class content
+between pitch-class sets: The IcVSIM function.&rdquo; <i>Journal of
+music theory</i> 34 (1990), 1&ndash;28.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1994 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Cynthia Gonzales and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

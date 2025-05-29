@@ -1,0 +1,878 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.3: Lindley, Mathematical Models of Scales</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="An Algebraic Approach to Mathematical Models of Scales">
+
+    <meta name="citation_author" content="Lindley, Mark">
+    <meta name="citation_author" content="Turner-Smith, Ronald">
+    
+
+<meta name="citation_publication_date" content="1993/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">An Algebraic Approach to Mathematical Models of Scales
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.93.0.3/mto.93.0.3.lindley_turner-smith.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Mark Lindley</a> and 
+			<a style="color:black" href="#AUTHORNOTE2">Ronald Turner-Smith</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: group, halfgroup, harmony, dodecaphony, semitones, temperament, 
+Landini, Matteo da Perugia, Dufay, Schutz, Louis Couperin</font></p><p><font size='4'>ABSTRACT: Although mathematical models of the scale have always been 
+characteristic of Western music theory, in the last 200 years they have 
+not been very much improved (although some interesting properties of 
+scales have been defined in recent years). This article describes our 
+effort in a new book to contribute to this part of music theory by using 
+some appropriate concepts of modern algebra.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.93.0.3/mto.93.0.3.lindley_turner-smith.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.93.0.3/lindley_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 3, June 1993 <br> Copyright &#0169; 1993 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. A sequence of constructions abstracted from the pitch continuum</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="lindley_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Three pitches in one pitch class</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="lindley_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+<p>[1] Our sequence of mathematical constructions is listed in <b>Figure 1</b>. 
+Our point of departure is the pitch continuum, which is not a 
+mathematical construction but an intuition, since pitch is subjective.  
+(Pitches as we hear them cannot be measured, but only judged.)  Our first 
+construction is a positive-number line for the sound-wave frequencies, 
+which can be measured and which almost wholly determine the pitches. </p>
+
+<p>[2] It is the differences between pitches that interest us musically.  
+Experience teaches us that there is a logarithmic relation between 
+these subjectively judged differences and the differences among the 
+corresponding pitch frequencies. So our second construction is a number 
+line for the logarithms of the frequencies.  We use logarithms to the 
+base 2; this choice is due to another aspect of musical experience: the 
+musical interval between two notes whose frequencies are in the ratio 2:1 
+is an octave, and notes one or more octaves apart from each other are 
+intuitively heard as manifestations of the same note on different levels.  
+Normally a scale repeats itself in each octave (there are exceptions, but 
+they can be treated as special cases), so musicians today speak of pitch 
+classes (see <b>Figure 2</b>)&mdash;that is, of equivalence classes of notes that are 
+one or more octaves apart from each other&mdash;and of &ldquo;pitch-class 
+intervals&rdquo; or &ldquo;pitch-class relations&rdquo;, which are the analogous 
+equivalence classes of musical intervals.  With logarithms to the base 2 
+it is very easy to define the addition of logarithms-mod-1 (which we call 
+&ldquo;flogs&rdquo;) in such a way that the sum will be musically valid when the 
+flogs for two pitch-class relations are added.  
+</p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 1</b>. How to reckon in flogs rather than logs to base 2</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=2&nonav=true"><img border="1" alt="GIF 1 thumbnail" src="lindley_gif1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+
+<p>[3] For a simple example, let us see how the flog for a 5th with a 
+frequency ratio of 3:2, when added to itself, yields a flog for a whole-
+tone.  It is readily reckoned that, to three decimal places, log 3 to the 
+base 2 = 1.585, and hence log (3/2) to the base 2 = 0.585.  Now instead 
+of adding 0.585 + 0.585 and getting 1.170 for a major 9th (which differs 
+by 1 from the log for a whole-tone), we reckon in terms of flogs and 
+write .585 + .585 = .170.  This is illustrated in <b>GIF 1</b>. </p>
+
+<p>[4] According to Max Weber,<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> there are two rational ways to construct a 
+system of tones: by means of harmonic relations or else by dividing the 
+octave into equal parts.  From this hypothesis can be derived two types 
+of generators for our pitch-class relations (see Figure 1e): either equal-
+division (whereby 1/n-octave is taken as a flog), or else harmonic (which 
+will be described below). We are content to consider these two types in 
+our book, but would admit any other valid type that could be adequately 
+defined. </p>
+
+<p>[5] Our next construction is the algebraic pair: (set, Abelian group), 
+to which such generators give rise.  The groups operate on the sets; the 
+operation is addition.  A positive number in a group means &ldquo;add so much,&rdquo; 
+but in a set means an amount that is <i>per se</i> so much.  (There is of 
+course no such thing as a &ldquo;negative&rdquo; or an &ldquo;absolute-zero&rdquo; pitch.) </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Three notes in one pitch class</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=3&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="lindley_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 2</b>. Some types of algebraic structure</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=4&nonav=true"><img border="1" alt="GIF 2 thumbnail" src="lindley_gif2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+<p>[6] Although music theorists have always represented notes as points, we 
+provide, for the sake of greater validity, that each note in the scale 
+will occupy a small neighborhood on the number line, in order to give 
+every note some leeway for things like vibrato, inexact intonation etc.  
+(We define the musical intervals as between the centres of these 
+neighborhoods.)  Thus the elements of our pitch-class sets are 
+equivalence classes of neighborhoods around points-mod-1 (see <b>Figure 3</b>).  
+To reach the highest degree of validity, one ought to allow that the 
+neighborhoods for different notes in the same system may differ in size, 
+and that in certain cases (for example, when a violinist has a wide 
+vibrato) the neighborhoods for notes adjacent in the scale may overlap, 
+obliging one to treat the neighborhoods as fuzzy sets.  For the sake of 
+simplicity, however, our book uses a kind of a modelling in which the 
+neighborhoods have definite borders, do not overlap, and are uniform in 
+any one system.  We also postulate that in every system the leeway is at 
+least a couple of ten-thousandths of an octave.  Thus we reach (at Figure 
+1h) our next construction: &ldquo;ideal systems&rdquo;.  Each ideal system has a set 
+of non-overlapping neighborhoods (and is thus finite) and a subset of one 
+of our groups.  This subset, which we call an &ldquo;embedded halfgroup&rdquo;, is an 
+unusual, indeed novel, algebraic structure: it is associative (when the 
+sums are defined) and has an identity element and inverses, but is not 
+closed with regard to group multiplication (compounds of the operation).  
+The place of halfgroups vis a vis semigroups, quasigroups etc. in 
+halfalgebra is indicated in <b>GIF 2</b>.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> </p>
+
+<p>[7] We wonder if in some cases the size of the neighborhood might 
+guarantee a set of pitch classes small enough to be musically useful.  
+Music is not only an art of sonorities but also (among other things) a 
+cognitive game, and most composers wish to &ldquo;juggle&rdquo; with a set of pitch 
+classes that is big enough to enable them to sustain an interesting 5-, 
+10- or 20-minute-long game of this kind&mdash;for which only three or four 
+pitch classes would be insufficient&mdash;but not so big that the listener 
+cannot grasp the cognitive game intuitively&mdash;for which, say, 40 pitch 
+classes would be too many.  One needs an intermediate number, something 
+like 7, 8, 10, 12, 15 or 20.  Gregorian chant normally has 7 or 8; 
+Giovanni Gabrieli and Schutz had 14; some other well-known Renaissance 
+composers (Costeley, Bull) composed music for 19 pitch classes; Bach, 
+Debussy and the Beatles had 12. In non-Western music, the sizes of the 
+sets are comparable.  Now we have noticed that in outdoor genres&mdash;for 
+instance, marching-band music&mdash;the intonation is not very exact (that 
+is, the neighborhoods for the notes are quite wide) and the number of 
+pitch classes in a phrase is normally closer to 7 than to 12.  Is there 
+a cause-and-effect relation here, in that such bands are usually unable 
+to project chromatic harmony because their intonation is so inexact?  The 
+question has not been investigated (as the concept of pitch-class-leeways 
+is new); we raise it in order to show that just where we come to our 
+unusual algebraic structure (the halfgroup) we find a music-theory 
+question which calls for empirical treatment&mdash;namely, the possible 
+relation between <i>(a)</i> the limiting of the set which is due to the pitch-
+class leeways and <i>(b)</i> the limiting which one would want in any case for 
+the sake of a cognitively viable juggling of the pitch classes. </p>
+<p>[8] It was by means of a natural mapping that we went over from notes and 
+musical intervals to pitch classes and pitch-class relations; so now we 
+return by reversing the natural mapping and thereby pulling back the 
+system to an &ldquo;unbounded&rdquo; scale (repeating itself indefinitely, octave 
+after octave) from which limited scales, each with a highest and a lowest 
+note, can readily be derived (Figure 1i&ndash;j).  One could then go farther, to 
+scales in which certain pitch classes are omitted in certain octaves, or 
+to scales in which every interval has a little something extra added to 
+it (and thus the frequency-ratio for the octave, for instance, is a 
+little bigger than 2:1, as on the piano) and so on.  We prefer, however, 
+to concentrate our attention on systems. </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Our notation for the generating harmonic pitch-class relations</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=5&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="lindley_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+<p>[9] Most systems of Western music have had harmonic generators.  There is 
+a series of such generators, which&mdash;so experience teaches us&mdash;can be 
+derived mathematically from the following series of primes: 2, 3, 5, 7.  
+Our adaptation of the traditional Roman numerals of music theory for 
+these generators is shown in <b>Figure  4</b>.  With the first generator alone 
+(which we write with the Roman numeral &ldquo;I&rdquo;), one can make a kind of 
+minimal music in which all the notes belong to the same pitch class; with 
+the first two generators (I and V), one obtains the most familiar kind of 
+Medieval harmony, in which the 5ths (and their compounds and inversions), 
+but not any 3rds, are used as consonant intervals; with the first three 
+generators (I, V and III) one obtains the triadic harmony of the 
+Renaissance; and with all four (I, V, III and VII), one has certain 
+aspects of later harmony.  </p>
+<p>[10] The extra &ldquo;smaller flogs&rdquo; (positive or negative) referred to in 
+Figure 4 are used to obtain one or more equations between the generators, 
+and thereby more pitch-class relations with a pitch-class set of a given 
+size.  These small amounts, which we designate with the letter &ldquo;t&rdquo;, are 
+necessary for this, because no multiple of the flog of one prime number 
+can be equal to another such flog.  (It is well known that no power of 
+one prime number can have another prime as a factor.)  The use of such 
+small extra amounts is traditionally called &ldquo;tempering&rdquo;, and in practice, 
+temperaments&mdash;systems with tempered consonances&mdash;have been normal since 
+the Renaissance. </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. A rough classification of orders of intervallic magnitude</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=6&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="lindley_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 3</b>. Reckoning the size of a chromatic semitone</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=7&nonav=true"><img border="1" alt="GIF 3 thumbnail" src="lindley_gif3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+
+<p>[11] How small should these small amounts be?  To answer this question 
+we have to classify empirically certain intervallic magnitudes, or 
+rather, certain ranges of magnitude.  Some amounts that are too small 
+to be used for melodic intervals between notes (or for pitch-class 
+relations) are nonetheless big enough&mdash;in the form of deviations from, 
+say, log 3 or log 5&mdash;to disturb a generating harmonic pitch-class 
+relation by making the resulting intervals sound out of tune.  A rough 
+classification is shown in <b>Figure 5</b>.  This is only a first approximation; 
+empirically there is no particular validity in a tenfold relation 
+between the different ranges.  For example, while the semitones in 
+equal temperament are each 1/12 octave, a semitone between an untempered 
+major 3rd (i.e. where t^III^ = 0) and an untempered minor 3rd would be 
+only some 6% of an octave (this is reckoned in <b>GIF 3</b>), so it would be 
+better to say that the range of magnitudes for melodic steps is &ldquo;20ths&rdquo; 
+rather than &ldquo;10ths&rdquo; of an octave.  Also, an amount which would very 
+likely render a 5th sour can in certain cases serve for the tempering of 
+a major 3rd.  (Such is the case in equal temperament, where the major 
+3rds are tempered by a little more than 1% of an octave; whereas a 5th 
+tempered by such an amount would be melodically and harmonically too ugly 
+to use in many kinds of music.)  Thus the concept of ranges or orders of 
+intervallic magnitude needs to be refined empirically by means of psycho-
+acoustical probings and a reading of the old music treatises (which often 
+discuss temperaments).  In general, however, tempering is taken to mean 
+the dividing up of such inconvenient magnitudes as are labeled &ldquo;out-of-
+tune-ness&rdquo; in Figure 5 into smaller, less noxious amounts to be distributed 
+amongst a suitable chain of generating pitch-class relations.  </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. A table showing how to find the most feasible equations nV = III</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=8&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="lindley_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Branches in our system-tree</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=9&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="lindley_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+
+<p>[12] In order to find the most feasible possibilities for tempering &ldquo;two-
+dimensional&rdquo; systems (systems with V and III as generators, but not VII), 
+we ask the following question: If one multiplies flog 3 by 1, -1, 2, -2, 
+3, -3 and so on, then which are the multiples that approach successively 
+closer to flog 5 or its inversion?  In the last (full) column of <b>Figure 6</b> we 
+see the smallest flogs by which it is possible to temper V and III at 
+once by distributing the various such differences evenly amongst the 
+group of generators.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  The first two such flogs&mdash;T^1^ and T^2^&mdash;are 
+too big (they would mar the pitch-class relations); T^3^ is good; T^4^ is 
+nearly insignificant, hence very good; to make use of T^5^ would involve 
+more than 45 pitch classes&mdash;too many for traditional composition.  
+Thus the equations at the far right in Figure 6 represent the most likely 
+possibilities.  They are the most feasible equations between harmonic 
+generators for a two-dimensional system.  </p>
+
+<p>[13] Now we are ready to discuss our system tree (see <b>Figure 7</b>).  We include 
+those possibilities that have been significant in the history of Western 
+composition and theory.  There are harmonic and equal-division systems, 
+according to the type of generator.  Among harmonic systems we have those 
+of one, two or three dimensions, according to the number of generators 
+(apart from the identity element).  Also among harmonic systems, we 
+distinguish between coherent sytems (in which all the pitch classes make 
+one chain of 5ths) and non-coherent systems&mdash;which have proven musically 
+so awkward that no well-known composer has ever written music for such a 
+system, even though many theorists since the 16th century have described 
+non-coherent, two-dimensional systems without any tempered intervals.  
+(Mostly they were theorists who did not understand the problem to which 
+tempering is the solution.) </p>
+<p>[14] Among coherent systems, we have temperaments and (one-dimensional) 
+untempered systems.  Then we have regular temperaments (in which each 
+kind of consonant interval is of uniform size), semi-regular temperaments 
+(discussed below), and irregular temperaments, in which some 5ths are 
+tempered a little more than others and hence the 3rds etc. also vary.  
+Certain irregular temperaments have been quite important historically. </p>
+<p>[15] Among regular, two-dimensional temperaments, there are two main 
+types (as we have seen in connection with Figure 6); and when both of their 
+defining equations (4V = III; -8V = III) are true for the same system, 
+then we have an intersection of the two types, which is so important 
+historically that it has its own name, &ldquo;equal temperament&rdquo;; and this name 
+can refer as well to an equivalent one-dimensional type (i.e. with a 
+&ldquo;circle&rdquo; of twelve 5ths but no consonant 3rds) which may conceivably have 
+played a role in the history of lute music in the 15th century, and also 
+to a three-dimensional type which practically everyone would agree is to 
+be found in the music of, say, Villa-Lobos (and which we believe is to be 
+found in some earlier music as well: think of how Wagner will resolve an 
+appoggiatura to a 7th-chord from which the harmony is then just as free 
+to move as it would be, in 17th-century harmony, from a triad).  </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Diagram of a meantone system with 14 pitch classes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=10&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="lindley_fig8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 4</b>. Sch&uuml;tz, &ldquo;Die so ihr den Herren f&uuml;rchtet&rdquo; (SWV 164)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=11&nonav=true"><img border="1" alt="GIF 4 thumbnail" src="lindley_gif4a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>            </div>
+
+<p>[16] Apart from equal temperament, there is a spectrum of musically good 
+possibilities for each of the two types MT and QP (see Figure 7h).  Meantone 
+temperaments were very important for Renaissance and early Baroque music.  
+They usually put at the composer&rsquo;s disposition two or three flats and 
+three or four sharps: if three flats and four sharps, then in all the 14 
+pitch classes (7 chromatic and 7 diatonic) mentioned above in connection 
+with Gabrieli and Schutz. (See <b>Figure 8</b>. It is well known that some keyboard 
+instruments had 14 keys per octave, i.e. with &ldquo;split keys&rdquo; for <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and 
+for <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.)  The chain of 5ths had a beginning and end, and this was very 
+important for the scheme of Renaissance modes, and often important also 
+for the planning of compositions. In <b>GIF 4a</b>, for example, we see how 
+Schutz in one of his pieces timed the successive steps toward the edges 
+of his chain of 5ths.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  In an 18th-century composition one would 
+normally find the richest harmony in the middle of the movement, not just 
+before the end.  And why?  Because in the 18th century, the chain of 5ths 
+was closed to make a circle; to modulate &ldquo;far away&rdquo; did not mean to 
+approach a border; so towards the end of the piece one would merely 
+return to the freely-chosen central pitch class, with no opportunity to 
+draw upon the structural discipline of an impending fence.  In many late 
+19th-century compositions, on the other hand, all the pitch classes are 
+introduced already in the first few bars. </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 5</b>. A 15th-century quasi-Pythagorean system and some evidence of its use: music in which triads with an explicit sharp are especially salient</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=12&nonav=true"><img border="1" alt="GIF 5 thumbnail" src="lindley_gif5a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>            </div>
+
+<p>[17] A quasi-Pythagorean temperament with twelve pitch classes was of 
+some importance in the first half of the 15th century.  The 5ths were 
+either untempered or else so little tempered that no one at all was 
+aware of it.  The five chromatic pitch classes were linked to <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in 
+the chain of 5ths&mdash;we know this from contemporary treatises<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>&mdash;and 
+so there was a &ldquo;wolf 5th&rdquo; between B and <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, as <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> was tuned so low that 
+it made a sour 5th with B.  By chance, however, all these rather low 
+chromatic notes made remarkably euphonious 3rds (hardly tempered at all) 
+with the diatonic notes, as indicated by the slanted lines in the 
+diagram at the beginning of <b>GIF 5a</b>.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Now in this transitional period 
+between one-dimensional and two-dimensional harmony, certain composers 
+would sometimes use such a 3rd at the end of a section of a piece (as 
+can be seen in the musical examples in GIFs 5b&ndash;5g),<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> but no one would 
+make such use of a 3rd without a sharp.  To understand this interesting 
+moment in the history of harmony, one must appreciate properly the 
+significance of the system; we will say more about this below. </p>
+
+<p>[18] For some of the regular temperaments in our system tree, there is 
+an <i>equivalent</i> equal-division system&mdash;that is, physically the same 
+though differently conceived (see Figure 7i&ndash;j).  In a harmonic system there 
+exists consonance (since the harmonic generators are the most consonant 
+pitch-class relations) and hence nearly always also its counterpart, 
+dissonance; and there is an important distinction between diatonic 
+semitones (between two notes with different letter-names) and chromatic 
+semitones (between two notes with the same letter-name).  In an equal-
+division system there is no consonance, and therefore no dissonance.  
+If the generator is 1/12-octave and if all twelve of the ensuing pitch 
+classes are in the system, then one composes &ldquo;mit zwoelf nur auf 
+einander bezogenen Toenen&rdquo; (in Arnold Schoenberg&rsquo;s words) and there 
+is no distinction between diatonic and chromatic semitones: they are 
+all qualitatively as well as quantitatively alike.  This aspect of 
+Schoenberg&rsquo;s dodecaphonic music is just as important as his atonality 
+(the fact that each movement or piece is not somehow centered on one 
+privileged pitch class), which is often said to be its most basic 
+technical characteristic. </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 6</b>. Lewin&rsquo;s analysis of a passage from <i>Parsifal</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=13&nonav=true"><img border="1" alt="GIF 6 thumbnail" src="lindley_gif6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. Some formulas distinguishing F<sup>1</sup> and F<sup>2</sup></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=14&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="lindley_fig9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 7</b>. A diagram made by Isaac Newton</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=15&nonav=true"><img border="1" alt="GIF 7 thumbnail" src="lindley_gif7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. The V and III relations in Newton&rsquo;s system</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=16&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="lindley_fig10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 8</b>. Some 18th-century irregular temperaments</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=17&nonav=true"><img border="1" alt="GIF 8 thumbnail" src="lindley_gif8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 9</b>. Louis Couperin, Pavane in F#-minor, first section</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=18&nonav=true"><img border="1" alt="GIF 9 thumbnail" src="lindley_gif9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+<p>[19] With such a perspective on how various systems have affected the art 
+of composition, one can appreciate better the technical significance of 
+enharmonic modulations in Romantic music.  In most enharmonic modulations 
+a given semitone is used first as a chromatic semitone and then as a 
+diatonic one, or <i>vice versa</i>.  More and more in the course of the 19th 
+century, the significance of enharmonic modulations lay not so much in 
+their momentary effect as in the way they enabled composers to exploit 
+the same physical scale in terms of two systems at once: harmonic and 
+equal-division.  Thus David Lewin&rsquo;s analytical sketch (reproduced in 
+<b>GIF 6</b>) of a well-known phrase in the prelude to Wagner&rsquo;s <i>Parsifal</i><sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  
+includes not only Roman numerals for a traditional harmonic analysis, but 
+also Arabic numerals to show how 3 + 3 + 1 = 7 semitones (adumbrating the 
+salient &ldquo;Zauber-motif&rdquo; in <i>Parsifal</i>) lead from <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to a cadence on <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. </p>
+
+<p>[20] It is possible to distinguish certain &ldquo;families&rdquo; of equal-division 
+systems (see Figure 7j) equivalent to the various kinds of temperaments.  
+<b>Figure 9</b> includes formulas (derived in one of the appendices of our book) 
+for their generators.  <b>GIF 7</b> reproduces a diagram by Isaac Newton<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> 
+showing how an equal-division system with 1/53-octave as generator and 
+with 15 pitch classes is equivalent to the harmonic system represented 
+in <b>Figure 10</b>.  The diatonic semitones, labeled &ldquo;mi-fa&rdquo; in GIF 7, amount to 
+5/53-octave; the chromatic semitones amount to 4/53.  Newton&rsquo;s harmonic 
+system is not coherent, but if he had provided for an additional pitch 
+class at &ldquo;4&rdquo; in the diagram, it would have made at once a good <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to his 
+<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (at &ldquo;35&rdquo;) and a good <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to his <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (at &ldquo;26&rdquo;), and thus he would have 
+had a coherent, quasi-Pythagorean system.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> </p>
+
+<p>[21] Among the irregular temperaments, the most important historically 
+were those used in the late 17th and 18th centuries.  For most composers 
+of that time, the various keys had much more individual character than 
+they do today, and many contemporary music theorists said that it was 
+due to the irregular temperaments of the day.  An irregular temperament 
+based on a circle of twelve Vs can be described as a variant of equal 
+temperament, so in <b>GIF 8</b> the sizes of each semitone in three such 18th-
+century schemes (by J. G. Neidhardt, J. H. Lambert and Vallotti) are 
+described as some percent of 1/12-octave.  The numbers at the outer 
+edges of those diagrams show the differences between semitones that 
+are adjacent in the circle of 5ths (in the sense that E-F and <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-G are 
+adjacent to B-C) and thereby show that in each of these competently 
+designed schemes, the semitones vary quite gradually, with B-C and E-F 
+being the largest and F-<nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-B the smallest.  There is an analogous 
+pattern of gradually varied nuances among the 3rds and 6ths, with C-E-G 
+being tempered least and <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-F most. </p>
+<p>[22] On the silent screen we cannot demonstrate the acoustical 
+differences amongst the different keys in such a system.  But we can 
+describe how, in the first section of Louis Couperin&rsquo;s famous <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-minor 
+Pavane (see <b>GIF 9</b>), the composer used the pitch class F = <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in a special 
+way.  <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, which is essential to the key of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-minor, was in the French-
+style irregular temperament tuned so high in relation to <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> that the 
+resulting interval was acoustically rather harsh.  In bar 2 (at the first 
+asterisk in GIF 9) <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is avoided: contrapuntally, our little ancillary 
+example in GIF 9 would sound so much more natural that Couperin&rsquo;s 
+alternative resolution of the chord <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-A is obviously an artful 
+evasion.  A similar avoidance of <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> at the end of bar 5 (at the second 
+asterisk) precipitates a modulation to A-major in the next two bars.  In 
+bars 10, 11 and 16 (at the next three asterisks) <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> does appear, but each 
+time in so dissonant a context (notice the A&rsquo;s and B&rsquo;s) that the acoustic 
+sourness of <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> with <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> merely gilds the lily, as it were.  <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-<nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is at 
+last heard in a straightforward triad at the end of the section; but then 
+in the next bar (not included in GIF 9) the composer reverts immediately 
+to a <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-minor chord, as if to say, &ldquo;Alas! <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is <i>too</i> sharp for a 
+straightfoward triad; let us revert to <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>.&rdquo;  This is an extreme 
+case in that the consonant status of the major 3rd (or 10th) was actually 
+compromised by its heavy tempering.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  A wealth of subtler nuances 
+involving some of the other 3rds in this piece are just as telling when 
+the music is heard in a stylistically appropriate tuning (matching the 
+conceptual system). It would be far more intelligent, however, to 
+demonstrate such nuances than to try to describe them <i>in absentia</i>. 
+           </p>
+
+<p>[23] In early 15th-century music such as represented in GIF 6, the 
+distinctly euphonious quality of a 3rd or 6th with a sharp in the quasi-
+Pythagorean temperament is sometimes especially salient because it occurs 
+right after (or right before) a prominent harmonic 3rd or 6th that is 
+tempered by an entire comma (that is, by nearly as much as <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-<nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in 
+Louis Couperin&rsquo;s pavane).  We may therefore speak of a &ldquo;semi-regular&rdquo; 
+temperament (Figure 7m), because while the 5ths are uniform, the composer 
+has evidently found two sizes of consonant or virtually consonant major 
+3rd, major 6th etc. in the scale.  This is a queer kind of system, 
+destined to play only a brief (though important), transitional role in 
+the history of harmony even though it is physically the same as a regular 
+system. </p>
+
+            <div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>GIF 10</b>. The &ldquo;margin of equivalence&rdquo; between two physically different systems with the same number of pitch classes (in this case, four)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="lindley_examples.php?id=19&nonav=true"><img border="1" alt="GIF 10 thumbnail" src="lindley_gif10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            </div>
+
+
+<p>[24] To measure the difference between any two systems that are 
+physically almost but not quite the same, we have devised a &ldquo;margin of 
+equivalence&rdquo;, and with it the concept of &ldquo;quasi-systems&rdquo; which have no 
+generators (and thus no subset of a group of pitch-class relations) but 
+only a set of pitch classes, whose neighborhoods are, however, unequal.  
+To put it very briefly: if two systems have the same number of pitch 
+classes, then the margin of equivalence is the smallest overlap&mdash;i.e. 
+where the notes differ most when the two systems are aligned as well 
+as possible (as illustrated in <b>GIF 10</b>).  </p>
+<p>[25] We hope that our book in which these and some related ideas are 
+elaborated upon<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> will prove of value to music theory and to the study 
+of music history.  Renaissance and Baroque theorists took only some 
+limited steps away from Medieval models of scales (by accepting ratios 
+involving 5 and 7 as prime factors, and then by accepting irrational 
+ratios), and even today many music theorists more or less vaguely favor 
+the ancient Pythagorean idea that &ldquo;Music is sonorous number.&rdquo;  Here our 
+algebraic approach could be of value, not only with regard to irregular 
+temperaments (where the pitch-class relations have to be represented as 
+functions of the pitch classes and not as numbers in their own right), 
+but also for the designing of experiments to investigate the various 
+musical and psycho-acoustical phenomena that give rise to pitch-frequency 
+leeways for the notes. (Instead of a general leeway u, one could 
+distinguish u^1^, u^2^, u^3^<nobr> . . . </nobr>)  Some refinement of concepts pertinent 
+to music history may also be derived from our work, as music historians 
+have generally either neglected most of the various kinds of system which 
+we describe or else have mistakenly treated them as a negligible aspect 
+of performance practice&mdash;that is, as unconscious and inconsequential 
+variants of equal temperament insofar as composition is concerned.  
+           </p></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Mark Lindley<br>
+	P.O. Box 1125<br>Cambridge MA 02238&ndash;1125<br>USA<br><br><a name='AUTHORNOTE2'></a>Ronald Turner-Smith<br>
+			19 Risingholme Road<br>Harrow, Middx HA3 7EP<br>England<br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Max Weber, <i>Die rationalen und soziologischen Grundlagen der Musik</i>, 
+ed. Theodor Kroyer (Munich 1921).  (The English translation published in 
+1958 is, alas, so inadequate that it quite misrepresents Weber&rsquo;s 
+thinking.)<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> All the terms in GIF 2 except &ldquo;halfgroup&rdquo; are defined in Richard 
+Herbert Bruck, <i>A Survey of Binary Systems</i> (Springer, Hamburg 1958).  
+On the basis of our cordial correspondence with Eytan Agmon we think 
+that a 12-oriented theory of diatonicism (as described in his &ldquo;A 
+mathematical model of the diatonic system&rdquo; in <i>Journal of Music Theory</i>, 
+33:1) can be improved upon, insofar as validity in regard to certain music 
+is concerned (e.g. Gregorian chant), by an acceptance of the concept of 
+halfgroups as applicable to music.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> When we go from one n to the next we get a rather lower T^n^ because 
+s^n^ is smaller while at the same time m^n^ is bigger.  (However, since 
+each T is an average of some t^V^s and a t^III^; one of those t&rsquo;s may be 
+less than T if the other is more.)  Some intermediate multiple might 
+yield a <i>slightly</i> lower average t (if the quasi-s is not as much bigger 
+as the multiple is smaller), but it is reasonable, once the multiple 
+becomes bigger than, say, 15 or 20, to demand a distinctly lower average 
+t in return for involving more pitch classes.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> GIF 4a shows a diagram from page 144 of our book and GIFs 4b, 4c,
+and 4d show some relevant excerpts from the piece to which the diagram 
+refers, &ldquo;Die so ihr den Herren fuerchtet&rdquo; (SWV 364).  Twenty diagrams of 
+this kind (with relevant musical examples) are included in Lindley, 
+&ldquo;Heinrich Schutz: intonazione della scala e struttura tonale&rdquo; (with a 
+long abstract in English), in <i>Recercare</i>, vol. i (1990).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Lindley, &ldquo;Pythagorean Intonation and the Rise of the Triad&rdquo;, Royal 
+Musical Association <i>Research Chronicle</i> 16 (1980).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> The diagram is on page 55 of our book.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> These examples (GIFs 5b&ndash;5g) show the conclusions of sections from 
+the following pieces:  Landini, &ldquo;O fanciula giulia;&rdquo; Matteo da Perugia, 
+&ldquo;A qui fortune&rdquo; and &ldquo;Le grant desir;&rdquo; a Kyrie for organ from the Faenza 
+Codex;  Dufay, &ldquo;Mon chier amy;&rdquo; and a prelude from the Buxheim Organ 
+Book (no. 242).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> David Lewin, <i>Generalized Musical Intervals and Transformations</i> 
+(Yale, 1987), p. 161.  The 3 + 3 + 1 diagram ends with a high <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, but 
+the tune really goes to the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> an octave lower after gliding down, step 
+by step, from high <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (a minor 3rd above <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>) to middle D (a diatonic 
+semitone below <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>).  One hears an implicit equation between the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and 
+the D, inferring that they are an octave apart, and this gives the 
+passage its enharmonic character.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> <i>GB-Cu</i> add. 4000, fol. 105<i>v</i>. (Reproduced on page 57 of our book.)<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Helmholtz for his &ldquo;Harmonium mit natuerlicher Stimmung&rdquo; used a system 
+of this latter kind with 24 pitch classes.  See Hermann von Helmholtz, 
+<i>On the Sensations of Tone</i>, tr. Alexander J. Ellis, 2nd ed. (London, 
+1885), 316&ndash;19, or for a more succinct account, the entry on &ldquo;Just 
+intonation&rdquo; in <i>The New Grove Dictionary of Musical Instruments</i>.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> It may be worth repeating that this is a French style.  According to 
+Bach&rsquo;s concept of the chromatic scale, which is reflected in what we know 
+about his tuning (Lindley, &ldquo;Bach&rsquo;s Harpsichord Tuning&rdquo;, <i>The Musical 
+Times</i>, vol. 126, December) as well as his music, harmony in &ldquo;extreme&rdquo; 
+keys is less constrained.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> <i>Mathematical Models of Musical Scales</i> (Verlag fur Systematische 
+Musikwissenschaft, Postfach 9026, DW-5300 Bonn, Germany).<br><a href="#FN12REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Max Weber, <i>Die rationalen und soziologischen Grundlagen der Musik</i>, 
+ed. Theodor Kroyer (Munich 1921).  (The English translation published in 
+1958 is, alas, so inadequate that it quite misrepresents Weber&rsquo;s 
+thinking.)</div><div id="fndiv2" class="flyoverdiv">All the terms in GIF 2 except &ldquo;halfgroup&rdquo; are defined in Richard 
+Herbert Bruck, <i>A Survey of Binary Systems</i> (Springer, Hamburg 1958).  
+On the basis of our cordial correspondence with Eytan Agmon we think 
+that a 12-oriented theory of diatonicism (as described in his &ldquo;A 
+mathematical model of the diatonic system&rdquo; in <i>Journal of Music Theory</i>, 
+33:1) can be improved upon, insofar as validity in regard to certain music 
+is concerned (e.g. Gregorian chant), by an acceptance of the concept of 
+halfgroups as applicable to music.</div><div id="fndiv3" class="flyoverdiv">When we go from one n to the next we get a rather lower T^n^ because 
+s^n^ is smaller while at the same time m^n^ is bigger.  (However, since 
+each T is an average of some t^V^s and a t^III^; one of those t&rsquo;s may be 
+less than T if the other is more.)  Some intermediate multiple might 
+yield a <i>slightly</i> lower average t (if the quasi-s is not as much bigger 
+as the multiple is smaller), but it is reasonable, once the multiple 
+becomes bigger than, say, 15 or 20, to demand a distinctly lower average 
+t in return for involving more pitch classes.</div><div id="fndiv4" class="flyoverdiv">GIF 4a shows a diagram from page 144 of our book and GIFs 4b, 4c,
+and 4d show some relevant excerpts from the piece to which the diagram 
+refers, &ldquo;Die so ihr den Herren fuerchtet&rdquo; (SWV 364).  Twenty diagrams of 
+this kind (with relevant musical examples) are included in Lindley, 
+&ldquo;Heinrich Schutz: intonazione della scala e struttura tonale&rdquo; (with a 
+long abstract in English), in <i>Recercare</i>, vol. i (1990).</div><div id="fndiv5" class="flyoverdiv">Lindley, &ldquo;Pythagorean Intonation and the Rise of the Triad&rdquo;, Royal 
+Musical Association <i>Research Chronicle</i> 16 (1980).</div><div id="fndiv6" class="flyoverdiv">The diagram is on page 55 of our book.</div><div id="fndiv7" class="flyoverdiv">These examples (GIFs 5b&ndash;5g) show the conclusions of sections from 
+the following pieces:  Landini, &ldquo;O fanciula giulia;&rdquo; Matteo da Perugia, 
+&ldquo;A qui fortune&rdquo; and &ldquo;Le grant desir;&rdquo; a Kyrie for organ from the Faenza 
+Codex;  Dufay, &ldquo;Mon chier amy;&rdquo; and a prelude from the Buxheim Organ 
+Book (no. 242).</div><div id="fndiv8" class="flyoverdiv">David Lewin, <i>Generalized Musical Intervals and Transformations</i> 
+(Yale, 1987), p. 161.  The 3 + 3 + 1 diagram ends with a high E&#x266d;, but 
+the tune really goes to the E&#x266d; an octave lower after gliding down, step 
+by step, from high E&#x266d;&#x266d; (a minor 3rd above C&#x266d;) to middle D (a diatonic 
+semitone below E&#x266d;).  One hears an implicit equation between the E&#x266d;&#x266d; and 
+the D, inferring that they are an octave apart, and this gives the 
+passage its enharmonic character.</div><div id="fndiv9" class="flyoverdiv"><i>GB-Cu</i> add. 4000, fol. 105<i>v</i>. (Reproduced on page 57 of our book.)</div><div id="fndiv10" class="flyoverdiv">Helmholtz for his &ldquo;Harmonium mit natuerlicher Stimmung&rdquo; used a system 
+of this latter kind with 24 pitch classes.  See Hermann von Helmholtz, 
+<i>On the Sensations of Tone</i>, tr. Alexander J. Ellis, 2nd ed. (London, 
+1885), 316&ndash;19, or for a more succinct account, the entry on &ldquo;Just 
+intonation&rdquo; in <i>The New Grove Dictionary of Musical Instruments</i>.</div><div id="fndiv11" class="flyoverdiv">It may be worth repeating that this is a French style.  According to 
+Bach&rsquo;s concept of the chromatic scale, which is reflected in what we know 
+about his tuning (Lindley, &ldquo;Bach&rsquo;s Harpsichord Tuning&rdquo;, <i>The Musical 
+Times</i>, vol. 126, December) as well as his music, harmony in &ldquo;extreme&rdquo; 
+keys is less constrained.</div><div id="fndiv12" class="flyoverdiv"><i>Mathematical Models of Musical Scales</i> (Verlag fur Systematische 
+Musikwissenschaft, Postfach 9026, DW-5300 Bonn, Germany).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1993 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Natalie Boisvert, Cynthia Gonzales, Rebecca Flore and Cara Stroud, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

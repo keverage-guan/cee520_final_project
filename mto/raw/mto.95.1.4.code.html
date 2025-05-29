@@ -1,0 +1,553 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 1.4: Code, Listening for Schubert&rsquo;s &ldquo;Doppelg&auml;ngers&rdquo;</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Listening for Schubert&rsquo;s &ldquo;Doppelg&auml;ngers&rdquo;">
+
+    <meta name="citation_author" content="Code, David L&oslash;berg">
+      
+
+<meta name="citation_publication_date" content="1995/07/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="1">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Listening for Schubert&rsquo;s &ldquo;Doppelg&auml;ngers&rdquo;
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.95.1.4/mto.95.1.4.code.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">David L&oslash;berg Code</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Schubert, doppelganger, Heine, song, analysis, key characteristics</font></p><p><font size='4'>ABSTRACT: A doppelg&auml;nger is the ghostly double or wraith of 
+a living person.  This essay adopts and adapts this legend to 
+an analysis of Franz Schubert&rsquo;s song &ldquo;Der Doppelg&auml;nger.&rdquo;  I 
+begin by discussing ways in which the myth of the 
+doppelg&auml;nger might relate to Schubert&rsquo;s personality and 
+other extramusical features such as affective key 
+characteristics. Next, these constructions are mapped onto 
+the piece itself, exploring multiple implications of motivic 
+pitch structures and binary oppositions among chords and 
+modalities.  After tracing these features through the piece, 
+I relate this detailed analysis to an interpretation of the 
+text, and finally, aspects of Schubert&rsquo;s personal life.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.95.1.4/mto.95.1.4.code.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.95.1.4/code_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 1, Number 4, July 1995 <br> Copyright &#0169; 1995 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+[1] &ldquo;Still ist die Nacht&rdquo; is the opening line of an untitled poem in Heinrich Heine&rsquo;s collection, <i>Die Heimkehr</i>.  Most of us know this poem by its inclusion in Franz Schubert&rsquo;s <i>Schwanengesang</i>.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  Regarding Schubert&rsquo;s setting of the poem, Jack Stein describes it as &ldquo;painfully wrong in its interpretation of the poem.&rdquo;  For example, &ldquo;the first stanza, which Schubert sets in a darkly atmospheric, highly charged recitative over somber chords<nobr> . . . </nobr>is in reality the innocuous opening typical of many Heine poems, revealing absolutely nothing of the emotional fireworks to come.&rdquo; (<a href="#stein_1971" id="citation_stein_1971_67dc9bde6a230">Stein 1971</a>, 89)  Stein seems to be concerned that Schubert&rsquo;s music prematurely gives away something of the ending, thus altering the narrative structure of Heine&rsquo;s poem.  I would agree that Schubert has dramatically restructured the way in which one experiences the poem, but it is pointless to chastise the musical introduction, as the poem has already been altered by Schubert&rsquo;s lifting of the word &ldquo;doppelg&auml;nger&rdquo; from Heine&rsquo;s third stanza and placing it prominently in the title.</p>   
+<p> 
+[2] Schubert&rsquo;s invocation of &ldquo;Der Doppelg&auml;nger&rdquo; brings to the foreground a host of cultural myths and imagery that would otherwise be absent from the opening of Heine&rsquo;s poem.  Literally meaning the &lsquo;double-goer,&rsquo; the idea of a &ldquo;spirit double, an exact but usually invisible replica of every human, bird, or beast is an ancient one&rdquo; (<a href="#encyclopaedia_britannica_1985" id="citation_encyclopaedia_britannica_1985_67dc9bde6a235">Encyclopaedia Britannica 1985</a>, 182).  In Schubert&rsquo;s time, the character of the doppelg&auml;nger was probably best known through the literary works of Johann Wolfgang Goethe and E.T.A. Hoffmann.  That Schubert was familiar with the myth is evident, not only due to his choice of title, but even because of his spelling of the word.  In the original poem, Heine uses the word &ldquo;doppeltg&auml;nger,&rdquo; (doubled-goer) while Schubert (omitting the &ldquo;t&rdquo;) chose the more common form of the word.  Furthermore, Given that Heine uses the word only once in the last stanza of the poem, he apparently wished to postpone or perhaps even downplay the mythical associations.  In rebutting what he calls Stein&rsquo;s &ldquo;often maddeningly wrongheaded study of Schubert&rsquo;s Heine songs,&rdquo; Richard Kramer (<a href="#r_kramer_1985" id="citation_r_kramer_1985_67dc9bde6a239">1985</a>, 219) argues that it is entirely appropriate for Schubert to remake Heine&rsquo;s poem.  &ldquo;It is in the nature of Romantic art,&rdquo; says Kramer, &ldquo;that idiosyncratic, personal style is a deep part of the message.<nobr> . . . </nobr>Heine&rsquo;s poem is no longer Heine&rsquo;s&rdquo; (<a href="#r_kramer_1985" id="citation_r_kramer_1985_67dc9bde6a23b">R. Kramer 1985</a>, 219). </p> 
+<p>
+[3] Schubert may have identified with the notion of the doppelg&auml;nger&mdash;a shadow-self&mdash;because of the double life he himself apparently led.  As his friend Eduard Bauernfeld described him, &ldquo;Schubert had, so to speak, a double nature.<nobr> . . . </nobr>Inwardly a kind of poet and outwardly a kind of hedonist.&rdquo; (<a href="#deutsch_1958" id="citation_deutsch_1958_67dc9bde6a23d">Deutsch 1958</a>, 45)  Similarly, Josef Krenner remarked: &ldquo;Anyone who knew Schubert knows how he was made of two natures, foreign to each other, how powerfully the craving for pleasure dragged his soul down to the cesspool of slime&rdquo; (<a href="#deutsch_1958" id="citation_deutsch_1958_67dc9bde6a23e">Deutsch 1958</a>, 86).  Maynard Solomon (<a href="#solomon_1989" id="citation_solomon_1989_67dc9bde6a240">1989</a>, <a href="#solomon_1993" id="citation_solomon_1993_67dc9bde6a242">1993</a>) portrays Schubert as part of a very intimate circle of male friends engaged in same-sex erotic activities that were socially unacceptable in 19th-century Vienna.  By necessity, this facet of Schubert&rsquo;s life was kept somewhat concealed from his public persona.  It is known that Schubert suffered from syphilis, an incurable disease at that time, which he probably contracted in 1822 (<a href="#sams_1980" id="citation_sams_1980_67dc9bde6a244">Sams 1980</a>).  With his contraction of syphilis and susbequent hospitalization and convalescence, however, Schubert&rsquo;s private life became at least tacitly manifest in his public life.  Furthermore, several of Schubert&rsquo;s circle of intimate friends succumbed to severe illness, thus contributing to the dissolution of the &lsquo;circle&rsquo; and their lifestyle even before Schubert&rsquo;s actual death.  According to Josef von Spaun, Schubert had intended the Rellstab- and Heine-songs of <i>Schwanengesang</i> to be published (without &ldquo;Die Taubenpost&rdquo;) as a yet untitled cycle dedicated to these friends (<a href="#deutsch_1978" id="citation_deutsch_1978_67dc9bde6a25f">Deutsch 1978</a>, 616).  &ldquo;Der Doppelg&auml;nger&rdquo; was therefore intended as the last song of this cycle.  While some have suggested that it should more properly be placed in the middle, following the order in the poems appear in Heine&rsquo;s <i>Die Heimkehr</i> (<a href="#goldschmidt_1974" id="citation_goldschmidt_1974_67dc9bde6a261">Goldschmidt 1974</a>, <a href="#r_kramer_1985" id="citation_r_kramer_1985_67dc9bde6a263">R. Kramer 1985</a>), it seems a fitting&mdash;though tragic&mdash;finale.</p>
+<p>
+[4] &ldquo;Der Doppelg&auml;nger&rdquo; begins in the key of B minor, evoking the opening of the &ldquo;Unfinished&rdquo; Symphony with which it shares not only the same key, but a similar bass motive.  Susan McClary (<a href="#mcclary_1994" id="citation_mcclary_1994_67dc9bde6a265">1994</a>, 225) describes the latter as an example of a victim narrative in which &ldquo;a sinister affective realm sets the stage for the vulnerable lyrical subject, which is doomed to be quashed.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  One of the means by which Schubert creates this &ldquo;affective realm&rdquo; in &ldquo;Der Doppelg&auml;nger&rdquo; is through his careful choice of keys.  Although references to key qualities abound, the topic has been largely neglected in our time until Rita Steblin&rsquo;s (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a268">1983</a>) <i>A History of Key Characteristics in the Eighteenth and Early Nineteenth Centuries</i>.  Historically, the most influential work on this subject was probably the <i>Ideen zu einer Asthetik der Tonkunst</i> of Christian Schubart, written about 1784, and published posthumously in 1806.  That Franz Schubert was familiar with the latter is likely, considering that he set four of Schubart&rsquo;s poems to music, including the famous &ldquo;Die Forelle.&rdquo;  However, as Steblin (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a269">1983</a>, 190) states, &ldquo;even composers who did not express their views on the matter might nevertheless be presumed to represent established tradition in their creative work.&rdquo; </p>
+<p>
+[5] It is intriguing to see how Schubart&rsquo;s key characteristics relate to the music and text of &ldquo;Der Doppelg&auml;nger.&rdquo;  Of B minor, the tonic key, Schubart (<a href="#schubart_1806" id="citation_schubart_1806_67dc9bde6a26b">1806</a>) states:</p>
+     <blockquote>B minor.  This is as it were the key of patience,
+     of calm awaiting one&rsquo;s fate and of submission to 
+     divine dispensation.  For that reason its lament is so 
+     mild, without ever breaking out into offensive murmuring 
+     or whimpering.  The use of this key is rather difficult 
+     for all instruments; therefore so few pieces are found 
+     which are expressly set in this key. (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a26d">Steblin 1983</a>, 124)</blockquote>
+<p>The affect of B minor, like the opening of the poem, is relatively calm, but it also foreshadows the &ldquo;fate&rdquo; to come.  In contrast, B major represents &ldquo;anger, rage, jealousy, fury, despair, and every burden of the heart&rdquo;&mdash;emotions well suited for the ending of the poem (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a26f">Steblin 1983</a>, 123).  The piece remains in B minor until the third stanza (measure 47), at which point it modulates, not to the dominant or relative major, but to the raised mediant.  The modulation occurs at the precise moment in which the doppelg&auml;nger mocks the love-sorrows of the narrator.  Based upon Schubart&rsquo;s description, the choice of key could not have been more fitting:<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+<blockquote>     [<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>] minor. Feelings of anxiety of the soul&rsquo;s 
+     deepest distress, of brooding despair, of blackest 
+     depression, of the most gloomy condition of the 
+     soul.  Every fear, every hesitation of the 
+     shuddering heart, breathes out of horrible [<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>] 
+     minor.  If ghosts could speak, their speech would 
+     approximate this key. (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a273">Steblin 1983</a>, 122&ndash;23)</blockquote>
+
+<p>If Schubert had modulated to a different tonic, the affect of the key would have contradicted that of the poem.  <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor (the dominant) &ldquo;tugs at passion as a dog biting a dress,&rdquo; while D major (the relative major) is the key of triumph and hallelujahs. (<a href="#steblin_1983" id="citation_steblin_1983_67dc9bde6a275">Steblin 1983</a>, 122&ndash;23)  As it stands, Schubart&rsquo;s description of the actual key is hauntingly accurate.  While the narrator addresses his double, the ghost speaks back through the music, mimicking the narrator&rsquo;s shuddering heart and brooding despair.  If one were attempting to demonstrate the validity of key characteristics within certain composers (or pieces), this would make a most compelling example.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Introduction to &ldquo;Der Doppelg&auml;nger,&rdquo; mm. 1&ndash;4</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="code_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Multiple implications of each dyad in mm. 1&ndash;4</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="code_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6] Taken as a whole, the opening chord progression can be clearly heard as a half cadence (or at least an incomplete progression) in the key of B minor (see <b>Example 1</b>). Individually, however, none of the chords are complete, hence each dyad potentially implies more than one harmony (see <b>Example 2</b>). Without their thirds, the outer chords could be either major or minor triads: the first being I (B&ndash;<b><nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></b>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) or i (B&ndash;<b>D</b>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>), and the last being V (<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<b><nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></b>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) or v (<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<b>A</b>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>).  Similarly, the thirds of the middle chords can be filled out in two directions.  The minor third of the penultimate chord (measure 3) could be completed as III (D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<b>A</b>) or i (<b>B</b>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>).<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  The major third in measure 2 presents a more complex situation.  Although it is most likely heard as part of the major dominant (<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<b><nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></b>), it could also be spelled as a mediant.  The resulting augmented triad (<b>D</b>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) seems out of place, especially considering that this chord never occurs in the composition.  However, as of measure 2, it is still possible to consider the piece in B major (due to the tonal ambiguity of the first measure), making it conceivable for the missing note to be a <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  Moreover, unlike the augmented mediant, this sharp mediant (in relation B minor) is heard later as the tonic chord of the modulation in measure 47.  All of the chords shown in Example 2 are heard (in context) later in the piece, thus providing some justification for my supposition of these eight chords (and exclusion of the augmented mediant).  As the opening progression is continually repeated and varied, the filling in of its chords becomes a dynamic structuring feature of the piece. </p>
+<p>
+[7] In the first part of the poem, the narrator fills in the picture of the surroundings gradually&mdash;night, street, house, man&mdash;just as the empty chords themselves are completed slowly.  In the first stanza (measures 5&ndash;24), virtually no action takes place in either the poem or the music.  Most of the vocal notes which fill in the chords are set to relatively insignificant articles (e.g., die, diesem, das), and there is no harmonic development between the first and second stanzas.  It is only with the appearance (in the poem) of the other man that the development of the music begins to advance.  In measure 25 the voice begins on a new note, D, rather than <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and its range is extended to <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>5, accompanied by a crescendo to fff.  Harmonically, two more chords are completed, and in measure 32, on the word &ldquo;Schmerzensgewalt&rdquo; (grief-violence) the dominant-seventh is transformed into a French-sixth chord by the introduction of C natural.</p>
+<p>  
+[8] The climax of the poem occurs at the end of the second stanza, when the narrator discovers that this other man is his double (&ldquo;der Mond zeigt mir meine eig&rsquo;ne Gestalt&rdquo;).  The revelation, in a sense, strips the narrator of his own identity, causing him to shudder (&ldquo;mir graut es&rdquo;).  More importantly, this coincides with the first interruption of the note <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, on the word &ldquo;Gestalt,&rdquo; the exact moment the narrator sees his own face in the other man.  This is a remarkable aural event, especially since <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is present constantly in all but seven bars of the piece.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>  Thus, one could, perhaps, identify the &lsquo;character <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&rsquo; (along with the dominant) as representing the narrator, as do Elaine Brody and Robert Fowkes (<a href="#brody_and_fowkes_1971" id="citation_brody_and_fowkes_1971_67dc9bde6a39a">1971</a>, 221): &ldquo;the combination of the sustained F sharp with the recurrent ostinato effectively portrays the agitation of the principal character.&rdquo;  I would, in turn, associate the subdominant E with his doppelg&auml;nger. </p> 
+<p>
+[9] The relationship between the dominant and the subdominant forms one of the primary binary oppositions within the piece: one obsessively present, the other hauntingly absent.  As with their poetic counterparts, the two terms are mirror images of each other, one major, the other minor.  The root pitches themselves, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and E, although adjacent in the diatonic scale, become antithetical figures when reflected across the axis of the tonic B.  Hence, the subdominant asserts its literal role as the <i>under-dominant</i>, or fifth below the tonic.  Furthermore, the narrator, like the dominant, is portrayed as being weak, for it is he who is tortured by the absence of his former love, and it is the doppelg&auml;nger who, like the subdominant in the final cadence, mocks him.  Although stated only once at the end, the effect of the subdominant throughout the piece is felt strongly, perhaps more strongly than the dominant itself.  </p>
+<p>
+[10] It is a tribute to Schubert&rsquo;s genius that all of the essential structural elements of &ldquo;Der Doppelg&auml;nger&rdquo; are contained within the opening four bars.  The four-note motive B&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> which accompanies the pedal-like <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> throughout much of the piece helps define the universe of harmonies around that note: all of the chords containing <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the key of B minor (tonic, mediant, and dominant) are implied by these five notes.  Furthermore, although not yet distinguishable to the first-time listener, the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and the harmonic function which it signifies (the dominant), appears marked by weakness.  One could argue that all of the chords appear &lsquo;weak&rsquo; in the introduction because of their incompleteness; why then should the dominant be singled out?  To begin with, of the three chords surrounding the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> mentioned above, only the dominant does not appear in root position.  The first and only root-position dominant does not appear until measure 55.  Through the course of the piece, the instability of the dominant becomes increasingly evident, making its significance in the introduction, to borrow from Edward T. Cone (<a href="#cone_1982" id="citation_cone_1982_67dc9bde6a3ab">1982</a>, 238), &ldquo;unforeseen in prospect yet inevitable in retrospect.&rdquo;  Along these same lines, there is an even subtler motive connoted in the opening by the marked absence of the subdominant.</p>
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Structural gap showing missing pitch C in opening motive</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="code_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Structural gaps (missing pitches E and G)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="code_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+[11] The four-note motive, B&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, that both creates and traverses this opening progression seems to be taken from the Agnus Dei of Schubert&rsquo;s <i>Mass in Eb</i>, written in June 1828, just two months before &ldquo;Der Doppelg&auml;nger&rdquo;.  It is interesting that the Agnus Dei uses the motive as the subject of a fugue.  One might expect a fugal treatment of the motive to have exhausted its musical possibilities, and yet, Schubert&rsquo;s use of the motive here seems to indicate that there is some element that has not yet been explored.  Regarding this same motive (B&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>), Werner Thomas (<a href="#thomas_1954" id="citation_thomas_1954_67dc9bde6a3b4">1954</a>, 253) has also noted its similarity to the famous B&ndash;A&ndash;C&ndash;H motive, with which it shares the same contour and symmetry, and similar compactness and chromaticism.  The difference is that, while the B&ndash;A&ndash;C&ndash;H motive completely fills its span of a minor third, Schubert&rsquo;s omits the note C natural in filling in the interval of a diminished fourth (see <b>Example 3</b>). This type of missing note is referred to by Leonard Meyer (<a href="#meyer_1956" id="citation_meyer_1956_67dc9bde6a3b6">1956</a>, 130&ndash;135) as a structural gap.  In addition, one will notice how the missing C (and the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> drone as well) serves as an axis of symmetry for the four-note set.  By adding the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to the above collection of pitches (B&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>), two more structural gaps can be revealed, one on each side of the dominant.  Arranging the pitches in ascending order, one can see that they form a diatonic B-minor scale, minus the notes E and G (see <b>Example 4</b>). The individual resolutions of all three of these &lsquo;gaps&rsquo; (the missing notes) form part of a larger sequence directly connected to the weakening stability I have associated with the dominant harmony.</p>
+<p>
+[12]  Although less significant than the dominant/subdominant pairing, the dual nature of the chords in the introduction also provides a complete (and circular) presentation of another binary opposition: the antithesis of major vs. minor.  William Kinderman (<a href="#kinderman_1986" id="citation_kinderman_1986_67dc9bde6a3b8">1986</a>, 75) suggests that in some of Schubert&rsquo;s music &ldquo;contrast between major and minor may represent one aspect of a more profound thematic juxtapositon suggesting the dichotomy of inward imagination and external perception.&rdquo;  In Heine&rsquo;s poem, the latter is present in the narrator&rsquo;s description of the physical house and street; the former in his remembrances of his sweetheart.  Individually, each of the chords in the opening might also symbolize this opposition by implying both a major and minor triad (see Example 2).  On a larger scale, the opening chord demarcates the dichotomy between the tonalities of B major and B minor.  With this in mind, the succeeding chords can be interpreted as belonging to one or the other side of the major/minor wall: the second chord, because of its leading-tone <nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, belongs to B major; the third chord, with its lowered third degree D, belongs to B minor.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Appropriately, these two pitches (<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and D) are also symmetrical opposites across the axes of both C and <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  Finally, the two opposing terms (B major/B minor) are brought back together with the neutral dominant (the fourth chord), which belongs to neither, or both, sides of the wall.  I am not suggesting that the introduction is initially heard as being modally ambiguous (it is clearly heard in B minor), rather I am trying to illuminate a dramatic structure imbedded within this opening that foreshadows larger actions in both the music and text. </p>
+<p>[13] Having presented (or, if you prefer, constructed) several issues in need of resolution, I would now like to pursue them through the remainder of the composition.  All of the chords in the first section of the piece (measures 5&ndash;40) are derived from the pitches of the introduction and are likewise mostly incomplete within the piano part itself.  One might expect the vocal line to supply the missing notes which complete the sonorities as the opening progression is repeated over and over.  Nonetheless, while Schubert may have prematurely revealed the somber tenor of Heine&rsquo;s poem, he defers revealing the &lsquo;true&rsquo; quality of the opening chords as much as possible.  The voice rarely enters on the downbeat thus creating the effect of a quasi-recitative, and its first entrance on the second beat of measure 5, of course, provides no additional information since the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is already present in the piano.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>  It is only on the last sixteenth of the last beat of measure 7 that one of the four chords can be be positively identified.  It is a B-minor chord in first inversion (D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;B).<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  The second half of the phrase (measures 9&ndash;14), however, presents a variation on the progression in which all of the chords can be determined.  The first two chords are filled in by the voice part and the rest are presented in their entirety by the piano: (B minor) i &ndash; v &ndash; III &ndash; <nobr>V<img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr>.  The piano motive is altered to B&ndash;A&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, transforming the second chord (measure 10) into a minor dominant (contradicting the implications of measure 2), and then reducing it to a bare octave on the third beat.</p>
+<p>[14] Harmonically, the next section (measures 15&ndash;24) is identical to the first, with the only difference being that the B natural in measure 17 comes in one-sixteenth of a beat earlier than its counterpart in measure 7.  In the beginning of the second stanza, the vocal line reveals two more chords: i (measure 25) and V (measure 28), which correspond to the first and last dyads of the opening progression.  Also of note, is the use of the piano motive B&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the voice to fill in the chords of measures 27&ndash;30, and again in measures 36&ndash;39.  With the fourth couplet (&ldquo;mir graust es&rdquo;) in measure 34, the piano presents all three notes of the opening tonic for the first time.  This also marks the last time that the introductory progression is presented unaltered.</p>
+<p>[15] In terms of the original progression, only three of the four chords can be identified.  The second chord (the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> dyad) has been consistently left incomplete.  Reviewing the total harmonic content up until this point, six of the eight chords implied by the opening dyads (see Example 2) have been fulfilled.  Only the major tonic and raised mediant remain to be heard, both of which I have identified with the latter side of the B minor/B major opposition.  Harmonically, the secondary augmented-sixth chord heard at this point of the song (measures 41&ndash;42) belongs equally and yet is also external to both B major and B minor, thus representing a kind mediation between those opposing pairs.  Likewise, this moment represents a collapse within Kinderman&rsquo;s (<a href="#kinderman_1986" id="citation_kinderman_1986_67dc9bde6a3cf">1986</a>, 75) &ldquo;dichotomy of inward imagination and external perception,&rdquo; as the narrator&rsquo;s inner thoughts become outwardly manifested in the person of the double.  This collapse is also depicted musically by the cessation of the narrator&rsquo;s signature pitch <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in measures 41&ndash;42, and by the modal ambiguity caused by the presence of <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor and B Major within the last third of the <nobr>piece.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></nobr> </p>
+<p>[16] Starting in measure 43, one seems to hear the opening progression starting yet again, but it quickly turns in another direction.  Instead of being abandoned, the progression begins to retrograde in measures 45&ndash;47.  Upon reaching the third chord (originally the second), the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is finally realized as part of the raised-mediant triad.  As if to compensate for its absence in the first half, Schubert prolongs the chord by modulating to the key of <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor, the raised mediant. With only tonic and dominant chords, this passage represents the most forceful and concise use of dominant harmony within the song.  The fact that this is not the tonic key, accentuates the instability of the original dominant.  The fact that this is affectively the key of ghosts intensifies the doppelg&auml;ngers taunting effect upon the narrator.  After five bars, the piece returns to B, completing, in a manner, the last chord of the retrograde progression.  The resolution of this enigma, however, is not yet complete.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Final version of opening progression, mm. 56&ndash;59</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="code_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Occurrences of &lsquo;missing&rsquo; C natural</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="code_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[17] In the end, one might expect for the ambiguity of the introduction to finally be resolved by filling in all of the chords.  While the progression does seem to return in the piano postlude, it is not &lsquo;filled in&rsquo;, but rather altered to reveal a different type of resolution.  The first three chords are the same as the opening (except for the added pitch D completing the first chord), while the last is replaced by a lowered II chord, (see <b>Example 5</b>). There are two important aspects associated with this change of chord.  First of all, it is in the position of what should have been the dominant.  Secondly, it contains all three of the missing pitches formed by the structural gaps.  Thus, these pitches (C, G, and E) are also unequivocally bound to the fate of the dominant.</p>
+<p>[18] Tracing the disintegration of the dominant harmony, I propose two separate (although interconnected) paths, both originating in measure 4, but leading to separate destinations.  The first path is governed by the force of the missing C natural.  There are just four occurrences of this pitch, and each is directly connected with the dominant (see <b>Example 6</b>).  Lawrence Kramer (<a href="#l_kramer_1986" id="citation_l_kramer_1986_67dc9bde6a3d9">1986</a>, 221) describes the role of C as &ldquo;an unresolvable long-term dissonance independent of tonal organization.&rdquo;  In my version, however, the appearance of the C is not &ldquo;unresolvable,&rdquo; but rather it is the inevitable resolution of the structural gap posed at the opening.  The first two times it appears as part of two different augmented-sixth chords (measures 32 and 41), both of which function harmonically as dominant substitutes, and physically replace the dominant-seventh chord heard in the previous statements of this progression (measures 13 and 23).  Then, in measure 44, the C&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> dyad parodies the open fifth of measure 4 by turning it into a diminished one.  The last presentation is, of course, in measure 59, which is an entire triad built on C.</p>
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Transformation of dominant into subdominant</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="code_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="code_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[19] The second path of the dominant&rsquo;s demise, leading from measure 4 to measure 61, is a gradual transmutation integrating the missing pitches E and G with the symbolic antithesis of the dominant and subdominant.  As I remarked earlier, from the beginning of the piece, the dominant is portrayed as weak, appearing as an empty fifth (measure 4), a minor triad (measure 10), and even as a bare octave (measure 10).  Regarding the piece as a whole, Lawrence Kramer (<a href="#l_kramer_1986" id="citation_l_kramer_1986_67dc9bde6a3eb">1986</a>, 220) notes that &ldquo;the dominant triad remains incomplete except when the seventh is added.&rdquo;  The seventh of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, however, is none other than E, the missing &lsquo;under-dominant&rsquo; of B.  I am not trying to make a universal claim that all dominant-seventh chords represent some secretive subsersive action.  Within the particular harmonic language created by this piece, however, this interpretation seems possible.  Despite the numerous implied dominants, the complete triad is heard on only three occasions, each accompanied by the pitch E.  Likewise, prior to the end, each time the note E appears in the piano (which is not frequently) it is part of a dominant-function chord.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> (see <b>Example 7</b>).  With the augmented-sixth in measure 41, the E is joined by G, interrupting, for the first time, the incessant pedal-tone of the <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and forming two-thirds of the subdominant triad.  By the next appearance of these pitches in measure 54, the process is almost complete.  Here we find, as part of a suspension, the entire subdominant triad enveloped inside the empty fifth of the dominant (from measure 4).  At the point of the final cadence (measure 61) the dominant has been completely taken over: the empty shell is discarded and only the subdominant remains.</p>
+<p>[20] The transformation from dominant to subdominant is a dynamic movement which structures the piece. It is, like Elizabeth Bowen&rsquo;s (<a href="#bowen_1974" id="citation_bowen_1974_67dc9bde6a3ee">1974</a>, 170) description of the story, an &ldquo;action towards an end not to be forseen (by the reader), but also toward an end which, having been reached, must have been from the start inevitable.&rdquo;  Looking back, we see the inevitability of the subdominant harmony first implied by the augmented-sixth chords shown in Example 6.  Unlike the German-sixth of measure 51, these chords are not the augmented-sixths one would normally expect in the key of B.  Rather, they are, respectively, the French- and German-sixth chords derived from the key of E.  Therefore, although they function as dominant substitutes in the context of B minor, they imply a dominant preparation in the key of the E minor.  Similarly, the modulation to <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor in measures 47&ndash;51 seems to point toward a resolution in E, moving step-by-step, chromatically from the note B, hanging on the <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> leading-tone before it can reach the pitch E.  In the end, this resolution is irreversibly granted.  The C-major chord in measure 59 functions as VI chord in E minor, this time followed by a proper dominant-seventh and, at last, in E minor chord, albeit over a B pedal tone.  Furthermore, as the penultimate chord of the composition, the subdominant appears in the position at which one most expects to find the dominant.</p>
+<p>[21] At the close of &ldquo;Der Doppelg&auml;nger,&rdquo; the two antithetical elements of the piece become interrelated to create an ambiguous ending.  Because of the added seventh (A natural), the B-major triad in measure 60 can only be interpreted as the dominant of E, thus belonging to the antithesis of the dominant/subdominant.  However, the appearance of this chord fulfills the expectation for a B-major triad which was created in the first bar of the piece.  This is the last of the eight potential chords of Example 3 to be realized and, thus, it also belongs to the dichotomy of B major/B minor.  If the latter pairing is considered more important than the former, then the final two chords (measures 61&ndash;63) should be considered a kind of plagal cadence with a Picardy third.  On the other hand, if the opposition of the dominant/subdominant is considered more significant, then these same chords might be construed as part of a cadence in E minor.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  At the very least, one can state that the ending does not unambiguously resolve either of these large-scale harmonic concerns.</p>
+<p>[22] Finally, the legend of the doppelg&auml;nger says that &ldquo;to meet one&rsquo;s wraith, or double, is a sign that one&rsquo;s death is imminent.&rdquo; (<a href="#encyclopaedia_britannica_1985" id="citation_encyclopaedia_britannica_1985_67dc9bde6a3f3">Encyclopaedia Britannica 1985</a>, 182)  Interpreting the music in this manner, the addition of the subdominant E (as the seventh of the dominant) in measure 12 might signal the imminent disintegration and ultimate replacement of the dominant.  Moreover, if the principal character does in fact die at the end, then the final raised B-major chord could not be thought of as a positive resolution, but rather as a dark victory for the subdominant, which succeeds in subverting even the original tonic into its own dominant.  The anguished, guilt-ridden death portrayed in &ldquo;Der Doppelg&auml;nger&rdquo; is even more poignant when juxtaposed against the prayer for peace and forgiveness of sins of the &ldquo;Agnus Dei&rdquo; with which it shares the principle motive.  </p>
+<p>[23] Following the model of other scholars, one could tie this musico-literary analysis to Schubert&rsquo;s personal life. <a href="#cone_1982" id="citation_cone_1982_67dc9bde6a3f5">Cone 1982</a>, <a href="#cone_1984" id="citation_cone_1984_67dc9bde6a3f7">1984</a>; <a href="#macdonald_1978" id="citation_macdonald_1978_67dc9bde6a3f9">Macdonald 1978</a>; <a href="#mcclary_1994" id="citation_mcclary_1994_67dc9bde6a3fa">McClary 1994</a>; <a href="#webster_1978" id="citation_webster_1978_67dc9bde6a3fc">Webster 1978</a>)  In his article, &ldquo;Schubert&rsquo;s Promissory Note,&rdquo; Edward T. Cone (<a href="#cone_1982" id="citation_cone_1982_67dc9bde6a3fe">1982</a>, 241) asks, &ldquo;did Schubert&rsquo;s realization of [the syphilis], and of its implications induce, or at least intensify the sense of desolation, even dread, that penetrates much of his music from then on?&rdquo;  Following this hypothesis, Cone relates the hermeneutic actions of the <i>Moment Musical No.6</i>, to Schubert&rsquo;s contraction of syphilis.  Similarly, one might view the gradual alterations of the dominant in &ldquo;Der Doppelg&auml;nger&rdquo; as representing the gradual affliction of the disease within Schubert himself.  Musically this process exposes the previously absent pitches of the opening, fleshing out the dual identities of the chords.  Similarly, Schubert&rsquo;s affliction made public his previously concealed private life, revealing the two-sided nature of his personality.  The song was dedicated to Schubert&rsquo;s circle of friends with whom Schubert shared his secret life of pleasure and for whom a similar fate was likely in store.  This reading of the song also maps well onto Heine&rsquo;s text.  Consider Schubert&rsquo;s self-portrayal in a letter from 1824:</p>
+<blockquote>Imagine a man whose health will never be right again, and who in sheer despair over this ever makes things worse and worse, instead of better;<nobr> . . . </nobr>to whom the felicity of love and friendship have nothing to offer but pain at best. (<a href="#deutsch_1947" id="citation_deutsch_1947_67dc9bde6a40c">Deutsch 1947</a>, 339)</blockquote>
+
+<p>The disease may well have been Schubert&rsquo;s own &lsquo;doppelg&auml;nger&rsquo;, painfully evoking the love-torment (&lsquo;Liebesleid&rsquo;) of days gone by and signaling his imminent death just a few months following the composition this song. <p>
+
+<!-------------------------------- Translation -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<hr>
+<p><b>Word-by-Word translation of text for &ldquo;Der Doppelg&auml;nger&rdquo;</b></p>
+
+  <p><i>Still ist die Nacht, es ruhen die Gassen,</i><br>
+   Still is the night, it sleeps the streets,<br>
+<i>in diesem Hause wohnte mein Schatz;</i><br>
+ in this house lived my sweetheart;<br>
+<i>sie hat schon l&oslash;ngst die Stadt verlassen,</i><br>
+ she has already long [ago] the town left.<br>
+<i>doch steht noch das Haus auf demselben Platz.</i><br>
+ yet stands still the house on the same place.<p>
+
+ <i> Da steht auch ein Mensch, und starrt in die H&oslash;he</i>,<br>
+   There stands also a man, and stares into the height.<br>
+<i>und ringt die H&oslash;nde vor Schmerzensgewalt;</i><br>
+ and wrings the hands for grief-violence,<br>
+<i>mir graust es, wenn ich sein Antlitz sehe,</i><br>
+ [to] me shudders it, when I his face see,<br>
+<i>der Mond zeigt mir meine eigne Gestalt </i><br> 
+ the moon shows me my own form.<p>
+
+<i>  Du Doppelg&auml;nger, du bleicher Geselle!</i><br>
+   You double-goer, you pale companion!<br>
+<i>Was &oslash;ffst du nach mein Liebesleid,</i><br>
+ Why ape [mimic] you after my love&rsquo;s-suffering</i><br>
+<i>das mich gequ&oslash;lt auf dieser Stelle</i><br>
+ that me tormented at this place<br>
+<i>so manche Nacht, in alter Zeit?</i><br>
+ so many [a] night, in old time?<p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	David L&oslash;berg Code<br>
+	Western Michigan University<br>School of Music<br>Kalamazoo, MI 49008<br><a href="mailto:code@wmich.edu">code@wmich.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_bowen_1974" class="flyoverdiv">Bowen, Elizabeth. 1974. <i>Pictures and Conversations</i>. New 
+     York: Knopf.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bowen_1974"></a>Bowen, Elizabeth. 1974. <i>Pictures and Conversations</i>. New 
+     York: Knopf.</p><div id="citediv_brody_and_fowkes_1971" class="flyoverdiv">Brody, Elaine and Robert Fowkes. 1971. <i>The German Lied and 
+     its Poetry</i>.  New York: New York University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brody_and_fowkes_1971"></a>Brody, Elaine and Robert Fowkes. 1971. <i>The German Lied and 
+     its Poetry</i>.  New York: New York University Press.</p><div id="citediv_cone_1984" class="flyoverdiv">Cone, Edward T. 1984. &ldquo;Schubert&rsquo;s Unfinished Business.&rdquo; <i>19th Century 
+     Music</i> 7, no. 3: 222&ndash;232.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1984"></a>Cone, Edward T. 1984. &ldquo;Schubert&rsquo;s Unfinished Business.&rdquo; <i>19th Century 
+     Music</i> 7, no. 3: 222&ndash;232.</p><div id="citediv_cone_1982" class="flyoverdiv">Cone, Edward T. 1982. &ldquo;Schubert&rsquo;s Promissory Note: An Exercise 
+     in Musical Hermeneutics.&rdquo; <i>19th Century Music</i> 5, no. 3: 233&ndash;241.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cone_1982"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1982. &ldquo;Schubert&rsquo;s Promissory Note: An Exercise 
+     in Musical Hermeneutics.&rdquo; <i>19th Century Music</i> 5, no. 3: 233&ndash;241.</p><div id="citediv_deutsch_1978" class="flyoverdiv">Deutsch, Otto Erich. 1978. <i>Franz Schubert: Thematisches Verzeichnis</i>. 
+     Kassel: Baerenreiter-Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="deutsch_1978"></a>Deutsch, Otto Erich. 1978. <i>Franz Schubert: Thematisches Verzeichnis</i>. 
+     Kassel: Baerenreiter-Verlag.</p><div id="citediv_deutsch_1958" class="flyoverdiv">Deutsch, Otto Erich. 1958. <i>Schubert: Memoirs by His Friends</i> (trans. Ley 
+     and Nowell). London: Dent.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="deutsch_1958"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1958. <i>Schubert: Memoirs by His Friends</i> (trans. Ley 
+     and Nowell). London: Dent.</p><div id="citediv_deutsch_1947" class="flyoverdiv">Deutsch, Otto Erich. 1947. <i>The Schubert Reader</i> (trans. 
+     Blom). New York: Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="deutsch_1947"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1947. <i>The Schubert Reader</i> (trans. 
+     Blom). New York: Norton.</p><div id="citediv_encyclopaedia_britannica_1985" class="flyoverdiv">Encyclopaedia Britannica. 1985.  &ldquo;Doppelganger.&rdquo; In <i>The New 
+     Encylcopaedia Britannica</i>, 15th edition.  Chicago: 
+     Encyclopaedia Britannica, Inc., 182.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="encyclopaedia_britannica_1985"></a>Encyclopaedia Britannica. 1985.  &ldquo;Doppelganger.&rdquo; In <i>The New 
+     Encylcopaedia Britannica</i>, 15th edition.  Chicago: 
+     Encyclopaedia Britannica, Inc., 182.</p><div id="citediv_goldschmidt_1974" class="flyoverdiv">Goldschmidt, Harry. 1974. &ldquo;Welches war die urspruenglische 
+     Reihenfolge in Schuberts Heine-Liedern.&rdquo; In <i>Deutschers 
+     Jahrbuch der Musikwissenschaft fuer 1972</i>. Leipzig.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="goldschmidt_1974"></a>Goldschmidt, Harry. 1974. &ldquo;Welches war die urspruenglische 
+     Reihenfolge in Schuberts Heine-Liedern.&rdquo; In <i>Deutschers 
+     Jahrbuch der Musikwissenschaft fuer 1972</i>. Leipzig.</p><div id="citediv_kinderman_1986" class="flyoverdiv">Kinderman, William. 1986. &ldquo;Schubert&rsquo;s Tragic Perspective.&rdquo; In 
+     <i>Schubert: Critical and Analytical Studies</i>, ed. Frisch, 65&ndash;83. 
+     Lincoln: University of Nebraska Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kinderman_1986"></a>Kinderman, William. 1986. &ldquo;Schubert&rsquo;s Tragic Perspective.&rdquo; In 
+     <i>Schubert: Critical and Analytical Studies</i>, ed. Frisch, 65&ndash;83. 
+     Lincoln: University of Nebraska Press.</p><div id="citediv_l_kramer_1986" class="flyoverdiv">Kramer, Lawrence. 1986. &ldquo;The Schubert Lied: Romantic Form and 
+     Romantic Consciousness.&rdquo; In <i>Schubert: Critical and 
+     Analytical Studies</i>, ed. Frisch, 200&ndash;236. Lincoln: University of 
+     Nebraska Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="l_kramer_1986"></a>Kramer, Lawrence. 1986. &ldquo;The Schubert Lied: Romantic Form and 
+     Romantic Consciousness.&rdquo; In <i>Schubert: Critical and 
+     Analytical Studies</i>, ed. Frisch, 200&ndash;236. Lincoln: University of 
+     Nebraska Press.</p><div id="citediv_r_kramer_1985" class="flyoverdiv">Kramer, Richard. 1985. &ldquo;Schubert&rsquo;s Heine.&rdquo; <i>19th-Century 
+     Music</i> 8, no. 3: 213&ndash;235.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="r_kramer_1985"></a>Kramer, Richard. 1985. &ldquo;Schubert&rsquo;s Heine.&rdquo; <i>19th-Century 
+     Music</i> 8, no. 3: 213&ndash;235.</p><div id="citediv_macdonald_1978" class="flyoverdiv">Macdonald, Hugh. 1978. &ldquo;Schubert&rsquo;s Volcanic Temper.&rdquo; <i>Musical 
+     Times</i> 119: 949&ndash;52.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="macdonald_1978"></a>Macdonald, Hugh. 1978. &ldquo;Schubert&rsquo;s Volcanic Temper.&rdquo; <i>Musical 
+     Times</i> 119: 949&ndash;52.</p><div id="citediv_mcclary_1994" class="flyoverdiv">McClary, Susan. 1994. &ldquo;Constructions of Subjectivity in 
+     Schubert&rsquo;s Music.&rdquo; In <i>Queering the Pitch</i>, eds. Brett, 
+     Thomas, and Wood), 205&ndash;234. New York: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mcclary_1994"></a>McClary, Susan. 1994. &ldquo;Constructions of Subjectivity in 
+     Schubert&rsquo;s Music.&rdquo; In <i>Queering the Pitch</i>, eds. Brett, 
+     Thomas, and Wood), 205&ndash;234. New York: Routledge.</p><div id="citediv_meyer_1956" class="flyoverdiv">Meyer, Leonard B. 1956. <i>Emotion and Meaning in Music</i>. 
+     Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="meyer_1956"></a>Meyer, Leonard B. 1956. <i>Emotion and Meaning in Music</i>. 
+     Chicago: The University of Chicago Press.</p><div id="citediv_sams_1980" class="flyoverdiv">Sams, Eric. 1980. &ldquo;Schubert&rsquo;s Illness Re-examined.&rdquo; <i>Musical 
+     Times</i> 121: 15&ndash;22.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sams_1980"></a>Sams, Eric. 1980. &ldquo;Schubert&rsquo;s Illness Re-examined.&rdquo; <i>Musical 
+     Times</i> 121: 15&ndash;22.</p><div id="citediv_schubart_1806" class="flyoverdiv">Schubart, Christian. 1806. <i>Ideen zu einer Aesthetik der 
+     Tonkunst</i>. (Cited in Steblin 1983, 124).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubart_1806"></a>Schubart, Christian. 1806. <i>Ideen zu einer Aesthetik der 
+     Tonkunst</i>. (Cited in Steblin 1983, 124).</p><div id="citediv_solomon_1993" class="flyoverdiv">Solomon, Maynard. 1993. &ldquo;Schubert: Some Consequences of Nostalgia.&rdquo; <i>19th-
+     Century Music</i> 17, no. 1: 34&ndash;46.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="solomon_1993"></a>Solomon, Maynard. 1993. &ldquo;Schubert: Some Consequences of Nostalgia.&rdquo; <i>19th-
+     Century Music</i> 17, no. 1: 34&ndash;46.</p><div id="citediv_solomon_1989" class="flyoverdiv">Solomon, Maynard. 1989. &ldquo;Franz Schubert and the Peacocks of 
+     Benvenuto Cellini.&rdquo; <i>19th-Century Music</i> 12, no. 3: 193&ndash;206.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="solomon_1989"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1989. &ldquo;Franz Schubert and the Peacocks of 
+     Benvenuto Cellini.&rdquo; <i>19th-Century Music</i> 12, no. 3: 193&ndash;206.</p><div id="citediv_steblin_1983" class="flyoverdiv">Steblin, Rita. 1983. <i>A History of Key Characteristics in the 
+     Eighteenth and Early Nineteenth Centuries</i>.  Ann Arbor, 
+     Michigan: UMI Research Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="steblin_1983"></a>Steblin, Rita. 1983. <i>A History of Key Characteristics in the 
+     Eighteenth and Early Nineteenth Centuries</i>.  Ann Arbor, 
+     Michigan: UMI Research Press.</p><div id="citediv_stein_1971" class="flyoverdiv">Stein, Jack M. 1971. <i>Poem and Music in the German Lied from 
+     Gluck to Hugo Wolf</i>. Cambridge, Massachusetts: Harvard 
+     University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stein_1971"></a>Stein, Jack M. 1971. <i>Poem and Music in the German Lied from 
+     Gluck to Hugo Wolf</i>. Cambridge, Massachusetts: Harvard 
+     University Press.</p><div id="citediv_thomas_1954" class="flyoverdiv">Thomas, Werner. 1954. &ldquo;Der Doppelgaenger von Franz Schubert.&rdquo; 
+     <i>Archiv fur Musik-Wissenschaft</i> 11, no. 3: 253.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="thomas_1954"></a>Thomas, Werner. 1954. &ldquo;Der Doppelgaenger von Franz Schubert.&rdquo; 
+     <i>Archiv fur Musik-Wissenschaft</i> 11, no. 3: 253.</p><div id="citediv_webster_1978" class="flyoverdiv">Webster, James. 1978. &ldquo;Schubert&rsquo;s Sonata Form and Brahms&rsquo;s 
+     First Maturity.&rdquo; <i>19th-Century Music</i> 2, no. 1: 18&ndash;35.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="webster_1978"></a>Webster, James. 1978. &ldquo;Schubert&rsquo;s Sonata Form and Brahms&rsquo;s 
+     First Maturity.&rdquo; <i>19th-Century Music</i> 2, no. 1: 18&ndash;35.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The poem and a rather literal word-by-word translation is found at the end of this essay.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> McClary (<a href="#mcclary_1994" id="citation_mcclary_1994_67dc9bde647e6">1994</a>, 226) further suggests that this type of narrative might reflect Schubert&rsquo;s &ldquo;sense of estrangement from former good times and his immersion in [the] &lsquo;miserable reality&rsquo; [of his later life].&rdquo;<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Following Steblin, I have appropriated Schubart&rsquo;s description of <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor for its enharmonic equivalent.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> It is also possible to consider this chord as a dominant with 6&ndash;5 appoggiatura (i.e., the D behaves like a temporary displacement of the dominant&rsquo;s 5th, <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Richard Kramer (<a href="#r_kramer_1985" id="citation_r_kramer_1985_67dc9bde647f0">1985</a>, 220) reveals that the original music accompanying &ldquo;Gestalt&rdquo; in the autograph was virtually the same as that accompanying &ldquo;Schmerzensgewalt&rdquo; (measures 31&ndash;33).  Thus, the <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> remained and there was no high G.  It seems evident from the preceding analysis that Schubert&rsquo;s revision was crucial to the structural levels of the piece.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> I realize, of course, that the pitch <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is present in the harmonic and melodic forms of the B-minor scale, and that a major dominant triad is a commonplace diatonic chord in both major and minor keys.  Symbolically, I wish to consider <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> as a modal scale degree because it is not diatonic in natural minor.  Its function as the leading tone (replacing the subtonic) is essentially borrowed from the major scale (one might say that its etymological origin is in the major key), placing it in the symbolic camp of B major.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Werner Thomas (<a href="#thomas_1954" id="citation_thomas_1954_67dc9bde647f5">1954</a>, 260) has proposed that the vocal part actually begins in a separate meter, starting with a &lsquo;downbeat&rsquo; in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr> time on the second beat of measure 6.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Lawrence Kramer (<a href="#l_kramer_1986" id="citation_l_kramer_1986_67dc9bde647fa">1986</a>, 220), however, suggests that the third chord of the progression is a III chord in B minor.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> One might also consider the abrupt change in vocal timbre resulting from the drop from G5 to <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>4 in measures 42&ndash;43 as a more overt sonic illustration of this divide between outer and inner selves.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Furthermore, with the exception of measure 55, the pitch E never occurs as a chord tone in the vocal part.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> I personally hear the ending as a cadential six-four progression in E minor, which is suspended (by a fermata) before reaching its final tonic in some netherworld beyond the double bar.  It is also interesting to note that the B&ndash;<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;D&ndash;<nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> motive from measures 1&ndash;4 can be found in measures 59&ndash;62 transposed to E minor: E&ndash;<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;G&ndash;<nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.<br><a href="#FN11REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The poem and a rather literal word-by-word translation is found at the end of this essay.</div><div id="fndiv2" class="flyoverdiv">McClary (<a href="#mcclary_1994" id="citation_mcclary_1994_67dc9bde647e6">1994</a>, 226) further suggests that this type of narrative might reflect Schubert&rsquo;s &ldquo;sense of estrangement from former good times and his immersion in [the] &lsquo;miserable reality&rsquo; [of his later life].&rdquo;</div><div id="fndiv3" class="flyoverdiv">Following Steblin, I have appropriated Schubart&rsquo;s description of D&#x266f; minor for its enharmonic equivalent.</div><div id="fndiv4" class="flyoverdiv">It is also possible to consider this chord as a dominant with 6&ndash;5 appoggiatura (i.e., the D behaves like a temporary displacement of the dominant&rsquo;s 5th, C&#x266f;).</div><div id="fndiv5" class="flyoverdiv">Richard Kramer (<a href="#r_kramer_1985" id="citation_r_kramer_1985_67dc9bde647f0">1985</a>, 220) reveals that the original music accompanying &ldquo;Gestalt&rdquo; in the autograph was virtually the same as that accompanying &ldquo;Schmerzensgewalt&rdquo; (measures 31&ndash;33).  Thus, the F&#x266f; remained and there was no high G.  It seems evident from the preceding analysis that Schubert&rsquo;s revision was crucial to the structural levels of the piece.</div><div id="fndiv6" class="flyoverdiv">I realize, of course, that the pitch A&#x266f; is present in the harmonic and melodic forms of the B-minor scale, and that a major dominant triad is a commonplace diatonic chord in both major and minor keys.  Symbolically, I wish to consider A&#x266f; as a modal scale degree because it is not diatonic in natural minor.  Its function as the leading tone (replacing the subtonic) is essentially borrowed from the major scale (one might say that its etymological origin is in the major key), placing it in the symbolic camp of B major.</div><div id="fndiv7" class="flyoverdiv">Werner Thomas (<a href="#thomas_1954" id="citation_thomas_1954_67dc9bde647f5">1954</a>, 260) has proposed that the vocal part actually begins in a separate meter, starting with a &lsquo;downbeat&rsquo; in 42 time on the second beat of measure 6.</div><div id="fndiv8" class="flyoverdiv">Lawrence Kramer (<a href="#l_kramer_1986" id="citation_l_kramer_1986_67dc9bde647fa">1986</a>, 220), however, suggests that the third chord of the progression is a III chord in B minor.</div><div id="fndiv9" class="flyoverdiv">One might also consider the abrupt change in vocal timbre resulting from the drop from G5 to F&#x266f;4 in measures 42&ndash;43 as a more overt sonic illustration of this divide between outer and inner selves.</div><div id="fndiv10" class="flyoverdiv">Furthermore, with the exception of measure 55, the pitch E never occurs as a chord tone in the vocal part.</div><div id="fndiv11" class="flyoverdiv">I personally hear the ending as a cadential six-four progression in E minor, which is suspended (by a fermata) before reaching its final tonic in some netherworld beyond the double bar.  It is also interesting to note that the B&ndash;A&#x266f;&ndash;D&ndash;C&#x266f; motive from measures 1&ndash;4 can be found in measures 59&ndash;62 transposed to E minor: E&ndash;D&#x266f;&ndash;G&ndash;F&#x266f;.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1995 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Cara Stroud, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

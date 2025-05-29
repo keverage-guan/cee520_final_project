@@ -1,0 +1,938 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 4.2: Schmalfeldt, Keeping the Score</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="On Keeping the Score">
+
+    <meta name="citation_author" content="Schmalfeldt, Janet">
+      
+
+<meta name="citation_publication_date" content="1998/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="4">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">On Keeping the Score
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.98.4.2/mto.98.4.2.schmalfeldt.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Janet Schmalfeldt</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: ethnicity, feminism, gender, sexuality,
+  McClary, McCreless, musical autonomy, new musicology</font></p><p><font size='4'>ABSTRACT: This essay proposes and then explores the view that the most
+profound and beneficial changes in the field of music theory within
+the last decade have come about in response to pressures from without
+to relinquish the notion of music as autonomous.  I ask anew why our
+field has waited so long to acknowledge that the creation,
+performance, and study of music cannot help but be implicated in both
+past and present social, cultural, and political concerns.  My
+overview celebrates the inspired contributions of individuals who have
+recently demonstrated how music theory can embrace ever broader
+cultural contexts without at the same time abandoning the analyst&rsquo;s
+commitment to interpreting the musical score.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.schmalfeldt.pdf">PDF text </a></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 4, Number 2, March 1998 <br> Copyright &#0169; 1998 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] For more reasons than one, it just doesn&rsquo;t seem possible to me
+that only within this last decade&mdash;even less than ten years ago&mdash;our
+Baltimore joint-conference hallways were buzzing about Maynard
+Solomon&rsquo;s paper on Schubert and the peacocks of Benvenuto Cellini.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> That was in 1988.  Only one year earlier&mdash;just ten years ago this
+month&mdash;did our conference promote the first official session of
+something called a Committee on the Status of Women.  Even harder to
+believe, Susan McClary&rsquo;s <i>Feminine Endings</i> hit the stands only as
+recently as 1991, also the year of the first Feminist Theory and Music
+Conference, in Minneapolis<nobr>.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></nobr> And the first AMS/SMT Conference to be
+held jointly with the Center for Black Music Research, inaugurated in
+1980, took place just two years ago.  Topics concerning ethnicity,
+feminism, gender, and sexuality have by now so clearly made an impact
+on our field that they seem to have been with us for much longer.  But
+colleagues in other fields&mdash;literature, philosophy, the social
+sciences, drama, art history, film, dance, you name it&mdash;are
+predictably incredulous when they learn that these issues are still so
+relatively new for us.
+</p>
+
+<p>[2] I submit today that these new cultural and social concerns are the
+ones to have exerted both the most profound and the most beneficial
+changes our field has seen in the last decade.  Before dismissing this
+observation as pure cant, please think about it with me.  Profound?
+Beneficial?  On what grounds can I make these claims?  And if I can
+indeed substantiate them, then how did it happen that the field of
+music theory seems as if to have waited for the 1990s before even
+tentatively beginning to investigate such concerns?
+</p>
+
+<p>[3] This last question engages countless elusive issues&mdash;academic,
+political, philosophical, sociological, dare I say even &ldquo;purely
+musical.&rdquo;  For the record, Susan McClary&rsquo;s sharp critiques of our
+field have from the very outset been complemented by her efforts to
+provide explanations for our behavior.  In the following statement,
+from as early as 1988, her judgment is gentle yet firm: &ldquo;Feminism has
+been very late in making an appearance in music criticism, and this is
+largely owing to the success composers, musicologists, and theorists
+have had in maintaining the illusion that music is an entirely
+autonomous realm.&rdquo;<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> In the 1997 collection of essays called <i>Keeping
+Score</i>, my distinguished plenary-session colleague Patrick McCreless
+presents a superb study in which he brings Michel Foucault&rsquo;s version
+of the old adage &ldquo;Knowledge is Power&rdquo; to the task of construing <i>why</i>
+we theorists in particular have been so reluctant to relinquish the
+illusion that music is autonomous.  McCreless posits that the
+willingness of two powerful East-Coast research universities&mdash;Yale and
+Princeton&mdash;to regard modern music theory as a professional academic
+discipline ultimately hinged in the 1950s on that very same illusion.
+Like others, Pat sees the twentieth-century notion of absolute music
+as a vestige of the shift in the early nineteenth century from
+compositional pedagogy to analysis, and towards an aesthetic of
+genius, originality, and romantic subjectivity.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[4] In Pat&rsquo;s view, in other words, our entree itself into the academy
+depended upon the following achievements of our American founding
+fathers&mdash;Milton Babbitt and Allen Forte: first, they regained
+intellectual respectability for music theory by shaking off its stigma
+in this country as mere pedagogy; second, they accomplished this by
+demonstrating most especially through twelve-tone, Schenkerian, and
+pitch-class set theories that our field is both a rigorous and a
+creative mode of thought.  As what Pat calls &ldquo;the driving intellectual
+forces of the discipline,&rdquo; these two &ldquo;central poles&rdquo; &ldquo;share a value
+system that explicitly privileges rigor, system, and theory-based
+analysis and implicitly share an aesthetic ideology whereby analysis
+validates masterworks that exhibit an unquestioned structural
+autonomy.&rdquo;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> From this perspective, we might just draw some
+understanding as to why it has been difficult for modern music
+theorists to give intellectual energy to the ways in which music
+reflects or expresses extra-musical meaning of any kind&mdash;whether this
+be relative to biography, social function, or even ethnic or national
+differences, let alone gender and sexuality: our initial prestige in
+the American academy, whence to this day cometh pay checks for most of
+us, rested on our promise that we could <i>explain</i> music in <i>purely
+musical terms</i>, rather than merely effuse about it.  Better yet, we
+could promise to do this at a time when most musicologists were not
+particularly interested in theory, analysis, or criticism of any kind.
+</p>
+
+<p>[5] Imagine our surprise, then, when our perhaps uneasy but ostensibly
+self-assured relationship with musicology began to show signs of
+crumbling in the early 1980s.  The appearance of two sharp-pointed
+attacks on our kinds of analysis&mdash;from Joseph Kerman in 1980 and Leo
+Treitler in 1982<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>&mdash;created so much indignation (read alarm here)
+for some of us in the Theory Department at McGill University that we
+organized a special McGill colloquium to discuss these articles.  But
+Kerman&rsquo;s and Treitler&rsquo;s critiques were only the beginnings&mdash;the first
+stage in what has since been perceived as a real siege on music
+theory.  During moments of the invited session entitled &ldquo;Contemporary
+Theory and the &lsquo;New Musicology&rsquo;&rdquo; at our 1995 joint conference in New
+York, something dubbed by someone as &ldquo;the new musicology&rdquo; seemed to
+have become the name of our enemy.
+</p>
+
+<p>[6] But let&rsquo;s face it: as a postmodernist phenomenon, the &ldquo;new
+musicology&rdquo; has itself been phenomenally slow to arrive.  How can we
+fathom that it took so many musicologists as well as theorists, most
+of us generally humanists at heart, such a long time to investigate
+the idea that the creation, performance, and study of music simply
+cannot help but be implicated in both past and present social,
+cultural, and political concerns?  And, to this day, how comfortable
+have we become with the notion that <i>music theory</i> might actually
+profit from an engagement with some of the great outcries for social
+change our society and our world have seen in this century&mdash;movements
+towards real equity in respect to race, gender, and sexual
+orientation, with concomitant efforts to undercut bigotry and
+parochialism by breaking down cultural hegemonies?
+</p>
+
+<p>[7] As McCreless readily explains, a Foucauldian assessment of any
+discipline treats the discipline as a social institution that
+regulates, or controls, individuals through its discourse; in Pat&rsquo;s
+words, Foucault &ldquo;tends to focus on discourse as an abstract site of
+knowledge, and to remove from this arena the motivation and action of
+the individual subject.&rdquo;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Allow me to take quite a different tack
+today: I&rsquo;d like to reverse Foucault&rsquo;s strategy by shifting the focus
+from our discipline as an institution, or society, to some of its
+individual members, if only towards the goal of acknowledging recent
+individual contributions to our field.  My premise should be obvious:
+disciplines become established as such mainly through the efforts of
+those individuals whose ideas seem to have emerged at just the right
+time and in the right place; by the same ineluctable process, the
+discourse of a discipline can change.  Here, then, is some history
+&ldquo;modeled on biography and human action,&rdquo;<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> or, shall we say, an
+anecdotal approach to our recent history, informally inspired by
+Richard Rorty&rsquo;s ideas in his <i>Contingency, Irony, and Solidarity</i>,
+from 1989.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+<p>[8] Few would deny that the rise of the professional theorist in this
+country during the 1950s was partly, and &ldquo;first of all&rdquo;&mdash;as Milton
+Babbitt says&mdash;&ldquo;a result of Schenker and of people who came over here
+who were Schenker students.&rdquo;<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> But third- and fourth-generation
+Schenkerians who in turn studied with one or more of those
+people&mdash;Hans Weisse, Felix Salzer, Oswald Jonas, and Ernst Oster&mdash;can
+confirm, ironically, that, as immigrants, these teachers certainly did
+not find an easy market for Schenkerian theory during the 1960s or
+even in the early 70s.  On a personal note, I can report that, as a
+candidate in 1970 for the M.M.A degree in Piano Performance, I did not
+have an easy time &ldquo;defending&rdquo; the Schenkerian aspects of my Masters
+thesis to my performance teachers in the Yale School of Music.  So
+much for all that intellectual rigor and creative analytical thought
+that was supposed to have legitimized American music theory as an
+academic discipline by the late 50s.  If, around 1979, when Schenker&rsquo;s
+<i>Free Composition (Der freie Satz)</i> appeared in English translation,
+we had begun to show signs of smugness about our beautiful
+voice-leading graphs, let&rsquo;s remember that only around then had
+institutions begun to exhibit pressure to hire Schenkerians who could
+also teach pitch-class set theory.  And, if modern music theory has
+indeed been in competition with musicology for certain kinds of power
+through knowledge, then the appearance of Kerman&rsquo;s and Treitler&rsquo;s
+articles so shortly after 1979 seems like more than a coincidence.
+But I&rsquo;ll contend that some brilliant pedagogy coupled with an
+ideological commitment to Schenker&rsquo;s ideas on the part of those first,
+lone immigrant teachers initially sparked comparable passions in the
+hearts and minds of just a few receptive, gifted theorists, and that
+the subsequent dissemination of Schenkerian thought here and abroad
+can be greatly understood as contingent on the far-reaching actions of
+those individuals, rather than as a Foucauldian demonstration of our
+discipline qua regulative institution.  Envision, if you will, please,
+the image of John Rothgeb in 1970 as an impassioned young theorist
+driving alone in his &rsquo;64 Volvo all the way from Austin, Texas, to
+Riverside, California, for the single purpose of meeting and studying
+with Oswald Jonas, as recommended by Jonas&rsquo;s student, and John&rsquo;s
+teacher, Ernst Oster.
+</p>
+
+<p>[9] If our field has now begun to drive in new directions, this has
+once again come about most especially, I think, as a result of the
+passionate, persuasive, persistent, and highly productive efforts of
+certain remarkable individuals.  Where have these scholars come from?
+Not, initially, from the rank and file of the Society for Music
+Theory, it must be admitted; and not even so obviously from the core
+of the AMS.  Maynard Solomon&rsquo;s profoundly stimulating biographical
+studies of Beethoven, Ives, Schubert, and Mozart suggest a remarkable
+contact with the fields of psychology and psychoanalysis.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Susan
+McClary&rsquo;s writings reflect her intensive involvement with feminist
+criticism in literary, film, and performance-artist studies.
+Lawrence Kramer&rsquo;s wonderfully provocative books each overtly draw on
+his expertise in postmodernist literary theory as an Associate
+Professor of English.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Carolyn Abbate brings a command of both
+literary theory and semiotics to her work in musical narrative.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> In
+other words, all four of these recently influential writers have
+devoted themselves to exhaustive interdisciplinary research.  And,
+though none of them has insisted that we should all do the same, they
+have, each in their own way, urged us&mdash;or, perhaps in the case of some
+of our members, shown that we have permission&mdash;to explore new, broader
+contexts for our analytic skills, and to think critically about the
+kinds of messages that music, music theory, and music analysis might
+transmit and embrace as cultural forces.
+</p>
+
+<p>[10] Whether or not the ideas of Solomon, McClary, Kramer, and Abbate
+have directly or even indirectly inspired the profusion of
+interdisciplinary, cultural, deconstructive, feminist, gender,
+sexuality, reception, popular, jazz, and rock studies in music since
+1991, we have certainly witnessed this outpouring, now emanating from
+the more central card-carrying ranks of musicology and music theory.
+Amongst musicologists, consider, for example, Jeffrey Kallberg&rsquo;s work
+on the rhetoric of genre and on the subject of sex in receptions of
+Chopin&rsquo;s music, or Kristina Muxfeldt&rsquo;s arduous documentary studies on
+the question of Schubert&rsquo;s sexuality.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> Note the coming-together of
+essays by musicologists <i>and</i> theorists&mdash;as if this distinction were
+really appropriate when describing Kofi Agawu, Susan McClary, James
+Webster, and Robert S. Winter&mdash;in the Commentary section within the
+1993 Special Issue of <i>19th-Century Music</i>, the issue entitled
+&ldquo;Schubert: Music, Sexuality, Culture.&rdquo;<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></p>
+
+<p>[11] From within the membership of our SMT, let&rsquo;s especially celebrate
+the individual contributions of Fred Everett Maus, Marion Guck, and
+Joseph Dubiel on such issues, among many, as masculine discourse in
+music theory, analytical fictions, and deconstruction.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Musicologist Ruth Solie&rsquo;s outspoken reading of Schumann&rsquo;s
+<i>Frauenliebe</i> songs, her critique of theorist Pieter van den Toorn&rsquo;s
+first publication about politics, feminism, and music theory, her
+leadership as editor of the collection <i>Musicology and Difference</i>,
+and her article on defining &ldquo;feminism&rdquo; in the first issue of the brand
+new journal <i>Women and Music</i> have all made a very big difference
+within our field.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> But then so have van den Toorn&rsquo;s responses to
+McClary, Treitler, Kerman, and Solie, in his ardent book-length
+defense of musical autonomy and technical analysis.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> Finally, we
+have, in the latest issue of <i>19th-Century Music</i>, Marianne
+Kielian-Gilbert&rsquo;s evocative meditation <i>a l&rsquo;ecriture feminine</i> on van
+den Toorn&rsquo;s ideas about immediacy and the aesthetic experience; with
+this work, we can sense that the text/context debate delicately rests
+at the base of a new plateau: the dialogue between McClary and van den
+Toorn that Marianne imaginatively construes augurs well for those of
+us who never understood in the first place why text and context should
+be in conflict.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup></p>
+
+<p>[12] It really does seem to me, in short, that the kinds of
+contributions I&rsquo;ve just mentioned have had a tremendously creative and
+liberating affect on our field; and there are so many other
+contributions I&rsquo;ve had to neglect.  It is of course absolutely
+essential to note, as Paula Higgins has done so emphatically,<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> that
+much excellent historical work on music by women had already appeared
+in the 1980s, well before McClary&rsquo;s earliest articles, and before the
+appearance of the 1987 collection <i>Music and Society: The Politics of
+Composition, Performance, and Reception</i>, which McClary edited along
+with Richard Leppert.  But Janet Wolff&rsquo;s lead article in this volume<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> seems to have struck on the topic&mdash;the ideology of autonomous
+art&mdash;that would become the Achilles&rsquo; heel of music theorists,
+eliciting genuine, explosive reactions both pro and con.  And, let&rsquo;s
+be frank, for a minority, yet substantial, membership within our
+society, &ldquo;permission&rdquo; in the form of encouragement to explode seems to
+have come as a welcome relief.
+</p>
+
+<p>[13] On the other hand, some might ask, Just what gave music theory
+permission <i>not</i> to address issues of social context for so long?  As
+a society and a field of inquiry, we&rsquo;ve not exactly played a
+leadership role here; and as the individual who stands before you
+right now, I&rsquo;m a good case in point.  But, for the very reason that I
+have not until now publicly entered the arena of feminist or
+postmodernist writings about music, I represent the majority of SMT
+members, while, at the same time&mdash;and I hope like others in my
+position&mdash;I&rsquo;ve been openly receptive to these issues.  From this
+perspective, perhaps I can claim to bring an unbesieged and
+undefensive enthusiasm for the postmodernist breakthroughs I think our
+field has made over the course of this last decade.  As your next SMT
+President, I feel obliged, moreover, to let you know where I stand.
+</p>
+
+<p>[14] Let me begin with several heartfelt tributes.  First, as one who
+has been and probably always will be intensely involved with matters
+of form in tonal music, I cannot thank Scott Burnham enough for having
+aspired to recontextualize A. B. Marx&rsquo;s gendering of sonata form in
+face of the embarrassingly superficial and misconstrued
+decontextualizations of Marx that have become a trademark of feminist
+critiques.  Burnham&rsquo;s thorough examination of Marx&rsquo;s views really
+ought to put to rest the going assumption that the Marxian sonata-form
+plot tells of the triumph of the &ldquo;masculine&rdquo; main theme in its
+subjugation of the &ldquo;feminine&rdquo; secondary theme.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> Let&rsquo;s also salute
+the 1996 SMT Awards Committee for having wasted no time in recognizing
+that Burnham&rsquo;s book <i>Beethoven Hero</i> superbly demonstrates how
+contemporary music theory and analysis can embrace the ever broader
+contexts of stylistic studies, reception history, history of theory,
+canon formation, and even ethical as well as aesthetic valuation.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> Burnham &ldquo;keeps the score&rdquo;: that is, he offers his own first-rate
+analytic insights about Beethoven&rsquo;s scores, both heroic and otherwise;
+but he insists that we critically contemplate his analyses, and those
+of others, in the light of the ideologies and myths about Beethoven
+that analyses can help to construct.
+</p>
+
+<p>[15] Second, let me note how fortunate we&rsquo;ve been that two of our most
+impressive leaders in the recent expansion of theoretical domains just
+happen to have been the two most recent Presidents of our SMT&mdash;Patrick
+McCreless and Joseph Straus.  Thanks to these two, and to the hard
+work of numerous volunteers, our society now has a Committee on
+Diversity and a Committee on Professional Development, with both of
+these serving as outreaches that have long been overdue.  Like
+McCreless, Joe Straus has artfully carried our discipline across the
+border into the land of literary theory; and, like Kevin Korsyn, but
+in vastly different ways, Straus has provoked some healthy anxiety
+about how Harold Bloom&rsquo;s theory of poetic influence might serve as yet
+another death threat to the notion of absolute music.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> Joe&rsquo;s
+anthology&mdash;<i>Music by Women for Study and Analysis</i> (1993)&mdash;and his
+1995 book on the music of Ruth Crawford Seeger place him at the
+forefront of theorists who are finally beginning to direct their
+analytic skills towards the recovery of music outside the canon by
+composers who happen to have been women.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup></p>
+
+<p>[16] Has the field of music theory really changed in profound ways
+over the last ten years?  Well, here&rsquo;s a small but significant sign:
+we&rsquo;ve certainly become more adept at avoiding third-person masculine
+pronouns.  And, even if we&rsquo;re not Charles Rosen, Edward T. Cone, or
+any other distinguished male writer, we might be less likely to expect
+that our journal editors will delete every one of our first persons.
+Speaking of distinguished persons, we <i>know</i> that our field has
+changed, and that it will always be capable of change, when we note
+that Allen Forte&mdash;our first SMT president, also known as the inventor
+of pitch-class set theory and the author of some of the most
+influential hard-core theoretical writings of the last thirty
+years&mdash;has recently published a book on the American popular ballad.
+For this extraordinarily diversified and versatile soul, it was no big
+deal to shift from pitch-class set genera and octatonicism to Kay
+Swift and Duke Ellington.  And it was just as easy for Allen then to
+turn to a book on the atonal music of Anton Webern.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup></p>
+
+<p>[17] Have the changes we&rsquo;ve seen really been beneficial?  You bet they
+have!  Like Allen Forte in particular, the field of music theory in
+general has recently expressed a remarkable new diversity; in doing
+so, it has found ways of achieving greater inclusiveness and
+generosity.  But what&rsquo;s so beneficial about that?  To say the obvious,
+every aspect of the world we live in&mdash;and that includes our musical
+world&mdash;has itself become more diverse.  How can we justify not
+responding to this simple fact of our professional and personal lives?
+Probably very much like all of you, I&rsquo;m currently teaching tonal
+theory to a class of young women and men from white, black, Asian,
+Indian, Hispanic, Philippine, and other backgrounds.  Some of these
+elementary theory students would recognize the opening of Beethoven&rsquo;s
+Third Symphony; some would not, but they may know a lot about rock
+music, jazz, or African drumming.  And, if they&rsquo;re interested in
+knowing more about nearly any culture on this planet, they can
+virtually surf over to check it out, through the mere flick of a
+finger or two online.  How can I ask these students to come with me on
+journeys into the realms of early chant or Purcell or Mozart or even
+Gershwin if I know nothing about the musical trips they might also
+want to be taking, or if I can&rsquo;t help them recognize the <i>differences</i>
+among styles and musical cultures that theory and analysis can help to
+articulate?  These same students may not be ready to tackle the
+sophisticated essays in that wonderfully forward-looking new
+collection <i>Concert Music, Rock, and Jazz Since 1945</i>, edited by
+Elizabeth West Marvin and Richard Hermann; but this collection was not
+meant so much for them as for the likes of me.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> Here, and with the
+many other new publications about popular, jazz, and rock music, not
+to mention new SMT sessions on these topics, are opportunities
+for all of us to expand the range of our knowledge, interests, and
+cultural concerns, or, for many SMT members, chances to return to the
+music they grew up with.  Though I won&rsquo;t be able to demonstrate Steven
+Block&rsquo;s analyses of &ldquo;Bemsha Swing&rdquo; to my tonal theory students next
+week, I can&rsquo;t wait to tell them that, for the first time ever, the
+lead article in the very latest issue of our house journal, <i>Music
+Theory Spectrum</i>, is Block&rsquo;s study of the transformation of a Bebop
+classic to free jazz.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup></p>
+
+<p>[18] In many of the recent writings and talks about popular, jazz,
+rock, and performance-artist repertoires, one senses that rare kind of
+enthusiasm arising first and foremost from a deep, personal
+involvement with the music.  The most exciting of these and other new
+studies seem to be the ones that take a cue from recent
+ethnomusicology: rather than simply transferring old analytic
+techniques to new styles, they seek new approaches from within those
+styles and the cultures that have produced them.  As always, however,
+it&rsquo;s the personal engagement and commitment that count the most; and
+this brings me back to the idea of &ldquo;keeping the score.&rdquo;
+</p>
+
+<p>[19] The field of music theory has been emphatically urged to branch
+out.  Perhaps we <i>can</i> see a case of Foucauldian institutional
+regulation in the pressure music departments now exhibit to hire tonal
+and atonal theorists who can also teach world music, jazz, rock, and
+music by women.  As one feminist has privately put it to me, a
+feminist victory will truly have been achieved on the day when jobs
+and tenure for women musicologists and theorists do not depend on
+their ability to teach courses about women in music, so that the
+&ldquo;really good&rdquo; music&mdash;by men&mdash;can be taught by the men.  But
+institutional, societal, or peer pressures tend, in the long run, to
+be the least effective motivation for personal change; our individual
+efforts to branch out will count for little unless they come from the
+heart.
+</p>
+
+<p>[20] Finally, I&rsquo;ll maintain that we theorists have not only the right
+but the obligation to &ldquo;keep the score&rdquo;; that is, we should never feel
+the need to apologize for our interest in close readings of musical
+scores, nor should we have to justify our love of musical details, our
+endless fascination with compositional craft and musical coherence.
+There is one very obvious reason why music theory, by contrast with
+our sister disciplines musicology and ethnomusicology, has been
+historically, perhaps even definitively, bound to the musical score:
+to theorists has fallen the task of music pedagogy; and this domain
+will most likely always include the teaching of how to read, hear, and
+attempt to interpret Western score notation.  But there are some other
+good reasons why the music text cannot be abandoned.  I&rsquo;m surely not
+the only one who has sometimes resisted feminist and postmodernist
+music criticism for the simple reason that the argument at hand has
+rested on what seem like superficial and unconvincing, if not
+downright inaccurate, music analyses.  Even if we have fully come to
+accept the truism that analyses, and the interpretations they yield,
+are nothing more, or less, than documents of what we hear, what you
+and I hear will always be somewhat different, and the distinct details
+we choose for describing our individual responses will inevitably
+yield different interpretations, both musical and cultural.  If
+theorists must continue to take collective pedagogical responsibility
+for the development of aural, score-reading, and interpretative
+musical skills, as well as responsibility for the exercise of
+self-criticism, historical knowledge, and good judgment in the
+preparation of analytic interpretations, then we theorists are
+beholden more than ever before to work together with our colleagues in
+musicology in the training of those young people who will perhaps be
+addressing our societies ten years from now.  Yet another
+extraordinary series of changes may well be our topic at the SMT
+celebration in the year 2007; but I both hope and expect that we will
+still be talking about the texts of music&mdash;that we will still feel
+free to cherish and keep close to the score.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Janet Schmalfeldt<br>
+	Tufts University<br>Department of Music<br>20 Professors Row<br>Medford, MA 02155<br><a href="mailto:jschmalf@emerald.tufts.edu">jschmalf@emerald.tufts.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Subsequently published by Maynard Solomon as &ldquo;Franz Schubert and
+the Peacocks of Benvenuto Cellini,&rdquo; <i>19th-Century Music</i> 12.3 (1989):
+193&ndash;206.  See also Solomon&rsquo;s &ldquo;Franz Schubert&rsquo;s &lsquo;My Dream&rsquo;,&rdquo; <i>American
+Imago</i> 38 (1981): 137&ndash;54.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Susan McClary, <i>Feminine Endings: Music, Gender, and Sexuality</i>
+(Minneapolis: University of Minnesota Press, 1991).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> McClary, &ldquo;Terminal Prestige: The Case of Avant-Garde Music
+Composition,&rdquo; <i>Cultural Critique</i> 12 (1989), republished in <i>Keeping
+Score: Music, Disciplinarity, Culture</i>, ed. David Schwarz, Anahid
+Kassabian, and Lawrence Siegel (Charlottesville: University of
+Virginia Press, 1997), 64.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Patrick McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; in
+<i>Keeping Score</i>, 21, passim.  See also, for example, Carl Dahlhaus,
+<i>The Idea of Absolute Music</i>, trans. Roger Lustig (Chicago: University
+of Chicago Press, 1989; orig. pub. as <i>Die Idee der absoluten Musik</i>
+[Kassel: Baerenreiter, 1978]); Janet Schmalfeldt, &ldquo;Form as the Process
+of Becoming: The Beethoven-Hegelian Tradition and &lsquo;Tempest&rsquo; Sonata,&rdquo;
+<i>Beethoven Forum</i> 4 (1995): 37&ndash;71.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; 31&ndash;32.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Joseph Kerman, &ldquo;How We Got into Analysis, and How We Can Get Out,&rdquo;
+<i>Critical Inquiry</i> 7 (1980): 311&ndash;31; Leo Treitler, &ldquo;To Worship That
+Celestial Sound: Motives for Analysis,&rdquo; <i>Journal of Musicology</i> 1
+(1982): 153&ndash;70 (reprinted in his <i>Music and the Historical
+Imagination</i> [Cambridge, Mass: Harvard University Press, 1989] as
+chap. 2).  See also Kerman&rsquo;s <i>Contemplating Music</i> (Cambridge, M.A.:
+Harvard University Press, 1985), chap. 3: &ldquo;Analysis, Theory, and New
+Music.&rdquo;<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; 16.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Ibid.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Richard Rorty, <i>Contingency, Irony, and Solidarity</i> (Cambridge:
+Cambridge University Press, 1989).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Milton Babbitt, <i>Words about Music</i>, ed. Stephen Dembski and
+Joseph N.  Straus (Madison: University of Wisconsin Press, 1987), 121.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Solomon, <i>Beethoven</i> (New York: Schirmer Books, 1977); <i>Beethoven
+Essays</i> (Cambridge, MA: Harvard University Press, 1988); &ldquo;Charles
+Ives: Some Questions of Veracity,&rdquo; <i>Journal of the American
+Musicological Society</i> 40 (1987): 466&ndash;69; <i>Mozart: A Life</i> (New York:
+HarperCollins, 1995).  See also note 1.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Lawrence Kramer, <i>Music and Poetry: The Nineteenth Century and
+After</i> (Berkeley and Los Angeles: University of California Press,
+1984); <i>Music and Cultural Practice, 1800&ndash;1900</i> (Berkeley and Los
+Angeles, University of California Press, 1990); <i>Classical Music and
+Postmodern Knowledge</i> (Berkeley and Los Angeles: University of
+California Press, 1995).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Carolyn Abbate, <i>Unsung Voices: Opera and Musical Narrative in the
+Nineteenth Century</i> (Princeton: Princeton University Press, 1991).<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Jeffrey Kallberg, &ldquo;The Rhetoric of Genre: Chopin&rsquo;s Nocturne in G
+Minor,&rdquo; <i>19th-Century Music</i> 11.3 (1988): 238&ndash;61; Kallberg, &ldquo;Small
+Fairy Voices: Sex, History and Meaning in Chopin,&rdquo; in <i>Chopin Studies</i>
+2, ed. John Rink and Jim Samson, 50&ndash;71 (Cambridge: Cambridge
+University Press, 1994); Kristina Muxfeldt, &ldquo;Political Crimes and
+Liberty, or Why Would Schubert Eat a Peacock?,&rdquo; <i>19th-Century Music</i>
+17 (1993): 47&ndash;64; Muxfeldt, &ldquo;Schubert, Platen, and the Myth of
+Narcissus,&rdquo; <i>Journal of the American Musicological Society</i> 49.3
+(1996): 480&ndash;527.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Kofi Agawu, &ldquo;Schubert&rsquo;s Sexuality: A Prescription for Analysis?&rdquo;;
+McClary, &ldquo;Music and Sexuality: On the Steblin/Solomon Debate&rdquo;; James
+Webster, &ldquo;Music, Pathology, Sexuality, Beethoven, Schubert&rdquo;; and
+Robert S.  Winter, &ldquo;Whose Schubert?,&rdquo; in <i>19th-Century Music</i> 17.1
+(1993): Special Issue, ed. Lawrence Kramer, 79&ndash;101.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Fred Everett Maus, &ldquo;Masculine Discourse in Music Theory,&rdquo;
+<i>Perspectives of New Music</i> 31.2 (1993): 264&ndash;93; Marion Guck,
+&ldquo;Analytical Fictions,&rdquo; <i>Music Theory Spectrum</i> 16.2 (1994): 217&ndash;30;
+Joseph Dubiel, &ldquo;On Getting Deconstructed,&rdquo; <i>Music Theory Online</i> 2.2
+(1996).<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Ruth A. Solie, &ldquo;Whose Life?  The Gendered Self in Schumann&rsquo;s
+<i>Frauenliebe</i> Songs,&rdquo; in <i>Music and Text: Critical Inquiries</i>,
+ed. Steven Paul Scher (Cambridge: Cambridge University Press, 1992),
+219&ndash;40; &ldquo;What Do Feminists Want? A Reply to Pieter van den Toorn,&rdquo;
+<i>Journal of Musicology</i> 9 (1991): 399&ndash;410; Solie, ed., <i>Musicology and
+Difference: Gender and Sexuality in Music Scholarship</i> (Berkeley and
+Los Angeles: University of California Press, 1993); &ldquo;Defining
+&lsquo;Feminism&rsquo;: Conundrums, Context, Communities,&rdquo; <i>Women and Music: A
+Journal of Gender and Culture</i> 1 (1997); Pieter van den Toorn,
+&ldquo;Politics, Feminism, and Contemporary Music Theory,&rdquo; <i>Journal of
+Musicology</i> 9 (1991): 275&ndash;99.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> van den Toorn, <i>Music, Politics, and the Academy</i> (Berkeley and
+Los Angeles: University of California Press, 1995).<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Marianne Kielian-Gilbert, &ldquo;Invoking Motives and Immediacy: Foils
+and Contexts for Pieter C. van den Toorn&rsquo;s <i>Music, Politics, and the
+Academy</i>,&rdquo; <i>19th-Century Music</i> 20.3 (1997): 253&ndash;78.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Paul Higgins, &ldquo;Women in Music, Feminist Criticism, and Guerrilla
+Musicology: Reflections on Recent Polemics,&rdquo; <i>19th-Century Music</i> 17.2
+(1993): 174&ndash;92.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Janet Wolff, &ldquo;Forward: The Ideology of Autonomous Art,&rdquo; in <i>Music
+and Society: The Politics of Composition, Performance and Reception</i>,
+ed.  Richard Leppert and Susan McClary (Cambridge: Cambridge
+University Press, 1987), 1&ndash;12.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Scott Burnham, &ldquo;A. B. Marx and the Gendering of Sonata Form,&rdquo; in
+<i>Music Theory in the Age of Romanticism</i>, ed. Ian Bent, (Cambridge:
+Cambridge University Press, 1996), 163&ndash;86.  See, for example, McClary,
+<i>Feminine Endings</i>, 69 and 13&ndash;17.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Burnham, <i>Beethoven Hero</i> (Princeton, N.J.: Princeton University
+Press, 1995).<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> See Joseph N. Straus, <i>Remaking the Past: Musical Modernism and
+the Influence of the Tonal Tradition</i> (Cambridge, M.A.: Harvard
+University Press, 1990); and Kevin Korsyn, &ldquo;Towards a New Poetics of
+Musical Influence,&rdquo; <i>Music Analysis</i> 10.1&ndash;2 (1991): 3&ndash;72.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Straus, ed., <i>Music by Women for Study and Analysis</i> (Englewood
+Cliffs, N.J.: Prentice Hall, 1993); <i>The Music of Ruth Crawford
+Seeger</i> (Cambridge: Cambridge University Press, 1995).<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Allen Forte, <i>The American Popular Ballad of the Golden Era, 
+1924&ndash;1950</i> (Princeton: Princeton University Press, 1995); <i>The Atonal Music
+of Anton Webern</i> (New Haven: Yale University Press, forthcoming,
+Spring 1998).<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> Elizabeth West Marvin and Richard Hermann, eds., <i>Concert Music,
+Rock, and Jazz Since 1945: Essays and Analytical Studies</i> (Rochester,
+N.Y.: University of Rochester Press, 1995).<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Steven Block, &ldquo;&lsquo;Bemsha Swing&rsquo;: The Transformation of a Bebop
+Classic to Free Jazz,&rdquo; <i>Music Theory Spectrum</i> 19.2 (1997): 206&ndash;231.<br><a href="#FN28REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Subsequently published by Maynard Solomon as &ldquo;Franz Schubert and
+the Peacocks of Benvenuto Cellini,&rdquo; <i>19th-Century Music</i> 12.3 (1989):
+193&ndash;206.  See also Solomon&rsquo;s &ldquo;Franz Schubert&rsquo;s &lsquo;My Dream&rsquo;,&rdquo; <i>American
+Imago</i> 38 (1981): 137&ndash;54.</div><div id="fndiv2" class="flyoverdiv">Susan McClary, <i>Feminine Endings: Music, Gender, and Sexuality</i>
+(Minneapolis: University of Minnesota Press, 1991).</div><div id="fndiv3" class="flyoverdiv">McClary, &ldquo;Terminal Prestige: The Case of Avant-Garde Music
+Composition,&rdquo; <i>Cultural Critique</i> 12 (1989), republished in <i>Keeping
+Score: Music, Disciplinarity, Culture</i>, ed. David Schwarz, Anahid
+Kassabian, and Lawrence Siegel (Charlottesville: University of
+Virginia Press, 1997), 64.</div><div id="fndiv4" class="flyoverdiv">Patrick McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; in
+<i>Keeping Score</i>, 21, passim.  See also, for example, Carl Dahlhaus,
+<i>The Idea of Absolute Music</i>, trans. Roger Lustig (Chicago: University
+of Chicago Press, 1989; orig. pub. as <i>Die Idee der absoluten Musik</i>
+[Kassel: Baerenreiter, 1978]); Janet Schmalfeldt, &ldquo;Form as the Process
+of Becoming: The Beethoven-Hegelian Tradition and &lsquo;Tempest&rsquo; Sonata,&rdquo;
+<i>Beethoven Forum</i> 4 (1995): 37&ndash;71.</div><div id="fndiv5" class="flyoverdiv">McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; 31&ndash;32.</div><div id="fndiv6" class="flyoverdiv">Joseph Kerman, &ldquo;How We Got into Analysis, and How We Can Get Out,&rdquo;
+<i>Critical Inquiry</i> 7 (1980): 311&ndash;31; Leo Treitler, &ldquo;To Worship That
+Celestial Sound: Motives for Analysis,&rdquo; <i>Journal of Musicology</i> 1
+(1982): 153&ndash;70 (reprinted in his <i>Music and the Historical
+Imagination</i> [Cambridge, Mass: Harvard University Press, 1989] as
+chap. 2).  See also Kerman&rsquo;s <i>Contemplating Music</i> (Cambridge, M.A.:
+Harvard University Press, 1985), chap. 3: &ldquo;Analysis, Theory, and New
+Music.&rdquo;</div><div id="fndiv7" class="flyoverdiv">McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; 16.</div><div id="fndiv8" class="flyoverdiv">Ibid.</div><div id="fndiv9" class="flyoverdiv">Richard Rorty, <i>Contingency, Irony, and Solidarity</i> (Cambridge:
+Cambridge University Press, 1989).</div><div id="fndiv10" class="flyoverdiv">Milton Babbitt, <i>Words about Music</i>, ed. Stephen Dembski and
+Joseph N.  Straus (Madison: University of Wisconsin Press, 1987), 121.</div><div id="fndiv11" class="flyoverdiv">Solomon, <i>Beethoven</i> (New York: Schirmer Books, 1977); <i>Beethoven
+Essays</i> (Cambridge, MA: Harvard University Press, 1988); &ldquo;Charles
+Ives: Some Questions of Veracity,&rdquo; <i>Journal of the American
+Musicological Society</i> 40 (1987): 466&ndash;69; <i>Mozart: A Life</i> (New York:
+HarperCollins, 1995).  See also note 1.</div><div id="fndiv12" class="flyoverdiv">Lawrence Kramer, <i>Music and Poetry: The Nineteenth Century and
+After</i> (Berkeley and Los Angeles: University of California Press,
+1984); <i>Music and Cultural Practice, 1800&ndash;1900</i> (Berkeley and Los
+Angeles, University of California Press, 1990); <i>Classical Music and
+Postmodern Knowledge</i> (Berkeley and Los Angeles: University of
+California Press, 1995).</div><div id="fndiv13" class="flyoverdiv">Carolyn Abbate, <i>Unsung Voices: Opera and Musical Narrative in the
+Nineteenth Century</i> (Princeton: Princeton University Press, 1991).</div><div id="fndiv14" class="flyoverdiv">Jeffrey Kallberg, &ldquo;The Rhetoric of Genre: Chopin&rsquo;s Nocturne in G
+Minor,&rdquo; <i>19th-Century Music</i> 11.3 (1988): 238&ndash;61; Kallberg, &ldquo;Small
+Fairy Voices: Sex, History and Meaning in Chopin,&rdquo; in <i>Chopin Studies</i>
+2, ed. John Rink and Jim Samson, 50&ndash;71 (Cambridge: Cambridge
+University Press, 1994); Kristina Muxfeldt, &ldquo;Political Crimes and
+Liberty, or Why Would Schubert Eat a Peacock?,&rdquo; <i>19th-Century Music</i>
+17 (1993): 47&ndash;64; Muxfeldt, &ldquo;Schubert, Platen, and the Myth of
+Narcissus,&rdquo; <i>Journal of the American Musicological Society</i> 49.3
+(1996): 480&ndash;527.</div><div id="fndiv15" class="flyoverdiv">Kofi Agawu, &ldquo;Schubert&rsquo;s Sexuality: A Prescription for Analysis?&rdquo;;
+McClary, &ldquo;Music and Sexuality: On the Steblin/Solomon Debate&rdquo;; James
+Webster, &ldquo;Music, Pathology, Sexuality, Beethoven, Schubert&rdquo;; and
+Robert S.  Winter, &ldquo;Whose Schubert?,&rdquo; in <i>19th-Century Music</i> 17.1
+(1993): Special Issue, ed. Lawrence Kramer, 79&ndash;101.</div><div id="fndiv16" class="flyoverdiv">Fred Everett Maus, &ldquo;Masculine Discourse in Music Theory,&rdquo;
+<i>Perspectives of New Music</i> 31.2 (1993): 264&ndash;93; Marion Guck,
+&ldquo;Analytical Fictions,&rdquo; <i>Music Theory Spectrum</i> 16.2 (1994): 217&ndash;30;
+Joseph Dubiel, &ldquo;On Getting Deconstructed,&rdquo; <i>Music Theory Online</i> 2.2
+(1996).</div><div id="fndiv17" class="flyoverdiv">Ruth A. Solie, &ldquo;Whose Life?  The Gendered Self in Schumann&rsquo;s
+<i>Frauenliebe</i> Songs,&rdquo; in <i>Music and Text: Critical Inquiries</i>,
+ed. Steven Paul Scher (Cambridge: Cambridge University Press, 1992),
+219&ndash;40; &ldquo;What Do Feminists Want? A Reply to Pieter van den Toorn,&rdquo;
+<i>Journal of Musicology</i> 9 (1991): 399&ndash;410; Solie, ed., <i>Musicology and
+Difference: Gender and Sexuality in Music Scholarship</i> (Berkeley and
+Los Angeles: University of California Press, 1993); &ldquo;Defining
+&lsquo;Feminism&rsquo;: Conundrums, Context, Communities,&rdquo; <i>Women and Music: A
+Journal of Gender and Culture</i> 1 (1997); Pieter van den Toorn,
+&ldquo;Politics, Feminism, and Contemporary Music Theory,&rdquo; <i>Journal of
+Musicology</i> 9 (1991): 275&ndash;99.</div><div id="fndiv18" class="flyoverdiv">van den Toorn, <i>Music, Politics, and the Academy</i> (Berkeley and
+Los Angeles: University of California Press, 1995).</div><div id="fndiv19" class="flyoverdiv">Marianne Kielian-Gilbert, &ldquo;Invoking Motives and Immediacy: Foils
+and Contexts for Pieter C. van den Toorn&rsquo;s <i>Music, Politics, and the
+Academy</i>,&rdquo; <i>19th-Century Music</i> 20.3 (1997): 253&ndash;78.</div><div id="fndiv20" class="flyoverdiv">Paul Higgins, &ldquo;Women in Music, Feminist Criticism, and Guerrilla
+Musicology: Reflections on Recent Polemics,&rdquo; <i>19th-Century Music</i> 17.2
+(1993): 174&ndash;92.</div><div id="fndiv21" class="flyoverdiv">Janet Wolff, &ldquo;Forward: The Ideology of Autonomous Art,&rdquo; in <i>Music
+and Society: The Politics of Composition, Performance and Reception</i>,
+ed.  Richard Leppert and Susan McClary (Cambridge: Cambridge
+University Press, 1987), 1&ndash;12.</div><div id="fndiv22" class="flyoverdiv">Scott Burnham, &ldquo;A. B. Marx and the Gendering of Sonata Form,&rdquo; in
+<i>Music Theory in the Age of Romanticism</i>, ed. Ian Bent, (Cambridge:
+Cambridge University Press, 1996), 163&ndash;86.  See, for example, McClary,
+<i>Feminine Endings</i>, 69 and 13&ndash;17.</div><div id="fndiv23" class="flyoverdiv">Burnham, <i>Beethoven Hero</i> (Princeton, N.J.: Princeton University
+Press, 1995).</div><div id="fndiv24" class="flyoverdiv">See Joseph N. Straus, <i>Remaking the Past: Musical Modernism and
+the Influence of the Tonal Tradition</i> (Cambridge, M.A.: Harvard
+University Press, 1990); and Kevin Korsyn, &ldquo;Towards a New Poetics of
+Musical Influence,&rdquo; <i>Music Analysis</i> 10.1&ndash;2 (1991): 3&ndash;72.</div><div id="fndiv25" class="flyoverdiv">Straus, ed., <i>Music by Women for Study and Analysis</i> (Englewood
+Cliffs, N.J.: Prentice Hall, 1993); <i>The Music of Ruth Crawford
+Seeger</i> (Cambridge: Cambridge University Press, 1995).</div><div id="fndiv26" class="flyoverdiv">Allen Forte, <i>The American Popular Ballad of the Golden Era, 
+1924&ndash;1950</i> (Princeton: Princeton University Press, 1995); <i>The Atonal Music
+of Anton Webern</i> (New Haven: Yale University Press, forthcoming,
+Spring 1998).</div><div id="fndiv27" class="flyoverdiv">Elizabeth West Marvin and Richard Hermann, eds., <i>Concert Music,
+Rock, and Jazz Since 1945: Essays and Analytical Studies</i> (Rochester,
+N.Y.: University of Rochester Press, 1995).</div><div id="fndiv28" class="flyoverdiv">Steven Block, &ldquo;&lsquo;Bemsha Swing&rsquo;: The Transformation of a Bebop
+Classic to Free Jazz,&rdquo; <i>Music Theory Spectrum</i> 19.2 (1997): 206&ndash;231.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1998 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

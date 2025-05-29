@@ -1,0 +1,1077 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 1.5: Robison, Category Structures and Fuzzy Sets</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Category Structures and Fuzzy Sets">
+
+    <meta name="citation_author" content="Robison, Brian">
+      
+
+<meta name="citation_publication_date" content="1995/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="1">
+<meta name="citation_issue" content="5">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Category Structures and Fuzzy Sets
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.95.1.5/mto.95.1.5.robison.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Brian Robison</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.95.1.4/mto.95.1.4.zbikowski.html">http://www.mtosmt.org/issues/mto.95.1.4/mto.95.1.4.zbikowski.html</a></font></p><p><font size='4'>KEYWORDS: Bruckner, Zbikowski, fuzzy sets, fuzzy algorithms</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.95.1.5/mto.95.1.5.robison.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 1, Number 5, September 1995 <br> Copyright &#0169; 1995 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Prior to his examination of the categorical structure of the first
+main theme in the first movement of Bruckner&rsquo;s Sixth Symphony,
+Lawrence Zbikowski comments that &ldquo;The complexity of the phenomenon of
+typicality may be one reason Zadeh&rsquo;s theory of fuzzy sets<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> has met
+with only limited success in characterizing the structure of Type 1
+categories.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> The following look at Prof. Zbikowski&rsquo;s analysis
+highlights (in a non-technical manner) those aspects of it which lend
+themselves more readily to &ldquo;fuzzy&rdquo; rather than &ldquo;crisp&rdquo; models, the
+complexity of their interaction notwithstanding.  In particular, I
+focus on the problems of describing formally those intuitions which
+enable us to associate different musical phrases in order to group
+them as members of the same category.</p>
+
+<p>[2] For the benefit of those persons unacquainted with fuzzy sets,
+algorithms, arithmetic, measures, etc., I'd like to emphasize that I
+use the word &ldquo;fuzzy&rdquo; as a connotationally neutral term which refers
+simply to matters of &ldquo;to what degree?&rdquo; (graded membership) rather than
+&ldquo;yes, or no?&rdquo;  (exclusive membership).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Whenever I refer below to
+aspects of &ldquo;fuzziness&rdquo; in Zbikowski&rsquo;s analysis, I'm <i>not</i> using the
+word in its colloquial, pejorative sense, to criticize the vague
+handling of ideas which one ought to render precisely.  Rather, I
+elaborate on various points where, implicitly or explicitly, he
+touches on the intrinsically imprecise character of certain musical
+ideas.  Thus, I'm not taking issue with his analysis; on the contrary,
+I merely offer observations geared toward an appropriate formalization
+of some of the comparatively informal insights which he offers (all of
+which I believe to be valid).</p>
+
+<p>[3] At first glance, Zbikowski seems to be dealing with a classic
+fuzzy set: for elements in a universe of &ldquo;crisply&rdquo; defined segments of
+the Bruckner, he tests for membership in the set of <i>typical</i>
+instances of the first theme.  The set is fuzzy because it admits
+degrees of membership: we don't ask simply</p>
+
+
+<blockquote>&ldquo;<i>Is</i> this a typical instance of the first theme (or not)?&rdquo;,
+</blockquote>
+but rather,<p>
+
+
+  <blockquote>&ldquo;<i>To what degree</i> is this instance of the first
+  theme typical?&rdquo;</blockquote>
+
+
+<p>Accordingly, Zbikowski ranks these instances: taking measures 2&ndash;6 as
+typical, measures 8&ndash;12 are &ldquo;somewhat less typical&rdquo;<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>, measures 26&ndash;28 and 32&ndash;34
+are &ldquo;even less typical,&rdquo;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> and so on.  It&rsquo;s a simple step to
+formalize these rankings by translating them into membership values
+between 0 and 1, which reflect not only their relative order but the
+subjective distances among them as well.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+
+
+<p>[4] However, as Zbikowski points out, the process by which we assign
+these degrees of membership is anything but linear.  Discussing the
+fragmentary gestures in measures 35&ndash;36, he notes that our judgments of
+typicality are not simple tallies of the numbers of structural
+propositions met (and the degree to which a musical segment fulfills
+them).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Instead, some propositions may carry more weight than
+others, such as his P4, by which texture can signal thematic
+potential, and these relative weights may well vary according to
+context.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Such factors suggest fuzzy algorithms<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> to model our
+intuitive calculations of typicality, for example:</p>
+
+
+<blockquote>  &ldquo;If the texture is <i>highly</i> complex, then
+  assign <i>much less</i> weight to correspondences
+  of rhythm and contour.&rdquo;<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></blockquote>
+
+<p>[5] Additionally, examination of the structural propositions reveals
+varying degrees of specificity.  Consider Zbikowski&rsquo;s P3, which
+describes the contour of the theme&rsquo;s first statement.  As Zbikowski
+compares it to subsequent statements, many of the contours stated as
+specific (chromatic) intervals seem better served by generic
+(diatonic) intervals, as in his Figure 1:</p>
+
+<p>
+<table>
+	<tr>
+		<td colspan="11">specific intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 2&ndash;6:</td>
+		<td>0</td>
+		<td>-7</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+8</td>
+		<td>-1</td>
+	</tr>      
+	<tr>
+		<td>mm. 8&ndash;12:</td>
+		<td>+1</td>
+		<td>-7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>+1</td>
+		<td>+7</td>
+		<td>+1</td>
+	</tr>
+</table></p>
+
+<p>
+<table>
+	<tr>
+		<td colspan="11">generic intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 2&ndash;6:</td>
+		<td>0</td>
+		<td>-4</td>
+		<td>-1</td>
+		<td>+1</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-1</td>
+		<td>+1</td>
+		<td>+5</td>
+		<td>-1</td>
+	</tr>
+	<tr> 
+		<td>mm. 8&ndash;12:</td>
+		<td>+1</td>
+		<td>-4</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-1</td>
+		<td>+1</td>
+		<td>+1</td>
+		<td>&ldquo;0&rdquo;</td>
+		<td>+4</td>
+		<td>+1</td>
+	</tr>
+</table>
+</p>
+
+<p>[6] But though these generic intervals clarify the diatonically
+precise inverse relation of the underlined segments, they fail to
+convey other essential information: the directed specific interval of
+-7 between the first two structural tones (Zbikowski&rsquo;s P2), the
+semitone at the very end, and the presence of a semitone in the turn
+figure, the absence of which, as Zbikowski mentions, diminishes the
+typicality of the statements in measures 159&ndash;66.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Furthermore, one is
+left with the task of accounting for the discrepancies between the
+first, eighth, and ninth intervals of the two series: are we to admit
+any &ldquo;off-by-one&rdquo; surrogate as an acceptably similar variant?  If so,
+are we to admit any number of such surrogates, or is there a point at
+which the accumulated alterations would disrupt our sense of
+parallelism?  In his pursuit of larger issues, Zbikowski declines to
+treat these details, yet they are decidedly nontrivial in the creation
+of an explicit formalization.</p>
+
+<p>[7] So, in addition to (<i>not</i> &ldquo;instead of&rdquo;) Zbikowski&rsquo;s P3, we might
+propose a slightly more general (and thus more robust) version of the
+theme&rsquo;s contour:</p>
+
+<p>
+        P3&prime;a) the theme contains four structural notes,</p>
+<p>
+
+        P3&prime;b) the first (preceded by a sixteenth-note
+                pickup) descends to the second by a
+                perfect fifth,</p>
+<p>
+
+        P3&prime;c) a stepwise diatonic turn figure
+                (incorporating a semitone) embellishes
+                the second structural note, proceeding
+                to the third,</p>
+<p>
+
+        P3&prime;d) the theme then ascends by leap to the
+                penultimate note, which neighbors the
+                final one (i.e. the fourth structural
+                note) by a semitone.</p>
+                
+<p>[8] Like Zbikowski&rsquo;s original P3, this new description (P3&prime;) of the
+theme&rsquo;s initial contour doesn't rely on a specification of scale step.
+However, P3&prime; incorporates both more and less detail: more, in that it
+invokes a local diatonic frame of reference and (implicitly)
+considerations of harmony (structural and embellishing tones); less,
+in that it doesn't specify the interval of the pickup in P3&prime;b, the
+direction of the turn in P3&prime;c, nor the size of the leap in P3&prime;d.  I
+offer P3&prime; as a version of how one might generalize from Zbikowski&rsquo;s P3
+after hearing measures 8&ndash;12: measures 2&ndash;6 are still <i>more</i> typical, but P3&prime;
+subsumes the points by which the second statement deviates from the
+first.  The modified description thus captures somewhat more
+explicitly the ways in which the statement of measures 8&ndash;12 is more typical
+than some of the subsequent variants, but without taking on the full
+complications of a &ldquo;binary basis for typicality.&rdquo;<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Furthermore, it
+does so in a way that distinguishes among the various stepwise
+motions: some are intrinsic to the theme&rsquo;s schematic contour, while
+others appear as the results of local harmonic changes.
+</p>
+
+<p>[9] The utility of such vague terms as &ldquo;leap&rdquo; becomes apparent when we
+consider the thematic variants beginning in measures 159&ndash;62.  Again, a
+comparison based on directed specific intervals (Zbikowski&rsquo;s Fig. 2)
+seems to indicate as many differences as similarities:</p>
+
+<table>
+	<tr>
+		<td colspan="11">specific intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 2&ndash;6:</td>
+		<td>0</td>
+		<td>-7</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+8</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+12</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-3</td>
+		<td>+3</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-9</td>
+		<td>+1</td>
+	</tr>
+</table>
+
+<p>
+
+Although Zbikowski describes the relation between the contours of
+measures 2&ndash;6 and measures 159&ndash;62 as an &ldquo;exact mirror&rdquo;<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>, we see from the
+specific intervals that the only &ldquo;exact&rdquo; aspect of mirroring is with
+regard to interval <i>direction</i>, not size.  Again, conversion to
+diatonic intervals doesn't resolve all discrepancies:
+</p>
+
+<table>
+	<tr>
+		<td colspan="11">generic intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 2&ndash;6:</td>
+		<td>0</td>
+		<td>-4</td>
+		<td>-1</td>
+		<td>+1</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-1</td>
+		<td>+1</td>
+		<td>+5</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-5</td>
+		<td>&ldquo;0&rdquo;</td>
+	</tr>
+</table>
+
+<p>
+How, then, can we model the intuition of an &ldquo;exact mirror&rdquo;?  One
+answer lies on a still greater level of generalization, in a
+distinction between large (L) and small (s) intervals--or,
+colloquially, between (L)eap and (s)tep-or-(s)kip:<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<table>
+	<tr>
+		<td colspan="11">fuzzy-generic intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 2&ndash;6:</td>
+		<td>0</td>
+		<td>-L</td>
+		<td>-s1</td>
+		<td>+s1</td>
+		<td>+s2</td>
+		<td>-s2</td>
+		<td>-s1</td>
+		<td>+s1</td>
+		<td>+L</td>
+		<td>-s</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-L</td>
+		<td>+s</td>
+	</tr>
+</table>
+
+<p>
+The designations &ldquo;s1&rdquo; and &ldquo;s2&rdquo; (ideally with subscripted numerals)
+provide a simple but flexible means to preserve the turn&rsquo;s diatonic
+character: that is, although the specific manifestations of s1 and s2
+may vary among theme statements, they must adhere to fixed intervals
+within a single statement.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></p>
+
+<p>[10] Not surprisingly, the variants in measures 163&ndash;82 require further
+adjustment to our description:
+</p>
+
+<p>
+<table>
+	<tr>
+		<td colspan="11">specific intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+12</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-3</td>
+		<td>+3</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-9</td>
+		<td>+1</td>
+	</tr>
+	<tr>
+		<td>mm. 163&ndash;66:</td>
+		<td>0</td>
+		<td>+12</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-3</td>
+		<td>+3</td>
+		<td>+3</td>
+		<td>-1</td>
+		<td>-11</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 167&ndash;70:</td>
+		<td>0</td>
+		<td>+12</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-4</td>
+		<td>+4</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-7</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 171&ndash;74:</td>
+		<td>0</td>
+		<td>+12</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-4</td>
+		<td>+4</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-7</td>
+		<td>+5</td>
+	</tr>
+	<tr>
+		<td>mm. 175&ndash;78:</td>
+		<td>0</td>
+		<td>+12</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-3</td>
+		<td>+3</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-9</td>
+		<td>+1</td>
+	</tr>
+	<tr>
+		<td>mm. 179&ndash;82:</td>
+		<td>0</td>
+		<td>+12</td>
+		<td>+2</td>
+		<td>-2</td>
+		<td>-3</td>
+		<td>+3</td>
+		<td>+2</td>
+		<td>-1</td>
+		<td>-9</td>
+		<td>+1</td>
+	</tr>
+</table>
+</p>
+
+<p>
+<table>
+	<tr>
+		<td colspan="11">generic intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-5</td>
+		<td>&ldquo;0&rdquo;</td>
+	</tr>
+	<tr>
+		<td>mm. 163&ndash;66:</td>
+		<td>0</td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+2</td>
+		<td>-1</td>
+		<td>-6</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 167&ndash;70:</td>
+		<td>0</td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-4</td>
+		<td>-1</td>
+	</tr>
+	<tr>
+		<td>mm. 171&ndash;74:</td>
+		<td>0</td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-4</td>
+		<td>+3</td>
+	</tr>
+	<tr>
+		<td>mm. 175&ndash;78:</td>
+		<td>0</td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-5</td>
+		<td>&ldquo;0&rdquo;</td>
+	</tr>
+	<tr>
+		<td>mm. 179&ndash;82:</td>
+		<td>0</td>
+		<td>+7</td>
+		<td>+1</td>
+		<td>-1</td>
+		<td>-2</td>
+		<td>+2</td>
+		<td>+1</td>
+		<td>&ldquo;0&rdquo;</td>
+		<td>-6</td>
+		<td>+1</td>
+	</tr>
+</table>
+</p>
+
+<p>
+<table>
+	<tr>
+		<td colspan="11">fuzzy-generic intervals:</td>
+	</tr>
+	<tr>
+		<td>mm. 159&ndash;62:</td>
+		<td></td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-L</td>
+		<td>+s</td>
+	</tr>
+	<tr>
+		<td>mm. 163&ndash;66:</td>
+		<td>0</td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s2</td>
+		<td>-s</td>
+		<td>-L</td>
+		<td>-s</td>
+	</tr>
+	<tr>
+		<td>mm. 167&ndash;70:</td>
+		<td>0</td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-L</td>
+		<td>-s</td>
+	</tr>
+	<tr>
+		<td>mm. 171&ndash;74:</td>
+		<td>0</td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-L</td>
+		<td>+L</td>
+	</tr>
+	<tr>
+		<td>mm. 175&ndash;78:</td>
+		<td>0</td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-L</td>
+		<td>+s</td>
+	</tr>
+	<tr>
+		<td>mm. 179&ndash;82:</td>
+		<td>0</td>
+		<td>+L</td>
+		<td>+s1</td>
+		<td>-s1</td>
+		<td>-s2</td>
+		<td>+s2</td>
+		<td>+s1</td>
+		<td>-s</td>
+		<td>-L</td>
+		<td>+s</td>
+	</tr>
+</table>
+</p>
+
+<p>
+Although relaxing the &ldquo;s1&rdquo; restriction on the antepenultimate interval
+resolves some discrepancies, the anomalous endings of measures 163&ndash;66 and
+measures 171&ndash;74 suggest the need for a fuzzy corollary: &ldquo;Correspondences
+toward the beginnings of statements are more important than those
+toward their ends.&rdquo;<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Indeed, applying this fuzzy corollary to the
+generic-interval descriptions enables us to recover these as
+sufficiently general descriptions of the statements in measures 159&ndash;82, and
+thus to invoke the fuzzy-generic level of description only as the
+means by which we relate these to the theme&rsquo;s initial (and subsequent)
+manifestations.
+</p>
+
+<p>[11] Returning to the verbal descriptions of the theme&rsquo;s contour, we
+see that just as Zbikowski&rsquo;s P3 provides a basis for generalization to
+P3&prime; in order to encompass the theme&rsquo;s first two statements, P3&prime; can in
+turn serve as the basis for an even more general version which bridges
+the gap between Zbikowski&rsquo;s first and second categories <sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup>:
+</p>
+<p>
+        P3&Prime;a) the theme contains four structural notes,</p>
+<p>
+
+        P3&Prime;b) the first (normally preceded by a
+                sixteenth-note pickup) moves to the
+                second by leap,</p>
+
+<p>
+        P3&Prime;c) a diatonic turn figure embellishes
+                the second structural note, proceeding
+                to the third,</p>
+
+<p>
+        P3&Prime;d) the theme then moves by leap (opposite
+                the direction of the initial leap) to
+                the penultimate note, which normally
+                neighbors the final one (i.e. the fourth
+                structural note) by a semitone.</p>
+<p>
+P3&Prime; thus incorporates a high level of generalization of the theme&rsquo;s
+contour across its various incarnations, to provide a description
+which one can fine-tune to produce either Zbikowski&rsquo;s P3n
+(measures 159&ndash;182) or my own P3&prime; (measures 2&ndash;6, 8&ndash;12), which one can further
+refine to arrive at Zbikowski&rsquo;s original P3 (measures 2&ndash;6).  The nesting of
+generalities within generalities suggests that a successful numerical
+formalization of Zbikowski&rsquo;s analysis would not only require fuzzy
+algorithms, but that some of the quantities involved might themselves
+be fuzzy: that is, not a unitary value between 0 and 1, but a weighted
+<i>range</i> of values between 0 and 1.  And, as Zbikowski emphasizes, the
+dynamic process by which we interpret Bruckner&rsquo;s &ldquo;system of
+approximate correspondences <i>and</i> exact correspondences&rdquo; <sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> dictates
+that these values (and, indeed, their relative degrees of precision)
+would vary over time in order to model appropriately our aural
+cognitions.
+</p>
+
+<p>[12] Again, none of the above is to dispute Zbikowski&rsquo;s findings;
+rather, I wish to focus attention on the many different degrees of
+precision that come into play in the course of his analysis.  In
+particular, we see that there is no single &ldquo;proper&rdquo; or &ldquo;correct&rdquo; level
+of specificity in describing our intuitions about thematic character,
+especially those by which we associate disparate material.  It seems
+self-evident that, as competent listeners, we perceive music neither
+as a great blur of shadowy patterns nor as an object of real-time,
+exhaustively detailed note-for-note (interval-for-interval,
+duration-for-duration, chord-for-chord<nobr> . . . </nobr>) analysis.  Instead, we
+infer chunks of versatile structure, such that we not only register
+exact matches but also distinguish among transformations which run the
+gamut from the slyly (or even cryptically) subtle to the boldly (and
+even shockingly) dramatic.  For these reasons, formalisms based on
+fuzzy sets and fuzzy algorithms seem ideally suited to model the
+respects in which, as Zbikowski notes, &ldquo;categorical processes adequate
+to music must deal with a large amount of auditory information
+streaming by in real time<nobr> . . . </nobr>[requiring] a model of categorization that
+is extremely rapid (at least in its gross aspects) and highly
+flexible.&rdquo;<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Brian Robison<br>
+	Department of Music<br>Lincoln Hall<br>Cornell University<br>Ithaca, NY  14850<br><a href="mailto:bcr2@cornell.edu">bcr2@cornell.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_zadeh_1965" class="flyoverdiv">Zadeh, Lotfi. 1965. &ldquo;Fuzzy sets.&rdquo; <i>Information and Control</i> 8: 338&ndash;353.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zadeh_1965"></a>Zadeh, Lotfi. 1965. &ldquo;Fuzzy sets.&rdquo; <i>Information and Control</i> 8: 338&ndash;353.</p><div id="citediv_zadeh_1968" class="flyoverdiv">Zadeh, Lotfi. 1968. &ldquo;Fuzzy algorithms.&rdquo; <i>Information and Control</i> 12: 94&ndash;102.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zadeh_1968"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1968. &ldquo;Fuzzy algorithms.&rdquo; <i>Information and Control</i> 12: 94&ndash;102.</p><div id="citediv_zbikowski_1995" class="flyoverdiv">Zbikowski, Lawrence. 1995. &ldquo;<a href='mto.95.1.4/mto.95.1.4.zbikowski.html'>Theories of categorization and theories of music</a>.&rdquo; <i>Music Theory Online</i> 1.4: 1&ndash;26.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zbikowski_1995"></a>Zbikowski, Lawrence. 1995. &ldquo;<a href='mto.95.1.4/mto.95.1.4.zbikowski.html'>Theories of categorization and theories of music</a>.&rdquo; <i>Music Theory Online</i> 1.4: 1&ndash;26.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Lotfi A. Zadeh,
+&quot;Fuzzy sets,&quot; <i>Information and Control</i> 8 (1965): 338-353.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Lawrence Zbikowski, &quot;Theories of categorization and
+theories of music,&quot; <i>Music Theory Online</i> 1.4 (1995): 11.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Zadeh, &quot;Fuzzy sets,&quot; 339.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Zbikowski, &quot;Theories,&quot; 17.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Ibid., 18.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Zadeh, &quot;Fuzzy sets,&quot; 339.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Zbikowski, &quot;Theories,&quot; 18.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Ibid., 25.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Lotfi A. Zadeh, &quot;Fuzzy algorithms,&quot; <i>Information and
+Control</i> 12 (1968): 94&ndash;102.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Construction of an explicit fuzzy model would then
+entail mapping the imprecise quantifiers &quot;highly&quot; and
+&quot;much less&quot; to ranges of appropriate numerical values.
+(see Zadeh, &quot;Fuzzy algorithms,&quot; 96.)<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Zbikowski, &quot;Theories,&quot; 22.  Zbikowski doesn't comment
+on whether he feels that the semitones in the statements of
+mm. 167&ndash;74 somehow impart greater typicality to those
+variants in relation to mm. 159&ndash;66 and 175&ndash;82.  My own
+intuition is that the presence or absence of a semitone is
+actually subordinate to the distinction between a strictly
+stepwise turn (mm. 2&ndash;6 and mm. 8&ndash;12) and one which
+embellishes by step-above and third-below (mm. 159&ndash;82).<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Zbikowski, &quot;Theories,&quot; 23.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Zbikowski, &quot;Theories,&quot; 20.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Although not needed within the limits of the present
+narrow example, a full-fledged fuzzy model would treat
+explicitly the vague transition between &quot;large steps&quot; and
+&quot;small leaps.&quot;<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> These restrictions thus prevent inappropriately
+chromatic realizations of 
+<pre>        <+s s s +s +s s>
+such as <+3 2 2 +1 +2 1>
+</pre>--a perfectly good turn for Ligeti or Birtwistle, but
+obviously not characteristic of Bruckner's material at hand.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> The corollary is fuzzy in that it does not specify hard-
+and-fast boundaries for which notes do or do not belong to
+the &quot;beginning&quot; and &quot;end&quot; of a segment--instead, the
+saliences of correspondences decrease gradually in sequence.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Zbikowski, &quot;Theories,&quot; 21.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Ibid., 25.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Zbikowski, &quot;Theories,&quot; 26.<br><a href="#FN19REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Lotfi A. Zadeh,
+&quot;Fuzzy sets,&quot; <i>Information and Control</i> 8 (1965): 338-353.</div><div id="fndiv2" class="flyoverdiv">Lawrence Zbikowski, &quot;Theories of categorization and
+theories of music,&quot; <i>Music Theory Online</i> 1.4 (1995): 11.</div><div id="fndiv3" class="flyoverdiv">Zadeh, &quot;Fuzzy sets,&quot; 339.</div><div id="fndiv4" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 17.</div><div id="fndiv5" class="flyoverdiv">Ibid., 18.</div><div id="fndiv6" class="flyoverdiv">Zadeh, &quot;Fuzzy sets,&quot; 339.</div><div id="fndiv7" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 18.</div><div id="fndiv8" class="flyoverdiv">Ibid., 25.</div><div id="fndiv9" class="flyoverdiv">Lotfi A. Zadeh, &quot;Fuzzy algorithms,&quot; <i>Information and
+Control</i> 12 (1968): 94&ndash;102.</div><div id="fndiv10" class="flyoverdiv">Construction of an explicit fuzzy model would then
+entail mapping the imprecise quantifiers &quot;highly&quot; and
+&quot;much less&quot; to ranges of appropriate numerical values.
+(see Zadeh, &quot;Fuzzy algorithms,&quot; 96.)</div><div id="fndiv11" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 22.  Zbikowski doesn't comment
+on whether he feels that the semitones in the statements of
+mm. 167&ndash;74 somehow impart greater typicality to those
+variants in relation to mm. 159&ndash;66 and 175&ndash;82.  My own
+intuition is that the presence or absence of a semitone is
+actually subordinate to the distinction between a strictly
+stepwise turn (mm. 2&ndash;6 and mm. 8&ndash;12) and one which
+embellishes by step-above and third-below (mm. 159&ndash;82).</div><div id="fndiv12" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 23.</div><div id="fndiv13" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 20.</div><div id="fndiv14" class="flyoverdiv">Although not needed within the limits of the present
+narrow example, a full-fledged fuzzy model would treat
+explicitly the vague transition between &quot;large steps&quot; and
+&quot;small leaps.&quot;</div><div id="fndiv15" class="flyoverdiv">These restrictions thus prevent inappropriately
+chromatic realizations of 
+        
+such as 
+--a perfectly good turn for Ligeti or Birtwistle, but
+obviously not characteristic of Bruckner's material at hand.</div><div id="fndiv16" class="flyoverdiv">The corollary is fuzzy in that it does not specify hard-
+and-fast boundaries for which notes do or do not belong to
+the &quot;beginning&quot; and &quot;end&quot; of a segment--instead, the
+saliences of correspondences decrease gradually in sequence.</div><div id="fndiv17" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 21.</div><div id="fndiv18" class="flyoverdiv">Ibid., 25.</div><div id="fndiv19" class="flyoverdiv">Zbikowski, &quot;Theories,&quot; 26.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1995 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Cara Stroud, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

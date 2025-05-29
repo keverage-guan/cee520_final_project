@@ -1,0 +1,1997 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 11.2: Samplaski, Pitch-Clas Set Similarity Measures</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Mapping the Geometries of Pitch-Class Set Similarity Measures via 
+		Multidimensional Scaling">
+
+    <meta name="citation_author" content="Samplaski, Art">
+      
+
+<meta name="citation_publication_date" content="2005/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="11">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Mapping the Geometries of Pitch-Class Set Similarity Measures via 
+		Multidimensional Scaling
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.05.11.2/mto.05.11.2.samplaski.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Art Samplaski</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: pitch-class set theory, similarity measures, atonal music, 
+numerical visualization, multidimensional scaling, IcVSIM, ISIM2, ANGLE, RECREL, 
+AMEMB2, ATMEMB</font></p><p><font size='4'>ABSTRACT: A numerical visualization technique called 
+multidimensional scaling (MDS) was applied to the matrices of (dis)similarity 
+ratings from six pitch-class set (pcset) similarity functions to see what types 
+of constructs they actually measure. Three functions that use the interval-class 
+vector (icv) for their computations (Scott and Isaacson&rsquo;s ANGLE, Isaacson&rsquo;s 
+IcVSIM and ISIM2) and three that use subset imbedding (Castr&eacute;n&rsquo;s RECREL, Rahn&rsquo;s 
+ATMEMB and AMEMB2) were studied. The ratings of these functions for all 
+trichords, tetrachords, and pentachords (under Tn/I-equivalence) were examined; 
+ratings for each cardinality of set-class separately as well as contiguously 
+grouped together (3+4, 4+5, 3+4+5) were studied. Four-dimensional geometric 
+solutions were found for the icv-based measures while five-dimensional solutions 
+were found for the subset-based measures, based on goodness-of-fit analysis. The 
+configurations show one dimension clearly interpretable as diatonicism vs. 
+chromaticism; other dimensions indicate oppositions such as &rdquo;whole-tone&rdquo; vs. 
+&rdquo;anti-wholetone&rdquo; or ic3- vs. 016-saturation. Still other dimensions are less 
+clear as to good interpretations. The overall results
+are generally consistent with the idea that these functions all measure 
+constructs relating to familiar scales (diatonic, hexatonic, octatonic, etc.). 
+The results are also compared with several systems of pcset genera. ISIM2 was 
+found to be inconsistent with itself in terms of the geometries it produced. 
+Several set-classes had coordinates near zero along various dimensions in the 
+derived configurations, indicating that in a formal quantitative sense they do 
+not possess the corresponding musical properties being measured; this may raise 
+questions concerning the relative aesthetic worth of some such set-classes.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.05.11.2/mto.05.11.2.samplaski.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.05.11.2/samplaski_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received December 2004</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 11, Number 2, June 2005 <br> Copyright &#0169; 2005 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Over thirty years after the publication of Allen Forte&rsquo;s 
+<i>The Structure of Atonal Music</i> (<a href="#forte_1973" id="citation_forte_1973_67dc9b42878d9">Forte 1973</a>), music theorists working with 
+pitch-class sets (henceforth, pcsets) still face a basic problem: how to assess 
+the degree to which two set-classes are similar to each other. A variety of 
+similarity measures have been proposed over the years, and arguments about the 
+merits of these measures now occupy a number of journal pages.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Some 
+fundamental questions remain unresolved by this discussion, however. First, what 
+constitutes a &ldquo;really good&rdquo; measure of pcset similarity, one that mirrors our 
+&ldquo;musical intuitions&rdquo;? Second, for the existing similarity measures, just 
+precisely what musical properties <i>are</i> they measuring? </p>
+<p>
+
+[2] Attempts to address the 
+former question head-on will get bogged down in arguments of philosophy, 
+epistemology, and aesthetics, because the term &ldquo;pcset similarity&rdquo; as used in the 
+vast majority of the literature has ultimately remained vague and 
+nebulous--while we certainly have some intuitive notion of what we mean by the 
+term, we have not expressed clearly what sorts of properties are involved.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> 
+By contrast, the latter question is both aesthetically neutral--it is, as Sgt. 
+Joe Friday would say, a case of &ldquo;Just the facts, ma&rsquo;am&rdquo;--and readily amenable to 
+analysis. Furthermore, once we have a detailed answer to it, we will be in a 
+much better position to work on the former question. In other words, once we 
+understand what specific musical constructs are actually being measured by 
+various &ldquo;similarity measures,&rdquo; we will have a basis for discussing whether those 
+constructs are relevant to our heretofore intuitive concept of &ldquo;pcset 
+similarity,&rdquo; and whether other constructs should be included in a list of 
+similarity criteria, or even replace some or all of those being rated by 
+existing measures. </p>
+<p>
+
+[3] Some similarity 
+measures--those that yield ratings for all possible comparisons, including 
+between set-classes of different cardinality--generate tremendous amounts of 
+data. Humans, however, are (perhaps fortunately) particularly ill-evolved to 
+comprehend massive tables of numbers. This implies that applying numerical 
+visualization techniques to the resulting data would be highly beneficial--to 
+paraphrase the adage, a picture is worth a thousand data points. Such techniques 
+have been developed over the last forty years in a family of computational 
+methods called multidimensional scaling (MDS) and cluster analysis (CA); with 
+computing power now ludicrously cheap, it makes sense to apply them to this 
+problem.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+<p>
+
+[4] Some, intimately familiar with various 
+similarity measures and the ratings they produce through years of working with 
+them, might wonder, &ldquo;Why bother? Didn&rsquo;t Scott and Isaacson (1998) show that most 
+similarity measures are derivable from each other? And as such, don&rsquo;t they all 
+necessarily measure the same things? After all, the paper gives a table (page 117) 
+showing high correlations between various measures&rsquo; ratings.&rdquo; There are several 
+responses to this. First and foremost, Scott and Isaacson did not show how to 
+derive all then-existing similarity measures from each other. It is in fact 
+possible that some cannot be so derived, e.g., it is difficult to conceive how 
+one might derive Castr&eacute;n&rsquo;s (<a href="#castr&eacute;n_1994" id="citation_castr&eacute;n_1994_67dc9b42878f4">1994</a>) highly recursive RECREL from a non-recursive 
+measure. Such other measures might well rate entirely different similarity 
+factors. Second, for those measures that were co-derivable, the transformations 
+involved are non-linear; and as the burgeoning field of dynamical systems theory 
+can attest, even simple non-linear transformations can generate substantially 
+differing results. As a trivial example, the functions y = x, y = SQRT(x), and y = x<sup>2</sup> 
+yield values that are highly correlated, yet their plots look quite 
+different.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Without visualizing 
+the graphs but only looking at the correlations, this would not be apparent. </p>
+<p>
+
+[5] In fact, correlations (as single, 
+all-subsuming numbers for pairs of measures) do nothing to show what constructs 
+might underlie the ratings being produced. For example, the measures &ldquo;number of 
+steel-reinforced girders in a skyscraper S&rdquo; and &ldquo;square footage of office space 
+in a skyscraper S&rdquo; do not appear <i>prima facie</i> to have anything to do with each 
+other; yet they will always have a high positive correlation because they are 
+both functions of the total volume of a skyscraper. The nature of such 
+underlying constructs and their relationships to the &ldquo;surface features&rdquo; being 
+measured might be extremely subtle and non-obvious. Geometric visualization and 
+similar techniques can help us tease out underlying multiple components of 
+similarity, and aid us in deciding whether we could simplify our models by 
+deriving some factors from others.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> 
+So, we might find that RECREL measures factors A, B, and C while some 
+nonrecursive measure rates factors B and D; this in turn would suggest 
+investigating whether factor D is some function of A or C, or whether all three 
+are expressible in terms of factor E. At the least, we could discuss explicitly 
+the relative worth of all those factors for measuring pcset similarity.</p>
+<p>
+
+[6] Finally, geometric 
+visualization allows a &ldquo;reality check&rdquo; for similarity measures: there might be 
+problems with a measure&rsquo;s numerical ratings that are not evident from inspection 
+of them, or even from the measure&rsquo;s verbal description. In fact, I will show 
+that there is at least one similarity measure that fails to be self-consistent 
+in its resulting geometries across various domains, even though its raw 
+numerical ratings are highly correlated with the ratings of other measures that 
+<i>are</i> geometrically self-consistent. </p>
+<p>
+
+[7] The techniques of MDS/CA are likely 
+unfamiliar to most music theorists. Therefore, in the first part of this article 
+(paragraphs 8-23) I provide a brief and as non-technical as possible overview of 
+several types of MDS/CA and some of the issues involved in their use.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> 
+The 
+overview is generic, so readers wishing for specific discussion about musical 
+issues may skim or skip it at first, returning only when they have 
+methodological questions about use of the method in a musical situation. In the 
+second part (paragraphs 24-53), I apply MDS to six pcset similarity functions&rsquo; 
+ratings for trichords through pentachords, to see what geometric structures they 
+yield (the nouns &ldquo;function&rdquo; and &ldquo;measure&rdquo; henceforth will be considered 
+interchangeable). Since my purpose here is simply to show what these functions 
+measure and not to investigate <i>why</i> they do so, I shall not attempt any 
+analysis of the underlying mathematics.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> 
+In the final section (paragraphs 54 
+ff.) I compare the MDS results with some proposed systems of pcset genera, and 
+discuss some implications as to whether the factors measured by these functions 
+&ldquo;match up with our musical intuitions.&rdquo; As part of that discussion, the MDS 
+results raise a potentially controversial question: perhaps the creed that &ldquo;all 
+set-classes are created equal(lly interesting musically)&rdquo; is false. </p>
+<p style="text-align: center"><b>MDS</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Four equivalent geometries involving rotation and reflection about axes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="samplaski_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[8] The basic idea behind MDS is very simple. 
+Consider a map of a region with several cities marked on it. If the map is of 
+reasonable quality, it is easy to derive from it the inter-city distance matrix, 
+the set of &ldquo;as the crow flies&rdquo; distances between all pairs of cities on the map. 
+(Some readers may already be thinking, what about the curvature of the earth? 
+This is an excellent question, and will be discussed shortly.) The reverse 
+problem--given an inter-city distance matrix, derive the relative locations of 
+the cities--is rather more difficult. MDS is simply a numerical technique to 
+solve this problem: the matrix is fed to a computer program that returns a plot 
+of the relative positions of the cities and/or a set of coordinates for them. In 
+general, we have a set of objects of analytical interest for which we have 
+obtained ratings of relative distance or similarity for all possible pairs;<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+an MDS analysis will yield a geometric configuration of the objects in some 
+abstract (psychological) space, and interpretation of the dimensions of the 
+resulting configuration is up to the researcher. (In the above mileage exercise, 
+such interpretation would be trivial--we would simply need to find the 
+north-south vs. east-west axes--but in general it is more complex.) Note that 
+besides the obvious question of what the dimensions mean (tall-short? 
+bright-dark? etc.), the researcher may have to consider how the configuration is 
+oriented with respect to a pre-existing model they might be testing, since some 
+types of MDS are result-invariant with respect to translation, rotation, and 
+reflection about axes. 
+<b>Figure 1</b> illustrates this point: all four 
+cubes are the same configuration, but rotated or flipped around one or more 
+axes. If the origins of the coordinate systems are located in the centers of the 
+cubes, the objects in the different setups might appear to have very different 
+coordinates; yet the relationship between them all is clearly invariant. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. (Very rough) estimated distances in miles between cities in New York State</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=1&nonav=true"><img border="1" alt="Table 1 thumbnail" src="samplaski_tab1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2a</b>. Map of NY cities listed in Table 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2a thumbnail" src="samplaski_fig2a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2b</b>. Derived MDS configuration from data in Table 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=3&nonav=true"><img border="1" alt="Figure 2b thumbnail" src="samplaski_fig2b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[9] As a simple application of MDS, consider
+<b>Table 1</b>, which shows estimated distances in miles between a number of cities 
+in New York State, derived from the American Automobile Association&rsquo;s &ldquo;Driving 
+Distances&rdquo; map for the state. (<b>Figure 
+2a</b> is a hand-drawn plot of their approximate 
+locations.) There is a very large amount of noise (errors) in the table. Only a 
+few of the cities have directly listed driving distances on the AAA map so many 
+of the numbers are extrapolations, or, in some cases, complete guesswork--in 
+particular, nothing remotely resembling a straight-line drive exists from 
+Ogdensburg and Plattsburgh, in the extreme north of the state, to nearly any of 
+the other cities in the table. Even those values listed on the AAA map are for 
+<i>driving</i> distances, and so may not be straight-line. Given the all-important 
+computing maxim of &ldquo;Garbage In, Garbage Out,&rdquo; we might well expect that this 
+exercise in <i>geographia speculativa</i> should result in nothing like reality. 
+Nonetheless, the resulting MDS configuration (<b>Figure 
+2b</b>) shows a recognizable if distorted plot of the various city locations. 
+(The outline of the state was hand-drawn in afterwards.) </p>
+<p>
+
+[10] A derived 
+geometric configuration may be surprising, given the physical makeup of the 
+objects being investigated. For example, in an MDS analysis of color similarity 
+data originally obtained by Ekman (<a href="#ekman_1954" id="citation_ekman_1954_67dc9b4287a26">1954</a>) the stimuli varied along exactly one 
+dimension--the wavelengths of the lights for the colors--yet the program 
+recovered the familiar two-dimensional structure of the color wheel. Researchers 
+should thus be prepared to see more complex structure in the psychological space 
+than they might think present given the stimuli structure. One example in music 
+is the well-known result of Krumhansl and Kessler (<a href="#krumhansl_and_kessler_1982" id="citation_krumhansl_and_kessler_1982_67dc9b4287a29">1982</a>), which in essence 
+verified Schoenberg&rsquo;s (<a href="#schoenberg_1954" id="citation_schoenberg_1954_67dc9b4287a2b">1954</a>) chart of key regions: the configuration of the 
+distances between musical keys was seen to lie on a torus (donut-shape), a 
+geometry that had been proposed by several other writers throughout history. The 
+torus was in a space of four dimensions, not three, however;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> 
+so our cognitive 
+structuring of music is more subtle than we might believe at first.</p>
+<p>
+
+[11] The concept of MDS 
+dates to the 1930s, but it was only with a paper by Shepard (<a href="#shepard_1962" id="citation_shepard_1962_67dc9b4287a2e">1962</a>) and two 
+papers by Kruskal (<a href="#kruskal_1964a" id="citation_kruskal_1964a_67dc9b4287a30">1964a</a>, <a href="#kruskal_1964b" id="citation_kruskal_1964b_67dc9b4287a32">1964b</a>) that a practical numerical technique was 
+described. This method, called nonmetric MDS for reasons that do not concern us, 
+assumes that the distance or proximity values of the matrix are directly related 
+by some unknown function to distances between the objects in some underlying 
+abstract N-dimensional Euclidean space, whose distance metric is the generalized 
+version of the formula familiar from Cartesian geometry, SQRT(x<sup>2</sup> + y<sup>2</sup> + z<sup>2</sup> + 
+<nobr> . . . </nobr>).<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> 
+Because the underlying space is Euclidean, the &ldquo;true&rdquo; distances are 
+all symmetric; asymmetries in the data are considered to be noise. Discrepancies 
+between the actual data values and the derived underlying distances are 
+accounted for in a goodness-of-fit measure called &ldquo;stress&rdquo;: as the number of 
+dimensions increases, stress decreases, and choosing between configurations of 
+different dimensionalities becomes an issue. Here is how the curvature of the 
+earth comes into play in the example that opened this discussion: if our 
+distance matrix is taken from a small geographic region (say, locations in the 
+New York City metropolitan area), we can treat everything as lying on a 
+Euclidean plane.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> If, however, 
+we took the list of cities [New York, Vancouver, London, Buenos Aires, New 
+Delhi, Tokyo, Wellington, Moscow, Nairobi<nobr> . . . </nobr>] and tried to fit the resulting 
+distance matrix onto a flat surface, there would be a significant amount of 
+stress (i.e., distortion) to any such solution--witness the history of 
+cartography. By going to three dimensions, we will reduce the stress 
+dramatically (and in fact should almost eliminate it except for residual amounts 
+due to numerical round-off error, since the true geometry of the cities is 
+three-dimensional).</p>
+<p>
+
+[12] Four broad issues arise. First, how do we 
+determine the best dimensionality for a solution? Second, since in nearly all 
+practical cases we take data from multiple subjects--the rule of thumb is that 
+one needs a minimum of 30 subjects for reliability--and average their matrices 
+together before running an analysis, how might we account for idiosyncrasies in 
+their ratings (different subjects might selectively attend more significantly to 
+certain features in the stimuli, skewing their ratings)? Third, what if there 
+are possible inherent underlying asymmetries between the stimuli? (An obvious 
+instance in music: in a context of functional tonality I-&gt;V will be rated rather 
+differently than V-&gt;I.) Fourth and ultimately most importantly, how many objects 
+can we study at one time without causing undue stress and fatigue to the 
+subjects from whom we are collecting data? While I do not wish to downplay 
+unduly the seriousness of the latter three questions, they are irrelevant for 
+our purposes since we are concerned with results from abstract functions rather 
+than human subjects. I shall therefore give only the briefest discussion of 
+them. </p>
+<p>
+
+[13] To evaluate individual idiosyncrasies, there is an MDS model called INDSCAL that uses a set of multiple input matrices, one per subject, rather than 
+a single averaged matrix. It permits finding a &ldquo;group stimulus space&rdquo; that shows 
+a shared geometric configuration across all subjects, then gives a configuration 
+of the different attentional weights that each subject gives per dimension to 
+the stimuli. Thus, for a two-dimensional configuration a subject who attended 
+equally to the features that correspond to the two dimensions would have their 
+weight coordinates at (1.0, 1.0), while a subject who attended twice as much to 
+the feature corresponding to the first dimension as to the second would have 
+weight coordinates of (1.0, .5). </p>
+<p>
+
+[14] There are a number of models for dealing 
+with possible asymmetries underlying the data. They have a fair bit of 
+diversity; a brief mention of one, called ASCAL, will illustrate the general 
+idea. ASCAL assumes that the underlying distances between the stimuli are still 
+in some Euclidean space; for each component in the Euclidean distance formula, 
+however, there is a weighting factor assigned to that dimension for every 
+stimulus. So, for a two-dimensional configuration with N stimuli, 4N free 
+parameters are being estimated: two each for the actual coordinates of the 
+stimuli, and two for the dimensional weightings of each stimulus.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> 
+</p>
+<p>
+
+[15] The issue of the maximum number of 
+objects that can be studied at one time is sometimes called &ldquo;the data explosion 
+problem.&rdquo; Simply put, in order to analyze N objects, ratings must be collected 
+from every subject on N<sup>2</sup> pairs of objects. When taking data from humans, one 
+quickly reaches a limit on the number of experimental trials they will be 
+willing to endure (never mind satisfying committees that vett proposed 
+experiments in terms of nationally-mandated guidelines for the ethical 
+treatment of subjects). While there are ways to mitigate the resulting cognitive 
+(and, eventually, physical) fatigue--breaking up data collection into multiple 
+short sessions, and a higher rate of payment for subjects&rsquo; time per 
+session--these only work so far. Such limits can be overcome a little more by 
+some indirect methods (having each subject rate only a portion of the total 
+number of pairs is one possibility), but then other types of limits (finding a 
+sufficiently large pool of subjects, and obtaining sufficient funds to pay them 
+all) come into play. Computers, fortunately, do not complain when asked to 
+perform a few billion extra calculations, so the only way data explosion affects 
+us is the limits of available software. </p>
+<p>
+
+[16] In assessing the proper 
+dimensionality for a solution, it is important to minimize the number of 
+dimensions, both for visualization purposes and for parsimony of explanation: 
+why use three dimensions if two tell us almost everything of interest? If we add 
+too many dimensions, there is eventually too much &ldquo;wiggle room&rdquo; within which to 
+fit a solution and the algorithm can no longer derive a unique one.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> 
+In most cases, long before this situation is reached we already hit a point 
+where we are getting insufficient &ldquo;bang for the buck&rdquo; to justify the added 
+complexity. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Hypothetical stress/<i>r</i><sup>2</sup> plots as functions of dimensionality</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=4&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="samplaski_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[17] Standard MDS unfortunately contains no test 
+of statistical significance to evaluate whether adding one more dimension will 
+give usefully more explanatory power. Some art in evaluation is thus needed. For 
+a solution of a given dimensionality, we obtain two values: the stress factor 
+mentioned earlier, and the percentage of the variability of the data being 
+explained by the solution, a factor called &ldquo;r-squared&rdquo; (notated as <i>r<sup></i>2</sup>). One 
+needs to plot the stress and <i>r<sup></i>2</sup> values for solutions of several 
+dimensionalities and look for &ldquo;elbows&rdquo; (inflection points) in the plots. If an 
+elbow exists, then by and large the higher-dimensional solutions are not giving 
+significant additional explanation--the plot suddenly flattens out.  
+<b>Figure 3</b> shows two examples of this. In the upper 
+pair of plots stress drops precipitously from one to three dimensions then 
+basically levels off, indicating that nothing more is being gained at higher 
+dimensions. In the lower pair, the stress plot has no obvious elbow but the 
+<i>r<sup></i>2</sup> plot does have one, indicating that for this data a 4-D solution is 
+probably best. One must hope that one or both plots will have such elbows 
+present. As another rule of thumb, to make reliable judgments about a 
+configuration the number of objects should be at least 3-4 times greater than 
+the highest anticipated dimensionality. If the number of objects is much below 
+this factor, then there will likely be too few constraints on the configuration 
+for it to be reliable.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+<p>
+
+[18] A poor fit can be caused by several factors, 
+notably by underlying asymmetries in the data. Other problems are the presence 
+of exemplars or prototypes in the set of objects being evaluated--in the set 
+[apple, banana, cherry, fruit, kiwi, orange, watermelon], &ldquo;fruit&rdquo; will be almost 
+certainly be considered more similar to all the other objects than any other 
+pair to each other<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>--or if the dimensions involved are &ldquo;highly separable,&rdquo; 
+i.e., have little or nothing to do with each other.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> 
+The problem of separable 
+dimensions in particular led Tversky and others (<a href="#tversky_1977" id="citation_tversky_1977_67dc9b4287a4b">Tversky 1977</a>; <a href="#tversky_and_gati_1982" id="citation_tversky_and_gati_1982_67dc9b4287a4d">Tversky and Gati 1982</a>; <a href="#tversky_and_hutchinson_1986" id="citation_tversky_and_hutchinson_1986_67dc9b4287a4f">Tversky and Hutchinson 1986</a>) to propose a different way to represent 
+structure in psychological data, called cluster analysis (CA). There is a family 
+of CA models, but they all work similarly: given a proximity or distance matrix, 
+some method is used to pick the pair of objects most like each other, group them 
+into a single cluster, and derive a new reduced matrix. When the process is 
+finished, the objects will be grouped into a binary tree structure (exactly two 
+branches descend from each node, and the objects are &ldquo;leaves&rdquo; at the termini of 
+the final branches), where the distance between any pair of objects is related 
+to the length of the path along the branches separating them. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Poor fit for a cluster analysis due to addition of privileged nodes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=5&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="samplaski_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[19] Cluster analysis is certainly more 
+appropriate than MDS for certain situations (e.g., when highly separable 
+dimensions are involved); and even when MDS works for a given situation, CA can 
+aid the researcher in interpreting an otherwise obscure set of dimensions. On 
+the other hand, there are situations where CA gives extremely bad fits. If, for 
+example, the underlying data structure forms a grid, any type of CA will yield a 
+really bad fit since the only way to &ldquo;move&rdquo; between objects in the configuration 
+is to traverse the tree connecting them.   
+<b>Figure 4</b> shows an instance of this--visually, each object (open circle) 
+is equidistant from its vertical or horizontal neighbors, but not at all along 
+the tree (the filled squares are extra nodes generated by the tree-building 
+procedure). The bottom line is, the researcher must be careful and explore many 
+possibilities.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup></p>
+<p>
+
+[20] A different type of 
+issue can be termed &ldquo;robustness&rdquo;--whether changing the set of objects being 
+compared alters the perceived/computed similarity between the original set of 
+objects. Another example of cities on a map will illustrate. Take two distance 
+matrices, one for just Toronto and its suburbs and the other for those 
+plus various other cities across southern Ontario. If we run these two matrices 
+through an MDS program and normalize the resulting configurations to each fit on 
+an eight-by-ten color glossy photograph, the only change in the second 
+configuration for the suburbs would be the percentage of area they 
+occupied--they would still be at the same relative locations, with simply the 
+scale changed. By contrast, the process of categorization and similarity 
+judgment by humans is highly flexible and context-dependent. For example, 
+consider in your own mind the similarities or differences in the set of animals 
+[cat, cow, dog, moose]. Now consider the set [cat, cow, dog, moose, unicorn]: 
+unicorns are large mammals like cows and moose, but mythical. Now consider 
+instead the set [cat, cow, dog, moose, bonsai unicorn], where the bonsai unicorn 
+looks just like its bigger counterpart but is the size of a chihuahua--does it 
+now group closer to the small mammals? What about the set [cat, cow, dog, moose, 
+turtle]? How about the set [cat, cow, dinosaur, dog, moose, small furry creature 
+from Alpha Centauri, turtle, standard unicorn]? It is likely that your groupings 
+may have altered rather considerably by the end. </p>
+<p>
+
+[21] Suppose we are presented 
+with two functions Q and R that each purport to measure distances in southern 
+Ontario. We use them to build distance matrices of the two lists of cities 
+above, and examine the resulting MDS configurations. For the first case (only Toronto + suburbs), Q and R yield geometries that agree with each other and with 
+the atlas; R also agrees with the atlas for the larger dataset. In Q&rsquo;s 
+trans-Ontario configuration, however, some Toronto suburbs do not appear in 
+their expected places: Scarborough (just east of the city) has migrated south 
+and is sitting in downtown Buffalo, while Mississauga (immediately southwest of 
+the city) has shifted eastwards some 200 km, into the middle of Lake Ontario. 
+Geographical features such as cities are stationary (<i>pacite</i> Birnham Wood and 
+James Blish&rsquo;s <i>Cities in Flight</i>), so we would likely view Q&rsquo;s usefulness as a 
+distance metric with extreme skepticism, to say the least. It is in this sense 
+of &ldquo;yields consistent relative MDS geometries, save for scaling, regardless of 
+surrounding context&rdquo; that R is &ldquo;robust&rdquo; and Q is not. Given humans&rsquo; flexibility 
+of similarity judgment, most MDS research is usually unconcerned with this 
+issue: the flexibility and context-dependence is normally part of what is being 
+investigated. This article, however, is examining formal, abstract functions, 
+which do not (or, at least, should not) exhibit such subjectivity; it is 
+therefore very much of importance. </p>
+<p>
+
+[22] In the abstract universe of pcsets, 
+there is no external reality check like an atlas--this is, after all, why we are 
+developing similarity measures--but we can at least demand geometric 
+self-consistency from our functions. If function S yields different geometries 
+than function T and each function is self-consistent, that suggests they are 
+measuring different musical constructs and the situation warrants investigation. 
+If on the other hand S behaves like function Q above, that strongly implies that 
+we should not use it because there is no reason to have any faith in its 
+ratings--all research on pcset similarity has (implicitly) assumed that pcsets 
+are &ldquo;stationary&rdquo; objects. Note that it certainly should be possible, and perhaps 
+highly desirable, to build a pcset similarity function that <i>is</i> 
+context-sensitive in its calculations; but I am unaware that anyone has ever 
+attempted to devise such a measure. In particular, none of the functions 
+discussed in this essay incorporate context-dependence in their ratings. If we 
+find a function that yields different relative locations of trichords if we 
+consider trichords and tetrachords as a group vs. trichords in isolation, that 
+is a serious red flag re the function. As mentioned in paragraph 6, it turns out 
+that not all similarity measures pass this test. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Different distance estimates for probabilistic MDS, PROSCAL model</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=6&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="samplaski_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[23] The data obtained from 
+humans in an MDS/CA study are inherently messy; this is why multiple subjects 
+are needed to achieve reliability. Recently a different way to deal with this 
+noisy data has been developed, called Probabilistic MDS (PMDS). Here it is still 
+assumed that there is an underlying Euclidean geometry, but rather than being 
+points in that space the objects are probability distributions like clouds. The 
+centers of such clouds are what occur at the idealized object coordinates; but 
+every similarity judgment is considered to be merely from somewhere within the 
+cloud. (Such judgments of course have a higher probability of being from near 
+the centers of the clouds, but this is not guaranteed.) Thus, each time a 
+subject estimates the distance from object A to object B, their estimate will 
+change (<b>Figure 
+5</b>); the extent to 
+which the estimates vary is a function of how &ldquo;spread out&rdquo; the clouds are along 
+each dimension--the technical term is the degree of variance of the stimuli.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> 
+A PMDS program can do calculations for several scenarios: when all objects are 
+assumed to have the same degree of variance for all dimensions, when the 
+variance is the same for all objects for any given dimension but can be 
+different for different dimensions, etc. Because PMDS also gives the variance 
+for each dimension in the derived configuration, it is able to do significance 
+testing for different dimensionalities. The price for this increased power is of 
+course much more intractable math;<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> 
+PMDS is a technique still under development at this writing, and a present-day 
+researcher should always run some non-probabilistic MDS model on their data as a 
+reality check. </p>
+<p style="text-align: center"><b>PCSETS</b></p>
+<p>
+
+[24] Let us analyze some pcset similarity 
+functions using MDS. Doing so yields two things. First, the resulting geometries 
+will tell us something about what properties of pcsets the functions are 
+measuring, since each dimension of the configurations involves different 
+properties. Second, if the geometries produced by different functions match up 
+save for rotation, translation, or reflection, then, given that such functions 
+all purport to measure &ldquo;pcset similarity&rdquo; (whatever that is), it is reasonable 
+to think that they are in fact either a) measuring the same constructs, whatever 
+those might be, or b) measuring constructs that, while different, are themselves 
+functions of some other underlying construct(s). For narrative simplicity, the 
+above second item will be termed &ldquo;measuring the same thing(s),&rdquo; even though that 
+phrase plays rather fast and loose with the situation. </p>
+<p>
+
+[25] Only such functions 
+as give distinct proximity/distance ratings can be so evaluated; measures like 
+Forte&rsquo;s (<a href="#forte_1973" id="citation_forte_1973_67dc9b4287aa2">1973</a>) Rn relations are binary so cannot generate a distance matrix for 
+input. Other functions that yield multiple values but only permit comparisons 
+between set-classes of the same cardinality, e.g., Teitelbaum&rsquo;s (<a href="#teitelbaum_1965" id="citation_teitelbaum_1965_67dc9b4287aa4">1965</a>) s.i., 
+while evaluable to some degree by MDS, are still not very attractive--there is 
+no way to say that the results of comparing tetrachords have anything to do with 
+the results of comparing heptachords, for example. </p>
+<p>
+
+[26] For a reasonably-sized 
+selection of functions I chose six, three of which--Scott and Isaacson&rsquo;s (<a href="#scott_and_isaacson_1998" id="citation_scott_and_isaacson_1998_67dc9b4287aa6">1998</a>) 
+ANGLE, and Isaacson&rsquo;s (<a href="#isaacson_1990" id="citation_isaacson_1990_67dc9b4287aa8">1990</a>, <a href="#isaacson_1992" id="citation_isaacson_1992_67dc9b4287ab5">1992</a>) IcVSIM and (<a href="#isaacson_1996" id="citation_isaacson_1996_67dc9b4287ab7">1996</a>) ISIM2--use interval-class 
+vector (henceforth, icv) content for their calculations, and three--Castr&eacute;n&rsquo;s 
+(<a href="#castr&eacute;n_1994" id="citation_castr&eacute;n_1994_67dc9b4287ab9">1994</a>) RECREL, and Rahn&rsquo;s (<a href="#rahn_1979&ndash;80" id="citation_rahn_1979&ndash;80_67dc9b4287aba">1979&ndash;80</a>) ATMEMB and AMEMB2--that use subset 
+content.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> Since RECREL uses Tn-rather than Tn/I-equivalence, only ratings 
+between &ldquo;-A&rdquo; forms of asymmetrical set-classes (prime forms in the sense of 
+<a href="#forte_1973" id="citation_forte_1973_67dc9b4287abe">Forte 1973</a>) were used for this study. Due to possible reflections/rotations 
+between configurations, &ldquo;reference functions&rdquo; are needed against which other 
+functions in a category can be compared; ANGLE and RECREL were declared to be 
+the references for their respective categories on the basis of personal 
+aesthetics. The domain to be studied was limited to trichords through 
+pentachords (a total of 3160 distinct set-class pairings), for two reasons. 
+First, it was within the limits of available software. Second, for the icv-based 
+measures the ratings of a set-class and its complement are not independent;<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup>the simplest way to avoid any possible resultant systemic problems was to 
+eliminate hexachords <i>et al.</i> from consideration. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Correlations of raw data values among functions for all trichords through pentachords</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=7&nonav=true"><img border="1" alt="Table 2 thumbnail" src="samplaski_tab2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[27] 
+<b>Table 2</b> gives the correlation matrix for the raw ratings 
+of these functions for this domain. The values are extremely high, suggesting 
+that there is indeed a great deal of correspondence between whatever it is they 
+measure; the notation &ldquo;<i>p&lt;</i>.001&rdquo; is a measure of significance, meaning that 
+there is a probability of less than one in a thousand that the observed result 
+might have occurred by chance.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup>The negative signs on the correlations for 
+ATMEMB and AMEMB2 vs. the other measures are not a cause for concern: those two 
+functions rate <i>similarity</i> while the other four functions rate <i>dissimilarity</i>, 
+so naturally the signs will be reversed. The absolute values of the <i>r</i>s and the 
+corresponding <i>p</i>-values are the important things. </p>
+<p>
+
+[28] By definition, there is 
+no noise in this data: the ratings are exactly what the functions compute for a 
+pair of set-classes. Stress values in the analyses are therefore inherent for 
+the configurations involved, in the sense that there are irreducible ambiguities 
+in the computed ratings. Also by definition, the ratings matrices are all 
+symmetrical; we can thus use the simplest MDS model, which is result-invariant 
+with respect to axial reflection and rotation. This allows us to realign the 
+configurations for the non-reference functions with respect to those for the 
+references in order to compare them. The matrix manipulation technique to do so 
+is called Procrustes rotation; named after the villain of Greek mythology, it is 
+an algorithm that transforms a matrix so as to most closely align it with a 
+given target matrix of equal size. The details of this process are irrelevant. 
+</p>
+<p>
+
+[29] To examine the issue of robustness mentioned in paragraphs 20-22, the 
+set-classes of each cardinality were analyzed in isolation as well as 
+combinations of contiguous cardinalities. There were thus six datasets for each 
+function. The following shorthand is used: </p>
+<ul>
+	<li>cardinality 3 alone: 3x3 dataset 
+(12 set-classes) </li>
+	<li>cardinality 4 alone: 4x4 dataset (29 set-classes) </li>
+	<li>cardinality 5 alone: 5x5 dataset (38 set-classes) </li>
+	<li>cardinalities 3 and 4: 3x4 
+dataset (41 set-classes) </li>
+	<li>cardinalities 4 and 5: 4x5 dataset (67 set-classes) </li>
+	<li>cardinalities 3, 4, and 5: 3x5 dataset (79 set-classes) </li>
+</ul>
+<p>These were analyzed 
+using SPSS, one of the most widely available statistical packages.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup>It would 
+be extraordinarily tedious (and in fact unnecessary) to examine in detail all 
+six datasets for all six functions; instead, I shall discuss only the results 
+for the 3x5 dataset for the two reference functions ANGLE and RECREL, since it 
+will be easiest to interpret the dimensions due to the wide range of objects 
+involved.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup>Even so, the results may seem somewhat lengthy; as a guide, the 
+order of discussion is as follows. First, the appropriate dimensionalities for 
+the derived configurations are determined (paragraphs 30-34); next, the ANGLE 
+and RECREL configurations for the 3x5 dataset are examined in detail (paragraphs 
+35-42 and 43-48); third, those configurations are compared with the equivalent 
+configurations for the other four functions via correlational analysis 
+(paragraphs 49-51); finally, the robustness of the different functions for the 
+various cardinalities is examined, also via correlations (paragraphs 52-53).</p>
+<p style="text-align: center"><b>Dimensionality</b></p>
+<p>[30] Four-dimensional solutions 
+were obtained for the icv-based functions, while five-dimensional ones were 
+found for the subset-based functions. For readers new to MDS, the decision 
+process is given in some detail as illustration; those already familiar with MDS 
+or who want to cut to the chase can skip to paragraph 35, although they should 
+be aware that some peculiarities exist and will be mentioned later on. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 3</b>. Stress and <i>r</i><sup>2</sup> values by function, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=8&nonav=true"><img border="1" alt="Table 3 thumbnail" src="samplaski_tab3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6a</b>. Stress/<i>r</i><sup>2</sup> plots for 3x5 dataset for subset-based functions</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=9&nonav=true"><img border="1" alt="Figure 6a thumbnail" src="samplaski_fig6a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6b</b>. Stress/<i>r</i><sup>2</sup> plots for 3x5 dataset for icv-based functions</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=10&nonav=true"><img border="1" alt="Figure 6b thumbnail" src="samplaski_fig6b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Coordinate values and histogram for ANGLE ic1 vs. ic5 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=11&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="samplaski_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[31] 
+<b>Table 3</b> gives the stress and <i>r<sup></i>2</sup> values for different 
+dimensionalities by function for the 3x5 dataset, since discussion will focus on 
+it; <b>Figures 6a</b> and
+<b>6b</b> plot these 
+values for the subset-based and icv-based functions respectively. For RECREL, as 
+we increase from two to six dimensions we see incremental improvements in <i>r<sup></i>2</sup> 
+of .0845 (from 2-D to 3-D), .0685 (from 3-D to 4-D), .0516 (from 4-D to 5-D), 
+and then a sudden drop to .0154 (from 5-D to 6-D). For ANGLE, as we go from two 
+to five dimensions we see incremental improvements in <i>r<sup></i>2</sup> of .1206 (from 2-D 
+to 3-D), .14 (from 3-D to 4-D), and then down to .0285 (from 4-D to 5-D). Those 
+sudden drops in incremental improvement are the elbow points indicating optimal 
+dimensionalities. </p>
+<p>[32] There are several oddities in Table 3. For the icv-based 
+functions, the incremental improvement in <i>r<sup></i>2</sup> <i>increases</i> in going from 3-D to 
+4-D vs. going from 2-D to 3-D. We thus have a set of &ldquo;reverse elbows&rdquo; at 3-D; 
+these are apparent (albeit somewhat subtly) on the plots in Figure 6b. Also, the 
+stress values suddenly drop to essentially zero and the <i>r<sup></i>2</sup> values jump up to 
+1.000 (meaning all variability in the data is explained) at five dimensions for 
+IcVSIM and ISIM2; this phenomenon occurs for them in all except the 3x3 dataset. 
+The latter situation is an absolute indicator of too many dimensions: there is 
+no stress because there are insufficient constraints on the configurations. 
+Meanwhile, reverse elbows usually indicate that a calculation became trapped in 
+a local minimum, and that a configuration should be recomputed--one typically 
+uses the configuration from the next higher dimensionality (minus the extra 
+dimension) as an input seed. For these functions, however, doing so does not 
+change things: something else is involved. The reason will be seen in a few 
+paragraphs. </p>
+<p>[33] Although the stress/<i>r<sup></i>2</sup> values for the other datasets have 
+not been shown, those datasets still have an issue of reliability regarding the 
+configurations for the 3x3 and 4x4 datasets due to the small number of data 
+points involved; this must be considered in determining the proper 
+dimensionality for them. It is in fact not possible to compute a 6-D solution 
+for the 3x3 dataset because the number of parameters to be derived (72, 6 
+coordinates each for 12 set-classes) exceeds the number of data values (66, the 
+number of similarity ratings). For the 3-D, 4-D, and 5-D solutions for that 
+dataset, the numbers of parameters to be derived (36, 48, and 60) are still high 
+compared to the number of data values, so those configurations are also 
+questionable. For the 4x4 dataset, the 6-D solution also has a reliability issue 
+(174 parameters vs. 406 data values). The incremental improvements in stress and 
+<i>r<sup></i>2</sup> for both those datasets do mirror the patterns seen for the larger 
+datasets, however. Since we cannot increase the number of objects in these 
+datasets, we must assume that our decisions for appropriate dimensionality for 
+the larger datasets carry over to these smaller ones. </p>
+<p>[34] We are left with the 
+prospect of examining four-and five-dimensional geometries. Visualization of 
+more than three dimensions is typically difficult for humans;<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> 
+furthermore, even if we were to examine only three dimensions&rsquo; worth of the 
+configurations at a time, the pictures would be far too crowded at their centers 
+to understand any structure involved. By definition of a Euclidean space, 
+however, each dimension in the configurations is independent of the others. We 
+can thus examine the ordering of set-classes along each dimension separately to 
+interpret what that dimension represents. </p>
+<p style="text-align: center"><b>ANGLE</b></p>
+<p>[35] The order of dimensions produced by SPSS is arbitrary, so there is no need to adhere to it in the following 
+discussion. Also, rather than repeatedly referring to &ldquo;dimension one,&rdquo; etc., I 
+shall use my suggested interpretations for the dimensions as descriptive names. 
+Thus, the phrase &ldquo;the ic1/ic5 dimension&rdquo; is a narrative shorthand for &ldquo;the 
+dimension to which I am assigning an interpretation of &lsquo;an opposition of 
+ic1-saturation vs. ic5-saturation&rsquo;,&rdquo; and so forth. For each dimension, the 
+coordinates of the set-classes along the dimension are given plus a histogram 
+for visualization. The units for the coordinates are also arbitrary, although 
+they are on the same scale for all dimensions of a particular configuration. 
+</p>
+
+<p>[36] The most dramatic dimension has the easiest interpretation: ic1-saturation 
+vs. ic5-saturation. The histogram in    
+<b>Figure 7</b> shows a symmetrical distribution, with [012], its direct 
+supersets, and other ic1-dominant set-classes at one extreme, while [027] and 
+other diatonic subsets are at the opposite end. Most striking, though, is the 
+clustering near zero of 37 set-classes, with large gaps between it and the other 
+groups. </p>
+<p>[37] This huge cluster explains the oddities in the stress/<i>r<sup></i>2</sup> tables. 
+In the typical case when a configuration is one or more dimensions beyond 
+optimum, one finds that for some of the dimensions almost all of the coordinate 
+values will be at or near zero. Such an occurrence provides an additional 
+dimensionality check, since it usually indicates that we are learning too little 
+additional information to warrant the extra dimension. At first glance this 
+looks to have happened here. </p>
+<p>[38] In reconsidering whether a 4-D solution is 
+appropriate, several factors must be weighed. First, the stress and <i>r<sup></i>2</sup> values 
+show a non-trivial incremental improvement from 3-D to 4-D, arguing that the 
+fourth dimension in the solution is a real one. Second, 42 of the 79 set-classes 
+have non-zero coordinates, and some of those coordinates are decidedly non-zero. 
+If this were a &ldquo;fake dimension&rdquo; we would expect fewer non-zero coordinates, and 
+expect those to be closer to zero instead of being clearly grouped towards the 
+extremes. Third, this dimension has a clear and logical interpretation, whereas 
+the situation in the 3-D solution (omitted for space considerations) is 
+muddled--as mentioned in footnote 14, judgment calls are sometimes necessary. 
+Finally, the 5-D solution for RECREL has an almost exact counterpart to this 
+dimension, and its stress/<i>r</i><sup>2</sup> values showed no oddities. This last admittedly 
+risks being an example of circular reasoning: if we are trying to determine 
+whether these functions measure the same things, we should not use the results 
+from one function to decide that the results of another are valid then go back 
+to check what the former measures compared to the latter. I will argue in 
+paragraph 48, however, that ic1-saturation vs. ic5-saturation is equivalent to 
+[012]-saturation vs. [027]-saturation; if two different functions, one examining icv content and the other subset content, find these oppositions in their 
+respective domains, then we should consider the result legitimate. </p>
+<p>[39] The 
+presence of certain set-classes in the near-zero clump may seem surprising. For 
+example, 4-10 and 4-11, [0135] and [0235] respectively, are in the clump yet are 
+both diatonic subsets. They do not, however, exhibit relative ic5-saturation. 
+All of the set-classes in the clump have equal ic1 and ic5 content; the first 
+few set-classes with significantly non-zero coordinates have ic1 content one 
+more than ic5 content or vice versa; and the set-classes at the extremes have 
+either zero ic5 or ic1 content while the value of the opposite is at least two, 
+and have zero values for at least one other icv component. This dimension thus 
+provides a graphic (in both senses of the word) example of how to quantitatively 
+clarify one aspect of pcset similarity: what the terms &ldquo;diatonic&rdquo; and 
+&ldquo;chromatic&rdquo; really signify, as measured by certain abstract functions. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Coordinate values and histogram for ANGLE 016 vs. ic3 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=12&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="samplaski_fig8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. Coordinate values and histogram for ANGLE whole-tone vs. anti-wholetone dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=13&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="samplaski_fig9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. Coordinate values and histogram for ANGLE hexatonic vs. ic2 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=14&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="samplaski_fig10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 13</b>. Coordinate values and histogram for RECREL 024 vs. 016/036 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=17&nonav=true"><img border="1" alt="Figure 13 thumbnail" src="samplaski_fig13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 14</b>. Coordinate values and histogram for RECREL 04/014 vs. 012/027 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=18&nonav=true"><img border="1" alt="Figure 14 thumbnail" src="samplaski_fig14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 15</b>. Coordinate values and histogram for RECREL 015/04 vs. 036 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=19&nonav=true"><img border="1" alt="Figure 15 thumbnail" src="samplaski_fig15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 16</b>. Coordinate values and histogram for RECREL 016/026 vs. anti-ic6 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=20&nonav=true"><img border="1" alt="Figure 16 thumbnail" src="samplaski_fig16_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[40] The 
+next dimension can be termed &ldquo;016-saturation vs. ic3-saturation&rdquo; or &ldquo;even 
+distribution around the pitch-chroma wheel vs. pitch-classes clumped at opposite 
+sides of the chroma wheel.&rdquo; At one extreme in the histogram in     
+<b>Figure 8</b> are [016] and [0167], 
+followed closely by other sets with imbedded 016s, such as [0156]. Any other 
+similar set-classes will necessarily increase the amount of ic5 and ic1 
+simultaneously; thus, set-classes like [015] also group at this end of the 
+dimension. At the other end are the diminished triad and the diminished seventh 
+chord. Because the addition of any other pitch-classes would add ics other than 
+ic3/ic6, there is a wide gap between those two set-classes and the others at 
+this end, and the distribution along this dimension is asymmetrical. There is 
+still a fairly large clump of set-classes at near-zero coordinates, although 
+less so than in the ic1/ic5 dimension (only 25 of 79 here). This also 
+contributes to the oddities of the stress/<i>r</i><sup>2</sup> table. </p>
+<p>[41] The third dimension 
+is characterizable as &ldquo;whole-toneness vs. anti-whole toneness.&rdquo; The distribution 
+histogram in      
+<b>Figure 9</b> is again asymmetrical. At one extreme are the seven 
+subsets of the whole-tone scale, followed by a large gap; at the other extreme, 
+we again see [016] and [0167], also with a wide gap between them and the next 
+set-classes; but among that group are [036] and [0369]. Evidently for ANGLE, if 
+&ldquo;whole-tone&rdquo; means &ldquo;saturation in ic2 and ic4 together,&rdquo; then &ldquo;anti-wholetone&rdquo; 
+can mean either ic3- or 016-saturation. </p>
+<p>[42] The last dimension in the ANGLE 
+configuration has the most even distribution and is harder to interpret. At the 
+positive end of the histogram in      
+<b>Figure 10</b> are hexatonic subsets--the augmented triad and its 
+supersets [0148] and [01458]--followed by other pcsets with relatively high 
+ic4-content and zero or minimal ic2- and ic6-content. In contrast, the negative 
+extreme has a seemingly confusing mix of whole-tone ([024], [0246]), diatonic 
+([0257]) and chromatic or near-chromatic ([013], [0123]) set-classes. The 
+hexatonic scale has the characteristic &ldquo;ic4-saturation at the expense of ic2 and 
+ic6 content,&rdquo; so the best interpretation for the negative end of the dimension 
+appears to be the opposite, i.e., &ldquo;attempts at ic2-saturation at the expense of 
+ic4 and/or ic6.&rdquo; Since it is impossible to have any ic2 content in set-classes 
+of cardinality three or higher without having some other ics present, we get the 
+&ldquo;mixed bag&rdquo; of set-classes here. </p>
+<p style="text-align: center"><b>RECREL</b></p>
+<p>[43] As mentioned, RECREL has an almost 
+exact counterpart to ANGLE&rsquo;s ic1 vs. ic5 dimension--here better labeled 
+&ldquo;012-saturation vs. 027-saturation.&rdquo; The coordinates and histogram in       
+<b>Figure 11</b> 
+are somewhat different, 
+but the units are arbitrary anyway. The signs are backwards, but they are also 
+arbitrary; by reversing one configuration and comparing the set-class orderings, 
+as shown in       
+<b>Figure 12</b>, it is clear how closely the two 
+match up. The three set-classes at the extremes match in order; there follows a 
+group of three set-classes whose orders almost match; a single set-class that 
+matches; another group of three that almost match up; then a group of eleven; 
+and then the near-zero cluster. </p>
+
+                <table width=800><tr><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11</b>. Coordinate values and histogram for RECREL 012 vs. 027 dimension, 3x5 dataset</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="samplaski_examples.php?id=15&nonav=true"><img border="1" alt="Figure 11 thumbnail" src="samplaski_fig11_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td><td width=50></td><td valign='top' width=50%><p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b>. Correspondence of set-class orderings between RECREL and ANGLE diatonic/chromatic dimensions, 3x5 dataset</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="samplaski_examples.php?id=16&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="samplaski_fig12_small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td></tr></table>
+<p>[44] The next dimension corresponds to ANGLE&rsquo;s 
+&ldquo;whole-tone vs. anti-whole tone&rdquo; dimension, although not quite so exactly. At 
+the positive extreme of the histogram in        
+<b>Figure 13</b> are the seven whole-tone subsets, just as for 
+ANGLE; beyond those, however, the orderings diverge somewhat. For the ANGLE 
+configuration, general high ic4 content seemed to come next; here, high 
+024-content apparently takes precedence. This end of the dimension thus seems to 
+be more strictly &ldquo;024-saturation.&rdquo; At the negative end, the three set-classes 
+at the extreme also match, but after that set-classes with higher 016- than 
+036-content seem to take slight precedence: there are three set-classes before 
+we reach the diminished triad and seventh chord, vs. one for ANGLE. A full 
+interpretation therefore appears to be &ldquo;024-saturation vs. 016-/036-saturation.&rdquo; 
+</p>
+<p>[45] The next dimension bears some resemblance to ANGLE&rsquo;s &ldquo;hexatonic vs. ic2&rdquo; 
+dimension, but again has differences. At the negative end in the histogram of 
+<b>Figure 14</b> are 
+the augmented triad and [0148], as for ANGLE. The augmented triad is much more 
+of an outlier here, however; and after those two set-classes the orderings 
+diverge. Here, various pcsets with high 014-content follow, although the 
+diatonic/diminished triads and the diminished seventh chord also appear. The 
+set-classes at the opposite end of this dimension all lack ic4 content, but the 
+pairings that occur are striking: [012] and [027] are farthest out, followed by 
+their immediate supersets [0123] and [0257]; a bit further in are the next level 
+of supersets, [01234] and [02479]. This dimension thus appears to be 
+&ldquo;04/014-saturation vs. 012/027-saturation.&rdquo; </p>
+<p>[46] The remaining two dimensions 
+correspond much less if at all to dimensions in the ANGLE configuration; this is 
+not surprising since this is a five-dimensional solution instead of a 
+four-dimensional one. As shown in        
+<b>Figure 15</b>, the next dimension has the diminished triad and 
+seventh chord at its positive extreme, leading to an interpretation of 
+&ldquo;036-content.&rdquo; The negative end would appear to have &ldquo;015-content&rdquo; as its 
+primary characteristic, since [015] and [0156] are the two set-classes at that 
+extreme, and [015] is very much an outlier. The third set-class in is [048], 
+however, and other set-classes with high ic4-content, such as [0148], take 
+precedence over those with 015-content. ([014] has a near-zero coordinate, so 
+this is not about 014-content.) The distribution along the histogram is much 
+more even than in the previous dimensions; this may indicate some sort of 
+conflict between these two characteristics, so that one does not take clear 
+precedence after the extremum. This dimension is thus apparently &ldquo;015/04-content 
+vs. 036-content.&rdquo; </p>
+<p>[47] The final dimension for RECREL is the most difficult to 
+understand, and a good, solid interpretation in terms of trichord content is 
+elusive. There are no clear outliers at the negative extreme, and the 
+distribution on the histogram in         
+<b>Figure 16</b> is very even. There is again a potpourri of 
+set-classes; their only common characteristic is a lack of ic6. At the positive 
+end, we have various set-classes with ic6-content and no ic3-content. The two 
+most extreme set-classes are [016] and its direct superset [0167], followed by 
+[026] and <i>its</i> direct superset [0268]; but there is no real separation between 
+the latter pair and the rest of the pack. The diminished triad and seventh chord 
+do occur near this end and they of course have high ic3 content; but they also 
+have relatively high ic6 content. The best interpretation for this dimension 
+thus appears to be &ldquo;016/026-content at the expense of ic3 vs. depletion of 
+ic6.&rdquo; Note that this is not an analogue to ANGLE&rsquo;s 016/ic3 dimension because 
+[036] and [0369] were at the opposite extreme from [016]/[0167] in the latter. 
+</p>
+<p>[48] If we consider those dimensions where ANGLE and RECREL appear to give the 
+same results, we see situations where ic-saturation and subset-saturation are 
+in a sense equivalent. In other words, if we try to maximize ic1, we perforce 
+will be led to [012], [0123], etc.; a subset-based measure that views 
+012-saturation as one aspect of pcset similarity must then yield the same sort 
+of results for that dimension, and a similar line of reasoning applies to 
+ic5/027-content. This says nothing about <i>why</i> R RECREL views 012-content as one 
+aspect of similarity while not viewing, e.g., 013-content (which would lead 
+towards an &ldquo;octatonic vs. whatever&rdquo; dimension) as another aspect; it merely 
+explains why it should yield somewhat similar factors as an icv-based function 
+in some situations. </p>
+<p style="text-align: center"><b>The Other Functions</b></p>
+<p>[49] As noted in paragraph 28, to 
+analyze the other functions for the 3x5 dataset we first apply Procrustes 
+rotation to their configurations so as to most closely align them with those of 
+the reference functions. We then examine correlations of the dimensional 
+coordinates between the two triples of functions. If IcVSIM and ISIM2 measure 
+the same things as ANGLE, corresponding dimensions (e.g., dimension 1 for ANGLE 
+and IcVSIM--we do not care here whether this is the ic1/ic5 dimension or 
+whatever) should be highly correlated while non-corresponding dimensions 
+(dimension 2 for ANGLE vs. dimension 3 for IcVSIM) should have little or no 
+correlation; the same situation should hold true for RECREL, ATMEMB and 
+AMEMB2.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> It is then only 
+necessary to consider any dimensions in the other functions where this does not 
+hold. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 4</b>. Correlations between dimensions of icv-based functions and between dimensions of subset-based functions for 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=21&nonav=true"><img border="1" alt="Table 4 thumbnail" src="samplaski_tab4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[50]  
+<b>Table 4</b> gives the 
+correlations for all dimensions of the 4-D solutions for the icv-based 
+functions, and likewise for the 5-D solutions for the subset-based measures, for 
+the 3x5 dataset. The subset-based functions show the expected situation if these 
+functions all measure the same things: values on the main diagonal 
+(corresponding dimensions) are all extremely high, while the other values are 
+all very low. Recall that the notation &ldquo;<i>p&lt;</i>.001&rdquo; means a probability of less 
+than one in a thousand that the observed result might have occurred by chance; 
+conversely, &ldquo;<i>p</i>&gt;&gt;.05&rdquo; says there is well over a 5% probability that the results 
+are due to chance.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></p>
+<p>[51] The same situation 
+holds for ANGLE and IcVSIM, but there are exceptions for ISIM2: ANGLE/IcVSIM 
+dimensions two (the 016 vs. ic3 dimension) have significant negative 
+correlations with ISIM2 dimension three (its hexatonic vs. ic2 dimension), at 
+<i>p&lt;</i>.01 each; and ANGLE dimension three (hexatonic vs. ic2) has a significant 
+negative correlation with ISIM2 dimension two (016 vs. ic3) at <i>p&lt;</i>.05. (IcVSIM&rsquo;s 
+hexatonic-vs.-ic2 and ISIM2&rsquo;s 016-vs.-ic3 dimensions &ldquo;just miss&rdquo; being 
+correlated at <i>p</i>&lt;.05.) Also, for some pairs of corresponding dimensions in some 
+of the other datasets (omitted for space), ISIM2 has essentially no correlation 
+to ANGLE and IcVSIM (<i>r</i>s are near-zero). This would suggest that ISIM2 measures 
+something different than the latter two functions and should be examined in 
+detail; however, ISIM2 turns out to be non-robust. As a result, it is pointless 
+to compare it with the other icv-based functions. </p>
+<p style="text-align: center"><b>Robustness</b></p>
+<p>[52] Here, recall, 
+the concern is the self-consistency of a function&rsquo;s set-class orderings along 
+each dimension across several datasets. For example, trichords occur in the 3x3, 
+3x4, and 3x5 datasets. The coordinates for trichords in the 3x4 and 3x5 
+configurations must be extracted from them and compared to the coordinates for 
+the 3x3 dataset. This means subjecting the extracted sub-configurations to Procrustes rotation with the 3x3 configuration as target (because configurations 
+for the other datasets might be reflected and/or rotated about axes), then 
+computing correlations for corresponding dimensions for the various datasets; an 
+equivalent procedure applies for tetrachords and pentachords. If the coordinates 
+for set-classes of a cardinality for a particular dimension are highly 
+correlated across all the datasets involved, then we can conclude that the 
+function is stable and robust for that cardinality with respect to that 
+dimension--the set-classes occur in approximately the same relative ordering 
+regardless of where set-classes of other cardinalities occur along that 
+dimension.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 5</b>. Non-robust dimensions for ISIM2, by cardinality</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=22&nonav=true"><img border="1" alt="Table 5 thumbnail" src="samplaski_tab5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[53] All of the functions except 
+ISIM2 are extremely robust for all dimensions. Except for two correlations for 
+AMEMB2 at .904 and .915, all <i>r</i>s for the other five functions are greater than 
+.96, and nearly all are greater than .99--<i>p</i>&lt;.001 for all cases. By contrast, 
+ISIM2 fails to be robust at <i>p</i>&lt;.05 in several cases. It is not necessary for us 
+to analyze these inconsistencies; that they exist already renders the function 
+unusable for this essay&rsquo;s purposes. For those wishing to investigate these cases 
+on their own,   
+<b>Table 5</b> gives the correlation matrices 
+for ISIM2&rsquo;s non-robust cardinalities and dimensions, and lists the coordinate 
+values for each of the configurations or Procrustes-rotated subconfigurations 
+for those dimensions.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> The titles &ldquo;Dimension 2&rdquo;, etc. reflect the order of 
+dimensions from SPSS for the &ldquo;base&rdquo; datasets (3x3, 4x4, or 5x5, as appropriate) 
+involved. The interpretations given are likewise for the base dataset for each 
+particular cardinality/dimension, so do not necessarily match anything in the 
+prior discussions for ANGLE and RECREL; as noted in footnote 24, such 
+interpretations are generally rather tentative due to the smaller number of 
+objects in those datasets.</p>
+<p style="text-align: center"><b>Pcset genera</b></p>
+<p>[54] The various dimensions of the 
+ANGLE and RECREL configurations show two types of organizations: either 
+different ways of attempted symmetrical distribution of pitch-classes, or 
+symmetrical vs. asymmetrical distributions. Thus, the diatonic set-classes 
+evenly distribute pcs by ic5, while chromatic organization tries <i>not</i> to 
+distribute evenly but rather bunch all pcs up in one section of the chroma 
+circle via ic1 saturation. Several of these organization types correspond to 
+group-theoretic ways of distributing pcs around the chroma circle according to 
+the concept of maximal evenness (<a href="#clough_and_douthett_1991" id="citation_clough_and_douthett_1991_67dc9b4287b2b">Clough and Douthett 1991</a>). As Quinn (<a href="#quinn_2001" id="citation_quinn_2001_67dc9b4287b2d">2001</a>) 
+also points out, the chromatic, whole-tone, octatonic, hexatonic, and diatonic 
+scales correspond to Hanson&rsquo;s (<a href="#hanson_1960" id="citation_hanson_1960_67dc9b4287b2f">1960</a>) idea of interval cycles, with each of those 
+having ics 1 through 5 respectively dominant; and 016/0167 organization 
+corresponds to Hanson&rsquo;s ic6 interval cycle. The notion of different kinds of 
+pcsets at the extremes of the dimensions invites comparison with various models 
+of pcset families, or genera. </p>
+<p>[55] The <i>Oxford Shorter English Dictionary</i> 
+defines <i>genus</i> as &ldquo;a class of things containing a number of subordinate classes 
+(called species) with certain common attributes.&rdquo; In certain fields, most 
+notably biology, genus membership is exhaustive and exclusive: every species 
+belongs to exactly one genus. For other fields such as categories of games, the 
+boundaries are not clear-cut--games can have characteristics that arguably 
+render them members of more than one genus. In terms of mathematical, not 
+musical, set theory, the former situation corresponds to classical sets: an 
+object is either a member of a set or it is not, and the truth value of the 
+proposition &ldquo;X belongs to set Y&rdquo; is 1 or 0 (true or false in classical logic). 
+The latter situation corresponds to Zadeh&rsquo;s (<a href="#zadeh_1965" id="citation_zadeh_1965_67dc9b4287b31">1965</a>) fuzzy sets, which let one say 
+&ldquo;X sort of belongs to Y,&rdquo; and where the truth value of &ldquo;X belongs to Y&rdquo; can be 
+any real number from 0 to 1 inclusive (i.e., a probability value). </p>
+<p>[56] Implicit 
+in the definition of genus, whether classical or fuzzy, is the notion that some 
+sort of criteria exist for exclusion as well as inclusion. A genus is defined to 
+provide a distinction between objects that belong to it and those that do not; a 
+genus whose inclusion rule is so broad and liberal as to permit <i>any</i> object of 
+the domain to be a member is not useful. Likewise for a system of genera, 
+significant overlap in members, even if no genus is all-inclusive, limits the 
+system&rsquo;s utility. This is not to say that there can be no doubtful 
+classifications, since some objects really may be best described as belonging to 
+multiple genera; but it would seem a good rule of thumb that such objects should 
+be a decided minority. </p>
+<p>[57] Like similarity functions, multiple genera systems 
+have been proposed; some explicitly come out of pcset theory or investigations 
+influenced by it (e.g., <a href="#ericksson_1986" id="citation_ericksson_1986_67dc9b4287b32">Ericksson 1986</a>; <a href="#forte_1988" id="citation_forte_1988_67dc9b4287b34">Forte 1988</a>; <a href="#parks_1989" id="citation_parks_1989_67dc9b4287b36">Parks 1989</a>; <a href="#quinn_1997" id="citation_quinn_1997_67dc9b4287b37">Quinn 1997</a>, 
+<a href="#quinn_2001" id="citation_quinn_2001_67dc9b4287b39">2001</a>) while others do not (e.g., Hanson, 1960; Harris, 1989; Hindemith, 1937/42; 
+Wolpert, 1951, 1972). It is beyond the scope of this article to compare all of 
+the various genera systems with the factors found to be measured by the 
+similarity functions studied here. It is possible, though, to look at a sample: 
+the systems of Forte, Parks, and Quinn provide an interesting set of contrasting 
+approaches. </p>
+<p>[58] Forte (1988) proposed a system of 12 genera, each generated by 
+one or more trichord progenitors (the trichords are not actually members of the 
+genera); Forte also lists four &ldquo;supragenera&rdquo; as a classification level above 
+these. There are tremendous overlaps between the genera: while 17 of the 29 
+tetrachords belong to only one genus, only one pentachord and no hexachords are 
+singular to a genus. Most set-classes in fact belong to many genera: 29 out of 
+38 pentachords belong to between 4 and 9 genera, and 6 of 35 hexachords belong 
+to 11(!) genera.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup> This situation strongly implies that Forte&rsquo;s system is a 
+very poor set of genera in the usual sense (classical or fuzzy) of the term; a 
+much better and more accurate label would appear to be &ldquo;interlocked network of 
+complexes of set-classes.&rdquo; Given Forte&rsquo;s emphasis on families of supersets and 
+the associated K/Kh-relations in his 1973 work, this is not surprising. Because 
+of the membership overlaps and extreme blurring of boundaries among Forte&rsquo;s 
+groups, it is not practical to try to determine any correspondences between his 
+system and the MDS configurations. </p>
+<p>[59] Parks (1989) developed his system for the 
+analysis of Debussy&rsquo;s music. While he says he was explicitly coming out of the 
+tradition of pcset theory, he is concerned with reflecting one musician&rsquo;s actual 
+compositional palette rather than developing a scheme <i>ab initio</i>.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> He posits 
+five genera, four of which correspond to familiar scales (diatonic, whole-tone, 
+chromatic, and octatonic). His fifth genus, termed by him the &ldquo;8-17/18/19 
+complex,&rdquo; is unwieldy: nearly every set-class in the domain of the present 
+article belongs to it, with only 5-1 and 5-35 absent. This suggests that it is 
+not useful as a genus <i>per se</i>--Parks&rsquo; own name, &ldquo;complex,&rdquo; implies as 
+much--and it is omitted from further consideration here. Of his remaining 
+genera, the diatonic and octatonic are still fairly obese--the former contains 9 
+trichords/13 tetrachords/10 pentachords, while the latter has 7 trichords/13 
+tetrachords/7 pentachords--but the situation is nowhere near as bad as for the 
+8-17/18/19 complex.</p>
+<p>[60] There is excellent correspondence between 
+Parks&rsquo; whole-tone/chromatic genera and the equivalent groups in the MDS 
+configurations. The seven whole-tone set-classes in the ANGLE-RECREL WT/anti-WT 
+dimension match exactly the trichords through pentachords in Parks&rsquo; genus; for 
+the chromatic genus, the seven set-classes at the extremes in the configurations 
+omit 5-2 and 5-3 ([01235] and [01245]) and add 3-3, [014], as compared to Parks&rsquo; 
+group of eight.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> The seven 
+set-classes at the extreme diatonic end of the MDS configurations are in Parks&rsquo; 
+diatonic genus, but that genus includes a number of set-classes that occur in 
+the near-zero clump in the configurations. The five set-classes at the ic3 
+extreme in the MDS configurations ([036], [0236], [0258], [0369], and [01369]) 
+are all members of Parks&rsquo; octatonic genus; not much more can be said, because of 
+both the obesity of Parks&rsquo; genus and the lack of a good secondary cutoff value 
+for the configurations.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 6</b>. Taxonomic families of trichords and tetrachords in Quinn (1997)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=23&nonav=true"><img border="1" alt="Table 6 thumbnail" src="samplaski_tab6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[61] In his 1997 presentation, Quinn used cluster analysis to examine the 
+ratings of a large number of similarity functions for trichords and tetrachords. 
+In comparing the resulting trees he found a good deal of correspondence among 
+the various measures, something not unexpected given the present results. Quinn 
+decided the trees could be parsed into eight large clusters (i.e., genera), but 
+a number of set-classes were borderline: several &ldquo;fence sitters&rdquo; (my term) 
+belonged to not just two but multiple groups, and [0135] in particular was 
+listed as belonging to five groups. Because of this, Quinn argued strongly for a 
+fuzzy set theory of pcset similarity.    
+<b>Table 6</b> reproduces his list of groups from that presentation. </p>
+<p>[62] In his 2001 
+paper, a rather substantial modification of the earlier work, Quinn presented 
+several more cluster analyses on trichords through hexachords as rated by 
+different functions. He also carried out a very interesting Monte Carlo 
+analysis<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup> to determine networks of relationships between set-classes of 
+various cardinalities, as measured by several functions. In the paper he gives 
+two examples, one for tetrachords as rated by Morris&rsquo; (1979-80) ASIM, and one 
+for hexachords as rated by ATMEMB. He finds six clusters of set-classes in the 
+former and seven in the latter. The set-classes within each cluster have 
+moderate to very strong connections with other cluster members, while the 
+connections between groups are much weaker or nonexistent. </p>
+<p>[63] Quinn&rsquo;s 
+Monte Carlo results show an interlocked network of pcset clusters; in that sense 
+they are more like Forte&rsquo;s system than Parks&rsquo;. His clusters are much more 
+successful as a system of genera than Forte&rsquo;s, though, because his method allows 
+quantitative cutoff values that circumscribe cluster membership and demonstrate 
+the relative strengths of connections between pcsets both intra- and 
+inter-cluster. In his analysis of hexachords as rated by ATMEMB, for example, 
+when only the one percent most similar pcsets are used to develop connections 
+between set-classes he gets strongly connected but essentially isolated 
+clusters. As the cutoff value is liberalized to include the five percent and 
+then ten percent most similar pcsets, the weaker connections between the 
+clusters appear while connections within each cluster are strengthened, and the 
+intra-cluster connections become more differentiated. This subtle distinction is 
+missing in Forte&rsquo;s complexes, although one could envision Quinn&rsquo;s network 
+perhaps asymptotically approaching Forte&rsquo;s in amounts of cross-connection if a 
+sufficiently liberal cutoff value were used. The six ASIM tetrachord clusters 
+correspond to Hanson&rsquo;s interval cycles and thus to components of the present 
+results. Six of the seven ATMEMB hexachord clusters also correspond to the 
+interval cycles while group B, containing [023457] and ten other set-classes, 
+does not; perhaps significantly, it is the group most interconnected to all the 
+other clusters. </p>
+<p>[64] It would be far beyond the scope of this article to attempt 
+a detailed comparison of the present results and the wide-ranging theory put 
+forth in Quinn&rsquo;s (2004) dissertation, but it is possible to give a brief taste. 
+In his third chapter, &ldquo;A Generalized Theory of Affinities,&rdquo; Quinn connects a set 
+of properties first described by Lewin (1959), and termed &ldquo;Fourier properties&rdquo; 
+in Lewin (2001), to the general mathematical theory of chord quality he has been 
+developing. For example, a chord has Fourier property six--FOURPROP(6) in Lewin 
+(2001), &ldquo;the whole-tone property&rdquo; in Lewin (1959)--if it has &ldquo;the same number of 
+notes in one whole-tone set as it has in the other.&rdquo; Of the set-classes studied 
+here, [0167] and [0369] possess this property while the whole-tone subsets do 
+not. (Quinn provides a set of &ldquo;balance scale&rdquo; illustrations in his discussion; 
+in that view, [0167] and [0369] are &ldquo;most balanced&rdquo; on this scale/property while 
+[0246] <i>et al.</i> are &ldquo;most unbalanced;&rdquo; the other set-classes in this article&rsquo;s 
+domain have varying degrees of unbalance on it.) The ANGLE-RECREL WT/anti-WT 
+dimension thus appears to correspond to Lewin&rsquo;s FOURPROP(6) or its lack, and to 
+suggest a potential way to quantify it. Possible correspondences between the 
+other configuration dimensions and the other Fourier properties are less exact; 
+more investigation is necessary. Readers, especially those frustrated by the 
+lack of mathematical (vs. statistical) analysis in this article, are again urged 
+to study this important dissertation. </p>
+<p style="text-align: center"><b>Implications</b></p>
+<p>[65] The above results about 
+genera systems and the MDS configurations offer one possible answer to the broad 
+philosophical question rhetorically posed at the beginning of this essay: just 
+what sorts of &ldquo;musical intuitions&rdquo; are involved in our vague but loaded term, 
+&ldquo;pitch-class set similarity?&rdquo; Most of the MDS results and some of the systems 
+mentioned (e.g., Parks&rsquo; genera) involve familiar scales used by composers; these 
+scales also correspond to group-theoretic models of pitch-chroma distribution. 
+If we are primarily interested in set-classes that derive from such 
+scales/models (as opposed to, say, the various Z-related pcsets or complementary 
+hexachords), then the functions considered here yield ratings that mirror well 
+the similarities and differences between such set-classes. </p>
+<p>[66] Suppose we 
+consider one of these proposed genera systems--let us stay with Parks for the 
+sake of argument--to be a general system for pcset categorization. We then face 
+an important issue. Several set-classes in the domain of cardinalities 
+three-to-five simply do not belong to any of Parks&rsquo; four usable genera. The MDS 
+results appear to support this in that many set-classes seem to have little of 
+the properties being measured, based on their coordinates along the various 
+dimensions--the huge near-zero clump in the diatonic/chromatic dimension is the 
+most dramatic example. We may be forced to conclude that some set-classes are 
+simply &ldquo;mongrels&rdquo; or &ldquo;garbage&rdquo; in terms of interesting musical (as opposed to 
+set-theoretical) properties. Note that this is not just a subjective aesthetic 
+judgment but a formal one about set-class structure as computed by multiple 
+abstract functions.<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup> This is also distinct from, although not incompatible 
+with, Quinn&rsquo;s (1997) idea of fuzzy pcset similarity: many pcsets still likely 
+belong to one genus and a few might belong to several genera, but some may not 
+belong to <i>any</i> genera (at least, any musically interesting or useful 
+ones). </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 7</b>. Set-classes with near-zero coordinate values along two or more dimensions in ANGLE/RECREL configurations, 3x5 dataset</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="samplaski_examples.php?id=24&nonav=true"><img border="1" alt="Table 7 thumbnail" src="samplaski_tab7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[67]     
+<b>Table 7</b> lists 
+those trichords through pentachords with coordinates in a &ldquo;near-zero&rdquo; category 
+for at least two dimensions in the ANGLE or RECREL configurations. Some judgment 
+calls were involved to decide cutoff values. For example, if a dimension had a 
+number of coordinates between .001 and .15 then a gap to .39, all those small 
+positive coordinates were considered to be near-zero. The Z-related tetrachords 
+[0137]/[0146] and 5-11, [02347], are near-zero in all four dimensions for ANGLE 
+and in three of the five RECREL dimensions; 5-Z12, [01356], also is near-zero in 
+three RECREL dimensions. Several entries are clearly false alarms since they are 
+of obvious musical interest along at least one other dimension: among other 
+cases, the diminished, diatonic, and augmented triads are all on the list. For 
+any set-classes that ultimately remain on the &ldquo;potential garbage&rdquo; list, 
+however, it is worth examining the musical literature to see whether any of them 
+have been exploited in any systematic way by atonal composers; and present-day 
+atonal composers should ask themselves whether such set-classes offer worthwhile 
+compositional possibilities.<sup><a name="FN35REF" href="#FN35" id="footnote35">(35)</a></sup> If 
+they do turn out to be musically interesting, the question of what makes them so 
+could very well suggest new approaches to the issue of pcset similarity. </p>
+<p>[68] I 
+have deliberately avoided &ldquo;value-neutral&rdquo; terms in favor of &ldquo;provocative&rdquo; 
+language in the immediately preceding discussion because at this point we must 
+reenter the (emotionally-laden) fray of aesthetic debate, and I feel it 
+appropriate to &ldquo;get the blood flowing&rdquo; here. For example, for well over two 
+thousand years, back to the Greater and Lesser Perfect Systems of Greek 
+antiquity, [0235] as a melodic segment with its T-S-T ordered intervallic 
+content has in some sense epitomized &ldquo;diatonicism.&rdquo; Yet, its coordinate is zero 
+along the ANGLE-RECREL dimension that appears to measure that construct, 
+indicating it has nothing of whatever property is being measured. Readers may be 
+extremely dismayed by such a result. The entire motivation for this article was 
+to show how numerical visualization techniques like MDS can provide quantitative 
+clarification for concepts like &ldquo;diatonicism.&rdquo; As stated in paragraph 2, once we 
+are armed with such information, we now can (and to my mind must) debate how, or 
+whether, to use it. If multiple formal abstract functions indicate that 
+&ldquo;diatonicism&rdquo; quantitatively equates to {ic5-content at least two; ic1-content 
+zero; and zero content of at least one other ic}, do we want to accept that 
+definition if it means the exclusion of [0235]? After all, the octatonic scale 
+is saturated with [0235] to a much greater degree than the diatonic scale, so a 
+good case can be made for [0235]&rsquo;s placement in that genus. If we want to reject 
+this quantification, that is our prerogative; the present results force us to say 
+with greater precision what we are rejecting and why. </p>
+<p>[69] So, which similarity 
+functions are &ldquo;really good?&rdquo; Such a question is vague to the point of 
+meaninglessness. Better is, &ldquo;Which functions are most useful?&rdquo;, since it is at 
+least possible to give operational criteria for &ldquo;utility.&rdquo; Castr&eacute;n (1994) 
+discussed a number of such criteria in detail; while one might quibble with one 
+or another of his desiderata, doing so is besides the point for the present 
+essay. By implication, I consider functions that do not permit some form of 
+quantitative comparison between set-classes of different cardinality to be much 
+less useful than those that do--but people with other priorities might find 
+binary functions like Forte&rsquo;s (1973) Rn relations useful. For still others 
+needing to compare set-classes of different cardinalities, the present results 
+suggest they mostly have a free hand to choose whichever function most closely 
+matches their own aesthetics. The only caveat appears to be, avoid functions 
+that are not robust, like ISIM2--once robustness has been determined for a 
+function. If such users have deep disagreement with the similarity factors 
+measured by these functions, however, it seems they will have to develop 
+entirely different functions; and it is not at all clear how this might be done, 
+or even if it is possible in principle. There is also the broader issue of the 
+appropriate level of theoretical abstraction within which to examine similarity: 
+most authors use Tn/I-equivalence, but Castr&eacute;n and some others take exception to 
+this and use Tn-equivalence. This was not addressed here at all.<sup><a name="FN36REF" href="#FN36" id="footnote36">(36)</a></sup></p>
+<p>[70] 
+Finally, there is an entire gastank of worms waiting to be touched off: 
+perception and cognition. The discussion in this article and the other works 
+cited has been about abstract functions that consider formal structural 
+properties of theoretical objects; it is a decidedly non-trivial question 
+whether these results have anything whatsoever to do with how any human 
+perceives actual musical objects. Some of the results here certainly seem to 
+indicate at least a partial alignment between perception and theoretical 
+features, in that set-classes considered highly diatonic, chromatic, or 
+whole-tone by the functions studied here do match up with how we appear to group 
+them based on our intuitive perceptions. This does not, however, account for all 
+possible set-classes; and it says nothing at all about whether, and under what 
+circumstances, other factors affect and/or take precedence for our perceptions 
+of musical similarity.<sup><a name="FN37REF" href="#FN37" id="footnote37">(37)</a></sup> <i>Those</i> 
+questions can only be addressed after numerous empirical studies. At the same 
+time, we must decide whether or not we care if our theories of atonal musical 
+structure take into account how we hear atonal music. Only after we have a 
+consensus re the epistemological stance of the latter and (if we decide yes) the 
+psychological data about the former will we be in a position to develop 
+similarity functions of ultimate utility.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Art Samplaski<br>
+	P.O. Box 4971<br>Ithaca, NY 14852<br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_abbott_1885-1952" class="flyoverdiv">Abbott, Edwin A. 1885/1952. <i>Flatland: A Romance of Many 
+Dimensions (by A Square).</i> Reprint, New York: Dover.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="abbott_1885-1952"></a>Abbott, Edwin A. 1885/1952. <i>Flatland: A Romance of Many 
+Dimensions (by A Square).</i> Reprint, New York: Dover.</p><div id="citediv_castr&eacute;n_1994" class="flyoverdiv">Castr&eacute;n, Marcus. 1994. 
+<i>RECREL: A Similarity Measure for Set-Classes</i>. Helsinki: Sibelius Academy.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="castr&eacute;n_1994"></a>Castr&eacute;n, Marcus. 1994. 
+<i>RECREL: A Similarity Measure for Set-Classes</i>. Helsinki: Sibelius Academy.</p><div id="citediv_clough_and_douthett_1991" class="flyoverdiv">Clough, John, and Douthett, Jack. 1991. &ldquo;Maximally Even Sets.&rdquo; <i>Journal of Music 
+Theory</i> 35, 93&ndash;173.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_douthett_1991"></a>Clough, John, and Douthett, Jack. 1991. &ldquo;Maximally Even Sets.&rdquo; <i>Journal of Music 
+Theory</i> 35, 93&ndash;173.</p><div id="citediv_ekman_1954" class="flyoverdiv">Ekman, Gosta. 1954. &ldquo;Dimensions of Color Vision.&rdquo; <i>Journal 
+of Psychology</i> 38, 467&ndash;474.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ekman_1954"></a>Ekman, Gosta. 1954. &ldquo;Dimensions of Color Vision.&rdquo; <i>Journal 
+of Psychology</i> 38, 467&ndash;474.</p><div id="citediv_ericksson_1986" class="flyoverdiv">Ericksson, Tore. 1986. &ldquo;The IC Max Point Structure, 
+MM Vectors and Regions.&rdquo; <i>Journal of Music Theory</i> 30, 95&ndash;111.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ericksson_1986"></a>Ericksson, Tore. 1986. &ldquo;The IC Max Point Structure, 
+MM Vectors and Regions.&rdquo; <i>Journal of Music Theory</i> 30, 95&ndash;111.</p><div id="citediv_forte_1973" class="flyoverdiv">Forte, Allen. 
+1973. <i>The Structure of Atonal Music.</i> New Haven: Yale Univ. Pr.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_1973"></a>Forte, Allen. 
+1973. <i>The Structure of Atonal Music.</i> New Haven: Yale Univ. Pr.</p><div id="citediv_forte_1988" class="flyoverdiv">Forte, Allen. 
+1988. &ldquo;Pitch-Class Set Genera and the Origin of Modern Harmonic Species.&rdquo; 
+<i>Journal of Music Theory</i> 32, 187&ndash;270.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_1988"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 
+(1988). &ldquo;Pitch-Class Set Genera and the Origin of Modern Harmonic Species.&rdquo; 
+<i>Journal of Music Theory</i> 32, 187&ndash;270.</p><div id="citediv_hanson_1960" class="flyoverdiv">Hanson, Howard. 1960. <i>Harmonic 
+Materials of Modern Music.</i> New York: Appleton-Century-Crofts.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hanson_1960"></a>Hanson, Howard. 1960. <i>Harmonic 
+Materials of Modern Music.</i> New York: Appleton-Century-Crofts.</p><div id="citediv_harris_1989" class="flyoverdiv">Harris, Simon. 
+1989. <i>A Proposed Classification of Chords in Early Twentieth-Century Music.</i> 
+New York: Garland.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="harris_1989"></a>Harris, Simon. 
+1989. <i>A Proposed Classification of Chords in Early Twentieth-Century Music.</i> 
+New York: Garland.</p><div id="citediv_hindemith_1989" class="flyoverdiv">Hindemith, Paul. 1937/1942. <i>The Craft of Musical 
+Composition, Vol. 1: Theoretical Part</i> (Trans. A. Mendel). New York: Associated 
+Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hindemith_1989"></a>Hindemith, Paul. 1937/1942. <i>The Craft of Musical 
+Composition, Vol. 1: Theoretical Part</i> (Trans. A. Mendel). New York: Associated 
+Music.</p><div id="citediv_isaacson_1990" class="flyoverdiv">Isaacson, Eric J. 1990. &ldquo;Similarity of Interval-Class Content between 
+Pitch-Class Sets: The IcVSIM Relation.&rdquo; <i>Journal of Music Theory</i> 34, 1&ndash;28.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="isaacson_1990"></a>Isaacson, Eric J. 1990. &ldquo;Similarity of Interval-Class Content between 
+Pitch-Class Sets: The IcVSIM Relation.&rdquo; <i>Journal of Music Theory</i> 34, 1&ndash;28.</p><div id="citediv_isaacson_1992" class="flyoverdiv">Isaacson, Eric J. 1992. &ldquo;Similarity of Interval Class Content between 
+Pitch-Class Sets: The IcVSIM Relation and Its Application.&rdquo; Ph.D. dissertation, 
+Indiana Univ.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="isaacson_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. &ldquo;Similarity of Interval Class Content between 
+Pitch-Class Sets: The IcVSIM Relation and Its Application.&rdquo; Ph.D. dissertation, 
+Indiana Univ.</p><div id="citediv_isaacson_1996" class="flyoverdiv">Isaacson, Eric J. 1996. &ldquo;Issues in the Study of Similarity in 
+Atonal Music.&rdquo; <i>Music Theory Online</i> 2(7) <a href='http://www.mtosmt.org/issues/mto.96.2.7/mto.96.2.7.isaacson.html'>http://www.mtosmt.org/issues/mto.96.2.7/mto.96.2.7.isaacson.html</a>.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="isaacson_1996"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1996. &ldquo;Issues in the Study of Similarity in 
+Atonal Music.&rdquo; <i>Music Theory Online</i> 2(7) <a href='http://www.mtosmt.org/issues/mto.96.2.7/mto.96.2.7.isaacson.html'>http://www.mtosmt.org/issues/mto.96.2.7/mto.96.2.7.isaacson.html</a>.</p><div id="citediv_krumhansl_1995" class="flyoverdiv">Krumhansl, Carol L. 1995. &ldquo;Music Psychology: Influences from Music 
+Theory.&rdquo; <i>Music Theory Spectrum</i> 17, 53&ndash;80.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krumhansl_1995"></a>Krumhansl, Carol L. 1995. &ldquo;Music Psychology: Influences from Music 
+Theory.&rdquo; <i>Music Theory Spectrum</i> 17, 53&ndash;80.</p><div id="citediv_krumhansl_and_kessler_1982" class="flyoverdiv">Krumhansl, Carol L., and Kessler, 
+Edward J. 1982. &ldquo;Tracing the Dynamic Changes in Perceived Tonal Organization in 
+a Spatial Representation of Musical Keys.&rdquo; <i>Psychological Review</i> 89, 334&ndash;368.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krumhansl_and_kessler_1982"></a>Krumhansl, Carol L., and Kessler, 
+Edward J. 1982. &ldquo;Tracing the Dynamic Changes in Perceived Tonal Organization in 
+a Spatial Representation of Musical Keys.&rdquo; <i>Psychological Review</i> 89, 334&ndash;368.</p><div id="citediv_kruskal_1964a" class="flyoverdiv">Kruskal, J[oseph] B. 1964a. &ldquo;Multidimensional Scaling by Optimizing Goodness of 
+Fit to a Nonmetric Hypothesis.&rdquo; <i>Psychometrika</i> 29, 1&ndash;27.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kruskal_1964a"></a>Kruskal, J[oseph] B. 1964a. &ldquo;Multidimensional Scaling by Optimizing Goodness of 
+Fit to a Nonmetric Hypothesis.&rdquo; <i>Psychometrika</i> 29, 1&ndash;27.</p><div id="citediv_kruskal_1964b" class="flyoverdiv">Kruskal, J[oseph] B. 
+1964b. &ldquo;Nonmetric Multidimensional Scaling: A Numerical Method.&rdquo; <i>Psychometrika</i> 
+29, 115&ndash;129.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kruskal_1964b"></a>Kruskal, J[oseph] B. 
+1964b. &ldquo;Nonmetric Multidimensional Scaling: A Numerical Method.&rdquo; <i>Psychometrika</i> 
+29, 115&ndash;129.</p><div id="citediv_kruskal_and_wish_1978" class="flyoverdiv">Kruskal, Joseph B., and Wish, Myron. 1978. <i>Multidimensional 
+Scaling.</i> Newbury Park, CA and London: Sage Publications.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kruskal_and_wish_1978"></a>Kruskal, Joseph B., and Wish, Myron. 1978. <i>Multidimensional 
+Scaling.</i> Newbury Park, CA and London: Sage Publications.</p><div id="citediv_lewin_1959" class="flyoverdiv">Lewin, David. 1959. 
+&ldquo;Re: Intervallic Relations between Two Collections of Notes.&rdquo; <i>Journal of Music 
+Theory</i> 3, 298&ndash;301.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1959"></a>Lewin, David. 1959. 
+&ldquo;Re: Intervallic Relations between Two Collections of Notes.&rdquo; <i>Journal of Music 
+Theory</i> 3, 298&ndash;301.</p><div id="citediv_lewin_1979&ndash80" class="flyoverdiv">Lewin, David. 1979&ndash;80. &ldquo;A Response to a Response: On Pcset 
+Relatedness.&rdquo; <i>Perspectives of New Music</i> 18, 498&ndash;502.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1979&ndash80"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1979&ndash;80. &ldquo;A Response to a Response: On Pcset 
+Relatedness.&rdquo; <i>Perspectives of New Music</i> 18, 498&ndash;502.</p><div id="citediv_lewin_2001" class="flyoverdiv">Lewin, David. 2001. 
+&ldquo;Special Cases of the Interval Function between Pitch-Class Sets X and Y.&rdquo; 
+<i>Journal of Music Theory</i> 45, 1&ndash;29.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. 
+&ldquo;Special Cases of the Interval Function between Pitch-Class Sets X and Y.&rdquo; 
+<i>Journal of Music Theory</i> 45, 1&ndash;29.</p><div id="citediv_mackay_and_zinnes_1999" class="flyoverdiv">MacKay, David B., and Zinnes, Joseph L. 
+(1999). &ldquo;PROSCAL: A Program for Multidimensional Scaling.&rdquo; [Computer program and 
+user's manual; superseded by newest versions, available at <a href='http://www.proscal.com'>www.proscal.com</a>.]</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mackay_and_zinnes_1999"></a>MacKay, David B., and Zinnes, Joseph L. 
+(1999). &ldquo;PROSCAL: A Program for Multidimensional Scaling.&rdquo; [Computer program and 
+user's manual; superseded by newest versions, available at <a href='http://www.proscal.com'>www.proscal.com</a>.]</p><div id="citediv_morris_1979&ndash;80" class="flyoverdiv">Morris, Robert. 1979&ndash;80. &ldquo;A Similarity Index for Pitch-Class Sets.&rdquo; 
+<i>Perspectives of New Music</i> 18, 445&ndash;460.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1979&ndash;80"></a>Morris, Robert. 1979&ndash;80. &ldquo;A Similarity Index for Pitch-Class Sets.&rdquo; 
+<i>Perspectives of New Music</i> 18, 445&ndash;460.</p><div id="citediv_morris_1995" class="flyoverdiv">Morris, Robert. 1995. &ldquo;Equivalence and 
+Similarity in Pitch and Their Interaction with Pcset Theory.&rdquo; <i>Journal of Music 
+Theory</i> 39, 207&ndash;243.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1995"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1995. &ldquo;Equivalence and 
+Similarity in Pitch and Their Interaction with Pcset Theory.&rdquo; <i>Journal of Music 
+Theory</i> 39, 207&ndash;243.</p><div id="citediv_narmour_1990" class="flyoverdiv">Narmour, Eugene. 1990. <i>The Analysis and Cognition of 
+Basic Melodic Structures: The Implication-Realization Model. </i>Chicago: Univ. 
+Chicago Pr.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="narmour_1990"></a>Narmour, Eugene. 1990. <i>The Analysis and Cognition of 
+Basic Melodic Structures: The Implication-Realization Model. </i>Chicago: Univ. 
+Chicago Pr.</p><div id="citediv_narmour_1992" class="flyoverdiv">Narmour, Eugene. 1992. <i>The Analysis and Cognition of Melodic 
+Complexity: The Implication-Realization Model. </i>Chicago: Univ. Chicago Pr.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="narmour_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. <i>The Analysis and Cognition of Melodic 
+Complexity: The Implication-Realization Model. </i>Chicago: Univ. Chicago Pr.</p><div id="citediv_parks_1989" class="flyoverdiv">Parks, Richard S. 1989. <i>The Music of Claude Debussy.</i> New Haven: Yale Univ. 
+Pr.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="parks_1989"></a>Parks, Richard S. 1989. <i>The Music of Claude Debussy.</i> New Haven: Yale Univ. 
+Pr.</p><div id="citediv_quinn_1997" class="flyoverdiv">Quinn, Ian. 1997. &ldquo;On Similarity, Relations, and Similarity Relations.&rdquo; 
+Paper presented at the Society for Music Theory national meeting, Phoenix, AZ.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_1997"></a>Quinn, Ian. 1997. &ldquo;On Similarity, Relations, and Similarity Relations.&rdquo; 
+Paper presented at the Society for Music Theory national meeting, Phoenix, AZ.</p><div id="citediv_quinn_2001" class="flyoverdiv">Quinn, Ian. 2001. &ldquo;Listening to Similarity Relations.&rdquo; <i>Perspectives of New 
+Music</i> 39(2), 108&ndash;158.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. &ldquo;Listening to Similarity Relations.&rdquo; <i>Perspectives of New 
+Music</i> 39(2), 108&ndash;158.</p><div id="citediv_quinn_2004" class="flyoverdiv">Quinn, Ian. 2004. &ldquo;A Unified Theory of Chord Quality in 
+Equal Temperaments.&rdquo; Ph.D. dissertation, Eastman School of Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quinn_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &ldquo;A Unified Theory of Chord Quality in 
+Equal Temperaments.&rdquo; Ph.D. dissertation, Eastman School of Music.</p><div id="citediv_rahn_1979&ndash;80" class="flyoverdiv">Rahn, John. 
+1979&ndash;80. &ldquo;Relating Sets.&rdquo; <i>Perspectives of New Music</i> 18, 483&ndash;497.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1979&ndash;80"></a>Rahn, John. 
+1979&ndash;80. &ldquo;Relating Sets.&rdquo; <i>Perspectives of New Music</i> 18, 483&ndash;497.</p><div id="citediv_rahn_1989" class="flyoverdiv">Rahn, John. 
+1989. &ldquo;Toward a Theory of Chord Progression.&rdquo; <i>In Theory Only</i> 11(1&ndash;2), 1&ndash;10.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1989"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 
+1989. &ldquo;Toward a Theory of Chord Progression.&rdquo; <i>In Theory Only</i> 11(1&ndash;2), 1&ndash;10.</p><div id="citediv_ramsay_1977" class="flyoverdiv">Ramsay, J. O. 1977. &ldquo;Maximum Likelihood Estimation in Multidimensional Scaling.&rdquo; 
+<i>Psychometrika</i> 42, 241&ndash;266.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ramsay_1977"></a>Ramsay, J. O. 1977. &ldquo;Maximum Likelihood Estimation in Multidimensional Scaling.&rdquo; 
+<i>Psychometrika</i> 42, 241&ndash;266.</p><div id="citediv_samplaski_2004" class="flyoverdiv">Samplaski, Art. 2004. &ldquo;Interval Classes and 
+Psychological Space.&rdquo; <i>Music Theory Online</i> 10(2) <a href='http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.samplaski.html'>http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.samplaski.html</a>.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="samplaski_2004"></a>Samplaski, Art. 2004. &ldquo;Interval Classes and 
+Psychological Space.&rdquo; <i>Music Theory Online</i> 10(2) <a href='http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.samplaski.html'>http://www.mtosmt.org/issues/mto.04.10.2/mto.04.10.2.samplaski.html</a>.</p><div id="citediv_schellenberg_1996" class="flyoverdiv">Schellenberg, E. Glenn. 1996. &ldquo;Expectancy in Melody: Tests of 
+the Implication-Realization Model.&rdquo; <i>Cognition</i> 58, 75&ndash;125.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schellenberg_1996"></a>Schellenberg, E. Glenn. 1996. &ldquo;Expectancy in Melody: Tests of 
+the Implication-Realization Model.&rdquo; <i>Cognition</i> 58, 75&ndash;125.</p><div id="citediv_schellenberg_1997" class="flyoverdiv">Schellenberg, E. 
+Glenn. 1997. &ldquo;Simplifying the Implication-Realization Model of Melodic 
+Expectancy.&rdquo; <i>Music Perception</i> 14, 295&ndash;318.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schellenberg_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. &ldquo;Simplifying the Implication-Realization Model of Melodic 
+Expectancy.&rdquo; <i>Music Perception</i> 14, 295&ndash;318.</p><div id="citediv_schoenberg_1954" class="flyoverdiv">Schoenberg, Arnold. 1954. 
+<i>Structural Functions of Harmony.</i> New York: Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schoenberg_1954"></a>Schoenberg, Arnold. 1954. 
+<i>Structural Functions of Harmony.</i> New York: Norton.</p><div id="citediv_scott_and_isaacson_1998" class="flyoverdiv">Scott, Damon, and Isaacson, 
+Eric J. 1998. &ldquo;The Interval Angle: A Similarity Measure for Pitch-Class Sets.&rdquo; 
+<i>Perspectives of New Music</i> 36(2), 107&ndash;142.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scott_and_isaacson_1998"></a>Scott, Damon, and Isaacson, 
+Eric J. 1998. &ldquo;The Interval Angle: A Similarity Measure for Pitch-Class Sets.&rdquo; 
+<i>Perspectives of New Music</i> 36(2), 107&ndash;142.</p><div id="citediv_shepard_1962" class="flyoverdiv">Shepard, Roger N. 1962. &ldquo;The 
+Analysis of Proximities: Multidimensional Scaling with an Unknown Distance 
+Function.&rdquo; <i>Psychometrika</i> 27, 125&ndash;140; 219&ndash;246.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shepard_1962"></a>Shepard, Roger N. 1962. &ldquo;The 
+Analysis of Proximities: Multidimensional Scaling with an Unknown Distance 
+Function.&rdquo; <i>Psychometrika</i> 27, 125&ndash;140; 219&ndash;246.</p><div id="citediv_teitelbaum_1965" class="flyoverdiv">Teitelbaum, Richard. 1965. 
+&ldquo;Intervallic Relations in Atonal Music.&rdquo; <i>Journal of Music Theory</i> 9, 72&ndash;127.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="teitelbaum_1965"></a>Teitelbaum, Richard. 1965. 
+&ldquo;Intervallic Relations in Atonal Music.&rdquo; <i>Journal of Music Theory</i> 9, 72&ndash;127.</p><div id="citediv_tversky_1977" class="flyoverdiv">Tversky, Amos. 1977. &ldquo;Features of Similarity.&rdquo; <i>Psychological Review</i> 84, 
+327&ndash;352.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tversky_1977"></a>Tversky, Amos. 1977. &ldquo;Features of Similarity.&rdquo; <i>Psychological Review</i> 84, 
+327&ndash;352.</p><div id="citediv_tversky_and_gati_1982" class="flyoverdiv">Tversky, Amos, and Gati, Itamar. 1982. &ldquo;Similarity, Separability, and 
+the Triangle Inequality.&rdquo; <i>Psychological Review</i> 89, 123&ndash;154.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tversky_and_gati_1982"></a>Tversky, Amos, and Gati, Itamar. 1982. &ldquo;Similarity, Separability, and 
+the Triangle Inequality.&rdquo; <i>Psychological Review</i> 89, 123&ndash;154.</p><div id="citediv_tversky_and_hutchinson_1986" class="flyoverdiv">Tversky, Amos, and 
+Hutchinson, J. Wesley. 1986. &ldquo;Nearest Neighbor Analysis of Psychological 
+Spaces.&rdquo; <i>Psychological Review</i> 93, 3&ndash;22.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tversky_and_hutchinson_1986"></a>Tversky, Amos, and 
+Hutchinson, J. Wesley. 1986. &ldquo;Nearest Neighbor Analysis of Psychological 
+Spaces.&rdquo; <i>Psychological Review</i> 93, 3&ndash;22.</p><div id="citediv_wolpert_1951" class="flyoverdiv">Wolpert, Franz. 1951. <i>Neue Harmonik: 
+die Lehre von den Akkordtypen, Kurz-Ausgabe.</i> Regensburg: Gustav Bosse.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wolpert_1951"></a>Wolpert, Franz. 1951. <i>Neue Harmonik: 
+die Lehre von den Akkordtypen, Kurz-Ausgabe.</i> Regensburg: Gustav Bosse.</p><div id="citediv_wolpert_1972" class="flyoverdiv">Wolpert, 
+Franz. 1972. <i>Neue Harmonik. Einf&uuml;hrung. Erweiterte und erg&auml;nzte Neufassung.</i> 
+Wilhelmshaven: Heinrichshofens.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wolpert_1972"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1972. <i>Neue Harmonik. Einf&uuml;hrung. Erweiterte und erg&auml;nzte Neufassung.</i> 
+Wilhelmshaven: Heinrichshofens.</p><div id="citediv_zadeh_1965" class="flyoverdiv">Zadeh, Lofti. 1965. &ldquo;Fuzzy Sets.&rdquo; <i>Information 
+and Control</i> 8, 338&ndash;353.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="zadeh_1965"></a>Zadeh, Lofti. 1965. &ldquo;Fuzzy Sets.&rdquo; <i>Information 
+and Control</i> 8, 338&ndash;353.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> I am grateful to Eric Isaacson for his assistance in providing 
+the raw data used in the analyses, and to Matt Faranda and Ryan Zawel for 
+facilitating use of computing facilities at different times. I am also deeply 
+indebted to Tim Koozin and the anonymous reviewers of this essay for many 
+valuable suggestions that ultimately made it a readable work.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">I am grateful to Eric Isaacson for his assistance in providing 
+the raw data used in the analyses, and to Matt Faranda and Ryan Zawel for 
+facilitating use of computing facilities at different times. I am also deeply 
+indebted to Tim Koozin and the anonymous reviewers of this essay for many 
+valuable suggestions that ultimately made it a readable work.</div><p><a name="FN1">1.</a> Surveys and critiques of most similarity measures can be 
+found in Castr&eacute;n (<a href="#castr&eacute;n_1994" id="citation_castr&eacute;n_1994_67dc9b427f82a">1994</a>), Isaacson (<a href="#isaacson_1990" id="citation_isaacson_1990_67dc9b427f833">1990</a>, <a href="#isaacson_1992" id="citation_isaacson_1992_67dc9b427f837">1992</a>), and Scott and Isaacson 
+(<a href="#scott_and_isaacson_1998" id="citation_scott_and_isaacson_1998_67dc9b427f83c">1998</a>).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Isaacson (<a href="#isaacson_1996" id="citation_isaacson_1996_67dc9b427f841">1996</a>) raises some basic conceptual questions. 
+Quinn (<a href="#quinn_2001" id="citation_quinn_2001_67dc9b427f844">2001</a>) is a well-argued critique of several fundamental issues.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Rahn (<a href="#rahn_1989" id="citation_rahn_1989_67dc9b427f848">1989</a>) relates an early 
+attempt to apply computation to the analysis of similarity relations; he was 
+defeated by the speeds of then-available processors. Computational complexity 
+has not completely disappeared since then, in that commercially-available 
+software still has limits that prevent, e.g., a single analysis of all ratings 
+for trichords through nonachords (a 208 x 208 matrix); but excessive length of 
+computer runs is no longer an obstacle to such analyses.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Correlations (denoted by &ldquo;<i>r</i>&rdquo;) can vary from a 
+perfect negative of -1.0 (as quantity A goes up, quantity B goes down by the 
+same proportion) to a perfect positive of +1.0; for these functions over the 
+integers 1 to 50, a domain size comparable to the number of pcsets studied here, 
+y = x/SQRT(x) have <i>r </i>= .983, 
+y = x/x<sup>2</sup> have <i>r </i>= .969, and y = x<sup>2</sup>/SQRT(x) have <i>r </i>= .911--all close to perfect 
+positive.</i><br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Narmour&rsquo;s (<a href="#narmour_1990" id="citation_narmour_1990_67dc9b427f84c">1990</a>, <a href="#narmour_1992" id="citation_narmour_1992_67dc9b427f850">1992</a>) 
+implication-realization model for melodic expectation is a case in point. He 
+proposes five interacting factors to account for listeners&rsquo; melodic 
+expectancies; studies by Krumhansl (<a href="#krumhansl_1995" id="citation_krumhansl_1995_67dc9b427f853">1995</a>) and Schellenberg (<a href="#schellenberg_1996" id="citation_schellenberg_1996_67dc9b427f856">1996</a>, <a href="#schellenberg_1997" id="citation_schellenberg_1997_67dc9b427f85a">1997</a>) indicate 
+that the model can be simplified to just two factors without significant loss of 
+explanatory power.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> In doing so, I fulfill the promise in my previous 
+article in this journal (<a href="#samplaski_2004" id="citation_samplaski_2004_67dc9b427f85f">Samplaski 2004</a>, fn. 7) to provide &ldquo;a detailed but 
+non-technical tutorial&rdquo; about MDS and some of the issues in its use. 
+Nonetheless, this overview must perforce still be very superficial and exclude 
+the theoretical underpinnings necessary to use the techniques appropriately; I 
+can but hope that it will stimulate some readers to investigate possible 
+applications to their own areas of music-theoretic research. The best initial 
+pointer into the MDS literature remains Kruskal and Wish (<a href="#kruskal_and_wish_1978" id="citation_kruskal_and_wish_1978_67dc9b427f863">1978</a>), even though 
+there have been a number of developments in the field since then.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Quinn (<a href="#quinn_2004" id="citation_quinn_2004_67dc9b427f867">2004</a>) has recently completed a dissertation that analyzes in depth the 
+mathematics behind pcset genera, and by extension, similarity functions. Since 
+he considers not only twelve-fold division of the octave but other equal 
+temperaments, his results clarify issues that remain obscured if one examines 
+only the 12-ET universe. Interested readers should consult this important work.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The ratings can be obtained in any of several ways: as 
+direct estimates or impressions of similarity or distance; as same-different 
+confusion rates (non-identical but similar stimuli are more likely to be 
+mistaken for each other than dissimilar ones, so high confusion rates correlate 
+with high similarity); etc.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Without going deeply into topology, a torus can be 
+embedded in variously-dimensioned spaces. In a three-dimensional space an 
+observer on a torus&rsquo; surface would notice that the surface was non-Euclidean: 
+the angle sum of a triangle would not be 180 degrees, etc. If a torus is 
+embedded in a four-dimensional space, its surface will be &ldquo;flat&rdquo; in the sense of 
+Euclidean geometry. This was the nature of the configuration found by Krumhansl 
+and Kessler.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Other distance metrics are possible. One, intuitively 
+used daily by millions, is the &ldquo;city-block&rdquo; or &ldquo;taxi-cab&rdquo; metric, where to get 
+from point A to point B you go J units in the first dimension, then K units in 
+the next, etc. The general formula for such distance metrics is called the &ldquo;Minkowski 
+distance metric.&rdquo;<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Even this assumption fails in the real world depending 
+on the precision needed: the builders of the Verrazano Narrows Bridge, between 
+the NYC boroughs of Staten Island and Brooklyn, had to take the earth&rsquo;s 
+curvature into account.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Note that models such as ASCAL and INDSCAL are <i>not</i> 
+invariant with respect to rescaling, or to rotation or reflection about axes. 
+They also have a significantly larger number of free parameters to be estimated 
+than simpler models. Moreover for INDSCAL, because individual biases are not 
+canceled out by averaging responses into a single matrix, it can produce a much 
+poorer fit to the data. A researcher should thus not automatically use one of 
+these models in hopes of obtaining the most general result.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> In technical terms, as the number of free parameters 
+being calculated increases relative to the number of data points, there become 
+too few constraints on the possible configuration.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> If questions remain, the researcher should examine 
+several different dimensionalities and be prepared to choose on the bases of 
+clarity and logical interpretation. There are times where a solution one 
+dimension above or below &ldquo;optimal&rdquo; as indicated by the stress/<i>r</i><sup>2</sup> 
+values might be better: 1) if there is a clear interpretation given an added 
+dimension; or 2) if one configuration is easier to visualize (e.g., a 3-D vs. a 
+4-D solution), especially in a situation where it is unclear what can be gained 
+in explanatory power by using the extra dimension.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> In an MDS analysis of N objects, one of which is an 
+exemplar, the only way to minimize distortion (i.e., stress) is to place the 
+exemplar at the center of the configuration and arrange the other objects around 
+it, along the rim of a circle/sphere/equivalent higher surface. One can always 
+draw a circle through three non-colinear points, a sphere through four 
+non-coplanar points, etc.; so, adding in the exemplar, an N-dimensional MDS 
+solution can in general accommodate N+2 objects (where one is an exemplar) 
+without problems. Of course, for some datasets one will be able to fit more 
+objects than this along the surface&rsquo;s rim; and in other cases the limit can be 
+somewhat liberalized by locating the exemplar off-center in the 
+circle/sphere/etc., or by using an ellipse/oblate spheroid/etc. as the surface. 
+This will, though, only go so far: if you try to fit a set of 23 objects 
+including an exemplar in two or three dimensions, you must expect a fair amount 
+of stress in the solution.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> An example dating back to the great nineteenth century 
+psychologist William James is: the moon is like a ball because they are both 
+round; the moon is also like a gas lantern because they both illuminate; but we 
+do not think of a ball as being like a gas lantern.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> This study considers only results from MDS, so no 
+further discussion of CA is necessary; it is mentioned to raise awareness of the 
+issues that render it appropriate for various situations. Some of Quinn&rsquo;s (<a href="#quinn_1997" id="citation_quinn_1997_67dc9b427f86a">1997</a>, 
+<a href="#quinn_2001" id="citation_quinn_2001_67dc9b427f86e">2001</a>) analyses of pcset similarity measures use CA; as discussed in paragraphs 
+61&ndash;63, he obtains results compatible with those reported here.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> This model underlies MacKay and Zinnes&rsquo; 
+(<a href="#mackay_and_zinnes_1999" id="citation_mackay_and_zinnes_1999_67dc9b427f872">1999</a>) PROSCAL program. A different model underlies an older PMDS program called 
+MULTISCALE (<a href="#ramsay_1977" id="citation_ramsay_1977_67dc9b427f875">Ramsay 1977</a>), but we need not worry about the distinctions.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> The present article is a case in point: analyses of 
+the datasets herein took a few seconds on a PC of moderate speed, using the 
+statistical package SPSS; the 
+equivalent analyses on the same machine using PROSCAL took up to forty minutes.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> AMEMB2 is a modification of Rahn&rsquo;s (<a href="#rahn_1979&ndash;80" id="citation_rahn_1979&ndash;80_67dc9b427f879">1979&ndash;80</a>) MEMB2 
+function by Isaacson for inclusion in the latter&rsquo;s Winsims calculator, available 
+at <a href='http://theory.music.indiana.edu/isaacso/winsims.html'>http://theory.music.indiana.edu/isaacso/winsims.html</a>; 
+Isaacson applies a normalization factor equivalent to that used by Rahn to 
+derive ATMEMB from his TMEMB function. For narrative simplicity, it seemed 
+preferable to refer to it as Rahn&rsquo;s function. Note that while AMEMB2 is 
+concerned with cardinality-two sets, i.e., interval-classes, it is not an icv-based 
+function in the sense of ANGLE <i>et al.</i>, since it only counts how many 
+instances of each dyad are mutually imbedded in two pcsets--for example, in 
+returning a comparison for [0156] and [0167], only one ic6 in the latter is 
+counted. I thus treat it as a subset-based measure.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> That is, the icv of any nonachord is a 
+function of the icv of its trichord complement, and similarly for octachords/tetrachords 
+and heptachords/pentachords; ratings produced by icv-based similarity functions 
+are therefore also related. The precise functions involved differ for each pair 
+of cardinalities, but they are systematic for those pairs.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> That value is actually a severe understatement; it is 
+the limit of accuracy reported by the statistical package used. Obtaining an <i>r</i> 
+of better than .96 (between ANGLE and RECREL) over 3160 observations is so close 
+to perfection as to be basically unheard-of for a &ldquo;real-life&rdquo; dataset.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Various additional types of cross-check analyses were 
+carried out using PROSCAL to the extent possible given the version of the 
+program available&mdash;the 4x5 and 3x5 datasets were too large. These are omitted 
+for considerations of space, minimization of technical detail, and reader 
+patience.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> In particular, the 3x3 dataset, with only 12 objects, 
+is far too sketchy to understand what is going on for most of its configuration. 
+The same holds true to lesser extents for the other smaller datasets.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> If one is determined to try to visualize a 
+four-dimensional object, the best starting place is Edwin Abbott&rsquo;s classic story <i>Flatland</i> 
+(<a href="#abbott_1885-1952" id="citation_abbott_1885-1952_67dc9b427f87d">1885/1952</a>). With modern computer graphics, it is now possible to get a 
+direct visceral appreciation of such objects via programs that manipulate their 
+projections onto the screen.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Since the Procrustes rotation deals with the derived 
+configurations, which involve the final relative set-class locations in abstract 
+space, we need not worry that the latter two functions rate similarity while 
+RECREL rates dissimilarity.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> A <i>p</i>-value of .05 is the typical cutoff value 
+for empirical studies, in that researchers are usually willing to risk a 1 in 20 
+chance of reporting a false positive result. (Certain types of studies, e.g., 
+clinical drug trials, obviously must set far more stringent standards.)<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> There is no possibility of problems due to axial 
+reflection, since the Procrustes rotation would have handled that.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> The most surprising of these cases is the 
+disappearance of the ic1/ic5 dimension for cardinality-three set-classes in the 
+3x4 dataset. Given the coordinates of the rotated subconfiguration, that 
+dimension appears to involve an &ldquo;ic3/anti-ic6 vs. ic6/anti-ic3&rdquo; opposition, as 
+seen on the second section of <a target='ex_window' onClick='newwindow('samplaski_table5.html',1000,800); return false;' href='samplaski_table5.html'>
+Table 5</a>.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Forte only lists hexachords up to 6-35 in his table on 
+pages 264&ndash;266 that summarizes the makeup of the genera. From the inclusion rules 
+on page 192 one can deduce that the remaining 15 hexachords belong to the same 
+genera as their Z-related counterparts, but it would have been better just to 
+list them explicitly, since he lists all Z-related tetrachords and pentachords<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> Harris (<a href="#harris_1989" id="citation_harris_1989_67dc9b427f881">1989</a>) follows this same procedure, except that 
+he draws from a wide body of musical literature, and he is explicitly <i>not</i> 
+working from a pcset-influenced background. His system of chord families is much 
+more complicated than Parks&rsquo;, but it has a great deal of solid and thoughtful 
+musicianship behind it. His proposal deserves closer attention by the 
+music-theoretic community.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> If we adjust cutoff values, we can re-include 5-2 and 
+5-3, although 5-4 and 5-8 ([01236] and [02346]) will also come along.<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> The term refers to a probabilistic process that is 
+repeatedly carried out (as in, &ldquo;repeated throws of the dice at Monte Carlo&rdquo;) to 
+determine a result. The technique is often used to simulate physical processes; 
+it has some relation to the stochastic algorithms used to generate a number of 
+Xenakis&rsquo; compositions.<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> The speculation two paragraphs ago about Quinn&rsquo;s 
+hexachord group B, whose members all had fairly high connections to other 
+clusters (unlike members of the remaining six groups), applies: might an MDS 
+analysis of hexachords show all his group B hexachords to be &ldquo;garbage&rdquo; 
+set-classes?<br><a href="#FN34REF">Return to text</a></p><p><a name="FN35">35.</a> As an example, if I alternately play 0137/0146 in 
+closest spacing with the same bass note I feel a definite sense of 
+tonic/dominant, presumably due to the imbedded minor triad in 0137 and the 
+semitone neighbor in the soprano in 0146 acting like a leading tone. I could 
+easily envision exploiting this type of perceived relationship in a composition.<br><a href="#FN35REF">Return to text</a></p><p><a name="FN36">36.</a> Using Tn-equivalence raises a number of 
+questions; in particular, would the dimensionality of the configurations change? 
+Since a major priority for this essay was to compare RECREL with several other 
+functions, all of which use Tn/I-equivalence, it was necessary to eliminate the 
+B-forms of asymmetrical set-classes from consideration, obviating all such 
+issues. Morris (<a href="#morris_1995" id="citation_morris_1995_67dc9b427f885">1995</a>) lists several other possible levels of abstraction. Most 
+of these have as yet received little or no attention by music theorists, a 
+situation which sorely needs correction.<br><a href="#FN36REF">Return to text</a></p><p><a name="FN37">37.</a> To cite one example, Samplaski (<a href="#samplaski_2004" id="citation_samplaski_2004_67dc9b427f889">2004</a>) found support 
+for grouping interval-classes by category of acoustical dissonance, rather than 
+treating them as separate isolated entities. If other studies confirm this 
+result, that would strongly imply a need for substantial modification of 
+existing similarity measures.<br><a href="#FN37REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Surveys and critiques of most similarity measures can be 
+found in Castr&eacute;n (<a href="#castr&eacute;n_1994" id="citation_castr&eacute;n_1994_67dc9b427f82a">1994</a>), Isaacson (<a href="#isaacson_1990" id="citation_isaacson_1990_67dc9b427f833">1990</a>, <a href="#isaacson_1992" id="citation_isaacson_1992_67dc9b427f837">1992</a>), and Scott and Isaacson 
+(<a href="#scott_and_isaacson_1998" id="citation_scott_and_isaacson_1998_67dc9b427f83c">1998</a>).</div><div id="fndiv2" class="flyoverdiv">Isaacson (<a href="#isaacson_1996" id="citation_isaacson_1996_67dc9b427f841">1996</a>) raises some basic conceptual questions. 
+Quinn (<a href="#quinn_2001" id="citation_quinn_2001_67dc9b427f844">2001</a>) is a well-argued critique of several fundamental issues.</div><div id="fndiv3" class="flyoverdiv">Rahn (<a href="#rahn_1989" id="citation_rahn_1989_67dc9b427f848">1989</a>) relates an early 
+attempt to apply computation to the analysis of similarity relations; he was 
+defeated by the speeds of then-available processors. Computational complexity 
+has not completely disappeared since then, in that commercially-available 
+software still has limits that prevent, e.g., a single analysis of all ratings 
+for trichords through nonachords (a 208 x 208 matrix); but excessive length of 
+computer runs is no longer an obstacle to such analyses.</div><div id="fndiv4" class="flyoverdiv">Correlations (denoted by &ldquo;<i>r</i>&rdquo;) can vary from a 
+perfect negative of -1.0 (as quantity A goes up, quantity B goes down by the 
+same proportion) to a perfect positive of +1.0; for these functions over the 
+integers 1 to 50, a domain size comparable to the number of pcsets studied here, 
+y = x/SQRT(x) have <i>r </i>= .983, 
+y = x/x2 have <i>r </i>= .969, and y = x2/SQRT(x) have <i>r </i>= .911--all close to perfect 
+positive.</i></div><div id="fndiv5" class="flyoverdiv">Narmour&rsquo;s (<a href="#narmour_1990" id="citation_narmour_1990_67dc9b427f84c">1990</a>, <a href="#narmour_1992" id="citation_narmour_1992_67dc9b427f850">1992</a>) 
+implication-realization model for melodic expectation is a case in point. He 
+proposes five interacting factors to account for listeners&rsquo; melodic 
+expectancies; studies by Krumhansl (<a href="#krumhansl_1995" id="citation_krumhansl_1995_67dc9b427f853">1995</a>) and Schellenberg (<a href="#schellenberg_1996" id="citation_schellenberg_1996_67dc9b427f856">1996</a>, <a href="#schellenberg_1997" id="citation_schellenberg_1997_67dc9b427f85a">1997</a>) indicate 
+that the model can be simplified to just two factors without significant loss of 
+explanatory power.</div><div id="fndiv6" class="flyoverdiv">In doing so, I fulfill the promise in my previous 
+article in this journal (<a href="#samplaski_2004" id="citation_samplaski_2004_67dc9b427f85f">Samplaski 2004</a>, fn. 7) to provide &ldquo;a detailed but 
+non-technical tutorial&rdquo; about MDS and some of the issues in its use. 
+Nonetheless, this overview must perforce still be very superficial and exclude 
+the theoretical underpinnings necessary to use the techniques appropriately; I 
+can but hope that it will stimulate some readers to investigate possible 
+applications to their own areas of music-theoretic research. The best initial 
+pointer into the MDS literature remains Kruskal and Wish (<a href="#kruskal_and_wish_1978" id="citation_kruskal_and_wish_1978_67dc9b427f863">1978</a>), even though 
+there have been a number of developments in the field since then.</div><div id="fndiv7" class="flyoverdiv">Quinn (<a href="#quinn_2004" id="citation_quinn_2004_67dc9b427f867">2004</a>) has recently completed a dissertation that analyzes in depth the 
+mathematics behind pcset genera, and by extension, similarity functions. Since 
+he considers not only twelve-fold division of the octave but other equal 
+temperaments, his results clarify issues that remain obscured if one examines 
+only the 12-ET universe. Interested readers should consult this important work.</div><div id="fndiv8" class="flyoverdiv">The ratings can be obtained in any of several ways: as 
+direct estimates or impressions of similarity or distance; as same-different 
+confusion rates (non-identical but similar stimuli are more likely to be 
+mistaken for each other than dissimilar ones, so high confusion rates correlate 
+with high similarity); etc.</div><div id="fndiv9" class="flyoverdiv">Without going deeply into topology, a torus can be 
+embedded in variously-dimensioned spaces. In a three-dimensional space an 
+observer on a torus&rsquo; surface would notice that the surface was non-Euclidean: 
+the angle sum of a triangle would not be 180 degrees, etc. If a torus is 
+embedded in a four-dimensional space, its surface will be &ldquo;flat&rdquo; in the sense of 
+Euclidean geometry. This was the nature of the configuration found by Krumhansl 
+and Kessler.</div><div id="fndiv10" class="flyoverdiv">Other distance metrics are possible. One, intuitively 
+used daily by millions, is the &ldquo;city-block&rdquo; or &ldquo;taxi-cab&rdquo; metric, where to get 
+from point A to point B you go J units in the first dimension, then K units in 
+the next, etc. The general formula for such distance metrics is called the &ldquo;Minkowski 
+distance metric.&rdquo;</div><div id="fndiv11" class="flyoverdiv">Even this assumption fails in the real world depending 
+on the precision needed: the builders of the Verrazano Narrows Bridge, between 
+the NYC boroughs of Staten Island and Brooklyn, had to take the earth&rsquo;s 
+curvature into account.</div><div id="fndiv12" class="flyoverdiv">Note that models such as ASCAL and INDSCAL are <i>not</i> 
+invariant with respect to rescaling, or to rotation or reflection about axes. 
+They also have a significantly larger number of free parameters to be estimated 
+than simpler models. Moreover for INDSCAL, because individual biases are not 
+canceled out by averaging responses into a single matrix, it can produce a much 
+poorer fit to the data. A researcher should thus not automatically use one of 
+these models in hopes of obtaining the most general result.</div><div id="fndiv13" class="flyoverdiv">In technical terms, as the number of free parameters 
+being calculated increases relative to the number of data points, there become 
+too few constraints on the possible configuration.</div><div id="fndiv14" class="flyoverdiv">If questions remain, the researcher should examine 
+several different dimensionalities and be prepared to choose on the bases of 
+clarity and logical interpretation. There are times where a solution one 
+dimension above or below &ldquo;optimal&rdquo; as indicated by the stress/<i>r</i>2 
+values might be better: 1) if there is a clear interpretation given an added 
+dimension; or 2) if one configuration is easier to visualize (e.g., a 3-D vs. a 
+4-D solution), especially in a situation where it is unclear what can be gained 
+in explanatory power by using the extra dimension.</div><div id="fndiv15" class="flyoverdiv">In an MDS analysis of N objects, one of which is an 
+exemplar, the only way to minimize distortion (i.e., stress) is to place the 
+exemplar at the center of the configuration and arrange the other objects around 
+it, along the rim of a circle/sphere/equivalent higher surface. One can always 
+draw a circle through three non-colinear points, a sphere through four 
+non-coplanar points, etc.; so, adding in the exemplar, an N-dimensional MDS 
+solution can in general accommodate N+2 objects (where one is an exemplar) 
+without problems. Of course, for some datasets one will be able to fit more 
+objects than this along the surface&rsquo;s rim; and in other cases the limit can be 
+somewhat liberalized by locating the exemplar off-center in the 
+circle/sphere/etc., or by using an ellipse/oblate spheroid/etc. as the surface. 
+This will, though, only go so far: if you try to fit a set of 23 objects 
+including an exemplar in two or three dimensions, you must expect a fair amount 
+of stress in the solution.</div><div id="fndiv16" class="flyoverdiv">An example dating back to the great nineteenth century 
+psychologist William James is: the moon is like a ball because they are both 
+round; the moon is also like a gas lantern because they both illuminate; but we 
+do not think of a ball as being like a gas lantern.</div><div id="fndiv17" class="flyoverdiv">This study considers only results from MDS, so no 
+further discussion of CA is necessary; it is mentioned to raise awareness of the 
+issues that render it appropriate for various situations. Some of Quinn&rsquo;s (<a href="#quinn_1997" id="citation_quinn_1997_67dc9b427f86a">1997</a>, 
+<a href="#quinn_2001" id="citation_quinn_2001_67dc9b427f86e">2001</a>) analyses of pcset similarity measures use CA; as discussed in paragraphs 
+61&ndash;63, he obtains results compatible with those reported here.</div><div id="fndiv18" class="flyoverdiv">This model underlies MacKay and Zinnes&rsquo; 
+(<a href="#mackay_and_zinnes_1999" id="citation_mackay_and_zinnes_1999_67dc9b427f872">1999</a>) PROSCAL program. A different model underlies an older PMDS program called 
+MULTISCALE (<a href="#ramsay_1977" id="citation_ramsay_1977_67dc9b427f875">Ramsay 1977</a>), but we need not worry about the distinctions.</div><div id="fndiv19" class="flyoverdiv">The present article is a case in point: analyses of 
+the datasets herein took a few seconds on a PC of moderate speed, using the 
+statistical package SPSS; the 
+equivalent analyses on the same machine using PROSCAL took up to forty minutes.</div><div id="fndiv20" class="flyoverdiv">AMEMB2 is a modification of Rahn&rsquo;s (<a href="#rahn_1979&ndash;80" id="citation_rahn_1979&ndash;80_67dc9b427f879">1979&ndash;80</a>) MEMB2 
+function by Isaacson for inclusion in the latter&rsquo;s Winsims calculator, available 
+at <a href='http://theory.music.indiana.edu/isaacso/winsims.html'>http://theory.music.indiana.edu/isaacso/winsims.html</a>; 
+Isaacson applies a normalization factor equivalent to that used by Rahn to 
+derive ATMEMB from his TMEMB function. For narrative simplicity, it seemed 
+preferable to refer to it as Rahn&rsquo;s function. Note that while AMEMB2 is 
+concerned with cardinality-two sets, i.e., interval-classes, it is not an icv-based 
+function in the sense of ANGLE <i>et al.</i>, since it only counts how many 
+instances of each dyad are mutually imbedded in two pcsets--for example, in 
+returning a comparison for [0156] and [0167], only one ic6 in the latter is 
+counted. I thus treat it as a subset-based measure.</div><div id="fndiv21" class="flyoverdiv">That is, the icv of any nonachord is a 
+function of the icv of its trichord complement, and similarly for octachords/tetrachords 
+and heptachords/pentachords; ratings produced by icv-based similarity functions 
+are therefore also related. The precise functions involved differ for each pair 
+of cardinalities, but they are systematic for those pairs.</div><div id="fndiv22" class="flyoverdiv">That value is actually a severe understatement; it is 
+the limit of accuracy reported by the statistical package used. Obtaining an <i>r</i> 
+of better than .96 (between ANGLE and RECREL) over 3160 observations is so close 
+to perfection as to be basically unheard-of for a &ldquo;real-life&rdquo; dataset.</div><div id="fndiv23" class="flyoverdiv">Various additional types of cross-check analyses were 
+carried out using PROSCAL to the extent possible given the version of the 
+program available&mdash;the 4x5 and 3x5 datasets were too large. These are omitted 
+for considerations of space, minimization of technical detail, and reader 
+patience.</div><div id="fndiv24" class="flyoverdiv">In particular, the 3x3 dataset, with only 12 objects, 
+is far too sketchy to understand what is going on for most of its configuration. 
+The same holds true to lesser extents for the other smaller datasets.</div><div id="fndiv25" class="flyoverdiv">If one is determined to try to visualize a 
+four-dimensional object, the best starting place is Edwin Abbott&rsquo;s classic story <i>Flatland</i> 
+(<a href="#abbott_1885-1952" id="citation_abbott_1885-1952_67dc9b427f87d">1885/1952</a>). With modern computer graphics, it is now possible to get a 
+direct visceral appreciation of such objects via programs that manipulate their 
+projections onto the screen.</div><div id="fndiv26" class="flyoverdiv">Since the Procrustes rotation deals with the derived 
+configurations, which involve the final relative set-class locations in abstract 
+space, we need not worry that the latter two functions rate similarity while 
+RECREL rates dissimilarity.</div><div id="fndiv27" class="flyoverdiv">A <i>p</i>-value of .05 is the typical cutoff value 
+for empirical studies, in that researchers are usually willing to risk a 1 in 20 
+chance of reporting a false positive result. (Certain types of studies, e.g., 
+clinical drug trials, obviously must set far more stringent standards.)</div><div id="fndiv28" class="flyoverdiv">There is no possibility of problems due to axial 
+reflection, since the Procrustes rotation would have handled that.</div><div id="fndiv29" class="flyoverdiv">The most surprising of these cases is the 
+disappearance of the ic1/ic5 dimension for cardinality-three set-classes in the 
+3x4 dataset. Given the coordinates of the rotated subconfiguration, that 
+dimension appears to involve an &ldquo;ic3/anti-ic6 vs. ic6/anti-ic3&rdquo; opposition, as 
+seen on the second section of <a target='ex_window' onClick='newwindow('samplaski_table5.html',1000,800); return false;' href='samplaski_table5.html'>
+Table 5</a>.</div><div id="fndiv30" class="flyoverdiv">Forte only lists hexachords up to 6-35 in his table on 
+pages 264&ndash;266 that summarizes the makeup of the genera. From the inclusion rules 
+on page 192 one can deduce that the remaining 15 hexachords belong to the same 
+genera as their Z-related counterparts, but it would have been better just to 
+list them explicitly, since he lists all Z-related tetrachords and pentachords</div><div id="fndiv31" class="flyoverdiv">Harris (<a href="#harris_1989" id="citation_harris_1989_67dc9b427f881">1989</a>) follows this same procedure, except that 
+he draws from a wide body of musical literature, and he is explicitly <i>not</i> 
+working from a pcset-influenced background. His system of chord families is much 
+more complicated than Parks&rsquo;, but it has a great deal of solid and thoughtful 
+musicianship behind it. His proposal deserves closer attention by the 
+music-theoretic community.</div><div id="fndiv32" class="flyoverdiv">If we adjust cutoff values, we can re-include 5-2 and 
+5-3, although 5-4 and 5-8 ([01236] and [02346]) will also come along.</div><div id="fndiv33" class="flyoverdiv">The term refers to a probabilistic process that is 
+repeatedly carried out (as in, &ldquo;repeated throws of the dice at Monte Carlo&rdquo;) to 
+determine a result. The technique is often used to simulate physical processes; 
+it has some relation to the stochastic algorithms used to generate a number of 
+Xenakis&rsquo; compositions.</div><div id="fndiv34" class="flyoverdiv">The speculation two paragraphs ago about Quinn&rsquo;s 
+hexachord group B, whose members all had fairly high connections to other 
+clusters (unlike members of the remaining six groups), applies: might an MDS 
+analysis of hexachords show all his group B hexachords to be &ldquo;garbage&rdquo; 
+set-classes?</div><div id="fndiv35" class="flyoverdiv">As an example, if I alternately play 0137/0146 in 
+closest spacing with the same bass note I feel a definite sense of 
+tonic/dominant, presumably due to the imbedded minor triad in 0137 and the 
+semitone neighbor in the soprano in 0146 acting like a leading tone. I could 
+easily envision exploiting this type of perceived relationship in a composition.</div><div id="fndiv36" class="flyoverdiv">Using Tn-equivalence raises a number of 
+questions; in particular, would the dimensionality of the configurations change? 
+Since a major priority for this essay was to compare RECREL with several other 
+functions, all of which use Tn/I-equivalence, it was necessary to eliminate the 
+B-forms of asymmetrical set-classes from consideration, obviating all such 
+issues. Morris (<a href="#morris_1995" id="citation_morris_1995_67dc9b427f885">1995</a>) lists several other possible levels of abstraction. Most 
+of these have as yet received little or no attention by music theorists, a 
+situation which sorely needs correction.</div><div id="fndiv37" class="flyoverdiv">To cite one example, Samplaski (<a href="#samplaski_2004" id="citation_samplaski_2004_67dc9b427f889">2004</a>) found support 
+for grouping interval-classes by category of acoustical dissonance, rather than 
+treating them as separate isolated entities. If other studies confirm this 
+result, that would strongly imply a need for substantial modification of 
+existing similarity measures.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2005 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

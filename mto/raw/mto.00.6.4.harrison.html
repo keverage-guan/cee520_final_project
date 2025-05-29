@@ -1,0 +1,470 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 6.4: Harrison, Tolling Time</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Tolling Time">
+
+    <meta name="citation_author" content="Harrison, Daniel">
+      
+
+<meta name="citation_publication_date" content="2000/10/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="6">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Tolling Time
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.00.6.4/mto.00.6.4.harrison.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Daniel Harrison</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: clock chimes, bells, time, carillon, Westminster Quarters, Rochester Quarters, Magdalen Chimes, Parisfal Chimes, Guildford Chimes</font></p><p><font size='4'>ABSTRACT: Five clock chimes (Parsifal, Guildford, Magdalen, Westminster, and Rochester) are analyzed to show how they communicate specific values about time. These chimes are shown to have two design elements, &ldquo;distinctiveness&rdquo; and &ldquo;emergence,&rdquo; that provide for particular kinds of temporal commentary.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.00.6.4/mto.00.6.4.harrison.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.00.6.4/harrison_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 6, Number 4, October 2000 <br> Copyright &#0169; 2000 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] It is a commonplace that music can be made out of any variety of sounds, including those not originally intended for music-making. I am concerned
+here, however, with a different case: situations in which sounds with explicit pitch are neither meant nor heard primarily as music. Car horns, doorbells, buzzers, and other purely functional yet (proto-)musical sounds are&mdash;in this present culture, at least&mdash;not much more than acoustic signifiers, and arouse no one&rsquo;s aesthetic appreciation save perhaps that of a composer inspired to use them. But I am concerned here with an even more specialized case, one in which acoustic signification is artistically grounded, where the sign feigns a pure functionality, the import of which apparently can be extracted casually by the observer (like a road sign), but which also&mdash;and even really&mdash;expresses a subtle bit of art. My object here is clock chimes.</p>
+
+<p>[2] Are chimes amenable to musical analysis? This question would not have occurred to me until a short time ago, as I&mdash;like everyone else&mdash;heard mostly their functional message. To be sure, they have bits of tune, and one of the five chimes that I will discuss in detail here, the Westminster Quarters, actually forms quite a pleasant and memorable collection of tones, so much so
+that composers have used this collection as the motivic basis of an extended
+composition.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> But I found myself in the position of having to write (compose? design?) a chime tune, and had therefore to consider whatever musical principles there happened to be in this apparently simple art. This article results from this unusual experience, and it is partly an analysis of existent clock chimes, partly a report on a model-compositional procedure for a new chime that resulted from this analysis, and partly a commentary on a music so regularly heard (like clockwork!) that it becomes part of the acoustic landscape of a particular place and eventually loses some of its quality as music.</p>
+
+<hr>
+
+<p>[3] The Hopeman Memorial Carillon is installed at the top of Rush Rhees Library at the University of Rochester, 189 feet above the main campus quadrangle. Although it has fifty bells, played from a mechanical-action console inside the tower, only five are equipped with electric-action strikers activated by an electronic clock. Every quarter hour, the clock triggers the strikers in a melodic sequence, and the bells sound out over the campus. Depending on wind and ambient noise conditions, they can be heard up to half a mile from the tower. Several thousand people are within earshot of the clock chimes.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+
+<p>[4] Since the original installation of bells in the library tower in 1930, the clock has chimed the Westminster Quarters, so named because of its adoption on the tower clock at Westminster Palace, where the British Houses of Parliament meet. (The lowest bell there, which tolls the hours and weighs thirteen and a half tons, is the famous &ldquo;Big Ben.&rdquo;) Having been reproduced in clocks both large and small all over the world, the Westminster Quarters is a well-known chime tune&mdash;perhaps the only tune people think of when the subject of clock chimes is broached. Its popularity certainly owes much to the attractive melodic sequence, but perhaps more to sentimental associations of British imperial pomp and circumstance, reinforced by the use of the Westminster Quarters by the BBC World Service for many years to preface the top-of-the-hour world news report on short-wave radio.</p>
+
+<p>[5] As University Carilloneur, I am steward of the bells and the clock mechanism. Over the years, I had become curious about the practice of chiming quarter hours, and wondered to what extent this musical pronouncement of time&mdash;as opposed to the occasional passive glance at a watch or clock&mdash;might affect the life of the campus community. I had resolved in the summer of 1999 to see about changing the chime tune, partly to mark the sesquicentennial of the University of Rochester in 2000, but also partly to respect the wishes of the composer Sir John Stainer, who, in 1895, was quoted as remarking to a friend that &ldquo;you will be doing a kindness in turning out the Westminster Chimes, of which everybody is heartily sick.&rdquo;<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+
+<p>[6] I therefore looked at some existing chime tunes in order to learn the style, such as it was. I anticipated that the analytical work would be simple, quick, and of no lasting interest. I was surprised that it turned out differently.</p>
+
+<hr>
+
+<p>[7] A useful feature of clock chimes is that each announcement of time within the hour have a unique melodic sequence. In this way, quarter past the hour, for example, can be distinguished by sound alone from half past, a useful advantage when one is not in the line of sight of a tower clock, or when (as is the case at the University of Rochester) there is no visible tower clock at all. I will call this rather elementary design feature of clock chimes &ldquo;distinctiveness.&rdquo; Another design feature, characteristic of English-style clock chimes, I will call &ldquo;emergence.&rdquo; Emergent chimes are marked by progressive lengthening of the melodic sequence during the course of the hour, with the shortest melodic sequence at fifteen past the hour (the &ldquo;first quarter&rdquo;) and the longest on the hour (followed by a tolling of the hour). Emergence can impart a definite temporal teleology, marking each hour as a culmination and not a beginning, as sixty minutes past a previous hour and not zero minutes of a new hour. This acoustical sensibility contrasts markedly with a visual one (reinforced by digital clocks) in which the hour is experienced as &ldquo;:00.&rdquo; Emergence thus is able to cloak the modular quality of time by depicting linear rather than circular motion within the
+hour, celebrating the arrival of the new hour both by completing the melodic sequence and by striking the lowest bell in the peal for the hour.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Parsifal Chimes, 1932</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="harrison_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[8] Clock chimes can be composed to emphasize either distinctiveness or emergence. While one quality cannot eradicate the other, one can be so pronounced that the other becomes secondary unto accidental. A chime tune emphasizing emergence is shown in <b>Example 1</b>, the so-called Parsifal Chimes as they sound at Riverside Church in New York.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Using only four melody bells plus the hour strike, this chime adds a new four-note melodic pattern to each quarter hour. Distinctiveness thus results both from the number of bells struck at each quarter hour and from the unique four-note pattern that concludes each quarter-hour chime. While these unique patterns are a subset of the twenty-four distinct permutations of the four bells, the emergent structure can be modeled better by a different permutational design. Let each quarter phrase be composed of two ordered intervals of a perfect fourth, f1 = &lt;C,G> and f2 = &lt;A,E>, and let these two sets of ordered intervals themselves be ordered. Considering pitch succession alone, the chime pattern resolves thusly:</p>
+
+<p>1st quarter: Q1 = &lt;f1,f2><br>
+2nd quarter: Q2 = &lt;f2,f1> = R&lt;f1,f2><br>
+3rd quarter: R(Q2) = &lt;R(f1),R(f2)><br>
+4th quarter: R(Q1) = &lt;R(f2),R(f1)></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Analysis of Parsifal Chimes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="harrison_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[9] The sophisticated emergent effect that this structure creates is illustrated in <b>Example 2</b>. Two time spans are especially marked: the sixty-minute whole and two thirty-minute segments. The sixty-minute span is conveyed by a climax figure created by dotted-half notes that end each quarter-phrase. Counterpointing this rising line is its retrograde on the first quarter-note of each quarter-phrase. Upon completion of both lines at the fourth quarter, the hour is tolled on the lowest and heaviest bell in the instrument, a twenty-ton C2 that is the largest bell ever cast for a carillon. The hour strike thus &ldquo;turns over&rdquo; the modulus, transforming sixty-past into zero-hour, from which the registral ascent of the dotted-halves begins again. Within this sixty-minute span are two thirty-minute spans, the &ldquo;outbound&rdquo; and &ldquo;inbound&rdquo; half hours. The outbound is created by falling fourths, the last of which, f2, produces a half cadential effect at thirty past. The inbound, a retrograde of the outbound, is created by rising fourths and produces an authentic cadential effect at sixty past. The association of retrogression with inbound effects can be extended to the fifteen-minute spans as well, where the retrograde affects the order of the two perfect-fourth intervals. In this way, thirty-past is composed of an outbound quarter hour and an inbound quarter hour. The inbound half hour is similarly composed.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Guildford Chimes, 1843</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="harrison_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[10] In comparison to the Parsifal Chimes, the Guildford Chimes, shown in <b>Example 3</b>, emphasize distinctiveness, and what emerges over the course of the hour is not a single melodic entity, but rather something more abstract: a &ldquo;compositional&rdquo; sensibility that progressively displaces what might be called a &ldquo;sound design&rdquo; sensibility. The Parsifal Chimes has a limited number of available bells, and, as a result, it displays its design elements as the main feature of its art. In contrast, the Guildford Chimes has a peal of eight bells forming a major scale and thus offers opportunity for rudimentary tonal composition. Because of emergence, it takes advantage of this opportunity only gradually during the course of the hour. The first quarter, like that of the Parsifal Chimes, is a melodic sequence without much cohesion as a musical phrase. The second quarter presents a minimal phrase involving a tonic-dominant-tonic harmonic progression as well as polyphonic melody, thereby introducing an elementary tonal-compositional feature. A measure longer than the first, it concludes with an imperfect authentic cadence, appropriately signaling a conventionally important segment of the hour. The third quarter adds another measure, continues the polyphonic-melody technique, and presents in addition a definite melodic contour that strengthens the compositional sensibility at the expense of the design sensibility. Interestingly, the third quarter concludes with a perfect authentic cadence on the downbeat of the fourth measure, creating thereby a strong closing effect before the hour is up.</p>
+
+<p>[11] The fourth quarter has a number of striking features. While the second and third quarters each added a single measure to the total, the fourth doubles the length of the third to cover eight measures. These eight measures contain four phrases that&mdash;save for a missing anacrusis in the first phrase&mdash;could set a typical English ballad text in an iambic common (86.86.) meter, a possibility shown by the phrasing marks in the example. The fourth quarter thus sounds like a &ldquo;real&rdquo; piece of music, something definitely composed rather than designed. Because of its exceptional nature, the
+fourth quarter stands apart from the previous three, and the curious closure effected in the third quarter is, in effect, the cadence of the overture before the main act commences on the hour. This idea of an hour &ldquo;show,&rdquo; incidentally, is realized spectacularly in a number of continental tower clocks, where cast metal puppets (&ldquo;clock-jacks&rdquo;) strike bells in full view of a presumably amused public. A very elaborate clock-jack show at the Rathaus in Munich has revolving multilevel stages on which dancers and jousting knights
+cavort.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> (The inspiration for any number of Disneyland effects is obvious.) While no colorful clock-jacks emerge to ring the hour on the Guildford Chimes, a complete if rudimentary composition does. Perhaps the most unusual feature of the fourth quarter is its cadence, which is strongly on the dominant. The eight measures are thus tonally open and incomplete. It is the hour strike on the tonic that closes and completes the piece, conclusively resolving the dominant on which the fourth-quarter chime rested. In this way, the hour strike becomes part of the show&mdash;the denouement of it, actually&mdash;instead of being a event separate from the tonal structure of the chime.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Magdalen Chimes, 1713</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="harrison_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[12] The Parsifal and Guildford Chimes illustrate strong tendencies towards emergence and distinctiveness respectively. The Magdalen Chimes, shown in <b>Example 4</b>, has a more balanced relationship of the two features. (To ease the analytic discussion below, each quarter is denoted by thematic tokens.) Emergence is a straightforward affair, as two notes are added at each quarter hour. For the first two quarters, the chime seems to be unfolding a single tune in the manner of the Parsifal Chimes: A, A+B, and then possibly A+B+Y and A+B+Y+Z for the final two quarters, with Y and Z each being putative two-note motives. The third quarter, however, unexpectedly sounds a new melodic pattern, C, while still striking the expected six times. The fourth then takes C and, significantly, appends the two notes of A to it, completing the emergent total of eight.</p>
+
+<p>[13] The teleological character of the Magdalen Chimes is thus quite different from that of either the Parsifal or the Guildford Chimes. Although in different ways, those two chimes &ldquo;build&rdquo; the hour and present the other quarters as supporting structures that prepare the ultimate goal. The Magdalen Chimes has a more modular character than the other two, and, while the fourth quarter is still the longest sequence, it seems less climactic than those of the other chimes. To be sure, it still presents something tonally coherent, with complementary linear motions converging on the tonic scale degree shown at B in Example 4. But this culminating effect is less powerful than that of the Parsifal Chimes because of the deployment of the motivic material.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Analysis of Magdalen Chimes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="harrison_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[14] <b>Example 5</b> maps the Magdalen Chimes onto an analog-clock grid marked in quarters, showing the hour to be divided into two distinct half hours. These time spans are different from the inbound/outbound half hours of the Parsifal Chimes, which convey a kind of pendular oscillation. The Magdalen half hours, as Example 5 suggests, are experienced as two different entities because motive C&mdash;the irruptive event of the third quarter&mdash;dramatically separates the first from the second half. Both half hours are further marked by other features. The second and fourth quarters (the concluding segments of each half hour) use the lowest bell in the peal to create cadential effects appropriate to the time spans in question. In the second quarter, this tonic precedes a dominant one, producing a half-cadential effect, whereas in the fourth quarter, the low bell reinforces the authentic-cadential effect of the concluding motive A of the chime. Reinforcing these tonal signals of conclusion is the use of compound motivic figures at the second and fourth quarters: AB at the second and CA for the fourth.</p>
+
+<p>[15] To some extent, motive A cuts against the half-hour division. By recapitulating A from the first half hour, the fourth quarter creates a liaison between the ending of the second half and the beginning of a new first half, so that the hour event is experienced less as a culmination and more as an anticipation of the following hour segment. In other words, the motivic combination CA in the fourth quarter defines the hour as the median between the third quarter of the present hour (C) and the first quarter of the hour to come (A). In this way, the first quarter can be heard as an echo of the previous hour; it looks backwards rather than forwards.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Westminster Quarters, 1794</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="harrison_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[16] Like the Magdalen Chimes, the more famous Westminster Quarters (<b>Example 6</b>) balances distinctiveness and emergence. The fame of these chimes is such that its origins are well documented. The composer William Crotch (1775&ndash;1847), while a student at Cambridge in 1794, was asked to write a chime tune for a new clock at the university. He took the fifth and sixth measures of Handel&rsquo;s &ldquo;I know that my Redeemer liveth&rdquo; from <i>Messiah</i> as his inspiration, and&mdash;considering them somewhat as a designer of a change-ringing method&mdash;produced four sets of permutations on the four bells (G,C,D,E).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Each permutation is shown below as ordered sets of quarter-phrases, which are defined by the rhythmic signature of the Westminster Quarters: three quarter notes followed by a dotted half. Note that the second quarter-phrase of the second quarter is a &ldquo;malformed&rdquo; permutation due to the absence of the G bell:</p>
+
+<p>First quarter:  &lt;E,D,C,G><br>
+Second quarter: &lt;C,E,D,G> &lt;C,D,E,C><br>
+Third quarter:  &lt;E,C,D,G> &lt;G,D,E,C> &lt;E,D,C,G><br>
+Fourth quarter: &lt;C,E,D,G> &lt;C,D,E,C> &lt;E,C,D,G> &lt;G,D,E,C></p>
+
+<p>The relationship between the permutational and temporal structures can best be illustrated by recourse to the following abbreviations:</p>
+
+<p>Q1 = &lt;E,D,C,G><br>
+Q2 = &lt;C,E,D,G><br>
+Q3 = &lt;E,C,D,G><br>
+Q4 = &lt;G,D,E,C><br>
+MQ = &lt;C,D,E,C></p>
+
+<p>First quarter:  Q1<br>
+Second quarter: Q2 MQ<br>
+Third quarter:  Q3 Q4 Q1<br>
+Fourth quarter: Q2 MQ Q3 Q4</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Analysis of Westminster Quarters</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="harrison_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[17] As was the case with the previous chimes, cadential effects are coordinated with quarter-hour segments. In the Westminster Quarters, however, these are prominent and may even be said to be paramount. But other forces are at work here as well, and these endow this chime with different levels of structural cohesion. Like the Parsifal chimes, the Westminster Quarters builds the hour from quarter phrases, but there is no rigid assignment of a particular phrase to a particular quarter hour in this case. All odd quarters (i.e., the first and third) use quarter-phrases with half-cadential effects (Q1, Q2, Q3), while even quarters use phrases with authentic effects (Q4, MQ). The odd quarters thus conclude with a G, and the even with a C. This observation suggests that Crotch&rsquo;s permutational design has at least some partial ordering constraints. These are explored further in <b>Example 7</b>, which adopts a &ldquo;node &amp; arrow&rdquo; system from David Lewin to show a left-to-right ordering of events.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Those events in squares have fixed precedence, while those in circles are movable, appearing in the sequence at the indicated quarter. Thus, in the half-cadential quarters, E is always before D, which is always before G; C&mdash;to use the parlance of change ringing&mdash;&ldquo;hunts&rdquo; in the order, moving about the other, fixed bells. Further, it hunts in a consistent way. The three half-cadential quarter-phrases are heard six times during the course of the hour, proceeding from Q1 at the first quarter, through Q2 at the second, to Q3 and back to Q1 at the third, and finally to Q2 and Q3 at the fourth.</p>
+
+<p>[18] The authentic-cadential phrases, as Example 7 shows, have a different ordering design. To be sure, C no longer hunts but is fixed as the cadential end. Yet D and E exchange precedence as well, as the dashed lines indicate. It is this change that gives the Westminster Quarters a pleasing balance and symmetry more subtle than that created by the alternation of cadential effects. These effects are obvious; the change of (E,D) precedence is less so. (Yet, as an experiment, create for yourself an authentic-cadence permutation in which E precedes D and substitute it for either MQ or Q4. The effect is surprisingly dramatic.) Just as the six half-cadential opportunities are parceled out to three different quarter-phrases, the four authentic-cadential opportunities are sounded by two different quarter-phrases, MQ and Q4, that alternate consistently&mdash;MQ being heard first and then Q4, followed by MQ and the final Q4.</p>
+
+<p>[19] The cumulative effect of the design is multilayered. The consistent rotation of quarter-phrases over the course of the hour provides a subtle sense of modularity to the hour while not interfering with the teleology of emergence. Moreover, this rotation allows the astute listener to tell what time it is by hearing the first quarter-phrase alone, the one exception being the fourth quarter. At a middle and more easily-heard level, the alternation of precedence for E and D creates a pleasing balance and undulation to the unfolding chime tune. And at the surface, the cadential effects create half-hour units from rudimentary quarter-hour antecedent &amp; consequent constructions.</p>
+
+<p>[20] The Westminster Quarters seems to comment on the passing of quarter hours in the following way: A short quarter-phrase ending half-cadentially signifies the first quarter, which seems an obvious incomplete section of time.  The second quarter, which ends authentically, seems more complete yet not whole. The obvious incompleteness of the first quarter (marked by Q1) is avoided by the use of a &ldquo;new&rdquo; quarter-phrase Q2.  But the use of the &ldquo;malformed&rdquo; permutation, MQ, lessens the cadential strength. The second quarter is thus not heard as the first quarter plus another, but rather as an original half.  For the third quarter, a completely new representation of the first half hour (Q3+Q4 instead of Q2+MQ) is followed by the original marker of incomplete quarter time, Q1. In a literal sense, the third quarter does not &ldquo;contain&rdquo; the previous two but is a new entity that, by concluding with Q1, recapitulates that quarter&rsquo;s message of incompleteness.  This situation becomes clearer at the fourth quarter, where two equal segments make up a satisfying whole: an outbound &ldquo;malformed&rdquo; 30-minute segment (Q2+MQ) and inbound &ldquo;well-formed&rdquo; 30-minute segment (Q3+Q4), previously heard in the third quarter satisfactorily to &ldquo;seal&rdquo; the outbound half. In this light, 45 past does not resolve to 30+15, but rather to 60-15. The third quarter thus looks forward to and anticipates the hour to come.</p>
+
+<hr>
+
+<p>[21] In composing a new chime for the Hopeman Carillon, a number of novel ideas occurred to me, such as designing &ldquo;third-hour&rdquo; chimes that would sound every twenty minutes, or (and this was admittedly impish) having chimes sound, say, every eighteen minutes on a six-hour modulus. But I was restrained by a sympathetic consideration for the &ldquo;user community&rdquo;&mdash;for the people who might possibly rely on the clock chimes to regulate their lunch hour, to gauge their arrival time at class, or simply to order their day in a traditional quarter-hour rhythm. This was not a matter of artistic composition, but of maintaining the integrity of a publically-traded signifier. An eighteen-minute interval, for example, would no doubt force people always to look at their watch to figure out what time it was, which could be a continual annoyance. Moreover, it would defeat the original mission of the clock chimes to tell time using sound alone. While entertaining these notions, I was also reminded of the reception that Richard Serra&rsquo;s &ldquo;Tilted Arc&rdquo; received when installed at the Federal Building plaza in New York; what had been a bland but functional space for unfettered human movement become blocked by a 120-foot length of worked steel, twelve feet high. An outcry ensued and, after a highly publicized lawsuit, the sculpture was removed.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> A similar point for modernist aesthetics I did not care to make. Nor, in the end, did I want to trouble the engineers at the Verdin Company, the manufacturers of the clock chime mechanism, with my whimsy. So I resolved to maintain the quarter-hour chiming. As it was, a new logic chip would have to be manufactured for the quartz clock that triggers the strikers, and this would strain my limited budget. To avoid the expense of additional strikers, which would have created opportunities for a more expansive, Guildford-style composition, I decided to use the same bells as those used for the Westminster Quarters.  </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Rochester Quarters, 2000</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="harrison_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[22] The first problem was thus composing a chime tune that sounded manifestly different from the Westminster Quarters, whose bells and timing it would nonetheless share. Seeing little opportunity for emphasizing distinctiveness under these conditions, I opted for an emergent design (<b>Example 8a</b>) like that of the Parsifal Chimes.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> The main innovation of the Rochester
+Quarters is its phrase structure. Whereas both the Westminster Quarters and Parsifal Chimes have distinct quarter-phrases, emphasizing the quarter hour as the unit of measure, the Rochester Quarters presents a new segment of a single if miniature tonal structure at each quarter hour. This structure is best explained in Schenkerian terms, as seen in <b>Example 8b</b>. The chime marks each quarter-hour segment with a report of progress towards completion of the fundamental 3-line. A major interruption occurs at the second quarter, which effectively couples the half hour with an important structural event. At the third quarter, the Kopfton is regained and the line begins a descent in double time, clearly aiming towards arrival on <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> at the downbeat of measure 4 (=fourth quarter). The interruption at the third quarter (marked by breaking the beam) disrupts this motion dramatically&mdash;marking the third quarter as the point of greatest tonal and temporal tension within the hour. At the fourth quarter, this interruption disappears as <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span> progresses to <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> without pause.</p>
+
+<p>[23] The chime at the first quarter points out a defect in the fundamental structure: there is no apparent tonic support for the Kopfton <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>. Given the length of the piece, and given that there is only one bell sounding <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, there was no way to put that scale degree in service of both the upper voice and the bass. To have put <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> in the first-quarter chime would have suggested a downward bass arpeggiation to <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>, or would have created some other registral confusion as to what was upper voice and what was bass. Despite this issue, the absence of a <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> support for the Kopfton actually enhances the effect of the chime by making the first quarter a decidedly incomplete structure. As the hour passes and the tune unfolds, the attainment of <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span> and of an attendant structural &ldquo;repair&rdquo; becomes apparent. That is, the final <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>, while appearing within the upper voice-leading, also creates the heretofore missing bass line; a single note (C as <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>) cannot be a line, but two (CF as <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>) can. Although the bass arpeggiation is truncated, it occurs nonetheless as part of the last event in the structure. With some imagination, it is not hard to hear the first two <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>s as upper-voice pitches, and the last two as bass voice, as Example 8B graphs.</p>
+
+<hr>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="harrison_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="harrison_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[24] The Rochester Quarters debuted on January 31, 2000, the sesquicentennial anniversary of the signing of the university charter. I did some advance publicity for the change, so that the community was somewhat prepared, but it was not extensive. Reaction was largely positive, which has been gratifying because, in truth, what I composed is not as deeply interesting as the Westminster Quarters from the theoretical perspective; given four bells, a lick from Handel, and the reflected glory from most famous and prestigious bell tower in Western culture, it is hard to improve upon the Westminster Quarters. The student newspaper did find cause for complaint; I had tampered with one of the few venerable traditions the campus had, and the new chime sounded like &ldquo;<nobr>. . .</nobr> the pounding of a kindergartener on a xylophone.&rdquo; An editorial cartoon that linked the new chime with an unwelcome innovation in student dining (<b>Example 9</b>) underlined the point.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p>
+
+<p>[25] All reactions, whether positive or negative, seemed to comment not so much on the chime tune itself, but rather on a renewed appreciation for being called to note the passing of time, and to note it with some pleasure. Buzzers, electronic beeps, and other assorted chirps also mark time, but crudely and without intelligence. Moreover, many are meant as private signals (e.g., the watch alarm), which makes their public impact one of inadvertent rudeness. The clock chime, in contrast, is a courteous public service. It asks to be appreciated rather than merely noted. The examples analyzed here also communicate something about the passage of time, and not just about a particular time point. They all use musical means to comment about what time it is or what part of the hour it is, and the consistent repetition of these comments throughout the day encourages one to transfer characteristics of a particular chime pattern to a particular quarter-hour segment. Fifteen past sounds different&mdash;and therefore feels different when heard&mdash;from forty-five past. Gradually, like all things that repeat mechanically for an indefinite term, these feelings aroused by the clock chime, as well as the attention paid to the chimes themselves, blend into the background of daily routine. The chimes will be heard instead of listened to, and the time points they mark will sound dull instead of sharp. But there will still be yet a unique and intrinsically musical sense of time in the place wherein they sound, a sense its denizens will share for as long as the bells continue to toll their particular story.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Daniel Harrison<br>
+	University of Rochester<br>Department of Music<br>205 Todd<br>Rochester, New York 14627-0052<br><a href="mailto:hrsn@mail.rochester.edu">hrsn@mail.rochester.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> See, for example, Louis Vierne, &ldquo;Carillon de Westminster,&rdquo; from <i>Pieces de Fantaisie</i> for organ.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> For more information about the instrument, consult its website: <a href='http://www.cc.rochester.edu/College/MUR/carillon.html'> http://www.cc.rochester.edu/College/MUR/carillon.html</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Quoted in W. W. Starmer, &ldquo;Chimes,&rdquo; <i>Proceedings of the Musical Association</i> 34th session, (1907&ndash;8): 8.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> The melodic sequence from <i>Parsifal</i> upon which the chime is based is found at the end of the &ldquo;Good Friday&rdquo; scene in the third act. According to Percival Price (<i>Bells and Man</i> [Oxford: Oxford University Press, 1983], 182), this sequence &ldquo;<nobr>. . .</nobr>is associated with the Benedictine Abbey of Beuron, Germany, which in 1869 installed a swinging peal of four bells sounding, in descending order, the notes B-flat, G, F, and D above middle C. Wagner wanted the bells sounding a minor seventh lower in order to suggest the solemnity of the Monastery of the Holy Grail<nobr>. . .</nobr> The only place where the Parsifal Quarters may be heard complete and on bells of the deep pitches that Wagner envisioned is at the Riverside Church.&rdquo; For more information about the carillon at Riverside, consult its web site: <a href='http://theriversidechurchny.org/about_carillon.html'>http://theriversidechurchny.org/about_carillon.html</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> For a useful web site (with bibliography) concerning clock&nbsp;jacks although not dealing with those in tower clocks, consult: <a href='http://www.database.com/~lemur/dm-clock-jacks.html' eudora='autourl'>http://www.database.com/~lemur/dm-clock-jacks.html</a>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See Starmer, &ldquo;Chimes,&rdquo; page 9. Starmer quotes a &ldquo;Dr. Raven,&rdquo; to whom was written a letter by a &ldquo;Mr. Amps,&rdquo; who apparently knew the origination story of the chime. Dr. Raven notes that Crotch&rsquo;s permutations show evidence of a systematic order &ldquo;<nobr>. . .</nobr>not unworthy of Fabian Stedman.&rdquo; Stedman was the author of <i>Campanologia</i> (Cambridige, 1677), the first thorough examination of change ringing and its permutational nature. <i>Campanologia</i> can fairly be said to be the first work of in which group theory was applied to a musical situation.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> See David Lewin, <i>Generalized Musical Intervals and
+Transformations</i> (New Haven: Yale University Press, 1987), 134&ndash;5, 209 ff. For a more concise treatment, see David Lewin, &ldquo;On Partial Ordering,&rdquo; <i>Perspectives of New Music</i> 14&ndash;15 (1976): 252&ndash;59.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> For more information about &ldquo;Tilted Arc,&rdquo; including bibliography, consult: <a href='http://www.arts.arizona.edu/are476/files/tilted_arc.htm'>http://www.arts.arizona.edu/are476/files/tilted_arc.htm</a>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> The hour strike on G is correct, despite the obvious clash with the remainder of the chime. This G is the lowest bell in the Hopeman Carillon, and it also struck the hours when the Westminster Quarters (also set in F major) chimed from that instrument. Many chimes lack a bell large enough to act as a suboctave tonic for hour strikes, so hour strikes often occur on whatever the largest bell is regardless of key.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> University of Rochester <i>Campus Times</i>, Februrary 3, 2000.<br><a href="#FN10REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">See, for example, Louis Vierne, &ldquo;Carillon de Westminster,&rdquo; from <i>Pieces de Fantaisie</i> for organ.</div><div id="fndiv2" class="flyoverdiv">For more information about the instrument, consult its website: <a href='http://www.cc.rochester.edu/College/MUR/carillon.html'> http://www.cc.rochester.edu/College/MUR/carillon.html</a>.</div><div id="fndiv3" class="flyoverdiv">Quoted in W. W. Starmer, &ldquo;Chimes,&rdquo; <i>Proceedings of the Musical Association</i> 34th session, (1907&ndash;8): 8.</div><div id="fndiv4" class="flyoverdiv">The melodic sequence from <i>Parsifal</i> upon which the chime is based is found at the end of the &ldquo;Good Friday&rdquo; scene in the third act. According to Percival Price (<i>Bells and Man</i> [Oxford: Oxford University Press, 1983], 182), this sequence &ldquo;. . .is associated with the Benedictine Abbey of Beuron, Germany, which in 1869 installed a swinging peal of four bells sounding, in descending order, the notes B-flat, G, F, and D above middle C. Wagner wanted the bells sounding a minor seventh lower in order to suggest the solemnity of the Monastery of the Holy Grail. . . The only place where the Parsifal Quarters may be heard complete and on bells of the deep pitches that Wagner envisioned is at the Riverside Church.&rdquo; For more information about the carillon at Riverside, consult its web site: <a href='http://theriversidechurchny.org/about_carillon.html'>http://theriversidechurchny.org/about_carillon.html</a>.</div><div id="fndiv5" class="flyoverdiv">For a useful web site (with bibliography) concerning clock&nbsp;jacks although not dealing with those in tower clocks, consult: <a href='http://www.database.com/~lemur/dm-clock-jacks.html' eudora='autourl'>http://www.database.com/~lemur/dm-clock-jacks.html</a>.</div><div id="fndiv6" class="flyoverdiv">See Starmer, &ldquo;Chimes,&rdquo; page 9. Starmer quotes a &ldquo;Dr. Raven,&rdquo; to whom was written a letter by a &ldquo;Mr. Amps,&rdquo; who apparently knew the origination story of the chime. Dr. Raven notes that Crotch&rsquo;s permutations show evidence of a systematic order &ldquo;. . .not unworthy of Fabian Stedman.&rdquo; Stedman was the author of <i>Campanologia</i> (Cambridige, 1677), the first thorough examination of change ringing and its permutational nature. <i>Campanologia</i> can fairly be said to be the first work of in which group theory was applied to a musical situation.</div><div id="fndiv7" class="flyoverdiv">See David Lewin, <i>Generalized Musical Intervals and
+Transformations</i> (New Haven: Yale University Press, 1987), 134&ndash;5, 209 ff. For a more concise treatment, see David Lewin, &ldquo;On Partial Ordering,&rdquo; <i>Perspectives of New Music</i> 14&ndash;15 (1976): 252&ndash;59.</div><div id="fndiv8" class="flyoverdiv">For more information about &ldquo;Tilted Arc,&rdquo; including bibliography, consult: <a href='http://www.arts.arizona.edu/are476/files/tilted_arc.htm'>http://www.arts.arizona.edu/are476/files/tilted_arc.htm</a>.</div><div id="fndiv9" class="flyoverdiv">The hour strike on G is correct, despite the obvious clash with the remainder of the chime. This G is the lowest bell in the Hopeman Carillon, and it also struck the hours when the Westminster Quarters (also set in F major) chimed from that instrument. Many chimes lack a bell large enough to act as a suboctave tonic for hour strikes, so hour strikes often occur on whatever the largest bell is regardless of key.</div><div id="fndiv10" class="flyoverdiv">University of Rochester <i>Campus Times</i>, Februrary 3, 2000.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2000 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

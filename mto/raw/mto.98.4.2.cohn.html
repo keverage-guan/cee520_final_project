@@ -1,0 +1,843 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 4.2: Cohn, Pedagogability</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Music Theory&rsquo;s New Pedagogability">
+
+    <meta name="citation_author" content="Cohn, Richard">
+      
+
+<meta name="citation_publication_date" content="1998/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="4">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Music Theory&rsquo;s New Pedagogability
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.98.4.2/mto.98.4.2.cohn.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Richard Cohn</a></font></span></h2><br><br>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.98.4.2/mto.98.4.2.cohn.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 4, Number 2, March 1998 <br> Copyright &#0169; 1998 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] My paper is about pedagogy.  At first I take a relatively
+traditional view of the term:  I will be addressing how we teach our
+students.  Later I shall view pedagogy in broader terms, by discussing
+how we teach ourselves, each other, and those colleagues and musicians
+outside of the research field who peer in on us from time to time.
+</p>
+
+<p>[2] My contribution is inspired in part by Patrick McCreless&rsquo;s
+recently published paper, &ldquo;Rethinking Contemporary Music Theory.&rdquo;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Among other topics, McCreless addresses the relationship between
+speculative and practical theory.  He notes that this relationship has
+at times been one of severe disjunction, at other times one of close
+alliance.  In music theory&rsquo;s current efflorescence in the late
+twentieth-century academy, McCreless suggests that the
+speculative/practical dichotomy is translated into one between
+research and pedagogy.  Although most music theorists practice both
+activities, a boundary divides them.  Introductory pedagogical
+practice is guided less by current research in music theory than by
+the speculative theory of past centuries.  In the twentieth century,
+these concepts&mdash;octave equivalence, acoustic generation, harmonic
+function, formal prototypes&mdash;have run deep grooves in the pavement,
+grooves which much current introductory pedagogy retraces.
+</p>
+
+<p>[3] When I first entered the field as a graduate student in 1979, the
+boundary between research and teaching at the introductory levels
+seemed inevitable and unbreachable.  At that time, the most
+progressive and stimulating concepts in the field&mdash;middleground
+motivic parallelisms, dissonant prolongations, double-tonic complexes,
+Kh-networks, and hexachordal combinatoriality&mdash;were embedded in
+distinct repertories.  Grasping these concepts required a saturation
+in the respective repertories, and then a long walk through
+preparatory concepts.
+</p>
+
+<p>[4] I think we are at a somewhat different juncture now.  A number of
+central concepts have emerged in the last fifteen years that can be
+taught at the introductory level, to students whose only prior
+exposure is some familiarity with basic notation.  In identifying some
+of these areas, my primary purpose is not to advocate for a particular
+approach to pedagogy, but rather to establish a position from which to
+observe the state of music theory as a research field.  I will suggest
+that the opportunity to transgress the boundary between introductory
+teaching and research reflects other ways that music theorists have
+been recently crossing boundaries&mdash;boundaries between repertories,
+between compositional parameters, and between domains of knowledge.  I
+will suggest further that these circumstances provide an opportunity
+to develop a more effective broader pedagogy.
+</p>
+
+<p>[5] I will now proceed through an imaginary syllabus for the first six
+units of an introductory course in the fundamentals of music in the
+European tradition.  Course pre-requisite:  ability to &ldquo;read music,&rdquo;
+i.e. to passively interpret standard pitch/duration symbols in treble
+and bass clefs.
+</p>
+
+<p>[6] When an oral version of this paper was presented at the Plenary
+Session in Phoenix, my &lsquo;pedagogical program&rsquo; provoked some irritation
+among a subset of those present, so I reiterate, with some emphasis,
+that my intention is not to prescribe how music theory ought to be
+taught, nor even to recommend a particular pedagogical program, but
+rather, to call attention to the pedagogability of recent music
+theory&mdash;the <i>potential</i> for its central concepts to be explained to a
+population who has not made a substantial prior investment in
+conceptual or repertorial overhead&mdash;and to use this circumstance as a
+mirror for reflecting back on the current state of research in the
+field.
+</p>
+
+<p>[7] UNIT 1. Rhythm and Meter.  After reviewing rhythmic notation,
+establishing the concept of metric hierarchy, and introducing the
+strong-beat oriented durational patterns most characteristic of
+art-music and its pedagogy, we turn to the topic of funky rhythms.
+The concept, but not the name, comes from the work of Jeff Pressing;
+he calls them &ldquo;prime-generated.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> A prime-generated durational
+pattern recursively applies a durational value that is co-prime with
+the durational span that separates successive downbeats.  An example
+is the dotted eight-note value in &ldquo;common&rdquo; time.  Upon reaching the
+end of a measure, the generating value wraps back to the beginning of
+the measure and continues to occupy empty beats until approximately
+half of the available beat-classes are occupied.  The method is
+cumbersome to explain, but, in my experience, not difficult for
+students to intuit from example.  Among those patterns generated are
+bell patterns characteristic of West African music, and musics of the
+African diaspora.  These include, of course, many of the musics of the
+United States and their further dissemination in trans-national
+popular genres.
+</p>
+
+<p>[8] The concept of funky rhythms creates an opportunity to pay a visit
+to some students in their musical homes, and in so doing to
+demonstrate that productive systematic inquiries into musical
+organization are not the province of Western European art music alone.
+But there is another virtue as well:  prime generativity is
+characteristic of pitch as well as of rhythm, and thus provides a
+lead-in to future topics.  As Pressing shows, pentatonic and diatonic
+scales in chromatic space, and triads and seventh chords in diatonic
+space, are all prime generated, and thus isomorphic with funky
+rhythms.
+</p>
+
+<p>[9] UNIT 2. Scales.  Diatonic scales are over-determined, and this
+presents a pedagogical advantage.  They can be prime-generated by the
+interval of the perfect fourth, as Schenker taught.  Or they can be
+taught, perhaps more practically, as a series of whole and half-steps,
+where the position of the half-steps is governed by the principle of
+<i>maximal evenness</i>.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Clough and Douthett&rsquo;s concept is easily
+intuited, in part because it seems to operate commonly in the physical
+and social world.  Indeed, Douthett has recently shown its application
+to the behavior of gas molecules.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> More to the pedagogical point,
+maximal evenness seems to predict the position of individuals on
+elevators.
+</p>
+
+<p>[10] UNIT 3. The Tonic Triad as Melodic Frame.  We begin this unit by
+partitioning the diatonic scale into triadic and non-triadic tones.
+This partition is both prime-generated and maximally even; the latter
+concept will eventually serve to underwrite the complementarity of
+steps and leaps, i.e., of voice-leading and harmony, as emphasized in
+Eytan Agmon&rsquo;s work.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> For now, our concern is with studying stock
+melodic figures that neighbor and pass between degrees of the tonic
+triad.  Here three linked concepts introduced by Steve Larson are
+useful:  inertia, magnetism, and gravity.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Together, these terms help
+characterize fundamental psychological states of expectation and
+fulfillment prompted by basic melodic figures and their
+concatenations.
+</p>
+
+<p>[11] UNIT 4. Two-Voice Counterpoint.  We begin our study by
+partitioning harmonic intervals into dissonance and consonance, and
+further partitioning the latter category into imperfect and perfect.
+We then study the syntactic model that leads dissonance to imperfect
+consonance to perfect consonance.  The progression toward perfection
+and the cadential status of the perfect intervals are both
+psychologically clarified and historically situated through the
+Aristotelean notion that the imperfect strives for the perfect, and
+through the adaptation of these concepts to Christian theology by
+Scholasticist philosophers.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+
+<p>[12] UNIT 5. Triadic Voice-Leading in Root Position.  Having studied
+triads as the stable ingredients of a diatonic collection, it is time
+to learn the twenty-four consonant triads as individual entities, and
+to begin to explore inter-triadic voice-leading, restricted for the
+moment to root position.  We introduce the <i>Verwandtschaftstabelle</i> of
+19th-century German theory, but adapted to equal temperament.  Motion
+through the table proceeds by stepwise displacement of a single voice,
+moving in oblique or contrary motion with the bass.  The pedagogy here
+is rooted in the neo-Riemannian work of David Lewin and Brian Hyer.
+The incremental moves are Lewin&rsquo;s Leitton, Parallel, and Relative
+operations, the charting of these operations on an equal-tempered
+version of Riemann&rsquo;s map is inspired by Brian Hyer&rsquo;s work, and the
+focus on voice-leading parsimony has been the focus of my own recent
+research.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+
+<p>[13] UNIT 6. Talking About Music.  Having spent an intense few weeks
+learning to talk about music, it&rsquo;s a good time to spend some time
+examining the language that we&rsquo;ve been using.  In speaking of Maximal
+Evenness, we appealed to a notion of objects in space.  We studied
+melodic succession by analogy with physical motion.  For dissonance
+and consonance, we invoked theology; for voice-leading parsimony, we
+quietly appropriated a central concept from logic and economics.  When
+we spoke of melody as adhering to principles of inertia, magnetism,
+and gravity, we did not mean to imply that acoustic phenomena have
+weight, volume, and mass.  My own understanding of these matters has
+been enriched by Thomas Christensen&rsquo;s study of Newtonian mechanics and
+Enlightenment musical concepts;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> by the work of Janna Saslaw and
+Lawrence Zbikowski on image schemata and cross-domain mapping;<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> and
+by the writings of Marion Guck, Judy Lochhead, Nicholas Cook,<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> and
+others who have alerted me to the metaphorical nature of many concepts
+whose source I would not have otherwise considered.  Discussion of
+these matters in the classroom provides points of contact with other
+questions that colleagues in other departments invite our students to
+pose, and it provides the more flexible thinkers among them a
+perspective that will help them deal with their frustrations at
+encountering the poverty of language about music in the face of the
+richness of musical experience.
+</p>
+
+<p>[14] The discussion of the metaphorical nature of musical language
+marks the end of my hypothetical musical curriculum.  I turn now to a
+consideration of what broader trends are reflected in the
+circumstances that I have been outlining.  Here I return to the theme
+of boundary crossings that I mentioned earlier.  The term has acquired
+the aura of a buzzword lately, yet its prominence responds to
+something very real:  the rapid migration of populations and the
+expedited pace of communications.  Among those phenomena hurtling
+through the ether are artistic artifacts, including musics.  On this
+scale, the boundaries that music theorists have crossed in the last
+fifteen years have been relatively modest ones, but they are
+nonetheless significant to my theme.
+</p>
+
+<p>[15] First there are the boundaries between musical repertories within
+the Western art music tradition.  Such boundary crossings are not
+without precedent:  for example, the putative modernist wall of 1908
+was long ago transgressed by Adele Katz and Felix Salzer in the one
+direction, and in the less distant past by Benjamin Boretz and John
+Clough in the other.  But Lewin&rsquo;s <i>Generalized Musical Intervals and
+Transformations</i> has had a crucial and probably long-lasting impact on
+problematizing the boundary between the atonal and tonal.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup></p>
+
+<p>[16] Second are the boundaries between art music and popular music,
+between Western and non-Western, between written and oral musical
+traditions.  This is part of a broader trend away from an exclusive
+focus on the aesthetic experience of the focused expert listener in
+the sustained presence of the masterwork, and toward a regard for the
+ordinary cognition of ordinary folks in the perhaps casual presence of
+perhaps ordinary music.  I don&rsquo;t mean to say that the one has replaced
+the other, but rather that the two orientations increasingly exist
+side-by-side, so that our discourse about music now travels
+effortlessly and perhaps tacitly along a continuum between them.  On
+one end of this continuum is traditional analytic scholarship; on the
+other end, work in music perception and cognition, and work by
+scholars such as Jay Rahn and Kofi Agawu on popular and folk music
+traditions.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p>
+
+<p>[17] The third transgressed boundary is intimately related to the
+second.  It is the boundary between music and other human activities.
+Again we can point to a substantial pre-history, including the work of
+Zuckerkandl and Meyer in the 1950&rsquo;s, and Clifton in the 1970&rsquo;s.  But
+the 1983 book of Lerdahl and Jackendoff, with its articulate advocacy
+of a cognitive orientation and its compelling demonstration of the
+general cognitive basis of musical grouping judgments, marked an
+important moment when musical capacities began to be viewed in the
+broader framework of mental life.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<p>[18] The transgression of these boundaries is, I think, connected to
+the potential for eroding the boundary between research and pedagogy.
+The concepts enumerated in my &lsquo;syllabus&rsquo; are style- and music-specific
+to varying degrees, but all of them point arrows to other domains of
+musical and human experience. Prime-generativity is powerful because,
+as Pressing&rsquo;s evidence suggests, it crosses boundaries of musical
+style, and even domains of musical organization. Maximal evenness,
+inertia, and magnetism acquire their power because of their
+applicability to phenomena in the physical and social world; parsimony
+because it is a desideratum of logical and economic systems.  Whether
+we take these arrows to represent an ontologically real connection is
+a matter of preference and ideology.  From the perspective I am
+adopting here, what matters is the heuristic job that each arrow
+performs:  it provides a conduit for explanation, and such conduits are
+central to the pedagogical process.
+</p>
+
+<p>[19] My essay so far has adopted a traditionally narrow view of
+pedagogy, as the education of undergraduate students in the
+classroom. But we don&rsquo;t only teach our students. We teach each
+other&mdash;fellow practitioners of music theory in the Anglo-American
+tradition&mdash;and we teach (and in turn are taught by) scholars and
+musicians who locate themselves outside that tradition. I will not
+attempt an analysis of our scholarly modes of discourse, but it is
+worth observing that we seem to be collectively placing a higher value
+on ushering each other incrementally into our private
+thought-universes. I am thinking especially of the trend toward more
+targeted deployment of sparser graphic images, in particular, the epic
+story told by the arrow in Figure 0.1 of Lewin&rsquo;s GMIT, and the
+technique for graphically transmitting analytic information developed
+by Lewin in the <i>Four Analytical Essays</i> and in Henry Klumpenhouwer&rsquo;s
+work.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></p>
+
+<p>[20] The manner in which we address those outside our profession is
+also changing. I have in mind here not only targeted pedagogical
+works, such as those of Straus, Friedmann, and Morris, but also overt
+works of outreach toward performers, such as Deborah Stein&rsquo;s book
+(with Robert Spillman) on song, and original works of research that
+make explicit attempts to maximize their audience when the topic
+allows, such as the books on tonal rhythm by Joel Lester and William
+Rothstein.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></p>
+
+<p>[21] The increasing possibility of disseminating music-theoretic
+insights, without huge investment in overhead, provides a number of
+opportunities for a broadened audience, and a broadened set of
+dialogues which can mold and inform our own practice. Some of these
+dialogues have already begun.  The commerce between music theorists
+and behavioral and cognitive scientists is already approaching a
+healthy volume. This is the area of music theory that treats of
+fundamental questions by its very nature, and the problem of
+transmissability seems thereby less acute.  The communication gates
+between music theorists and critical and cultural musicologists are
+opening a bit more creakily, but the increasing volume and
+sophistication of historical approaches to music theory will likely
+oil these doors as a matter of course. The challenge here will be for
+those of us who deal with problems that are analytic, or ahistorically
+speculative, to communicate our insights in ways that other scholars,
+trained in different traditions, will want to absorb them. Martha
+Hyde&rsquo;s admonition from ten years ago is perhaps less urgent than it
+was on that similarly commemorative occasion:  &ldquo;If we remain exclusive,
+competing among ourselves, interested only in our own issues, reading
+only our own journals, in ten years or twenty we may find that we have
+conceded the real competition without knowing it, for in the meantime
+younger music historians are going to be learning analysis&mdash;well
+enough for their purposes if not for ours.&rdquo;<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> Volition furnishes
+only a portion of the solution to Hyde&rsquo;s challenge. There is also an
+aspect of communicative technique, analogous to that faced by the
+&ldquo;human factors&rdquo; or &ldquo;user interface&rdquo; branch of computer science.  The
+pedagogability of some aspects of recent music theory, to beginning
+students, bodes well for its transmissability to peers across
+intra-disciplinary boundaries.
+</p>
+
+<p>[22] There are two sets of boundaries, however, that we have only just
+begun to permeate. One of them is work on non-Western music. As
+repertorial boundaries erode, and Anglo-American music scholars become
+increasingly aware that music is located in knowledge and behavior as
+well as in authorized texts, the line that divides our work from
+research on non-Western and non-classical repertories begins to seem
+increasingly artificial. Is it possible that work now wearing the
+jersey &ldquo;ethnomusicology,&rdquo; by scholars such as Paul Berliner, Simha
+Arom, and Steven Feld, is no different in kind from work that sports
+the colors of our own discipline?<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup></p>
+
+<p>[23] Here is a case that clearly outlines the issue.  In 1978,
+archaeologists working in Southern China uncovered a tomb from 433 BC,
+containing sixty-five bells. Each bell preserves not only its
+acoustic properties but also contains an inscription characterizing
+its function in various tonal systems.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> One might expect that the
+level of interest that such a discovery might arouse in a scholarly
+community that identifies its domain by conjoining the terms &ldquo;music&rdquo;
+and &ldquo;theory&rdquo; might be tantamount to, say, that of a community of
+astronomers upon the discovery of a new moon for Jupiter.  What does
+it say about our discipline that, for the last twenty years, we
+collectively yawned at or slept through this discovery, leaving its
+exploration to the archaeologists and materials scientists?<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup></p>
+
+<p>[24] The second boundary is one that divides music theory across
+linguistic boundaries. There are increasing points of contact between
+Anglophone theorists and those in Europe and elsewhere. Translations
+of writings of Nattiez, Vieru, and others have revealed colleagues
+spontaneously traveling along paths related to our own.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> A
+particularly encouraging model of an international approach to
+fundamental concerns was recently published in Italy. Loris Azzaroni&rsquo;s
+<i>Canone Infinito</i> is striking both in that it combines two genres that
+are distinct <i>chez nous</i>&mdash;it is both a first-year theory book, and an
+introduction to advanced research in the field&mdash;and because it is
+thoroughly international, mixing and mingling much of the best from
+the American, British, German, Italian, and French theoretical
+traditions.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup></p>
+
+<p>[25] Twenty years after the founding of its principal professional
+society, North American music theory is less insular than it was, but
+more insular than it need be. The pedagogability of many recent
+concepts suggests that there are emerging opportunities to communicate
+our best ideas in languages that can reach audiences beyond our
+sub-disciplinary and linguistic borders, and that we may not even need
+to work all that hard to meet those opportunities.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Richard Cohn<br>
+	University of Chicago<br>Department of Music<br>1010 East 59th Street<br>Chicago, IL 60637<br><a href="mailto:r-cohn@uchicago.edu">r-cohn@uchicago.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Patrick McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; in
+<i>Keeping Score: Music, Disciplinarity, Culture</i>, ed.  David Schwarz,
+Anahid Kassabian, Lawrence Siegel (Charlottesville: University Press
+of Virginia, 1997).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Jeff Pressing, &ldquo;Cognitive Isomorphisms Between Pitch and Rhythm in
+World Musics: West Africa, the Balkans and Western Tonality,&rdquo; <i>Studies
+in Music</i> (Australia) 17 (1983): 38&ndash;61.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> John Clough and Jack Douthett, &ldquo;Maximally Even Sets,&rdquo; <i>Journal of
+Music Theory</i> 35 (1991): 93&ndash;173.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Jack Douthett and Richard Krantz, &ldquo;Energy Extreme and Spin
+Configurations for the One-Dimensional Antiferromagnetic Ising Model
+with Arbitrary-Range Interaction,&rdquo; <i>Journal of Mathematical Physics</i>
+37.7 (July 1996): 3334&ndash;3353.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Eytan Agmon, &ldquo;Linear Transformations Between Cyclically Generated
+Chords,&rdquo; <i>Musikometrika</i> (1991): 15&ndash;40.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Steve Larson, &ldquo;Scale-Degree Function: A Theory of Expressive
+Meaning and its Application to Aural-Skills Pedagogy,&rdquo; <i>Journal of
+Music Theory Pedagogy</i> 7 (1993): 69&ndash;84.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> David E. Cohen, &ldquo;Aristotelian Physics and the Early Concept of
+Harmonic Progression,&rdquo; unpublished paper presented at the joint
+meeting of the American Musicological Society and the Society for
+Music Theory, October 30, 1997.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> David Lewin, <i>Generalized Musical Intervals and Transformations</i>
+(New Haven: Yale University Press, 1987), pages 175&ndash;180; idem., &ldquo;Some
+Notes on Analyzing Wagner: The Ring and Parsifal,&rdquo; <i>19th-Century
+Music</i> 16 (1992): 49&ndash;58; Brian Hyer, &ldquo;Reimag(in)ing Riemann,&rdquo; <i>Journal
+of Music Theory</i> 39 (1995): 101&ndash;138; Richard Cohn, &ldquo;Neo-Riemannian
+Operations, Parsimonious Trichords, and their <i>Tonnetz</i>
+Representations,&rdquo; <i>Journal of Music Theory</i> 41 (1997): 1&ndash;66.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Thomas Christensen, <i>Rameau and Musical Thought in the
+Enlightenment</i> (Cambridge: Cambridge University Press, 1993).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Janna Saslaw, &ldquo;Forces, Containers, and Paths: The Role of
+Body-Derived Image Schemas in the Conceptualization of Music,&rdquo;
+<i>Journal of Music Theory</i> 40 (1996): 217&ndash;243; Lawrence Zbikowski,
+&ldquo;Conceptual Models and Cross-Domain Mapping: New Perspectives on
+Theories of Music and Hierarchy,&rdquo; <i>Journal of Music Theory</i> 41, no. 2
+(1997; in press).<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Marion Guck, &ldquo;Two Types of Metaphoric Transference,&rdquo; in
+<i>Metaphor&mdash;A Musical Dimension</i>, ed. Jamie C. Kassler (Sydney,
+Australia: The Currency Press), 1&ndash;12; Judy Lochhead, &ldquo;The Metaphor of
+Musical Motion: Is There an Alternative?&rdquo; <i>Theory &amp; Practice</i> 14/15
+(1989/1990), 83&ndash;104; Nicholas Cook, &ldquo;Music Theory and &lsquo;Good
+Comparison&rsquo;: A Viennese Perspective,&rdquo; <i>Journal of Music Theory</i> 33
+(1989): 117&ndash;141.  Zbikowski&rsquo;s recent &ldquo;Metaphor and Music Theory:
+Reflections from Cognitive Science&rdquo; (<i>Music Theory Online</i> 4.1, 1998)
+and the electronic dialog that it stimulated on mto-talk are but the
+most recent manifestations.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Adele Katz, <i>Challenge to Musical Tradition</i> (New York: Alfred A.
+Knopf, 1945); Felix Salzer, <i>Structural Hearing</i> (New York: Charles
+Boni, 1952); Benjamin Boretz, &ldquo;Meta-Variations: Studies in the
+Foundations of Musical Thought,&rdquo; Ph.D. diss, Princeton University,
+1970; John Clough, &ldquo;Diatonic Interval Sets and Transformational
+Structures,&rdquo; <i>Perspectives of New Music</i> 18 (1979&ndash;80): 461&ndash;482.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Jay Rahn, <i>A Theory for All Music</i> (Toronto: University of Toronto
+Press, 1982); Kofi Agawu, <i>African Rhythm: a Northern Ewe
+Perspective</i> (Cambridge: Cambridge University Press, 1995).<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Fred Lerdahl and Ray Jackendoff, <i>A Generative Theory of Tonal
+Music</i> (Cambridge: MIT Press, 1983).<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Lewin, <i>Generalized Musical Intervals</i>, op. cit.; idem, <i>Musical
+Form and Transformation: Four Analytical Essays</i> (New Haven: Yale
+University Press, 1994); Henry Klumpenhouwer, &ldquo;An Instance of
+Parapraxis in the Gavotte of Schoenberg&rsquo;s Opus 25,&rdquo; <i>Journal of Music
+Theory</i> 38 (1994): 217&ndash;248.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> Deborah Stein and Robert Spillman, <i>Poetry into Song: Performance
+and Analysis of Lieder</i> (New York: Oxford University Press, 1996);
+Joel Lester, <i>The Rhythms of Tonal Music</i> (Carbondale: Southern
+Illinois University Press, 1986); William Rothstein, <i>Phrase Rhythm in
+Tonal Music</i> (New York: Schirmer, 1990).<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> Martha M. Hyde, &ldquo;Twentieth-Century Analysis during the Past
+Decade: Achievements and New Directions,&rdquo; <i>Music Theory Spectrum</i> 11
+(1989): 38&ndash;39.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Paul Berliner, <i>Thinking in Jazz</i> (Chicago: University of Chicago
+Press, 1994); Simha Arom, <i>African Polyphony and Polyrhythm: Musical
+Structure and Methodology</i>, trans. Martin Thom, Barbara Tuckett, and
+Raymond Boyd (Cambridge: Cambridge University Press; Paris: Editions
+de la Maison des Sciences de l&rsquo;Homme, 1991); Steven Feld, <i>Sound and
+Sentiment: Birds, Weeping, Poetics and Song in Kaluli Expression</i>
+(Philadelphia: University of Pennsylvania Press, 1982).<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> The initial English-language report of this discovery is Lee
+Yuan-Yuan, &ldquo;An Amazing Discovery in Chinese Music,&rdquo; <i>Chinese Music</i>
+2.2 (1979): 16&ndash;17.  A more comprehensive report by the same author is
+&ldquo;The Music of the Zenghou Zhong,&rdquo; <i>Chinese Music</i> 3.1 (1980): 3&ndash;15.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> See Lothar von Falkenhausen, <i>Suspended Music: Chime-Bells in the
+Culture of Bronze-Age China</i> (Berkeley and Los Angeles: University of
+California Press, 1993) and Cheng-Yih Chen, ed., <i>Two-Tone Set-Bells
+of Marquis Yi</i> (Singapore: World Scientific, 1994).  
+Falkenhausen&rsquo;s book has been reviewed by a music theorist, Lewis
+Rowell, although not in a music journal.  (See <i>Journal of Asian
+History</i> 29.1 (1995): 91).<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Jean-Jacques Nattiez, <i>Music and Discourse</i>, trans. Carolyn Abbate
+(Princeton: Princeton University Press, 1990); Anatol Vieru, <i>The Book
+of Modes</i> (Bucharest: Editura Musicala, 1993).<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Loris Azzaroni, <i>Canone Infinito: Lineamenti di teoria della
+musica</i> (Bologna: Cooperativa Libreria Universitaria Editrice Bologna,
+1997).<br><a href="#FN22REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Patrick McCreless, &ldquo;Rethinking Contemporary Music Theory,&rdquo; in
+<i>Keeping Score: Music, Disciplinarity, Culture</i>, ed.  David Schwarz,
+Anahid Kassabian, Lawrence Siegel (Charlottesville: University Press
+of Virginia, 1997).</div><div id="fndiv2" class="flyoverdiv">Jeff Pressing, &ldquo;Cognitive Isomorphisms Between Pitch and Rhythm in
+World Musics: West Africa, the Balkans and Western Tonality,&rdquo; <i>Studies
+in Music</i> (Australia) 17 (1983): 38&ndash;61.</div><div id="fndiv3" class="flyoverdiv">John Clough and Jack Douthett, &ldquo;Maximally Even Sets,&rdquo; <i>Journal of
+Music Theory</i> 35 (1991): 93&ndash;173.</div><div id="fndiv4" class="flyoverdiv">Jack Douthett and Richard Krantz, &ldquo;Energy Extreme and Spin
+Configurations for the One-Dimensional Antiferromagnetic Ising Model
+with Arbitrary-Range Interaction,&rdquo; <i>Journal of Mathematical Physics</i>
+37.7 (July 1996): 3334&ndash;3353.</div><div id="fndiv5" class="flyoverdiv">Eytan Agmon, &ldquo;Linear Transformations Between Cyclically Generated
+Chords,&rdquo; <i>Musikometrika</i> (1991): 15&ndash;40.</div><div id="fndiv6" class="flyoverdiv">Steve Larson, &ldquo;Scale-Degree Function: A Theory of Expressive
+Meaning and its Application to Aural-Skills Pedagogy,&rdquo; <i>Journal of
+Music Theory Pedagogy</i> 7 (1993): 69&ndash;84.</div><div id="fndiv7" class="flyoverdiv">David E. Cohen, &ldquo;Aristotelian Physics and the Early Concept of
+Harmonic Progression,&rdquo; unpublished paper presented at the joint
+meeting of the American Musicological Society and the Society for
+Music Theory, October 30, 1997.</div><div id="fndiv8" class="flyoverdiv">David Lewin, <i>Generalized Musical Intervals and Transformations</i>
+(New Haven: Yale University Press, 1987), pages 175&ndash;180; idem., &ldquo;Some
+Notes on Analyzing Wagner: The Ring and Parsifal,&rdquo; <i>19th-Century
+Music</i> 16 (1992): 49&ndash;58; Brian Hyer, &ldquo;Reimag(in)ing Riemann,&rdquo; <i>Journal
+of Music Theory</i> 39 (1995): 101&ndash;138; Richard Cohn, &ldquo;Neo-Riemannian
+Operations, Parsimonious Trichords, and their <i>Tonnetz</i>
+Representations,&rdquo; <i>Journal of Music Theory</i> 41 (1997): 1&ndash;66.</div><div id="fndiv9" class="flyoverdiv">Thomas Christensen, <i>Rameau and Musical Thought in the
+Enlightenment</i> (Cambridge: Cambridge University Press, 1993).</div><div id="fndiv10" class="flyoverdiv">Janna Saslaw, &ldquo;Forces, Containers, and Paths: The Role of
+Body-Derived Image Schemas in the Conceptualization of Music,&rdquo;
+<i>Journal of Music Theory</i> 40 (1996): 217&ndash;243; Lawrence Zbikowski,
+&ldquo;Conceptual Models and Cross-Domain Mapping: New Perspectives on
+Theories of Music and Hierarchy,&rdquo; <i>Journal of Music Theory</i> 41, no. 2
+(1997; in press).</div><div id="fndiv11" class="flyoverdiv">Marion Guck, &ldquo;Two Types of Metaphoric Transference,&rdquo; in
+<i>Metaphor&mdash;A Musical Dimension</i>, ed. Jamie C. Kassler (Sydney,
+Australia: The Currency Press), 1&ndash;12; Judy Lochhead, &ldquo;The Metaphor of
+Musical Motion: Is There an Alternative?&rdquo; <i>Theory &amp; Practice</i> 14/15
+(1989/1990), 83&ndash;104; Nicholas Cook, &ldquo;Music Theory and &lsquo;Good
+Comparison&rsquo;: A Viennese Perspective,&rdquo; <i>Journal of Music Theory</i> 33
+(1989): 117&ndash;141.  Zbikowski&rsquo;s recent &ldquo;Metaphor and Music Theory:
+Reflections from Cognitive Science&rdquo; (<i>Music Theory Online</i> 4.1, 1998)
+and the electronic dialog that it stimulated on mto-talk are but the
+most recent manifestations.</div><div id="fndiv12" class="flyoverdiv">Adele Katz, <i>Challenge to Musical Tradition</i> (New York: Alfred A.
+Knopf, 1945); Felix Salzer, <i>Structural Hearing</i> (New York: Charles
+Boni, 1952); Benjamin Boretz, &ldquo;Meta-Variations: Studies in the
+Foundations of Musical Thought,&rdquo; Ph.D. diss, Princeton University,
+1970; John Clough, &ldquo;Diatonic Interval Sets and Transformational
+Structures,&rdquo; <i>Perspectives of New Music</i> 18 (1979&ndash;80): 461&ndash;482.</div><div id="fndiv13" class="flyoverdiv">Jay Rahn, <i>A Theory for All Music</i> (Toronto: University of Toronto
+Press, 1982); Kofi Agawu, <i>African Rhythm: a Northern Ewe
+Perspective</i> (Cambridge: Cambridge University Press, 1995).</div><div id="fndiv14" class="flyoverdiv">Fred Lerdahl and Ray Jackendoff, <i>A Generative Theory of Tonal
+Music</i> (Cambridge: MIT Press, 1983).</div><div id="fndiv15" class="flyoverdiv">Lewin, <i>Generalized Musical Intervals</i>, op. cit.; idem, <i>Musical
+Form and Transformation: Four Analytical Essays</i> (New Haven: Yale
+University Press, 1994); Henry Klumpenhouwer, &ldquo;An Instance of
+Parapraxis in the Gavotte of Schoenberg&rsquo;s Opus 25,&rdquo; <i>Journal of Music
+Theory</i> 38 (1994): 217&ndash;248.</div><div id="fndiv16" class="flyoverdiv">Deborah Stein and Robert Spillman, <i>Poetry into Song: Performance
+and Analysis of Lieder</i> (New York: Oxford University Press, 1996);
+Joel Lester, <i>The Rhythms of Tonal Music</i> (Carbondale: Southern
+Illinois University Press, 1986); William Rothstein, <i>Phrase Rhythm in
+Tonal Music</i> (New York: Schirmer, 1990).</div><div id="fndiv17" class="flyoverdiv">Martha M. Hyde, &ldquo;Twentieth-Century Analysis during the Past
+Decade: Achievements and New Directions,&rdquo; <i>Music Theory Spectrum</i> 11
+(1989): 38&ndash;39.</div><div id="fndiv18" class="flyoverdiv">Paul Berliner, <i>Thinking in Jazz</i> (Chicago: University of Chicago
+Press, 1994); Simha Arom, <i>African Polyphony and Polyrhythm: Musical
+Structure and Methodology</i>, trans. Martin Thom, Barbara Tuckett, and
+Raymond Boyd (Cambridge: Cambridge University Press; Paris: Editions
+de la Maison des Sciences de l&rsquo;Homme, 1991); Steven Feld, <i>Sound and
+Sentiment: Birds, Weeping, Poetics and Song in Kaluli Expression</i>
+(Philadelphia: University of Pennsylvania Press, 1982).</div><div id="fndiv19" class="flyoverdiv">The initial English-language report of this discovery is Lee
+Yuan-Yuan, &ldquo;An Amazing Discovery in Chinese Music,&rdquo; <i>Chinese Music</i>
+2.2 (1979): 16&ndash;17.  A more comprehensive report by the same author is
+&ldquo;The Music of the Zenghou Zhong,&rdquo; <i>Chinese Music</i> 3.1 (1980): 3&ndash;15.</div><div id="fndiv20" class="flyoverdiv">See Lothar von Falkenhausen, <i>Suspended Music: Chime-Bells in the
+Culture of Bronze-Age China</i> (Berkeley and Los Angeles: University of
+California Press, 1993) and Cheng-Yih Chen, ed., <i>Two-Tone Set-Bells
+of Marquis Yi</i> (Singapore: World Scientific, 1994).  
+Falkenhausen&rsquo;s book has been reviewed by a music theorist, Lewis
+Rowell, although not in a music journal.  (See <i>Journal of Asian
+History</i> 29.1 (1995): 91).</div><div id="fndiv21" class="flyoverdiv">Jean-Jacques Nattiez, <i>Music and Discourse</i>, trans. Carolyn Abbate
+(Princeton: Princeton University Press, 1990); Anatol Vieru, <i>The Book
+of Modes</i> (Bucharest: Editura Musicala, 1993).</div><div id="fndiv22" class="flyoverdiv">Loris Azzaroni, <i>Canone Infinito: Lineamenti di teoria della
+musica</i> (Bologna: Cooperativa Libreria Universitaria Editrice Bologna,
+1997).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1998 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

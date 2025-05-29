@@ -1,0 +1,553 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 15.1: Bor, Sonata-Formal Functions</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Sonata-Formal Functions and Transformational Processes in the First Movement of Rochberg&#8217;s String Quartet No. 6">
+
+    <meta name="citation_author" content="Bor, Mustafa">
+      
+
+<meta name="citation_publication_date" content="2009/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="15">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Sonata-Formal Functions and Transformational Processes in the First Movement of Rochberg&#8217;s String Quartet No. 6
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.09.15.1/mto.09.15.1.bor.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Mustafa Bor</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: transformational theory, Rochberg, form, sonata, transposition, K-nets, inversional balance, animation</font></p><p><font size='4'>ABSTRACT: To the extent that it represents the actual temporal event-series of a composition, transformational theory can reveal some interesting correlations between the formal functions of sections and the transformations that characterize them. For example, the changes in characteristic transformations in the first movement of George Rochberg&#8217;s sixth string quartet articulate specific functions familiar in sonata form. The differing types of transformations (transposition versus inversion) in the first two sections set up a contrast analogous to that of the first and second themes. The third section functions as a development section, blending both types of transformations found in the exposition. Reprises of these types, and their contrast, define the function of the last two sections as a recapitulation, in which the second-theme group is metaphorically transposed. Rochberg has been criticized for mimicking conventional musical structures, but this analysis demonstrates how he successfully reinvents a tonal form with non-tonal transformations.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.09.15.1/mto.09.15.1.bor.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.09.15.1/bor_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received November 2008</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 15, Number 1, March 2009 <br> Copyright &#0169; 2009 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Published analyses employing networks of musical transformations have been critiqued for concentrating more on relatively small-scale processes and relations&#8212;chord progressions and motivic transformations&#8212;than on large-scale form and for omitting the chronological flow of the music which they represent (<a href="#morris_1995" id="citation_morris_1995_67dc9af890e75">Morris 1995</a>, <a href="#cook_1996" id="citation_cook_1996_67dc9af890e79">Cook 1996</a>). There are some notable exceptions to this trend, such as the last chapter of Lewin (<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e7c">1993</a>) and Cohn (<a href="#cohn_1999" id="citation_cohn_1999_67dc9af890e7e">1999</a>). Usually we understand the formal functions of large groups to depend, among other things, on the chronological order in which they are presented. The selection of a particular spatial layout in constructing a network is, in essence, the selection of the musical features that the network can model. Thus, if we want to discuss form in the temporal sense that it is conventionally understood, it is important that the network represents the temporal order of the piece&#8217;s events.</p>
+
+
+
+<p>[2] However, Lewin&#8217;s discussions of transformational form are often essentially atemporal. For example, his analysis of Dallapiccola&#8217;s <i>Simbolo</i> (the first chapter of 
+<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e80">Lewin 1993</a>) identifies a bi-partite form whose two parts resemble each other, but this resemblance is defined purely in terms of transformational networks that are arranged anachronically. Similarly, his analysis of Stockhausen&#8217;s <i>Klavierst&#252;ck III</i> (the second chapter of 
+<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e81">Lewin 1993</a>) sets aside a temporally ordered network, along with its &#8220;phenomenological presence&#8221; (<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e83">Lewin 1993</a>, 32), in favor of a <i>spatial</i> network that does not depict &#8220;how the piece moves through chronological time&#8221; (<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e84">Lewin 1993</a>, 17). Lewin presents a series of four different passes through the spatial network as a narrative account of the piece, but these passes do not by themselves represent sections of a form, standing instead as supplements to the atemporal spatial network. The last chapter of Lewin (<a href="#lewin_1993" id="citation_lewin_1993_67dc9af890e86">1993</a>) attempts to address a long composition and the interaction of its form with transformational structuring. This is similar to the work of Cohn (<a href="#cohn_1999" id="citation_cohn_1999_67dc9af890e87">1999</a>), which represents a large (sonata) form with transformational networks. Neither of the authors, however, discusses thematic aspects of non-tonal form in ways that are analogous to traditional accounts, such as the distinctions commonly made, say, between the types of material that characterize principal themes, secondary themes, and developments. Since &#8220;formal functionality involves the way in which music expresses its logical location in a temporal spectrum&#8221; (<a href="#caplin_1998" id="citation_caplin_1998_67dc9af890e89">Caplin 1998</a>, 111), such distinctions are essentially temporal, notwithstanding idiosyncrasies, such as a theme beginning with a continuation function;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> they are perceived through hearing the themes in order and hearing the themes&#8217; inner groups, which fulfill specifically temporal functions.</p> 
+
+
+
+<p>[3] Nothing in transformational theory prevents making such temporally consequential distinctions. Indeed, transformational theory suggests a potentially powerful way to make them&#8212;by describing and contrasting not only sections&#8217; content but also their characteristic transformations. From this point of view the difference between a first theme and a second theme, particularly in non-tonal music, would not only be in their pitches, melodic contour, intervallic content, and durations, but also in the internal transformations they manifest.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Some interesting questions arise in such an approach: can the introduction of new transformations, even when <i>not</i> introducing new materials, signal different sections, and can the reprise of specific transformations articulate the recapitulation of sections of similar formal function? If so, it might be possible to give convincing transformational-network accounts of form in large-scale non-tonal pieces.</p>
+
+
+
+<p>[4] In this paper, I show how to hear changes in transformations in the first movement of George Rochberg&#8217;s sixth string quartet as articulating specific formal functions, in the sense of William Caplin&#8217;s theory of form in the Classical style (<a href="#caplin_1998" id="citation_caplin_1998_67dc9af890e9f">Caplin 1998</a>). Caplin&#8217;s theory of &#8220;formal functions&#8221; is in many ways a reworking and extension of the formal theories introduced by Arnold Schoenberg (<a href="#schoenberg_1967" id="citation_schoenberg_1967_67dc9af890ea1">1967</a>) and Erwin Ratz (<a href="#ratz_1973" id="citation_ratz_1973_67dc9af890ea3">1973</a>). The common ground between all three is a shift of focus from &#8220;what&#8221; the formal parts are to &#8220;how&#8221; these parts function as presentation, continuation, or cadential 
+section. Of course, Caplin shows how processes of harmonic tonality articulate and characterize these functions, but the notion of formal functions is suggestive for a wider range of repertoire.</p>
+
+
+
+<p>[5] The last of the &#8220;Concord&#8221; series, the Sixth Quartet is typical of Rochberg&#8217;s post-1963 works, which blend tonal and post-tonal idioms to achieve &#8220;maximum variety of gesture and texture and the broadest possible spectrum <nobr>. . .</nobr> from the purest diatonicism to the most complex chromaticism&#8221; (<a href="#clarkson_and_johnson_2001" id="citation_clarkson_and_johnson_2001_67dc9af890ea5">Clarkson and Johnson 2001</a>). The non-tonal first movement is entitled &#8220;Fantasia.&#8221; It lacks the sustained themes, contrasts, and transpositional schemes of tonal music, but it appears to me that Rochberg uses more contextual ways of alluding to sonata form. Given his clear interest in the forms of classical tonality, it seems worthwhile to investigate whether such an allusion is made by employing motivic transformations, rather than motives themselves.</p>
+
+
+
+<p>[6] Let us begin with a top-down overview of the grouping structure of the movement. As I hear it, the movement can be divided into five sections on the basis of contrasts presented in various parameters, such as tempo, dynamics, bowing, and texture. For example, the change from the first section to the second is marked by a clear texture shift from homophony to monophony/polyphony, as well as by a change in tempo. The other sectional divisions are also mostly marked by tempo and/or textural changes. These sections are stratified texturally into what I will call &#8220;layers.&#8221; Each layer is distinct from others in pitch, contour, texture, rhythm, and timbre. For instance, the descending leap pattern of violin 1 in 
+measures 1&#8211;2, which begins the first layer, is very different from the repeated chords in the other instruments in 
+measures 3&#8211;4, which begin the second layer (the score is displayed in Animation 1a and discussed in paragraph [10]). The differentiation is not limited to the textures but also includes the durations and overall registers of these layers. Within each layer, there are a number of motivic units, each of which is generally repeated in a pitch&#8211;altered form, but maintains the distinctive qualities mentioned above. For example, the repetition of the first unit in 
+measure 5 is basically a transposition of the same unit presented in measures 1&#8211;2 (see Example 1, Layer 1 in paragraph [10]).</p>
+
+
+
+<p>[7] From the bottom up, the grouping hierarchy of the movement is composed as follows: units constitute the layers, the layers combine concurrently and sequentially to constitute the sections, and 
+the sections combine sequentially to constitute the entire form. Except for the rather free way 
+in which the layers combine, the scheme certainly alludes to the organization of classical-form movements. This is reflected in the following 
+examples, each of which denotes a particular section. They inventory the sections&#8217; layers, denoting each by an Arabic numeral, and the layers&#8217; respective units, denoting each alphabetically. When a particular unit within a layer recurs with some variation, I distinguish its instances by 
+labeling them with different letters. I often focus on how the pitch structure of units changes from one instance of the unit to another. I treat these changes as transformations (of pitch-classes or pitches) and consider how they relate to other transformations that take place in the same section, as well as to transformations in the other sections.</p>
+
+
+
+<p>[8] Animations 1&#8211;5 provide a visual and aural aid to demonstrate the proposed ideas more vividly. Each analysis is presented first by an animation on the musical score, synchronized with a recording, and then silently on a two-dimensional grid of pitches. The grid is organized in one dimension by the transposition T<sub>4</sub> and in the other by T<sub>5</sub>, thus forming a 
+<i>Tonnetz</i>. These specific transpositions are, in fact, the defining transformations of the first section. The Tonnetz representations demonstrate how different transformations employed throughout the movement share a certain quality, namely a characteristic move of pitch-class collections, which is effectively displayed by the T<sub>4</sub>-T<sub>5</sub> grid.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  The different layers in the examples are shown in different colors in the presentation.</p>
+
+
+
+<p>[9] Some notes that appear in the score are not included in the analysis. There are two fundamental reasons for such omission. In some instances, notes are excluded because of their accompanimental or ornamental nature. For example, the viola and cello parts in measure 1 and the violin 2 and cello parts in measure 5 (see Animation 1a in paragraph [10]) accompany the motivic gesture presented by violin 1, which holds a prominent role in the movement. In other instances, the notes 
+that constitute a more integral part of the work do not contribute to the analytical argument made in that particular context. For example, two pitches, <nobr>A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">4</nobr> and <nobr>B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop">4</nobr>, 
+in the violin 1 part in measure 29 (see Animation 2a in paragraph [16]) interrupt the process, which establishes a certain &#8220;inversional balance point,&#8221; and thus are omitted from the analysis.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 1a</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=0&nonav=true"><img border="1" alt="Animation 1a thumbnail" src="bor_an1a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 1b</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=1&nonav=true"><img border="1" alt="Animation 1b thumbnail" src="bor_an1b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Exposition, 1<sup>st</sup> theme group, measures 1&ndash;17 (3 layers)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=2&nonav=true"><img border="1" alt="Example 1 thumbnail" src="bor_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[10] The first section is analyzed by <b>Animations 1a and 1b</b>, and <b>Example 1</b>. It consists of three distinct layers, each clearly distinguished from the others in terms of its texture, length, rhythm and intervallic content. The units of Layer 1 all consist of a sixteenth-note m9 descent plus a long sustained note, forming a 012 trichord. These pitch classes (pcs) are accompanied by a few others that do not figure in the transformational analysis. Layer 2 presents various vertical trichords and tetrachords. Layer 3 consists of adjacent groups of 0236-type tetrachords, mostly in thirty-second notes; 
+however, a few of the tetrachords are incomplete. 
+<b>Animation 1a</b> shows how these layers proceed in real time, distinguishing them by colors. Examples 1 and 2 are 
+labeled as &#8220;Exposition&#8221; for reasons explained later in the article.</p>
+
+<p >[11] <b>Example 1</b> diagrams the layers more abstractly, as temporally ordered networks, in order to clarify the transformations that characterize them, which are also shown in Animation 1a. In Layer 1, the first unit, 
+labeled a, is transformed by T<sub>8</sub> to the second unit, b. The third unit of this layer is identical to a, and can be heard as T<sub>4</sub> of b as well. The fourth unit is identical to b, and so it can be heard similarly as T<sub>8</sub> of the preceding unit.</p>
+
+
+
+<p>[12] Layer 2 involves a somewhat different transformational process. Its first three units, 
+labeled c, d, and e, all hold the two pcs {A, <nobr>G<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop"></nobr>} constant. This focuses attention on the way the other pcs change. The transformation of a single pitch in unit c by T<sub>7</sub> forms unit d. The transformation of unit d to unit e is different: a single pitch, G, is now mapped on two distinct pitches, B and C, via T<sub>4</sub> and T<sub>5</sub>. The following unit f is not derived by a transformation similar to the previous units and is simply a subset of the combined pitch-class collections of the previous three units.</p>
+
+
+
+<p>[13] The last layer, 3, does not begin until after the second statement of a Layer 1 unit, but thereafter it recurs regularly along with the other layers. This layer is different from the other two layers in its hierarchical structure, which involves two levels of transposition: the lower level of T<sub>7</sub> and the higher level of T<sub>4</sub>. In this layer, not all units are transformed or are the results of transformations. For example, units i and k are not transformed to obtain other units and units g&prime; and j are not obtained by transformations of other units. It is interesting to note that the return to g in 
+measure 14 involves a pitch variation and thus is 
+labeled as g&prime;. The first three notes of the four-note collection of g are transposed by 2 
+semitones in g&prime;. However, the rest of the sequence is a perfect reprise of the opening units of g, h, and i.</p>
+
+
+
+<p>[14] <b>Animation 1b</b> shows three pitch grids. They differ in content, but each is organized by T<sub>5</sub> in one dimension and by T<sub>4</sub> in the other, and 
+they show the transformational actions on pcs in one of the layers of the first section. In the first layer (the leftmost grid), the units are expressed by a distinctive slanted rectangle that encloses chromatically related pcs, since T<sub>7</sub>,T<sub>4</sub>= T<sub>11</sub>. As the animation proceeds, the movements of this rectangle to the left, then right, then left again, represents the series of transpositions evident in Layer 1 of Example 1. At the same time, over on the rightmost grid, representing Layer 3, a slanted T shape moves upward twice, then shifts down and to the right, and then repeats two upward moves. These moves express the transpositions from unit to unit, and from unit-group to unit-group, in Layer 3 of Example 1. The motion on the central grid deforms the rectangle in various ways, conforming to how the individual pcs are transposed in Layer 2. Altogether it is evident that T<sub>4</sub>, T<sub>5</sub>, and their inverses are strongly characteristic of this passage.</p>
+
+
+
+<p>[15] The first section has certain features that are significant for the large-scale form of the movement. Although the layers differ in content, the transformations that characterize them are all of one type, namely, transposition. Furthermore, the overall structure of the section presents a sort of antecedent-consequent pair, as is evident from the recurrence of the incipit pairs a-b in 
+measures 9&#8211;10 and 13, respectively. This formal structure is further supported by the recurrence of the third layer units g&prime;-h-i in 
+measure 14.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 2a</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=3&nonav=true"><img border="1" alt="Animation 2a thumbnail" src="bor_an2a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 2b</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=4&nonav=true"><img border="1" alt="Animation 2b thumbnail" src="bor_an2b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Exposition, 2nd theme group, measures 18&ndash;35 (2 layers)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=5&nonav=true"><img border="1" alt="Example 2 thumbnail" src="bor_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+
+<p>[16] The second section presents two distinct layers, both of which involve small changes of pitch that could be heard as linear motion. In the manner of the discussion above, it is analyzed in 
+<b>Animation 2a</b>, which shows the layers on the score appearing in synchronization with a recording, together with the transformations within them. 
+<b>Example 2</b> represents each entire layer by a temporally ordered transformational network, and 
+<b>Animation 2b</b> realizes Layer 2 on the T<sub>5</sub>/T<sub>4</sub> pitch grid.</p>
+
+<p> [17] The first layer is presented by five pairs of units that alter their pitch but maintain a consistent transformational structure that can be expressed by trichordal Klumpenhouwer networks. The second layer, as shown by the arrows in Example 2, consists of various units whose pitches are inversionally balanced. In other words, as each unit unfolds, each pitch in the second half is the inversion, around a virtual pitch-center of inversion, of the retrograde-corresponding pitch in the first half. That is, the second half is a retrograde pitch-inversion of the first half. I will refer to the inversional center as the &#8220;inversional balance pitch,&#8221; or IBP; it differs for each unit. Of course, inversional processes may occur among pitch classes, too, and I will refer to the corresponding centers as 
+IBPCs.</p>
+<p> [18] <b>Animation 2b</b> makes the processes of Layer 2 strikingly apparent on the pitch-class T<sub>5</sub>/T<sub>4</sub> grid. First a thick circle appears around the first IBPC, C. Then all the notes of the first unit appear circled as pairs arranged symmetrically around C. All pcs adjacent to C appear, plus two pcs that are two steps from the center vertically on either side. Then the IBPC indicator shifts up and left to <nobr>E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"></nobr>, 
+and the pcs of unit 2 appear symmetrically paired around it: two adjacent pcs to 
+the right and left, plus two pcs that are two steps vertically from the center 
+(like the outliers in the first unit). Finally the IBPC shifts down and left to 
+E, and exactly the same inversionally balanced configuration is assembled as in 
+the second unit.</p>
+<p>[19] Although the T<sub>5</sub>/T<sub>4</sub> grid seems well suited to represent both the first section and the second section, the animations actually help to underscore a significant difference. Both layers in the second section are characterized by the use of inversion, in contrast with the transpositionally oriented first section.</p>
+<p>[20] The third section consists of three layers. They are identified and analyzed, as in the previous sections, by two movies, 
+<b>Animation 3a and 3b</b>, and by the fixed but temporally ordered transformational networks in
+<b>Example 3</b>. In this section no new types of transformations are introduced; all transformations are drawn from the previous two sections. Consider the first layer, shown at the top of Example 3. It presents inversionally balanced pitch groups, like those in the second layer of the second section. What is different, however, is the way these transformations are represented. In the second section, the inversional balance points are established by retrograde-inversional melodic motion. However, in the third section, they are the centers of accelerating trills whose timbre and dynamics are distinctive. But we can also easily perceive the transpositions that transform one balance point to another, shown as labels on the arrows connecting the nodes. Therefore, the first layer of the third section combines the two types of transformations, transposition and inversion, that respectively characterized the first and second sections.</p>
+
+<table align=center><tr><td valign="top">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 3a</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=6&nonav=true"><img border="1" alt="Animation 3a thumbnail" src="bor_an3a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p></td>
+	<td width=50></td><td valign="top">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 3b</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=7&nonav=true"><img border="1" alt="Animation 3b thumbnail" src="bor_an3b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view the animation)</font></p></td>
+</tr></table>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Exposition, measures 36&ndash;51 (3 layers)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=8&nonav=true"><img border="1" alt="Example 3 thumbnail" src="bor_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=9&nonav=true"><img border="1" alt="Animation 4 thumbnail" src="bor_an4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Recapitulation, 1<sup>st</sup> theme group, measures 52&#8211;74 (1 layer)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=10&nonav=true"><img border="1" alt="Example 4 thumbnail" src="bor_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 5a</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=11&nonav=true"><img border="1" alt="Animation 5a thumbnail" src="bor_an5a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Animation 5b</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=12&nonav=true"><img border="1" alt="Animation 5b thumbnail" src="bor_an5b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Exposition, measures 36&ndash;51 (3 layers)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=13&nonav=true"><img border="1" alt="Example 5 thumbnail" src="bor_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>    
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Formal scheme of the movement</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="bor_examples.php?id=14&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="bor_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[21] Layer 2 is not as unique as Layer 1. The analysis of it in Example 3 clearly shows it to be a variation of Layer 2 of the second section. 
+<b>Animation 3b</b> displays the inversional balancing process in Layers 1 and 2. Example 3 also shows the third layer to be a more complex version of the first layer of the second section, taking the trichordal K-nets and expanding them to tetrachordal K-nets. Apparently, the overall characteristic of this third section is one based on conflicts between the first and second layers. I perceive the alternation between the static, insistent nature of the first layer and the fluid, slippery nature of the second layer to create a kind of tension. The combination of this tension with the reprise and mixture of transformational processes from the first two sections makes the third section seem like the development in a sonata form.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+</div>
+
+<p>[22] If such a formal process is indeed operative here, we would expect to hear a recapitulation next. So let us examine the following passage, represented in 
+<b>Animation 4</b> and <b>Example 4</b>. In some respects this seems to continue and cadence the preceding music, but its length and uniformity are so substantial that I hear it assuming its own thematic presence. In fact, it can be understood as a reprise of the first section, but only partially, replaying just the first unit of the first section in a more purified, simpler way. The smooth diminuendo from fortissimo to pianissimo makes this fourth section more continuous than the first section, which had many sudden dynamic changes. Although this section does not contain any transformations, Animation 4 is provided for the listener to observe the effect of the repetitive opening unit. In fact, such an effect might lead one to hear this section as a retransition or standing on the dominant.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  While one could also conceive the possibility of the formal functions of recapitulation and retransition being conflated to a certain degree in this passage, the recurrence of the exposition&#8217;s opening unit exerts a rather strong presence.</p>
+
+<p>[23] Similarly, the last section, presented in <b>Animation 5a</b> and analyzed in 
+<b>Example 5</b>, reprises only the second layer of the second section. This reprise is not exact either: the inversional balance pitch&#8211;classes are different from those in the second section. Nevertheless, they are related, as clarified by 
+<b>Animation 5b</b>, which shows the three IBPCs of the second section shifting to the three IBPCs of the last section by T<sub>2</sub> (that is, by two inverse-T<sub>5</sub> steps on the grid).</p>
+
+
+<p>[24] The end of <b>Animation 5a</b> exhibits the persistent repetition of a dissonant chord presenting a gradual diminuendo from <i>ff</i> to <i>ppp</i>. If this chord is understood to continue the preceding music, then we can hear this whole passage as suggesting closure for the movement, because it completes nearly the entire aggregate. The one missing pitch-class, D, has a unique role in the whole string quartet, consideration of which is beyond the scope of this paper. Suffice it to say that in the second movement of the quartet, D is the only root missing from a near-aggregate of triads. The entire third movement is a set of variations on the Pachelbel Canon in D, compensating for the missing D in the previous movements.</p>
+
+
+
+<p>[25] The analysis of form in Examples 1&#8211;5 has shown that sections have fairly clear transformational similarities and differences that support the sonata-rhetoric: the first section is characterized by transposition, the second section contrastingly by inversion, and the third section by a combination of both. Although the fourth section lacks transformation due to its simplicity, the formal connection with the first section is clearly provided by the main unit or motive of the first section. Lastly, the fifth section reiterates the second section. 
+<b>Figure 1</b> clarifies the similarities between this five-section scheme and sonata-allegro form: these similarities can be expressed in the terminology William Caplin uses to discuss this form in Classical music.</p>
+
+
+
+<p>[26] The first section has a deliberate affect that we realize retrospectively when we hear the second section. But this quality also arises from its internal structure. We have seen that it presents an antecedent-consequent pair. In addition, it involves transposition within units, 
+which is similar to the transposition of a basic idea within a sentence. The combination of procedures characteristic of both period and sentence does seem to evoke a tight-knit thematic quality characteristic of a prototypical first-theme group.</p>
+
+
+
+<p>[27] The second section functions as a &#8220;looser&#8221; second-theme group, not only because of its flowing character, as opposed to the more stable character of the first-theme group, but also because of the shift to more abstract inversional transformational processes, which includes K-nets and inversionally balanced pitch groups. Here the contrast between the types of <i>transformations</i> (transposition versus inversion) is analogous to the contrast of first- and second-theme <i>materials</i> that is characteristic of classical sonata form.</p>
+
+
+
+<p>[28] Caplin emphasizes two aspects of development in sonata form: &#8220;as a formal unit, a development stands between an exposition and a recapitulation; [and] as a formal function, a development generates the greatest degree of<nobr>. . .</nobr>instability in the movement and this motivates a restoration of stability&#8221; (<a href="#caplin_1998" id="citation_caplin_1998_67dc9af890ff7">Caplin 1998</a>, 139). The third section draws its materials from the first two sections freely, in a manner similar to a development section. It presents a variation of the second-theme group and some of the motives and transformations of the first theme, thus blending both transpositional and inversional processes of the exposition. Therefore, it satisfies Caplin&#8217;s definition of development as a &#8220;formal unit.&#8221; Furthermore, the &#8220;formal function&#8221; of development is expressed not only by the superposition of layers and by the high dynamic level, but also by the unstable alternation between transposition and inversion.</p>
+
+
+
+<p>[29] The fourth and fifth sections draw their materials and transformations from the first and second sections, respectively. The formal functions of this repetition are identical to those in the first- and second-theme recapitulations in sonata-allegro form. The specific relations of these sections to the earlier ones also mimic those in sonata form: the fourth section reprises first-section materials at their original transposition level, while the fifth section presents a transposition of the second section materials. Thus, the fourth and fifth sections clearly function as recapitulation, where the first-theme group is simplified such that only the main motive is presented, and the second-theme group is transposed, alluding to similar procedures in sonata form.</p>
+
+
+
+<p>[30] In this paper I advocate hearing non-tonal pitch transformations as formative features of this movement. Of course, one must remain cautious in such an interpretation of a non-tonal piece, since the classical theories of form are heavily based on tonal phenomena. Yet, the movement&#8217;s unmistakable resemblances to conventional sonata form provoke an analogy based on other sectional characteristics where keys, tonics, and roots are absent. One such characteristic of sections&#8212;that is, their transformational network-structure&#8212;has the potential to reveal the formal functions of the relevant sections. Such an approach seems to be fruitful in the light of the analysis presented, which demonstrates how Rochberg, who is often criticized for imitating traditional musical structures, successfully reinvents sonata form with non-tonal transformations.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Mustafa Bor<br>
+	Department of Music<br>University of Alberta<br>Edmonton, AB<br>T6G 2C9 CANADA<br><a href="mailto:mbor@ualberta.ca">mbor@ualberta.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_caplin_1998" class="flyoverdiv">Caplin, William E. 1998. <i>Classical Form: A Theory of Formal Functions for the Instrumental Music of Haydn, Mozart, and Beethoven.</i> New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="caplin_1998"></a>Caplin, William E. 1998. <i>Classical Form: A Theory of Formal Functions for the Instrumental Music of Haydn, Mozart, and Beethoven.</i> New York: Oxford University Press.</p><div id="citediv_clarkson_and_johnson_2001" class="flyoverdiv">Clarkson, Austin and Steven Johnson. 2001. &#8220;Rochberg, George.&#8221; In <i>Grove Music Online</i>. Ed. Laura Macy. <br><a href='http://www.grovemusic.com'>http://www.grovemusic.com</a> (Accessed May 08, 2007).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clarkson_and_johnson_2001"></a>Clarkson, Austin and Steven Johnson. 2001. &#8220;Rochberg, George.&#8221; In <i>Grove Music Online</i>. Ed. Laura Macy. <br><a href='http://www.grovemusic.com'>http://www.grovemusic.com</a> (Accessed May 08, 2007).</p><div id="citediv_cohn_1999" class="flyoverdiv">Cohn, Richard L. 1999. &#8220;As Wonderful as Star Clusters: Instruments for Gazing at Tonality in Schubert.&#8221; <i>Nineteenth-Century Music</i> 22/3: 213&#8211;32.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1999"></a>Cohn, Richard L. 1999. &#8220;As Wonderful as Star Clusters: Instruments for Gazing at Tonality in Schubert.&#8221; <i>Nineteenth-Century Music</i> 22/3: 213&#8211;32.</p><div id="citediv_cook_1996" class="flyoverdiv">Cook, Nicholas. 1996. Review of <i>Musical Form and Transformation: 4 Analytic Essays</i>, by David Lewin. <i>Music & Letters</i> 77/1: 143&#8211;46.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_1996"></a>Cook, Nicholas. 1996. Review of <i>Musical Form and Transformation: 4 Analytic Essays</i>, by David Lewin. <i>Music & Letters</i> 77/1: 143&#8211;46.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</p><div id="citediv_lewin_1993" class="flyoverdiv">Lewin, David. 1993. <i>Musical Form and Transformation: 4 Analytic Essays</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. <i>Musical Form and Transformation: 4 Analytic Essays</i>. New Haven: Yale University Press.</p><div id="citediv_morris_1995" class="flyoverdiv">Morris, Robert D. 1995. Review of <i>Musical Form and Transformation: 4 Analytic Essays</i>, by David Lewin. <i>Journal of Music Theory</i> 39/2: 342&#8211;83.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1995"></a>Morris, Robert D. 1995. Review of <i>Musical Form and Transformation: 4 Analytic Essays</i>, by David Lewin. <i>Journal of Music Theory</i> 39/2: 342&#8211;83.</p><div id="citediv_ratz_1973" class="flyoverdiv">Ratz, Erwin. 1973. <i>Einf&#252;hrung in die musikalische Formenlehre: &#220;ber Formprinzipien in den Inventionen und Fugen J. S. Bachs und ihre Bedeutung f&#252;r die Kompositionstechnik Beethovens</i>. Vienna: Universal Edition.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ratz_1973"></a>Ratz, Erwin. 1973. <i>Einf&#252;hrung in die musikalische Formenlehre: &#220;ber Formprinzipien in den Inventionen und Fugen J. S. Bachs und ihre Bedeutung f&#252;r die Kompositionstechnik Beethovens</i>. Vienna: Universal Edition.</p><div id="citediv_schoenberg_1967" class="flyoverdiv">Schoenberg, Arnold. 1967. <i>Fundamentals of Musical Composition</i>. Ed. Gerald Strang and Leonard Stein. London: Faber & Faber.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schoenberg_1967"></a>Schoenberg, Arnold. 1967. <i>Fundamentals of Musical Composition</i>. Ed. Gerald Strang and Leonard Stein. London: Faber & Faber.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> This is a revised version of a paper presented at the 2006 annual meetings of the Rocky Mountain Society for Music Theory in Denver, Colorado, and the Music Theory Midwest in Muncie, Indiana. I thank John Roeder for his encouragement and advice during the writing of this paper.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">This is a revised version of a paper presented at the 2006 annual meetings of the Rocky Mountain Society for Music Theory in Denver, Colorado, and the Music Theory Midwest in Muncie, Indiana. I thank John Roeder for his encouragement and advice during the writing of this paper.</div><p><a name="FN1">1.</a> Caplin uses the term <i>formal dissonance</i> to describe instances in which &#8220;a given function is actually placed differently from its expressed temporal position&#8221; (111).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Haydn&#8217;s monothematic sonata forms provide a tonal example of formal function encoded by transformational relationship between the first and second themes (tonic-dominant) rather than the content itself. However, in monothematic sonata forms the transformation takes place <i>between</i> the themes rather than <i>within</i> the themes. The approach adopted in this paper examines the internal transformations in the formal sections and compares and contrasts them from a formal-functional point of view.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Although it is possible to assert a quasi-tonal reading of the movement based on this tonal network established upon T<sub>4</sub> and T<sub>5</sub>, I will not pursue this line of thought in the present study.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> It should be noted that Caplin draws a distinction between &#8220;retransition&#8221; and &#8220;standing on the dominant&#8221; indicating that &#8220;if the term retransition is to be used with most development sections, it should be applied before the standing on the dominant, presumably at the moment when the modulation to the home key takes place&#8221; since &#8220;by the time the standing on dominant begins, the home key has already been achieved&#8221; (157). Thus, the fourth section should be understood to function as a standing on the dominant rather than a retransition as a result of the recurrence of the opening unit.<br><a href="#FN4REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Caplin uses the term <i>formal dissonance</i> to describe instances in which &#8220;a given function is actually placed differently from its expressed temporal position&#8221; (111).</div><div id="fndiv2" class="flyoverdiv">Haydn&#8217;s monothematic sonata forms provide a tonal example of formal function encoded by transformational relationship between the first and second themes (tonic-dominant) rather than the content itself. However, in monothematic sonata forms the transformation takes place <i>between</i> the themes rather than <i>within</i> the themes. The approach adopted in this paper examines the internal transformations in the formal sections and compares and contrasts them from a formal-functional point of view.</div><div id="fndiv3" class="flyoverdiv">Although it is possible to assert a quasi-tonal reading of the movement based on this tonal network established upon T4 and T5, I will not pursue this line of thought in the present study.</div><div id="fndiv4" class="flyoverdiv">It should be noted that Caplin draws a distinction between &#8220;retransition&#8221; and &#8220;standing on the dominant&#8221; indicating that &#8220;if the term retransition is to be used with most development sections, it should be applied before the standing on the dominant, presumably at the moment when the modulation to the home key takes place&#8221; since &#8220;by the time the standing on dominant begins, the home key has already been achieved&#8221; (157). Thus, the fourth section should be understood to function as a standing on the dominant rather than a retransition as a result of the recurrence of the opening unit.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2009 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by William Guerin, Cara Stroud, and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="4631717"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="ce0cf08b"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/4631717/0/ce0cf08b/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

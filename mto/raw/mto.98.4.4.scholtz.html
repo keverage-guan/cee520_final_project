@@ -1,0 +1,1630 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 4.4: Scholtz, Algorithms for Tunings and Temperaments</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Algorithms for Mapping Diatonic Keyboard
+  Tunings and Temperaments">
+
+    <meta name="citation_author" content="Scholtz, Kenneth P.">
+      
+
+<meta name="citation_publication_date" content="1998/07/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="4">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Algorithms for Mapping Diatonic Keyboard
+  Tunings and Temperaments
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.98.4.4/mto.98.4.4.scholtz.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Kenneth P. Scholtz</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Algorithm, chain of fifths, diatonic
+  scale, equal temperament, enharmonic, just
+  intonation, meantone, Pythagorean tuning,
+  schisma, syntonic comma</font></p><p><font size='4'>ABSTRACT: Diatonic keyboard tunings in equal temperament, just
+intonation, meantone and well tempered scales are derived from 
+Pythagorean tuning using algorithms whose operations involve
+combinations of pure fifths and syntonic commas.  Graphic
+diagrams of the line of fifths are used to show the harmonic and
+mathematical relationships between common tunings and
+temperaments.  Four modes of just intonation are derived from
+Pythagorean tuning by an algorithm that narrows each major third
+by one syntonic comma.  Equal temperament is approximated with
+imperceptible error by algorithms that narrow Pythagorean and
+justly tuned enharmonic intervals by one or more syntonic commas.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.98.4.4/mto.98.4.4.scholtz.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.98.4.4/scholtz_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 4, Number 4, July 1998 <br> Copyright &#0169; 1998 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align:center"><b>Table of Contents</b></p>
+
+<p><a HREF="#Section1">1. Introduction</a></p>
+ 
+<p><a HREF="#Section2">2. The Chain of Fifths</a></p> 
+ 
+<p><a HREF="#Section3">3. Pythagorean Tuning</a></p> 
+
+<p><a HREF="#Section4">4. Equal Temperament</a></p>
+
+<p><a HREF="#Section5">5. The Four Modes of Just Intonation</a></p>
+
+<p><a HREF="#Section6">6. Meantone Temperament</a></p>
+
+<p><a HREF="#Section7">7. Well Temperament</a></p>
+
+<p><a HREF="#Section8">8. Algorithms for Schismatic and Syntonic Equal Temperment</a></p>
+
+<p><a HREF="#Section9">9. Concluding Thoughts</a></p>
+
+<p><a HREF="#Section10">Appendix I</a></p> 
+
+<p><a HREF="#Section11">Appendix II</a></p> 
+
+<p><a HREF="#Footnotes">References</a></p>
+
+<p> 
+<hr>
+<p style="text-align: center" id="Section1"><b>1. Introduction</b></p>
+
+<p>
+[1.1] This article describes algorithms that map the traditional
+harmonic tunings and temperaments for the keyboard: Pythagorean
+tuning, equal temperament, just intonation, and historical
+variations on meantone temperaments.  Keyboard tuning is used
+because it has been worked out in detail over hundreds of years
+and is understood to give a reasonable approximation of the pitch
+choices made by performers on instruments without fixed pitches.  
+I have excluded analysis of multiple divisions of the octave into
+more than twelve notes because they were not commonly used
+temperaments.  Working from the chain of fifths, we will
+demonstrate how the intervals in any tuning or temperament can be
+mapped from Pythagorean tuning by algorithms that combine pure
+fifths and syntonic commas.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  The algorithms that map the
+tunings and temperaments into one another are not purely
+mathematical, but are derived from the harmonic structure of the
+chain of fifths and enharmonic relationships between notes.
+<p>
+
+[1.2] This article is not concerned with generating diatonic
+scale tuning from prime numbers or otherwise deriving its form
+from physical or mathematical principles.  We will use the
+historic definition of a diatonic scale as two tetrachords plus
+one additional tone that completes the octave.  The diatonic
+octave is divided into five whole tones and two semitones in all
+tunings and temperaments.  The convention of assigning letter
+names to notes in a 12-note chromatic keyboard for diatonic
+scales will be observed.  The chain of fifths will be introduced
+and used as the defining feature common to all scales without
+initially assuming any particular tuning. 
+<p> 
+
+[1.3] Several modern theorists, including Mark Lindley<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> and
+Easley Blackwood<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+have applied algebraic techniques in
+describing the tonal relationships which form traditional
+diatonic scales.  Others have developed diagrams to compare the
+differences in pitch for a note in various tunings.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  Although
+such techniques have their uses, I did not personally find them
+particularly helpful in visualizing the overall difference
+between one tuning system or temperament and another.  For my own
+analysis, I prefer to diagram the chain of fifths and use
+rational fractions to express the size of the intervals.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> 
+Differences between tuning systems are indicated by placing 
+commas or fractional commas between adjacent fifths.  This
+provides a visual comparison between the separate diatonic
+tunings and temperaments of a complete scale and makes it easier
+to demonstrate the mathematical and musical relationships between
+them.
+<p>
+
+[1.4] Theorists classify tuning systems as either cyclic, 
+generated by a reiterative sequence of fifths, or divisive, 
+tunings that subdivide the octave.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Historically, this
+division is somewhat arbitrary.  Euclid and Boethius derived the
+Pythagorean tuning that we now associate with a sequence of
+fifths by dividing a monochord into two octaves.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>  Methods
+based upon the overtone series or other systems which attempt to
+derive just intonation from acoustic phenomena are often
+considered to be divisive in nature.  The typographical diagrams
+utilized in this article interpret tunings and temperaments in
+terms of the line of fifths.
+<p>
+
+<p style="text-align: center" id="Section2"><b>2. The Chain of Fifths</b></p>
+
+<p>[2.1] It is well known that every diatonic scale can be reordered
+into a sequence of fifths.  For the C-major scale, the sequence
+of fifths is F&ndash;C&ndash;G&ndash;D&ndash;A&ndash;E&ndash;B, renumbering the notes of the scale in
+the order 4&ndash;1&ndash;5&ndash;2&ndash;6&ndash;3-7.  This is the sequence of notes produced
+when one starts with C and then tunes a keyboard alternately down
+a fourth and up a fifth until the last note of the scale is
+reached.  For consistency of metaphor, I call the sequence of
+fifths a &ldquo;chain&rdquo; in which the fifths are &ldquo;links,&rdquo; without
+assuming any specific tuning system.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. A Section of the Chain of Fifths</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="scholtz_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Six Diatonic Scales in a Chromatic Chain From <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="scholtz_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+
+[2.2] The chain of fifths has its origin at C and extends to the
+sharp notes on the right and the flat notes on the left.  The
+chain is theoretically endless, neither closing nor repeating, so
+that each note in the chain is musically unique.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  <b>Figure 1</b>
+shows the central 21 links in the chain, with C at the origin. 
+All the notes in the chain are considered to be within a single
+octave bounded by two C&rsquo;s.  Since fifths and fourths are
+inversions, each note is a fifth above the note to its left and a
+fourth above the note to its right.  As a matter of convention,
+it is useful to consider the links to the right of C to be 
+ascending fifths and the those to the left to be ascending fourths. The same seven letter names repeat themselves over and over in
+the same invariant sequence of the C-major scale&mdash;F&ndash;C&ndash;G&ndash;D&ndash;A&ndash;E&ndash;B&mdash;with each repetition augmented by sharps to the
+right and flats to the left. Any group of six adjacent links
+defines a major diatonic scale whose tonic note is one link from
+the left end of the group, and a natural minor scale which starts
+two links from the right end.  Horizontal movement of any
+six-link group is the equivalent of transposition of the scale
+into a new key as exemplified by <b>Figure 2</b>.  A twelve-note
+chromatic keyboard commonly contained the notes from <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,
+before the acceptance of equal temperament.  When all the
+fifths were pure, the keyboard would be suitable for the diatonic
+major and minor scales in the keys depicted in Figure 2.  Other
+keys would be unavailable because the required sharp or flat
+notes would be outside the range of the chain of fifths.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Harmonic Intervals Ordered From the Chain of Fifths</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="scholtz_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+
+[2.3]  The chain of fifths can be used to rationally order the
+harmonic structure of the diatonic scale. <b>Figure 3</b> lists the
+harmonic intervals available on a twelve-note chromatic keyboard
+for each pairing of links in the chain of fifths.  The pairs of
+notes listed are examples that start with C.  Any interval can be
+horizontally transposed along the chain of fifths. Figure 3 classifies harmonic intervals by the number of links and
+their direction on the chain of fifths.  Each pair of intervals
+are inversions of one another.  Chromatic intervals have more
+than six links, diatonic intervals have six or fewer.  Generally
+speaking, major intervals and augmented intervals ascend from
+left to right, while minor intervals and diminished intervals
+ascend from right to left.  The perfect fourth is the only
+consonant interval that ascends from right to left, which may
+reflect its harmonic ambiguity.  Intervals that ascend to the
+right from a flat to a natural are always major, such as <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;D, a
+four link ascending major third transposed from C&ndash;E.  In the same
+manner, intervals that ascend to the right from a flat to a sharp
+are considered &ldquo;augmented,&rdquo; as in <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, an 11-link augmented
+third transposed from C&ndash;<nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  In the opposite direction, intervals
+that ascend to the left from a sharp to a natural are always
+minor, as in <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;E, a three link minor third transposed from C&ndash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. 
+Intervals that ascend to the left from a sharp to a flat are
+diminished, as in <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, a ten-link diminished third transposed
+from C&ndash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>.  Each pair of enharmonically equivalent notes is
+separated by twelve links.  It is also well known that the
+progressions of diatonic harmony correspond to the chain of
+fifths, but this is a topic which will not be further detailed.
+<p>
+
+<p style="text-align: center" id="Section3"><b>3. Pythagorean Tuning</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Pythagorean Tuning</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="scholtz_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[3.1]  Tuning the diatonic scale with pure fifths, now known as
+Pythagorean tuning, was the norm for nearly 2,000 years.  The
+Pythagorean tuning of twelve notes in a standard <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> keyboard
+is shown in <b>Figure 4</b>.  The links are a sequence of powers of 3/2
+to the right of C and powers of 4/3 to the left of C.  Whenever
+necessary, the fraction is divided by two to keep the pitch
+within the compass of a single 2/1 octave.  Thus, 3/2 x 3/2 =
+9/4.  9/4 is divided by 2, making D = 9/8.  Logarithms allow the
+sequence to be calculated by addition instead of multiplication.
+In logarithmic measure, each perfect fifth is approximately
+702 cents.   The tuning of D is equal to 204 cents, obtained by
+subtracting a an octave of 1200 cents from 702 + 702 = 1404.
+Since all the links are the same size, the harmonic intervals can
+be transposed freely.  All major seconds are 9/8, all major
+thirds, 81/64, and etc. The dashes between the letter names of the notes in Figure 4
+indicate that the fifths are pure.</p>
+<p>
+
+[3.2] Although <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (19683/16384) and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>(32/27) are enharmonically
+identical in equal temperament, their pitches in Pythagorean
+tuning are different; <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is higher than <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> by 531441/524288&mdash;the Pythagorean comma(P).  The more common method for deriving
+the Pythagorean comma is to calculate it as the difference
+between 12 consecutive fifths and seven octaves.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>  As Euclid
+knew, it is also the difference between six whole tones and one
+octave.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup><p>
+
+[3.3] A wolf fifth, &ldquo;w,&rdquo; occurs at the end of the line when <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>has to be used enharmonically because <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is unavailable; the
+&ldquo;fifth,&rdquo; which is more precisely a diminished sixth, from <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to
+<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>(<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) will be too narrow by a Pythagorean comma.  Blackwood
+describes such a narrow fifth as discordant and sounding badly
+out of place in a scale whose other fifths are pure.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  It was
+known as the wolf fifth, because of the howling sound that it
+made on an organ.
+<p>
+
+<p style="text-align: center" id="Section4"><b>4. Equal Temperament</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Schematic of Equal Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="scholtz_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.1] Equal temperament has been commonly used for the
+past 150 years to tune pianos and organs and, before that, was
+used for fretted instruments such as guitars and lutes.  Equal
+temperament flattens the fifths (and sharpens the fourths) by
+1/12 of a Pythagorean comma, &ldquo;p,&rdquo; as shown in <b>Figure 5</b>.  This is
+just enough to give a true octave from a chain of 12 links. In
+musical terms, the 12 fifths in the chromatic line are made
+exactly equal to 7 octaves.  As can be seen from Figure 5, the
+term &ldquo;equal temperament&rdquo; only applies to the fifths.  The other
+intervals are not tempered equally with respect to Pythagorean
+tuning. In Figure 5, the Pythagorean comma is indicated by the upper-case
+&ldquo;P&rdquo; and 1/12 of the Pythagorean comma by the lower-case &ldquo;p.&rdquo;  The
+direction of the arrow indicates the ascending harmonic interval.
+Reversing the arrow would invert the interval and change the sign
+of the fraction, as illustrated by the fifth (-1/4p) and the
+fourth (+1/4p).
+<p>
+
+[4.2] Since equal temperament makes every thirteenth note the
+same, it makes all enharmonic pairs equal; for example, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>becomes identical with <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> becomes identical with <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>.  
+This superposition is quite different from a Pythagorean 
+keyboard in which substitution of enharmonically equivalent notes 
+gives a fifth that is narrowed by a Pythagorean comma. 
+Compressing the chromatic line of twelve pure fifths by a
+Pythagorean comma makes the tuning of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> equal to the tuning of
+<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  Instead of an infinite series of links extending along the
+chain of fifths in both directions, equal temperament reduces the
+chromatic scale to exactly 12 notes which end on an octave and
+then repeat.  In equal temperament, one does not have to choose
+between an available <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and an unavailable <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>; both are available
+and the tuning of the two notes is now the same.  Equal
+temperament made possible modern keyboard music with full
+modulation between all keys.  It has become common to consider
+equal temperament as being the division of an octave into twelve
+equal semitones, since the ratio of an octave is 2/1 and an
+equally tempered semitone multiplied by itself 12 times produces
+an exact octave.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Enharmonic Pairs in Equal Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="scholtz_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+
+[4.3] We can easily demonstrate from the chain of fifths that
+equal temperament makes both the tuning and the musical function
+of each pair of enharmonically equivalent notes equal, using the
+12 links from C to <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  After subtracting the Pythagorean comma,
+<nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> becomes the same musical note as C.  C can be substituted for
+<nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, which is indicated by placing it vertically below <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in
+<b>Figure 6</b>.  <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is a fifth below <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, but since <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> has been replaced
+by C, F must be placed below <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> since F is a fifth below C.  The
+substitutions continue to the left along the top row from <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to C
+until the bottom row is complete from C on the right to <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> on
+the left.  Figure 6 shows that the two rows created by these
+substitutions are the same as if the chain of fifths was split
+into two rows, with the sharp notes above the flat notes.  The
+substitutions derived from equal temperament have made the tuning
+of the top row identical to that of the bottom row.  Equal
+temperament combines each vertical pair of enharmonically
+equivalent notes into one single note.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> This process can be extended out to infinity by vertically stacking
+each group of 12 notes in rows below <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;C and above C&ndash;<nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  Each 
+vertical stack of enharmonic notes will be identical. The profound 
+consequence of equal temperament is that the chain of twelve 
+tempered links absorbs the infinite chain into a single row of 12 
+chromatic notes that corresponds exactly to the 12 notes-to-the-
+octave (7 diatonic and 5 chromatic) equally-tempered keyboard.</p>
+
+<div style="width:350px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b>. Equal Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="scholtz_fig7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b>. Dissonant Internal Intervals in Just Intonation Scale</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=7&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="scholtz_fig8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b>. Just scales in <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, F, C and G</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=8&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="scholtz_fig9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[4.4] Calculating the tuning of an equally tempered scale
+generates irrational numbers,<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> because the rational fraction
+that measures the Pythagorean comma must be divided into twelve
+roots.  One equally tempered semitone equals the twelfth root of
+2, an irrational number whose value is normally given in a
+decimal approximation as 1.05946 (100 cents.)  The tuning of the
+chain of equal tempered fifths in six place decimals is given in
+<b>Figure 7</b>. Using the diagram in Figure 5, the 700-cent logarithmic tuning of
+an equally tempered fifth is narrower than a 702 cent perfect
+fifth by 2 cents, 1/12 of the 24-cent Pythagorean comma.  The
+last column in Figure 7 displays this pattern; the pitch of each
+note in the vertical chain is 700 cents above the note below it
+before subtracting out the octave.</p>
+
+<p style="text-align: center" id="Section5"><b>5. The Four Modes of Just Intonation</b></p>
+
+<p>[5.1] In Pythagorean tuning, only the fifths and fourths are
+tuned as consonant intervals.  The thirds and sixths generated by
+a sequence of perfect fifths are not generally considered
+consonant by comparison to the most consonant major third which
+is 5/4, a minor third of 5/6 and their inversions, a major sixth
+of 5/3 and a minor sixth of 8/5.  The diatonic tuning that
+includes both consonant thirds and pure fifths is known as just
+intonation.  One traditional method of forming a C-major scale in
+just intonation is to combine consonant tonic, dominant and
+subdominant triads, F&ndash;A&ndash;C, C&ndash;E&ndash;G and G&ndash;B&ndash;D.  This tunes the just
+diatonic scale shown in <b>Figure 8</b>.  The D&ndash;A link is narrowed by a
+syntonic comma indicated by the &ldquo;k.&rdquo;  Since the other links are
+pure, the pitch of A, E and B will also be lower than Pythagorean
+by a syntonic comma.  Even though each note has its optimum
+tuning relative to C, just intonation is a theoretical scale
+which is unsatisfactory for tuning an instrument with fixed pitch
+because the narrow D&ndash;A results in the unjust intervals shown in
+Figure 8.  The narrow D&ndash;A sounds much the same as a Pythagorean
+wolf fifth.  The Pythagorean minor third and its inversion, the
+major sixth between D and F also sound badly out of place in an
+otherwise just scale.</p>
+
+<p>           
+
+[5.2] Tuning a chromatic octave in just intonation creates
+further difficulties since alternate tunings are required for
+each note.  A theoretical scale of just intonation can be
+calculated for four diatonic major scales in the chromatic octave
+by replicating the procedure used to form the scale of C-major. 
+A scale of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-major would have triads in which <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;G, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;D and F&ndash;A
+were pure major thirds.  The pure thirds would be <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;D, F&ndash;A, C&ndash;E
+in F-major and C&ndash;E, G&ndash;B and D&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in G-major. <b>Figure 9</b> shows the
+two alternative tunings for G, D and A that are required for
+these four scales.  The multiplicity of alternate tunings makes
+just intonation even more impractical for the normal keyboard
+with twelve keys to the octave.  It can also be seen from Figure 9 that the absolute location of
+the syntonic comma moves but that its relative location is always
+on the fourth link of the scale.  Each just scale could be
+considered to be virtually a separate entity whose tuning is
+fixed by the tuning of the triads that it contains.
+<p>
+
+[5.3] It is helpful at this point to introduce the concept of an
+algorithm, which is a set of instructions for making a series of
+calculations.  Each of the tunings we have discussed so far can
+be derived from an algorithm for tuning the chain of fifths into
+one 12-note chromatic octave on a keyboard.  The Pythagorean
+tuning algorithm has four steps: 
+<ol>
+<li>C is tuned to an arbitrary unit pitch of 1.
+<li>Tune the pitch of each note to be a perfect fifth (3/2)<br>
+         from the notes immediately adjacent to it. 
+<li>If the pitch of any note is greater than 2, divide the<br>
+         pitch by 2 to keep it within the same octave.
+<li>Stop after the 12 notes from <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> have been tuned.
+</ol>
+
+
+<p>
+The equal temperament algorithm is the same as the Pythagorean
+algorithm except that the interval in step 2 is 1/12 of a
+Pythagorean comma narrower than a pure fifth.  Although justly
+tuned scales often have been considered to represent a different
+species from the Pythagorean or the equally tempered scale, we
+will show in Figure 10 how an algorithm can be derived that maps
+Pythagorean tuning into just chromatic scales.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. Just Intonation Compared to Pythagorean Tuning</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=9&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="scholtz_fig10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[5.4]  The scale in <b>Figure 10</b> has a syntonic comma at every
+fourth link.  This produces a chromatic scale in which the
+diatonic scale of C-major is just and the maximum number of major
+thirds are a consonant 5/4.  This scale is generated by an
+algorithm in which (1) the fourth link of a Pythagorean C-major
+scale is narrowed by a syntonic comma and (2) every fourth link
+above and below that link is also narrowed by a syntonic comma. 
+The tuning of the just chromatic scale from <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> depicted in
+Figure 10 corresponds to the tuning given by Rossing for these
+same 12 chromatic notes within a larger chromatic scale of just
+intonation from <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> We can use the graphic diagram in Figure 10 to evaluate the
+difference between the just and Pythagorean pitch of each note
+without having to multiply out the 81/80 syntonic comma.  In this
+just chromatic scale, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> are each a syntonic comma higher
+in pitch while justly tuned A, E, B and <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> are each a syntonic
+comma lower in pitch.  Just <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> are lower than Pythagorean
+by two syntonic commas.  Examining Figure 10 demonstrates still
+more reasons why a chromatic scale of just intonation is unusable
+on a standard keyboard.  Narrowing every fourth link by a comma
+does not leave all the thirds and fifths consonant.  The fifths
+that are narrowed (which means that the fourths are inversely
+broadened) by a full syntonic comma are obviously dissonant.
+Thus, the just chromatic scale has two more dissonant links than
+a Pythagorean chromatic scale.  The wolf fifth from enharmonic
+<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>(<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>) to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> will be narrowed by three syntonic commas.  Any
+group of three adjacent links that does not include a comma will
+form a Pythagorean minor third and a Pythagorean major sixth.
+Whole tones in this scale that include a syntonic comma are 10/9,
+while the other whole tones are in the just and Pythagorean
+proportion of 9/8.  To assess the severe impact of these tuning
+discrepancies we summarize the most significant consequences when
+a keyboard tuned in just intonation as in Figure 10 is used to
+play the six diatonic major scales listed in Figure 2.
+<p> 
+
+<ul>
+<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-major: fifth of tonic triad narrowed by a syntonic comma.<br>
+F-major: major fourth broadened by a syntonic comma.<br>
+C-major: fifth of the II chord narrowed by a syntonic comma.<br>
+G-major: fifth of the dominant triad narrowed by a comma.<br>
+D-major: fifth of tonic triad narrowed by a syntonic comma.<br>
+A-major: major fourth broadened by a syntonic comma.<br>
+</ul>
+
+<p>It is, thus, amply clear that just scales with consonant thirds
+cannot be meaningfully used on a chromatic keyboard.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11</b>. The Four Modes of Just Intonation </p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=10&nonav=true"><img border="1" alt="Figure 11 thumbnail" src="scholtz_fig11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+
+[5.5]  Since the scale in Figure 10 was created by an algorithm
+that narrowed every fourth link by one syntonic comma, one can
+generate four chromatic modes of just intonation, one for each of
+the scales shown in Figure 9.  These are the only just chromatic
+scales that are possible when C has the relative tuning of 1,
+since the pattern of the algorithm repeats after the fourth
+link.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup>  <b>Figure 11</b> presents the tuning of the four modes of
+just intonation along a chromatic scale from <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> for a
+vertical chain of fifths in Pythagorean tuning and the four just
+chromatic modes in <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, F, C, and G.  The number of syntonic
+commas by which each note has been altered from Pythagorean
+tuning is indicated in parentheses, the pitch of the notes above
+C being lowered by the number of syntonic commas indicated and
+the ones below C being raised.  The remaining notes are
+Pythagorean. Figure 11 provides an insight on the relationship between
+Pythagorean and just tuning.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup>  Instead of presenting just
+intonation as a series of pitches that are independently derived,
+Figure 11 shows that the pitch of the sharp and flat notes are
+modified in a regular progression as syntonic commas are
+sequentially added to or subtracted from Pythagorean tuning. 
+The logarithmic tuning of each note can be easily calculated
+using the fact that a pure fifth is 702 cents, a pure fourth, its
+inversion, is 498 cents, and a syntonic comma is 22 cents.  As an
+example, 27/25, the tuning of <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in the just G-major mode is 5
+links plus 2 syntonic commas left of C: 5 x 498 = 2490 + 44
+= 2534.  After subtracting 2400, <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> + 2k = 134 cents.
+<p>
+
+[5.6]  F. Murray Barbour listed 22 historical scales of just
+intonation dating from 1482 to 1776 in his historical survey of
+tuning and temperament.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup>  Barbour defined just intonation more
+broadly than we have done, including within the concept any
+12-note chromatic scale that possessed some pure fifths and at
+least one pure third.  Barbour described a late 18th-century
+tuning by Marpurg which is the same as Figure 10 as &ldquo;the
+model form of just intonation.&rdquo;<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup>  Two scales which correspond
+to the F-major mode shown in Figure 11 were described by Barbour
+as &ldquo;the most symmetric arrangement of all.&rdquo;  The first was an
+early 17th century scale by Salomon de Caus which started with
+<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>; the second was by Mersenne and started on <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> An even
+earlier tuning by Fogliano in the F-major mode starting with <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>was also included.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup>  None of the other tunings are precisely
+in the form of Figure 11.  A complete listing of these historical
+just tunings is given in Appendix I.
+<p>
+
+[5.7]  It is also interesting to compare the actual tuning of
+notes in Figure 11 with Ellis&rsquo;s &ldquo;Table of Intervals not exceeding
+One Octave&rdquo; in his appendix to Helmholtz.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup>  Figure 11 gives
+new significance to intervals whose names as given by Ellis imply
+a diatonic origin.  Thus Ellis&rsquo;s list includes the following
+varieties of fourths: &ldquo;acute,&rdquo;  27/20, a &ldquo;superfluous,&rdquo; 25/18 and
+another &ldquo;superfluous,&rdquo; 125/96.  Figure 11 shows that the
+&ldquo;acute&rdquo; fourth is the just fourth in the G-major mode, the first
+&ldquo;superfluous&rdquo; fourth is an augmented fourth, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the F-major
+and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-major modes, and the second &ldquo;superfluous&rdquo; fourth is an
+augmented third, <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, in the C, F and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> modes.  In all, Ellis
+lists 33 intervals obtained by combining one or more perfect
+fifths with one or more just thirds, only 3 less than the 36
+tunings in Figure 11 that are altered by one or more Pythagorean
+commas.  All but two of Ellis&rsquo;s 33 intervals are included in
+Figure 11; one is a well-tempered interval and the other
+is not part of a chromatic scale in which C is tuned to
+1.  The complete list of Ellis&rsquo;s intervals and their notation in
+terms of Pythagorean tuning and syntonic commas is contained in
+Appendix II.
+<p>
+
+[5.8]  We can now appreciate why the chain of fifths is useful
+for evaluating the harmonic consequences of alternate tunings of
+a diatonic scale embedded in a chromatic keyboard.  It is not
+possible to arbitrarily change the pitch of one note without
+altering its relationship with all other notes in the chromatic
+space.  The interdependence of tuning is not limited to
+instruments with fixed pitch.  For example, a string quartet
+could not play passages containing a sequence of triads in
+just intonation without altering the melodic intervals and,
+possibly the overall level of pitch.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup>  The problems of tuning
+harmonic intervals can only be solved by dynamic ad hoc
+adjustments of pitch to obtain optimum consonance while
+preserving the melodic line and stability of pitch.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup>  This is
+one of the reasons why it is so difficult for inexperienced
+musicians to achieve good ensemble intonation.
+<p> 
+
+[5.9] The syntonic comma is not an independent variable; the
+independent variables are the tuning ratios for the consonant
+fifth and major third as determined by psychoacoustic
+measurements, which are 3/2 and 5/4.  The syntonic comma, even
+though it has been known and separately named for two thousand
+years is merely derived from the difference between the consonant
+or just major third and the Pythagorean major third generated by
+four consecutive fifths.  However, one would not intuitively
+expect that this single dependent variable could be used to
+measure all the differences in tuning between Pythagorean and
+just scales, including intervals that are not generated by major
+thirds.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup>  The just intonation algorithms provide a coherent
+framework for this ancient and well respected dependent variable
+known as the syntonic comma.  As was noted above, just intonation
+and Pythagorean tuning are commonly thought of as different
+species of tuning.  The just intonation algorithms demonstrate
+that just intonation can more completely be understood in terms
+of the chain of fifths and syntonic commas than if considered
+independently.
+<p>
+
+<p style="text-align: center" id="Section6"><b>6. Meantone Temperament</b></p>
+
+<p>[6.1] Meantone temperament is a keyboard tuning that makes a
+chromatic scale with consonant major thirds playable in diatonic
+scales in a few closely related keys.  It does so by equally
+dividing the syntonic comma over the four links of each
+major third.  This results in a whole tone that is exactly half-
+way between the alternate 9/8 and 10/9 found in just scales.  The
+name &ldquo;meantone&rdquo; is derived from the resulting mid-size interval
+for the whole tone even though the division of the whole tone was
+only a by-product of distributing the syntonic comma.  Dividing
+the comma into four &ldquo;quarter commas&rdquo; and distributing the
+quarter-commas so that every fifth was tempered by one
+quarter-comma also smooths out the three narrow fifths created by
+the undivided comma in the just scale, replacing them with a
+sequence of tempered fifths that are far more tolerable to
+the ear.  The earliest generally accepted meantone scale was
+described by Pietro Aron in the early sixteenth century for a
+chromatic scale from <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b>. Schematic of Quarter-Comma Meantone Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=11&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="scholtz_fig12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[6.2]  The quarter-comma (4q = 1k) narrowing of each link in the
+chain of fifths is shown in <b>Figure 12</b>, which also depicts the
+resulting alteration of other intervals from Pythagorean tuning.
+Compared to Pythagorean tuning, it is evident that the fifths to
+the right of C are all tuned a quarter-comma flat, while the
+fourths to the left of C become a quarter-comma sharp. As before, Figures 10 and 12 allow us to measure the difference
+between the just and meantone scales without using arithmetic.
+As an example, a mean-tone chromatic semitone is narrowed by 7/4
+syntonic commas compared to Pythagorean tuning and 3/4 of a
+syntonic comma compared to just intonation.
+<p>
+
+[6.3] Meantone temperament and its variations was the established
+mode for tuning keyboards for nearly three centuries.  English
+pianos and organs were tuned this way until the middle of the
+nineteenth century.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup>  As Thurston Dart explained in his
+treatise on early music:
+<blockquote>
+     Thus mean-tone provides the player with a group of
+     about a dozen &lsquo;central&rsquo; keys in which all the important
+     chords are more in tune than they are in the modern
+     piano<nobr>. . . . </nobr>Mean-tone is admittedly imperfect as a
+     tuning for chromatic music; for diatonic music,
+     however, it cannot be bettered, as the musicians of
+     earlier times knew very well.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup>  
+</blockquote>
+
+<p>For a time, organs were built with more than twelve keys per
+octave in order to utilize more of the extended chromatic scale. 
+The keys could be split or other devices used to enable the
+performer to play either note of an enharmonic pair such as <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> 
+or <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup>  There was a practice, apparently, of raising or
+lowering the location of the wolf in the tuning of harpsichords
+to fit the composition being played at the moment.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup>  However,
+manufacturers refrained from constructing instruments with more
+than 12 keys per octave and performers refrained from learning
+how to play such instruments, probably because the standard
+keyboard was suitable for most uses.  As musical development led
+to the use of more keys outside its central compass, meantone
+temperament became increasingly impractical.
+<p>
+
+[6.4]  Since a syntonic comma is 81/80, a quarter-comma, its
+fourth root, is an irrational number.  However, rational
+fractions that closely approximate the size of a quarter-comma
+and which cumulatively equal a full syntonic comma can be derived
+by arithmetically dividing a syntonic comma of 324/320 into four
+parts as follows:</p>
+<p style="text-align:center">324/320 = 321/320 x 322/321 x 323/322 x 324/323</p>
+<p>Therefore, a quarter-comma fifth may calculated as being:</p>
+<p style="text-align:center">3/2 x 320/321 = 160/107</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 13</b>. Quarter-Comma Meantone Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=12&nonav=true"><img border="1" alt="Figure 13 thumbnail" src="scholtz_fig13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>Rational fractions approximating each of the other meantone
+intervals may be calculated in a similar manner, using the other
+fractions in the expansion.  A chromatic meantone tuning for a
+keyboard is shown in <b>Figure 13</b> for a chain of fifths tempered by
+a quarter-comma (q).<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> Logarithmic values for a meantone scale can be easily calculated
+by subtracting one-fourth of a syntonic comma (22/4 = 5.5 cents)
+from every pure fifth.  Thus each meantone fifth will be 696.5
+cents. 
+<p>
+
+<p style="text-align: center" id="Section7"><b>7. Well Temperament</b></p>
+
+
+
+<p>[7.1] The term well temperament includes a family of temperaments
+that modified meantone temperament to eliminate wolves and to
+expand the range of playable keys by taking advantage of the
+small difference between the Pythagorean comma and the syntonic
+comma.  The difference between the two commas is an interval of
+32805/32786 (2 cents), which is called the schisma.  If only four
+links of a chromatic keyboard scale are tempered by a
+quarter-comma, with the remainder being tuned pure, the chromatic
+scale will exceed an acoustic octave by only a schisma and the
+wolf fifth will be thereby minimized to the point of
+nonexistence.</p>
+<p>
+
+<div style="width:430px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 14</b>. Schematic of Well Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=13&nonav=true"><img border="1" alt="Figure 14 thumbnail" src="scholtz_fig14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 15</b>. Well Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=14&nonav=true"><img border="1" alt="Figure 15 thumbnail" src="scholtz_fig15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>
+[7.2] <b>Figure 14</b> illustrates a simplified form of well temperament
+in which all but the central four links are Pythagorean and the
+major thirds vary from just (C&ndash;E) to fully Pythagorean (<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;C and
+E&ndash;<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>).  No major triad will be exactly consonant.  The wolf fifth
+between <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>(<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> has been essentially eliminated, and notes
+which are enharmonic to <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> will differ in
+pitch only by a schisma.  Therefore, use of these notes
+enharmonically increases the number of available scales from 6 to
+11.  The tuning for this version of well temperament are given in
+<b>Figure 15</b>. A number of historical well temperaments were devised that
+separated the quarter commas by one or more links to improve
+playability in desired keys.  Other temperaments subdivided the
+syntonic even further into 2/7 and 1/6 commas.  The more that the
+commas were divided and dispersed, the more that well temperament
+approached equal temperament.
+</p>
+
+<p style="text-align: center" id="Section8"><b>8. Algorithms for Schismatic and Syntonic Equal Temperament</b></p>
+
+<p>[8.1]  We will develop and expand upon the method advocated by
+Kirnberger in the eighteenth century for deriving a scale of
+equal temperament from Pythagorean intonation.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup>  A scale
+obtained by the first procedure is schismatic equal temperament
+and a scale obtained by the second procedure is syntonic equal
+temperament.  The tuning of schismatic ET is exactly equal to the
+tuning for syntonic ET, the only difference being in their
+algorithms.  Both match the tuning of equal temperament to
+several decimal places as shown in Figure 16.
+<p>
+
+[8.2] Schismatic and syntonic equal temperament is derived by
+extending a well-tempered scale eleven links to the left and
+right of C.  When the eleventh note to the left of C is raised by
+one syntonic comma and the eleventh note to the right of C is
+lowered by one syntonic comma the results are tunings for <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and
+for <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> that are almost exactly the same as the equally tempered
+tunings for F and G respectively.</p>
+<table>
+	<tr>
+		<td>E#-1k</td>
+		<td>  =  </td>
+		<td>10935/8192</td>
+		<td> =  </td>
+		<td>1.334839</td>
+		<td>    </td>
+		<td>F(ET)</td>
+		<td> = </td>
+		<td>1.334840</td>
+	</tr>
+	<tr>
+		<td><nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+1k</td>
+		<td> =  </td>
+		<td>16384/10935</td>
+		<td> = </td>
+		<td>1.498308</td>
+		<td>    </td>
+		<td>G(ET)</td>
+		<td> = </td>
+		<td>1.498307</td>
+	</tr>
+</table>
+
+<p>This strategy works because a syntonic comma is very nearly 11/12
+of a Pythagorean comma, expressed as k = 11/12P.  Therefore a
+schisma, defined as sk = P-k = 32805/32786, is very nearly 1/12
+of a Pythagorean comma &ldquo;p,&rdquo; the amount by which each link is
+narrowed in equal temperament.  The pitch of <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in Pythagorean
+tuning is higher than its enharmonic note, F, by a Pythagorean
+comma(P).  Therefore,</p>
+<p style="text-align:center"><nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-k ~ F+P-k ~ F+sk ~ F+p.</p>
+<p>As shown in Figure 5, F+p is the pitch of F in equal temperament. 
+Since the precise value of a schisma is 1.954 cents and 1/12 of a
+Pythagorean comma is 1.955 cents, the error is only 1/1000 of a
+cent.  One can then obtain decimal tunings for equal temperament
+by reiterating the proportions for <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k to a full chromatic
+chain of 12 links that would exceed an exact octave by a ratio of
+only 2.000018/2 or 0.012 cents.
+<p>
+
+[8.3]  We will now derive and apply two algorithms which map
+Pythagorean tuning into equal temperament.  The algorithm based
+upon the schisma produces schismatic ET.  As with ordinary equal
+temperament, this procedure equates the tuning of enharmonic
+pairs, substituting G for <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> + k, D for <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> + k + 1sk, and so
+on.  Every 10th link to the left of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> + k and to the right of
+<nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k is tempered by one schisma.  The five schismatic notes
+tuned to the right of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+k are enharmonically equivalent to the
+notes normally located to the right of G, while the five
+schismatic notes tuned to the left of <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-k are enharmonically
+equivalent to the notes normally located to the left of F.  The
+steps of the algorithm are as follows.
+<ol>
+<li>Starting with C, move 10 links to the left to <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+1k.
+         Substitute G enharmonically for <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+1k. 
+<li>Move 1 link to the right 5 times, adding 1 schisma to
+         the width of each interval.  Rename each note enharmonically. 
+<li>Returning to C, move 10 links to the right to <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k.
+         Substitute F enharmonically for <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k.
+<li>Move 1 link to the left 4 times, subtracting 1 schisma
+         from the width from each interval.  Rename each note
+         enharmonically. 
+</ol>
+
+<div style="width:350px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 16</b>. Schismatic and Syntonic Equal Temperament</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=15&nonav=true"><img border="1" alt="Figure 16 thumbnail" src="scholtz_fig16_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 17</b>. Just (C-Major mode) Schismatic and Syntonic Equal Temperaments</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="scholtz_examples.php?id=16&nonav=true"><img border="1" alt="Figure 17 thumbnail" src="scholtz_fig17_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[8.4] The algorithm that produces syntonic equal temperament
+also starts with the intervals C&ndash;<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, ten links to the left of C,
+and C&ndash;<nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, ten links to the right of C.  Substituting G, which is
+enharmonic to <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+1k in syntonic ET, and reiterating the process,
+D in Syntonic ET would be 10 more links to the left of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> plus
+one more syntonic comma, giving D enharmonically equivalent to
+<nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+2k.  At the other end of the chain, enharmonic <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in
+syntonic ET would be 10 links minus one syntonic comma to the
+right of <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k(F), written as <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> = <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-2k.  Syntonic ET is based
+upon substitution of enharmonic pairs just as is equal
+temperament.  The tuning of each note is exactly the same in both
+syntonic and schismatic ET.  The notation and tuning for
+schismatic and syntonic ET are given in <b>Figure 16</b>. The algorithm
+for syntonic ET is as follows.
+<ol>
+<li>Starting with C, move 10 links to the left to <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+ k.
+        Substitute G enharmonically for <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>+1k.
+<li>Reiterate the action 5 more times, adding 1 syntonic
+        comma to the width of each 10-link interval.  Rename each note
+        enharmonically. 
+<li>Returning to C, move 10 links to the right of C to <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k.
+        Substitute F enharmonically for <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k. 
+<li>Reiterate the action 4 more times, subtracting 1
+        syntonic comma for each 10-link interval.  Rename each note
+        enharmonically.
+</ol>
+
+<p>
+
+[8.5] We can now go a step further and derive the algorithm that
+maps just intonation into syntonic ET from the algorithms
+previously used to map Pythagorean tuning into just intonation. 
+For example, <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the just mode of C-major is equal to
+Pythagorean <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-3k.  Adding back the three syntonic commas, <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k
+in schismatic and syntonic ET is enharmonically equivalent to <nobr><span style= 'letter-spacing:-0.8px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ 2k in the just C-major mode.  The algorithm for just schismatic
+ET parallels the algorithm given in section 8.3, adding back to
+each interval the number of commas listed in Figure 11.  In
+syntonic ET, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is enharmonically equivalent to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-2k.  If the
+C-mode just scale were extended to <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, the Pythagorean tuning
+would be narrowed by 5 syntonic commas.  Replacing the 5 commas,
+<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+3k maps just <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> into <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in just syntonic ET.  We have
+not set out the full just chromatic scale for the 121 links
+necessary in Figure 11, but it can be done simply by adding 1
+syntonic comma for every four links to the left and subtracting 1
+syntonic comma for every four links to the right as many times as
+is necessary.  Applying these algorithms in <b>Figure 17</b> gives
+scales of just schismatic and just syntonic ET for the C-major
+scale.</p>
+<p>
+
+[8.6]  Of course, neither syntonic nor schismatic ET are
+precisely equal.  They do not merge all enharmonically equivalent
+notes, as shown by the outer sections of Figure 16 which contains
+notes from <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in schismatic ET.  The enharmonic value for
+<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is not exactly equal to the value of <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> as it is in equal
+temperament and C is not exactly equal to <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr><nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and <nobr><span style= 'letter-spacing:-0.8px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.  Therefore,
+the number of possible notes is still endless and does not
+collapse to twelve.  The divergences between the tunings produced
+by the two equal temperaments are of no audible or acoustic
+significance either to the tuning of individual notes or to the
+overall sound of the temperament.  A keyboard instrument tuned to
+syntonic ET would not sound distinguishable from one tuned with
+unlikely mathematical perfection to traditional equal
+temperament.  The twelve chromatic links tuned to syntonic ET
+would have to be replicated nearly 163 times before the
+divergence in tuning C would exceed even one schisma.
+<p>
+
+<p style="text-align: center" id="Section9"><b>9. Concluding Thoughts</b></p>
+
+<p>[9.1] This article has explored the relations between keyboard
+tunings based upon the chain of fifths.  We began by accepting
+the historical definition of a diatonic scale embedded in a
+12-note chromatic keyboard.  We demonstrated that the terms used
+to name diatonic and chromatic intervals can be rationally
+ordered according to the number of links between the intervals on
+the chain of fifths.  We then derived algorithms that map
+Pythagorean tuning into just intonation and equal temperament and
+map just intonation into equal temperament.  Pythagorean tuning
+and just intonation have traditionally been classified as
+distinct tuning strategies, while Pythagorean tuning and equal
+temperament have been related only by the Pythagorean comma. 
+This article has shown that the three tunings can be related
+using algorithms that utilize combinations of pure fifths and
+syntonic commas.
+<hr>
+
+<p style="text-align: center" id="Section10"><b>Appendix I 
+<br>Historical Scales of Just Intonation Listed by Barbour</b></p>
+
+<p>The numbers in the left hand margin correspond to the number
+used by Barbour.  The table lists the author of the
+temperament, the date of its publication, the chromatic
+compass of the tuning on the chain of fifths, and the number
+of intervals which are pure or are altered by one or more
+commas, starting at the left end of the chain.  
+<pre>
+81.  Ramis, 1482.      Ab-F#  Ab-G, 8=0, 4=-1k.  
+82.  Erlangen, 15c.    Ebb, Bbb, Gb-B, 2=+1k, 8=0, 2=-1.
+83.  Erlangen revised, Eb-G#, 7=0, 3=-1k.
+84.  Fogliano 1529     Eb-G#, 1=+1k, 4=0, 4=-1k, 3=-2k.
+85.  Fogliano 1529     Eb-G#, 2=+1k, 4=0, 3=-1k, 3=-2k.
+86.  Fogliano 1529     Eb-G#, 1=+1k, 1=+1/2k, 3=0, 1=-1/2k, 
+                              3=-1k, 3=-2k.
+88.  Agricola 1539.    Bb-D#, 8=0, 4=-1k
+89.  De Caus 17c.      Bb-D#, 4=0, 4=-1k, 4=-2k
+90.  Kepler 1619       Eb-G#, 2=+2, 5=0, 5=-1
+91.  Kepler 17c.       Ab-C#, 3=+1, 5=0, 4=-1
+92.  Mersenne 1637     Gb-B,  4=+1, 4=0, 4=-1
+93.  Mersenne 1637     Bb-D#, 4=0, 4=-1, 4=-2
+94.  Mersenne 1637     Gb-B,  5=+1, 3=0, 4=-1
+95.  Mersenne 1637     Gb-B,  5=+1, 4=0, 3=-1
+96.  Marpurg 1776      Eb-G#, 2=+1, 4=0, 4=-1, 2=-2 
+97.  Marpurg 1776      Eb-G#, 1=+1, 6=0, 2=-1, 2=-2
+98.  Marpurg 1776      Eb-G#, 2=+1, 3=0, 4=-1, 3=-2
+99.  Malcolm 1721      Db-F#, 3=+1, 5=0, 4=-1
+100. Rousseau 1768     Ab-C#, 3=+1, 4=0, 3=-1, 2=-2
+101. Euler 1739        F-A#,  4=0, 3=-1, 5=-2
+102. Montvallon 1742   Eb-G#, 1=+1, 5=0, 6=-1
+103. Romieu 1758       Eb-G#, 1=+1, 5=0, 4=-1, 2=-2  
+</pre>
+<hr>
+<p style="text-align: center" id="Section11"><b>Appendix II.  <br>Ellis&rsquo;s Table of Intervals not Exceeding an Octave</b></p>
+
+<p>This chart lists the intervals identified by Ellis as being
+formed from pure fifths and major thirds.  It provides the
+inverted proportions used by Ellis and his name for the interval
+along with the Pythagorean equivalent of the interval from Figure
+11.  <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k was not part of Figure 11 because it is not included
+in a scale in which C = 0.  <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>-1k is a well-tempered interval
+from Figure 14.  The remainder of the intervals are from Figure
+11.
+<pre>     
+     24:25     Small semitone                     C#-2k
+    128:135    Larger limma                       C#-1k
+     15:16     Diatonic or just semitone          Db+1k
+     25:27     Great limma                        Db+2k
+      9:10     The minor tone of just intonation  D-1k
+    125:144    Acute diminished third             Ebb+3k
+    108:125    Grave augmented tone               D#-3k
+     64:75     Augmented tone                     D#-2k
+      5:6      Just minor third                   Eb+1k
+      4:5      Just major third                   E-1k
+     25:32     Diminished fourth                  Fb+2k
+     96:125    Superfluous fourth                 E#-3k
+    243:320    Grave fourth                       (F-1k)
+     20:27     Acute fourth                       F+1k 
+     18:25     Superfluous fourth                 F#-2k
+     32:45     Tritone, augmented fourth          F#-1k
+     45:64     Diminished fifth                   Gb+1k
+     25:36     Acute diminished fifth             Gb+2k
+     27:40     Grave fifth                        G-1k
+     16:25     Grave superfluous fifth            G#-2k
+    256:405    Extreme sharp fifth                (G#-1k)
+      5:8      Just minor sixth                   Ab+1k 
+      3:5      Just major sixth                   A-1k
+     75:128    Just diminished seventh            Bbb+2k
+    125:216    Acute diminished seventh           Bbb+3k
+     72:125    Just superfluous sixth             A#-3k 
+    128:225    Extreme sharp sixth                A#-1k
+      5:9      Acute minor seventh                Bb+1k          
+     27:50     Grave major seventh                B-2k
+      8:15     Just major seventh                 B-1k
+     25:48     Diminished octave                  Cb+2k
+     64:125    Superfluous seventh                B#-3k
+</pre></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Kenneth P. Scholtz<br>
+	2821 Anchor Ave.<br>Los Angeles, CA 90064-4605<br><a href="mailto:kscholtz@earthlink.net">kscholtz@earthlink.net</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The syntonic comma is defined as the difference between the
+Pythagorean tuning and just tuning of the major third.  The
+difference between the just third (5/4) and the Pythagorean third
+(81/64) is 81/80, calculated as follows: 81/64 x 4/5 = 81/16 x
+1/5 = 81/80.  The syntonic comma is also the difference between
+the Pythagorean and just tunings for all diatonic intervals other
+than the fourth and fifth, which are the same in both tunings. 
+The reason for the repeated appearance of the syntonic comma will
+be apparent from the discussion of the four modes of just
+intonation in section 5.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Mark Lindley and Ronald Turner-Smith, &ldquo;An Algebraic Approach
+to Mathematical Models of Scales,&rdquo; <i>Music Theory Online</i> 0.3
+(1993), which is a commentary based upon their book,
+<i>Mathematical Models of Musical Scales</i> (Bonn: Verlag fuer 
+Systematische Musikwissenschaft, 1993).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Blackwood, <i>The Structure of Recognizable Diatonic Tunings</i>,
+(Princeton: Princeton University Press, 1985).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> See, for example, L. L. Lloyd&rsquo;s diagrams in his articles in
+the 1954 <i>Grove&rsquo;s Dictionary of Music and Musicians</i> on &ldquo;Just 
+Intonation&rdquo; and &ldquo;Temperaments.&rdquo;<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Intervals measured by rational fractions can be converted
+into cents using the following approximate values: octave = 1200
+cents, perfect fifth = 702 cents; Pythagorean comma = 24 cents;
+syntonic comma = 22 cents.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See Lindley and Turner-Smith, &ldquo;An Algebraic Approach,&rdquo; 
+paragraph 4.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> In modern terminology, dividing the string in half gives two
+octaves, in thirds gives a fifth and an eleventh, and in fourths
+gives a fourth, octave and double octave.  The other diatonic
+notes are then determined by calculating intervals of a fifth
+from these intervals.  This produces two diatonic octaves in
+Pythagorean tuning.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Perfect fifths do not combine to produce a perfect octave. 
+The nth fifth in a sequence of n fifths is defined mathematically
+by the expression (3/2)<sup>(n)</sup>, which can never be an exact multiple
+of 2 since every power of 3 is an odd number.  The mathematical
+proof that no sequence of fourths can ever produce an octave is
+less obvious since every even number can be expressed as a
+fraction with an odd denominator, and every power of 3 can be
+associated with an infinite sequence of even numbers, such as
+18/9, 36/9,<nobr> . . . ;</nobr> 162/81,<nobr> . . . ,</nobr> etc.  However, an intuitive
+musical proof can be deduced from the fact that fourths and
+fifths are inversions of one another.  No sequence of fourths can
+generate an octave because the inverse sequence of fifths can never do so.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> In logarithmic measure, a perfect fifth is 702 cents. 
+Therefore twelve perfect fifths equals 8424 cents while seven
+octaves is 8400 cents.  The difference, the Pythagorean comma, is
+therefore equal to 24 cents.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Euclid (attrib.), <i>Section of the Canon</i>, in Barker, <i>Greek
+Musical Writings</i>, vol. 2 (Cambridge: Cambridge University
+Press, 1989), 199.  Twelve links on the chain of fifths can be
+interpreted as 12 fifths, 6 whole tones, 4 minor thirds and 3
+major thirds.  Thus, the Pythagorean comma is also equal to the
+difference between three major thirds or four minor thirds and an
+octave.  In Pythagorean tuning, a Pythagorean comma is the
+interval between any two notes separated by 12 links on the chain
+of fifths.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Blackwood, <i>Recognizable Diatonic Tunings</i>, 58.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> The development of the 12-tone school of composition was a
+logical consequence of accepting the 12-semitone model of equal
+temperament in place of a chain of harmonic fifths.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> These stacked rows appear in Helmholtz&rsquo;s <i>On the Sensations 
+of Tone</i> (London: Longman, 1885; New York: Dover, 1954; orig., 
+4th ed., Braunshweig: Verlag von Fr. Vieweg u. Sohn, 1877), 312, 
+where it is used to illustrate the enharmonic relation between 
+notes in Pythagorean intonation.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> An irrational number, such as pi or the square root of two,
+is one that cannot be expressed as the ratio of two integers.  An
+irrational number includes a nonterminating decimal written to
+the number of decimals needed for practical accuracy.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Rossing, <i>The Science of Sound</i> (Reading, Mass: Addison Wesley, 
+1982), 161. This is a general textbook on acoustics.  Rossing&rsquo;s 
+chart lists the equally-tempered, just and Pythagorean tunings for a
+22-note chromatic scale in cents and decimals.  The just scale
+corresponds to the &ldquo;C&rdquo; scale in Figure 10.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> It is possible to generate an infinite number of chromatic
+just scales by allowing the four adjacent links in Pythagorean
+tuning to freely slide along the chain of fifths.  Whenever C is
+not part of the Pythagorean notes, it will necessarily be raised
+or lowered by one or more syntonic commas and no note in the
+chromatic scale will be tuned to 1.  However, changing the
+absolute tuning of the notes in this manner does not change their
+relative tuning.  Therefore, all of the just chromatic scales
+generated in this manner can be transposed into one of the four
+modes listed in Figure 11.  The major and minor scales available
+in each of the four modes are the following:
+<pre>
+G-mode:  Cb,  Eb, G,  B, D#     E-minor mode:  Fb, Ab, C, E,  G#
+C-mode:  Fb,  Ab, C,  E, G#     A-minor mode: Bbb, Db, F, A,  C#
+F-mode:  Bbb, Db, F,  A  C#     D-minor mode:  Gb, Bb, D, F#, A#
+Bb-mode: Ebb, Gb, Bb, D, F#     G-minor mode:  Cb, Eb, G, B,  D#
+</pre><br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> The algorithm used to construct just chromatic scales can be
+used to illustrate why intervals generated by the prime 7 cannot
+be systematically included in diatonic keyboard tunings. Pleasant
+sounding intervals can include sevens.  Examples which are
+commonly cited are a 7/4 minor seventh, a 7/5 diminished fifth,
+both of which are part of a diminished seventh chord in which the
+notes C, E, G, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> are in the proportion of 4:5:6:7, or
+1:5/4:3/2:7/4.  A single scale in which these intervals are used
+can be contrived.
+<pre>
+                    Eb- Bb-s-F--C--G-s-D----A
+                   7/6 7/4  4/3 1 3/2 7/4 21/16
+</pre>
+<p>However, temperaments based on 7&rsquo;s or factors of 7 do not produce
+a usable family of chromatic keyboard scales from the chain of
+fifths, which would have the desired ratios for the diminished
+seventh chord.  The &ldquo;septimal&rdquo; comma which produces a 7/4 minor
+seventh and an 8/7 major second on the second link of the chain
+of fifths is 64/63 (27 cents). Therefore, reiteration of the
+septimal comma, &ldquo;s&rdquo;, in an algorithm which tunes every minor
+seventh to 7/4 produces two modes of septimal chromatic scales in
+which E is 64/49, not the desired 5/4.
+<pre>
+      Mode 1 (F)              Mode 2 (G)
+
+G#   4096/2041 (+4s)        4096/2041 (+4s)
+C#   8192/7203 (+4s)         348/343  (+3s)
+F#    512/343  (+3s)         512/343  (+3s)
+B    2048/1029 (+3s)          96/49   (+2s)
+E      64/49   (+2s)          64/49   (+2s)
+A     246/147  (+2s)          12/7    (+1s)
+D       8/7    (+1s)           8/7    (+1s)
+G      32/21   (+1s)           3/2
+C        1                      1
+F       4/3                   21/16   (-1s)
+Bb      7/4    (-1s)           7/4    (-1s)
+Eb      7/6    (-1s)         147/128  (-2s)
+Ab     49/32   (-2s)          49/32   (-2s)
+Db     49/48   (-2s)        1029/1024 (-3s)
+Gb    343/256  (-3s)         343/256  (-3s)
+Cb    343/192  (-3s)        7203/4096 (-4s)
+Fb   2401/2048 (-4s)        2401/2048 (-4s)
+</pre>
+<p>These septimal modes are worse than the just modes because the
+septimal comma is broader than the syntonic comma by five cents.
+The deviation from just intonation is further aggravated because
+septimal commas increase the pitch of notes to the right of C and
+decrease the pitch of notes to the left of C, contrary to the
+action of the syntonic comma.  Thus, compared to just intonation,
+the pitch of notes to the right of C will be painfully sharp and
+notes to the left will be dismally flat.  For example, the major
+third necessary for the diminished seventh chord will be 2s+1k
+(76 cents) broader than in a just scale while the minor sixth
+will be 2s + 1k (49 cents) narrower.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Barbour, <i>Tuning and Temperament: A Historical Survey</i>
+(East Lansing, Michigan: Michigan State College Press, 1953), 
+90&ndash;102.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Ibid., 100.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Ibid., 97&ndash;98.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> Ibid., 94.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Helmholtz, <i>On the Sensations of Tone</i>, 453.  A similar 
+list of &ldquo;Extended Just Tuning&rdquo; is found in Blackwood, 
+<i>Recognizable Diatonic Tunings</i>, 116&ndash;119.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Blackwood, <i>Recognizable Diatonic Tunings</i>, 74, demonstrates
+that in a common progression of C-major triads from II to V, just
+intonation would require that D as the root of the II chord be
+one syntonic comma lower in pitch than D as the fifth of the V
+chord.  In <i>The Science of Musical Sound</i> (<i>Scientific American
+Books</i>, 1983, 67), John Pierce shows a five chord
+progression, I, IV, II, V, I, in which the just tuning of C drops
+by a syntonic comma from the first chord to the last.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> It is for this reason that Lloyd in his article on Just
+Intonation in the 1954 Grove Dictionary adopted the position that
+instruments without fixed pitch and vocalists use a flexible
+scale in which the size of the intervals vary according to the
+context and part of the reason that Lindley and Turner-Smith
+introduced the concept of &ldquo;leeway&rdquo; into their algebraic tuning
+theory.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Inspection of the chain of fifths tells us that a major
+third can only generate one-quarter of the infinite series of
+chromatic notes that are generated by the fifth.  This is why the
+tuning of the major third is a subsidiary factor in the
+generation of diatonic scales.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Barbour, <i>Tuning and Temperament</i>, 26.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> <i>Grove&rsquo;s Dictionary of Music and Musicians</i> (1954), 
+&ldquo;Temperaments&rdquo; (380).<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Dart, <i>The Interpretation of Music</i> (New York: Harper &amp; Row, 
+1963), 47.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> Barbour, <i>Tuning and Temperament</i>, 108&ndash;9.  Since the first 
+reference to split keys found by Barbour goes back to 1484, this 
+device must have been used for both Pythagorean and meantone 
+tunings.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> <i>Grove&rsquo;s Dictionary of Music and Musicians</i>, 
+&ldquo;Temperaments&rdquo; (379).<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> Barbour&rsquo;s table 24 gives a monochord mean-tone tuning derived
+by Gibelius in 1666 by arithmetic division of the comma which is
+the same tuning shown in Figure 12.  Gibelius&rsquo;s monochord is
+divided into an octave between 216000 and 108000, in which G =
+144450, D = 193200 and A = 129200.  The equivalence of these
+monochord tunings to Figure 12 is calculated as follows:
+<pre>
+     G = 216000/144450 = 4320/2889 = 480/321 = 160/107
+     D = 216000/193200 = 540/483 = 180/161
+     A = 216000/129200 = 540/323
+</pre>
+<p>Barbour states that these approximations &ldquo;check closely with
+numbers obtained by taking roots,&rdquo; with the G being off by
+0.000003.  Barbour, <i>Tuning and Temperament</i>, 29.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> Barbour, <i>Tuning and Temperament</i>, 64.<br><a href="#FN32REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The syntonic comma is defined as the difference between the
+Pythagorean tuning and just tuning of the major third.  The
+difference between the just third (5/4) and the Pythagorean third
+(81/64) is 81/80, calculated as follows: 81/64 x 4/5 = 81/16 x
+1/5 = 81/80.  The syntonic comma is also the difference between
+the Pythagorean and just tunings for all diatonic intervals other
+than the fourth and fifth, which are the same in both tunings. 
+The reason for the repeated appearance of the syntonic comma will
+be apparent from the discussion of the four modes of just
+intonation in section 5.</div><div id="fndiv2" class="flyoverdiv">Mark Lindley and Ronald Turner-Smith, &ldquo;An Algebraic Approach
+to Mathematical Models of Scales,&rdquo; <i>Music Theory Online</i> 0.3
+(1993), which is a commentary based upon their book,
+<i>Mathematical Models of Musical Scales</i> (Bonn: Verlag fuer 
+Systematische Musikwissenschaft, 1993).</div><div id="fndiv3" class="flyoverdiv">Blackwood, <i>The Structure of Recognizable Diatonic Tunings</i>,
+(Princeton: Princeton University Press, 1985).</div><div id="fndiv4" class="flyoverdiv">See, for example, L. L. Lloyd&rsquo;s diagrams in his articles in
+the 1954 <i>Grove&rsquo;s Dictionary of Music and Musicians</i> on &ldquo;Just 
+Intonation&rdquo; and &ldquo;Temperaments.&rdquo;</div><div id="fndiv5" class="flyoverdiv">Intervals measured by rational fractions can be converted
+into cents using the following approximate values: octave = 1200
+cents, perfect fifth = 702 cents; Pythagorean comma = 24 cents;
+syntonic comma = 22 cents.</div><div id="fndiv6" class="flyoverdiv">See Lindley and Turner-Smith, &ldquo;An Algebraic Approach,&rdquo; 
+paragraph 4.</div><div id="fndiv7" class="flyoverdiv">In modern terminology, dividing the string in half gives two
+octaves, in thirds gives a fifth and an eleventh, and in fourths
+gives a fourth, octave and double octave.  The other diatonic
+notes are then determined by calculating intervals of a fifth
+from these intervals.  This produces two diatonic octaves in
+Pythagorean tuning.</div><div id="fndiv8" class="flyoverdiv">Perfect fifths do not combine to produce a perfect octave. 
+The nth fifth in a sequence of n fifths is defined mathematically
+by the expression (3/2)(n), which can never be an exact multiple
+of 2 since every power of 3 is an odd number.  The mathematical
+proof that no sequence of fourths can ever produce an octave is
+less obvious since every even number can be expressed as a
+fraction with an odd denominator, and every power of 3 can be
+associated with an infinite sequence of even numbers, such as
+18/9, 36/9, . . . ; 162/81, . . . , etc.  However, an intuitive
+musical proof can be deduced from the fact that fourths and
+fifths are inversions of one another.  No sequence of fourths can
+generate an octave because the inverse sequence of fifths can never do so.</div><div id="fndiv9" class="flyoverdiv">In logarithmic measure, a perfect fifth is 702 cents. 
+Therefore twelve perfect fifths equals 8424 cents while seven
+octaves is 8400 cents.  The difference, the Pythagorean comma, is
+therefore equal to 24 cents.</div><div id="fndiv10" class="flyoverdiv">Euclid (attrib.), <i>Section of the Canon</i>, in Barker, <i>Greek
+Musical Writings</i>, vol. 2 (Cambridge: Cambridge University
+Press, 1989), 199.  Twelve links on the chain of fifths can be
+interpreted as 12 fifths, 6 whole tones, 4 minor thirds and 3
+major thirds.  Thus, the Pythagorean comma is also equal to the
+difference between three major thirds or four minor thirds and an
+octave.  In Pythagorean tuning, a Pythagorean comma is the
+interval between any two notes separated by 12 links on the chain
+of fifths.</div><div id="fndiv11" class="flyoverdiv">Blackwood, <i>Recognizable Diatonic Tunings</i>, 58.</div><div id="fndiv12" class="flyoverdiv">The development of the 12-tone school of composition was a
+logical consequence of accepting the 12-semitone model of equal
+temperament in place of a chain of harmonic fifths.</div><div id="fndiv13" class="flyoverdiv">These stacked rows appear in Helmholtz&rsquo;s <i>On the Sensations 
+of Tone</i> (London: Longman, 1885; New York: Dover, 1954; orig., 
+4th ed., Braunshweig: Verlag von Fr. Vieweg u. Sohn, 1877), 312, 
+where it is used to illustrate the enharmonic relation between 
+notes in Pythagorean intonation.</div><div id="fndiv14" class="flyoverdiv">An irrational number, such as pi or the square root of two,
+is one that cannot be expressed as the ratio of two integers.  An
+irrational number includes a nonterminating decimal written to
+the number of decimals needed for practical accuracy.</div><div id="fndiv15" class="flyoverdiv">Rossing, <i>The Science of Sound</i> (Reading, Mass: Addison Wesley, 
+1982), 161. This is a general textbook on acoustics.  Rossing&rsquo;s 
+chart lists the equally-tempered, just and Pythagorean tunings for a
+22-note chromatic scale in cents and decimals.  The just scale
+corresponds to the &ldquo;C&rdquo; scale in Figure 10.</div><div id="fndiv16" class="flyoverdiv">It is possible to generate an infinite number of chromatic
+just scales by allowing the four adjacent links in Pythagorean
+tuning to freely slide along the chain of fifths.  Whenever C is
+not part of the Pythagorean notes, it will necessarily be raised
+or lowered by one or more syntonic commas and no note in the
+chromatic scale will be tuned to 1.  However, changing the
+absolute tuning of the notes in this manner does not change their
+relative tuning.  Therefore, all of the just chromatic scales
+generated in this manner can be transposed into one of the four
+modes listed in Figure 11.  The major and minor scales available
+in each of the four modes are the following:
+
+G-mode:  Cb,  Eb, G,  B, D#     E-minor mode:  Fb, Ab, C, E,  G#
+C-mode:  Fb,  Ab, C,  E, G#     A-minor mode: Bbb, Db, F, A,  C#
+F-mode:  Bbb, Db, F,  A  C#     D-minor mode:  Gb, Bb, D, F#, A#
+Bb-mode: Ebb, Gb, Bb, D, F#     G-minor mode:  Cb, Eb, G, B,  D#
+</div><div id="fndiv17" class="flyoverdiv">The algorithm used to construct just chromatic scales can be
+used to illustrate why intervals generated by the prime 7 cannot
+be systematically included in diatonic keyboard tunings. Pleasant
+sounding intervals can include sevens.  Examples which are
+commonly cited are a 7/4 minor seventh, a 7/5 diminished fifth,
+both of which are part of a diminished seventh chord in which the
+notes C, E, G, B&#x266d; are in the proportion of 4:5:6:7, or
+1:5/4:3/2:7/4.  A single scale in which these intervals are used
+can be contrived.
+
+                    Eb- Bb-s-F--C--G-s-D----A
+                   7/6 7/4  4/3 1 3/2 7/4 21/16
+
+However, temperaments based on 7&rsquo;s or factors of 7 do not produce
+a usable family of chromatic keyboard scales from the chain of
+fifths, which would have the desired ratios for the diminished
+seventh chord.  The &ldquo;septimal&rdquo; comma which produces a 7/4 minor
+seventh and an 8/7 major second on the second link of the chain
+of fifths is 64/63 (27 cents). Therefore, reiteration of the
+septimal comma, &ldquo;s&rdquo;, in an algorithm which tunes every minor
+seventh to 7/4 produces two modes of septimal chromatic scales in
+which E is 64/49, not the desired 5/4.
+
+      Mode 1 (F)              Mode 2 (G)
+
+G#   4096/2041 (+4s)        4096/2041 (+4s)
+C#   8192/7203 (+4s)         348/343  (+3s)
+F#    512/343  (+3s)         512/343  (+3s)
+B    2048/1029 (+3s)          96/49   (+2s)
+E      64/49   (+2s)          64/49   (+2s)
+A     246/147  (+2s)          12/7    (+1s)
+D       8/7    (+1s)           8/7    (+1s)
+G      32/21   (+1s)           3/2
+C        1                      1
+F       4/3                   21/16   (-1s)
+Bb      7/4    (-1s)           7/4    (-1s)
+Eb      7/6    (-1s)         147/128  (-2s)
+Ab     49/32   (-2s)          49/32   (-2s)
+Db     49/48   (-2s)        1029/1024 (-3s)
+Gb    343/256  (-3s)         343/256  (-3s)
+Cb    343/192  (-3s)        7203/4096 (-4s)
+Fb   2401/2048 (-4s)        2401/2048 (-4s)
+
+These septimal modes are worse than the just modes because the
+septimal comma is broader than the syntonic comma by five cents.
+The deviation from just intonation is further aggravated because
+septimal commas increase the pitch of notes to the right of C and
+decrease the pitch of notes to the left of C, contrary to the
+action of the syntonic comma.  Thus, compared to just intonation,
+the pitch of notes to the right of C will be painfully sharp and
+notes to the left will be dismally flat.  For example, the major
+third necessary for the diminished seventh chord will be 2s+1k
+(76 cents) broader than in a just scale while the minor sixth
+will be 2s + 1k (49 cents) narrower.</div><div id="fndiv18" class="flyoverdiv">Barbour, <i>Tuning and Temperament: A Historical Survey</i>
+(East Lansing, Michigan: Michigan State College Press, 1953), 
+90&ndash;102.</div><div id="fndiv19" class="flyoverdiv">Ibid., 100.</div><div id="fndiv20" class="flyoverdiv">Ibid., 97&ndash;98.</div><div id="fndiv21" class="flyoverdiv">Ibid., 94.</div><div id="fndiv22" class="flyoverdiv">Helmholtz, <i>On the Sensations of Tone</i>, 453.  A similar 
+list of &ldquo;Extended Just Tuning&rdquo; is found in Blackwood, 
+<i>Recognizable Diatonic Tunings</i>, 116&ndash;119.</div><div id="fndiv23" class="flyoverdiv">Blackwood, <i>Recognizable Diatonic Tunings</i>, 74, demonstrates
+that in a common progression of C-major triads from II to V, just
+intonation would require that D as the root of the II chord be
+one syntonic comma lower in pitch than D as the fifth of the V
+chord.  In <i>The Science of Musical Sound</i> (<i>Scientific American
+Books</i>, 1983, 67), John Pierce shows a five chord
+progression, I, IV, II, V, I, in which the just tuning of C drops
+by a syntonic comma from the first chord to the last.</div><div id="fndiv24" class="flyoverdiv">It is for this reason that Lloyd in his article on Just
+Intonation in the 1954 Grove Dictionary adopted the position that
+instruments without fixed pitch and vocalists use a flexible
+scale in which the size of the intervals vary according to the
+context and part of the reason that Lindley and Turner-Smith
+introduced the concept of &ldquo;leeway&rdquo; into their algebraic tuning
+theory.</div><div id="fndiv25" class="flyoverdiv">Inspection of the chain of fifths tells us that a major
+third can only generate one-quarter of the infinite series of
+chromatic notes that are generated by the fifth.  This is why the
+tuning of the major third is a subsidiary factor in the
+generation of diatonic scales.</div><div id="fndiv26" class="flyoverdiv">Barbour, <i>Tuning and Temperament</i>, 26.</div><div id="fndiv27" class="flyoverdiv"><i>Grove&rsquo;s Dictionary of Music and Musicians</i> (1954), 
+&ldquo;Temperaments&rdquo; (380).</div><div id="fndiv28" class="flyoverdiv">Dart, <i>The Interpretation of Music</i> (New York: Harper &amp; Row, 
+1963), 47.</div><div id="fndiv29" class="flyoverdiv">Barbour, <i>Tuning and Temperament</i>, 108&ndash;9.  Since the first 
+reference to split keys found by Barbour goes back to 1484, this 
+device must have been used for both Pythagorean and meantone 
+tunings.</div><div id="fndiv30" class="flyoverdiv"><i>Grove&rsquo;s Dictionary of Music and Musicians</i>, 
+&ldquo;Temperaments&rdquo; (379).</div><div id="fndiv31" class="flyoverdiv">Barbour&rsquo;s table 24 gives a monochord mean-tone tuning derived
+by Gibelius in 1666 by arithmetic division of the comma which is
+the same tuning shown in Figure 12.  Gibelius&rsquo;s monochord is
+divided into an octave between 216000 and 108000, in which G =
+144450, D = 193200 and A = 129200.  The equivalence of these
+monochord tunings to Figure 12 is calculated as follows:
+
+     G = 216000/144450 = 4320/2889 = 480/321 = 160/107
+     D = 216000/193200 = 540/483 = 180/161
+     A = 216000/129200 = 540/323
+
+Barbour states that these approximations &ldquo;check closely with
+numbers obtained by taking roots,&rdquo; with the G being off by
+0.000003.  Barbour, <i>Tuning and Temperament</i>, 29.</div><div id="fndiv32" class="flyoverdiv">Barbour, <i>Tuning and Temperament</i>, 64.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1998 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

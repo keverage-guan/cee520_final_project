@@ -1,0 +1,593 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 16.3: Jenkins, After the Harvest</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="After the Harvest: Carter&#8217;s Fifth String Quartet and the Late Late Style">
+
+    <meta name="citation_author" content="Jenkins, J. Daniel">
+      
+
+<meta name="citation_publication_date" content="2010/08/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="16">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">After the Harvest: Carter&#8217;s Fifth String Quartet and the Late Late Style
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">J. Daniel Jenkins</a></font></span></h2><br><br>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.10.16.3/mto.10.16.3.jenkins.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.10.16.3/jenkins_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received September 2009</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 16, Number 3, August 2010 <br> Copyright &#0169; 2010 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center"><b>I. Introduction</b><sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+<p>[1] While reflecting on Elliott Carter&#8217;s <i>Night Fantasies </i>(1980) and those pieces that followed, David Schiff writes, &#8220;after years of ploughing through rocky soil it was now time for the harvest&#8221; (<a href="#schiff_1988" id="citation_schiff_1988_67dc9ad698b9f">Schiff 1988</a>, 2). As various scholars have demonstrated, in the &#8220;harvest period,&#8221; Carter cultivated two main structural elements in his music: a harmonic language that focused on all-interval twelve-note chords and a rhythmic language that relied on long-range polyrhythms.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  Almost all of Carter&#8217;s works composed between 
+<i>Night Fantasies </i>and the Fifth String Quartet (1995) include either an all-interval twelve-note chord or a structural polyrhythm, and many contain both. Exceptions are either occasional pieces, or compositions for solo instruments that often do not have the range to accommodate the registral space that all-interval rows require.
+</p>
+<p>[2] Because of the constancy of these elements in Carter&#8217;s music over a period of 
+fifteen years, it is remarkable that in the Fifth String Quartet he eschews all-interval twelve-note chords while simultaneously removing the rhythmic scaffolding provided by a structural polyrhythm.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Carter has incorporated all-interval twelve-note chords in some of the compositions that postdate the Fifth String Quartet, but global long-range polyrhythms seem to have disappeared as a structural force in his music. Therefore, it can be argued that the Fifth String Quartet marks a turning point in Carter&#8217;s oeuvre.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>   Schiff notes the Quartet&#8217;s historical importance, suggesting that it ushers in &#8220;Carter&#8217;s late late style&#8221; (<a href="#schiff_1998" id="citation_schiff_1998_67dc9ad698ba6">Schiff 1998</a>, 92).<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>   
+</p>
+<p>[3] In this article, I investigate this watershed work both philologically and analytically to gain a greater understanding of Carter&#8217;s compositional approach in the absence of all-interval twelve-note chords or a single long-range polyrhythm as structural elements. Although the focus will be on the Fifth Quartet, I will also briefly consider other works. The analysis provides insight not only into the Quartet, but also somewhat into the late late style in general.
+
+</p>
+<p style="text-align: center"><b>II. Harmonic preliminaries</b>
+</p>
+<p>[4] As is well known, Carter developed his own <i>Harmony Book</i> from 1963&#8211;67, in which he thoroughly examined the subset content of chords of three pitch-classes or more.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> In an interview with Jonathan Bernard, Carter clarified that he prefers the word &#8220;chord&#8221; to the more commonly-used &#8220;set,&#8221; (<a href="#bernard_and_carter_1990" id="citation_bernard_and_carter_1990_67dc9ad698bab">Bernard and Carter 1990</a>, 203) and his numbering system does not correspond to that which Allen Forte outlines in 
+<i>The Structure of Atonal Music</i> (<a href="#carter_2002" id="citation_carter_2002_67dc9ad698bac">Carter 2002</a>, 23&#8211;26). Carter identifies each chord with a symbol, to indicate cardinality, and a number, which refers to the chord&#8217;s placement on his list. For example, the number &#8220;1&#8221; enclosed in a triangle refers to the first trichord on Carter&#8217;s list, Forte&#8217;s 3-12[048]. The number &#8220;1&#8221; inside a square refers to the first tetrachord on Carter&#8217;s list, Forte&#8217;s 4-1[0123].<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>  
+</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Interval scheme for the Fifth String Quartet from a March 27 sketch</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="jenkins_ex1_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[5] Although Carter&#8217;s harmonic classification system presupposes equivalence under transposition and inversion, he does not recognize interval-class equivalence. &#8220;I distinguish between an interval and its inversion and often use them for very different musical effects&#8221; (<a href="#bernard_and_carter_1990" id="citation_bernard_and_carter_1990_67dc9ad698ca9">Bernard and Carter 1990</a>, 201). In many of Carter&#8217;s compositions since the Second String Quartet (1959), he limits the allowable intervals for each instrument or instrument group, giving each its own characteristic sound. The chart in 
+<b>Example 1</b>, found among the sketch material for the Fifth Quartet and written in blue highlighter, shows the allowable intervals for each instrument in this work. Just to be clear, these are allowable
+<i>intervals</i>, not interval classes. For example, if the first violin is playing D5, it may proceed melodically to either F5 (up an interval-3) or to B4 (down an interval-3), but it cannot proceed to either B5 or F4, because these pitches lie an interval-9 away from D5, an interval that is not allowed for this instrument.
+	</p>
+<div style="width:300px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. All-interval twelve-note chords in (a) <i>Night Fantasies</i> and (b) String Quartet no. 4</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="jenkins_ex2_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[6] The intervals in Example 1 constrain not only melodic motion in the Fifth Quartet, but also the vertical intervals played by each instrument as double, triple, and quadruple stops. As Carter has said, the harmonic &#8220;spacing in chords is a very important matter in my work&#8221; (<a href="#bernard_and_carter_1990" id="citation_bernard_and_carter_1990_67dc9ad698cbf">Bernard and Carter 1990</a>, 201). In many of Carter&#8217;s compositions since 1980, all-interval twelve-note chords, ordered in pitch space rather than in time, provided a mechanism for exhausting the aggregate while placing constraints on intervallic spacing.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  
+<b>Examples 2a and 2b</b>, from 
+<i>Night Fantasies</i> and String Quartet no. 4 (1986), respectively, are typical examples of all-interval twelve-note chords in Carter&#8217;s music. In
+Example 2a, complementary intervals are mirrored around the central tritone, while in Example 2b, the tritone remains in the center, and complementary intervals fall in the same position within each discrete hexachord.
+</p>
+<p>[7] In June 1992, John Link sent Carter a list of all-interval twelve-note chords that contain &#8220;one or more instances of the all-trichord hexachord [012478] as a contiguous subset.&#8221;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>  Link found an autograph sketch of these chords written in music notation dated June 20th, 1992 at the Paul Sacher Stiftung labeled &#8220;since Link,&#8221;<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup>  and these all-interval twelve-note chords have come to be known as &#8220;Link chords&#8221; (<a href="#schiff_1998" id="citation_schiff_1998_67dc9ad698cc3">Schiff 1998</a>, 325&#8211;27). Carter incorporated Link chords in the &#8220;Partita&#8221; and &#8220;Adagio tenebroso&#8221; movements of the orchestral work 
+<i>Symphonia</i> (1993&#8211;96), and in the vocal work, <i>Of Challenge and of Love</i> (1994). 
+
+</p>
+<p>[8] It may be that Carter thought about incorporating an all-interval twelve-note chord in the Fifth Quartet.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  The earliest sketch for the Quartet bears the stamp &#8220;JAN. 15, 1995,&#8221; with the word &#8220;ANFANG!&#8221; (beginning) written at the top in pencil.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>  A few days later, on a sketch stamped &#8220;JAN. 17, 1995,&#8221; Carter wrote &#8220;Links list,&#8221; which could perhaps be a reference to the list Link prepared for Carter.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>  However, I did not uncover any other sketch evidence that suggests that Carter considered any Link chords as the harmonic basis of the Fifth Quartet. 
+</p>
+<p>[9] Rather than focus on all-interval twelve-note chords, many of the early sketches include various combinations of tetrachords. A sketch stamped &#8220;JAN. 17 1995&#8221; shows some pre-compositional sketching in which Carter worked out his ideas for the harmonic underpinnings of the Fifth Quartet. He wrote all the pitches in lead pencil, and circled the entire page in green pencil. Examples 3 and 4, although relatively brief when compared to the wealth of information Carter left in his pre-compositional sketches for the work, provide representative examples of the work&#8217;s initial stages of development. For all such sketches, one must assume a treble clef.
+</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. [0369] pre-compositional material from the sketch stamped JAN. 17 1995 and circled in green pencil, with a marking of blue highlighter</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="jenkins_ex3_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>			<br>
+</div>
+<p>[10] The upper staff of <b>Example 3</b> begins with {47A1}, a member of sc[0369] or chord #5 on Carter&#8217;s list of tetrachords. (In this and all of the following examples that include transcriptions of source material, Carter&#8217;s sigla, such as the number &#8220;5&#8221; inside a square, are original to the sketches. All prime form labels in brackets are purely editorial, and serve only as a guide to those more familiar with the pitch-class set nomenclature.) The next two measures contain distinct members of each of the all-interval tetrachords, sc[0146] and sc[0137], which combine with the initial [0369] tetrachord to complete the aggregate.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup>  The staff below the second measure includes the other two members of sc[0369], suggesting another possible combination with the initial [0369] tetrachord to complete the aggregate. This example reveals that while the sketches do not contain all-interval twelve-note chords, they do show an emphasis on aggregate completion and subset content.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>   
+	</p>
+<p>[11] <b>Example 4</b> focuses on four-note chord #12, sc[0268]. As with the previous example, Example 4 shows that Carter sought ways to divide the complementary octachord, sc[0124678A], into [0146] and [0137] subsets. The sketch also reveals Carter&#8217;s interest in other subset pairings. On the third staff of the example, Carter wrote out a member of the [0124678A] octachord, and divided it into a statement of the all-trichord hexachord and an interval-4. He then proceeded to circle the top three staves of this example with a red pencil, indicating his interest in this material.
+	</p>
+<div style="width:300px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. &#8220;Sym.&#8221; example from the March 27 interval scheme sketch</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="jenkins_ex5_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[12] As the blue square in Example 3 shows, the large page from which 
+Examples 3 and 4 were excerpted included a mark in blue highlighter in the upper 
+left-hand corner, revealing a connection between these examples and the interval chart in Example 1, 
+the only other sketch material written in blue highlighter. Since the interval chart bears the date &#8220;March 27,&#8221; the 
+blue square suggests that Carter wrote out the chords in Examples 3 and 4 on January 17, and then came back to the sketch later to choose which chords and partitions of chords he was going to use, marking these with 
+the highlighter. 
+<b>Example 5</b>, taken from the same sheet of paper that includes the interval chart of March 27, provides additional information about how Carter manipulates harmonic material in the Fifth Quartet. The example begins with {45AB}, a member of sc[0167], followed by four distinct interval-4s.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup>  One notes that the combination of the member of sc[0167] with 
+<i>any</i> of the interval-4s always results in a member of the <i>same</i> hexachord, sc[012478] (the all-trichord hexachord).
+</p>
+<p>[13] Robert Morris (<a href="#morris_1990" id="citation_morris_1990_67dc9ad698cde">1990</a>) defines the segmentation of the all-trichord hexachord into subsets of [0167] and [04] as an example of what he terms the Complement Union Property. If the nonintersecting members of two different set classes always result in the same third set class, this third set class has the Complement Union Property, or CUP. As various scholars have shown, CUP spaces play an important role in Carter&#8217;s recent music.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup>   In a 1996 interview, Carter suggests that a methodology that takes a dynamic view of CUP sets will be fruitful in the analysis of his music.  He states:
+<blockquote>The whole harmonic structure (of my music) depends enormously on the idea of using one note as a pivot, two notes as a pivot from one chord to the next; sometimes three. For instance, in the all-trichord hexachord [012478]...[i]t&#8217;s possible to hold five and change one, or hold four and change two, and so forth&#8212;I&#8217;ve studied all of that quite carefully. A lot of my pieces come from having this study&#8212;which notes can be held, and which&#8212;when you want a maximum of harmonic change&#8212;hold two notes and have the other four move and so forth.  When you want a little&#8212;just have one note move (<a href="#capuzzo_1996" id="citation_capuzzo_1996_67dc9ad698ce1">Capuzzo 1996</a>, quoted in <a href="#capuzzo_1999" id="citation_capuzzo_1999_67dc9ad698ce3">Capuzzo 1999</a>, 13&#8211;14).</blockquote>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Reduction of measures 574&#8211;575 <br>of Partita with analysis</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="jenkins_ex6_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. [0167]/[04] CUP space <br>modeled after Morris (1990, 188)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="jenkins_ex7_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Carter&#8217;s plan for the Fifth String Quartet</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="jenkins_ex8_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[14] <b>Example 6</b> is a reduction of measures 574&#8211;575 of Carter&#8217;s Partita, the first movement of
+<i>Symphonia</i>, composed in 1993.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup>  The top staff of Example 6 reduces ostinato-like figures presented in the woodwinds and strings that sustain the set {1278}, a member of sc[0167].  The bottom staff presents three dyads heard in the horns and trombones, all of which are members of interval-class 4.
+</p>
+<p>[15] <b>Example 7</b> is a diagram of the [0167]/[04] CUP space, modeled after one by Morris (<a href="#morris_1990" id="citation_morris_1990_67dc9ad698cee">Morris 1990</a>, 188). The diagram includes members of sc[0167] and sc[04] in nodes, with nonintersecting members of these set-classes connected with a line. The union of any two sets connected by a line results in a member of sc[012478].  The top of the example contains the segment of the space that Carter orchestrates in the passage from Partita.  Carter composes out the first hexachord from the passage, {78B123}, as the union of {1278}, a member of sc[0167], and {B3}, a member of sc[04]. When the horns and trombones move from {B3} to {6A}, and the woodwinds and strings sustain {1278}, the resulting hexachord, {678A12}, remains a member of sc[012478]. The same proves true when the brass then moves to {59}, as the resulting hexachord, {125789}, is also a member of sc[012478]. Thus, although the pitch-class content of the passage changes with each new dyad, the same set-class, [012478], results from each new pairing of the non-intersecting members of sc[0167] and sc[04], and the passage remains within the [0167]/[04] CUP space. In other words, the passage exhibits the generation of sc[012478] by sc[0167] and sc[04] via CUP.
+
+
+</p>
+<p style="text-align: center"><b>III. The &#8220;Lento espressivo movement&#8221; &#8211; 
+Initial compositional stage
+	</b>
+</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[16] As the sketch material and the analysis below shows, Carter further explored the dynamic possibilities of CUP spaces in the Fifth Quartet.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup>  Before delving into the specifics, first consider the overall shape of the work. 
+<b>Example 8</b>, included in the materials at the Sacher Stiftung, shows Carter&#8217;s plan for the Fifth Quartet.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup>  Carter comprised the Quartet of six movements-proper, preceded these with an introduction, and connected them with five intervening interludes into a continuous structure. As Example 8 shows, Carter wrote the information about the movements-proper in lead pencil, and filled in the content of the introduction and interludes in red pencil. The introduction and interludes contain material from the six movements-proper, serving both to foreshadow what will come, as well as mull over that which has already passed. As Carter 1995 indicates, he intended for the work to capture something about how chamber musicians rehearse short passages, discuss them, and then put larger sections of music together.
+</p>
+<p>[17] The sketches are a physical manifestation of the creative process Carter alludes to in his program notes. Originally written on King Brand 24-stave paper with two leaves attached into a folio, Carter worked on each movement at various times, leaving ideas for a single movement scattered among several pieces of manuscript paper. He then tore many of the pages into single leaves, and taped these together into a thick booklet that approximates the final composition. To clarify the connections from one section to the next, Carter often drew arrows across one or more pages.
+</p>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Published movements of the Fifth String Quartet</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="jenkins_ex9_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. First attempt, stamped FEB. 03 1995</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="jenkins_ex10_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Long-range polyrhythm sketch</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="jenkins_ex11_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[18] In Example 8, Carter identified the movements-proper with Roman numerals I-VI and shorthand names. In the published score, he labeled the twelve sections of the Quartet with Arabic numerals 1&#8211;12, shown in 
+<b>Example 9</b>; the shorthand names such as &#8220;very fast&#8221; and &#8220;harmonics slow&#8221; become &#8220;Allegro energico&#8221; and &#8220;Adagio sereno,&#8221; respectively. Throughout the sketches, he referred to the second movement-proper as &#8220;slow,&#8221; distinguishing it from &#8220;harmonics slow.&#8221; In the finished work, this movement became the fourth section of the composition, &#8220;Lento espressivo.&#8221;
+	</p>
+<p>[19] <b>Example 10</b> shows an excerpt from a sketch stamped &#8220;FEB. 03 1995,&#8221; Carter&#8217;s earliest pitch sketch for &#8220;Lento espressivo.&#8221; In the first measure, each instrumental part contains a dyad that is one of its allowable intervals. Taken together, these pitches form {4568AB02}, a member of sc[0124678A]. The dyads in the second measure form {5679B013}, also a member of sc[0124678A]. In the transformation from one octachord to the next, the pitches {56B0}, which form a member of sc[0167], are held as common tones. (In fact, he fixed these pitches in register, if not in instrumentation.) In the first octachord, this [0167] tetrachord joins with a member of sc[0268], {248A}; in the second octachord, it joins with {1279}, a different member of sc[0268]. In fact, if one combines 
+<i>any</i> member of sc[0167] with <i>any</i> nonintersecting member of sc[0268], the result will 
+<i>always</i> be a member of sc[0124678A]. Therefore, the combination of [0167] and [0268] to form [0124678A] is yet another example of CUP.
+</p>
+<div style="width:500px;float:right;border:none;margin-left:30px">
+</div>
+<p>[20] On his first attempt at the &#8220;Lento espressivo&#8221; movement on February 3, Carter stopped orchestrating the material from the CUP space after writing out the two chords in Example 10, circling and questioning his choice for the second violin part. He turned his attention from pitch to rhythm, and composed the first line of the polyrhyhmic sketch in 
+<b>Example 11</b>, returning to it the next day on February 4th.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup>  The word &#8220;slow&#8221; in the left margin indicates that Carter intended to use this material for the &#8220;Lento espressivo&#8221; movement. Each vertical line represents a bar line, marking off a measure in 4/4 time, but the sketch includes no designation of tempo (the numbers above each line are measure numbers). The fact that Carter numbered the first measure &#8220;73&#8221; indicates that even at this early stage, he must have had some idea of the overall shape of the composition, or at least about the material prior to this movement. Measures 73&#8211;90 of Example 11 include four rhythmic lines in score order. The beats of the first violin line are subdivided into thirty-second-note septuplets; the second violin into sixteenth-note quintuplets; the viola into eighth-note triplets; and the cello into sixteenth notes. Carter stopped notating the second violin line in measure 91, the cello in measure 97, and the viola in measure 101, leaving only the first violin remaining, revealing the sketch&#8217;s fragmentary nature.
+As the example shows, Carter used a different colored pencil for each 
+instrument.</p>
+<p>[21] As <a href="#link_1994" id="citation_link_1994_67dc9ad698d08">Link 1994</a>  has shown, the long-range polyrhythms in Carter&#8217;s music that predates the Fifth Quartet involve two or more pulse strands in a proportional relationship. For example, String Quartet no. 4 is based on a 120:126:175:98 polyrhythm, with each instrument of the quartet articulating one of the four pulse strands. The polyrhythm not only structures the entire work, but also limits the number of coincident attacks that involve two or more instruments, contributing to the sense of the rhythmic independence of each voice&#8212;which has long been a concern of Carter&#8217;s. In fact, the polyrhythm employed in String Quartet No. 4 allows for only two coincident points in the entire composition that involve all four instruments&#8212;beat 1 of measure 3 and the final chord of the piece. 
+	</p>
+<p>[22] The sketch in Example 11 shows that Carter had planned for each instrumental part in the &#8220;Lento espressivo&#8221; movement of the Fifth Quartet to include its own two-voice polyrhythm, resulting in a structural polyrhythm of eight, rather than four, different pulse strands. Carter notated one polyrhythmic pulse strand with filled-in noteheads and the other with open squares.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup>  Had the sketch in Example 11 been brought to fruition, it would have been among the most intricate long-range polyrhythms in all of Carter&#8217;s music. 
+<b>Example 12</b> summarizes the polyrhythms in this sketch. 
+	</p>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b>. &#8220;Make more intense?&#8221; (FEB. 04 1995)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=12&nonav=true"><img border="1" alt="Example 13 thumbnail" src="jenkins_ex13_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[23] On a sketch stamped &#8220;FEB. 04 1995,&#8221; Carter began to realize the polyrhythmic framework with pitch material. The transcription in 
+<b>Example 13</b> faithfully reproduces this draft, but also includes editorial filled-in noteheads and open squares to mark the articulation of each polyrhythmic strand. In keeping with his practice in composing out other long-range polyrhythms, Carter articulated many, but not all, of the pulses of each pulse strand.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup>  The sketch opens with the same chord, in the same spacing, as the first chord of Example 10; the second chord has the same pitch-class content as the second chord of Example 10, but the spacing of the two chords is quite different.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup>  Not only did Carter alter the content of the second violin, which he so clearly questioned in an earlier sketch (cf. Example 10), but he also moved the first violin down an octave and changed the pitches in the viola and the cello. With all of the changes in voicing, however, the second octachord still derives from the first via the [0167]/[0268] CUP space. Even though the two chords are not literally connected&#8212;there is a beat of silence after the first one&#8212;they hold a member of sc[0167], {56B0}, in common, while switching out one non-intersecting member of sc[0268], {248A}, for another, {359B}. 
+	</p>
+<p>[24] In the sketch in Example 13, Carter composed out only eight measures of the polyrhythmic grid in Example 11, but, as the analysis below shows, the approach to harmonic materials bears out its influence in later sketches. For example, just as Carter built up [0124678A] octachords from double stops in each instrument in measures 73&#8211;74, he repeated that process in measures 77&#8211;78, where the first double stop in each instrument combines to form {34579AB1} and the second double stop in each instrument combines to form {4568AB02}. Both octachords, members of sc[0124678A], hold {45AB}, a member of sc[0167], in common, while replacing {1379} with {0268}, both members of sc[0268]. The sketch also includes instances of single pitches in each voice that combine to form sets that will be of harmonic importance to the movement. The first single pitches in the instruments, G<span class=\"sharp\"></span>&nbsp;in the first violin, E and then D in the second violin, and D and then Bb in the cello, form {248A}, a member of sc[0268].<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup>  Additionally, the single pitches at the end of measure 79 through the beginning of measure 80 mark &#8220;filled-in notehead&#8221; pulses, and form {469A}, a member of sc[0146], exposing another subset of the [0124678A] octachord that proves very important to the harmonic language of the final composition. 
+</p>
+<p>[25] As with the long-range polyrhythm sketch in Example 11, its realization in Example 13 trails off, revealing Carter&#8217;s lack of interest in continuing with this line of thought. He wrote, &#8220;Make more intense?&#8221; at the top of the February 4 draft and underlined it, opting to embark on a different path. No remnants of the polyrhythm remain in the final version of this movement, and I located no materials among the sketches for the Fifth Quartet to indicate that Carter pursued this long-range polyrhythm further.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup>  
+
+</p>
+<p style="text-align: center"><b>IV. &#8220;Lento espressivo&#8221; &#8211; Second compositional stage
+</b>
+</p>
+<p>[26] The next sketch relating to &#8220;Lento espressivo&#8221; dates from April 2, when Carter began working again with tetrachord #12, sc[0268], combining it with the two all-interval tetrachords, or with the all-trichord hexachord and an interval-4, to exhaust the aggregate. 
+<b>Example 14</b> shows that Carter marked three tetrachords among this pre-compositional material for attention&#8212;a member of sc[0167] and two members of sc[0268]&#8212;which serve as a representation in music notation of a subset of the [0167]/[0268] CUP space. 
+<b>Example 15</b>, from the same sheet of staff paper, includes a circled member of sc[02468A] and three members of sc[06]. Although Carter only circled the last member of sc[06], the combination of the member of sc[02468A] with any of these members of sc[06] forms a member of sc[0124678A]. In fact, the combination of 
+<i>any</i> member of sc[02468A] with <i>any</i> non-intersecting member of sc[06] 
+<i>always</i> yields a member of sc[0124678A]. Therefore, the [02468A]/[06] subset pairing provides a second example of CUP that results in a statement of sc[0124678A]. As the analysis below demonstrates, in the absence of a long-range polyrhythm or an all-interval twelve-note chord, the [0167]/[0268] and [02468A]/[06] CUP spaces became the basis for the &#8220;Lento espressivo&#8221; movement. 
+	</p>
+	<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 14</b>. [0268] pre-compositional sketch from April 2</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="jenkins_examples.php?id=13&nonav=true"><img border="1" alt="Example 14 thumbnail" src="jenkins_ex14_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 15</b>. [02468A] pre-compositional sketch from April 2</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="jenkins_examples.php?id=14&nonav=true"><img border="1" alt="Example 15 thumbnail" src="jenkins_ex15_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 16</b>. April 9 sketch with circles and boxes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=15&nonav=true"><img border="1" alt="Example 16 thumbnail" src="jenkins_ex16_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 17</b>. April 9 sketch (marked &#8220;slow&#8221;)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=16&nonav=true"><img border="1" alt="Example 17 thumbnail" src="jenkins_ex17_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 18</b>. April 9 draft (marked &#8220;slow&#8221;)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=17&nonav=true"><img border="1" alt="Example 18 thumbnail" src="jenkins_ex18_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 19</b>. Reduction of measures 86&#8211;88 of the published score</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=18&nonav=true"><img border="1" alt="Example 19 thumbnail" src="jenkins_ex19_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 20</b>. Harmonic reduction of the &#8220;Lento espressivo&#8221; movement of the Fifth String Quartet</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=19&nonav=true"><img border="1" alt="Example 20 thumbnail" src="jenkins_ex20_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[27] Carter began sketching the slow movement again on April 9, shown in <b>Example 16</b>. This material comes from the same page as Example 10 (which is also stamped FEB. 03 1995), and is taped to the page dated April 2 from which the material in Examples 14 and 15 come. The boxed pentachord in the second measure includes the trichord {B05}, a member of sc[016], in the upper three voices, and {39} in the cello. The combination of pc3 with the trichord results in a member of sc[0146], while the combination of pc9 with the trichord results in a member of sc[0137].<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup>  Carter combined all of the pitches in measures 2&#8211;3 into a single [0124678A] octachord in measure 4, around which he drew a box. This material, with this particular spacing of the [0124678A] octachord, emerges in the introductory measures of the final version of the &#8220;Lento espressivo&#8221; movement.
+	</p>
+<div style="width:500px;float:right;border:none;margin-left:30px">
+</div>
+<p>[28] <b>Example 17</b>, another sketch dated &#8220;Apr. 9,&#8221; shows the next stage in the compositional process. The first measure includes the same pitches as measures 2&#8211;3 of the previous example, but in this example their placement indicates something about how Carter would rhythmicize the texture, avoiding coincident attacks among instruments. The final three measures of the example show how Carter planned to continue to work with these pitches to eventually build up a statement of sc[0124678A]. The material in measures 2&#8211;4 with filled-in noteheads contains other members of sc[0124678A]. Even though the octachord in measure 2 does not survive in the final composition, the spacings in measures 3 and 4 serve as the second and third statements of the [0124678A] octachord in the movement. 
+	</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[29] Carter skipped a staff line after the material in Example 17, and composed the sketch in 
+<b>Example 18</b>. Here he took the pitch material of Example 17 and defined the rhythm of each part quite clearly. Although he continued to avoid coincident attacks, as suggested by the placement of the pitches in measure 1 of Example 17, he did not incorporate the long-range polyrhythm he had composed on February 3&#8211;4 into the sketch in Example 18. However, this sketch does include precise rhythmic notation in all voices, and thus, emerges as the first one for the &#8220;Lento espressivo&#8221; movement that post-dates February 4 in which the texture resembles a finished product. With a couple of immaterial exceptions, the pitch and rhythm content of the first four measures of Example 18 corresponds exactly to measures 86&#8211;90 of the completed work, the beginning of the &#8220;Lento espressivo&#8221; movement.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup></p>
+<div style="width:550px;float:right;border:none;margin-left:30px">
+</div>
+<p>[30] <b>Example 19</b> shows a reduction of measures 86&ndash;88 of the published 
+score (compare with Example 18). In measure 86, each instrument presents a 
+single pitch, resulting in the tetrachord {1367}, a member of sc[0146]. 
+Beginning in measure 87, each subsequent attack in every instrumental voice 
+results in a new tetrachord. The six tetrachords in measures 86&ndash;88 form a 
+symmetrical structure with tetrachords 1 and 6, 2 and 5, and 3 and 4 related by I<sub>6</sub>. The union of tetrachords 1 and 5, as well as the union of tetrachords 2 and 6, is {5679B013}, the initial statement of sc[0124678A] in the movement.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup>  
+</p>
+<p>[31] The end of the first system of the draft in Example 18 shows this first octachord and the transformation to the second [0124678A] octachord (completed by the viola at the beginning of the second system). Although the octachord initially emerges as the union of two all-interval tetrachords, the [0167]/[0268] CUP space governs the transformation between octachordal statements. The end of the second system shows a member of sc[02468A] and a member of sc[06], with two additional interval-6s below&#8212;a musical notation of a [02468A]/[06] CUP space&#8212;indicating how Carter would lead from one statement of the [0124678A] octachord to another later in the movement.
+
+</p>
+<p style="text-align: center"><b>V. CUP-space voice-leadings in the published work
+</b>
+</p>
+<div style="width:550px;float:right;border:none;margin-left:30px">
+</div><p>[32] The published version of the &#8220;Lento espressivo&#8221; movement lasts from measures 86&#8211;110. It contains eight simultaneous statements of the [0124678A] octachord, shown in the reduction in Example 20, where the chords bear a Pn-label, and n indicates the number of semitones that the set is transposed from the prime form starting on 0.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup>  These chords serve as pillars, providing structure and direction for the voice-leading motion in the movement. In the progression of octachords in
+<b>Example 20</b>, P<sub>5</sub> emerges as referential, appearing not only as the first and last octachord, but also twice in the center of the example. The octachords form a symmetrical pattern related by I<sub>6</sub>&#8212;the same inversional relationship about which the introductory tetrachords are symmetrical, as was shown in Example 19.  
+</p>
+<p>[33] Carter constrains the voice-leading motion from one statement of the octachord to the next within the context of the [0167]/[0268] and [02468A]/[06] CUP spaces, shown in 
+<b>Examples 21</b> and <b>22</b>. Beginning with the [0167]/[0268] CUP space, Chord 1, P<sub>5</sub>, is interpreted as the union of {0167} and {359B}. By holding {0167} invariant, and moving {359B} to {248A}, P<sub>5</sub> is mapped onto P<sub>0</sub>. P<sub>0</sub>, Chord 2, can then be reinterpreted as the union of {1278} and {46A0}. When {1278} holds invariant, and {46A0} moves to {359B}, P<sub>0</sub> moves to P<sub>1</sub>.
+	</p>
+	<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 21</b>. [0167]/[0268] CUP space</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="jenkins_examples.php?id=20&nonav=true"><img border="1" alt="Example 21 thumbnail" src="jenkins_ex21_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 22</b>. [02468A]/[06] CUP space</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="jenkins_examples.php?id=21&nonav=true"><img border="1" alt="Example 22 thumbnail" src="jenkins_ex22_small.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge and see the rest)</font></p></td></tr></table>
+
+<p>[34] In the [02468A]/[06] CUP space, Chord 3, P<sub>1</sub>, results from the union of {13579B} and {28}.  In the movement from Chord 3 to Chord 4, {13579B} holds invariant and {28} moves to {06}, mapping P<sub>1</sub> onto P<sub>5</sub>.  P<sub>5</sub> is reiterated as the fifth chord in the sequence, at which point it is mapped onto P<sub>3</sub> within the [02468A]/[06] CUP space.  {13579B} holds invariant, and {06} moves to {4A}.  Chord 6, P<sub>3</sub>, can then be reinterpreted in the [0167]/[0268] CUP space as the union of {1379} and {45AB}.  {45AB} holds invariant, and {1379} moves to {0268}, mapping P<sub>3</sub> onto P<sub>4</sub>. Chord 7, P<sub>4</sub>, can then be reinterpreted within the [0167]/[0268] CUP space, where a {56B0} subset of P<sub>4</sub> holds invariant, and {248A} moves to {1379}, returning the movement to a statement of P<sub>5</sub>, Chord 8. 
+</p>
+<p>[35] Some of these CUP-space voice-leadings appear closer to the surface of the music than others. The transformation from Chord 1 to Chord 2 happens in rather quick fashion over the course of measure 90, but that is nothing compared to the rapid-fire motion from Chord 5 to Chord 6 to Chord 7 in measure 100 that marks the movement&#8217;s dramatic high point.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup>  The transitions between other chords are not so clearly marked on the music&#8217;s surface. In these instances, Carter uses the space between octachords to expose thinner textures and non-CUP subsets. 
+</p>
+
+<div style="width:550px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 23</b>. Reduction of measures 91&#8211;94</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=22&nonav=true"><img border="1" alt="Example 23 thumbnail" src="jenkins_ex23_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[36] The transition between Chords 2 and 3 provides a case in point. The reduction in 
+<b>Example 23</b> reveals the chords that result in this transition. Recall that Carter exposed the components parts of octachord in the introduction of &#8220;Lento Espressivo,&#8221; measures 86&#8211;88, and then combined these elements together to form the initial octachordal statement in measure 89. As Examples 16 and 19 showed, Carter conceived of Chord 1 in its all-interval tetrachord pairings before reinterpreting it in a [0167]/[0268] CUP space and transitioning to Chord 2. When the players release Chord 2 in measure 91, only the second violin remains, playing C4. The other instruments join in with a single pitch, all of which are fixed in register, if not in instrumentation, from their placement in Chord 2. These four pitches form {0146}, a member of sc[0146]. Each instrument changes to a new single pitch, one at a time, moving the harmony through statements of sc[0148] and sc[0147], before arriving at another member of sc[0146] that is also a subset of Chord 2, {2478}. When the first violin falls by tritone from E5 to B<span class=\"flat\"></span>4, the harmony changes from a statement of sc[0146] to a statement of sc[0137], another literal subset of Chord 2. The melodic interval-6 in the first violin in measure 93 from E5 to B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top">4 marks a rare moment when a melodic interval does not conform to the interval scheme set forth for this Quartet in Example 1. For an example of this phenomenon in the Oboe Concerto, see <a href="#heinemann_2001" id="citation_heinemann_2001_67dc9ad698d5d">Heinemann 2001</a>. These &#8220;residue&#8221; tetrachords serve to keep the memory of Chord 2 alive while preparing for the arrival of Chord 3, initiated by the second violin double stop at the end of measure 93 and completed by the first violin at the end of measure 94.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> 
+</p>
+
+<p>[37] With the span of musical time between Chords 2 and 3 being much longer than that between Chords 1 and 2, can one really maintain that there is a CUP-space voice-leading between the two? Certainly, the CUP-space voice leading between Chords 2 and 3 is not so easily heard as that between Chords 1 and 2, but the sketches support a hearing the connects Chord 2 to Chord 3. Return to Example 17. Here, measures 3 and 4 contain Chords 2 and 3 with the instrumentation and spacing they retain in the finished movement. One can clearly see that the common-tone voice leading between the two occurs in the [0167]/[0268] CUP space. This sketch shows a very initial stage of this part of the movement&#8212;one that includes only the octachordal goal posts. Only in a later draft did the all-interval tetrachordal subsets that preoccupy the harmony between Chords 2 and 3 emerge.  Thus, although not all CUP-space voice leadings may be immediately apparent, a CUP-space model for chord to chord motion in this movement reveals itself to be profitable not only as an abstract construction, but also as something ferreted out by the sketch materials.<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup> 
+</p>
+<div style="width:350px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 24</b>. Reduction of measure 110</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="jenkins_examples.php?id=23&nonav=true"><img border="1" alt="Example 24 thumbnail" src="jenkins_ex24_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[38] 
+Although the octachordal statements exit the texture at the beginning of measure 104, the movement continues until measure 110, comprised almost exclusively of statements of the all-interval tetrachords (see 
+<b>Example 24</b>). As the movement nears its end, the upper three instruments in measure 109 sustain pitches that form {B356}, a member of 
+sc[0137], at a pianissimo dynamic. The cello punctures the placid calm with a boisterous {8902} quadruple stop, a member of 
+sc[0146]. This time, the union of the all-interval tetrachords is not a statement of 
+sc[0124678A], but {235689B0}, a member of sc[0134679A], the octatonic collection. Thus, at the movement&#8217;s close, Carter composed out the complement of [0369] as a statement of each of the all-interval tetrachords, as he had contemplated on JAN. 17 in some of the earliest sketches for the work (see Example 4). The cello quadruple stop introduces the fifth section of the Quartet, Interlude II.<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup> 
+
+</p>
+
+<p style="text-align: center"><b>VI. Conclusion
+	</b>
+</p>
+<p>[39] The analysis presented here has focused largely on pitch material, leaving one to ask about rhythmic structure. In the Fifth String Quartet, Carter continues to avoid coincident attacks among instruments, but this compositional choice is not directed throughout by a structural polyrhythm. In the years since the Fifth String Quartet, some of Carter&#8217;s scores evidence less and less interest in densely-packed rhythmic structures and the avoidance of coincidence. For example, in compositions such as the Cello Concerto (2001) and 
+<i>Dialogues</i> (2003), the instruments play in rhythmic unison, something not heard in a Carter composition for many years. And, as Link 2008 reports, 
+<i>Sound Fields</i> (2007) &#8220;contains no rhythm more complicated than an eighth note!&#8221; Given these developments, in retrospect, Carter&#8217;s abandonment of an all-encompassing long-range polyrhythm in the Fifth Quartet marks a turning point in his compositional practice.
+	</p>
+<p>[40] Schiff writes that in the Fifth String Quartet, Carter, &#8220;strips his music down to its essentials&#8221; (<a href="#schiff_1998" id="citation_schiff_1998_67dc9ad698d64">Schiff 1998</a>, 92). This paper has shown that dynamic motion with CUP spaces that proves essential to the &#8220;Lento espressivo&#8221; movement of the Quartet. Carter continued to investigate the dynamic possibilities of CUP spaces in his opera, 
+<i>What Next?</i> (1998). Years later, we can only wonder what <i>will</i> come next from this preeminent American composer.</p>
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	J. Daniel Jenkins<br>
+	University of South Carolina<br><a href="mailto:djenkins@mozart.sc.edu">djenkins@mozart.sc.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_aylward_2009" class="flyoverdiv">Aylward, John. 2009. &#8220;Metric Synchronization and Long-Range Polyrhythms in Elliott Carter&#8217;s Fifth String Quartet.&#8221; <i>Perspectives of New Music</i> 47/2 (Summer): 88&#8211;99.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="aylward_2009"></a>Aylward, John. 2009. &#8220;Metric Synchronization and Long-Range Polyrhythms in Elliott Carter&#8217;s Fifth String Quartet.&#8221; <i>Perspectives of New Music</i> 47/2 (Summer): 88&#8211;99.</p><div id="citediv_bauer-mengleberg_and_ferentz_1965" class="flyoverdiv">Bauer-Mengelberg, Stefan and Melvin Ferentz. 1965. &#8220;On Eleven-Interval Twelve-Tone Rows.&#8221; <i>Perspectives of New Music</i> 3/2 (Spring&#8211;Summer): 93&#8211;103.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bauer-mengleberg_and_ferentz_1965"></a>Bauer-Mengelberg, Stefan and Melvin Ferentz. 1965. &#8220;On Eleven-Interval Twelve-Tone Rows.&#8221; <i>Perspectives of New Music</i> 3/2 (Spring&#8211;Summer): 93&#8211;103.</p><div id="citediv_bernard_2009" class="flyoverdiv">Bernard, Jonathan. 2009. &#8220;The String Quartets of Elliott Carter.&#8221; In <i>Intimate Voices: Aspects of Construction and Character in the Twentieth-Century String Quartet,</i> vol. 2. Edited by Evan Jones. Rochester, University of Rochester Press, 238&#8211;275.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bernard_2009"></a>Bernard, Jonathan. 2009. &#8220;The String Quartets of Elliott Carter.&#8221; In <i>Intimate Voices: Aspects of Construction and Character in the Twentieth-Century String Quartet,</i> vol. 2. Edited by Evan Jones. Rochester, University of Rochester Press, 238&#8211;275.</p><div id="citediv_bernard_and_carter_1990" class="flyoverdiv">Bernard, Jonathan and Elliott Carter. 1990. &#8220;An Interview with Elliott Carter.&#8221; <i>Perspectives of New Music</i> 28/2 (Summer): 180&#8211;214.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bernard_and_carter_1990"></a>Bernard, Jonathan and Elliott Carter. 1990. &#8220;An Interview with Elliott Carter.&#8221; <i>Perspectives of New Music</i> 28/2 (Summer): 180&#8211;214.</p><div id="citediv_boland_2006" class="flyoverdiv">Boland, Marguerite. 2006. &#8220;&#8216;Linking&#8217; and &#8216;Morphing&#8217;: Harmonic Flow in Elliott Carter&#8217;s <i>Con Leggerezza Pensosa</i>.&#8221; <i>Tempo</i> no. 237 (July): 33&#8211;43.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="boland_2006"></a>Boland, Marguerite. 2006. &#8220;&#8216;Linking&#8217; and &#8216;Morphing&#8217;: Harmonic Flow in Elliott Carter&#8217;s <i>Con Leggerezza Pensosa</i>.&#8221; <i>Tempo</i> no. 237 (July): 33&#8211;43.</p><div id="citediv_budelier_2009" class="flyoverdiv">Budelier, Patrick. 2009. &#8220;Maximizing the Miniature: Signature Chords and Covert Means in Elliott Carter&#8217;s Latest Music.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="budelier_2009"></a>Budelier, Patrick. 2009. &#8220;Maximizing the Miniature: Signature Chords and Covert Means in Elliott Carter&#8217;s Latest Music.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</p><div id="citediv_buchler_and_theisen_2009" class="flyoverdiv">Buchler, Michael and Alan Theisen. 2009. &#8220;Elliott Carter and the Sorcerer&#8217;s Stone: All-Interval Tetrachords as Musical Building Blocks.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="buchler_and_theisen_2009"></a>Buchler, Michael and Alan Theisen. 2009. &#8220;Elliott Carter and the Sorcerer&#8217;s Stone: All-Interval Tetrachords as Musical Building Blocks.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</p><div id="citediv_capuzzo_2007" class="flyoverdiv">Capuzzo, Guy. 2007. &#8220;Registral Constraints on All-Interval Rows in Elliott Carter&#8217;s <i>Changes</i>,&#8221; <i>Integral</i> 21: 79&#8211;108.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capuzzo_2007"></a>Capuzzo, Guy. 2007. &#8220;Registral Constraints on All-Interval Rows in Elliott Carter&#8217;s <i>Changes</i>,&#8221; <i>Integral</i> 21: 79&#8211;108.</p><div id="citediv_capuzzo_2004" class="flyoverdiv">Capuzzo, Guy. 2004. &#8220;The Complement Union Property in the Music of Elliott Carter,&#8221; <i>Journal of Music Theory</i> 48/1 (Spring): 1&#8211;24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capuzzo_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &#8220;The Complement Union Property in the Music of Elliott Carter,&#8221; <i>Journal of Music Theory</i> 48/1 (Spring): 1&#8211;24.</p><div id="citediv_capuzzo_1999" class="flyoverdiv">Capuzzo, Guy. 1999. &#8220;Variety Within Unity: Expressive Ends and their Technical Means in the Music of Elliott Carter, 1983&#8211;1994.&#8221; Ph.D. diss., Eastman School of Music, University of Rochester.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capuzzo_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. &#8220;Variety Within Unity: Expressive Ends and their Technical Means in the Music of Elliott Carter, 1983&#8211;1994.&#8221; Ph.D. diss., Eastman School of Music, University of Rochester.</p><div id="citediv_capuzzo_1996" class="flyoverdiv">Capuzzo, Guy. 1996. Interview with Elliott Carter. n.p.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="capuzzo_1996"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1996. Interview with Elliott Carter. n.p.</p><div id="citediv_carter_2002" class="flyoverdiv">Carter, Elliott. 2002. <i>Harmony Book</i>. Edited by Nicholas Hopkins and John F. Link. New York: Carl Fischer.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carter_2002"></a>Carter, Elliott. 2002. <i>Harmony Book</i>. Edited by Nicholas Hopkins and John F. Link. New York: Carl Fischer.</p><div id="citediv_carter_1995" class="flyoverdiv">Carter, Elliott. 1995. &#8220;Note from the Composer,&#8221; <i>String Quartet No. 5.</i> New York: Hendon Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="carter_1995"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1995. &#8220;Note from the Composer,&#8221; <i>String Quartet No. 5.</i> New York: Hendon Music.</p><div id="citediv_childs_2006" class="flyoverdiv">Childs, Adrian P. 2006. &#8220;<a href="http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.childs.html">Structural and Transformational Properties of All-Interval Tetrachords</a>.&#8221; <i>Music Theory Online</i> 12.4.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="childs_2006"></a>Childs, Adrian P. 2006. &#8220;<a href="http://www.mtosmt.org/issues/mto.06.12.4/mto.06.12.4.childs.html">Structural and Transformational Properties of All-Interval Tetrachords</a>.&#8221; <i>Music Theory Online</i> 12.4.</p><div id="citediv_heinemann_2001" class="flyoverdiv">Heinemann, Stephen. 2001. &#8220;Melodic Creation and Influence in Elliott Carter&#8217;s Recent Concertos.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Philadelphia.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="heinemann_2001"></a>Heinemann, Stephen. 2001. &#8220;Melodic Creation and Influence in Elliott Carter&#8217;s Recent Concertos.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Philadelphia.</p><div id="citediv_hooper_2009" class="flyoverdiv">Hooper, Jason. 2009. &#8220;A Transformational Approach to Harmony and Voice Leading in Elliott Carter&#8217;s Recent Music.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hooper_2009"></a>Hooper, Jason. 2009. &#8220;A Transformational Approach to Harmony and Voice Leading in Elliott Carter&#8217;s Recent Music.&#8221; Paper presented at the annual meeting of the Society for Music Theory, Montreal.</p><div id="citediv_jemian_2001" class="flyoverdiv">Jemian, Rebecca Ann. 2001. &#8220;Rhythmic Organization in Works by Elliott Carter, George Crumb, and John Adams: Rhythmic Frameworks, Timepoints, Periodicity, and Alignment.&#8221; Ph.D. diss., Indiana University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jemian_2001"></a>Jemian, Rebecca Ann. 2001. &#8220;Rhythmic Organization in Works by Elliott Carter, George Crumb, and John Adams: Rhythmic Frameworks, Timepoints, Periodicity, and Alignment.&#8221; Ph.D. diss., Indiana University.</p><div id="citediv_link_2008" class="flyoverdiv">Link, John. 2008. &#8220;Elliott Carter&#8217;s Late Music?&#8221; In &#8220;Carter's Century: Festival of Contemporary Music.&#8221; Tanglewood Music Center Program. n.p.: 79.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="link_2008"></a>Link, John. 2008. &#8220;Elliott Carter&#8217;s Late Music?&#8221; In &#8220;Carter's Century: Festival of Contemporary Music.&#8221; Tanglewood Music Center Program. n.p.: 79.</p><div id="citediv_link_1994" class="flyoverdiv">Link, John. 1994. &#8220;Long-range Polyrhythms in Elliott Carter&#8217;s Recent Music.&#8221; Ph.D. diss., City University of New York.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="link_1994"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1994. &#8220;Long-range Polyrhythms in Elliott Carter&#8217;s Recent Music.&#8221; Ph.D. diss., City University of New York.</p><div id="citediv_mead_1995" class="flyoverdiv">Mead, Andrew. 1995. &#8220;Twelve-Tone Composition and the Music of Elliott Carter.&#8221; In <i>Concert Music, Rock, and Jazz Since 1945: Essays and Analytic Studies.</i> Edited by Elizabeth West Marvin and Richard Hermann. Rochester, NY: University of Rochester Press, 67&#8211;102.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mead_1995"></a>Mead, Andrew. 1995. &#8220;Twelve-Tone Composition and the Music of Elliott Carter.&#8221; In <i>Concert Music, Rock, and Jazz Since 1945: Essays and Analytic Studies.</i> Edited by Elizabeth West Marvin and Richard Hermann. Rochester, NY: University of Rochester Press, 67&#8211;102.</p><div id="citediv_meyer_and_shreffler_2008" class="flyoverdiv">Meyer, Felix and Anne Shreffler. 2008. <i>Elliott Carter: A Centennial Portrait in Letters and Documents.</i> Woodbridge, Suffolk: The Boydell Press. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="meyer_and_shreffler_2008"></a>Meyer, Felix and Anne Shreffler. 2008. <i>Elliott Carter: A Centennial Portrait in Letters and Documents.</i> Woodbridge, Suffolk: The Boydell Press. </p><div id="citediv_morris_1990" class="flyoverdiv">Morris, Robert D. 1990. &#8220;Pitch-Class Complementation and Its Generalizations,&#8221; <i>Journal of Music Theory</i> 34/2 (Autumn): 175&#8211;245.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1990"></a>Morris, Robert D. 1990. &#8220;Pitch-Class Complementation and Its Generalizations,&#8221; <i>Journal of Music Theory</i> 34/2 (Autumn): 175&#8211;245.</p><div id="citediv_roeder_2009" class="flyoverdiv">Roeder, John. 2009. &#8220;A Transformational Space for Elliott Carter&#8217;s Recent Complement-Union Music.&#8221; In <i>Proceedings of the First International Conference of the Society of Mathematics and Computation in Music.</i> Heidelberg: Springer Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roeder_2009"></a>Roeder, John. 2009. &#8220;A Transformational Space for Elliott Carter&#8217;s Recent Complement-Union Music.&#8221; In <i>Proceedings of the First International Conference of the Society of Mathematics and Computation in Music.</i> Heidelberg: Springer Verlag.</p><div id="citediv_schiff_1998" class="flyoverdiv">Schiff, David. 1998. <i>The Music of Elliott Carter,</i> 2nd ed. Ithaca: Cornell University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schiff_1998"></a>Schiff, David. 1998. <i>The Music of Elliott Carter,</i> 2nd ed. Ithaca: Cornell University Press.</p><div id="citediv_schiff_1988" class="flyoverdiv">Schiff, David. 1988. &#8220;Carter&#8217;s Harvest Home,&#8221; <i>Tempo</i> no. 167 (December): 2&#8211;13.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schiff_1988"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. (1988). &#8220;Carter&#8217;s Harvest Home,&#8221; <i>Tempo</i> no. 167 (December): 2&#8211;13.</p><div id="citediv_shreffler_1993" class="flyoverdiv">Shreffler, Anne. 1993. &#8220;&#8216;Give the Music Room&#8217;: Elliott Carter&#8217;s &#8216;View of the Capitol from the Library of Congress&#8217; aus <i>A Mirror on Which to Dwell.</i>&#8221; In <i>Quellenstudien II: Zw&ouml;lf Komposisten des 20. Jahrhunderts,</i> Edited by Felix Meyer. Winterthur: Amadeus Verlag, 255&#8211;83.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shreffler_1993"></a>Shreffler, Anne. 1993. &#8220;&#8216;Give the Music Room&#8217;: Elliott Carter&#8217;s &#8216;View of the Capitol from the Library of Congress&#8217; aus <i>A Mirror on Which to Dwell.</i>&#8221; In <i>Quellenstudien II: Zw&ouml;lf Komposisten des 20. Jahrhunderts,</i> Edited by Felix Meyer. Winterthur: Amadeus Verlag, 255&#8211;83.</p><div id="citediv_vermaelen_2004" class="flyoverdiv">Vermaelen, Denis. 2004. &#8220;Elliott Carter&#8217;s Sketches: Spiritual Exercises and Craftsmanship.&#8221; In <i>A Handbook to Twentieth-Century Musical Sketches.</i> Edited by Patricia Hall and Friedemann Sallis. Cambridge: Cambridge University Press, 161&#8211;175.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="vermaelen_2004"></a>Vermaelen, Denis. 2004. &#8220;Elliott Carter&#8217;s Sketches: Spiritual Exercises and Craftsmanship.&#8221; In <i>A Handbook to Twentieth-Century Musical Sketches.</i> Edited by Patricia Hall and Friedemann Sallis. Cambridge: Cambridge University Press, 161&#8211;175.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> I wish to thank Dave Headlam, Ciro Scotto, Bob Morris, Guy Capuzzo, John Link and Anne Marie deZeeuw for comments they made on earlier drafts of this paper, as well as the two anonymous readers who provided many helpful insights. Additionally, I want to acknowledge the generosity of the staff at the Paul Sacher Stiftung, particularly Dr. Felix Meyer, who allowed me to undertake this project.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> See, for example, <a href="#capuzzo_2007" id="citation_capuzzo_2007_67dc9ad695745">Capuzzo 2007</a>, <a href="#jemian_2001" id="citation_jemian_2001_67dc9ad695749">Jemian 2001</a>, <a href="#link_1994" id="citation_link_1994_67dc9ad69574b">Link 1994</a>, <a href="#mead_1995" id="citation_mead_1995_67dc9ad69574d">Mead 1995</a> and <a href="#schiff_1998" id="citation_schiff_1998_67dc9ad69574e">Schiff 1998</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The long-range polyrhythms I refer to here span a significant amount of the length of the composition. While such a polyrhythm does not exist in the Fifth String Quartet, <a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695750">Aylward 2009</a> makes clear that Carter does employ a &#8220;local&#8221; long-range polyrhythm in the Allegro energico movement of the Fifth Quartet. Although this polyrhythm is not constant throughout the entire work, Aylward shows that &#8220;Carter utilizes constituent parts of a long-range polyrhythm outside the bounds of the polyrhythm itself&#8221; in certain sections of the composition (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695753">2009</a>, 88).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Fragment No. 1 for String Quartet (1994), which slightly predates the Fifth Quartet, might be mentioned as a precedent to this new approach to compositional materials, as it lacks both a long-range polyrhythm and an all-interval twelve-note chord, as well as features coincident attacks among instruments. It foreshadows particularly the &#8220;Adagio sereno&#8221; movement of the Fifth Quartet, by virtue of being performed on harmonics throughout.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Schiff classifies the years since 1980 as &#8220;a long and fecund &#8216;late period&#8217;&#8221; (<a href="#schiff_1998" id="citation_schiff_1998_67dc9ad695756">1998</a>, 28), and therefore, the label &#8220;late late style&#8221; serves to distinguish the Fifth String Quartet and those works that followed from these earlier compositions. In contrast, Meyer and Shreffler write, &#8220;<i>Tempo e tempi</i> anticipates several features of Carter&#8217;s more recent music and may even mark the point at which one could say this his &#8216;late style&#8217; begins&#8221; (<a href="#meyer_and_shreffler_2008" id="citation_meyer_and_shreffler_2008_67dc9ad695758">2008</a>, 314). Clearly, scholars will continue to theorize about the issue of the periodization of Carter&#8217;s oeuvre. In this article, I have chosen to follow Schiff&#8217;s interpretation.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Carter discusses the <i>Harmony Book</i> in <a href="#bernard_and_carter_1990" id="citation_bernard_and_carter_1990_67dc9ad69575a">Bernard and Carter 1990</a>, 201. It is now published as <a href="#carter_2002" id="citation_carter_2002_67dc9ad69575c">Carter 2002</a>.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Carter identifies trichords with triangles, tetrachords with squares, pentachords with pentagons, hexachords with hexagons. For sets of seven or more notes, he uses a circle with the number of the cardinality of the set in superscript. See <a href="#carter_2002" id="citation_carter_2002_67dc9ad69575e">Carter 2002</a>, 5&#8211;6.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Carter became interested in all-interval twelve-note rows after reading <a href="#bauer-mengleberg_and_ferentz_1965" id="citation_bauer-mengleberg_and_ferentz_1965_67dc9ad695760">Bauer-Mengleberg and Ferentz 1965</a>.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> <a href="http://www.wpunj.edu/coac/music/link/linkchords.html">http://www.wpunj.edu/coac/music/link/linkchords.html</a>, accessed on February 9, 2010. Coincidentally, Carter was in the process of creating a list of this sort on his own when he received Link&#8217;s list.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> <a href="http://www.wpunj.edu/coac/music/link/linkchords.html">http://www.wpunj.edu/coac/music/link/linkchords.html</a>, accessed on February 9, 2010.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> The sketches for the Fifth String Quartet are now housed at the Paul Sacher Stiftung in Basel, Switzerland. Other sketch studies of Carter&#8217;s works include <a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695762">Aylward 2009</a>, <a href="#shreffler_1993" id="citation_shreffler_1993_67dc9ad695763">Shreffler 1993</a> and <a href="#vermaelen_2004" id="citation_vermaelen_2004_67dc9ad695765">Vermaelen 2004</a>.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> An anonymous reviewer of this article reports the date to be January 13, 1995. Aylward (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695767">2009</a>, 94) also records the date as January 15.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> As an anonymous reviewer of this article pointed out, the word &#8220;link&#8221; could also refer to the process of linking one chord to another in the manner described below.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> The combination of a member of [0146] and a member of [0137] with a third tetrachord to complete the aggregate, as is shown here, harkens back to the harmonic language of compositions such as the Double Concerto for Harpsichord and Piano. See <a href="#schiff_1998" id="citation_schiff_1998_67dc9ad695768">Schiff 1998</a>, 92&#8211;93 and 241.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Another sketch, dated April 2 and shown in Example 14, includes twelve-counting, explicit evidence of Carter&#8217;s interest in aggregate completion.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> The circled numbers do not indicate chord classification.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> <a href="#roeder_2009" id="citation_roeder_2009_67dc9ad69576a">Roeder 2009</a>; <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad69576b">Capuzzo 2004</a>; <a href="#capuzzo_1999" id="citation_capuzzo_1999_67dc9ad69576d">Capuzzo 1999</a>; <a href="#hooper_2009" id="citation_hooper_2009_67dc9ad69576e">Hooper 2009</a>.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> This example also appears in <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad695770">Capuzzo 2004</a>, 7.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Other studies that adopt transformational models to illuminate Carter&#8217;s music include <a href="#capuzzo_1999" id="citation_capuzzo_1999_67dc9ad695771">Capuzzo 1999</a> and <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad695773">2004</a>, <a href="#childs_2006" id="citation_childs_2006_67dc9ad695775">Childs 2006</a>, <a href="#hooper_2009" id="citation_hooper_2009_67dc9ad695777">Hooper 2009</a> and <a href="#roeder_2009" id="citation_roeder_2009_67dc9ad695778">Roeder 2009</a>.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> See also the transcription of this sketch in <a href="#bernard_2009" id="citation_bernard_2009_67dc9ad69577a">Bernard 2009</a>, 267.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> This sketch is one of the few not written on manuscript paper. Rather, Carter wrote it on a piece of yellow construction paper, with a different colored pencil for each instrumental voice. Contents in the red, &#8220;viola&#8221; line that appear blurred were written and then erased, and are not consistent with either of the polyrhythmic strands in that voice.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> The numbers above measure 73 refer to the filled-in notehead polyrhythm, which includes an attack on every 27th quintuple sixteenth note, every 38th septuple thirty-second note, etc.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> In an interview with Link, Carter said: &#8220;There are places where I&#8217;ve sort of obliterated, or covered [the polyrhythm] up. I remember that because I began to wonder whether this was a little bit too mechanical&#8221; (<a href="#link_1994" id="citation_link_1994_67dc9ad69577b">Link 1994</a>, 111).<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> The chords in Example 10 include two intervals that do not belong in the interval patterns of the Fifth Quartet, an interval-2 in the viola and the interval-4 in the second violin. Example 13 also contains inconsistencies, with interval-2s in the viola in measure 73 and measure 78, the interval-9 in the cello in measure 76 and measure 78, and the interval-4 in the cello in measure 78. These differences may be due to the fact that the sketches dates from February 3 and 4, and the interval-pattern chart in Example 1 dates from March 27.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Note that the double stops that form the first two statements of sc[0124678A] mark the first two pulses of the &#8220;filled-in note head&#8221; polyrhythm, while the single pitches mark the first pulse of the &#8220;open square&#8221; polyrhythm. Thus, the changes in density aid in making the various polyrhythmic streams audible.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Aylward (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad69577d">2009</a>, 95) includes sketch evidence dating from April 30&#8211;May 8 of a different long-range polyrhythm used in the Allegro energico movement. Although this polyrhythm arose relatively late in the compositional process of the quartet as a whole, and does not underscore the copmlete work as the polyrhythm in String Quartet no. 4, for example, it does imbue the Allegro energico movement with a flavor of the music of the harvest period.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> The same is true of the [016] trichord in the third measure.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Recall that Example 10 begins with measure 73, but this measure number does not hold in the final piece. &#8220;72&#8221; in the margin next the first violin part most likely refers to a metronome marking, even though the tempo in the completed work is quarter note = 60.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> It should be made clear that the combination of the all-interval tetrachords to form a member of sc[0124678A] is not an example of CUP since nonintersecting all-interval tetrachords may combine to yield other sets, such as sc[0134679A], the octatonic collection.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Example 9.15 of Bernard 2009 includes a statement of the [0124678A] octachord in measure 99 (271). While the pitches here are proximate, all eight do not sound as a simultaneity: the G<span class="sharp"></span>4/E5 dyad in the first violin ends at the beginning of beat 4 before the F3/G<span class="flat"></span>4 dyad enters in the viola on the fifth division of a thirty-second note septuplet. Example 20 includes only simultaneously-sounding statements of the [0124678A] octachord, and therefore omits this statement in measure 99.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> Not only does this measure include the loudest dynamic markings and most extensive instrumental range of the movement, but the release of chord 7 also marks the Golden Mean of the movement. For more on the importance of Golden Means in Carter&#8217;s music, see <a href="#budelier_2009" id="citation_budelier_2009_67dc9ad69577f">Budelier 2009</a>.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> For a discussion of a similar treatment of musical material in another Carter work, see <a href="#boland_2006" id="citation_boland_2006_67dc9ad695781">Boland 2006</a>.<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> The fact that some of the CUP-space voice leading occurs closer to the surface of the music than others begs the question of harmonic levels in this movement, or at least of the notion of similar processes occurring over both relatively shorter and longer time-spans. Examples 19 and 20 show that I<sub>6</sub> symmetry serves as an organizing force in both the introduction of the movement, measures 86&#8211;88, but also across the span of the eight octachordal statements, measures 89&#8211;103.<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> For an interesting analysis of this section that focuses on aggregate completion, see <a href="#buchler_and_theisen_2009" id="citation_buchler_and_theisen_2009_67dc9ad695782">Buchler and Theisen 2009</a>.<br><a href="#FN34REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">I wish to thank Dave Headlam, Ciro Scotto, Bob Morris, Guy Capuzzo, John Link and Anne Marie deZeeuw for comments they made on earlier drafts of this paper, as well as the two anonymous readers who provided many helpful insights. Additionally, I want to acknowledge the generosity of the staff at the Paul Sacher Stiftung, particularly Dr. Felix Meyer, who allowed me to undertake this project.</div><div id="fndiv2" class="flyoverdiv">See, for example, <a href="#capuzzo_2007" id="citation_capuzzo_2007_67dc9ad695745">Capuzzo 2007</a>, <a href="#jemian_2001" id="citation_jemian_2001_67dc9ad695749">Jemian 2001</a>, <a href="#link_1994" id="citation_link_1994_67dc9ad69574b">Link 1994</a>, <a href="#mead_1995" id="citation_mead_1995_67dc9ad69574d">Mead 1995</a> and <a href="#schiff_1998" id="citation_schiff_1998_67dc9ad69574e">Schiff 1998</a>.</div><div id="fndiv3" class="flyoverdiv">The long-range polyrhythms I refer to here span a significant amount of the length of the composition. While such a polyrhythm does not exist in the Fifth String Quartet, <a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695750">Aylward 2009</a> makes clear that Carter does employ a &#8220;local&#8221; long-range polyrhythm in the Allegro energico movement of the Fifth Quartet. Although this polyrhythm is not constant throughout the entire work, Aylward shows that &#8220;Carter utilizes constituent parts of a long-range polyrhythm outside the bounds of the polyrhythm itself&#8221; in certain sections of the composition (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695753">2009</a>, 88).</div><div id="fndiv4" class="flyoverdiv">Fragment No. 1 for String Quartet (1994), which slightly predates the Fifth Quartet, might be mentioned as a precedent to this new approach to compositional materials, as it lacks both a long-range polyrhythm and an all-interval twelve-note chord, as well as features coincident attacks among instruments. It foreshadows particularly the &#8220;Adagio sereno&#8221; movement of the Fifth Quartet, by virtue of being performed on harmonics throughout.</div><div id="fndiv5" class="flyoverdiv">Schiff classifies the years since 1980 as &#8220;a long and fecund &#8216;late period&#8217;&#8221; (<a href="#schiff_1998" id="citation_schiff_1998_67dc9ad695756">1998</a>, 28), and therefore, the label &#8220;late late style&#8221; serves to distinguish the Fifth String Quartet and those works that followed from these earlier compositions. In contrast, Meyer and Shreffler write, &#8220;<i>Tempo e tempi</i> anticipates several features of Carter&#8217;s more recent music and may even mark the point at which one could say this his &#8216;late style&#8217; begins&#8221; (<a href="#meyer_and_shreffler_2008" id="citation_meyer_and_shreffler_2008_67dc9ad695758">2008</a>, 314). Clearly, scholars will continue to theorize about the issue of the periodization of Carter&#8217;s oeuvre. In this article, I have chosen to follow Schiff&#8217;s interpretation.</div><div id="fndiv6" class="flyoverdiv">Carter discusses the <i>Harmony Book</i> in <a href="#bernard_and_carter_1990" id="citation_bernard_and_carter_1990_67dc9ad69575a">Bernard and Carter 1990</a>, 201. It is now published as <a href="#carter_2002" id="citation_carter_2002_67dc9ad69575c">Carter 2002</a>.</div><div id="fndiv7" class="flyoverdiv">Carter identifies trichords with triangles, tetrachords with squares, pentachords with pentagons, hexachords with hexagons. For sets of seven or more notes, he uses a circle with the number of the cardinality of the set in superscript. See <a href="#carter_2002" id="citation_carter_2002_67dc9ad69575e">Carter 2002</a>, 5&#8211;6.</div><div id="fndiv8" class="flyoverdiv">Carter became interested in all-interval twelve-note rows after reading <a href="#bauer-mengleberg_and_ferentz_1965" id="citation_bauer-mengleberg_and_ferentz_1965_67dc9ad695760">Bauer-Mengleberg and Ferentz 1965</a>.</div><div id="fndiv9" class="flyoverdiv"><a href="http://www.wpunj.edu/coac/music/link/linkchords.html">http://www.wpunj.edu/coac/music/link/linkchords.html</a>, accessed on February 9, 2010. Coincidentally, Carter was in the process of creating a list of this sort on his own when he received Link&#8217;s list.</div><div id="fndiv10" class="flyoverdiv"><a href="http://www.wpunj.edu/coac/music/link/linkchords.html">http://www.wpunj.edu/coac/music/link/linkchords.html</a>, accessed on February 9, 2010.</div><div id="fndiv11" class="flyoverdiv">The sketches for the Fifth String Quartet are now housed at the Paul Sacher Stiftung in Basel, Switzerland. Other sketch studies of Carter&#8217;s works include <a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695762">Aylward 2009</a>, <a href="#shreffler_1993" id="citation_shreffler_1993_67dc9ad695763">Shreffler 1993</a> and <a href="#vermaelen_2004" id="citation_vermaelen_2004_67dc9ad695765">Vermaelen 2004</a>.</div><div id="fndiv12" class="flyoverdiv">An anonymous reviewer of this article reports the date to be January 13, 1995. Aylward (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad695767">2009</a>, 94) also records the date as January 15.</div><div id="fndiv13" class="flyoverdiv">As an anonymous reviewer of this article pointed out, the word &#8220;link&#8221; could also refer to the process of linking one chord to another in the manner described below.</div><div id="fndiv14" class="flyoverdiv">The combination of a member of [0146] and a member of [0137] with a third tetrachord to complete the aggregate, as is shown here, harkens back to the harmonic language of compositions such as the Double Concerto for Harpsichord and Piano. See <a href="#schiff_1998" id="citation_schiff_1998_67dc9ad695768">Schiff 1998</a>, 92&#8211;93 and 241.</div><div id="fndiv15" class="flyoverdiv">Another sketch, dated April 2 and shown in Example 14, includes twelve-counting, explicit evidence of Carter&#8217;s interest in aggregate completion.</div><div id="fndiv16" class="flyoverdiv">The circled numbers do not indicate chord classification.</div><div id="fndiv17" class="flyoverdiv"><a href="#roeder_2009" id="citation_roeder_2009_67dc9ad69576a">Roeder 2009</a>; <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad69576b">Capuzzo 2004</a>; <a href="#capuzzo_1999" id="citation_capuzzo_1999_67dc9ad69576d">Capuzzo 1999</a>; <a href="#hooper_2009" id="citation_hooper_2009_67dc9ad69576e">Hooper 2009</a>.</div><div id="fndiv18" class="flyoverdiv">This example also appears in <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad695770">Capuzzo 2004</a>, 7.</div><div id="fndiv19" class="flyoverdiv">Other studies that adopt transformational models to illuminate Carter&#8217;s music include <a href="#capuzzo_1999" id="citation_capuzzo_1999_67dc9ad695771">Capuzzo 1999</a> and <a href="#capuzzo_2004" id="citation_capuzzo_2004_67dc9ad695773">2004</a>, <a href="#childs_2006" id="citation_childs_2006_67dc9ad695775">Childs 2006</a>, <a href="#hooper_2009" id="citation_hooper_2009_67dc9ad695777">Hooper 2009</a> and <a href="#roeder_2009" id="citation_roeder_2009_67dc9ad695778">Roeder 2009</a>.</div><div id="fndiv20" class="flyoverdiv">See also the transcription of this sketch in <a href="#bernard_2009" id="citation_bernard_2009_67dc9ad69577a">Bernard 2009</a>, 267.</div><div id="fndiv21" class="flyoverdiv">This sketch is one of the few not written on manuscript paper. Rather, Carter wrote it on a piece of yellow construction paper, with a different colored pencil for each instrumental voice. Contents in the red, &#8220;viola&#8221; line that appear blurred were written and then erased, and are not consistent with either of the polyrhythmic strands in that voice.</div><div id="fndiv22" class="flyoverdiv">The numbers above measure 73 refer to the filled-in notehead polyrhythm, which includes an attack on every 27th quintuple sixteenth note, every 38th septuple thirty-second note, etc.</div><div id="fndiv23" class="flyoverdiv">In an interview with Link, Carter said: &#8220;There are places where I&#8217;ve sort of obliterated, or covered [the polyrhythm] up. I remember that because I began to wonder whether this was a little bit too mechanical&#8221; (<a href="#link_1994" id="citation_link_1994_67dc9ad69577b">Link 1994</a>, 111).</div><div id="fndiv24" class="flyoverdiv">The chords in Example 10 include two intervals that do not belong in the interval patterns of the Fifth Quartet, an interval-2 in the viola and the interval-4 in the second violin. Example 13 also contains inconsistencies, with interval-2s in the viola in measure 73 and measure 78, the interval-9 in the cello in measure 76 and measure 78, and the interval-4 in the cello in measure 78. These differences may be due to the fact that the sketches dates from February 3 and 4, and the interval-pattern chart in Example 1 dates from March 27.</div><div id="fndiv25" class="flyoverdiv">Note that the double stops that form the first two statements of sc[0124678A] mark the first two pulses of the &#8220;filled-in note head&#8221; polyrhythm, while the single pitches mark the first pulse of the &#8220;open square&#8221; polyrhythm. Thus, the changes in density aid in making the various polyrhythmic streams audible.</div><div id="fndiv26" class="flyoverdiv">Aylward (<a href="#aylward_2009" id="citation_aylward_2009_67dc9ad69577d">2009</a>, 95) includes sketch evidence dating from April 30&#8211;May 8 of a different long-range polyrhythm used in the Allegro energico movement. Although this polyrhythm arose relatively late in the compositional process of the quartet as a whole, and does not underscore the copmlete work as the polyrhythm in String Quartet no. 4, for example, it does imbue the Allegro energico movement with a flavor of the music of the harvest period.</div><div id="fndiv27" class="flyoverdiv">The same is true of the [016] trichord in the third measure.</div><div id="fndiv28" class="flyoverdiv">Recall that Example 10 begins with measure 73, but this measure number does not hold in the final piece. &#8220;72&#8221; in the margin next the first violin part most likely refers to a metronome marking, even though the tempo in the completed work is quarter note = 60.</div><div id="fndiv29" class="flyoverdiv">It should be made clear that the combination of the all-interval tetrachords to form a member of sc[0124678A] is not an example of CUP since nonintersecting all-interval tetrachords may combine to yield other sets, such as sc[0134679A], the octatonic collection.</div><div id="fndiv30" class="flyoverdiv">Example 9.15 of Bernard 2009 includes a statement of the [0124678A] octachord in measure 99 (271). While the pitches here are proximate, all eight do not sound as a simultaneity: the G4/E5 dyad in the first violin ends at the beginning of beat 4 before the F3/G4 dyad enters in the viola on the fifth division of a thirty-second note septuplet. Example 20 includes only simultaneously-sounding statements of the [0124678A] octachord, and therefore omits this statement in measure 99.</div><div id="fndiv31" class="flyoverdiv">Not only does this measure include the loudest dynamic markings and most extensive instrumental range of the movement, but the release of chord 7 also marks the Golden Mean of the movement. For more on the importance of Golden Means in Carter&#8217;s music, see <a href="#budelier_2009" id="citation_budelier_2009_67dc9ad69577f">Budelier 2009</a>.</div><div id="fndiv32" class="flyoverdiv">For a discussion of a similar treatment of musical material in another Carter work, see <a href="#boland_2006" id="citation_boland_2006_67dc9ad695781">Boland 2006</a>.</div><div id="fndiv33" class="flyoverdiv">The fact that some of the CUP-space voice leading occurs closer to the surface of the music than others begs the question of harmonic levels in this movement, or at least of the notion of similar processes occurring over both relatively shorter and longer time-spans. Examples 19 and 20 show that I6 symmetry serves as an organizing force in both the introduction of the movement, measures 86&#8211;88, but also across the span of the eight octachordal statements, measures 89&#8211;103.</div><div id="fndiv34" class="flyoverdiv">For an interesting analysis of this section that focuses on aggregate completion, see <a href="#buchler_and_theisen_2009" id="citation_buchler_and_theisen_2009_67dc9ad695782">Buchler and Theisen 2009</a>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2010 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Brent Yorgason, Managing Editor  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="6176308"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="d4328c9f"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/6176308/0/d4328c9f/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

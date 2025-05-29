@@ -1,0 +1,487 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 15.5: Traut, Dyadic TC Lattices</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Dyadic TC Lattices: Revisiting the TC/IS Relationship">
+
+    <meta name="citation_author" content="Traut, Donald G.">
+      
+
+<meta name="citation_publication_date" content="2009/10/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="15">
+<meta name="citation_issue" content="5">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Dyadic TC Lattices: Revisiting the TC/IS Relationship
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.09.15.5/mto.09.15.5.traut.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Donald G. Traut</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.02.8.3/mto.02.8.3.scotto.php">http://www.mtosmt.org/issues/mto.02.8.3/mto.02.8.3.scotto.php</a></font></p><p><font size='4'>KEYWORDS: Voice leading, transformation, neo-Riemannian theory, parsimonious graphs</font></p><p><font size='4'>ABSTRACT: This short study builds on Richard Cohn&#8217;s work by illustrating that dyadic transpositional combination alone accounts for the majority of noteworthy set-classes with the TC-property.  It presents six lattices of scs all related by TC and then analyzes the results as they relate to the 94 scs with IS.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.09.15.5/mto.09.15.5.traut.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.09.15.5/traut_examples.pdf">PDF examples </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received February 2009</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 15, Number 5, October 2009 <br> Copyright &#0169; 2009 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Cohn&#8217;s illustrations of IS and TC collections used in Bart&oacute;k</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="traut_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[1] In an article from 1988, Richard Cohn explores the relationship between inversional symmetry and transpositional combination, especially as it relates to Bart&#243;k analysis (<a href="#cohn_1988" id="citation_cohn_1988_67dc9aed42aad">Cohn 1988</a>). He argues that while it is well known that many of the pitch collections most important to Bart&#243;k&#8217;s music are inversionally symmetric, it is also significant that they can all be explained using transpositional combination (TC).  He makes this clear in the illustration shown in <b>Example 1</b>.  Here we see both the inversional axis (represented with a dotted line) and the TC-property (shown beneath each figure) of several noteworthy collections.  Indeed, collections such as Antokoletz&#8217;s &#8220;x&#8221; and &#8220;z&#8221; cells, along with the diatonic, whole-tone, and octatonic collections, all parse into two transpositionally related pitch-class sets.  As Cohn argues, while these collections are all inversionally symmetric, the presence of the TC-property is not a mere coincidence that can be ignored.</p>
+
+<p>[2] While the crux of Cohn&#8217;s article is analytic in nature, he also mentions some of the more abstract elements of TC. Some of this comes in the form of simple statistics.  As he writes:
+
+<blockquote>Of the 223 set-classes, 137 bear the TC-property.  Of particular interest for the present purposes is the relationship of the contents of this group to the contents of the group of ninety-four bearing the IS-property.  Seventy-two set-classes bear both properties; that is, about three-quarters of all IS-set-classes are also TC-set-classes (<a href="#cohn_1988" id="citation_cohn_1988_67dc9aed42ab0">Cohn 1988</a>, 24&ndash;25).</blockquote>
+
+<p>He goes on to explain that the list of set-classes containing both IS and TC includes most of the important set-classes for Bart&#243;k analysis:</p>
+
+<blockquote>These include the thirteen tetrachord-types which can be realized as inversionally-symmetric structures of exactly four pitches; all of the partial and complete interval-cycles, including chromatic, diatonic, and whole-tone sets; and all of the Tn-invariant sets such as the octatonic collection and the &#8220;1:3 model&#8221; (<a href="#cohn_1988" id="citation_cohn_1988_67dc9aed42ab2">Cohn 1988</a>, 25).</blockquote>
+
+<p>Since his goals for the article are primarily analytic, Cohn stops short of traveling further down this abstract path.  But for those interested in this topic, there are still worthwhile questions to ask.  Just what are the set-classes that have IS but not TC?  Also, are there any distinctions among those sets that do have both IS and TC?
+</p>
+
+<p>[3] Cohn answers some of these questions in his dissertation (<a href="#cohn_1987" id="citation_cohn_1987_67dc9aed42ab4">Cohn 1987</a>).  In this exhaustive study, he provides the theoretic groundwork for TC and illustrates its analytic importance in contemporary music.  In addition to defining the operation and showing its role in music, this document contains appendixes listing various TC properties of all 223 scs.  Of primary interest here are the categories into which Cohn places set-classes based on their TC properties.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> He uses four categories:  1) prime; 2) semi-prime; 3) fully factorable; and 4) semi-factorable.  Prime scs&#8212;such as 4-12 (0236)&#8212;do not possess the TC-property at all, while fully factorable scs&#8212;such as 4-17 (0347)&#8212;have a TC path stemming from a &#8220;simple operation&#8221; (TC3 of (04) in the case of 4-17).  Semi-factorable scs have TC, but their generative path traces back to a &#8220;mixed operation,&#8221; meaning one of the initial operands is a trichord or larger.  The example Cohn gives is 6-19 (013478), which comes from TC1 of 3-11 (037).  Finally, semi-prime sets are those whose TC operands are both trichords or larger, resulting in a &#8220;complex operation.&#8221;  This is the case for 6-31 (014579), which is generated when 3-11 (037) is transpositionally combined with itself.</p>
+
+<p>[4] Armed with further information about the role TC plays in the set universe, 
+we may ask even more questions regarding the relationship between TC and IS.  As stated earlier, it will certainly be interesting to know exactly which sets have IS but not TC.  Further, now that we know that scs can be categorized based on their TC properties, it will be useful to see if there are differences among those sets that do have both IS and TC.  With these points in mind, this paper adds to our understanding of the TC/IS relationship in two main ways.  First, it presents lattices that contain all of the fully factorable set-classes.  These are referred to as <i>dyadic TC lattices</i> because all set-classes produced can be traced back to a pair of dyads.  This approach was first suggested by Robert Morris&#8217;s work, which used lattices to illustrate how small sets combine to generate larger sets (<a href="#morris_2001" id="citation_morris_2001_67dc9aed42ac9">Morris 2001</a>, 23).  Second, it analyzes the results for the IS sets.  While all sets produced on the lattices will be IS, we will see that not all of the possible IS sets appear; that is, they are not fully factorable.  The paper concludes with a discussion of these remaining set-classes.</p>
+
+<p>[5] There are several things that need explanation in order to understand the lattices:<br/>
+<table border="0" cellpadding="2" cellspacing="2" style="margin-left:1.5cm;margin-top:0.5cm;">
+<tr>
+<td style="vertical-align:top;" width="70"><p style="margin-top:0em; width:70px">Colors:</p></td><td><p style="margin-top:0em; width:670px">Each TC operation is assigned a color as follows: TC 1 = black; TC 2 = purple; TC 3 = orange; TC 4 = green; TC 5 = red; TC 6 = blue.  (This color scheme is shown in the lower right-hand corner of each illustration.)  A colored line then connects a smaller set with the larger set that results when the smaller set undergoes a TC operation.  For example, TC 3 (orange) of (01) results in (0134).  Thus, an orange line will connect (01) to (0134).</p></td>
+</tr><tr>
+<td style="vertical-align:top;" width="70"><p style="margin-top:0em; width:70px">Recursion:</p></td><td><p style="margin-top:0em; width:670px">As Cohn states, &#8220;Since the input and output of an operation are entities of the same type, it follows that the result of one operation can serve as an operand for a subsequent one, and that TC is capable of recursion&#8221; (<a href="#cohn_1988" id="citation_cohn_1988_67dc9aed42acb">Cohn 1988</a>, 29&ndash;30).  Thus, each new sc is itself subjected to the six TC operations.  This is done to all new members until all unique scs for that lattice have been produced.</p></td>
+</tr><tr>
+<td style="vertical-align:top;" width="70"><p style="margin-top:0em; width:70px">Pruning:</p></td><td><p style="margin-top:0em; width:670px">At each cardinality, only those TC operations producing <i>new</i> scs are shown.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  For example, TC 1 of (012) would result in (0123).  However, this relationship is not shown since (0123) was already produced at an earlier cardinality level (i.e., TC 2 of (01)).  The only exceptions to this pruning practice are those scs that turn into themselves at any TC level.  These &#8220;idempotent&#8221; scs (as Cohn calls them) are represented with a curved arrow.</p></td>
+</tr><tr>
+<td style="vertical-align:top;" width="70"><p style="margin-top:0em; width:70px">Order:</p></td><td><p style="margin-top:0em; width:670px">Set-classes of the same cardinality are all on the same horizontal plane.  Aside from that, there is no method to the order of presentation.</p></td>
+</tr>
+</table>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Beginning of Lattice 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="traut_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Middle stage of Lattice 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="traut_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p><b>Example 2</b> shows the beginning of Lattice 1.  The six TC transformations result in six new sets, each of which is connected to (01) via the appropriate colored line.  <b>Example 3</b> shows the next set of transformations, which operate on the one trichord and the five tetrachords.  Finally, 
+<b>Example 4</b> shows the final round of operations and thus presents the completed lattice for the (01) dyad.</p>
+
+<p>[6] Examples 5-9 present lattices for the remaining dyads.  While the pruning process described above does not allow for illustrations of all TC paths, the individual lattices do reveal some relationships worth mentioning.  For example, Lattice 1 (<b>Example 4</b>) shows a single path to 6-20 (the hexatonic collection), which then blossoms with three different paths to 9-12 (i.e., three augmented triads), two paths straight to the aggregate, and one idempotent transformation.  In Lattice 2 (<b>Example 5</b>), TC 2 then TC 6 generates the whole-tone collection (6-35), which then maps onto itself at the three even TC levels and straight to the aggregate at the odd TC levels.  Each of the five tetrachords generated in Lattice 3 (<b>Example 6</b>) has at least one mapping that leads to the octatonic collection (8-28).  Not surprisingly, Lattice 4 (<b>Example 7</b>) is dominated by the clear path from the augmented triad, to the hexatonic collection (6-20), and on to 9-12, with its three augmented triads.  And finally, Lattice 6 (<b>Example 9</b>) generates only collections that are idempotent 
+on at least one TC level.</p>
+
+<div align="center">
+<div class="mtoTable"><div class="mtoTableRow"><div class="mtoTableCell">	
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Completion of Lattice 1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="traut_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div><div class="mtoTableCell">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Lattice 2</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="traut_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div></div>
+<div class="mtoTableRow"><div class="mtoTableCell">	
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Lattice 3</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="traut_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div><div class="mtoTableCell">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Lattice 4</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="traut_ex7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div></div>
+<div class="mtoTableRow"><div class="mtoTableCell">	
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Lattice 5</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="traut_ex8small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div><div class="mtoTableCell">
+	
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Lattice 6</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="traut_ex9small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div></div></div>
+</div>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Debussy, <em>String Quartet</em>, IV</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="traut_ex10small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Crumb, <em>Five Pieces For Piano</em></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="traut_ex11small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Totals from dyad lattices</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=11&nonav=true"><img border="1" alt="Table 1 thumbnail" src="traut_table1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Roster of inversionally symmetric set classes</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=12&nonav=true"><img border="1" alt="Table 2 thumbnail" src="traut_table2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 3</b>. &#8220;Prime&#8221; SCs with IS</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=13&nonav=true"><img border="1" alt="Table 3 thumbnail" src="traut_table3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 4</b>. &#8220;Semi-factorable&#8221; SCs with IS</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=14&nonav=true"><img border="1" alt="Table 4 thumbnail" src="traut_table4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 14</b>. Nonochord &#8220;none&#8221;  sets</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="traut_examples.php?id=17&nonav=true"><img border="1" alt="Example 14 thumbnail" src="traut_ex14small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[7] Generating these lattices can provide more context for analyses that incorporate TC.  This is especially true when discussing the relationship between TC and fully chromatic or aggregate formations, as Mark McFarland has done recently (<a href="#mcfarland_2005" id="citation_mcfarland_2005_67dc9aed42b0b">McFarland 2005</a>). As McFarland shows, Debussy often transposed the same pc-set numerous times to create fully chromatic collections.  Thus, McFarland explains the first measure of 
+<b>Example 10</b> as four transpositions of a minor third, which when taken together, form SC 7-1.  However, the analysis seen beneath the score illustrates another way of achieving this.  Since the passage clearly stems from a dyad&#8212;(03) in this case&#8212;it is possible to show the generative path from the dyad to the larger sets.  This is confirmed by referring to Lattice 3 (Example 6) and following the path from the dyad, through the tetrachord, and on to the septachord.  Measure three of the same excerpt shows a similar situation.  Here, three TC transformations generate aggregate completion from an initial tritone.  Since the initial dyad is (06), this transformational path appears on Lattice 6 (Example 9).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> For one more example, consider the passage shown in <b>Example 11</b>, taken from George Crumb&#8217;s <i>Five Pieces for Piano</i>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>   Here, three successive transformations of TC 3 generate the aggregate from the opening (012) collection.  While this passage does not begin with a dyad, the transformational path is easy to follow on Lattice 1 (Example 4).<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> As in the Debussy examples, the lattice illustrates at a glance how the smaller set becomes a larger one.  Further, in each case, the lattices place the scs involved in a larger context, adjacent to other scs related by TC, thus illustrating how the unique path chosen by the composer achieved the desired result.</p>
+
+<p>[8] While studying each individual lattice is useful for several reasons, we must take them as a whole to learn about their relationship to IS.  <b>Table 1</b> presents tallies from the lattices.  The six rows devoted to each of the lattices show the number of set-classes generated at the twelve cardinalities.  For example, Lattice 3 produces eight hexachords (the most for that cardinality), but it does not produce any pentachords.  In the &#8220;Total&#8221; column, we see that Lattice 3 does in fact generate the most set-classes overall, while Lattice 6 generates the least by far.  Table 1 also shows the total number of unique sets at each cardinality.  It superimposes this on the total number of IS sets at each cardinality.  For example, it is clear that Lattices 1&ndash;5 each produced one trichord.  The &#8220;Unique Sets&#8221; entry shows that all five of these trichords were different.  The &#8220;IS Sets&#8221; entry tells us that there are only five trichords with IS.  Since we know that all the sets produced on our lattices are IS, we can safely state that dyadic TC generates all five of the IS trichords.  By contrast, we can also see that dyadic TC generates only three of the ten possible pentachords with IS.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+</div>
+
+<p>[9] <b>Table 2</b> provides even more detailed information regarding the IS sets and TC.  Listed here are all 94 scs with IS.  Also listed are the lattices (if any) on which these scs appear.  For example, 4-7 (0145) appears on Lattices 1 and 4.  Its complement, however, does not appear on any (i.e., it is not fully factorable).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Perhaps the most striking fact here is that, other than 11-1 and 12-1 (which are not shown in Table 2), the octatonic collection (8-28) is the only set-class that appears on all six lattices.  This makes sense, given the collection&#8217;s many tetrachordal parsings.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Interestingly, Lattice 5 is the only lattice to show only one path to the octatonic collection: TC 6 of (05), then TC 3 of (0167).</p>
+
+<p>[10] At this point, we can return to a question posed at the outset: Will these dyadic lattices generate <i>all</i> of the IS scs?  We know now that the answer is &#8220;no.&#8221;  As Cohn points out, there are 94 scs that have the IS-property.  As Table 1 shows, the lattices generate only 60 of these.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  Add to that the six dyads themselves and we can account for 66 of the IS scs.  Thus, of the 94 scs with IS, 28 are not represented on any of the lattices.  They have an entry of &#8220;none&#8221; in Table 2.</p>
+
+<p>[11] These 28 &#8220;none&#8221; sets divide into two groups, shown here in Tables 3 and 4.  The first group (<b>Table 3</b>) includes the 17 scs that have the IS-property, but cannot be generated by TC of any kind; they are &#8220;prime.&#8221;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> The second group (<b>Table 4</b>) consists of the remaining &#8220;none&#8221; scs, which <i>can</i> be generated by TC, but are not fully factorable and thus do not appear on any of the lattices presented herein.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p>
+
+<p>[12] Examples 12&ndash;14 illustrate one way each of these eleven scs can be generated using TC.  While there are several TC possibilities for each of these examples, the goal here is to find one of the more explicit equations where at least one of the operands is a dyad.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  As the examples show, this is possible for all eleven of the scs.  In most cases, a tetrachord combines (and partially overlaps) with a transposed version of itself to generate the larger set.  This is the case for all three of the septachords (<b>Example 12</b>), which can derive from TC 2 of prime tetrachords.  Of the seven octachords (<b>Example 13</b>), all but one derives in similar fashion: a tetrachord combines with a transposed version of itself (this time sans overlap, of course).  Once again, all of the tetrachords used here are prime.  Set-class 8-24 does not factor into two tetrachords, but instead reveals T4-related versions of 5-8, with two members overlapping.</p>
+
+                <table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. Septachord &#8220;none&#8221;  sets</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="traut_examples.php?id=15&nonav=true"><img border="1" alt="Example 12 thumbnail" src="traut_ex12small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b>. Octochord &#8220;none&#8221;  sets</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="traut_examples.php?id=16&nonav=true"><img border="1" alt="Example 13 thumbnail" src="traut_ex13small.png"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to enlarge)</font></p></td></tr></table>
+<p>[13] The one nonachord, 9-10, is curious.  <b>Example 14</b> illustrates how it divides into two versions of 5-12.  But this is not what is interesting here.  As shown earlier, there are exactly five nonachords with the IS-property: 9-1, 9-6, 9-9, 9-10, and 9-12.  Of these five, all but 9-10 are fully factorable and thus appear on at least one of the dyad lattices.  Remarkably, 9-10 stands out from its IS brethren even further.  Not only is it the lone IS nonachord that is not fully factorable, but it is also the only IS nonachord that cannot be derived from non-overlapping versions of 3-10 (036).  Indeed, 9-1, 9-6, 9-9, and 9-12 all appear on Lattice 3, which features (036) as its lone trichord.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup></p>
+
+<p>[14] This interesting point about 9-10 is just one of the many tidbits gained by viewing dyadic TC via these lattices.  Not only 
+are we able to see many of the specific TC paths that generate specific scs, but we can also quickly view the families of sets produced on each of the lattices.  They have not been formalized in that fashion for this particular study, but such an approach could prove fruitful.</p>
+
+<p>[15] Several new points can be made regarding the relationship of TC to IS as well.  As Cohn pointed out, of the 223 scs, 137 have the TC-property.  Of these, only 60 are from dyadic TC (and thus appear on one of the lattices presented herein).  The remaining 77 scs get their TC-property from non-dyadic TC.  Thus, dyadic TC does not generate even half of the total scs that possess the TC-property.  However, of the 94 scs with IS, close to two-thirds are fully factorable.  Moreover, all but five of the scs with both TC and IS are present on the lattices (when we include the six dyads themselves).  Further, the dyadic TC lattices include all of the scs Cohn cited as being important for Bart&#243;k analysis, including the interval cycles, the &#8220;x&#8221; and &#8220;z&#8221; cells, and the chromatic, diatonic, whole-tone, and octatonic collections.  But the role of dyadic TC goes beyond that.  In addition to collections important to Bart&#243;k, we can add all six of the all-combinatorial hexachords, which of course includes the hexatonic collection, 6-20.  These insights seem to suggest that while TC in general is indeed an important complement to IS, <i>dyadic</i> TC in particular warrants our closest attention.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Donald G. Traut<br>
+	University of Arizona<br>School of Music<br>1017 N. Olive Road<br>P.O. Box 210004<br>Tucson, AZ 85721-0004<br><a href="mailto:dgtraut@email.arizona.edu">dgtraut@email.arizona.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_cohn_1987" class="flyoverdiv">Cohn, Richard. 1987. &ldquo;Transpositional Combination in Twentieth-Century Music.&rdquo; Ph.D. dissertation, Eastman School of Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1987"></a>Cohn, Richard. 1987. &ldquo;Transpositional Combination in Twentieth-Century Music.&rdquo; Ph.D. dissertation, Eastman School of Music.</p><div id="citediv_cohn_1988" class="flyoverdiv">Cohn, Richard. 1988. &ldquo;Inversional Symmetry and Transpositional Combination in Bart&oacute;k.&rdquo; <i>Music Theory Spectrum</i> 10: 19&ndash;42.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1988"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. (1988). &ldquo;Inversional Symmetry and Transpositional Combination in Bart&oacute;k.&rdquo; <i>Music Theory Spectrum</i> 10: 19&ndash;42.</p><div id="citediv_cohn_1991" class="flyoverdiv">Cohn, Richard. 1991. &ldquo;Bart&oacute;k&rsquo;s Octatonic Strategies: A Motivic Approach.&rdquo; <i>Journal of the American Musicological Society</i> 44/2: 262&ndash;300.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. &ldquo;Bart&oacute;k&rsquo;s Octatonic Strategies: A Motivic Approach.&rdquo; <i>Journal of the American Musicological Society</i> 44/2: 262&ndash;300.</p><div id="citediv_mcfarland_2005" class="flyoverdiv">McFarland, Mark. 2005. &ldquo;Transpositional Combination and Aggregate Formation in Debussy.&rdquo; <i>Music Theory Spectrum</i> 27/2: 187&ndash;220.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mcfarland_2005"></a>McFarland, Mark. 2005. &ldquo;Transpositional Combination and Aggregate Formation in Debussy.&rdquo; <i>Music Theory Spectrum</i> 27/2: 187&ndash;220.</p><div id="citediv_morris_2001" class="flyoverdiv">Morris, Robert D. 2001. <i>Class Notes for Advanced Atonal Music Theory.</i> Lebanon, NH: Frog Peak Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_2001"></a>Morris, Robert D. 2001. <i>Class Notes for Advanced Atonal Music Theory.</i> Lebanon, NH: Frog Peak Music.</p><div id="citediv_scotto_2002" class="flyoverdiv">Scotto, Ciro G. 2002. &ldquo;<a href='../issues/mto.02.8.3/mto.02.8.3.scotto.php'>Transformational Networks, Transpositional Combination, and Aggregate Partitions in Processional by George Crumb.</a>&rdquo; <i>Music Theory Online</i> 8/3: 1&ndash;15.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scotto_2002"></a>Scotto, Ciro G. 2002. &ldquo;<a href='../issues/mto.02.8.3/mto.02.8.3.scotto.php'>Transformational Networks, Transpositional Combination, and Aggregate Partitions in Processional by George Crumb.</a>&rdquo; <i>Music Theory Online</i> 8/3: 1&ndash;15.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> These categories are defined on pp. 94&#8211;99 of <a href="#cohn_1987" id="citation_cohn_1987_67dc9aed4030e">Cohn 1987</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> The curious reader can refer to Appendix 4 of Cohn&rsquo;s dissertation, which lists all possible TC derivations for all 137 scs with the TC-property.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> While the first two TC operations are easily followed on Lattice 6, the final one is not shown on the lattice due to the pruning process.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Many thanks to Aaron Templin, a graduate student at the University of Arizona, for bringing this passage to my attention.  For other analyses involving TC and Crumb, see <a href="#scotto_2002" id="citation_scotto_2002_67dc9aed40314">Scotto 2002</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Again, the motion from 6-1 to 9-1 and from 9-1 to 12-1 is not represented in the lattice due to the pruning process.  Still, it should be clear that TC 3 generates those paths.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> This is obviously not entirely unusual.  There are several complement pairs where one member is fully factorable and the other is not.  Conversely, there are a few scs that map directly to their complement by some TC operation.  These are indicated with an asterisk (*).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> This certainly overlaps with Cohn&#8217;s observations about the &#8220;fertility&#8221; of the octatonic collection.  See <a href="#cohn_1991" id="citation_cohn_1991_67dc9aed40316">Cohn 1991</a>.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> In his dissertation, Cohn listed these &#8220;fully-factorable&#8221; scs in Table IV of Appendix 6 on p. 616.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> The 17 sets listed here are all included on Cohn&#8217;s complete list of prime scs, found on p. 616 of his dissertation.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> The 11 sets listed here are all included on Cohn&#8217;s complete list of semi-factorable scs, found on 
+p. 616 of his dissertation.  However, the careful reader will notice that, when added to the 60 collections generated by the lattices, the total number of scs with both TC and IS comes to 71, a slight difference from Cohn&#8217;s total of 72 cited above.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> The curious reader can refer to Appendix 4 of Cohn&#8217;s dissertation, which lists all possible TC derivations for all 137 scs with the TC-property.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> While some of the operations that lead from (036) to the nonachords fell prey to the pruning process and do not appear explicity on the (03) lattice, a quick study of the five nonachords reveals this statement&#8217;s validity.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> I would like to thank Bob Morris, Evan Jones, Matthew Shaftel, and the anonymous readers for their helpful comments.<br><a href="#FN13REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">These categories are defined on pp. 94&#8211;99 of <a href="#cohn_1987" id="citation_cohn_1987_67dc9aed4030e">Cohn 1987</a>.</div><div id="fndiv2" class="flyoverdiv">The curious reader can refer to Appendix 4 of Cohn&rsquo;s dissertation, which lists all possible TC derivations for all 137 scs with the TC-property.</div><div id="fndiv3" class="flyoverdiv">While the first two TC operations are easily followed on Lattice 6, the final one is not shown on the lattice due to the pruning process.</div><div id="fndiv4" class="flyoverdiv">Many thanks to Aaron Templin, a graduate student at the University of Arizona, for bringing this passage to my attention.  For other analyses involving TC and Crumb, see <a href="#scotto_2002" id="citation_scotto_2002_67dc9aed40314">Scotto 2002</a>.</div><div id="fndiv5" class="flyoverdiv">Again, the motion from 6-1 to 9-1 and from 9-1 to 12-1 is not represented in the lattice due to the pruning process.  Still, it should be clear that TC 3 generates those paths.</div><div id="fndiv6" class="flyoverdiv">This is obviously not entirely unusual.  There are several complement pairs where one member is fully factorable and the other is not.  Conversely, there are a few scs that map directly to their complement by some TC operation.  These are indicated with an asterisk (*).</div><div id="fndiv7" class="flyoverdiv">This certainly overlaps with Cohn&#8217;s observations about the &#8220;fertility&#8221; of the octatonic collection.  See <a href="#cohn_1991" id="citation_cohn_1991_67dc9aed40316">Cohn 1991</a>.</div><div id="fndiv8" class="flyoverdiv">In his dissertation, Cohn listed these &#8220;fully-factorable&#8221; scs in Table IV of Appendix 6 on p. 616.</div><div id="fndiv9" class="flyoverdiv">The 17 sets listed here are all included on Cohn&#8217;s complete list of prime scs, found on p. 616 of his dissertation.</div><div id="fndiv10" class="flyoverdiv">The 11 sets listed here are all included on Cohn&#8217;s complete list of semi-factorable scs, found on 
+p. 616 of his dissertation.  However, the careful reader will notice that, when added to the 60 collections generated by the lattices, the total number of scs with both TC and IS comes to 71, a slight difference from Cohn&#8217;s total of 72 cited above.</div><div id="fndiv11" class="flyoverdiv">The curious reader can refer to Appendix 4 of Cohn&#8217;s dissertation, which lists all possible TC derivations for all 137 scs with the TC-property.</div><div id="fndiv12" class="flyoverdiv">While some of the operations that lead from (036) to the nonachords fell prey to the pruning process and do not appear explicity on the (03) lattice, a quick study of the five nonachords reveals this statement&#8217;s validity.</div><div id="fndiv13" class="flyoverdiv">I would like to thank Bob Morris, Evan Jones, Matthew Shaftel, and the anonymous readers for their helpful comments.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2009 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by William Guerin, Mitch Ohriner, Cara Stroud, and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="5249327"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="88ca1bb4"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/5249327/0/88ca1bb4/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

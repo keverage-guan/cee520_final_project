@@ -1,0 +1,870 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 2.3: Willner, More on Handel and the Hemiola</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="More on Handel and the Hemiola: Overlapping Hemiolas">
+
+    <meta name="citation_author" content="Willner, Channan">
+      
+
+<meta name="citation_publication_date" content="1996/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="2">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">More on Handel and the Hemiola: Overlapping Hemiolas
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.96.2.3/mto.96.2.3.willner.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Channan Willner</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: hemiola, sarabande, courante, musette, expansion, contraction, Handel, J.S. Bach, Mozart</font></p><p><font size='4'>ABSTRACT: To the three categories of hemiolas I identified in an
+earlier study I add a fourth, <i>overlapping hemiolas</i>. Particularly in
+the Baroque repertoire, and especially in the works of Handel, there
+are frequent instances of two successive two-bar hemiolas that overlap
+because they are collapsed onto three bars.  I examine the larger
+context in which their preparation, elaboration, and peroration may
+represent central compositional issues, especially in light of the brevity
+of most Baroque compositions.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.96.2.3/mto.96.2.3.willner.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.96.2.3/willner_examples.pdf">PDF examples </a></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 2, Number 3, March 1996 <br> Copyright &#0169; 1996 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] In my article, &ldquo;The Two-Length Bar Revisited:  Handel and the
+Hemiola&rdquo; (<i>G&ouml;ttinger H&auml;ndel-Beitr&auml;ge</i>, Vol. 4 [1991], pages 208&ndash;31),
+I attempted to identify several categories of Handelian hemiolas&mdash;cadential, expansion, and contraction hemiolas&mdash;in the hope that their
+establishment would help us sort out some of the complexities of
+Handel&rsquo;s phrase rhythm (and that of other composers, for that
+matter).  I also pointed to several types of hemiola that could not be
+readily stratified.  If nothing else, the article demonstrated that the
+hemiola could assume a great variety of contextually defined senses. 
+The present update is designed to complement my earlier study by
+pointing to an additional category&mdash;<i>overlapping hemiolas</i>&mdash;and by
+assessing its impact on the surrounding elements of the design.  After
+establishing this new category in the first part, I shall seek to revise
+two of my earlier readings in the second part and, in closing, point to
+several relatively recent studies that illuminate this complex and
+elusive subject.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+
+<p>[2] Among the difficulties of observing the hemiola and approaching
+it from a theoretical or analytical perspective is the high degree of
+uncertainty (not to say ambiguity) that surrounds its articulation.  The
+compositional environment will often suggest hemiolas by
+emphasizing the third beat of a measure (or the second beat in the
+following measure) through thematic, textural, harmonic, or registral
+stresses of varying impact, but it will not necessarily follow it up with
+an explicitly marked hemiola formation.  In other words, it will stop
+just short of defining three <i>contiguous</i> long, hemiolic beats (each
+divided into two short internal beats, one strong, the other weak) over
+the span of two measures in triple meter.  Compounding the
+consequent uncertainty is the well-established absence of a
+requirement for the hemiola to be articulated by both outer voices: 
+The bass may not necessarily support the suggestion of a hemiola by
+the upper voice, and the upper voice will not necessarily corroborate
+its realization by the bass.  Especially in such cases, the emphases
+articulating the hemiola will accrue largely through a series of design
+stresses&mdash;rhythmic accents that (as just intimated) are due to melodic,
+textural, harmonic, or registral intensification of purely local origin,
+at the very surface.  In borderline instances, it is up to such design
+accents to try and supplant the metrical accents of the notated meter,
+whose supporting grid extends to deeper levels of durational structure. 
+And indeed, there are many cases where it is in fact the notated meter
+that wins out.  (On the other hand, the presence of several
+hemiolas may foster parallelisms that will reinforce the design
+stresses in potentially ambiguous passages.)  Since not all voices
+necessarily participate in the hemiolic activity, the hemiola&rsquo;s
+effect on the composition&rsquo;s harmonic rhythm and other underlying paces
+will vary considerably from one hemiola to another.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Overlapping Hemiolas</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="willner_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3] The formation I call overlapping hemiolas, which may be defined
+as a set of two hemiolas collapsed onto three measures, makes use of
+just this possibility of articulating the hemiola incompletely; see
+<b>Example 1</b>, which also depicts the possibility of a third overlapping
+hemiola, sometimes found in Bach and occasionally in Handel. The formation often begins, somewhat unexpectedly and perhaps furtively,
+at a distance of three, rather than two, bars from the closing cadential
+progression of a phrase or subphrase, namely at the beginning of the
+group.  Its location lends it a thematic weight different in nature, if not
+in emphasis or impact, from that of hemiolas that appear closer to the
+cadential chords of the group in question; its length allows it to shape
+the entire group in a way no single hemiola could.  (Single hemiolas
+may, of course, also appear at the beginning of a group without being
+followed by an overlapping hemiola.)</p>
+
+<p>[4] In the first bar of the formation, two-beat patterns in the soprano
+or bass (or in both) briefly contradict the notated meter and establish
+the first hemiola.  In the second bar, the hemiola&rsquo;s articulation
+becomes uncertain, as the broken stems in Example 1 show.  On the
+one hand, the metrical accent on the first beat is not attenuated to the
+same degree it usually is in hemiola formations; on the other, the
+expected stress on the second beat is elided or contradicted by adjacent
+stresses.  The first two beats of the second measure may be regarded
+as a grey area, a durational &ldquo;pivot zone,&rdquo; that plays host to two events:
+the premature peroration of the first hemiola, and the sly entrance
+of the second hemiola.  For the second hemiola enters, however
+surreptitiously, at the downbeat of this second measure; it now begins
+to make its presence known.  As a result, the first hemiola&rsquo;s division
+of long hemiolic beats into strong and weak internal beats undergoes
+metrical reinterpretation, as the diagram of accentual conflicts at the
+bottom of Example 1 demonstrates.  The first hemiola&rsquo;s conclusion
+thus assumes a jagged and unsettled quality, a sense of tentative and
+incomplete realization that may have significant repercussions for the
+metrical design in the phrases and sections that follow.  Once the third
+measure has been reached, the outline of the second hemiola emerges
+quite clearly.  Because it is usually the second hemiola that enlists the
+cadential support of the bass, it brings the formation to a decisive
+close and at the same time sends out the signal that it has neutralized
+and absorbed the first hemiola.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Handel, Suite in G minor (1720), Sarabande, mm. 1&ndash;4</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="willner_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Handel, Suite in G minor (1720), Sarabande, mm. 5&ndash;8</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="willner_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>[5] To illustrate the foregoing explanation and its more extended
+ramifications, I should like to offer several observations on the
+appearance of overlapping hemiolas in the Sarabande from Handel&rsquo;s
+G-minor Suite of 1720.  The Sarabande opens with a four-bar
+subphrase that strikes an immediately memorable impression by
+replacing the expected, largely stepwise outlines of the typical
+sarabande melody with a series of bold leaps; see the braces in
+<b>Example 2</b>. While these help underscore the Sarabande&rsquo;s four-bar
+grouping they also prevent it from assuming the predictable melodic
+contours of the genre.  The overlapping hemiolas occupy bars 5&ndash;7,
+much of the second four-bar subphrase (<b>Example 3</b>).</p>
+
+<p>[6] The two-chord patterns in bars 5&ndash;6 begin to establish a hemiola and
+continue through to the downbeat of bar 6 (see the brackets atop
+Example 3).  The melodic line&rsquo;s two pairs of descending thirds, <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>5&ndash;D5 and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5&ndash;C5, are supported by rising fourths in the
+bass, D3&ndash;G3 and C3&ndash;F3.  Together, melody and bass articulate an 
+S&ndash;W, S&ndash;W formation that reaches into the beginning of bar 6.  The 
+progression stands out&mdash;and can superimpose a hemiolic interpretation 
+over the notated meter&mdash;because it comprises the Sarabande&rsquo;s first 
+genuinely harmonic progressions spanning only two internal beats each, 
+and because it suggests a durational contraction (as well as a harmonic 
+realization) of the longer, contrapuntally conceived progressions that 
+straddle the barline at the turn of bars 2, 3, and 4.</p>
+
+<p>[7] At the downbeat of bar 6, then, two events overlap:  The statement
+of the hemiola&rsquo;s fourth, weak internal beat, and the beginning of an
+unexpectedly sustained F-major chord, whose continuation through
+the second beat of the measure supports the notated meter as
+established in bars 1&ndash;4 and generates what Joel Lester called a
+&ldquo;durational accent.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  Not only is the fifth, strong internal beat
+of the hemiola elided&mdash;it is subsequently contradicted by the third beat
+of bar 6, which initiates a faster melodic pace of quarter notes.  The
+group of quarter notes, supported by a strong cadential progression
+in the bass, straddles the downbeat of bar 7 and describes a typical
+cadential hemiola (<a href:"../mto.96.2.3/mto.96.2.3.willnr3.gif">Example 3</a>).  The gradual realization of this second
+hemiola, then, overlaps the equally gradual peroration of the first
+hemiola; both realization and peroration are the subject matter of bar
+6, whose first two beats emerge as the &ldquo;pivot zone&rdquo; referred to earlier.
+Note how the movement in parallel tenths, <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>5&ndash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5&ndash;D5
+(upper voice) and D3&ndash;C3&ndash;<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>3 (bass), established by the first
+hemiola, is completed not on the second beat of bar 6 but on the third,
+lending further weight to the emerging second hemiola.</p>
+
+<p>[8] Because the overlapping hemiolas span three bars and occupy the
+greater part of a four-bar subphrase, the temporary metrical
+uncertainty they portray in their central measure has the potential for
+creating a genuine disturbance in the rhythmic flux of the piece.  To
+foster a compositional and rhetorical milieu in which such disturbance
+will realize its assigned effect without appearing out of line, Handel
+often prepares the onset of overlapping hemiolas in some way during
+the preceding passages and then only gradually allows them to
+dissipate in the phrase or phrases that follow.  By the time their
+peroration is completed, then, their very presence in the piece, as such,
+will likely have promoted additional rhythmic dialectics, and these
+might have in turn become intimately linked to the compositional
+essence of the piece.</p>
+
+<p>[9] The two-chord patterns that launch the first hemiola in bars 5&ndash;6 are
+prepared by the falling third <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>4&ndash;D4 in bar 4.  Their movement
+forward begins with the quasi-improvisatory reappearance of this
+falling third in the two-line octave, <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>5 conspicuously replacing
+<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>5 at the turn of bar 5.  The transfer of <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to the high
+register and its alteration to <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> represents yet another way of
+sidestepping excessive thematic predictability within the Sarabande&rsquo;s
+periodic framework.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Handel, Suite in G-minor (1720), Sarabande, mm. 9&ndash;16</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="willner_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>[10] Let us look now at several later allusions to the overlapping
+hemiolas; these, too, help prevent the remaining three eight-bar
+phrases from outlining an excessively mechanical profile.  Although
+the four-bar group that follows the double bar brings back the
+rhythmic outlines of bars 1&ndash;4, the unexpected entrance of a two-beat
+G major chord on the second beat of bar 12, at the close of the group
+(and in the manner of a written-out <i>sforzato</i>), nearly usurps the
+cadential status of F, the subtonic that entered on the downbeat of the
+measure (see the arrow in <b>Example 4</b>). It is as if Handel insisted on
+affirming, following the upheaval of bars 5&ndash;7, that we are indeed
+listening to a Sarabande, but that further upheaval is in store for us as
+well.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  The resulting metrical imbalance makes it possible for the
+new thematic material that enters in bar 13 to chart a more flexible
+course than the opening of a foursquare group would normally allow. 
+The mysterious quarter-note rests on the third beat of bar 13 and the
+second beat of bar 14 represent suppressed accents:  On
+account of their proximity they seem jointly to allude to a hemiola, if
+not to express one explicitly (see the asterisks in Example 4; the rest in
+bar 13, though a reference to the rest in bar 1, is dramatized by its
+contradiction of the two-beat G-major chord in bar 12).  As in bar 6,
+earlier, their more decisive continuation&mdash;namely, at the third beat of
+bar 14&mdash;establishes a typical cadential hemiola (bars 14&ndash;15).  Like the
+cadential hemiola of bars 6&ndash;7, this new hemiola absorbs the
+uncertainties of bars 13&ndash;14.  One could, then, view the events in bars
+13&ndash;15 as a partly silent, hidden reminiscence of those in bars 5&ndash;7. 
+Given the relative surface regularity of bars 9&ndash;12, which recalls that of
+bars 1&ndash;4, one could take the correspondence one step further and
+regard the route followed by the Sarabande&rsquo;s second phrase as parallel
+to that followed by its first phrase.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[11] The uncertainties and tensions of the Sarabande&rsquo;s overlapping
+hemiolas find their complete peroration only in its remaining two
+phrases (bars 17&ndash;24 and 25&ndash;32).  The subphrase in bars 17&ndash;20 restores
+the outlines of bars 1&ndash;4 but forgoes the striking leaps of the first
+subphrase in favor of a more traditionally <i>cantabile</i>, conjunct
+setting of the characteristic incipit.  The following subphrase, in
+bars 21&ndash;24, shows a comparatively mechanical quality (a quality
+underscored by the repetition of the same subphrase in bars 29&ndash;32).
+The literal transposition of bars 21 and 29 in bars 22 and 30 (a third
+higher) underscores the insistence of the subphrase&rsquo;s repeated notes
+(A4, C5), as well as the closing impulse of its plainly cadential
+hemiolas (bars 22&ndash; 23, 30&ndash;31).  This is Handel&rsquo;s response to the
+accentual irregularities occasioned by the overlapping hemiolas:
+Though they play their role well, the two subphrases in question count
+among the less inspired passages in the 1720 collection of suites (the
+Sarabande dates from about 1703&ndash;06, but it was revised for the 1720
+publication).  Their slight awkwardness exemplifies the difficulties
+Baroque composers faced when, in the course of very short pieces, they
+felt need to resolve complex issues they had raised moments earlier
+but did not quite have the needed durational space in which to work
+out the resolution.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Handel, Suite in G minor (1720), Sarabande, mm. 25&ndash;28</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="willner_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>[12] It is only in the course of bars 25&ndash;28, the first subphrase of the
+closing phrase, that a vestige of genuine tension reemerges.  At bar 26,
+Handel sidesteps the opportunity to present generic repeated-chord
+patterns (in imitation of bars 17ff. and bar 25) and sustains the
+second-beat D chord through the end of the measure instead.  Handel
+can thereby suggest a &ldquo;hidden hemiola&rdquo; in bars 25&ndash;26 without fully
+realizing it.  The seventh chord on G, sustained in different positions
+through the second and third beats of bar 25, militates against the
+realization of the hemiola (<b>Example 5</b>). Along the same lines, by
+beginning bar 27 with two quarter notes, Handel evokes the preceding
+cadential hemiola (that of bars 22&ndash;23) without really articulating it (cf.
+the brackets in Example 5).  As a group, bars 25&ndash;27 thus portray an
+attenuated rhythmic reference to the Sarabande&rsquo;s temporal
+peculiarities (the suggestion of hemiolic closure in bars 26 and 27 not
+being matched by that of hemiolic opening in bars 25 or 26), but at the
+same time they steer clear of the peculiarities&rsquo; actual portrayal&mdash;a
+signal indication that the turbulence of the Sarabande&rsquo;s temporality
+has finally reached the point of complete peroration.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>  Though not
+as elegant as its introduction, Handel&rsquo;s resolution of the Sarabande&rsquo;s
+durational dialectic is emblematic of the dynamic, improvisatory
+nature of Baroque style, and it embodies a measure of compositional
+freedom missing perhaps from his later, more closely integrated
+compositions.</p>
+
+<p>[13] I should like to take the opportunity of writing again about the
+hemiola to modify my account of the hemiola formations in two of the
+pieces I presented in &ldquo;The Two-Length Bar Revisited&rdquo;:  Those in the
+Courante from Handel&rsquo;s F minor Suite, and those in the Musette from
+the G minor Concerto Grosso, Op. 6 No. 6 (Examples 3 and 4 in that
+article).  Even though the hemiolas in each piece appear at the close of
+a phrase, one could make a plausible case for reading them as
+constellations of overlapping hemiolas.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Handel, Suite in F minor (1720), Courante, mm. 14&ndash;20</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="willner_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>[14] In bars 17&ndash;19 of the Courante (<b>Example 6</b> in the present essay),
+the upper voice&rsquo;s first hemiola (bars 17&ndash;18) is self-evident; that an
+additional, overlapping hemiola spans bars 18&ndash;19 in the upper voice
+is suggested by the entrance of the bass G at the turn of bar 18, which
+underscores the downbeat of the measure, by the subsequent emphasis
+on the supertonic <nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> chord on the third beat of bar 18, and by the
+articulation of the dominant&rsquo;s <nobr><img border="0" alt="6 4" src="../../gifs/64.gif" width="8" height="15" style="vertical-align:text-top"></nobr>&ndash;<nobr><img border="0" alt="5 3" src="../../gifs/53.gif" width="7" height="16" style="vertical-align:text-top"></nobr> resolution on the first two beats
+of bar 19, which places substantial motivic weight on the second beat
+of that measure. The succession of these events suggests a metric
+reinterpretation similar to that displayed in the present Example 1.</p>
+
+<p>[15] Though it is the second, rather than the first, hemiola that is
+relatively tentative here&mdash;its interpretation is supported by the
+grouping of the upper voice but contradicted by the return of the bass
+tone G at the beginning of bar 19&mdash;the durationally angular
+setting of the three-bar segment and its collection of conflicting
+accents does evoke the thematic and rhythmic contraction typical of
+overlapping hemiolas and as such assumes growing significance in the
+course of the piece.  First introduced as the climax to a set of imitative
+entrances of the Courante&rsquo;s short theme over the dominant (bars 10&ndash;
+14&ndash;17), it reappears in the form of seemingly incidental allusions to the
+tentative hemiola of bars 18&ndash;19 during the cadential progression of
+bars 27&ndash;29 and, more concretely, in the progression of bars 30&ndash;32 (and,
+transposed but complete, in bars 41&ndash;43).</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Handel, Concerto Grosso in G minor, Op. 6, No. 6, Musette, mm. 1&ndash;15</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="willner_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Handel, Concerto Grosso in G minor, Op. 6, No. 6, Musette, mm. 11&ndash;13</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="willner_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Handel, Concerto Grosso in G minor, Op. 6, No. 6, Musette, mm. 1&ndash;7</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="willner_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Handel, Concerto Grosso in G minor, Op. 6, No. 6, Musette, mm. 11&ndash;14, 49&ndash;53, 81&ndash;82</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="willner_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="willner_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>[16] The overlapping hemiolas in the Musette from the G minor
+Concerto Grosso (bars 11&ndash;13) stand, by contrast, on nearly equal
+footing (bars 1&ndash;15 are quoted in <b>Example 7</b> of the present article; my
+new analytical observations are illustrated in Examples 8&ndash;10). The first hemiola is outlined by three pairs of chords whose articulation of
+strong and weak internal beats&mdash;SW, SW, SW&mdash;supports their
+contrapuntal and harmonic priorities.  The first chord of each pair
+acts as an accented appoggiatura to the second.  The metrical
+reinterpretation that takes place in the course of bar 12 is made
+possible by this contrapuntal and harmonic function:  As bar 12
+unfolds, the second chord of each pair is reinterpreted accentually as
+the principal chord of the pair.  The primacy of the rising fourths in
+the bass in bars 11&ndash;12 is gradually replaced by that of the falling thirds
+in bars 12&ndash;13, which are supported by the melody&rsquo;s movement in
+parallel tenths with the bass beginning at the downbeat of bar 12.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> 
+The reinterpretation is possible, indeed necessary, because at a deeper
+level the bass tone <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, introduced by the first chordal pair in bar
+11, is retained across bar 12 through to the downbeat of bar 13; its
+retention possesses substantial harmonic significance in that <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>supports the first-inversion supertonic of the Musette theme&rsquo;s closing
+cadential progression (<b>Example 8</b> of the present article). Both the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and C of the bass in bar 12 gain in accentual
+importance because they help extend <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> through an ascent to the
+supertonic&rsquo;s inner-voice tone C, a third above, and in so doing
+gradually define the contour of the expanded cadential progression
+that spans bars 11&ndash;13 (closing in bar 14).  By the time the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>dominant enters on the second beat of bar 13, it has gained its
+requisite hemiolic strong accent.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+
+
+<p>[17] The effect of a hemiola depends in large measure on its relation to
+the prevailing rhythmic and thematic design.  From this perspective,
+the Musette&rsquo;s overlapping hemiolas are particularly noteworthy for
+they introduce the third change in design within the six- and eight-bar
+groups in which they occur (bars 1&ndash;6 and 7&ndash;14; the hemiolas are first
+suggested, in germinal form, by the chordal pairs in bars 5&ndash;6).  The
+Musette&rsquo;s incipit, which moves in quarter notes (bars 1&ndash;2, 7&ndash;8), is
+followed by an extraordinary rising slide to a sustained <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (bars 3,
+7) and a responding, falling slide to a sustained <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>; the slides
+represent displaced contractions of the quarter-note incipit (<b>Example
+9</b>). The hemiolas (incipiently in bars 5&ndash;6, fully in bars 11&ndash;13)
+reintroduce the movement in quarter notes but contradict their earlier
+grouping in threes through the hemiolas&rsquo; characteristic articulation in
+pairs.  The expansive nature of the dialogue between the <i>concertino</i>
+and <i>ripieno</i> groups that follows&mdash;and many of the ensuing tonal and
+durational enlargements&mdash;throughout the movement arise
+from the need to work out and then dissipate the tensions resulting
+from this uncommonly close succession of changes in design and, in
+particular, from the effects of contraction occasioned by the slides and
+the chordal pairs.</p>
+
+<p>[18] To my original remarks regarding the influence the passage exerts
+on the rest of the Musette I should like to add also the observation
+that durational groupings in the Musette&rsquo;s extended developmental
+passages are remarkably regular.  Like the brief spurt of periodicity
+that follows the double bar in the F-minor Courante and the growing
+accentual conformity of the G-minor Sarabande, they mitigate the
+accentual uncertainties of the earlier, thematic hemiolas.  More
+important, later allusions to the chordal pairs that originally
+introduced the overlapping hemiolas present them in an expanded
+state, their ascending bass fourths altered to ascending fifths (bars 49&ndash;
+53, <b>Example 10</b> in the present article). The bass line carrying the
+ascending fifths rises, like the bass line that carried the hemiolas&rsquo;
+original ascending fourths, from <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to F and G; instead of
+continuing up to <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, though, it quickly falls back to F and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. 
+By allowing each chord to occupy a full measure rather than just a
+quarter note, Handel sidesteps the questions that marked the original
+progression and paves the way for the introduction of altogether new
+tensions in the stormy C minor section that is to follow.  It is perhaps
+a mere coincidence&mdash;but what a wonderful coincidence&mdash;that the C
+minor section (bars 81ff.) opens, as well, with a rising fifth in the bass,
+which ascends from tonic to dominant; however common and, in this
+instance, isolated from a sequential setting, the progression
+nonetheless carries a recollection of the earlier sequence (Example 10).</p>
+
+<p>[19] The hemiola, to be sure, occupies a special place in the Handelian
+repertoire, but its cultivation as a durational and tonal resource with
+consequences ranging well beyond its immediate appearance was
+hardly within Handel&rsquo;s exclusive compositional domain.  Overlapping
+hemiolas, in particular, appear with great frequency in the music of
+J.S. Bach, and especially in Bach&rsquo;s Courantes, Sarabandes, and
+Minuets.  Particularly worthy of study are such pieces as the
+Sarabande from the G-major Partita for Clavier, in which almost
+every four-bar group contains overlapping hemiolas that are expressed
+in different ways by different constellations of inner and outer voices.</p>
+
+<p>[20] Although the literature on the hemiola remains modest in scope,
+several important studies that shed considerable light on its durational
+properties (and offer some intriguing further references) have
+appeared in the recent and relatively recent past; I should like to close
+by calling them to the reader&rsquo;s attention.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Channan Willner<br>
+	The New York Public Library for the Performing Arts<br>Music Division<br>40 Lincoln Center Plaza<br>New York, NY 10023&ndash;7498<br><a href="mailto:cwillner@nypl.org">cwillner@nypl.org</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_cohn_1992" class="flyoverdiv">Cohn, Richard. 1992. &ldquo;Metric and Hypermetric Dissonance in the Menuetto of Mozart&rsquo;s Symphony in G minor, K. 550,&rdquo; <i>Integral</i> 6: 1&ndash;33.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1992"></a>Cohn, Richard. 1992. &ldquo;Metric and Hypermetric Dissonance in the Menuetto of Mozart&rsquo;s Symphony in G minor, K. 550,&rdquo; <i>Integral</i> 6: 1&ndash;33.</p><div id="citediv_corrigan_1992" class="flyoverdiv">Corrigan, Vincent. 1992. &ldquo;Hemiola in the Eighteenth Century.&rdquo; In <i>Johann Sebastian: A Tercentenary Celebration</i>, ed. Seymour L. Benstock. 23&ndash;32. Westport, CT: Greenwood Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="corrigan_1992"></a>Corrigan, Vincent. 1992. &ldquo;Hemiola in the Eighteenth Century.&rdquo; In <i>Johann Sebastian: A Tercentenary Celebration</i>, ed. Seymour L. Benstock. 23&ndash;32. Westport, CT: Greenwood Press.</p><div id="citediv_grave_1995" class="flyoverdiv">Grave, Floyd K. 1995. &ldquo;Metrical Dissonance in Haydn.&rdquo; <i>Journal of Musicology</i> 13, no. 2, 168&ndash;202.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="grave_1995"></a>Grave, Floyd K. 1995. &ldquo;Metrical Dissonance in Haydn.&rdquo; <i>Journal of Musicology</i> 13, no. 2, 168&ndash;202.</p><div id="citediv_hlawicka_1971" class="flyoverdiv">Hlawicka, Karl. 1971. &ldquo;Musikalischer Rhythmus und Metrum.&rdquo; <i>Die Musikforschung</i> 24, no. 4: 385&ndash;406.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hlawicka_1971"></a>Hlawicka, Karl. 1971. &ldquo;Musikalischer Rhythmus und Metrum.&rdquo; <i>Die Musikforschung</i> 24, no. 4: 385&ndash;406.</p><div id="citediv_hlawicka_1958" class="flyoverdiv">Hlawicka, Karl. 1958. &ldquo;Die rhythmische Verwechslung.&rdquo; <i>Die Musikforschung</i> 11, no. 1: 33&ndash;49.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hlawicka_1958"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1958. &ldquo;Die rhythmische Verwechslung.&rdquo; <i>Die Musikforschung</i> 11, no. 1: 33&ndash;49.</p><div id="citediv_jackson_1989" class="flyoverdiv">Jackson, Timothy L. 1989. &ldquo;Mozart&rsquo;s &lsquo;Little Gigue&rsquo; in G major K. 574: A Study in Rhythmic Shift&mdash;A Reminiscence of the Competition with Haessler.&rdquo; <i>Mitteilungen der Internationalen Stiftung Mozarteum</i> 37, nos. 1&ndash;4: 70&ndash;80.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jackson_1989"></a>Jackson, Timothy L. 1989. &ldquo;Mozart&rsquo;s &lsquo;Little Gigue&rsquo; in G major K. 574: A Study in Rhythmic Shift&mdash;A Reminiscence of the Competition with Haessler.&rdquo; <i>Mitteilungen der Internationalen Stiftung Mozarteum</i> 37, nos. 1&ndash;4: 70&ndash;80.</p><div id="citediv_krebs_1987" class="flyoverdiv">Krebs, Harald. 1987. &ldquo;Some Extensions of the Concepts of Metrical Consonance and Dissonance.&rdquo; <i>Journal of Music Theory</i> 31, no. 1: 99&ndash;120.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krebs_1987"></a>Krebs, Harald. 1987. &ldquo;Some Extensions of the Concepts of Metrical Consonance and Dissonance.&rdquo; <i>Journal of Music Theory</i> 31, no. 1: 99&ndash;120.</p><div id="citediv_little_and_jenne_1992" class="flyoverdiv">Little, Meredith Ellis, and Natalie Jenne. 1992. <i>Dance and the Music of J. S.Bach</i>. Bloomington: Indiana University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="little_and_jenne_1992"></a>Little, Meredith Ellis, and Natalie Jenne. 1992. <i>Dance and the Music of J. S.Bach</i>. Bloomington: Indiana University Press.</p><div id="citediv_schneider_1992" class="flyoverdiv">Schneider, Herbert. 1992. &ldquo;Structure metriques du menuet au XVIIe et au debut du XVIIIe siecle.&rdquo; <i>Revue de Musicologie</i> 78, no. 1: 27&ndash;65.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schneider_1992"></a>Schneider, Herbert. 1992. &ldquo;Structure metriques du menuet au XVIIe et au debut du XVIIIe siecle.&rdquo; <i>Revue de Musicologie</i> 78, no. 1: 27&ndash;65.</p><div id="citediv_sutton_1985" class="flyoverdiv">Sutton, Julia. 1985. &ldquo;The Minuet: An Elegant Phoenix.&rdquo; <i>Dance Chronicle</i> 8, nos. 3&ndash;4: 119&ndash;52.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sutton_1985"></a>Sutton, Julia. 1985. &ldquo;The Minuet: An Elegant Phoenix.&rdquo; <i>Dance Chronicle</i> 8, nos. 3&ndash;4: 119&ndash;52.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> I wish to thank Floyd K. Grave for reading both articles and
+offering illuminating comments on the intricacies of Handel&rsquo;s G-minor
+Sarabande, which I discuss in the course of this study.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Joel Lester, <i>The Rhythms of Tonal Music</i> (Carbondale and
+Edwardsville, Ill.: Southern Illinois University Press, 1986), 3&ndash;4
+and 18&ndash;21.  This durational accent is considerably intensified by the
+trill embellishing C5, but the trill, which appears in brackets or
+parentheses in the most reliable editions, is implicit in Handel&rsquo;s
+melodic outline (note the two eighths by which it is followed) rather
+than explicit in his text.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> It is possible to find several hemiolic implications in bars 9&ndash;12,
+especially across bars 10&ndash;11 and 11&ndash;12.  These, I believe, represent an
+allusion to bars 5&ndash;7 that is superseded by the more obvious
+parallelisms among the second-beat emphases throughout the passage. 
+The emphases win out (as we shall presently see) on account of the
+stronger need to evoke the durational design of bars 1&ndash;4.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Floyd K. Grave (private communication) has suggested that the
+Sarabande rhythm&rsquo;s second-beat emphasis comes into its own in bars
+13&ndash;15 and persists as an unnotated expression of <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr> time through the
+second beat of bar 15 (the tied <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5 standing for a quarter-note rest
+at the beginning of bar 15); and that the sense of an event is
+underscored by the entrance of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>5 in bar 13.  The melodic peak of
+the Sarabande, it also contradicts the inner-voice <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>4 of bar 12
+in much the same way that the <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>5 of bar 5 contradicted the <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>4 of bar 4.  These wonderful observations are by no means
+incompatible with mine and reflect the extraordinary richness of
+meaning with which Handel invests the surface&mdash;particularly
+remarkable in view of the substantial rests and static F-minor
+harmony (also pointed out by Grave) that pervade the passage.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> The hemiolic implications of bars 25&ndash;27 echo those of bars 10&ndash;12
+(see footnote 3, above) but they are more explicitly articulated owing to the
+intensified activity on the third beat of bar 25.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Like most of Handel&rsquo;s Courantes, the piece under discussion is really
+a Corrente, but Handelians&mdash;unlike Bach scholars&mdash;persist in using the
+French term even when the Italian is clearly preferable. To maintain
+Handelian consistency, I retain the French form here.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Bar 12 includes the overlapping hemiolas&rsquo; grey area, their &ldquo;pivot
+zone,&rdquo; spanning beats 1 and 2.  Our retrospective interpretation of the
+area&rsquo;s metrical disposition allows the chords on <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and C (beats 1
+and 3) to assert their accentual primacy over the appoggiatura-like
+chords by which they are preceded.  The parallel tenths between the
+outer voices in bars 12&ndash;13 allow both performers and listeners to
+absorb the accentual reinterpretation in a fluent, unforced way. 
+Paradoxically, both appearances of the underlying <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (bar 11, beat
+2; bar 13, beat 1) are metrically weaker than those of <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and C,
+which prolong <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>; but the metrical weakness of structural chords
+following their introduction by sequential appoggiatura chords and
+preceding the appearance of still more structural chords (such as the
+dominant on beats 2 and 3 of bar 13) is quite common.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Similar pairs of hemiolic chords appear as an idiom under more
+straightforward circumstances throughout the Classical era. In their
+later formation, they extend for four&mdash;rather than three&mdash;bars, and
+therefore divide into two sets of complete hemiolas.  See, for instance,
+the second movement from Haydn&rsquo;s Keyboard Sonata in D, No. 61
+[Hoboken XVI: 51], bars 31&ndash;34, for a particularly dramatic example;
+or the Menuet from Haydn&rsquo;s Symphony No. 99 in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, bars 52&ndash;55. 
+Though they don&rsquo;t occur very frequently, such groups of successive
+hemiolas are by no means uncommon in the Classical style (see also
+Mozart&rsquo;s Little Gigue in G, K. 574, which incorporates successive
+hemiolas in its principal thematic material as a well-known borrowing
+of similar hemiolas from the Gigue of Handel&rsquo;s F-minor Suite).  For
+a set of genuine late 18th-century overlapping hemiolas see Mozart&rsquo;s
+Piano Concerto in <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, K. 595, third movement, bars 51&ndash;52; the
+hemiolas appear in the bass line, extending from the middle of bar 51
+through the end of bar 52 (the movement is in <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>6</mn></msubsup></math></nobr> time, and the
+hemiolas span the duration of what would be three bars in <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>3</mn></msubsup></math></nobr> time).
+Canonic hemiolas in the Menuetto from Mozart&rsquo;s G-minor Symphony,
+K. 550, that in some ways resemble overlapping hemiolas are discussed
+by Richard Cohn (<a href="#cohn_1992" id="citation_cohn_1992_67dc9bd063489">1992</a>), pages 22&ndash;26, Example 7 (bars 28&ndash;36).  Canonic hemiolas
+occur in different voices; overlapping hemiolas are usually
+collapsed onto a single voice or onto several voices moving
+simultaneously.<br><a href="#FN8REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">I wish to thank Floyd K. Grave for reading both articles and
+offering illuminating comments on the intricacies of Handel&rsquo;s G-minor
+Sarabande, which I discuss in the course of this study.</div><div id="fndiv2" class="flyoverdiv">Joel Lester, <i>The Rhythms of Tonal Music</i> (Carbondale and
+Edwardsville, Ill.: Southern Illinois University Press, 1986), 3&ndash;4
+and 18&ndash;21.  This durational accent is considerably intensified by the
+trill embellishing C5, but the trill, which appears in brackets or
+parentheses in the most reliable editions, is implicit in Handel&rsquo;s
+melodic outline (note the two eighths by which it is followed) rather
+than explicit in his text.</div><div id="fndiv3" class="flyoverdiv">It is possible to find several hemiolic implications in bars 9&ndash;12,
+especially across bars 10&ndash;11 and 11&ndash;12.  These, I believe, represent an
+allusion to bars 5&ndash;7 that is superseded by the more obvious
+parallelisms among the second-beat emphases throughout the passage. 
+The emphases win out (as we shall presently see) on account of the
+stronger need to evoke the durational design of bars 1&ndash;4.</div><div id="fndiv4" class="flyoverdiv">Floyd K. Grave (private communication) has suggested that the
+Sarabande rhythm&rsquo;s second-beat emphasis comes into its own in bars
+13&ndash;15 and persists as an unnotated expression of 42 time through the
+second beat of bar 15 (the tied E&#x266d;5 standing for a quarter-note rest
+at the beginning of bar 15); and that the sense of an event is
+underscored by the entrance of A&#x266d;5 in bar 13.  The melodic peak of
+the Sarabande, it also contradicts the inner-voice A&#x266e;4 of bar 12
+in much the same way that the F&#x266e;5 of bar 5 contradicted the F&#x266f;4 of bar 4.  These wonderful observations are by no means
+incompatible with mine and reflect the extraordinary richness of
+meaning with which Handel invests the surface&mdash;particularly
+remarkable in view of the substantial rests and static F-minor
+harmony (also pointed out by Grave) that pervade the passage.</div><div id="fndiv5" class="flyoverdiv">The hemiolic implications of bars 25&ndash;27 echo those of bars 10&ndash;12
+(see footnote 3, above) but they are more explicitly articulated owing to the
+intensified activity on the third beat of bar 25.</div><div id="fndiv6" class="flyoverdiv">Like most of Handel&rsquo;s Courantes, the piece under discussion is really
+a Corrente, but Handelians&mdash;unlike Bach scholars&mdash;persist in using the
+French term even when the Italian is clearly preferable. To maintain
+Handelian consistency, I retain the French form here.</div><div id="fndiv7" class="flyoverdiv">Bar 12 includes the overlapping hemiolas&rsquo; grey area, their &ldquo;pivot
+zone,&rdquo; spanning beats 1 and 2.  Our retrospective interpretation of the
+area&rsquo;s metrical disposition allows the chords on B&#x266d; and C (beats 1
+and 3) to assert their accentual primacy over the appoggiatura-like
+chords by which they are preceded.  The parallel tenths between the
+outer voices in bars 12&ndash;13 allow both performers and listeners to
+absorb the accentual reinterpretation in a fluent, unforced way. 
+Paradoxically, both appearances of the underlying A&#x266d; (bar 11, beat
+2; bar 13, beat 1) are metrically weaker than those of B&#x266d; and C,
+which prolong A&#x266d;; but the metrical weakness of structural chords
+following their introduction by sequential appoggiatura chords and
+preceding the appearance of still more structural chords (such as the
+dominant on beats 2 and 3 of bar 13) is quite common.</div><div id="fndiv8" class="flyoverdiv">Similar pairs of hemiolic chords appear as an idiom under more
+straightforward circumstances throughout the Classical era. In their
+later formation, they extend for four&mdash;rather than three&mdash;bars, and
+therefore divide into two sets of complete hemiolas.  See, for instance,
+the second movement from Haydn&rsquo;s Keyboard Sonata in D, No. 61
+[Hoboken XVI: 51], bars 31&ndash;34, for a particularly dramatic example;
+or the Menuet from Haydn&rsquo;s Symphony No. 99 in E&#x266d;, bars 52&ndash;55. 
+Though they don&rsquo;t occur very frequently, such groups of successive
+hemiolas are by no means uncommon in the Classical style (see also
+Mozart&rsquo;s Little Gigue in G, K. 574, which incorporates successive
+hemiolas in its principal thematic material as a well-known borrowing
+of similar hemiolas from the Gigue of Handel&rsquo;s F-minor Suite).  For
+a set of genuine late 18th-century overlapping hemiolas see Mozart&rsquo;s
+Piano Concerto in B&#x266d;, K. 595, third movement, bars 51&ndash;52; the
+hemiolas appear in the bass line, extending from the middle of bar 51
+through the end of bar 52 (the movement is in 86 time, and the
+hemiolas span the duration of what would be three bars in 83 time).
+Canonic hemiolas in the Menuetto from Mozart&rsquo;s G-minor Symphony,
+K. 550, that in some ways resemble overlapping hemiolas are discussed
+by Richard Cohn (<a href="#cohn_1992" id="citation_cohn_1992_67dc9bd063489">1992</a>), pages 22&ndash;26, Example 7 (bars 28&ndash;36).  Canonic hemiolas
+occur in different voices; overlapping hemiolas are usually
+collapsed onto a single voice or onto several voices moving
+simultaneously.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1996 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Lee A. Rothfarb, General Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

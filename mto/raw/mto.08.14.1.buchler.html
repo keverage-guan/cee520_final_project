@@ -1,0 +1,591 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 14.1: Buchler, Reconsidering Klumpenhouwer Networks One More Time</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Reconsidering Klumpenhouwer Networks One More Time: A Response to 
+		Eight Responses">
+
+    <meta name="citation_author" content="Buchler, Michael">
+      
+
+<meta name="citation_publication_date" content="2008/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="14">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Reconsidering Klumpenhouwer Networks One More Time: A Response to 
+		Eight Responses
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.08.14.1/mto.08.14.1.buchler.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Michael Buchler</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.php">http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.php</a></font></p><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.07.13.3/toc.13.3.php">http://www.mtosmt.org/issues/mto.07.13.3/toc.13.3.php</a></font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.08.14.1/mto.08.14.1.buchler.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received February 2008</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 14, Number 1, March 2008 <br> Copyright &#0169; 2008 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] I am grateful to Tim Koozin for affording me the opportunity to write a 
+rejoinder to the many thoughtful responses &#8220;Reconsidering Klumpenhouwer 
+Networks&#8221; has elicited.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Having already said more than my fair share on the subject, I will keep this relatively brief, addressing only a few of the issues raised by Gretchen Foley, Henry Klumpenhouwer, Catherine Losada, Scott Murphy, Catherine Nolan, Shaugn O&#8217;Donnell, Philip Stoecker, and Dmitri Tymoczko. Because I am responding to a host of different topics, I have not tried to fashion a coherent essay, but have rather adopted an episodic narrative. I hope that readers will have the opportunity to examine Lewin&#8217;s foundational articles on K-nets (<a href="#lewin_1990" id="citation_lewin_1990_67dc9b0a21608">1990</a> and <a href="#lewin_1994" id="citation_lewin_1994_67dc9b0a2160e">1994</a>), my article in Volume 13.2 and the relevant articles and commentaries in Volume 13.3 before weighing the arguments that follow.</p>
+
+<p>[2] <b>On relational abundance<br></b>
+In his response, O&#8217;Donnell stated that my &#8220;primary concern with K-nets is their potential promiscuity&#8221; (paragraph 3). I was somewhat amused by this observation only because it struck me that Murphy might have imagined that I was most upset by recursion, Tymoczko seems to have thought that the meaning of &lt;T<sub><i>n</i></sub>&gt; was foremost on my mind, and perhaps Klumpenhouwer was most bothered by my alleged analytical rigidity. I will take up each of these complaints in turn.</p>
+
+<p>[3] To address O&#8217;Donnell&#8217;s remark and his subsequent arguments that these networks are really not so &#8220;promiscuous,&#8221; let me begin by reminding readers that my section on relational abundance (paragraph 32) opened with the sincere disclaimer that &#8220;this abundance of potential relations could be cast as either a problem (what O&#8217;Donnell has deemed &#8216;promiscuity&#8217;) or a feature, highlighting their inherent flexibility. Inasmuch as K-nets are considered musical interpretations, I am inclined to view their abundant relatability as a good thing.&#8221; (Incidentally, I believe this statement also undermines Klumpenhouwer&#8217;s 
+claim that I oppose multiple interpretations.)</p>
+
+<p>[4] Readers may revisit my paragraphs 32&ndash;38 to see how I initially articulated and limited my complaint about relational abundance. I will now turn to O&#8217;Donnell&#8217;s response, especially the following section from his paragraph 3, in which he countered my claim (also found in <a href="#stoecker_2002" id="citation_stoecker_2002_67dc9b0a21613">Stoecker 2002</a>) that any member of set class [026] can be shown to be positively (or negatively) isographic to any other trichord. The social circle O&#8217;Donnell describes continues a metaphor that I introduced.</p>
+
+<blockquote>
+In the more social circle of K-nets, {0,2,6} can have relations with 
+approximately 3.5% of the population, or up to 10.5% if one is willing to 
+explore the multiple configurations afforded by <i>double emploi</i>. In other words, a K-net {0,2,6} is still rather discerning in rejecting 90&#8211;96% of its potential suitors, and only against Buchler&#8217;s backdrop of canonical set classes does a K-net {0,2,6} seem promiscuous. It&#8217;s not freely partying with all the other 4,094 pcsets! (O&#8217;Donnell, paragraph 3) </p>
+</blockquote>
+
+<p>[5] One might almost pity the poor {0,2,6} pcset&#8212;that most identifiable 
+representative of its class: even with <i>double emploi</i>, it enjoys relations with only about 10.5% of its peers. However, who exactly are its peers? I 
+demonstrated that every single trichord (that is not a multiset) and half the 
+dyads could be related to any single representative of [026]. O&#8217;Donnell is 
+simply saying that of all the 4,094 possible combinations of pitch classes (not 
+including multisets, empty sets, or {0,2,6}) only about 10.5% are three-note 
+combinations. I don&#8217;t know what K-net parties O&#8217;Donnell has been attending, but in practice {0,2,6}&#8217;s potential suitors have rarely included larger sets.</p>
+
+<p>[6] This particular disregard of common K-net practice amounts to only one 
+reason that I find O&#8217;Donnell&#8217;s 10.5% statistic (and his even more limiting 3.5% 
+statistic) to be highly questionable.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Imagine that we wanted to relate some 
+member of [026] to some member of [01234678a].<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Because network-based comparisons 
+require structures with the same number of nodes, we must create two 
+commensurate nine-node networks. This entails triplicating each note in the 
+[026]-type set, or doubling some while quadrupling others, and so forth, 
+rendering our simple [026] conceptually unwieldy.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p>[7] O&#8217;Donnell&#8217;s statistics do not account for network structures with duplicate 
+pcs (I do not blame him; I certainly would not want to generate those statistics 
+and, as I mentioned, I find the practice of arbitrarily duplicating pcs within 
+networks to be suspicious.). But this means that he is incorrectly claiming that 
+{0,2,6} can only be related to a relatively small number of the 4,094 pcsets 
+that form his data set. On the contrary, if we distribute the elements of some 
+[026] among a larger number of nodes, freely allowing any degree of pc 
+duplication, then we will necessarily be able to use network isography to relate 
+members of [026] to members of an enormous 
+number of larger set classes. It all comes down to 
+which notes we choose to duplicate and how we draw our arrows.</p>
+
+<p>[8] <b>On K-nets and Perle sets<br>
+</b>Foley makes the good point&#8212;also articulated, somewhat differently, by Headlam (<a href="#headlam_2002" id="citation_headlam_2002_67dc9b0a21643">2002</a>)&#8212;that Perle&#8217;s compositional method (as described in his book <i>Twelve-Tone Tonality</i>) virtually guarantees strong isography wherever he applies his cyclic sets. Weaving together two complementary interval cycles necessarily produces the conditions for strong isography (i.e., part of the set does <i>this</i> while the other does <i>that</i>&#8212;and <i>this</i> is the inverse of <i>that</i>). But, perhaps paradoxically, I would prefer <i>not</i> to use K-nets (or any analytical method) where I know that they will always succeed. Perle describes these relationships so thoroughly (if a bit idiosyncratically) that I question the benefit of using K-nets to depict his illustrations. Still, analysis is a personal matter and I respect Foley&#8217;s analytical decisions. Although she shows relations that are produced by Perle&#8217;s compositional system, Foley is certainly not using K-nets to describe musical situations that are abstractly trivial. She and I still disagree on matters of recursion, an issue I will revisit later in response to Klumpenhouwer.</p>
+
+<p>[9] <b>On index numbers</b><br>
+I have little to add to Tymoczko&#8217;s excellent essay. In particular, I am 
+intrigued by his suggestion (which, I should confess, we batted back and forth a 
+bit before he wrote his response) that the arguments of &lt;T<sub><i>n</i></sub>&gt; be halved to 
+reflect true pitch-class transposition rather than the less intuitive 
+index-number transposition. Were I in the mood to introduce a bit of notational 
+havoc, I might even suggest that dividing plain old index numbers (i.e., <i>n</i> in 
+the expression I<sub><i>n</i></sub>) in half is generally also a good idea (indeed, this would 
+obviate the need to halve the &lt;T<sub><i>n</i></sub>&gt; arguments). If we did this, inversion about a 
+single pitch class would be denoted by an integer and inversion about a quarter 
+tone would be denoted by a fractional number (e.g., I<sub>5.5</sub> to reflect inversion 
+that maps F<sub>4</sub> onto F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"><sub>4</sub>). One feature of this proposed 24-index-number system is 
+that it would differentiate between inversion about C (I<sub>0</sub>) and inversion about 
+F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"> (I<sub>6</sub>). </p>
+
+<p>[10] Imagine a composition that begins by wedging outward from C and later 
+features a similar wedge outward from F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top">. It might be analytically useful to 
+distinguish the pitch levels of these two events. In his <i>Class Notes</i>, Robert 
+Morris contends (and I am inclined to agree) that inversion is properly a 
+p-space phenomenon.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> However, even an analyst who does not wish to venture into 
+the vast domain of p-space could capture this simple difference by collapsing 
+the specific idea of wedging about some particular C to a broader notion of 
+wedging about any C. Clearly there are other circumstances where suggesting a 
+more specific inversional axis might be analytically advantageous, and my new 
+index number system would allow us to operate within pc-space while still making 
+stronger statements about the musical surface. This could have other interesting 
+implications for atonal analysis: for instance, given a musical situation in 
+which there is no reason to prefer any particular axis of inversion, one might 
+reasonably question whether inversion was truly at play. Readers concerned with 
+the potential incommensurability of T<sub><i>n</i></sub>I and I<sub><i>n</i></sub> notations that my system would 
+introduce might prefer to adopt Lewin&#8217;s own inversion notation (or some minor 
+modification thereof) to capture such musical distinctions as I<img border="0" src="../../gifs/cc.gif" width="10" height="19" align="texttop"> 
+versus I<img border="0" src="../../gifs/fsharpfsharp.gif" width="17" height="20" align="texttop">, 
+or I<img border="0" src="../../gifs/cc.gif" width="10" height="19" align="texttop"> versus I<img border="0" src="../../gifs/eba.gif" width="17" height="19" align="texttop">, 
+or even I<img border="0" src="../../gifs/fs5fs5.gif" width="22" height="22" align="texttop"> 
+versus I<img border="0" src="../../gifs/fs6fs6.gif" width="22" height="22" align="texttop">.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<p>[11] <b>On Murphy&#8217;s five recursive situations and my five recursive arguments</b><br>Murphy is correct that I was aiming the full force of my recursion critique at &#8220;exact self-similarity&#8221; networks such as those that Lewin produces in Figure 12 of his foundational K-net article (<a href="#lewin_1990" id="citation_lewin_1990_67dc9b0a21649">1990</a>). He also very perceptively separates my criticism on recursion into five components (Murphy, paragraph 4), and he 
+likewise finds five situations in which Lewin, Klumpenhouwer, and others have 
+used recursion (Murphy, paragraph 3). In so doing, Murphy creates distinct 
+categories out of some situations that I might have considered recursive way 
+stations. No matter, I think it is productive both to scrutinize how Lewin uses 
+recursion and to examine my specific criticisms about such uses of recursion. 
+Moreover, I enjoyed reading Murphy&#8217;s analysis and was inspired by the 
+pedagogical way in which he leads us through it and demonstrates its musical 
+motivation.</p>
+
+<p>[12] Murphy clearly prefers a broader notion of recursion, and I appreciate his 
+rationale (again, see his paragraph 3). However, when Murphy says that his 
+recursive categories 3 and 4 (&#8220;modal&#8221; and &#8220;T-net self-similarity&#8221;) take only a 
+&#8220;glancing blow&#8221; from my (now five) criticisms and his category 5 
+(&#8220;self-dissimilarity&#8221;) recursion escapes nearly scot-free, he incorrectly 
+assumes that each of the five critiques that he has (again, correctly) ascribed 
+to me carry equal force. In fact, criticism #5 (incommensurability of 
+levels)&#8212;which applies to all manner of network recursion&#8212;is my most significant 
+objection. Indeed, if I had to rank these five in importance, I would say that 
+#1 and #4 raise relatively mild objections, #2 and #3 point out significant 
+flaws, and #5 describes the central-most problem with all K-net hierarchies. So, 
+while I admire both Murphy&#8217;s clear and logical prose and his very musical 
+reading of Bart&oacute;k&#8217;s &#8220;Fourths,&#8221; I still disagree that he has substantially 
+softened the blow of my criticism on recursion (although I would have been 
+pleased had he found a musical relationship that would allay the problem of 
+criticism #5). </p>
+
+<p>[13] <b>On Henry Klumpenhouwer&#8217;s response</b><br>
+A number of the respondents, including Klumpenhouwer, Nolan, and O&#8217;Donnell, 
+reminded us that there is an ontological difference between dual transpositions 
+and network operations. In the first section of my article, I made the case that 
+hyper transpositions could be calculated more simply and with greater analytical 
+transparency by envisioning them as the sum of a pair of dual transpositions. We 
+arrive at the same result using a different and easier-to-conceptualize 
+structure.</p>
+
+<p>[14] I certainly concede that these constructions are philosophically distinct 
+(and Klumpenhouwer articulates the differences quite well in paragraphs 4 
+through 8 of his response, as does Nolan in paragraphs 7 through 12 of her 
+response). In my defense, however, I would like to highlight an important 
+disclaimer that I made at the outset of my article: that most of my arguments 
+(those in sections two through four) amounted to &#8220;a detailed editorial&#8221; on the 
+analytical use of K-nets. The reason the initial section of my essay went into 
+so much detail in showing the relationship between unary network and dual 
+(non-network) transformations was to support my claim that K-nets are not 
+generally as useful as dual transformations <i>for analysis</i>. I did not mean this to 
+be a general statement against automorphisms, though retrospectively I can see 
+how my first section might have been interpreted this way.</p>
+
+<p>[15] Indeed, I believe K-nets (as K-nets, not as dual transformations) offer an especially thought-provoking way to investigate the abstract potential of a 
+musical space. Lewin fostered a better understanding of our musical materials 
+beginning with his first article in <a href="#lewin_1959" id="citation_lewin_1959_67dc9b0a21665">1959</a>, and I would prefer to regard K-nets as another attractive way to conceptualize pitch-class combination and transformation. However, when abstract theory is used as the basis for musical analysis, I want the methodology (or, rather, some reasonable interpretation of the methodology) to tell us something about the music rather than solely telling us something about the methodology; in the latter case, why bother with the music at all? This is a central question that runs through my head when I read Lewin&#8217;s analytical tutorial on K-nets (<a href="#lewin_1994" id="citation_lewin_1994_67dc9b0a21668">1994</a>), to cite one particularly relevant example.</p>
+
+<p>[16] In light of Klumpenhouwer&#8217;s response, I also wish to clarify that I am not generally trying to dismantle musical hierarchies, whether conceived from the bottom up or from the top down. My primary complaint is one of commensurability. To restate what I said initially (paragraph 66) and what Losada said more compellingly (her paragraph 11): in a Schenkerian hierarchy, the various levels all (at least arguably) represent pitches and their interrelationships; in a K-net hierarchy (or, really, in any network hierarchy), one level might show transformations among pitch classes and the next level might show transformations among transformations.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> When a hierarchy shows fundamentally different types of things at different levels, at best it becomes unclear, and at worst it loses its meaning. Thus, in my opinion, an inconsistent hierarchy is inherently undesirable for analysis, where our (or at least my) overriding aim is coherence and clarity.</p>
+
+<p>[17] Nonetheless, I believe that Klumpenhouwer and I largely see eye to eye 
+about the broad goals for analysis. Contrary to his claims, I would not 
+articulate any sort of prescriptive&#8212;much less objectivist&#8212;vision of what 
+analysis ought to look like. He and I both very strongly favor highlighting 
+musical ambiguities, comparing and studying different analyses, and avoiding the 
+problematic notion of analytical truth. I agree with the philosophical position 
+that Klumpenhouwer outlined in his paragraph 20 and with the embedded Schoenberg 
+quote in paragraph 21. But criticizing <i>an</i> analysis or even <i>an</i> analytical method 
+(if it is a method) is certainly not tantamount to believing in either a single 
+best analysis or in only a single way of doing analysis.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Michael Buchler<br>
+	Florida State University<br>College of Music<br>Tallahassee, FL 32306-1180<br><a href="mailto:mbuchler@fsu.edu">mbuchler@fsu.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_buchler_2007" class="flyoverdiv">Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html'>Reconsidering Klumpenhouwer Networks</a>.&#8221; <i>Music Theory Online</i> 13.2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="buchler_2007"></a>Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html'>Reconsidering Klumpenhouwer Networks</a>.&#8221; <i>Music Theory Online</i> 13.2.</p><div id="citediv_foley_2007" class="flyoverdiv">Foley, Gretchen. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.foley.html'>The Efficacy of K-Nets in Perlean Theory</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="foley_2007"></a>Foley, Gretchen. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.foley.html'>The Efficacy of K-Nets in Perlean Theory</a>.&#8221; <i>Music Theory Online</i> 13.3.</p><div id="citediv_grant_2008" class="flyoverdiv">Grant, Roger M. 2008. &#8220;<a href='http://www.mtosmt.org/issues/mto.08.14.1.grant.html'>Hysteria at the Musical Surface</a>.&#8221; <i>Music Theory Online</i> 14.1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="grant_2008"></a>Grant, Roger M. 2008. &#8220;<a href='http://www.mtosmt.org/issues/mto.08.14.1.grant.html'>Hysteria at the Musical Surface</a>.&#8221; <i>Music Theory Online</i> 14.1.</p><div id="citediv_headlam_2002" class="flyoverdiv">Headlam, Dave. 2002. &#8220;Perle&#8217;s Cyclic Sets and Klumpenhouwer Networks: A Response.&#8221; <i>Music Theory Spectrum</i> 24.2: 246&#8211;256.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="headlam_2002"></a>Headlam, Dave. 2002. &#8220;Perle&#8217;s Cyclic Sets and Klumpenhouwer Networks: A Response.&#8221; <i>Music Theory Spectrum</i> 24.2: 246&#8211;256.</p><div id="citediv_klumpenhouwer_2007" class="flyoverdiv">Klumpenhouwer, Henry. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.klumpenhouwer.html'>Reconsidering Klumpenhouwer Networks: a Response</a>.&#8221; <i>Music Theory Online </i>13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_2007"></a>Klumpenhouwer, Henry. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.klumpenhouwer.html'>Reconsidering Klumpenhouwer Networks: a Response</a>.&#8221; <i>Music Theory Online </i>13.3.</p><div id="citediv_lambert_2002" class="flyoverdiv">Lambert, Philip. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24.2: 165&#8211;195.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lambert_2002"></a>Lambert, Philip. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24.2: 165&#8211;195.</p><div id="citediv_lewin_1959" class="flyoverdiv">Lewin, David. 1959. &#8220;Re: Intervallic Relations between Two Collections of Notes.&#8221; <i>Journal of Music Theory</i> 3:2: 298&#8211;301.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1959"></a>Lewin, David. 1959. &#8220;Re: Intervallic Relations between Two Collections of Notes.&#8221; <i>Journal of Music Theory</i> 3:2: 298&#8211;301.</p><div id="citediv_lewin_1990" class="flyoverdiv">Lewin, David. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&#8211;120.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1990"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&#8211;120.</p><div id="citediv_lewin_1994" class="flyoverdiv">Lewin, David. 1994. &#8220;A Tutorial on Klumpenhouwer Networks, Using the Chorale in Schoenberg&#8217;s Opus 11, No. 2.&#8221; <i>Journal of Music Theory</i> 38: 79&#8211;101.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1994"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1994. &#8220;A Tutorial on Klumpenhouwer Networks, Using the Chorale in Schoenberg&#8217;s Opus 11, No. 2.&#8221; <i>Journal of Music Theory</i> 38: 79&#8211;101.</p><div id="citediv_losada_2007" class="flyoverdiv">Losada, Catherine. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recursion: Further 
+Considerations</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="losada_2007"></a>Losada, Catherine. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recursion: Further 
+Considerations</a>.&#8221; <i>Music Theory Online</i> 13.3.</p><div id="citediv_morris_1991" class="flyoverdiv">Morris, Robert D. 1991. <i>Class Notes for Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1991"></a>Morris, Robert D. 1991. <i>Class Notes for Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</p><div id="citediv_murphy_2007" class="flyoverdiv">Murphy, Scott. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.murphy.html'>Considering Network Recursion and Bart&oacute;k&#8217;s &#8216;Fourths.&#8217;</a>&#8221; <i>Music Theory Online </i>13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="murphy_2007"></a>Murphy, Scott. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.murphy.html'>Considering Network Recursion and Bart&oacute;k&#8217;s &#8216;Fourths.&#8217;</a>&#8221; <i>Music Theory Online </i>13.3.</p><div id="citediv_nolan_2007" class="flyoverdiv">Nolan, Catherine. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.nolan.html'>Thoughts on Klumpenhouwer Networks and Mathematical Models: The Synergy of Sets and Graphs</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nolan_2007"></a>Nolan, Catherine. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.nolan.html'>Thoughts on Klumpenhouwer Networks and Mathematical Models: The Synergy of Sets and Graphs</a>.&#8221; <i>Music Theory Online</i> 13.3.</p><div id="citediv_o&rsquo;donnell_2007" class="flyoverdiv">O&rsquo;Donnell, Shaugn. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.odonnell.html'>Embracing Relational Abundance</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="o&rsquo;donnell_2007"></a>O&rsquo;Donnell, Shaugn. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.odonnell.html'>Embracing Relational Abundance</a>.&#8221; <i>Music Theory Online</i> 13.3.</p><div id="citediv_perle_1996" class="flyoverdiv">Perle, George. 1996. <i>Twelve-Tone Tonality</i>, 2nd ed. Berkeley: University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="perle_1996"></a>Perle, George. 1996. <i>Twelve-Tone Tonality</i>, 2nd ed. Berkeley: University of California Press.</p><div id="citediv_stoecker_2002" class="flyoverdiv">Stoecker, Philip. 2002. &#8220;Klumpenhouwer Networks, Trichords, and Axial Isography.&#8221; <i>Music Theory Spectrum</i> 24.2: 231&#8211;245.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stoecker_2002"></a>Stoecker, Philip. 2002. &#8220;Klumpenhouwer Networks, Trichords, and Axial Isography.&#8221; <i>Music Theory Spectrum</i> 24.2: 231&#8211;245.</p><div id="citediv_stoecker_2007" class="flyoverdiv">Stoecker, Philip. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.stoecker.html'>Without a Safety (k)-Net</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stoecker_2007"></a>Stoecker, Philip. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.stoecker.html'>Without a Safety (k)-Net</a>.&#8221; <i>Music Theory Online</i> 13.3.</p><div id="citediv_tymoczko_2007" class="flyoverdiv">Tymoczko, Dmitri. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.tymoczko.html'>Recasting K-nets</a>.&#8221; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_2007"></a>Tymoczko, Dmitri. 2007. &#8220;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.tymoczko.html'>Recasting K-nets</a>.&#8221; <i>Music Theory Online</i> 13.3.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> &nbsp;I am also enormously grateful to Nancy 
+Rogers, Evan Jones, Clifton Callender, Matthew Shaftel, Shaugn O&#8217;Donnell, Norman 
+Carey, Dave Headlam, Dmitri Tymoczko, and Scott Murphy for their willingness to 
+engage in informal debates about these and other related issues. They have all 
+helped me clarify my thoughts, but I alone claim responsibility for whatever 
+muddiness remains.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a>  In yet another response, published alongside this rejoinder, Roger Grant seems to validate O&#8217;Donnell&#8217;s view (and his accompanying statistics) by fiat: &#8220;O&#8217;Donnell, having already demonstrated that K-nets do in fact show significant relationships<nobr>. . .</nobr>&#8221; (<a href="#grant_2008" id="citation_grant_2008_67dc9b0a1c000">Grant 2008</a>, paragraph 6). Two paragraphs earlier, Grant framed my reporting that 78.8% of trichord classes can form isographic relationships as a &#8220;claim,&#8221; incorrectly suggesting some level of interpretive subjectivity on my part and also on the part of Stoecker (<a href="#stoecker_2002" id="citation_stoecker_2002_67dc9b0a1c00a">2002</a>, 234), who first produced the graph from which I took those statistics.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> O&#8217;Donnell might prefer that I compared {0,2,6} to 
+{0,1,2,3,4,6,7,8,a}, but, despite what he implies, choosing a token 
+representative of a set class (SC) should not increase exclusivity and neither 
+is it a very productive way to talk about what is and is not possible. O&#8217;Donnell 
+could have arrived at his statistics using any [026]-type set. More generally, 
+if two pcsets X and Y can be related by network isography, it is also 
+necessarily true that any member of SC(X) can be related by network isography to 
+any member of SC(Y). Where trichords are concerned, we could add either 
+&#8220;positive&#8221; or &#8220;negative&#8221; before &#8220;network isography.&#8221; Since I was addressing 
+abstract potential, dealing with types seems clearer than dealing with tokens. I 
+am not alone in this regard: Lambert (<a href="#lambert_2002" id="citation_lambert_2002_67dc9b0a1c011">2002</a>) and Stoecker (<a href="#stoecker_2002" id="citation_stoecker_2002_67dc9b0a1c015">2002</a> and <a href="#stoecker_2007" id="citation_stoecker_2007_67dc9b0a1c019">2007</a>) both invoke set classes in their enumerations of the kinds of relations K-nets 
+can generate, and I agree with Stoecker (c.f., <a href="#stoecker_2007" id="citation_stoecker_2007_67dc9b0a1c01c">2007</a>, paragraphs 11 and 12) that developing an understanding of what sorts of things could possibly be related by K-net (or, for that matter, any other device) is helpful in understanding both the device itself and the space in which it operates (I say a bit more about this in paragraph 15 of the present essay).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Furthermore, our efforts may be for naught: comparisons between our inflated 
+[026] nonachord and [01234678a] might not mean very much, since <i>every</i> nine-note 
+pcset contains multiple [026]-type subsets. For that matter, every nine-note set 
+also contains many even-interval dyads and also many different pitch classes. 
+So, it does not particularly matter that [026] and [01234678a] are 
+complementary, and that the latter is the only nonachord that can be formed by 
+combining three non-overlapping members of [026]<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> &#8220;An inversional center is properly a p-space concept, for the notion is incoherent in pc-space ... We throw out the idea of inversional centers in pc-space&#8221; (<a href="#morris_1991" id="citation_morris_1991_67dc9b0a1c020">Morris 1991</a>, 26).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Of course, Lewin necessarily abandoned this notation in 
+his articles about Klumpenhouwer networks.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> To recapitulate, this was also the sentiment that Murphy 
+highlighted as the fifth (and most universally applicable) of my criticisms of 
+recursion.<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">&nbsp;I am also enormously grateful to Nancy 
+Rogers, Evan Jones, Clifton Callender, Matthew Shaftel, Shaugn O&#8217;Donnell, Norman 
+Carey, Dave Headlam, Dmitri Tymoczko, and Scott Murphy for their willingness to 
+engage in informal debates about these and other related issues. They have all 
+helped me clarify my thoughts, but I alone claim responsibility for whatever 
+muddiness remains.</div><div id="fndiv2" class="flyoverdiv"> In yet another response, published alongside this rejoinder, Roger Grant seems to validate O&#8217;Donnell&#8217;s view (and his accompanying statistics) by fiat: &#8220;O&#8217;Donnell, having already demonstrated that K-nets do in fact show significant relationships. . .&#8221; (<a href="#grant_2008" id="citation_grant_2008_67dc9b0a1c000">Grant 2008</a>, paragraph 6). Two paragraphs earlier, Grant framed my reporting that 78.8% of trichord classes can form isographic relationships as a &#8220;claim,&#8221; incorrectly suggesting some level of interpretive subjectivity on my part and also on the part of Stoecker (<a href="#stoecker_2002" id="citation_stoecker_2002_67dc9b0a1c00a">2002</a>, 234), who first produced the graph from which I took those statistics.</div><div id="fndiv3" class="flyoverdiv">O&#8217;Donnell might prefer that I compared {0,2,6} to 
+{0,1,2,3,4,6,7,8,a}, but, despite what he implies, choosing a token 
+representative of a set class (SC) should not increase exclusivity and neither 
+is it a very productive way to talk about what is and is not possible. O&#8217;Donnell 
+could have arrived at his statistics using any [026]-type set. More generally, 
+if two pcsets X and Y can be related by network isography, it is also 
+necessarily true that any member of SC(X) can be related by network isography to 
+any member of SC(Y). Where trichords are concerned, we could add either 
+&#8220;positive&#8221; or &#8220;negative&#8221; before &#8220;network isography.&#8221; Since I was addressing 
+abstract potential, dealing with types seems clearer than dealing with tokens. I 
+am not alone in this regard: Lambert (<a href="#lambert_2002" id="citation_lambert_2002_67dc9b0a1c011">2002</a>) and Stoecker (<a href="#stoecker_2002" id="citation_stoecker_2002_67dc9b0a1c015">2002</a> and <a href="#stoecker_2007" id="citation_stoecker_2007_67dc9b0a1c019">2007</a>) both invoke set classes in their enumerations of the kinds of relations K-nets 
+can generate, and I agree with Stoecker (c.f., <a href="#stoecker_2007" id="citation_stoecker_2007_67dc9b0a1c01c">2007</a>, paragraphs 11 and 12) that developing an understanding of what sorts of things could possibly be related by K-net (or, for that matter, any other device) is helpful in understanding both the device itself and the space in which it operates (I say a bit more about this in paragraph 15 of the present essay).</div><div id="fndiv4" class="flyoverdiv">Furthermore, our efforts may be for naught: comparisons between our inflated 
+[026] nonachord and [01234678a] might not mean very much, since <i>every</i> nine-note 
+pcset contains multiple [026]-type subsets. For that matter, every nine-note set 
+also contains many even-interval dyads and also many different pitch classes. 
+So, it does not particularly matter that [026] and [01234678a] are 
+complementary, and that the latter is the only nonachord that can be formed by 
+combining three non-overlapping members of [026]</div><div id="fndiv5" class="flyoverdiv">&#8220;An inversional center is properly a p-space concept, for the notion is incoherent in pc-space ... We throw out the idea of inversional centers in pc-space&#8221; (<a href="#morris_1991" id="citation_morris_1991_67dc9b0a1c020">Morris 1991</a>, 26).</div><div id="fndiv6" class="flyoverdiv">Of course, Lewin necessarily abandoned this notation in 
+his articles about Klumpenhouwer networks.</div><div id="fndiv7" class="flyoverdiv">To recapitulate, this was also the sentiment that Murphy 
+highlighted as the fifth (and most universally applicable) of my criticisms of 
+recursion.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2008 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Cara Stroud and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="3511880"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="c366644e"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/3511880/0/c366644e/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

@@ -1,0 +1,475 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+      
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 10.3: Collins, An Algorithm for the Generation of Set Class Representatives</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="An Algorithm for the Direct Generation of Set Class Representatives in Any Pitch Class Space">
+
+    <meta name="citation_author" content="Collins, Nick">
+      
+
+<meta name="citation_publication_date" content="2004/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="10">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+    
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<script type="text/javascript" async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+    <article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">An Algorithm for the Direct Generation of Set Class Representatives in Any Pitch Class Space
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.04.10.3/mto.04.10.3.collins.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Nick Collins</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: equivalence class generation, set class representatives, orderly algorithm</font></p><p><font size='4'>ABSTRACT: When spaces with greater than 20 pitch classes are considered, the problem of
+generating equivalence classes (set classes) with respect to operations like transposition and
+inversion becomes increasingly difficult. The brute force approach of enumerating all possible
+pitch class sets and ignoring those that fall into already selected set classes becomes computationally
+intractable. Some improvements can be made using Read&rsquo;s Orderly Algorithm, and the essential
+features are seen to be the binary coding of pitch class sets and an augmentation operation. A
+further refined algorithm is described that makes use of a stack technique to directly generate,
+straight to a text file, all equivalence class representatives of given cardinality within any pitch
+class universe. This supports the mathematical and compositional exploration of much larger
+pitch class spaces than hitherto.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.04.10.3/mto.04.10.3.collins.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2004</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 10, Number 3, September 2004 <br> Copyright &#0169; 2004 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align:center"><b>[1] Introduction</b></p>
+
+
+<p>[1.1] A program for generating equivalence classes (set classes) of pitch class sets is an essential tool to support music theory mathematical research, with concomitant repercussions in compositional exploration. For example, a researcher might wish to investigate possible chord types with respect to transposition and inversion in a 24 pitch class space with a view to some mathematically interesting property; an analyst might be working on classifying harmonic content in Ives&#8217; <i>Three Quartertone Pieces for Two Pianos</i> (1903&#8211;23); a composer might wish to explore some novel pitch combinations with respect to that space. Unfortunately, as the number of pitch classes increases, a combinatorial explosion occurs in the number of classes which must be catalogued. The naive approach to finding set classes is an exhaustive search, whereby one generates all possible pitch class sets, adding a set to the list of representatives only where it is not equivalent to a set earlier on the list. Each passed candidate can then be placed in a &#8216;prime form&#8217; as a suitable representative. This na&iuml;ve approach becomes too slow for practical purposes for spaces not much larger than the aforementioned quartertone space. This article provides an algorithm that should give more efficient access to equivalence classes, making the construction of complete lists of set classes computationally tractable for much larger spaces.</p>
+
+<p>[1.2] The terminology of music theory mathematics herein shall follow Fripertinger&#8217;s excellent foundation (<a href="#fripertinger_1999" id="citation_fripertinger_1999_67dc9b541826a">1999</a>) but with some service to the standard pitch class analytic terms of <a href="#forte_1973" id="citation_forte_1973_67dc9b541826d">Forte 1973</a>  for those less versed in combinatorics. As terms are introduced, I will try to illustrate them with a Fortean example. To Fripertinger the n-scale \(Z_n\) provides the pitch material, which to the music theorist raised on Forte just means the set of integer pitch classes \(\{0, 1, \ldots , n-1\}\). Therefore, the standard music theoretic world of 12 pitch classes uses pitch material from the 12-scale \(Z_{12}\) or \(\{0, 1, \ldots , 11\}\). Pitch class sets are constructed in the usual manner, as some collection of pitch classes without duplication, and the pc set [1, 2, 5, 7] is taken as an example for this paragraph (pc set is Forte&#8217;s shorthand for pitch class set). Fripertinger&#8217;s k-chords are pitch class sets of cardinality k, so our example pc set is of course a 4-chord. What are conventionally referred to as set classes are collections of pitch class sets which can all be interrelated by some musically relevant operations, conventionally transposition and inversion. The set class is tagged by a representative pc set from which all other members of the class can be generated by the operations in question. Our tame pc set is in the set class (with respect to transposition and inversion) which has representative [0, 1, 4, 6], named 4-Z15 in the Forte list (<a href="#forte_1973" id="citation_forte_1973_67dc9b541826f">1973</a>, 179), and our pc set may be recovered from this representative after transposition up by a semitone. In more mathematical language, set classes are equivalence classes (orbits) under the action of some group operations which define equivalence.</p>
+
+
+<p>[1.3] The equivalence classes of k-chords under some group action are the set classes whose representatives have cardinality k. If a set class has a representative pc set of cardinality k (a k-chord), it shall be referred to as a k-set.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> As a set class, 4Z-15 is a 4-set. Pitch class spaces of pitch class sets on n pitch classes are termed n-spaces, or \(Z_n\) for convenience. It is trusted that this informal notation for the space, which overlaps with the pitch materials definition, will not be confusing and that context will make such usages clear.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+
+<p>[1.4] It is left to formally describe the equivalence relation with respect to which set classes are constructed. The exposition here is somewhat mathematical; the casual reader is referred to <a href="#morris_1987" id="citation_morris_1987_67dc9b5418286">Morris 1987</a> for a lighter introduction. The permutation operators of transposition T and inversion I are generators for a permutation group which acts on \(Z_n\).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> The standard group generated by transposition and inversion \(&lt;T, I>\), being the dihedral group \(D_n\), is the usual case for pitch class analysis. Forte&rsquo;s list of set classes is with respect to transposition and inversion; the acting group is \(D_{12}\). Permutation under the action of a group defines the equivalence relation from which the classes must be generated. In mathematical parlance, the action of the permutation group generates orbits; an orbit is simply an equivalence class. The algorithms discussed below should cope with any valid equivalence relation, so have utility to help construct any desired set of set class representatives in pitch class mathematics.</p>
+
+<p>[1.5] An exhaustive search approach was already mentioned as the straight forward but impractically slow method to generate set class representatives. Fripertinger treats the problem of generating representatives by utilizing Read&#8217;s Orderly Algorithm (<a href="#read_1978" id="citation_read_1978_67dc9b5418289">1978</a>), an approach from the mainstream of combinatorial mathematics. He also notes that the step of testing a candidate pc set for canonicity (whether it is a representative) can have shortcuts based on the permutation subgroup in question. When that subgroup is \(&lt;T, I>\), as in standard music theoretic work, there are only 2n possibilities for the representative anyway, allowing a simple method of creating the class and checking against its prime form. Fripertinger acknowledges the difficulties of set class generation for larger n; for large spaces, he recommends probabilistic sampling of representatives.</p>
+
+<p>[1.6] Read&#8217;s Orderly Algorithm (<a href="#read_1978" id="citation_read_1978_67dc9b541828b">1978</a>) is a general method for exhaustively generating equivalence classes without any backtracking through that same list,  when certain conditions are met.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The construction can be adapted to the combinatorial objects of pitch class analysis in a similar way to Read&#8217;s treatment of digraphs, using the schema of &#8216;a general problem&#8217; on page 112. Let S be the set of dimension n vectors with elements 0 or 1; members of S can be imagined as characteristic function vectors across \(Z_n\). The characteristic vector form is further discussed in the next section. To temporarily relate the notation of Read&#8217;s paper to that within this, Read&#8217;s \(S_q\) will be those vectors where the sum of elements is q, i.e. q-chords. The equivalence classes are Read&#8217;s lists \(\mathcal{L}_q\) of q-sets. In Read&#8217;s method, the representatives of a certain cardinality are generated from those of cardinality of size one less, so an iterative process produces the equivalence classes of a space, that is, \(\mathcal{L}_{q+1}\) is generated from \(\mathcal{L}_q\). The production of (q+1)-sets requires the q-sets to be created first. This places restrictions on getting directly at objects of interest, particularly where the combinatorial explosion in the number of objects means that many intermediate objects must be generated prior to those sought. Because pitch classes yield to a simple binary number coding, and some leveraging of that representation allows improvements on Read&#8217;s methods for the particular case of interest to music theorists, an alternative algorithm can be created which can more directly produce the q-sets in any given n-space.</p>
+
+<p>[1.7] The remaining sections of this paper work to outline this algorithm. In section 2 a natural binary coding in common use in computational work with pitch class sets is described. In section 3 pseudocode and rationale for the algorithm is provided.</p>
+
+
+<p style="text-align:center"><b>[2] Coding of Pitch Class Sets</b></p>
+
+<p>[2.1] Computational work with pitch class sets has a very natural encoding available; sets are identified with integers by a binary or base two code. Given any pitch class set \(S \subseteq Z_n\), characteristic functions \(\chi_S\) return 1 or 0 for an input \(i \in Z_n\) depending on whether \(i \in S\) or \(i \notin S\) respectively. Again, using Forte 4Z-15 in \(Z_{12}\), and the representative pc set S = [0, 1, 4, 6] as an example:
+$$
+\chi_{[0, 1, 4, 6]}(0) = 1 \\
+\chi_{[0, 1, 4, 6]}(1) = 1 \\
+\chi_{[0, 1, 4, 6]}(2) = 0
+$$
+etc. Necessarily, the characteristic function of this 4-chord will output a 1 for four values and a 0 for eight in \(Z_{12}\).</p>
+
+
+<p>[2.2] A vector form for the pc set can be defined using the characteristic function. Each pc set \(S\) in n-space is represented by an n component vector which contains the output of the characteristic function across the domain of pitch classes of the space:
+$$
+{\chi_S(i) : i \in Z_n}
+$$
+So for S = {0, 1, 4, 6}, an equivalent vector form of characteristic function is [1, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0]. By thinking of this vector form as a binary number, a single number can be produced for any pc set.</p>
+
+
+<p>[2.3] Now to the coding. A decimal number can be associated with any binary number vector such that
+    $$
+{\chi_S(i) : i \in Z_n} \equiv \sum_{i=0}^{n-1} \chi_S (i) 2^{n-1-i}
+$$
+
+As an example, for S = {0, 1, 4, 6}, the single unique number associated is
+$$
+1 \times 2^{11} + 1 \times 2^{10} + 0 \times 2^9 + 0 \times 2^8 + 1 \times 2^7 + 0 \times 2^6 + 1 \times 2^5 + 0 \times 2^4 + 0 \times 2^3 + 0 \times 2^2 + 0 \times 2^1 + 0 \times 2^0
+    =\\ 2048 + 1024 + 128 + 32 =\\ 3232
+$$</p>
+
+
+<p>[2.4] The equation above is just an explicit way of saying that \((110010100000)_2 = (3232)_{10}\). The characteristic function gets us into base 2; we may then convert to base 10. Read calls the vector <i>v</i> and the coding <i>code(v)</i> (<a href="#read_1978" id="citation_read_1978_67dc9b541828e">1978</a>, 112).</p>
+
+<p>[2.5] Especially for any reader familiar with programming, this binary representation should seem a very natural one. Each n-bit decimal number has an associated pc set in \(Z_n\), for the characteristic function demonstrates that an n-digit binary number can represent any pitch class set in n-space. In terms of computer storage, a 4 byte integer can cope with pitch class sets below n = 32 (each byte has 8 bits, so 4 &times; 8 = 32 bits). An 8-byte integer,<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> would deal with cases below n = 64, which is also a likely practical limit for exhaustive manipulation (recall the ancient story of the gift of salt on a chessboard . . . ). Advantage can be taken of computer architecture in that all operations on pc sets work with the codes that represent them.</p>
+
+<p>[2.6] The essential advantageous property of this coding is to define a set class representative as the pitch class set in that class with maximal code. Given any pitch class set, an immediate test for canonicity is: generate the set class, testing for any equivalent pitch class set with a higher code. Since the music theory operations of transposition, inversion or optional multiplication are simple to apply, and the permutation subgroup is not that large (2n for dihedral \(&lt;T, I>\)), generation of the set class is easily achieved. Computationally, comparison of two pc sets in a class is simply a matter of comparing their codes, so that, <nobr><i>code(a)</i> &lt; <i>code(b)</i></nobr> implies b is a better representative for the set class than a. There will never be a case of equality since each code is a unique pc set.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+    <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Possible representatives for the set class containing [0, 2, 3, 5]</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="collins_examples.php?id=0&nonav=true"><img border="1" alt="Table 1 thumbnail" src="collins_table1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.7] For a particular example, consider the possible representatives for the (transposition and inversion) set class containing pc set [0, 2, 3, 5]. <b>Table 1</b> describes each distinct member of the set class, giving the Fortean array, binary, and decimal code representations. There are 12, not 24, because this pc set is self inverse after a transposition of 7 semitones. The maximal code is 3330, so that the equivalence class representative is [0, 1, 3, 10] with this coding. Forte&#8217;s prime form algorithm gives a representative of [0, 2, 3, 5] for the 4-10 class (because of his compactness of set elements condition), but note that for the binary coding used here, <i>code</i>([0, 2, 3, 5]) = 2880 &lt; 3330. In general, Forte&#8217;s set class representative list (<a href="#forte_1973" id="citation_forte_1973_67dc9b5418397">1973</a>, 179&ndash;81) would differ in some cases from that produced by the natural coding, and Forte&#8217;s prime form algorithm is thus unnecessarily complicated as a computational entity compared to the coding described here.</p>
+
+<p>[2.8] The maximal code pc set as representative idea leads directly to a first draft algorithm&#8212;exhaustively produce all possible pitch class sets, testing each for canonicity (maximal number code within its class). Add representatives to the output list. The coding thus avoids isomorphism search through the list of representatives garnered so far, which is one step up from the naive algorithm introduced at the beginning of this paper.</p>
+
+<p>[2.9] We can do better. An exploitation of the maximal code property of representatives is a sufficient basis to go directly to finding all representatives of cardinality k, with an adapted use of Read&#8217;s orderly generation based on augmentation. The naive approach of generating all pitch class sets in that space can be reduced to a more manageable generation of all k-chords. A refinement to achieve this will now be described which uses a stack data construction.</p>
+
+
+<p style="text-align:center"><b>[3] An Algorithm for Generating k-sets</b></p>
+
+<p>[3.1] The problem of the direct generation of all k-sets in \(Z_n\) has been reduced to the question: is there an efficient way to generate all k-chords? Given an exhaustive list of k-chords, representatives are found using the maximal code test described in the previous section. In fact, finding all k-chords is the same as producing all binary numbers which have k 1s in their bits. The algorithm to be described in this section tackles this problem. Considering the problem domain, some inspiration was gleaned from computer science, in particular from Sedgewick&#8217;s descriptions of tree traversal, recursion and stack methods (<a href="#sedgewick_1992" id="citation_sedgewick_1992_67dc9b541839a">1992</a>). A stack is an efficient data structure for these goals, used to traverse a tree of possible binary numbers, the traversal being intimately related to a recursive procedure. The reader might intuitively appreciate that finding all k-chords can be an iterative construction that may leverage the (k &#8211; 1)-chords and thus act recursively. There is a similar iterative constructive process in the standard Orderly Algorithm, but tricks particular to set classes and the stack data container can be applied to reduce the workload, both in terms of the number of pc sets (binary numbers) to be tested, and in the working memory required.</p>
+
+<p>[3.2] A few immediate shortcuts are noted. Degenerate cases for \(k = 0, 1, n-1\) and \(n\) are readily dispensed with. Complementation means that only k less than or equal to \(\lfloor\frac{n}{2}\rfloor\) need be calculated.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Critically, since all solutions have at least one 1, and the maximal code is the representative, the leading (leftmost in the base two number) bit is always a 1. Hence, the problem reduces to finding all ways of placing \(k-1\) 1s into \(n-1\) slots.</p>
+
+<p>[3.3] Using a stack data structure avoids holding too much data in memory at any one time; as exploited in the algorithm here, it naturally provides the next pitch class set to consider at each step. The representation used for descriptive convenience is the array form of a binary number (Read&#8217;s vector) as introduced above.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> With each array in the stack, an associated recursion level is recorded, identifying the number of 1s in that set, and the position of the last 1 is also stored for convenience.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+    <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Pseudocode for the equivalence class generation algorithm</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="collins_examples.php?id=1&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="collins_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>    <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Pseudocode for a candidate generation (augmentation) subroutine</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="collins_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="collins_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>    <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Tree showing the generation of the 3-sets in Z<sub>6</sub></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="collins_examples.php?id=3&nonav=true"><img border="1" alt="Table 2 thumbnail" src="collins_table2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>    <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Tree showing the generation of the 3-sets in Z<sub>6</sub></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="collins_examples.php?id=4&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="collins_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3.4] An essential lemma used to keep the stack small and the number of tree branches low is Read&#8217;s theorem on canonical elements and the augmentation operation (<a href="#read_1978" id="citation_read_1978_67dc9b54183ab">1978</a>, 112&ndash;14). This is also used in the original Orderly Algorithm to justify the augmentation step. In short, the lemma means that only representatives need be kept in the stack as generating elements for further possible representatives. Intermediate stack pitch class sets will be representative M-sets for \(M &lt; k\).</p>
+
+<p>[3.5] Pseudocode for the equivalence class generation algorithm is presented in <b>Figure 1</b>. Please be aware that this describes generating the \(k-1\) 1s into \(n-1\) slots as noted as a shortcut above. Whilst the canonicity test algorithm has already been described, the generation of candidates must be explained; it is basically Read&#8217;s augmentation operation with a further shortcut. Pseudocode for this subroutine is presented in <b>Figure 2</b>. Given any pitch class set in array form, trailing zeroes at the right are successively converted from left to right into 1s. So, the array [1, 0, 0, 0] would be augmented to the set [1, 1, 0, 0], [1, 0, 1, 0] and [1, 0, 0, 1]. If the current recursion level is l, less than k, there must be space for \(k-1\) further 1s, and any arrays without adequate space on the right can be discarded at this point. This gives a further performance enhancement over the Orderly Algorithm.</p>
+
+<p>[3.6] By studying the pseudocode (particularly Figure 2) and example below the reader may be able to convince themselves that the stack size can never exceed \((n - k + 1)(k-1)\), and in practice, through the requirement that any pc set in the stack be canonical, is always smaller.</p>
+
+<p>[3.7] As an example of the algorithm&#8217;s approach, the discovery of the 3-sets in \(Z_6\) is made explicit in <b>Table 2</b>. Each successive line of the table gives the current contents of the stack, the next pivot element read off the stack (current generator) and the augmentations and successful canonical elements discovered. Note that the augmentations ignore any element where there would not be room for the target three 1s (see pseudocode in Figure 2). Furthermore, only canonical elements make it through onto the stack, because of Read&#8217;s lemma mentioned above. 3-sets themselves do not have to go onto the stack, they are simply output to the file when they appear. To show the relation to a tree traversal, <b>Figure 3</b> shows the same algorithm at work, in terms of the creation of a tree of binary numbers. Each row is one recursion level of the algorithm, so that the 1-sets are the first row, the relevant 2-sets the second and the candidate 3-sets the third. Non-canonical elements discarded along the way are denoted by the dashed rather than solid ellipses.</p>
+
+<p>[3.8] In performance, the stack version uses only memory storage rather than intermediate files to hold representatives, and the tricks built into the optimization detailed here mean that less testing of canonicity is carried out. For finding the 4752 \(&lt;T, I>\) 10-sets in \(Z_{20}\) the original Orderly Algorithm must create eight intermediate output files (for the 2-sets through 9-sets) and call a canonicity test 41834 times. The stack algorithm which tries to go more directly to the 10-sets does so with 29397 tests, with a stack that never holds more than 11 numbers! Note that a na&iuml;ve approach would require 184756 tests if it could generate just the 10-chords (using a stack algorithm without any refinements), or 220 = 1048576 tests to work on every binary number.</p>
+
+<p>[3.9] There is no guarantee that representatives will be generated in order of code, but a single sort of the output file solves that if it is an issue.</p>
+
+<p style="text-align:center"><b>[4] Implementations of the Algorithm</b></p>
+
+<p>[4.1] The algorithm was prototyped in the SuperCollider 3 audio programming language (<a href="#mccartney_2002" id="citation_mccartney_2002_67dc9b54183ba">2002</a>), and a library of extensions for the manipulation and generation of pitch class sets and set classes created to support the work. This <i>PCSet Library</i> has been released under the GNU GPL and is available from http://www.sicklincoln.org/code.htm. Whilst this code is adequate for the exploration of pitch class universes for \(n \leq 20\) it is too slow for creating the representative lists for large n. An efficient C++ implementation has been created (in the Mac OS X XCode compiler) for large n, specifically for the standard \(&lt;T, I>\) group, though other groups could easily be programmed. A binary number coding is exploited, alongside binary masking versions of transposition and inversion, using the <i>unsigned long long</i> type, which can cope with up to 64 bit integers; thus, \(n \leq 64\) is the scope of the implementation. Given the combinatorial explosion involved, it is unlikely that anyone would attempt to go higher, except for finding k-sets within n-space for \(n \gg k\). The performance gain is worthwhile; generating the 12-sets in \(Z_{24}\) takes 3.21 seconds on a 400MHz G4 powerbook. As a test of its facility, this code was used to show that there are 34,324,174 17-sets (representing 2.3 billion or so pitch class sets) in \(Z_{34}\), generating a 385MB ASCII output file in 39 minutes. The source code C++ file is released with this paper for the use of researchers and composers, under the GNU General Public License.</p>
+
+<p style="text-align:center"><b>[5] Conclusions</b></p>
+
+<p>An algorithm has been described which allows the generation of all k-set representatives in a pitch class spaces on n pitch classes. Whilst the Orderly Algorithm is still useful for generating all set class representatives of a space across all cardinalities, the refined algorithm herein goes directly to the k-sets and requires very minimal memory requirements to run.</p>
+
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+    
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Nick Collins<br>
+	Centre for Music and Science<br>Faculty of Music, University of Cambridge<br>11 West Road, Cambridge, CB3 9DP, UK<br>http://www.cus.cam.ac.uk/nc272<br><a href="mailto:nc272@hermes.cam.ac.uk">nc272@hermes.cam.ac.uk</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+    
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_forte_1973" class="flyoverdiv">Forte, Allen. 1973. <i>The Structure of Atonal Music.</i> Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_1973"></a>Forte, Allen. 1973. <i>The Structure of Atonal Music.</i> Yale University Press.</p><div id="citediv_fripertinger_1999" class="flyoverdiv">Fripertinger, Harald. 1999. &ldquo;Enumeration and Construction in Music Theory.&rdquo; In <i>Proceedings of the Diderot Forum on Mathematics and Music</i>, 170&ndash;203. Vienna.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fripertinger_1999"></a>Fripertinger, Harald. 1999. &ldquo;Enumeration and Construction in Music Theory.&rdquo; In <i>Proceedings of the Diderot Forum on Mathematics and Music</i>, 170&ndash;203. Vienna.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. Yale University Press.</p><div id="citediv_mccartney_2002" class="flyoverdiv">McCartney, James. 2002. &ldquo;Rethinking the computer music language: SuperCollider.&rdquo; <i>Computer Music Journal</i> 26(4).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mccartney_2002"></a>McCartney, James. 2002. &ldquo;Rethinking the computer music language: SuperCollider.&rdquo; <i>Computer Music Journal</i> 26(4).</p><div id="citediv_morris_1987" class="flyoverdiv">Morris, Robert D. 1987. <i>Composition with Pitch Classes</i>. Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1987"></a>Morris, Robert D. 1987. <i>Composition with Pitch Classes</i>. Yale University Press.</p><div id="citediv_read_1978" class="flyoverdiv">Read, Ronald C. 1978. &ldquo;Every One a Winner or How to Avoid Isomorphism Search When Cataloguing Combinatorial Configurations.&rdquo; <i>Annals of Discrete Mathematics</i> 2:107&ndash;20.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="read_1978"></a>Read, Ronald C. 1978. &ldquo;Every One a Winner or How to Avoid Isomorphism Search When Cataloguing Combinatorial Configurations.&rdquo; <i>Annals of Discrete Mathematics</i> 2:107&ndash;20.</p><div id="citediv_sedgewick_1992" class="flyoverdiv">Sedgewick, Robert. 1992. <i>Algorithms in C++</i>. Addison-Wesley.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sedgewick_1992"></a>Sedgewick, Robert. 1992. <i>Algorithms in C++</i>. Addison-Wesley.</p>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+    	
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Many thanks to MTO editor Timothy Koozin and the two anonymous reviewers for helpful suggestions and encouragement in the preparation of the final article.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Many thanks to MTO editor Timothy Koozin and the two anonymous reviewers for helpful suggestions and encouragement in the preparation of the final article.</div><p><a name="FN1">1.</a> David Lewin introduced these objects as M-sets (<a href="#lewin_1987" id="citation_lewin_1987_67dc9b54164b2">1987</a>), referring to the set of set classes whose representatives have cardinality M, where M is conventionally a positive integer; k is used in the sequel, since the integer variable label is obviously arbitrary.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> As Fripertinger notes the Abelian group is implied but not the same as this construct. This paper will use the looser style to avoid an overburdening of notation.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> These are not the only possible generators. Consider Fripertinger&rsquo;s quart-circle symmetry Q (multiplier coprime to n), also called M in the literature (<a href="#morris_1987" id="citation_morris_1987_67dc9b54164b7">Morris 1987</a>).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Recall that in the na&iuml;ve approach, one tests the next candidate against all existing representatives in the list, which can be very time consuming.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Provided as an unsigned long long type in C on some systems.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Complements are generated by switching 0s and 1s and substituting new maximal representatives as needed—the list of set classes is already complete.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> The decimal integers themselves are the entities stored in the output file, where storage space is at a premium. Indeed, a binary file format would allow us to store the bit forms of the representatives very efficiently. The stack, however, is never excessively large, even for large n, and thus array forms may be stored therein. The array form makes it conceptually simpler to do operations like augmentation, though it would be equally possible to achieve this with bit operations on binary numbers.<br><a href="#FN7REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">David Lewin introduced these objects as M-sets (<a href="#lewin_1987" id="citation_lewin_1987_67dc9b54164b2">1987</a>), referring to the set of set classes whose representatives have cardinality M, where M is conventionally a positive integer; k is used in the sequel, since the integer variable label is obviously arbitrary.</div><div id="fndiv2" class="flyoverdiv">As Fripertinger notes the Abelian group is implied but not the same as this construct. This paper will use the looser style to avoid an overburdening of notation.</div><div id="fndiv3" class="flyoverdiv">These are not the only possible generators. Consider Fripertinger&rsquo;s quart-circle symmetry Q (multiplier coprime to n), also called M in the literature (<a href="#morris_1987" id="citation_morris_1987_67dc9b54164b7">Morris 1987</a>).</div><div id="fndiv4" class="flyoverdiv">Recall that in the na&iuml;ve approach, one tests the next candidate against all existing representatives in the list, which can be very time consuming.</div><div id="fndiv5" class="flyoverdiv">Provided as an unsigned long long type in C on some systems.</div><div id="fndiv6" class="flyoverdiv">Complements are generated by switching 0s and 1s and substituting new maximal representatives as needed—the list of set classes is already complete.</div><div id="fndiv7" class="flyoverdiv">The decimal integers themselves are the entities stored in the output file, where storage space is at a premium. Indeed, a binary file format would allow us to store the bit forms of the representatives very efficiently. The stack, however, is never excessively large, even for large n, and thus array forms may be stored therein. The array form makes it conceptually simpler to do operations like augmentation, though it would be equally possible to achieve this with bit operations on binary numbers.</div>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+    <hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2004 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+    	
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Brent Yorgason, Managing Editor  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

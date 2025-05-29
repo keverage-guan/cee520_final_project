@@ -1,0 +1,818 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 11.1: Cook, Prompting Performance</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Prompting Performance: Text, Script, and Analysis in Bryn Harrison&rsquo;s
+		<i>&ecirc;tre-temps</i>">
+
+    <meta name="citation_author" content="Cook, Nicholas">
+      
+
+<meta name="citation_publication_date" content="2005/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="11">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Prompting Performance: Text, Script, and Analysis in Bryn Harrison&rsquo;s
+		<i>&ecirc;tre-temps</i>
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.05.11.1/mto.05.11.1.cook.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Nicholas Cook</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: analysis, performance, notation</font></p><p><font size='4'>ABSTRACT: Taking as its focus a piano solo work by the British composer Bryn 
+Harrison, this article focuses on the manner in which complex rhythmic notation 
+functions not (or not simply) to specify a sound object, but to prompt a 
+performative interaction between pianist and score&mdash;an interaction that needs to 
+be renewed on each occasion of performance. It is based on documentation of the 
+first performance, given by Philip Thomas, including recorded rehearsals and 
+interviews with both composer and pianist.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.cook.PDF">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.05.11.1/cook_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received January 2005</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 11, Number 1, March 2005 <br> Copyright &#0169; 2005 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] I take as my starting point an argument that I&rsquo;ve made in 
+another article:<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> that you can&rsquo;t draw a categorical distinction between the 
+kind of improvisation found in jazz and the kind of performance &ldquo;of&rdquo; 
+pre-existing scores characteristic of the Western &ldquo;art&rdquo; tradition. The impetus 
+to make this kind of categorical distinction comes from the literature of jazz, 
+perhaps as a result of critics and musicologists who seek to construct their own 
+cultural identity in opposition to the perceived hegemony of thinking associated 
+with the Western &ldquo;art&rdquo; tradition. (Move outside academia and that might seem an 
+absurd contention in relation to the actual hegemony of popular musics, but that 
+would be a third article).</p>
+
+<p>[2] I can focus what is at issue through two diametrically opposed quotes. On 
+the one hand, Ingrid Monson writes that &ldquo;meaningful theorizing about jazz 
+improvisation at the level of the ensemble must take the interactive, 
+collaborative context of musical invention as a point of departure. This context 
+has no parallel in the musical practice of Western classical composers of the 
+common practice period&rdquo;.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> On the other hand, Alfred Schutz writes that &ldquo;there 
+is no difference in principle between the performance of a string quartet and 
+the improvisations at a jam session of accomplished jazz players&rdquo;.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> 
+Reconciliation is impossible; the standoff could hardly be more complete.
+</p>
+
+<p>[3] In the original paper I referred to, I pursued a circuitous route that took in, 
+among other things, ideological issues relating to orality as against literacy 
+that boil down to something close to racial essentialism. I&rsquo;m not going to open 
+that can of worms now, and will instead move directly to a very simple 
+demonstration of why I don&rsquo;t think Monsons distinction between jazz and &lsquo;the 
+musical practice of Western classical composers of the common practice period&rsquo; 
+stands up. All I need do is juxtapose two passages by musicians who combine an 
+academic career with a high level of performance accomplishment. The first is 
+from Monson herself (she plays jazz trumpet): she writes of a particular moment 
+in the Jaki Byard Quartet&rsquo;s recording of &ldquo;Bass-ment Blues&rdquo; that</p>
+
+<blockquote>Dawson anticipates and reinforces Tucker&rsquo;s continuing triplet 
+	rhythms in measures 5 and 6 by playing a triplet-based fill between the 
+	snare, tom-toms and bass drum<nobr>. . . .</nobr> [Dawson] reinforces the flow of triplet 
+	eighths in the solo bass line<nobr> . . . </nobr>his accentuation on the snare articulates 
+	a quarter-note triplet against this flow that pushes towards completion on 
+	beat 3 of this measure. Dawson could not have known for sure whether Tucker 
+	would continue with eighth notes in measure 6 but correctly anticipated that 
+	he would<nobr>. . . .</nobr> While Dawson&rsquo;s decision to play triplets in measure 6 might be 
+	predicted in a syntactic sense<nobr> . . . </nobr>there is 
+nothing that could have predicted the exact choices made by these individual 
+musicians. Such spontaneous, fortuitous moments of coming together or hooking up 
+are highly prized by musicians.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></blockquote>
+
+<p>[4] And now compare John Potter&rsquo;s (1998: 178&ndash;82) account of singing a passage 
+from Antoine Brumel&rsquo;s <i>Missa Victimae Paschali</i>:</p>
+<blockquote>The superius and bassus enter together but have to negotiate the 
+	tempo, since there is no movement on the second beat. This immediately means 
+	that the two singers are in very close aural contact with one another. The 
+	altus imitates the superius half a bar later, so he has to have been in 
+	similarly close contact with the superius, who has been giving him the 
+	music. At the end of bar 1 for a brief instant the three singers sound a G, 
+	an A and a B flat simultaneously. It is only a passing moment but it creates 
+	a moment of acute pleasure that they may wish to prolong<nobr>. . . .</nobr> There is a high 
+	degree of mutual trust as the scales rise and fall<nobr>. . . .</nobr> [T]he voices are setting up patterns of tension and relaxation, 
+acutely conscious of each other, both seeking to accommodate each other&rsquo;s 
+desires and to satisfy themselves.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></blockquote>
+
+<p>[5] And whereas Potter isn&rsquo;t talking about music of the common practice period, 
+the sort of approach he is putting forward is just as applicable to, say, a 
+Mozart quartet. What happens in the performance of music like this? The players 
+may well play the notes exactly as Mozart wrote them. And yet they don&rsquo;t play 
+them exactly as Mozart wrote them, because every note in the score is subject to 
+the contextual negotiation of intonation, precise dynamic value, articulation, 
+timbral quality, and so forth. For example, the performers stay in time not 
+because each accommodates his or her playing to an external beat (as when studio 
+musicians record to a click track), but because each is continuously listening 
+to the others, accommodating his or her timing to the others&rsquo;, giving rise to a 
+shared, communal temporality. This kind of social interaction takes place in the 
+interstices of the score, in the zones of indeterminacy incorporated within it: 
+either because the notation doesn&rsquo;t specify something at all (timbre, for 
+example, beyond the specification of the instrument), or because the score 
+supplies a categorical value that isn&rsquo;t intended for literal execution but 
+instead needs to be negotiated and refined in performance. Monson argues for an 
+understanding of musical structure that has &ldquo;as one of its central functions the 
+construction of social context&rdquo;.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> She is thinking of jazz, but any Mozart 
+quartet embodies this: the score choreographs a series of ongoing social 
+engagements between players, setting up a shared framework or goal (a shared 
+mission, if you like) but delegating detailed decisions to be made in real time 
+by the relevant individuals in light of local conditions&mdash;to be improvised, in 
+short, as so much in everyday life is. A Mozart quartet is not just a 
+representation but an enaction of community.</p>
+
+<p>[6] I have argued elsewhere<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> that there is a mismatch between the everyday 
+practices of musical culture and the composition-centered, which is also to say 
+score-centered, ways in which musicologists represent that culture, and I don&rsquo;t 
+want to repeat those arguments here. In brief, the principal source of this 
+orientation towards the written text lies in the origins of musicology within 
+the nineteenth-century project of nationalist philology; this gave rise to the 
+idea that meaning is inherent in the text, so that performing it becomes an act 
+of reproduction, something essentially peripheral to musical culture (in the 
+same way that reading aloud is seen as peripheral to literary culture). A 
+further formative influence on musicology was the cult of the composer that 
+began in Beethoven&rsquo;s lifetime and reached a climax around a century later. The 
+idea of the musical text that results from this is rather different, in that it 
+is seen as a vehicle for the composer&rsquo;s voice, so that the performer&rsquo;s job 
+becomes less one of reproducing the text than of conforming to the intentions 
+behind the text; on this model, meaning may not be inherent in the text&mdash;but it 
+is still predefined, so that performance remains a matter of getting it right, 
+of adequacy, rather than of contributing in a fundamentally creative manner to 
+the generation of musical meaning in real time. But having said this, we don&rsquo;t 
+really believe that performance is such a banal activity as this would suggest. 
+There is, that&rsquo;s to say, a mismatch between what we believe and the conceptual 
+apparatus at hand for expressing those beliefs.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Bryn Harrison, <i>&ecirc;tre-temps</i>, page 4 (mm. 70&ndash;84)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="cook_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="cook_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+
+<p>[7] Yet the score of Bryn Harrison&rsquo;s <i>&ecirc;tre-temps</i> might look like a vindication 
+of the &ldquo;performance as reproduction&rdquo; paradigm. On the fourth page, for example 
+(<b>Example 1</b>), there are two broadly similar passages ending in a trill, and Harrison 
+employs a device borrowed from Morton Feldman: the same pattern of irregular 
+time signatures appears on each system within a page (the next page is 
+completely different). What is basically happening is that the same musical 
+material is being passed through different metrical grids, or more precisely 
+it's being passed through the same metrical grids but offset. That means that 
+the composer has to look for a different pattern of rhythmic approximations each 
+time the material appears, as it were presenting it from a different metrical 
+perspective, so that as Harrison puts it &ldquo;I think what you<nobr> . . . </nobr>get in a good 
+performance is a sense of this spatial contraction and expansion and things 
+going softly against each other&rdquo;.</p>
+
+<p>[8] The outcome of this process is a forbiddingly complex notation full of 
+nested irrational relationships: in this respect it looks like something from 
+Finnissy or Ferneyhough. And if you are going to use such complex rhythmic 
+notation to represent your music, it stands to reason that you want it to be 
+very accurately performed: after all, if it isn&rsquo;t exactly this rhythmic 
+execution that you are after, then what possible justification can there be for 
+using so challenging a notation, as against for example using a space-time 
+notation? That, it would appear, is what Harrison meant by a &ldquo;good performance&rdquo;, 
+as you can see if I provide more of the passage I have just quoted:
+</p>
+
+<blockquote>BRYN HARRISON: Obviously I&rsquo;d like to think of the player as aiming 
+	for as much rhythmic precision as possible, and in fact although I&rsquo;d have to 
+	go over and really work out those figurations myself to know just exactly 
+	how accurate that is, I think what you<nobr> . . . </nobr>get in a good performance is a sense of this 
+spatial contraction and expansion and things going softly against each 
+other.</blockquote>
+
+<p>[9] Of course, the suspicion to which such notations have given rise ever since 
+Stockhausen&rsquo;s <i>Klavierst&uuml;cke I&ndash;IV</i> is that nobody <i>does</i> perform them 
+accurately, and that they serve at most to deconstruct sedimented patterns of 
+eye-hand interaction, perhaps resulting in performances that have an 
+improvisatory feel hard to create otherwise. As a matter of fact, however, 
+Philip Thomas&rsquo;s performances were remarkably accurate in terms of durational 
+realization. At this point I should explain the nature of the project on which 
+I&rsquo;m now drawing, which was a collaboration between Bryn Harrison, Philip Thomas, 
+Eric Clarke, and myself. Thomas, a pianist based in Sheffield who specializes in 
+contemporary music, commissioned <i>&ecirc;tre-temps</i> for a series of concerts in which 
+he was also playing music by Morton Feldman. Both acoustic and MIDI recordings 
+were made of the rehearsals and the first public performance (Thomas was playing 
+a Yamaha Disklavier grand), and in addition Clarke interviewed both Thomas and 
+Harrison shortly after the first performance. In addition we recorded a 
+run-through early in the rehearsal process in which Thomas and Harrison worked 
+together. The quotations I use in this paper come from these various sources, 
+plus the contributions of each of the collaborators to a forthcoming article.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Timing profile for mm. 70&ndash;73, treated as a single composite</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="cook_examples.php?id=1&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="cook_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>	<p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Sound Example 1</b></p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="cook_ex1_LAN.mp3" type="audio/mpeg"><source src="cook_ex1_LAN.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p></div>
+
+<p>[10] Clarke analyzed the MIDI data of various passages from <i>&ecirc;tre-temps</i> in order 
+to measure the extent to which Thomas&rsquo; playing actually corresponded to the 
+specifications of the score. Of course, it&rsquo;s not entirely obvious what the best 
+way to measure this might be, given the textural as well as rhythmic complexity 
+of the music, with what are notated as three interlocking lines&mdash;though the 
+effect isn&rsquo;t of three independent lines but rather of a more homogeneous, 
+rippling texture. Clarke&rsquo;s first approach, as you might expect, was to measure 
+how accurately each note was timed, treating the texture as a single, composite 
+series of attacks: 
+<b>Figure 1</b>< shows the data for the top line of page 4 (measures 70&ndash;73), 
+with the open circles showing the notated values, and the filled-in ones the 
+performed ones. (Thomas&rsquo;s performance of the whole of this page at the premiere 
+is reproduced as <b>Sound Example 1</b>.) Without going into details, the overall 
+durational profile is reproduced reasonably accurately, but there is little 
+correspondence in terms of rhythmic detail; that would be compatible with the 
+cynical view of notational complexity I put forward in the previous paragraph.</p>
+
+<p>[11] However this approach doesn&rsquo;t correspond to the way in which Thomas 
+actually learnt the piece. In his article contribution, he says of this passage:</p>
+
+<blockquote>Each of the three lines has its own internal energy, which is difficult to 
+sustain throughout its duration. I felt that the only way to learn this was to 
+get to know each line on its own, and then in pairs before putting them all 
+together, much like Bach counterpoint. In order to ascertain the degree to which 
+a note in one voice occurred very soon after or just quite soon after another 
+voice I would in some cases have to calculate the relationships to the nearest 
+hundredth of a second to be sure of the correct order, and temporal proximity, 
+of the events. When putting everything together I would then find points that I 
+could identify as markers, such as a downbeat in one voice which the other 
+voices could respond to, always trying to hear the individual energy of each 
+line as learned on its own.</blockquote>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Timing profile for mm. 70&ndash;84, lowest voice only</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="cook_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="cook_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[12] So Clarke now looked at the timing profile of each individual line, instead 
+of measuring it across the composite texture (<b>Figure 2</b>). This graph shows the 
+data for just the lowest voice across the whole of page 4, and&mdash;again without 
+going into details&mdash;you can see that this time there is a much closer fit, and 
+the same applied to the other lines too. In terms of how Thomas conceived and operationalized the music, then, his performance was extremely accurate, and in 
+fact was so almost from the beginning of the rehearsal process; as Clarke 
+comments in the article, &ldquo;This then is powerful evidence for the rhythmic 
+integrity of the three individual voices, and their very close relationship with 
+the rhythmic notation of the score.&rdquo;</p>
+
+<p>[13] So far, then, it might seem that the idea of performance as reproduction is 
+vindicated: even in music as complexly notated as this, the performance 
+corresponds as closely to the score as it would be reasonable to expect, and 
+Thomas&rsquo; account of how he learnt the piece&mdash;practicing each line separately 
+before putting them together, even using a calculator to work out the exact 
+relationships between them&mdash;might well suggest that accurate rendition, in a 
+word reproduction, was his aim. In fact, if anything, Thomas seems to 
+underestimate the accuracy of his performance, as came out in an exchange 
+between him and Clarke (they were talking about a passage on page 6 of <i>&ecirc;tre-temps</i>):</p>
+
+<blockquote>ERIC CLARKE: But God, I mean it&rsquo;s, does he really want it so, I mean, you 
+	know, like the second bar of page 6, you&rsquo;ve got a 3 in the time of 2, within 
+	a 6 in the time of 5, within a 5/16 bar<nobr> . . . </nobr><br>
+	PHILIP THOMAS: Oh, but that&rsquo;s not complicated, really, that&rsquo;s, forget the 
+six in the space of five, so if you played it without the six in the space of 
+five it would be [sings], and six in the space of five simply means it&rsquo;s a 
+little bit faster, so those two bars would be [sings], you just simply nudge the 
+beat on a bit faster<nobr>. . . .</nobr> I mean it&rsquo;s correct as I, I mean, hearing it on the Disklavier, 
+	if someone was going to really meticulously see the timings of that, then it 
+	would be different every time. I&rsquo;m not going to be, it&rsquo;s not going to be 
+	exact<nobr>. . . .</nobr> I hope no one listens to music really hearing things as they are, 
+	6 in the space of 5<nobr>. . . .</nobr> It&rsquo;s just a notational device which encourages me to 
+	just move on a little bit here.</blockquote>
+	
+<p>[14] That final comment indicates that, for all the accuracy which he actually 
+achieved in performance, Thomas thought of the notation less as the 
+specification of a sound object than as a stimulus to the performer to respond 
+in a musically meaningful way. Indeed he came back to this several times in the 
+interview:</p>
+
+<blockquote>PHILIP THOMAS: This is a classic kind of notational device to prompt the 
+	performer to respond in ways which will always keep it floating and never 
+	rooted in anything, always keep it changing<nobr>. . . .</nobr> It&rsquo;s not highly calculated 
+	stuff, it&rsquo;s more a way of just inspiring the performer to do certain kinds 
+	of things, and hopefully the listeners won&rsquo;t be thinking about how is that 
+	notated too much, you know, as you say, it&rsquo;s just this constantly 
+	fluctuating, it&rsquo;s a wash of sound, the same notes the whole time, just the 
+	pedal down, I think it&rsquo;s very beautiful.</blockquote>
+	
+<p>[15] But the most revealing statement came in the run-through with Thomas and 
+Harrison. Thomas had just played the same passage that he and Clarke had 
+discussed at the interview, and the following exchange took place:</p>
+
+<blockquote>PHILIP THOMAS: How does it feel the last section, when it&rsquo;s more 
+	complicated rhythm between the two hands?<br>
+	BRYN HARRISON: You can feel the change from something that is in one metre 
+	to two, definitely, you get a slight feeling of acceleration as well, which 
+	is nice.<br>
+	PHILIP THOMAS: Do you think it&rsquo;s accurate? I think I&rsquo;m pretty accurate.<br>
+	BRYN HARRISON: As far as I can tell, I&rsquo;m struggling to tell<nobr>. . . .</nobr><br>
+	PHILIP THOMAS: You kind of do it so much, I&rsquo;ve practised it, and then you 
+get used to it, and it gets compromised again, so I&rsquo;ve got to keep kicking 
+myself in the arse to kind of take it apart again, I think that&rsquo;s the problem, 
+I&rsquo;ve got to keep unraveling it.<br>
+	BRYN HARRISON: Otherwise you get used to the sound and keep imitating 
+	yourself in a slightly inaccurate way really.</blockquote>
+	
+<p>[16] Performance, then, as Thomas conceives and practices it, isn&rsquo;t a matter of 
+reproducing an overlearnt series of actions, however accurately. Rather, it 
+consists of an interpretive engagement with the notation that can only be done 
+in real time, that has to be enacted afresh on each occasion of performance&mdash;and 
+it is here that I come back to the hidden social dimension of solo performance 
+that I talked about, for this engagement with the notation is a two-way process, 
+a process of interaction, a vehicle through which performance acquires the 
+quality that Lonnie Hillyer ascribed to jazz improvisation when he spoke of it as 
+&ldquo;really like a guy having a conversation with himself&rdquo;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>. And as Thomas sees 
+it, the result of this real-time interaction is the generation of a kind of 
+energy which wouldn&rsquo;t otherwise be there. This is how he explains it in the 
+joint article:</p>
+
+<blockquote>As I devise a strategy for counting, a certain energy is created in my 
+	mind which impacts upon the articulation of the gestures. Page 5, for 
+	example, consists very simply of the same three-note cluster repeated at 
+	different dynamics, with slightly different durations, and positioned 
+	irregularly throughout the page. The complexity of the counting needed to 
+	measure accurately the lengths of the intervening rests is, of course, 
+	unheard by the listener; but the impact of that counting upon the 
+	articulation of the cluster across time is such that each sound has its own 
+	energy. If Bryn had notated this using either a simpler rhythmic strategy, 
+	or space-time notation, that energy would, I suggest, be noticeably lacking.</blockquote>
+	
+<p>[17] The result is that in terms of human activity there is a real difference 
+between performing and, so to speak, merely imitating the sound that performance 
+makes. This is something that Thomas spelled out in his interview, too, in 
+connection with the idea that you can perform Ferneyhough&rsquo;s music by reducing 
+the rhythms to a simpler metrical framework which can then be subjected to 
+nuance, so reproducing more or less the effect of the original notation: This 
+kind of simplified transcription, Thomas complained, suggests that the original 
+notation is needlessly complex&mdash;&ldquo;and it is a completely ridiculous notion&rdquo;, he 
+added, &ldquo;because it&rsquo;s as if rhythmic notation affects duration alone, but of 
+course it doesn&rsquo;t&rdquo;. In this way the transcription &ldquo;would sound entirely 
+different from what Ferneyhough had written, the effect would be completely 
+different&rdquo;.</p>
+
+<p>[18] The extent to which this difference&mdash;the difference in energy that Thomas 
+spoke of&mdash;actually communicates itself to listeners is a question that could 
+only be settled by further empirical work. But I hope I have said enough to 
+establish the general point I wanted to make. We have here the kind of music 
+that, with its abstract, mathematical notation, might be thought most amenable 
+to the paradigm of performance as reproduction, and analysis of the MIDI 
+recordings shows that accuracy of reproduction is achieved to a remarkably high 
+degree. And yet, at the same time, an ethnographical approach reveals a quite 
+different conception&mdash;what would once have been called a folk theory&mdash;and, 
+presumably, a quite different pattern of intentional activity on the musicians&rsquo; 
+part (for it is obvious from the transcript of the play-through session that 
+Thomas and Harrison were thinking along very much the same lines). And here 
+there are three points I would like to bring out.</p>
+
+<p>[19] The first of these points is that there is space in both Thomas&rsquo; and 
+Harrison&rsquo;s thinking for the performer. In his interview Harrison said this in so 
+many words:</p>
+
+<blockquote>BRYN HARRISON: I wouldn&rsquo;t want to feel I was one of those composers who 
+	feel that there&rsquo;s no flexibility in terms of what the player can bring to a 
+	piece, I think that&rsquo;s where the sort of human aspect comes in and I think 
+	that that&rsquo;s the really, really important part of music-making as far as I&rsquo;m 
+	concerned.</blockquote>
+	
+<p>[20] But he also said something that grounds this view of the performer&rsquo;s role 
+in his thinking about composition. Referring to the New York-based artist and 
+friend of John Cage&rsquo;s, Harrison observed:</p>
+
+<blockquote>BRYN HARRISON: Jasper Johns said that &ldquo;Sometimes I see it and then paint 
+	it. Other times I paint it and then see it&rdquo;. And I really like that quote, 
+	because I think in some ways the way that I&rsquo;m dealing with rhythm and the 
+	setup on the page, it&rsquo;s not purely deterministic in my point of view, even 
+	though you know, it&rsquo;s carefully regulated on the page but in some ways I&rsquo;m 
+	writing it to hear it, as much as I&rsquo;m hearing it to write it.</blockquote>
+	
+<p>[21] In other words, in contrast to the still influential nineteenth-century 
+idea of the composer possessing a vision which is communicated through the 
+score, Harrison understands composition as a process of discovery&mdash;a process 
+which does not come to an end when the score is completed, but continues into 
+the performance:</p>
+
+<blockquote>BRYN HARRISON: I think the thing I&rsquo;ve learnt is that you don&rsquo;t have to 
+have the answers to every question as well, I think you know, when I first 
+started getting performances and I&rsquo;d go and attend rehearsals, you know I was, 
+well I was probably scared stiff for one thing, but there was always this 
+feeling that any question that a player had you had to feel you immediately knew 
+the answer to that question, and of course you&rsquo;ve got to trust their judgment as 
+	well.</blockquote>
+	
+<p>[22] As well as creating a space for the creative contribution of the performer, 
+in a way that the reproduction paradigm does not, these comments emphasize the 
+extent to which the meaning of music is emergent, in other words to which it 
+arises from the act of performance itself.</p>
+
+<p>[23] The second point I&rsquo;d like to draw out is that approaches to performance 
+analysis that focus exclusively on recordings&mdash;on the acoustic outputs of 
+performance&mdash;risk misreading or simply not grasping the social meaning inherent 
+in the act of performance: much as I applaud the efforts that have been made in 
+the last decade or two to develop a musicology of performance, we are vulnerable 
+to the claim that the voices of performers have not really been heard, that 
+theorists have as it were taken it upon themselves to speak for performers in a 
+kind of ventriloquism. If that is the case, then the project I have been 
+describing is in the most literal way an attempt to bring performers&rsquo; voices 
+into the field of study, and the suggestion I am making is that ethnographic 
+approaches have a great deal of potential for contextualizing the now more 
+traditional approaches to the empirical study of performance.</p>
+
+<p>[24] The final point follows on from this. When the &ldquo;New&rdquo; musicologists of the 
+1990s identified what they saw as a complicity between traditional musical 
+analysis and the ideology of musical autonomy, they reacted against the whole of 
+idea of &ldquo;close reading&rdquo;; the same happened when, a decade or two before that, 
+theatre studies broke away from literary studies. But there is no need to throw 
+away the baby with the bathwater, because there is not an either/or relationship 
+between ethnographical, contextual approaches on the one hand, and the close 
+reading of texts (under which I include both scores and performance data) on the 
+other. Moreover, in music of the Western &ldquo;art&rdquo; tradition, this both/and 
+relationship extends to the very topic of study. In the wake of Lydia Goehr&rsquo;s 
+influential book <i>The Museum of Musical Works,</i> there was a general tendency to 
+debunk the idea of musical works, and it would be very easy to imagine a 
+musicology of performance that went the same way as theatre studies. 
+(Christopher Small&rsquo;s writings, however valuable as a corrective to the then 
+prevailing assumptions of mainstream musicology, provide an idea of what such a 
+musicology of performance might look like.) Yet one of the characteristic 
+features of the Western &ldquo;art&rdquo; tradition is the dual life of musical works: on 
+the one hand as frameworks for a performance culture that is distinguishable 
+from that of jazz improvisation only in terms of degree, not category; and on 
+the other, as objects of contemplation or critical reflection, if only to that 
+small but culturally influential circle of the musical literati.</p>
+
+<p>[25] In moving so rapidly from Bryn Harrison&rsquo;s 
+<i>&ecirc;tre-temps</i> to music in general 
+I am, of course, implying that the kind of performative meaning I have been 
+talking about is something present in musical performance in general, at least 
+within the Western &ldquo;art&rdquo; tradition, rather than something purely idiosyncratic, 
+applying only to &ldquo;New Complexity&rdquo; music, or perhaps more generally to music 
+outside the so-called &ldquo;common practice&rdquo; tradition. Philip Thomas, it appears, 
+would incline to the latter view. Immediately after the passage from our joint 
+article in which he talks about energy, he discusses the way in which the use of 
+bar lines affects the manner of performance: the notation of the opening gesture 
+as occurring after a semiquaver rest, he says, &ldquo;suggests to the performer a 
+different way of breathing, if you like, with the initial attack bouncing off an 
+imaginary wall rather than coming down on the traditional down-beat&rdquo;. Having 
+cited some other, similar cases, he continues:</p>
+
+<blockquote>Here we see how despite the apparent rigidity of the barring structure 
+that Bryn laid out for himself, he has used the bars to bring life to the 
+material and not simply to contain it. These are examples of the notation 
+playing a crucial role in the nature of the material. One could feasibly learn, 
+say, a Beethoven sonata in a purely aural manner, simply through repeatedly 
+listening to a recording: the correct pitches, rhythms, tempi, dynamics, and so 
+on could all be learned in this way. But in <i>&ecirc;tre-temps</i>, and much 
+	music like it, the visual appearance of the notation is fundamental to the 
+	character and production of the material: the notation and the material are 
+	inseparable.</blockquote>
+	
+<p>[26] Yet I wonder if the contrast with a Beethoven sonata is as self-evident as 
+it might appear. Certainly you could learn a Beethoven sonata that way. But such 
+an approach runs counter to the established pedagogical view that you make music 
+your own by going back to the score and creating your own interpretation of it. 
+And after all, in principle you could (with whatever difficulty) do the same 
+with Harrison&rsquo;s music: the point Thomas is making isn&rsquo;t really so much that this 
+can&rsquo;t be done, but that a certain energy&mdash;a dimension of the music that derives 
+from the often uneasy relationship between score and sound, between written 
+notation and acoustic realization&mdash;will be lacking. And if that is true of 
+Harrison, then I see no reason to believe that it is not true of Beethoven as 
+well. To say that there is more to musical performance than the sound it makes 
+may sound merely flippant. But to do justice at one and the same time to the 
+sight and the sound of music is perhaps the most challenging demand we face in 
+making sense not just of musical performance, but of the tradition of Western 
+&ldquo;art&rdquo; music itself.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Nicholas Cook<br>
+	Department of Music<br>Royal Holloway, University of London<br>Egham, Surrey TW20 0EX<br>UK<br><a href="mailto:nicholas.cook@rhul.ac.uk">nicholas.cook@rhul.ac.uk</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> &ldquo;Making Music Together, or Improvisation and its 
+Others,&rdquo; <i>The Source: Challenging Jazz Criticism</i> 1 (2004), 5&ndash;25.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Ingrid Monson, <i>Saying Something: Jazz Improvisation 
+and Interaction</i> (Chicago: Chicago University Press, 1996), 74.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Alfred Schutz, &ldquo;Making Music Together: A Study in Social Relationship,&rdquo; in Arvid Brodersen (ed.), 
+<i>Alfred Schutz: Collected Papers II: Studies in Social 
+Theory</i> (The Hague: Nijhoff, 1964), 177.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Monson, 141&ndash;3.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> John Potter, <i>Vocal Authority: Singing Style and 
+Ideology</i> (Cambridge: Cambridge University Press, 1998), 178&ndash;82.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Monson, 186.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> &ldquo;Between Process and Product: Music and/as Performance,&rdquo; <i>Music Theory Online</i> 
+7.2 (2001).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Eric Clarke, Nicholas Cook, Bryn Harrison, and Philip 
+Thomas, &ldquo;Interpretation and Performance in Bryn Harison's <i>&ecirc;tre-temps</i>&rdquo; (<i>Musicae Scientiae</i>, 
+forthcoming), on which the following draws; I am grateful to my co-authors and 
+to Ir&egrave;ne Deliege for permitting me to reproduce materials from this publication.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Quoted in Paul Berliner, <i>Thinking in Jazz: The 
+Infinite Art of Improvisation</i> (Chicago: University of Chicago Press, 1994), 
+192.<br><a href="#FN9REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">&ldquo;Making Music Together, or Improvisation and its 
+Others,&rdquo; <i>The Source: Challenging Jazz Criticism</i> 1 (2004), 5&ndash;25.</div><div id="fndiv2" class="flyoverdiv">Ingrid Monson, <i>Saying Something: Jazz Improvisation 
+and Interaction</i> (Chicago: Chicago University Press, 1996), 74.</div><div id="fndiv3" class="flyoverdiv">Alfred Schutz, &ldquo;Making Music Together: A Study in Social Relationship,&rdquo; in Arvid Brodersen (ed.), 
+<i>Alfred Schutz: Collected Papers II: Studies in Social 
+Theory</i> (The Hague: Nijhoff, 1964), 177.</div><div id="fndiv4" class="flyoverdiv">Monson, 141&ndash;3.</div><div id="fndiv5" class="flyoverdiv">John Potter, <i>Vocal Authority: Singing Style and 
+Ideology</i> (Cambridge: Cambridge University Press, 1998), 178&ndash;82.</div><div id="fndiv6" class="flyoverdiv">Monson, 186.</div><div id="fndiv7" class="flyoverdiv">&ldquo;Between Process and Product: Music and/as Performance,&rdquo; <i>Music Theory Online</i> 
+7.2 (2001).</div><div id="fndiv8" class="flyoverdiv">Eric Clarke, Nicholas Cook, Bryn Harrison, and Philip 
+Thomas, &ldquo;Interpretation and Performance in Bryn Harison's <i>&ecirc;tre-temps</i>&rdquo; (<i>Musicae Scientiae</i>, 
+forthcoming), on which the following draws; I am grateful to my co-authors and 
+to Ir&egrave;ne Deliege for permitting me to reproduce materials from this publication.</div><div id="fndiv9" class="flyoverdiv">Quoted in Paul Berliner, <i>Thinking in Jazz: The 
+Infinite Art of Improvisation</i> (Chicago: University of Chicago Press, 1994), 
+192.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2005 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

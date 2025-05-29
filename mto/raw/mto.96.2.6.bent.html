@@ -1,0 +1,1557 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 2.6: Bent, Diatonic ficta revisited</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Diatonic <i>ficta</i> revisited: Josquin&rsquo;s <i>Ave Maria</i> in Context">
+
+    <meta name="citation_author" content="Bent, Margaret">
+      
+
+<meta name="citation_publication_date" content="1996/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="2">
+<meta name="citation_issue" content="6">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Diatonic <i>ficta</i> revisited: Josquin&rsquo;s <i>Ave Maria</i> in Context
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.96.2.6/mto.96.2.6.bent.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Margaret Bent</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="../mto.96.2.5/mto.96.2.5.wibberley.html">../mto.96.2.5/mto.96.2.5.wibberley.html</a></font></p><p><font size='4'>KEYWORDS: Wibberley, counterpoint, ficta, diatonic, accidentals, mode, notation, hexachords, Josquin, Obrecht</font></p><p><font size='4'>ABSTRACT: Roger Wibberley in <a href='../mto.96.2.5/toc.2.5.html'><i>MTO</i> 2.5</a> has criticized a version I published of the sequence from Josquin&rsquo;s<i>Ave Maria</i>, on grounds that it flouts Glarean&rsquo;s modal classification. Cristle Collins Judd has already challenged Wibberley&rsquo;s construction of mode, and I further deny Glarean&rsquo;s relevance on chronological grounds. The first part of my article restates and revises some of the premises (ignored by Wibberley) which provided the context for my discussion of the Josquin piece; the second part extends my original discussion of that passage, and offers some comments and questions in response to <a href='../mto.96.2.5/mto.96.2.5.wibberley.html'>Wibberley&rsquo;s paper</a>.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.96.2.6/mto.96.2.6.bent.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 2, Number 6, September 1996 <br> Copyright &#0169; 1996 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><b><i>A mind is like a parachute. It only works if it is open</i>.</b></p>
+<hr><br>
+
+<p>[1] I am grateful to Roger Wibberley and other 
+correspondents following his article in <i>MTO</i><sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> for airing 
+some important questions and providing me with an incentive 
+for this reply. I do plan eventually to produce a more 
+fully revised and corrected expansion of the thesis I set 
+out in &ldquo;Diatonic <i>ficta</i>&rdquo; (henceforth DF),<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> incorporating 
+replies to Karol Berger and Peter Urquhart, but 
+this may serve as a partial, interim statement.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup><p>
+
+[2] Cristle Collins Judd began her posting of July 23 to
+mto-talk (&ldquo;Wibberley, MTO 2.5,&rdquo; <a href="http://societymusictheory.org/www-talk/mto/96july.mto/0032.html">mto-talk 23 July 1996</a>) by
+addressing not so much Wibberley&rsquo;s solution but his modal
+premises.  In order to restore premises rather than symptoms to
+the centre of the discussion, I shall first set the Josquin
+aside.  Since some readers may not be familiar with DF and the
+context in which I used that example, and since none will be able
+to infer it correctly from Wibberley&rsquo;s article, it might be
+helpful if I now restate and amplify some parts (only) of the
+thesis particularly germane to this discussion, and take this
+opportunity to adjust some areas where my presentation may have
+proved incomplete or too elliptical.
+<p>
+
+[3] Since I invoke counterpoint so strongly, I had better 
+explain the specific sense in which I use the term. 
+Counterpoint, as defined in DF from Tinctoris and earlier 
+theorists, is concerned not with lines or vague general 
+attributes but with <i>two-voice</i> progressions&mdash;what <i>we</i> 
+might call two-part or <i>dyadic harmony</i>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> At least up to 
+the late 15th century, the handling of more than two parts 
+was treated by theorists as an extension of those dyadic 
+principles. It is in respecting and reconciling melodic 
+principles and the rules of counterpoint that ficta is 
+necessitated; I have tried to show that ficta needs to be 
+viewed in the context of counterpoint as a whole, and not 
+informed just by precepts specifically labelled as ficta. 
+The list discussion has referred to the need to set 
+priorities in cases of conflicting principles (Judd, 23 
+July: &ldquo;the challenge to Bent&rsquo;s solution of the passage in 
+question comes not from modal theory, but in relation to 
+how one interprets horizontal and vertical priorities in 
+determining ficta.&rdquo; Just so.).  I did indeed attempt<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> to 
+draw from theorists a set of primary guidelines for 
+applying contrapuntal precepts (melodic and &ldquo;harmonic&rdquo;) 
+precisely with a view to setting priorities when those 
+precepts come into conflict, though there is still a long 
+way to go in spelling out qualifications, exceptions and 
+licences to those primary considerations, some of which 
+have been addressed by Berger and Urquhart.
+<p>
+
+[4] A fundamental difference between renaissance notation 
+and ours is that, then, &ldquo;not to notate accidentals is not 
+to misnotate the music.&rdquo;  Notated accidentals were truly 
+accidental. No more or less importance attaches to their 
+prescriptive power or indeed to their absence than would, 
+say, to that of sporadic fingerings in some early keyboard 
+sources.  We may be glad of help, however occasional or 
+eccentric, but notation should not be viewed as incomplete 
+or inaccurate when lacking such accidental indications. 
+When we transcribe old music into a notation in which 
+accidentals have become essential, we tend to read the 
+notation thus transcribed as a stronger default than it 
+ever could have been, one from which &ldquo;deviations&rdquo; have to 
+be justified and to which accidentals have to be added, or 
+notes inflected. It is we, <i>not they</i>, who &ldquo;add 
+accidentals,&rdquo; depart from the notation, and make 
+inflections.  They had no term to distinguish our F flat 
+from F: if a note was F according to the clef, it was still 
+&ldquo;F,&rdquo; even F fa ut, <i>even if</i> it had become our &ldquo;F flat&rdquo; by 
+local contrapuntal operations. This is what I shall mean by 
+the term &ldquo;contrapuntal descent&rdquo; (see [8]), as distinct from 
+a descent caused by tuning.
+<p>
+
+[5] It is the modern transcription that has traditionally 
+been treated as our default, as when we refer to &ldquo;the 
+notation as it stands,&rdquo; or at &ldquo;face value,&rdquo; despite 
+changing standards in editorial practice. After 
+considerable editorial experience, it is now my conviction 
+that so to treat it is a greater disfigurement and source 
+of misprision than to start from the other end, as I now 
+advocate. It is obvious that <i>their</i> starting point for 
+these determinations, <i>their</i> access to the music, was not 
+from a modern transcription but rather through singing from 
+their manuscripts and prints. Early notation provided a 
+weak intervallic default organization by clef and 
+signature, but because it was incompletely prescriptive of 
+pitch (hence &ldquo;weak default&rdquo;), the performer expected to 
+arrive at actual sounds by some means besides prescriptive 
+notation. Modes and hexachords (see [18] below), while very 
+important for other purposes, run on separate tracks from 
+each other and are at best marginally relevant to the 
+realization of counterpoint and the determination of ficta. 
+The most important key to successful realization of weakly 
+prescriptive notation is to complement it as they must have 
+done, armed with an approximation of the elementary 
+training shared by composers and singers, and which 
+composers presumed in their singers when they committed 
+their compositions to notation, namely, for these purposes, 
+practical training in counterpoint. Taken in partnership, 
+notation and counterpoint create a more strongly 
+prescriptive basis for realization. Like them, we should 
+develop the (for us very different) musical skills that are 
+dictated by singing from the original, acquiring an 
+awareness of the constraints and freedoms inherent in the 
+notation, as well as a sense of the violence done by 
+putting weak-default (early) notation (without the 
+complement of a strengthening counterpoint training) into a 
+(modern) form that demands to be read by the standards of 
+modern notation as a &ldquo;strong&rdquo; default.  DF grew out of a 
+recognition that the answers to many of these questions 
+follow naturally from the experience of reading and singing 
+from original notation instead of from conceptually 
+different modern translations. If this is a counsel of 
+perfection, we need at least to learn (by doing it) to 
+<i>simulate</i> that experience so that in using modern scores 
+we can make all allowance for their inherent distortions, 
+as one glimpses the original  language through the 
+shortcomings of a translation. It is those earlier habits 
+that (echoing Crocker 1962) we need to recover, by reading 
+their books (musical and theoretical) rather than ours, by 
+observing what they don&rsquo;t say as well as what they do.
+<p>
+
+[6] Armed with the rudiments of mensural and contrapuntal 
+skills (correct realization of perfect simultaneities and 
+cadential approaches in discant-tenor pairs, and perfection 
+of melodic 4ths and 5ths unless prevented), one <i>reads</i> 
+one&rsquo;s own part in a state of readiness to re-interpret, of 
+readiness to change one&rsquo;s <i>expectation</i> of how to read the 
+under-prescriptive notation (not to <i>change the notation!</i>) 
+in prompt reaction to what one <i>hears</i>.  The &ldquo;default&rdquo; of 
+the line you <i>see</i>, together with the melodic articulations 
+you expect to apply (perfecting linear fourths, making 
+cadential semitones) is controlled and sometimes over-ruled 
+by the counterpoint you <i>hear</i>. The &ldquo;default&rdquo; that is 
+&ldquo;changed&rdquo; is not the <i>notation as transcribed</i>, but the 
+<i>expectation</i> of how the original notation is to be 
+realized.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> Once the new (i.e. old) 
+habits of listening 
+and adjusting aurally have been internalized, most 
+solutions follow naturally, and almost never require the 
+lengthy discussions that arise when singing from 
+transcribed score. I fear that I am now as skeptical of the 
+authority of assertions about what is and is not possible 
+in early polyphony, from those who have not acquired 
+fluency in reading in this way, as I would be reluctant to 
+accept literary correction from someone who read a language 
+only in translation.  The weak default of under-
+prescriptive notation becomes a strong default when coupled 
+with contrapuntal training, but it is a different strong 
+default from modern, mostly white-note, notation &ldquo;as it 
+stands,&rdquo; and the inherent status accorded accidentals by 
+current editorial conventions.
+<p>
+
+[7] We are still free to treat results so obtained as a 
+default that can or must be departed from, but this default 
+is as different as it could be from that of a modern 
+transcription. We will approach their thinking and 
+musicianship more closely by trying to do it their way (the 
+Kon-Tiki principle of testing whether the expedition is 
+possible using the original equipment), even if the results 
+turn out to be very different from what we have grown used 
+to by doing it from the opposite, unquestionably 
+anachronistic direction, and even if we then decided (on 
+grounds <i>yet to be determined</i>, since &ldquo;modal fidelity,&rdquo; 
+<i>pace</i> Wibberley, will no longer do) that the new results need 
+further adjustments of a different kind.  
+<p>
+ 
+[8] Our musical culture has raised the definition of 
+frequency and pitch-class to a high status, for analysis, 
+editing and performance. My reading of a range of early 
+theorists leads me to posit a slightly fuzzier status both 
+for what we would call pitch-class and for frequency, a 
+status that places pitch closer to the more flexible view 
+of durations and tempo that we still have. This reading 
+rests partly on conspicuous circumlocutions and the late 
+arrival of precise language, notation and measurement, 
+partly on a pervasive Pythagorean mentality expressed in 
+the tuning system, partly on my understanding of 
+counterpoint and the internal evidence of some paradigmatic 
+pieces, <i>not</i> the Josquin. We routinely make <i>rhythmic and 
+durational</i> analyses on the basis of notated values even 
+though we know that performance fluctuations, some 
+necessary, some elective, expected but elusive to precise 
+definition, are ignored by the analyst. We are not 
+necessarily shocked if an analysis disregards the fact that 
+a piece, any piece, may end slower than it began. A 
+terminal ritardando needn&rsquo;t affect certain kinds of 
+analysis; nor need the ritardando of pitch caused by a 
+logical downward sequential spiral (Obrecht) shock us. I do 
+not assume, as Wibberley seems to impute [2], that for the 
+&ldquo;Obrecht piece to begin on F and end on <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> was of little if 
+any consequence for the singers.&rdquo; By suggesting that if 
+they <i>knew</i> they were spiralling for reasons either of 
+tuning or counterpoint (if I understand him correctly) they 
+would have found a way not to do so, Wibberley subscribes to a 
+rigid frequency stability which, however well established 
+it became in the keyboard-reference era, did not, I 
+believe, govern earlier music (see especially [13] below). 
+Without cumbersome advance planning, I maintain that it is 
+virtually impossible to sing the Obrecht <i>Libenter 
+gloriabor</i> Kyrie (and about 30 other pieces) from original 
+notation in any other artful way than to let the sequence, 
+indeed, wind smoothly down in its <i>contrapuntal</i> operation 
+(irrespective of the tuning used, even if that were equal 
+temperament). This happened in one of our singing sessions 
+when someone innocent of its notoriety brought a facsimile 
+along. We read it, it descended, as everyone was (and 
+always would have been) well aware as it was happening. The 
+sequence of descending fifths and rising fourths F B E A D 
+G C F is notated only with a few encouraging B and E flats, 
+but its smooth counterpoint locks it into &mdash; in our terms, 
+F <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (see DF, 34&ndash;40).  Another of us, who 
+had previously been sceptical of &ldquo;my&rdquo; solution on paper, 
+exclaimed with surprise that it sounded fine. That is 
+precisely the point. Try it!
+<p>
+
+[9] Nor need such a spiral impinge on, <i>pace</i> Wibberley, a modal 
+analysis. The work by Powers and Judd on Aaron&rsquo;s modal 
+assignations<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> makes it clear that 
+Aaron in the <i>Trattato</i> 
+was indeed making those assignations &ldquo;on paper,&rdquo; in such a 
+way as to permit two startlingly different-sounding pieces 
+(such as <i>Mon mari m&rsquo;a diffame</i> by De Orto and <i>E la la la</i> 
+by Ninot le Petit, nos. 12 and 27 in Canti B) to receive 
+the same classification. (How, for example, does Wibberley deal 
+with such witness or advocacy of mode?) This is closer in 
+time to Josquin than Glareanus and should restrain Wibberley&rsquo;s 
+construction of the relevance of (his perception of 
+Glarean&rsquo;s view of) mode to the sound (= contrapuntal 
+realization) of a piece. The relatively higher status we 
+now accord to sounding pitch definition is reflected in the 
+facts that we (not they) have made accidentals essential, 
+and that we fix frequency and pitch class much more sharply 
+than we do metronomic values. Pitch, in short, has a higher 
+status for us than rhythm. Skilled singers <i>of course</i> 
+would be aware of changes, both at the micro-level of 
+tuning, shifting commas of intonation, and at the macro-
+level of occasional contrapuntal spiralling sequences such 
+as I believe to be indisputable in the Willaert and 
+unavoidable in the Obrecht examples.
+<p>
+
+[10] Berger (in <i>Musica ficta</i>) was unwilling to accept the 
+evolution of his &ldquo;renaissance&rdquo; view of a keyboard-like 
+repertory of available pitches from my free-standing, 
+vocally-conceived, Pythagorean, pre-keyboard &ldquo;medieval&rdquo; 
+view of pitch, tuning and vocal counterpoint. Indeed, he 
+(like Wibberley) is reluctant to accept any possibility of 
+fluctuation, by tuning or counterpoint, and there we 
+differ. I believe that Berger&rsquo;s view is broadly valid for a 
+later period and with different qualifications from those 
+to which he applies it, and that it can at some point be 
+reconciled with mine, though not as a background to music 
+before 1500, where I judge it to be anachronistic. I wrote: 
+&ldquo;Musica recta is not an arsenal of fixed pitches but 
+denotes a set of relationships to a notional norm of pitch 
+stability that is more like a flotilla at anchor than a 
+Procrustean bed or a pre-tuned keyboard. The &lsquo;operation of 
+<i>musica ficta</i>&rsquo;, that is, the substitution at any point, 
+for contrapuntal reasons, of a tone for a semitone (or vice 
+versa), could mean that the absolute frequency of the As, 
+Bs, Cs that follow may not be the same as they were before, 
+although the local interval relationships of small segments 
+will remain intact. The taking of a <i>conjuncta</i> 
+(substitution of a tone for a semitone or vice versa) 
+anywhere in the system may change the actual pitches 
+following that point, without changing the relationships 
+except at that point. The value of a semibreve may be 
+changed by proportional operation or mensural change; the 
+contextual relationships of that semibreve will continue to 
+be observed after the point of change even if the absolute 
+durations represented by the same symbol in the same 
+context are different from before. Both for mensuration and 
+for pitch, the values are achieved through local context 
+and without reference to long-term absolutes.&rdquo; (DF p. 10, and 
+passim.)  Especially since the Powers-Judd illumination of 
+renaissance views of mode, it has yet to be shown that 
+there is any basis other than modern prejudice for claiming 
+such absolutes with respect to sounding pitch, as distinct 
+from notated status, for a musicianship that was not yet, 
+before the 16th century, bound by keyboard-like reference. 
+It is the notion of frequency volatility of both these 
+kinds that has already educed the loudest howls of protest 
+(e.g. from Berger, p. 45). This is a genuine point of 
+disagreement, much more fundamental than the Josquin 
+example. That singers were aware of these shifts does not 
+prove (again, <i>pace</i> Wibberley and Berger) that they would have found 
+them undesirable or striven to avoid them. Before about 
+1500, and often afterwards, there is nothing to constrain a 
+piece to a fixed frequency or, in certain special 
+circumstances, to a fixed constancy irrespective of tuning, 
+for a letter-name-plus-hexachord syllable point on the 
+gamut; these fixities are what I see as coming in with the 
+rise of the keyboard as instrument of practical and 
+theoretical reference. They would have been as ready, I 
+believe (as we are not), to redefine a frequency or, as in 
+the Willaert, to adopt a changed but logically-approached 
+pitch for E, as to accept (as we can without special 
+pleading) a new value for a semibreve beat after a 
+proportional shift, whether specified or otherwise 
+necessitated.
+<p>
+
+[11] Diatonic (and hence also chromatic) status  was 
+defined <i>melodically</i> in the 16th century and earlier.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+The presence of sharps and flats does not necessarily 
+render music chromatic; diatonic status then, as later, is 
+not confined to &ldquo;white notes.&rdquo;  F&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is a chromatic, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;G a 
+diatonic semitone, <i>irrespective of the size or tuning of 
+the interval</i>. <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&ndash;G&ndash;<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> presents two adjacent <i>diatonic</i> 
+semitones.  This or any melodic progression that proceeds 
+by diatonic intervals (e.g. the tenor of the Willaert duo) 
+is diatonic. Most ficta is diatonic, hence &ldquo;Diatonic 
+ficta.&rdquo; I did not intend the apparently paradoxical title 
+as a label for exotic procedures;<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> 
+rather, I used some 
+unusual pieces to illustrate how far diatonicism can go, in 
+order to demonstrate how some modern scholarship has 
+misused the term in relation to early music, and to bring 
+out the different underlying assumptions and the different 
+prescriptive power of old and new notation respectively. I 
+am pleased to note in the recent discussion that most 
+correspondents avoid indiscriminately calling sharps and 
+flats chromatic, and thus tacitly acquiesce in the view 
+that, except for specifically chromatic intervals such as 
+F&ndash;<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, ficta was largely diatonic.
+<p>
+
+[12] I have read with interest the mto-talk postings of Nicolaus
+Meeus on tuning and intonation (&ldquo;Wibberley, MTO 2.5,&rdquo; <a href="http:/www-talk/mto/96aug.mto/0005.html">mto-talk
+19 August 1996</a>, <a href="http:/www-talk/mto/96aug.mto/0011.html">mto-talk 26 
+August 1996</a>).  He rightly surmises that I believe some
+kind of just intonation (with pure 5ths and 8ves) applied to <i>a
+cappella</i> vocal counterpoint &ldquo;with pure intonation, Pythagorean
+in principle [Meeus and Lindley also use this qualification], but
+probably with justly tempered thirds in practice&rdquo; (DF p.  18).
+However, Meeus&rsquo;s view of tuning is so clearly anchored to a
+sophisticated keyboard-equivalent that, in setting a standard of
+reference for a piece or a passage, it comes at the discussion
+from the opposite direction from mine.  As for adjustments <i>on</i>
+dissonances, the frequent pitch redefinitions that result from a
+Pythagorean approach (as I understand it; see next para.)  result
+in no bumps, no audible local dislocations.
+<p>
+
+[13] It is highly significant that there was no standard
+<i>starting point</i> for tuning the Pythagorean monochord.  In DF I
+presented Pythagorean tuning as the antithesis of keyboard
+reference:  &ldquo;even if two monochords were tuned with true
+Pythagorean ratios, their resulting frequencies could be slightly
+different if those ratios were applied from a unison by a
+different route through the spiral of fifths.&rdquo;  (See DF,
+especially 3&ndash;7.)  The monochord was unsuitable as an accompanying
+instrument; apart from very elementary pedagogic use, it was a
+representation of Pythagorean ratios rather than a proto-keyboard
+for an individual performance; this of course allows for the kind
+of disciplined frequency movement I believe to be endemic to
+their thinking, hence the Pythagorean spiral, not circle, of
+fifths.  The monochord <i>represented</i> the proportions that yielded
+those sounds, but in practice (by pure 5/4 thirds) may have been
+on a slightly different track from them (separate tracks, yet
+again).  I believe that the view of a constantly redefining
+Pythagorean application overcomes the rejection (by Meeus,
+<a href="http:/www-talk/mto/96aug.mto/0011.html">mto-talk 26 August</a>, and 
+implicitly by many others) of
+Pythagorean tuning throughout the very period where it is
+prevalent, and the point of theoretical reference for proportions
+of all kinds.  Indeed, the better in tune a performance sounds in
+terms of its local progressions (with pure thirds and fifths),
+the more likely it is to move down, as several professional
+performers confirm.  It is a short step from here to believe, as
+I do, that Pythagorean intonation was <i>constantly redefinable</i>
+around new central notes in the course of a piece.  The arrival
+on each new true fifth sonority would then be the new point of
+departure for purposes of tuning calculations, thus achieving
+local perfection and a smooth, gradual descent by comma
+increments.  This rules out a notional keyboard standard for
+performance; any performance <i>with</i> a keyboard necessitated
+compromises, a fact that exercised several 16th-century
+theorists.  The final sequence of a piece like <i>Absalom</i>, in
+which (I believe) pure (Pythagorean) fifths would, ideally at
+least, have been mediated by pure 3rds (5/4) which in turn anchor
+the next pure fifths of the sequence, is almost bound to end at a
+fractionally lower frequency unless it is (artificially, and
+irrelevantly for this discussion) disciplined by adherence to a
+pre-tuned keyboard standard or repertory of available pitches
+(Berger&rsquo;s view).
+<p>
+
+[14] If you believe, with Lowinsky, that frequency must 
+have been constant, a musical absolute (as if to be 
+accompanied on equal-tempered or fretted instruments), then 
+obviously pieces such as the Willaert duo and Greiter&rsquo;s 
+<i>Fortuna</i> can be regarded, as he did, as precocious 
+manifestos for equal temperament.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> He was prepared to 
+accept <i>contrapuntal</i> descent under certain conditions, but 
+not frequency descent. By contrapuntal descent, I mean 
+pieces like the Obrecht and Willaert examples (see DF) and 
+the Greiter where <i>even with constant frequency</i> the &ldquo;F&rdquo; at 
+the end is, by purely contrapuntal  spiralling,  one or 
+more semitones lower than the &ldquo;F&rdquo; at the beginning. If you 
+believe, with me, that (1) such logical <i>contrapuntal</i> and 
+melodic descent through the spiral of fifths in these 
+pieces is inherently Pythagorean in concept and (2) that 
+Pythagorean <i>tuning</i> of 5ths in practice, with pure 3rds 
+(5/4), was predisposed to result in comma slippage, pieces 
+which thus descend <i>contrapuntally</i> can be construed as (in 
+these cases, late) manifestos of Pythagorean conception and 
+execution, as posited above. Rejection of <i>any</i> degree of 
+frequency volatility obviously makes it harder to overcome 
+resistance to contrapuntal descent, despite the existence 
+of pieces (Willaert, Greiter) where all are agreed that it 
+<i>must</i> happen. Otherwise, the tuning consideration need not 
+be an impediment to considering other premises of this 
+argument (notably contrapuntal correction) independently of 
+a specific tuning system.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup><p>
+
+[15] Now for a confessional review of some miscalculations 
+in DF, and a further unpacking of some ellipses. First, it 
+was misleading to present my examples in modern score. I 
+should never have expected readers to accept, even 
+hypothetically, a paradigm shift that emphasizes the 
+radical difference between old and new notation while at 
+the same time transcribing the examples in such a way as to 
+imply that they are equivalent, and exposing them to all 
+the shock of unfamiliarity, and to conceptually foreign 
+analyses of their tonality and tuning. As I put it, 
+&ldquo;neglect of some primary musical facts has led us to 
+tolerate the aural dissonance of intolerable intervals 
+before we accept the merely graphic dissonance of an 
+intolerable-looking modern score.&rdquo; (DF p. 48.) My examples 
+in DF should, rather, be seen as &ldquo;phonetic&rdquo; approximations, 
+into a different language, of what might be sung from the 
+original, or might be at least the first default so 
+derived. But it is hard to know what else to do. It is 
+unrealistic to assume that readers will have the training 
+or time to get together to sing examples from parts, the 
+counsel of perfection spelled out above, thus simulating 
+the <i>process</i> by which contrapuntal training was applied to 
+notated music, but modern scores might at least be read 
+with that awareness.
+<p>
+
+[16] Since DF I&rsquo;ve had the benefit of reading and 
+discussing recent developments in work on mode, especially 
+by Powers and Judd, and I would now reformulate some of 
+what I said about mode in the light of that, though the 
+basic disconnection, on which Judd and I agree, is not much 
+affected. For the moment, I will confine myself to quoting 
+her clear statements to the mto-talk discussion: (23 July) 
+&ldquo;there is simply no need for mode or ficta to impinge one 
+upon the other because they occupy different conceptual and 
+theoretical realms,&rdquo; and, after quoting Wibberley&rsquo;s &ldquo;Only by this 
+means [retaining some diminished fifths in performance] 
+would it have been possible to remain faithful to the mode 
+on account of the actual notes Josquin composed in the 
+particular combination chosen by him,&rdquo; Judd continues: Wibberley&rsquo;s 
+&ldquo;conclusion is based on a modern understanding of mode as 
+tonal system.  Nowhere is such a view articulated by 
+Glarean.  Such a view fundamentally misrepresents the very 
+nature of musica ficta in seeking to fix pitches in a way 
+that Renaissance musicians clearly did not.  Although 
+Bent&rsquo;s solution is not one that I would adopt for this 
+passage, there is nothing in the Glarean passage quoted by 
+Wibberley in para. 9 to argue against it.  Wibberley is 
+imputing to Glarean an &lsquo;internal&rsquo; view of the modes, but 
+nothing in Bent&rsquo;s solution changes the final or range (i.e. 
+the external criteria by which the mode is recognized), 
+hence Bent&rsquo;s view that her solution does not disturb &lsquo;modal 
+coherence.&rsquo;&rdquo;
+<p>
+
+[17] While I do not think that I am &ldquo;mixing up&rdquo;<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> 
+performance and understanding, I do see that this is 
+something that needs to be addressed, and one way in which 
+I hope to advance the formulations of DF is to make that 
+distinction a bit clearer. I hope I have done so by 
+introducing the &ldquo;default&rdquo; element into paras [4&ndash;7] above.  
+Having advocated even more separation of tracks than I did 
+in DF, I see that here I have not gone far enough, and  
+that certain rare conundrum passages like the Josquin that 
+are capable of a perfect contrapuntal realization might in 
+practice not receive it. Just as there might be a reading 
+of a piece that was perfectly consonant with the 
+traditional (Wibberley&rsquo;s) modal-scalar ideal, but a reading that 
+one would not choose in practice, so there may be passages 
+like the Josquin sequence where the perfection of the 
+counterpoint would have been tempered in practice. This is 
+where my discussion above of a &ldquo;default&rdquo; concept may be 
+helpful. While I in no way withdraw from &ldquo;my&rdquo; version of 
+the Josquin as an exercise in contrapuntal perfection, I am 
+perfectly prepared to accept the possibility of a more 
+cautious compromise (see below), if only to direct 
+attention to the premises by admitting that they need not 
+stand or fall by an &ldquo;extreme&rdquo; example. I chose examples 
+that would make vivid the radically different conceptual 
+underpinnings of old and new notation, rather than to 
+illustrate the much subtler consequences that this 
+understanding brings in practice for most &ldquo;normal&rdquo; pieces; 
+but if we can now agree to recognise the Josquin as a 
+special case, the way may be open for broader acceptance of 
+what I have outlined above.
+<p>
+
+[18] In an attempt to set out the main tributaries of a 
+proposed radical shift in <i>understanding</i> the basis of 
+notation (not necessarily or always entailing a shift in 
+the sounding <i>results</i>), I inevitably overstated or 
+understated some aspects, largely by insufficiently freeing 
+myself of some modern prejudices. In attempting to 
+formulate the complementary nature of notation and 
+counterpoint, I may have overstated the weakness of the 
+default, leading others to impute a less disciplined 
+relativism than I actually intend. I hope that the default 
+element helps here.  I seem to have <i>under</i>stated my 
+position on the role of hexachords and solmization, and 
+hence misled Daniel Zager and some others about how 
+mastery of solmization relates to ficta.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>  I never meant 
+to claim (as Zager implies but does not state) that 
+solmization can resolve counterpoint/ficta problems. I do 
+not share his dependence on solmization to determine 
+counterpoint. Rather the converse: contrapuntal decisions, 
+once made, can be expressed in terms of solmization, the 
+nearest they had to a precise language in which to 
+conceptualise and name sounds.  But since they stretched 
+the system to cope with all eventualities, so that anything 
+could be solmized by extensions and disjunctions, the 
+criterion of easy solmization is not a valid arbiter of 
+which sounds are or are not possible. To argue a particular 
+solution <i>from</i> solmization is to let the tail wag the dog. 
+I wrote:  &ldquo;Hexachords provide a functional context for 
+semitone locations which have been predetermined by musical 
+considerations, but they do not in themselves determine 
+what the sounds will be. The hexachordal <i>voces</i>  are the 
+means by which those sounds become practically accessible 
+in vocal polyphony, just as, by analogy, fingering is the 
+means by which small groups of notes are physically 
+negotiated on instruments.&rdquo; Hexachordal thinking permeates 
+their terminology. It guides us away from the notion of 
+&ldquo;inflections&rdquo; of individual  notes and into that of small 
+scalar segments (sometimes projected as tangents from the 
+<i>scala</i> of <i>musica recta</i>) that accommodate and articulate 
+semitones, the need for which is <i>pre-determined</i> on 
+contrapuntal principles. It cannot in itself solve 
+individual ficta problems just as, conversely, no ficta 
+solution can be rejected on grounds that it can&rsquo;t be 
+solmized. Nor, as Judd agrees, can modal theory solve ficta 
+questions, whether Aaron&rsquo;s or Glarean&rsquo;s. What I have 
+proposed is the beginnings of a system drawing simple rules 
+and priorities from counterpoint theory, principles whose 
+development, exceptions and qualifications will have to 
+venture beyond the point where theory helps us and be 
+derived in turn from actual composed music; but they can be 
+projected homeopathically in the direction indicated by 
+that theory (rather than antibiotically from our alien 
+perspective), and fleshed out from a practice stripped of 
+some modern varnish (such as the notion of modal fidelity 
+as an arbiter of tonal stability, and of modern notation 
+&ldquo;as is&rdquo;).  Some of these precepts are strong and binding. 
+Some are weaker and open to alternatives and competing 
+priorities. All of them can be accepted without the 
+obligation to choke down my Josquin example whole as a 
+prescription for <i>practice</i>. That is negotiable.
+<p>
+
+[19] Having thus slightly rearranged the furniture to 
+permit (I hope) constructive discussion, now to the 
+Josquin. I should add to my list of miscalculations that I 
+ought to have saved that example until a later time, in 
+order not to distract attention from the premises, or at 
+least I should have continued the argument, which I will 
+now try to do. It <i>is</i> an exceptional puzzle, and has been 
+so recognized by several writers, notably by Dahlhaus, with 
+the rather different conclusion that &ldquo;der Tonsatz abstrakt 
+konzipiert ist und dass sich Josquin ueber die 
+Unentschiedenheit, wie er zu realisieren sei, hinwegsetzte, 
+da sie ihm gleichgueltig war.&rdquo; (&ldquo;the composition is conceived 
+in the abstract, and that Josquin disregarded 
+the inconclusiveness as to how [the composition] was to be realized, 
+because he was indifferent to [the inconclusiveness.&rdquo;)  Dahlhaus thus posits 
+<i>the composer&rsquo;s indifference to the actual resulting 
+sounds</i>, and argues that counterpoint thus abstractly 
+conceived  may have lacked either prior aural imagination 
+of such sounds or, indeed, any musically acceptable 
+realization<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> To this view 
+Berger and I join in taking 
+exception, if for different reasons.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> Josquin&rsquo;s sequence 
+<i>is</i> a conundrum, of a fairly rare type. In the disputed 
+measures, he gives us not just one text-book sequential 
+&ldquo;cliche&rdquo; chain of fifths and sixths, but <i>two</i> superimposed 
+contrapuntal pairs, discant and tenor, tenor and bass<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> 
+<i>both</i> of which, (not just the upper pair, <i>pace</i> Wibberley [13]), 
+have claims to perfection <i>and</i> place constraints on the 
+other. Dahlhaus gave up on the passage. Lowinsky favoured B 
+natural in bar 48 because it fitted his sense of the piece 
+as being <i>tonal</i> as well as (<i>nearly</i> pure) Ionian.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> 
+Urquhart accepts <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> at bar 48, but avoids my version by 
+accepting the simultaneous false relation of a B <i>natural</i> 
+against it in the treble.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup>  
+Wibberley also accepts the 
+<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, but his compromise has a melodic augmented fourth <i>and</i> 
+a simultaneous diminished fifth at 48&ndash;50.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> The conundrum 
+is that, <i>pace</i> Dahlhaus, I have shown that Josquin wrote a 
+passage that <i>is</i> capable of contrapuntally perfect 
+realization, whether we like it or not, and this 
+intervallic perfection has been acknowledged by Wibberley (n.7) 
+and by others in the list discussion. Let us call it &ldquo;a&rdquo; 
+solution but not necessarily &ldquo;the&rdquo; solution. In the context 
+of DF, I was frankly more interested in its Janus-like 
+status as a theoretical conundrum than in making a binding 
+performance prescription. I would now prefer to call that 
+version a contrapuntally-defined default, a <i>starting-
+point</i> for negotiation or compromise. I was exploring the 
+implications of counterpoint, not primarily fixing up a 
+piece for performance&mdash;perhaps I did not make this clear 
+enough (in DF n.49), but it is clearer to me now.
+<p>
+
+[20] The provocation, therefore, is not mine but 
+Josquin&rsquo;s. It remains interesting and inescapable that he 
+set up this sequential passage of two superimposed 
+contrapuntal pairs in such a way that an intervallically 
+flawless reading,<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> if not a 
+perfect solution, is 
+possible. Josquin&rsquo;s conceit deserves better than that we 
+retreat from it on anachronistic grounds based on notions 
+of white-note supremacy or modal chastity. Wibberley has attempted 
+to make the case for doing so on modal grounds, but for 
+reasons given by Judd, and because of the irrelevance to 
+Josquin&rsquo;s personal arsenal of the later testimony of 
+Glarean, let alone Zarlino, it will be clear that I do not 
+think he has succeeded.  We have to choose in practice 
+whether to depart from that particular kind of perfection&mdash;
+indeed, whether Josquin was provoking us to do just that, 
+rather than whether to depart from the notational 
+translation of a modern score. That is the nub of the 
+&ldquo;default&rdquo; aspect of my hypothesis.  Bach chose occasionally 
+to break &ldquo;rules&rdquo; about parallels or leading notes; we must 
+be prepared for Josquin to do likewise, and to imply that 
+we need to realise certain passages imperfectly. But we had 
+better have a reason more firmly grounded in what we can 
+discern of the musical practice of Josquin&rsquo;s contemporaries 
+than simply disliking something that differs from what <i>we</i> 
+have&mdash;perhaps mistakenly&mdash;grown used to. Addled by years 
+of hearing and seeing under-inflected performances (of the 
+notation &ldquo;as it stands&rdquo;) with too many flat leading-notes 
+and proto-tonal diminished fifths, our mistrained ears are 
+not reliable arbiters. That &ldquo;we haven&rsquo;t tried it because we 
+don&rsquo;t like it&rdquo; (to quote the old Guinness advertisement) is 
+a self-fulfilling prophecy.
+<p>
+
+[21] I am pleased to see that there has come to be 
+acceptance of the bass <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in bar 48 by Wibberley and Urquhart, despite 
+other disagreements.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> This 
+note was ubiquitously 
+rendered as B natural in the Josquin <i>Werken</i>, in Miller&rsquo;s 
+edition of Glareanus, by Lowinsky, and in most recorded 
+performances. Good, for that <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> seems to me the one non-
+negotiable point, and reflects new acceptance of a strong 
+priority that we can perhaps all agree on. The B natural 
+was earlier seen as a kind of first-inversion dominant 
+seventh anticipating the leading-note that takes us back to 
+the bright radiance of C major or, if you prefer, Glarean&rsquo;s 
+likewise anachronistic hypoionian.  The  <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in bar 48 
+<i>both</i> avoids a linear tritone <i>and</i> a simultaneous 
+diminished 5th in a standard sequential progression, and 
+thus claims priority on two counts. But that <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is the thin 
+end of a wedge; that there <i>can</i> be an ideal solution but 
+no perfect solution makes it very difficult to define how 
+far is too far, now that we have removed anachronistic 
+tonal harmony, simplistic modal restraints, and, I hope, 
+the misapplication of modern notation as defaults.
+<p>
+
+[22] Except for the bar 48 <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, alternative compromise 
+solutions can be entertained in performance, including the 
+different ones of Wibberley and Urquhart (and see DF n.49). Since there 
+is no good solution, the actual performance choice is much 
+less interesting, because to some extent arbitrary. I have 
+summarized the most important rules and priorities,(see 
+above, n.5) but there are many caveats, and a much longer 
+discussion is necessary, especially of the circumstances 
+where diminished fifths may be permitted, and where there 
+is some common ground between my views and those of Berger and 
+Urquhart. I could, for example, more readily tolerate an&mdash;albeit 
+unnecessary, and denied by a notated B flat&mdash;diminished 
+5th in the different context of bar 43 (with B* natural 
+below F contracting to a third on C and E between the lower 
+parts) before Wibberley&rsquo;s example begins: <p>
+
+<table>
+	<tr>
+		<td>[discantus]</td>
+		<td>D</td>
+		<td>C</td>
+		<td>B</td>
+	</tr>
+	<tr>
+		<td>[tenor]</td>
+		<td>F</td>
+		<td>E</td>
+		<td>D</td>
+	</tr>
+	<tr>
+		<td>[bassus]</td>
+		<td>D B*</td>
+		<td>C</td>
+		<td>G</td>
+	</tr>
+</table>
+
+<p>
+The fifth at bar 48 on the other hand does not contract but 
+forms part of an ongoing sequence and must, as we seem to 
+agree, be perfect. But how do the following limbs of the 
+sequence differ in the constraints that are placed on 
+consonance and contrapuntal perfection? Wibberley cites Aaron in 
+support of his claim [15] that &ldquo;None of this means, 
+however, that diminished fifths were to be completely 
+banned from composed music; it simply means that perfect 
+consonances did not admit them, and that where perfect 
+consonances were <i>to be attained</i> [my emphasis] such 
+intervals had to be eliminated.&rdquo; If <i>this</i> chain of fifths 
+is not a prime, and literally text-book, candidate for 
+&ldquo;where perfect consonances were to be attained,&rdquo; I don&rsquo;t 
+know what is. Having accepted the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in 48 by the rules of 
+consonance [4], his version presents both a linear tritone 
+and a simultaneous diminished 5th in a standard sequential 
+progression, and thus merely pushes further on the crisis 
+that was avoided at bar 48. He invokes a lower status for 
+the relationship between the upper parts, which might be 
+acceptable when the main contrapuntal relationship was 
+between the lower two. Indeed, diminished fifths sometimes 
+occur either, as Wibberley puts it, between upper parts that are 
+supported from below, or, as I would more often prefer to 
+put it, when the primary contrapuntal cadence, the 6th to 
+8ve between the lower parts, has an added part above, e.g.:<p>
+
+<table>
+	<tr>
+		<td>[discantus]</td>
+		<td>F</td>
+		<td>E</td>
+	</tr>
+	<tr>
+		<td>[2nd discantus]</td>
+		<td>B</td>
+		<td>C</td>
+	</tr>
+	<tr>
+		<td>[tenor]</td>
+		<td>D</td>
+		<td>C</td>
+	</tr>
+</table>
+
+<p>
+But he fails to recognise that the Josquin passage does not 
+meet those criteria, because its unique feature is that 
+<i>two</i> primary and non-cadential contrapuntal progressions 
+are superimposed, and that the upper part therefore cannot 
+be treated as subsidiary.
+<p>
+
+[23] In light of Judd&rsquo;s postings to mto-talk it is almost
+superfluous for me at this point to deny the relevance of
+Glarean&rsquo;s twelve-mode system (or for that matter Zarlino&rsquo;s
+counterpoint theory<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup>) to 
+discussion of constraints and freedoms
+that might have applied in Josquin&rsquo;s mind and his expectations of
+performance.  Glareanus says nothing relevant to counterpoint and
+ficta.  His 12-mode system is no more germane to how <i>Josquin</i>
+might have classified the <i>Ave Maria</i> than would be a roman
+numeral analysis to his harmony.  Wibberley would be mistaken to
+assume that my silence on Glareanus was for any other reason (see
+DF 45).  Judd published a modally-based analysis of the motet,
+not mentioned by Wibberley;<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> 
+in principle, her and my
+statements can co-exist without disagreements affecting our
+different approaches:  &ldquo;there is simply no need for mode or ficta
+to impinge one upon the other because they occupy different
+conceptual and theoretical realms&rdquo;(&ldquo;Wibberley, MTO 2.5,&rdquo; <a href="http://societymusictheory.org/www-talk/mto/96july.mto/0032.html">mto-talk
+23 July 1996</a>).<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> Judd 
+further commented in the same posting:
+&ldquo;Wibberley&rsquo;s straightforward mapping from composer to theorist
+(and vice versa) highlights an even more problematic issue.  I
+find his view of theorists as &rdquo;witnesses&ldquo; difficult to sustain.
+Aron, Glarean, and Zarlino are, after all, advocates of their own
+agendas as well as witnesses.&rdquo;  Then Wibberley (&ldquo;Wibberley, MTO
+2.5,&rdquo;<a href="http:/www-talk/mto/96aug.mto/0004.html"> mto-talk 19 August 1996</a>):  
+&ldquo;The presumption underlying my
+article was that the Josquin motet WAS [Ionian tonality],
+especially since Glareanus said so.&rdquo;  and (&ldquo;Wibberley, MTO 2.5,&rdquo;
+<a href="http:/www-talk/mto/96aug.mto/0000.html">mto-talk 5 August 1996</a>):  &ldquo;What 
+is clear to me is that Glareanus
+is telling us something quite definitely about the way the
+COMPOSER has composed the music, rather than about the way others
+might have performed it.&rdquo;  Does Wibberley not distinguish between
+subsequent comment and classification on the one hand, and what
+could have been in the composer&rsquo;s mind, on the other?  It is
+indeed a big leap to go from a subsequent theorist (especially
+Glarean) with his own axe to grind to make the assumption that
+because this was in his mind it must have been in Josquin&rsquo;s more
+than 50 years earlier.
+<p>
+
+[24] Finally, some further comments and questions for Wibberley.
+Why is it acceptable for <i>Absalom</i> to &ldquo;modulate&rdquo; (a modern 
+term and concept) and, as Wibberley would have it, to &ldquo;remove the 
+harmony from its base,&rdquo; but not (by his standards) for the 
+Josquin or indeed the Obrecht? By what standards does he 
+judge such &ldquo;removal&rdquo; not only permissible but &ldquo;very 
+successful&rdquo; while other comparable pieces are not similarly 
+favoured?<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup>  Indeed, we cannot 
+be sure exactly what 
+Glareanus means by his &ldquo;without removing the harmony from 
+its base,&rdquo;<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> invoked by 
+Wibberley against excessive fictive 
+adjustments. Glarean&rsquo;s language and context <i>may</i> suggest 
+some connection with Aaron&rsquo;s <i>distonata via</i> and 
+Tinctoris&rsquo;s <i>distonatio</i>, neither of which easily lends 
+itself to the construction Wibberley would wish to place on it. 
+This is a difficult area, yet to be explained; Wibberley jumps too 
+readily to the conclusion that it must mean removal from 
+defaults of modern, not of renaissance, imposition.
+<p>
+
+[25] That Wibberley accepts <i>some</i> &ldquo;ficta additions&rdquo; (I would
+prefer to call them contrapuntal adjustments) is clear in his
+posting of 8 August (&ldquo;Wibberley, MTO 2.5&rdquo; <a href="http:/www-talk/mto/96aug.mto/0002.html">mto-talk 8 August 1996</a>).
+Are all of these consonant with his view of mode in pieces
+classified by Glareanus (or indeed Aaron), or with the way that
+these theorists <i>would have</i> classified them?  Up to what point
+does he accept &ldquo;inflections,&rdquo; and which ones, on what criteria
+and authority, and why no further?  How does he reconcile the
+constraint he draws from Glareanus with explicit and
+incontrovertible text-book examples of ficta from the early 16th
+century, such as offered by Ornithoparcus and Listenius?<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> Are
+works classified by Glareanus to be given different treatment in
+order that they can conform with Wibberley&rsquo;s sense of what
+Glarean means, irrespective of any musical characteristics that
+may suggest otherwise?  He also accepts ([13]) that my example is
+consonant.  He sometimes invokes the rules of consonance, though
+he does not make it clear where he departs from the
+notational-contrapuntal premises of DF&mdash;where indeed?  It is on
+(albeit anachronistic) modal grounds that he determines that the
+rules of consonance may here be broken.  Wibberley adopts the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>in the bass at bar 48 &ldquo;by the accepted rules of consonance,&rdquo; but
+it was not widely accepted before I spelled out those rules (see
+above, n.5).  Wibberley and others think that my Josquin example
+takes the application of the rules too far for practical
+purposes, and I might even agree with them, but they (and I) have
+yet to define precisely at what point and why the &ldquo;accepted rules
+of consonance&rdquo; become unacceptable.  Does Wibberley have a view
+on this?
+<p>
+
+[26] Wibberley [21] and n.11 is unclear about the status of the 
+fourth. When the fourth appears in composition treated 
+<i>not</i> as a dissonance, it is because it is not part of the 
+primary contrapuntal pair. In this case there will be a 
+<p>
+
+<table>
+	<tr>
+		<td colspan="3">fifth or a third below it:</td>
+	</tr>
+	<tr>
+		<td>[discant]</td>     
+		<td><nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></td>
+		<td>G</td>
+	</tr>
+	<tr>
+		<td>[contratenor]</td>
+		<td><nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr></td>
+		<td>D</td>
+	</tr>
+	<tr>
+		<td>[tenor]</td>
+		<td>A</td>
+		<td>G</td>
+	</tr>
+</table>
+
+<p>Another and more medieval way of explaining this would be 
+that <i>each</i> of the upper parts formed a contrapuntal pair, 
+cadencing on a 5th and 8ve respectively, with the lowest 
+part, when that part is functionally the tenor at that 
+moment. When the fourth occurs between the primary dyadic 
+pair&mdash;that is what Tinctoris means by &ldquo;in counterpoint&rdquo;&mdash;
+it must be treated as a dissonance, i.e prepared and 
+resolved.   Wibberley&rsquo;s citation of Tinctoris&rsquo;s &ldquo;Hence it is 
+rejected [as a consonance] by counterpoint&rdquo; (n.11) means 
+just that. He misinterprets Tinctoris&rsquo;s statement as 
+meaning generally in the musical texture, but counterpoint 
+clearly must be understood specifically here, or it doesn&rsquo;t 
+make sense, and Wibberley has to labour to do so. He confuses the 
+issue by bringing in acoustics ([15] and n.15). Acoustic 
+perfection is on a separate track (again!) from 
+contrapuntal perfection. Later instructions for the 
+behaviour of a third or fourth voice are also ancillary to 
+the primary dyadic counterpoint.
+<p>
+
+[27] A substantial portion of Wibberley&rsquo;s article [paras. 14&ndash;19] 
+is devoted to the examples in Aaron&rsquo;s <i>Aggiunta</i> to his 
+<i>Toscanello</i>. I have discussed these examples and 
+rules,<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> and invite interested 
+readers to compare my 
+explanations with Wibberley&rsquo;s for some of the features he 
+observes. He fails to point out [14] that Aaron&rsquo;s 
+discussion of partial signatures relates them to mode; see 
+ACN p. 321. See ACN p. 324 for a discussion of Aaron&rsquo;s bias 
+to the lowest voice. In para 18 Wibberley raises Orto&rsquo;s <i>Ave 
+Maria</i>, used as an example in Aaron&rsquo;s <i>Aggiunta</i>, and says 
+that the only reason for the diminished 5th in the 
+preceding bar is that there is a G in the bass beneath it.  
+Not so. The <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> above E contracts to a third, but this E is 
+making a discant-tenor 6&ndash;8 cadence with the bass. This is 
+one case for possible exemption for diminished fifths (see 
+[22] above). Indeed, a fifth contracting to a third might 
+sometimes be regarded as &ldquo;exempt&rdquo; when it is not part of 
+the primary discant-tenor contrapuntal relationship, and it 
+does not always have to have bass support.  Aaron&rsquo;s 
+weighing of priorities in the Agnus of Josquin&rsquo;s Missa 
+<i>L&rsquo;homme arme super voces musicales</i> is discussed in DF 26-
+28 and ACN p. 312; he allows a mediated melodic augmented 
+fourth (but not in a sequence) in order to avoid a 
+simultaneous diminished fifth, <i>and</i> to concord with the 
+cantus firmus. The melodic augmented fourth is here 
+mediated, and is tolerated in the interests of perfecting a 
+simultaneous fifth; Wibberley&rsquo;s solution achieves neither.
+<p>
+
+[28] No one these days can deny the importance of language, 
+and the way the terms we use permeate our thought-processes 
+and prejudices. Thus it is surely also important, for our 
+purposes, to flag dangerous short-circuits or short cuts 
+that may symptomise inappropriate matching of concepts and 
+terms, so that, when we have to use modern terms, we can at 
+least be aware that the <i>absence</i> of an early term may be 
+eloquent.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> I pointed out at the 
+beginining of DF that 
+medieval theory had no single word for pitch or for rhythm, 
+but rather <i>congeries</i> of differently-shaded words, a 
+powerful symptom of the separate tracks on which, for 
+example, mode, counterpoint, solmization and tuning 
+operate. These tracks are interdependent, but not in the 
+way we imagine when we prioritize not only pitch, but a 
+frequency-biased notion of pitch.
+<p>
+
+[29] In conclusion:<br>
+There is still a widespread and under-supported belief that 
+renaissance composers must have stuck largely to &ldquo;white-
+note diatonicism&rdquo; except where we are forced to believe 
+otherwise. This has been supported from modern misprisions 
+of mode (such as Wibberley&rsquo;s), now being unpicked, that were in 
+turn introduced to counter what we now see as the 
+excessively harmonic-tonal approaches to early music by 
+previous generations of scholars. The unpicking of all 
+related assumptions still has a long way to go. Recent 
+repudiation of artificial shackles of &ldquo;modal purity&rdquo; (or 
+whatever we call it) invites us to start afresh with open 
+minds about the sound of early vocal polyphony. (The 
+question of tuning is separable, but obviously important, 
+since it is loaded with many of the same modern 
+assumptions. The contrapuntal arguments are not affected by 
+precisely what tuning system they are realized in, but can 
+be made on their own track.) The urgent question remains: 
+if Judd&rsquo;s view that &ldquo;modal fidelity&rdquo; poses no constraints on 
+ficta prevails over Wibberley&rsquo;s view that it does, i.e. if it is 
+true that &ldquo;paper&rdquo; modal assignations may be disconnected 
+from realized sounds; and if my premises outlined  above 
+find even partial acceptance, are we not further overlaying 
+modern prejudices on early music by assuming that in order 
+to be &ldquo;coherent&rdquo; it must conform to <i>our</i> standards of 
+long-range tonality (and frequency)? Some of the same 
+questions arising from our imposition of value-laden terms 
+have been raised by Richard Taruskin and others for 
+&ldquo;authenticity,&rdquo; a term of approbation which admits no 
+alternative; I believe we must do the same for &ldquo;stability&rdquo; 
+and &ldquo;coherence.&rdquo;</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Margaret Bent<br>
+	All Souls College<br>Oxford, OX1 4AL<br>England<br><a href="mailto:margaret.bent@all- souls.oxford.ac.uk">margaret.bent@all- souls.oxford.ac.uk</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Roger Wibberley, &ldquo;Josquin&rsquo;s <i>Ave Maria</i>: Musica Ficta versus Mode,&rdquo; <a href='../mto.96.2.5/mto.96.2.5.wibberley.html'><i>Music Theory Online</i> 2.5 (1996)</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Margaret Bent, &ldquo;Diatonic <i>ficta</i>,&rdquo; <i>Early Music History</i> 4 (1984), 1&ndash;48.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Karol Berger, <i>Musica ficta: Theories of Accidental 
+Inflections in Vocal Polyphony from Marchetto da Padova to 
+Gioseffo Zarlino</i> (Cambridge: Cambridge University Press, 
+1987), especially 43&ndash;8; Peter Urquhart, &ldquo;Canon, Partial 
+Signatures, and &lsquo;Musica  Ficta&rsquo; in Works by Josquin Desprez 
+and his Contemporaries,&rdquo; Ph.D. dissertation, Harvard, 1988; 
+Urquhart, &ldquo;Cross-Relations by Franco-Flemish Composers after 
+Josquin,&rdquo; <i>Tijdschrift van de Vereniging voor Nederlandse 
+Muziekgeschiedenis</i> 43 (1993), 3&ndash;41.  Their paraphrases have 
+been invaluable in showing where my formulations need to be 
+strengthened.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Richard Crocker, &ldquo;Discant, Counterpoint and Harmony,&rdquo; <i>Journal of the American Musicological Society</i> 15 (1962), 1&ndash;21.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> In DF 23&ndash;29; also in my &ldquo;Accidentals, counterpoint and 
+notation in Aaron&rsquo;s <i>Aggiunta</i> to the <i>Toscanello  in 
+Musica</i>,&rdquo; <i>The Journal of Musicology</i> 12 (1994), 306&ndash;344 
+(Festschrift issue for James Haar: Aspects of Musical 
+Language and Culture in the Renaissance), henceforth ACN. 
+See especially 324&ndash;5.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See also my &ldquo;<i>Resfacta</i> and <i>Cantare super librum</i>,&rdquo; 
+<i>Journal of the American Musicological Society</i> 36 (1983), 
+371&ndash;91, and &ldquo;Editing early music: the dilemma of 
+translation,&rdquo; <i>Early Music</i> 22 (August  1994), 373&ndash;394.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Harold Powers, &ldquo;Is Mode Real? Pietro Aron, the 
+octenary system, and polyphony,&rdquo;  <i>Basler Jahrbuch f&uuml;r 
+historische Musikpraxis</i> XVI (1992), 9&ndash;52; Cristle Collins 
+Judd, &ldquo;Reading Aron reading Petrucci,&rdquo; <i>Early Music History</i> 
+14 (1995), 121&ndash;152.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> James Haar, &ldquo;False Relations and Chromaticism in 
+Sixteenth-Century Music,&rdquo; <i>Journal of the American 
+Musicological Society</i> 30 (1977), 391&ndash;418.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> As Wibberley, [2] and [10].<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> E.E. Lowinsky, &ldquo;Matthaeus Greiter&rsquo;s <i>Fortuna</i>: an 
+Experiment in Chromaticism and in Musical Iconography,&rdquo; 
+<i>Musical Quarterly</i> 42 (1956), 500&ndash;519, 43 (1957), 68&ndash;85.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> 11. Of course, transcriptions of these or any pieces <i>can</i> 
+be sung in equal temperament, but I disagree with Lowinsky 
+that they <i>must</i> be; indeed their spiralling and fifth-
+based conception makes it most unlikely that this would 
+have happened in a locally well-tuned vocal performance.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> As Berger alleges, <i>Musica ficta</i>, 46.  He also rebukes me for not 
+keeping in mind letter-plus-solmization designations, a 
+charge directly contradicted by DF 7&ndash;12.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Daniel Zager, &ldquo;From the Singer&rsquo;s Point of View: A 
+Case Study in Hexachordal Solmization as a Guide to Musica 
+Recta and Musica Ficta in Fifteenth-Century Vocal Music,&rdquo; 
+<i>Current Musicology</i> 43 (1987), 7&ndash;21, referred to by Wibberley. 
+Urquhart (p. 368) invokes awkwardness of solmization against my 
+version of the Josquin.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Carl Dahlhaus, &ldquo;Tonsystem und Kontrapunkt um 1500,&rdquo;  
+<i>Jahrbuch des Staatlichen Instituts f&uuml;r Musikforschung 
+preussischer Kulturbesitz</i> 1969, ed. D. Droysen (Berlin, 
+1970), 7&ndash;17, especially 15&ndash;16.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Berger, <i>Musica Ficta</i>, 166&ndash;70.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> I give &ldquo;text-book&rdquo; sources for this sequence from 
+Hothby and Aaron in DF 29&ndash;30.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> E.E. Lowinsky, <i>Tonality and Atonality in Sixteenth-
+Century Music</i>  (Berkeley and Los Angeles, 1961), 20.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Urquhart discusses the <i>Ave Maria</i> example on pp. 368&ndash;69 
+of his 
+dissertation. His solution, couched in an often seriously 
+misleading report of my premises, is given in his article 
+cited in n.3, especially pp. 25&ndash;8, and also in a paper to 
+the American Musicological Society, November 1995.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Wibberley states [13]: &ldquo;Since it is impossible to render the 
+Josquin passage in any way other than that proposed by Bent 
+without failing to eliminate all diminished fifths 
+otherwise occurring between notes of the upper voices (such 
+an elimination being her prime motive).&rdquo; I invite him to 
+re-read the way I set up the Josquin example. If any 
+fifths, by Wibberley&rsquo;s criteria, are to be regarded as &ldquo;where 
+perfect consonances were to be attained,&rdquo; they are surely 
+these. See [22] below on diminished fifths, and [27] 
+on Aaron.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Before someone raises it on the mto-talk discussion list,
+I explain in DF (29&ndash;34) why the altus part, for internal and 
+diagnosable reasons, takes a low priority in this passage, and 
+why the sequence, as &ldquo;pure&rdquo; counterpoint, can be contemplated 
+separately. But the altus may yet be the best way into 
+arguments as to how one might depart from a contrapuntally 
+pure default.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> See DF n.48, where I comment on the source status of 
+the bass B flat. Wibberley however places it in parentheses in 
+&ldquo;my&rdquo; version, while stating:  &ldquo;By the accepted rules of 
+consonance, the bass b must be flattened to b-flat in order 
+to provide a perfect consonance with the tenor&rdquo; (Wibberley [4]).<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Wibberley [29] &ldquo;Josquin would seem, in the example under 
+consideration, to have arrived at Zarlino&rsquo;s &rdquo;impasse,&ldquo; but 
+Bent has not followed Zarlino&rsquo;s advice in finding a 
+suitable way around it.&rdquo; Why should I have taken the advice 
+of a theorist 100 years later whose theoretical world, 
+including his use of terms like diatonic, is entirely 
+different from Josquin&rsquo;s?<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> &ldquo;Some Problems of Pre-Baroque Analysis: an Examination 
+of Josquin&rsquo;s <i>Ave Maria<nobr> . . . </nobr>Virgo Serena</i>,&rdquo; <i>Music Analysis</i> 
+4.3 (1985), 201&ndash;239.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> Why, incidentally, does Wibberley so dislike Zager&rsquo;s term 
+&ldquo;modal purity&rdquo; and how does it differ from his own &ldquo;modal 
+fidelity&rdquo; [13, 26]? He complains  &ldquo;If, by &rdquo;modal purity,&ldquo; 
+[Zager] has in mind a succession of notes and harmonies that 
+arise only from the pure diatonic notes of a particular 
+scale,&rdquo; but in his own n.8 Wibberley refers to &ldquo;the use of notes 
+outside the diatonic notes of that mode.&rdquo;<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Wibberley, <a href='http:/www-talk/mto/96aug.mto/0000.html'>mto-talk 5 August</a>. His reference to this as a 
+&ldquo;powerful rhetorical device&rdquo; suggests that he might be 
+following Lowinsky in demanding extra-musical reasons for 
+what they both call &ldquo;modulations,&rdquo; a position that can lead 
+to great inconsistencies of treatment between musically 
+similar constructions. Consider the arcane lengths to which 
+Lowinsky went to defend his Secret Chromatic sheep against 
+the musically similar goats who did not qualify by virtue 
+of their texts. See also DF n.47. (NB the <i>Absalom</i> 
+&ldquo;modulation&rdquo; is not <i>dependent</i> on notated accidentals and 
+would have to occur, even without them, as in the Willaert 
+and Obrecht pieces.)<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> I plead innocent to the mind-boggling charges packed 
+into sentences such as Wibberley&rsquo;s [10]: &ldquo;The whole point of 
+Margaret Bent&rsquo;s solution is that the harmony is, via the 
+&lsquo;necessary&rsquo; application of diatonic ficta, &lsquo;removed from 
+its base.&rsquo;&rdquo; And I don&rsquo;t know what Wibberley means by claiming [7] 
+that I see &ldquo;modal coherence as a close relative of pitch 
+stability,&rdquo; citing DF 45&ndash;47, where I wrote: &ldquo;Modal theory 
+does deal with some kind of long-term tonal coherence, but 
+not necessarily such as can be equated with pitch 
+stability&mdash;another distinction that has lost its force for 
+us.&rdquo;  There are numerous examples in Wibberley of discourteously 
+careless reporting, not only of my alleged views but also 
+Bonnie Blackburn&rsquo;s, astoundingly misrepresented.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> These and others are cited in E.E. Lowinsky, &ldquo;Secret 
+Chromatic Art Re-examined,&rdquo; <i>Perspectives in Musicology</i> ed. 
+B. Brook et al. (New York, 1972),  91&ndash;135.<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> DF 19, ACN (see n.5); for Aaron see also Judd&rsquo;s 
+article in n.7.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> In view of his reproaches to me for anachronism, I&rsquo;m 
+surprised to see Wibberley use terms such as root (n.16), 
+tonicization (n.7) and modulation [10].<br><a href="#FN29REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Roger Wibberley, &ldquo;Josquin&rsquo;s <i>Ave Maria</i>: Musica Ficta versus Mode,&rdquo; <a href='../mto.96.2.5/mto.96.2.5.wibberley.html'><i>Music Theory Online</i> 2.5 (1996)</a>.</div><div id="fndiv2" class="flyoverdiv">Margaret Bent, &ldquo;Diatonic <i>ficta</i>,&rdquo; <i>Early Music History</i> 4 (1984), 1&ndash;48.</div><div id="fndiv3" class="flyoverdiv">Karol Berger, <i>Musica ficta: Theories of Accidental 
+Inflections in Vocal Polyphony from Marchetto da Padova to 
+Gioseffo Zarlino</i> (Cambridge: Cambridge University Press, 
+1987), especially 43&ndash;8; Peter Urquhart, &ldquo;Canon, Partial 
+Signatures, and &lsquo;Musica  Ficta&rsquo; in Works by Josquin Desprez 
+and his Contemporaries,&rdquo; Ph.D. dissertation, Harvard, 1988; 
+Urquhart, &ldquo;Cross-Relations by Franco-Flemish Composers after 
+Josquin,&rdquo; <i>Tijdschrift van de Vereniging voor Nederlandse 
+Muziekgeschiedenis</i> 43 (1993), 3&ndash;41.  Their paraphrases have 
+been invaluable in showing where my formulations need to be 
+strengthened.</div><div id="fndiv4" class="flyoverdiv">Richard Crocker, &ldquo;Discant, Counterpoint and Harmony,&rdquo; <i>Journal of the American Musicological Society</i> 15 (1962), 1&ndash;21.</div><div id="fndiv5" class="flyoverdiv">In DF 23&ndash;29; also in my &ldquo;Accidentals, counterpoint and 
+notation in Aaron&rsquo;s <i>Aggiunta</i> to the <i>Toscanello  in 
+Musica</i>,&rdquo; <i>The Journal of Musicology</i> 12 (1994), 306&ndash;344 
+(Festschrift issue for James Haar: Aspects of Musical 
+Language and Culture in the Renaissance), henceforth ACN. 
+See especially 324&ndash;5.</div><div id="fndiv6" class="flyoverdiv">See also my &ldquo;<i>Resfacta</i> and <i>Cantare super librum</i>,&rdquo; 
+<i>Journal of the American Musicological Society</i> 36 (1983), 
+371&ndash;91, and &ldquo;Editing early music: the dilemma of 
+translation,&rdquo; <i>Early Music</i> 22 (August  1994), 373&ndash;394.</div><div id="fndiv7" class="flyoverdiv">Harold Powers, &ldquo;Is Mode Real? Pietro Aron, the 
+octenary system, and polyphony,&rdquo;  <i>Basler Jahrbuch f&uuml;r 
+historische Musikpraxis</i> XVI (1992), 9&ndash;52; Cristle Collins 
+Judd, &ldquo;Reading Aron reading Petrucci,&rdquo; <i>Early Music History</i> 
+14 (1995), 121&ndash;152.</div><div id="fndiv8" class="flyoverdiv">James Haar, &ldquo;False Relations and Chromaticism in 
+Sixteenth-Century Music,&rdquo; <i>Journal of the American 
+Musicological Society</i> 30 (1977), 391&ndash;418.</div><div id="fndiv9" class="flyoverdiv">As Wibberley, [2] and [10].</div><div id="fndiv10" class="flyoverdiv">E.E. Lowinsky, &ldquo;Matthaeus Greiter&rsquo;s <i>Fortuna</i>: an 
+Experiment in Chromaticism and in Musical Iconography,&rdquo; 
+<i>Musical Quarterly</i> 42 (1956), 500&ndash;519, 43 (1957), 68&ndash;85.</div><div id="fndiv11" class="flyoverdiv">11. Of course, transcriptions of these or any pieces <i>can</i> 
+be sung in equal temperament, but I disagree with Lowinsky 
+that they <i>must</i> be; indeed their spiralling and fifth-
+based conception makes it most unlikely that this would 
+have happened in a locally well-tuned vocal performance.</div><div id="fndiv12" class="flyoverdiv">As Berger alleges, <i>Musica ficta</i>, 46.  He also rebukes me for not 
+keeping in mind letter-plus-solmization designations, a 
+charge directly contradicted by DF 7&ndash;12.</div><div id="fndiv13" class="flyoverdiv">Daniel Zager, &ldquo;From the Singer&rsquo;s Point of View: A 
+Case Study in Hexachordal Solmization as a Guide to Musica 
+Recta and Musica Ficta in Fifteenth-Century Vocal Music,&rdquo; 
+<i>Current Musicology</i> 43 (1987), 7&ndash;21, referred to by Wibberley. 
+Urquhart (p. 368) invokes awkwardness of solmization against my 
+version of the Josquin.</div><div id="fndiv14" class="flyoverdiv">Carl Dahlhaus, &ldquo;Tonsystem und Kontrapunkt um 1500,&rdquo;  
+<i>Jahrbuch des Staatlichen Instituts f&uuml;r Musikforschung 
+preussischer Kulturbesitz</i> 1969, ed. D. Droysen (Berlin, 
+1970), 7&ndash;17, especially 15&ndash;16.</div><div id="fndiv15" class="flyoverdiv">Berger, <i>Musica Ficta</i>, 166&ndash;70.</div><div id="fndiv16" class="flyoverdiv">I give &ldquo;text-book&rdquo; sources for this sequence from 
+Hothby and Aaron in DF 29&ndash;30.</div><div id="fndiv17" class="flyoverdiv">E.E. Lowinsky, <i>Tonality and Atonality in Sixteenth-
+Century Music</i>  (Berkeley and Los Angeles, 1961), 20.</div><div id="fndiv18" class="flyoverdiv">Urquhart discusses the <i>Ave Maria</i> example on pp. 368&ndash;69 
+of his 
+dissertation. His solution, couched in an often seriously 
+misleading report of my premises, is given in his article 
+cited in n.3, especially pp. 25&ndash;8, and also in a paper to 
+the American Musicological Society, November 1995.</div><div id="fndiv19" class="flyoverdiv">Wibberley states [13]: &ldquo;Since it is impossible to render the 
+Josquin passage in any way other than that proposed by Bent 
+without failing to eliminate all diminished fifths 
+otherwise occurring between notes of the upper voices (such 
+an elimination being her prime motive).&rdquo; I invite him to 
+re-read the way I set up the Josquin example. If any 
+fifths, by Wibberley&rsquo;s criteria, are to be regarded as &ldquo;where 
+perfect consonances were to be attained,&rdquo; they are surely 
+these. See [22] below on diminished fifths, and [27] 
+on Aaron.</div><div id="fndiv20" class="flyoverdiv">Before someone raises it on the mto-talk discussion list,
+I explain in DF (29&ndash;34) why the altus part, for internal and 
+diagnosable reasons, takes a low priority in this passage, and 
+why the sequence, as &ldquo;pure&rdquo; counterpoint, can be contemplated 
+separately. But the altus may yet be the best way into 
+arguments as to how one might depart from a contrapuntally 
+pure default.</div><div id="fndiv21" class="flyoverdiv">See DF n.48, where I comment on the source status of 
+the bass B flat. Wibberley however places it in parentheses in 
+&ldquo;my&rdquo; version, while stating:  &ldquo;By the accepted rules of 
+consonance, the bass b must be flattened to b-flat in order 
+to provide a perfect consonance with the tenor&rdquo; (Wibberley [4]).</div><div id="fndiv22" class="flyoverdiv">Wibberley [29] &ldquo;Josquin would seem, in the example under 
+consideration, to have arrived at Zarlino&rsquo;s &rdquo;impasse,&ldquo; but 
+Bent has not followed Zarlino&rsquo;s advice in finding a 
+suitable way around it.&rdquo; Why should I have taken the advice 
+of a theorist 100 years later whose theoretical world, 
+including his use of terms like diatonic, is entirely 
+different from Josquin&rsquo;s?</div><div id="fndiv23" class="flyoverdiv">&ldquo;Some Problems of Pre-Baroque Analysis: an Examination 
+of Josquin&rsquo;s <i>Ave Maria . . . Virgo Serena</i>,&rdquo; <i>Music Analysis</i> 
+4.3 (1985), 201&ndash;239.</div><div id="fndiv24" class="flyoverdiv">Why, incidentally, does Wibberley so dislike Zager&rsquo;s term 
+&ldquo;modal purity&rdquo; and how does it differ from his own &ldquo;modal 
+fidelity&rdquo; [13, 26]? He complains  &ldquo;If, by &rdquo;modal purity,&ldquo; 
+[Zager] has in mind a succession of notes and harmonies that 
+arise only from the pure diatonic notes of a particular 
+scale,&rdquo; but in his own n.8 Wibberley refers to &ldquo;the use of notes 
+outside the diatonic notes of that mode.&rdquo;</div><div id="fndiv25" class="flyoverdiv">Wibberley, <a href='http:/www-talk/mto/96aug.mto/0000.html'>mto-talk 5 August</a>. His reference to this as a 
+&ldquo;powerful rhetorical device&rdquo; suggests that he might be 
+following Lowinsky in demanding extra-musical reasons for 
+what they both call &ldquo;modulations,&rdquo; a position that can lead 
+to great inconsistencies of treatment between musically 
+similar constructions. Consider the arcane lengths to which 
+Lowinsky went to defend his Secret Chromatic sheep against 
+the musically similar goats who did not qualify by virtue 
+of their texts. See also DF n.47. (NB the <i>Absalom</i> 
+&ldquo;modulation&rdquo; is not <i>dependent</i> on notated accidentals and 
+would have to occur, even without them, as in the Willaert 
+and Obrecht pieces.)</div><div id="fndiv26" class="flyoverdiv">I plead innocent to the mind-boggling charges packed 
+into sentences such as Wibberley&rsquo;s [10]: &ldquo;The whole point of 
+Margaret Bent&rsquo;s solution is that the harmony is, via the 
+&lsquo;necessary&rsquo; application of diatonic ficta, &lsquo;removed from 
+its base.&rsquo;&rdquo; And I don&rsquo;t know what Wibberley means by claiming [7] 
+that I see &ldquo;modal coherence as a close relative of pitch 
+stability,&rdquo; citing DF 45&ndash;47, where I wrote: &ldquo;Modal theory 
+does deal with some kind of long-term tonal coherence, but 
+not necessarily such as can be equated with pitch 
+stability&mdash;another distinction that has lost its force for 
+us.&rdquo;  There are numerous examples in Wibberley of discourteously 
+careless reporting, not only of my alleged views but also 
+Bonnie Blackburn&rsquo;s, astoundingly misrepresented.</div><div id="fndiv27" class="flyoverdiv">These and others are cited in E.E. Lowinsky, &ldquo;Secret 
+Chromatic Art Re-examined,&rdquo; <i>Perspectives in Musicology</i> ed. 
+B. Brook et al. (New York, 1972),  91&ndash;135.</div><div id="fndiv28" class="flyoverdiv">DF 19, ACN (see n.5); for Aaron see also Judd&rsquo;s 
+article in n.7.</div><div id="fndiv29" class="flyoverdiv">In view of his reproaches to me for anachronism, I&rsquo;m 
+surprised to see Wibberley use terms such as root (n.16), 
+tonicization (n.7) and modulation [10].</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1996 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Lee A. Rothfarb, General Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

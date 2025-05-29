@@ -1,0 +1,524 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 16.3: Waters and Williams, Modeling Harmonies</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Modeling Diatonic, Acoustic, Hexatonic, and Octatonic Harmonies and Progressions in Two- and Three-Dimensional Pitch Spaces; or Jazz Harmony after 1960">
+
+    <meta name="citation_author" content="Williams, Keith J. Waters and J. Kent">
+      
+
+<meta name="citation_publication_date" content="2010/08/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="16">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Modeling Diatonic, Acoustic, Hexatonic, and Octatonic Harmonies and Progressions in Two- and Three-Dimensional Pitch Spaces; or Jazz Harmony after 1960<font size="5"><sup> <a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></font>
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Keith J. Waters and J. Kent Williams</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Neo-Riemannian, <i>Tonnetz</i>, Hexatonic, Jazz Harmony, Scale, Octatonic, Acoustic, Diatonic, Wayne Shorter, Miles Davis, Ninth Chords, Harmonic Progression, Chord/Scale Theory</font></p><p><font size='4'>ABSTRACT: The paper provides methods for modeling harmonies and harmonic progressions based on diatonic, acoustic, hexatonic, and octatonic collections. It examines these four spaces in relation to jazz harmony, particularly post-1960s jazz compositions in which harmonic function is suppressed or absent. It discusses the opening progression to Wayne Shorter&#8217;s composition &#8220;Vonetta&#8221; (from the 1967 Miles Davis Quintet recording <i>Sorcerer</i>), and ultimately provides a three-dimensional <i>Tonnetz</i> that permits moves among ninth chords, showing them as trapezoidal moves in all four spaces. The article makes use of interactive graphics to illustrate its procedures.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.10.16.3/mto.10.16.3.waters_williams.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.10.16.3/waters_williams_examples.pdf">PDF examples </a></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received September 2009</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 16, Number 3, August 2010 <br> Copyright &#0169; 2010 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1.1] Theories of harmony rest on two fundamental questions: 1) What are the objects (i.e., the harmonies) and; 2) What are the relationships among the objects (i.e., harmonic progressions/successions)? The success of recent work in neo-Riemannian theory addresses situations for which the answer to the first question involves standard or syntactic harmonies, but the answer to the second question involves non-standard or non-syntactic progressions (<a href="#childs_1998" id="citation_childs_1998_67dc9ad95cec5">Childs 1998</a>, <a href="#cohn_1998a" id="citation_cohn_1998a_67dc9ad95cec8">Cohn 1998a</a> and <a href="#cohn_1998b" id="citation_cohn_1998b_67dc9ad95cecb">1998b</a>, <a href="#douthett_and_steinbach_1998" id="citation_douthett_and_steinbach_1998_67dc9ad95cece">Douthett and Steinbach 1998</a>, <a href="#gollin_1998" id="citation_gollin_1998_67dc9ad95cecf">Gollin 1998</a>, <a href="#hyer_1995" id="citation_hyer_1995_67dc9ad95ced1">Hyer 1995</a>). A roughly analogous situation arises for addressing jazz harmonic progressions, particularly for compositions after 1960. Compositions of this period often use standard jazz harmonies, but in progressions that suppress or ignore harmonic function. Yet the analogy is rough because, in general, jazz harmonies employ chordal extensions of sevenths, ninths, elevenths, and/or thirteenths. Further, harmonies in a number of jazz compositions after 1960 also make use of non-syntactic (or non-standard) chords, many of which are derived from the hexatonic collection and use pcset [0148] as a subset.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+ 
+<p>[1.2] In this paper I continue to examine these issues. I first delimit the harmonies in this repertory as subsets of one of four collections: diatonic, acoustic, octatonic, and hexatonic. I use recent work in neo-Riemannian theory as a springboard to suggest methods to model harmonic succession, and ultimately supply a three-dimensional <i>Tonnetz</i> in order to consider ways in which ninth-chord harmonies from these four underlying collections interact. I use the opening progression 
+of Wayne Shorter&#8217;s composition &#8220;Vonetta&#8221; (recorded in 1967 by the Miles Davis Quintet on the album <i>Sorcerer</i>) as a test case in order to examine progressions of chords derived from different collections. Throughout, the essay uses interactive graphics for modeling these two- and three-dimensional pitch spaces.</p>
+
+<p style="text-align: center"><b>Chord Quality</b></p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Jazz harmonies from Diatonic, Acoustic, Octatonic, and Hexatonic Collections</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="waters_williams_ex1small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></div>
+<p>[2.1] Jazz compositions of the 1960s draw primarily from harmonies that are subsets of four fundamental collections: the diatonic, the acoustic (also considered a mode of the ascending melodic minor scale), the octatonic, and the hexatonic.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> <b>Example 1</b> indicates some representative jazz harmonies from these four underlying collections. Example 1a shows harmonies derived from the C Diatonic Collection. I refer here to diatonic collections by the letter D and a number that corresponds to the pitch class of the major form of the collection: the label D0 refers to the C major collection, D1 the C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>/D<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> major collection, etc. The diatonic harmonies include major seventh harmonies (and their extensions), minor seventh harmonies (and their extensions), dominant seventh harmonies (and their diatonic extensions), and others. Example 1b reveals harmonies derived from the F acoustic collection. I refer to acoustic collections by the letter A and a number that corresponds to the pitch class of the final of the acoustic collection: A5 is the F acoustic collection, A6 is the F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font> acoustic collection, etc. (The F acoustic collection may also be regarded as a mode of the C ascending melodic minor scale.) Common jazz harmonies from this A5 collection include F13(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>11), CminM7 with extensions, Amin7/9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5), B7(altered), and E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5). Many of these acoustic harmonies include pc-set class [0148]: with the A5 collection [0148] consists of the pitch classes of either C, E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, G, B, or E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, G, B, D.</p>
+
+<p>[2.2] Example 1c contains chords from the D/E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> octatonic collection (Oct 2,3), indicating ic3-related dominant and diminished chords. Example 1d contains ic4-related hexatonic chords, primarily minM7 and maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5), which form set-class [0148]. Note that [0148] harmonies also appear as subsets of acoustic collection harmonies. In jazz compositional contexts, however, hexatonic harmonies appear as supersets of [0148], typically [01458]. Many of these hexatonic harmonies are overlooked in jazz pedagogy texts, but are ones I have encountered transcribing or performing this music. Example 1e contains specific examples of [01458] hexatonic harmonies used in specific compositions from the 1960s and early 70s: A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5/<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>9) (Shorter, &#8220;Vonetta&#8221;), A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5)/E and EMinMaj 7th/A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> (Corea, &#8220;Song of the Wind&#8221;), and A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>maj7(natural 5, <img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) (Shorter, &#8220;Iris&#8221;). Such hexatonic harmonies emerged in jazz composition only in the 1960s, and represented new harmonic resources for jazz composers such as Shorter, Corea, Hancock, and others. In sum, the jazz harmonies in works of the 1960s (by composers such as Shorter, Corea, and Hancock) are primarily subsets (or complete statements) of  four collections: diatonic, acoustic, octatonic, and hexatonic.</p>
+
+<p style="text-align: center"><b>Chord Progression: Mapping Diatonic and Acoustic Spaces</b></p>
+
+<p>[3.1] Example 1 relates chord type to underlying collections, and thus provides some explanatory power for understanding chords in isolation. In fact, what I have done is slightly recast the primary focus of jazz pedagogy and theory since at least 1959: the mapping of underlying collections to individual chords in order to suggest methods for improvisation and/or composition.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Such discussions do not always say much about principles of chord succession, however, particularly for music of the 1960s whose progressions may avoid or suppress functional harmonic patterns. Further, if collections of 6-8 pitches&#8212;particularly the four indicated above&#8212;do provide the source sets for post-1960s harmonies, their relationship may be abstract: in practice all members of the underlying collection need not be stated by the harmonic accompanying instruments (or by improvisers). Thus two questions remain: how do we address post-1960s harmonic progressions, and how do we do it in a way that more clearly models harmonic practice? These two questions can lead us past the chord/scale taxonomy of jazz pedagogy to consider harmonies instead as subsets of these collections and 
+examine the ways in which the harmonies connect.</p>	
+
+<p style="text-align: center"><b>Mapping Hexatonic Harmonies and [0148]</b></p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. [0148] through the Hyper-Hexatonic System (Cohn, 1996)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="waters_williams_ex2small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. [0148] on the [7, 4, 3, E] <i>Tonnetz</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="waters_williams_ex3small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[4.1] <b>Example 2</b> starts to address those questions. It indicates the Hyper-Hexatonic System (<a href="#cohn_1996" id="citation_cohn_1996_67dc9ad95d0cf">Cohn 1996</a>). The system labeled H0 has two constituent augmented triads, shown by the blue- and red-circled pc numbers adjacent to H0. The example also shows how any two adjacent H systems share an augmented triad (H0 and H1 share 0, 4, and 8, for example). This example also locates all instances of [0148] within each system. By clicking on the &#8220;H0&#8221; label, the example displays the three minMaj 7th chords (whose roots are C, E, and <nobr>A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></nobr></font>) that reside within H0. It also shows the Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) chords with the same roots. It is worth observing some common-tone relationships that 
+are obtained between these H0 [0148] harmonies. In comparison with one another, each minMaj 7th harmony preserves three elements and alters one element. Likewise, in comparison with one another, each Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) harmony preserves three elements and alters one element. In comparing any minMaj 7th with any Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5), 
+two elements are preserved and two are altered. (The interactive example also displays constituent Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) and minMaj 7th harmonies for each of the remaining H systems when accessed.)</p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[4.2] <b>Example 3</b> now models some of those common tone relationships more concretely. It includes a <i>Tonnetz</i> whose upward verticals progress by seven semitones, and whose horizontals progress by four semitones. The <i>Tonnetz</i> descriptor is [7, 4, 3, E] (<a href="#morris_1998" id="citation_morris_1998_67dc9ad95d0d3">Morris 1998</a>). All <i>Tonnetze</i> that I use will consist of pitch class letters (rather than numbers), and assume equal temperament and enharmonic equivalence. To the right of the <i>Tonnetz</i>, the overlapping brackets (and designations H0, 1, 2, 3) show that any two adjacent horizontals represent one of the four hexatonic systems. On the left of the <i>Tonnetz</i> are two overlapping triangles. The red triangle indicates the pitch classes of C Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5), the blue triangle the pitch classes of E minMaj 7th.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> (Each triangle also contains an additional internal line, setting off the chordal root from its upper structure). The common-tone relationships are made particularly apparent with the example, indicating that the two harmonies share the pitch classes of E and B. The brackets on the right show that both these harmonies are derived from H0, as would any harmony formed by those two adjacent horizontals. By clicking the bottommost arrow directly above the instructions &#8220;move blue triangle (minMaj 7th),&#8221; the example translates the triangle down, yielding a move to A minMaj 7th. This move shows the preservation of three pitch classes (C, E, and G<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>) between the original red triangle (C Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5)) and the new blue one; the fourth pitch class inverts around this augmented triad (B inverts to A). The overlapping brackets on the right indicate that these two harmonies come from two different hexatonic systems, the two that share pcs C, E, and G<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>. The interactive example allows the blue and red triangles to move vertically and horizontally; &#8220;rotate space&#8221; moves the <i>Tonnetz</i> through vertical space.</p>
+
+<p style="text-align: center"><b>Mapping Hexatonic and Diatonic Harmonies</b></p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Opening progression to &#8220;Vonetta&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="waters_williams_ex4small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[5.1] So far, we have modeled particular hexatonic harmonies on the <i>Tonnetz</i>. This particular <i>Tonnetz</i> is useful because it also shows relationships between hexatonic and diatonic harmonies. This is the purpose of <b>Example 4</b>, which includes the opening progression 
+of Wayne Shorter&#8217;s composition &#8220;Vonetta&#8221; (from the Miles Davis Quintet 1967 recording <i>The Sorcerer</i>). Clicking on the right-button arrow traces the progression of the first six chords, from C-9 (diatonic harmony) to A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>maj7<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5/<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>9 (hexatonic harmony), then to Amaj9 (diatonic), D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>/E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>-9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5) (acoustic), Dmaj9 (diatonic), and D<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>min9 (diatonic). This presentation idealizes all harmonies as ninth chords in order to show harmonic progression more clearly. In practice, of course, chords are often multiply realized, and the chordal instrument often adds or subtracts harmonic extensions. The harmonies indicated here were determined both by Shorter&#8217;s copyright deposit (contained at the Library of Congress) as well as a personal transcription of the recording.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<p>[5.2] The progression of the six chords seems to resist standard tonal interpretation. The motions through the <i>Tonnetz</i> do show something of the harmonic logic of the progression, however. The first three harmonies show the progression as a series of rotations that preserve at least two pitch classes: Chords 1 to 2 preserve C/G; Chords 2-3 preserve E/B. The <i>Tonnetz</i> graphically depicts the inversional relation between these two diatonic harmonies of Chords 1 and 3 (the relation between Chord 1 [T0237] and Chord 3 [489E1] is T<sub>E</sub>I). Chord 2, though, is a different set type, and mediates between the two harmonies of C-9 and Amaj9. The disposition of 
+Chord 2 on this particular <i>Tonnetz</i> tells us several things. Chord 2 relates to 
+Chords 1 and 3 via two common tones. In addition, Chord 2, or any chord made up of two adjacent horizontals on this particular <i>Tonnetz</i>, is a subset of one of the hexatonic systems. Further, the clockwise rotation of the trapezoid by 90 degrees from 
+Chord 1 to Chord 2 suggests that the two harmonies are organized according to similar cyclic principles. We can understand Chord 1 (the &#8220;Nevada-shaped&#8221; chord) as a diatonic-based harmony that contains 
+two strands of ic5 (C/G/D and E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>/B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>).  Two dyads, one from each strand, are in an ic4 relation (G to E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> = ic4; D to B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> = ic4). Chord 2 (the &#8220;Tennessee-shaped&#8221; chord) is a hexatonic-based harmony that contains 2 strands of ic4 (A<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>/C/E and G/B). Two dyads, one from each strand, are in an ic5 relation (C to G = ic5, E to B = ic5)]. Chord 3 is a diatonic-based harmony (upside-down Nevada). We may consider the preservation of the trapezoid (and of two common tones) in the move between 
+Chords 1-3 as a contextual operation that relates one set type to a different one, and that moves from diatonic space (Chord 1) to hexatonic space (Chord 2) and back to diatonic space (Chord 3).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Thus the <i>Tonnetz</i> models the progression of the first three harmonies, and indicates the communication between diatonic (Nevada-shaped) chords and hexatonic (Tennessee-shaped) chords.</p>
+
+<p>[5.3] The <i>Tonnetz</i> also models the progression from Chords 5 to 6, which comes about by rotation. The move from 
+Chords 5 to 6 preserves the pitch classes C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>/D<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> and E/F<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, and the reflection is inversionally symmetrical around those two pitch classes (mapping 
+Chord 5 to 6 at T<sub>5</sub>I). Both Chords 5 and 6 are diatonically-based. (We may also note that the composite of these two individually diatonic harmonies creates the diatonic octad, or begins to access what one writer refers to as &#8220;Dasian&#8221; space. <a href="#martins_2003" id="citation_martins_2003_67dc9ad95d0fc">Martins 2003</a> and <a href="#martins_2006" id="citation_martins_2006_67dc9ad95d100">2006</a>.)</p>
+
+<p>[5.4] However, Chord 4, represented by the dotted line, does not reflect the same construction on this <i>Tonnetz</i> as 
+Chords 1, 2, 3, 5, and 6. Chord 4 contains pcset [0148] (G<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font><img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, D<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>, F), but its root (E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>/D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>) means that this harmony is not hexatonic, but based on the acoustic collection. This 7/4 <i>Tonnetz</i> models diatonic and hexatonic-based ninth chords analogously as trapezoids, but not acoustic collection-based ninth chords such as Chord 4. We will return to 
+Chord 4 eventually, after considering the acoustic collection and its harmonies more generally.</p>
+
+<p style="text-align: center"><b>The Hyper-Acoustic System</b></p>
+
+<div style="width:420px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5a</b>. A<sub>0</sub> and A<sub>1</sub> Acoustic Systems</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=4&nonav=true"><img border="1" alt="Example 5a thumbnail" src="waters_williams_ex5asmall.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5), minMaj 7th, and Chord 4 of &#8220;Vonetta&#8221; on A<sub>1</sub></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=7&nonav=true"><img border="1" alt="Example 6 thumbnail" src="waters_williams_ex6small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Hyper-Acoustic System and Chord 4 of &#8220;Vonetta&#8221; </p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=8&nonav=true"><img border="1" alt="Example 7 thumbnail" src="waters_williams_ex7small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[6.1] Among any two representatives of the acoustic collection, there can only be a maximum of five common tones, and this relation occurs only with acoustic collections that are two semitones apart. That particular property allows us to represent all the acoustic collections in two separate networks. <b>Example 5a</b> displays initially what I call the A<sub>0</sub> acoustic system, consisting of all the even-numbered acoustic collections and contained within a circular strand of thirds. A click on the interior boxes, labeled as A0, A2, A4, etc., enables the display of the pitch classes of each acoustic collection.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  Accessing the &#8220;to A<sub>1</sub> system&#8221; yields the cyclic third configuration of the odd-numbered acoustic collections.</p>
+
+		    	<table width=800><tr><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5b</b>. A<sub>0</sub> Acoustic System (= A0, 2, 4, 6, 8, T)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=5&nonav=true"><img border="1" alt="Example 5b thumbnail" src="waters_williams_ex5bsmall.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td><td width=50></td><td valign='top' width=50%>
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5c</b>. A<sub>1</sub> Acoustic System (= A1, 3, 5, 7, 9, E)</p><p class='fullwidth' style="text-align: center;"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=6&nonav=true"><img border="1" alt="Example 5c thumbnail" src="waters_williams_ex5csmall.gif"></a></p><p class='fullwidth' style="text-align: center"><font size="2">(click to view animation)</font></p></td></tr></table>
+<p>[6.2] <b>Examples 5b</b> and <b>5c</b> show the same A<sub>0</sub> and A<sub>1</sub> systems but they are now organized in a linear fashion; the red and blue arrow buttons will advance (or retard) each set of acoustic collections. Such a representation helps us see the harmonic possibilities of the acoustic collection as adjacent members along either of the cyclic strands. Any individual seven-note acoustic collection (A0, A2, for example) arranged in thirds forms the common jazz harmony of a dominant-thirteenth chord with a raised eleventh. We can also locate other acoustic harmonies consisting of seven-note strands (thirteenth chords) or subsets (forming seventh, ninth, and eleventh chords). <b>Example 6</b> contains the A<sub>1</sub> system, and it indicates constituent minMaj 7th chords with 
+the lilac-colored line, and Maj7(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) with the blue line. The green line shows a half-diminished ninth chord, min7/9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5), and using the blue arrow to advance to the A9 and A11 segment will yield Chord 4 of &#8220;Vonetta&#8221;: D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, F<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, A, C<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>, and F. All the individual harmonies placed in Example 6 might suggest that we can move these lines like a slide rule and obtain constituent A<sub>1</sub> system harmonies. However, there seems to be no communication between A<sub>0</sub> and A<sub>1</sub>. These two systems are configured as mutually exclusive.</p>
+
+<p>[6.3] Can we understand any degree of communication between A<sub>0</sub> and A<sub>1</sub>? <b>Example 7</b> addresses this by a representation that I&#8217;ve indicated as the &#8220;Hyper-Acoustic&#8221; system. Note that this Example 7 takes into account both A<sub>0</sub> and A<sub>1</sub> systems, indicated by brackets on the right. These brackets show that the A<sub>1</sub> system is formed by the upper two rows, while the A<sub>0</sub> system is formed by the lower two rows. The central axis contains ic5 cycles, moving left to right as interval 7 (shown in bold). The upper row moves in alternation of intervals 8 and 6.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> To locate the third-based harmonies of A<sub>1</sub>, you may begin on the uppermost line, move southeast to the center, then vertically back to the upper row. The central axis and the lower horizontal row establish A<sub>0</sub>. Again, the central axis consists of interval 7 cycles, and the lower row alternates interval 6 and 8 cycles. To locate the third-based harmonies of A<sub>0</sub>, one may move northeast from the lower row to the center, then vertically back to the lower line.</p>
+
+
+<p>[6.4] Clicking on a trapezoid button of Example 7 displays these acoustic collection harmonies as ninth chord trapezoids, and suggests moves among and between both A<sub>0</sub> and A<sub>1</sub> systems by 
+reflecting (&#8220;Click on a trapezoid&#8221;)&nbsp;and translating (&#8220;Previous/Next Instance&#8221;) 
+the trapezoids. A representative of each chord type may be heard by clicking &#8220;Play Chord Type,&#8221; while the &#8220;Rotate Space&#8221; buttons advance the pitch collections horizontally. 
+Example 7 also indicates Chord 4 of &#8220;Vonetta&rdquo; (D<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>/E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>min9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5)).</p>
+
+<p>[6.5] This Hyper-Acoustic System only allows us to consider acoustic collection harmonies in isolation, of course, and I am unaware of any jazz compositions that use acoustic collection harmonies exclusively. Thus the question remains of how to place these acoustic collections in a broader context. Can these acoustic-based harmonies (or at least their ninth-chord trapezoids) interact with harmonies from other collections? I show that they can in several stages. The first stage concatenates diatonic and acoustic space in a three-dimensional <i>Tonnetz</i>, the following stage then expands this space into one that also allows octatonic and hexatonic harmonies.</p>
+
+<p style="text-align: center"><b>Mapping Diatonic and Acoustic Harmonies: A Three-Dimensional <i>Tonnetz</i></b></p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Three-dimensional tonal map (Diatonic and Acoustic Systems): Diatonic Harmonies</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=9&nonav=true"><img border="1" alt="Example 8 thumbnail" src="waters_williams_ex8small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[7.1] <b>Example 8</b> shows the first stage, which adds an additional element to the 
+Hyper-Acoustic system. The central axis remains, consisting of interval 7 cycles. The rows directly above and below the axis are likewise formed of interval 7 cycles. The axis row and a row either directly above or below will allow the representation of trapezoidal diatonic harmonies. The axis row and the outer horizontal rows form the hyper-acoustic system.</p>
+
+<p>[7.2] At the instructions &#8220;Click on a trapezoid to plot a chord&#8221; are four trapezoid buttons. A click on the upper-right trapezoid supplies on the tonal map a minor-ninth chord trapezoid. A click on the lower right trapezoid supplies on the tonal map a major ninth trapezoid. These ninth chord trapezoids access diatonic harmonies that alternate ic3 and ic4. By configuring diatonic space in this fashion, it is then possible to consider contextual moves as rotations, reflections, or translations of a trapezoid on this map. Thus the min7/9 and maj7/9 harmonies just described indicate the Riemannian Parallel (P) operation with ninth chords, shown here as a reflection across the axis.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> Here the two reflected harmonies preserve three elements. Further, the root of the min7/9 and maj7/9 chords remains invariant.</p>
+
+<p>[7.3] A click on the upper leftside trapezoid button likewise provides a maj7/9 harmony. It arises as a rotation of the upper rightside trapezoid. A click on the lower leftside trapezoid reflects that maj7/9 harmony across the axis, supplying a min7/9 harmony. Note that the reflection that arises with these two leftside trapezoids preserves two of the five elements. Further, the root of the two reflected harmonies changes. In comparison with the Parallel (P) operation with the rightside trapezoids, we may indicate this relationship as P&#8217; (<a href="#morris_1998" id="citation_morris_1998_67dc9ad95d161">Morris 1998</a>). The arrows labeled &#8220;move chord&#8221; translate the trapezoids. Further, the pitch space can be advanced horizontally (&#8220;rotate space&#8221;), and instances of each harmony can be heard (&#8220;play chord type&#8221;).</p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Three-dimensional tonal map (Diatonic and Acoustic Systems): Acoustic Harmonies</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=10&nonav=true"><img border="1" alt="Example 9 thumbnail" src="waters_williams_ex9small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[7.4] Example 8 uses the central axis and an adjacent row to configure diatonic harmonies. It also contains outer rows that, together with the central axis, form the 
+Hyper-Acoustic system. This confects a potential three-dimensional <i>Tonnetz</i>. With this, the central axis forms diatonic trapezoids with the adjacent rows, and acoustic trapezoids that bypass the adjacent rows and connect with the outer rows. <b>Example 9</b> shows more clearly its three-dimensional configuration.  Thus, even while the axis and the two outer rows are not contiguous in two-dimensional space, they may be considered contiguous in three-dimensional space.</p>
+
+<p>[7.5] At Example 9&#8217;s instructions &#8220;Click on a trapezoid to plot a chord&#8221; are four trapezoid buttons. A click on the upper right trapezoid plots on the tonal map a minM7/9 harmony, derived from A<sub>1</sub>. A click on the lower right trapezoid elicits a dom7/9 chord, derived from A<sub>0</sub>. By configuring acoustic space in this fashion, it is then possible to consider contextual moves as rotations, reflections, or translations of a trapezoid on this map. Thus the minM7/9 and dom7/9 harmonies just described indicate the Riemannian Parallel (P) operation with ninth chords, shown here as a reflection across the axis. Here the two reflected harmonies preserve three elements. Further, the root of the min7/9 and maj7/9 chords remains invariant.</p>
+
+<p>[7.6]  A click on the upper leftside trapezoid button plots a maj7/9(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) harmony. It arises as a rotation of the upper rightside trapezoid. A click on the lower leftside trapezoid reflects the maj7/9(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) harmony across the axis, supplying a min7/9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5) harmony. The reflection that arises with these two leftside trapezoids preserves two of the five elements. Further, the root of the two reflected harmonies is not consistent. In comparison with the Parallel (P) operation with the rightside trapezoids, we may indicate this relationship as P&#8217; (<a href="#morris_1998" id="citation_morris_1998_67dc9ad95d16b">Morris 1998</a>). As in Example 8, the arrows labeled &#8220;move chord&#8221; translate the trapezoids; the pitch space can be advanced horizontally (&#8220;rotate space&#8221;); and instances of each chord type can be heard (&#8220;play chord type&#8221;).</p>
+
+<p style="text-align: center"><b>Mapping Diatonic, Acoustic, Hexatonic, and Octatonic Harmonies in a Three-Dimensional Tonal Map</b></p>
+
+<div style="width:500px;float:right;border:none;margin-left:30px">
+			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Three-dimensional tonal map:  Diatonic and Acoustic Harmonies</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=11&nonav=true"><img border="1" alt="Example 10 thumbnail" src="waters_williams_ex10small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>			
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11a</b>. Three-dimensional tonal map (Diatonic/Acoustic/Hexatonic/Octatonic Systems)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=12&nonav=true"><img border="1" alt="Example 11a thumbnail" src="waters_williams_ex11asmall.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div>
+<p>[8.1] <b>Example 10</b> allows a dialogue between diatonic and acoustic harmonies. At the instructions &#8220;Click on a trapezoid to plot a chord&#8221; are four variegated trapezoids. A click on the right uppermost blue trapezoid forms a diatonic minor ninth (min7/9) harmony. A click on the right uppermost green trapezoid forms an acoustic-based minor ninth harmony (minM7/9). This creates a hinge motion that swings from diatonic (blue and two-dimensional) into acoustic (green and three-dimensional) space. This three-dimensional space suggests ways that acoustic and diatonic harmonies might relate. The interactive nature of the example allows translations, rotations, and reflections of the ninth chord trapezoids to further form dom7/9, min7/9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5), maj7/9, and maj7/9(<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="top"></font>5) harmonies. The instructions &#8220;advance space,&#8221; &#8220;move chord,&#8221; and &#8220;play chord type&#8221; operate in analogous fashion to the previous examples. The example indicates the dialogue between diatonic and acoustic spaces, still requiring the participation of octatonic and hexatonic ones.</p>
+
+<div style="width:500px;float:right;border:none;margin-left:30px">
+</div>
+<p>[8.2] This is the goal of <b>Example 11a</b>, which vertically expands the previous examples. It continues the motion of interval cycles both upward and downward, indicated by the green pitch-class letters. From the central axis, the columns progress upwards in ic3 cycles in two-dimensional space. From the central axis, the columns progress downward in ic4 cycles in two-dimensional space. Thus below the axis, harmonies constructed of two contiguous columns represent one of the four hexatonic collections. Above the axis, harmonies constructed of two contiguous columns represent one of the three octatonic collections. This map thus suggests moves between the four collectional spaces identified at the outset: diatonic, acoustic, hexatonic, and octatonic. We can imagine, then, motion between harmonies as shifting between and within these four spaces. For ninth-chord representations, this will consist of trapezoidal moves.</p>
+
+<p>[8.3] As <b>Example 11b</b> indicates, that is precisely how the opening progression to &#8220;Vonetta&#8221; operates. Again, we can locate the opening three harmonies (numbered 1-3) as trapezoidal moves from diatonic to hexatonic space, then back to diatonic, through operations of rotation then reflection. We were unable to account for Chord 4 earlier (E<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>min9(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font>5)), a subset of the acoustic collection, but now Chord 4 appears in three-dimensional space. Moreover, the connection of Chord 4 to Chord 5 is now explicit: the progression to the following Dmaj9 consists of a hinge motion, moving from acoustic space to diatonic space. The move from Chords 5 to 6 rotates the trapezoid. The mapping of these harmonies shows the six chords progressing in triples: Chords 1-3 involve contiguous moves, as do Chords 4-6. <b>Example 11c</b> plays and proceeds directly through the six chords.</p>
+
+<div class="mtoTable"><div class="mtoTableRow"><div class="mtoTableCell">
+		
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11b</b>. Opening Progression to &#8220;Vonetta&#8221; Plotted on Three-dimensional Tonal Map )</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=13&nonav=true"><img border="1" alt="Example 11b thumbnail" src="waters_williams_ex11bsmall.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p>		</div><div class="mtoTableCell">
+		
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11c</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="waters_williams_examples.php?id=14&nonav=true"><img border="1" alt="Example 11c thumbnail" src="waters_williams_ex11csmall.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to view animation)</font></p></div></div></div>
+
+<p style="text-align: center"><b>Conclusion</b></p>
+
+<p>[9.1] This three-dimensional map is a modified <i>Tonnetz</i> that allows connections between constituent harmonies of all four collections, and suggests that a series of operations can map all ninth chords onto one another by processes of rotation, translation, and reflection, as well as hinge motions that move the trapezoids in and out of three-dimensional space. My purpose here is not to show specific contextual operations or groups of operations, but rather to provide a space in which ninth chords of these four collections may map into one another. Note that within this tonal map, the space is circular in the horizontal dimension: it wraps around from right-to-left, as do equal-tempered <i>Tonnetze</i>. However, the vertical space is not circular: unlike traditional toroidal (equal-tempered) <i>Tonnetze</i>, it does not wrap from top to bottom.</p>
+
+<p>[9.2] It is possible to continue the vertical motion outward. For example, the upper leftmost vertical pitches consist of E and G. This allows the possibility of E&#8217;s row to form a new axis, creating diatonic space between that row and the one directly above formed by G&#8217;s row. This then could allow an acoustic collection &#8220;stripe&#8221; directly above G&#8217;s horizontal. Such a move duplicates the tonal space found in the given axis of Example 11b, begun from the E six steps to the right of the B<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="top"></font> that forms the leftmost member of the axis.  Thus the structure of the map has a symmetry that produces invariance on such actions.</p>
+
+<p>[9.3] Further examination might suggest that not all 1960s repertories consist of similar moves on this three-dimensional <i>Tonnetz</i>, but may reveal consistencies within compositions or among different works of the same composer. The discussion here also does not engage the problem of octatonic harmonies, which are structurally inconsistent with diatonic, acoustic, and hexatonic harmonies. In jazz, octatonic harmonies typically operate as dominant-functioning chords, and therefore would be less likely to be modeled as trapezoidal ninth chords in the same fashion as are diatonic, acoustic, and hexatonic harmonies. General issues of voice-leading parsimony are not relevant to ninth chord representations in the same way that they are to P, L, and R triadic transformations on a neo-Riemannian <i>Tonnetz</i>. Further, this three-dimensional <i>Tonnetz</i> shares some of the same limitations of the more standard <i>Tonnetz</i>, which does not comfortably model moves between chords of different cardinality, and idealizes harmonies consistently as stacks of thirds.</p>
+
+<p>[9.4] Such a three-dimensional <i>Tonnetz</i> begins to account not only for the more standard harmonies already in practice by 1960, those derived from diatonic, acoustic, and octatonic collections, but also addresses the newer hexatonic harmonic resources that emerged during the decade. It provides the playing field on which we may observe the progressions of these harmonies in jazz composition. While standard jazz pedagogy likewise regards these four collections, its focus remains on relating harmonies to <i>entire</i> collections on a chord-by-chord basis (<a href="#levine_1995" id="citation_levine_1995_67dc9ad95d19c">Levine 1995</a>, <a href="#miller_1996" id="citation_miller_1996_67dc9ad95d19f">Miller 1996</a>). In contrast, this model addresses ninth chord subsets of these collections, and models more directly the ways in which these harmonies progress. The above discussion is intended to show a degree of underlying coherence to these chord progressions, and to move beyond local chord/scale taxonomy. If the objects&#8212;the chords&#8212;are largely standard and syntactic, their connections&#8212;the harmonic progressions&#8212;are what makes much post-1960s jazz composition tantalizingly resistant to analysis.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+<hr>
+<h4><a name="AUTHORNOTE1"></a>
+Keith Waters<br>
+University of Colorado at Boulder<br>
+Campus Box 301<br>
+Boulder, CO 80302<br>
+<a href="Keith.Waters@colorado.edu">Keith.Waters@colorado.edu</a></h4>
+
+<h4>J. Kent Williams<br>
+University of North Carolina at Greensboro<br>
+School of Music<br>
+P.O. Box 26170<br>
+Greensboro, NC 27402-6170<br>
+<a href="jkwillia@uncg.edu">jkwillia@uncg.edu</a></h4>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_abersold_1975" class="flyoverdiv">Aebersold, Jamey. 1975. <i>A New Approach to Jazz Improvisation</i>. New Albany, Indiana: Aebersold.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="abersold_1975"></a>Aebersold, Jamey. 1975. <i>A New Approach to Jazz Improvisation</i>. New Albany, Indiana: Aebersold.</p><div id="citediv_baker_1969" class="flyoverdiv">Baker, David. 1969. <i>Jazz Improvisation</i>. Chicago: Maher Publications.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="baker_1969"></a>Baker, David. 1969. <i>Jazz Improvisation</i>. Chicago: Maher Publications.</p><div id="citediv_baker_1974" class="flyoverdiv">Baker, David. 1974. <i>Advanced Improvisation</i>. Chicago: Maher Publications.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="baker_1974"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1974. <i>Advanced Improvisation</i>. Chicago: Maher Publications.</p><div id="citediv_brown_2003" class="flyoverdiv">Brown, Stephen C. 2003. &#8220;Dual Interval Space in Twentieth-Century Music.&#8221; <i>Music Theory Spectrum</i> 25/1: 35-58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brown_2003"></a>Brown, Stephen C. 2003. &#8220;Dual Interval Space in Twentieth-Century Music.&#8221; <i>Music Theory Spectrum</i> 25/1: 35-58.</p><div id="citediv_childs_1998" class="flyoverdiv">Childs, Adrian. 1998. &#8220;Moving Beyond Neo-Riemannian Triads: Exploring a Transformational Model for Seventh Chords.&#8221; <i>Journal of Music Theory</i> 42/2: 181-194.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="childs_1998"></a>Childs, Adrian. 1998. &#8220;Moving Beyond Neo-Riemannian Triads: Exploring a Transformational Model for Seventh Chords.&#8221; <i>Journal of Music Theory</i> 42/2: 181-194.</p><div id="citediv_cohn_1996" class="flyoverdiv">Cohn, Richard. 1996. &#8220;Maximally Smooth Cycles, Hexatonic Stystems, and Analysis of Late-Romantic Triadic Progressions.&#8221; <i>Music Analysis</i> 15/1: 9-40.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1996"></a>Cohn, Richard. 1996. &#8220;Maximally Smooth Cycles, Hexatonic Stystems, and Analysis of Late-Romantic Triadic Progressions.&#8221; <i>Music Analysis</i> 15/1: 9-40.</p><div id="citediv_cohn_1997" class="flyoverdiv">Cohn, Richard. 1997. &#8220;Neo-Riemannian Operations, Parsimonious Trichords, and Their <i>Tonnetz</i> Representations.&#8221; <i>Journal of Music Theory</i> 41/1: 1-66.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. &#8220;Neo-Riemannian Operations, Parsimonious Trichords, and Their <i>Tonnetz</i> Representations.&#8221; <i>Journal of Music Theory</i> 41/1: 1-66.</p><div id="citediv_cohn_1998a" class="flyoverdiv">Cohn, Richard. 1998a. &#8220;Introduction to Neo-Riemannian Theory: A Survey and Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42/2: 167-180.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1998a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998a. &#8220;Introduction to Neo-Riemannian Theory: A Survey and Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42/2: 167-180.</p><div id="citediv_cohn_1998b" class="flyoverdiv">Cohn, Richard. 1998b. &#8220;Square Dances With Cubes.&#8221; <i>Journal of Music Theory</i> 42/2: 283-296.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1998b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998b. &#8220;Square Dances With Cubes.&#8221; <i>Journal of Music Theory</i> 42/2: 283-296.</p><div id="citediv_coker_1964" class="flyoverdiv">Coker, Jerry. 1964. <i>Improvising Jazz</i>. Englewood Cliffs, New Jersey: Prentice-Hall.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="coker_1964"></a>Coker, Jerry. 1964. <i>Improvising Jazz</i>. Englewood Cliffs, New Jersey: Prentice-Hall.</p><div id="citediv_douthett_and_steinbach_1998" class="flyoverdiv">Douthett, Jack, and Peter Steinbach. 1998. &#8220;Parsimonious Graphs: A Study in Parsimony, Contextual Transformations, and Modes of Limited Transposition.&#8221; <i>Journal of Music Theory</i> 42/2: 241-264.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="douthett_and_steinbach_1998"></a>Douthett, Jack, and Peter Steinbach. 1998. &#8220;Parsimonious Graphs: A Study in Parsimony, Contextual Transformations, and Modes of Limited Transposition.&#8221; <i>Journal of Music Theory</i> 42/2: 241-264.</p><div id="citediv_gollin_1998" class="flyoverdiv">Gollin, Edward. 1998. &#8220;Some Aspects of Three-Dimensional <i>Tonnetz</i>e.&#8221; <i>Journal of Music Theory</i> 42/2: 195-206.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gollin_1998"></a>Gollin, Edward. 1998. &#8220;Some Aspects of Three-Dimensional <i>Tonnetz</i>e.&#8221; <i>Journal of Music Theory</i> 42/2: 195-206.</p><div id="citediv_gollin_2007" class="flyoverdiv">Gollin, Edward. 2007. &#8220;Multi-Aggregate Cycles and Multi-Aggregate Serial Techniques in the Music of B&eacute;la Bart&oacute;k.&#8221; <i>Music Theory Spectrum</i> 29/2: 143-176.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gollin_2007"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007. &#8220;Multi-Aggregate Cycles and Multi-Aggregate Serial Techniques in the Music of B&eacute;la Bart&oacute;k.&#8221; <i>Music Theory Spectrum</i> 29/2: 143-176.</p><div id="citediv_haerle_1975" class="flyoverdiv">Haerle, Dan. 1975. <i>Scales for Jazz Improvisation</i>. Lebanon, Indiana: Studio P/R.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="haerle_1975"></a>Haerle, Dan. 1975. <i>Scales for Jazz Improvisation</i>. Lebanon, Indiana: Studio P/R.</p><div id="citediv_hyer_1995" class="flyoverdiv">Hyer, Brian. 1995. &#8220;Reimag(in)ing Riemann.&#8221; <i>Journal of Music Theory</i> 39/1: 101-138.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hyer_1995"></a>Hyer, Brian. 1995. &#8220;Reimag(in)ing Riemann.&#8221; <i>Journal of Music Theory</i> 39/1: 101-138.</p><div id="citediv_julien_2003" class="flyoverdiv">Julien, Patricia A. 2003. &#8220;The Structural Function of Harmonic Relations in Wayne Shorter&#8217;s Early Compositions: 1953-1963.&#8221; Ph.D. Diss., University of Maryland.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="julien_2003"></a>Julien, Patricia A. 2003. &#8220;The Structural Function of Harmonic Relations in Wayne Shorter&#8217;s Early Compositions: 1953-1963.&#8221; Ph.D. Diss., University of Maryland.</p><div id="citediv_keller_2002" class="flyoverdiv">Keller, Gary. 2002. <i>The Jazz Chord/Scale Handbook</i>. Rottenburg, Germany: Advance Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="keller_2002"></a>Keller, Gary. 2002. <i>The Jazz Chord/Scale Handbook</i>. Rottenburg, Germany: Advance Music.</p><div id="citediv_lawn_and_helmer_1993" class="flyoverdiv">Lawn, Richard, and Jeffrey Helmer. 1993. <i>Jazz Theory and Practice</i>. Belmont, California: Wadsworth.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lawn_and_helmer_1993"></a>Lawn, Richard, and Jeffrey Helmer. 1993. <i>Jazz Theory and Practice</i>. Belmont, California: Wadsworth.</p><div id="citediv_levine_1995" class="flyoverdiv">Levine, Mark. 1995. <i>The Jazz Theory Book</i>. Petaluma, California: Sher Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="levine_1995"></a>Levine, Mark. 1995. <i>The Jazz Theory Book</i>. Petaluma, California: Sher Music.</p><div id="citediv_lewin_2002" class="flyoverdiv">Lewin, David. 2002. &#8220;Thoughts on Klumpenhouwer Networks and Perle-Lansky Cycles.&#8221; <i>Music Theory Spectrum</i> 24/2: 196-230.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_2002"></a>Lewin, David. 2002. &#8220;Thoughts on Klumpenhouwer Networks and Perle-Lansky Cycles.&#8221; <i>Music Theory Spectrum</i> 24/2: 196-230.</p><div id="citediv_lewin_2005" class="flyoverdiv">Lewin, David. 2005. &#8220;Some Thoughts About Aspects of Harmony in Mahler&#8217;s Symphonies,&#8221; essay in <i>Music and the Aesthetics of Modernism</i>, ed. Karol Berger and Anthony Newcomb. Cambridge: Harvard University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_2005"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005. &#8220;Some Thoughts About Aspects of Harmony in Mahler&#8217;s Symphonies,&#8221; essay in <i>Music and the Aesthetics of Modernism</i>, ed. Karol Berger and Anthony Newcomb. Cambridge: Harvard University Press.</p><div id="citediv_martins_2003" class="flyoverdiv">Martins, Jos&eacute; Ant&oacute;nio. 2003. &#8220;Bart&oacute;k&#8217;s Polymodal Chromaticism and the Dasian System.&#8221;  Paper given at SMT-Madison Wisconsin.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="martins_2003"></a>Martins, Jos&eacute; Ant&oacute;nio. 2003. &#8220;Bart&oacute;k&#8217;s Polymodal Chromaticism and the Dasian System.&#8221;  Paper given at SMT-Madison Wisconsin.</p><div id="citediv_martins_2006" class="flyoverdiv">Martins, Jos&eacute; Ant&oacute;nio. 2006. &#8220;Dasian, Guidonian, and Affinity Spaces in Twentieth-Century Music.&#8221; Ph.D. Diss., University of Chicago.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="martins_2006"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2006. &#8220;Dasian, Guidonian, and Affinity Spaces in Twentieth-Century Music.&#8221; Ph.D. Diss., University of Chicago.</p><div id="citediv_miller_1996" class="flyoverdiv">Miller, Ron. 1996. <i>Modal Jazz: Composition and Harmony</i>. Rottenburg, Germany: Advance Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="miller_1996"></a>Miller, Ron. 1996. <i>Modal Jazz: Composition and Harmony</i>. Rottenburg, Germany: Advance Music.</p><div id="citediv_morris_1998" class="flyoverdiv">Morris, Robert. 1998. &#8220;Voice-Leading Spaces.&#8221; <i>Music Theory Spectrum</i> 20/2: 175-208.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1998"></a>Morris, Robert. 1998. &#8220;Voice-Leading Spaces.&#8221; <i>Music Theory Spectrum</i> 20/2: 175-208.</p><div id="citediv_pressing_1978" class="flyoverdiv">Pressing, Jeff. 1978. &#8220;Towards an Understanding of Scales in Jazz.&#8221; <i>Jazz Research</i> 9: 25-35.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pressing_1978"></a>Pressing, Jeff. 1978. &#8220;Towards an Understanding of Scales in Jazz.&#8221; <i>Jazz Research</i> 9: 25-35.</p><div id="citediv_russell_1959" class="flyoverdiv">Russell, George. 1959. <i>The Lydian Chromatic Concept of Tonal Organization</i>, 2nd ed. New York: Concept Publishing.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="russell_1959"></a>Russell, George. 1959. <i>The Lydian Chromatic Concept of Tonal Organization</i>, 2nd ed. New York: Concept Publishing.</p><div id="citediv_strunk_2000" class="flyoverdiv">Strunk, Steven. 2000. &#8220;Analytical Approaches to Chick Corea&#8217;s Compositions of the 1960s.&#8221; Paper given at European Music Analysis Conference, Oxford, England.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="strunk_2000"></a>Strunk, Steven. 2000. &#8220;Analytical Approaches to Chick Corea&#8217;s Compositions of the 1960s.&#8221; Paper given at European Music Analysis Conference, Oxford, England.</p><div id="citediv_strunk_2003" class="flyoverdiv">Strunk, Steven. 2003. &#8220;Wayne Shorter&#8217;s Yes and No: An Analysis.&#8221; <i>Tijdschrift voor Muziektheorie</i> 8/1: 40-56.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="strunk_2003"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2003. &#8220;Wayne Shorter&#8217;s Yes and No: An Analysis.&#8221; <i>Tijdschrift voor Muziektheorie</i> 8/1: 40-56.</p><div id="citediv_strunk_2005" class="flyoverdiv">Strunk, Steven. 2005. &#8220;Notes on Harmony in Wayne Shorter&#8217;s Composition, 1964-67.&#8221; <i>Journal of Music Theory</i> 49/2: 301-332.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="strunk_2005"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005. &#8220;Notes on Harmony in Wayne Shorter&#8217;s Composition, 1964-67.&#8221; <i>Journal of Music Theory</i> 49/2: 301-332.</p><div id="citediv_tymoczko_1997" class="flyoverdiv">Tymoczko, Dmitri. 1997. &#8220;The Consecutive Semitone Restraint: A Link Between Impressionism and Jazz.&#8221; <i>Int&eacute;gral</i> 11: 135-179.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_1997"></a>Tymoczko, Dmitri. 1997. &#8220;The Consecutive Semitone Restraint: A Link Between Impressionism and Jazz.&#8221; <i>Int&eacute;gral</i> 11: 135-179.</p><div id="citediv_tymoczko_2004" class="flyoverdiv">Tymoczko, Dmitri. 2004. &#8220;Scale Networks and Debussy.&#8221; <i>Journal of Music Theory</i> 48/2: 219-294.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &#8220;Scale Networks and Debussy.&#8221; <i>Journal of Music Theory</i> 48/2: 219-294.</p><div id="citediv_waters_2005" class="flyoverdiv">Waters, Keith. 2005. &#8220;Modes, Scales, Functional Harmony and Non-Functional Harmony in the Compositions of Herbie Hancock.&#8221; <i>Journal of Music Theory</i> 49/2: 333-357.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="waters_2005"></a>Waters, Keith. 2005. &#8220;Modes, Scales, Functional Harmony and Non-Functional Harmony in the Compositions of Herbie Hancock.&#8221; <i>Journal of Music Theory</i> 49/2: 333-357.</p><div id="citediv_waters_and_diamond_2000&#8211;2001" class="flyoverdiv">Waters, Keith, and David Diamond. 2000-2001. &#8220;Out Front: The Art of Booker Little.&#8221; <i>Annual Review of Jazz Studies</i> 11: 1-38.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="waters_and_diamond_2000&#8211;2001"></a>Waters, Keith, and David Diamond. 2000-2001. &#8220;Out Front: The Art of Booker Little.&#8221; <i>Annual Review of Jazz Studies</i> 11: 1-38.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> This paper was originally presented at the SMT national conference in Seattle 2004. I would like to acknowledge input and suggestions from several theorists, including Dave Headlam, Steve Larson, Justin Lundberg, and Steven Strunk. The article&#8217;s text was authored by Keith Waters and the interactive examples were created by Kent Williams<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Recent analytical work examines harmony and harmonic progression in such 1960s compositions by composers including Wayne Shorter, Chick Corea, Herbie Hancock, Booker Little, and others (<a href="#julien_2003" id="citation_julien_2003_67dc9ad958711">Julien 2003</a>; <a href="#strunk_2000" id="citation_strunk_2000_67dc9ad958716">Strunk 2000</a>, <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad95871a">2003</a>, and <a href="#strunk_2005" id="citation_strunk_2005_67dc9ad95871d">2005</a>; <a href="#waters_2005" id="citation_waters_2005_67dc9ad95871f">Waters 2005</a>, <a href="#waters_and_diamond_2000&#8211;2001" id="citation_waters_and_diamond_2000&#8211;2001_67dc9ad958721">Waters and Diamond 2000&#8211;2001</a>).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> In comparison with the four collections listed here, <a href="#levine_1995" id="citation_levine_1995_67dc9ad958723">Levine 1995</a> excludes hexatonic, but includes whole tone. By 1960, however, the use of the whole tone collection seemed to recede, although there are exceptions: Wayne Shorter&#8217;s 1964 &#8220;Juju,&#8221; for example, opens with a whole-tone based sonority (<a href="#strunk_2005" id="citation_strunk_2005_67dc9ad958724">Strunk 2005</a>, 319). <br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> <a href="#abersold_1975" id="citation_abersold_1975_67dc9ad958726">Abersold 1975</a>, <a href="#baker_1969" id="citation_baker_1969_67dc9ad958728">Baker 1969</a> and <a href="#baker_1974" id="citation_baker_1974_67dc9ad95872a">1974</a>, <a href="#coker_1964" id="citation_coker_1964_67dc9ad95872b">Coker 1964</a>, <a href="#haerle_1975" id="citation_haerle_1975_67dc9ad95872d">Haerle 1975</a>, <a href="#keller_2002" id="citation_keller_2002_67dc9ad95872e">Keller 2002</a>, <a href="#levine_1995" id="citation_levine_1995_67dc9ad958730">Levine 1995</a>, <a href="#miller_1996" id="citation_miller_1996_67dc9ad958731">Miller 1996</a>, <a href="#russell_1959" id="citation_russell_1959_67dc9ad958733">Russell 1959</a>. For music theoretical considerations of scalar organization in jazz, see <a href="#pressing_1978" id="citation_pressing_1978_67dc9ad958734">Pressing 1978</a>, <a href="#tymoczko_1997" id="citation_tymoczko_1997_67dc9ad958736">Tymoczko 1997</a> and <a href="#tymoczko_2004" id="citation_tymoczko_2004_67dc9ad958738">2004</a>, <a href="#waters_2005" id="citation_waters_2005_67dc9ad958739">Waters 2005</a>.)<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> <a href="#strunk_2000" id="citation_strunk_2000_67dc9ad95873b">Strunk 2000</a> and <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad95873d">2003</a> represent 7th and 9th chords on <i>Tonnetz</i>e and define operations of rotation, reflection, and translation. <br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Library of Congress Copyright Deposit Eu 42291 (March 13, 1968). Shorter&#8217;s copyright deposit lead sheet of &#8220;Vonetta&#8221; consists of a 14-bar composition in 4/4, with measure 12 a 5/4 bar. Although Shorter&#8217;s lead sheet indicates the opening chord as Emaj7(<img border="0" src="../../gifs/flat.gif" width="7" height="18" align="texttop"></font>5), the group more consistently plays that measure as Cminor9. Pianist Herbie Hancock does state a version of that E harmony (usually played as Emaj7<img border="0" src="../../gifs/sharp.gif" width="7" height="18" align="texttop"></font>5) in m. 1 (mid-measure) three times: during the opening head, during Davis&#8217;s second improvised chorus, and during his own first improvised chorus.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Brown generalizes this process as &#8220;interval exchange&#8221; in <a href="#brown_2003" id="citation_brown_2003_67dc9ad95873f">Brown 2003</a>.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The two larger systems that subsume all even or odd numbered acoustic collections are represented by &#8220;A&#8221; and a subscript zero or one (A<sub>0</sub>, A<sub>1</sub>). Individual seven-note acoustic collections are represented by &#8220;A&#8221; and a non-subscript pitch class number (A0, A2, A4, etc.) <br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> <a href="#lewin_2005" id="citation_lewin_2005_67dc9ad958740">Lewin 2005</a> and <a href="#gollin_2007" id="citation_gollin_2007_67dc9ad958742">Gollin 2007</a> consider such double interval cycles in other contexts<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Although not shown here, it is also possible to show the R and L relations with 9th chords on this map. <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad958744">Strunk 2003</a> examines these standard Riemannian moves with 9th chords on a <i>Tonnetz</i>.<br><a href="#FN10REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">This paper was originally presented at the SMT national conference in Seattle 2004. I would like to acknowledge input and suggestions from several theorists, including Dave Headlam, Steve Larson, Justin Lundberg, and Steven Strunk. The article&#8217;s text was authored by Keith Waters and the interactive examples were created by Kent Williams</div><div id="fndiv2" class="flyoverdiv">Recent analytical work examines harmony and harmonic progression in such 1960s compositions by composers including Wayne Shorter, Chick Corea, Herbie Hancock, Booker Little, and others (<a href="#julien_2003" id="citation_julien_2003_67dc9ad958711">Julien 2003</a>; <a href="#strunk_2000" id="citation_strunk_2000_67dc9ad958716">Strunk 2000</a>, <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad95871a">2003</a>, and <a href="#strunk_2005" id="citation_strunk_2005_67dc9ad95871d">2005</a>; <a href="#waters_2005" id="citation_waters_2005_67dc9ad95871f">Waters 2005</a>, <a href="#waters_and_diamond_2000&#8211;2001" id="citation_waters_and_diamond_2000&#8211;2001_67dc9ad958721">Waters and Diamond 2000&#8211;2001</a>).</div><div id="fndiv3" class="flyoverdiv">In comparison with the four collections listed here, <a href="#levine_1995" id="citation_levine_1995_67dc9ad958723">Levine 1995</a> excludes hexatonic, but includes whole tone. By 1960, however, the use of the whole tone collection seemed to recede, although there are exceptions: Wayne Shorter&#8217;s 1964 &#8220;Juju,&#8221; for example, opens with a whole-tone based sonority (<a href="#strunk_2005" id="citation_strunk_2005_67dc9ad958724">Strunk 2005</a>, 319). </div><div id="fndiv4" class="flyoverdiv"><a href="#abersold_1975" id="citation_abersold_1975_67dc9ad958726">Abersold 1975</a>, <a href="#baker_1969" id="citation_baker_1969_67dc9ad958728">Baker 1969</a> and <a href="#baker_1974" id="citation_baker_1974_67dc9ad95872a">1974</a>, <a href="#coker_1964" id="citation_coker_1964_67dc9ad95872b">Coker 1964</a>, <a href="#haerle_1975" id="citation_haerle_1975_67dc9ad95872d">Haerle 1975</a>, <a href="#keller_2002" id="citation_keller_2002_67dc9ad95872e">Keller 2002</a>, <a href="#levine_1995" id="citation_levine_1995_67dc9ad958730">Levine 1995</a>, <a href="#miller_1996" id="citation_miller_1996_67dc9ad958731">Miller 1996</a>, <a href="#russell_1959" id="citation_russell_1959_67dc9ad958733">Russell 1959</a>. For music theoretical considerations of scalar organization in jazz, see <a href="#pressing_1978" id="citation_pressing_1978_67dc9ad958734">Pressing 1978</a>, <a href="#tymoczko_1997" id="citation_tymoczko_1997_67dc9ad958736">Tymoczko 1997</a> and <a href="#tymoczko_2004" id="citation_tymoczko_2004_67dc9ad958738">2004</a>, <a href="#waters_2005" id="citation_waters_2005_67dc9ad958739">Waters 2005</a>.)</div><div id="fndiv5" class="flyoverdiv"><a href="#strunk_2000" id="citation_strunk_2000_67dc9ad95873b">Strunk 2000</a> and <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad95873d">2003</a> represent 7th and 9th chords on <i>Tonnetz</i>e and define operations of rotation, reflection, and translation. </div><div id="fndiv6" class="flyoverdiv">Library of Congress Copyright Deposit Eu 42291 (March 13, 1968). Shorter&#8217;s copyright deposit lead sheet of &#8220;Vonetta&#8221; consists of a 14-bar composition in 4/4, with measure 12 a 5/4 bar. Although Shorter&#8217;s lead sheet indicates the opening chord as Emaj7(5), the group more consistently plays that measure as Cminor9. Pianist Herbie Hancock does state a version of that E harmony (usually played as Emaj75) in m. 1 (mid-measure) three times: during the opening head, during Davis&#8217;s second improvised chorus, and during his own first improvised chorus.</div><div id="fndiv7" class="flyoverdiv">Brown generalizes this process as &#8220;interval exchange&#8221; in <a href="#brown_2003" id="citation_brown_2003_67dc9ad95873f">Brown 2003</a>.</div><div id="fndiv8" class="flyoverdiv">The two larger systems that subsume all even or odd numbered acoustic collections are represented by &#8220;A&#8221; and a subscript zero or one (A0, A1). Individual seven-note acoustic collections are represented by &#8220;A&#8221; and a non-subscript pitch class number (A0, A2, A4, etc.) </div><div id="fndiv9" class="flyoverdiv"><a href="#lewin_2005" id="citation_lewin_2005_67dc9ad958740">Lewin 2005</a> and <a href="#gollin_2007" id="citation_gollin_2007_67dc9ad958742">Gollin 2007</a> consider such double interval cycles in other contexts</div><div id="fndiv10" class="flyoverdiv">Although not shown here, it is also possible to show the R and L relations with 9th chords on this map. <a href="#strunk_2003" id="citation_strunk_2003_67dc9ad958744">Strunk 2003</a> examines these standard Riemannian moves with 9th chords on a <i>Tonnetz</i>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2010 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Sean Atkinson, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="6176320"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="4f6e5eb6"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/6176320/0/4f6e5eb6/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

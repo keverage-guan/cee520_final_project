@@ -1,0 +1,895 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 5.1: Boss, &ldquo;Schenkerian-Schoenbergian Analysis&rdquo;</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="&ldquo;Schenkerian-Schoenbergian Analysis&rdquo; and Hidden Repetition in the Opening
+Movement of Beethoven&rsquo;s Piano Sonata Op. 10, No. 1">
+
+    <meta name="citation_author" content="Boss, Jack F.">
+      
+
+<meta name="citation_publication_date" content="1999/01/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="5">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">&ldquo;Schenkerian-Schoenbergian Analysis&rdquo; and Hidden Repetition in the Opening
+Movement of Beethoven&rsquo;s Piano Sonata Op. 10, No. 1
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.99.5.1/mto.99.5.1.boss.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Jack F. Boss</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: motive, hidden repetition, Grundgestalt, musical idea, Schenker, Schoenberg,
+Beethoven</font></p><p><font size='4'>ABSTRACT: A process akin to Schoenberg&rsquo;s &ldquo;musical idea&rdquo; accounts to a large
+degree for motivic coherence in the first movement of Beethoven&rsquo;s Piano Sonata Op. 10, No.
+1. My article illustrates this process by means of a synthesis of Schenker&rsquo;s and
+Schoenberg&rsquo;s approaches to analysis. I use Schenkerian analysis to identify potential
+motives at various levels of musical structure, then interpret the treatment of some of
+these segments according to Schoenberg&rsquo;s model. I also show how the primary motivic
+process interacts with other such processes in the first movement.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.99.5.1/mto.99.5.1.boss.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.99.5.1/boss_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 5, Number 1, January 1999 <br> Copyright &#0169; 1999 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Among followers of Schenker, the notion of &ldquo;hidden repetition&rdquo; has
+garnered a good deal of interest in recent years. Articles by Beach, Burkhart, Cadwallader
+and Pastille, Kamien, Rothgeb, and Schachter, among others, have illustrated how
+repetition of a given motive or motives at different levels contributes to organic
+coherence in a variety of tonal works.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> However, one rarely finds in this literature a comprehensive treatment of how the
+repetitions of a motive (hidden or otherwise) in a piece bind together into one
+all-encompassing process. Many tonal pieces can be heard as working out just such
+processes: one not only exists in the first movement of Beethoven&rsquo;s Sonata Op. 10, No. 1,
+but also accounts to a large degree for that piece&rsquo;s motivic coherence. </p>
+
+<p>[2] There is another analytic tradition originating in the same time and place as
+Schenker&rsquo;s that concerns itself specifically with the question of how a single process can
+organize motivic relations (or other kinds of relations) across the surface of a tonal
+piece. That tradition stems from the theoretical work of Arnold Schoenberg. Schoenberg&rsquo;s
+analytic approach has not been adopted as commonly in studies of tonal music as has
+Schenkerian analysis: one possible reason is a disagreement among scholars who use
+Schoenberg&rsquo;s method about its basic terms and concepts, such as &ldquo;developing
+variation,&rdquo; <i>Grundgestalt</i>, and &ldquo;musical idea.&rdquo;<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Accordingly, I begin by briefly
+outlining my understanding of the Schoenbergian terms crucial to my study. Schoenberg
+accounts for coherence in a piece by showing how its initial material (what he calls <i>Grundgestalt</i>)
+sets up an opposition of pitches, chords, motives, or rhythms that is then elaborated
+through the course of the piece and ultimately resolved (by the principal ingredient of
+the <i>Grundgestalt</i> absorbing or subsuming its opponent) at or near the end. This
+blueprint for a whole piece, which can also be thought of as a compositional dialectic, is
+what Schoenberg means by the term &ldquo;musical idea&rdquo; or <i>musikalische Gedanke</i>.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> My article will show how the motives
+at foreground and low-middleground levels in the first movement of Beethoven&rsquo;s Op. 10, No.
+1 project a process very much like that described by Schoenberg, but unlike Schoenberg and
+other scholars who practice Schoenbergian analysis, I will limit what I call
+&ldquo;motive&rdquo; to segments that are equivalent to diminutions in the Schenkerian sense
+or that combine such diminutions. This is how I plan to forestall the kinds of criticism
+that have been made against Schoenbergian analysis by Schenkerians such as Rothgeb and
+Burkhart; namely, that the motivic segments in Schoenberg&rsquo;s analyses and those of his
+followers disagree with the segmentation that would be imposed by a correct Schenkerian
+graph.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Since my approach relies on
+Schenker for motive identification but interprets the relations between some of these
+motives in a way parallel to Schoenberg&rsquo;s musical idea, I have given it the label
+&ldquo;Schenkerian-Schoenbergian Analysis.&rdquo; </p>
+
+<p>[3] I believe &ldquo;Schenkerian-Schoenbergian Analysis&rdquo; introduces a new way of
+amalgamating the two approaches. Others have attempted to combine them, most notably David
+Epstein in <i>Beyond Orpheus</i>, but in ways considerably different from the present
+article.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Epstein&rsquo;s concept of
+&ldquo;musical idea&rdquo; focuses primarily on the power of the <i>Grundgestalt</i> to
+unify the piece through its repetition at various structural levels, not on the
+dialectical process that organizes such repetitions through the piece.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> His focus results in some insightful
+analyses, which sometimes describe the introduction of elements foreign to the main
+tonality within the <i>Grundgestalt</i> and the elaborations through the piece of such
+oppositions (his account of the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> motive that appears in measures 4&ndash;5 of the first
+movement of Beethoven&rsquo;s <i>Eroica</i> Symphony and its subsequent consequences is a good
+example; see pages 111&ndash;27). Yet rarely does he show how such foreign elements are
+assimilated into the home tonality as the final stage of an overarching process. In
+addition, the middleground shapes Epstein claims as offspring of the motive sometimes
+diverge from what would typically be considered Schenkerian middlegrounds (again, an
+example can be found in his <i>Eroica</i> analysis: a reordering of the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> motive
+that goes D-<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, see page 114). In the present article, middleground motives always
+function as diminutions in an orthodox sense. </p>
+
+<p>[4] Another, more recent, contribution that combines aspects of Schoenberg&rsquo;s
+theoretical writings with the Schenkerian approach is Janet Schmalfeldt&rsquo;s <i>Music
+Analysis</i> article on the &ldquo;Reconciliation of Schenkerian Concepts with Traditional
+and Recent Theories of Form.&rdquo;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Schmalfeldt focuses on a different aspect of Schoenberg&rsquo;s theoretical output from my
+article: she demonstrates rather convincingly the mutual influences between formal
+elements introduced or developed by Schoenberg in <i>Fundamentals of Musical Composition</i>
+and various harmonic-contrapuntal structures characteristic of the Schenkerian viewpoint.
+Much of her article deals with Schenkerian correlates to the parts of the
+&ldquo;sentence&rdquo; structure proposed by Schoenberg in <i>Fundamentals</i>, but in
+addition she illustrates how Schoenberg&rsquo;s distinction between &ldquo;fixed&rdquo; themes and
+&ldquo;loosely-constructed&rdquo; themes and transition sections is enriched by and
+contributes to the Schenkerian perspective. One of the main pieces she analyzes is the
+same Beethoven sonata movement I take up in my article; accordingly, I will comment on
+differences between Schmalfeldt&rsquo;s and my analyses of specific passages in the footnotes. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 1&ndash;10, beginning of exposition&rsquo;s first theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="boss_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[5] In Beethoven&rsquo;s Op. 10, No. 1, first movement, the <i>Grundgestalt</i> is measures 1&ndash;9,
+the initial period plus the downbeat of the following measure. See <b>Example 1</b>. This opening unit contains two voice-leading strands
+within the i - vii<sup>o</sup><nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> - <nobr>i<sup>6</sup></nobr> progression that can be heard as opponents to one another. The
+reasons are: 1) they present diminutions of different kinds, and 2) they are given
+contrasting characters through the surface characteristics applied to them such as
+register, dynamics, and diminution. These motives are the ascending third harmonized by
+parallel tenths (labeled delta in Example 1)
+and the double neighbor figure (labeled alpha).<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Within the <i>Grundgestalt</i>, motive delta is undoubtedly more
+strongly presented. Delta&rsquo;s first two notes (<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and F) are not only led up to by long
+arpeggios at a <i>forte</i> dynamic, but also are set in a high register, repeated and
+accented. The third note of delta, G (which is the movement&rsquo;s primary tone), gets less
+registral, diminutional, and dynamic emphasis, yet it has a relatively long note value and
+occurs on a downbeat. It, too, has an arpeggio prefix, consisting of two grace notes.
+Meanwhile, the parallel tenths supporting delta possess the registral low end of the
+passage, and are also dynamically emphasized. In contrast, motive alpha occurs in a middle
+register at a <i>piano</i> dynamic and has no surface diminutions prefixed to its members,
+giving it an unmistakable inner-voice quality.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 56&ndash;71, beginning of exposition&rsquo;s second theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="boss_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6] According to Schoenberg&rsquo;s &ldquo;idea,&rdquo; the next step in Beethoven&rsquo;s process,
+having established an opposition between motives delta and alpha, would be to elaborate
+that opposition. Analyses by Schoenberg, Patricia Carpenter, and Severine Neff (as well as
+others) illustrate a variety of ways that tonal pieces elaborate such oppositions; often,
+one of the opposing elements is a foreign pitch or chord with respect to the home key and
+the other is the tonic triad, and the elaboration consists of allowing the foreign element
+to simulate a tonic. In the movement under consideration, however, the procedure is a bit
+different, since the opposing elements are two motives, both members of the
+tonal-prolongational structure of measures 1&ndash;9, which are marked as divergent by surface
+characteristics such as register and dynamics rather than by the tonalities they
+represent. In a few words, Beethoven gradually increases motive alpha&rsquo;s salience by giving
+it delta&rsquo;s original surface characteristics, while at the same time submerging motive
+delta by replacing its dominant characteristics with more recessive ones. This process
+then culminates in delta becoming a diminution of alpha, which, it seems to me, makes the
+motivic process resemble Hegelian dialectic. The exchange of status between the two
+motives begins at the exposition&rsquo;s second theme, directly following a transition based
+almost entirely on the inversion of motive delta. See <b>Example 2</b>.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> The first presentations of alpha in measures 56&ndash;70 are somewhat veiled: they occur in the
+middleground behind the bass part, and are inversions of the original alpha. The soprano
+during these same measures does not present alpha as such; but instead begins with the
+middleground succession <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span> <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>. This succession not only balances upper and lower
+neighbors like alpha and hence can be heard as related to it, but it also creates a rather
+normative example of the style structure Robert Gjerdingen identifies as a hallmark of the
+Classical era; combined as it is with alpha in the bass and I - <nobr>V<img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr> - <nobr>V<img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> - I in the
+harmony, and placing as it does suspensions leading to <span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span> and <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span> on downbeats 4 measures
+apart.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> The soprano follows
+this at measures 64&ndash;71 with an ornamented version of a similar succession, <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span> <span style='font-size:0.8em'><math><mover><mn>2</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>, which
+in its contrapuntal, harmonic and metrical contexts also strongly resembles Gjerdingen&rsquo;s
+style structure. The passage we have just discussed and the corresponding one in the
+recapitulation (measures 215&ndash;48) are the only places in the movement where alpha plays a part
+in such structures; so that it is not necessary here to shift our focus to them from the
+process we are beginning to describe involving the gradual transformation of alpha within
+this movement. (Had we been considering relationships between Beethoven&rsquo;s sonata movement
+and those of his Classical precursors&mdash;as Gjerdingen does&mdash;we might, however.) We can
+think of such style structures as early stages that alpha passes through on its journey
+toward greater salience: stable passages within which alpha (as bass line rather than
+inner voice) plays an increasingly significant role. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 82&ndash;94, end of exposition&rsquo;s second theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="boss_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 94&ndash;105, exposition&rsquo;s codetta</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="boss_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 106&ndash;118, beginning of development</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="boss_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 118&ndash;133, middle of development</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="boss_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 136&ndash;150, later part of development</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="boss_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 215&ndash;248, recapitulation&rsquo;s second theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="boss_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 259&ndash;267, latter part of recapitulation&rsquo;s second theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="boss_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[7] The principal way that Beethoven increases motive alpha&rsquo;s salience in this movement is to bring it from the middleground closer to the surface (and then he gives it delta&rsquo;s surface characteristics, as I suggested above). Authors on hidden repetition generally refer to this technique as &ldquo;contraction&rdquo;; see for example the Rothgeb and Burkhart articles mentioned in footnote 1. There are three contractions of alpha in the second theme&rsquo;s closing measures&mdash;one at measures 82&ndash;84 (which is repeated at measures 84&ndash;86) and the others at measures 86&ndash;90, in the alto and bass. See <b>Example 3</b>. Beethoven highlights the first contraction of alpha as a segment by repeating it, while the second and third at measures 86&ndash;90 are set off by registral and textural changes, as
+well as by the reintroduction of the ascending arpeggio prefix characteristic of delta
+when it first appeared in measures 1&ndash;9. These three double neighbors are not literally on the
+surface of the music, but are certainly closer than their counterparts in measures 56&ndash;70
+(actually, not being on the surface helps us hear them as increasingly salient, given the
+fast tempos at which the passage is normally played). The last two alphas at measures 86&ndash;90
+incorporate a <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> passing tone between the upper neighbor C and the lower neighbor
+<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>&mdash;creating ascending and descending spans of a third within the vii<sup>o</sup><nobr><sup>7</sup></nobr>/V chord.
+This is a significant move, because the ascending and descending thirds, delta and its
+inversion, now serve as diminutions of the double neighbors, alpha and its inversion;
+prefiguring Beethoven&rsquo;s ultimate synthesis later in the piece, where the ascending third
+ornamenting the double neighbor moves up out of the inner voice into the soprano.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> </p>
+
+<p>[8] The codetta in the exposition summarizes the direction of the foregoing measures
+and at the same time brings alpha forward all the way to the surface of the music. See <b>Example 4</b>. The tonic pitches in the descending <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> arpeggio from measure 98 to measure 105 are all decorated by lower and upper neighbors; the former
+harmonized, the latter dissonant. The dominant pitches receive a single upper neighbor. </p>
+
+<p>[9] The development section begins with a presentation of motive delta, the ascending
+third, in C major, which retains many of the surface features that accompanied delta in
+the first theme: the ascending arpeggios leading up to <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> and F, the alternation
+between <i>forte</i> and <i>piano</i> dynamics, the accents on repeated <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>s and Fs.
+See <b>Example 5</b>. But two essential features of
+the original ascending third are now missing; and because of this, it makes more sense to
+hear high <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>, F and G as surface diminutions rather than the low-middleground
+motive that delta had originally been. First, motive delta no longer prolongs a tonic
+triad&mdash;while the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> is harmonized by I and the F by vii<sup>o</sup><nobr><img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr>, just as before, the G
+is now supported by a vii<sup>o</sup><nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> of iv, leading into the next section of the development
+which tonicizes F minor. Second, the harmonization in parallel tenths that delta had
+originally had has disappeared: instead, we hear <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>-F-G in the lowest voice, which
+would cause middleground parallel octaves with a manifestation of delta in the highest
+register. Possibly we could hear this low-register ascending third as delta without the
+accompanying tenths, but in that case the members of delta would all lack the surface
+characteristics such as diminution, accent, and dynamics that marked them as dominant in
+measures 1&ndash;9. All these factors work together to make the ascending third less salient.
+Meanwhile, motive alpha also bridges I to vii<sup>o</sup><nobr><img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> of IV, but as a diminution circling
+around a single note&mdash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> this time rather than C&mdash;it seems better able to retain
+its aural identity while reinforcing the ultimate direction of the passage (toward the
+subdominant). </p>
+
+
+<p>[10] The trend of bringing motive alpha forward to the surface and thus increasing its
+salience, which we heard in the exposition, continues in the development. See <b>Example 6</b>. At measures 119&ndash;21, we hear the double
+neighbor at the surface in the soprano: this is the original form, with lower neighbor
+first. It appears again a perfect fourth higher at measures 127&ndash;29, as part of a sequence
+tonicizing first iv, then iv of iv. At the same time, the inversion of alpha underlies the
+tonicizations of F minor and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> minor, in a manner very similar to the second theme. All
+the notes of alpha get a consonant skip of a third, as they had in the earlier passage,
+and the harmony, I - <nobr>V<img border="0" alt="4 3" src="../../gifs/43.gif" width="7" height="17" style="vertical-align:text-top"></nobr> - <nobr>V<img border="0" alt="6 5" src="../../gifs/65.gif" width="7" height="16" style="vertical-align:text-top"></nobr> - <nobr>V<sup>7</sup></nobr> - I, only slightly varies that of the earlier
+passage (though the addition of <nobr>V<sup>7</sup></nobr> turns alpha into a motive projected by a combination of
+two voices; the third note of alpha&mdash;<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> in measure 121 and <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> in measure 129&mdash;is,
+according to my reading, a tenor note). In measures 118&ndash;33, then, the alpha motive appears
+simultaneously at two levels&mdash;foreground and low middleground&mdash;saturating the pitch
+structure in a way we have not heard to this point. In the measures almost immediately
+following, the double neighbor begins to saturate the piece in another way. See <b>Example 7</b>, my graph of measures 136&ndash;41 and their
+immediate context. Here, every two-measure unit contains alpha, presented in sixths and
+tenths without accompaniment to call the listener&rsquo;s attention to it. These measures are a
+culmination of the double neighbor&rsquo;s gradual growth in salience&mdash;at this point in the
+movement, nothing is happening <i>except</i> alpha. The graph makes clear the function of
+these motivic repetitions in their larger context: they embellish a prolonged neighbor <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> which resolves back to the primary tone at measure 148. One interesting aside about Beethoven&rsquo;s
+approach to the primary tone: note that the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> neighbor that supplants <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in measures 143&ndash;45,
+the <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, and the eventual resolution G are counterpointed by lower neighbors in the bass,
+<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>-F and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>-C. The notion of balancing upper and lower neighbors affects
+this piece in ways beyond the process involving the alpha motive. We&rsquo;ll see another,
+higher-level, example later on. </p>
+
+<p>[11] As one would expect, the recapitulation replays the motivic process we heard in
+the exposition, with few changes (although one of those changes is extremely significant
+to the motivic process as a whole). Motive delta reasserts itself at measures 168&ndash;76,
+&ldquo;pushing alpha back down into the inner voice,&rdquo; as it were. And although the
+recap&rsquo;s transition points toward F major rather than <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> as it originally had, it still
+relies heavily on inversions of delta. Motive alpha does not begin to regain the upper
+hand until the second theme at measure 215. See my graph of measures 215&ndash;47 in <b>Example 8</b>. Since Beethoven states the first two phrases of his theme
+in F major, then repeats them in C minor, we have <i>two</i> opportunities to hear the
+repeated inversion of alpha in the bass, counterpointed against <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span> <span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span> and <span style='font-size:0.8em'><math><mover><mn>1</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>7</mn><mo>&#710;</mo></mover></math></span> <span style='font-size:0.8em'><math><mover><mn>2</mn><mo>&#710;</mo></mover></math></span>-<span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span> in the soprano. Not only has the composer &ldquo;corrected&rdquo; the key of his
+second theme, but he has given himself an opportunity to powerfully reassert the alpha
+motive through repetition. </p>
+
+<p>[12] In measures 251&ndash;53, the movement&rsquo;s fundamental line makes its descent to <span style='font-size:0.8em'><math><mover><mn>3</mn><mo>&#710;</mo></mover></math></span>, and this
+is followed almost immediately (at measures 259&ndash;67) by the statements of motive alpha that we
+heard first in the latter measures of the exposition&rsquo;s second theme. See <b>Example 9</b>. In the recap, the double neighbors
+ornament the fifth scale degree, G, setting the listener up for the movement&rsquo;s final
+cadence. The first two of these at measures 259 and 261 are not that different from their
+counterparts in measures 82 and 84. (One might comment on the way the upper neighbor is delayed
+in the second alpha through consonant skip diminutions.) But the third and fourth
+manifestations of motive alpha at measures 263&ndash;67 add something significant to their
+counterparts at measures 86&ndash;90: the double neighbor that mirrors that of the bass has been
+moved up from the alto into the soprano. As the alto had earlier, the soprano here
+projects a transposition of the original alpha motive (that is, with lower neighbor
+first). Like its alto predecessor, this soprano occurrence of alpha includes an <i>ascending
+third</i> as a diminution between the lower and upper neighbors, and the ascending third,
+like the original delta of measures 1&ndash;9, is ornamented by arpeggios. This subsumption of delta
+and its diminutions by alpha, as I suggested before, constitutes the motivic synthesis
+that completes the movement&rsquo;s overarching dialectic. While this synthesis had been buried
+in an inner voice at measures 86&ndash;90 (like the alpha motive itself at measures 1&ndash;9), here it bursts
+into prominence, capturing both of the outer voices that had belonged to delta at the
+beginning of the movement. </p>
+
+<p>[13] Thus the surface, foreground, and low middleground manifestations of motives alpha
+and delta project a process akin to Schoenberg&rsquo;s musical idea, which gives a kind of
+motivic coherence to Beethoven&rsquo;s work that goes beyond simple unity. One question remains
+to be answered, however, concerning my account of this motivic process, a question that
+may have caused some skepticism on the part of the reader. Namely, to what extent can we
+think of entities such as alpha and delta as <i>motives</i>, since many tonal pieces
+depend on and often feature double neighbors and ascending thirds harmonized in parallel
+tenths? Shouldn&rsquo;t these rather be thought of as common voice-leading components of the
+tonal system? David Epstein in <i>Beyond Orpheus</i> suggests one answer to this question;
+
+I will consider his and then contrast it with my own. According to Epstein, a common tonal
+element such as a major triad can be heard as a motive if it displays some &ldquo;unusual
+property or characteristic&rdquo; that it shares with other manifestations of that motive
+in the piece. For example, his attribution of motive status to the two <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> chords that open
+the first movement of Beethoven&rsquo;s <i>Eroica</i> Symphony hinges on the fact that their
+(rather unusual) spacing replicates almost exactly the pitch-class sequence of the
+beginning of the first theme.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> </p>
+
+<p>[14] In the opening movement of the Op. 10, No. 1 sonata, however, it is difficult to
+find unusual characteristics of (for instance) the alpha motive in measures 1&ndash;9 that it shares
+with the other manifestations of alpha in the piece. Indeed, alpha&rsquo;s gradually taking on
+new characteristics as the movement progresses is a crucial reason for my hearing the
+piece as the elaboration of an opposition between alpha and delta. It seems that here the
+motives should be justified as such on different grounds. Possibly the fact that they take
+part in a process that spans the entire piece is enough; in other words, it is the motivic
+progression <i>itself</i> that invests alpha and delta with motivic significance. My
+viewpoint here does not go too far beyond Schoenberg&rsquo;s when he asserts in <i>Fundamentals
+of Musical Composition</i> that &ldquo;every element or feature of a motive must be
+considered to be a motive if it is treated as such, that is if it is repeated with or
+without variation.&rdquo;<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> The
+main difference is I am claiming that it is not mere directionless repetition or
+variation, but an <i>organized process</i> of repetition and variation that causes me to
+single alpha and delta out from among all the other components of voice-leading in the
+piece. Many tonal pieces do indeed repeat and vary double neighbors and third-spans
+harmonized in tenths, but how many set two such components against one another in an
+opposition based on surface characteristics at the beginning, allow one to gradually wrest
+the position of dominance (or salience) from the other as the piece progresses, then
+culminate the process at the end by making the component that had been more salient at the
+beginning serve as the diminution of the other? </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 9&ndash;22, latter part of exposition&rsquo;s first theme</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="boss_ex10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 270&ndash;284, recapitulation&rsquo;s codetta</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="boss_ex11_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b>. Beethoven, Sonata Op. 10, no. 1, i, mm. 56&ndash;71, reduction showing the underlying voice-leading</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="boss_examples.php?id=11&nonav=true"><img border="1" alt="Example 12 thumbnail" src="boss_ex12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[15] One other voice-leading component that Beethoven identifies as a motive through
+the process in which it plays a part is what I will call motive beta. Motive beta gives
+rise to a non-dialectical process that also helps to structure the work, and in addition
+beta combines with delta and alpha in ways significant to the shaping of the piece. Motive
+beta is the stepwise descent through a perfect or diminished fifth. Its most common
+version, G-F-<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-C, makes its initial appearance at the end of the <i>Grundgestalt</i>
+(measures 9&ndash;10) at the surface. See <b>Example 10</b>.
+Motive beta is repeated immediately at the surface, then repeats with identical pitch
+classes at the middleground in measures 16&ndash;22. An incomplete beta, G-F-<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D, also provides a
+middleground framework for the closing measures of the development, measures 148&ndash;58. Finally,
+motive beta at the same pitch classes, G-F-<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-C, provides the <i>Urlinie</i> for the
+entire movement. As we progress through the movement, then, we realize that beta is
+undergoing a progressive expansion&mdash;it contributes to the pitch structure on progressively
+higher levels. At the same time, all this expansion is balanced by beta&rsquo;s occurrence
+(again as G-F-<nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-D-C) on the surface at the end of the piece. My <b>Example 11</b> illustrates this. These surface reminders of beta at
+piece&rsquo;s end hook up with motive alpha in an interesting way&mdash;notice that the C that ends
+beta at measure 273 reappears as the goal note of alpha two measures later. In this way, beta
+seems to lead into alpha. But at the beginning of the piece, delta had led into beta in a
+similar way&mdash;see Example 1 again&mdash;the last note
+of delta becomes the first note of beta. We could characterize the interaction between the
+three motives at beginning and end of piece as delta &ldquo;handing off&rdquo; to beta,
+which in turn &ldquo;hands off&rdquo; to alpha. Here also, we have a motivic process that
+shows alpha supplanting delta. </p>
+
+<p>[16] Another aspect of the piece&rsquo;s motivic structure that my account of the dialectic
+involving delta and alpha ignored is the occurrences of these two motives at levels higher
+than the low middleground. There are a number of them, but we will focus on only one,
+portrayed in <b>Example 12</b>. This example
+verticalizes the unfoldings from the second theme in the exposition and changes some
+registers to clearly illustrate the underlying voice-leading. As it turns out, the
+unfoldings in measures 56&ndash;70 project an upper neighbor G-<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-G followed by a lower neighbor
+G-F-G&mdash;a close relative of the inverted alpha motive on <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> that structures the bass line
+in that same passage. </p>
+
+<p>[17] We have seen that a segmentation of Beethoven&rsquo;s Op. 10, No. 1 according to
+Schenkerian principles reveals a succession of motives that closely resembles the
+compositional dialectic of Schoenberg&rsquo;s &ldquo;musical idea.&rdquo; I believe that this
+approach constitutes a new way of combining Schenkerian and Schoenbergian analysis, one
+that could have value for the analysis of works other than Beethoven&rsquo;s. Recently I have
+tried a similar &ldquo;hybrid&rdquo; approach for the analysis of the first movement of
+Mahler&rsquo;s Tenth Symphony and for some of Schoenberg&rsquo;s Op. 6 songs. With both composers,
+&ldquo;Schenkerian-Schoenbergian Analysis&rdquo; led to some significant insights about how
+the music makes sense as a process in time. What is most interesting is that Schoenberg&rsquo;s
+&ldquo;idea&rdquo; is able to form a framework for pitch structures in Beethoven and Mahler
+as well as Schoenberg&rsquo;s own music&mdash;possibly this <i>musikalische Gedanke</i> could be one
+among several keys to understanding the development of music in German-speaking countries
+in the nineteenth and early twentieth centuries.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Jack F. Boss<br>
+	School of Music<br>1225 University of Oregon<br>Eugene, OR 97043-1225<br><a href="mailto:jfboss@oregon.uoregon.edu">jfboss@oregon.uoregon.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> David Beach, &ldquo;Motive and Structure in Beethoven&rsquo;s Piano Sonata Op. 110,
+Part I: The First Movement,&rdquo; <i>Integral</i> 1 (1987): 1&ndash;29; Charles Burkhart,
+&ldquo;Schenker&rsquo;s Motivic Parallelisms,&rdquo; <i>Journal of Music Theory</i> 22 (1978):
+145&ndash;75; Allen Cadwallader and William Pastille, &ldquo;Schenker&rsquo;s High-Level Motives,&rdquo;
+<i>Journal of Music Theory</i> 36 (1992): 119&ndash;48; Roger Kamien, &ldquo;Aspects of Motivic
+Elaboration in the Opening Movement of Haydn&rsquo;s Piano Sonata in <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> Minor,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 77&ndash;93; John Rothgeb, &ldquo;Thematic Content: A Schenkerian View,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 39&ndash;60; Carl Schachter, &ldquo;Motive and Text in Four Schubert Songs,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 61&ndash;76.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> For instance, David Epstein&rsquo;s <i>Beyond Orpheus: Studies in
+Musical Structure</i> (Cambridge, MA: MIT Press, 1979), in general treats the <i>Grundgestalt</i>
+as a unifying interval pattern, while Patricia Carpenter and Severine Neff (and I)
+understand it as the source of a &ldquo;tonal problem&rdquo; that gives rise to a process of
+elaboration and resolution. See the Carpenter and Neff articles cited in footnote 3.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Schoenberg mentions musical idea and its components briefly in
+essays such as &ldquo;New Music, Outmoded Music, Style and Idea,&rdquo; <i>Style and Idea</i>,
+trans. Leo Black, ed. Leonard Stein (Berkeley: University of California Press, 1984), pages
+113&ndash;24, and in <i>Fundamentals of Musical Composition</i>, 2nd ed., ed. Gerald Strang and
+Leonard Stein (London: Faber and Faber, 1970). He treats the concept more substantively in
+his posthumously-published textbook <i>The Musical Idea and the Logic, Technique and Art
+of its Presentation</i>, ed., trans., and with a commentary by Patricia Carpenter and
+Severine Neff (New York: Columbia University Press, 1995), though even there he does not
+present a complete illustration of a musical idea manifested by an individual work. More
+exhaustive applications of Schoenberg&rsquo;s approach are provided by his student Patricia
+Carpenter and Carpenter&rsquo;s student Severine Neff in a series of articles, of which the
+following are representative: Carpenter, &ldquo;<i>Grundgestalt</i> as Tonal
+Function,&rdquo; <i>Music Theory Spectrum</i> 5 (1983): 15&ndash;38; idem, &ldquo;A Problem in
+Organic Form: Schoenberg&rsquo;s Tonal Body,&rdquo; <i>Theory and Practice</i> 13 (1988): 31&ndash;63;
+Neff, &ldquo;Schoenberg and Goethe: Organicism and Analysis,&rdquo; in <i>Music Theory and
+the Exploration of the Past</i>, ed. David Bernstein and Christopher Hatch (Chicago:
+University of Chicago Press, 1993), pages 409&ndash;33.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> John Rothgeb, review of <i>Brahms and the Principle of Developing
+Variation</i> by Walter Frisch, <i>Music Theory Spectrum</i> 9 (1987): 204&ndash;15; idem,
+&ldquo;Thematic Content,&rdquo; 40&ndash;42; Charles Burkhart, &ldquo;Schenker&rsquo;s Motivic
+Parallelisms,&rdquo; 146&ndash;47.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> See footnote 2 for a full reference to Epstein&rsquo;s work.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Such an interpretation of Schoenberg&rsquo;s concept can be traced back
+to Josef Rufer&rsquo;s analysis of the first movement of Beethoven&rsquo;s Sonata Op. 10 No. 1 in <i>Composition
+with Twelve Notes Related Only to One Another</i>, trans. Humphrey Searle (New York:
+Macmillan, 1954), pages 38&ndash;45. Rufer highlights the repetitions and variations of motives in
+the movement&rsquo;s initial phrase, showing how such techniques unify the movement (and mark
+Beethoven as a precursor to Schoenberg the twelve-tone composer), but gives no suggestion
+that a process involving problem, elaboration and resolution organizes the motivic
+variation.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Janet Schmalfeldt, &ldquo;Towards a Reconciliation of Schenkerian
+Concepts with Traditional and Recent Theories of Form,&rdquo; <i>Music Analysis</i> 10/3
+(1991): 233&ndash;87.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> <a href='boss1.gif' target='ex_window'>Example 1</a> also
+illustrates the initial occurrence of a third motive, beta, the descending fifth. Its
+later manifestations in the movement will be discussed at length in paragraph [15].<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> My reading of measures 1&ndash;9 is modeled (though not at every point)
+on Schenker&rsquo;s analysis in &ldquo;Further Consideration of the Urlinie: I,&rdquo; trans. John
+Rothgeb, in <i>The Masterwork in Music</i>, vol. 1, ed. William Drabkin (Cambridge:
+Cambridge University Press, 1994), pages 105&ndash;06. Schenker&rsquo;s graphs at levels d) and c) in
+this analysis not only clearly portray what I am calling motive delta as an ascending
+third harmonized in tenths and my alpha as a neighbor C5-B4-C5 that is then turned into a
+double neighbor through the addition of the diminution D5, but they also give alpha a
+smaller notehead size, marking it as an inner voice in this initial presentation. Schenker
+in the commentary writes about a &ldquo;dispute&rdquo; between alpha and delta,
+characterizing them as &lsquo;competitors&rsquo; for status as principal line and asserting that delta
+deserves preeminence as initial ascent to the primary tone. </p>
+
+<p>The characterization of the two motives in this <i>Grundgestalt</i> as opponents
+actually did not originate with Schenker. He may have been aware that Anton Schindler,
+Beethoven&rsquo;s contemporary and associate, described this same passage as a manifestation of
+the concept of <i>Zwei Principe</i>, which in Beethoven&rsquo;s thinking (according to
+Schindler) involved the opposition of &lsquo;strong&rsquo; and &lsquo;gentle&rsquo; musical characters. See Nancy
+Hager, &ldquo;The First Movements of Mozart&rsquo;s Sonata, K. 457 and Beethoven&rsquo;s Opus 10, No.
+1: a C Minor Connection?,&rdquo; <i>The Music Review</i> 47/2 (1986&ndash;87): 95&ndash;96. </p>
+
+<p>Janet Schmalfeldt in the above-mentioned <i>Music Analysis</i> article (page 256, first
+half of <a href='boss8.gif' target='ex_window'>Example 8</a>) also presents a graph of measures
+1&ndash;9, which differs only in one essential aspect from my reading: she does not interpret
+the D5 in measure 8 as part of a double neighbor figure, but as a chord tone harmonizing the
+middle member of the lower neighbor C-B-C. My reasons for highlighting the D5 as part of
+motive alpha will become obvious; but her reading has the advantage of more faithfully
+following Schenker.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> The transition is not shown in <a href='boss2.gif' target='ex_window'>Example 2</a> to save space in the graphical file; the reader will want
+to refer to the full score for measures 32&ndash;56. Descending groups of three parallel 10ths can be
+heard at measures 34&ndash;36 and measures 38&ndash;40; while measures 42&ndash;46 adds tenths before and after to extend
+the motive to five parallel tenths, and the dominant pedal following measure 48 repeats the
+descending form of delta twice at measures 49&ndash;52 and 53&ndash;56, in soprano and tenor voices. </p>
+
+<p>Schmalfeldt also provides a graph of the second theme in her Ex. 14 (pages 272&ndash;73). The
+reader can compare her analysis with both of my <a href='boss2.gif' target='ex_window'>Examples
+2</a> and <a href='boss3.gif' target='ex_window'>3</a> (Ex. 3 will be discussed in the
+following paragraph). Again, the general perspective&mdash;second theme as a prolongation of <span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>
+over III, a focus on neighbor motion in measures 56&ndash;71 and a middleground descent in measures
+90&ndash;94&mdash;seems to be the same. But we differ on some of the details, especially our readings
+of measures 82&ndash;86. Schmalfeldt hears this passage as a prolongation of <span style='font-size:0.8em'><math><mover><mn>6</mn><mo>&#710;</mo></mover></math></span> over IV (the <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> is
+introduced back in measure 80), enabling her to characterize it as part of a culminating
+development of the G-<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>-G motive that has been prominent throughout the second theme
+(seeher commentary on pages 275&ndash;76). My reading takes the &ldquo;more conventional&rdquo; tack
+of hearing 82&ndash;86 as prolongation of the cadential six-four chord, which enables me to set Bb as
+a consonant starting and ending point for repeated statements of motive alpha.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Robert O. Gjerdingen, <i>A Classic Turn of Phrase</i>
+(Philadelphia: University of Pennsylvania Press, 1988), especially chapters 4 and 5.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> My interpretation of measures 86&ndash;90 as two alpha motives hinges on
+reading the six-four chord in measure 88 as a passing chord within a prolongation of the same chord
+from measure 86 to measure 90. This sort of interpretation has precedents in the Schenkerian
+literature&mdash;for example, Schenker&rsquo;s own reading of measures 21&ndash;28 of J. S. Bach&rsquo;s C-Minor
+Prelude from Book I of the Well-Tempered Clavier. Schenker maintains that a cadential six-four chord in measures 21&ndash;27 resolves to <nobr>V<img border="0" src="../../gifs/53.gif" width="7" height="16" style="vertical-align:text-top"></nobr> at measure 28. The prolongation of the six-four chord is accomplished
+mainly through a neighbor vii<sup>o</sup><nobr><sup>7</sup></nobr>/V. In turn, chromatically-altered chord skips from <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to
+<nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and back to <nobr><span style= 'letter-spacing:-1px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> within this vii<sup>o</sup><nobr><sup>7</sup></nobr>/V are filled in by passing Gs, creating passing six-four chords that are ultimately part of the prolongation of the same chord. See Figure 1 (page 48) and
+the associated commentary (especially pages 50&ndash;51) in Heinrich Schenker, &ldquo;The Organic
+Nature of Fugue as Demonstrated in the C Minor Fugue from Bach&rsquo;s Well-Tempered Clavier,
+Book I,&rdquo; trans. Hedi Siegel, in <i>The Masterwork in Music</i>, vol. 2, ed. William
+Drabkin (Cambridge: Cambridge University Press, 1996), pages 31&ndash;54.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Epstein, <i>Beyond Orpheus</i>, pages 127&ndash;29.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Schoenberg, <i>Fundamentals of Musical Composition</i>, page 9.<br><a href="#FN14REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">David Beach, &ldquo;Motive and Structure in Beethoven&rsquo;s Piano Sonata Op. 110,
+Part I: The First Movement,&rdquo; <i>Integral</i> 1 (1987): 1&ndash;29; Charles Burkhart,
+&ldquo;Schenker&rsquo;s Motivic Parallelisms,&rdquo; <i>Journal of Music Theory</i> 22 (1978):
+145&ndash;75; Allen Cadwallader and William Pastille, &ldquo;Schenker&rsquo;s High-Level Motives,&rdquo;
+<i>Journal of Music Theory</i> 36 (1992): 119&ndash;48; Roger Kamien, &ldquo;Aspects of Motivic
+Elaboration in the Opening Movement of Haydn&rsquo;s Piano Sonata in C&#x266f; Minor,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 77&ndash;93; John Rothgeb, &ldquo;Thematic Content: A Schenkerian View,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 39&ndash;60; Carl Schachter, &ldquo;Motive and Text in Four Schubert Songs,&rdquo; in <i>Aspects
+of Schenkerian Theory</i>, ed. David Beach (New Haven and London: Yale University Press,
+1983), pages 61&ndash;76.</div><div id="fndiv2" class="flyoverdiv">For instance, David Epstein&rsquo;s <i>Beyond Orpheus: Studies in
+Musical Structure</i> (Cambridge, MA: MIT Press, 1979), in general treats the <i>Grundgestalt</i>
+as a unifying interval pattern, while Patricia Carpenter and Severine Neff (and I)
+understand it as the source of a &ldquo;tonal problem&rdquo; that gives rise to a process of
+elaboration and resolution. See the Carpenter and Neff articles cited in footnote 3.</div><div id="fndiv3" class="flyoverdiv">Schoenberg mentions musical idea and its components briefly in
+essays such as &ldquo;New Music, Outmoded Music, Style and Idea,&rdquo; <i>Style and Idea</i>,
+trans. Leo Black, ed. Leonard Stein (Berkeley: University of California Press, 1984), pages
+113&ndash;24, and in <i>Fundamentals of Musical Composition</i>, 2nd ed., ed. Gerald Strang and
+Leonard Stein (London: Faber and Faber, 1970). He treats the concept more substantively in
+his posthumously-published textbook <i>The Musical Idea and the Logic, Technique and Art
+of its Presentation</i>, ed., trans., and with a commentary by Patricia Carpenter and
+Severine Neff (New York: Columbia University Press, 1995), though even there he does not
+present a complete illustration of a musical idea manifested by an individual work. More
+exhaustive applications of Schoenberg&rsquo;s approach are provided by his student Patricia
+Carpenter and Carpenter&rsquo;s student Severine Neff in a series of articles, of which the
+following are representative: Carpenter, &ldquo;<i>Grundgestalt</i> as Tonal
+Function,&rdquo; <i>Music Theory Spectrum</i> 5 (1983): 15&ndash;38; idem, &ldquo;A Problem in
+Organic Form: Schoenberg&rsquo;s Tonal Body,&rdquo; <i>Theory and Practice</i> 13 (1988): 31&ndash;63;
+Neff, &ldquo;Schoenberg and Goethe: Organicism and Analysis,&rdquo; in <i>Music Theory and
+the Exploration of the Past</i>, ed. David Bernstein and Christopher Hatch (Chicago:
+University of Chicago Press, 1993), pages 409&ndash;33.</div><div id="fndiv4" class="flyoverdiv">John Rothgeb, review of <i>Brahms and the Principle of Developing
+Variation</i> by Walter Frisch, <i>Music Theory Spectrum</i> 9 (1987): 204&ndash;15; idem,
+&ldquo;Thematic Content,&rdquo; 40&ndash;42; Charles Burkhart, &ldquo;Schenker&rsquo;s Motivic
+Parallelisms,&rdquo; 146&ndash;47.</div><div id="fndiv5" class="flyoverdiv">See footnote 2 for a full reference to Epstein&rsquo;s work.</div><div id="fndiv6" class="flyoverdiv">Such an interpretation of Schoenberg&rsquo;s concept can be traced back
+to Josef Rufer&rsquo;s analysis of the first movement of Beethoven&rsquo;s Sonata Op. 10 No. 1 in <i>Composition
+with Twelve Notes Related Only to One Another</i>, trans. Humphrey Searle (New York:
+Macmillan, 1954), pages 38&ndash;45. Rufer highlights the repetitions and variations of motives in
+the movement&rsquo;s initial phrase, showing how such techniques unify the movement (and mark
+Beethoven as a precursor to Schoenberg the twelve-tone composer), but gives no suggestion
+that a process involving problem, elaboration and resolution organizes the motivic
+variation.</div><div id="fndiv7" class="flyoverdiv">Janet Schmalfeldt, &ldquo;Towards a Reconciliation of Schenkerian
+Concepts with Traditional and Recent Theories of Form,&rdquo; <i>Music Analysis</i> 10/3
+(1991): 233&ndash;87.</div><div id="fndiv8" class="flyoverdiv"><a href='boss1.gif' target='ex_window'>Example 1</a> also
+illustrates the initial occurrence of a third motive, beta, the descending fifth. Its
+later manifestations in the movement will be discussed at length in paragraph [15].</div><div id="fndiv9" class="flyoverdiv">My reading of measures 1&ndash;9 is modeled (though not at every point)
+on Schenker&rsquo;s analysis in &ldquo;Further Consideration of the Urlinie: I,&rdquo; trans. John
+Rothgeb, in <i>The Masterwork in Music</i>, vol. 1, ed. William Drabkin (Cambridge:
+Cambridge University Press, 1994), pages 105&ndash;06. Schenker&rsquo;s graphs at levels d) and c) in
+this analysis not only clearly portray what I am calling motive delta as an ascending
+third harmonized in tenths and my alpha as a neighbor C5-B4-C5 that is then turned into a
+double neighbor through the addition of the diminution D5, but they also give alpha a
+smaller notehead size, marking it as an inner voice in this initial presentation. Schenker
+in the commentary writes about a &ldquo;dispute&rdquo; between alpha and delta,
+characterizing them as &lsquo;competitors&rsquo; for status as principal line and asserting that delta
+deserves preeminence as initial ascent to the primary tone. 
+
+The characterization of the two motives in this <i>Grundgestalt</i> as opponents
+actually did not originate with Schenker. He may have been aware that Anton Schindler,
+Beethoven&rsquo;s contemporary and associate, described this same passage as a manifestation of
+the concept of <i>Zwei Principe</i>, which in Beethoven&rsquo;s thinking (according to
+Schindler) involved the opposition of &lsquo;strong&rsquo; and &lsquo;gentle&rsquo; musical characters. See Nancy
+Hager, &ldquo;The First Movements of Mozart&rsquo;s Sonata, K. 457 and Beethoven&rsquo;s Opus 10, No.
+1: a C Minor Connection?,&rdquo; <i>The Music Review</i> 47/2 (1986&ndash;87): 95&ndash;96. 
+
+Janet Schmalfeldt in the above-mentioned <i>Music Analysis</i> article (page 256, first
+half of <a href='boss8.gif' target='ex_window'>Example 8</a>) also presents a graph of measures
+1&ndash;9, which differs only in one essential aspect from my reading: she does not interpret
+the D5 in measure 8 as part of a double neighbor figure, but as a chord tone harmonizing the
+middle member of the lower neighbor C-B-C. My reasons for highlighting the D5 as part of
+motive alpha will become obvious; but her reading has the advantage of more faithfully
+following Schenker.</div><div id="fndiv10" class="flyoverdiv">The transition is not shown in <a href='boss2.gif' target='ex_window'>Example 2</a> to save space in the graphical file; the reader will want
+to refer to the full score for measures 32&ndash;56. Descending groups of three parallel 10ths can be
+heard at measures 34&ndash;36 and measures 38&ndash;40; while measures 42&ndash;46 adds tenths before and after to extend
+the motive to five parallel tenths, and the dominant pedal following measure 48 repeats the
+descending form of delta twice at measures 49&ndash;52 and 53&ndash;56, in soprano and tenor voices. 
+
+Schmalfeldt also provides a graph of the second theme in her Ex. 14 (pages 272&ndash;73). The
+reader can compare her analysis with both of my <a href='boss2.gif' target='ex_window'>Examples
+2</a> and <a href='boss3.gif' target='ex_window'>3</a> (Ex. 3 will be discussed in the
+following paragraph). Again, the general perspective&mdash;second theme as a prolongation of 5&#710;
+over III, a focus on neighbor motion in measures 56&ndash;71 and a middleground descent in measures
+90&ndash;94&mdash;seems to be the same. But we differ on some of the details, especially our readings
+of measures 82&ndash;86. Schmalfeldt hears this passage as a prolongation of 6&#710; over IV (the A&#x266d; is
+introduced back in measure 80), enabling her to characterize it as part of a culminating
+development of the G-A&#x266d;-G motive that has been prominent throughout the second theme
+(seeher commentary on pages 275&ndash;76). My reading takes the &ldquo;more conventional&rdquo; tack
+of hearing 82&ndash;86 as prolongation of the cadential six-four chord, which enables me to set Bb as
+a consonant starting and ending point for repeated statements of motive alpha.</div><div id="fndiv11" class="flyoverdiv">Robert O. Gjerdingen, <i>A Classic Turn of Phrase</i>
+(Philadelphia: University of Pennsylvania Press, 1988), especially chapters 4 and 5.</div><div id="fndiv12" class="flyoverdiv">My interpretation of measures 86&ndash;90 as two alpha motives hinges on
+reading the six-four chord in measure 88 as a passing chord within a prolongation of the same chord
+from measure 86 to measure 90. This sort of interpretation has precedents in the Schenkerian
+literature&mdash;for example, Schenker&rsquo;s own reading of measures 21&ndash;28 of J. S. Bach&rsquo;s C-Minor
+Prelude from Book I of the Well-Tempered Clavier. Schenker maintains that a cadential six-four chord in measures 21&ndash;27 resolves to V at measure 28. The prolongation of the six-four chord is accomplished
+mainly through a neighbor viio7/V. In turn, chromatically-altered chord skips from F&#x266f; to
+A&#x266d; and back to F&#x266f; within this viio7/V are filled in by passing Gs, creating passing six-four chords that are ultimately part of the prolongation of the same chord. See Figure 1 (page 48) and
+the associated commentary (especially pages 50&ndash;51) in Heinrich Schenker, &ldquo;The Organic
+Nature of Fugue as Demonstrated in the C Minor Fugue from Bach&rsquo;s Well-Tempered Clavier,
+Book I,&rdquo; trans. Hedi Siegel, in <i>The Masterwork in Music</i>, vol. 2, ed. William
+Drabkin (Cambridge: Cambridge University Press, 1996), pages 31&ndash;54.</div><div id="fndiv13" class="flyoverdiv">Epstein, <i>Beyond Orpheus</i>, pages 127&ndash;29.</div><div id="fndiv14" class="flyoverdiv">Schoenberg, <i>Fundamentals of Musical Composition</i>, page 9.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1999 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

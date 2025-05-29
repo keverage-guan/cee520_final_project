@@ -1,0 +1,469 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 24.4: Mee&ugrave;s, Harmonic Vectors and the Constraints of Tonality</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Harmonic Vectors<br>and the Constraints of Tonality">
+
+    <meta name="citation_author" content="Mee&ugrave;s, Nicolas">
+      
+
+<meta name="citation_publication_date" content="2018/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="24">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+			
+	<h1 style="width:900px; margin-top:1em">Harmonic Vectors<br>and the Constraints of Tonality</h1>
+	<div style="width:900px">
+				</div>
+
+	
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Nicolas Mee&ugrave;s</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: harmonic vectors, tonality, root progressions, asymmetry</font></p><p><font size='4'>ABSTRACT: The theory of harmonic vectors (THV) rests on the hypothesis that tonal functions result from root progressions, not the reverse: it is a transformational theory of the tonal harmonic process. The article discusses three interconnected constraints: the asymmetry of progressions, their limitation to the diatonic span, and the affirmation of the tonic.</font></p><p><small>DOI: 10.30535/mto.24.4.11</small></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.18.24.4/mto.18.24.4.meeus.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.18.24.4/meeus_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received April 2016</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 24, Number 4, December 2018 <br> Copyright &#0169; 2018 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<h2>1. The Theory of Harmonic Vectors</h2>
+
+<p>[1] The <i>Th&eacute;orie des vecteurs harmoniques</i> (&ldquo;Theory of harmonic vectors,&rdquo; or THV) deserves a few words of introduction, even though an English-language presentation has already appeared in <i>Music Theory Online</i>, following the SMT meeting in Atlanta in 1999 (<a href="#mee&ugrave;s_2000" id="citation_mee&ugrave;s_2000_67dc99a66b97a">Mee&ugrave;s 2000</a>; see also <a href="#mee&ugrave;s_1988" id="citation_mee&ugrave;s_1988_67dc99a66b97d">Mee&ugrave;s 1988</a> and <a href="#mee&ugrave;s_1989" id="citation_mee&ugrave;s_1989_67dc99a66b980">1989</a>).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  The THV has been described as close to &ldquo;a pure root-motion theory&rdquo; (<a href="#tymoczko_2003" id="citation_tymoczko_2003_67dc99a66b984">Tymoczko 2003</a>, 3), in that it asserts the syntactic value of harmonic progressions solely in terms of root motions. The THV is based on the conviction that harmonic functions are not inherent in the chords themselves, but arise from the relation between chords and, more specifically, from the progression from one to the next.</p>
+
+<p>[2] The use of the term &ldquo;vector&rdquo; to describe root progressions does not refer so much to its mathematical meaning as to the somewhat metaphorical usage of process philosophy, where the word denotes a flux, a carrier, a transmitter, the dynamic process by which an input is transformed into an output. The conception of harmonic functions as residing in the chord progressions rather than in the chords themselves is a recognition of the fact that, in our traditional view, &ldquo;the &lsquo;scalar&rsquo; form overwhelms the original &lsquo;vector&rsquo; form.&nbsp;.&nbsp;.&nbsp;. The vector form is not lost but is submerged as the foundation of the scalar superstructure&rdquo; (<a href="#whitehead_1978" id="citation_whitehead_1978_67dc99a66b985">Whitehead 1978</a>, 212). As in Newtonian physics, &ldquo;the dominance of the <i>scalar</i> physical quantity&nbsp;.&nbsp;.&nbsp;. obscured the recognition of the truth that all fundamental quantities are <i>vector</i> and not <i>scalar</i>&rdquo; (<a href="#whitehead_1978" id="citation_whitehead_1978_67dc99a66b987">Whitehead 1978</a>, 177). The THV is a transformational theory. A &ldquo;vector,&rdquo; in the sense considered here, is properly speaking a &ldquo;function,&rdquo; linking an output to an input.</p>
+
+<p>[3] An isolated chord has no harmonic function. No chord can be recognized as a dominant or a subdominant unless by its relation to a tonic (or one of its substitutes). Schoenberg expressed a similar point of view when he stated that &ldquo;structural functions are exerted by <i>root progressions</i>&rdquo; (<a href="#schoenberg_1969" id="citation_schoenberg_1969_67dc99a66b989">1969</a>, 6) and when he spoke of &ldquo;a dominant with the function of V&ndash;I&rdquo; (<a href="#schoenberg_1969" id="citation_schoenberg_1969_67dc99a66b98a">1969</a>, 28): the dominant function, in this description, does not reside in the V chord, but in its relation to I. Even the tonic function arises from a retrospective relation to other chords. Harmonic functions, in other words, are <i>transitive</i>, both from a syntactic and from a semantic point of view, both with respect to their position in the tonal syntax and to their tonal meaning (<a href="#mee&ugrave;s_1992" id="citation_mee&ugrave;s_1992_67dc99a66b98c">Mee&ugrave;s 1992</a>).</p>
+
+<p>[4] The THV identifies two types of harmonic vectors. The first type is the <i>dominant vector</i> (DV), the relation between two chords of which the first is a fifth above (or a fourth below) the second in terms of fundamental bass, e.g., V&rarr;I or I&rarr;IV. The second type is the <i>subdominant vector</i> (SV), between two chords of which the first is a fifth below (or a fourth above) the second, e.g., I&larr;V or IV&larr;I. The abstract &ldquo;direction&rdquo; of the vectors, conventionally denoted by arrows pointing to the right for dominant vectors and to the left for subdominant ones, can be equated neither with the succession of the roots in time&mdash;represented by their order from left to right&mdash;nor with the ascending or descending direction of the actual progressions, since the roots are understood as pitch classes. The vector&rsquo;s &ldquo;direction&rdquo; may be considered a &ldquo;semantic&rdquo; direction, for which it would be difficult at this point to propose other translations than merely &ldquo;dominant&rdquo; and &ldquo;subdominant&rdquo;&mdash;or, more generally, &ldquo;function.&rdquo;</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Chord substitutions</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="meeus_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[5] The size of the vectors (the interval of the progression) can be a fourth, a third, a second, or their inversions (fifth, sixth, or seventh). The usual techniques of substitution (e.g., Rameau&rsquo;s <i>double emploi</i> or Riemann&rsquo;s &ldquo;feigned consonances&rdquo;) allow reducing all six to the two types described in paragraph [3] above. Substitutions consist in replacing a chord by the one a third above or below, that is, assuming an implied additional third progression. Reverting the substitutions reduces all progressions to those of a fifth or a fourth&mdash;see <b>Example 1</b>. Because the THV is based on root progressions, neither the mode of the chords nor the size of the second or third progressions is important at this stage (although they may have to be taken in account under some specific conditions). The only progression not covered is that of the tritone (diminished fifth or augmented fourth, ascending or descending), because its direction cannot be ascertained.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Progressions indicated by interval size and direction</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="meeus_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[6] One important premise of the THV is that the progressions are not constrained a priori by the tonality of a work or a passage. On the contrary, tonality itself may be constrained by the progressions. Roman numerals were used above for convenience, but the progressions are assumed to be independent of their position in the tonal scale. The items in Example 1 can be rewritten with symbols denoting by the figures 4, 3, or 2 the magnitude of the interval, and signs + or &ndash; for the ascending or descending direction of the progressions, without assigning them positions in a scale. <b>See Example 2</b>. From this it can be seen that the ambition of the THV is to be able to discuss tonality without presupposing it. It usually is not possible to assign a Roman numeral (or a tonal function) to a chord without having presupposed the tonality that it expresses and the key to which it belongs. Harmonic vectors can be assigned without such presuppositions.</p>
+
+<p>[7] The common conception that tonal progressions are constrained by the tonality, to the point that they actually result from it, usually is subsumed under notions of tonal tension and resolution, which entail ideas of attraction, obligatory voice leading, etc. In such descriptions, the progression V&ndash;I results from the fact that the dominant chord is <i>attracted</i> by the tonic chord, that the leading note is <i>attracted</i> by the tonic note, possibly that the dissonance (the seventh) is <i>attracted</i> by its resolution, and that all these are cases of tonal tension resolving in relaxation. The THV, on the contrary, is based on the conviction that the truth is the other way around, that tension and attraction can only be retrospective. A dominant chord cannot be shown to be attracted by a tonic chord unless it resolves to it; indeed, it cannot be considered a dominant unless it resolves to the tonic&mdash;a so-called &ldquo;dominant&rdquo; chord that does not explicitly or implicitly resolve on a tonic or on one of its substitutes is not truly a dominant. And reciprocally, a &ldquo;tonic&rdquo; that is not included in a &ldquo;dominant&rdquo; relation, a Dominant Vector (DV), of the type V&rarr;I (or a subdominant relation, a SV, of the type IV&larr;I) may not be really a tonic. Tonal functions result from root progressions, they are not their causes.</p>
+
+<p>[8] This is not to say that the THV rejects the semantic value of tension, attraction, or relaxation in tonal music. But these too can only be retrospective: a supposed tension in a chord can too easily be negated by an unexpected resolution. If dominant chords appear in themselves loaded with tonal tension, it can only be by force of habit, that is, by force of the tonal usage and of typical progressions. The &ldquo;dominant&rdquo; meaning does not reside in the chord itself, but in the expected progression following it. Tension and attraction reside in the &ldquo;vector character&rdquo; (Whitehead) of the link between chords.</p>
+
+<p>[9] The THV is dualist in the sense that it considers two possible &ldquo;directions&rdquo; for the harmonic vectors, either &ldquo;dominant&rdquo; or &ldquo;subdominant.&rdquo; This view is similar to Rameau&rsquo;s when he wrote that &ldquo;any fundamental note that is not tonic, and that descends a fifth, is therefore <i>dominant</i>. . . . Any fundamental note that ascends a fifth is always <i>subdominant</i>&rdquo; (<a href="#rameau_1760" id="citation_rameau_1760_67dc99a66ba5a">1760</a>, 29). The THV, however, is not comparable to nineteenth-century German dualism, because that tradition took the tonic itself as its central point: the opposition is between the chord a fifth above and another a fifth below the tonic (which Riemann [<a href="#riemann_1896" id="citation_riemann_1896_67dc99a66ba5c">1896</a>, 7] associated with the tonic&rsquo;s overtone and undertone series, respectively). The directions of the harmonic vectors should also not be confused with the ascending or descending direction of the progression itself: as we have seen, the main &ldquo;dominant&rdquo; progression, for instance, is either <img src='plus4.png'> or <img src='minus5.png'>, where the + and &ndash; signs indicate the ascending or descending direction, while &rarr; denotes the abstract &ldquo;dominant direction.&rdquo;</p>
+
+<h2 id="header-constraints">2. Constraints</h2>
+
+<p>[10] The THV does not consider all degrees entirely free to progress in any direction, but merely avoids discussion in terms of a presupposed tonal hierarchy: the case of tonality is methodologically left aside. De Jong and Noll (<a href="#de_jong_and_noll_2008" id="citation_de_jong_and_noll_2008_67dc99a66ba5e">2008</a>, 87) rightly stress that &ldquo;the assumption of a free unlimited space for the progression of the fundamental bass is not realistic for an advanced theory of harmonic tonality. . . . Tonal harmony constrains the routes taken by the fundament. But little is known about the principles that govern these constraints.&rdquo; They consider nevertheless that &ldquo;although it is desirable to make tonally sensitive fundamental-bass analyses, it is a disembarrassment for the analyst to have a tonally free neutral level of description, where the path of fundaments may be traced without the constraints of bulky theories of harmonic tonality.&rdquo; And they add that the THV &ldquo;highlights aspects of harmony that are submerged in the traditions of scale degree theory and functional harmony. Both traditions pay much attention to the chords or functions in the sense of positions within systems of harmonic signifiers or signifieds, and suffer from a lack of attention for the harmonic <i>process</i>&rdquo; (<a href="#de_jong_and_noll_2008" id="citation_de_jong_and_noll_2008_67dc99a66ba60">2008</a>, 88). The THV indeed is a theory of harmonic processes&mdash;a transformational theory&mdash;but it will not provide a satisfactory explanation of tonality so long as it fails to justify tonal constraints and their relation to the harmonic progressions.</p>
+
+<p>[11] Classifying root progressions in a pure root-motion theory opens questions that should be answered by any theory of tonality, but that are not often raised in this context. The point is not of discovering how &ldquo;tonal harmony constrains the routes taken by the fundament,&rdquo; as De Jong and Noll claim, but instead of describing the rules of root-motion that may constrain tonal harmony. The principal questions can be placed under the following headings:</p>
+
+<p>[11.1] <i>Asymmetry</i>: The asymmetry of the root progressions, by which DV appear more frequent than SV, especially in common practice tonality. The asymmetry (or the directional orientation) itself is a well-known fact, but it is too often explained by tonal attractions, the effect being taken for the cause, as explained above. This problem has been the concern of some recent French research, which deals with, among other things, the statistics of progressions in large corpora (e.g., <a href="#cath&eacute;_2012" id="citation_cath&eacute;_2012_67dc99a66ba71">Cath&eacute; 2012</a> and <a href="#guillotel-nothmann_2017" id="citation_guillotel-nothmann_2017_67dc99a66ba72">Guillotel-Nothmann 2017</a>).</p>
+
+<p>[11.2] <i>Diatonicity</i>: The limited span covered by root progressions, often no more than four or five roots in any given key and usually confined within one or a few diatonic collections in a full composition. A constant succession of <img src="plus4.png"> vectors would inexorably lead away from the starting point: the limitation of the span covered plays an important role in tonal centricity. Mee&ugrave;s (<a href="#mee&ugrave;s_2000" id="citation_mee&ugrave;s_2000_67dc99a66ba75">2000</a>) had already stated that a well-formed tonal phrase requires at least one substitution, but this needs further consideration.</p>
+
+<p>[11.3]<i>Tonicization</i>: The assignment of the position of tonic within the span covered by the progressions probably is constrained mainly by cadences. In the major/minor system the possibilities reduce to just two: if the diatonic scale is presented in the order of six ascending fifths, say F C G D A E B, the major tonic is the second degree (C), the minor tonic is the fifth degree <nobr>(A);<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></nobr>  while in modal polyphony of the sixteenth century, six of the seven degrees could serve as &ldquo;tonic.&rdquo;</p>
+
+<p>[11.4] Asymmetry, diatonicity, and tonicization appear as the three main constraints of tonality. They are interdependent, however, and must at some point be considered together: this is what I will try to indicate in this article, without claiming to afford any definitive answer.</p>
+
+<p>[12] Lerdahl (<a href="#lerdahl_2001" id="citation_lerdahl_2001_67dc99a66ba77">2001</a>) does give some consideration to these questions, but too often takes tonality for granted. He does not really problematize the question of asymmetry: while his geometric representations allow a description of paths and journeys in the tonal space, they do not explain the mechanisms at work or the reasons why these paths usually choose one direction and not the other. His view of diatonicity is restrictive: any accidental seems considered to denote a modulation, or at least a change of diatonic collection. The problem of tonicization therefore seems to reduce for him to considering the diatonic collection concerned.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Arnold Schoenberg, <i>Structural Functions of Harmony</i>, examples 10a, 11a, 12a and 13a (adapted)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="meeus_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[13] Schoenberg did propose a classification of root progressions based on common notes between the two chords involved: in so doing, he took account not only of the interval, but also of the direction of the progression. Much earlier, Rameau (<a href="#rameau_1737" id="citation_rameau_1737_67dc99a66ba7d">1737</a>; <a href="#rameau_1750" id="citation_rameau_1750_67dc99a66ba7e">1750</a>) had done the same, but based on common overtones rather than common notes; this, however, only raises additional problems (that will not be considered here). In Schoenberg&rsquo;s case, he described the progressions as &ldquo;ascending&rdquo; or &ldquo;descending,&rdquo; depending on the relative position of the common tone in each chord, as shown in <b>Example 3</b> (adapted from <a href="#schoenberg_1969" id="citation_schoenberg_1969_67dc99a66ba80">Schoenberg 1969</a>, 6-7, examples 10a, 11a, 12a and 13a). His &ldquo;ascending&rdquo; and &ldquo;descending&rdquo; progressions correspond to what is called here the &ldquo;dominant&rdquo; and &ldquo;subdominant&rdquo; progressions&mdash;except for the important difference that he did not include progressions by a second, which he placed in a separate category of &ldquo;superstrong&rdquo; progressions.</p>
+
+<p>[14] The case of progressions with two common notes (progressions by a third) tacitly involves the additional criterion of diatonicity. In the example from Schoenberg above, the descending third progression, I&ndash;VI, is a minor third from major to minor, because in a diatonic scale the chord a third below a major one always is minor and always distant by a minor third; the ascending one, I&ndash;III, is a major third, again from major to minor, for similar reasons. The mode of the chords cannot be changed unless the size of the intervals and the direction of the progression are modified at the same time. And any other third progression would not be diatonic: such progressions are possible in nineteenth-century harmony, where they form the essence of the <i>romantische Terzverwandtschaft</i>, but they cannot involve two common tones.</p>
+
+<p>[15] Diatonicity also constrains progressions up or down a second between major or minor triads: the progression, in these cases, must involve a major second (a whole tone), or would result in a false (non-diatonic) relation between the fifth of the lower chord and the prime of the higher one. In order to remain diatonic, a progression of a semitone must include a diminished triad as its lower chord. Fourth progressions are less constrained: they may occur between major or minor triads; however, the progression of a fourth with a change of mode can occur only if the major chord is the higher, that is, ascending from minor to major or descending from major to minor.</p>
+
+<p>[16] Because several of the diatonic constraints just described apparently concern voice leading more than progressions of the fundamental bass, a word must be said at this point concerning the relation between them. Primarily concerned with the parsimony of the voice leading, neo-Riemannian theory tends to reduce all root progressions to those involving only one movement in the voice leading&mdash;in the case of diatonic progressions between triads, progressions with two common notes, and progressions by a third. But this involves the problems briefly described in [14] above. It is necessary to take account of both the ascending or descending direction of the progression and the major or minor interval covered: the voice leading then appears to determine the root progression.</p>
+
+<p>[17] Matthew Shirlaw discussed the double nature of Rameau&rsquo;s <i>basse fondamentale</i>, on the one hand expressing the theory of chord inversion&mdash;in which case the fundamental note really is the root of the chord&mdash;and on the other hand trying &ldquo;to discover the underlying principles that govern the progressions from one harmony to another&rdquo; (<a href="#shirlaw_1917" id="citation_shirlaw_1917_67dc99a66ba82">1917</a>, 98)&mdash;in which case the fundamental bass forms a more abstract view of the whole. The fundamental bass may be seen in first instance to represent the succession of the roots (see, for instance, <a href="#brower_2008" id="citation_brower_2008_67dc99a66ba90">Brower 2008</a>, 69&ndash;70), but at a more speculative level it forms an abstract representation of the harmonic/polyphonic complex as a whole. As Rameau himself wrote, &ldquo;with respect to the progression of the parts that include each one note of these chords, . . . it must be diatonic and this obligation arises from the consonant progression of the fundamental bass; therefore, if one knows the size of the intervals, one feels inclined as if involuntarily to give to the high parts this diatonic progression&rdquo; (<a href="#rameau_1722" id="citation_rameau_1722_67dc99a66ba92">1722</a>, 52; on his theories of voice leading, see also Book II, Chap. XIX). Rameau considers that the progression of the individual parts is ruled by that of the fundamental bass, but this could as easily be reversed, the voice leading ruling the fundamental bass. For our purpose, it will suffice to consider that they represent each other and that, especially in terms of pitch classes, the progression of the fundamental bass merely subsumes the progressions of the parts.</p>
+
+<h2>3. Analyses</h2>
+
+<p>[18] In all the examples below, the fundamental bass is notated on a separate staff under the score, with the following conventions: half notes denote major chords, quarter notes minor chords; DV (dominant vectors) are indicated by arrows pointing to the right, SV (subdominant vectors) by arrows pointing to the left; thick arrows mark progressions by a fourth, thin ones indicate a substitution (that is, progressions by a third or a second). Main cadences are underlined by a &ldquo;swan slur&rdquo; stressing the succession predominant&ndash;dominant&mdash;that is, a major chord preceded by another one a second or a fourth lower and followed by another one a fourth above or a fifth below.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  A statistical overview is given, showing the number of pitch classes, major triads, dissonances, roots, and DV. As the examples and statistics will show, the THV allows an approach to tonality different from that of our usual analytic usages.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Lassus, <i>Bonjour mon Coeur</i> (1564), mm. 16&ndash;22</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="meeus_ex4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[19] The first example is a fragment from Lassus&rsquo;s <i>Bonjour mon Coeur</i> (1564), mm. 16&ndash;22&mdash;see <b>Example 4</b>. The fragment&rsquo;s overall key may be D minor or D Aeolian, but if so with a very high tonal instability despite the extremely strong asymmetry (94% of DV).<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The bass covers one single diatonic collection, the seven notes of the cycle of fifths from <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to E. All triads are in root position: the bass part and the fundamental bass are identical. Cadences follow each other almost without interruption but in too many different keys to produce any sense of tonal stability (E is the only root not approached by a cadence). The fast succession of major triads&mdash;all seven roots support at least one major triad&mdash;obviously could not belong to one single diatonic collection, and it produces frequent chromatic relations: this is one of the stylistic features that make this fragment (and the piece itself) hardly tonal.</p>
+
+<p>[20] Questions raised by this fragment concern both the very high asymmetry and the composer&rsquo;s attitude concerning diatonicity. Even although it is not the purpose of this paper to discuss sixteenth-century harmonic usages, one may note that the chromatic inflections in the upper voices (<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) always concern the third of the triad, transforming minor chords into major ones (the only exception being the G minor triad in m. 21). As such, they must be considered of the order of <i>musica ficta</i>&mdash;they represent mere inflections of an essentially diatonic substrate, as evidenced by the diatonic bass part, and with relatively little concern for the affirmation of a unified key. This may be a general characteristic of sixteenth-century modal polyphony, even in less chromatic compositions.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Lassus, <i>Bonjour mon Coeur</i> (1564), mm. 1&ndash;6</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="meeus_ex5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[21] The passage above may be compared with the beginning of the same piece, mm. 1&ndash;6 (<b>Example 5</b>; mm. 6&ndash;12 are a repeat of the same). Here the music is more clearly diatonic (the few chromatic inflections are concentrated in m. 5), and it may give a more coherently tonal effect, despite the lack of asymmetry. The key of G (the main key of the piece as a whole) indicates a Mixolydian mode&mdash;that is, a &ldquo;tonic&rdquo; in third position in the cycle of ascending fifths. The major triads on F, C, and G are those dictated by the diatonic system of the piece (in <i>systema regulare</i>, that is, without key signature); the single triad on A and one of the two on D are rendered major by an inflection of their thirds in m. 5; this also is the sole full cadence in the fragment. The first measures of the fragment are occupied mainly by &ldquo;pendular&rdquo; progressions, C&ndash;G&ndash;C, G&ndash;C&ndash;G, or C&ndash;F&ndash;C.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Melchior Vulpius, chorale <i>Christus, der ist mein Leben</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="meeus_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[22] Let us turn to a second example, the chorale <i>Christus, der ist mein Leben</i>, by Melchior Vulpius (1609; <b>Example 6</b>). There are five different roots, and these are not equally distributed: ten chords on F, five on C, three each on G and on <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (which are substitutions for each other), and just one on D. All pitch classes, in addition, belong to the diatonic collection in the cycle of fifths from <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;E. Yet, the asymmetry remains rather low, with only 64% of DV. It is therefore the diatonicity of the pitch classes and the irregular distribution of the roots (almost one chord out of every two is an F triad) that marks the somewhat more tonal effect of this piece. The number of &ldquo;pendular&rdquo; progressions remains rather high and they always concern F (F&ndash;C&ndash;F, F&ndash;<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;F or F&ndash;G&ndash;F). On the other hand, of the six cadence figures, four are on <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, against two on F.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. J.S. Bach, setting of <i>Christus, der ist mein Leben</i>, BWV 281</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="meeus_ex7_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[23] J. S. Bach&rsquo;s realization of the same chorale (BWV 281; see <b>Example 7</b>) at first appears less diatonic, with nine different pitch classes instead of seven. The additional pitch classes are the passing <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in m. 1 and two <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr>s (mm. 5 and 6). The third phrase, framed in the example below, is written in a different diatonic collection, fifths from F to B instead of from <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> to E; the shift in the diatonic collection is confirmed by the cadence on C at the end of phrase 3&mdash;compare the example by Vulpius above, where all four phrases end on an F triad. On the basis of this example, it would seem that modulation itself may have to be considered an additional constraint on tonality. The reason remains unclear, but it may correspond to a desire to stress the diatonic scale and to reserve chromatic inflections to wider spans, resulting in changes in diatonic collections, instead of a lack of concern for diatonicity, as in the first Lassus example above.</p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Max Reger, setting of <i>Christus, der ist mein Leben</i>, op. 79b, no. 9</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="meeus_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and see the rest)</font></p></fig>
+
+<p>[24] The last example, Max Reger&rsquo;s harmonization of the same melody, his op. 79b, no. 9 (<b>Example 8</b>),<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> raises additional questions concerning the harmonic analysis itself. Because of the large amount of figuration (passing and neighbor notes), the identification of the chords is not as straightforward as in the previous examples.</p>
+
+<p>[24.1] In some cases, although the voice leading produces vertical arrangements of notes that could be identified as chords, these would result in a questionable harmony, as in m. 3; these &ldquo;chords&rdquo; have not been included in the calculations. In other cases, chords that produce a coherent harmony nevertheless could also be explained as resulting from the voice leading: their roots are then inscribed as notes without stem. Pendular progressions (upbeat to m. 1; mm. 5 and 8) are not included. In the other cases, the corresponding vectors have been inscribed above the main line of vectors, but they have not been taken in account for the statistics. One could easily verify that they would not significantly modify the statistics.</p>
+
+<p>[24.2] The remaining chords evidence a harmonic rhythm similar to that of the previous examples. Some of them could also be explained as resulting from the voice leading and therefore may not qualify as <i>Stufen</i> in the Schenkerian meaning of the term. The question whether more elaborated <i>Stufen</i> could be taken in account in the THV, and how, will not retain us here, but it remains an open question for future research.</p>
+
+<p>[25] Reger&rsquo;s version of <i>Christus, der ist mein Leben</i> shares several features with the first Lassus fragment studied above: it is fully chromatic (12 pitch classes), with all 6 roots supporting at least one major chord. It would be pointless to try to single out any diatonic collection for any significant span of time. The asymmetry is extremely high, 93%. Cadences conclude on five of the six roots, F, G, <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, C, and D. More specifically, the first phrase cadences on D in m. 2, the second phrase ends in D without a formal cadence; the third cadences in C; and the fourth in F.</p>
+
+<p>[26] To some extent, such a piece closes the era of common practice tonality by returning to usages of the late sixteenth century. There are important differences, however. While several of the chromatic alterations do function to change the mode of the chords, the proportion of major chords (73%) nevertheless remains lower than in the preceding examples (the identification of the chords&rsquo; quality, however, is moot in more than one instance). Many chromatic degrees are passing notes, foreign to the harmony. The first half of the piece may be described as being in D minor, a tonality that was not even hinted at in the Vulpius and Bach examples. The importance given to the minor relative of F major may be put in relation with the rather high percentage of root progressions by third, more frequent here than those by second: this reflects the importance of <i>Terzverwandschaften</i> in nineteenth-century tonality.</p>
+
+<p style="text-align:center">*	    *	        * </p>
+
+<fig>
+ <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Vulpius (?), <i>Christus, der ist mein Leben</i> (1609), melody</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="meeus_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="meeus_ex9_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[27] Identifying the tonality of a tonal work is a complex task, involving many interrelated characteristics. One point that the above discussion fails to take into account is that the melody <i>Christus, der ist mein Leben</i>, probably by Vulpius (1609), already is &ldquo;tonal&rdquo; in its monodic form: <b>Example 9</b>. It is not useful to discuss whether this is transposed Ionian, or Lydian, or F major. The melody covers one octave from F4 to F5, with a single lower neighbor note E4, clear ascending and descending arpeggiations F4&ndash;A4&ndash;C5&ndash;F5&ndash;C5&ndash;A4&ndash;F4, a conspicuous upper neighbor D5 above C5, and passing notes filling in this &ldquo;tonal space.&rdquo; Root progressions, or more generally the harmony, in such a piece may not be sufficient to describe its tonality.</p>
+
+<p>[28] The THV proposes a novel way of approaching and analyzing harmony; more specifically, it proposes an alternative view of harmonic functions. It appears particularly convenient for the statistical study of corpora&mdash;that is, it may be a help for stylistic analysis. It does not say&mdash;no more than any other analytic method&mdash;whether a piece is tonal, modal, or anything. But it does give insight into the inner functioning of harmony, and it does open paths for further research.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Nicolas Mee&ugrave;s<br>
+	Institut de Recherche en Musicologie (IReMus &ndash; UMR 8223)<br>2 rue de Louvois<br>75002 Paris, France<br><a href="mailto:nicolas.meeus@sorbonne-universite.fr">nicolas.meeus@sorbonne-universite.fr</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_brower_2008" class="flyoverdiv">Brower, Candace. 2008. &ldquo;Paradoxes of Pitch Space.&rdquo; <i>Music Analysis</i> 27 (1): 51&ndash;106.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brower_2008"></a>Brower, Candace. 2008. &ldquo;Paradoxes of Pitch Space.&rdquo; <i>Music Analysis</i> 27 (1): 51&ndash;106.</p><div id="citediv_cath&eacute;_2012" class="flyoverdiv">Cath&eacute;, Philippe. 2012. &ldquo;Synchronie et diachronie: musique fran&ccedil;aise (1870&ndash;1950) et th&eacute;orie des vecteurs harmoniques.&rdquo; Thesis (Habilitation), Universit&eacute; Paris-Sorbonne.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cath&eacute;_2012"></a>Cath&eacute;, Philippe. 2012. &ldquo;Synchronie et diachronie: musique fran&ccedil;aise (1870&ndash;1950) et th&eacute;orie des vecteurs harmoniques.&rdquo; Thesis (Habilitation), Universit&eacute; Paris-Sorbonne.</p><div id="citediv_de_jong_and_noll_2008" class="flyoverdiv">De Jong, Karst, and Thomas Noll. 2008. &ldquo;Contiguous Fundamental Bass Progressions.&rdquo; <i>Dutch Journal of Music Theory</i> 13 (1): 84&ndash;97.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="de_jong_and_noll_2008"></a>De Jong, Karst, and Thomas Noll. 2008. &ldquo;Contiguous Fundamental Bass Progressions.&rdquo; <i>Dutch Journal of Music Theory</i> 13 (1): 84&ndash;97.</p><div id="citediv_guillotel-nothmann_2017" class="flyoverdiv">Guillotel-Nothmann, Christophe. 2017. <i>Asym&eacute;trie conditionnelle et asym&eacute;trie spontan&eacute;e des progressions harmoniques. Le r&ocirc;le des dissonances dans la cristallisation de la syntaxe harmonique tonale, c. 1530&ndash;1745</i>. PubliQation &ndash; Academic Publishing</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guillotel-nothmann_2017"></a>Guillotel-Nothmann, Christophe. 2017. <i>Asym&eacute;trie conditionnelle et asym&eacute;trie spontan&eacute;e des progressions harmoniques. Le r&ocirc;le des dissonances dans la cristallisation de la syntaxe harmonique tonale, c. 1530&ndash;1745</i>. PubliQation &ndash; Academic Publishing</p><div id="citediv_hedges_and_rohrmeier_2011" class="flyoverdiv">Hedges, Thomas, and Martin Rohrmeier. 2011. &ldquo;Exploring Rameau and Beyond: A Corpus Study of Root Progression Theories.&rdquo; <i>Mathematics and Computation in Music</i>, C. Agon e.a. ed., Berlin, Heidelberg: Springer, 334&ndash;7. <br>Online: <a href='https://www.academia.edu/18037648/Exploring_Rameau_and_Beyond_A_Corpus_ Study_of_Root_Progression_Theories'>https://www.academia.edu/18037648/Exploring_Rameau_and_Beyond_A_Corpus_ Study_of_Root_Progression_Theories</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hedges_and_rohrmeier_2011"></a>Hedges, Thomas, and Martin Rohrmeier. 2011. &ldquo;Exploring Rameau and Beyond: A Corpus Study of Root Progression Theories.&rdquo; <i>Mathematics and Computation in Music</i>, C. Agon e.a. ed., Berlin, Heidelberg: Springer, 334&ndash;7. <br>Online: <a href='https://www.academia.edu/18037648/Exploring_Rameau_and_Beyond_A_Corpus_ Study_of_Root_Progression_Theories'>https://www.academia.edu/18037648/Exploring_Rameau_and_Beyond_A_Corpus_ Study_of_Root_Progression_Theories</a></p><div id="citediv_lerdahl_2001" class="flyoverdiv">Lerdahl, Fred. 2001. <i>Tonal Pitch Space</i>. Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lerdahl_2001"></a>Lerdahl, Fred. 2001. <i>Tonal Pitch Space</i>. Oxford University Press.</p><div id="citediv_mee&ugrave;s_1988" class="flyoverdiv">Mee&ugrave;s, Nicolas. 1988. &ldquo;Vecteurs harmoniques : Essai d&rsquo;une syst&eacute;matique des progressions harmoniques.&rdquo; <i>Fascicules d&rsquo;Analyse Musicale</i> I (3): 87&ndash;106. <br>Online: <a href='http://nicolas.meeus.free.fr/NMVecteurs/Vecteurs.pdf'>http://nicolas.meeus.free.fr/NMVecteurs/Vecteurs.pdf</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mee&ugrave;s_1988"></a>Mee&ugrave;s, Nicolas. 1988. &ldquo;Vecteurs harmoniques : Essai d&rsquo;une syst&eacute;matique des progressions harmoniques.&rdquo; <i>Fascicules d&rsquo;Analyse Musicale</i> I (3): 87&ndash;106. <br>Online: <a href='http://nicolas.meeus.free.fr/NMVecteurs/Vecteurs.pdf'>http://nicolas.meeus.free.fr/NMVecteurs/Vecteurs.pdf</a></p><div id="citediv_mee&ugrave;s_1989" class="flyoverdiv">Mee&ugrave;s, Nicolas. 1989. &ldquo;Syst&eacute;matique des progressions harmoniques.&rdquo; <i>Fascicules d&rsquo;Analyse Musicale</i> II (1): 11&ndash;20. <br>Online: <a href='http://nicolas.meeus.free.fr/NMVecteurs/Systematique.pdf'>http://nicolas.meeus.free.fr/NMVecteurs/Systematique.pdf</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mee&ugrave;s_1989"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1989. &ldquo;Syst&eacute;matique des progressions harmoniques.&rdquo; <i>Fascicules d&rsquo;Analyse Musicale</i> II (1): 11&ndash;20. <br>Online: <a href='http://nicolas.meeus.free.fr/NMVecteurs/Systematique.pdf'>http://nicolas.meeus.free.fr/NMVecteurs/Systematique.pdf</a></p><div id="citediv_mee&ugrave;s_1992" class="flyoverdiv">Mee&ugrave;s, Nicolas. 1992. &ldquo;Transitivit&eacute;, rection, fonctions tonales. Une approche cognitive de la tonalit&eacute;.&rdquo; <i>Analyse musicale</i> 26: 26&ndash;29. <br>Online: <a href='http://nicolas.meeus.free.fr/NMSemio/NMTransitivite.pdf'>http://nicolas.meeus.free.fr/NMSemio/NMTransitivite.pdf</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mee&ugrave;s_1992"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1992. &ldquo;Transitivit&eacute;, rection, fonctions tonales. Une approche cognitive de la tonalit&eacute;.&rdquo; <i>Analyse musicale</i> 26: 26&ndash;29. <br>Online: <a href='http://nicolas.meeus.free.fr/NMSemio/NMTransitivite.pdf'>http://nicolas.meeus.free.fr/NMSemio/NMTransitivite.pdf</a></p><div id="citediv_mee&ugrave;s_2000" class="flyoverdiv">Mee&ugrave;s, Nicolas. 2000. &ldquo;Toward a Post-Schœnbergian Grammar of Tonal and Pre-tonal Harmonic Progressions.&rdquo; Paper read at the annual meeting of the Society for Music Theory, Atlanta, November 13, 1999. <i>Music Theory Online</i> 6.1: <a href='http://www.mtosmt.org/issues/mto.00.6.1/mto.00.6.1.meeus.html'>http://www.mtosmt.org/issues/mto.00.6.1/mto.00.6.1.meeus.html</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mee&ugrave;s_2000"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000. &ldquo;Toward a Post-Schœnbergian Grammar of Tonal and Pre-tonal Harmonic Progressions.&rdquo; Paper read at the annual meeting of the Society for Music Theory, Atlanta, November 13, 1999. <i>Music Theory Online</i> 6.1: <a href='http://www.mtosmt.org/issues/mto.00.6.1/mto.00.6.1.meeus.html'>http://www.mtosmt.org/issues/mto.00.6.1/mto.00.6.1.meeus.html</a></p><div id="citediv_rameau_1722" class="flyoverdiv">Rameau, Jean-Philippe. 1722. <i>Trait&eacute; de l&rsquo;harmonie: r&eacute;duite &agrave; ses principes naturels</i>. Imprimerie royale. Online: <a href='http://gallica.bnf.fr/ark:/12148/btv1b550084575?rk=21459;2'>http://gallica.bnf.fr/ark:/12148/btv1b550084575?rk=21459;2</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rameau_1722"></a>Rameau, Jean-Philippe. 1722. <i>Trait&eacute; de l&rsquo;harmonie: r&eacute;duite &agrave; ses principes naturels</i>. Imprimerie royale. Online: <a href='http://gallica.bnf.fr/ark:/12148/btv1b550084575?rk=21459;2'>http://gallica.bnf.fr/ark:/12148/btv1b550084575?rk=21459;2</a></p><div id="citediv_rameau_1737" class="flyoverdiv">Rameau, Jean-Philippe. 1737. <i>G&eacute;n&eacute;ration harmonique ou Trait&eacute; de musique th&eacute;orique et pratique</i>. Prault fils. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/btv1b8623285t'>http://gallica.bnf.fr/ark:/12148/btv1b8623285t</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rameau_1737"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1737. <i>G&eacute;n&eacute;ration harmonique ou Trait&eacute; de musique th&eacute;orique et pratique</i>. Prault fils. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/btv1b8623285t'>http://gallica.bnf.fr/ark:/12148/btv1b8623285t</a></p><div id="citediv_rameau_1750" class="flyoverdiv">Rameau, Jean-Philippe. 1750. <i>D&eacute;monstration du principe de l&rsquo;harmonie</i>. Durand, Pissot. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/bpt6k1082246'>http://gallica.bnf.fr/ark:/12148/bpt6k1082246</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rameau_1750"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1750. <i>D&eacute;monstration du principe de l&rsquo;harmonie</i>. Durand, Pissot. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/bpt6k1082246'>http://gallica.bnf.fr/ark:/12148/bpt6k1082246</a></p><div id="citediv_rameau_1760" class="flyoverdiv">Rameau, Jean-Philippe. 1760. <i>Code de musique pratique</i>. Imprimerie royale. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/bpt6k1080202'>http://gallica.bnf.fr/ark:/12148/bpt6k1080202</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rameau_1760"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1760. <i>Code de musique pratique</i>. Imprimerie royale. <br>Online: <a href='http://gallica.bnf.fr/ark:/12148/bpt6k1080202'>http://gallica.bnf.fr/ark:/12148/bpt6k1080202</a></p><div id="citediv_riemann_1896" class="flyoverdiv">Riemann, Hugo. 1896. <i>Harmony Simplified or the Theory of the Tonal Functions of Chords</i>. Third printing. Augener.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riemann_1896"></a>Riemann, Hugo. 1896. <i>Harmony Simplified or the Theory of the Tonal Functions of Chords</i>. Third printing. Augener.</p><div id="citediv_schoenberg_1969" class="flyoverdiv">Schoenberg, Arnold. 1969. <i>Structural Functions of Harmony</i>. Revised edition. L. Stein ed. Faber & Faber. First edition 1954.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schoenberg_1969"></a>Schoenberg, Arnold. 1969. <i>Structural Functions of Harmony</i>. Revised edition. L. Stein ed. Faber & Faber. First edition 1954.</p><div id="citediv_shirlaw_1917" class="flyoverdiv">Shirlaw, Matthew. 1917. <i>The Theory of Harmony</i>. Novello.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shirlaw_1917"></a>Shirlaw, Matthew. 1917. <i>The Theory of Harmony</i>. Novello.</p><div id="citediv_tymoczko_2003" class="flyoverdiv">Tymoczko, Dmitri. 2003. &ldquo;Root Motion, Function, Scale-degree.&rdquo; English version, <a href='http://dmitri.mycpanel.princeton.edu/files/publications/tonaltheories.pdf'>http://dmitri.mycpanel.princeton.edu/files/publications/tonaltheories.pdf</i></a>. Original in French: <i>Musurgia</i> X (3&ndash;4): 35&ndash;64.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tymoczko_2003"></a>Tymoczko, Dmitri. 2003. &ldquo;Root Motion, Function, Scale-degree.&rdquo; English version, <a href='http://dmitri.mycpanel.princeton.edu/files/publications/tonaltheories.pdf'>http://dmitri.mycpanel.princeton.edu/files/publications/tonaltheories.pdf</i></a>. Original in French: <i>Musurgia</i> X (3&ndash;4): 35&ndash;64.</p><div id="citediv_whitehead_1978" class="flyoverdiv">Whitehead, Alfred North. 1978. <i>Process and Reality. An Essay in Cosmology</i>. Corrected edition, D. R. Griffin and D.W. Sherburne, eds. The Free Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="whitehead_1978"></a>Whitehead, Alfred North. 1978. <i>Process and Reality. An Essay in Cosmology</i>. Corrected edition, D. R. Griffin and D.W. Sherburne, eds. The Free Press.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Several publications about the THV may be found at, or obtained through, <a href='http://nicolas.meeus.free.fr/NMVecteurs.html'>http://nicolas.meeus.free.fr/NMVecteurs.html</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Although this description of the minor is not entirely accurate&mdash;since it presupposes that the &ldquo;normal&rdquo; version is diatonic (the Aeolian scale), some degrees of this scale possibly being accidentally altered&mdash;the point will not be further explored in this article.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> This is a quite restrictive definition of &ldquo;cadence,&rdquo; resulting from the fact that no consideration is taken of position in the tonal scale. Cadences in this sense do not need to end on I or V, nor do they need to contain V as penultimate chord. Even the condition that the penultimate chord be major would in fact be unnecessary: as Christophe Guillotel-Nothmann explains in his article, the leading tone and its resolution are not considered essential for a dominant progression. Leading tones belong to the realm of <i>rection</i> (see also <a href="#mee&ugrave;s_1992" id="citation_mee&ugrave;s_1992_67dc99a666dd6">Mee&ugrave;s 1992</a>). It is only for the sake of my argument that the narrower definition of cadence has been chosen here, that is, the one that presupposes a major chord as penultimate.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Tymoczko (<a href="#tymoczko_2003" id="citation_tymoczko_2003_67dc99a666ddd">2003</a>, 4) writes that the THV takes asymmetries &ldquo;to characterize the difference between modal and tonal styles,&rdquo; and Hedges & Rohrmeier (<a href="#hedges_and_rohrmeier_2011" id="citation_hedges_and_rohrmeier_2011_67dc99a666de0">Hedges and Rohrmeier 2011</a>, 336) claim that the THV &ldquo;suggest[s] the strength of dominant/subdominant symmetry to be a useful distinction between tonal and pre-tonal music.&rdquo; These are misconceptions, or at least overstatements: the asymmetry, at best, is one indication among several, and certainly cannot serve as a measure of the level at which a piece is tonal.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> The case of pendular progressions will not be pursued further here. It may be noted that they often consist in progressions of a fourth or fifth and that they do not occur on all degrees of the diatonic scale. As such, they could represent interesting case studies for the link between progressions and tonality.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> The original is in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, a tone lower. It has been transposed here for the sake of comparison.<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Several publications about the THV may be found at, or obtained through, <a href='http://nicolas.meeus.free.fr/NMVecteurs.html'>http://nicolas.meeus.free.fr/NMVecteurs.html</a>.</div><div id="fndiv2" class="flyoverdiv">Although this description of the minor is not entirely accurate&mdash;since it presupposes that the &ldquo;normal&rdquo; version is diatonic (the Aeolian scale), some degrees of this scale possibly being accidentally altered&mdash;the point will not be further explored in this article.</div><div id="fndiv3" class="flyoverdiv">This is a quite restrictive definition of &ldquo;cadence,&rdquo; resulting from the fact that no consideration is taken of position in the tonal scale. Cadences in this sense do not need to end on I or V, nor do they need to contain V as penultimate chord. Even the condition that the penultimate chord be major would in fact be unnecessary: as Christophe Guillotel-Nothmann explains in his article, the leading tone and its resolution are not considered essential for a dominant progression. Leading tones belong to the realm of <i>rection</i> (see also <a href="#mee&ugrave;s_1992" id="citation_mee&ugrave;s_1992_67dc99a666dd6">Mee&ugrave;s 1992</a>). It is only for the sake of my argument that the narrower definition of cadence has been chosen here, that is, the one that presupposes a major chord as penultimate.</div><div id="fndiv4" class="flyoverdiv">Tymoczko (<a href="#tymoczko_2003" id="citation_tymoczko_2003_67dc99a666ddd">2003</a>, 4) writes that the THV takes asymmetries &ldquo;to characterize the difference between modal and tonal styles,&rdquo; and Hedges & Rohrmeier (<a href="#hedges_and_rohrmeier_2011" id="citation_hedges_and_rohrmeier_2011_67dc99a666de0">Hedges and Rohrmeier 2011</a>, 336) claim that the THV &ldquo;suggest[s] the strength of dominant/subdominant symmetry to be a useful distinction between tonal and pre-tonal music.&rdquo; These are misconceptions, or at least overstatements: the asymmetry, at best, is one indication among several, and certainly cannot serve as a measure of the level at which a piece is tonal.</div><div id="fndiv5" class="flyoverdiv">The case of pendular progressions will not be pursued further here. It may be noted that they often consist in progressions of a fourth or fifth and that they do not occur on all degrees of the diatonic scale. As such, they could represent interesting case studies for the link between progressions and tonality.</div><div id="fndiv6" class="flyoverdiv">The original is in E&#x266d; major, a tone lower. It has been transposed here for the sake of comparison.</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2018 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Brent Yorgason, Managing Editor  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		7710
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

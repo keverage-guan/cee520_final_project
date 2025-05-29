@@ -1,0 +1,441 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 20.1: Gann, Outside the Feedback Loop</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Outside the Feedback Loop: A Nancarrow Keynote Address">
+
+    <meta name="citation_author" content="Gann, Kyle">
+      
+
+<meta name="citation_publication_date" content="2014/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="20">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Outside the Feedback Loop: A Nancarrow Keynote Address
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Kyle Gann</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Conlon Nancarrow, Henry Cowell, American experimental tradition, player piano</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.14.20.1/mto.14.20.1.gann.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 20, Number 1, March 2014 <br> Copyright &#0169; 2014 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-- - - - - - - - - - - ARTICLE BODY (begin) - - - - - - - - - - - - - - - - - -->
+
+<p>[1] There is a point in an artist&#8217;s life, I think, when quality of lifestyle begins to be more important than career issues. Conlon Nancarrow was not a great model for a composing career, but he was a great model for a life. My last visit to Conlon was in 1993, when he was 80, and the previous week he had been visited by a German film crew that was making a documentary about him. He was still complaining about how much of his time they had taken up, how they had dragged their equipment all through his house and made him play the Study No. 21 on the player piano over and over again while they got the lighting and the sound right. If a German film crew came to make a documentary about me, I&#8217;d think I had finally hit the big time. Most composers tend to consider exposure and publicity the greatest possible good, and for a composer to remain undiscovered until the age of 65, as Conlon did, sounds like a harsh fate, a recipe for bitterness. For Conlon, however, such celebrity as he enjoyed seemed merely a distraction from his tequila and fresh papayas.</p>
+
+<p>[2] Conlon taught me to drink tequila. I had never thought much about tequila, though I enjoyed margaritas and tequila sunrises. Once, upon arriving at his house, before even taking my bags to the bedroom he immediately poured me some El Jimador tequila in a tall, exquisitely thin glass, and taught me how to savor it. That was an education that nearly led me down the primrose path to degradation. I rarely indulge in straight tequila at my age, but when I do, I insist on El Jimador, and drink it slowly the way he showed me.</p>
+
+<p>[3] Conlon also had a basket in his dining room in which he put the papayas and mangos he grew in his backyard. The papaya, as we know it in the United States, is a third-rate fruit with a pulpy texture and cloying, artificial taste, jammed into jars in thick, sour syrup. But upon visiting Conlon I learned that an absolutely fresh papaya, coral pink on the inside instead of garish orange, is the king of fruits, more delicious and succulent and tastefully sweet than bananas, strawberries, cantaloupes, or anything else. I have never tasted anything like it before or since. Conlon had a housekeeper who routinely prepared fabulous meals. Two years in a row, 1988 and 1989, I happened to be there on September 16, Mexican Independence Day, and got to enjoy the national dish of red, white, and green chiles de nogada, as beautiful as it was delicious. In addition, Conlon and Yoko took me and my wife to Tepoztlan, where we had what I still consider the best meal of my life, enchiladas in a mole sauce that contained nineteen ingredients, many of them unavailable north of the border.</p>
+
+<p>[4] What I mean to suggest with these reminiscences is that Conlon Nancarrow lived the good life. Yoko told me once that she asked Conlon what she should do with his player piano rolls after he died; he shrugged and replied, &#8220;Burn &#8217;em.&#8221; I really think that he wanted to hear what certain tempos would sound like if you played them at the same time, and once he&#8217;d heard them, the purpose of the experiment was fulfilled. His manager of the early 1980s Eva Soltes tells me that he was reluctant to tour Europe with his music, and that she convinced him to go with the argument that it would convince his son that he had done something worthwhile with his life.</p>
+
+<p>[5] Recently, the daughter of a communist harassed by the government during the McCarthy era told me that she had found aversion to publicity a common attribute among people who had been through that experience, that they forever afterward shied away from public attention. I don&#8217;t know whether there was anything like that in Conlon&#8217;s case; it sounds very much like what Conlon said about Henry Cowell after Cowell&#8217;s San Quentin experience, that he never got over being nervous that someone was out to get him. But last April at the Nancarrow conference in London we heard from both Yoko and Conlon&#8217;s stepson Luis Stephens, who had known Conlon since the 1940s. Both made it clear that Nancarrow had been reclusive about his music at least since he started writing for player piano, that he had not only not courted publicity, but had attempted to dissuade friends like Elliott Carter and John Cage from arranging performances of his works. The distrust of publicity was not something that came late in life, but had been there throughout his composing career. Fantastic food and liquor, yes; publicity and posterity, no. Never have I had such a vivid lesson in what kind of priorities a composer should have to be satisfied with life. I&#8217;ve known a huge crowd of bitter and under-recognized composers, but there was never a moment in which I was tempted to feel sorry for Conlon Nancarrow. He had his head on straight.</p>
+
+<hr style="width:50%"/><br>
+
+<p>[6] Whether it is cause or effect, this unconcern with publicity goes hand in hand with Nancarrow being perhaps the most truly experimental composer of the twentieth century. I use the word &ldquo;experimental&rdquo; partly in John Cage&#8217;s strict sense, as relating to musical processes whose outcome cannot be foreseen. I also use it in the sense that Nancarrow was something of a musical scientist, someone who would perform an experiment to test a certain hypothesis, and, having received a result, would move on to the next problem. In my book on him (<a href="#gann_1995" id="citation_gann_1995_67dc9a60c2243">1995</a>, 4&#8211;5) I list 26 ideas that he used only once each in his music and never returned to, including:</p>
+
+<ul>
+    <li>A pitch row containing internal repetitions of a pitch cell (Study No. 4) </li>
+	<li>A canon in which the voices gradually reverse roles (Study No. 21)</li>
+    <li>The use of a 12-tone row as a harmonic determinant for triadic music (Study No. 25)</li>
+    <li>Aleatory tempo canon (Study No. 44)</li>
+    <li>Use of durations based on the Fibonacci series to create the same rhythmic motive at different temporal levels (Study No. 45)</li>
+</ul>
+
+<p>And so on, and so on.</p>
+
+<p>[7] Someone who was living the public career of the average composer could never have sustained this type of creativity. Most of us get the occasional commission, based on a stylistic profile we&#8217;ve established. We end up trying to express the same ideas we&#8217;ve used before in a different medium. If we get a commission we know who the performers are, and what they expect from us; we know what kind of audience a certain space will attract, and we know what they will applaud. Charles Ives, in his &#8220;Postface to 114 Songs,&#8221; wrote that when a composer writes a symphony that has been commissioned, its inspiration is likely to be attenuated, contaminated, by, in Ives's words, "the artist's over- anxiety about its effect upon others" (<a href="#ives_1961" id="citation_ives_1961_67dc9a60c2248">Ives 1961</a>, 125). Most of us, Ives and Nancarrow aside, compose within a feedback loop, in which what we create is conditioned, in part, by the reactions we&#8217;ve received to what we&#8217;ve already created.</p>
+
+<p>[8] What is most individual in Nancarrow&#8217;s output is the evidence that it grew outside that feedback loop, its lack of reception anxiety. The way in which a new idea is taken up for a few player-piano studies, experimented with for awhile, and then dropped gives his musical chronology a profile unlike that of almost any other composer, as does the fact that about 85 percent of his music was for a single medium. One gets a sense that he was his own audience, and that no other listener needed be taken into account. He had the luxury of getting his sonic feedback while alone in his studio, when he could make changes unobserved, and he was the first composer in the history of acoustic music to get a perfect premiere performance of every new piece he wrote. The intensity of that private composing <i>and</i> performance process with its immediate and vivid perfect results, which I&#8217;ve experienced somewhat myself with my own Disklavier works, must deserve some credit for 
+making Nancarrow the composer he did.</p>
+
+<p>[9] In addition, as I enjoy pointing out, Nancarrow was one of a trio of composers, along with John Cage and Milton Babbitt, who didn&#8217;t believe in music&#8217;s ability to express emotion. I remember Conlon saying that to him music was just an interesting pattern of sounds with no emotive connotations. He never wrote a programmatic piece or a piece with text. And perhaps as a result of that emotive agnosticism, those three composers also felt no need to gauge the effect or result of their music by how the listener would react to it. Given the pre-conditions of a Cage chance piece or a Babbitt serial piece or a Nancarrow tempo canon, it is difficult to criticize anything more detailed than the overall concept. And Nancarrow&#8217;s music has been far less controversial than that of the other two, because his processes were exquisitely audible in a way that Cage&#8217;s and Babbitt&#8217;s never were. In a way, Nancarrow&#8217;s best works are virtually impossible to misunderstand. If you have the ability to recognize the process he&#8217;s using, then you can only let it wash over you and admire the details. There is no emotive aspect one can react to by liking or disliking, though one is often awestruck by the extraordinary physical and mathematical aspects.</p>
+
+<p>[10] I have to relativize this portrait of Nancarrow as a composer-scientist by noting the powerfully creative way in which some of his largest works integrate his earlier experiments into one of the most original formal and structural languages ever achieved in music. I organized the chapters of my book (<a href="#gann_1995" id="citation_gann_1995_67dc9a60c224b">1995</a>) around the musical ideas Nancarrow had worked with in various periods: ostinato, isorhythm, acceleration, tempo canon, and what I call the diagonal texture he achieved by using tempos too close to always be heard as canonic. I have always found something Beethovenian in the way that Nancarrow came to superimpose all these techniques in his late works, Studies Nos. 25, 35, 40, 41, 42, 45, 46, 47, and 48. Beethoven learned to write a fugue that was also a theme and variations, or a theme and variations that was also a sonata form; in the late sonatas and string quartets the distinctions between these genres begin to disappear. In the same way, Nancarrow became so adept at what he was doing that he could begin to have accelerating ostinatos, isorhythmic canons, and even isorhythmic canons of arpeggiated ostinatos. In his late works, if I may quote myself, &#8220;Glissandos, arpeggios, triads, minor-third motives, octave bass lines . . . are no longer differentiated: they are <i>markers</i> in a Nancarrovian syntax, articulation points of rhythmic processes. . . . Everything that <i>can</i> be has been reduced to logic&#8221; (<a href="#gann_1995" id="citation_gann_1995_67dc9a60c224d">1995</a>, 240). I find this transcendence of technique a strong parallel between Nancarrow and Beethoven.</p>
+
+<p>[11] At the same time, I would love to start divorcing Nancarrow from that politically charged term &#8220;maverick.&#8221; A maverick, according to Random House Dictionary, is &#8220;an unbranded calf, cow, or steer, especially an unbranded calf that is separated from its mother.&#8221; By extension it has come to mean &#8220;a lone dissenter, as an intellectual, an artist, or a politician, who takes an independent stand apart from his or her associates.&#8221;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> As I&#8217;ve been writing for years without anyone much noticing, the musicological purpose of the word &#8220;maverick&#8221; seems to be to legitimize certain handpicked composers despite the unconventionality of their composing methods (as compared with alleged European norms), and to do so while still carefully marginalizing all the other composers who share those methods (Gann <a href="#gann_2008a" id="citation_gann_2008a_67dc9a60c2252">2008a</a> and <a href="#gann_2008b" id="citation_gann_2008b_67dc9a60c2254">2008b</a>). What we need is for the methods themselves to be legitimized, thus legitimizing <i>all</i> the composers who use them. The &#8220;maverick&#8221; image of Cage, Nancarrow, Lou Harrison, 
+and La Monte Young as lone dissenters&mdash;composers who, after all, had teachers, friends, students, prot&eacute;g&eacute;s with whom they shared ideas and developed their creativity collectively&#8212;was always a palpable fiction. It does not in any way diminish Nancarrow&#8217;s originality that many of the ideas he worked with his entire life were originally suggested in Henry Cowell&#8217;s book <i>New Musical Resources</i>, which was published in 1930 and which Nancarrow read in 1939 and 1940. To the end of his life he had charts on the wall of his studio with numbers and tempo relationships drawn from Cowell&#8217;s book.</p>
+
+<hr style="width:50%"/><br>
+
+<p>[12] Cowell (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a60c2256">1930</a>, 98&#8211;99) suggests that one could compose along a scale of tempos analogous to our scale of pitches. And since equal temperament would give a scale of irrational numerical relationships that would be extremely difficult to notate, he suggests a just-intonation scale. The tonic scale on C, he suggests, would be the reference point of 1/1; <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> would be 15/14 as fast; D would be 9/8 as fast; <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> would be 6/5; and so on. These twelve relative tempos are the ones Nancarrow ended up using decades later in his Study No. 37. And the Cowell connection is that he uses 15/14 for the first half step. The 
+half step we&#8217;re used to is closer to 18/17 or 16/15 than to 15/14, and I have never, in all the works I&#8217;ve read on tuning and temperament, seen <i>anyone</i> besides Cowell identify a normal 
+half step as 15/14. The fact that Nancarrow used that ratio is a dead giveaway, if we needed more evidence, that he was sitting there getting his ideas from Cowell&#8217;s book.</p>
+
+<p>[13] Likewise, if the fact isn&#8217;t already too well-known to bear mentioning here, Cowell wrote in his book,</p>
+<blockquote><p>Some of the rhythms developed through the present acoustical investigation could not be played by any living performer; but these highly engrossing rhythmical complexes could easily be cut on a player-piano roll. This would give a real reason for writing music specially for player piano. (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a60c2266">Cowell 1930</a>, 64&#8211;65)</p></blockquote>
+<p>Of course we all know that Nancarrow was the composer who took that suggestion. Cowell also writes about the potential pleasures, and technical difficulties, of music in which one melody could be gradually accelerating while another is gradually slowing down (<a href="#cowell_1930" id="citation_cowell_1930_67dc9a60c2267">1930</a>, 94&#8211;96). And here 
+we have the theoretical basis for Nancarrow&#8217;s acceleration studies, Nos. 8, 21, 22, 23, and especially 27.</p>
+
+<p>[14] That Nancarrow received these ideas from Cowell&#8217;s book doesn&#8217;t make him a less original composer, or a less great one, but it does mean he wasn&#8217;t really a maverick. He had not, so to speak, &#8220;separated from his mother.&#8221; He was branded as a Cowell reader by the use of that 15/14 and those accelerations. He met Cowell before he wrote any player-piano music, and corresponded with Elliott Carter all through the 1950s. Also, like so many other composers of his generation, he was inspired by jazz, and the influence of Art Tatum and Earl Hines on his early music has been abundantly noted. Many of the ideas about isorhythm came from East Indian music, which Nancarrow collected recordings of, and which was beginning to influence other composers in North America. To that extent, Nancarrow inhabited the same musical world as Cage, Harrison, Carter, Harry Partch, Ben Johnston, Alan Hovhaness, and even Copland and Blitzstein. This is quite a large and close-knit herd of mavericks. In fact, one of the great musical epiphanies of my life came when I flew straight from visiting Nancarrow in Mexico City to the Telluride Festival in Colorado where I stayed in a house with Lou Harrison. Conlon had showed me the strips of paper which he used as templates for his tempo ratios; and Lou showed me the strips of paper which he used as templates for his just intonation scales!</p>
+
+<p>[15] Add to that that Nancarrow inherited some melodic tendencies from the Bar&oacute;k string quartets he loved so well, and that I have occasionally found an echo of <i>The Rite of Spring</i> in his music, and it becomes clear that he was closely involved in the same dialogue as other composers of his generation. As the old saying goes, it doesn&#8217;t matter where you get your ideas from, it only matters where you take them to. Nancarrow&#8217;s musical output took the shape it did because of his isolation, but he didn&#8217;t start out by turning his back on what all the other composers were interested in. His peculiar situation simply made it possible for him to take a different route.</p>
+
+<hr style="width:50%"/><br>
+
+<p>[16] One thing I&#8217;ve learned from imitating Nancarrow is how far we remain from catching up with him. I&#8217;ve written a lot of canons, tempo and otherwise. I&#8217;ve written really fast music for Disklavier, though I&#8217;ve never written a tempo canon for Disklavier; I tried and found that I couldn&#8217;t do so without sounding embarrassingly like him. Through analysis I have inherited and learned some of Nancarrow&#8217;s techniques, including ones first suggested by Cowell. In my music theater piece <i>Custer and Sitting Bull</i>, I have a passage at the end where a straight military beat is juxtaposed with a gradual five-percent deceleration of a quasi-American Indian beat in 11/4 meter. To achieve this I made a computer program in the old math software called Basic, which generated numbers to map the decelerating beats on to a grid of 4/4 measures. Then I had to painstakingly input the attack points into an old sequencing program called Voyetra Plus. Even so, the final score is a complicated-looking mess, and still only an approximation. I had tons more technology at my disposal than Nancarrow did, and still couldn&#8217;t execute the task as cleanly as he did.</p>
+
+<p>[17] When I was analyzing Nancarrow&#8217;s Study No. 27, I asked him how he calculated the spacing of his accelerating and decelerating lines without even so much as a hand-held calculator to work with. He said he didn&#8217;t remember; surely a book of logarithmic tables was involved. He had a huge library, with hundreds of books on math and engineering, and somehow he absorbed from those books the math he needed. One of the strangest gestures of his career is the famous tempo relationships in the canon of Study No. 41: one over the cube root of three against the cube root of \(\frac{13}{16}\) in one voice, and one over the square root of pi against the square root of \(\frac{2}{3}\) in the other. I&#8217;ve looked it up, and no calculator available in the 1970s was capable of cube roots. How did he do it? He didn&#8217;t remember.</p>
+
+<p>[18] Today our notation software makes it easy to write in tempo complexes like 17:18:19:20, but notation and sequencing software are still based on a standard metric paradigm that would make writing a canon in irrational ratios <i>e</i> against <i>pi</i>, as in Nancarrow&#8217;s Study No. 40, a nightmare. Nancarrow envied the capabilities of the computer, but we still don&#8217;t have the limitless freedom that allowed him to conceive his music in pure, unarticulated musical space. Analogously, Ben Johnston, whom I studied with, wrote a string quartet (No. 7) containing more than 1200 pitches in an octave, based on a 183-note row with no pitch repetitions. Timothy Ernest Johnson, who made a partial MIDI version of this quartet, used four different software programs simply to keep track of all the pitches. We live in the shadow of musical giants who achieved, with pencil and paper, technical feats that our computers are hardly capable of competing with.</p>
+
+<p>[19] In fact, a large part of what&#8217;s important about Nancarrow for me isn&#8217;t merely what he accomplished, but what roads he mapped out for our musical future. And it is a collective process. The works of Nancarrow, Johnston, Young, Harrison, Cage, Feldman, Meredith Monk, Robert Ashley, and others have mapped out new continents of music with possibilities of new tempo relationships, new harmonies, new forms, new relationships to text, new vocal techniques, new interactions with the other arts. The possibilities these composers have created are so open-ended, so full of promise for new perceptual capacities, that I believe it will take several generations of composers to realize all the ramifications.</p>
+
+<hr style="width:50%"/><br>
+
+<p>[20] In closing, I&#8217;d like to play you one of the realizations I&#8217;ve made of some of Nancarrow&#8217;s unnumbered player-piano rolls, the 68 rolls found in his studio that weren&#8217;t labeled as studies and thus have never been commercially recorded. Some of these unknown rolls, due to their severely restricted pitch range, were clearly intended not for piano, but for the percussion machine he invented and had to abandon. Some of them are small sketches for effects that he wanted to try out. Some are the beginnings of pieces that he apparently became dissatisfied with. And some are fully fleshed-out works that, in my opinion, are better than some of the studies that have been officially numbered and recorded. I&#8217;ve had to do some editing, because the machine that Trimpin invented to convert player-piano-roll information to MIDI information didn&#8217;t preserve dynamics. In addition, of course, I&#8217;ve had to make some guesses about how fast to play these pieces.</p>
+
+<p>[21] Roll RR (the letter assigned to the roll by Trimpin) opens with a 5:6 canon between the treble and bass with a non-canonic voice in middle; the half-step appoggiatura in this middle line seems to relate the work to Study 
+no. 22. The two and a half minutes&rsquo; duration includes a jazzy melody over a bass in arpeggiated triads, and a brief 5:6:7 canon at the very end, ending at a convergence point. This is a piece that could easily be inserted into Nancarrow&rsquo;s official canon.</p>
+
+
+<div style="width:800px">
+<p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Example 1</b>. My arrangement of Nancarrow&rsquo;s unnumbered player-piano roll &ldquo;RR&rdquo;</p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="gann_audioex1.mp3" type="audio/mpeg"><source src="gann_audioex1.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p> </div>
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Kyle Gann<br>
+	Bard College<br><a href="mailto:gann@bard.edu">gann@bard.edu</a><br>	
+</p>
+
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_cowell_1930" class="flyoverdiv">Cowell, Henry. 1930. <i>New Musical Resources</i>. New York: A. A. Knopf.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cowell_1930"></a>Cowell, Henry. 1930. <i>New Musical Resources</i>. New York: A. A. Knopf.</p><div id="citediv_gann_1995" class="flyoverdiv">Gann, Kyle. 1995. <i>The Music of Conlon Nancarrow</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gann_1995"></a>Gann, Kyle. 1995. <i>The Music of Conlon Nancarrow</i>. Cambridge: Cambridge University Press.</p><div id="citediv_gann_2008a" class="flyoverdiv">Gann, Kyle. 2008a. &#8220;The Longyear Lecture.&#8221; <i>American Music</i> 26, no. 2: 140&#8211;55.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gann_2008a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008a. &#8220;The Longyear Lecture.&#8221; <i>American Music</i> 26, no. 2: 140&#8211;55.</p><div id="citediv_gann_2008b" class="flyoverdiv">Gann, Kyle. 2008b. &#8220;<a href='http://www.artsjournal.com/postclassic/2008/10/thank_you_sarah_palin.html'>Thank you, Sarah Palin</a>.&#8221;</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gann_2008b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008b. &#8220;<a href='http://www.artsjournal.com/postclassic/2008/10/thank_you_sarah_palin.html'>Thank you, Sarah Palin</a>.&#8221;</p><div id="citediv_ives_1961" class="flyoverdiv">Ives, Charles. 1961. &#8220;Postface to 114 Songs.&#8221; In <i>Essays Before a Sonata, The Majority, and Other Writings</i>. New York: W. W. Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ives_1961"></a>Ives, Charles. 1961. &#8220;Postface to 114 Songs.&#8221; In <i>Essays Before a Sonata, The Majority, and Other Writings</i>. New York: W. W. Norton.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> <i>Dictionary.com</i> Unabridged, Random House, Inc., <a href='http://dictionary.reference.com/browse/maverick'>http://dictionary.reference.com/browse/maverick</a> (accessed February 26, 2014).<br><a href="#FN1REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv"><i>Dictionary.com</i> Unabridged, Random House, Inc., <a href='http://dictionary.reference.com/browse/maverick'>http://dictionary.reference.com/browse/maverick</a> (accessed February 26, 2014).</div>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2014 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<script type="text/javascript"
+src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		9859
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

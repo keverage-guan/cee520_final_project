@@ -1,0 +1,1212 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 11.2: Eckert, &ldquo;So, you want to write a Minuet?&rdquo;</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="&ldquo;So, you want to write a Minuet?&rdquo;&mdash;Historical Perspectives in 
+		Teaching Theory">
+
+    <meta name="citation_author" content="Eckert, Stefan">
+      
+
+<meta name="citation_publication_date" content="2005/06/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="11">
+<meta name="citation_issue" content="2">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">&ldquo;So, you want to write a Minuet?&rdquo;&mdash;Historical Perspectives in 
+		Teaching Theory
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.05.11.2/mto.05.11.2.eckert.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Stefan Eckert</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: theory pedagogy, history of theory, minuet composition</font></p><p><font size='4'>ABSTRACT: The article discusses the applicability of Joseph Riepel&rsquo;s <i><i>Anfangsgr&uuml;nde </i>zur 
+musicalischen Setzkunst </i>(1752&ndash;1765) to today&rsquo;s music theory classroom. 
+Riepel&rsquo;s treatise, a lively dialogue between a teacher (<i>Pr&aelig;ceptor</i>) and a 
+student (<i>Discantista</i>) transcends historical boundaries, allowing students to 
+gain hands-on experience with concepts that otherwise remain abstract. In the 
+spirit of Riepel&rsquo;s treatise, I do not merely discuss how Riepel&rsquo;s <i>Pr&aelig;ceptor</i> 
+teaches the student to write minuets, but I describe how I use these 
+instructions in the music theory classroom while providing a sample of my 
+teaching materials.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.05.11.2/mto.05.11.2.eckert.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.05.11.2/eckert_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received February 2005</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 11, Number 2, June 2005 <br> Copyright &#0169; 2005 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] It has been my experience that many of my students do not 
+feel bound to the rules of common practice tonality. Students actually seem to 
+prefer parallel fifths, unresolved leading tones and other violations of the 
+voice leading rules <i>not</i> because it is easier to work without rules, but 
+because these rules often have no bearing on the music with which they are most 
+familiar. As one way to answer to this challenge, I have found it useful to 
+create hands-on experiences with the theory of the common practice period. 
+Inspired by Glenn Gould&rsquo;s playful <i>So You Want to Write a Fugue?</i> and my 
+interest in eighteenth-century compositional theory, I have been teaching the 
+composition of minuets within a historical context, based on W. A. Mozart&rsquo;s 
+early minuets and Joseph Riepel&rsquo;s compositional theory.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+<p>
+
+[2] In the following essay, I discuss the beginning of Joseph Riepel&rsquo;s <i>Anfangsgr&uuml;nde zur musicalischen Setzkunst</i> (<i>Fundamentals of Musical Composition</i>) 
+and its application to today&rsquo;s music theory classroom.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Riepel&rsquo;s
+<i>Anfangsgr&uuml;nde</i>
+seems especially well suited for use in a theory class, because both the 
+structure and the content of the treatise suggest a hands-on approach to musical 
+composition. The different chapters of the <i>Anfangsgr&uuml;nde</i> resemble actual lessons 
+in composition, unfolding as lively discussions between a teacher, the <i>Pr&aelig;ceptor</i>, 
+and his student, the <i>Discantista.</i> Because the beginning of the <i>Anfangsgr&uuml;nde</i> 
+focuses on very basic musical issues, it does not require an extensive 
+theoretical introduction. In each lesson a student and a teacher discuss the 
+basic musical features of mid-eighteenth century style. I have been using 
+Riepel&rsquo;s instructions on how to compose minuets as a way of providing second 
+semester theory students with a workshop that highlights the practical nature of 
+concepts which might otherwise remain abstract. In order to grasp such concepts 
+as tonicization and modulation, students recognize, analyze, and write 
+mid-eighteenth-century minuets, in which these concepts are important 
+constituents of the form.</p>
+<p>
+
+[3] While stylistic composition assignments are not uncommon in theory classes, 
+the use of historical models and sources, especially one as lively as Riepel&rsquo;s 
+<i>Anfangsgr&uuml;nde</i>, provides a number of advantages.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> First, the historical distance 
+helps students to set aside their own preferences and engage with the past. 
+Since the objective is to recreate a historical sound, students do not need to 
+conform to a textbook notion of what sounds &ldquo;good&rdquo; in a composition assignment. 
+They learn to evaluate their own efforts in light of specific models and acquire 
+style-specific knowledge on the side. Second, instead of asking students to 
+write isolated phrases or chord progressions, students learn to write a complete 
+composition, which means that they learn to understand specific compositional 
+processes. In addition, since the compositional instructions emphasize the 
+functional aspects of minuets, the assignments do not require compositional 
+ability, but an understanding of a minuet&rsquo;s basic building blocks. In the spirit 
+of Riepel&rsquo;s treatise, I will not merely discuss how Riepel&rsquo;s <i>Pr&aelig;ceptor</i> teaches 
+the student to write minuets (Part I), but I will describe how I use these 
+instructions in the music theory classroom (Part II) while providing a sample of 
+my teaching materials (see &ldquo;<a href="eckert_instructions.pdf">Instructions on How to Write a Minuet in the Galant 
+Style</a>&rdquo;). I present Parts I and II separately in order to offer readers the 
+possibility of moving directly to my discussion of the classroom teaching and 
+the worksheets. However, Riepel&rsquo;s discussion of the minuet in the opening pages 
+of the <i>Anfangsgr&uuml;nde</i>, which I discuss in the first part, has been the starting 
+point for my exploration of the minuet and students gain much by reading and 
+discussing the original treatise in the classroom.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+
+<p style="text-align: center"><b>Part I: Riepel&rsquo;s Minuet Instructions</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. The Student&rsquo;s Sample Minuet (Riepel 1752, 1&ndash;2)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="eckert_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+
+[4] Riepel&rsquo;s <i>Pr&aelig;ceptor</i> begins the first lesson by asking his new student to 
+write a sample composition so that he may find out if the <i>Discantista</i> has &ldquo;sufficient knowledge of the proper structure of melody (<i>ordentlichen 
+Eintheilung des Gesanges</i>). For whoever wants to build houses must have the 
+materials to do so.&rdquo;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> The <i>Discantista</i> confidently presents the minuet reproduced 
+in <b>Example 1</b>, which occurs in the text with numbers underneath each measure to 
+facilitate the <i>Pr&aelig;ceptor</i>&rsquo;s comments and corrections.</p>
+<p align="center">
+
+
+<p>
+
+Before writing down the minuet, the <i>Discantista</i> confidently states, &ldquo;In my 
+opinion, there is nothing in the world that it easier to compose than a minuet. 
+I even trust myself to swiftly write down a whole dozen one after another.&rdquo;<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  
+However, this confidence soon disappears when the <i>Pr&aelig;ceptor</i> answers his student 
+not with praise, but with a tirade of criticism. &ldquo;Heaven, you cannot even tell 
+the notes apart,&rdquo; he exclaims, &ldquo;Let it please whom it may, I for one would not 
+even give you a pipe-load of evil-smelling tobacco for it.&rdquo;<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Indeed, the 
+teacher&rsquo;s criticism, which I have summarized below, seems overwhelming.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> The 
+<i>Pr&aelig;ceptor</i> demands that</p>
+<ol>
+	<li>A composition, and especially a minuet, should always consist of an even 
+number of measures (the second part of the student&rsquo;s minuet is thirteen measures 
+long).</li>
+	<li>Each part should consist of no more than eight measures (again, the second 
+part of the student&rsquo;s minuet consists of thirteen measures).</li>
+	<li>The beginning or theme should be set off by clearly recognizable <i>Zweyer</i> and 
+	<i>Vierer,</i> that is, two- and four-measure units (measures 2 and 3 in the student&rsquo;s 
+minuet each begin with a half-note, making it difficult to hear measure 3 as the 
+beginning of a second two-measure unit.).</li>
+	<li>Except at the cadence, a minuet should always proceed in quarter-notes, which Riepel calls &ldquo;perfectly or imperfectly rising notes&rdquo; (the student&rsquo;s minuet uses 
+a dotted half-note not only at the end of the first and second part, but also in 
+measure 5 (part one) and measure 9 (part two). Also, it contains three measures (measures 8, 
+10, and 11) in which there are only eighth notes)</li>
+	<li>The second part of the minuet should employ material that already has been 
+presented in the first part (the second part of the student&rsquo;s minuet has hardly 
+any resemblance to the first).</li>
+	<li>A minuet should, if possible, rise in the first part and fall in the second 
+(the student&rsquo;s minuet does the opposite).</li>
+	<li>Measures 4 and 5 should be written with a recognizable difference. This would 
+enable the listener to perceive measure four as the end of the first 
+four-measure unit and measure five as the beginning of a second (however, measure 5 
+in the student&rsquo;s minuet consists only of one dotted half-note and measures 5 to 8 
+show no resemblance to measures 1 through 4. Thus, not only does measure 5 start with a 
+closing gesture but it also is difficult to perceive measures 5 to 8 as a second 
+four-measure unit).</li>
+</ol>
+<p>The <i><i>Pr&aelig;ceptor</i>&rsquo;s</i> first three objections seem repetitive, since the second one 
+will automatically yield the first: if every part contains eight measures then 
+the whole minuet can only consist of an even number of measures. Riepel, 
+however, not only makes a point about the overall length of a composition (2) 
+and then deals with aspects of rhythmic and metric coherence in a composition (1 
+and 3), but also begins his criticism by noting the large-scale issues first, 
+similar to the way that he first presents a complete minuet which he then 
+dissects.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> Objection four addresses the note values within a measure, while five 
+through seven again concern larger issues, i.e. (5) overall coherence, (6) 
+registral shape, and (7) contrast between measures 4 and 5. The <i>Discantista,
+</i>truly horrified by the great number of problems identified by his teacher, 
+immediately begs the <i>Pr&aelig;ceptor</i> to teach him the essential concepts so that he 
+can make the necessary changes at once.</p>
+<h3><i>Zweyer, Dreyer, </i>and <i>Vierer</i> (<i>Tactordnung</i>)</h3>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2a</b>. <i>Zweyer</i> (Riepel 1752, 2)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=1&nonav=true"><img border="1" alt="Example 2a thumbnail" src="eckert_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2b</b>. <i>Dreyer</i> (Riepel 1752, 3)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=2&nonav=true"><img border="1" alt="Example 2b thumbnail" src="eckert_ex2b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[5] The 
+<i>Pr&aelig;ceptor</i> begins his instructions by explaining to his student the basics of 
+<i>Tactordnung,</i> that is, how measures are grouped together to create larger units.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> The <i>Pr&aelig;ceptor</i> first defines 
+<i>Zweyer,</i> or <i>Binarius</i> (two-measure groups), <i>Dreyer, </i>or <i>Ternarius</i> (three-measure groups), and 
+<i>Vierer,</i> or <i>Quaternarius</i> (four-measure 
+groups), which appear not as isolated measure groups but rather in pairs.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Riepel 
+emphasizes this by labeling his first example of a <i>Zweyer</i> as &ldquo;first&rdquo; (<i>erster</i>) 
+<i>Zweyer</i> and &ldquo;another&rdquo; (<i>anderer</i>) <i>Zweyer</i> (<b>Example 2a</b>). The <i>Pr&aelig;ceptor</i> explains: &ldquo;A 
+<i>Zweyer</i>** [Footnote: **Binarius] consists of two measures which are mostly 
+similar in motion to the following two measures, for example.&rdquo;<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> The 
+<i>Pr&aelig;ceptor</i> further demonstrates that the correspondence between the 
+<i>Zweyer</i> 
+does not have to be literal. He illustrates this with two examples which exhibit 
+small rhythmic variations. The harmonic and melodic orientation of these 
+variations, however, is not different from Example 2a: measures 1&ndash;2 move towards F, measures 
+3&ndash;4 towards G, and they retain the same melodic contour.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup></p>
+<p>[6] A <i>Dreyer</i> (<b>Example 2b</b>), the 
+<i>Pr&aelig;ceptor</i> explains, is similar to the <i>Zweyer</i> except that 
+it is a measure longer.</p>
+<blockquote>
+	<p><i>Disc</i>. I understand this very well; because one can see and hear this. But which 
+ones are better in a minuet, <i>Zweyer</i> or <i>Dreyer</i>?<br>
+	<br><i>Pr&aelig;c</i>. <i>Zweyer</i>. Because 
+	<i>Dreyer</i> are not used at all in it. However, I will tell you 
+still today, where and how they can be used successfully.<br>
+	<br><i>Disc.</i> Thus one can make a Dreyer from a
+	<i>Zweyer</i>, or vice versa, by cutting away a 
+measure or adding one to it.<br>
+	<br><i>Pr&aelig;c.</i> By all means.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+</blockquote>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2c</b>. <i>Vierer</i> (Riepel 1752, 3)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=3&nonav=true"><img border="1" alt="Example 2c thumbnail" src="eckert_ex2c_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2d and 2e</b>. <i>Zweyer</i> in a Vierer (Riepel 1752, 3)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=4&nonav=true"><img border="1" alt="Example 2d and 2e thumbnail" src="eckert_ex2d_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>We learn that while a <i>Dreyer</i> does not have a place in the minuet, it can be 
+easily changed to a <i>Zweyer</i>. Indeed, Riepel&rsquo;s <i>Zweyer, Dreyer, </i>and
+<i>Vierer</i> are not 
+&ldquo;organically&rdquo; conceived units, but combinations of different numbers of 
+measures.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> Thus, the <i><i>Pr&aelig;ceptor</i>&rsquo;s</i>
+<i>Vierer</i> (<b>Example 2c</b>), a four-measure unit, 
+essentially comprises a <i>Zweyer</i> with two added measures. This, of course, raises the question of whether there is a difference between a 
+<i>Vierer</i> and two <i>Zweyer:</i> After the <i>Pr&aelig;ceptor</i> presents a 
+<i>Vierer</i> which he deems 
+fitting for a minuet, the <i>Discantista</i> remarks that the first <i>Vierer</i> (Example 2c, measures 
+1&ndash;4) does not seem very different from two <i>Zweyer</i>. &ldquo;If [this <i>Vierer</i>] is not 
+followed by another <i>Vierer,</i> I would accept your opinion if need be,&rdquo; argues the
+<i>Pr&aelig;ceptor</i>. &ldquo;However, the [two] <i>Zweyer</i> would be clearer in the following manner 
+than yours, for example [<b>Example 2e</b>]:&rdquo;<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> He points out that this example (Example 2e) demonstrates a clearer division, 
+&ldquo;because the other <i>Zweyer</i> comes to rest a tone higher. Your <i>Zweyer</i> [Example 2d], 
+however, remain both in the tone F.&rdquo;<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> Indeed, the difference between Examples 2d and 
+2e lies in their tonal orientation. Stressing the importance of context, the <i>Pr&aelig;ceptor</i> remarks that if no other 
+<i>Vierer</i> follows, the first <i>Vierer</i> of 
+Example 2c 
+could be interpreted as two <i>Zweyer</i>. Not only can one change a <i>Zweyer</i> into a 
+Dreyer or <i>Vierer</i> by adding measures, but the musical context also can change the 
+interpretation of any of these groupings.</p>
+<h3>Rhythmic motion within a measure</h3>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Rhythmic motion and contour within a measure</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=5&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="eckert_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[7] Following the discussion of 
+<i>Zweyer, Dreyer,</i> and <i>Vierer,</i> which dealt with the 
+grouping of measures, the <i><i>Pr&aelig;ceptor</i>&rsquo;s</i> attention shifts to the rhythmic content 
+of a measure. The figure below (<b>Figure 1</b>) schematizes the rhythmic motion and 
+contour within a measure. Riepel distinguishes between &ldquo;running&rdquo; (<i>laufende</i>), &ldquo;rising&rdquo; (<i>erhebende</i>), &ldquo;dotted&rdquo; (<i>punctirte</i>), and 
+&ldquo;immobile&rdquo; (<i>unbewegliche</i>) notes. Among the running 
+notes, there are those that move by step and those that move by leap. Riepel 
+specifically discusses the difference between running notes that move upward and 
+those that move downward, arguing that the upward moving ones are easier to 
+perform. Among the rising notes (quarter notes), he distinguishes between &ldquo;perfectly&rdquo; and 
+&ldquo;imperfectly&rdquo; rising notes. The names of a measure&rsquo;s durational 
+components, except for the &ldquo;dotted notes,&rdquo; are not technical (i.e., eighth-note, 
+quarter-note, etc.) but descriptive and grounded in everyday experience. By 
+using perception-based terms, Riepel enables students to immediately understand 
+the issues discussed and also to remember the concepts more easily. In addition, 
+by refraining to use mere technical labels, Riepel emphasizes their function 
+within the measure, not how they are constructed.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3a</b>. &ldquo;Perfectly Rising Notes&rdquo; (Riepel 1752, 4)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=6&nonav=true"><img border="1" alt="Example 3a thumbnail" src="eckert_ex3a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3b</b>. &ldquo;Perfectly Rising Notes&rdquo; Varied (Riepel 1752, k)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=7&nonav=true"><img border="1" alt="Example 3b thumbnail" src="eckert_ex3b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>[8] The <i>Pr&aelig;ceptor</i> first introduces the &ldquo;running notes that move by step&rdquo; (<i>stuffenweise 
+laufende Noten</i>) and the &ldquo;running notes that move by leap&rdquo; (<i>sprungweise laufende 
+Noten</i>), which exemplify the difference between scales and arpeggios 
+respectively. These &ldquo;running notes,&rdquo; the <i>Pr&aelig;ceptor</i> explains, &ldquo;[?] are the best 
+notes in an <i>Allegro assai,</i> or Tempo <i>presto</i> and <i>prestissimo</i> of a symphony, a 
+concerto, or solo and so forth, [?].&rdquo;<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> While these eighth-note runs can be 
+successfully employed in larger compositions, the minuet has different demands. 
+&ldquo;For a minuet, however,&rdquo; the <i>Pr&aelig;ceptor</i> clarifies, &ldquo;one needs always perfectly 
+rising notes, that is quarter notes, for example:&rdquo;<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> (see <b>Figure 3a</b>). These quarter notes, the 
+<i>Pr&aelig;ceptor</i> demonstrates, can be varied in the following 
+ways: (see <b>Figure 3b</b>). While he encourages his student to create numerous variations, the 
+<i>Pr&aelig;ceptor</i> 
+also teaches his student to choose the most desirable ones based on general 
+notions of what &ldquo;works&rdquo; within a measure and the measure&rsquo;s function, which is 
+derived from its position within the minuet.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> For example, Riepel&rsquo;s <i>Pr&aelig;ceptor</i> 
+prefers eighth-note motion on the second and third beats and dislikes the 
+combination of four eighth notes followed by a quarter note, as in measures 6 and 7 
+of the student&rsquo;s sample composition (Example 1).<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> Although he rejects this rhythmic 
+construction in general, the <i>Pr&aelig;ceptor</i> does not object if it appears in a single 
+measure. In addition, he considers the eighth-note motion (&ldquo;running notes that 
+move by step&rdquo;) in the last four measures of the student&rsquo;s minuet acceptable, 
+&ldquo;[b]ecause the minuet aims to reach its cadence and place of rest, almost as if 
+someone hungry [runs] from his work for example to dinner, or ? You should not 
+laugh,&rdquo; scolds the teacher and defends his use of metaphors, arguing that they 
+are necessary &ldquo;because a <b>beginner must imagine</b> these and a <b>thousand</b> other 
+<b>comparisons if he does not want to fill his composition with</b> empty, simple and 
+<b>lifeless notes</b> [Riepel&rsquo;s emphasis].&rdquo;<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> In all these explanations, the <i>Pr&aelig;ceptor</i> 
+impresses on his student the importance of context, which changes the function 
+of a rhythmic figure. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4a</b>. &ldquo;Dead Notes&rdquo; and &ldquo;Living Notes&rdquo; (Riepel 1752, 5)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=8&nonav=true"><img border="1" alt="Example 4a thumbnail" src="eckert_ex4a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4b</b>. &ldquo;Perfectly and Imperfectly Rising Notes&rdquo; (Riepel 1752, 5)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=9&nonav=true"><img border="1" alt="Example 4b thumbnail" src="eckert_ex4b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5a</b>. &ldquo;Dotted Notes&rdquo; (Riepel 1752, 6)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=10&nonav=true"><img border="1" alt="Example 5a thumbnail" src="eckert_ex5a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5b</b>. The <i>Pr&aelig;ceptor</i>&rsquo;s &ldquo;Dotted Notes&rdquo; (Riepel 1752, 6)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=11&nonav=true"><img border="1" alt="Example 5b thumbnail" src="eckert_ex5b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[9] In addition to &ldquo;running&rdquo; and &ldquo;rising&rdquo; notes (eighth- and quarter-notes), the 
+student&rsquo;s minuet also contains dotted half-notes. In reference to them, the 
+<i>Pr&aelig;ceptor</i> warns the <i>Discantista</i> that &ldquo;one never uses an immobile or dead note 
+[dotted half-note] in the middle of such a short and dance-like minuet, but only 
+at the end of the first and second parts. However, one can make such an immobile 
+or dead note come alive in the following manner, for example [<b>Example 4a</b>].&rdquo;<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup>  
+Having defined the dotted half note as an &ldquo;immobile or dead note&rdquo; (<i>unbewegliche 
+oder todte Note</i>), the <i>Pr&aelig;ceptor</i> consequently labels the combination of half note 
+and quarter note or half-note and two eighth-notes as &ldquo;imperfectly rising notes&rdquo; 
+(<i>unvollkommen erhebende Noten</i>). He warns the Discantista that &ldquo;two such measures 
+are of no use in a minuet,&rdquo; and suggests that he should always combine such a 
+measure with a measure of perfectly rising notes (<b>Example 4b</b>).<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup></p>
+
+<p>[10] Finally, after the 
+<i>Pr&aelig;ceptor</i> has discussed eighth, quarter, and half-notes, the 
+<i>Discantista</i> asks if he may also use dotted notes, giving the music shown in 
+<b>Example 5a</b> as an instance. The 
+<i>Pr&aelig;ceptor</i> objects, finding them unsuitable for a minuet. He dislikes the 
+student&rsquo;s dotted quarter-eighth-quarter combination, claiming that only a 
+&ldquo;limping dance master&rdquo; (<i>hinckenden Tanzmeister</i>) might like them. However, if the 
+<i>Discantista</i> must use dotted notes, then the following combination (<b>Example 5b</b>) is 
+much more preferable.</p>
+<p>[11] Riepel&rsquo;s repertoire of rhythmic motion within a measure covers most usable 
+combinations. However, the <i>Pr&aelig;ceptor</i> does not simply list these rhythmic 
+variants, but gives reasons why some are preferable to others. Some of the 
+reasons are based on general considerations of the specific genre in question (a 
+symphony can accommodate more elaborate rhythmic figures than a short minuet), 
+others are functional (the beginning, middle, and end of a composition require 
+different notes), or are based on aesthetic judgment and personal preference 
+(the <i>Pr&aelig;ceptor</i> sometimes freely admits to liking a particular combination). Thus 
+these reasons allow us insight into the cultural norms (the 
+mid-eighteenth-century expectation of what constitutes a minuet) and into 
+Riepel&rsquo;s personal choices and judgments. Often, of course, a particular choice 
+is guided by several criteria. In this way, Riepel does not merely identify and 
+discuss an inventory of rhythmic content and contour for a measure, but teaches 
+criteria for choosing one above the other.</p>
+<h3>Coherence, Contour, and Contrast</h3>
+<p>[12] After discussing the parts (the construction of 
+<i>Zweyer, Dreyer,</i> and <i>Vierer</i>) and 
+providing a detailed investigation of the rhythmic motion within a measure, the
+<i>Pr&aelig;ceptor</i> shifts his attention to the whole, namely the overall shape of the 
+minuet. For this, the teacher focuses on his last three objections to the 
+student&rsquo;s sample minuet: (5) motivic/thematic relationship between the different 
+parts of a minuet, (6) melodic contour, and (7) clear separation of measures 4 
+and 5. In this section of the lesson, teacher and student deal with complex 
+musical relationships. Similar to other beginning students, the <i>Discantista</i> 
+often makes mistakes in another area while addressing issues of larger 
+structures.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Similarity and Coherence in a Minuet (Riepel 1752, 6)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=12&nonav=true"><img border="1" alt="Example 6 thumbnail" src="eckert_ex6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[13] As his fifth objection, the <i>Pr&aelig;ceptor</i> argues that a minuet&rsquo;s second part should 
+be related to the first. The two terms that he uses to describe the relationship 
+between the two parts of a minuet are: &ldquo;similarity&rdquo; (<i>Aehnlichkeit</i>) and &ldquo;coherence&rdquo; (<i>Zusammenhang</i>). In the revision of his sample minuet (<b>Example 6</b>), the 
+<i>Discantista</i> marks the related parts &ldquo;<img border="0" src="ecksymbol.GIF" width="18" height="16">.&rdquo; &ldquo;Notice,&rdquo; he tells his teacher, &ldquo;in the 
+first part the notes <img border="0" src="ecksymbol.GIF" width="15" height="16"> go down, in the second, up. Thus, I believe that one can 
+hear enough similarity and coherence.&rdquo;<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> The 
+<i>Pr&aelig;ceptor</i>, however, is not satisfied with this and tells his student that 
+many consider inverted notes ornamental. He argues that such inversions are 
+often used in other compositions, but they are hardly recognizable in this 
+context. Immediately, the student writes a number of variants that contain more 
+direct relationships between the different parts of the minuet.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7a</b>. Contour in a Minuet (Riepel 1752, 7)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=13&nonav=true"><img border="1" alt="Example 7a thumbnail" src="eckert_ex7a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7b</b>. Contour in a Minuet (Riepel 1752, 7)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=14&nonav=true"><img border="1" alt="Example 7b thumbnail" src="eckert_ex7b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Contour in a Minuet (Riepel 1752, 8)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=15&nonav=true"><img border="1" alt="Example 8 thumbnail" src="eckert_ex8_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9a</b>. Contrast in a Minuet (Riepel 1752, 8)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=16&nonav=true"><img border="1" alt="Example 9a thumbnail" src="eckert_ex9a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9b</b>. Contrast in a Minuet (Riepel 1752, 8)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=17&nonav=true"><img border="1" alt="Example 9b thumbnail" src="eckert_ex9b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Comparison between the student&rsquo;s sample minuet and the &ldquo;corrected&rdquo; version</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=18&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="eckert_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[14] The sixth objection on the 
+<i>Pr&aelig;ceptor</i>&rsquo;s list was that a minuet should rise at the 
+beginning and fall at the end. The student immediately tries out this concept in 
+his sixth revision of his sample-minuet (<b>Example 7a</b>). His teacher, however, slows him down saying: &ldquo;Wait a moment! You went much too 
+high. I have to tell you that the minuet is much too youthful in this way, the 
+melody loses its <b>seriousness and maturity</b> [Riepel&rsquo;s emphasis].&rdquo;<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> To lower the 
+high register, the student writes another minuet (<b>Example 7b</b>) which he begins lower 
+than the previous one. &ldquo;This is very good,&rdquo; replies the 
+<i>Pr&aelig;ceptor</i>, &ldquo;but, one does not need to rise and 
+fall in every <i>Zweyer</i>. The cadences are almost always bound to the following 
+rule: the cadence in the second part can fall just by itself, just as a single 
+note <img border="0" src="ecksymbol.GIF" width="16" height="15"> can express the ascent in the first part, as for example [<b>Example 8</b>].&rdquo;<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></p>
+<p>[15] The last objection of the teacher focuses on separating measures four and five 
+to make the <i>Vierer</i> clearly recognizable. Using the distinction between perfectly 
+and imperfectly rising notes, the <i>Pr&aelig;ceptor</i> exemplifies the two possible 
+versions. In <b>Example 9a</b>, measure 4 consists of perfectly rising notes, while measure 5 
+consists of imperfectly rising ones, for example. Both examples Example 9a and <b>9b</b> give only the first part of the minuet. This causes 
+the <i>Discantista</i> to ask what one does in the second part. &ldquo;It [the second part] 
+could do similar things if it wished, argues the <i>Pr&aelig;ceptor</i>, but [the second 
+part] is often so extravagant that it does not want to follow any rule. In 
+addition, a listener might be so taken by the first part that he does not take 
+much trouble with the second part, because it is only considered the resolution 
+of the first part anyway.&rdquo;<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup></p>
+<p>[16] This ends the seven corrections of the student&rsquo;s sample minuet with which the 
+first chapter of the <i>Anfangsgr&uuml;nde </i>begins. Although the <i>Pr&aelig;ceptor</i> points out 
+numerous problems in the student&rsquo;s composition, there are substantial 
+similarities between the student&rsquo;s minuet and its &ldquo;corrected&rdquo; versions that 
+result from the teacher&rsquo;s interventions. A comparison between the student&rsquo;s 
+sample minuet (Example 1) and a version of the &ldquo;corrected&rdquo; minuet (Example 6), which 
+most closely resembles the original in its musical material, demonstrates that 
+the two minuets have a number of similarities. <b>Figure 2</b> presents an outline of the 
+two minuets, using modern terminology to indicate their metric and harmonic 
+structure. It shows the unfolding of the two minuets, with the corresponding 
+sections written one below the other. Both minuets display the same basic structure: Each consists of four sections, 
+which the double bar divides into two times eight measures (thirteen measures in 
+Example 1). Both versions share the same general harmonic orientation: The first 
+group closes on the tonic, the second ends with a half cadence, the third closes 
+on the dominant, and the fourth, the last, cadences in the tonic key. Guided by 
+the <i>Pr&aelig;ceptor</i>&rsquo;s discussion of <i>Tactordnung,</i> the student&rsquo;s revised version has a 
+clear, symmetrical structure: The first part contains two <i>Vierer,</i> of which the 
+first is built out of two <i>Zweyer</i> (2+2). However, except for the three 
+quarter-note repetition on C4, which helps to avoid the closure created by the 
+C4 dotted half-note in the student&rsquo;s first minuet (Example 1, measure 5), measures 5&ndash;8 of the 
+revised version correspond exactly to the same measures in the student&rsquo;s 
+original minuet. Similarly in the second part, the metrically even first <i>Vierer</i> 
+(Example 6, measures 9&ndash;12) has replaced the five-measure group (Example 1, part two, measures 1&ndash;5) 
+in the student&rsquo;s minuet. However, after the double bar, the <i>Discantista</i>&rsquo;s sample 
+minuet already uses the same harmonic structure as the <i>Vierer</i>: a sequential 
+continuation pattern, called a <i>Monte,</i> which the <i>Pr&aelig;ceptor</i> discusses in the 
+second chapter of the <i>Anfangsgr&uuml;nde</i>.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> Finally, the last 
+<i>Vierer</i> of the second part 
+in the revised version resembles the last four measures of the original; except 
+for the stepwise ascending eighth-notes g&ndash;a&ndash;b&ndash;c&ndash;d&ndash;e (Example 1, measure10) which are 
+reduced to their underlying g&ndash;b&ndash;d triad (Example 6, measure 13). The <i>Discantista</i> has also 
+cut out measures 6&ndash;9 of the original, the unresolved drive to the cadence, which is 
+repeated and resolved in the last <i>Vierer.</i> All significant changes in the 
+student&rsquo;s sample minuet have resulted in a metrically even structure; the 
+revised minuet has a rhythmic &ldquo;rhyme.&rdquo; However, <i>Pr&aelig;ceptor</i> did not need to 
+address the minuet structure, because he could rightly expect his student to 
+understand the functional aspects of a minuet.<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup></p>
+<h2> Part II: Teaching the Minuet In Today&rsquo;s Theory Classroom</h2>
+<p> [17] The minuet seems an ideal composition for the theory classroom, because it is 
+short and easy to comprehend and it requires only a limited harmonic knowledge. 
+I have used Riepel&rsquo;s compositional instructions many times at the end of a 
+first-year music theory course to provide students with a hands-on experience of 
+basic compositional strategies.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup> Since students are usually unprepared for 
+dealing with composition in a specific style, their eighteenth-century 
+&ldquo;Capellmeister&rdquo; training requires several stages: First students get to know the 
+basic minuet structure by analyzing a number of minuets thereby recognizing 
+their common features; second, the analyzed minuets provide a starting point for 
+limited compositional assignments (i.e., composing a new melody above a given 
+bass, harmonizing the melody of an existing minuet, composing a minuet based on 
+a model, etc.); and third, after students have gained some compositional 
+experience within a clearly defined frame, they write their own minuets. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Basic Minuet Structure in Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i> (Riepel 1752 and 1755)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=19&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="eckert_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p> [18] In the first chapter of the <i>Anfangsgr&uuml;nde,</i> &ldquo;<i>De Rhythmopoe&iuml;a</i>, or On Metric Order&rdquo; 
+(<i>Tactordnung</i>), which focuses on the rhythmic and metric structure of 
+compositions, Riepel&rsquo;s <i>Pr&aelig;ceptor</i> teaches his student the fundamentals of 
+composition, that is, how to use note values in a measure, how to group measures 
+into larger units, and how to combine them into a minuet. In the second chapter, 
+&ldquo;Basic Rules Concerning the Order of Pitches&rdquo; (<i>Tonordnung</i>), which considers 
+minuets, concertos, and symphonies from the standpoint of their the tonal 
+organization, Riepel discusses specific ways for continuing the second part of a 
+minuet and how to extend a sixteen-measure long minuet to 32 measures and more 
+by way of repetition, insertion of new or contrasting material, expansion (i.e., 
+lengthening a section), and the doubling of a cadence, that is, the repeat of a 
+cadential gesture.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup> <b>Figure 3</b> schematizes the basic minuet structure, which can be 
+found throughout the first two chapters of Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>. 
+Most minuets close their first section in the tonic, followed by turn to the 
+dominant. The second section, and with it the first part, usually ends either 
+with a half cadence on the dominant, like Examples 1 or 6 or, after a modulation 
+to the dominant key, with an authentic cadence in the dominant, like Examples 
+7a, 7b, and 8. The second part opens either with <i>Monte, Fonte,</i> or <i>Ponte</i> and ends 
+with a cadence in the tonic key. <i>Monte, Fonte,</i> or <i>Ponte</i> are melodic/harmonic 
+continuation patterns, which Riepel discusses, in the second chapter of the 
+<i>Anfangsgr&uuml;nde</i>. <i>Monte,</i> which means going up the mountain, consists of an 
+ascending sequence (C&ndash;F followed by D&ndash;G in C major), harmonically V of IV going 
+to IV followed by a V of V going to V movement. <i>Fonte</i> (going down a well), 
+consists of a descending sequence (A&ndash;d followed by G&ndash;C, again in C major), 
+harmonically V of ii going to ii followed by a V to I movement. <i>Ponte</i> (crossing 
+a bridge) consists of a prolongation of the dominant that closes on the tonic. 
+These continuation patterns usually appear after the double bar line in a minuet 
+thus opening the second part.<sup><a name="FN33REF" href="#FN33" id="footnote33">(33)</a></sup> The beginning of the second part of Examples 1, 6, 
+and 8, and Examples 2a through 2e contain a <i>Monte,</i> while Examples 7a, 7b begin 
+their second part with a <i>Fonte.</i></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Mozart&rsquo;s Minuets K. 1&ndash;7</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=20&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="eckert_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. The Structure of W. A. Mozart&rsquo;s Minuets</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=21&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="eckert_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p> [19] Because W. A. Mozart&rsquo;s Minuets K. 1&ndash;7 stylistically match the minuets in 
+Riepel&rsquo;s <i>Anfangsgr&uuml;nde, </i>I have found them to be the best possible example for 
+the class room.<sup><a name="FN34REF" href="#FN34" id="footnote34">(34)</a></sup> <b>Figure 4</b> provides an overview of some of their features. 
+Except for K.2, which ends its first part with a half cadence (HC), all of 
+Mozart&rsquo;s Minuets K. 1&ndash;7 modulate to the key of the dominant and end their first 
+part with a cadence in the dominant key (V-<i>Cad.</i>). In addition, all of them 
+employ a continuation pattern at the beginning of the second part; two minuets 
+begin with <i>Monte</i> (K. 4 and 5), four with <i>Fonte</i> (K. 1e, 1f, 2, and 3), and one 
+with <i>Ponte</i> (K. 7), and end with a final cadence in the tonic key (I-<i>Cad.</i>). While 
+both parts of K. 1e and 1f c are exactly eight measures long, the remaining 
+minuets contain sections with 10, 12, 14, or 16 measures. <b>Figure 5</b> summarizes my 
+interpretation of the metric and harmonic structure of Mozart&rsquo;s Minuets K. 1&ndash;7.</p>
+
+<p>[20] As Figure 5 demonstrates, all minuets are constructed out of even numbered 
+metric groupings. Four measure structures, <i>Vierer, </i>are usually the result of the 
+combination of two two-measure units, two <i>Zweyer</i>. The two <i>Zweyer</i> can either be 
+joined (+), repeated (R), or transposed (T) in order to create the <i>Vierer, 
+</i>the 
+four-measure groupings. I find such a distinction helpful because it emphasizes 
+the structural difference between the functional sections of a minuet. For 
+example, a beginning <i>Vierer</i> will usually not be the result of a transposed <i>Zweyer</i>, because the function of the opening 
+<i>Vierer</i> is to acknowledge and 
+strengthen the tonic. On the other hand the second part usually opens with a 
+transposed <i>Zweyer</i>, because the transposition is part of the contrast provided by 
+the continuation patterns. Figure 5 also lists instances of inserted measure (I) 
+and doubling of the cadence (Dblg.). The former is easily distinguished in that 
+the inserted material usually stands out and is not related to the surrounding 
+music, while the later presents a special case of repetition, which simply 
+restates the cadential measures. This often happens in combination with a 
+deceptive or weak cadence and requires a restatement of the cadence. In addition 
+to the metric structure Figure 5 provides also a basic harmonic overview of the 
+different minuets. The <i>Vierer</i> in a minuet usually end either on the tonic (I) or 
+Dominant (V); yet I also show the <i>Zweyer</i> of <i>Monte</i> and <i>Fonte</i>, which end on IV and 
+ii respectively. If the ending is not a formal cadence with a stepwise approach 
+of the final note in the melody and leap from the fifth to the first scale 
+degree in the bass, it is simply identified with the scale degree (I or V).<sup><a name="FN35REF" href="#FN35" id="footnote35">(35)</a></sup>  
+Discounting the extensions by way of repeats, sequences, transpositions, and 
+insertion, Mozart&rsquo;s minuets clearly adhere to the minuet structure taught by Riepel.</p>
+<p>[21] The attached PDF-file &ldquo;<a href="eckert_instructions.pdf">Instructions on How to Write a Minuet in the Galant 
+Style</a>,&rdquo; provides a sample of my minuet-teaching material. I usually distribute 
+the six minuets (pages 3&ndash;8) together with a comparison sheet (&ldquo;K. 1&ndash;7 Minuet 
+Comparison,&rdquo; page 9) at the beginning of my minuet unit. The comparison sheet 
+helps to focus students&rsquo; analyses on the thematic, structural, and harmonic 
+aspects, and, by compiling their findings, it allows them to recognize common 
+features more easily. Throughout these investigations into Mozart&rsquo;s early 
+minuets, I encourage students to consider these compositions from the standpoint 
+of a courtly composer whose livelihood depends on his ability to quickly produce 
+a handful of minuets for the evening entertainment of his employer. Composition 
+from such a viewpoint is about craft, not inspiration. As a result, I am 
+highlighting the functional aspects of the different sections and their role 
+within the basic sixteen measure minuet structure, where the first four measures 
+serve to establish the tonic and introduce the main thematic material, measures 5&ndash;8, 
+the second section, usually modulate to the dominant, ending with a cadence 
+which usually takes up measures 7&ndash;8. The second part opens with a contrasting pattern 
+(<i>Monte, Fonte,</i> or <i>Ponte</i>) and ends with a section that cadences in the tonic. I 
+have found it useful to provide students with a number of handouts that 
+emphasize the functional sections within a minuet:<sup><a name="FN36REF" href="#FN36" id="footnote36">(36)</a></sup></p>
+<ol>
+	<li>The two-page &ldquo;K. 1&ndash;7 Mozart Minuet (Basic 8+8 Structure)&rdquo; allows for easy 
+comparison of the harmonic and thematic details in the six minuets. All minuets 
+are reduced to the minimum requirement of sixteen (8+8) measures, which allow 
+just for the four required sections of the minuet. The following handout &ldquo;Minuet 
+Extensions,&rdquo; which identifies all the extension measures that have been left 
+out, is useful for comparing the reduced versions with the real minuets. 
+Usually, I demonstrate the effect of leaving out a repeated section during the 
+analysis of the individual minuets. Thus the handouts merely summarize something 
+that students have already heard. However, I always emphasize that the reduced 
+minuets do not replace the complete minuets but that they prove a conceptual 
+stance. Thus whenever I leave out repeated measures to demonstrate a structural 
+aspect, I later bring them back again and discuss with students why the repeat 
+works.<br>
+&nbsp;</li>
+	<li>The &ldquo;K. 1&ndash;7 Cadential Patterns&rdquo; handout demonstrates the melodic variety 
+within the basis IV&ndash;<nobr>V<img border="0" alt="6 4" src="../../gifs/64.gif" width="8" height="15" style="vertical-align:text-top"></nobr>&ndash;<nobr><img border="0" alt="5 3" src="../../gifs/53.gif" width="7" height="16" style="vertical-align:text-top"></nobr>&ndash;I or ii<sup>6</sup>&ndash;<nobr>V<img border="0" alt="6 4" src="../../gifs/64.gif" width="8" height="15" style="vertical-align:text-top"></nobr>&ndash;<nobr><img border="0" alt="5 3" src="../../gifs/53.gif" width="7" height="16" style="vertical-align:text-top"></nobr>&ndash;I structure. All of them are 
+perfect authentic cadences, except for the half cadence in K. 2 (boxed example). 
+The handout emphasizes not only the melodic variety of the cadential patterns 
+but also a number of other features. First, it makes clear that a cadence 
+requires two measures: the first contains the pre-dominant and the cadential 
+6/4, the second measure the final cadential harmony. Second, it demonstrates the 
+importance of the hexachord above the final note as the melody of half of the 
+cadences leaps up to the sixth scale degree before descending stepwise or with 
+skips to the final tonic (for example, K. 1e La&ndash;Sol&ndash;Fa&ndash;Mi&ndash;Re&ndash;Do and La&ndash;Fa&ndash;Re&ndash;Do&ndash;Ti&ndash;Do); 
+many of the remaining cadences leap at least to the fourth scale degree (for 
+example, K. 5 Fa&ndash;Mi&ndash;Re&ndash;Ti&ndash;Do with thirds and K. 7 Re&ndash;Fa&ndash;Mi&ndash;Re&ndash;Do&ndash;Ti&ndash;Do). In 
+addition, the handout serves a practical purpose as it allows students to &ldquo;cut 
+and paste&rdquo; cadences into their own assignments.<br>
+&nbsp;</li>
+	<li>The &ldquo;K. 1&ndash;7 Continuation Patterns (Monte, Fonte, and Ponte)&rdquo; provides an 
+overview of the some of the melodic possibilities for the beginning of the 
+minuet&rsquo;s second part after the double bar line. Again, I encourage students to 
+consider the handout a collection of continuation patterns from which they can 
+draw for their own compositions. Students often only need to transpose, and 
+slightly alter them before they can paste these patterns into their own 
+compositions.</li>
+</ol>
+<p>[22] After students are more familiar with the basic minuet structure, I introduce 
+them to Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>by way of the <i>Discantista</i>&rsquo;s minuet.<sup><a name="FN37REF" href="#FN37" id="footnote37">(37)</a></sup> Their first 
+task is to &ldquo;mark any problems and mistakes&rdquo; based on their understanding of 
+Mozart&rsquo;s early minuets. It has been my experience that students usually pick up 
+on almost all of the <i>Pr&aelig;ceptor</i>&rsquo;s objections. Moreover, I have found that the 
+latter objections that deal with the use of note values and thematic coherence 
+in a minuet provide the opportunity for the discussion of more general musical 
+features that are helpful to students. One class period is usually spent on 
+discussing the different corrections to the student&rsquo;s minuet using pages 2 and 3 
+of &ldquo;Minuet Corrections.&rdquo; The handout reproduces only five of the seven 
+corrections by the teacher, because the teacher significantly changes the melody 
+of the student&rsquo;s minuet in the final two corrections. The next class period is 
+usually spent with a discussion of the first seven pages, the first lesson of 
+the <i>Discantista</i>, in the Anfangsgr&uuml;nde, which allows for a consideration of the 
+detail which I discussed in the first part of this present essay.<sup><a name="FN38REF" href="#FN38" id="footnote38">(38)</a></sup></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b>. Minuet Worksheets Nos. 1&ndash;6</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="eckert_examples.php?id=22&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="eckert_fig6_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[23] Throughout these analytic approaches, I use worksheets that guide students 
+towards composing their own minuet. By asking students to complete specific 
+sections or aspects of minuets, I emphasize the functional aspects of the 
+different sections; by gradually increasing the length and complexity of their 
+assignments, I am guiding them towards their final project, which consists of an 
+expanded minuet composed and performed in collaboration as a group. <b>Figure 6</b> summarizes the different tasks specified in each worksheet. I am using 
+such worksheets as soon as students begin to recognize some of the features of 
+the minuet. This usually happens by the end of the second week. Since each 
+worksheet consists of an incomplete minuet and instructions on how to complete 
+it, the six worksheets yield another six minuets that reinforce the basic minuet 
+structure. Because the cadence and the continuation patterns <i>Monte, Fonte,</i> and 
+<i>Ponte</i> have a predictable structure, the first two worksheets focus on them. 
+While the following worksheets require students to write a new melody above a 
+given bass (No. 3), to fill in the internal four measures of every part (No. 4), 
+to complete a minuet based on the first four measures (No. 5), and to write a 
+complete minuet (No. 6), the final projects asks students to write minuets above 
+the minimally required sixteen measure structure. It is also helpful to use 
+Leonard Ratner&rsquo;s conception of the overall 
+<img border="0" src="eckrepeatleft.GIF" width="12" height="18" align="absbottom"> I ? V 
+<img border="0" src="eckrepeatright.GIF" width="13" height="18" align="absbottom"><img border="0" src="eckrepeatleft.GIF" width="12" height="18" align="absbottom"> X ? I 
+<img border="0" src="eckrepeatright.GIF" width="13" height="18" align="absbottom"> two-reprise form 
+structure of the minuet as a way to demonstrate the connection of the minuet to 
+larger structure.<sup><a name="FN39REF" href="#FN39" id="footnote39">(39)</a></sup></p>
+<p>[24] In summary, I have found that this step-by-step approach, consisting of analysis 
+and guided composition, provides a meaningful and engaging introduction to 
+working with stylistic copies. The limited composition assignments especially 
+guide student&rsquo;s efforts without overwhelming them with the task of writing a 
+whole composition. While I have experimented with many different approaches over 
+the years, my central concern has remained to provide students with a 
+historically contextualized hands-on experience of compositional procedures that 
+are shared by most common practice compositions.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Stefan Eckert<br>
+	School of Music<br>Northwestern University<br>711 Elgin Road<br>Evanston, IL 60208-1200<br><a href="mailto:s-eckert@northwestern.edu">s-eckert@northwestern.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_allanbrook_1998" class="flyoverdiv">Allanbrook, Wye J (trans.). 1998. &ldquo;Joseph Riepel: From: Fundamentals of Musical 
+Composition.&rdquo; <i>Source Readings in Music History</i>, Revised Edition, Edited by Leo Treitler, New York and London: W. W. Norton &amp; Company, 749&ndash;61.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="allanbrook_1998"></a>Allanbrook, Wye J (trans.). 1998. &ldquo;Joseph Riepel: From: Fundamentals of Musical 
+Composition.&rdquo; <i>Source Readings in Music History</i>, Revised Edition, Edited by Leo Treitler, New York and London: W. W. Norton &amp; Company, 749&ndash;61.</p><div id="citediv_balthazar_1983" class="flyoverdiv">Balthazar, Scott L. 1983. &ldquo;Intellectual History and Concepts of the Concerto: 
+Some Parallels from 1750 to 1850,&rdquo; <i>Journal of the American Musicological Society</i> 
+36, no. 1, 39&ndash;72.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="balthazar_1983"></a>Balthazar, Scott L. 1983. &ldquo;Intellectual History and Concepts of the Concerto: 
+Some Parallels from 1750 to 1850,&rdquo; <i>Journal of the American Musicological Society</i> 
+36, no. 1, 39&ndash;72.</p><div id="citediv_brumbeloe_1991" class="flyoverdiv">Brumbeloe, Joseph Leonard. 1991. <i>Formal Grouping in the Theory and Musical 
+Practice of the Eighteenth Century</i>, Ph.D. diss., Indiana University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brumbeloe_1991"></a>Brumbeloe, Joseph Leonard. 1991. <i>Formal Grouping in the Theory and Musical 
+Practice of the Eighteenth Century</i>, Ph.D. diss., Indiana University.</p><div id="citediv_budday_1987" class="flyoverdiv">Budday, Wolfgang. 1987. &ldquo;&Uuml;ber &lsquo;Form&rsquo; und &lsquo;Inhalt&rsquo; in Menuetten Mozarts,&rdquo;
+<i>Archiv f&uuml;r Musikwissenschaft </i>44, no. 1, 58&ndash;89.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="budday_1987"></a>Budday, Wolfgang. 1987. &ldquo;&Uuml;ber &lsquo;Form&rsquo; und &lsquo;Inhalt&rsquo; in Menuetten Mozarts,&rdquo;
+<i>Archiv f&uuml;r Musikwissenschaft </i>44, no. 1, 58&ndash;89.</p><div id="citediv_budday_1983" class="flyoverdiv">Budday, Wolfgang. 1983. <i>Grundlagen musikalischer Formen der Wiener Klassik: An 
+Hand der zeitgen?ssischen Theorie von Joseph Riepel und Heinrich Christoph Koch 
+dargestellt an Menuetten und Sonatens&auml;tzen (1750&ndash;1790)</i>, Kassel: B&auml;renreiter.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="budday_1983"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1983. <i>Grundlagen musikalischer Formen der Wiener Klassik: An 
+Hand der zeitgen?ssischen Theorie von Joseph Riepel und Heinrich Christoph Koch 
+dargestellt an Menuetten und Sonatens&auml;tzen (1750&ndash;1790)</i>, Kassel: B&auml;renreiter.</p><div id="citediv_clendinning_and_marvin_2005" class="flyoverdiv">Clendinning, Jane Piper and Elizabeth West Marvin. 2005. <i>The Musician&rsquo;s Guide to 
+Theory and Analysis.</i> New York: W.W. Norton &amp; Company.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clendinning_and_marvin_2005"></a>Clendinning, Jane Piper and Elizabeth West Marvin. 2005. <i>The Musician&rsquo;s Guide to 
+Theory and Analysis.</i> New York: W.W. Norton &amp; Company.</p><div id="citediv_cook_1996" class="flyoverdiv">Cook, Nicholas. 1996. <i>Analysis through Composition: Principles of the Classical 
+Style.</i> New York and Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cook_1996"></a>Cook, Nicholas. 1996. <i>Analysis through Composition: Principles of the Classical 
+Style.</i> New York and Oxford: Oxford University Press.</p><div id="citediv_eckert_2000" class="flyoverdiv">Eckert, Stefan. 2000. <i>Ars Combinatoria, Dialogue Structure, and Musical Practice 
+in Joseph Riepel&rsquo;s Anfangsgr&uuml;ndezur musicalischen Setzkunst</i>, Ph.D. diss., State 
+University of New York at Stony Brook.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="eckert_2000"></a>Eckert, Stefan. 2000. <i>Ars Combinatoria, Dialogue Structure, and Musical Practice 
+in Joseph Riepel&rsquo;s Anfangsgr&uuml;ndezur musicalischen Setzkunst</i>, Ph.D. diss., State 
+University of New York at Stony Brook.</p><div id="citediv_feil_1955" class="flyoverdiv">Feil, Arnold. 1955. <i>Satztechnische Fragen in den Kompositionslehren von F. E. 
+Niedt, J. Riepel und H. Chr. Koch,</i> Ph.D. diss., University of Heidelberg.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="feil_1955"></a>Feil, Arnold. 1955. <i>Satztechnische Fragen in den Kompositionslehren von F. E. 
+Niedt, J. Riepel und H. Chr. Koch,</i> Ph.D. diss., University of Heidelberg.</p><div id="citediv_gauldin_1995" class="flyoverdiv">Gauldin, Robert. 1995. <i>A Practical Approach to Eighteenth-Century Counterpoint.</i> 
+2nd edition. Prospect Heights, Illinois: Waveland Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gauldin_1995"></a>Gauldin, Robert. 1995. <i>A Practical Approach to Eighteenth-Century Counterpoint.</i> 
+2nd edition. Prospect Heights, Illinois: Waveland Press.</p><div id="citediv_gjerdingen_forthcoming" class="flyoverdiv">Gjerdingen, Robert O. Forthcoming. <i>The Craft of Eighteenth-Century Court Music: 
+A Treatise on Various Schemata Characteristic of the Galant Style. </i>Aldershot, 
+U.K.: Ashgate Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gjerdingen_forthcoming"></a>Gjerdingen, Robert O. Forthcoming. <i>The Craft of Eighteenth-Century Court Music: 
+A Treatise on Various Schemata Characteristic of the Galant Style. </i>Aldershot, 
+U.K.: Ashgate Press.</p><div id="citediv_ratner_1980" class="flyoverdiv">Ratner, Leonard. 1980. <i>Classic Music &mdash; Expression, Form, and Style,</i> New York: 
+Schirmer Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ratner_1980"></a>Ratner, Leonard. 1980. <i>Classic Music &mdash; Expression, Form, and Style,</i> New York: 
+Schirmer Books.</p><div id="citediv_reed_1983" class="flyoverdiv">Reed, Nola Jane. 1983. <i>The Theories of Joseph Riepel as expressed in his Anfangsgr&uuml;ndezur Musicalischen Setzkunst (1752&ndash;1768),</i> Ph.D. diss., University 
+of Rochester, Eastman School of Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="reed_1983"></a>Reed, Nola Jane. 1983. <i>The Theories of Joseph Riepel as expressed in his Anfangsgr&uuml;ndezur Musicalischen Setzkunst (1752&ndash;1768),</i> Ph.D. diss., University 
+of Rochester, Eastman School of Music.</p><div id="citediv_riepel_1755" class="flyoverdiv">Riepel, Joseph. 1755. <i>Grundregeln zur Tonordnung insgemein, Abermal durchgehends 
+mit musicalischen Exempeln abgefa&szlig;t und Gespr&auml;ch-weise vorgetragen</i>, Frankfurt, 
+Leipzig, und aller Orten Teutschlands, wo das erste Capitel von der Tactordnung 
+zu haben ist.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riepel_1755"></a>Riepel, Joseph. 1755. <i>Grundregeln zur Tonordnung insgemein, Abermal durchgehends 
+mit musicalischen Exempeln abgefa&szlig;t und Gespr&auml;ch-weise vorgetragen</i>, Frankfurt, 
+Leipzig, und aller Orten Teutschlands, wo das erste Capitel von der Tactordnung 
+zu haben ist.</p><div id="citediv_riepel_1752" class="flyoverdiv">Riepel, Joseph. 1752. <i>Anfangsgr&uuml;ndezur musikalischen Setzkunst: Nicht zwar nach 
+alt-mathematischer Einbildungsart der Zirkel-Harmonisten, Sondern durchgehends 
+mit sichtbaren Exempeln abgefasset, De Rhythmopoeia, oder von der Tactordnung</i>, Regensburg.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riepel_1752"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1752. <i>Anfangsgr&uuml;ndezur musikalischen Setzkunst: Nicht zwar nach 
+alt-mathematischer Einbildungsart der Zirkel-Harmonisten, Sondern durchgehends 
+mit sichtbaren Exempeln abgefasset, De Rhythmopoeia, oder von der Tactordnung</i>, Regensburg.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> This is an expanded version of a paper presented at the 27th annual meeting of the Society for Music Theory in Seattle 2004.  I would like to thank Robert Gjerdingen and my anonymous reviewers for their comments and suggestions.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">This is an expanded version of a paper presented at the 27th annual meeting of the Society for Music Theory in Seattle 2004.  I would like to thank Robert Gjerdingen and my anonymous reviewers for their comments and suggestions.</div><p><a name="FN1">1.</a> Glenn Gould wrote <i>So You Want to Write a Fugue?</i> 
+for <i>The Anatomy of the Fugue,</i> a CBC-TV <i>Festival</i> program, broadcast 
+on March 4, 1963. <i>Glenn Gould Archive</i> (Accessed 15 June 2005),
+<a href='http://www.collectionscanada.ca/glenngould/m23-305-e.html'>
+http://www.collectionscanada.ca/glenngould/m23-305-e.html</a>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> <a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f28">Riepel 1752</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> While Cook (1996) also works on the basis of historical 
+models and sources, I find his treatment of individual topics too cursory and 
+his overall approach too eclectic for use in the classroom. Yet Cook&rsquo;s text 
+offers a good starting point for exploring ideas about stylistic copies.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Fortunately, the revised Strunk contains a translation 
+of the opening section. See <a href="#allanbrook_1998" id="citation_allanbrook_1998_67dc9b4426f2d">Allanbrook 1998</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> &ldquo;[<i>Pr&aelig;c</i>.]&lsquo;eine hinl&auml;nglich Erkenntni&szlig;?von der 
+ordentlichen Eintheilung des Gesanges. Denn wer H&auml;user baut, muss die 
+Materialien dazu haben&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f2f">Riepel 1752</a>, 1.).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> &ldquo;Disc. Nach meinem Erachten ist auf der Welt nichts leichter zu componiren als 
+ein Menuet; ja ich getrauete mir flugs ein ganzes Dutzend nacheinander 
+herzuschreiben&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f31">Riepel 1752</a>, 1.).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> &ldquo;Pr&aelig;c. Himmel! du kennest ja noch nicht einmal die Noten 
+voneinander. Von diesem Minuet, wenn ich ihn so nennen darf, [?] mag er gefallen 
+wem er will; ich meines Ortes gebe dir keine gute Pfeife Knaster daf&uuml;r&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f33">Riepel 1752</a>, 2.).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> See <a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f35">Riepel 1752</a>, 2.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Nola Reed (<a href="#reed_1983" id="citation_reed_1983_67dc9b4426f38">1983</a>) and Joseph Brumbeloe (<a href="#brumbeloe_1991" id="citation_brumbeloe_1991_67dc9b4426f3a">1991</a>) also 
+emphasize that the first point concerns the overall length of a composition and 
+points two and three are concerned with inner coherence (See <a href="#reed_1983" id="citation_reed_1983_67dc9b4426f3c">Reed 1983</a>, 34-35 
+and <a href="#brumbeloe_1991" id="citation_brumbeloe_1991_67dc9b4426f3e">Brumbeloe 1991</a>, 78&ndash;79.). In addition, Scott Balthazar (<a href="#balthazar_1983" id="citation_balthazar_1983_67dc9b4426f3f">1983</a>) points out that 
+Riepel&rsquo;s tendency to begin a topic by presenting it first in its entirety and 
+then dealing with its details, bears resemblance to Gottfried Wilhelm Leibniz&rsquo;s 
+conception of the universe (See <a href="#balthazar_1983" id="citation_balthazar_1983_67dc9b4426f41">Balthazar 1983</a>, 39&ndash;72.).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Since Riepel does not use the terms &ldquo;phrase&rdquo; or &ldquo;period&rdquo; within the 
+<i>Anfangsgr&uuml;nde</i>, I will use the more neutral terms 
+&ldquo;unit&rdquo; and &ldquo;section&rdquo; to refer to groups of measures. The reason for this is that Riepel&rsquo;s 
+conception of musical punctuation differs substantially from nineteenth-century 
+theories of phrase structure. This issue is addressed in Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f43">2000</a>).<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Later in the <i>Anfangsgr&uuml;nde, </i>Riepel discusses groupings 
+of up to nine measures (<i>Neuner</i>).<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> &ldquo;[<i>Pr&aelig;c</i>.] Eine Zweyer** [Footnote: **Binarius] bestehet 
+in 2. T&auml;cten, welche andern darauf folgenden 2. T&auml;cten der Bewegung nach, 
+meistentheils &auml;hnlich sind, zum Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f45">Riepel 1752</a>, 2.).<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> See <a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f47">Riepel 1752</a>, 2. Riepel identifies this ascending 
+sequence as a feature of a Monte (going up the mountain) in the second chapter 
+of the Anfangsgr&uuml;nde. I will discuss this and other continuation patterns, which 
+open the second part of a minuet, later.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> &ldquo;Disc. Das verstehe ich nun sehr wohl; denn man kann 
+es sehen und h?ren. Allein welche sind besser zu einem Men., die Zweyer oder 
+Dreyer?<br>
+&nbsp;&nbsp;&nbsp;
+Pr&aelig;c. Die Zweyer. Denn die Dreyer sind gar nichts n&uuml;tze dazu. Ich will dir aber 
+heut noch sagen, wann und wo diese gut angebracht k?nnen werden.<br>
+&nbsp;&nbsp;&nbsp;
+Disc. Also kan man ja aus einem Zweyer einen Dreyer, oder aus diesem jenen 
+machen, wenn man z. Example bald einen Tact abschneidet, und bald einen hinzu thut.<br>
+&nbsp;&nbsp;&nbsp;
+Pr&aelig;c. Auf alle Weise&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f49">Riepel 1752</a>, 3.).<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> In his 1955 dissertation discussing eighteenth-century 
+compositional theory, Arnold Feil argues that although Riepel presents groups of 
+measures, &ldquo;the first building block is the measure and not the measure group, 
+even if it does not appear individually.&rdquo; In order to support his argument, Feil 
+reproduces Riepel&rsquo;s <i>Zweyer, Dreyer, </i>and <i>Vierer</i> with lower-case letters 
+underneath each measure. For example, he marks the four measures of Riepel&rsquo;s 
+&ldquo;first <i>Zweyer</i>&rdquo; and &ldquo;other <i>Zweyer</i>&rdquo; (Example 2a) a, b, c, and d respectively. While 
+Feil&rsquo;s view is not without merit&mdash;individual measures are indeed the basic 
+building blocks&mdash;his interpretation ignores Riepel&rsquo;s own identification of the 
+second <i>Zweyer</i> as a repeat of the first. Thus the first <i>Zweyer</i> creates a grouping 
+that needs to be considered as a whole. Hence, the measures in the example 
+should not be labeled a, b, c, and d, but a, b, a&rsquo;, and b.&rsquo; See <a href="#feil_1955" id="citation_feil_1955_67dc9b4426f4a">Feil 1955</a>, 
+38&ndash;39.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> &ldquo;[<i>Pr&aelig;c</i>.] Wenn nicht noch ein Vierer nachfolgete, so 
+wollte ich deine Meinung zur Noth endlich noch gelten lassen. Jedennoch w&uuml;rden 
+sich die Zweyer auf folgende Art deutlicher ausnehmen, als die Deinigen, z. Ex?&rdquo; 
+(<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f4c">Riepel 1752</a>, 3.).<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> &ldquo;[<i>Pr&aelig;c</i>.] Daher, weil hier der andere Zweyer um einen 
+Ton h?her zu stehen kommt. Deine Zweyer hingegen halten sich beide in dem Tone F 
+auf&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f4e">Riepel 1752</a>, 3.).<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> &ldquo;[<i>Pr&aelig;c</i>.]?sie sind gut, und zwar in einem 
+<i>Allegro 
+assai,</i> oder <i>Tempo presto,</i> und <i>prestissimo</i> einer Sympfonie, eines Concerts, oder 
+Solo, und so weiter, unter allen die besten Noten?&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f50">Riepel 1752</a>, 4.).<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> &ldquo;[<i>Pr&aelig;c</i>.] Zu einem Menuet aber werden stets vollkommen 
+erhebende, n&auml;mlich Viertelnoten erfordert, z. Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f52">Riepel 1752</a>, 4.).<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Variation by means of <i>ars combinatoria</i> is an integral 
+aspect of Riepel&rsquo;s compositional approach. See Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f54">2000</a>) for a discussion of 
+the role of <i>ars combinatoria</i> in Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> The <i>Pr&aelig;ceptor</i>&rsquo;s dislike for such a rhythmic 
+construction is easily understood, since the eighth-notes clearly undermine the 
+down-beat. The single quarter-note at the end gives rise to a rhythmic accent on 
+beat three.<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> &ldquo;[<i>Pr&aelig;c</i>.] Darum, weil der Men. gleichsam trachtet zu 
+seiner Cadenz oder Ruhe zu gelangen, gleich wie ein Hungriger von seiner Arbeit 
+etwan zum Abendessen, oder ? Du sollst nicht lachen, denn diese und tausend 
+andere <b>Gleichnissen mu&szlig; sich</b>, sonderlich <b>ein Anf&auml;nger, vorstellen, sofern er 
+seine Composition nicht mit</b> leeren, einf&auml;ltigen und <b>papirenen Noten anf&uuml;llen 
+will</b> [Riepel&rsquo;s emphasis]&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f56">Riepel 1752</a>, 5.).<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> &ldquo;[<i>Pr&aelig;c</i>.]?eine unbewegliche Note in der Mitte eines so 
+kurzen oder tanzm&auml;&szlig;igen Men. niemals, sondern nur am Ende des ersten und zweyten 
+Theils gebraucht wird. Man kann aber eine solche unbewegliche oder todte Note 
+lebendig machen auf folgende Art, z. Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f58">Riepel 1752</a>, 5.).<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> &ldquo;[<i>Pr&aelig;c</i>.] Nun zwey solche T&auml;cte sind in einem
+<i>Men</i>. 
+nichts n&uuml;tze?&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f59">Riepel 1752</a>, 5.).<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> &ldquo;[<i>Disc</i>.] Merke wohl auf! Im ersten Theile gehen die 
+Noten <img border='0' src='ecksymbol.GIF' width='15' height='16'> herab, in dem zweyten hinauf, und so glaube ich, da&szlig; genug Aehnlichkeit 
+oder Zusammenhang geh?ret werde&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5b">Riepel 1752</a>, 6.).<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> &ldquo;[<i>Pr&aelig;c</i>.] Warte ein wenig! Du bist gar zu hoch 
+gestiegen, ich will sagen, der Men. ist auf solche Art zu jung, hintenmal der 
+Gesang <b>das Ernsthafte und Mannbare</b> dadurch verlieret [Riepel&rsquo;s emphasis]&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5d">Riepel 1752</a>, 7.).<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> &ldquo;[<i>Pr&aelig;c</i>.] Das ist sehr gut. Jedoch braucht man eben 
+nicht mit allen Zweyern zu steigen oder fallen; ja es binden sich die Cadenzen 
+fast gar mehr an diese Regel: indem oft die Cadenz des zweyten Theils f&uuml;r sich 
+ganz allein das fallen: gleich wie im ersten Theile eine einzige Note <img border='0' src='ecksymbol.GIF' width='15' height='16'> das 
+Steigen ausdr&uuml;cken kann, z.Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5e">Riepel 1752</a>, 8.).<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> &ldquo;[<i>Pr&aelig;c</i>.] Er k?nnte dieses eben auch beobachten, wenn 
+er wollte; allein er ist oft so ausschweifend, da&szlig; er gar keiner Regel folgen 
+will. Zudem so kann der erste Theil einen zuh?renden Liebhaber auf einmal so 
+sehr einnehmen, da&szlig; er sich nicht viel um den zweyten Theil bek&uuml;mmert, weil 
+dieser ohnehin nur als ein Beschlu&szlig; des ersten Theils anzusehen ist&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f60">Riepel 1752</a>, 8.).<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> <i>Monte</i> (going up the mountain), is a melodic/harmonic 
+pattern which appears usually after the double barline in a minuet. In its basic 
+form it is constituted by an ascending sequence: C&ndash;F followed by D&ndash;G (in C 
+major), which is usually harmonized with a V/IV going to IV followed by a V/V 
+going to V movement. I will discuss this and other patterns, which Riepel 
+presents, in the next part.<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Wolfgang Budday&rsquo;s (<a href="#budday_1983" id="citation_budday_1983_67dc9b4426f62">1983</a>) dissertation, which surveys 
+minuets written between 1750 and 1790, clearly demonstrates the close 
+relationship between Riepel&rsquo;s instructions and contemporaneous musical practice.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> While the harmonic competence for dealing with the 
+minuet is usually reached by the end of the first year, I have also used it for 
+a review of diatonic harmony in upper level classes.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> For a discussion of Riepel&rsquo;s means of extension, see 
+Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f64">2000</a>) 172&ndash;183.<br><a href="#FN32REF">Return to text</a></p><p><a name="FN33">33.</a> Robert Gjerdingen&rsquo;s forthcoming book on galant 
+schematas dedicates a chapter to each of the three continuation patterns and 
+their varied appearance in the repertoire. For a discussion of <i>Monte, Fonte,</i> and 
+<i>Ponte</i> in recent theory textbooks, see Gauldin (<a href="#gauldin_1995" id="citation_gauldin_1995_67dc9b4426f66">1995</a>) and Clendinning and West 
+Marvin (<a href="#clendinning_and_marvin_2005" id="citation_clendinning_and_marvin_2005_67dc9b4426f69">2005</a>).<br><a href="#FN33REF">Return to text</a></p><p><a name="FN34">34.</a> Wolfgang Budday (<a href="#budday_1987" id="citation_budday_1987_67dc9b4426f6b">1987</a>) argues that Leopold Mozart 
+taught his son composition using the second chapter of Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>
+(<a href="#riepel_1755" id="citation_riepel_1755_67dc9b4426f6d">1755</a>). Indeed it is quite remarkable how closely W. A. Mozart&rsquo;s early minuets 
+match Riepel&rsquo;s instructions.<br><a href="#FN34REF">Return to text</a></p><p><a name="FN35">35.</a> Riepel considers an ending that is not a formal 
+cadence an <i>Absatz.</i> While I teach <i>Monte, Fonte,</i> and <i>Ponte</i> to my students, I 
+usually avoid discussing the finer points of mid-eighteenth century musical 
+punctuation to keep the number of new concepts to a minimum.<br><a href="#FN35REF">Return to text</a></p><p><a name="FN36">36.</a> In order to enable students to compare the different 
+minuets more easily and allow for using sections in their own composition, the 
+following three handouts transpose the minuets into C major.<br><a href="#FN36REF">Return to text</a></p><p><a name="FN37">37.</a> For a full discussion of the opening section of 
+Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>please see Part I of this essay.<br><a href="#FN37REF">Return to text</a></p><p><a name="FN38">38.</a> <a href="#allanbrook_1998" id="citation_allanbrook_1998_67dc9b4426f6f">Allanbrook 1998</a>, 749&ndash;761.<br><a href="#FN38REF">Return to text</a></p><p><a name="FN39">39.</a> <a href="#ratner_1980" id="citation_ratner_1980_67dc9b4426f70">Ratner 1980</a>, 209&ndash;216.<br><a href="#FN39REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Glenn Gould wrote <i>So You Want to Write a Fugue?</i> 
+for <i>The Anatomy of the Fugue,</i> a CBC-TV <i>Festival</i> program, broadcast 
+on March 4, 1963. <i>Glenn Gould Archive</i> (Accessed 15 June 2005),
+<a href='http://www.collectionscanada.ca/glenngould/m23-305-e.html'>
+http://www.collectionscanada.ca/glenngould/m23-305-e.html</a>.</div><div id="fndiv2" class="flyoverdiv"><a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f28">Riepel 1752</a>.</div><div id="fndiv3" class="flyoverdiv">While Cook (1996) also works on the basis of historical 
+models and sources, I find his treatment of individual topics too cursory and 
+his overall approach too eclectic for use in the classroom. Yet Cook&rsquo;s text 
+offers a good starting point for exploring ideas about stylistic copies.</div><div id="fndiv4" class="flyoverdiv">Fortunately, the revised Strunk contains a translation 
+of the opening section. See <a href="#allanbrook_1998" id="citation_allanbrook_1998_67dc9b4426f2d">Allanbrook 1998</a>.</div><div id="fndiv5" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.]&lsquo;eine hinl&auml;nglich Erkenntni&szlig;?von der 
+ordentlichen Eintheilung des Gesanges. Denn wer H&auml;user baut, muss die 
+Materialien dazu haben&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f2f">Riepel 1752</a>, 1.).</div><div id="fndiv6" class="flyoverdiv">&ldquo;Disc. Nach meinem Erachten ist auf der Welt nichts leichter zu componiren als 
+ein Menuet; ja ich getrauete mir flugs ein ganzes Dutzend nacheinander 
+herzuschreiben&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f31">Riepel 1752</a>, 1.).</div><div id="fndiv7" class="flyoverdiv">&ldquo;Pr&aelig;c. Himmel! du kennest ja noch nicht einmal die Noten 
+voneinander. Von diesem Minuet, wenn ich ihn so nennen darf, [?] mag er gefallen 
+wem er will; ich meines Ortes gebe dir keine gute Pfeife Knaster daf&uuml;r&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f33">Riepel 1752</a>, 2.).</div><div id="fndiv8" class="flyoverdiv">See <a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f35">Riepel 1752</a>, 2.</div><div id="fndiv9" class="flyoverdiv">Nola Reed (<a href="#reed_1983" id="citation_reed_1983_67dc9b4426f38">1983</a>) and Joseph Brumbeloe (<a href="#brumbeloe_1991" id="citation_brumbeloe_1991_67dc9b4426f3a">1991</a>) also 
+emphasize that the first point concerns the overall length of a composition and 
+points two and three are concerned with inner coherence (See <a href="#reed_1983" id="citation_reed_1983_67dc9b4426f3c">Reed 1983</a>, 34-35 
+and <a href="#brumbeloe_1991" id="citation_brumbeloe_1991_67dc9b4426f3e">Brumbeloe 1991</a>, 78&ndash;79.). In addition, Scott Balthazar (<a href="#balthazar_1983" id="citation_balthazar_1983_67dc9b4426f3f">1983</a>) points out that 
+Riepel&rsquo;s tendency to begin a topic by presenting it first in its entirety and 
+then dealing with its details, bears resemblance to Gottfried Wilhelm Leibniz&rsquo;s 
+conception of the universe (See <a href="#balthazar_1983" id="citation_balthazar_1983_67dc9b4426f41">Balthazar 1983</a>, 39&ndash;72.).</div><div id="fndiv10" class="flyoverdiv">Since Riepel does not use the terms &ldquo;phrase&rdquo; or &ldquo;period&rdquo; within the 
+<i>Anfangsgr&uuml;nde</i>, I will use the more neutral terms 
+&ldquo;unit&rdquo; and &ldquo;section&rdquo; to refer to groups of measures. The reason for this is that Riepel&rsquo;s 
+conception of musical punctuation differs substantially from nineteenth-century 
+theories of phrase structure. This issue is addressed in Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f43">2000</a>).</div><div id="fndiv11" class="flyoverdiv">Later in the <i>Anfangsgr&uuml;nde, </i>Riepel discusses groupings 
+of up to nine measures (<i>Neuner</i>).</div><div id="fndiv12" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Eine Zweyer** [Footnote: **Binarius] bestehet 
+in 2. T&auml;cten, welche andern darauf folgenden 2. T&auml;cten der Bewegung nach, 
+meistentheils &auml;hnlich sind, zum Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f45">Riepel 1752</a>, 2.).</div><div id="fndiv13" class="flyoverdiv">See <a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f47">Riepel 1752</a>, 2. Riepel identifies this ascending 
+sequence as a feature of a Monte (going up the mountain) in the second chapter 
+of the Anfangsgr&uuml;nde. I will discuss this and other continuation patterns, which 
+open the second part of a minuet, later.</div><div id="fndiv14" class="flyoverdiv">&ldquo;Disc. Das verstehe ich nun sehr wohl; denn man kann 
+es sehen und h?ren. Allein welche sind besser zu einem Men., die Zweyer oder 
+Dreyer?<br>
+&nbsp;&nbsp;&nbsp;
+Pr&aelig;c. Die Zweyer. Denn die Dreyer sind gar nichts n&uuml;tze dazu. Ich will dir aber 
+heut noch sagen, wann und wo diese gut angebracht k?nnen werden.<br>
+&nbsp;&nbsp;&nbsp;
+Disc. Also kan man ja aus einem Zweyer einen Dreyer, oder aus diesem jenen 
+machen, wenn man z. Example bald einen Tact abschneidet, und bald einen hinzu thut.<br>
+&nbsp;&nbsp;&nbsp;
+Pr&aelig;c. Auf alle Weise&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f49">Riepel 1752</a>, 3.).</div><div id="fndiv15" class="flyoverdiv">In his 1955 dissertation discussing eighteenth-century 
+compositional theory, Arnold Feil argues that although Riepel presents groups of 
+measures, &ldquo;the first building block is the measure and not the measure group, 
+even if it does not appear individually.&rdquo; In order to support his argument, Feil 
+reproduces Riepel&rsquo;s <i>Zweyer, Dreyer, </i>and <i>Vierer</i> with lower-case letters 
+underneath each measure. For example, he marks the four measures of Riepel&rsquo;s 
+&ldquo;first <i>Zweyer</i>&rdquo; and &ldquo;other <i>Zweyer</i>&rdquo; (Example 2a) a, b, c, and d respectively. While 
+Feil&rsquo;s view is not without merit&mdash;individual measures are indeed the basic 
+building blocks&mdash;his interpretation ignores Riepel&rsquo;s own identification of the 
+second <i>Zweyer</i> as a repeat of the first. Thus the first <i>Zweyer</i> creates a grouping 
+that needs to be considered as a whole. Hence, the measures in the example 
+should not be labeled a, b, c, and d, but a, b, a&rsquo;, and b.&rsquo; See <a href="#feil_1955" id="citation_feil_1955_67dc9b4426f4a">Feil 1955</a>, 
+38&ndash;39.</div><div id="fndiv16" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Wenn nicht noch ein Vierer nachfolgete, so 
+wollte ich deine Meinung zur Noth endlich noch gelten lassen. Jedennoch w&uuml;rden 
+sich die Zweyer auf folgende Art deutlicher ausnehmen, als die Deinigen, z. Ex?&rdquo; 
+(<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f4c">Riepel 1752</a>, 3.).</div><div id="fndiv17" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Daher, weil hier der andere Zweyer um einen 
+Ton h?her zu stehen kommt. Deine Zweyer hingegen halten sich beide in dem Tone F 
+auf&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f4e">Riepel 1752</a>, 3.).</div><div id="fndiv18" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.]?sie sind gut, und zwar in einem 
+<i>Allegro 
+assai,</i> oder <i>Tempo presto,</i> und <i>prestissimo</i> einer Sympfonie, eines Concerts, oder 
+Solo, und so weiter, unter allen die besten Noten?&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f50">Riepel 1752</a>, 4.).</div><div id="fndiv19" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Zu einem Menuet aber werden stets vollkommen 
+erhebende, n&auml;mlich Viertelnoten erfordert, z. Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f52">Riepel 1752</a>, 4.).</div><div id="fndiv20" class="flyoverdiv">Variation by means of <i>ars combinatoria</i> is an integral 
+aspect of Riepel&rsquo;s compositional approach. See Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f54">2000</a>) for a discussion of 
+the role of <i>ars combinatoria</i> in Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>.</div><div id="fndiv21" class="flyoverdiv">The <i>Pr&aelig;ceptor</i>&rsquo;s dislike for such a rhythmic 
+construction is easily understood, since the eighth-notes clearly undermine the 
+down-beat. The single quarter-note at the end gives rise to a rhythmic accent on 
+beat three.</div><div id="fndiv22" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Darum, weil der Men. gleichsam trachtet zu 
+seiner Cadenz oder Ruhe zu gelangen, gleich wie ein Hungriger von seiner Arbeit 
+etwan zum Abendessen, oder ? Du sollst nicht lachen, denn diese und tausend 
+andere <b>Gleichnissen mu&szlig; sich</b>, sonderlich <b>ein Anf&auml;nger, vorstellen, sofern er 
+seine Composition nicht mit</b> leeren, einf&auml;ltigen und <b>papirenen Noten anf&uuml;llen 
+will</b> [Riepel&rsquo;s emphasis]&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f56">Riepel 1752</a>, 5.).</div><div id="fndiv23" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.]?eine unbewegliche Note in der Mitte eines so 
+kurzen oder tanzm&auml;&szlig;igen Men. niemals, sondern nur am Ende des ersten und zweyten 
+Theils gebraucht wird. Man kann aber eine solche unbewegliche oder todte Note 
+lebendig machen auf folgende Art, z. Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f58">Riepel 1752</a>, 5.).</div><div id="fndiv24" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Nun zwey solche T&auml;cte sind in einem
+<i>Men</i>. 
+nichts n&uuml;tze?&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f59">Riepel 1752</a>, 5.).</div><div id="fndiv25" class="flyoverdiv">&ldquo;[<i>Disc</i>.] Merke wohl auf! Im ersten Theile gehen die 
+Noten  herab, in dem zweyten hinauf, und so glaube ich, da&szlig; genug Aehnlichkeit 
+oder Zusammenhang geh?ret werde&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5b">Riepel 1752</a>, 6.).</div><div id="fndiv26" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Warte ein wenig! Du bist gar zu hoch 
+gestiegen, ich will sagen, der Men. ist auf solche Art zu jung, hintenmal der 
+Gesang <b>das Ernsthafte und Mannbare</b> dadurch verlieret [Riepel&rsquo;s emphasis]&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5d">Riepel 1752</a>, 7.).</div><div id="fndiv27" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Das ist sehr gut. Jedoch braucht man eben 
+nicht mit allen Zweyern zu steigen oder fallen; ja es binden sich die Cadenzen 
+fast gar mehr an diese Regel: indem oft die Cadenz des zweyten Theils f&uuml;r sich 
+ganz allein das fallen: gleich wie im ersten Theile eine einzige Note  das 
+Steigen ausdr&uuml;cken kann, z.Ex.&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f5e">Riepel 1752</a>, 8.).</div><div id="fndiv28" class="flyoverdiv">&ldquo;[<i>Pr&aelig;c</i>.] Er k?nnte dieses eben auch beobachten, wenn 
+er wollte; allein er ist oft so ausschweifend, da&szlig; er gar keiner Regel folgen 
+will. Zudem so kann der erste Theil einen zuh?renden Liebhaber auf einmal so 
+sehr einnehmen, da&szlig; er sich nicht viel um den zweyten Theil bek&uuml;mmert, weil 
+dieser ohnehin nur als ein Beschlu&szlig; des ersten Theils anzusehen ist&rdquo; (<a href="#riepel_1752" id="citation_riepel_1752_67dc9b4426f60">Riepel 1752</a>, 8.).</div><div id="fndiv29" class="flyoverdiv"><i>Monte</i> (going up the mountain), is a melodic/harmonic 
+pattern which appears usually after the double barline in a minuet. In its basic 
+form it is constituted by an ascending sequence: C&ndash;F followed by D&ndash;G (in C 
+major), which is usually harmonized with a V/IV going to IV followed by a V/V 
+going to V movement. I will discuss this and other patterns, which Riepel 
+presents, in the next part.</div><div id="fndiv30" class="flyoverdiv">Wolfgang Budday&rsquo;s (<a href="#budday_1983" id="citation_budday_1983_67dc9b4426f62">1983</a>) dissertation, which surveys 
+minuets written between 1750 and 1790, clearly demonstrates the close 
+relationship between Riepel&rsquo;s instructions and contemporaneous musical practice.</div><div id="fndiv31" class="flyoverdiv">While the harmonic competence for dealing with the 
+minuet is usually reached by the end of the first year, I have also used it for 
+a review of diatonic harmony in upper level classes.</div><div id="fndiv32" class="flyoverdiv">For a discussion of Riepel&rsquo;s means of extension, see 
+Eckert (<a href="#eckert_2000" id="citation_eckert_2000_67dc9b4426f64">2000</a>) 172&ndash;183.</div><div id="fndiv33" class="flyoverdiv">Robert Gjerdingen&rsquo;s forthcoming book on galant 
+schematas dedicates a chapter to each of the three continuation patterns and 
+their varied appearance in the repertoire. For a discussion of <i>Monte, Fonte,</i> and 
+<i>Ponte</i> in recent theory textbooks, see Gauldin (<a href="#gauldin_1995" id="citation_gauldin_1995_67dc9b4426f66">1995</a>) and Clendinning and West 
+Marvin (<a href="#clendinning_and_marvin_2005" id="citation_clendinning_and_marvin_2005_67dc9b4426f69">2005</a>).</div><div id="fndiv34" class="flyoverdiv">Wolfgang Budday (<a href="#budday_1987" id="citation_budday_1987_67dc9b4426f6b">1987</a>) argues that Leopold Mozart 
+taught his son composition using the second chapter of Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>
+(<a href="#riepel_1755" id="citation_riepel_1755_67dc9b4426f6d">1755</a>). Indeed it is quite remarkable how closely W. A. Mozart&rsquo;s early minuets 
+match Riepel&rsquo;s instructions.</div><div id="fndiv35" class="flyoverdiv">Riepel considers an ending that is not a formal 
+cadence an <i>Absatz.</i> While I teach <i>Monte, Fonte,</i> and <i>Ponte</i> to my students, I 
+usually avoid discussing the finer points of mid-eighteenth century musical 
+punctuation to keep the number of new concepts to a minimum.</div><div id="fndiv36" class="flyoverdiv">In order to enable students to compare the different 
+minuets more easily and allow for using sections in their own composition, the 
+following three handouts transpose the minuets into C major.</div><div id="fndiv37" class="flyoverdiv">For a full discussion of the opening section of 
+Riepel&rsquo;s <i>Anfangsgr&uuml;nde</i>please see Part I of this essay.</div><div id="fndiv38" class="flyoverdiv"><a href="#allanbrook_1998" id="citation_allanbrook_1998_67dc9b4426f6f">Allanbrook 1998</a>, 749&ndash;761.</div><div id="fndiv39" class="flyoverdiv"><a href="#ratner_1980" id="citation_ratner_1980_67dc9b4426f70">Ratner 1980</a>, 209&ndash;216.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2005 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

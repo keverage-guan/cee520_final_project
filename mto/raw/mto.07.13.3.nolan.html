@@ -1,0 +1,493 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 13.3: Nolan, Thoughts on Klumpenhouwer Networks and Mathematical 
+Models</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Thoughts on Klumpenhouwer Networks and Mathematical Models: 
+The Synergy of Sets and Graphs">
+
+    <meta name="citation_author" content="Nolan, Catherine">
+      
+
+<meta name="citation_publication_date" content="2007/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="13">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Thoughts on Klumpenhouwer Networks and Mathematical Models: 
+The Synergy of Sets and Graphs
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.07.13.3/mto.07.13.3.nolan.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Catherine Nolan</a></font></span></h2><br><br><p><font size='4'>REFERENCE: <a href="http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html">http://www.mtosmt.org/issues/mto.07.13.2/mto.07.13.2.buchler.html</a></font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.nolan.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2007</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 13, Number 3, September 2007 <br> Copyright &#0169; 2007 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] In the past seventeen or so years since the publication of pioneering work by David Lewin (Lewin 1990) and Henry Klumpenhouwer (Klumpenhouwer 1991), the theory of Klumpenhouwer networks (hereafter referred to as K-nets) has established itself as an important topic in music theory, but it seems that it is still in its youth. Michael Buchler&#8217;s recent critical examination of K-net theory (Buchler 2007) is indicative of both its standing in the discipline of music theory and the need for ongoing evaluation of its premises. In this essay I respond to one of the four central issues in Buchler&#8217;s 
+thoughtful article: K-nets and their association with dual transformation. The 
+juxtaposition of K-nets and dual transformation leads to a broader engagement 
+with some fundamentals and phenomenological and metaphorical considerations of 
+mathematical models in music theory. Remodeling K-nets as dual transformations, 
+as Buchler advocates (Buchler 2007, 7), indeed elucidates transformational voice 
+leading, but dual transformations also dispense with the network organization of 
+K-nets, and thus evince fundamentally different structures than K-net isographies.
+
+<p style="text-align: center"><b>K-nets, set theory, and graph theory </b></p>
+
+<p>[2] K-nets are typically employed to model sets of pitch classes through internal transformational pairings of pitch classes by the canonical operations of transposition (T<sub>n</sub>) and inversion (I<sub>n</sub>).<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  While a relatively large number of K-net representations can be constructed for any set, the number of well-formed K-net representations that can be constructed is considerably smaller.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  Selecting one K-net representation from the (well-formed) alternatives is an interpretive act; when employed in analysis, the selection is based on musical context, usually in consideration of the relationship of one K-net to its successor(s) or predecessor(s). We turn now to theoretical aspects of K-nets.
+
+<p>[3] K-nets call upon the mathematical models of set theory and graph theory, models of different conceptual origins, as Jeffrey Johnson describes:
+
+<blockquote>
+	<p>Graph-theoretical constructs are not dependent on Cartesian coordinates, but only on the abstract relationship between dots and connecting lines. Graph theory had its origin in solutions to puzzles and games rather than more intense desires to describe motion, quantify measurement, and, bring order to scientific inquiry that impelled other branches of mathematics (Johnson 1997, 12).
+
+</blockquote>
+<p>A graph models relations between pairs of elements, and consists of two sets: a set of vertices and a set of edges. The vertex set in a K-net consists of pitch classes, while the edge set consists of ordered pairs of vertices, each representing the transformational relation between a pair of pitch classes. K-nets are 
+<i>directed</i> graphs (also called <i>digraphs</i>), because each edge has a specific direction or orientation.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  (The double-headed arrow representing the inversion operation on pitch classes, identifying the operation as an involution, stands for edges with dual orientations between a single pair of vertices.) Strictly speaking, a graph is comprised simply of dots or points without content (the vertices) and connecting lines (the edges); it is an abstract construction independent of the elements that motivate and occupy the vertices. A 
+<i>network</i> is a graph whose vertices have assigned values.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>   
+A network is thus, in a sense, an applied graph.
+
+<p>[4] K-net theory adopts the terms <i>node</i> for vertex and <i>arrow</i> for edge, following David Lewin&#8217;s definition of 
+<i>node/arrow system</i>,<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> which corresponds to 
+<i>digraph</i>, as described above. The distinction between graph and network likewise follows Lewin&#8217;s distinction between transformation graph and transformation network (Lewin 1987), and is nicely summarized by Julian Hook: &#8220;The 
+<i>graph</i> is...the more abstract of the two structures; a <i>network</i> adds information to a graph, bringing it to life in a real musical setting via the node labels&#8221; (Hook 2007, 7).
+
+<p>[5] As graphs, K-nets consist of two sets: a set of labeled (or occupied) nodes and a set of transformations relating pairs of nodes. Well-formed K-nets are 
+<i>path-consistent</i>; that is, they reflect what Julian Hook calls the <i>path consistency condition</i>, by which, when multiple paths in a network between two nodes are possible, each must produce the same result by combining different transformations (Hook 2007, 3&#8211;4; Lewin 1987, 195). The 
+<i>path consistency condition</i> applies to the set of transformations, not the node contents, and falls out of the group-theoretic properties of the T/I group of transformations.
+
+<p>[6] The duality of objects and transformations lies at the core of K-net theory. The essential independence of transformations from objects is reflected in the multiple possible K-net representations of a single pitch-class set. Graphic representation brings into relief the transformational relations, and sets them apart from the objects or nodes with which they are associated.
+
+<p style="text-align: center"><b>Isography and dual transformations</b></p>
+
+<p>[7] Transformational relations between pairs of (well-formed) K-nets are described in terms of isomorphic transformational graphs or 
+<i>isography</i>; isography is an algebraic relation between the sets of transformations within a pair of graphs, and is independent of the pitch classes that occupy the nodes. K-net theory customarily admits three types of isography: strong isography, in which the transformations within each K-net are strictly identical; positive isography, in which the subscripts of the T operators in the two K-nets are identical and the corresponding subscripts of the I operators differ by a constant value (mod 12); and negative isography, in which the subscripts of the T operators in the two K-nets are complementary (mod 12) and the corresponding subscripts of the I operators sum to a constant value (mod 12).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>These isographies are, in turn, isomorphic to the T/I group itself (Lewin 1990), and are labeled accordingly. The relation of positive isography is indicated by a label in the form &lt;T<sub>n</sub>&gt;, where the subscript n refers to the difference (mod 12) between the subscripts of the corresponding I operators in the K-net; the relation of strong isography is labeled &lt;T<sub>0</sub>&gt; since the difference between the values of the (identical) subscripts of the corresponding I operators is 0. The relation of negative isography is indicated by a label in the form &lt;I<sub>n</sub>&gt;, where the subscript n refers to the sum (mod 12) of the subscripts of the I corresponding operators in the K-net.
+
+<p>[8] Philip Stoecker has proposed a seemingly logical addition to the small range of isographies through a new isography he has called 
+<i>axial isography</i> (Stoecker 2002). In the relation of <i>positive axial isography</i>, two 3-node (trichordal) K-nets share an identical I<sub>n</sub> transformation, and the differences between the  subscripts of the remaining I<sub>n</sub> and T<sub>n</sub> transformations are complementary (mod 12). In the relation of 
+<i>negative axial isography</i>, two 3-node K-nets share complementary I<sub>n</sub> transformations, and the sums of the subscripts of the remaining I<sub>n</sub> and T<sub>n</sub> transformations are complementary (mod 12). Jerry Ianni and Lawrence Shuster recently described an extension of Stoecker&#8217;s axial isography to 4-node (tetrachordal) K-nets in which the K-nets share two identical I<sub>n</sub> transformations, and have named this transformation 
+<i>double axial isography</i> (Ianni and Shuster 2007).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>
+<p>[9] In a (well-formed) 3-node K-net, three transformations, one T<sub>n</sub> and two I<sub>n</sub> transformations, between node pairs are displayed, and in a 4-node K-net, four transformations, two T<sub>n</sub> and two I<sub>n</sub> transformations, are (generally) displayed.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> 
+A single hyper-transformation&#8212;&lt;T<sub>n</sub>&gt; or &lt;I<sub>n</sub>&gt; (or &lt;T<sub>n/12-n</sub>&gt; or &lt;I<sub>n/12-n</sub>&gt; if axial isography is included)&#8212;subsumes all the local transformational actions between pitch-class pairs, and signifies a multifaceted action upon the network as a whole. The assimilation of transpositional and inversional transformations within individual K-nets associates K-nets with the model of dual transformations, by which &#8220;some of the notes in a [pitch-class set] are transformed in one way while the other notes are transformed in some other way&#8221; (Buchler 2007, 5). Shaugn O&#8217;Donnell, who first wrote about dual transformations, points out that the K-net model &#8220;disguises the parsing [of a pitch-class set into subsets] with its unified graphic appearance&#8221; (O&#8217;Donnell 1997, 48). Similarly, Buchler remarks that &#8220;as unified networks of nodes and arrows, this dual transformational basis might not be so evident.&#8221; (Buchler 2007, 5). Buchler&#8217;s
+<a target="ex_window" onClick="newwindow('nolan_ex1.html',800,650); return false;" href="nolan_ex1.html" style="text-decoration:none; ">
+Figure 5</a> clearly illustrates how the &lt;T<sub>n</sub>&gt; relation of positive isography between K-nets can be remodeled as a parsing of each pitch-class set into two subsets related by different transposition operators, T<sub>x</sub> and T<sub>y</sub>, such that the subscripts x + y = n mod 12 (the same value as in &lt;T<sub>n</sub>&gt;). Likewise, Buchler&#8217;s
+<a target="ex_window" onClick="newwindow('nolan_ex2.html',800,600); return false;" href="nolan_ex2.html" style="text-decoration:none; ">
+Figure 6</a> illustrates how the &lt;I<sub>n</sub>&gt; relation of negative isography between K-nets can be remodeled as a parsing of each pitch-class set into two subsets related by different inversion operators, I<sub>x</sub> and I<sub>y</sub>, such that the subscripts x + y = n, mod 12 (the same value as in &lt;I<sub>n</sub>&gt;).
+
+<p>[10] As Buchler shows, a &lt;T<sub>n</sub>&gt; or &lt;I<sub>n</sub>&gt; isography can be remodeled by means of dual transformations, that is, through parsing of the pitch-class sets into subsets related by distinct T or I subscripts. We see in Buchler&#8217;s
+<a target="ex_window" onClick="newwindow('nolan_ex3.html',800,650); return false;" href="nolan_ex3.html" style="text-decoration:none; ">
+Figure 12</a> and 
+<a target="ex_window" onClick="newwindow('nolan_ex4.html',800,600); return false;" href="nolan_ex4.html" style="text-decoration:none; ">
+Figure 13</a> that a K-net&#8217;s internal arrows showing transformations between node pairs are no longer needed to illustrate the dual transformation from one set to the next. This is because the sets are no longer represented as networks, and their representation no longer adopts the graph-theoretical model. Dual transformations identify transformations of pitch classes, and are ontologically different than K-net isographies, which identify transformations of transformations. Dual transformations indeed effectively reveal transformational voice leading, as Buchler demonstrates, but they also suppress the integrity of the K-net, and, by extension, the pitch-class set being transformed. O&#8217;Donnell elegantly expresses the concern about the wholeness or integrity of sets:
+
+<blockquote>
+	<p>Although I feel that a successful voice-leading model must have an external or horizontal orientation, I also feel that the internal dynamism of the network model captures an invaluable dimension of musical structure that I think of as set identity... With its horizontal emphasis and explicit partitioning of sets, dual transformations do not satisfactorily model the cohesive quality of individual chords or sets... (O&#8217;Donnell 1997, 60).
+
+	</blockquote>
+<p>[11] Dual transformations do have their own intrinsic theoretical and analytical interest, and can offer a contextual perspective on the abstraction of K-net isographies, as Buchler compellingly argues. O&#8217;Donnell surveys a wide range of transformational models in music theory which parse pitch-class sets into subsets that are transformed in different ways (O&#8217;Donnell 1997, 48&#8211;68). The article by Nancy Rogers and Michael Buchler on square dance moves and transformational operators also imaginatively reveals the explanatory power of dual transformations (Rogers and Buchler 2003).
+
+<p>[12] Dual transformations and K-net isography stand on opposite sides of the object-relation divide. Dual transformations are not a simple substitute for K-nets, as each exploits different mathematical models and reveals different features of the objects and relations it seeks to elucidate.
+
+<p style="text-align: center"><b>K-nets and dual transformations: contextual and phenomenological considerations</b></p>
+
+<p>[13] Buchler cites my K-net analysis of a passage from Webern&#8217;s <i>Das Augenlicht</i>, Op. 26 (Nolan 2005), which shows a succession of four-note sonorities as K-nets related by positive, or in one case strong, isography (Buchler 2007, 53 and 
+<a target="ex_window" onClick="newwindow('nolan_ex5.html',900,800); return false;" href="nolan_ex5.html" style="text-decoration:none; ">
+Figure 24</a>).<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>			He raises the question about &#8220;whether there is much that is T<sub>3</sub>-like about the &lt;T<sub>3</sub>&gt; (hyper) transformations that connect all but one pair of adjacent chords in this example,&#8221; and points out how the 
+&lt;T<sub>3</sub>&gt; relation between sonorities 1 and 2 can only be described in very different terms than the 
+&lt;T<sub>3</sub>&gt; relation between sonorities 2 and 3, taking into account the similar motion between the male and female voice-pairs in sonorities 1 and 2 versus the contrary motion between the male and female voice-pairs in sonorities 2 and 3. The 
+&lt;T<sub>3</sub>&gt; transformation, however, describes an isography, and as such, acts on operators and not on pitch classes or pitches; different instantiations of the same isography may well result in seemingly different behavior by pitch classes or pitches.
+
+<p>[14] Buchler ably demonstrates how dual transformations are of great service in elucidating phenomenological aspects of K-net isography. He observes: &#8220;It would be difficult to imagine a situation in which dual transformation did not provide a more straightforward phenomenological account [of aurally salient aspects of K-net interpretations] than K-nets&#8221; (Buchler 2007, 58). Strong isography between two tetrachordal K-nets, as in the present context, can be characterized by wedge-like voice leading of two dyadic subsets in contrary motion by the same distance. Positive isography adds the further step that one of the dyadic subsets then moves again (by the value of n in &lt;T<sub>n</sub>&gt;), 
+skewing the voice-leading wedge.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></a>
+			In my analysis of the Webern passage (Buchler&#8217;s 
+<a target="ex_window" onClick="newwindow('nolan_ex5.html',900,800); return false;" href="nolan_ex5.html" style="text-decoration:none; ">
+Figure 24</a>), the strong isography (&lt;T0&gt;) between sonorities 3 and 4 is easily perceived as a symmetrical wedging of the dyads formed in the female voices and in the male voices around pitch C4. The female voices (in parallel motion to each other) descend and the male voices (in parallel motion to each other) ascend by the same interval, three semitones. The strong isography is rendered here in terms of the dual transformation T<sub>-3</sub>/T<sub>3</sub>, and because the transformations are realized in pitch space, they are quite readily perceptible. As Buchler points out (Buchler 2007, 54&#8211;55), the positive isographic &lt;T<sub>3</sub>&gt; relation between sonorities 1 and 2 in my analysis of this passage, when converted to the dual transformation T<sub>1</sub>/T<sub>2</sub>, is realized directly by the overt pairings of female and male voices, by the parallel motion within each voice pair, and by the similar motion of the pairs (one pair ascending by one semitone, the other by two). The recurrence of the &lt;T<sub>3</sub>&gt; relation between sonorities 2 and 3 by means of a different dual transformation, T<sub>4</sub>/T<sub>-1</sub>, also directly reflects the voice pairings, the contrary motion between the voice pairs, and the interval and direction by which each pair moves. (The same dual transformation 
+T<sub>4</sub>/T<sub>-1</sub> also describes the relation of sonorities 4 and 5.) The off-kilter wedge between positively isographic K-nets intensifies the challenge of perceiving them in comparison to the challenge of perceiving the symmetrical wedge between strongly isographic K-nets.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup><p>[15] Dual transformations, through their capacity for phenomenological feasibility, provide a narrative for how we can experience or hear the motion from one K-net to the next, but K-net isographies themselves need not be understood as narrative events. Isographies, as isomorphic network transformations, place those motions in a larger context of the mathematical group of transformations to which they belong. David Lewin, in reflecting on his transformational analysis of Dallapiccola&#8217;s
+<i>Simbolo</i>, writes: &#8220;The group [of transformations] is not a list of immediate aural intuitions or intentions&#8221; (Lewin 1993, 34). Lewin&#8217;s analysis of 
+<i>Simbolo</i> does not involve K-nets specifically, but his reflections on phenomenology and musical transformations apply well to any approach to music analysis involving transformations. Lewin continues:
+
+<blockquote>
+	<p>Rather than trying to make our transformations denote phenomenological presences in a blow-by-blow narrative, we can more comfortably regard them as ways of structuring an abstract space...through which the piece moves (Lewin 1993, ibid).
+
+</blockquote>
+<p style="text-align: center"><b>Final thoughts</b></p>
+
+	 
+<p>[16] In considering further the duality of object and relation that is central to K-net theory, an appeal to conceptual metaphor is illuminating.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>			We can conceive of a set metaphorically as a <i>container</i> or as an 
+<i>object</i>. The set-as-container metaphor dwells on the contents of the set, the assemblage of objects into collections; the container possesses an interior, an exterior, and a boundary, and the familiar set-theoretic relations of union, intersection, and complementation ensue. The ubiquity of the Venn diagram attests to the longevity and pervasiveness of the set-as-container metaphor. The set-as-object metaphor dwells on the singularity of the set as an entity that can at the same time be a member of another set; inclusion is thus an abstract relation distinct from the container metaphor, and leads to the existence of the empty set as a subset of all sets and the set as a subset of itself. Via the object metaphor, relations, functions, and transformations can be defined in terms of sets.
+
+<p>[17] As music theorists, we are accustomed to thinking of pitch-class sets using both metaphors in different situations without serious consequence, even though the metaphors are mutually inconsistent. When it comes to K-nets, however, we may be resistant to the set-as-object metaphor in reference to the set of arrows or transformations; that is, we may find it difficult to conceive of the collection of arrows or transformations as a singular entity. Indeed, the distinction between object and relation (or operation) begins to fade when relations, in particular the T<sub>n</sub> and I<sub>n</sub> operators that define relations between pitch-class pairs, are themselves objects. Yet we may also remain resistant to the set-as-container metaphor in reference to the set of arrows or transformations in a K-net because we have no straightforward container-like relations analogous to union, intersection, or complementation by which to manipulate the set&#8217;s contents.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>
+<p>[18] The coexistence in a K-net of two distinct, yet interrelated, sets&#8212;the set of nodes (pitch classes) and the set of arrows (transformations)&#8212;remains a challenge to our theoretical and analytical instincts. Through a deeper understanding of the interaction of the mathematical models of set theory and graph theory as they inform the theory of K-nets, and a stronger appreciation of the synergy of sets and graphs, we can enhance our theoretical explorations and analytical applications of K-nets and of other transformational approaches to music theory. </p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Catherine Nolan<br>
+	University of Western Ontario<br><a href="mailto:cnolan@uwo.ca">cnolan@uwo.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_buchler_2007" class="flyoverdiv">Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/retrofit/mto.07.13.2/mto.07.13.2.buchler.php'>Reconsidering Klumpenhouwer Networks.</a>&#8221; <i>Music Theory Online</i> 13.2: 1&#8211;69.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="buchler_2007"></a>Buchler, Michael. 2007. &#8220;<a href='http://www.mtosmt.org/retrofit/mto.07.13.2/mto.07.13.2.buchler.php'>Reconsidering Klumpenhouwer Networks.</a>&#8221; <i>Music Theory Online</i> 13.2: 1&#8211;69.</p><div id="citediv_chartrand_1977" class="flyoverdiv">Chartrand, Gary. 1977. <i>Graphs as Mathematical Models</i>. Boston: Prindle, Weber & Schmidt.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="chartrand_1977"></a>Chartrand, Gary. 1977. <i>Graphs as Mathematical Models</i>. Boston: Prindle, Weber & Schmidt.</p><div id="citediv_harris_hirst_and_mossinghoff_2000" class="flyoverdiv">Harris, John M., Jeffrey L. Hirst, and Michael J. Mossinghoff. 2000. <i>Combinatorics and Graph Theory</i>. New York: Springer Verlag. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="harris_hirst_and_mossinghoff_2000"></a>Harris, John M., Jeffrey L. Hirst, and Michael J. Mossinghoff. 2000. <i>Combinatorics and Graph Theory</i>. New York: Springer Verlag. </p><div id="citediv_hook_2007" class="flyoverdiv">Hook, Julian. 2007. &ldquo;Cross-Type Transformations and the Path Consistency Condition.&rdquo; <i>Music Theory Spectrum</i> 29/1: 1&ndash;39. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2007"></a>Hook, Julian. 2007. &ldquo;Cross-Type Transformations and the Path Consistency Condition.&rdquo; <i>Music Theory Spectrum</i> 29/1: 1&ndash;39. </p><div id="citediv_ianni_and_shuster_2007" class="flyoverdiv">Ianni, Jerry G. and Lawrence B. Shuster. 2007. &ldquo;Subgroup Relations Among Pitch-Class Sets Within Tetrachordal K-Families.&rdquo; Paper presented at the Mathematics and Computation in Music Conference, Berlin, 18&ndash;20 May 2007. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ianni_and_shuster_2007"></a>Ianni, Jerry G. and Lawrence B. Shuster. 2007. &ldquo;Subgroup Relations Among Pitch-Class Sets Within Tetrachordal K-Families.&rdquo; Paper presented at the Mathematics and Computation in Music Conference, Berlin, 18&ndash;20 May 2007. </p><div id="citediv_johnson_1997" class="flyoverdiv">Johnson, Jeffrey. 1997. Graph Theoretical Models of Abstract Musical Transformation. Westport, Connecticut: Greenwood Press. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="johnson_1997"></a>Johnson, Jeffrey. 1997. Graph Theoretical Models of Abstract Musical Transformation. Westport, Connecticut: Greenwood Press. </p><div id="citediv_klumpenhouwer_1991" class="flyoverdiv">Klumpenhouwer, Henry. 1991. &#8220;A Generalized Model of Voice-Leading for Atonal Music.&#8221; Ph.D. dissertation, Harvard University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. &#8220;A Generalized Model of Voice-Leading for Atonal Music.&#8221; Ph.D. dissertation, Harvard University.</p><div id="citediv_lakoff_and_johnson_1980" class="flyoverdiv">Lakoff, George and Mark Johnson. 1980. <i>Metaphors We Live By</i>. Chicago: University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_and_johnson_1980"></a>Lakoff, George and Mark Johnson. 1980. <i>Metaphors We Live By</i>. Chicago: University of Chicago Press.</p><div id="citediv_lakoff_and_n&uacute;&ntilde;ez" class="flyoverdiv">Lakoff, George and Rafael E. N&uacute;&ntilde;ez. 2000. <i>Where Mathematics Comes From: How The Embodied Mind Brings Mathematics Into Being</i>. New York: Basic Books. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lakoff_and_n&uacute;&ntilde;ez"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000. <i>Where Mathematics Comes From: How The Embodied Mind Brings Mathematics Into Being</i>. New York: Basic Books. </p><div id="citediv_lambert_2002" class="flyoverdiv">Lambert, Philip. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24.2: 165&ndash;195.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lambert_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24.2: 165&ndash;195.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven: Yale University Press.</p><div id="citediv_lewin_1990" class="flyoverdiv">Lewin, David. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&ndash;120.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1990"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1990. &#8220;Klumpenhouwer Networks and Some Isographies That Involve Them.&#8221; <i>Music Theory Spectrum</i> 12: 83&ndash;120.</p><div id="citediv_lewin_1993" class="flyoverdiv">Lewin, David. 1993. <i>Musical Form and Transformation: 4 Analytic Essays</i>. New Haven: Yale University Press. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. <i>Musical Form and Transformation: 4 Analytic Essays</i>. New Haven: Yale University Press. </p><div id="citediv_losada_2007" class="flyoverdiv">Losada, Catherine. 2007. &ldquo;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recurrence: Further Considerations</a>.&rdquo; <i>Music Theory Online</i> 13.3.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="losada_2007"></a>Losada, Catherine. 2007. &ldquo;<a href='http://www.mtosmt.org/issues/mto.07.13.3/mto.07.13.3.losada.html'>K-nets and Hierarchical Structural Recurrence: Further Considerations</a>.&rdquo; <i>Music Theory Online</i> 13.3.</p><div id="citediv_morris_2001" class="flyoverdiv">Morris, Robert. 2001. <i>Class Notes for Advanced Atonal Music Theory</i>. 2 Vols. Lebanon NH: Frog Peak Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_2001"></a>Morris, Robert. 2001. <i>Class Notes for Advanced Atonal Music Theory</i>. 2 Vols. Lebanon NH: Frog Peak Music.</p><div id="citediv_nolan_2005" class="flyoverdiv">Nolan, Catherine. 2005. &ldquo;More Than Meets The Eye: Text, Texture, and Transformation in Webern&rsquo;s Das Augenlicht, Op. 26.&rdquo; Paper presented at the Dublin International Conference on Music Analysis, Dublin, Ireland, June 2005. (The paper was also presented in a slightly different form at the Society for Music Theory Conference, Seattle, Washington, November 2004.) </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nolan_2005"></a>Nolan, Catherine. 2005. &ldquo;More Than Meets The Eye: Text, Texture, and Transformation in Webern&rsquo;s Das Augenlicht, Op. 26.&rdquo; Paper presented at the Dublin International Conference on Music Analysis, Dublin, Ireland, June 2005. (The paper was also presented in a slightly different form at the Society for Music Theory Conference, Seattle, Washington, November 2004.) </p><div id="citediv_o&rsquo;donnell_1997" class="flyoverdiv">O&rsquo;Donnell, Shaugn J. 1997. &ldquo;Transformational Voice Leading in Atonal Music.&rdquo; Ph.D. dissertation, City University of New York. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="o&rsquo;donnell_1997"></a>O&rsquo;Donnell, Shaugn J. 1997. &ldquo;Transformational Voice Leading in Atonal Music.&rdquo; Ph.D. dissertation, City University of New York. </p><div id="citediv_o&rsquo;donnell_1998" class="flyoverdiv">O&rsquo;Donnell, Shaugn J. 1998. &ldquo;Klumpenhouwer Networks, Isography, and the Molecular Metaphor.&rdquo; Int&eacute;gral 12: 53&ndash;80. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="o&rsquo;donnell_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. &ldquo;Klumpenhouwer Networks, Isography, and the Molecular Metaphor.&rdquo; Int&eacute;gral 12: 53&ndash;80. </p><div id="citediv_rogers_and_buchler_2003" class="flyoverdiv">Rogers, Nancy and Michael Buchler. 2003. &ldquo;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.rogers_buchler.pdf'>Square-Dance Moves and Twelve-Tone Operators: Isomorphisms and New Transformational Models</a>.&rdquo; <i>Music Theory Online</i> 9.4. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rogers_and_buchler_2003"></a>Rogers, Nancy and Michael Buchler. 2003. &ldquo;<a href='http://www.mtosmt.org/issues/mto.03.9.4/mto.03.9.4.rogers_buchler.pdf'>Square-Dance Moves and Twelve-Tone Operators: Isomorphisms and New Transformational Models</a>.&rdquo; <i>Music Theory Online</i> 9.4. </p><div id="citediv_stoecker_2002" class="flyoverdiv">Stoecker, Philip. 2002. &#8220;Klumpenhouwer Networks, Trichords, and Axial Isography.&#8221; <i>Music Theory Spectrum</i> 24.2: 231&ndash;245.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stoecker_2002"></a>Stoecker, Philip. 2002. &#8220;Klumpenhouwer Networks, Trichords, and Axial Isography.&#8221; <i>Music Theory Spectrum</i> 24.2: 231&ndash;245.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> <a href="#morris_2001" id="citation_morris_2001_67dc9b1be3070">Morris 2001</a> includes the multiplication operations M (or M5) and MI (or M7) among the possible transformations relating the pairs of pitch classes in a K-net. He also points out that David Lewin, while not including the multiplication operations directly in his writings on K-nets, discusses them in an appendix to Lewin 1990. (See <a href="#morris_2001" id="citation_morris_2001_67dc9b1be3074">Morris 2001</a>, Vol. I, 101&#8211;11.) Morris introduces K-nets under the broader topic of <i>operator networks</i> (<a href="#morris_2001" id="citation_morris_2001_67dc9b1be3076">Morris 2001</a>, 87). <br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> See <a href="#o&rsquo;donnell_1998" id="citation_o&rsquo;donnell_1998_67dc9b1be3078">O&rsquo;Donnell 1998</a>, 53&#8211;60, for a discussion of the total number of voice-leading mappings using T<sub>n</sub> and I<sub>n</sub> operators between pitch-class pairs in a set, and the reduction through elimination of non-well-formed graphs and graphs consisting only of T<sub>n</sub> mappings to a relatively small number of &#8220;practical K-nets&#8221; for each cardinality. In well-formed graphs, all paths that connect any two nodes are equivalent (the <i>path consistency condition</i> (<a href="#hook_2007" id="citation_hook_2007_67dc9b1be307a">Hook 2007</a>) to be discussed below).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> In an undirected graph, the edge set consists of <i>unordered</i> pairs of vertices. See <a href="#harris_hirst_and_mossinghoff_2000" id="citation_harris_hirst_and_mossinghoff_2000_67dc9b1be307c">Harris, Hirst, and Mossinghoff 2000</a>, 1&#8211;12, for a clear introduction to graph theory. See also Chartrand 1977, chapter 1 (&#8220;Mathematical Models&#8221;) and chapter 2 (&#8220;Elementary Concepts of Graph Theory&#8221;), 1&#8211;50.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> A network is defined in <a href="#chartrand_1977" id="citation_chartrand_1977_67dc9b1be307e">Chartrand 1977</a> as &#8220;a graph or digraph together with a function which maps the edge set into the set of real numbers&#8221; (<a href="#chartrand_1977" id="citation_chartrand_1977_67dc9b1be3080">Chartrand 1977</a>, 19). In other sources, a network is defined as a graph with labels associated with the edges. The focus on edges rather than vertices in such definitions is in effect an alternate way to understand the distinction between graph as abstraction and network as application.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> <a href="#lewin_1987" id="citation_lewin_1987_67dc9b1be3081">Lewin 1987</a>, 193. &#8220;By a <i>node/arrow system</i> we shall mean an ordered pair (NODES, ARROW), where NODES is a family (i.e. set in the mathematical sense), and ARROW is a subfamily of NODES &#0215; NODES, i.e. a collection containing some ordered pairs (N<sub>1</sub>, N<sub>2</sub>) of NODES. We say that nodes 
+N<sub>1</sub> and N<sub>2</sub> are &#8220;in the arrow relation&#8221; if the pair (N<sub>1</sub>, 
+N<sub>2</sub>) is a member of the collection ARROW.&#8221; <br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> See <a href="#lambert_2002" id="citation_lambert_2002_67dc9b1be3083">Lambert 2002</a>, 165&#8211;167, and <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be3085">Buchler 2007</a>, 12&#8211;15, for critical reviews of the three types of isography.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> In <a href="#nolan_2005" id="citation_nolan_2005_67dc9b1be3087">Nolan 2005</a>, I too extended Stoecker&#8217;s axial isography for 3-node K-nets to 4-node K-nets, defining the new isography as one in which two of the four shown transformations are shared, and the subscripts of the remaining transformations are related by complementary values, mod 12 (<a href="#nolan_2005" id="citation_nolan_2005_67dc9b1be3088">Nolan 2005</a>).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> In a 4-node K-net, transformations between only four of the six pairs of pitch classes are usually shown. Shown this way, the graph is not complete, but the remaining transformations are easily derived. See <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be308a">Buchler 2007</a>, 11.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> The passage is one of five a cappella choral passages in Webern&#8217;s
+<i>Das Augenlicht</i>, mm. 20&#8211;23.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> See <a href="#lambert_2002" id="citation_lambert_2002_67dc9b1be308c">Lambert 2002</a>, 167&#8211;8, for a similar characterization of strong and positive isography between trichordal K-nets. See 
+also <a href="#o&rsquo;donnell_1997" id="citation_o&rsquo;donnell_1997_67dc9b1be308d">O&rsquo;Donnell 1997</a>, 77&#8211;81, for a discussion of perceptual issues involving K-nets and dual transformations, and <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be308f">Buchler 2007</a>, 58.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> I have omitted discussion of the phenomenology of negative isography remodeled as dual transformations. If positive isography involves a level of abstraction beyond that of strong isography because of the off-kilter 
+wedge, then negative isography involves yet a further level of abstraction because of the inversional axes at multiple levels (within and between K-nets). For a discussion of some of the theoretical and phenomenological challenges inherent in the relation of negative isography, see <a href="#losada_2007" id="citation_losada_2007_67dc9b1be3091">Losada 2007</a>.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Conceptual metaphor refers to the understanding of metaphor not as literary or figurative device, but as &#8220;the basic means by which abstract thought is made possible&#8221; <a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3093">Lakoff and N&uacute;&ntilde;ez</a>, 39. The pioneering work on conceptual metaphor and its place in cognitive linguistics is <a href="#lakoff_and_johnson_1980" id="citation_lakoff_and_johnson_1980_67dc9b1be3094">Lakoff and Johnson 1980</a>. <a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3096">Lakoff and N&uacute;&ntilde;ez</a> focuses on the metaphoric basis of mathematical ideas. See particularly Part II, &#8220;Algebra, Logic, and Sets,&#8221; 107&#8211;152, which informs the ideas in this paragraph.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Lakoff and N&uacute;&#0241;ez use graphs to represent sets of numbers, and claim that this act redefines those sets so as to eliminate the containment metaphor (<a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3098">Lakoff and N&uacute;&ntilde;ez</a>, 148&#8211;49).<br><a href="#FN13REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv"><a href="#morris_2001" id="citation_morris_2001_67dc9b1be3070">Morris 2001</a> includes the multiplication operations M (or M5) and MI (or M7) among the possible transformations relating the pairs of pitch classes in a K-net. He also points out that David Lewin, while not including the multiplication operations directly in his writings on K-nets, discusses them in an appendix to Lewin 1990. (See <a href="#morris_2001" id="citation_morris_2001_67dc9b1be3074">Morris 2001</a>, Vol. I, 101&#8211;11.) Morris introduces K-nets under the broader topic of <i>operator networks</i> (<a href="#morris_2001" id="citation_morris_2001_67dc9b1be3076">Morris 2001</a>, 87). </div><div id="fndiv2" class="flyoverdiv">See <a href="#o&rsquo;donnell_1998" id="citation_o&rsquo;donnell_1998_67dc9b1be3078">O&rsquo;Donnell 1998</a>, 53&#8211;60, for a discussion of the total number of voice-leading mappings using Tn and In operators between pitch-class pairs in a set, and the reduction through elimination of non-well-formed graphs and graphs consisting only of Tn mappings to a relatively small number of &#8220;practical K-nets&#8221; for each cardinality. In well-formed graphs, all paths that connect any two nodes are equivalent (the <i>path consistency condition</i> (<a href="#hook_2007" id="citation_hook_2007_67dc9b1be307a">Hook 2007</a>) to be discussed below).</div><div id="fndiv3" class="flyoverdiv">In an undirected graph, the edge set consists of <i>unordered</i> pairs of vertices. See <a href="#harris_hirst_and_mossinghoff_2000" id="citation_harris_hirst_and_mossinghoff_2000_67dc9b1be307c">Harris, Hirst, and Mossinghoff 2000</a>, 1&#8211;12, for a clear introduction to graph theory. See also Chartrand 1977, chapter 1 (&#8220;Mathematical Models&#8221;) and chapter 2 (&#8220;Elementary Concepts of Graph Theory&#8221;), 1&#8211;50.</div><div id="fndiv4" class="flyoverdiv">A network is defined in <a href="#chartrand_1977" id="citation_chartrand_1977_67dc9b1be307e">Chartrand 1977</a> as &#8220;a graph or digraph together with a function which maps the edge set into the set of real numbers&#8221; (<a href="#chartrand_1977" id="citation_chartrand_1977_67dc9b1be3080">Chartrand 1977</a>, 19). In other sources, a network is defined as a graph with labels associated with the edges. The focus on edges rather than vertices in such definitions is in effect an alternate way to understand the distinction between graph as abstraction and network as application.</div><div id="fndiv5" class="flyoverdiv"><a href="#lewin_1987" id="citation_lewin_1987_67dc9b1be3081">Lewin 1987</a>, 193. &#8220;By a <i>node/arrow system</i> we shall mean an ordered pair (NODES, ARROW), where NODES is a family (i.e. set in the mathematical sense), and ARROW is a subfamily of NODES &#0215; NODES, i.e. a collection containing some ordered pairs (N1, N2) of NODES. We say that nodes 
+N1 and N2 are &#8220;in the arrow relation&#8221; if the pair (N1, 
+N2) is a member of the collection ARROW.&#8221; </div><div id="fndiv6" class="flyoverdiv">See <a href="#lambert_2002" id="citation_lambert_2002_67dc9b1be3083">Lambert 2002</a>, 165&#8211;167, and <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be3085">Buchler 2007</a>, 12&#8211;15, for critical reviews of the three types of isography.</div><div id="fndiv7" class="flyoverdiv">In <a href="#nolan_2005" id="citation_nolan_2005_67dc9b1be3087">Nolan 2005</a>, I too extended Stoecker&#8217;s axial isography for 3-node K-nets to 4-node K-nets, defining the new isography as one in which two of the four shown transformations are shared, and the subscripts of the remaining transformations are related by complementary values, mod 12 (<a href="#nolan_2005" id="citation_nolan_2005_67dc9b1be3088">Nolan 2005</a>).</div><div id="fndiv8" class="flyoverdiv">In a 4-node K-net, transformations between only four of the six pairs of pitch classes are usually shown. Shown this way, the graph is not complete, but the remaining transformations are easily derived. See <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be308a">Buchler 2007</a>, 11.</div><div id="fndiv9" class="flyoverdiv">The passage is one of five a cappella choral passages in Webern&#8217;s
+<i>Das Augenlicht</i>, mm. 20&#8211;23.</div><div id="fndiv10" class="flyoverdiv">See <a href="#lambert_2002" id="citation_lambert_2002_67dc9b1be308c">Lambert 2002</a>, 167&#8211;8, for a similar characterization of strong and positive isography between trichordal K-nets. See 
+also <a href="#o&rsquo;donnell_1997" id="citation_o&rsquo;donnell_1997_67dc9b1be308d">O&rsquo;Donnell 1997</a>, 77&#8211;81, for a discussion of perceptual issues involving K-nets and dual transformations, and <a href="#buchler_2007" id="citation_buchler_2007_67dc9b1be308f">Buchler 2007</a>, 58.</div><div id="fndiv11" class="flyoverdiv">I have omitted discussion of the phenomenology of negative isography remodeled as dual transformations. If positive isography involves a level of abstraction beyond that of strong isography because of the off-kilter 
+wedge, then negative isography involves yet a further level of abstraction because of the inversional axes at multiple levels (within and between K-nets). For a discussion of some of the theoretical and phenomenological challenges inherent in the relation of negative isography, see <a href="#losada_2007" id="citation_losada_2007_67dc9b1be3091">Losada 2007</a>.</div><div id="fndiv12" class="flyoverdiv">Conceptual metaphor refers to the understanding of metaphor not as literary or figurative device, but as &#8220;the basic means by which abstract thought is made possible&#8221; <a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3093">Lakoff and N&uacute;&ntilde;ez</a>, 39. The pioneering work on conceptual metaphor and its place in cognitive linguistics is <a href="#lakoff_and_johnson_1980" id="citation_lakoff_and_johnson_1980_67dc9b1be3094">Lakoff and Johnson 1980</a>. <a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3096">Lakoff and N&uacute;&ntilde;ez</a> focuses on the metaphoric basis of mathematical ideas. See particularly Part II, &#8220;Algebra, Logic, and Sets,&#8221; 107&#8211;152, which informs the ideas in this paragraph.</div><div id="fndiv13" class="flyoverdiv">Lakoff and N&uacute;&#0241;ez use graphs to represent sets of numbers, and claim that this act redefines those sets so as to eliminate the containment metaphor (<a href="#lakoff_and_n&uacute;&ntilde;ez" id="citation_lakoff_and_n&uacute;&ntilde;ez_67dc9b1be3098">Lakoff and N&uacute;&ntilde;ez</a>, 148&#8211;49).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2007 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Stefanie Acevedo, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="2999581"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="865ff8f3"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/2999581/0/865ff8f3/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

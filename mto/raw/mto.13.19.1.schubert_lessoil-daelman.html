@@ -1,0 +1,562 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 19.1: Schubert and Lessoil-Daelman, Modular Analysis</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="What Modular Analysis Can Tell Us About Musical Modeling in the Renaissance">
+
+
+
+<meta name="citation_publication_date" content="2013/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="19">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">What Modular Analysis Can Tell Us About Musical Modeling in the Renaissance
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Peter Schubert</a> and 
+			<a style="color:black" href="#AUTHORNOTE2">Marcelle Lessoil-Daelman</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: parody, Renaissance, module, analysis, chanson, mass, imitation, stretto, counterpoint, Lassus, Palestrina, Lupi</font></p><p><font size='4'>ABSTRACT: Two Kyrie movements by Lassus and Palestrina, both based on a famous chanson by Lupi, are analyzed. Modular analysis, which involves tracking repeating contrapuntal combinations, is applied to the model and to the imitation pieces. It reveals the two composers&#8217; different approaches to their material: Palestrina works from within, increasing contrapuntal density, while Lassus builds long, formally structured spans.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.13.19.1/mto.13.19.1.schubert_lessoil-daelman.pdf">PDF text </a> | <a href="http://mtosmt.org/issues/mto.13.19.1/schubert_lessoil-daelman_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received September 2012</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 19, Number 1, March 2013 <br> Copyright &#0169; 2013 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Among the copious writings on musical borrowing in the Renaissance, there are few thorough analyses of whole movements or pieces.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> This is in part due to the state of early music analysis, which is still in its infancy, and in part because musicologists have focused on cataloguing the many techniques used by composers to modify the material taken from the model. Examples from repertoire have been adduced as illustrations of the techniques of borrowing rather than as whole works to be explicated. (There may indeed be an implicit doubt as to the very status of the imitation piece <i>qua</i> work.) Studies of imitation masses have tended to be more descriptive than interpretive: they do not tell us why a composer would use a given motive in a given place, or why different composers would choose to copy or repeat &#8220;blocks&#8221; of counterpoint. Rather, the aim has been to understand stylistic norms and compositional techniques as a backdrop against which to place an individual work. As Cathy Ann Elias has written: &#8220;The understanding of any genre involves defining it by means of common elements shared by all examples . . . . [these] are nothing more than the most common elements at a composer&#8217;s fingertips, but once contextualized and repeated within a particular composer&#8217;s works, they will provide the clues to the unique aspects of that individual&#8217;s style and compositional process&#8221; (<a href="#elias_2004" id="citation_elias_2004_67dc9a88b5ebb">2004</a>, 152). However, the attempt to generalize about common borrowing techniques seems doomed, for, as Murray Steib observes, &#8220;No two Renaissance composers deal with borrowing in precisely the same way&#8221; (<a href="#steib_2004" id="citation_steib_2004_67dc9a88b5ebe">2004</a>, 60).</p>
+
+<p>[2] We propose another path through this thicket of intertwined pieces of music. We start with the assumption that imitation music is fundamentally like composition from scratch, but when there is a model, we know which musical ideas came first.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> The composer of the sixteenth-century imitation piece appropriates material from a model&#8212;ranging from a single line to a complete block of polyphony&#8212;as if it were his own first sketch. Then he modifies, develops, refines and improves the musical ideas, often admixing his own freshly composed material. The simplest type of modification comes from adapting the old music to the declamatory demands of the new text; the most complex comes from changing contrapuntal relationships.</p>
+
+<p>[3] These relationships are best viewed through the lens of modular analysis, which focuses on small-scale contrapuntal combinations that repeat.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Modular analysis provides a high degree of descriptive precision, since a module must contain two well-defined melodies in a specific relationship to each other.  It opens a window into compositional process by showing which contrapuntal ideas the composer thought worthy of repetition and how those repetitions are disposed.</p>
+
+<p>[4] The pieces we have chosen as case studies are well known: the Kyries of Lassus and Palestrina based on the famous Lupi chanson, &#8220;Je suys desheritee.&#8221;<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The chanson was written at least 40 years earlier than the imitation pieces, and some stylistic differences between them will be noted. However, the differences between Lassus&#8217;s and Palestrina&#8217;s Kyries are more structural than stylistic.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> We develop a plausible narrative of each composer&#8217;s intentions in the movements we examine, and reveal that Lassus and Palestrina worked consistently towards very different goals. Ultimately we hope this will be a step towards the analysis of imitation pieces as valid musical wholes. This in turn may lead to a broader understanding of the language of Renaissance polyphony, for as Quentin W. Quereau wrote, &#8220;If approached in the proper manner, parody may be a source of real insight into the syntax of sixteenth-century sacred music and the compositional concerns of its composers&#8221; (<a href="#quereau_1982" id="citation_quereau_1982_67dc9a88b5ec4">1982</a>, 198).</p>
+
+<p>[5] The idea that composers approach their models with some specific goal in mind has been developed by David Crook in his penetrating study of Lassus&#8217;s imitation Magnificats. He analyzed several pieces and concluded that for Lassus the process of derivation was a challenge, &#8220;an act of criticism&#8212;the opportunity to show what is strong or weak in a composition, and a chance to point out what deserves our further consideration and attention&#8221; (<a href="#crook_1994" id="citation_crook_1994_67dc9a88b5ed7">Crook 1994</a>, 25&#8211;26). He finds Lassus using different tactics for different imitation pieces, referring, for example, to &#8220;coupling of elements&#8221; as &#8220;one of [Lassus&#8217;s] main preoccupations&#8221; (<a href="#crook_1994" id="citation_crook_1994_67dc9a88b5ed9">204</a>).</p>
+
+<p>[6] Our study follows Crook&#8217;s in developing for our two Kyries a narrative of compositional process based on the deployment of modules, those originating in the chanson and those created afresh for the Kyries. The story we tell is that Palestrina works towards increased contrapuntal density, whereas Lassus works towards expansion. Palestrina chose to work from within, often creating new modules while maintaining the overall dimensions of the model; Lassus, on the other hand, was more interested in large-scale <i>dispositio</i>, repeating segments of the model and inserting new or varied material. Both composers can be said to improve on the model, but in diametrically opposed ways. We must stress that our conclusions apply to these two short pieces only; we do not attempt any broader generalizations about the personal styles of the two composers.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<p>[7] The choice of a model implies homage, and the drive to improve on the model comes from the natural urge to compete. As Howard Mayer Brown wrote, &#8220;We shall never know whether such emulation or imitation was practiced to compete with other composers&#8212;to demonstrate superior expertise using the same musical material&#8212;or to pay them homage. In truth, the two impulses are doubtless closely related&#8221; (<a href="#brown_1982" id="citation_brown_1982_67dc9a88b5edc">1982</a>, 10). In the following pages we will show how Palestrina and Lassus demonstrated superior expertise in many ways, from small-scale contrapuntal cleverness to sweeping new large-scale structures.</p>
+
+<p>[8] Finally, before beginning our analyses, it may be helpful to clear up a question about what constitutes repetition in an imitation piece. To become a module,  a contrapuntal combination must be repeated, but one might ask: is it repetition if the composer of the imitation piece lifts a combination out of another piece and copies it into his Mass movement or Magnificat? We say no: the only modular repetition that &#8220;counts&#8221; is that which occurs within the confines of a piece, for only in that way can it give form. Thus, if the model contains a repeated combination and the composer borrows it for just one occurrence, he has eliminated a module. Likewise, if the model contains a passage that is not repeated and the composer of the imitation-piece repeats it in the new piece, he has created a module. A simple example of the latter can be found in Crook&#8217;s discussion of Lassus&#8217;s Magnificat &#8220;Si par souhait.&#8221; The chanson model contains a three-measure cadential phrase on the text &#8220;Secretement, belle brunette,&#8221; which Lassus uses three times to end the second verse of the Magnificat on the text &#8220;in Deo salutari meo.&#8221; Crook points out that the first and third occurrences are literal reproductions of those in the model, but the middle one is transposed. In the middle one &#8220;a two-voice framework, originally formed between the bass and alto, now appears in the soprano and bass . . .&#8221; (<a href="#crook_1994" id="citation_crook_1994_67dc9a88b5ede">1994</a>, 163). This &#8220;framework&#8221; is for us a module, and we would say that its threefold repetition is in some way structural; we would look at how this succession of &#8220;blocks&#8221; functions in the verse as a whole. </p>
+
+<p style="text-align: center"><b>Lupi&#8217;s Chanson</b></p>
+
+<div style="float:right;text-align:center;margin-right:50px;"><p style="width:400px"><u>Section A</u>
+<br>A1 Je suys desheritee (measures 1&ndash;5) 
+<br>
+		A2 Puisque j&#8217;ay perdu mon amy (5&ndash;10)
+<br><br><u>Repeat of A
+</u>
+<br>A1 Seule si m&#8217;a laissee (9&ndash;13) 
+<br>A2 Plaine de pleurs et de soucy (13&ndash;18) 
+<br><br><u>Section B</u>
+<br>B1 Rossignol du bois joly (17&ndash;21)
+<br>B2 Sans point faire demeure (21&ndash;24) 
+<br>B3 Va t&rsquo;en dire a mon amy (24&ndash;27) 
+<br>B4 Que pour luy suys tourmentee (28&ndash;32) 
+<br>B4 repeated (32&ndash;37)<br></p>
+</div>
+
+<p>[9] Scores for the chanson and two Kyries appear in the <a target="ex_window" onClick="newwindow('schubert_lessoil-daelman_examples.php?id=10',650,350); return false;" href="schubert_lessoil-daelman_examples.php?id=10">Appendix</a> with annotations. The chanson is in typical AAB form; the schema 
+displayed on the right shows the poetic lines and the principal thematic subjects associated with each section (these labels are also shown in the score). When there is imitation, these melodies occur first in the tenor, then in the soprano; however, in phrases B2 and B4, the principal melody is only in the soprano.</p>
+
+<p>[10] The technique that governs most of the chanson is what Julie Cumming has dubbed &#8220;FI-2 T+S,&#8221; that is, free imitation in two parts between tenor and soprano (<a href="#cumming_2012" id="citation_cumming_2012_67dc9a88b5ee0">2012</a>, 79). The soprano imitates the tenor exactly, but the imitation is called &#8220;free&#8221; because it is not immediately repeated and creates no modules. FI-2 T+S is quite common around 1500; as the sixteenth century progresses, however, modular construction becomes more prevalent. In order to follow precisely how the later composers transformed Lupi&#8217;s material, we will now examine the contrapuntal properties of the chanson. As we will see, Lupi writes only a few modules, while Lassus and Palestrina introduce more modular constructions.</p>
+
+<p>[11] The first subject, A1, is sung by the tenor, then imitated by the soprano an octave above in a syllabic canon on the words &#8220;Je suys desheritee.&#8221; The soprano statement is labeled A1&#8217; because it is situated in a new contrapuntal context. Bass and alto begin with the same rhythmically repeated notes but then deviate.  Phrase A2 (measures 5&#8211;9) is also a canon between the tenor and the soprano on the second line &#8220;Puisque j&#8217;ay perdu mon amy.&#8221; The soprano statement of the A2 melody is labeled A2&#8217; because once again the surrounding counterpoint differs.</p>
+
+<p>[12] For the repetition of melodies A1+A2 (measures 9&#8211;17), Lupi does a little re-modeling of his own: the bass does not begin as before; rather, the tenor begins the A1 melody right away. Because the bass and alto are altered, this tenor statement is labeled A1&#8217;&#8217;. The alto now sounds the first six notes of the A1 melody transposed and with slight rhythmic alterations, and the bass is new. (The new bass is labeled Z because it shows up in one of the imitation pieces as a countermelody.) The section as a whole is the same length as the first A1, however, because the overlap between tenor A1&#8217;&#8217; and soprano A1&#8217; is changed, the soprano coming in later; it is as if the late soprano entrance compensates for the early tenor beginning. The soprano statement of A1&#8217; in measures 11&#8211;13 is almost identical, in the whole contrapuntal complex,  to that in measures 3&#8211;5, and A2 in the tenor (measures 13-14) is likewise the same as in measures 5&#8211;8. What&#8217;s new is the substantial alteration of the lower voices accompanying the soprano statement (measures 15&#8211;18) of the first subject; the polyphonic complex, previously labeled A2&#8217;, is now labeled A2&#8217;&#8217;.</p>
+
+<p>[13] In A2&#8221; the tenor has the same countermelody in semiminims (P) that the bass had in measures 5&#8211;6 and 13&#8211;14, while the bass now follows the soprano in parallel tenths. The repetition of the A2 melody and countermelody P makes this combination into a two-voice module that occurs three times, once in measures 5&#8211;7 and twice in a row in measures 13&#8211;15 and 15&#8211;17. These are the only modules in Lupi&#8217;s chanson.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> They are boxed in the score in the 
+<a target="ex_window" onClick="newwindow('schubert_lessoil-daelman_examples.php?id=10',650,350); return false;" href="schubert_lessoil-daelman_examples.php?id=10">Appendix</a> and connected by arrows in Figure 1 (below). The last presentation of the A2 melody in measure 15 is a climactic variation: it contains the highest notes yet in all three of the lowest voices (D4 in the bass, A4 in the tenor, and C5 in the alto). This variation is popular with Lassus and Palestrina, as we will see.</p>
+
+<p>[14] Phrase B1 (measure 17) is again FI-2 T+S for &#8220;Rossignol du bois joly,&#8221; with the soprano presentation labeled B1&#8217;. Phrase B2 (measure 21) starts in the soprano like B1 (C&#8211;C&#8211;D&#8211;F&#8211;E . . . ), but it is longer and involves no imitation; it cadences to C in measure 24. Phrase B3 (measure 24) is a stretto fuga between the tenor and soprano, and it cadences to F in measure 27.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  Before B4 (measure 28) all voices rest. B4 is characterized by parallel tenths in the outer voices and a bit of hidden imitation between soprano and alto. It cadences to D, and after rests again in all voices, B4 (measure 32) is repeated exactly.</p>
+
+<p>[15] The chanson has many features that mark it as a chanson ca. 1530: the construction FI-2 T+S, occasional rests in all voices, an almost total lack of modular repetition, and direct repetition of the closing phrase B4. As we will see, Lassus and Palestrina both eliminate many of these features because, over a generation later, they are writing more &#8220;modern&#8221; music.</p>
+
+<p style="text-align: center"><b>Lassus&#8217;s Kyrie 1</b></p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Lupi&#8217;s A section and the Palestrina and Lassus Kyries</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="schubert_lessoil-daelman_fig1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[16] <b>Figure 1</b> shows the layout of thematic material in the chanson and the two first Kyries. It is immediately apparent that both imitation pieces use only A1 and A2 phrases. However, Lassus&#8217;s movement, at  eighteen measures plus a final downbeat chord (db), is a bit longer than the model, while that of Palestrina is 25% shorter.</p>
+
+<p>[17] Lassus lifts the first A1s and A2s straight from the chanson, with the most minor changes (borrowed polyphonic complexes are highlighted in the Figures). The extra length is partly due to the addition of an A2 phrase in the tenor in measures 9&#8211;10 (bold in Figure 1). This third A2, the inserted one, is borrowed from Lupi&#8217;s last one (measures 15&#8211;17), with the high bass line and the semiminim countermelody P (now in the alto), making a module.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. The tenor-soprano combination compared to the soprano-bass combination</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=1&nonav=true"><img border="1" alt="Example 1 thumbnail" src="schubert_lessoil-daelman_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Lassus tightens up the overlaps vis-&agrave;-vis Lupi</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="schubert_lessoil-daelman_fig2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[18] What is the effect of this extra entry? Because this module involves only the lower voices, the next A1 melody can occur in the soprano (at the end of measure 10), which enters earlier (over the <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the cadence) than in the corresponding joint between A2 and A1 in the chanson. (See the tenor entry at the cadence in measure 9&#8212;Lupi could have done this, but might have wanted more time between the cadential <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and the subject&#8217;s <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> than Lassus, or perhaps he was content with regular 
+two-breve phrases.) In turn, the fact that A1 comes in the soprano allows the next A1 melody to be in the bass transposed down a twelfth (in measure 12), a radical departure from the chanson.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> This low entry is made not at the extended time interval Lupi used for the second pair of A1s in the chanson, but at the time interval of the first pair in both the chanson and the Kyrie. (Compare Lassus, soprano and bass entries in measures 10 and 12, with tenor and soprano entries in measures 1 and 3 of both pieces.) This is possible because the overlap between the last two notes of A1 and the first note of A1 is invertible at the twelfth, as shown in <b>Example 1</b>. These overlaps are in fact mini-modules, and Lassus would have immediately seen the possibility of inverting the relationship between entries. <b>Figure 2</b> shows how Lassus has tightened up the two joints between phrases.</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Melody P redistributed</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=3&nonav=true"><img border="1" alt="Example 2 thumbnail" src="schubert_lessoil-daelman_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[19] The last two A2 phrases are also recomposed: the first (in the alto, measure 14) is in fauxbourdon, and the second (in the soprano, measure 16) is a recomposed A2. It contains the melodic high points of Lupi&#8217;s last A2&#8217;&#8217;, but the characteristic countermelody P has had its notes redistributed into the alto and tenor voices as shown in <b>Example 2</b>. Lassus&#8217;s new alto melody, which rises a seventh (called P&#8217; in the Lassus score, measures 16&#8211;17 and 62&#8211;63), starts off like P but migrates smoothly into the alto <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&#8211;C. As we will see, this melody plays an important role in Lassus&#8217;s second Kyrie.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup></p>
+
+<p>[20] Finally, Lassus adds a one-breve <i>supplementum</i>. This extension after the cadence serves three possible functions: it further extends the movement; it allows the soprano to end on A, less complete and thus demanding a continuation; and it gives the last phrase an even number of measures. We can conclude that Lassus improves on the model by presenting thematic material in voices other than the tenor and soprano, by transposing thematic material, by lengthening the movement, and by building up momentum with added and varied repetition.</p>
+
+<p style="text-align: center"><b>Palestrina&#8217;s Kyrie 1</b></p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Transformation of the alto voice in A'</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=4&nonav=true"><img border="1" alt="Example 3 thumbnail" src="schubert_lessoil-daelman_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></fig>
+
+<p>[21] Palestrina&#8217;s imperatives are quite different. Figure 1 shows Palestrina&#8217;s thematic material appearing in the soprano and tenor as in the chanson, but the second A1 is not highlighted because it is not as it was in the chanson: the alto voice has been subtly reworked as shown in <b>Example 3</b> (containing an imaginary narrative).</p>
+
+<p>[22] Palestrina has moved the alto up a fourth and a semibreve later so that it can relate to the soprano as the bass did to the tenor. The soprano and alto thus form the same module as the tenor and bass, and the opening is a pair of non-imitative (or partially imitative) duos (shown with arrows in Figure 1). The improvement, an increase in the density of thematic material, is all the more impressive because Palestrina manages to do it without disturbing the other voices, other than shortening the bass D.</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Palestrina&#8217;s double canon, measures 4&#8211;8</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=5&nonav=true"><img border="1" alt="Example 4 thumbnail" src="schubert_lessoil-daelman_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[23] The A2s are recomposed as well. In measure 6, Palestrina has replaced the alto&#8217;s repeated Gs with the same three notes the bass had in measure 4 (<b>Example 4</b>). Now the soprano-alto duo in measures 6&#8211;7 is the same as the bass-tenor duo in measures 4&#8211;5, a double canon. The bass is slightly altered in measure 6; this alteration eliminates the second half of characteristic countermelody P, and the module is very short (boxed in the 
+<a href="schubert_lessoil-daelman_appendix_palestrina.pdf">score</a>). But again the amount of repetition of melodic material has increased.</p>
+
+<p>[24] Palestrina might have wanted to avoid part of the characteristic countermelody (P) that was heard three times in the model because that countermelody contains a dissonant accented semiminim (the first E in Lupi&#8217;s measure 6). This melodic formula is characteristic of the chanson, and Palestrina may be reaching for greater <i>gravitas</i> appropriate for sacred music&#8212;he eliminates it in all of the settings of A2.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> However, getting rid of part of P means eliminating part of a module that was present in the model. It is as if, after having introduced modules where there were none in the first A1s and A2s, Palestrina now wants to shorten some that were in the A2s.</p>
+
+<p>[25] Repeating four A2s in a row adds momentum, but, as required by the ethos of variation, they are all quite different, climaxing with the last. The first (measure 5) is now part of a double canon; the second (measure 7) is like Lupi&#8217;s climactic A2&#8217;&#8217; with the high notes in the lower three voices; the third is a singleton in the alto in measures 9&#8211;10, as a kind of repose before the final one in the soprano.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> This fourth A2 phrase, like that in measures 7&#8211;8, is like Lupi&#8217;s A2&#8217;&#8217;, but Palestrina has found a clever variation: the tenor is now in parallel sixths with the soprano, replacing Lupi&#8217;s bass in parallel tenths.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<p>[26] All these changes are characteristic of Palestrina&#8217;s preoccupation in this imitation, which is to increase contrapuntal density and add more regularity. Perhaps Palestrina doesn&#8217;t need to repeat the A1 phrases because he has improved them by making them so much denser. Like Lassus, Palestrina &#8220;modernizes&#8221; the given material by having the bass and alto participate in presenting thematic ideas, and in the first half of the movement all four voices are meaningfully interrelated through the use of conventional &#8220;presentation types&#8221; (see <a href="#schubert_2007" id="citation_schubert_2007_67dc9a88b60a8">Schubert 2007</a>, 490&#8211;513).</p>
+
+<p style="text-align: center"><b>Lassus&#8217;s Christe</b></p>
+
+<p>[27] Lassus transforms Lupi&#8217;s FI-2 T+S into a pair of non-imitative modules (NIms), pairing melody A1 in the soprano with a countermelody in the alto, and then repeating that combination in the tenor and bass (see the score in the 
+<a target="ex_window" onClick="newwindow('schubert_lessoil-daelman_examples.php?id=10',650,350); return false;" href="schubert_lessoil-daelman_examples.php?id=10">Appendix</a>, measures 20&#8211;29).<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> The countermelody is the bass line labeled &#8220;Z&#8221; in the model (Lupi, measures 9&#8211;11), and it is hardly an obvious choice, not having been foregrounded by Lupi. In Lupi&#8217;s chanson, the combination A1 + Z appears only one time, while in the Christe, Lassus gives it more importance by first sounding it alone as a duo (measures 20&#8211;22), and then by repeating it (measures 23&#8211;25). The A1 + Z combination becomes a module in Lassus&#8217;s Christe.</p>
+
+<p>[28] A striking feature of the opening of the Christe is how Lassus follows each of the first two A1s with a hint of A2 (the high Fs labeled &#8220;A2?&#8221;) before A2 finally comes in the soprano (measures 27&#8211;29). This last A2 is lifted with its accompaniment from the chanson, as are the following B1s and B2.</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Lassus&#8217;s transformation of B1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=6&nonav=true"><img border="1" alt="Example 5 thumbnail" src="schubert_lessoil-daelman_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></fig>
+
+<p>[29] What is new, however, is the insertion of another pair of B1s in measures 36&#8211;39. These are also lifted from the chanson, but, in keeping with the Renaissance ethos of <i>varietas</i>, they are transformed. Now they occur at a closer time interval than they did in the chanson.  <b>Example 5</b> shows that this is cleverly accomplished by splicing out a breve of music from the lower three voices of the original texture and by allowing the soprano to begin over the F in the bass (instead of the bass C as in the original). The effect is, once again, to add modular repetition, with the second pair of B1s intensified in two ways: they occur closer together, and the second B1 (resembling Lupi&#8217;s B1&#8217;) is thicker in texture, with four voices where the first has only three. This is altogether a winning move over Lupi&#8217;s original. Lassus extends the material by repeating a block, finding a clever way to vary and intensify it.</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Elements of B1, B2, and B4 combined in Lassus&#8217;s Christe</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=7&nonav=true"><img border="1" alt="Example 6 thumbnail" src="schubert_lessoil-daelman_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[30] Lassus caps this when the soprano starts up again at the end of measure 39 with what could be the beginning of B1 or B2 (they start the same with C&#8211;C&#8211;D&#8211;F) but then continues as B4. <b>Example 6</b> shows the similarities between Lupi&#8217;s B1, B2 and B4, and Lassus&#8217;s line from the end of measure 39. The normal bass line of the beginning of B1 (C&#8211;C&#8211;D&#8211;F&#8211;F) is A&#8211;A&#8211;G&#8211;F&#8211;C (labeled &#8220;Q&#8221; in Lupi, measures 17&#8211;19), and since B4 contains an internal C&#8211;D&#8211;F too, it is possible to place Q in the bass, which Lassus does in measures 40&#8211;41.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> Once again he has combined material from an unexpected source with principal thematic material. And as we will see, skipping B3 altogether is part of Lassus&#8217;s plan for the Kyrie 2.</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Lassus&#8217;s Christe, measures 30&#8211;43</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=8&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="schubert_lessoil-daelman_fig3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[31] Having described the detailed manipulations of the given material, we can interpret Lassus&#8217;s larger formal aims. <b>Figure 3</b> shows the section of the Christe after the opening NIms. If we group the B1 pairs together, we can consider each pair as a composite module. Each composite module can be labeled A (A&#8217; is so called because of the omitted breve and thicker texture).</p>
+
+<p>[32] Lassus disposes his material so that the composite modules are punctuated, as it were, by B2 and B1/2+B4, which are the longer non&#8211;imitative segments from Lupi containing final cadences (B2 to C and B4 to D). Thus Lassus builds a large formal shape out of his repeated and varied modules.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> The stretto in particular illustrates Crook&#8217;s observation on the imitation Magnificats, that Lassus &#8220;took advantage&#8221; of features of his models, and that he developed &#8220;a musical idea&#8217;s potential in a manner not possible in the original composition&#8221; (<a href="#crook_1994" id="citation_crook_1994_67dc9a88b6175">1994</a>, 176&#8211;78).</p>
+
+<p style="text-align: center"><b>Palestrina&#8217;s Christe</b></p>
+
+<p>[33] Lassus&#8217;s Christe is 23 breves plus the final downbeat, while Palestrina&#8217;s is only 12 breves plus the final downbeat. Palestrina also begins his Christe (in measure 14) with a pair of NIms; his countermelody to B1 is a slightly simplified version of Lupi&#8217;s alto in measures 19&#8211;20 (labeled &#8220;W&#8221; in the Lupi score), preceded by a long F.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> Like Lassus, Palestrina has made a prominent repeated countermelody from an inconspicuous item in the model.</p>
+
+<p>[34] Not content, however, with a straightforward pair of NIms in which we would see the tenor and bass replicate the soprano and alto, Palestrina inserts an extra entrance of B1 in the tenor (see measure 16) and then follows in stretto with the real modular member melody in the alto. Who would have guessed that a substantial portion (the first four semibreves) of B1 could be started a semibreve <i>before</i> the new countermelody as well as after? Surely that double employment accounts for Palestrina&#8217;s construction of the countermelody.</p>
+
+<p>[35] Likewise, Palestrina sees in Lupi&#8217;s bass line to B3 (measure 24) the possibility of a third entry of B3. Lupi apparently did not feel the need to give primary thematic material to voices other than tenor and soprano, and this partial imitation (the C&#8211;F skip) seems fortuitous in the chanson. Palestrina is more concerned with squeezing meaningful melodic fragments into a short segment than with large-scale form.</p>
+
+<p style="text-align: center"><b>Lassus&#8217;s Kyrie 2</b></p>
+
+<p>[36] Here Lassus uses a theme in the soprano that seems only distantly related to melodies in the model (see the Lassus score, measures 44&#8211;45). The first three notes in measure 44 look like the notes of A1 retrograded.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> Alternatively, the first four notes could be taken as the transposed inversion of the first six notes of B1, not counting pitch repetition. These multiple resemblances may be a testament to the economy of Lupi&#8217;s thematic invention or it may simply reflect the generic nature of Renaissance melodies.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> However, looking at the soprano with the alto, we see that the first four notes of both the soprano (labeled X) and the alto (labeled Y) correspond to a two-voice fragment from the middle of Lupi&#8217;s B3 (measure 26). Lupi&#8217;s soprano fragment X is completely buried in a longer melody and both voices begin together: in contrast, Lassus has removed the accented dissonant passing <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> from X and offset Y by a rest.</p>
+
+<p>[37] Lassus uses this combination structurally as the beginning of a NIm, repeated in the tenor and bass (measures 47&#8211;50). The alto continues freely over this duo, and in measure 49 the soprano enters with melody X (transposed up to high G and with one rhythmic alteration). The significance of this melody is that it introduces the highest note heard in any of these pieces, G, and that it occurs against the first three notes of module X + Y, now sounded in the tenor and bass inverted at the tenth (measure 50). Thus the soprano makes a stretto of melody X with the bass. The soprano phrase ends with a cadence resembling the end of B2, making a smooth introduction of B3.</p>
+
+<p>[38] Lassus then borrows B3 and B4 verbatim from the model. Remember that Lassus pointedly refrained from using B3 in the Christe, and now, after hinting at B3 by sounding X and Y, he sounds the whole B3 (measure 53&#8211;56), and we hear again the module X + Y in its original context (measures 54&#8211;55). Lassus makes sure we notice this by sounding the tune with the same word (&#8220;Kyrie&#8221;) as at the beginning of the movement.  Finally, instead of repeating B4 after a rest in all voices, Lassus elides the cadence at measure 60 with new music for the end. Beginning with the four soprano notes A&#8211;C&#8211;D&#8211;C&#8211;A, a palindrome that sums up A1 and X, Lassus continues with the longest runs of semiminims heard in the soprano in any of these pieces. This line (labeled P&#8217;) contains a transposition of a melody that Lassus had made out of two voices taken from Lupi&#8217;s A2&#8217;&#8217; (see Example 2).</p>
+
+
+<fig>
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Lassus&#8217;s Kyrie 2, measures 44&#8211;65</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="schubert_lessoil-daelman_examples.php?id=9&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="schubert_lessoil-daelman_fig4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></fig>
+
+<p>[39] The large-scale structure of Lassus&#8217;s Kyrie 2 consists of two long halves, A and B, shown in <b>Figure 4</b>. The first half (measures 44&#8211;52) begins with the NIms X+Y and continues with new material containing a transposition of X on high G (measure 49). (New continuations for X and Y are indicated by &#8220;X+&#8221; and &#8220;Y+&#8221; in Figure 4.) The second half (measures 53&#8211;65) begins with direct quotations of B3 and B4 and ends with new material in which a transposition of the P-derived melody also reaches high G (measure 63). Lassus achieves an apotheosis, expanding on the model not only in length and in registral space, but also in rhythmic activity.</p>
+
+
+<p style="text-align: center"><b>Palestrina&#8217;s Kyrie 2</b></p>
+
+<p>[40] Lassus&#8217;s Kyrie 2 is 21 breves plus the downbeat, while Palestrina&#8217;s is only 11 breves plus the downbeat (see the Palestrina score, measures 27&#8211;38). Palestrina begins with a point of imitation at the octave and unison using various stretches of B4. (The soprano has the full melody and the other voices have less in order to accommodate the imitation.) Palestrina must have gotten the idea of imitating from Lupi&#8217;s buried crypto-imitation in the alto of the chanson (compare Lupi&#8217;s soprano in measures 28&#8211;29 to 
+his alto in measures 29&#8211;30). Palestrina brings this opportunity to the fore: the soprano and alto appear as in the model, and it sufficed to get the bass and tenor to pre-imitate.</p>
+
+<p>[41] Palestrina, like Lassus, removes the rests between the two B4 phrases by filling in with a cadence, finally sounding B4 (measures 34&#8211;38), almost exactly as in measures 34&#8211;37 of the chanson. Palestrina&#8217;s Kyrie 2 triumphantly displays the only point of imitation where all four voices enter with the same theme in all six of the imitation movements we are looking at.</p>
+
+<p style="text-align: center"><b>Conclusion</b></p>
+
+<p>[42] We have drawn attention to the relative lengths of the imitation pieces because, although both Kyries contain all the material of the chanson, Lassus and Palestrina are so consistently opposed in their approaches (NB: in this particular group of movements). The original chanson is 37 measures (breves) long; Palestrina&#8217;s Kyrie is 38. It might be that he set himself the task of maintaining the overall length of the chanson, and so his &#8220;improvements&#8221; are intricate reworkings, augmenting contrapuntal intensity. Palestrina elaborates his musical material to create new shapes (i.e., modular repetitions) within the span of the model.</p>
+
+<p>[43] Lassus, on the other hand, has a different preoccupation&#8212;to enlarge. His derivative work is much longer than its model. (The Kyrie of Lassus is 65 breves long compared to 37 for the chanson.) This is why he leaves large sections intact, repeats some material, and finds ways to insert additional material. He articulates his formal sections by adding some transformed material and some new material, and by giving emphasis to new registers.</p>
+
+<p>[44] The ways Palestrina and Lassus developed Lupi&#8217;s chanson show us how they perceive the possibilities suggested by the model, its strengths and weaknesses, as Crook observed (see <a href="#crook_1994" id="citation_crook_1994_67dc9a88b61c6">Crook 1994</a> and discussion above). Both composers bring Lupi&#8217;s material up to date by creating new modules. Both delve into the model to bring to the fore buried, apparently inconsequential countermelodies (Lassus reuses Z, X and Y, and Q; Palestrina only W). Palestrina works with the subtlety and delicacy of the clockmaker, while Lassus, with the same language, creates broad sweeping arches.</p>
+
+<p>[45] Finally, our study gives insight into the workings of Renaissance polyphony, illustrating some of the ways composers thought in music. Counterpoint is an opportunistic art&#8212;the composer looks for ways to fit meaningful things (i.e., thematic fragments) together in meaningful ways (e.g., stretto, transposition, double canon, modules, invertible counterpoint).  Our examples show composers making new melodies from bits of old ones, sliding melodic fragments back and forth and up and down. There are as many ways to rework melodic materials as there are original pieces and composers to alter them&#8212;it would be impossible to create an exhaustive list of procedures. We can, however, tell convincing stories about a Renaissance composer&#8217;s procedures and goals through the close study of counterpoint and modular repetition.</p>
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Peter Schubert<br>
+	McGill University<br>Dept. of Music Research<br>555 Sherbrook W.<br>Montreal, QC H3A 1E3<br><a href="mailto:peter.schubert@mcgill.ca">peter.schubert@mcgill.ca</a><br><br><a name='AUTHORNOTE2'></a>Marcelle Lessoil-Daelman<br>
+			McGill University<br>Dept. of Music Research<br>555 Sherbrook W.<br>Montreal, QC H3A 1E3<br><a href="mailto:daelless@videotron.ca">daelless@videotron.ca</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_brown_1982" class="flyoverdiv">Brown, Howard Mayer. 1982. &#8220;Emulation, Competition, and Homage: Imitation and Theories of Imitation in the Renaissance.&#8221; <i>Journal of the American Musicological Society</i> 35: 1&#8211;48.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brown_1982"></a>Brown, Howard Mayer. 1982. &#8220;Emulation, Competition, and Homage: Imitation and Theories of Imitation in the Renaissance.&#8221; <i>Journal of the American Musicological Society</i> 35: 1&#8211;48.</p><div id="citediv_crook_1994" class="flyoverdiv">Crook, David. 1994. <i>Orlando di Lasso&#8217;s Imitation Magnificats for Counter-Reformation Munich</i>. Princeton, N.J.: Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="crook_1994"></a>Crook, David. 1994. <i>Orlando di Lasso&#8217;s Imitation Magnificats for Counter-Reformation Munich</i>. Princeton, N.J.: Princeton University Press.</p><div id="citediv_cumming_2012" class="flyoverdiv">Cumming, Julie. 2012. &#8220;Text Setting and Imitative Technique in Petrucci&#8217;s First Five Motet Prints.&#8221; In <i>The Motet around 1500: On the Relationship of Imitation and Text Treatment</i>, ed. Thomas Schmidt-Beste, 83&#8211;110. Turnhout: Brepols.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cumming_2012"></a>Cumming, Julie. 2012. &#8220;Text Setting and Imitative Technique in Petrucci&#8217;s First Five Motet Prints.&#8221; In <i>The Motet around 1500: On the Relationship of Imitation and Text Treatment</i>, ed. Thomas Schmidt-Beste, 83&#8211;110. Turnhout: Brepols.</p><div id="citediv_cumming_and_schubert_forthcoming" class="flyoverdiv">Cumming, Julie, and Schubert, Peter. (forthcoming).  &#8220;The Rise of Pervasive Imitation.&#8221; In <i>The Cambridge History of Fifteenth-Century Music</i>, ed. Anna Maria Busse and Jesse Rodin. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cumming_and_schubert_forthcoming"></a>Cumming, Julie, and Schubert, Peter. (forthcoming).  &#8220;The Rise of Pervasive Imitation.&#8221; In <i>The Cambridge History of Fifteenth-Century Music</i>, ed. Anna Maria Busse and Jesse Rodin. Cambridge: Cambridge University Press.</p><div id="citediv_elias_2004" class="flyoverdiv">Elias, Cathy Ann. 2004. &#8220;Mid-Sixteenth-Century Chanson Masses: A Kaleidoscopic Process.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 149&#8211;78. London: Routledge. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="elias_2004"></a>Elias, Cathy Ann. 2004. &#8220;Mid-Sixteenth-Century Chanson Masses: A Kaleidoscopic Process.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 149&#8211;78. London: Routledge. </p><div id="citediv_fromson_2004" class="flyoverdiv">Fromson, Mich&egrave;le. 2004. &#8220;Melodic citation in the sixteenth-century motet.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 179&#8211;206. London: Routledge. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fromson_2004"></a>Fromson, Mich&egrave;le. 2004. &#8220;Melodic citation in the sixteenth-century motet.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 179&#8211;206. London: Routledge. </p><div id="citediv_lessoil-daelman_1995" class="flyoverdiv">Lessoil-Daelman, Marcelle. 1995. &#8220;Les Jeux num&eacute;riques dans les Psaumes de la P&eacute;nitence de Lassus.&#8221; <i>Revue Belge de Musicologie</i> 49: 47&#8211;78.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lessoil-daelman_1995"></a>Lessoil-Daelman, Marcelle. 1995. &#8220;Les Jeux num&eacute;riques dans les Psaumes de la P&eacute;nitence de Lassus.&#8221; <i>Revue Belge de Musicologie</i> 49: 47&#8211;78.</p><div id="citediv_lessoil-daelman_2002" class="flyoverdiv">Lessoil-Daelman, Marcelle. 2002. &#8220;Une approche synoptique des motifs et des modules dans la messe parodique.&#8221; PhD diss., McGill University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lessoil-daelman_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002. &#8220;Une approche synoptique des motifs et des modules dans la messe parodique.&#8221; PhD diss., McGill University.</p><div id="citediv_meconi_2004" class="flyoverdiv">Meconi, Honey, ed. 2004. <i>Early Musical Borrowing</i>. London: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="meconi_2004"></a>Meconi, Honey, ed. 2004. <i>Early Musical Borrowing</i>. London: Routledge.</p><div id="citediv_milsom_2005a" class="flyoverdiv">Milsom, John. 2005a. &#8220; &#8216;Imitation,&#8217; &#8217;Intertextuality,&#8217; and Early Music.&#8221; In <i>Citation and Authority in Medieval and Renaissance Musical Culture: Learning from the Learned</i>, ed. Suzannah Clark and Elizabeth Eva Leach, 146&#8211;51. Woodbridge: Boydell Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="milsom_2005a"></a>Milsom, John. 2005a. &#8220; &#8216;Imitation,&#8217; &#8217;Intertextuality,&#8217; and Early Music.&#8221; In <i>Citation and Authority in Medieval and Renaissance Musical Culture: Learning from the Learned</i>, ed. Suzannah Clark and Elizabeth Eva Leach, 146&#8211;51. Woodbridge: Boydell Press.</p><div id="citediv_milsom_2005b" class="flyoverdiv">Milsom, John. 2005b. &#8220;Crequillon, Clemens, and Four-Voice Fuga.&#8221; In <i>Beyond Contemporary Fame: Reassessing the Art of Clemens non Papa and Thomas Crequillon</i>, ed. Eric Jas, 293&#8211;345. Collection &#8220;Epitome musical.&#8221; Turnhout, Belgium: Brepols.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="milsom_2005b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005b. &#8220;Crequillon, Clemens, and Four-Voice Fuga.&#8221; In <i>Beyond Contemporary Fame: Reassessing the Art of Clemens non Papa and Thomas Crequillon</i>, ed. Eric Jas, 293&#8211;345. Collection &#8220;Epitome musical.&#8221; Turnhout, Belgium: Brepols.</p><div id="citediv_owens_1984" class="flyoverdiv">Owens, Jessie Ann. 1984. &#8220;The Milan Partbooks: Evidence of Cipriano de Rore&#8217;s Compositional Process.&#8221; <i>Journal of the American Musicological Society</i> 37: 270&#8211;98.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="owens_1984"></a>Owens, Jessie Ann. 1984. &#8220;The Milan Partbooks: Evidence of Cipriano de Rore&#8217;s Compositional Process.&#8221; <i>Journal of the American Musicological Society</i> 37: 270&#8211;98.</p><div id="citediv_quereau_1982" class="flyoverdiv">Quereau, Quentin W. 1982. &#8220;Aspects of Palestrina&#8217;s Parody Procedure.&#8221; <i>The Journal of Musicology</i> 1: 198&#8211;216.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="quereau_1982"></a>Quereau, Quentin W. 1982. &#8220;Aspects of Palestrina&#8217;s Parody Procedure.&#8221; <i>The Journal of Musicology</i> 1: 198&#8211;216.</p><div id="citediv_schubert_1995" class="flyoverdiv">Schubert, Peter N. 1995. &#8220;A Lesson from Lassus: Form in the Duos of 1577.&#8221; <i>Music Theory Spectrum</i> 17: 1&#8211;26.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_1995"></a>Schubert, Peter N. 1995. &#8220;A Lesson from Lassus: Form in the Duos of 1577.&#8221; <i>Music Theory Spectrum</i> 17: 1&#8211;26.</p><div id="citediv_schubert_2003" class="flyoverdiv">Schubert, Peter N. 2003. &#8220;Recombinant Melody: Ten Things to Love about Willaert&#8217;s Music.&#8221; <i>Current Musicology</i> 75 (Spring): 91&#8211;113.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_2003"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2003. &#8220;Recombinant Melody: Ten Things to Love about Willaert&#8217;s Music.&#8221; <i>Current Musicology</i> 75 (Spring): 91&#8211;113.</p><div id="citediv_schubert_2007" class="flyoverdiv">Schubert, Peter N. 2007. &#8220;Hidden Forms in Palestrina&#8217;s First Book of Four-Voice Motets.&#8221; <i>Journal of the American Musicological Society</i> 60: 483&#8211;556. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_2007"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2007. &#8220;Hidden Forms in Palestrina&#8217;s First Book of Four-Voice Motets.&#8221; <i>Journal of the American Musicological Society</i> 60: 483&#8211;556. </p><div id="citediv_schubert_2008" class="flyoverdiv">Schubert, Peter N. 2008. <i>Modal Counterpoint, Renaissance Style</i>. 2nd ed. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_2008"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2008. <i>Modal Counterpoint, Renaissance Style</i>. 2nd ed. New York: Oxford University Press.</p><div id="citediv_schubert_2012" class="flyoverdiv">Schubert, Peter N. 2012. &#8220;From Voice to Keyboard: Improvised Techniques in the Renaissance.&#8221;  <i>Philomusica on-line</i> 11, no. 1: 11&#8211;22. [http://philomusica.unipv.it]</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_2012"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2012. &#8220;From Voice to Keyboard: Improvised Techniques in the Renaissance.&#8221;  <i>Philomusica on-line</i> 11, no. 1: 11&#8211;22. [http://philomusica.unipv.it]</p><div id="citediv_schubert_forthcoming" class="flyoverdiv">Schubert, Peter N. Forthcoming. &#8220;From Improvisation to Composition: Three Case Studies.&#8221; In <i>The Collected Writings of the Orpheus Instituut</i>. Leuven: Leuven University Press. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schubert_forthcoming"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. Forthcoming. &#8220;From Improvisation to Composition: Three Case Studies.&#8221; In <i>The Collected Writings of the Orpheus Instituut</i>. Leuven: Leuven University Press. </p><div id="citediv_sibley_1989" class="flyoverdiv">Sibley, David J. 1989. &#8220;The Sixteenth-Century Parody Mass.&#8221; PhD diss., University of Nottingham.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sibley_1989"></a>Sibley, David J. 1989. &#8220;The Sixteenth-Century Parody Mass.&#8221; PhD diss., University of Nottingham.</p><div id="citediv_steib_2004" class="flyoverdiv">Steib, Murray. 2004. &#8220;Ockeghem and Intertextuality: A Composer Interprets Himself.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 37&#8211;63. London: Routledge.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="steib_2004"></a>Steib, Murray. 2004. &#8220;Ockeghem and Intertextuality: A Composer Interprets Himself.&#8221; In <i>Early Musical Borrowing</i>, ed. Honey Meconi, 37&#8211;63. London: Routledge.</p><div id="citediv_whang_2004" class="flyoverdiv">Whang, Carol. 2004. &#8220;Re-Defining Relationships: Modeling in Four Imitation Masses by Palestrina.&#8221; PhD diss., University of Pennsylvania.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="whang_2004"></a>Whang, Carol. 2004. &#8220;Re-Defining Relationships: Modeling in Four Imitation Masses by Palestrina.&#8221; PhD diss., University of Pennsylvania.</p><div id="citediv__" class="flyoverdiv"><h3>Musical sources</h3></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="_"></a><h3>Musical sources</h3></p><div id="citediv_lupi_1537" class="flyoverdiv">Lupi, Johannes. 1537. <i>Je suys desheritee</i>. RISM 1537. <i>Tiers livre contenant XXX. Chansons vieilles et esleues de plusieurs livres: nagu&egrave;res r&eacute;imprim&eacute;es en ung volume et en deux</i>. Paris: P. Attaingnant et H. Jullet.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lupi_1537"></a>Lupi, Johannes. 1537. <i>Je suys desheritee</i>. RISM 1537. <i>Tiers livre contenant XXX. Chansons vieilles et esleues de plusieurs livres: nagu&egrave;res r&eacute;imprim&eacute;es en ung volume et en deux</i>. Paris: P. Attaingnant et H. Jullet.</p><div id="citediv_lasso_nd" class="flyoverdiv">Lasso, Orlando di. Missa super <i>Je suis desheritee</i>. M&uuml; 23: M&uuml;chen, Bayerische Staatsbibliotek, Mus. Mss. 23 (Maier Nr. 49).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lasso_nd"></a>Lasso, Orlando di. Missa super <i>Je suis desheritee</i>. M&uuml; 23: M&uuml;chen, Bayerische Staatsbibliotek, Mus. Mss. 23 (Maier Nr. 49).</p><div id="citediv_palestrina_1596" class="flyoverdiv">Palestrina, Pierluigi da. 1596. <i>Missa Sine Nomine</i>. RISM 1594a.- [erweiterte Ausgabe] ... <i>cum quatuor, quinque, ac sex vocibus ... liber sextus</i>. Venice: Angelo Gardano.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="palestrina_1596"></a>Palestrina, Pierluigi da. 1596. <i>Missa Sine Nomine</i>. RISM 1594a.- [erweiterte Ausgabe] ... <i>cum quatuor, quinque, ac sex vocibus ... liber sextus</i>. Venice: Angelo Gardano.</p><div id="citediv__" class="flyoverdiv"><h3>Modern editions</h3></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="_"></a><h3>Modern editions</h3></p><div id="citediv_lasso_1970" class="flyoverdiv">Lasso, Orlando di. 1970. Missa super <i>Je suis desheritee. Orlando di Lasso</i>. In <i>S&auml;mtliche Werke: Neue Reihe</i>, vol. 10, ed. Siegfried Hermelink, 93&#8211;112. Kassel: B&auml;renreiter.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lasso_1970"></a>Lasso, Orlando di. 1970. Missa super <i>Je suis desheritee. Orlando di Lasso</i>. In <i>S&auml;mtliche Werke: Neue Reihe</i>, vol. 10, ed. Siegfried Hermelink, 93&#8211;112. Kassel: B&auml;renreiter.</p><div id="citediv_lupi_1970" class="flyoverdiv">Lupi, Johannes. 1970. &#8220;Je suys desheritee.&#8221; In <i>Orlando di Lasso: S&auml;mtliche Werke, Neue Reihe</i>, vol. 12, ed. Siegfried Hermelink, 206&#8211;7. Kassel: B&auml;renreiter. </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lupi_1970"></a>Lupi, Johannes. 1970. &#8220;Je suys desheritee.&#8221; In <i>Orlando di Lasso: S&auml;mtliche Werke, Neue Reihe</i>, vol. 12, ed. Siegfried Hermelink, 206&#8211;7. Kassel: B&auml;renreiter. </p><div id="citediv_palestrina_1862" class="flyoverdiv">Palestrina, Giovanni Pierluigi da. 1862&#8211;1907. <i>Missa Sine Nomine</i>. In <i>Werke</i>, vol. 15, ed. Franz Xaver Haberl, 44&#8211;59. Leipzig: Breitkopf and H&auml;rtel, Repr. 1968. Farnborough: Gregg International Publishers.      </div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="palestrina_1862"></a>Palestrina, Giovanni Pierluigi da. 1862&#8211;1907. <i>Missa Sine Nomine</i>. In <i>Werke</i>, vol. 15, ed. Franz Xaver Haberl, 44&#8211;59. Leipzig: Breitkopf and H&auml;rtel, Repr. 1968. Farnborough: Gregg International Publishers.      </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> This is a revised version of a paper &#8220;Making the Most of It: Modular Analysis Applied to Imitation Masses,&#8221; given at the Annual Meeting of the Renaissance Society of America, Montreal, March 26, 2011. The authors wish to thank Jennifer Bloxam, Cathy Ann Elias, Patrick Macey, Sten Thomson, and Julie Cumming for their interest and comments, and Matthew Provost and Paul Daelman for preparing the examples and animations.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">This is a revised version of a paper &#8220;Making the Most of It: Modular Analysis Applied to Imitation Masses,&#8221; given at the Annual Meeting of the Renaissance Society of America, Montreal, March 26, 2011. The authors wish to thank Jennifer Bloxam, Cathy Ann Elias, Patrick Macey, Sten Thomson, and Julie Cumming for their interest and comments, and Matthew Provost and Paul Daelman for preparing the examples and animations.</div><p><a name="FN1">1.</a> For references to studies on parody (as it used to be called) and imitation, see the essays in <a href="#meconi_2004" id="citation_meconi_2004_67dc9a88ae0bf">Meconi 2004</a>, and <a href="#whang_2004" id="citation_whang_2004_67dc9a88ae0c8">Whang 2004</a>, 1&#8211;15.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Indeed, even composition from scratch is often not really from scratch. Michelle Fromson <a href="#fromson_2004" id="citation_fromson_2004_67dc9a88ae0ce">2004</a> shows that many melodic ideas that seem original are actually chant paraphrases. <br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The term &#8220;module&#8221; originated in Jessie Ann Owens <a href="#owens_1984" id="citation_owens_1984_67dc9a88ae0d3">1984</a> and it has been developed into a typology and applied to the analysis of Palestrina motets in <a href="#schubert_2007" id="citation_schubert_2007_67dc9a88ae0d6">Schubert 2007</a>. For analyses of imitation masses using modules, see <a href="#lessoil-daelman_2002" id="citation_lessoil-daelman_2002_67dc9a88ae0da">Lessoil-Daelman 2002</a>.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> The chanson is also attributed to Pierre Cad&eacute;ac (see <a href="#sibley_1989" id="citation_sibley_1989_67dc9a88ae0dd">Sibley 1989</a>, 406); for sources see works cited list.  <br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Some studies have focused on the differences in the style of the imitators, particularly when they are from different generations: <a href="#elias_2004" id="citation_elias_2004_67dc9a88ae0e1">Elias 2004</a> has shown how Palestrina and Gombert, using this same model, arrive at different results, each in the composer&#8217;s characteristic style.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Lassus&#8217;s mass is actually shorter than Palestrina&#8217;s, so the conclusion that Lassus extends and Palestrina shortens holds only for these Kyries.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> The alto in measures 7&#8211;8 is reminiscent of the P countermelody, but we do not call it part of a module.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> On stretto fuga in two voices, see <a href="#milsom_2005a" id="citation_milsom_2005a_67dc9a88ae0e4">Milsom 2005a</a>. See also <a href="#schubert_2008" id="citation_schubert_2008_67dc9a88ae0e7">Schubert 2008</a>, 156&#8211;59, <a href="#schubert_2012" id="citation_schubert_2012_67dc9a88ae0ea">Schubert 2012</a>, and &#8220;From Improvisation to Composition,&#8221; <a href="#schubert_forthcoming" id="citation_schubert_forthcoming_67dc9a88ae0ed">forthcoming</a>. For an even fuller discussion of the use of stretto fuga in the second half of the fifteenth century, see Julie Cumming and Peter Schubert, &#8220;The Rise of Pervasive Imitation,&#8221; <a href="#cumming_and_schubert_forthcoming" id="citation_cumming_and_schubert_forthcoming_67dc9a88ae0f1">forthcoming</a>.  <br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> The identification of sections from here on will be based on principal melodies, and not take into account variants in the accompaniment, so primes will not be used.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> In addition to making this entry at a short time interval and in a different register, Lassus exploits the possibility of using the descending fourth (G&#8211;D) as the bass of an A-mi cadence.  Palestrina, in contrast, adds no cadences to notes not appearing in Lupi.   <br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Lupi had the alto rise to C5, but never from a low D. Palestrina&#8217;s first Kyrie has a similar melody from D4 to C5 (measures 7&#8211;8), but it is not reused as in Lassus&#8217;s Kyrie 2. Lassus&#8217;s new alto line could be seen as the inversion of Lupi&#8217;s bass in measures 2&#8211;3, and certainly the line is a commonplace in Renaissance music.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> The accented dissonant E is part of the &#8220;chanson idiom,&#8221; in which the preparation of the suspension at a cadence sounds against the third of four descending semiminims, anticipating the dissonance that comes on the next minim beat. See <a href="#schubert_2008" id="citation_schubert_2008_67dc9a88ae0f5">Schubert 2008</a>, 147&#8211;48. <br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> The term &#8220;singleton&#8221; refers to a thematic subject that appears without a regular countermelody. The term was coined by John Milsom (<a href="#milsom_2005b" id="citation_milsom_2005b_67dc9a88ae0f8">2005b</a>), and is used in <a href="#schubert_2007" id="citation_schubert_2007_67dc9a88ae0fb">Schubert 2007</a>.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Note that the new tenor has the same solmization syllables as the old bass, la, la, la, sol, fa, mi, re, and that it is like the original combination but in double counterpoint at the fifth.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> A non-imitative module is a contrapuntal combination in which two entirely different melodies are joined; there is no imitation within the combination, although the combination may be repeated.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> It may be noted that motives Q and Z are somewhat similar. They are fairly generic, and the difference between them is that Q has the F on a weak beat, ends by rising to C, and is only combined with B1, while Z has F on the strong part of the semibreve and is only combined with A1.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> For other ABA&#8217;C structures in Lassus, see <a href="#schubert_1995" id="citation_schubert_1995_67dc9a88ae0fe">Schubert 1995</a>. For other types of structure, notably palindromes, see <a href="#lessoil-daelman_1995" id="citation_lessoil-daelman_1995_67dc9a88ae101">Lessoil-Daelman 1995</a>, 47&#8211;78. <br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Melody W is a transposition of the end of melody P, another commonplace cadential figure used motivically.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Sibley (<a href="#sibley_1989" id="citation_sibley_1989_67dc9a88ae105">1989</a>, 435) noted this resemblance. <br><a href="#FN19REF">Return to text</a></p><p><a name="FN21">21.</a> For another view of &#8220;generic&#8221; melodic materials, see <a href="#schubert_2003" id="citation_schubert_2003_67dc9a88ae108">Schubert 2003</a>.<br><a href="#FN21REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">For references to studies on parody (as it used to be called) and imitation, see the essays in <a href="#meconi_2004" id="citation_meconi_2004_67dc9a88ae0bf">Meconi 2004</a>, and <a href="#whang_2004" id="citation_whang_2004_67dc9a88ae0c8">Whang 2004</a>, 1&#8211;15.</div><div id="fndiv2" class="flyoverdiv">Indeed, even composition from scratch is often not really from scratch. Michelle Fromson <a href="#fromson_2004" id="citation_fromson_2004_67dc9a88ae0ce">2004</a> shows that many melodic ideas that seem original are actually chant paraphrases. </div><div id="fndiv3" class="flyoverdiv">The term &#8220;module&#8221; originated in Jessie Ann Owens <a href="#owens_1984" id="citation_owens_1984_67dc9a88ae0d3">1984</a> and it has been developed into a typology and applied to the analysis of Palestrina motets in <a href="#schubert_2007" id="citation_schubert_2007_67dc9a88ae0d6">Schubert 2007</a>. For analyses of imitation masses using modules, see <a href="#lessoil-daelman_2002" id="citation_lessoil-daelman_2002_67dc9a88ae0da">Lessoil-Daelman 2002</a>.</div><div id="fndiv4" class="flyoverdiv">The chanson is also attributed to Pierre Cad&eacute;ac (see <a href="#sibley_1989" id="citation_sibley_1989_67dc9a88ae0dd">Sibley 1989</a>, 406); for sources see works cited list.  </div><div id="fndiv5" class="flyoverdiv">Some studies have focused on the differences in the style of the imitators, particularly when they are from different generations: <a href="#elias_2004" id="citation_elias_2004_67dc9a88ae0e1">Elias 2004</a> has shown how Palestrina and Gombert, using this same model, arrive at different results, each in the composer&#8217;s characteristic style.</div><div id="fndiv6" class="flyoverdiv">Lassus&#8217;s mass is actually shorter than Palestrina&#8217;s, so the conclusion that Lassus extends and Palestrina shortens holds only for these Kyries.</div><div id="fndiv7" class="flyoverdiv">The alto in measures 7&#8211;8 is reminiscent of the P countermelody, but we do not call it part of a module.</div><div id="fndiv8" class="flyoverdiv">On stretto fuga in two voices, see <a href="#milsom_2005a" id="citation_milsom_2005a_67dc9a88ae0e4">Milsom 2005a</a>. See also <a href="#schubert_2008" id="citation_schubert_2008_67dc9a88ae0e7">Schubert 2008</a>, 156&#8211;59, <a href="#schubert_2012" id="citation_schubert_2012_67dc9a88ae0ea">Schubert 2012</a>, and &#8220;From Improvisation to Composition,&#8221; <a href="#schubert_forthcoming" id="citation_schubert_forthcoming_67dc9a88ae0ed">forthcoming</a>. For an even fuller discussion of the use of stretto fuga in the second half of the fifteenth century, see Julie Cumming and Peter Schubert, &#8220;The Rise of Pervasive Imitation,&#8221; <a href="#cumming_and_schubert_forthcoming" id="citation_cumming_and_schubert_forthcoming_67dc9a88ae0f1">forthcoming</a>.  </div><div id="fndiv9" class="flyoverdiv">The identification of sections from here on will be based on principal melodies, and not take into account variants in the accompaniment, so primes will not be used.</div><div id="fndiv10" class="flyoverdiv">In addition to making this entry at a short time interval and in a different register, Lassus exploits the possibility of using the descending fourth (G&#8211;D) as the bass of an A-mi cadence.  Palestrina, in contrast, adds no cadences to notes not appearing in Lupi.   </div><div id="fndiv11" class="flyoverdiv">Lupi had the alto rise to C5, but never from a low D. Palestrina&#8217;s first Kyrie has a similar melody from D4 to C5 (measures 7&#8211;8), but it is not reused as in Lassus&#8217;s Kyrie 2. Lassus&#8217;s new alto line could be seen as the inversion of Lupi&#8217;s bass in measures 2&#8211;3, and certainly the line is a commonplace in Renaissance music.</div><div id="fndiv12" class="flyoverdiv">The accented dissonant E is part of the &#8220;chanson idiom,&#8221; in which the preparation of the suspension at a cadence sounds against the third of four descending semiminims, anticipating the dissonance that comes on the next minim beat. See <a href="#schubert_2008" id="citation_schubert_2008_67dc9a88ae0f5">Schubert 2008</a>, 147&#8211;48. </div><div id="fndiv13" class="flyoverdiv">The term &#8220;singleton&#8221; refers to a thematic subject that appears without a regular countermelody. The term was coined by John Milsom (<a href="#milsom_2005b" id="citation_milsom_2005b_67dc9a88ae0f8">2005b</a>), and is used in <a href="#schubert_2007" id="citation_schubert_2007_67dc9a88ae0fb">Schubert 2007</a>.</div><div id="fndiv14" class="flyoverdiv">Note that the new tenor has the same solmization syllables as the old bass, la, la, la, sol, fa, mi, re, and that it is like the original combination but in double counterpoint at the fifth.</div><div id="fndiv15" class="flyoverdiv">A non-imitative module is a contrapuntal combination in which two entirely different melodies are joined; there is no imitation within the combination, although the combination may be repeated.</div><div id="fndiv16" class="flyoverdiv">It may be noted that motives Q and Z are somewhat similar. They are fairly generic, and the difference between them is that Q has the F on a weak beat, ends by rising to C, and is only combined with B1, while Z has F on the strong part of the semibreve and is only combined with A1.</div><div id="fndiv17" class="flyoverdiv">For other ABA&#8217;C structures in Lassus, see <a href="#schubert_1995" id="citation_schubert_1995_67dc9a88ae0fe">Schubert 1995</a>. For other types of structure, notably palindromes, see <a href="#lessoil-daelman_1995" id="citation_lessoil-daelman_1995_67dc9a88ae101">Lessoil-Daelman 1995</a>, 47&#8211;78. </div><div id="fndiv18" class="flyoverdiv">Melody W is a transposition of the end of melody P, another commonplace cadential figure used motivically.</div><div id="fndiv19" class="flyoverdiv">Sibley (<a href="#sibley_1989" id="citation_sibley_1989_67dc9a88ae105">1989</a>, 435) noted this resemblance. </div><div id="fndiv20" class="flyoverdiv">For another view of &#8220;generic&#8221; melodic materials, see <a href="#schubert_2003" id="citation_schubert_2003_67dc9a88ae108">Schubert 2003</a>.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2013 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Michael McClimon, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="8831493"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="28c6739c"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/8831493/0/28c6739c/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

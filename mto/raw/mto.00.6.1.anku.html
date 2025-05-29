@@ -1,0 +1,661 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 6.1: Anku, Circles and Time</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Circles and Time: A Theory of Structural Organization of Rhythm in African Music">
+
+    <meta name="citation_author" content="Anku, Willie">
+      
+
+<meta name="citation_publication_date" content="2000/01/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="6">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Circles and Time: A Theory of Structural Organization of Rhythm in African Music
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.00.6.1/mto.00.6.1.anku.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Willie Anku</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: African music, rhythm, dance music, set theory</font></p><p><font size='4'>ABSTRACT: Much of African music is circular. This circular concept of time ultimately defines a structural set. The set represents a structural module from which the entire performance is derived. The performance consists of a steady ostinato framework of multi-concentric rhythms on which various manipulations of the set are realized by a leader (e.g., a lead drummer). It is in these complex structural manipulations (against a background of a steady ostinato referent) that Africa finds its finest rhythmic qualities. The paper focuses on two principal elements. It discusses the properties of the rhythmic set, and it demonstrates its various modes of performance and analytical applications.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.00.6.1/mto.00.6.1.anku.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.00.6.1/anku_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 6, Number 1, January 2000 <br> Copyright &#0169; 2000 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+
+<h3>Introduction</h3>
+
+<p>[1] For the sake of those who are not well acquainted with the procedures of African music, I would like to begin by presenting,
+in brief, a general (descriptive) analytical picture of its performance practice. I would like first of all, to distinguish
+between two broad categories of music practiced in Africa as those that are strictly timed (or
+metered), often suited for dance and those that lack in dance qualities and therefore, for
+the want of an appropriate term, may be described as in &ldquo;free rhythm.&rdquo; This paper focuses on the former, which finds its
+highest expression in &ldquo;dance drumming.&rdquo; Though African community life makes provision for individual music making, music is
+generally organized as a social event, oriented towards a large degree of community participation. Following are four structural
+statements about the music:</p>
+<p>[2] 1. Whether performed individually or shared as a collective experience, the music is nonetheless rigidly controlled by a
+<i>recurrent rhythm</i> often associated with the role of the <i>bell</i> pattern typical of West and Central African drumming. This
+controlling structural concept is however not always externalized along with the music. It prevails mentally and controls its
+structural perception, as for instance in the case of a lone performer playing a xylophone or
+<i>Mbira/Kalimba</i>&mdash;&ldquo;thumb piano.&rdquo;</p>
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="anku_fig01_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Background Ostinato and Master Drum</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="anku_fig02_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3] 2. This <i>time Line</i> concept of the bell rhythm (for the purpose of this paper) translates as a
+<i>time cycle</i> because African music is perceived essentially as a circular concept
+rather than linear (<b>Figure 1</b>). Events of the performance (which
+may include multiple instruments, a body of songs and dances) are all organized around this structural
+matrix, making it possible for performers to go in and out of the performance without much
+inhibition. There are however clearly prescribed cues for each event.</p>
+<p>[4] 3. The events are unified by a common recurring undercurrent of one <i>regulative
+beat</i> per cycle which is divided into four equidistant beats. The regulative beat with its equidistant beat
+divisions should not be misconstrued for a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> metric concept. Instead, it is a structural definition of the time cycle span.
+All the composite parts of the performance are controlled, however, by a single meter.</p>
+
+
+<p>[5] 4. The drum ensemble consists of two basic concepts&mdash;the background <i>ostinato</i> on one hand and the
+<i>master drum</i> concept on the other. Visualize the background ostinato as consisting of
+concentric circular rhythms, each with its peculiar orientation to the regulative beat of the time cycle and thus revealing
+staggered entry relationships astride the regulative beat. Against this constant ostinato structural framework of the
+background, the master drum &ldquo;projects&rdquo; a succession of intriguing, logically ordered rhythmic manipulations which are
+concurrently regulated by the common timing principle of the time cycle. A visual representation reveals a complex interlocking
+super-structure of the fundamental circular concept (<b>Figure 2</b>).</p>
+
+<h3>The Quantification Process (The Transcription)</h3>
+<p>[6] Ideally, African music is highly quantifiable. To the uncultivated listener, such a statement may seem an absolute
+absurdity at first. While the music seems to emerge from a principle of collective social participation with a high
+incidence of social interaction, nevertheless, its practitioners have a developed sense of tolerance for certain apparent
+disparities that may be manifest during performance. Thus, knowledge of the &ldquo;compositional ideal&rdquo; exists in each ethnic
+tradition and is available from those regarded as musicians in society on the critical level, and the community at large on the
+general level. A reliable transcription ought to take full cognizance of precise rhythmic relationships and &ldquo;ethnic
+perception norms&rdquo; on the appropriate level of inquiry and should not be dependent merely on performance manifestations.
+<p>[7] African music is isometric. The music is either <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>6</mn></msubsup></math></nobr> or <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr>. <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>3</mn></msubsup></math></nobr> is rarely or never used in African music.</p>
+<h3>The Analytical Framework</h3>
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Set Properties</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="anku_fig03_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=3&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="anku_fig04_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=4&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="anku_fig05_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[8] The time cycle ultimately defines a <i>set</i> and this set rhythm is a structural module from which the entire
+performance is derived. Having said that, my first task is to isolate the constituent set properties as follows. It consists of
+(<b>Figure 3</b>) <nobr>. . .</nobr> :</p>
+<ul>
+  <li>four equidistant beat areas,</li>
+  <li>one occurrence of a regulative beat (marked with a down arrow in the following figures),</li>
+  <li>polarization into two symmetrical halves.</li>
+</ul>
+<p>
+[9] There are three identifiable set types:</p>
+<ul>
+  <li>The <i>12-time point set</i>: (with an eighth-note referent)&mdash;spans two measures of <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>6</mn></msubsup></math></nobr> time
+    <a href="ankufig04.jpg" target="ex_window"> (<b>Figure 4</b>)</a>.</li>
+  <li>The <i>16-time point set</i>: (with a sixteenth-note referent)&mdash;spans two measures of <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr> time
+    <a href="ankufig05.jpg" target="ex_window"> (<b>Figure 5</b>)</a>.</li>
+  <li>The <i>cross-set</i> (combines elements of the 12 and 16 sets is of two kinds&mdash;<br>
+    a. A cross-set with a <i>12 primary set</i> is a <nobr><math><msubsup><mtext></mtext><mn>8</mn><mn>6</mn></msubsup></math></nobr> meter with tuplets,<br>
+    b. A cross-set with a <i>16 primary set</i> is simply a <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>2</mn></msubsup></math></nobr> meter consisting of triplets.</li>
+</ul>
+<p>[10] Drum pieces belong to one set or the other at any given time. Coincidentally, these sets are observed to convey
+particular moods which make each one contextually appropriate. For instance, pieces in the 12 set category are found to be
+associated with occasions of serious social and festive nature, such as funerals and celebrations involving royalty. A large
+number of pieces in the 16 set are for recreational purposes and are of light, less serious (social) content. Those of the cross-set (particularly the 16 phenomenon) are associated with ritual,
+worship, prowess, and related contexts.</p>
+<h3>The Syntax of Set Rhythm</h3>
+<p>[11] To understand rhythm syntax we need to consider that it consists of both physical and psychological properties, that is,
+the rhythm itself on a superficial level and the way it is perceived, on a deeper level. When we hear rhythm without any
+preconceived beat indications, there is a natural tendency to assume a self-determined perception based on our memory of a
+previous experience. Hearing therefore is subjectively conditioned by our choice of perception. This, of course, does
+not necessarily represent the way the rhythm is transmitted, resulting in an obvious disparity between the perception of the
+transmitter and that of the recipient.&nbsp;</p>
+
+<div style="width:350px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 6</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=5&nonav=true"><img border="1" alt="Figure 6 thumbnail" src="anku_fig06_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 7</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=6&nonav=true"><img border="1" alt="Figure 7 thumbnail" src="anku_fig07_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 8</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=7&nonav=true"><img border="1" alt="Figure 8 thumbnail" src="anku_fig08_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 9</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=8&nonav=true"><img border="1" alt="Figure 9 thumbnail" src="anku_fig09_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>               <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 10</b>. Set Schematic Formula 12/7 [1221222] R1 - RTP1</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=9&nonav=true"><img border="1" alt="Figure 10 thumbnail" src="anku_fig10_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[12] In Western art music, this problem of disparity is forestalled by the externalization of meter with the use of time
+signatures. In African music the counterpart of the metric solution prevails, though intuitively, in ethnically perceived
+norms of beat perception. So therefore, if the rhythm in <b>Figure 6</b> is played in reference to a particular genre of an ethnic
+tradition, it is likely to be misconstrued by one unfamiliar with its beat perception norms of that tradition, as for example in
+<b>Figure 7</b>. The two rhythms are practically the same on the superficial level, that is,
+without externalization of their beat perceptions (see <b>Figure 8</b>). There are sixteen different beat
+perception possibilities in this concept, considering that each time-point of the set (based on a sixteenth note referent), is a
+potential first beat in rotation within the cycle.&nbsp;</p>
+<p>[13] In view of the above, I have suggested a paradigm of five attributes to help define and describe set rhythms as follows.</p>
+<ol>
+  <li>Indicate the rhythm first by its <i>set</i> type (whether 12,16, or cross-set). The rhythm in <b>Figure 9</b> is a 12 set.</li>
+  <li>Next, indicate the number of <i>attack points</i> in the set. Our example shows 7 of those.&nbsp;</li>
+  <li>Drum traditions perceive each set rhythm with a definite beginning and ending. Our example has a time interval
+    order of 2212221.&nbsp;</li>
+</ol>
+<p>[14] To describe a specific set rhythm considering its embedded rotational possibilities, we will need to establish an arbitrary
+standard as the <i>prime form</i> (normal form). By definition the prime form is the set rotation with the least time interval
+arrangement at the beginning in &ldquo;unordered&rdquo; form&mdash;thus, from the fastest to the slowest arrangement of the rotation. In this case
+the prime form of [2212221] is [1221222].&nbsp;</p>
+<ol start="4">
+  <li>With the prime form digits numbered 0 to 6, the original pattern&mdash;2212221 will be described as
+    <i>rotation 1</i> (<i>R1</i>) of the prime form.<br>
+    <br>
+    <font face="Courier">1 2 2 1 2 2 2<br>
+    | | | | | | |<br>
+    0 1 2 3 4 5 6<br>
+    <br>
+    </font></li>
+  <li>The fifth and last element for consideration is the <i>regulative beat</i>. Since the composite set rhythms of the
+    ensemble establish definite orientations with the regulative beat, it is a good indicator to establish set
+    relationships. And since the regulative beat occurs on one of the time points of each set rhythm, it is
+    expedient to label it <i>Regulative Time Point</i> (<i>RTP</i>) instead of regulative beat. The RTP position describes
+    the regulative beat position (indicated by an arrow) of the original pattern and not of the prime form.</li>
+</ol>
+<p>The RTP of our example is therefore, RTP1 (see Figure 10).</p>
+
+<p>[15] This rhythm and its perception is peculiar to Anlo Ewe of Ghana and used in musical types such as
+agbadza, adzogbo, etc. The schematic analyses in <b>Figures 11a</b> through <b>11d</b> demonstrate that
+the same Ewe rhythm [2212221] would be perceived differently by the Yoruba of Nigeria and the Bemba of Central Africa.</p>
+
+<table><tr><td>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11a</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=10&nonav=true"><img border="1" alt="Figure 11a thumbnail" src="anku_fig11a_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11b</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=11&nonav=true"><img border="1" alt="Figure 11b thumbnail" src="anku_fig11b_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td>
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11c</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=12&nonav=true"><img border="1" alt="Figure 11c thumbnail" src="anku_fig11c_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td></tr>
+</table>
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 11d</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=13&nonav=true"><img border="1" alt="Figure 11d thumbnail" src="anku_fig11d_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 12</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=14&nonav=true"><img border="1" alt="Figure 12 thumbnail" src="anku_fig12_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 13</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=15&nonav=true"><img border="1" alt="Figure 13 thumbnail" src="anku_fig13_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 14</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=16&nonav=true"><img border="1" alt="Figure 14 thumbnail" src="anku_fig14_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 15</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=17&nonav=true"><img border="1" alt="Figure 15 thumbnail" src="anku_fig15_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 16</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=18&nonav=true"><img border="1" alt="Figure 16 thumbnail" src="anku_fig16_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[16] Observe that all three rhythms share the same set type, number of attack points and prime form on the superficial level,
+but different perception of their rotations within the prime form and RTP orientations, on a deeper ethnic level. This simply
+implies that the Yoruba, the Ewe, and the Bemba listening to a performance of the same rhythm would each perceive it in a
+different way. The schematic analysis then gives us an opportunity to bring to
+the fore both the physical and psychological properties of set rhythms.</p>
+<h4>The Cross Set</h4>
+<p>[17] The cross set is indicated by <sup>cs</sup> before the set indicator: thus,
+12<sup>cs</sup>. The cross set time intervals are enclosed in angle
+brackets &lt; >. For example, the following is the representation for the pattern in <b>Figure 12</b>:</p>
+<p>&nbsp;&nbsp;&nbsp; 16<sup>cs</sup> / 8 [113&lt;111>34] R 1 RTP (13)</p>
+<h4>Further note</h4>
+<p>[18] A time interval or an RTP indicator in parentheses ((1) or RTP (1)) signifies an unarticulated
+intervallic duration or RTP position.&nbsp;</p>
+<ul>
+  <li>Therefore, a dash after a time interval before a cross set angle bracket &lt; followed by an interval in parentheses,
+    e.g. [2-&lt;(1)11>, denotes a tie or a sustained note held into the tuplet or triplet. <b>Figure 13</b> shows an example in
+    16 set.</li>
+</ul>
+<ul>
+  <li>A cross set interval in brackets not preceded by a dash, [2&lt;(1)11> denotes a rest in the specified duration. <b>Figure 14</b> shows an example in 16 set.</li>
+</ul>
+<ul>
+  <li>Similarly, a dash after a time interval within a cross set, followed by an interval in brackets 2 &lt;22->(1)
+    represents a tied note extending out of the tuplet or triplet field of the cross set. <b>Figure 15</b> shows an example in 12 set.</li>
+</ul>
+<ul>
+  <li>An interval in brackets [&lt;22>(1) not preceded by a dash denotes a rest in the specified duration. <b>Figure 16</b> shows an example in 12 set.</li>
+</ul>
+<h3>Master Drum Set Manipulation Procedures</h3>
+<p>[19] It is a common assumption that in performance the master drummer plays many variant and complex rhythms. Quite the
+contrary, the essential factor is rather dependent on how the drummer structurally manipulates relatively few set rhythms.
+These set rhythms employed in a particular musical context are often well known to the community of users. This of course means
+that the rhythms are not invented at the spur of the moment each time, but are drawn from a stock of generative rhythmic
+vocabulary associated with specific musical genres. There are two main principles involved as follows:&nbsp;</p>
+<ol type="A">
+  <li>Shifting Set Orientation and&nbsp;</li>
+  <li>The use of successive sets. This in turn divides into:&nbsp;<br>
+          1. Extrapolation and Masking of set units<br>
+          2. Staggered Subsets and Supersets<br>
+          3. Set Interpolation.</li>
+</ol>
+<p>I will now review these principles briefly.</p>
+<h4>A. Shifting Set Orientation.</h4>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 17</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=19&nonav=true"><img border="1" alt="Figure 17 thumbnail" src="anku_fig17_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 18</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=20&nonav=true"><img border="1" alt="Figure 18 thumbnail" src="anku_fig18_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[20] This procedure implies a characteristic phasing effect produced by
+integrating shifting concepts of set orientations against a fixed background ostinato referent. These shifts in set
+orientation (eg. RTP 6 to RTP 3 to RTP 1) are connected by bridges as illustrated in <b>Figure 17</b>.</p>
+<p>[21] There are basically two identifiable types of bridge statements. One in which the previous set rhythm is curtailed to
+allow for a new relationship to be established and the other in which a built-in stock rhythm, an
+<i>idiomatic</i> passage provides an important rhythmic and choreographic cue to both dancers and
+performers of response drums. <i>Idiomatic bridges</i> constitute a coherent passage and are
+asymmetrical in character, usually spanning beyond a prescribed set.</p>
+<p>[22] In Adowa drumming of the Akan of Ghana for instance (<b>Example 1</b>), there are various shifts in set orientation constituting sections
+within a performance segment. Each section's structural organization is based on mnemonic themes
+conceived along specific RTP orientation (see <b>Figure 18</b>, for example). The theme then
+presents a structural framework on which limited variations discussed below are organized.</p>
+
+<p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Example 1</b>. Adowa</p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="anku_adowa.mp3" type="audio/mpeg"><source src="anku_adowa.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p>
+<h4>B. Successive Sets</h4>
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 19</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=21&nonav=true"><img border="1" alt="Figure 19 thumbnail" src="anku_fig19_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 20</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=22&nonav=true"><img border="1" alt="Figure 20 thumbnail" src="anku_fig20_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 21</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=23&nonav=true"><img border="1" alt="Figure 21 thumbnail" src="anku_fig21_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 22</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=24&nonav=true"><img border="1" alt="Figure 22 thumbnail" src="anku_fig22_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 23</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=25&nonav=true"><img border="1" alt="Figure 23 thumbnail" src="anku_fig23_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[23] Within each theme section, set rhythms of the same RTP orientation are literally performed &ldquo;one after
+another&rdquo;&mdash;or in a more relevant description, within the framework of an <i>iso-circular</i> structure, a
+<i>dual circular</i> structure or a <i>tertiary circular</i> structural combinations of the set cycle (<b>Figure 19</b>). These structures are used either exclusively or interchangeably as appropriate to each musical
+tradition.</p>
+<p>[24] These variation possibilities are observed to utilize rather few procedures, discussed in brief as follows:&nbsp;</p>
+<p>1) Extrapolation and Masking of Set Units</p>
+<p>[25] Extrapolation of set units occurs on two levels. On the first level, two symmetrical divisions of the set rhythm into an
+antecedent/consequent (a b) relationship are manipulated to great structural advantage. The antecedent (a) or the consequent (b)
+may be extrapolated as <i>aa</i> or <i>bb</i>, constituting a full set span in each case. Thus the rhythm
+in <b>Figure 20</b> represented as <nobr>. . .</nobr></p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; a b  -  a a<br>
+&nbsp;&nbsp;&nbsp; a b  -  b b<br>
+&nbsp;&nbsp;&nbsp; a b  -  a b</font></p>
+<p><nobr>. . .</nobr> would be performed as shown in <b>Figure 21</b>.</p>
+<p>[26] On the second level, smaller units (around the beat area) may be extrapolated. For instance the original
+pattern becomes as shown in <b>Figure 22</b>. In other instances the unit may extend through the entire span, as in <b>Figure 23</b>.</p>
+<p>[27] In the <i>masking</i> procedure, any (or all) of the above units illustrated may be masked with equivalent silent sections while
+the structural span of the set rhythm is maintained. For example:</p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; a1 a1 a1 a1&nbsp;&nbsp;&nbsp;&nbsp; may become&nbsp;&nbsp;&nbsp;&nbsp;
+a1 &mdash; a1 &mdash;
+<br>
+&nbsp;&nbsp;&nbsp; a1 a1 b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; may become&nbsp;&nbsp;&nbsp;&nbsp;
+a1 a1 &mdash;
+<br>
+&nbsp;&nbsp;&nbsp; a b&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+may become&nbsp;&nbsp;&nbsp;&nbsp; &mdash;  b</font></p>
+<p>These may serve as rest points for the drummer, hence they may be described as
+<i>Waiting Sets</i>.</p>
+<p>2) Staggered Subsets and Supersets</p>
+<p>[28] Subsets and supersets are irregular/asymmetrical redefinitions of a rhythmic span running concurrently with the
+set. The result produces staggered effects which are very much a dominant character of many African drum
+traditions.</p>
+<p>[29] Subsets constitute shorter spans of the set while supersets are greater. A subset consisting of 9 time points played in
+combination with a 12 full set span referent naturally produces staggered relationships which many misconstrue as
+polymetric. For example:</p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; set&nbsp;&nbsp;&nbsp;&nbsp; 12+12+12 = 36 time points<br>
+&nbsp;&nbsp;&nbsp; subset&nbsp; 9+9+9+9&nbsp; = 36 time points</font></p>
+<p>[30] This interaction produces shifting relationships; the point at which the two (sets and subsets) return is of crucial
+structural importance. This critical return may be explained mathematically by finding the least common multiple between the
+set and the subset or superset. For instance, the LCM of a 12 time point set and a 9 time point subset is 36 time points:</p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; 36 / 12 = 3 sets<br>
+&nbsp;&nbsp;&nbsp; 36 / 9&nbsp; = 4 subsets</font></p>
+<div style="width:400px;float:right;border:none;margin-left:30px">
+<p class='fullwidth' style="text-align: center; margin-top:0em; margin-bottom:0.5em"><b>Example 2</b>. Bawa</p><p class='fullwidth' style="text-align: center; margin-top:0em;"><audio preload="metadata" controls style="width:300px"><source src="anku_bawa.mp3" type="audio/mpeg"><source src="anku_bawa.ogg" type="audio/ogg"><script language="JavaScript" type="text/javascript"></script></audio></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 24</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=26&nonav=true"><img border="1" alt="Figure 24 thumbnail" src="anku_fig24_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 25</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=27&nonav=true"><img border="1" alt="Figure 25 thumbnail" src="anku_fig25_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 26</b>. Bell and Master Drum</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=28&nonav=true"><img border="1" alt="Figure 26 thumbnail" src="anku_fig26_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 27</b>. Linear Representation</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=29&nonav=true"><img border="1" alt="Figure 27 thumbnail" src="anku_fig27_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                <p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 28</b>. Circular Representation</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="anku_examples.php?id=30&nonav=true"><img border="1" alt="Figure 28 thumbnail" src="anku_fig28_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>Thus, the set and subset return after three statements of the set and four statements of the subset.</p>
+<p>[31] Likewise, the LCM of 16 time point set and 24 time point superset is 48 time points:</p>
+<p><font face="Courier">&nbsp;&nbsp;&nbsp; 48 / 16 = 3 sets<br>
+&nbsp;&nbsp;&nbsp; 48 / 24 = 2 supersets</font></p>
+<p>The set and superset return after three statements of the set and two statements of the
+superset.</p>
+
+<p>[32] The drummer intuitively anticipates this crucial return leading him/her back to the original perception of the RTP
+relationship. Subsets and supersets may also be used as bridges between orientations. Bawa dance&nbsp;
+of the
+Dagati of Ghana (<b>Example 2</b>) is conceived entirely on subset and supersets.</p>
+<p>3) Set Interpolation</p>
+
+<p>[33] Interpolation involves two set rhythms with different RTP orientations.
+A section of the principal set (e.g., RTP 5&mdash;16 set, occuring on beat 2), gives
+way temporarily to a full statement of a subsidiary set (e.g., RTP 9 occuring on
+beat 3), as illustrated in <b>Figure 24</b>. The complement of the principal set
+returns immediately after the subsidiary or interpolated set. In its simplest
+form, two set rhythms, RTP 5: 1 <b><u>2</u></b> 3 4 and RTP 9: 1 2 <b><u>3</u></b>
+4, are then performed as illustrated in <b>Figure 25</b>.</p>
+<h4>Nested Interpolation</h4>
+<p>[34] With this initial concept the drummer sees further opportunities to nest other set orientations, thereby
+complicating the concept. The idea that the drummer plays a partial set and much later complements it after a series of other
+set orientations is an important one (see <b>Figures 26 and 27</b>).</p>
+<p>[35] While one may consider the set complement as much further away in linear terms, the drummer sees it in circular terms as a
+return to an uncompleted idea, with no real distance involved (<b>Figure 28</b>). The
+master drum maneuvers discussed in this paper are all contained in the
+interlocking super-structure. The choices and decisions a drummer makes in
+implementing the rhythm sets while &ldquo;navigating&rdquo; the circles are all
+controlled, where applicable, by the rules of play procedure with respect to the
+corresponding dance sequences. All of these provide a matrix, a framework for
+contextual interaction (see Figure 2 again).</p>
+<p>[36] Circles have an important philosophical significance in the perception of the African reality of time. As beautifully put in
+&ldquo;Ancestrallogic and Carribean blues,&rdquo; a book of African poetry, Kofi Anyidoho states: &ldquo;Do not forget the back without which there
+is no front.&rdquo; This statement suggests that the concept is not only circular but essentially
+spiral (<a href="#anyidoho_1983" id="citation_anyidoho_1983_67dc9b8d9145f">Anyidoho 1983</a>). To the African, future is expressed by
+reference to the past and in drumming we find a microcosm of this philosophy of a life's journey.</p>
+<p>[37] In conclusion, the ethnic diversity of the African continent is reflected in its numerous stylistic resources and devices for
+&ldquo;composition.&rdquo; My work merely suggests a theoretical framework within which I hope greater insights might be reached in our
+common effort to understand humanity through its music. It also demonstrates a growing awareness that the similarities of our
+worlds of music far outweigh the differences suggested by the early years of African Musicology. I hope this would guide our
+thinking as we open new doors into the future.</p>
+
+<hr>
+<h3>
+Postscript</h3>
+
+<p>
+Full transcriptions and analyses of the Adowa and Bawa are available in the following volumes:</p>
+
+<p>
+*Structural Set Analysis of African Music*. Vol. 1: Adowa<br>
+*Structural Set Analysis of African Music*. Vol. 2: Bawa</p>
+
+<p>
+These may be purchased for $15 plus postage for both volumes. To order, send email to
+<a href="mailto:icamd@africaonline.com.gh">icamd@africaonline.com.gh</a> (&ldquo;Attn: Willie Anku&rdquo;).</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Willie Anku<br>
+	SPA Music Department<br>University of Ghana<br>Legon, Ghana<br><a href="mailto:icamd@africaonline.com.gh (&ldquo;Attn: Willie Anku&rdquo;)">icamd@africaonline.com.gh (&ldquo;Attn: Willie Anku&rdquo;)</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_akpabot_1971" class="flyoverdiv">Akpabot, Samuel. 1971. &ldquo;Standard Drum Patterns in Nigeria.&rdquo; <i>African Music</i> 5(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="akpabot_1971"></a>Akpabot, Samuel. 1971. &ldquo;Standard Drum Patterns in Nigeria.&rdquo; <i>African Music</i> 5(1).</p><div id="citediv_agawu_1995" class="flyoverdiv">Agawu, Kofi. 1995. <i>African Rhythm: A Northern Ewe Perspective</i>. New York: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="agawu_1995"></a>Agawu, Kofi. 1995. <i>African Rhythm: A Northern Ewe Perspective</i>. New York: Cambridge University Press.</p><div id="citediv_anku_1992" class="flyoverdiv">Anku, Willie. 1992. <i>Structural Set Analysis of African Music</i>. Vol. 1, Adowa. Legon, Ghana: Soundstage Production.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anku_1992"></a>Anku, Willie. 1992. <i>Structural Set Analysis of African Music</i>. Vol. 1, Adowa. Legon, Ghana: Soundstage Production.</p><div id="citediv_anku_1993" class="flyoverdiv">Anku, Willie. 1993. <i>Structural Set Analysis of African Music</i>. Vol. 2, Bawa. Legon, Ghana: Soundstage Production.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anku_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. <i>Structural Set Analysis of African Music</i>. Vol. 2, Bawa. Legon, Ghana: Soundstage Production.</p><div id="citediv_anku_1995" class="flyoverdiv">Anku, Willie. 1995. &ldquo;Towards a Cross-cultural Theory of Rhythm in African Drumming.&rdquo; In <i>Intercultural Music</i>, vol. 1, edited by Cynthia Tse Kimberlin and Akin Euba. Bayreuth, Germany: Breitlinger.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anku_1995"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1995. &ldquo;Towards a Cross-cultural Theory of Rhythm in African Drumming.&rdquo; In <i>Intercultural Music</i>, vol. 1, edited by Cynthia Tse Kimberlin and Akin Euba. Bayreuth, Germany: Breitlinger.</p><div id="citediv_anku_1997" class="flyoverdiv">Anku, Willie. 1997. &ldquo;Principles of Rhythm Integration in African Drumming.&rdquo; <i>Black Music Research Journal</i> 17(2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anku_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997. &ldquo;Principles of Rhythm Integration in African Drumming.&rdquo; <i>Black Music Research Journal</i> 17(2).</p><div id="citediv_anyidoho_1983" class="flyoverdiv">Anyidoho, Kofi. 1983. &ldquo;Oral Poetics and Traditions of Verbal Art in Africa.&rdquo; Ph.D. diss., University of Texas.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anyidoho_1983"></a>Anyidoho, Kofi. 1983. &ldquo;Oral Poetics and Traditions of Verbal Art in Africa.&rdquo; Ph.D. diss., University of Texas.</p><div id="citediv_anyidoho_1993" class="flyoverdiv">Anyidoho, Kofi. 1993. <i>Ancestrallogic and Caribeanblues</i>. Trenton, N.J.: Africa World Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="anyidoho_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993. <i>Ancestrallogic and Caribeanblues</i>. Trenton, N.J.: Africa World Press.</p><div id="citediv_ekwueme_1975" class="flyoverdiv">Ekwueme, Laz. 1975. &ldquo;Structural Levels of Rhythm and Form in African Music.&rdquo; <i>African Music</i> 5(4).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ekwueme_1975"></a>Ekwueme, Laz. 1975. &ldquo;Structural Levels of Rhythm and Form in African Music.&rdquo; <i>African Music</i> 5(4).</p><div id="citediv_erickson_1975" class="flyoverdiv">Erickson, Robert. 1975. <i>Timbre and Time: Sound Structure in Music</i>. Madison: University of Wisconsin Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="erickson_1975"></a>Erickson, Robert. 1975. <i>Timbre and Time: Sound Structure in Music</i>. Madison: University of Wisconsin Press.</p><div id="citediv_gbeho_1951a" class="flyoverdiv">Gbeho, Philip. 1951a. &ldquo;Beat of the Master Drum.&rdquo; <i>West African Review</i> 22.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gbeho_1951a"></a>Gbeho, Philip. 1951a. &ldquo;Beat of the Master Drum.&rdquo; <i>West African Review</i> 22.</p><div id="citediv_gbeho_1951b" class="flyoverdiv">Gbeho, Philip. 1951b. &ldquo;African Drums Are More Than Tom-toms.&rdquo; <i>West African Review</i> 22.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gbeho_1951b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1951b. &ldquo;African Drums Are More Than Tom-toms.&rdquo; <i>West African Review</i> 22.</p><div id="citediv_gbeho_1951c" class="flyoverdiv">Gbeho, Philip. 1951c. &ldquo;African Music Deserves Generous Recognition.&rdquo; <i>West African Review</i> 22.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gbeho_1951c"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1951c. &ldquo;African Music Deserves Generous Recognition.&rdquo; <i>West African Review</i> 22.</p><div id="citediv_jairazbhoy_1977" class="flyoverdiv">Jairazbhoy, Nazir. 1977. &ldquo;The &lsquo;Objective&rsquo; and Subjective View in Music Transcription.&rdquo; <i>Ethnomusicology</i> 21(2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jairazbhoy_1977"></a>Jairazbhoy, Nazir. 1977. &ldquo;The &lsquo;Objective&rsquo; and Subjective View in Music Transcription.&rdquo; <i>Ethnomusicology</i> 21(2).</p><div id="citediv_josephs_1967" class="flyoverdiv">Josephs, Jess J. 1967. <i>The Physics of Musical Sound</i>. Princeton, N.J.: Van Nostrand.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="josephs_1967"></a>Josephs, Jess J. 1967. <i>The Physics of Musical Sound</i>. Princeton, N.J.: Van Nostrand.</p><div id="citediv_jones_1949" class="flyoverdiv">Jones, A. M. 1949. &ldquo;African Music.&rdquo; <i>African Affairs</i> 48.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jones_1949"></a>Jones, A. M. 1949. &ldquo;African Music.&rdquo; <i>African Affairs</i> 48.</p><div id="citediv_jones_1954" class="flyoverdiv">Jones, A. M. 1954. &ldquo;African Rhythm.&rdquo; <i>Africa</i> 24.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jones_1954"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1954. &ldquo;African Rhythm.&rdquo; <i>Africa</i> 24.</p><div id="citediv_kauffman_1980" class="flyoverdiv">Kauffman, Robert. 1980. &ldquo;African rhythm: A Reassessment.&rdquo; <i>Ethnomusicology</i> 8.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kauffman_1980"></a>Kauffman, Robert. 1980. &ldquo;African rhythm: A Reassessment.&rdquo; <i>Ethnomusicology</i> 8.</p><div id="citediv_king_1961" class="flyoverdiv">King, Anthony. 1961. &ldquo;Employments of the &lsquo;Standard Pattern&rsquo; in Yoruba Music.&rdquo; <i>African Music</i> 2(3).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="king_1961"></a>King, Anthony. 1961. &ldquo;Employments of the &lsquo;Standard Pattern&rsquo; in Yoruba Music.&rdquo; <i>African Music</i> 2(3).</p><div id="citediv_koetting_1970" class="flyoverdiv">Koetting, James. 1970. &ldquo;Analysis and Notation of West African Drum Ensemble Music.&rdquo; <i>Selected Reports</i> (3).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="koetting_1970"></a>Koetting, James. 1970. &ldquo;Analysis and Notation of West African Drum Ensemble Music.&rdquo; <i>Selected Reports</i> (3).</p><div id="citediv_locke_and_agbeli_1980" class="flyoverdiv">Locke, David, and Godwin Kwasi Agbeli. 1980. &ldquo;A Study of the Drum Language in Adzogbo&rdquo; <i>African Music</i> 6(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="locke_and_agbeli_1980"></a>Locke, David, and Godwin Kwasi Agbeli. 1980. &ldquo;A Study of the Drum Language in Adzogbo&rdquo; <i>African Music</i> 6(1).</p><div id="citediv_locke_and_agbeli_1982" class="flyoverdiv">Locke, David, and Godwin Kwasi Agbeli. 1982. &ldquo;Principles of Off-beat timing and Cross Rhythm in Southern Ewe Dance Drumming.&rdquo; <i>Ethnomusicology</i> 26(2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="locke_and_agbeli_1982"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1982. &ldquo;Principles of Off-beat timing and Cross Rhythm in Southern Ewe Dance Drumming.&rdquo; <i>Ethnomusicology</i> 26(2).</p><div id="citediv_nketia_1954" class="flyoverdiv">Nketia, J.H. Kwabena. 1954. &ldquo;The Role of the Drummer in Akan Society.&rdquo; <i>African Music</i> 1(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nketia_1954"></a>Nketia, J.H. Kwabena. 1954. &ldquo;The Role of the Drummer in Akan Society.&rdquo; <i>African Music</i> 1(1).</p><div id="citediv_nketia_1963" class="flyoverdiv">Nketia, J.H. Kwabena. 1963. <i>Drumming in Akan Communities of Ghana</i>. London:&nbsp;University of Ghana and Thomas Nelson and Sons.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nketia_1963"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1963. <i>Drumming in Akan Communities of Ghana</i>. London:&nbsp;University of Ghana and Thomas Nelson and Sons.</p><div id="citediv_pantaleoni_1972a" class="flyoverdiv">Pantaleoni, Hewitt. 1972a. &ldquo;The Rhythm of Atsia Dance Drumming Among the Anlo (Ewe) of Anyako.&rdquo; Ph.D dissertation, Wesleyan University (Middletown, Conn.).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pantaleoni_1972a"></a>Pantaleoni, Hewitt. 1972a. &ldquo;The Rhythm of Atsia Dance Drumming Among the Anlo (Ewe) of Anyako.&rdquo; Ph.D dissertation, Wesleyan University (Middletown, Conn.).</p><div id="citediv_pantaleoni_1972b" class="flyoverdiv">Pantaleoni, Hewitt. 1972b. &ldquo;Three Principles of Timing in Anlo Dance Drumming.&rdquo; <i>African Music</i> 5(2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pantaleoni_1972b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1972b. &ldquo;Three Principles of Timing in Anlo Dance Drumming.&rdquo; <i>African Music</i> 5(2).</p><div id="citediv_pantaleoni_1972c" class="flyoverdiv">Pantaleoni, Hewitt. 1972c. &ldquo;Towards Understanding the Play of Atsimevu in Atsia.&rdquo; <i>African Music</i> 5(2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pantaleoni_1972c"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1972c. &ldquo;Towards Understanding the Play of Atsimevu in Atsia.&rdquo; <i>African Music</i> 5(2).</p><div id="citediv_pantaleoni_1972d" class="flyoverdiv">Pantaleoni, Hewitt. 1972d. &ldquo;Toward Understanding the Play of Sogo in Atsia.&rdquo; <i>Ethnomusicology</i> 16(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pantaleoni_1972d"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1972d. &ldquo;Toward Understanding the Play of Sogo in Atsia.&rdquo; <i>Ethnomusicology</i> 16(1).</p><div id="citediv_pressing_1983a" class="flyoverdiv">Pressing, Jeff. 1983a. &ldquo;Cognitive Isomorphisms between Pitch and Rhythm in World Music.&rdquo; <i>Studies in Music</i> 17.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pressing_1983a"></a>Pressing, Jeff. 1983a. &ldquo;Cognitive Isomorphisms between Pitch and Rhythm in World Music.&rdquo; <i>Studies in Music</i> 17.</p><div id="citediv_pressing_1983b" class="flyoverdiv">Pressing, Jeff. 1983b. &ldquo;Rhythm Design in Support Drums of Agbadza.&rdquo; <i>African Music</i> 6(3).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pressing_1983b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1983b. &ldquo;Rhythm Design in Support Drums of Agbadza.&rdquo; <i>African Music</i> 6(3).</p><div id="citediv_rahn_1980" class="flyoverdiv">Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Schirmer Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1980"></a>Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Schirmer Books.</p><div id="citediv_wilson_1974" class="flyoverdiv">Wilson, Olly. 1974. &ldquo;The Significance of the Relationship between Afro- American Music and West African Music.&rdquo; <i>The Black Perspective in Music</i> 2(1).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="wilson_1974"></a>Wilson, Olly. 1974. &ldquo;The Significance of the Relationship between Afro- American Music and West African Music.&rdquo; <i>The Black Perspective in Music</i> 2(1).</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+
+
+
+
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2000 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

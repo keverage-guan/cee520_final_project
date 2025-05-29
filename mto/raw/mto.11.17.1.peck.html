@@ -1,0 +1,1584 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 17.1: Peck, A GAP Tutorial for Transformational Music Theory</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="A GAP Tutorial for Transformational Music Theory">
+
+    <meta name="citation_author" content="Peck, Robert W.">
+      
+
+<meta name="citation_publication_date" content="2011/04/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="17">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">A GAP Tutorial for Transformational Music Theory
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Robert W. Peck</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: computer-assisted research, transformational music theory, group theory, Klumpenhouwer networks, neo-Riemannian theory</font></p><p><font size='4'>ABSTRACT: GAP (an acronym for Groups, Algorithms, and Programming) is a system of computational discrete algebra that may function as an application for experimentation in transformational music theory.  In particular, it offers tools to music theorists that are not readily available elsewhere.  This tutorial will show how GAP may be used to generate algebraic group structures well known to music theorists.  Furthermore, it will investigate how these structures may be applied to the study of transformation theory, using familiar concepts from Klumpenhouwer-network and neo-Riemannian theories.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mto.societymusictheory.org/issues/mto.11.17.1/mto.11.17.1.peck.pdf">PDF text </a> | <a href="http://mto.societymusictheory.org/issues/mto.11.17.1/peck_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received October 2010</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 17, Number 1, April 2011 <br> Copyright &#0169; 2011 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<b>[1] About GAP
+
+</b>
+<p>[1.1] GAP (an acronym for Groups, Algorithms, and Programming) is a mathematical software package that has great potential as a tool for researchers and students of transformational music theory.  Whereas many computer resources are available to music theorists in the investigation of pitch-class set theory and serial theory&#8212;pitch-class set calculators, matrix generators, and the like&#8212;few, if any, permit users to construct, analyze, and manipulate algebraic systems themselves.  Such techniques, however, are an increasingly large part of the transformation theorist&#8217;s methodologies.  It is often necessary to consider concepts such as the subgroup structure of a group, or to determine a group&#8217;s automorphisms.  Whereas one can do such calculations by hand, the speed at which GAP performs them can dramatically increase efficiency of time for research.  From a pedagogical point of view, GAP provides students of transformation theory a resourceful and effective environment for experimentation, and a means of providing preliminary empirical proofs for their results.
+
+</p>
+<p>[1.2] GAP was developed by and for mathematicians and other computational scientists.  It began in 1986 as a project by four students at RWTH Aachen University, in Aachen, North Rhine-Westphalia, Germany: Johannes Meier, Alice Niemeyer, Werner Nickel, and Martin Sch&ouml;nert.  Its first public release was in 1988, with version 2.4.  Since that time, it has undergone a number of revisions, and has assumed worldwide recognition,<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  although it has not received much attention in music-theoretical research.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> 
+GAP 4.4.12 is the latest version. It is free and is available for Windows, 
+Macintosh, and UNIX operating systems, along with all its documentation, at
+<a href="http://www.gap-system.org">www.gap-system.org</a>. An interactive online version is also available via Sage (see [2.18] below).
+  
+</p>
+<p>[1.3] This tutorial endeavors to introduce some of the utilities in GAP to the music-theoretic community in the context of familiar transformation-theoretical concepts: transformation groups and their actions, Klumpenhouwer networks, and neo-Riemannian theory.  Therefore, it presupposes a basic&#8212;but not advanced&#8212;understanding of these concepts, and no prior knowledge of GAP.  After an initial section that describes the basics of the GAP environment (how to input commands, interpret output, get help, etc.), we generate the transposition group <i>T</i>, the transposition and inversion group <i>T/I</i>, and the affine group <i>TTO</i>.  We examine how these groups act on the set of pitch classes and on sets of pitch-class sets, and perform various tests that relate them to well-known abstract-algebraic structures.  Next, we use GAP to study Klumpenhouwer networks, generating the automorphism groups from which K-net isographies derive.  Finally, we consider the 
+<i>Schritt</i> and <i>Wechsel</i> group of neo-Riemannian theory, how it relates to the transposition and inversion group, how these are subgroups of Hook&#8217;s (<a href="#hook_2002" id="citation_hook_2002_67e1575c588b6">2002</a>) Uniform (and Quasi-uniform) Triadic Transformations, and how to generate other related groups of contextual operations.
+
+</p>
+<p><b>[2] Orthographic conventions and GAP commands
+
+</b> </p>
+<p>[2.1] Throughout this tutorial we use certain orthographic (i.e., notational) conventions, which sometimes differ from those commonly used in music theory.  In some instances, these conventions are required by GAP; at other times, they are not necessary, but are more consistent with standard mathematical conventions.  For instance, although it is not required by GAP, we represent all operations with lowercase letters:
+</p>
+<p style="text-align: center"><i>g</i> := (1,2,3)
+<br><i>h</i> := (1,2) </p>
+<p>This notation differs from the common practice in music theory of using uppercase letters for certain operators, such as T<sub><i>n</i></sub> and I.  For these particular operators, we instead use <i>t<sup>n</sup></i> and <i>i</i>, respectively (see section [3] below).  Operations also appear in cyclic notation.  In the case of <i>g</i> above, the parenthetical expression (1,2,3) tells us that, under <i>g</i>, the integer 1 moves to 2, 2 moves to 3, and 3 moves back to 1.  The result is a permutation of order 3 (i.e., a 3-cycle).  In contrast, under <i>h</i>, 1 moves to 2, and 2 moves directly back to 1 (i.e., a 2-cycle, or involution).  Then, the composition of <i>g</i> and <i>h</i>, <i><i>gh</i></i> = (1,2,3)(1,2), sends 1 to 2 under <i>g</i>, but then 2 back to 1 under <i>h</i>.  Hence, it fixes (or stabilizes) 1.   Further, it sends 2 to 3 under <i>g</i>, where it remains under <i>h</i>; and it sends 3 to 1 under <i>g</i>, and 1 to 2 under <i>h</i>.  Overall, it stabilizes 1, sends 2 to 3, and 3 to 2, so <i>gh</i> = (2,3).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>
+</p>
+<p>[2.2] We use multiplicative notation rather than additive notation, even for abelian (i.e., commutative) groups: </p>
+<p style="text-align: center"><i>g</i> &#215; <i>h</i>, or <i>gh</i>
+<br>
+(rather than <i>g</i> + <i>h</i>)
+</p>
+<p>Furthermore, GAP uses right-functional orthography (i.e., read from right to left).  That is, in the composition <i>gh</i>, perform <i>g</i> first, then <i>h</i>.  This practice differs from the left-functional notation commonly used in music theory, where, for instance, the operation T<sub><i>n</i></sub>I means invert first (I), then transpose by 
+<i>n</i> (T<sub><i>n</i></sub>).
+
+</p>
+<p>[2.3] We represent sets, groups, and other algebraic structures with uppercase letters:
+
+ </p>
+<p style="text-align: center"><i>G</i> := <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>g</i>, <i>h</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>
+
+ </p>
+<p>Here, the angle brackets signify that <i><i>G</i></i> is the group generated by <i>g</i> and <i>h</i>.  Additionally, we give functions that map such structures to one another (morphisms) with Greek letters; but as GAP reads only ASCII characters, we spell out these Greek letters:  
+
+ </p>
+<p style="text-align: center"><i>pi</i> : <i>G<sup>pi</sup></i> &#8594; <i>H</i>, where <i>g<sup>pi</sup></i> &#215; <i>h<sup>pi</sup></i> = (<i>g</i> &#215; <i>h</i>)<sup><span style="font-weight: 400"><i> pi</i></span></sup>, 
+<br>
+for all <i>g</i>,<i>h</i> &#8712; <i>G</i>
+
+ </p>
+<p>In GAP, we use exponential notation for functions, as in the example above, rather than prefix notation, which is more common in music-theoretical writing.  In other words, we write <i>G<sup>pi</sup></i>, rather than <i>pi</i>(<i>G</i>).  In this case, <i>G<sup>pi</sup></i> indicates a function <i>pi</i> that maps <i>G</i> to <i>H</i>, where <i>g<sup>pi</sup></i> is the image of <i>g</i> in the mapping, <i>h<sup>pi</sup></i> is the image of <i>h</i>, and so on.  Such functions may be homomorphisms, as in this example; isomorphisms, which are one-to-one; surjective homomophisms; or automorphisms, which are isomorphisms of a group to itself.  
+
+ </p>
+<p>[2.4] Right-functional orthography is also consistent with GAP&#8217;s use of exponential notation for functions.  The product of functions 
+<i>alpha</i> and <i>beta</i> (in that order) applied to a structure <i>G</i> receives the exponential notation: 
+</p>
+<p style="text-align: center">(<i>G<sup>alpha</sup></i>)<sup><span style="font-weight: 400"><i>beta</i></span></sup> = <i>G<sup>alpha</sup></i><sup>&#8901; 
+<i>beta</i></sup>
+</p>
+<p>whereas in prefix notation we would have: </p>
+<p style="text-align: center"><i>beta</i>(<i>alpha</i>(<i>G</i>)) = <i>beta</i> &#8901; <i>alpha</i>(<i>G</i>)
+</p>
+<p>reading from the right to the left.
+
+</p>
+<p>[2.5] In cases where <i>gh</i> indicates a composition of group elements that act on a set <i>S</i>, or on a member <i>x</i> of that set, we once again use exponential notation, such as <i>S<sup><span style="font-weight: 400">gh</span></sup></i>, or <i>x<sup><span style="font-weight: 400">gh</span></sup></i>, rather than prefix notation, such as <i>h</i>(<i>g</i>(<i>S</i>)) or <i>h</i>(<i>g</i>(<i>x</i>)).  Finally, because we use multiplicative notation, we also use exponential notation for exponents in the usual sense (powers): </p>
+<p style="text-align: center"><i>g</i> &#215; <i>g</i> = <i>g</i><sup>2</sup>, <i>g</i> &#215; <i>g</i> &#215; <i>g</i> = 
+<i>g</i><sup>3</sup>, etc. </p>
+
+<div style="width:500px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. The GAP welcome screen</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="peck_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.6] Throughout this tutorial, GAP commands are given in 
+<font color="#FF0000">red</font>, and GAP&#8217;s corresponding output appear in 
+<font color="#0000FF">blue</font>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>   N.B.: GAP is case sensitive.  All commands are entered at the GAP prompt &#8220;<font style = "font-family:monospace; font-size:14px; " color="#FF0000">gap></font>&#8221; (see the bottom of 
+<b>Example 1</b>), and end in a semicolon (followed by 
+<img border="0" src="images/return.gif" width="14" height="14" align="baseline"> [enter]).  GAP commands may be typed with or without spaces.  In GAP, we may define various objects using the standard notation &#8220;<font style="font-family:monospace; font-size:14px; " color="#FF0000">:=</font>&#8221; for definition.  These objects include operations:
+</p>
+<blockquote>
+	<p style = "font-family:monospace; font-size:14px;"><font color="#FF0000">gap> g := (1,2,3);
+<br>
+	</font><font color="#0000FF">(1,2,3)
+<br>
+	</font><font color="#FF0000">gap> h := (1,2);
+<br>
+	</font><font color="#0000FF">(1,2) </font></p>
+</blockquote>
+<p>GAP places the output on the line(s) below the defining commands. In this case, the output confirms the definition by redisplaying the cyclic permutations that <i>g</i> and <i>h</i> represent.
+</p>
+
+ </p>
+<p>[2.7] We may similarly define algebraic structures:
+</p>
+<blockquote>
+	<p style = "font-family:monospace; font-size:14px;"><font color="#FF0000">gap> G := Group(g,h);
+<br>
+	</font><font color="#0000FF">Group([ (1,2,3), (1,2) ])
+<br>
+	</font><font color="#FF0000">gap> N := Subgroup(G,[g]);
+<br>
+	</font><font color="#0000FF">Group([ (1,2,3) ]) </font></p>
+</code></blockquote>
+<p>Again, the output confirms the structure that is being defined: the group generated by <i>g</i> and <i>h</i> in the first case, and the subgroup of <i>G</i> generated by <i>g</i> in the second.  Notice, however, that the output alone of the second command does not indicate that 
+<i>N</i> is the subgroup of <i>G</i> generated by <i>g</i>.
+
+</p>
+<p>[2.8] We may also call objects from one of GAP&#8217;s libraries:
+</p>
+<blockquote>
+	<p style = "font-family:monospace; font-size:14px;"><font color="#FF0000">gap> D_6 := DihedralGroup(6);
+<br>
+	</font><font color="#0000FF">&lt;pc group of size 6 with 2 generators&gt;
+	</font></p>
+</blockquote>
+<p>Here, the dihedral group of order 6 is a purely abstract algebraic structure, not a permutation group such as <i>G</i> above.  The output confirms the size of the group, tells how many generators GAP uses to build the group, and references a particular type of abstract structure: a &#8220;pc group.&#8221;  The term &#8220;pc&#8221; in the output does not abbreviate &#8220;pitch-class,&#8221; as appears commonly in music theory.  Rather, it stands for &#8220;polycyclic,&#8221; a type of group structure that includes the dihedral groups.  Then, the elements of the 
+<i>D</i><sub>6</sub> are not permutations, such as (1,2,3) and (1,2), but rather compositions of abstract generators f1 (of order 2) and f2 (of order 3), as seen in the output of the following command. </p>
+<p>[2.9] We may define morphisms and other mappings:
+</p>
+<blockquote>
+	<p style = "font-family:monospace; font-size:14px;"><font color="#FF0000">gap> pi := IsomorphismGroups(D_6,G);
+<br>
+	</font><font color="#0000FF">[ f1, f2 ] -> [ (2,3), (1,2,3) ] 
+	</font></p>
+</blockquote>
+
+<div style="width:350px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Mapping of <i>D</i><sub>6</sub> to <i>G</i> under <i>pi</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=1&nonav=true"><img border="1" alt="Table 1 thumbnail" src="peck_table1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>The output for this command tells us that GAP has located an isomorphism from <i>D</i><sub>6</sub> to <i>G</i>; otherwise, the output would indicate &#8220;<font style = "font-family:monospace; font-size:14px; " color="#0000FF">fail</font>.&#8221;  (N.B.: In cases such as this one, where more than one possible isomorphism exists, GAP selects only one to display.)  The isomorphism <i>pi</i> is a mapping of every element of <i>D</i><sub>6</sub> to one of <i>G</i>, but the output presents this isomorphism merely in terms of (abstract) generators of <i>D</i><sub>6</sub>, f1 and f2, and their images in <i>G</i>, from which the mappings of the additional group elements may be derived (e.<i>g</i>., <i>h</i> = (1,2) = (2,3)(1,2,3) in <i>G</i> is the image of f1 &#8901; f2 in <i>D</i><sub>6</sub>). <b>Table 1</b> provides a mapping for all six elements in each of the respective groups.
+
+</p>
+
+<p>[2.10] We may display objects, including those defined previously:
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;"><font color="#FF0000">gap> g;
+<br>
+	</font><font color="#0000FF">(1,2,3)
+<br>
+	</font><font color="#FF0000">gap> List(G);
+<br>
+	</font><font color="#0000FF">[ (), (1,3,2), (1,2,3), (2,3), (1,3), (1,2) ] 
+	</font> </p>
+</blockquote>
+<p>Whereas the output to the &#8220;<font style="font-family:monospace; font-size:14px; " color="#FF0000">g;</font>&#8221; command above displays a single cyclic permutation, the output for &#8220;<font style="font-family:monospace; font-size:14px; " color="#FF0000">List(G);</font>&#8221; presents all six group elements in <i>G</i>.  The empty parentheses, 
+<font style="font-family:monospace; font-size:14px; " color="#0000FF">()</font>, in the output that follows the latter command denotes the identity element of the group&#8212;for example, the trivial permutation, which sends each member of the set on which <i>G</i> acts (i.e., the integers 1, 2, and 3) to itself.
+
+</p>
+<p>[2.11] Additionally, we may determine products, factors, quotients, etc.:
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;"><font color="#FF0000">gap> g*h;
+<br>
+	</font><font color="#0000FF">(2,3)
+<br>
+		</font><font color="#FF0000">gap> g^2;
+<br>
+		</font><font color="#0000FF">(1,3,2)
+<br>
+		</font><font color="#FF0000">gap> DirectProduct(G,D_6);
+<br>
+	</font><font color="#0000FF">&lt;group of size 36 with 4 generators&gt;<br>
+	</font><font color="#FF0000">gap> G/N;
+<br>
+	</font><font color="#0000FF">Group([ f1 ]) </font> </p>
+</blockquote>
+<p>The outputs of the first two commands above are straightforward enough from the preceding discussion, but those of the third and fourth commands need further comment.  The output of the third command tells us that the direct product is a group of order 36 (or 6<sup><span style="font-weight: 400">2</span></sup>, accordingly, as the two groups in the direct product are of size 6), and that it has four generators (i.e., the respective generators of <i>G</i> and <i>D</i><sub>6</sub>: <i>g</i> and <i>h</i>, and f1 and f2).  The fourth command calls a quotient group, which consists of the various cosets of 
+<i>N</i> in <i>G</i>.  The f1 in the output to this line signifies one of those cosets, and does not refer to the other f1 above (a generator of <i>D</i><sub>6</sub>).
+
+</p>
+<p>[2.12] In GAP, we may perform various functions, arithmetic and otherwise:
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;"><font color="#FF0000">gap> 1*2*3;
+<br>
+		</font><font color="#0000FF">6
+<br>
+		</font><font color="#FF0000">gap> Size(G); 
+<br>
+	</font><font color="#0000FF">6 </font> </p>
+</blockquote>
+<p>and run various tests:
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;">
+	<font color="#FF0000">gap> Size(G) = Factorial(3);
+<br>
+	</font><font color="#0000FF">true
+<br>
+	</font><font color="#FF0000">gap> g*h = h*g;
+<br>
+	</font><font color="#0000FF">false
+<br>
+	</font><font color="#FF0000">gap> IsAbelian(G);
+<br>
+	</font><font color="#0000FF">false </font> </p>
+</blockquote>
+<p>[2.13] We may enter two or more commands on a single line (each followed by a semicolon), and GAP displays their respective output on adjacent successive lines:  
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;">
+	<font color="#FF0000">gap> H := Subgroup(G,[h]); Size(H); </font>
+<br>
+	<font color="#0000FF">Group([ (1,2) ])
+<br>
+	2
+</font>
+</p>
+</blockquote>
+<p>Long commands may be broken by  
+<img border="0" src="images/return.gif" width="14" height="14" align="baseline"> (enter) before reaching the semicolon.  In these instances, GAP continues the command line on a subsequent line with a simple &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000" size="2">></font>&#8221; prompt:
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;">
+	<font color="#FF0000">gap> Size(InnerAutomorphismsAutomorphismGroup(<img border="0" src="images/return.gif" width="14" height="14" align="baseline">
+<br>
+		> AutomorphismGroup(G)));
+<br>
+	</font><font color="#0000FF">1
+</font></p>
+</blockquote>
+<p>The syntax of the above command is complex, but follows a certain logic.  In a series of parentheticals, we are asking GAP first to establish the automorphism group for <i>G</i> (<font style="font-family:monospace; font-size:14px; ;" color="#FF0000">AutomorphismGroup(<i>G</i>)</font>); second, to determine which of the automorphisms in this group are inner, hence derive from conjugation by a group element (<font style="font-family:monospace; font-size:14px; ;" color="#FF0000">InnerAutomorphismsAutomorphismGroup</font>); and finally, to display how many of these inner automorphisms exist (<font style="font-family:monospace; font-size:14px; ;" color="#FF0000">Size</font>).  The output tells us that the inner automorphism group for <i>G</i> contains only one member.
+
+</p>
+<p>[2.14] We may suppress output for a command that would normally produce it by following the command with two semicolons:
+</p>
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px; ;" color="#FF0000">gap> List(H);;
+</font></p>
+</blockquote>
+<p>GAP stores a history of command lines for any one session.  Users may recall a previous command by using the 
+<font color="#FF0000">&uarr;</font> (up-arrow) key repeatedly as needed, and/or with the 
+<font color="#FF0000">&darr;</font> (down-arrow) key, to scroll through the history.  Finally, to end a session, we use:
+</p>
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px; ;" color="#FF0000">gap> quit;
+
+</font></p>
+</blockquote>
+<p>[2.15] Rather than retyping GAP commands into every session, we may create programs, which are stored as normal text files.  The programs may then be loaded into a GAP session.  In this way, we can easily set up an environment for continued experimentation.  For instance, all the commands used in sections [3]-[5] of this tutorial appear in the text file &#8220;<a href="SampleGAPprogram.txt">SampleGAPprogram.txt</a>&#8221; that accompanies this article.  To load this program into a GAP session, we use the command:<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> 
+</p>
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px; ;" color="#FF0000">gap> Read("SampleGAPprogram.txt");
+</font></p>
+</blockquote>
+<p>Notice that there is no output following this command, even though the commands the program contains would normally produce it.  Consequently, there is no particular need for a program to include commands other than definitions.  Once such a program is read, the user can simply call display commands, describe further definitions, run tests, and so on.  Programs may also contain remarks, which GAP does not treat as commands.  Remarks are prefaced with the pound sign, and do not end with a semicolon:
+</p>
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px; ;" color="#FF0000">gap> # This is a remark. It is not a command.
+	</font></p>
+</blockquote>
+<p>Again, there is no output.  
+
+</p>
+<p>[2.16] Help for GAP users is available in several ways.  First, the GAP website offers a number of online manuals, including tutorials, FAQ, examples, and instructions for joining the GAP Forum e-mail distribution list.  Help is also available within a GAP session; one may find help on a particular topic by typing a search term preceded by a question mark (again, the semicolon is not used):
+</p>
+<blockquote>
+	<p style="font-family:monospace; font-size:14px;"><font color="#FF0000">gap> ?orbit
+<br>
+	</font><font color="#0000FF">Help: several entries match this topic - type ?2 to get match [2]
+
+<br>[1] Tutorial: Orbit
+<br>[2] Reference: Orbit
+<br>[3] Reference: Orbit Stabilizer Methods for Polycyclic Groups
+<br>[4] Reference: Orbits
+<br>[5] Reference: Orbits!operation/attribute
+<br>[6] Reference: OrbitsDomain
+<br>[7] Reference: OrbitLength
+<br>[8] Reference: OrbitLengths
+<br>[9] Reference: OrbitLengthsDomain
+<br>[10] Reference: OrbitStabilizer
+<br>[11] Reference: OrbitStabilizerAlgorithm
+<br>[12] Reference: OrbitPerms
+<br>[13] Reference: OrbitsPerms
+<br>[14] Reference: OrbitStabChain
+<br>[15] Reference: OrbitPowerMaps
+<br>[16] Reference: OrbitFusions
+<br>[17] Extending: Orbits
+<br>[18] Extending: OrbitsishOperation
+<br>[19] Extending: OrbitishFO
+<br>[20] New Features: OrbitGenerators
+<br>[21] New Features: OrbitGeneratorsInv
+<br>[22] New Features: OrbitGeneratorsOfGroup </font> </p>
+</blockquote>
+<p>At a subsequent GAP prompt (which need not be immediate), we may enter the number of the entry we wish to read, following a question mark:
+</p>
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> ?2
+	<br>
+	</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&gt; Orbit( &lt;G&gt;[, 
+	&lt;Omega&gt;], 
+	&lt;pnt&gt;, [&lt;gens&gt;, 
+	&lt;acts&gt;, ] 
+	&lt;act&gt;)               
+
+<br><br>The  orbit of the point 
+	&lt;pnt&gt;is the list of all images of 
+	&lt;pnt&gt;under the action.
+
+<br><br>(Note  that  the  arrangement of points in this list is not defined by the operation.)
+
+<br><br>The  orbit  of  
+	&lt;pnt&gt;will  always contain one element that is *equal* to 
+	&lt;pnt&gt;,  however  for  performance  reasons this element is not necessarily *identical* to 
+	&lt;pnt&gt;, in particular if 
+	&lt;pnt&gt;is mutable.
+
+<br><br>gap&gt; g:=Group((1,3,2),(2,4,3));;
+<br>gap&gt; Orbit(g,1);
+<br>[ 1, 3, 2, 4 ]
+<br>gap&gt; Orbit(g,[1,2],OnSets);
+<br>[ [ 1, 2 ], [ 1, 3 ], [ 1, 4 ], [ 2, 3 ], [ 3, 4 ], [ 2, 4 ] ]
+
+<br><br>(See Section "Basic Actions" for information about specific actions.)
+
+<br><br>&gt; Orbits( &lt;G&gt;, 
+	&lt;seeds&gt;[, 
+	&lt;gens&gt;, 
+	&lt;acts&gt;][, 
+	&lt;act&gt;] )!<br>
+	{operation/attribute}
+                                                                         
+<br><br>&gt; Orbits( 
+	&lt;xset&gt;)!{operation/attribute} 
+	
+	<br><br>-- &lt;space&gt; page, &lt;n&gt;next line, &lt;b&gt; back, 
+	&lt;p&gt; back line, &lt;q&gt; quit --</font></p></blockquote>
+	<p>GAP then prompts for some form of continuation or exit from the manual; for example,
+	<font style="font-family:monospace; font-size:14px;" color="#FF0000">&nbsp;n
+</font>or
+	<font style="font-family:monospace; font-size:14px;" color="#FF0000">&nbsp;q
+</font></p>
+<p>The <font style="font-family:monospace; font-size:14px;" color="#FF0000">[space]</font>, 
+<font style="font-family:monospace; font-size:14px;" color="#FF0000">n</font>, etc., are not followed by a semicolon (nor by <img border="0" src="images/return.gif" width="14" height="14" align="baseline">).
+
+<p>[2.17] On encountering an error, the output provides a description of the problem, whether it is syntactical:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Size(Group(g);
+	<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">Syntax error: ) expected
+	<br>
+	Size(Group(g);
+             <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ^
+</font></p>
+</blockquote>
+<p>or logical:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> G/H;
+	<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">Error, 
+	&lt;N&gt; must be a normal subgroup of &lt;G&gt; called from
+	<br>
+		&lt;function&gt;( 
+	&lt;arguments&gt;) called from read-eval-loop
+<br>
+		Entering break read-eval-print loop ...
+<br>
+		you can 'quit;' to quit to outer loop, or
+<br>
+		you can 'return;' to continue <br>
+	brk>
+</font></p>
+</blockquote>
+<p>In the latter instance, we are given the opportunity to exit the description by typing 
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">brk> quit;
+</font></p>
+</blockquote>
+<p>at the break prompt, or by continuing the description: 
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">brk> return;
+	<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">Error, 
+	&lt;H> must be contained in 
+	&lt;G> called from
+<br>
+	oper( super, sub ) called from
+<br>
+		Index( G, N ) called from <br>
+	oper( super, sub ) called from
+<br>
+	NaturalHomomorphismByNormalSubgroupNCOrig( G, N ) called from
+<br>
+	NaturalHomomorphismByNormalSubgroupNC( G, N ) called from
+<br>
+		...
+<br>
+		Entering break read-eval-print loop ...
+<br>
+		you can 'quit;' to quit to outer loop, or
+<br>
+		you can 'return;' to continue <br>
+	brk> </font></p>
+</blockquote>
+<p>Entering either&nbsp;  <font style="font-family:monospace; font-size:14px;" color="#FF0000">brk> return;</font>
+or <font style="font-family:monospace; font-size:14px;" color="#FF0000">brk> quit;</font>
+at this point continues or quits the description accordingly.
+
+<p>[2.18] Users may also access GAP on the World Wide Web via the mathematics software system Sage:
+<a href="http://www.sagemath.org/">http://www.sagemath.org/</a>.
+Including GAP, Sage has interfaces for Mathematica, Magma, and several other mathematics applications useful to music theorists.  Therefore, in addition to computational discrete algebra, Sage may be used to study other algebras, calculus, number theory, cryptography, numerical computation, combinatorics, graph theory, and the like.  
+</p>
+
+<div style="width:500px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. A sample Sage Notebook</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=2&nonav=true"><img border="1" alt="Example 2 thumbnail" src="peck_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[2.19] To work in an online GAP session in Sage, create a notebook (or edit a 
+pre-existing notebook). First, go to <a href="http://www.sagenb.org">www.sagenb.org</a>.&nbsp;Then, either sign in to an existing account, or register for a new one and sign in.  For a new notebook, click on &#8220;new worksheet,&#8221; and title it.  This takes you to a worksheet (see 
+<b>Example 2</b>).  
+
+ 
+From the drop-down menu near the top, select &#8220;gap&#8221; (&#8220;sage&#8221; is the default).  Type a GAP command into the first cell, and click on the corresponding &#8220;evaluate&#8221; link to display its output.  A new cell appears, in which you may type the next command, and so on.  You may save your worksheet (by clicking the &#8220;save&#8221; button), and publish your worksheet (by clicking the &#8220;publish&#8221; button).  The latter gives you a URL, through which others may view your notebook.  For example, a notebook &#8220;GAP &#8211; MTO,&#8221; which contains all of the commands in this tutorial, may be found at 
+<a href="http://sagenb.org/pub/1117/">http://sagenb.org/pub/1117/</a>.&nbsp; 
+<p><b>[3] Generating the <i>T</i>, <i>T/I</i>, and <i>TTO</i> groups
+
+</b>
+<p>[3.1] Now let us build some familiar music-theoretical groups using GAP.  In this section, we generate the transposition group <i>T</i>, the transposition and inversion group <i>T/I</i>, and the affine group <i>TTO</i> that includes the transpositions, inversions, and various multiplicative operations.  We also examine how GAP can model these groups&#8217; actions on pitch classes and pitch-class sets, and how they relate to various abstract algebraic structures.
+
+<p>[3.2] Call <i>T</i> the musical transposition group (mathematically, a translation group).<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>   <i>T</i> has an action on the set 
+<i>PCS</i> of twelve pitch classes (residue classes of the infinite set of chromatic pitches under enharmonic and octave equivalence).  We may use GAP to model groups such as <i>T</i>, using a permutation representation on some subset of the positive integers.  Such representations in GAP do not incorporate the integer 0, to which the pitch class C is usually mapped.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>   Instead, we map pitch class C to the integer 12.  
+
+<p>[3.3] Put
+<blockquote>
+	<p><nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>	=	1
+<br>D 	=	2
+<br><nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>	=	3
+<br>
+	&#8758; <br>B 	=	11
+<br>C 	=	12</p>
+</blockquote>
+<p>Hence, we may define a unit transposition <i>t</i> (translation), a pitch-class transposition &#8220;up&#8221; one semitone:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t := (1,2,3,4,5,6,7,8,9,10,11,12);
+<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,2,3,4,5,6,7,8,9,10,11,12) </font></p>
+</blockquote>
+<p>In other words, <i>t</i> is merely another notation for the operation that is more commonly written T<sub>1</sub>, using instead a lowercase letter for the variable name.  The output shows 
+<i>t</i> in cyclic notation: under <i>t</i>, pitch class 1 maps to 2, 2 to 3, and so on through 11 to 12, and 12 back to 1.
+
+<p>[3.4] We may compose operators using multiplication, such as <i>t</i> with <i>t</i> (T<sub>1</sub> with T<sub>1</sub>):
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t*t;
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,3,5,7,9,11)(2,4,6,8,10,12)
+</font></p>
+</blockquote>
+<p>Notice that the output for this command contains two cycles: one that passes through the even pitch classes, and one that passes through the odd pitch classes.  Such cycles are by definition distinct.
+
+<p>[3.5] We may also use exponents for an operator composed with itself, as before: <sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup><blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^2;
+<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,3,5,7,9,11)(2,4,6,8,10,12) </font></p>
+</blockquote>
+<p>Here, <i>t</i><sup>2</sup> agrees with the operation commonly notated as T<sub>2</sub>.  
+
+<p>[3.6] We may show inverses:<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> 
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^-1;
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,12,11,10,9,8,7,6,5,4,3,2)
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^-1;
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11,9,7,5,3)(2,12,10,8,6,4)
+</font></p>
+</blockquote>
+<p>In other words, <i>t</i><sup>-1</sup> conforms to T<sub>11</sub> (= T<sub>-1</sub>), and (<i>t</i><sup>2</sup>)<sup>-1</sup> = <i>t</i><sup>-2</sup> to T<sub>10</sub> (= T<sub>-2</sub>).  We may also test for such equivalences:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^-1 = t^10;
+<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">true </font></p>
+</blockquote>
+<p>[3.7] We can use <i>t</i> as a generator of a group, <i>T</i>:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> T := Group(t);
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12) ])
+</font></p>
+</blockquote>
+<p>The output for this command confirms that <i>T</i> is the group generated by <i>t</i>, where <i>t</i> is the permutation (1,2,3,4,5,6,7,8,9,10,11,12).  <i>T</i> is isomorphic to the cyclic group of order 12, 
+<i>C</i><sub>12</sub>:  
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsomorphismGroups(T,CyclicGroup(12));
+	<br>
+	[ (1,5,9)(2,6,10)(3,7,11)(4,8,12), (1,4,7,10)(2,5,8,11)(3,6,9,12) ] ->
+<br>
+	[ f3, f1*f2 ]
+</font></p>
+</blockquote>
+<p>The output for this command needs some explanation.  First, GAP is telling us that it has located an isomorphism from <i>T</i> to C12; otherwise, it would return the message &#8220;fail.&#8221;  However, rather than describing the isomorphism in terms of the generator <i>t</i> of <i>T</i> that we defined previously, GAP uses <i>t</i><sup>3</sup> and <i>t</i><sup>4</sup> (T<sub>3</sub> and T<sub>4</sub>), which together also generate <i>T</i>.  (The specific reason for this choice of generators has to do with GAP&#8217;s internal programming logic, and is somewhat outside the scope of this tutorial.)  Then, GAP maps these generators to f3 and f1 &#8901; f2, abstract generators of the cyclic group of order 12 that are stored in GAP&#8217;s internal library.  Again, the important point here is that an isomorphism exists.
+
+<p>[3.8] We may verify the order of <i>T</i>:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Size(<i>T</i>);
+	<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">12</font></p></blockquote>
+and display its elements:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> List(T);
+	<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (), (1,9,5)(2,10,6)(3,11,7)(4,12,8),(1,5,9)(2,6,10)(3,7,11)(4,8,12),<br>
+&nbsp;(1,11,9,7,5,3)(2,12,10,8,6,4), (1,7)(2,8)(3,9)(4,10)(5,11)(6,12),<br>
+&nbsp;(1,3,5,7,9,11)(2,4,6,8,10,12), (1,12,11,10,9,8,7,6,5,4,3,2),<br>
+&nbsp;(1,8,3,10,5,12,7,2,9,4,11,6), (1,4,7,10)(2,5,8,11)(3,6,9,12),<br>
+&nbsp;(1,10,7,4)(2,11,8,5)(3,12,9,6), (1,6,11,4,9,2,7,12,5,10,3,8),<br>
+&nbsp;(1,2,3,4,5,6,7,8,9,10,11,12) ]</font></p>
+</blockquote>
+<p>In this output, GAP returns the elements in cyclic notation, in the order <i>t</i><sup>0</sup>, <i>t</i><sup>8</sup>, <i>t</i><sup>4</sup>, <i>t</i><sup>10</sup>, <i>t</i><sup>6</sup>, <i>t</i><sup>11</sup>, <i>t</i><sup>7</sup>, <i>t</i><sup>3</sup>, <i>t</i><sup>9</sup>, <i>t</i><sup>5</sup>, <i>t</i> (T<sub>0</sub>, T<sub>8</sub>, T<sub>4</sub>, T<sub>10</sub>, etc.).  (As before, GAP&#8217;s logic for listing the elements according to this scheme is outside the scope of this tutorial, but this ordering is also featured in the next few sections.)
+
+<p>[3.9] GAP can determine the orbit of a pitch class under the members of the <i>T</i> group, shown here using pitch class 1:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Orbit(T,1);
+<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 1, 9, 5, 11, 7, 3, 12, 8, 4, 10, 6, 2 ] </font></p>
+</blockquote>
+<p>The orbit consists of the members of the set of pitch classes to which pitch class 1 maps under the elements of the <i>T</i> group.  That is, 1 maps to 1 under <i>t</i><sup>0</sup> (T<sub>0</sub>), to 9 under <i>t</i><sup>8</sup> (T<sub>8</sub>), to 5 under <i>t</i><sup>4</sup> (T<sub>4</sub>), and so on, through all twelve pitch-class transpositions.  Notice here that GAP&#8217;s ordering of pitch classes in the output follows the same ordering of group elements in the output to the &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">List(<i>T</i>);</font>&#8221; command above.  Furthermore, because the action of <i>T</i> on <i>PCS</i> is transitive, 
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsTransitive(T);<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">true </font></p>
+</blockquote>
+<p>pitch class 1 maps to all twelve members of the set of pitch classes.  
+
+<p>[3.10] GAP can also display the orbit of an unordered set of pitch classes (a pcset), such as a C major triad {0,4,7} (recalling that we use the integer 12 in place of pitch class 0):
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Orbit(T,[4,7,12],OnSets);
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ [ 4, 7, 12 ], [ 4, 8, 11 ], [ 3, 8, 12 ], [ 2, 6, 9 ], [ 1, 6, 10 ], 
+<br>[ 2, 5, 10 ], [ 1, 5, 8 ], [ 5, 9, 12 ], [ 1, 4, 9 ], [ 3, 7, 10 ], 
+<br>[ 2, 7, 11 ], [ 3, 6, 11 ] ]
+</font></p>
+</blockquote>
+<p>Here, the output shows (in successive square-bracketed sets) the pitch-class sets to which the C major triad maps under members of the transposition group: C major, E major, <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, D major, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> major, and so on through all twelve major triads.  Again, the ordering of operators that carry the C major triad to these various other triads is related to the ordering in [3.9] above, except that the operators in this succession are the respective inverses of those operators in the previous ordering.  It is important to note that, whereas GAP considers {0,4,7} as an unordered pcset in this context, we must enter it in ascending order &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">[4,7,12]</font>&#8221; in the command; otherwise, we receive an error message.
+<p>[3.11] GAP can also model orbits of pcsets on which the action of <i>T</i> is not faithful, such as the augmented triad {0,4,8}:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Orbit(T,[4,8,12],OnSets);
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ [ 4, 8, 12 ], [ 2, 6, 10 ], [ 1, 5, 9 ], [ 3, 7, 11 ] ]
+</font></p>
+</blockquote>
+<p>Here, the output shows the four augmented triads to which {0,4,8} can map under the members of the transposition group.  We say the action of <i>T</i> is not faithful on this set of sets, because certain non-identity elements of the group (specifically <i>t</i><sup>4</sup> [T<sub>4</sub>] and <i>t</i><sup>8</sup> [T<sub>8</sub>]) are indistinguishable from <i>t</i><sup>0</sup> [T<sub>0</sub>]; that is, they hold all four augmented triads invariant.
+
+<p>[3.12] Next, define the inversion operation <i>i</i> (the label we use in GAP for the operation I, or I<sub>0</sub>):
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i := (1,11)(2,10)(3,9)(4,8)(5,7);
+<br>
+	</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11)(2,10)(3,9)(4,8)(5,7) </font></p>
+</blockquote>
+<p>The output for this command merely echoes the cycles of pitch classes we use to define the operation. (N.B.: Both the input and the output omit the singleton cycles of pitch-classes 0 [= 12, in GAP] and 6, both of which are held invariant under inversion).  Moreover, because GAP uses right-functional instead of left-functional orthography, our notation for the composition of inversion with transposition always appears in the opposite order than that which is typically found in music theory.  For instance, the operation T<sub>1</sub>I (or I<sub>1</sub>) appears as 
+<i>it</i>; T<sub>2</sub>I (or I<sub>2</sub>) as 
+<i>it</i><sup>2</sup>; and so on.
+
+<p>[3.13] Together, <i>t</i> and <i>i</i> generate the transposition and inversion group <i>T/I</i>: 
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI := Group(t,i);
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ])
+</font></p>
+</blockquote>
+<p>Again, the output shows the cycles of the operations we use to generate the group.  <i>T/I</i> is isomorphic to the dihedral group of order 24, 
+<i>D</i><sub>24</sub>:
+<blockquote>
+	<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsomorphismGroups(TI,DihedralGroup(24));
+<br>
+</font>
+	<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ] ->
+<br>
+	[ f2, f1*f3*f4^2 ]
+</font></p>
+</blockquote>
+<p>As with the output for the command above that demonstrated an isomorphism of <i>T</i> to 
+<i>C</i><sub>12</sub>, this output tells us that GAP has found an isomorphism from <i>T/I</i> to 
+<i>D</i><sub>24</sub>; and, as before, it gives the isomorphism in terms of various generators of the respective groups.  Unlike the earlier example&#8212;wherein GAP substituted generators <i>t</i><sup>3</sup> [T<sub>3</sub>] and <i>t</i><sup>4</sup> [T<sub>4</sub>] of <i>T</i> for the generator <i>t</i> [T<sub>1</sub>] that we had used to define the group&#8212;GAP does not make such a substitution in this instance.  Rather, it uses the generators <i>t</i> [T<sub>1</sub>] and 
+<i>i</i> [I<sub>0</sub>] of <i>T/I</i> that we supplied.  Then, the isomorphism maps these generators to generators of the abstract group 
+<i>D</i><sub>24</sub>, f2 and f1 &#8901; f3 &#8901; f4<sup>2</sup> that are stored in GAP&#8217;s library.
+
+<p>[3.14] We incorporate Morris&#8217;s (<a href="#morris_1982" id="citation_morris_1982_67e1575c589ec">1982</a>) multiplicative operation <i>m</i> (usually given as M or M<sub>5</sub> in music-theoretical writings) on pitch classes.  That is, <i>m</i> : <i>x</i> &#8614; 5<i>x</i> mod 12, for all 
+<i>x</i> &#8712; 
+<i>PCS</i>:<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> m := (1,5)(2,10)(4,8)(7,11);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,5)(2,10)(4,8)(7,11)
+</font></p></blockquote>
+<p>Again, the output confirms the cycles we entered, and both the input and the output omit the singleton cycles.
+<p>[3.15] Adjoining <i>m</i> to <i>T/I</i> yields a group <i>TTO</i> of order 48, the set of affine transformations on &#8484;<sub>12</sub>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TTO := Group(t,i,m);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7), 
+  <br>
+(1,5)(2,10)(4,8)(7,11) ])
+</font></p></blockquote>
+<p>The output for this command confirms that <i>TTO</i> is the group generated by these cycles.  <i>TTO</i> is isomorphic to the direct product of the dihedral groups of orders 6 and 8, <i>D</i><sub>6</sub> &#215;<i> D</i><sub>8</sub>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsomorphismGroups(<i>TTO</i>,DirectProduct(<img border="0" src="images/return.gif" width="14" height="14" align="baseline">
+<br>
+> DihedralGroup(6),DihedralGroup(8)));
+ <br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7),
+  <br>
+(1,5)(2,10)(4,8)(7,11) ] -> [ f2*f4, f1*f3*f4*f5, f1*f5 ]
+
+</font></p></blockquote>
+
+<p>In the output to this command, the generators <i>t</i> [T<sub>1</sub>], i [I<sub>0</sub>], and <i>m</i> [M<sub>5</sub>] of <i>TTO</i> are mapped to products of f1, f2, f3, f4, and f5, generators that GAP&#8217;s internal library uses to construct the relevant abstract group of order 48.  Again, the important point here is that GAP has indeed located an isomorphism.</p>
+
+<div style="width:250px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. A sample K-net</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=3&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="peck_fig1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p><b>[4] Klumpenhouwer-network isographies </b>
+<p>[4.1] One way that we might use GAP as a tool for music theory is in the study of Klumpenhouwer networks (<a href="#lewin_1990" id="citation_lewin_1990_67e1575c58a01">Lewin 1990</a>, <a href="#klumpenhouwer_1991" id="citation_klumpenhouwer_1991_67e1575c58a03">Klumpenhouwer 1991</a>).  Klumpenhouwer networks, or K-nets, are directed graphs with nodes (vertices) labeled in the set of pitch classes and arrows (edges) in the <i>T/I</i> group (see 
+<b>Figure 1</b>).
+
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^2; i*t^3; i*t^5;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,3,5,7,9,11)(2,4,6,8,10,12)
+<br>
+(1,2)(3,12)(4,11)(5,10)(6,9)(7,8)
+<br>
+(1,4)(2,3)(5,12)(6,11)(7,10)(8,9)
+</font></p></blockquote>
+<p>Entering the labels that correspond to the arrows in GAP, as above, produces an output that displays the cycle(s) in which the node contents lie.  For instance, the (single-headed) arrow that connects the node populated by pc 9 to that populated by 11 is labeled <i>t</i><sup>2</sup> (T<sub>2</sub>); its cycles are as follows:
+<blockquote>
+	<p>(1, 3, 5, 7, <u>9, 11</u>)(2, 4, 6, 8, 10, 12)
+</blockquote>
+<p>The pitch class 9 maps to the pitch class 11 (underlined), which, in turn, maps to 1, 3, 5, 7, and ultimately back to 9.  Hence, it is a cycle of length 6 (a 6-cycle).  Because pitch class 11 continues on to 1 and does not return directly to 9, we use a single-headed arrow in the network.
+<p>[4.2] On the other hand, the cycles of operations in Figure 1 that connect pitch classes 9 and 6, and 11 and 6&#8212;<i>it</i><sup>3</sup> and <i>it</i><sup>5</sup> (I<sub>3</sub> and I<sub>5</sub>) respectively&#8212;are involutions.  That is, they are their own inverses.  Entering their corresponding arrow labels yields the following cycles of length 2 (2-cycles):
+<blockquote>
+	<p>(1, 2)(3, 12)(4, 11)(5, 10)(<u>6, 9</u>)(7, 8) <br>
+		(1, 4)(2, 3)(5, 12)(<u>6, 11</u>)(7, 10)(8, 9)
+</blockquote>
+<p>In the first 2-cycle, pitch class 6 maps to 9, and 9 to 6; in the second, 6 maps to 11, and vice versa.  Hence, the network incorporates double-headed arrows to connect their associated nodes.
+<p>[4.3] Entire networks may relate to one another via isographies, which correspond to members of the automorphism group for <i>T/I</i>, 
+<i>Aut</i>(<i>T/I</i>):
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap>  AutTI := AutomorphismGroup(TI); </font><br>
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;group of size 48 with 4 generators&gt;
+</font></p></blockquote>
+<p>
+The output indicates that <i>Aut</i>(<i>TT/I</i>) is a group of order 48, and it gives the number of generators that GAP uses to build it.  As <a href="#lewin_1990" id="citation_lewin_1990_67e1575c58a05">Lewin 1990</a> points out, this group&#8212;which acts on the twenty-four members of <i>T/I</i>&#8212;is isomorphic to <i>TTO</i>.  We call this isomorphism 
+<i>alpha</i>:<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup><blockquote>
+<p style="font-family:monospace; font-size:14px;"><font color="#FF0000">gap> alpha := IsomorphismGroups(TTO,AutTI);
+<br>
+</font>
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7), 
+  (1,5)(2,10)(4,8)(7,11) ] -> 
+<br>
+[ [ (1,6,11,4,9,2,7,12,5,10,3,8), (1,3)(4,12)(5,11)(6,10)(7,9) ] -> 
+    <br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,2)(3,12)(4,11)(5,10)(6,9)(7,8) ], 
+  <br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,3)(4,12)(5,11)(6,10)(7,9) ] -> 
+    <br>
+[ (1,8,3,10,5,12,7,2,9,4,11,6), (1,2)(3,12)(4,11)(5,10)(6,9)(7,8) ], 
+  <br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,3)(4,12)(5,11)(6,10)(7,9) ] -> 
+    <br>
+[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ] ]</font></p></blockquote>
+<p>Under <i>alpha</i>, GAP sends the previously defined generators of <i>TTO</i>: <i>t</i>, <i>i</i>, and 
+<i>m</i> (T<sub>1</sub>, I<sub>0</sub>, and M<sub>5</sub>), to three automorphisms of the <i>T/I</i> group that together generate the <i>Aut</i>(<i>T/I</i>) group.  These automorphisms appear in the output (following the first arrow &#8220;<font style="font-family:monospace; font-size:14px;" color="#0000FF">-></font>&#8221;) in terms of their respective actions on (arbitrary) generators of the <i>T/I</i> group: <i>t</i><sup>5</sup> and <i>it</i><sup>4</sup> (T<sub>5</sub> and I<sub>4</sub>).<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>   We may use Lewin&#8217;s (<a href="#lewin_1990" id="citation_lewin_1990_67e1575c58a0d">Lewin 1990</a>) notation to label these automorphisms: F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>u</i>,<i>j</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, which maps <i>t<sup>n</sup></i> to <i>t<sup>un</sup></i> (T<sub><i>n</i></sub> to T<sub><i>un</i></sub>), and <i>it<sup>n</sup></i> to <i>it<sup>un+j</sup></i> (I<sub><i>n</i></sub> to I<sub><i>un+j</i></sub>), where 
+<i>u</i> &#8712; {1,5,7,11} and <i>j</i> &#8712; &#8484;<sub>12</sub>.  We observe that <i>t</i> (T<sub>1</sub>) under <i>alpha</i> maps to the <i>T/I</i> automorphism that sends <i>t</i><sup>5</sup> to <i>t</i><sup>5</sup> (T<sub>5</sub> to T<sub>5</sub>), and <i>it</i><sup>4</sup> to <i>it</i><sup>3</sup> (I<sub>4</sub> to I<sub>3</sub>), which Lewin would call F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1,11<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>.  Next, 
+<i>i</i> (I<sub>0</sub>) under <i>alpha</i> maps to the automorphism that sends <i>t</i><sup>5</sup> to <i>t</i><sup>7</sup> (T<sub>5</sub> to T<sub>7</sub>), and <i>it</i><sup>4</sup> to <i>it</i><sup>3</sup> (I<sub>4</sub> to I<sub>3</sub>), hence F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">11,7<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> in Lewin&#8217;s notation.  Finally, under <i>alpha</i>, <i>m</i> (M<sub>5</sub>) maps to the automorphism that sends <i>t</i><sup>5</sup> to <i>t</i> (T<sub>5</sub> to T<sub>1</sub>), and <i>it</i><sup>4</sup> to 
+<i>i</i> (I<sub>4</sub> to I<sub>0</sub>), or F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">5,4<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, per Lewin.  Then, F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1,11<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">11,7<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, and F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">5,4<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> together do indeed generate the <i>Aut</i>(<i>T/I</i>) group of order 48.
+<p>[4.4] As <i>Aut</i>(<i>T/I</i>) is isomorphic to <i>TTO</i>, and <i>TTO</i> contains <i>T/I</i> as a subgroup, it follows that <i>Aut</i>(<i>T/I</i>) contains a subgroup that is isomorphic to <i>T/I</i>; we call this subgroup 
+<i>Hyp</i>(<i>T/I</i>) (or hyper-<i>T/I</i>).  It consists of the <i>T/I</i> automorphisms with 
+<i>u</i> &#8712; {1,11}.  Call isographies that derive from automorphisms with <i>u</i> = 1 positive, and those with <i>u</i> = 11 negative.  We may take the <i>T/I</i> automorphism that is the image of <i>t</i> (T<sub>1</sub>) under <i>alpha</i>, F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1,11<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, as one generator of this subgroup; and take that which is the image of 
+<i>i</i> (I<sub>0</sub>) under <i>alpha</i>, F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">11,7<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, as another:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> HypTI := Group(t^alpha,i^alpha);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;group with 2 generators>
+</font></p></blockquote>
+<p>We recall from [2.4] that the exponential notation used in this command (e.g., &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">t^alpha</font>&#8221;) signifies a function, in this case an isomorphism.  Then, the output provides merely a terse description of the structure being generated: a group with two generators; but it does not indicate size, or any other outward information. 
+<p>[4.5] Using an adaptation of Lewin&#8217;s later (<a href="#lewin_1994" id="citation_lewin_1994_67e1575c58a1a">Lewin 1994</a>) notation for hyper-<i>T/I</i> operators to our present orthography&#8212;<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t<sup>j</sup></i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> for F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1, <i>j</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, and <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it<sup>j</sup></i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> for F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">11, <i>j</i> <img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>&#8212;we note that GAP maps <i>t</i> (T<sub>1</sub>) under <i>alpha</i> to the automorphism of <i>T/I</i> that is called <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>11</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>: that which sends <i>t<sup>n</sup></i> to <i>t<sup>n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>n</i></sub>), and 
+<i>it<sup>n</sup></i> to <i>it<sup>n+11</sup></i> (I<i><sub>n</sub></i> to I<sub><i>n</i>+11</sub>).  Therefore, to define a hyper-<i>t</i> (hyper-T<sub>1</sub>) operator, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, that sends <i>t<sup>n</sup></i> to <i>t<sup>n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>n</i></sub>), and 
+<i>it<sup>n</sup></i> to <i>it<sup>n+1</sup></i> (I<i><sub>n</sub></i> to I<sub><i>n</i>+1</sub>), as does F<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1,<i>j</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, put 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> hyp_t := (t^11)^alpha;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,2)(3,12)(4,11)(5,10)(6,9)(7,8) ] ->
+<br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,3)(4,12)(5,11)(6,10)(7,9) ]
+</font></p></blockquote>
+<p>Notice that in the output to this command, the generator <i>t</i><sup>5</sup> (T<sub>5</sub>) of <i>T/I</i> maps to itself, and the generator <i>it</i><sup>3</sup> (I<sub>3</sub>) maps to <i>it</i><sup>3+1</sup> = <i>it</i><sup>4</sup> (I<sub>4</sub>).
+<p>[4.6] Similarly, GAP maps <i>i</i> (I<sub>0</sub>) under <i>alpha</i> to the automorphism we call <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>7</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>; that is, it agrees with the automorphism that sends <i>t<sup>n</sup></i> to <i>t<sup>-n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>-n</i></sub>), and <i>it<sup>n</sup></i> to <i>it<sup>-n+</sup></i><sup>7</sup> (I<i><sub>n</sub></i> to I<sub><i>-n</i>+7</sub>).  Hence, to define the a hyper-<i>i</i> (hyper-I<sub>0</sub>) operation <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>i</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> that sends <i>t<sup>n</sup></i> to <i>t<sup>-n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>-n</i></sub>), and <i>it<sup>n</sup></i> to <i>it<sup>-n+</sup></i><sup>0</sup> (I<i><sub>n</sub></i> to I<sub><i>-n</i>+0</sub>), put
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> hyp_i := (i^alpha)*((t^7)^alpha);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,8,3,10,5,12,7,2,9,4,11,6), (1,2)(3,12)(4,11)(5,10)(6,9)(7,8) ] ->
+<br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,8)(2,7)(3,6)(4,5)(9,12)(10,11) ]
+</font>
+</p></blockquote><p>Again, the output for this command shows an action on generators of the <i>T/I</i> group that results in a mapping of the group to itself; specifically, it demonstrates a mapping of <i>t</i><sup>7</sup> to <i>t</i><sup>5</sup> (T<sub>7</sub> to T<sub>5</sub>), and <i>it</i><sup>3</sup> maps to 
+<i>it</i><sup>(-3+0)</sup> = <i>it</i><sup>9</sup> (I<sub>3</sub> to I<sub>9</sub> ).</p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Schoenberg, Sechs kleine Klavierst&uuml;cke, op. 19, no. 6, measures 1&#8211;6 (following Lambert 2002)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=4&nonav=true"><img border="1" alt="Example 3 thumbnail" src="peck_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Two positively isographic K-nets from Lambert 2002</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=5&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="peck_fig2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Two negatively isographic K-nets from Lambert 2002</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=6&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="peck_fig3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.7] Following Philip Lambert&#8217;s (<a href="#lambert_2002" id="citation_lambert_2002_67e1575c58a25">Lambert 2002</a>) analysis, <b>Example 3</b> presents the first six measures of Arnold Schoenberg&#8217;s
+<i>Sechs kleine Klavierst&uuml;cke</i>, op. 19, no. 6.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<p>[4.8] We note that the network labeled (a) in <b>Figure 2</b>&#8212;corresponding to the trichord labeled &#8220;a&#8221; in the example&#8212;relates to that labeled (b) by <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>.  Specifically, the arrow labeled with the transposition operator <i>t</i><sup>2</sup> (T<sub>2</sub>) in (a) maps to a corresponding arrow with the same label in (b); and the arrows labeled the inversion operators <i>it</i><sup>3</sup> and <i>it</i><sup>5</sup> (I<sub>3</sub> and I<sub>5</sub>) in (a) map to <i>it</i><sup>3+2</sup> = <i>it</i><sup>5</sup> and <i>it</i><sup>5+2</sup> = <i>it</i><sup>7</sup> (I<sub>5</sub> and I<sub>7</sub>) in (b).
+
+	The output shows the cycles of network (b), which are the image of those of (a) under <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^(hyp_t^2); 
+<br>
+(i*t^3)^(hyp_t^2); (i*t^5)^(hyp_t^2);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,3,5,7,9,11)(2,4,6,8,10,12)
+<br>
+(1,4)(2,3)(5,12)(6,11)(7,10)(8,9)
+<br>
+(1,6)(2,5)(3,4)(7,12)(8,11)(9,10)</font></p></blockquote>
+<p>We recall that, as a hyper-operator, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> is a function on <i>T/I</i> (i.e., a group automorphism), hence we apply it using exponential notation in GAP.  That is, the command &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">(t^2)^(hyp_t^2)</font>;&#8221; instructs GAP to display the image of <i>t</i><sup>2</sup> (T<sub>2</sub>) under <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> (hyper-T<sub>2</sub>), and so on for the remaining arrow labels.
+
+<p>[4.9] Similarly, the network labeled (a) in <b>Figure 3</b> relates by <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> (hyper-I<sub>3</sub>) to the one labeled (d')&#8212;again, following the labeling of trichords in Example 3<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>&#8212;and vice versa, as <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> is an involution.  In particular, the <i>t</i><sup>2</sup> (T<sub>2</sub>) arrow in (a) maps to a <i>t<sup>-2</sup></i> = <i>t</i><sup>10</sup> (T<sub>10</sub>) arrow in (d'); and the <i>it</i><sup>3</sup> and <i>it</i><sup>5</sup> (I<sub>3</sub> and I<sub>5</sub>) arrows in (a) map respectively to <i>it</i><sup>-3+3</sup> = <i>it</i><sup>0</sup> and <i>it</i><sup>-5+3</sup> = <i>it</i><sup>10</sup> (I<sub>0</sub> and I<sub>10</sub>) in (d').<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^(hyp_i*hyp_t^3); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11,9,7,5,3)(2,12,10,8,6,4)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (i*t^3)^(hyp_i*hyp_t^3); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11)(2,10)(3,9)(4,8)(5,7)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (i*t^5)^(hyp_i*hyp_t^3);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,9)(2,8)(3,7)(4,6)(10,12)</font></p></blockquote>
+<p>Again, the output shows the image (in cyclic notation) of network (a)&#8217;s arrows under the relevant hyper-operator, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, which we render in the command as &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">(hyp_i*hyp_t^3)</font>.&#8221;  The resulting cycles conform to the operators that label the arrows in network (d'): <i>t</i><sup>10</sup>, 
+<i>i</i>, and <i>i</i><sup>10</sup> (T<sub>10</sub>, I<sub>0</sub>, and I<sub>10</sub>).
+
+<p>[4.10] It is now possible to determine the hyper-operator that relates network (b) to (d'), using the hyper-operators that relate (a) to (b) and (a) to (d').  We know already that <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> relates (a) to (b); hence, its inverse, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr><sup>-1</sup>, relates (b) to (a).<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup> We know also that (a) maps to (d') under <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>.  Therefore, (b) relates to (d') under the composition of <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr><sup>-1</sup> and <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, in that order.  The following output shows the corresponding action of this composition on the arrow labels of (b), which produces the cycles of (d'):
+
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^(((hyp_t^2)^-1)*hyp_i*hyp_t^3); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11,9,7,5,3)(2,12,10,8,6,4)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (i*t^5)^(((hyp_t^2)^-1)*hyp_i*hyp_t^3); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,11)(2,10)(3,9)(4,8)(5,7)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (i*t^7)^(((hyp_t^2)^-1)*hyp_i*hyp_t^3);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,9)(2,8)(3,7)(4,6)(10,12)</font></p></blockquote>
+<p>The cycles in the output agree with those of the operators that label the arrows in (d'), <i>t</i><sup>10</sup>, <i>i</i>, and <i>it</i><sup>10</sup> (T<sub>10</sub>, I<sub>0</sub>, and I<sub>10</sub>).  </p>
+
+<p>[4.11] The composition of hyper-operators <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr><sup>-1</sup> and <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> yields <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>5</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> (hyper-I<sub>5</sub>):  
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> ((hyp_t^2)^-1)*hyp_i*hyp_t^3 = hyp_i*hyp_t^5;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. Recursion between network (a) and hyper-network (r)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=7&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="peck_fig4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>We may use it together with <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>2</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> and <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>it</i><sup>3</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, above, to demonstrate the recursive relationship Lambert describes between network (a) and a hyper-network (Lambert&#8217;s Example 5) that we label (r).  In our 
+<b>Figure 4</b>, (r) has nodes populated by networks (a), (b), and (d'), and arrows labeled in
+<i>Hyp</i>(<i>T/I</i>).
+<p>[4.12] We can further define a hyper-<i>m</i> (hyper-M<sub>5</sub>) operation <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>m</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, following <a href="#lewin_1990" id="citation_lewin_1990_67e1575c58a43">Lewin 1990</a>,<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup>  which sends <i>t<sup>n</sup></i> to <i>t</i><sup>5<i>n</i></sup> (T<sub><i>n</i></sub> to T<sub>5<i>n</i></sub>), and <i>it<sup>n</sup></i> to <i>it</i><sup>5<i>n</i>+0</sup> (I<sub><i>n</i></sub> to I<sup>5<i>n</i>+0</sup>):
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> hyp_m := m^alpha*((<i>t</i>^4)^alpha);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ] ->
+<br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,11)(2,10)(3,9)(4,8)(5,7) ]</font></p></blockquote><p>
+As previously, the output here shows the action of the hyper-operator on (arbitrary) generators of the <i>T/I</i> group: <i>t</i> (T<sub>1</sub>) and i (I<sub>0</sub>), which get sent to <i>t</i><sup>5</sup> (T<sub>5</sub>) and 
+<i>i</i> (I<sub>0</sub>), respectively.
+<p>
+[4.13] Then, define a hyper-<i>mi</i> operation <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>mi</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> as follows:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> hyp_mi := hyp_m*hyp_i;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ] ->
+<br>
+[ (1,8,3,10,5,12,7,2,9,4,11,6), (1,11)(2,10)(3,9)(4,8)(5,7) ]</font></p></blockquote><p>
+This latter hyper-operator sends <i>t<sup>n</sup></i> to <i>t</i><sup>7<i>n</sup></i>, and <i>it<sup>n</sup></i> to <i>it</i><sup>7<i>n</i>+0</sup>, as demonstrated by the <i>T/I</i> generators in the output.</p>
+
+<div style="width:450px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 5</b>. Network (b) relates to (c) by <img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>10</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top">, but congruent nodes relate by <i>t</i><sup> 5</sup></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=8&nonav=true"><img border="1" alt="Figure 5 thumbnail" src="peck_fig5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+
+<p>
+[4.14] Klumpenhouwer (<a href="#klumpenhouwer_1998" id="citation_klumpenhouwer_1998_67e1575c58a4b">Klumpenhouwer 1998</a>) observes, however, that the action of Lewin&#8217;s <i>Hyp</i>(<i>T/I</i>) operators on networks does not necessarily agree with the action of <i>T/I</i> on the nodes of congruent networks.  For instance, the network labeled (b) in Figure 5 relates by <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>10</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> (hyper-T<sub>10</sub>) to the one 
+labeled (c)&#8212;corresponding to the trichords labeled &#8220;b&#8221; and &#8220;c,&#8221; respectively, in Example 3&#8212;but the congruent nodes of the networks relate by <i>t</i><sup>5</sup> (T<sub>5</sub>), not <i>t</i><sup>10</sup>.  That is, the pitch class 5 in the upper-left node in (b) moves by <i>t</i><sup>5</sup> to the pitch class 10 in the upper-left node of (c), not by <i>t</i><sup>10</sup>, and so on for the other ordered pairs of congruent nodes.  (See 
+<b>Figure 5</b>.)
+
+Therefore, Klumpenhouwer argues for the use of hyper-operators that derive from the inner automorphism group for <i>T/I</i>, 
+<i>Inn</i>(<i>T/I</i>),
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> InnTI := InnerAutomorphismsAutomorphismGroup(AutTI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;group with 2 generators&gt;</font></p></blockquote><p>
+which has a natural action of <i>T/I</i> on itself.  Here, the command &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">InnerAutomorphismsAutomorphismGroup(AutTI);</font>&#8221; is telling GAP to locate the subset of inner automorphisms in the automorphism group <i>Aut</i>(<i>T/I</i>).  
+<p>
+[4.15] The inner automorphisms in fact form a normal subgroup of the full automorphism group, <i>Aut</i>(<i>T/I</i>), consisting of those automorphisms that derive from conjugations by group elements, where conjugation of element 
+<i>a</i> by <i>b</i> equals the composition <i>b</i><sup>-1</sup><i>ab</i>.  (GAP also uses exponential notation for conjugation; hence, 
+<i>a<sup>b</sup></i> signifies <i>a</i> conjugated by <i>b</i>.)  Hence, Klumpenhouwer describes hyper-<i>t</i> operations [<i>t</i><sup><i>x</i></sup>], in square brackets, that conjugate the members of <i>T/I</i> by <i>t<sup>x</sup></i> (conjugation by T<sub><i>x</i></sub>).<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup>   Such conjugations send <i>t<sup>n</sup></i> to <i>t<sup>-x</sup></i>(<i>t<sup>n</sup></i>)<i>t<sup>x</sup></i> = <i>t<sup>n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>n</i></sub>), and <i>it<sup>n</sup></i> to <i>t</i>-x(<i>it<sup>n</sup></i>)<i>t<sup>x</sup></i> = <i>it</i><sup><i>n</i>+2<i>x</i></sup> (I<sub><i>n</i></sub> to I<sub><i>n</i>+2<i>x</i></sub>); and hyper-<i>it<sup>x</sup></i> operations [<i>it<sup>x</sup></i>] that send <i>t<sup>n</sup></i> to (<i>it<sup>x</sup></i>)<sup>-1</sup>(<i>t<sup>n</sup></i>)<i>it<sup>x</sup></i> = <i>t<sup>-n</sup></i> (T<sub><i>n</i></sub> to T<sub><i>-n</i></sub>), and <i>it<sup>n</sup></i> to (<i>it<sup>x</sup></i>)<sup>-1</sup>(<i>it<sup>n</sup></i>)<i>it<sup>x</sup></i> = 
+<i>it</i><sup>-<i>n</i>+2<i>x</i> </sup>(I<sub><i>n</i></sub> to I<sub>-<i>n</i>+2<i>x</i></sub>).  Thus, the network (b) in Figure 5 relates by [<i>t</i><sup>5</sup>] (conjugation by T<sub>5</sub>) to that in (c), matching the <i>t</i><sup>5</sup> operation on <i>PCS</i> that relates congruent nodes:  
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> (t^2)^(t^5); (i*t^5)^(t^5); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(i*t^7)^(t^5);
+(1,3,5,7,9,11)(2,4,6,8,10,12)
+<br>
+(1,2)(3,12)(4,11)(5,10)(6,9)(7,8)
+<br>
+(1,4)(2,3)(5,12)(6,11)(7,10)(8,9)</font></p></blockquote><p>
+The output shows the appropriate cycles of operators that label the arrows in (c).  Note as well the use of exponential notation in the command (e.<i>g</i>., &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">(t^2)^(t^5);</font>&#8221;), signifying conjugation by <i>t</i><sup>5</sup> (T<sub>5</sub>).
+<p>
+[4.16] We cannot describe an isomorphism between <i>Hyp</i>(<i>T/I</i>) and <i>Inn</i>(<i>T/I</i>), as <i>Hyp</i>(<i>T/I</i>) is of size 24, and <i>Inn</i>(<i>T/I</i>) is only of size 12.  We may, however, describe a group homomorphism 
+<i>beta</i> that maps <i>Hyp</i>(<i>T/I</i>) to <i>Inn</i>(<i>T/I</i>):
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> beta := ActionHomomorphism(HypTI,InnTI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;action homomorphism></font></p></blockquote><p>
+The output for this command merely denotes the presence of a homomorphism.  The kernel of 
+<i>beta</i>&#8212;those elements of <i>Hyp</i>(<i>T/I</i>) that map to the identity element of <i>Inn</i>(<i>T/I</i>)&#8212;is nontrivial:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> ker_beta := Kernel(beta);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;group with 1 generators>
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Size(ker_beta);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">2</font></p></blockquote><p>
+As the output indicates, the kernel consists of two elements of <i>Hyp</i>(<i>T/I</i>).  Using the &#8220;<font style="font-family:monospace; font-size:14px;" color="#FF0000">List</font>&#8221; command, we discover that these two elements consist of the hyper-operators <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>0</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> and <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>6</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> (hyper-T<sub>0</sub> and hyper-T<sub>6</sub>).
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> List(ker_beta);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ IdentityMapping( Group([ (1,2,3,4,5,6,7,8,9,10,11,12),<br>
+&nbsp;(1,11)(2,10)(3,9)(4,8)(5,7) ]) ),
+  <br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,10)(2,9)(3,8)(4,7)(5,6)(11,12) ] ->
+    <br>
+[ (1,6,11,4,9,2,7,12,5,10,3,8), (1,4)(2,3)(5,12)(6,11)(7,10)(8,9) ] ]</font></p></blockquote><p>
+First, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>0</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> appears in the output as &#8220;<font style="font-family:monospace; font-size:14px;" color="#0000FF">IdentityMapping( Group([1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7)</font>,&#8221; the automorphism of <i>T/I</i> that maps every element of the group to itself; second, the remaining output gives <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>6</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> in terms of the <i>T/I</i> generators <i>t</i><sup>5</sup> (T<sub>5</sub>) and <i>it</i><sup>11</sup> (I<sub>11</sub>), which map respectively to <i>t</i><sup>5</sup> and <i>it</i><sup>11+6</sup> = <i>it</i><sup>5</sup> (T<sub>5</sub> and I<sub>5</sub>).  We note that the kernel is equal to the center of <i>Hyp</i>(<i>T/I</i>).  This latter point is a result of the commutative property: members of the center (<i>Zentrum</i>) of a group are those elements that commute with all other elements in the group.  In this case, 
+<i>Z</i>(<i>Hyp</i>(<i>T/I</i>) = {<nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>0</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>t</i><sup>6</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>}.  As conjugation of any group element by another that commutes with it is trivial (via the axiomatic associative property of groups), both members of 
+<i>Z</i>(<i>Hyp</i>(<i>T/I</i>) map to the identity of <i>Inn</i>(<i>T/I</i>):
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> ker_beta = Center(HypTI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote><p>
+
+[4.17] Consequently, we cannot distinguish between permutations on <i>T/I</i> induced by conjugation by <i>t</i><sup>0</sup> or <i>t</i><sup>6</sup> (T<sub>0</sub> or T<sub>6</sub>), shown here on the generators <i>t</i> and 
+<i>i</i>: 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> <i>t</i>^(t^0) = t^(t^6); i^(t^0) = i^(t^6);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true
+<br>
+true</font></p></blockquote><p>
+or by different members of any coset (left or right) of the kernel:<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^(t^1) = t^(t^7); i^(t^1) = i^(t^7); 
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true
+<br>
+true
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^(i*t^4) = t^(i*t^10); i^(i*t^4) = i^(i*t^10);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true
+<br>
+true</font></p></blockquote><p>
+and so on for all the other cosets. 
+<p>
+<b>[5] Neo-Riemannian theory
+
+</b>
+<p>
+[5.1] Another area of music-theoretic research for which GAP is useful is neo-Riemannian theory.  This theory deals largely with contextual operations on the set of consonant triads, or 
+<i>Kl&auml;nge</i>.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> To that end, define an arbitrary consonant (major or minor) triad as an unordered pitch-class set (pcset):<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> CM := [4,7,12];
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 4, 7, 12 ]</font></p></blockquote><p>
+Call the orbit of a pitch-class set under <i>T/I</i> a set-class (in this case, the set of pcsets to which a C major triad maps under the elements of the <i>T/I</i> group), and label the set-class of consonant triads 
+<i>K</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> K := Orbit(TI,CM,OnSets);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ [ 4, 7, 12 ], [ 1, 5, 8 ], [ 5, 8, 12 ], [ 2, 6, 9 ], [ 4, 7, 11 ],
+  <br>
+[ 1, 6, 9 ], [ 3, 7, 10 ], [ 3, 6, 10 ], [ 2, 7, 10 ], [ 3, 6, 11 ],
+  <br>
+[ 4, 8, 11 ], [ 2, 5, 9 ], [ 3, 8, 11 ], [ 2, 5, 10 ], [ 5, 9, 12 ],
+  <br>
+[ 1, 4, 8 ], [ 4, 9, 12 ], [ 1, 4, 9 ], [ 1, 6, 10 ], [ 3, 7, 12 ],
+  <br>
+[ 1, 5, 10 ], [ 3, 8, 12 ], [ 2, 7, 11 ], [ 2, 6, 11 ] ]</font></p></blockquote><p>
+<i>K</i>, as a set, has twenty-four members (twelve major triads and twelve minor triads, all represented above) on which <i>T/I</i> acts:<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI_K := Action(TI,K,OnSets);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,4,7,11,15,19,23,22,18,14,10)
+(3,6,9,13,17,21,24,20,16,12,8,5), <br>
+(1,3)(2,5)(4,8)(6,10)(7,12)(9,14)(11,16)
+(13,18)(15,20)(17,22)(19,24)(21,23) ])</font></p></blockquote>
+<div style="width:350px;float:right;border:none;margin-left:30px">            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Mapping of <i>K</i> to [1 .. 24]</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=9&nonav=true"><img border="1" alt="Table 2 thumbnail" src="peck_table2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>In the output, we see that GAP maps the twenty-four members of <i>K</i> to the integers [1 .. 24].  In fact, its particular mapping of <i>K</i> to these integers has a basis in its memory of our definition in [3.13] of <i>T/I</i> as being the group generated by <i>t</i> and 
+<i>i</i> (T<sub>1</sub> and I<sub>0</sub>).  If we assign order numbers to the twenty-four triads in the output of the previous command, then C major 
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[4, 7, 12] </font>is 1, C-sharp major 
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[1, 5, 8] </font>is 2, F minor 
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[5, 8, 12]</font> is 3, D major 
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[2, 6, 9]</font> is 4, E minor 
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">[4, 7, 11]</font> is 5, and so on.  Then, the generator <i>t</i> (T<sub>1</sub>) carries 1 to 2, 2 to 4, 4, to 7, etc.; and 
+<i>i</i> (I<sub>0</sub>) takes 1 to 3, 2 to 5, and the like.  <b>Table 2</b> provides a list of these triads and their corresponding labels.
+
+The action of the <i>T/I</i> group on the set of twelve pitch classes is isomorphic to its action on the twenty-four members of 
+<i>K</i>.  Call this isomorphism <i>gamma</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> gamma := IsomorphismGroups(TI,TI_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,3,4,5,6,7,8,9,10,11,12), (1,11)(2,10)(3,9)(4,8)(5,7) ] ->
+<br>
+[ (1,2,4,7,11,15,19,23,22,18,14,10)(3,6,9,13,17,21,24,20,16,12,8,5),
+  <br>
+(1,8)(2,12)(3,14)(4,16)(5,10)(6,18)(7,20)(9,22)(11,24)(13,23)(15,21)(17,19) ]</font></p></blockquote><p>
+Define the image of <i>t</i> under <i>gamma</i>: 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t_K := Image(gamma,t);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,2,4,7,11,15,19,23,22,18,14,10)(3,6,9,13,17,21,24,20,16,12,8,5)</font></p></blockquote><p>
+and the image of i under <i>gamma</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i_K := Image(gamma,i);
+<br>
+
+</font>
+<font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,8)(2,12)(3,14)(4,16)(5,10)(6,18)(7,20)(9,22)(11,24)(13,23)(15,21)(17,19)
+
+</font></p></blockquote>
+
+<p>[5.2] <i>T/I</i>&#8217;s action on <i>K</i> has a permutation representation on [1 .. 24] that is a subgroup of the symmetric group on that set:<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> S_24 := SymmetricGroup(24);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Sym( [ 1 .. 24 ] )
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsSubgroup(S_24,TI_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote><p>
+A classical result in transformational music theory (<a href="#lewin_1987" id="citation_lewin_1987_67e1575c58a6f">Lewin 1987</a>) states that the centralizer in 
+<i>S</i><sub>24</sub> of <i>T/I</i>&#8217;s action on <i>K</i> is the <i>Schritt/Wechsel</i> group, <i>S</i>/<i>W</i>, of neo-Riemannian theory:<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> SW := Centralizer(S_24,TI_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,4,7,11,15,19,23,22,18,14,10)
+(3,5,8,12,16,20,24,21,17,13,9,6),
+ <br>
+(1,3)(2,6)(4,9)(5,10)(7,13)(8,14)(11,17)
+(12,18)(15,21)(16,22)(19,24)(20,23) ])</font></p></blockquote><p>
+(The output here shows a particular <i>Schritt</i> and <i>Wechsel</i> pair as the generators of <i>S</i>/<i>W</i>.)  This result is related to one in permutation group theory, which states that because the action of <i>T/I</i> on <i>K</i> is regular (simply transitive),
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsRegular(TI_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote><p>
+it is isomorphic to its centralizer (<a href="#dixon_and_mortimer_1996" id="citation_dixon_and_mortimer_1996_67e1575c58a72">Dixon and Mortimer 1996</a>).  Call this isomorphism 
+<i>delta</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> delta := IsomorphismGroups(TI_K,SW);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ (1,2,4,7,11,15,19,23,22,18,14,10)(3,6,9,13,17,21,24,20,16,12,8,5),
+<br>
+(1,3)(2,5)(4,8)(6,10)(7,12)(9,14)(11,16)(13,18)(15,20)(17,22)(19,24)(21,23) ] -> 
+<br>
+[ (1,2,4,7,11,15,19,23,22,18,14,10)(3,5,8,12,16,20,24,21,17,13,9,6),
+<br>
+(1,3)(2,6)(4,9)(5,10)(7,13)(8,14)(11,17)(12,18)(15,21)(16,22)(19,24)(20,23) ]</font></p></blockquote><p>
+We note that <i>delta</i> sends <i>T/I</i> to <i>S</i>/<i>W</i>, which GAP shows in the output terms of generators for the respective groups, as they act on <i>K</i>.
+<p>
+[5.3] Call <i>s</i> (unit <i>Schritt</i>) the image of <i>t</i> under <i>delta</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> s := Image(delta,t_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,2,4,7,11,15,19,23,22,18,14,10)(3,5,8,12,16,20,24,21,17,13,9,6)</font></p></blockquote><p>
+It sends the major triads &#8220;up&#8221; by a semitone (C major, <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> major, etc.), and the minor triads &#8220;down&#8221; by the same amount (C minor, b minor, etc.).  Moreover, call
+<i>w</i> the image of <i>i</i> under <i>delta</i>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> w := Image(delta,i_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,9)(2,13)(3,14)(4,17)(5,18)(6,10)(7,21)(8,22)(11,24)(12,23)(15,20)(16,19)</font></p></blockquote><p>
+Recall the mapping in Table 2.  We note that <i>w</i> is a <i>Wechsel</i>.  It sends each major triad to a minor triad, and vice versa, where the respective triadic roots form a consistent interval: 1 goes to 9 (C major to G minor), 2 to 13 (<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> major to A-flat minor [<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor]), and so on.  Then, the labels of the <i>Schritt</i> and <i>Wechsel</i> that appear in the output to the command that defines <i>S</i>/<i>W</i> in [5.2] would be 
+<i>s</i> and <i>ws</i><sup>2</sup>.
+<p>
+[5.4] The canonical neo-Riemannian exchanges with parsimonious voice leading (parallel, relative, and leading-tone) may then be defined as follows: 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> p := w*s^7;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,20)(2,16)(3,15)(4,12)(5,11)(6,19)(7,8)(9,23)(10,24)(13,22)(14,21)(17,18)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> r := w*s^10;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,17)(2,21)(3,22)(4,24)(5,23)(6,18)(7,20)(8,19)(9,14)(10,13)(11,16)(12,15)
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> l := w*s^3;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,5)(2,3)(4,6)(7,9)(8,10)(11,13)(12,14)(15,17)(16,18)(19,21)(20,22)(23,24)</font></p></blockquote><p>
+Moreover, other useful operations, such as Cohn&#8217;s (<a href="#cohn_2004" id="citation_cohn_2004_67e1575c58a80">Cohn 2004</a>) hexatonic pole, may be defined as compositions of these exchanges:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> hp := l*p*l;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,13)(2,17)(3,18)(4,21)(5,22)(6,14)(7,24)(8,23)(9,10)(11,20)(12,19)(15,16)</font></p></blockquote><p>
+
+[5.5] Next, generate the cyclic <i>T</i> group acting on consonant triads:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> T_K := Group(t_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,4,7,11,15,19,23,22,18,14,10)
+(3,6,9,13,17,21,24,20,16,12,8,5) ])</font></p></blockquote><p>
+Again, the output shows the cycles of the generator <i>t</i> (T<sub>1</sub>) as it acts on <i>K</i>.  The centralizer in <i>S</i><sub>24</sub> of <i>T</i>&#8217;s action on <i>K</i> is another well-known group in neo-Riemannian theory, Hook&#8217;s (<a href="#hook_2002" id="citation_hook_2002_67e1575c58a82">Hook 2002</a>) set of 288 uniform triadic transformations (<i>UTT</i>s),
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> CinS_24ofT_K := Centralizer(<i>S</i>_24,<i>T</i>_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,4,7,11,15,19,23,22,18,14,10)
+(3,6,9,13,17,21,24,20,16,12,8,5),
+  <br>
+(3,5,8,12,16,20,24,21,17,13,9,6), 
+(1,3)(2,6)(4,9)(5,10)(7,13)(8,14)(11,
+    17)<br>
+(12,18)(15,21)(16,22)(19,24)(20,23) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> Size(CinS_24ofT_K);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">288</font></p></blockquote><p>
+of which <i>S</i>/<i>W</i> is a subgroup:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsSubgroup(CinS_24ofT_K,SW);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote>
+<div style="width:320px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 3</b>. Alternate mapping of <i>K</i> to [1 .. 24]</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=10&nonav=true"><img border="1" alt="Table 3 thumbnail" src="peck_table3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>
+[5.6] We can arrive at an isomorphic structure on [1 .. 24] that is perhaps more intuitive.  Let [1 .. 12] represent the pitch classes that function as the roots of the major triads, and let [13 .. 24] represent the roots of the minor triads, where 
+<i>x</i> and <i>x</i>+12 belong to the same pitch class. (That is, 1 and 13 both 
+map to the pitch class C#; 2 and 14 to D; ..., 12 and 24 to C.) See <b>Table 3</b>.   
+<p>
+
+[5.7] Hook&#8217;s <i>UTT</i>s are given in the form <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">&#963;, <i>t<sup>+</sup></i>, <i>t</i><sup>-</sup><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr>, where &#963; &#8712; {+, -}, which either preserves modes (+) or reverses them (-):<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> minus := (1,13)(2,14)(3,15)(4,16)(5,17)(6,18)<img border="0" src="images/return.gif" width="14" height="14" align="baseline">
+<br>
+>(7,19)(8,20)(9,21)(10,22)(11,23)(12,24);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,13)(2,14)(3,15)(4,16)(5,17)(6,18)(7,19)(8,20)(9,21)(10,22)(11,23)(12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> plus := minus^2;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">()</font></p></blockquote><p>
+Then, <i>t</i><sup>+</sup> represents the transposition (translation) factor on the <i>T</i>-orbit of major triads, 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^plus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,2,3,4,5,6,7,8,9,10,11,12)</font></p></blockquote><p>
+where we now conjugate <i>t</i> (T<sub>1</sub>, as it acts on [1 .. 12]) by the &#8220;plus&#8221; operation; and <i>t</i><sup>-</sup> on minor triads, 
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> t^minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(13,14,15,16,17,18,19,20,21,22,23,24)</font></p></blockquote><p>
+given by conjugating <i>t</i> by the &#8220;minus&#8221; operation, which carries [1 .. 12] to [13 .. 24] as a set.
+<p>
+[5.8] We may model <i>UTT</i>s such as Hyer&#8217;s (<a href="#hyer_1995" id="citation_hyer_1995_67e1575c58a8a">Hyer 1995</a>) dominant relation d = <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">+, 5, 5<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> and Smyth&#8217;s (<a href="#smyth_2008" id="citation_smyth_2008_67e1575c58a8b">Smyth 2008</a>) near-hexatonic pole 
+<i>nhp</i> = <nobr><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">- ,3, 9<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"></nobr> in GAP, as follows:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> d := (t^plus)^5*(t^minus)^5*plus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,6,11,4,9,2,7,12,5,10,3,8)(13,18,23,16,21,14,19,24,17,22,15,20)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> nhp := (t^plus)^3*(t^minus)^9*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,16)(2,17)(3,18)(4,19)(5,20)(6,21)(7,22)(8,23)(9,24)(10,13)(11,14)(12,15)</font></p></blockquote><p>
+The output of the first command sends 1 to 6 to 11, etc., in one orbit; and 13 to 18 to 23, etc., in another.  Under our new labeling system, these integers refer to <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> major, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> major, B major, etc., in the first orbit; and <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor, <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> minor, and B minor, etc. in the other.  The output of the second command shows instead twelve exchanges: 1 goes to 16, and 16 goes back to 1; 2 goes to 17, and 17 to 2; and so forth.  Again, per our new labeling system, we note that C# major exchanges with E minor, D major with F minor, and so forth.
+<p>
+[5.9] <a href="#hook_2002" id="citation_hook_2002_67e1575c58a9a">Hook 2002</a> further describes a larger group, <i>QTT</i>, which adjoins the usual inversion operation to the <i>UTT</i>s.  We can form this group as a wreath product of <i>T/I</i> acting on [1 .. 12] by 
+<i>S</i><sub>2</sub> (the symmetric group of degree 2, consisting of two permutations, ( ) and (1,2)).
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> QTT := WreathProduct(TI,SymmetricGroup(2));
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;permutation group of size 1152 with 5 generators&gt;</font></p></blockquote><p> 
+<i>QTT</i> contains several musically relevant subgroups of order 24, including Clough&#8217;s (<a href="#clough_1998" id="citation_clough_1998_67e1575c58a9b">Clough 1998</a>) abelian (so-called) <i>S</i>/<i>I</i> group:<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> schritt := t^plus*(t^minus)^-1*plus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,2,3,4,5,6,7,8,9,10,11,12)(13,24,23,22,21,20,19,18,17,16,15,14)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> inversion := i^plus*i^minus*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,23)(2,22)(3,21)(4,20)(5,19)(6,18)(7,17)(8,16)(9,15)(10,14)(11,13)(12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> SI := Group(schritt,inversion);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,24,23,22,21,20,19,18,17,16,15,14),
+<br>
+(1,23)(2,22)(3,21)(4,20)(5,19)(6,18)(7,17)(8,16)(9,15)(10,14)(11,13)(12,24) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IsAbelian(SI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">true</font></p></blockquote><p>
+
+[5.10] In addition to the usual inversion operation, <a href="#kochavi_2002" id="citation_kochavi_2002_67e1575c58a9e">Kochavi 2002</a> describes five contextual inversion operators (<i>cios</i>) that may act on the set of consonant triads:<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup><blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i215 := m^plus*m^minus*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,17)(2,22)(3,15)(4,20)(5,13)(6,18)(7,23)(8,16)(9,21)(10,14)(11,19)(12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i216 := (m*i)^plus*(m*i)^minus*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,19)(2,14)(3,21)(4,16)(5,23)(6,18)(7,13)(8,20)(9,15)(10,22)(11,17)(12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i217 := i^plus*i^minus*(t^minus)^6*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,23,7,17)(2,22,8,16)(3,21,9,15)(4,20,10,14)(5,19,11,13)(6,18,12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i218 := (m*i)^plus*(m*i)^minus*(t^minus)^6*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,19,7,13)(2,14,8,20)(3,21,9,15)(4,16,10,22)(5,23,11,17)(6,18,12,24)
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> i219 := m^plus*m^minus*(t^minus)^3*minus;
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">(1,17,4,20,7,23,10,14)(2,22,5,13,8,16,11,19)(3,15,6,18,9,21,12,24)</font></p></blockquote><p>
+These <i>cios</i> may be used with <i>t</i> (acting on [1 .. 24]) to generate nonabelian order-24 groups with an element of order 12:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI215 := Group(t^plus*t^minus,i215);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,14,15,16,17,18,19,20,21,22,23,24),
+<br>
+(1,17)(2,22)(3,15)(4,20)(5,13)(6,18)(7,23)(8,16)(9,21)(10,14)(11,19)(12,24) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI216 := Group(t^plus*t^minus,i216);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,14,15,16,17,18,19,20,21,22,23,24),
+<br>
+(1,19)(2,14)(3,21)(4,16)(5,23)(6,18)(7,13)(8,20)(9,15)(10,22)(11,17)(12,24) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI217 := Group(t^plus*t^minus,i217);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,14,15,16,17,18,19,20,21,22,23,24),
+  <br>
+(1,23,7,17)(2,22,8,16)(3,21,9,15)(4,20,10,14)(5,19,11,13)(6,18,12,24) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI218 := Group(t^plus*t^minus,i218);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,14,15,16,17,18,19,20,21,22,23,24),
+  <br>
+(1,19,7,13)(2,14,8,20)(3,21,9,15)(4,16,10,22)(5,23,11,17)(6,18,12,24) ])
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> TI219 := Group(t^plus*t^minus,i219);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">Group([ (1,2,3,4,5,6,7,8,9,10,11,12)(13,14,15,16,17,18,19,20,21,22,23,24),
+  <br>
+(1,17,4,20,7,23,10,14)(2,22,5,13,8,16,11,19)(3,15,6,18,9,21,12,24) ])</font></p></blockquote>
+
+<p>
+Now we can identify (up to isomorphism) each of these groups, using GAP&#8217;s Small Group Library (see 
+<b>Table 4</b><sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup>):<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup></p>
+<div style="width:450px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 4</b>. Isomorphism classes of the nonabelian subgroups <br>of order 24 in <i>M</i> with an element of order 12</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="peck_examples.php?id=11&nonav=true"><img border="1" alt="Table 4 thumbnail" src="peck_table4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 6 ]
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI215);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 5 ]
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI216);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 10 ]
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI217);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 4 ]
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI218);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 11 ]
+<br></font><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(TI219);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 1 ]</font></p></blockquote><p>
+
+[5.11] Whereas <i>QTT</i> contains subgroups that are isomorphic to all the groups of order 24 with an element of order 12,<sup><a name="FN30REF" href="#FN30" id="footnote30">(30)</a></sup>  it does not contain these particular subgroups.  Rather, <a href="#douthett_and_peck_2007" id="citation_douthett_and_peck_2007_67e1575c58ab4">Douthett and Peck 2007</a> give a group of order 4608, 
+<i>M</i>, which does contain Kochavi&#8217;s <i>cios</i>.<sup><a name="FN31REF" href="#FN31" id="footnote31">(31)</a></sup>   <i>M</i> is a wreath product of <i>TTO</i> acting on [1 .. 12] by 
+<i>S</i><sub>2</sub>:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> M := WreathProduct(t(TTO,SymmetricGroup(2));
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">&lt;permutation group of size 4608 with 7 generators&gt;</font></p></blockquote><p>
+
+[5.12] The two abelian groups of order 24 with an element of order 12 appear also as subgroups in 
+<i>M</i>.  Clough&#8217;s <i>S</i>/I group (from [5.9] above) is an example:
+<blockquote>
+<p><font style="font-family:monospace; font-size:14px;" color="#FF0000">gap> IdGroup(SI);
+<br>
+</font><font style="font-family:monospace; font-size:14px;" color="#0000FF">[ 24, 9 ]</font></p></blockquote><p>
+Its isomorphism class is as follows:
+<p style="text-align: center"><i>S</i>/I &#8773; [24, 9] &#8773; <i>C</i><sub>12</sub> &#215; <i>C</i><sub>2</sub>
+<p>
+The remaining case is left as an exercise for the reader.<sup><a name="FN32REF" href="#FN32" id="footnote32">(32)</a></sup>
+<p>
+<b>[6] Conclusions
+
+</b>
+<p>
+[6.1] The preceding discussion is intended to demonstrate GAP&#8217;s usefulness in studying transformational music theory.  Whereas most of the examples recreate well known models, it has not been our purpose here to discover novel results.  Nevertheless, GAP may function quite effectively in the pursuit of new theoretical systems.  Moreover, it can be a valuable tool in transformation theory pedagogy, affording teachers and students an environment for experimentation with either existing or original concepts.  
+
+<p>
+[6.2] In addition to the standard group-theoretical topics we have addressed thus far, GAP has many additional applications.  It can be used to study other discrete algebraic structures, such as monoids, semigroups, fields, rings, vector spaces, matrices, and the like.  What GAP is not capable of doing (at least not efficiently) is working with continuous and other infinite spaces, such as those found in <a href="#callendar_quinn_and_tymoczko_2008" id="citation_callendar_quinn_and_tymoczko_2008_67e1575c58ab8">Callendar, Quinn, and Tymoczko 2008</a>.  These topics may be explored computationally as well, but using applications other than GAP.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	<!-------------------------------- Author Info -------------------------------------------->
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Robert W. Peck<br>
+	Louisiana State University<br>Baton Rouge, LA 70803<br><a href="mailto:rpeck@lsu.edu">rpeck@lsu.edu</a><br>	
+</p>
+   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	<!-------------------------------- Works Cited List -------------------------------------------->
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_aschbacher_1986" class="flyoverdiv">Aschbacher, Michael. 1986. <i>Finite Group Theory.</i> Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="aschbacher_1986"></a>Aschbacher, Michael. 1986. <i>Finite Group Theory.</i> Cambridge: Cambridge University Press.</p><div id="citediv_callendar_quinn_and_tymoczko_2008" class="flyoverdiv">Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2008. &#8220;Generalized Voice Leading Spaces.&#8221; <i>Science</i> 320: 346&#8211;348.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="callendar_quinn_and_tymoczko_2008"></a>Callender, Clifton, Ian Quinn, and Dmitri Tymoczko. 2008. &#8220;Generalized Voice Leading Spaces.&#8221; <i>Science</i> 320: 346&#8211;348.</p><div id="citediv_clough_1998" class="flyoverdiv">Clough, John. 1998. &#8220A Rudimentary Geometric Model for Contextual Transposition and Inversion.&#8221; <i>Journal of Music Theory</i> 42, no. 2: 297&#8211;306.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_1998"></a>Clough, John. 1998. &#8220A Rudimentary Geometric Model for Contextual Transposition and Inversion.&#8221; <i>Journal of Music Theory</i> 42, no. 2: 297&#8211;306.</p><div id="citediv_cohn_1998" class="flyoverdiv">Cohn, Richard. 1998. &#8220;An Introduction to Neo-Riemannian Theory: A Survey and Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42, no. 2: 167&#8211;180.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1998"></a>Cohn, Richard. 1998. &#8220;An Introduction to Neo-Riemannian Theory: A Survey and Historical Perspective.&#8221; <i>Journal of Music Theory</i> 42, no. 2: 167&#8211;180.</p><div id="citediv_cohn_2004" class="flyoverdiv">Cohn, Richard. 2004. &#8220;Uncanny Resemblances: Tonal Signification in the Freudian Age.&#8221; <i>Journal of the American Musicological Society</i> 57, no. 2: 285&#8211;323.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004. &#8220;Uncanny Resemblances: Tonal Signification in the Freudian Age.&#8221; <i>Journal of the American Musicological Society</i> 57, no. 2: 285&#8211;323.</p><div id="citediv_dixon_and_mortimer_1996" class="flyoverdiv">Dixon, John D., and Brian Mortimer. 1996. <i>Permutation Groups.</i> New York: Springer-Verlag.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dixon_and_mortimer_1996"></a>Dixon, John D., and Brian Mortimer. 1996. <i>Permutation Groups.</i> New York: Springer-Verlag.</p><div id="citediv_douthett_and_peck_2007" class="flyoverdiv">Douthett, Jack, and Robert Peck. 2007. &#8220;An Order 1152 Group of Triadic Transformations and Its Relevance to Existing Musical Theoretical Structures.&#8221; Paper presented at the &#8220;Special Session on Mathematical Techniques in Musical Analysis,&#8221; American Mathematical Society/Mathematical Association of America Joint National Meeting, New Orleans, Louisiana.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="douthett_and_peck_2007"></a>Douthett, Jack, and Robert Peck. 2007. &#8220;An Order 1152 Group of Triadic Transformations and Its Relevance to Existing Musical Theoretical Structures.&#8221; Paper presented at the &#8220;Special Session on Mathematical Techniques in Musical Analysis,&#8221; American Mathematical Society/Mathematical Association of America Joint National Meeting, New Orleans, Louisiana.</p><div id="citediv_the_gap_group_2008" class="flyoverdiv">GAP Group, The. 2008. GAP&#8212;Groups, Algorithms, and Programming, Version 4.4.12. <<a href="http://www.gap-system.org">http://www.gap-system.org</a>></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="the_gap_group_2008"></a>GAP Group, The. 2008. GAP&#8212;Groups, Algorithms, and Programming, Version 4.4.12. <<a href="http://www.gap-system.org">http://www.gap-system.org</a>></p><div id="citediv_hook_2002" class="flyoverdiv">Hook, Julian. 2002. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 46, nos. 1&#8211;2: 57&#8211;126.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hook_2002"></a>Hook, Julian. 2002. &#8220;Uniform Triadic Transformations.&#8221; <i>Journal of Music Theory</i> 46, nos. 1&#8211;2: 57&#8211;126.</p><div id="citediv_hyer_1995" class="flyoverdiv">Hyer, Brian. 1995. &#8220;Reimag(in)ing Riemann.&#8221; <i>Journal of Music Theory</i> 39, no.1: 101&#8211;138.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hyer_1995"></a>Hyer, Brian. 1995. &#8220;Reimag(in)ing Riemann.&#8221; <i>Journal of Music Theory</i> 39, no.1: 101&#8211;138.</p><div id="citediv_klumpenhouwer_1991" class="flyoverdiv">Klumpenhouwer, Henry. 1991. <i>A Generalized Model of Voice-Leading for Atonal Music.</i> Ph.D. diss., Harvard University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_1991"></a>Klumpenhouwer, Henry. 1991. <i>A Generalized Model of Voice-Leading for Atonal Music.</i> Ph.D. diss., Harvard University.</p><div id="citediv_klumpenhouwer_1998" class="flyoverdiv">Klumpenhouwer, Henry. 1998. &#8220;The Inner and Outer Automorphisms of Pitch-Class Inversion and Transposition: Some Implications for Analysis with Klumpenhouwer Networks.&#8221; <i>Int&egrave;gral</i> 12: 81&#8211;93.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="klumpenhouwer_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. &#8220;The Inner and Outer Automorphisms of Pitch-Class Inversion and Transposition: Some Implications for Analysis with Klumpenhouwer Networks.&#8221; <i>Int&egrave;gral</i> 12: 81&#8211;93.</p><div id="citediv_kochavi_2002" class="flyoverdiv">Kochavi, Jonathan H. 2002. <i>Contextually Defined Musical Transformations.</i> Ph.D. diss., State University of New York, Buffalo.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kochavi_2002"></a>Kochavi, Jonathan H. 2002. <i>Contextually Defined Musical Transformations.</i> Ph.D. diss., State University of New York, Buffalo.</p><div id="citediv_lambert_2002" class="flyoverdiv">Lambert, Philip. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24, no. 2: 165-195.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lambert_2002"></a>Lambert, Philip. 2002. &#8220;Isographies and Some Klumpenhouwer Networks They Involve.&#8221; <i>Music Theory Spectrum</i> 24, no. 2: 165-195.</p><div id="citediv_lewin_1984" class="flyoverdiv">Lewin, David. 1984. &#8220;Amfortas&#8217;s Prayer to Titurel and the Role of D in <i>Parsifal</i>: The Tonal
+Spaces of the Drama and the Enharmonic C-flat/B.&#8221; <i>Nineteenth-Century Music</i> 8, no. 3: 336&#8211;349.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1984"></a>Lewin, David. 1984. &#8220;Amfortas&#8217;s Prayer to Titurel and the Role of D in <i>Parsifal</i>: The Tonal
+Spaces of the Drama and the Enharmonic C-flat/B.&#8221; <i>Nineteenth-Century Music</i> 8, no. 3: 336&#8211;349.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. <i>Generalized Musical Intervals and Transformations.</i> New Haven: Yale University Press.</p><div id="citediv_lewin_1990" class="flyoverdiv">Lewin, David. 1990. &#8220;Klumpenhouwer Networks and Some Isographies that Involve Them.&#8221; <i>Music Theory Spectrum</i> 12, no. 1: 83&ndash;120.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1990"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1990. &#8220;Klumpenhouwer Networks and Some Isographies that Involve Them.&#8221; <i>Music Theory Spectrum</i> 12, no. 1: 83&ndash;120.</p><div id="citediv_lewin_1994" class="flyoverdiv">Lewin, David. 1994. &#8220;A Tutorial on Klumpenhouwer Networks, Using the Chorale in Schoenberg&#8217;s Opus 11, No. 2.&#8221; <i>Journal of Music Theory</i> 38, no. 1: 79&#8211;101.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1994"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1994. &#8220;A Tutorial on Klumpenhouwer Networks, Using the Chorale in Schoenberg&#8217;s Opus 11, No. 2.&#8221; <i>Journal of Music Theory</i> 38, no. 1: 79&#8211;101.</p><div id="citediv_morris_1982" class="flyoverdiv">Morris, Robert D. 1982. &#8220;Set Groups, Complementation, and Mappings among Pitch-Class Sets.&#8221; <i>Journal of Music Theory</i> 26, no. 1: 101&#8211;44.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1982"></a>Morris, Robert D. 1982. &#8220;Set Groups, Complementation, and Mappings among Pitch-Class Sets.&#8221; <i>Journal of Music Theory</i> 26, no. 1: 101&#8211;44.</p><div id="citediv_morris_1987" class="flyoverdiv">Morris, Robert D. 1987. <i>Composition with Pitch-Classes.</i> New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987. <i>Composition with Pitch-Classes.</i> New Haven: Yale University Press.</p><div id="citediv_peck_2005" class="flyoverdiv">Peck, Robert. 2005. &#8220;GAP (Groups, Algorithms, and Programming): A Tool for Computer-Assisted Research in Music Theory.&#8221; Poster presented at Society for Music Theory National Meeting, Cambridge, Massachusetts.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="peck_2005"></a>Peck, Robert. 2005. &#8220;GAP (Groups, Algorithms, and Programming): A Tool for Computer-Assisted Research in Music Theory.&#8221; Poster presented at Society for Music Theory National Meeting, Cambridge, Massachusetts.</p><div id="citediv_peck_2009" class="flyoverdiv">Peck, Robert. 2009. &#8220;Wreath Products in Transformational Music Theory.&#8221; <i>Perspectives of New Music</i> 47, no.1: 193&#8211;210.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="peck_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2009. &#8220;Wreath Products in Transformational Music Theory.&#8221; <i>Perspectives of New Music</i> 47, no.1: 193&#8211;210.</p><div id="citediv_satyendra_1998" class="flyoverdiv">Satyendra, Ramon, ed. 1998. <i>Journal of Music Theory</i> 42, no. 2.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="satyendra_1998"></a>Satyendra, Ramon, ed. 1998. <i>Journal of Music Theory</i> 42, no. 2.</p><div id="citediv_smyth_2008" class="flyoverdiv">Smyth, David. 2008. &#8220;More About Wagner&#8217;s Chromatic Magic.&#8221; Paper presented at the 31st Annual Meeting of Society for Music Theory, Nashville, Tennessee.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="smyth_2008"></a>Smyth, David. 2008. &#8220;More About Wagner&#8217;s Chromatic Magic.&#8221; Paper presented at the 31st Annual Meeting of Society for Music Theory, Nashville, Tennessee.</p><div id="citediv_starr_1978" class="flyoverdiv">Starr, Daniel V. 1978. &#8220;Sets, Invariance, and Partitions.&#8221; <i>Journal of Music Theory</i> 22, no. 1: 136&#8211;83.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="starr_1978"></a>Starr, Daniel V. 1978. &#8220;Sets, Invariance, and Partitions.&#8221; <i>Journal of Music Theory</i> 22, no. 1: 136&#8211;83.</p><div id="citediv_starr_and_morris_1974" class="flyoverdiv">Starr, Daniel, and Robert Morris. 1974. &#8220;The Structure of All-Interval Series.&#8221; <i>Journal of Music Theory</i> 18, no. 2: 364&#8211;89.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="starr_and_morris_1974"></a>Starr, Daniel, and Robert Morris. 1974. &#8220;The Structure of All-Interval Series.&#8221; <i>Journal of Music Theory</i> 18, no. 2: 364&#8211;89.</p><div id="citediv_starr_and_morris_1977&#8211;78" class="flyoverdiv">Starr, Daniel, and Robert Morris. 1977&#8211;78. &#8220;A General Theory of Combinatoriality and the Aggregate.&#8221; <i>Perspectives of New Music</i> 16, no. 1: 3&#8211;35; and 16, no. 2: 50&#8211;84.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="starr_and_morris_1977&#8211;78"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1977&#8211;78. &#8220;A General Theory of Combinatoriality and the Aggregate.&#8221; <i>Perspectives of New Music</i> 16, no. 1: 3&#8211;35; and 16, no. 2: 50&#8211;84.</p><div id="citediv_stein_2009" class="flyoverdiv">Stein, William, et al. 2009. Sage Mathematics Software, Version 3.4. The Sage Development Team. <br><<a href="http://www.sagemath.org/">http://www.sagemath.org/</a>></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stein_2009"></a>Stein, William, et al. 2009. Sage Mathematics Software, Version 3.4. The Sage Development Team. <br><<a href="http://www.sagemath.org/">http://www.sagemath.org/</a>></p>   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	<!-------------------------------- Footnotes List -------------------------------------------->	
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> A partial bibliography, including hundreds of published works that cite GAP, can be found at <<a href="http://www.gap-system.org/Doc/Bib/gap-published.html">www.gap-system.org/Doc/Bib/gap-published.html</a>>.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> One example of GAP&#8217;s use in a music-theoretical context is <a href="#peck_2005" id="citation_peck_2005_67e1575c5724b">Peck 2005</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The interested reader may also consult <a href="#dixon_and_mortimer_1996" id="citation_dixon_and_mortimer_1996_67e1575c57251">Dixon and Mortimer 1996</a> for more information.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> GAP does not use this color coding; it is used here for clarity of presentation.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> For GAP to read the command as it is given here, the program needs to be stored in the same directory from which GAP is launched.  For example, using the default installation for Windows, that directory is C:\ gap4r4\bin.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Mathematicians refer to operations that music theorists normally call &#8220;transpositions&#8221; as &#8220;translations.&#8221;  Mathematically speaking, a translation moves every point the same distance in the same direction, whereas a transposition exchanges only two elements in a set, and holds all other elements invariant.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> GAP does, in fact, allow for modular arithmetic, but its inclusion here would add a level of complexity that is not necessary for our purposes.  See the Help manual under <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> ?modulo</font>.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The caret symbol &#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">^</font>&#8221; has several possible meanings in GAP, all relating to exponential notations.  Here, it is meant literally as an exponent (i.e., <i>t</i> squared).  It may also signify a function (see [4.3]), or a conjugation (see [4.15]).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Note the use of parentheses in the second subsequent GAP command (&#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> (t^2)^-1;</font>&#8221;).  They are necessary, as exponentiation is generally non-associative.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Music theorists frequently incorporate the notation &#8220;<i>T/I</i>&#8221; for the usual transposition and inversion group.  This notation could be confusing to mathematicians, who might interpret it as a quotient (or factor) group, <i>T</i> mod <i>I</i>.  As the subgroup generated by <i>i</i> is not normalized by <i>T</i>, however, such a quotient is not possible.  For that reason, GAP renders an error if we attempt to label this group &#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">T/I</font>,&#8221; hence we use merely &#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">TI</font>&#8221; in GAP.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> For earlier accounts of the <i>m</i> operation, particularly in the context of serial theory, see <a href="#starr_and_morris_1974" id="citation_starr_and_morris_1974_67e1575c57253">Starr and Morris 1974</a> and <a href="#starr_and_morris_1977&#8211;78" id="citation_starr_and_morris_1977&#8211;78_67e1575c57257">1977&#8211;78</a>, and <a href="#starr_1978" id="citation_starr_1978_67e1575c57259">Starr 1978</a>.  For a later, fuller treatment, see <a href="#morris_1987" id="citation_morris_1987_67e1575c5725a">Morris 1987</a>.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> N.B.: When reading the accompanying program, &#8220;SampleGAPprogram.txt,&#8221; GAP may assign to <i>alpha</i> a different isomorphism of <i>TTO</i> to <i>Aut</i>(<i>T/I</i>) than the one shown in the output here: for instance, it may send <i>TTO</i> generators <i>t</i>, <i>i</i>, and <i>m</i> to hyper-operators <i>F</i><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">1,7<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top">, <i>F</i><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">11,5<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top">, and <i>F</i><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">5,8<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top">.  As a result, we provide alternate definitions in the sample program for hyper-<i>t</i> and hyper-<i>i</i> than those that appear below in [4.5] and [4.6]; namely, put <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> hyp_t := (t^7)^alpha;</font> and <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> hyp_i := i^alpha*t^alpha</font>.  (Under this particular mapping, the hyper-<i>m</i> operation in [4.12] does not require re-defining.)  The definitions that appear in the online Sage Notebook &#8220;GAP&#8212;MTO&#8221; are yet again slightly different.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Our GAP representation of the <i>T/I</i> group may be generated by any <i>t</i> operator of order 12 (<i>t</i>, <i>t</i><sup> 5</sup>, <i>t</i><sup> 7</sup>, or <i>t</i><sup> 11</sup>) and any <i>it<sup> n</sup></i>.  Why GAP chooses here to model these automorphisms on generators <i>t</i><sup> 5</sup> and <i>it</i><sup> 4</sup> may seem arbitrary, but in fact has a basis in its programming beyond the scope of this tutorial.  Incidentally, GAP may choose generators other than <i>t</i><sup> 5</sup> and <i>it</i><sup> 4</sup> on different computers running precisely the same software, or when reading a program vs. a series of typed commands.  In these cases, we would need to redefine the hyper-<i>t</i>, <i>-i</i>, and <i>-m</i> operations in [4.5], [4.6], and [4.9] accordingly.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> In turn, Lambert&#8217;s (<a href="#lambert_2002" id="citation_lambert_2002_67e1575c5725c">2002</a>) analysis of op. 19, no. 6, takes Lewin&#8217;s (<a href="#lewin_1990" id="citation_lewin_1990_67e1575c5725e">1990</a>) analysis of three of the piece&#8217;s sonorities as its point of departure.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Lambert (<a href="#lambert_2002" id="citation_lambert_2002_67e1575c57260">2002</a>) offers initially a different interpretation of the trichord labeled &#8220;d&#8221; in our Example 3, which he calls &#8220;(d).&#8221;  Subsequently, he offers a reinterpretation, which he labels &#8220;(d').&#8221;  As we incorporate the latter interpretation here, we retain its labeling.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> We can take for granted the existence of an inverse here, as the automorphisms of a group themselves form a group, and a group provides an inverse for each of its elements axiomatically.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> This extension to K-net theory appears in Appendix B of <a href="#lewin_1990" id="citation_lewin_1990_67e1575c57262">Lewin 1990</a>.  There, he uses his earlier notation for these automorphisms: hence, F<img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">5,0<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"> for the hyper-<i>m</i> operation <img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>m</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"> we describe here; and <i>F</i><img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top">7,0<img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"> for hyper-<i>mi</i>, <img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"><i>mi</i><img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top">.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Note that <a href="#klumpenhouwer_1998" id="citation_klumpenhouwer_1998_67e1575c57263">Klumpenhouwer 1998</a> incorporates square brackets [ ] for hyper-operators that obtain from the inner automorphism group (i.e., those which obtain under conjugation), in contrast to the angle brackets <img border="0" src="images/lbracket.png" width="6" height="15" style="vertical-align:text-top"> <img border="0" src="images/rbracket.png" width="6" height="15" style="vertical-align:text-top"> <a href="#lewin_1994" id="citation_lewin_1994_67e1575c57265">Lewin 1994</a> uses for  hyper-operators that derive from the <i>Hyp</i>(<i>T/I</i>) group.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> Because the kernel is a normal subgroup (<font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> IsNormal(HypTI,ker_beta);</font> <font style="font-family:monospace; font-size:13px;" color="#0000FF">true</font>), it does not matter whether we multiply on the left or the right in forming the cosets.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> <a href="#lewin_1987" id="citation_lewin_1987_67e1575c57267">Lewin 1987</a> contains the first major work in neo-Riemannian theory, although in this regard it draws on certain aspects of his earlier work (such as <a href="#lewin_1984" id="citation_lewin_1984_67e1575c57268">Lewin 1984</a>).  <a href="#cohn_1998" id="citation_cohn_1998_67e1575c57269">Cohn 1998</a> also offers an excellent introduction to the theory; indeed, the entire issue of <i>Journal of Music Theory</i> 42, no. 2 (<a href="#satyendra_1998" id="citation_satyendra_1998_67e1575c5726b">Satyendra 1998</a>) is devoted to neo-Riemannian topics.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> In reading the subsequent command, recall our earlier use of the integer 12 for pitch class C.  In addition, neo-Riemannian theory commonly incorporates the notation &#8220;+&#8221; for major triads and &#8220;-&#8221; for minor triads.  In GAP, we cannot use these symbols in variable names, as GAP considers them to be arithmetic operators.  Therefore, we use &#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">M</font>&#8221; for major (e.g., &#8220;<font style="font-family:monospace; font-size:13px;" color="#FF0000">CM</font>&#8221; in the subsequent command is read &#8220;C major&#8221;).<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Similar to the situation in [4.3], fn. 12, GAP assigns a different mapping of <i>K</i> to [1 .. 24] when reading &#8220;SampleGAPprogram.txt.&#8221;  As a result, in the program we obtain a different ordering for the neo-Riemannian operations Schritt <i>s</i> and Wechsel <i>w</i> that appear below in [5.3].  Therefore, in the program, we must redefine the operations <i>p</i>, <i>r</i>, and <i>l</i> from [5.4] accordingly with <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> p := w*s^9;, gap> r := w;</font>, and <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> l := w*s^5;</font>.  Another, similar situation obtains in the Sage Notebook &#8220;GAP&#8212;MTO.&#8221;<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> <i>S</i><sub>24</sub> is a sizeable group, of order 24! (<font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> Size(S_24); </font><font style="font-family:monospace; font-size:13px;" color="#0000FF">620448401733239439360000</font>).  Nevertheless, GAP is able to process the subsequent commands that incorporate it nearly instantaneously.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> The centralizer in <i>S</i><sub>24</sub> of <i>T/I</i>&#8217;s action on <i>K</i> consists of all permutations on [1 .. 24] that commute with every member of <i>T/I</i>.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> The minus operation (<font style="font-family:monospace; font-size:13px;" color="#FF0000">minus</font>), defined in the subsequent command, is in essence the Parallel exchange; it is an involution that sends <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ to <nobr><span style= 'letter-spacing:-1px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>- <font style="font-family:monospace; font-size:13px;" color="#0000FF">(1,13)</font>, D+ to D- <font style="font-family:monospace; font-size:13px;" color="#0000FF">(2,14)</font>, ..., C+ to C- <font style="font-family:monospace; font-size:13px;" color="#0000FF">(12,24)</font>, and vice versa.  The plus operation (<font style="font-family:monospace; font-size:13px;" color="#FF0000">plus</font>), then, is trivial, and is given here only to provide consistency in labeling with Hook&#8217;s (<a href="#hook_2002" id="citation_hook_2002_67e1575c5726e">2002</a>) notation.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> <a href="#clough_1998" id="citation_clough_1998_67e1575c5726f">Clough 1998</a> presents a group acting on consonant triads generated by a unit <i>Schritt</i> and an inversion, which he labels the &#8220;<i>S/I</i> group.&#8221;  Whereas the group does contain the twelve familiar <i>Schritts</i>, it does not contain all twelve inversions.  (Clearly, two inversions compose to form a transposition, not a <i>Schritt</i>.)  In the same vein, he describes an isomorphic &#8220;<i>T/W</i> group.&#8221;  <a href="#hook_2002" id="citation_hook_2002_67e1575c57271">Hook 2002</a> discusses these groups in the context of the <i>QTT</i> group.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> Our labeling of Kochavi&#8217;s (<a href="#kochavi_2002" id="citation_kochavi_2002_67e1575c57273">2002</a>) contextual inversions (<i>i</i><sub>215</sub>, <i>i</i><sub>216</sub>, ..., <i>i</i><sub>219</sub>) follows the numbering of Figures in his dissertation (Figures 2.15, 2.16, ..., 2.19, respectively) in which they are presented (and otherwise unlabeled).<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> In Table 4, the notation &#8220;<i>Dic</i><sub>6</sub>&#8221; refers to the dicyclic group of order 24 (= 4 &#8901; 6); &#8220;<i>Q</i><sub>8</sub>&#8221; to the quaternion group of order 8; and &#8220;<i>C</i><sub>3</sub> <img border="0" src="images/rnf.gif" width="14" height="14" align="bottom"> <i>C</i><sub>8</sub>&#8221; to the semidirect product of <i>C</i><sub>3</sub> by <i>C</i><sub>8</sub>.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> The output for the subsequent <font style="font-family:monospace; font-size:13px;" color="#FF0000">gap> IdGroup(TI);</font> command shows <font style="font-family:monospace; font-size:13px;" color="#0000FF">[ 24, 6 ]</font>, which tells us that <i>T/I</i> is isomorphic to the sixth group listed in GAP&#8217;s classification of the fifteen groups of order 24.  The Small Group Library is not installed for Sage; hence, the last seven commands presented here are not included in the Sage Notebook &#8220;GAP&#8212;MTO.&#8221;<br><a href="#FN29REF">Return to text</a></p><p><a name="FN30">30.</a> Fifteen groups of order 24 (up to isomorphism) exist, but seven of them do not possess an element of order 12, which is necessary if we want to model an operation such as transposition in these groups.<br><a href="#FN30REF">Return to text</a></p><p><a name="FN31">31.</a> <i>M</i>, in the context of <a href="#douthett_and_peck_2007" id="citation_douthett_and_peck_2007_67e1575c57275">Douthett and Peck 2007</a>, stands for &#8220;Mother Group.&#8221;  It is not to be confused with Morris&#8217;s (<a href="#morris_1982" id="citation_morris_1982_67e1575c57277">1982</a>) <i>M</i> operation.<br><a href="#FN31REF">Return to text</a></p><p><a name="FN32">32.</a> One may alternatively consult the theorem in &#167;3.8 of <a href="#hook_2002" id="citation_hook_2002_67e1575c57278">Hook 2002</a>.<br><a href="#FN32REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">A partial bibliography, including hundreds of published works that cite GAP, can be found at <a href="http://www.gap-system.org/Doc/Bib/gap-published.html"www.gap-system.org/Doc/Bib/gap-published.html/a>.</div><div id="fndiv2" class="flyoverdiv">One example of GAP&#8217;s use in a music-theoretical context is <a href="#peck_2005" id="citation_peck_2005_67e1575c5724b">Peck 2005</a>.</div><div id="fndiv3" class="flyoverdiv">The interested reader may also consult <a href="#dixon_and_mortimer_1996" id="citation_dixon_and_mortimer_1996_67e1575c57251">Dixon and Mortimer 1996</a> for more information.</div><div id="fndiv4" class="flyoverdiv">GAP does not use this color coding; it is used here for clarity of presentation.</div><div id="fndiv5" class="flyoverdiv">For GAP to read the command as it is given here, the program needs to be stored in the same directory from which GAP is launched.  For example, using the default installation for Windows, that directory is C:\ gap4r4\bin.</div><div id="fndiv6" class="flyoverdiv">Mathematicians refer to operations that music theorists normally call &#8220;transpositions&#8221; as &#8220;translations.&#8221;  Mathematically speaking, a translation moves every point the same distance in the same direction, whereas a transposition exchanges only two elements in a set, and holds all other elements invariant.</div><div id="fndiv7" class="flyoverdiv">GAP does, in fact, allow for modular arithmetic, but its inclusion here would add a level of complexity that is not necessary for our purposes.  See the Help manual under gap> ?modulo.</div><div id="fndiv8" class="flyoverdiv">The caret symbol &#8220;^&#8221; has several possible meanings in GAP, all relating to exponential notations.  Here, it is meant literally as an exponent (i.e., <i>t</i> squared).  It may also signify a function (see [4.3]), or a conjugation (see [4.15]).</div><div id="fndiv9" class="flyoverdiv">Note the use of parentheses in the second subsequent GAP command (&#8220;gap> (t^2)^-1;&#8221;).  They are necessary, as exponentiation is generally non-associative.</div><div id="fndiv10" class="flyoverdiv">Music theorists frequently incorporate the notation &#8220;<i>T/I</i>&#8221; for the usual transposition and inversion group.  This notation could be confusing to mathematicians, who might interpret it as a quotient (or factor) group, <i>T</i> mod <i>I</i>.  As the subgroup generated by <i>i</i> is not normalized by <i>T</i>, however, such a quotient is not possible.  For that reason, GAP renders an error if we attempt to label this group &#8220;T/I,&#8221; hence we use merely &#8220;TI&#8221; in GAP.</div><div id="fndiv11" class="flyoverdiv">For earlier accounts of the <i>m</i> operation, particularly in the context of serial theory, see <a href="#starr_and_morris_1974" id="citation_starr_and_morris_1974_67e1575c57253">Starr and Morris 1974</a> and <a href="#starr_and_morris_1977&#8211;78" id="citation_starr_and_morris_1977&#8211;78_67e1575c57257">1977&#8211;78</a>, and <a href="#starr_1978" id="citation_starr_1978_67e1575c57259">Starr 1978</a>.  For a later, fuller treatment, see <a href="#morris_1987" id="citation_morris_1987_67e1575c5725a">Morris 1987</a>.</div><div id="fndiv12" class="flyoverdiv">N.B.: When reading the accompanying program, &#8220;SampleGAPprogram.txt,&#8221; GAP may assign to <i>alpha</i> a different isomorphism of <i>TTO</i> to <i>Aut</i>(<i>T/I</i>) than the one shown in the output here: for instance, it may send <i>TTO</i> generators <i>t</i>, <i>i</i>, and <i>m</i> to hyper-operators <i>F</i>1,7, <i>F</i>11,5, and <i>F</i>5,8.  As a result, we provide alternate definitions in the sample program for hyper-<i>t</i> and hyper-<i>i</i> than those that appear below in [4.5] and [4.6]; namely, put gap> hyp_t := (t^7)^alpha; and gap> hyp_i := i^alpha*t^alpha.  (Under this particular mapping, the hyper-<i>m</i> operation in [4.12] does not require re-defining.)  The definitions that appear in the online Sage Notebook &#8220;GAP&#8212;MTO&#8221; are yet again slightly different.</div><div id="fndiv13" class="flyoverdiv">Our GAP representation of the <i>T/I</i> group may be generated by any <i>t</i> operator of order 12 (<i>t</i>, <i>t</i> 5, <i>t</i> 7, or <i>t</i> 11) and any <i>it n</i>.  Why GAP chooses here to model these automorphisms on generators <i>t</i> 5 and <i>it</i> 4 may seem arbitrary, but in fact has a basis in its programming beyond the scope of this tutorial.  Incidentally, GAP may choose generators other than <i>t</i> 5 and <i>it</i> 4 on different computers running precisely the same software, or when reading a program vs. a series of typed commands.  In these cases, we would need to redefine the hyper-<i>t</i>, <i>-i</i>, and <i>-m</i> operations in [4.5], [4.6], and [4.9] accordingly.</div><div id="fndiv14" class="flyoverdiv">In turn, Lambert&#8217;s (<a href="#lambert_2002" id="citation_lambert_2002_67e1575c5725c">2002</a>) analysis of op. 19, no. 6, takes Lewin&#8217;s (<a href="#lewin_1990" id="citation_lewin_1990_67e1575c5725e">1990</a>) analysis of three of the piece&#8217;s sonorities as its point of departure.</div><div id="fndiv15" class="flyoverdiv">Lambert (<a href="#lambert_2002" id="citation_lambert_2002_67e1575c57260">2002</a>) offers initially a different interpretation of the trichord labeled &#8220;d&#8221; in our Example 3, which he calls &#8220;(d).&#8221;  Subsequently, he offers a reinterpretation, which he labels &#8220;(d').&#8221;  As we incorporate the latter interpretation here, we retain its labeling.</div><div id="fndiv16" class="flyoverdiv">We can take for granted the existence of an inverse here, as the automorphisms of a group themselves form a group, and a group provides an inverse for each of its elements axiomatically.</div><div id="fndiv17" class="flyoverdiv">This extension to K-net theory appears in Appendix B of <a href="#lewin_1990" id="citation_lewin_1990_67e1575c57262">Lewin 1990</a>.  There, he uses his earlier notation for these automorphisms: hence, F5,0 for the hyper-<i>m</i> operation <i>m</i> we describe here; and <i>F</i>7,0 for hyper-<i>mi</i>, <i>mi</i>.</div><div id="fndiv18" class="flyoverdiv">Note that <a href="#klumpenhouwer_1998" id="citation_klumpenhouwer_1998_67e1575c57263">Klumpenhouwer 1998</a> incorporates square brackets [ ] for hyper-operators that obtain from the inner automorphism group (i.e., those which obtain under conjugation), in contrast to the angle brackets   <a href="#lewin_1994" id="citation_lewin_1994_67e1575c57265">Lewin 1994</a> uses for  hyper-operators that derive from the <i>Hyp</i>(<i>T/I</i>) group.</div><div id="fndiv19" class="flyoverdiv">Because the kernel is a normal subgroup (gap> IsNormal(HypTI,ker_beta); true), it does not matter whether we multiply on the left or the right in forming the cosets.</div><div id="fndiv20" class="flyoverdiv"><a href="#lewin_1987" id="citation_lewin_1987_67e1575c57267">Lewin 1987</a> contains the first major work in neo-Riemannian theory, although in this regard it draws on certain aspects of his earlier work (such as <a href="#lewin_1984" id="citation_lewin_1984_67e1575c57268">Lewin 1984</a>).  <a href="#cohn_1998" id="citation_cohn_1998_67e1575c57269">Cohn 1998</a> also offers an excellent introduction to the theory; indeed, the entire issue of <i>Journal of Music Theory</i> 42, no. 2 (<a href="#satyendra_1998" id="citation_satyendra_1998_67e1575c5726b">Satyendra 1998</a>) is devoted to neo-Riemannian topics.</div><div id="fndiv21" class="flyoverdiv">In reading the subsequent command, recall our earlier use of the integer 12 for pitch class C.  In addition, neo-Riemannian theory commonly incorporates the notation &#8220;+&#8221; for major triads and &#8220;-&#8221; for minor triads.  In GAP, we cannot use these symbols in variable names, as GAP considers them to be arithmetic operators.  Therefore, we use &#8220;M&#8221; for major (e.g., &#8220;CM&#8221; in the subsequent command is read &#8220;C major&#8221;).</div><div id="fndiv22" class="flyoverdiv">Similar to the situation in [4.3], fn. 12, GAP assigns a different mapping of <i>K</i> to [1 .. 24] when reading &#8220;SampleGAPprogram.txt.&#8221;  As a result, in the program we obtain a different ordering for the neo-Riemannian operations Schritt <i>s</i> and Wechsel <i>w</i> that appear below in [5.3].  Therefore, in the program, we must redefine the operations <i>p</i>, <i>r</i>, and <i>l</i> from [5.4] accordingly with gap> p := w*s^9;, gap> r := w;, and gap> l := w*s^5;.  Another, similar situation obtains in the Sage Notebook &#8220;GAP&#8212;MTO.&#8221;</div><div id="fndiv23" class="flyoverdiv"><i>S</i>24 is a sizeable group, of order 24! (gap> Size(S_24); 620448401733239439360000).  Nevertheless, GAP is able to process the subsequent commands that incorporate it nearly instantaneously.</div><div id="fndiv24" class="flyoverdiv">The centralizer in <i>S</i>24 of <i>T/I</i>&#8217;s action on <i>K</i> consists of all permutations on [1 .. 24] that commute with every member of <i>T/I</i>.</div><div id="fndiv25" class="flyoverdiv">The minus operation (minus), defined in the subsequent command, is in essence the Parallel exchange; it is an involution that sends C&#x266f;+ to C&#x266f;- (1,13), D+ to D- (2,14), ..., C+ to C- (12,24), and vice versa.  The plus operation (plus), then, is trivial, and is given here only to provide consistency in labeling with Hook&#8217;s (<a href="#hook_2002" id="citation_hook_2002_67e1575c5726e">2002</a>) notation.</div><div id="fndiv26" class="flyoverdiv"><a href="#clough_1998" id="citation_clough_1998_67e1575c5726f">Clough 1998</a> presents a group acting on consonant triads generated by a unit <i>Schritt</i> and an inversion, which he labels the &#8220;<i>S/I</i> group.&#8221;  Whereas the group does contain the twelve familiar <i>Schritts</i>, it does not contain all twelve inversions.  (Clearly, two inversions compose to form a transposition, not a <i>Schritt</i>.)  In the same vein, he describes an isomorphic &#8220;<i>T/W</i> group.&#8221;  <a href="#hook_2002" id="citation_hook_2002_67e1575c57271">Hook 2002</a> discusses these groups in the context of the <i>QTT</i> group.</div><div id="fndiv27" class="flyoverdiv">Our labeling of Kochavi&#8217;s (<a href="#kochavi_2002" id="citation_kochavi_2002_67e1575c57273">2002</a>) contextual inversions (<i>i</i>215, <i>i</i>216, ..., <i>i</i>219) follows the numbering of Figures in his dissertation (Figures 2.15, 2.16, ..., 2.19, respectively) in which they are presented (and otherwise unlabeled).</div><div id="fndiv28" class="flyoverdiv">In Table 4, the notation &#8220;<i>Dic</i>6&#8221; refers to the dicyclic group of order 24 (= 4 &#8901; 6); &#8220;<i>Q</i>8&#8221; to the quaternion group of order 8; and &#8220;<i>C</i>3  <i>C</i>8&#8221; to the semidirect product of <i>C</i>3 by <i>C</i>8.</div><div id="fndiv29" class="flyoverdiv">The output for the subsequent gap> IdGroup(TI); command shows [ 24, 6 ], which tells us that <i>T/I</i> is isomorphic to the sixth group listed in GAP&#8217;s classification of the fifteen groups of order 24.  The Small Group Library is not installed for Sage; hence, the last seven commands presented here are not included in the Sage Notebook &#8220;GAP&#8212;MTO.&#8221;</div><div id="fndiv30" class="flyoverdiv">Fifteen groups of order 24 (up to isomorphism) exist, but seven of them do not possess an element of order 12, which is necessary if we want to model an operation such as transposition in these groups.</div><div id="fndiv31" class="flyoverdiv"><i>M</i>, in the context of <a href="#douthett_and_peck_2007" id="citation_douthett_and_peck_2007_67e1575c57275">Douthett and Peck 2007</a>, stands for &#8220;Mother Group.&#8221;  It is not to be confused with Morris&#8217;s (<a href="#morris_1982" id="citation_morris_1982_67e1575c57277">1982</a>) <i>M</i> operation.</div><div id="fndiv32" class="flyoverdiv">One may alternatively consult the theorem in &#167;3.8 of <a href="#hook_2002" id="citation_hook_2002_67e1575c57278">Hook 2002</a>.</div>   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	<!-------------------------------- FOOTER --------------------------------------------><hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2011 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Brent Yorgason, Managing Editor  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="6813073"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="86066cc6"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/6813073/0/86066cc6/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

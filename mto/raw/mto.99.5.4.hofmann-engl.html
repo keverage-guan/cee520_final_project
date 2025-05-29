@@ -1,0 +1,680 @@
+﻿ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 5.4: Hofmann-Engl, Review of Melodic Similarity: Concepts, Procedures, and
+Applications</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of W.B. Hewlett & E. Selfridge-Field, eds., <i>Melodic Similarity: Concepts, Procedures, and
+Applications</i> <br>(Cambridge, Massachusetts: MIT Press, 1999)">
+
+    <meta name="citation_author" content="Hofmann-Engl, Ludger">
+      
+
+<meta name="citation_publication_date" content="1999/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="5">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of W.B. Hewlett & E. Selfridge-Field, eds., <i>Melodic Similarity: Concepts, Procedures, and
+Applications</i> <br>(Cambridge, Massachusetts: MIT Press, 1999)
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.99.5.4/mto.99.5.4.hofmann-engl.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Ludger Hofmann-Engl</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: melody, analysis, similarity</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.99.5.4/mto.99.5.4.hofmann-engl.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 5, Number 4, September 1999 <br> Copyright &#0169; 1999 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Volume 11 of <i>Computing in Musicology</i> comprises 13
+contributions by 18 authors. While the spectrum of topics is
+broad, reaching from melodic similarity in music-copyright
+infringement suits (C. Cronin) to web-based melodic search tools
+(A. Kornstadt), a clear emphasis is given to the conceptional
+approach to melodic similarity&nbsp;</p>
+
+<p>
+
+[2] The main article within the group of essays on <i>Concepts and Procedures</i> is written by E. Selfridge-Field and focuses on data
+representations of music and search strategies for melodic
+material as stored in data banks. In her contribution,
+Selfridge-Field remarks that the representation of musical data
+crucially influences the choice of the search strategies and the
+results of data base searches. She suggests classifying musical
+components into three classes: (a) &ldquo;representable components&rdquo;
+such as pitch and duration, (b) &ldquo;derivable components&rdquo; such as intervallic motion and accent and (c) &ldquo;non-derivable components&rdquo;
+such as articulation and dynamic indications. Melodies, for
+example, which are represented only in the form of pitch
+sequences may misidentify musical material as &ldquo;similar&rdquo; which
+might have been identified as being &ldquo;different&rdquo; had the rhythm
+been considered. Thus, as Selfridge-Field maintains, such data
+representations are often inadequate. Why, however, she
+classifies dynamics into the class of non-derivable components
+remains unclear to this reviewer, especially if we consider its
+highly developed notation in 20th century music. 20th-century
+avant-garde music seems frequently slighted as, for instance,
+when Selfridge-Field critiques the base-12 system (the
+representation of the chromatic scale by twelve values) as not
+being applicable to the &ldquo;conventions of written tonality.&rdquo;
+Inspired by music ethnologists (e.g. <a href="#seeger_1960" id="citation_seeger_1960_67dc9b9502d60">Seeger 1960</a>) and
+supported by the findings of music psychologists (e.g. <a href="#dowling_1971" id="citation_dowling_1971_67dc9b9502d64">Dowling 1971</a>), contour has often been regarded as a major factor in
+melodic similarity. Thus it does not surprise when
+Selfridge-Field confirms that contour is a &ldquo;common approach to
+melodic comparison.&rdquo; How melodic similarity&mdash;including rhythmic
+representation&mdash;might be implemented in an algorithm, however,
+remains an unanswered question. Thus neither a definitive working
+solution nor a definite approach is offered.&nbsp;</p>
+
+<p>
+
+[3] D. O. Maidin&rsquo;s article, &ldquo;A Geometrical Algorithm for Melodic
+Difference,&rdquo; offers a specific algorithm which is based on some
+interesting principles. First, O Maidin proposes to compare a
+given pair of melodies by forming the difference between the
+pitch sequences of both melodies. For instance, melody A given as
+C&ndash;E&ndash;G&ndash;E and melody B given as E&ndash;D&ndash;E&ndash;G will produce the
+differences in semitones: C &ndash; E = 4, E &ndash; D = 2, G &ndash; E = 3 and E &ndash;
+G = 3. Overall we obtain the sum of the differences of 12
+semitones. Further, O Maidin maintains that notes of longer
+durations will have to be weighted more than notes of shorter
+durations. This seems a plausible assumption. Had we transposed
+the first melody up by a fifth, we would have obtained: g&ndash;b&ndash;d&ndash;b.
+Comparing this with the second melody, we obtained the overall
+difference of 26 semitones. Thus, the proposed algorithm is
+transpositionally sensitive. Although this is in accordance with
+experimental findings by R. Egmond, D. Povel &amp; E. Maris (1996), O
+Maidin seems uncomfortable with this aspect of the algorithm. He
+suggests the following procedure for the calculation of the pitch
+difference between the melodies A and B: (a) transpose melody B
+into various keys, (b) calculate the pitch differences between
+these various transpositions of melody B and the melody A and (c)
+determine which transposition of B yields the minimal pitch
+difference. This is a tedious procedure which could have been
+avoided by calculating the differences between the intervals
+rather than between the pitches. In fact L. Hofmann-Engl &amp;
+R. Parncutt (<a href="#hofmann-engl_and_parncutt_1998" id="citation_hofmann-engl_and_parncutt_1998_67dc9b9502d68">1998</a>) found in two experiments that a model based on
+interval difference is a major predictor for melodic similarity
+(r > 0.8, p &lt; 0.01).&nbsp;</p>
+
+<p>
+
+[4] Admittedly, experimental investigations into melodic
+similarity are still scarce. This might explain why neither the
+two articles reviewed above nor the other four contributions in
+the section on &ldquo;Concepts and Procedures&rdquo; endeavor to approach the
+issue from a more cognitive point of view. However, there seems
+altogether a certain amount of confusion prevailing over the
+issue of melodic similarity. This becomes apparent, when for
+instance T. Crawford, C. S. Iliopoulos, and R. Raman formulate in
+their article, &ldquo;String-Matching Techniques for Musical Similarity
+and Melodic Recognition,&rdquo; the objective that an important part of
+their research is directed towards a &ldquo;formal definition of
+musical similarity.&rdquo; This seems like yet another trial to develop
+a formal theory and then to hope for it to have some cognitive
+relevance (as happened with the &ldquo;generative theory of tonal
+music&rdquo; by F. Lerdahl &amp; R. Jackendoff (<a href="#lerdahl_and_jackendoff_1983" id="citation_lerdahl_and_jackendoff_1983_67dc9b9502d7d">1983</a>) and more recently
+E. Narmour&rsquo;s &ldquo;implication realization model&rdquo; (<a href="#narmour_1992" id="citation_narmour_1992_67dc9b9502d7f">1992</a>)).&nbsp;</p>
+
+<p>
+
+[5] L. A. Smith, R. J. McNab, and I. H. Witten approach the issue
+of melodic similarity in their essay, &ldquo;Sequence-Based Melodic
+Comparison: A Dynamic Programming Approach,&rdquo; from a
+transformational angle, based on the work of M. Dillon &amp; M.
+Hunter (<a href="#dillon_and_hunter_1991" id="citation_dillon_and_hunter_1991_67dc9b9502d81">1991</a>). The underlying hypothesis is: &ldquo;The more steps
+required to transform a given melody A into a melody B the
+smaller the similarity.&rdquo; Although interesting and possibly
+valuable, the reviewer is of the opinion that an experimental
+approach to the issue might be more promising. Useful examples of
+such an experimental approach can be found in the wider spectrum
+of cognitive psychology for instance within the works of S.
+Shepard (1987) and A. Tversky (<a href="#tversky_1977" id="citation_tversky_1977_67dc9b9502d83">1977</a>). Until there is more
+experimental evidence supporting a theoretical approach, it will
+remain purely speculative.&nbsp;</p>
+
+<p>
+
+[6] The issue of melodic similarity is considered from a more
+practical point in J. Howard&rsquo;s article, &ldquo;Strategies for Sorting
+Melodic Incipits.&rdquo; As he points out in his introduction, the
+collection of musical materials in libraries and the need for
+systematic classification pose direct questions. The most
+pressing question might be the attribution of pieces of unknown
+origin. Howard reports that while ten years ago there was still a
+trend to trace the origin of a source in order to determine
+authorship, there has recently been a shift towards comparing
+musical material directly. In a first attempt, the RISM database
+in Frankfurt was used to determine the origin of 144 unknown
+pieces by comparing pitch and interval profiles of melodic
+incipits. As this did not produce the desired results other
+factors were included (e.g., staccati, pauses). The results
+obtained confirmed that when several factors are included in a
+search, the search becomes far more effective. In a similar
+approach, Howard devised a series of search criteria. Although a
+search based on those criteria reproduced similar effects as had
+the team in Frankfurt, he also found that over-specification can
+be misleading, placing highly similar material into different
+classes. Howard concludes that search strategies have to be
+somewhat flexible and adaptable in order to be most effective. It
+also appears to the reviewer that more sophisticated statistical
+tools would enhance such search processes.&nbsp;</p>
+
+<p>
+
+[7] The concepts of musical &ldquo;signatures&rdquo; as referred to by D.
+Cope in his essay, &ldquo;Signatures and Earmarks: Computer Recognition
+of Patterns in Music,&rdquo; has been popular since J. S. Bach, who
+&ldquo;signed&rdquo; many of his compositions (the sequence <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>&ndash;A&ndash;C&ndash;B
+translates into German B&ndash;A&ndash;C&ndash;H). Cope proposes to broaden this
+concept of musical signature to any characteristic which is
+unique to a composer&rsquo;s style, referring to some examples of
+typical Mozartian cadences and to some excerpts of Chopin&rsquo;s
+Mazurkas. The question of what makes a specific style is as old
+as musicology itself. True, the given examples of Mozart are
+somewhat typical for his piano music, but they can also be found
+in compositions of other composers (e.g., Haydn and Clementi).
+Thus without some more detailed investigation, it seems difficult
+to say whether the quoted type of cadence is more typical for
+Mozart than, for instance, Clementi. The question remains: &ldquo;Who&rsquo;s
+signature really is it?&rdquo; Maybe more crucial is the question
+whether the style of a composer like Mozart or Chopin can be
+captured by referring to a signature. From a musicological point
+of view, we are tempted to say &ldquo;no.&rdquo; It seems a multiplicity of
+features creates Mozart&rsquo;s piano style including the extensive use
+of Alberti basses, chromaticisms, thin layered harmony (mostly
+within the understanding of the functional tonal system) and
+extensive use of the classic sonata form. Stanley&rsquo;s (<a href="#stanley_1983" id="citation_stanley_1983_67dc9b9502d86">1983</a>) entry
+in &ldquo;The New Grove&rdquo; might serve as a suitable starting point.
+Investigations of the kind proposed by Cope&rsquo;s conclusion will
+need further substantiation.&nbsp;</p>
+
+<p>
+
+[8] The essay, &ldquo;A Multi-scale Neural-Network Model for Learning
+and Reproducing Choral Variations,&rdquo; by D. Hornel is one of the
+three articles in the group on &ldquo;Tools and Applications.&rdquo; The
+underlying concept of his presentation is to test whether
+neural-networks will perform a compositional task better when the
+task is divided between two neural-networks. While one of the
+neural-networks is implemented to make decisions about the use of
+motivic material depending on the more global structure, the
+second neural-network is designed to decide on the exact pitches
+according to counterpoint rules and melodic coherence. The test
+case is the artificial composition of a melodic variation in the
+style of Pachelbel where quarter and half notes are replaced by a
+flowing line of sixteenth notes. After the initial training of
+this neural-network system by imputing examples of original
+Pachelbel excerpts, the system artificially composed several
+variations (two of them are given in the article). The results
+are impressive and seem to confirm that more complex
+neural-network systems, taking into account global structuring,
+are more likely to be successful. The composition composed by
+this system falls short, however, when compared to a typical
+Pachelbel variation. Several counterpoint rules are violated
+throughout both examples (e.g., improper resolution and
+preparation of dissonances). Additionally, much of the melodic
+line does not flow smoothly, which makes it hard to mistake these
+examples for compositions in Pachelbel&rsquo;s style. While the
+counterpoint violations can be avoided by algorithmic adaptation
+of the neural-network, the smoothness of the melodic line could
+be, as Hornel suggests, improved by using a third neural-network
+controlling the overall structure of motive distribution. The
+reviewer feels, however, that the application of neural-networks
+will be far more instructive if the network system is fed with
+different styles and used for the artificial composition of new
+works.&nbsp;</p>
+
+<p>
+
+[9] The concept of database search has been shown to provide
+useful information for the classification of musical material
+(e.g., <a href="#schlichte_1990" id="citation_schlichte_1990_67dc9b9502d88">Schlichte 1990</a>). Computer-aided music analysis might be
+just as useful, however, for the analysis of stylistic
+characteristics of individual composers. This is the main
+argument put forward by N. Nettheim in &ldquo;Melodic Pattern-Detection
+Using MuSearch in Schubert&rsquo;s &lsquo;Die sch&ouml;ne M&uuml;llerin&rsquo;.&rdquo; As the title
+suggests, Nettheim uses the song cycle, &ldquo;Die sch&ouml;ne M&uuml;llerin,&rdquo; by
+Schubert as an example. The melodic material, together with the
+text, was entered into a database. A text/melody search then can,
+for instance, list all data entries which contain the letter
+sequence &ldquo;lieb&rdquo; (love). Nettheim does not, however, draw any
+conclusions from his search results. Although the reviewer agrees
+with Nettheim that the use of databases could be a helpful tool
+for the analyst, he also feels that Nettheim&rsquo;s argument would
+have been much more convincing if he had shown that the
+text/melody search helped to reveal a new and interesting aspect
+of Schubert&rsquo;s music.&nbsp;</p>
+
+<p>
+
+[10] It certainly is true that a closer interdisciplinary
+cooperation between the various branches of musicology is still
+insufficiently explored. Ethnomusicology is no exception. Thus
+the article, &ldquo;Rhythmic Elements of Melodic Process in Nagauta
+Shamisen Music,&rdquo; by M. Yako could have been a valuable
+contribution to the publication. As it stands, however, Yako&rsquo;s
+article draws conclusions which seem little justified by the
+research details given in the text. Initially, Yako sets out to
+analyze ten nagauta compositions, based on transcriptions from
+1918. Although aware that traditional Japanese notation
+identifies finger positions and movements rather than pitches and
+durations, Yako seems to accept the accuracy of the
+transcriptions (transcriptions which usually ignore tempo
+deviations by grouping durations into simple duple or quadruple
+time). Following some vaguely described criteria Yako then
+isolates 700 rhythmical patterns within these 10 pieces. Although
+one of the tables in the text endeavors to list a selection of
+these patterns, we are given letters (representing patterns)
+without explanation what these letters stand for. Further, the
+letters given in the table do not coincide with the letters in
+the musical examples, thus rendering both the table and the
+examples useless. Finally, the conclusion that patterns overlap
+is trivial and more a consequence of allowing 700 patterns for
+the search and likely of no cognitive relevance. This is all the
+more disappointing as the understanding of time in Shamisen
+music, which might be described as breathing, is certainly worth
+a thorough investigation.&nbsp;</p>
+
+<p>
+
+[11] The section on &ldquo;human melodic judgment&rdquo; contains two
+articles. Disappointingly, neither article addresses cognitive
+questions, and any expectation to find an answer for the question
+&ldquo;What is melodic similarity?&rdquo; remains unfulfilled. Although E.
+Dahlig &amp; H. Schaffrath present an experiment in their essay, the
+standards of psychological experimentation are not met. The
+authors set out to investigate the effects of real folk songs in
+comparison to artificial folk songs. The stimuli of the real folk
+songs are authentic, but the construction of the artificial folk
+songs seems problematic, as they consist of phrases taken from
+original folk songs. The construction according to algorithmic
+strategies would have been more appropriate, for instance by
+using Markov chains (<a href="#cambouropoulos_1994" id="citation_cambouropoulos_1994_67dc9b9502d96">Cambouropoulos 1994</a>). The records of the
+participants of the experiment are also insufficient (for
+instance musical skill is simply measured by whether a
+participant plays an instrument or not). We are also not informed
+how many people participated in the experiment. The questionnaire
+itself gives the participant a three-point scale for &ldquo;pleasure&rdquo;
+and a five-point scale for &ldquo;authorship.&rdquo; The inclusion of other
+dimensions such as &ldquo;coherence&rdquo; and &ldquo;completion&rdquo; instead of
+&ldquo;authorship&rdquo; would have enabled the researchers to measure
+responses more accurately. Finally, in the result section we
+learn that subjects were from socially diverse groups. Groups of
+participants are listed as &ldquo;Hauptsch&uuml;ler&rdquo; (students classified by
+the German education system as unsuitable for regular secondary
+education and not, as claimed by the authors, students at the
+beginning of secondary education), statisticians,
+music-conservatory teachers, computer science students and
+others. Yet none of these groups form social groups per se and
+the formation of testable social groups would require much more
+detailed information about the participants. Finally, the
+evaluation as reported by the authors does not satisfy
+statistical requirements (e.g., correlations are stated without
+the value for &ldquo;r&rdquo; or with significance levels). The sum of all
+these deficiencies renders the text of questionable value.&nbsp;</p>
+
+<p>
+
+[12] C. Cornin&rsquo;s contribution, &ldquo;Concepts of Melodic Similarity in
+Music-Copyright Infringement Suits,&rdquo; is funny to read. It shows
+how courts struggle to prove the unprovable: That two melodic
+fragments which are highly similar are either truly the same or
+truly different. The fact that this quest is mostly driven by
+monetary interests can, as Cornin points out, produce highly
+controversial court decisions. Two on-line tools allow the
+Internet user to access a databank containing American/British,
+German, Chinese and Irish folk songs (<a href="http://www.nzdl.org/meldex">http://www.nzdl.org/meldex</a>), and
+a databank containing themes from compositions from the Baroque
+to the romantic period
+(<a href="http://musedata.stanford.edu/databases/themefinder">http://musedata.stanford.edu/databases/themefinder</a>).&nbsp;</p>
+
+<p>
+
+[13] Overall, the book is interesting and contains some new
+research. Nevertheless, some of the articles fail to approach the
+topic with methodologies sufficient for the considerable
+difficulties entailed by the subject matter. It also would have
+been beneficial to include at least one article dealing with
+cognitive aspects of melodic similarity.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Ludger Hofmann-Engl<br>
+	Keele Univerity (UK)<br><a href="mailto:hofmannengl@netscape.net">hofmannengl@netscape.net</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_cambouropoulos_1994" class="flyoverdiv">Cambouropoulos, E. 1994. &ldquo;Markov Chains As an Aid to Computer-assisted Composing.&rdquo;
+<i>Musical Praxis</i> 1: 41&ndash;52.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cambouropoulos_1994"></a>Cambouropoulos, E. 1994. &ldquo;Markov Chains As an Aid to Computer-assisted Composing.&rdquo;
+<i>Musical Praxis</i> 1: 41&ndash;52.</p><div id="citediv_dillon_and_hunter_1991" class="flyoverdiv">Dillon, M. &amp; Hunter, M. 1991. &ldquo;Automated Identification of Melodic Variants.&rdquo; In
+<i>Folk Music, Computers and the Humanities 16:</i> 107&ndash;117.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dillon_and_hunter_1991"></a>Dillon, M. &amp; Hunter, M. 1991. &ldquo;Automated Identification of Melodic Variants.&rdquo; In
+<i>Folk Music, Computers and the Humanities 16:</i> 107&ndash;117.</p><div id="citediv_dowling_1971" class="flyoverdiv">Dowling, J. W. 1971. &ldquo;Recognition of inversions of melodies and melodic contours.&rdquo;
+<i>Perception &amp; Psychophysics</i> 9: 348&ndash;349.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dowling_1971"></a>Dowling, J. W. 1971. &ldquo;Recognition of inversions of melodies and melodic contours.&rdquo;
+<i>Perception &amp; Psychophysics</i> 9: 348&ndash;349.</p><div id="citediv_hofmann-engl_and_parncutt_1998" class="flyoverdiv">Hofmann-Engl L. &amp; Parncutt R. 1998. &ldquo;Computational Modeling of Melodic Similarity Judgments: Two Experimetns on Isochronous
+Melodic Fragments.&rdquo; <a href="http://freespace.virgin.net/ludger.hofmann-engl/similarity.html" >http://freespace.virgin.net/ludger.hofmann-engl/similarity.html</a></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hofmann-engl_and_parncutt_1998"></a>Hofmann-Engl L. &amp; Parncutt R. 1998. &ldquo;Computational Modeling of Melodic Similarity Judgments: Two Experimetns on Isochronous
+Melodic Fragments.&rdquo; <a href="http://freespace.virgin.net/ludger.hofmann-engl/similarity.html" >http://freespace.virgin.net/ludger.hofmann-engl/similarity.html</a></p><div id="citediv_lerdahl_and_jackendoff_1983" class="flyoverdiv">Lerdahl, F. &amp; Jackendoff, R. 1983. <i>A Generative Theory of Tonal Music</i>.  Cambridge, Mass.: MIT Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lerdahl_and_jackendoff_1983"></a>Lerdahl, F. &amp; Jackendoff, R. 1983. <i>A Generative Theory of Tonal Music</i>.  Cambridge, Mass.: MIT Press.</p><div id="citediv_narmour_1992" class="flyoverdiv">Narmour, E. 1992. <i>The Analysis and Cognition of Melodic Complexity: The Implication-Realization
+Model</i>. Chicago: The University of Chicago Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="narmour_1992"></a>Narmour, E. 1992. <i>The Analysis and Cognition of Melodic Complexity: The Implication-Realization
+Model</i>. Chicago: The University of Chicago Press.</p><div id="citediv_schlichte_1990" class="flyoverdiv">Schlichte, J. 1990. &ldquo;Der automatische Vergleich von 83,243 Musikincipits aus der RISM-Datenbank:
+Ergebnisse&mdash;Nutzen&mdash;Perspektiven.&rdquo; <i>Fontes Artis Musicae</i> 37: 35&ndash;46.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="schlichte_1990"></a>Schlichte, J. 1990. &ldquo;Der automatische Vergleich von 83,243 Musikincipits aus der RISM-Datenbank:
+Ergebnisse&mdash;Nutzen&mdash;Perspektiven.&rdquo; <i>Fontes Artis Musicae</i> 37: 35&ndash;46.</p><div id="citediv_seeger_1960" class="flyoverdiv">Seeger, C. 1960. &ldquo;On the Moods of a Musical Logic.&rdquo; <i>Journal of the American Musicological
+Society</i> 13: 224&ndash;261.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="seeger_1960"></a>Seeger, C. 1960. &ldquo;On the Moods of a Musical Logic.&rdquo; <i>Journal of the American Musicological
+Society</i> 13: 224&ndash;261.</p><div id="citediv_shephard_1987" class="flyoverdiv">Shephard, R. N. 1987. &ldquo;Toward a Universal Law of Generalization of Psychological Science.&rdquo;
+<i>Science</i> 237: 1317&ndash;1323.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="shephard_1987"></a>Shephard, R. N. 1987. &ldquo;Toward a Universal Law of Generalization of Psychological Science.&rdquo;
+<i>Science</i> 237: 1317&ndash;1323.</p><div id="citediv_stanley_1983" class="flyoverdiv">Stanley, S. 1983. <i>The New Grove Mozart</i>. New York: W.W. Norton &amp; Co.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stanley_1983"></a>Stanley, S. 1983. <i>The New Grove Mozart</i>. New York: W.W. Norton &amp; Co.</p><div id="citediv_tversky_1977" class="flyoverdiv">Tversky, A. 1977. &ldquo;Features of Similarity.&rdquo; <i>Psychological Review</i> 84: 327&ndash;352.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tversky_1977"></a>Tversky, A. 1977. &ldquo;Features of Similarity.&rdquo; <i>Psychological Review</i> 84: 327&ndash;352.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1999 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

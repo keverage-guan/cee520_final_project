@@ -1,0 +1,723 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 1.3: Johnson, Computer Presentation of Musical Research</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="The Computer Presentation of Musical Research: A Case Study">
+
+    <meta name="citation_author" content="Johnson, Timothy A.">
+      
+
+<meta name="citation_publication_date" content="1995/05/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="1">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">The Computer Presentation of Musical Research: A Case Study
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.95.1.3/mto.95.1.3.johnson.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Timothy A. Johnson</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: HyperCard, CD-ROM, John Adams, computer-assisted instruction</font></p><p><font size='4'>ABSTRACT: The traditional format for the presentation of musical
+research, the journal article, makes referencing musical passages less
+direct than ideally desired.  CD-ROM technology provides a means for
+the presentation of written comments and analytical sketches
+simultaneously with a recorded performance of the corresponding music.
+This article describes a computer project that uses CD-ROM technology
+to bridge the gap between analytical or theoretical comments and the
+sound of musical passages.  The main goals of the article are to
+encourage the development of and provide guidance for similar
+projects.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.95.1.3/mto.95.1.3.johnson.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 1, Number 3, May 1995 <br> Copyright &#0169; 1995 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] The traditional format for the formal presentation of musical
+research, the journal article, makes referencing musical passages less
+direct than ideally desired.  Although much theoretical and analytical
+work primarily focuses on the musical sounds themselves, scholarly
+views and explanations usually are accompanied only by cryptic
+references to these sounds in the form of written musical examples and
+references to scores by measure numbers.  The lack of ready access to
+the sounds under discussion often makes the theoretical and analytical
+concepts presented difficult, if not impossible, to grasp fully.
+Despite the high level of ability among musical scholars in producing
+imagined aural recreations of such passages or in remembering past
+performances, many readers do not have the ability to conceive the
+sounds implied by unfamiliar musical examples precisely or will not
+take the time and trouble to obtain a score and recording of the works
+being discussed.  And even those with exceptional score-reading
+abilities or memories likely would benefit from hearing a performance
+of the passages discussed.  After all, sounding music&mdash;not music
+sounding in our heads&mdash;is what led most of us to devote our lives to
+its study (even if music sounding in our heads is what keeps us
+devoted).</p>
+<p>[2] CD-ROM technology provides a means for the presentation of written
+comments and analytical sketches simultaneously with a recorded
+performance of the corresponding musical passages.  The compact disks
+may be accessed with precision, accurate to a 75th of a second.  Using
+a programming software package such as HyperCard, an author may create
+links to immediately bring the reader/listener from analytical texts
+or graphics directly to the relevant passage on a compact disk.  Thus,
+the musical sounds are readily available, eliminating the problems
+associated with providing only written references to the music.</p>
+<p>[3] In this article I will describe in detail a computer project that
+uses CD-ROM technology to bridge the gap between analytical or
+theoretical comments and the sound of musical passages.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> First I
+will introduce some of the basic aspects of the musical theories
+presented in the program [section 4] and present some of the principal
+advantages of the use of this technology for the presentation of
+musical research [sections 5&ndash;6].  A detailed description of the
+computer program follows [sections 7&ndash;15].  Next I discuss the
+development effort required and relate some of the problems
+encountered in bringing the project to completion [sections 16&ndash;20].
+Finally, an exploration of some pedagogical implications of the
+technology closes the article [sections 21&ndash;24].  The main goals of
+this article are to encourage the development of similar projects by
+outlining the motivation for and benefits of using this technology and
+to provide guidance to those who choose to undertake such projects
+through example and by identifying some potential pitfalls.  Although
+a number of more polished commercial CD-ROM products dealing with
+similar analytical issues have appeared, the project described in this
+article represents a more informal model of the use of this
+technology, in which someone with little experience may develop a
+useful (though certainly less thorough) program.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> In addition to
+providing a detailed description of the computer project in this
+article, the computer program itself may be downloaded (see list of
+accompanying files above) for exploration by readers of this journal
+who have access to a Macintosh computer, preferably with a CD-ROM and
+the suitable compact disks.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Although CD-ROM is an essential
+component of the project and the primary concerns discussed in this
+article, the computer program may be examined without access to a
+CD-ROM, though unfortunately no music will be played.</p>
+
+<p>[4] This computer program, prepared using HyperCard for the Macintosh,
+presents analytical and theoretical comments linked to musical
+sketches and compact disk recordings of passages from John Adams&rsquo;s
+music.  The theory presented in the program identifies the seven chord
+successions used in passages that repeatedly alternate between two
+chords.  The seven chord successions correspond to two more general
+procedures, called operations.  These operations, taken singly or in
+combination, stipulate relationships between two chords based on
+either the circle of thirds, alternating between major and minor
+thirds, or on notes moving by half step.  The computer program
+describes and displays each of the seven typical successions, and
+links these theoretical explanations to analytical sketches and
+recordings of the corresponding musical passages from a variety of
+Adams&rsquo;s pieces.  In addition, a more extensive example from the first
+scene of the opera, <i>Nixon in China</i>, suggests that these successions
+connect different passages by providing recognizable chord root and
+quality relationships.</p>
+<p>[5] The interactive format of this program allows users to explore the
+ideas presented at their own pace and in their own way&mdash;spending more
+time to examine certain areas or to hear additional musical examples
+while skipping over areas of less interest.  This format seems
+particularly appropriate for the presentation of theoretical or
+analytical material, since many ideas require explanation from a
+variety of approaches and in reference to multiple examples, while
+other ideas may be immediately grasped with little explanation or
+demonstration.  Furthermore, the exploration of the theoretical and
+analytical ideas may be focused according to each user&rsquo;s own interests
+and background.</p>
+<p>[6] In addition to providing direct links to precise musical passages
+on compact disks and allowing individualized interactive access, the
+HyperCard platform also facilitates the production of animated
+sequences that can illustrate complicated theoretical concepts with
+ease and with little textual commentary.  Thus, instead of describing
+how a collection of notes may be manipulated to produce a related
+collection, the manipulation procedure may be shown as a step-by-step
+process unfolding upon the screen.  Even familiar concepts such as
+inversional symmetry may be shown clearly and succinctly by gradually
+inverting a collection of notes to yield the same collection through
+an animated process.  Another advantage of CD-ROM technology is the
+capability of highlighting specific locations in an analytical sketch
+at the same time as the corresponding music plays.  Consequently, the
+correlation between specific analytical symbols and the parallel
+location in the music are immediately apparent without reference to
+location cues such as measure number or section.  Because of this
+coordination, even an uninitiated student of music theory cannot fail
+to grasp the relationship between elements of the analytical sketches
+and the relevant musical passages.</p>
+<p>[7] The following detailed description of the key features of the
+computer program (sections 7&ndash;15) will provide an account of the
+program to readers without access to a Macintosh and will offer
+commentary on the essential aspects of the program.  In addition to
+their descriptive purpose, these remarks are intended to serve as a
+guide for the development of similar projects by identifying potential
+problems and suggesting possible solutions.  Those who have the
+facilities to examine the program may wish to read this section while
+observing the relevant screens in the program, skimming over the
+descriptive material in this part of the essay and focusing on the
+commentary.</p>
+<p>[8] The title page, in addition to providing descriptive information
+about the program and its developer, invites the unassisted user to
+try the software program.  The instruction, &ldquo;click the mouse anywhere
+to begin,&rdquo; indicates the only knowledge necessary to get started&mdash;the
+recognition of a mouse and the initiative to press the button.  After
+several informational screens and an opportunity to hear a sample from
+Adams&rsquo;s music, another introductory screen attempts to alleviate fears
+of computer novices through humor while clearly providing necessary
+information to more experienced users.  The technologically aware user
+is instructed to click the mouse in a button to select the level of
+help, while the novice is advised to &ldquo;click the mouse anywhere else if
+computers scare you!&rdquo;  Three levels of help are offered, ranging from
+no-help to virtual hand-holding, to provide flexibility for the
+different backgrounds of potential users.</p>
+<p>[9] The importance of getting users started and providing sufficient
+help cannot be overestimated in developing interactive programs.
+Unless the first screen is sufficiently inviting and uncluttered, many
+potential users may stare blankly at the screen hoping someone else
+will come along and demonstrate the program.  The help provided for
+those who venture into the hyperspace created in the program is even
+more essential, since furnishing too much help will bore and annoy
+sophisticated users (which, judging by the recent exuberant activity
+on the music theory list, are becoming more and more common among
+music theorists), and too little help will leave many users confused
+and unable to continue.  Instructions on the use of the software that
+are provided should be simple and gradual, and opportunities must be
+provided for the user to try the maneuvers necessary to run the
+program, accompanied by descriptive guidance.</p>
+<p>[10] The main menu screen serves as a home base for the user and
+supplies an outline of the entire program.  However, unlike the table
+of contents in a book, clicking the mouse on any particular entry in
+the outline provides immediate access to that section of the program.
+Each button on the main menu screen provides access to different areas
+in the program, and all screens in the program provide a possible
+direct link back to the main menu.  In this program, the seven typical
+chord successions are listed in the right column of buttons and are
+connected via lines to the buttons containing the corresponding
+operations listed in the left column.  An overview button heads the
+list, centered at the top of the screen, and a button linked to a list
+of musical examples and the quit button appear centered at the bottom
+of the screen.  The main menu functions as a familiar location from
+which to explore the entire program.  Whenever the user becomes
+disoriented, a click of the mouse on any of the &ldquo;return to main menu&rdquo;
+buttons produces this recognizable screen from which a new course of
+exploration may be contemplated.</p>
+<p>[11] Choosing &ldquo;Overview&rdquo; from the main menu reveals background
+information about the theory as well as essential aspects of how the
+main menu is constructed.  Relationships between the operations and
+the chord successions emerge graphically while theoretical commentary
+on some crucial aspects of the theory appears in text boxes.  The
+overview, in addition to providing a brief synopsis of the musical
+theory, aids the user in understanding the construction of the program
+and suggests possible areas to explore.</p>
+<p>[12] Choosing one of the operations from the main menu provides a
+detailed description of that operation and its connection to the
+corresponding typical chord successions.  Similarly, choosing any of
+the chord succession buttons from the main menu, in addition to
+showing its link to an operation, produces a graphical representation
+of the abstract idea and supplies a link to some musical examples that
+illustrate the theoretical device.  For each typical succession, the
+user may choose to examine and hear any of the examples listed on the
+buttons in the center of the screen or may choose to return to the
+main menu or repeat the graphic portrayal of the chord succession.
+Choosing one of the musical examples reveals a screen that clearly
+displays the title and measure numbers of the selected passage and the
+theoretical construct under investigation at the top of the screen.
+The main portion of the screen is devoted to a sketch of the harmonic
+content of the passage.  And the bottom of the screen provides an
+opportunity to learn about the sketch technique used in the project,
+displays the duration of the example, and gives the option of playing
+the example or exiting to the previous screen.  A box highlighted in
+reverse video, indicating the section of the sketch being played,
+moves through the sketch as the recording is heard.</p>
+<p>[13] Check marks appear next to all example buttons after the
+corresponding example has been examined and heard.  This signal allows
+the user to keep track of which examples have been explored and which
+remain, though these place indicators do not prevent users from
+returning to any of the examples for further study or replays.
+Similar check marks on the main menu help the user to keep tabs on
+progress on a grander scale.</p>
+<p>[14] The master list of musical examples, comprised of working
+buttons, provides alternative access to each of the examples in the
+program.  Thus, users may choose to approach the theoretical and
+analytical information through the operations or chord-succession
+types listed on the main menu, as described above, or they may explore
+the examples according to individual piece titles and measure numbers.
+The check marks indicating progress appear on this screen even if the
+example was entered from the chord-succession screens.  A
+Discography/Bibliography, presented using the analogy of index cards,
+gives the usual information a familiar feel despite the unfamiliar
+technological mechanism.  A user may move through the entries in the
+bibliography by using the arrow buttons at the bottom of the screen or
+by &ldquo;thumbing&rdquo; through the index cards by pointing to the top right
+corner of the cards and clicking with the mouse.</p>
+<p>[15] Whereas most of the examples in this program are brief excerpts
+from a number of different pieces, a more comprehensive view of the
+first scene of <i>Nixon in China</i> appears as a separate example.
+Instead of a graphical representation of the various passages, this
+extended example simply lists the many typical chord successions and
+their associated chords that appear in repeated alternation in the
+scene.  The entire scene may be played while tracking the various
+typical successions as shown by a highlighted box, or individual
+passages may be played by clicking on the various selections in the
+list.  This example serves as a summary, where the typical chord
+successions may be considered in a broader context.</p>
+<p>[16] This profile of the computer program and its essential
+theoretical components identifies the key features of the project.
+Although many aspects described above are unique to this project, the
+general concepts are applicable to other future projects.  Offering an
+inviting initial screen, providing appropriate help, linking all areas
+of the program to a central screen, and indicating progress through
+the program are all essential components of successful interactive
+computer programs.  In addition, providing effective metaphors for
+familiar concepts, such as the bibliographic index cards described
+above, helps the user to become acclimated to the program more
+quickly.</p>
+<p>[17] The development of this project required a rather substantial
+initial investment of time and effort.  Developing additional
+projects, however, would take far less time since familiarity with the
+software and with design strategies would accelerate the process
+considerably.  This project took approximately two and a half months
+of full-time work to complete&mdash;beginning with <i>no</i> knowledge of
+HyperCard or CD-ROM technology, almost no Macintosh experience, but
+considerable experience working with IBM-compatible computers.
+Included in this time period was a four-day music-technology workshop
+at the University of North Dakota.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> After the workshop, continual
+reference to a valuable resource by Daniel Goodman,<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> and
+considerable trial and error guided the advancement of this project.
+In the final stages the Academic Computing Staff at Mount Holyoke
+College provided invaluable assistance.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+
+<p>[18] The development of this project required a Macintosh Computer
+with a CD-ROM drive, headphones or speakers with an amplifier, a full
+authoring version of HyperCard, a CD sound-driver, Voyager Audio
+Stack, and compact disks of the music under investigation.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> The
+project initially cost approximately $1170 ($750, music-technology
+workshop including travel; $50, books; $120, compact disk recordings;
+$75, CD-Caddies; $150, Voyager Audio Stack software; $25, audio
+wiring), not including computer and CD-ROM hardware.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Completing
+additional projects, however, would require only the cost of the
+compact disk recordings.</p>
+
+<p>[19] This program was initially presented as a &ldquo;poster&rdquo; at the Annual
+Meeting of the Society for Music Theory, Kansas City, 1992.  A major
+obstacle in presenting this project at a national conference was
+transporting computer equipment to the site.  Although a laptop would
+have be ideal for this application, test runs on a Powerbook revealed
+a &ldquo;bug&rdquo; in Powerbooks making their use problematic and causing
+substantial levels of stress for the developer (the computer would
+&ldquo;freeze&rdquo; during relatively lengthy animated processes since the
+keyboard was not in use).  Other problems involved the disparate
+speeds at which the animated sequences ran on different computers,
+negating the effects of working out precise timing for certain
+animated processes.  This timing problem has become more of a factor
+as computers constantly increase in speed; therefore, the program has
+been revised to rely on clock time rather than the computer&rsquo;s internal
+processor speed.  Fortunately, none of the problems encountered were
+insurmountable, and the presentation took place without incident.</p>
+<p>[20] Another important consideration in the development of this
+project was the desire to discuss pieces appearing on different
+compact disks.  Since automatic CD-ROM changers are currently rare and
+prohibitively expensive, users of this program must frequently change
+from one compact disk to another&mdash;an awkward and somewhat confusing
+process.  Placing all pieces on a single compact disk would be ideal
+but would require either permission from disparate recording companies
+or new recordings of the pieces under discussion&mdash;both of which would
+be too time-consuming and expensive for non-commercial projects such
+as this model.  The ability to utilize standard, existing compact
+disks is one of the most compelling features of this technology,
+making its wide use among music theorists imaginable and making many
+pedagogical applications feasible, as discussed below.</p>
+<p>[21] The model described in this case study, though designed as a
+vehicle for the presentation of musical research, easily may be
+adapted for use with students.  This project has a variety of
+instructional implications including interactive programs for students
+to explore individually (similar to the project described in this
+article), courseware for classroom presentations, and computer
+projects for students to prepare on their own.</p>
+<p>[22] Software may be developed for students to use at their own pace
+that would directly link sound materials with text and graphics.  The
+interactive nature of the software would engage the student in a
+rather different way than traditional assignments, since the student
+would have more control over her or his learning pace and sequence.
+Furthermore, many students, when pressed for time, often seek to
+streamline their studies by ignoring the audio components of
+assignments, choosing instead to rely solely upon the written
+representation.  The development of this software would virtually
+eliminate the potential for students to listen to the assigned aural
+material at a different time than when they studied the corresponding
+graphical images and text or for students to ignore the aural material
+altogether.  In addition, such programs would assure the instructor
+that students will at least have access to all of the course materials
+at the same time.  Furthermore, the use of an interactive format
+allows students of widely divergent backgrounds and interests to be
+actively engaged in their own education.  The students choose which
+aspects of the material to study first and in what order to proceed.
+When a particular aspect of the material sparks their interest, they
+are free to explore it in detail before returning to more general
+information.</p>
+<p>[23] Creating interactive programs may be the most compelling
+application of the material presented in this case study; however,
+course material may be developed quickly by instructors that would
+give them immediate access to specific locations on any compact
+disk&mdash;providing more class time for discussion rather than just
+searching for the proper track and time segment.  Sound examples may
+be further enhanced in a classroom presentation by linking the
+examples to simple graphical images scanned from any source or created
+by the instructor using the simple drawing tools provided with
+HyperCard.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> The expandable nature of HyperCard allows classroom
+materials to be assembled gradually from year to year, spreading the
+preparation time over a number of years.  The coordination of
+graphical images with sounds further improves the quality of classroom
+presentations; instead of hastily drawing examples on a blackboard, a
+copy of the original image may be projected on a screen at precisely
+the right moment.</p>
+
+<p>[24] A third potential instructional application for this model is for
+students to design their own software programs.  Instead of a term
+paper with written examples representing sounds pasted into the text,
+the students may link their ideas to the actual sounds of the music
+discussed.  This method of presentation would give students access to
+sounds, graphics, text, and animation to describe their research
+results.  This application of the technology would allow students with
+different abilities in expression to clearly present their ideas.
+Furthermore, more creative students would have an essential outlet for
+their creativity in courses that traditionally provide few such
+opportunities.  In addition, in analytical assignments, students would
+be forced to grapple with the actual sounds they are discussing rather
+than taking them for granted from written representations, since at
+times some students complete their analytical projects without ever
+hearing the sounds implied by the scores provided for them, as
+mentioned above in connection with interactive programs.  They simply
+apply the rules and conventions they have learned, ignoring the effect
+of the music in their analyses, and consequently miss the most
+compelling aspects of pieces by focusing instead on the mundane.</p>
+<p>[25] In summary this article has shown some of the advantages of
+developing interactive computer programs with CD-ROM, has described
+the development of one such project, and has discussed some
+pedagogical implications.  This technology has a number of possible
+uses ranging from the formal presentation of musical research to a
+variety of pedagogical applications.  Although developing similar
+projects requires considerable time and effort at first, the resulting
+coordination between theoretical/analytical ideas and the music upon
+which they are based suggests that this technology has the potential
+to surpass many traditional methods for the presentation of musical
+research.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Timothy A. Johnson<br>
+	Mount Holyoke College<br>Department of Music<br>South Hadley, MA 01075<br><a href="mailto:tjohnson@mhc.mtholyoke.edu">tjohnson@mhc.mtholyoke.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> An earlier version of this case study was supported by the Mount Holyoke College Technology Seminar, sponsored by a grant from the Pew Charitable Trusts.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Some excellent commercial CD-ROM software products include: Daniel Jacobson and Timothy Koozin, <i>The Norton CD-ROM Masterworks</i>, Vol.  1 (New York: W. W. Norton and Company, forthcoming in 1995); Daniel Jacobson and Timothy Koozin, <i>CD-ROM Listening Guides for The Enjoyment of Music, 7th ed. by Joseph Machlis and Kristine Forney</i> (New York: W. W. Norton and Company, 1995); William Renwick and David Walker, <i>CD-BRAHMS</i> (Hamilton, Ontario: McMaster University, 1994); Robert Winter, <i>Anton Dvorak, Symphony No. 9 in E minor: From the New World</i> (Irvington, N.Y.: Voyager, 1994); Robert Winter, <i>Igor Stravinsky, The Rite of Spring</i> (Santa Monica, Calif.: Voyager, 1992); and Robert Winter, <i>Ludwig van Beethoven, Symphony No. 9</i> (Santa Monica, Calif.: Voyager, 1989).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> The following compact disks may be used with this program: John Adams, <i>The Chairman Dances</i>, San Francisco Symphony, Edo de Waart, cond. (Elektra/Nonesuch 9 79144&ndash;2); Adams, <i>Grand Pianola Music</i>, and Steve Reich, <i>Eight Lines</i> and <i>Vermont Counterpoint</i>, Solisti New York, Ransom Wilson, cond. (EMI CDC-7 47331 2); Adams, <i>Harmonielehre</i>, San Francisco Symphony, Edo de Waart, cond. (Elektra/Nonesuch 79115&ndash;2); Adams, <i>Harmonium</i>, San Francisco Symphony Orchestra and Chorus, Edo de Waart, cond.  (ECM 1277); Adams, <i>Nixon in China</i>, Orchestra of St. Luke&rsquo;s, Edo de Waart, cond. (Elektra/Nonesuch 9 79177&ndash;2); <i>American Piano Music of Our Time</i>, Ursula Oppens, piano (Music &amp; Arts CD 604).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Although there are a number of fine workshops on HyperCard and CD-ROM, I chose this one for the opportunity to work with Tim Koozin and Dan Jacobson, a music theorist and a musicologist who both have had substantial experience in developing applications similar to this program.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> The Complete HyperCard 2.2 Handbook, 4th ed. (New York: Random House Electronic Publishing, 1993).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> I especially would like to thank Jurgen Botz, Vijay Kumar, and Kevin Prime.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Similar projects may be produced using an IBM-compatible computer and a comparable software product to HyperCard such as Toolbook.  For Macintosh computers a <i>full</i> version of HyperCard must be procured since, although Macintoshes are customarily shipped with HyperCard, a full authoring version is not always supplied.  A CD sound-driver is software that allows CD-ROM to be used for sound production rather than just data storage, the Voyager CD AudioStack is a software program for the Macintosh that facilitates access to compact disks, and the compact disks used for this application are standard commercial CD recordings.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> The developmentof this project was supported by a faculty research grant from Mount Holyoke College.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> The sketches in this program were prepared using the drawing tools and the Petrucci type font.<br><a href="#FN9REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">An earlier version of this case study was supported by the Mount Holyoke College Technology Seminar, sponsored by a grant from the Pew Charitable Trusts.</div><div id="fndiv2" class="flyoverdiv">Some excellent commercial CD-ROM software products include: Daniel Jacobson and Timothy Koozin, <i>The Norton CD-ROM Masterworks</i>, Vol.  1 (New York: W. W. Norton and Company, forthcoming in 1995); Daniel Jacobson and Timothy Koozin, <i>CD-ROM Listening Guides for The Enjoyment of Music, 7th ed. by Joseph Machlis and Kristine Forney</i> (New York: W. W. Norton and Company, 1995); William Renwick and David Walker, <i>CD-BRAHMS</i> (Hamilton, Ontario: McMaster University, 1994); Robert Winter, <i>Anton Dvorak, Symphony No. 9 in E minor: From the New World</i> (Irvington, N.Y.: Voyager, 1994); Robert Winter, <i>Igor Stravinsky, The Rite of Spring</i> (Santa Monica, Calif.: Voyager, 1992); and Robert Winter, <i>Ludwig van Beethoven, Symphony No. 9</i> (Santa Monica, Calif.: Voyager, 1989).</div><div id="fndiv3" class="flyoverdiv">The following compact disks may be used with this program: John Adams, <i>The Chairman Dances</i>, San Francisco Symphony, Edo de Waart, cond. (Elektra/Nonesuch 9 79144&ndash;2); Adams, <i>Grand Pianola Music</i>, and Steve Reich, <i>Eight Lines</i> and <i>Vermont Counterpoint</i>, Solisti New York, Ransom Wilson, cond. (EMI CDC-7 47331 2); Adams, <i>Harmonielehre</i>, San Francisco Symphony, Edo de Waart, cond. (Elektra/Nonesuch 79115&ndash;2); Adams, <i>Harmonium</i>, San Francisco Symphony Orchestra and Chorus, Edo de Waart, cond.  (ECM 1277); Adams, <i>Nixon in China</i>, Orchestra of St. Luke&rsquo;s, Edo de Waart, cond. (Elektra/Nonesuch 9 79177&ndash;2); <i>American Piano Music of Our Time</i>, Ursula Oppens, piano (Music &amp; Arts CD 604).</div><div id="fndiv4" class="flyoverdiv">Although there are a number of fine workshops on HyperCard and CD-ROM, I chose this one for the opportunity to work with Tim Koozin and Dan Jacobson, a music theorist and a musicologist who both have had substantial experience in developing applications similar to this program.</div><div id="fndiv5" class="flyoverdiv">The Complete HyperCard 2.2 Handbook, 4th ed. (New York: Random House Electronic Publishing, 1993).</div><div id="fndiv6" class="flyoverdiv">I especially would like to thank Jurgen Botz, Vijay Kumar, and Kevin Prime.</div><div id="fndiv7" class="flyoverdiv">Similar projects may be produced using an IBM-compatible computer and a comparable software product to HyperCard such as Toolbook.  For Macintosh computers a <i>full</i> version of HyperCard must be procured since, although Macintoshes are customarily shipped with HyperCard, a full authoring version is not always supplied.  A CD sound-driver is software that allows CD-ROM to be used for sound production rather than just data storage, the Voyager CD AudioStack is a software program for the Macintosh that facilitates access to compact disks, and the compact disks used for this application are standard commercial CD recordings.</div><div id="fndiv8" class="flyoverdiv">The developmentof this project was supported by a faculty research grant from Mount Holyoke College.</div><div id="fndiv9" class="flyoverdiv">The sketches in this program were prepared using the drawing tools and the Petrucci type font.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1995 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Cara Stroud, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

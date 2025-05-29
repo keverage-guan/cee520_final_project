@@ -1,0 +1,464 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 6.3: Dubiel, Analysis, Description, and What Really Happens</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Analysis, Description, and What Really Happens">
+
+    <meta name="citation_author" content="Dubiel, Joseph">
+      
+
+<meta name="citation_publication_date" content="2000/08/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="6">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Analysis, Description, and What Really Happens
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.00.6.3/mto.00.6.3.dubiel.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Joseph Dubiel</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: analysis, description, experience, explanation, hearing, methodology, minimalism, theory, David Brodbeck, Christopher Hasty, Steve Reich, Robert Schumann, Bernd Alois Zimmermann, &ldquo;Rhenish&rdquo; Symphony, <i>Perspektivens</i></font></p><p><font size='4'>ABSTRACT: The distinction between analysis and description is not a useful one to make if our aim is to distinguish between writing about music that
+helps us hear and understand it better and writing that does not.  If the distinction is supposed to depend on analysis being explanatory and
+description not, and if explanation depends on teleology (a conception inferable from much theoretical literature, here called the &ldquo;received view&rdquo;), then this methodological stance both overestimates the force of analytical explanation and underestimates the variety of ways that music
+can go.  There is not much point in arguing against this conception, when we can instead simply ignore it&mdash;that is, stop taking positions with
+respect to it, thereby freeing ourselves to value work that falls on either side of it, or on neither side, depending only on how we find our
+musical experience illuminated and expanded.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.00.6.3/mto.00.6.3.dubiel.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 6, Number 3, August 2000 <br> Copyright &#0169; 2000 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p id="1">[1] There are important ways of learning from talk about music that I think we theorists could acknowledge better if we gave up trying to
+maintain a distinction between analysis and description.  On the received account of this distinction, there are two characteristics that
+analysis is supposed to have and description to lack: analysis tells you more than you could find out by listening, description does not; and
+analysis tells you why things happen, description does not.  Both of these differences are supposed to make analysis a more substantial and
+disciplined intellectual activity than description.  Often this judgment is not discussed
+overtly, but is implied in the ease with which writers help themselves to expressions like
+&ldquo;<i>mere</i> description.&rdquo;  I have to say that I seriously resent that &ldquo;mere&rdquo;
+whenever I encounter it: what&rsquo;s &ldquo;mere,&rdquo; I&rsquo;d like to know, about conveying the sense of what it&rsquo;s
+like to listen to some music?  Sometimes I feel that if an invidious distinction must be drawn between different kinds of discourse, it
+should be between actual description and mere analysis.</p>
+
+<p id="2">[2] But to set myself up as an advocate of description as against analysis is precisely what I do not want to do in this talk.  What I
+want to advocate is that we stop concerning ourselves with the distinction, and particularly that we stop using it to motivate our
+evaluation of discourses or to define our professional identity as theorists.  So I don&rsquo;t want to be understood as constructive, in the
+sense of offering an alternative to the received view, or even critical, in the sense of
+carefully examining some arguments for this view and showing exactly where they go wrong; in a quite precise sense of the
+word, this talk is meant as <i>dismissive</i>.  I want to show you how a certain way of thinking about analysis and certain familiar ways of
+learning about music are mutually irrelevant; and, faced with that situation, I want to recommend keeping faith with our actual experiences
+and practices, and letting an imposed methodological scheme go by the boards.</p>
+<p>[3] Let me introduce my reservations about the analysis/description distinction by telling you two stories about my learning from talk about
+music, that are hard to interpret with reference to this distinction. Both stories happen to be about unpublished lectures, so unfortunately
+you can&rsquo;t verify my account of what was said.  I am going to go ahead and name the speakers, since I intend to praise them; but this is my
+version of their ideas, and anything you don&rsquo;t like should be blamed on me.</p>
+<p>[4] One lecture was by the musicologist David Brodbeck, about the first movement of Schumann&rsquo;s &ldquo;Rhenish&rdquo; Symphony.  Much as I love this piece, I
+had always been disturbed by what seemed a moment of redundancy in the exposition.  Just when the first large-scale modulation, from E-flat
+major to G minor, seems to have been accomplished, it is undone: the music somehow finds itself back in E-flat, and soon enough with the
+first theme again, and the modulation has to be done over.  Admittedly, when the second theme begins, it&rsquo;s so nice that who remembers there was
+ever anything odd?&mdash;formal problems in Schumann often solve themselves that way; but still.  The second group also modulates, from G minor to
+B-flat major, and this too happens twice, but it&rsquo;s articulated differently and it never bothered me.</p>
+<p>[5] Brodbeck proposed that, instead of repeating its exposition in the familiar way, this movement repeats each
+<i>stage</i> of its exposition immediately, before moving on to the next: the first group, including
+its modulation, twice, then the second group twice&mdash;each repetition being composed out, of course, not just
+literal.  And it was amazing how this idea changed my hearing of the exposition.  Suddenly it sounded
+just fine to me, and it does to this day.</p>
+<p>[6] There was more to my experience than the simple-minded epiphany &ldquo;Oh, it&rsquo;s
+<i>supposed</i> to be that way&rdquo;&mdash;not that I reject this completely; I take my epiphanies where I can get them.  But I emphasize that the passage
+<i>sounded</i> different to me, once I had a new conception under which to listen to it.  It wasn&rsquo;t
+that an experience that used to be unsatisfactory came to be satisfactory once I got a new way to think
+about it; it was that the experience changed.  My evaluation changed too; but take that as testimony to the magnitude of the change of sound.</p>
+<p>[7] Second story.  I heard Christopher Hasty give a talk about a two-piano piece called
+<i>Perspektiven</i> by Bernd Alois Zimmermann.  He played a recording of a passage, and I found myself thinking, &ldquo;This is full of
+lovely things; but again and again it drops them.  I don&rsquo;t sense the resonance of previous lovely things
+having an effect on new ones. The piece keeps pulling its own plug.&rdquo;</p>
+<p>[8] Then Hasty described the piece as manifesting &ldquo;a constantly evanescent beauty.&rdquo;  And you can guess how the rest of the story goes.
+The piece sounded very different to me under that description.  It sounded a lot better, of course.  But, once again, it sounded better
+because, in the first place, it sounded <i>different</i>. And once again the difference in sound was the result of a difference in conception.</p>
+<p>[9] I think of Brodbeck and Hasty, on these two occasions, as having done a lot for me.  They gave me ways to take more pleasure in these
+pieces than I had managed with only my own conceptual resources.  They did this not so much by alerting me to previously unnoticed details of
+the pieces as by giving me a new way to relate to what was before my ears all the time.  Obviously I don&rsquo;t want to claim a sharp disjunction
+between these two ways of helping me.  There must have been features of the pieces that I didn&rsquo;t notice until I heard these accounts of them.
+But I am sure that a large part of what happened on these two occasions was a change in my relationship to features of the pieces that I had
+been noticing.  There was a change in how I was <i>allowed</i> to hear each piece&mdash;allowed by myself, I mean&mdash;once I was able to entertain a new
+conception of what the piece did.  There&rsquo;s a wonderfully apt expression for what
+happened to me: I was <i>brought to my senses</i>&mdash;that is, given access, by means of new concepts, to what my ears were delivering.</p>
+<p>[10] In each of these cases, the new conception of what the music was doing was to some degree a new conception of what music could do.  It
+was a conception that I was not quick to find on my own, because something about it seemed contrary or illogical or perverse, at least at
+first.  I wouldn&rsquo;t have imagined that music <i>could</i> go that way.  But once the idea was offered to me, by someone better attuned to the piece than
+I was, I could recognize that the piece went that way, and that I liked it just fine; and the peculiar new idea was thereby validated.  Whenever
+something like this happens, my world becomes larger and better: inclusive of more sources of pleasure, and specifically more
+intellectually interesting as well, insofar as it comes to encompass a greater variety
+of distinct musical logics.</p>
+<p id="11">[11] This kind of experience thrills me: at once a realization of the power of music to overturn ideas about it and of the power of thought
+about music to determine what music is.  The hope of having such experiences, and sharing them, is my reason for being in this business.
+Accordingly, I want my conception of music theory to give a very prominent place to the kind of invention, communication, and
+understanding represented in my stories.  And, as I said at the outset, I do not find that the received distinction between analysis and
+description helps me at all in this pursuit.</p>
+
+<p id="12">[12] Think about my two stories from the perspective of this distinction.  What did Brodbeck and Hasty offer me&mdash;analysis or
+description?  If it isn&rsquo;t immediately obvious how to answer, I want you to consider this very fact to be informative; because, remember, I&rsquo;m
+trying to establish that important things that really happen to us don&rsquo;t fall neatly into the categories that the received view imposes.  The
+received view isn&rsquo;t even <i>antithetical</i> to these experiences; it&rsquo;s <i>orthogonal</i> to them.</p>
+
+<p id="13">[13] Point one: Did Brodbeck and Hasty take me beyond where I could have got to by listening&mdash;thus getting beyond description?  Yes and no.  Yes,
+in that I needed their help to hear these pieces as I now hear them. But no, in that everything I got from them was immediately and
+completely audible as soon as the relevant concepts were available.  My experience, then, is that where you can get to by listening depends so
+much on what concepts you have that this question can&rsquo;t really be made sense of&mdash;much less given a sense robust enough to be the basis for a
+distinction between two importantly different kinds of discourse.  It would seem particularly beside the point to ask whether Brodbeck and
+Hasty did what they did for me by letting me in on some kind of structure that underlay
+what was audible.  If asked under duress, I suppose I would say no, this was not how these transactions worked; but
+I could not concede that the audibility of what these discourses offered was any reason to consider these discourses particularly limited in
+ambition or power.</p>
+<p>[14] Point two: Did Brodbeck and Hasty <i>explain</i> to me why anything happened?  And especially: Did they explain the occurrence of anything
+that I originally didn&rsquo;t understand?  In one way, I suppose that they did.  There is a way I could say that I initially didn&rsquo;t understand why
+the Rhenish Symphony returned from G minor to E-flat major, and Brodbeck told me; and that I initially didn&rsquo;t understand why
+<i>Perspektiven</i> kept dropping things the way it did, and Hasty told me. But notice how these
+supposed explanations breathe an air of tautology.  Why does <i>Perspektiven </i> keep dropping things?  Not because it fails to sustain
+them, as I originally thought, but in order to produce an effect of constant loss.  And why that?  Sorry, no more explanations; that&rsquo;s just
+how the piece goes.  Ditto for the Rhenish Symphony: it modulates twice because it modulates twice.  If this model of explanation is acceptable
+to you, then there&rsquo;s no problem in saying that these discourses include explanation and are therefore full-bloodedly analytical.  But in that
+case I daresay there might be a little problem in continuing to regard explanation as the mark of special rational command.</p>
+<p id="15">[15] Now actually I think the received view envisions something more specific in the way of explanation.  I&rsquo;ll give you a representative
+quote, leaving it anonymous because I have to deal with it a bit roughly.  To analyze a piece of music means &ldquo;to explain how [it] should
+be heard&rdquo;; and &ldquo;to explain how a given musical event should be heard one must show why it occurs: what preceding events have made it necessary or
+appropriate, toward what later events its function is to lead.&rdquo;  In other words, analytical explanation has to be teleological, on this
+view; and to analyze music means to show that it progresses in a particular way.  And of course that&rsquo;s exactly the view that, in these
+two cases, I <i>got over</i>, with a little help from my interlocutors.  In each case, I learned that I
+had come to the music with too narrow and unimaginative a range of conceptions of what a piece might do&mdash;too
+narrow and unimaginative specifically in that it was too bound up with a limited notion of logical consecution&mdash;which fortunately I could be
+persuaded to give up.  About the most bizarre way I can think of to understand these episodes of learning would be to say that the discourse
+that helped me get over this notion and widen my world was mere sub-analytical description, an inferior sort of chit-chat; whereas if
+someone had come along to tell me how these pieces actually did proceed
+teleologically, then that would have been real analysis.  And, as I&rsquo;ve been saying over and over, I am convinced that any meta-analytical
+framework that would even suggest that we say this is a framework that we&rsquo;d be better off without.</p>
+<p>[16] I don&rsquo;t have much time to examine literature in this talk.  Let me suggest, if you want to see this framework clashing with theorists&rsquo; best
+impulses, that you look at the writing about so-called minimal music done in the last fifteen years.  Repeatedly, this music is said to
+present a special impediment to analysis unless it can be said to progress toward goals.  There are a variety of responses, ranging from
+the determination to find goal-directed progression, no matter what, to genuinely inventive discussion that still remains haunted by concern
+about whether this discussion should be considered analysis&mdash;or analysis &ldquo;in the traditional
+sense.&rdquo;  A feature of this literature that stands out particularly, from my point of view, is the way in which so many
+theorists have been provoked by Steve Reich&rsquo;s wisecrack &ldquo;I don&rsquo;t know of any secrets of structure you can&rsquo;t hear&rdquo;; the feeling that this is a
+challenge to analysts, even a taunt, depends completely on the misbegotten notion that as analysts we have an obligation to talk about
+something that can&rsquo;t be heard.  And we don&rsquo;t.</p>
+<p id="17">[17] Please understand that I&rsquo;m not saying that anybody is dumb here; if anything, I&rsquo;m impressed by the ability of these writers to bring off the
+invention that they do from within a view of the discipline that imposes an anxiety about whether one is rising to the exalted level of analysis.
+I would advise such writers&mdash;I would advise everybody&mdash;simply to stop worrying about that issue.  If you&rsquo;re articulating a distinct and
+interesting conception of how a piece goes, you&rsquo;re doing all that you need to do.  If, for some reason, you remain concerned to define a
+special kind of talk about pieces that will be specifically identifiable as music theory, then
+I suppose you can think of us theorists as the talkers about music who are specially concerned with
+<i>how</i> pieces produce the effects that we attribute to them. But actually I don&rsquo;t see much
+reason for us to spend energy policing our borders with criticism, music appreciation, and so on.  If anything, I think we should eye
+the neighboring territories with more avidity.  The best thing we could do for ourselves in the world is get ourselves recognized as a fountain of
+sharp, attractive, useful concepts for grasping our experiences of music.  If people aren&rsquo;t getting that from us, then they&rsquo;re unlikely to
+care very much about the rest of what we say anyway.  If we theorists are as smart as we say we are, then we ought to make our characteristic
+concern with &ldquo;musical structure,&rdquo; or whatever we call it, recognizable as a source of stimulus for the invention and articulation of such
+experience-oriented concepts.  And we should adjust our methodological self-image accordingly.</p>
+
+<p><a href="mto.00.6.3.forte.php">Allen Forte&rsquo;s response</a></p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Joseph Dubiel<br>
+	Department of Music<br>Dodge Hall<br>Columbia University<br>New York NY 10027<br><a href="mailto:jpd5@columbia.edu">jpd5@columbia.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2000 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

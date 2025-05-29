@@ -1,0 +1,273 @@
+{
+    "title": "On Considering a Computational Model of \nSimilarity Analysis",
+    "date": "1995/03/01",
+    "volume": "1",
+    "issue": "2",
+    "authors": [
+        "Demske, Thomas R."
+    ],
+    "abstract": "A clustering program is proposed for identifying salient similarity relationship trends within populations of pitch-class sets abstracted in post-tonal analysis. That program requires an evaluation component, but attempts to define one are frustrated. The similarity relation itself is too abstract to imply guidelines for its own application, and other potential criteria resist formal implementation. Even less rigorous applications of the more commonly used tools in post-tonal analysis are susceptible to the concerns raised here.",
+    "keywords": [
+        "similarity",
+        "REL",
+        "clustering",
+        "decision",
+        "post-tonal analysis"
+    ],
+    "doi": "",
+    "received": "",
+    "pdf": "http://www.mtosmt.org/issues/mto.95.1.2/mto.95.1.2.demske.pdf",
+    "author_info": [
+        {
+            "name": "Thomas R. Demske",
+            "university": "Connecticut College",
+            "address": "Department of Music, 270 Mohegan Avenue, New London, CT  06320, USA",
+            "email": "trdem@conncoll.edu"
+        }
+    ],
+    "citations": {
+        "block_and_douthett_1994": "Block, Steven and Jack Douthett. 1994. “Vector Products and\nIntervallic Weighting.” Journal of Music Theory 38/1: 21–41.",
+        "demske_1993": "Demske, Thomas R. 1993. “Recognizing Melodic Motion in Piano Scores:\nRules and Contexts.” Ph.D. diss., Yale University.",
+        "forte_1973": "Forte, Allen. 1973. The Structure of Atonal Music .  New Haven: Yale\nUniversity Press.",
+        "friedmann_1990": "Friedmann, Michael L. 1990. Ear Training for Twentieth-Century\nMusic . New Haven: Yale University Press.",
+        "hindemith_1942": "Hindemith, Paul. 1942. The Craft of Musical Composition ,\nv. 1. Trans. Arthur Mendel. New York: Associated Music.",
+        "isaacson_1990": "Isaacson, Eric J. 1990. “Similarity of Interval-Class Content Between\nPitch-Class Sets: The ICVSIM Relation.” Journal of Music Theory 34: 1–28.",
+        "lewin_1980": "Lewin, David. 1980. “A Response to a Response: On Pcset Relatedness.” Perspectives of New Music 18/2: 498–502.",
+        "lewin_1977": "Lewin, David. 1977.  “Forte’s Interval Vector, My Interval\nFunction, and Regener’s Common-Note Function.” Journal of Music\nTheory 21/2: 194–237.",
+        "michalski_and_stepp_1983": "Michalski, Ryszard S. and Robert. E. Stepp. 1983.  “Learning from\nObservation: Conceptual Clustering.” In Machine Learning: An\nArtificial Intelligence Approach , R. Michalski, J. Carbonell, and\nT. Mitchell, eds. Palo Alto, CA: Tioga Publishing Company.",
+        "morris_1980": "Morris, Robert. 1980. “A Similarity Index for Pitch-Class Sets.”\nPerspectives of New Music 18/2: 445–460.",
+        "rahn_1989": "Rahn, John. 1989. “Toward a Theory for Chord Progression.” In Theory\nOnly 11/1,2: 1–10.",
+        "rahn_1980": "Rahn, John. 1980. “Relating Sets.” Perspectives of New Music 18/2: 483–498."
+    },
+    "footnotes": {
+        "FN1": {
+            "text": "1. Isaacson has also written a handy, inexpensive, and well-documented program which calculates the values of various similarity functions for arbitrary sets.  DOS and Windows versions are available.",
+            "citations": []
+        },
+        "FN2": {
+            "text": "2. The embedding function EMB(/q/,r) countsthe multiplicity of q-type sets included in set r; see Lewin 1977 .",
+            "citations": [
+                "lewin_1977"
+            ]
+        },
+        "FN3": {
+            "text": "3. Blind subset polling is a basic source of such barriers.  Two REL calls with the same pivot may yield identical results, and yet differ with respect to the types of subsets counted.  Ignoring the degree of this difference when comparing REL value spreads strikes me as questionable.",
+            "citations": []
+        },
+        "FN4": {
+            "text": "4. Block and Douthett’s ( 1994 ) “vector product” parts with other similarity measures in that the pivot argument is not a set, but rather an arbitrarily specified standard of subset content.  What was once merely a “staggeringly complex” network of relationships is now potentially infinite.  Otherwise, vector product similarities continue to admit the same critique voiced here with respect to REL.",
+            "citations": [
+                "block_and_douthett_1994"
+            ]
+        },
+        "FN5": {
+            "text": "5. Hindemith ( 1942 ) types chords according to intrinsic intervallic properties, which is very roughly analogous to holding one particular set of ideals as a constant pivot argument to REL.  Consequently, variance between pivot and point of transition would not conflict with Hindemith’s absolutist conception of harmonic fluctuation.  The relativistic conception pursued here in the interpretation of Figure 5 conforms more closely to that implied in Rahn’s ( 1989 ) “theory of chord progression.”",
+            "citations": [
+                "hindemith_1942",
+                "rahn_1989"
+            ]
+        },
+        "FN6": {
+            "text": "6. Rahn ( 1989 ) presupposes a “theory of instances” to account for discrepancies between the heard surface and DATM’s predictions. That theory remains incomplete.",
+            "citations": [
+                "rahn_1989"
+            ]
+        }
+    },
+    "paragraphs": [
+        {
+            "0": {
+                "text": "",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "1": {
+                "text": "[1] A few months ago, I considered applying conceptual clustering\ntechniques to identify context-specific similarity relations among\npitch-class sets.  That project quickly stalled for lack of suitable\nevaluation criteria, a problem which I take as the subject of this\nessay.  The issues here are not necessarily new, but they are\npersistent.  Recent SMT e-list interest in formal analysis suggests\nthe timeliness of reviewing these issues now from an applicational\nstandpoint.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "2": {
+                "text": "[2] Many fields use clustering to establish meaningful distinctions\nwithin arbitrary data sets.  The data are events described as n-tuples\nand interpreted as points in n-dimensional space.  Points lying closer\ntogether according to some distance specification “cluster” into\ngroups distinguished by boundaries.  Clustering comes in many flavors.\nThe conceptual clustering model in Michalski and Stepp 1983 is\ninteresting because it determines cluster membership, not only through\npredefined metrics, but also by the resultant shape of the cluster—its “conceptual cohesiveness.”  Conceptual clusters are\ncontext-specific, in that events cohere on the basis of their\nrelationships to other events in the data set.",
+                "footnotes": [],
+                "citations": [
+                    "michalski_and_stepp_1983"
+                ]
+            }
+        },
+        {
+            "3": {
+                "text": "[3] I was first attracted to conceptual clustering through ongoing\nresearch into melodic grouping in piano scores, an early stage of\nwhich is documented in Demske 1993 .  Clustering is fruitfully\napplied there to isolate and address causes of rule base misfire.\nMight the technique also prove useful in post-tonal analysis, despite\nthe far more diffuse nature of the problem domain?  Given a collection\nof pitch-class set segmentations abstracted from a composition, the\nclustering implementation would “learn” the most salient, structural\ntrends particular to that population.",
+                "footnotes": [],
+                "citations": [
+                    "demske_1993"
+                ]
+            }
+        },
+        {
+            "4": {
+                "text": "[4] Cluster membership indicates relatedness, an idea which is\nfundamental in pitch-class set analysis.  Most analytical assertions\neventually require boundaries in a conceptual space to distinguish one\nor more sets (or sets of sets, etc.) from others.  Mainstream\nanalytical set theory tends to recognize only a few types of musically\nmotivated boundaries.  These account for the familiar TnI set classes,\ntransformational partitionings, “referential” collections and their\nsubsets, and so forth.  In all cases, kinship and contrast between\nobjects disposed respectively on one or both sides of a boundary\nprovide the potential for a syntax.  This simple duality can spawn\nsophisticated arguments about form, association, and process.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "5": {
+                "text": "[5] “Similarity” in pitch-class set theory refers narrowly to special\ninclusion-based relationships.  These are commonly understood as\nreflecting degrees of context-free, “aural similitude” ( Morris 1980 ),\nalthough some writers avoid any perceptual interpretation Forte 1973 . Isaacson 1990 surveys several similarity functions proposed\nover the years, while offering his own “IcVSIM” as an alternative. (1) Most similarity functions take two sets as arguments and return a\nsingle, usually scaled value determined through subset counts;\nMorris’s ASIM, Rahn’s ATMEMB, and Lewin’s REL are perhaps the best\nknown examples ( Morris 1980 ; Rahn 1980 ; Lewin 1980 ).",
+                "footnotes": [
+                    "FN1"
+                ],
+                "citations": [
+                    "morris_1980",
+                    "forte_1973",
+                    "isaacson_1990",
+                    "morris_1980",
+                    "rahn_1980",
+                    "lewin_1980"
+                ]
+            }
+        },
+        {
+            "6": {
+                "text": "[6] Similarity functions seem an ideal test bed for clustering because\nof the apparent simplicity with which they model distance in set-class\nspace.  However, conceptual clustering is a learning algorithm.\nWithout a means for evaluating prospective clusters, the algorithm’s\noutput will likely make little sense.  How might similarity-based\nclusters be evaluated, assuming the identification of “salient trends”\nas a loosely-defined goal? Figure 1 (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "7": {
+                "text": "[7] I use Lewin’s REL here for illustration, although other similarity\nindex functions would work as well.  Consider a pivot, P = {0147}, and\ntwo target sets, T1 = {01369} and T2 = {047a}.  REL(P,T1) = 0.783 and\nREL(P,T2) = 0.636.  Drawing a boundary around all sets Y such that\n0.783 >= REL(P,Y) > 0.636, P and T1 cluster together on one side,\nwhile T2 falls on the other.  This boundary might be treated like any\nother in analysis. However, nothing in the interpretation of REL\ncompels us to draw any particular boundary.  Assume another set T3 =\n{0134}, where REL(P,T3) = 0.529.  We could keep our original boundary,\nor now draw a new one separating P, T1, and T2 from T3.  In fact, we\ncould draw a boundary separating P from all of the target sets, or\nanother which includes P and the targets all on one side. Figure 1 shows the relationships just described, with vertical bars indicating\npotential boundary sites (the vee is explained later):",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "8": {
+                "text": "[8] Comparing REL values tells us only where boundaries may be drawn,\nnot where they should be drawn.  Barring ad hoc provisions in the\ninterpretation, all sets are similar with respect to each other.  Only\nthe degree of similarity varies.  This makes it difficult to evaluate\ncompeting clusters, such as those distinguished by alternately drawing\nboundaries through the third and fourth vertical bars in Figure 1 above.\nAn a priori cutoff point X would help, whereby only targets T with\nREL(P,T) >= X are considered “similar” in an absolute sense.  (TnI\n“equivalence” supports analogous appeals to the absolute.)  But could\nsuch a point be meaningfully determined here?  Statistical analysis of\nhow the REL values at issue are disposed around an average or mean\nbegs another question: are all of REL’s returns with respect to a\ngiven pivot commensurable in a meaningful way (I am not sure that they\nare), or are they merely indications of a partial ordering? Figure 2 (click to enlarge) Figure 3 (click to enlarge) Figure 4 (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "9": {
+                "text": "[9] Other boundary ambiguities must be considered.  We can compare two\nreturns of REL only when an instance of the same set class appears in\nboth calls. Rahn 1989 demonstrates this tangentially with his DATM\nfunction, derived from ATMEMB, but the same applies to REL and\ncomparable similarity index functions.  That argument common to both\ncalls is the pivot, P. Figures 2–4 show how the potential\nboundaries change when our old target sets are cycled through P.\n{01369} is the pivot at Figure 2. Unlike the situation earlier at Figure 1, {047a} and {0147} at Figure 2\nwill always appear on the same side of a boundary.  Compared to\nFigure 1, taking {047a} as the pivot at Figure 3 means that {047a} and\n{0134} can no longer be grouped as a pair apart from {01369} and\n{0147}. In Figure 4, it suddenly becomes possible to place the pairs, {0134} and\n{01369}, and {0147} and {047a}, on opposite sides of a boundary.",
+                "footnotes": [],
+                "citations": [
+                    "rahn_1989"
+                ]
+            }
+        },
+        {
+            "10": {
+                "text": "[10] Figures 1–4 together represent a tiny bubble in that\n“(staggeringly complex) network of relations” revealed by functions\nlike REL ( Rahn 1980 , 494).  The downside to this attractive notion is\nthat it means more potential conflicts among REL-derived clusters.  Is\n{0147} more related to {01369} than it is to {047a}?  Expressed\nthrough the totality of REL returns in Figures  1–4, the answer is yes\nand no.  For example, {0147} and {01369} cluster together without\n{047a} under the boundary drawn through the vee at Figure 1, while\n{0147} and {047a} cluster together without {01369} under the two\nboundaries drawn through the vees at Figure 2.",
+                "footnotes": [],
+                "citations": [
+                    "rahn_1980"
+                ]
+            }
+        },
+        {
+            "11": {
+                "text": "[11] Critical REL returns are interpreted directly at Figure 1 and\nindirectly at Figure 2, suggesting that one criterion for evaluating\nconflicting clusters might be to prefer the more musically intuitive\none.  “Intuition” is difficult to pin down, however.  For example, Rahn 1980 claims special intuitive status for ATMEMB, but others may\nfind the notion of “mutual embedding” less compelling.  All else being\nequal, ATMEMB(A,B) remains constant so long as the sum of EMB(/X/,A)\nand EMB(/X/,B) remains constant, and so long as neither term equals\nzero. (2) This means A and B can differ considerably in the number of X\ntypes they separately include, and yet still return high ATMEMB\nvalues.  REL seems more “intuitive” in this respect because it takes\nthe product of EMB(/X/,A) and EMB(/X/,B).  While REL(A,B) still\nincreases along with either one of EMB(/X/,A) and EMB(/X/,B) (assuming\nnonzero values), it does so more quickly when both subterms\nincrease.  This makes sense, since we would expect—in the abstract—that two sets with convergent inclusion capabilities will have more\n“aural similitude” than two sets which diverge in their capabilities.",
+                "footnotes": [
+                    "FN2"
+                ],
+                "citations": [
+                    "rahn_1980"
+                ]
+            }
+        },
+        {
+            "12": {
+                "text": "[12] The mechanics of ATMEMB, REL, and comparable functions present\nother potential barriers to intuition. (3) But those pale in comparison\nto the problems which arise when similarity function returns are\nviewed in their totality.  Assume two sets WT1 = {0246} and WT2 =\n{0248}.  Considered in isolation, REL(WT1,WT2) = 0.846 bespeaks\nurgency, emphasizing the difference in “aural similitude.”  That\nchanges by adding CHR = {0123} to the mix.  WT1 and WT2 now seem quite\nsimilar, by virtue of their relationship to CHR: an absence of odd\ninterval classes binds the wholetone sets together.  Relationships are\nthus colored by other relationships.  In Rahn’s vast network, where\neverything is connected, the result is a flat, homogeneous black (or\nwhite, depending on perspective).  But when only a portion of the\nnetwork is considered, glimmers of color surface, forming\nkaleidoscopic patterns of arbitrary complexity.  Tracking those\npatterns can strain intuition mightily.",
+                "footnotes": [
+                    "FN3"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "13": {
+                "text": "[13] So, who is to say whether the direct relation described in\nparagraph 10 above is more intuitive than, and thus necessarily takes\nprecedence over, the indirect one? Rahn 1989 briefly explores the\nidea of following only “paths ‘of least resistance’” through a\nnetwork, while Block and Douthett 1994 offer a new way to focus on\nspecific paths. (4) But neither indicates whether certain paths should\ngenerally be preferred over others, given an arbitrary collection of\nsets.  Both Hindemith 1942 and Friedmann 1990 informally consider\ninterval class 1 content as being especially determinative of chord quality.  \nPerhaps those paths reflecting aspiration toward high semitone counts—\nREL hierarchies based on chromatic pivots—are therefore to be preferred a priori . Figure 5 (click to enlarge) Figure 6 (click to enlarge) Figure 7 (click to enlarge)",
+                "footnotes": [
+                    "FN4"
+                ],
+                "citations": [
+                    "rahn_1989",
+                    "block_and_douthett_1994",
+                    "hindemith_1942",
+                    "friedmann_1990"
+                ]
+            }
+        },
+        {
+            "14": {
+                "text": "[14] Such concerns raise the inevitable issue of perception.\nEvaluating similarity clusters with perceptual criteria is complicated\nbecause we can attend to the same music in many different ways.\nStill, there are limits. Figure 5 graphically displays similarity\nrelations between successive piano chords in the first movement of\nMessiaen’s Quatour pour le fin du temps .  The piano part is a\nrecurring sequence of 29 chords set to a rhythmic ostinato of 17\ndurations; chord 30 is thus the same as chord 1.  Higher ASIM, ATMEMB,\nand REL values plotted on the graph indicate greater similarity.\n(ASIM is adjusted to facilitate comparison with the other functions.)\nFigure 5 shows the three functions diverging in their values, but mostly\nagreeing about peaks, valleys, and plateaus.  The relation expressed\nin moving from chord 1 to 2 appears above point 2 on the x axis; that\nfrom chord 2 to 3 appears above point 3; etc.  The middle chord in\neach three-chord succession is the pivot, while the two flanking\nchords are the targets.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "15": {
+                "text": "[15] The graph resembles a “harmonic fluctuation” analysis ( Hindemith 1942 ), and should capture a comparable aspect under the most obvious\ninterpretation of the similarity relationship.  However, and despite\ngreat effort in attending, I can discern no correspondence at all\nbetween musical transitions in the Quatour and those represented\nsymbolically on the graph.  For example, the strong contrast that\nFigure 5 reports between chords 15 and 16 simply does not conform to\nMessiaen’s smooth realization.  Taking this perception into account\nsuggests preferring a boundary through the vee at Figure 6 . This is not entirely satisfactory, however, even allowing for the wide\ndisparity in REL values.  To my ear, the move between Messiaen’s\nchords 16 and 17 is in fact more striking than that between his chords\n15 and 16.  Perhaps a boundary should therefore separate chords 15 and\n16 from chord 17.  The REL scheme of Figure  6 cannot accomodate that\nboundary, so another pivot is required. (see Figure 7 ).",
+                "footnotes": [],
+                "citations": [
+                    "hindemith_1942"
+                ]
+            }
+        },
+        {
+            "16": {
+                "text": "[16] The pivot in Figure 7 no longer coincides with the original point\nof transition, a fact which obscures the harmonic fluctuation\ninterpretation of similarities. (5) Perhaps this shows harmonic\nfluctuation to be an insufficient standard for perceptual cluster\nevaluation.  That in turn suggests another complication when appealing\nto perceptual criteria.  Exactly how similarity relationships might\ninform perception is speculative.  Gradations of “smooth” chord\nsuccession, strength of motivic association, and degree of harmonic\ncontrast in form delineation are only the first potential\nmanifestations which spring to mind.  The idea that any formal\nevaluation procedure could embrace all of the possibilities seems\nuntenable.  On what bases would a partial set of possibilities be\nselected for implementation?  Since the different criteria may address\ndifferent—and possibly conflicting—aspects of perception, how\nwould the application of one criterion be coordinated with that of\nanother? Figure 8 (click to enlarge)",
+                "footnotes": [
+                    "FN5"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "17": {
+                "text": "[17] Apart from the manner in which similarities shape perception,\nthere is the further question of the extent to which they do so.  For\nexample, strong contrast is perceived in moving between Messiaen’s\nchords 6 and 7, despite the initial plateau of Figure 5.  This implies\ndrawing a boundary through the vee at Figure 8 , even though that is not\nan allowed boundary site. Nothing in the micro-network of REL relationships among Messiaen’s 29\nchords will support this boundary, since chords 6 and 8 are members of\nthe same set class.  Clearly, competing factors inaccessible to\nsimilarity functions and the pitch-class set model in general\ninfluence perception enormously. (6) In order to realistically evaluate\nsimilarity clusters according to perception, we must first have a\nmeans of isolating and gauging the influence of these factors.",
+                "footnotes": [
+                    "FN6"
+                ],
+                "citations": []
+            }
+        },
+        {
+            "18": {
+                "text": "[18] Such a means does not appear to be forthcoming at present, given\ncurrent knowledge about music perception.  Implementing practical\nevent structures and distance functions whose resultant clusterings\nsatisfy general perceptual criteria is thus but a dim hope.  We cannot\nexpect a simple automaton processing high-level abstractions to have\nmuch to do with perception.  For now at least, the place for\nperceptual criteria remains in cautiously selecting input and very\ncarefully weighing output. Figure 9 (click to enlarge) Figure 10 (click to enlarge) Figure 11 (click to enlarge) Figure 12 (click to enlarge)",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "19": {
+                "text": "[19] Analytical music theory usually holds a less naive view of\ncontext than that described in the chord-by-chord scenario above.\nRelationships not immediately perceptible can nevertheless inform\nmusical structure.  This suggests another possible evaluation\ncriterion: goodness of fit between a boundary and an analytical goal.\nThe clustering program could take as input segmentations together with\nan analytical paradigm.  For example, a short movement strongly\nprojects the large-scale succession of pitch-class sets shown at Figure 9 . The analyst wants to emphasize that the movement is through-composed.\nA REL clustering solution appears at Figure 10 , with two boundaries\nindicating progressive motion away from the opening set in “similarity\nspace.”",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "20": {
+                "text": "[20] The boundaries of Figure 10 are a good fit to the analytical\ndescription, but they are not a completely honest fit. Figure 11 shows\nanother REL clustering of the same sets. The single boundary here at least suggests a different form, the\nsymmetrical, ternary structure distinguished by outer sections equally\ndistant from B in similarity space ( Figure 12 ). The goodness of fit criterion now appears suspicious, in that the\nanalyst receives only supportive solutions, and is shielded from\npossibly damaging ones.",
+                "footnotes": [],
+                "citations": []
+            }
+        },
+        {
+            "21": {
+                "text": "[21] REL and comparable similarity functions are not used much in\nanalysis today.  Still, my basic concerns extend beyond a particular\nfunction and its potential for rigorous application in a computer\nmodel.  Post-tonal analyses typically involve countless decisions\nabout boundaries, ranging from relatively low-level segmentation\nselections to high-level identifications of referential collections in\nrefractory textures.  The decisions interact and motivate one another\nfreely across all levels of description, and often depend on abstract\ncriteria whose perceptual relevance and provability is speculative.\nWe all slip, sometimes conspicuously: dubious examples of “composed\nout” sets in undergraduate textbooks; untempered enthusiasm for a\nsingle octad class underlying a composer’s entire output.  Exuberant\nflexibility is essential to the post-tonal analytical dialectic.  But\nI suggest checking it occasionally by asking what constraints we would\nimpose on a machine approaching the same decisions.",
+                "footnotes": [],
+                "citations": []
+            }
+        }
+    ],
+    "mto": true,
+    "category": "article",
+    "source": "mto/raw/mto.95.1.2.demske.html",
+    "data": "mto/data/mto.95.1.2.demske.json"
+}

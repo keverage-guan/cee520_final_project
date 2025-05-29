@@ -1,0 +1,765 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 1.3: Kopp, On the Function of Function</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="On the Function of Function">
+
+    <meta name="citation_author" content="Kopp, David">
+      
+
+<meta name="citation_publication_date" content="1995/05/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="1">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">On the Function of Function
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.95.1.3/mto.95.1.3.kopp.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">David Kopp</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: function, harmony, Riemann, Rameau, Weber</font></p><p><font size='4'>ABSTRACT: The concept of harmonic function, far from carrying a
+unitary and universally understood meaning, has signified many
+different things to theorists past and present. This essay
+examines some of the different meanings commonly associated with
+the term today, as well as aspects of the harmonic theories of
+Rameau, Weber, and Riemann, all regularly associated with the
+concept. Notions of chord identity, scale degree, and logical
+determinacy are considered.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.95.1.3/mto.95.1.3.kopp.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.95.1.3/kopp_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 1, Number 3, May 1995 <br> Copyright &#0169; 1995 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Harmonic function is a term which, although it may seem to
+express a simple and obvious concept, has grown uncommonly vague
+through use. Loosely put, function signifies harmonic meaning or
+action. But notions of what meaning and action constitute may
+take many forms. In our time, any search for a commonly accepted
+definition of function will be frustrated, for the meaning of the
+word has proved adaptable to support a wide variety of statements
+concerning harmony. For example, the harmonic meaning of chords
+is often attributed to each diatonic scale degree and their
+variants, serving as the roots of a variety of chords.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> Thus we
+may say that <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major functions as III in F minor, as V in
+<nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, and as <nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>VI in C major. The term function may
+also be used in a stronger sense to signify a concept of the
+intrinsic potentiality of a given chord to progress in a
+particular way or to a particular chord; thus we say that V
+expresses function in its tendency to progress to I. We may use
+the term to group chords with similar syntactic behavior, e. g.
+saying that II and IV often express similar function. We may link
+it to the primacy of tonic, dominant, and subdominant in the key.
+Or we may associate function with specific outcomes rather than
+with unitary scale degree identity.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> The term may be associated
+with harmonic tendencies of individual chord tones as well as
+chords.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> It may be correlated with phrase-based syntactic
+meaning.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> The function concept has even been identified with a
+prolongational scale-step notion.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> We often use the term
+function to denote meaningfulness or meaningful relation within a
+key, as opposed to &ldquo;color,&rdquo; which signifies a relation without
+meaning in the tonal system. All of these and many more
+contrasting notions of chord identity, potentiality, and activity
+may be invoked by the same term. Yet we use it as if its meaning
+were fixed and intuitively evident. None of the harmony textbooks
+cited above, for example, treats function as a concept to be
+defined in its own right or contains an index entry for the term. </p>
+
+<p>[2] Furthermore, we commonly associate an idea of function with
+the thought of many theorists of common-practice tonality, and
+regularly identify the presence of &ldquo;function&rdquo; in theory which
+significantly predates the introduction of the formal concept.
+What we call function in these theories is not always the same
+thing, nor is it always what we may think it to be. It is a
+familiar idea that one&rsquo;s view of the past can be affected by
+one&rsquo;s own manner of thinking<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>; familiar terms may particularly
+obscure. In the space of this short essay I cannot propose either
+to trace either the development of the functional idea through
+the history of theory or to identify all the theorists to whose
+work we attribute function. Instead, I will restrict my inquiry
+to an attempt to isolate and evaluate the aspect of three major
+theories of harmony customarily associated with the function
+concept, one each from the beginning, middle, and end of the
+common-practice period. I hope to show how different this aspect
+is in each case, and to argue that the use of the same term to
+describe each unduly denatures its effectiveness.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Rameau's 1760 analysis of a descending chromatic line with alternative <i>basses
+fondamentales</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kopp_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="kopp_ex1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[3] Our tendency to identify function extends back to accounts of
+Rameau, whose theory is often described in recent literature as
+elucidating the harmonic functions of chords. Without a doubt,
+notions of differentiated chord action are present in Rameau. But
+did he really describe a property of the tonal system properly
+characterized as function? His terms <i>tonique</i>, <i>dominante</i>, and
+<i>sous-dominante</i> certainly evoke associations with Riemann&rsquo;s
+three <i>Hauptfunktionen</i>. But where <i>Hauptfunktionen</i> define
+harmonic states of triads, Rameau&rsquo;s chord types do not. Their
+identities hinge on an extrinsic explanation. Rameau does not
+identify chord types with harmonic meaning and identity.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> Rather, he concentrates on differentiating chords&rsquo; tendencies to
+progress: <i>dominante</i> by descending fifth, <i>sous-dominante</i> by
+ascending fifth, and <i>tonique</i> by any acceptable fundamental bass
+interval. Rameau accounts for the constrained, motivated natures
+of <i>dominante</i> and <i>sous-dominante</i> by positing the universal
+presence of dissonant minor seventh and major sixth in them,
+whether actual or implied.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> A <i>tonique</i>&rsquo;s freedom to progress
+stems from the absence of added dissonance. Thus the motivating
+force behind these tendencies is not harmonic but contrapuntal:
+the addition of a dissonant pitch to a consonant formation is the
+necessary cause of the directed motion associated with certain
+chord types. Rameau observes that dissonance is required for the
+listener to desire the chords which follow.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> Furthermore, only
+the <i>sous-dominante</i> as defined is completely specific to scale
+degree.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> A dominante could be one of a number of diatonic
+seventh chords; the dominant seventh chord on the fifth degree
+required a special name, <i>dominante-tonique</i>.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> And while
+Rameau originally specified the <i>tonique</i> for the first scale
+degree only, the prevalence of freely progressing roots on other
+scale degrees in his fundamental bass analyses obliged him
+eventually to distinguish between the true tonic and <i>notes
+cens&eacute;es toniques</i>, or seeming tonics.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Thus there is no one-to-one correspondence between the three chord types and the three
+primary chords of the key. <b>Example 1</b> shows Rameau&rsquo;s 1760 analysis
+of a descending chromatic line with alternative <i>basses
+fondamentales</i>. It contains <i>dominantes</i> and <i>dominantes-toniques</i> 
+on various scale degrees, also <i>toniques</i> and a <i>note
+cens&eacute;e tonique</i> in the first <i>b. f.</i> at letter <i>f</i>.</p>
+
+<p>[4] Does this constitute a theory of function? Rameau&rsquo;s theory
+contains no formal concepts of chord identity based on scale
+degree or of common harmonic identity shared by different types
+of chord. To a remarkable degree, the theory does contain a
+definite notion of how chords act differently from one another.
+But while Rameau does demonstrate that the coherence of
+progressions stems ultimately from the coherence of the
+triad,<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> he attributes the determined nature of these
+progressions to a contrapuntal tendency emanating from outside
+the triad, not from scale-degree identity. In this light, any
+view that Rameau&rsquo;s theory originates an idea of function as
+inherent potentialities of chord actions is compromised by the
+fact that for him these potentialities are in no way defined as
+inherent in triads themselves nor essentially in their position
+in the key, despite what is possible to read in behind what
+Rameau says. Rameau clearly perceived differences in chord
+action, accounting for them with his theory of added dissonance
+and the three chord types. However, his theory differs so
+dramatically from other conceptions of function that merely using
+the term to describe it necessitates a great deal of explanation
+as to what it really means. Claiming that function exists in
+Rameau unavoidably invites associations with the term which are
+not reflected in the theory. It would be useful to have more
+precise, dedicated terms to denote different conceptions of
+harmonic activity (e.g. notions of action-function,
+identity-function, hierarchic/syntactic-function,
+tonic-centering-function). Particular well-defined types of
+function could then be adduced in a more specific and meaningful
+way to clarify understanding of the essential nature of harmonic
+systems such as Rameau&rsquo;s.</p>
+
+<p>[5] Another theorist routinely identified with introducing
+functional thinking is Gottfried Weber. Typical is this comment
+on Weber&rsquo;s work by a mid-twentieth century historian of
+nineteenth-century harmonic theory: &ldquo;The author believes Weber to
+be the first theorist to use Roman numerals as function
+signs.&rdquo;<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> This account suggests that Weber, writing in the
+1820s, was devising signs to denote the concept familiar to us.
+While a clearly defined notion of function in harmony had not yet
+been introduced, it could indeed be possible that Weber sensed
+its existence and documented it in theory without being able to
+fully articulate its nature. But Weber was adamant that his
+theory was not meant to be a system explaining the genesis of
+chords and their <nobr>actions.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup></nobr> He rejected rules and explanations
+for mechanisms properly linking chords; to do so would have been
+to unnecessarily forbid perfectly good progressions. Weber fully
+recognized the importance and ubiquity of I, IV, and V in the
+key. But at the same time, he permitted and even encouraged the
+use of any and all of the 6888 possible chord relationships he
+defined within and between keys, refusing to forbid anything.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup>He ascribed cadential power only to seventh chords resolving to
+triads; thus V<sup>7</sup>&ndash;I was his model cadence, V&ndash;I only a frequent
+progression between essential harmonies.<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> Moreover, Weber did
+not require the presence of the dominant in a modulation and even
+allowed for pieces containing no dominant at all.<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup> Nor did he
+offer any explanation for the motivation and dynamics of chord
+progressions; he merely reported on the comparative strength and
+plausibility of as many of them as possible.</p>
+
+<div style="width:500px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Weber's analysis, mm.21&ndash;33</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kopp_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="kopp_ex2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[6] In essence, Weber&rsquo;s theory identifies chords by their
+participation and position in a key, not by their relation to
+each other or their tendency to progress. His method attributed
+Roman numerals on a chord-by-chord basis: either a chord fit
+exactly into the prevailing key, or else it was defined as
+belonging to the closest possible key into which it fit. On this
+basis diatonic music was readily analyzed in a single key. But
+Weber had no concept of secondary/applied dominant by which to
+show basic hierarchic relationships of chords within the key, nor
+a theory of alterations by which to define variants of diatonic
+chords. Consequently, he analyzed stretches of music containing
+tonicizations of secondary degrees as quick successions of
+modulations to different keys. Highly chromatic passages of
+passing chords could, in his system, invoke one or more new keys
+with every chord.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> Thus while Weber&rsquo;s Roman numerals do define
+chords by their identities within keys, they cannot demonstrate
+how successions of chords with any significant chromatic content
+display coherence within a single key, thereby depicting the
+syntactic connections which can represent function to us.
+Essentially, his Roman numerals designate chords: primary
+diatonic triads and seventh chords. They do not represent the
+scale degree rubrics we may associate with function, which do
+more to subjugate chord identity to the key. Accordingly, simply
+calling Weber&rsquo;s labels &ldquo;function signs&rdquo; can give a false
+impression that scale degrees themselves, not chords, are being
+designated.</p>
+
+<p>[7] Moreover, these symbols are a far cry from the &ldquo;functions&rdquo;
+represented by Rameau&rsquo;s chord types. <i>Tonique</i>, <i>dominante</i>, and
+<i>sous-dominante</i> are defined by action&mdash;their relation to the
+chord which follows. I, ii, iii, etc., are defined by identity&mdash;their relation to a tonic. Used so broadly, these attributions of
+function may confound as much as they illuminate. It is
+interesting to note one shared idea: both theories require the
+presence of a dissonant seventh in order for the dominant to
+strongly imply the tonic. Neither attributes the will or power to
+progress to the fifth scale degree of itself.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Key-preserving chromatic progression</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="kopp_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="kopp_ex3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[8] Hugo Riemann&rsquo;s theory is indisputably a functional one in
+some sense, since it was he who popularized the term. But his
+notion of function and ours are worlds apart. In an early harmony
+treatise predating his introduction of the concept, Riemann
+demonstrates how a series of five chords containing direct
+chromatic relations, normally understood as passing through four
+keys, can be interpreted as belonging to a single key from
+beginning to end.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> The progression, with its alternative
+analyses, is shown in <b>Example 3</b>. Riemann brings two lines of
+thought to bear here: first, the acknowledgement of the
+possibility of direct connections between the tonic and chords
+with chromatic content; second, the identification of chords
+containing chromatic pitches with diatonic chords from which they
+draw identity and meaning while retaining individual character.
+These lines of thought led to his concept of <i>Tonalitaet</i>, an
+expanded notion of key encompassing both diatonic and chromatic
+relations directly with the tonic, and to the mature concept of
+<i>Funktion</i> of the 1890s. Both concepts stem from his underlying
+urge to show that chromatic music retains and reinforces its
+essential tonal aspect rather than subverting it.</p>
+
+<p>[9] While Riemann was developing the concept that eventually
+became <i>Funktion,</i> he also proposed an independent explanation of
+the mechanisms of chord connection. This was an exhaustive
+taxonomy based on intervals between roots and direction of
+progression.<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> Riemann retained this system of
+<i>Harmonieschritte</i> to explain chord progression even after
+introducing the <i>Funktion</i> idea; both are essential elements of
+his comprehensive harmonic theory. The advantage Riemann
+attributed to the <i>Harmonieschritte</i> system is that its
+particulars do not refer to key. He makes this clear in an
+impassioned refutation of Weber&rsquo;s Roman numeral notation, arguing
+for an essential identity of individual chord progression types
+existing independently of the character which they take on in the
+context of a key.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> The system provides little explanation for
+motivational aspects of the progressions; it has no recourse to
+dissonance-based arguments such as those of Rameau and Weber.<sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup></p>
+
+<p>[10] <i>Funktion</i>, on the other hand, has next to nothing to do
+with chord progression. Rather, it concerns the <i>meanings</i> of the
+chords which progressions link. The principal significance of the
+functional archetypes Tonic, Dominant, and Subdominant is that
+they are the primary chords of the key, linked by the preeminent
+interval of the fifth. Scale degree identification per se is
+completely absent from the theory; any of the member pitches of a
+functional archetype can represent functional identity. By
+allowing for the identification of every possible diatonic and
+chromatic chord with one of the three functional archetypes,
+Riemann provided a means not otherwise available by which to
+understand these chords as exercising meaning within a prevailing
+key, rather than requiring constant reference to other keys. But
+a chord&rsquo;s <i>Funktion</i> does not specify its probable course of
+action. There is no counterpart in Riemann&rsquo;s theory to Rameau&rsquo;s
+doctrine of characteristic dissonances, differentiating the
+functions by their certain successors. Riemann&rsquo;s earliest
+writings do draw on Hauptmann&rsquo;s dialectic to substantiate the
+directed nature of familiar cadences.<sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> But this aspect of
+logical necessity virtually disappears in later works. It would
+have been difficult to sustain as Riemann sought to account for
+every possible triadic progression within his theory.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> Riemann&rsquo;s familiar prescription of T&ndash;S&ndash;D&ndash;T is often cited as an
+example of logical necessity in his functional theory. But
+perhaps his most characteristic argument for T&ndash;S&ndash;D&ndash;T appears in
+his composition treatise of 1902, rather than in the speculative
+works.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> There Riemann painstakingly demonstrates to the
+student that the succession T&ndash;S&ndash;D&ndash;T strengthens the perception of
+tonic, while T&ndash;D&ndash;S&ndash;T weakens it. This argument is presented in
+terms of the favored choice among possibilities, rather than on
+the basis of any inherent properties of the functions themselves.
+While Riemann concludes that T&ndash;S&ndash;D&ndash;T is naturally smoother than
+T&ndash;D&ndash;S&ndash;T, there is nothing in his discussion to prove that the
+weaker cadence cannot be functional, nor that the stronger one is
+the only possible functional progression. The lesson is merely
+that T&ndash;S&ndash;D&ndash;T works and sounds better; the purpose of the
+discussion is chiefly to discourage the student composer from
+writing the progression from D to S.<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup></p>
+
+<p>[11] Carl Dahlhaus has examined Riemann&rsquo;s use of the terms
+<i>Funktion</i> and <i>Logik</i> and found both wanting. He has observed
+that while the term <i>Funktion</i> suggests a definite mathematical
+process by which to formally account for getting from chord X to
+chord Y, this kind of specificity is not to be found in Riemann&rsquo;s
+theory.<sup><a name="FN28REF" href="#FN28" id="footnote28">(28)</a></sup> Likewise, Dahlhaus reproaches Riemann for claiming
+the attribute of musical logic for his system. Dahlhaus observes
+that, while the system does explain harmonic content of chords
+and the relations of chords within the tonal system, it must also
+supply rules and norms of harmonic progression in order to be
+truly logical. He finds that such rules are completely lacking in
+Riemann&rsquo;s system, which as a result appears more descriptive than
+logical. Ultimately, Riemann&rsquo;s functions inhere as tonal meanings
+in individual chords; they do not determine action from one to
+the next. One chord cannot imply another simply on account of its
+function.</p>
+
+<p>[12] Clearly, Riemann&rsquo;s seminal idea is far removed from familiar
+concepts of function associating harmonic identity with scale-degree 
+relations. But there is a more basic divergence having to
+do with the purpose of the systems. One way we use the term
+function is to signify the quality of harmonic relationship which
+makes music tonal. Used in this way it is an exclusive concept:
+there are functional relationships and there are non-functional
+relationships in harmony, with many different ways proposed to
+differentiate the two. For Riemann, function also represented
+that quality of harmonic relationship which makes music tonal.
+But his was an <i>inclusive</i> concept. The objective of his
+elaborate system was to show that all possible chords and
+progressions could be accounted for in its terms as occurring
+within the key in relation to a tonic. While the cadential
+strength of progressions and their centrality to the key could
+vary, there was ideally no such thing as a non-functional
+progression within <i>Tonalitaet</i>. </p>
+<p>[13] What we are looking for in these older theories, I think, is
+a reflection of our belief that one of the important things
+chords do is imply other chords, and furthermore that they do so
+because of their function, whatever we understand that to be. All
+three of the theories discussed above fall short in this regard,
+each in its own way. Rameau provided an explanation showing how
+some chords imply other chords according to type, but ascribed
+their motivation to progress to non-chordal dissonance. Weber
+developed a way to clearly specify the position of each chord in
+its key, but allowed for all chord connections equally, and
+preferred not to speculate on motivational causes. Riemann
+explained harmonic coherence with a two-pronged approach:
+function specified the meaning of a chord in relation to its
+tonic and its key; the interval of root relation, which is
+independent of position in the key, specified the strength and
+directness of progressions. The motivational aspect of his theory
+was formulated as the concept of musical logic (not function),
+whose development he pursued early on but abandoned as his ideas
+matured. In our minds the lack of true teleological components in
+these theories of harmony can represent a serious shortcoming.
+Thus we may tend to read them in where they do not exist, or to
+lament their absence when it is undeniably perceived. It may be
+hard to imagine that all theorists of the common-practice era did
+not share our beliefs in the dynamic nature of harmonic identity,
+yet this is what close readings of at least these three theories
+reveal. But we need not conclude that these differences
+constitute failings on the part of the earlier theories. Rather,
+a clear understanding of the contrasts between earlier theories
+and our own can help to shed light on the expectations of our own
+time.</p>
+<p>[14] It has become natural for us to expect the ideal harmonic
+theory to explain how chord progressions are determined and goal-
+directed. Some of the responsibility for this, ironically, can be
+laid at Riemann&rsquo;s feet, for he was the one to introduce the term
+<i>function</i> in the first place. In his own work he explicitly
+associated <i>Funktion</i> with <i>Bedeutung</i>.<sup><a name="FN29REF" href="#FN29" id="footnote29">(29)</a></sup> But the word
+naturally evokes more dynamic associations. After all, in
+everyday usage, the function of any object or concept has to do
+with what it does more than with what it is. It is inevitable
+that this sense of the word would have influenced our notion of
+harmonic function, leading us to associate the concept with the
+behaviors of chords and to transform it into an active verb
+(&ldquo;functions as&rdquo;). The positivistic model of much modern inquiry
+also orients us toward explanations which invoke logical
+determinacy. Moreover, the  familiar feel of the term makes
+strict definition seem unnecessary. Yet this familiar feel
+derives more from informal usage (as the varied uses of the term
+cited at the beginning of this essay demonstrate) than from any
+rigorous and shared music-theoretic concept. Attempts to
+articulate the specific powers of chord function appropriately
+take the form of empirical summaries of chord behavior, such as
+the one quoted above in paragraph 1, note 2. It would be a
+formidable task to successfully formulate predictive rules to
+further specify exactly how and when each of the common functions
+of the IV chord as described must come into play. Such a fully
+rule-governed theory of harmonic function has proved on one hand
+to be an elusive goal, and on the other to be somewhat beside the
+point, since we have more satisfying deterministic explanations
+of music these days.</p>
+
+<p>[15] One of the principal teachings of Schenkerian theory is that
+the quality of goal-directedness in tonal music derives from
+short- and long-range contrapuntal and prolongational processes
+imbedded in the musical texture rather than from integral
+chord-to-chord progressions on the surface. If we accept this
+explanation of <i>Tonwille</i>, then perhaps it is unnecessary to
+require that our concept of harmonic function account fully for
+the same quality. A notion of function short on teleological
+implications might initially strike us as empty. But explanations
+of harmonic meaning and coherence remain necessary and important.
+If we limit our vision to recognizing diatonic scale-degree
+chords and their variants, then function becomes subsidiary in
+our minds to other musical processes. If, though, we open our
+view to imagine an enhanced system of diatonic and chromatic
+relations anchored to a tonic, something like Riemann&rsquo;s
+<i>Tonalitaet</i>, it may open our minds to contemplate in a positive
+way the greater structural potentials of the tonal system as
+exploited in mid-nineteenth to early twentieth-century music.
+Thus I would not like to suggest that we discard the function
+concept in our own descriptions of harmony or reject useful
+notions of harmonic identity and action. Function is a suggestive
+term which is still inspiring creative work in theory after over
+a century of use. But careful definition and elaboration is
+crucial. I do feel that we should be circumspect in attributing
+the function concept wholesale to theory before Riemann. The term
+carries so many associations for us that it is difficult not to
+read some of them into the historical subject, thereby occluding
+perception of subtle yet important differences from our own
+views. Even if we know exactly what we mean, there is no
+guarantee that our reader will accurately grasp our meaning when
+we use the term without scrupulous qualification, since there are
+so many acceptable interpretations of the concept. Furthermore,
+the widespread and casual use of the term nowadays has diminished
+its descriptive power. It may prove helpful to investigate our
+assumptions and more clearly articulate and differentiate the
+myriad concepts which function has come to represent for us.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	David Kopp<br>
+	Brandeis University<br>Department of Music<br>Waltham, MA  02254-9110<br><a href="mailto:kopp@binah.cc.brandeis.edu">kopp@binah.cc.brandeis.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> &ldquo;Each scale degree has its part in the scheme of tonality, its tonal function.&rdquo; Walter Piston and Mark DeVoto, <i>Harmony</i>, fourth edition, New York: Norton (1976), page 49.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> &ldquo;The IV has three common functions. In some cases, IV proceeds to a I chord<nobr> . . . </nobr>More frequently, IV is linked with ii<nobr> . . . </nobr>(it may also go) directly to V<nobr> . . . </nobr>&rdquo; Stefan Kostka and Dorothy Payne, <i>Tonal Harmony</i>, second edition. New York: Alfred A. Knopf (1989), page 103.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> This approach is used by Daniel Harrison in his recent <i>Harmonic Function in Chromatic Music: A Renewed Dualist Theory and an Account of its Precedents</i>, Chicago: University of Chicago Press (1994).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> &ldquo;In the Kuhnau, the tonic functions first as an <i>opening tonic</i> At the end it is a goal of motion, thus a <i>closing tonic</i>.&rdquo; Edward Aldwell and Carl Schachter, <i>Harmony and Voice Leading</i>, 2nd. ed., New York: Harcourt, Brace, and Jovanovich (1989), page 84.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Willi Apel, <i>The Harvard Dictionary of Music</i>, 2nd. ed., Cambridge: Harvard University Press (1969), article on function.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Thomas Christensen has examined this issue in &ldquo;Music Theory and its Histories,&rdquo; in <i>Music Theory and the Exploration of the Past</i>, ed. Hatch and Bernstein, Chicago: University of Chicago Press (1993).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Lester, op. cit., page 207. Lester uses the term function but is careful to distinguish how Rameau&rsquo;s theory differs from modern ideas.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> A thorough discussion of this &ldquo;mechanistic&rdquo; aspect of Rameau&rsquo;s theory is found in Christensen, <i>Rameau and Musical Thought in the Enlightenment</i>, Cambridge, England: Cambridge University Press (1993), pages 106&ndash;7.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Rameau, <i>Trait&eacute; de l'harmonie</i>, Paris (1722), page 53; <i>Nouveau syst&egrave;me de musique th&eacuteorique</i>, Paris (1726), pages 56&ndash;57. Reissued in facsimile by the American Institute of Musicology, 1966&ndash;68.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Rameau (1726), pages 38, 61.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Rameau (1722), pages 203&ndash;4.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Rameau, <i>Code de musique pratique</i>, Paris (1760), pages 81&ndash;82. Reissued in facsimile by the American Institute of Musicology, 1966&ndash;68. Example 1 from example page 17.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> David Lewin documents this in &ldquo;Two Interesting Passages in Rameau&rsquo;s <i>Trait&eacute; de l'harmonie</i>,&rdquo; In Theory Only 4/3 (1978):10. Also discussed in Christensen, op. cit., page 106.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Mark Hoffman, <i>A Study of German Theoretical Treatises of the Nineteenth Century</i>, Ph.D. dissertation, Eastman School of Music (1953), page 65. The comment is innacurate; for a discussion of earlier numbering systems, see Joel Lester, <i>Compositional Theory in the Eighteenth Century</i>, Cambridge: Harvard University Press, (1992), pages 207&ndash;08.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Weber, <i>Versuch einer geordneten Theorie der Tonsetzkunst</i>(1817), 3rd ed., B. Schotts S&ouml;hne, Mainz (1830&ndash;32), preface, pages x&ndash;xi.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> ibid., bk. II, pages 187&ndash;88, 213.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> His discussion of V&ndash;I comes in serial order between IV&ndash;vii and VI&ndash;ii during a taxonomic description of progressions by fourth (not fifth!). The discussion is one sentence long; since V&ndash;I is so common, Weber feels no need to explain it. Ibid., bk. II, pages 231, 242.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> ibid., bk. II, pages 7, 102.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> His analysis of a passage of his own music documents twenty keys in twenty-one measures, including chords which evoke two new keys simultaneously. Ibid., fig. 234, meas. 15&ndash;end. Example 2 shows an excerpt from this analysis (meas. 21&ndash;33). The attitude that individual chords may evoke a sense of key is not unique to Weber, but rather points to an attribute of thinking of the time. For example, A. B. Marx, writing in 1841, taught that even the dominant and subdominant triads, in their roles as principal triads of the key, bring with them a sense (<i>Erinnerungen</i>, or reminiscences) of their associated keys. Marx, <i>Die Lehre von der musikalische Komposition</i>, vol. 1, Leipzig: Breitkopf &amp; Haertel (1841), page 73.<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Hugo Riemann, <i>Skizze einer Neuen Methode der Harmonielehre</i>, Leipzig: Breitkopf &amp; Haertel (1880), pages 67&ndash;69.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> This system was formalized by HenryKlumpenhouwer in a recent article in this journal: &ldquo;Some Remarks on the Use of Riemann Transformations,&rdquo; Music Theory Online 0.9 (1994).<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Riemann, <i>Katechismus der Musik</i>, Berlin: Max Hesse (1890), page 65.<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Scott Burnham has carefully investigated Riemann&rsquo;s reading of Rameau, and the differences in their harmonic concepts, in &ldquo;Method and Motivation in Hugo Riemann&rsquo;s History of Harmonic Theory,&rdquo; Music Theory Spectrum, vol. 14/1, spring 1992.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> Riemann, &ldquo;<i>Musikalische Logik</i>&rdquo;, <i>Neue Zeitschrift fuer Musik</i> 28, (1872), pages 279&ndash;82.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> Harrison (op. cit., page 282) views this development as an abandonment of higher principles, a deliberate move designed for pedagogical expediency and market favor. Alternatively, though, it could be seen as the progression from idealistic, derivative student work to a more mature and tempered approach, implicitly acknowledging the shortcomings of earlier ideas while advancing newer ones as fruitful intellectually as they were financially.<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> Riemann, <i>Grosse Kompositionslehre</i>, vol. I (1902), page 33.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> Further evidence comes from Riemann&rsquo;s principal analytic work, the complete Beethoven sonata analyses of 1918&ndash;20. T&ndash;S&ndash;D&ndash;T does predominate in the analyses; however, along with numerous other successions, Riemann identifies several instances of T&ndash;D&ndash;S&ndash;T, nearly always occurring in principal thematic areas. Riemann, <i>L. Van Beethovens saemtliche Klavier-Solosonaten</i>, vols. 1&ndash;3, Berlin: Max Hesse (1920).<br><a href="#FN27REF">Return to text</a></p><p><a name="FN28">28.</a> Carl Dahlhaus, &ldquo;Terminologisches zum Begriff der harmonischen Funktion,&rdquo; <i>Die Musikforschung</i> 28/2 (1975), pages 197&ndash;202. Newer mathematical approaches, such as the transformation system proposed by David Lewin, are sounder, but (deliberately) shift the focus of meaning from individual chords to progressions in order to rectify the perceived emptiness of Riemann&rsquo;s concept. Lewin, <i>Generalized Musical Intervals and Transformations</i>, New Haven: Yale University Press (1987), page 177. Brian Hyer has also addressed this issue in his talk &ldquo;The Concept of Function in Riemann,&rdquo; referenced in Burnham, op. cit., note 26; he argues a relational aspect for the <i>Funktion</i> concept.<br><a href="#FN28REF">Return to text</a></p><p><a name="FN29">29.</a> This was his original definition of the term, I believe. Riemann (1890), page 27.<br><a href="#FN29REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">&ldquo;Each scale degree has its part in the scheme of tonality, its tonal function.&rdquo; Walter Piston and Mark DeVoto, <i>Harmony</i>, fourth edition, New York: Norton (1976), page 49.</div><div id="fndiv2" class="flyoverdiv">&ldquo;The IV has three common functions. In some cases, IV proceeds to a I chord . . . More frequently, IV is linked with ii . . . (it may also go) directly to V . . . &rdquo; Stefan Kostka and Dorothy Payne, <i>Tonal Harmony</i>, second edition. New York: Alfred A. Knopf (1989), page 103.</div><div id="fndiv3" class="flyoverdiv">This approach is used by Daniel Harrison in his recent <i>Harmonic Function in Chromatic Music: A Renewed Dualist Theory and an Account of its Precedents</i>, Chicago: University of Chicago Press (1994).</div><div id="fndiv4" class="flyoverdiv">&ldquo;In the Kuhnau, the tonic functions first as an <i>opening tonic</i> At the end it is a goal of motion, thus a <i>closing tonic</i>.&rdquo; Edward Aldwell and Carl Schachter, <i>Harmony and Voice Leading</i>, 2nd. ed., New York: Harcourt, Brace, and Jovanovich (1989), page 84.</div><div id="fndiv5" class="flyoverdiv">Willi Apel, <i>The Harvard Dictionary of Music</i>, 2nd. ed., Cambridge: Harvard University Press (1969), article on function.</div><div id="fndiv6" class="flyoverdiv">Thomas Christensen has examined this issue in &ldquo;Music Theory and its Histories,&rdquo; in <i>Music Theory and the Exploration of the Past</i>, ed. Hatch and Bernstein, Chicago: University of Chicago Press (1993).</div><div id="fndiv7" class="flyoverdiv">Lester, op. cit., page 207. Lester uses the term function but is careful to distinguish how Rameau&rsquo;s theory differs from modern ideas.</div><div id="fndiv8" class="flyoverdiv">A thorough discussion of this &ldquo;mechanistic&rdquo; aspect of Rameau&rsquo;s theory is found in Christensen, <i>Rameau and Musical Thought in the Enlightenment</i>, Cambridge, England: Cambridge University Press (1993), pages 106&ndash;7.</div><div id="fndiv9" class="flyoverdiv">Rameau, <i>Trait&eacute; de l'harmonie</i>, Paris (1722), page 53; <i>Nouveau syst&egrave;me de musique th&eacuteorique</i>, Paris (1726), pages 56&ndash;57. Reissued in facsimile by the American Institute of Musicology, 1966&ndash;68.</div><div id="fndiv10" class="flyoverdiv">Rameau (1726), pages 38, 61.</div><div id="fndiv11" class="flyoverdiv">Rameau (1722), pages 203&ndash;4.</div><div id="fndiv12" class="flyoverdiv">Rameau, <i>Code de musique pratique</i>, Paris (1760), pages 81&ndash;82. Reissued in facsimile by the American Institute of Musicology, 1966&ndash;68. Example 1 from example page 17.</div><div id="fndiv13" class="flyoverdiv">David Lewin documents this in &ldquo;Two Interesting Passages in Rameau&rsquo;s <i>Trait&eacute; de l'harmonie</i>,&rdquo; In Theory Only 4/3 (1978):10. Also discussed in Christensen, op. cit., page 106.</div><div id="fndiv14" class="flyoverdiv">Mark Hoffman, <i>A Study of German Theoretical Treatises of the Nineteenth Century</i>, Ph.D. dissertation, Eastman School of Music (1953), page 65. The comment is innacurate; for a discussion of earlier numbering systems, see Joel Lester, <i>Compositional Theory in the Eighteenth Century</i>, Cambridge: Harvard University Press, (1992), pages 207&ndash;08.</div><div id="fndiv15" class="flyoverdiv">Weber, <i>Versuch einer geordneten Theorie der Tonsetzkunst</i>(1817), 3rd ed., B. Schotts S&ouml;hne, Mainz (1830&ndash;32), preface, pages x&ndash;xi.</div><div id="fndiv16" class="flyoverdiv">ibid., bk. II, pages 187&ndash;88, 213.</div><div id="fndiv17" class="flyoverdiv">His discussion of V&ndash;I comes in serial order between IV&ndash;vii and VI&ndash;ii during a taxonomic description of progressions by fourth (not fifth!). The discussion is one sentence long; since V&ndash;I is so common, Weber feels no need to explain it. Ibid., bk. II, pages 231, 242.</div><div id="fndiv18" class="flyoverdiv">ibid., bk. II, pages 7, 102.</div><div id="fndiv19" class="flyoverdiv">His analysis of a passage of his own music documents twenty keys in twenty-one measures, including chords which evoke two new keys simultaneously. Ibid., fig. 234, meas. 15&ndash;end. Example 2 shows an excerpt from this analysis (meas. 21&ndash;33). The attitude that individual chords may evoke a sense of key is not unique to Weber, but rather points to an attribute of thinking of the time. For example, A. B. Marx, writing in 1841, taught that even the dominant and subdominant triads, in their roles as principal triads of the key, bring with them a sense (<i>Erinnerungen</i>, or reminiscences) of their associated keys. Marx, <i>Die Lehre von der musikalische Komposition</i>, vol. 1, Leipzig: Breitkopf &amp; Haertel (1841), page 73.</div><div id="fndiv20" class="flyoverdiv">Hugo Riemann, <i>Skizze einer Neuen Methode der Harmonielehre</i>, Leipzig: Breitkopf &amp; Haertel (1880), pages 67&ndash;69.</div><div id="fndiv21" class="flyoverdiv">This system was formalized by HenryKlumpenhouwer in a recent article in this journal: &ldquo;Some Remarks on the Use of Riemann Transformations,&rdquo; Music Theory Online 0.9 (1994).</div><div id="fndiv22" class="flyoverdiv">Riemann, <i>Katechismus der Musik</i>, Berlin: Max Hesse (1890), page 65.</div><div id="fndiv23" class="flyoverdiv">Scott Burnham has carefully investigated Riemann&rsquo;s reading of Rameau, and the differences in their harmonic concepts, in &ldquo;Method and Motivation in Hugo Riemann&rsquo;s History of Harmonic Theory,&rdquo; Music Theory Spectrum, vol. 14/1, spring 1992.</div><div id="fndiv24" class="flyoverdiv">Riemann, &ldquo;<i>Musikalische Logik</i>&rdquo;, <i>Neue Zeitschrift fuer Musik</i> 28, (1872), pages 279&ndash;82.</div><div id="fndiv25" class="flyoverdiv">Harrison (op. cit., page 282) views this development as an abandonment of higher principles, a deliberate move designed for pedagogical expediency and market favor. Alternatively, though, it could be seen as the progression from idealistic, derivative student work to a more mature and tempered approach, implicitly acknowledging the shortcomings of earlier ideas while advancing newer ones as fruitful intellectually as they were financially.</div><div id="fndiv26" class="flyoverdiv">Riemann, <i>Grosse Kompositionslehre</i>, vol. I (1902), page 33.</div><div id="fndiv27" class="flyoverdiv">Further evidence comes from Riemann&rsquo;s principal analytic work, the complete Beethoven sonata analyses of 1918&ndash;20. T&ndash;S&ndash;D&ndash;T does predominate in the analyses; however, along with numerous other successions, Riemann identifies several instances of T&ndash;D&ndash;S&ndash;T, nearly always occurring in principal thematic areas. Riemann, <i>L. Van Beethovens saemtliche Klavier-Solosonaten</i>, vols. 1&ndash;3, Berlin: Max Hesse (1920).</div><div id="fndiv28" class="flyoverdiv">Carl Dahlhaus, &ldquo;Terminologisches zum Begriff der harmonischen Funktion,&rdquo; <i>Die Musikforschung</i> 28/2 (1975), pages 197&ndash;202. Newer mathematical approaches, such as the transformation system proposed by David Lewin, are sounder, but (deliberately) shift the focus of meaning from individual chords to progressions in order to rectify the perceived emptiness of Riemann&rsquo;s concept. Lewin, <i>Generalized Musical Intervals and Transformations</i>, New Haven: Yale University Press (1987), page 177. Brian Hyer has also addressed this issue in his talk &ldquo;The Concept of Function in Riemann,&rdquo; referenced in Burnham, op. cit., note 26; he argues a relational aspect for the <i>Funktion</i> concept.</div><div id="fndiv29" class="flyoverdiv">This was his original definition of the term, I believe. Riemann (1890), page 27.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1995 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Cara Stroud and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

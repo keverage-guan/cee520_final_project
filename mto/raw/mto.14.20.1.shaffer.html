@@ -1,0 +1,402 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 20.1: Shaffer, Open Peer Review</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="A Proposal for Open Peer Review">
+
+    <meta name="citation_author" content="Shaffer, Kris P.">
+      
+
+<meta name="citation_publication_date" content="2014/02/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="20">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">A Proposal for Open Peer Review
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Kris P. Shaffer</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: <i>MTO,</i> open access, open peer review, publishing, curation, blogs</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://mtosmt.org/issues/mto.14.20.1/mto.14.20.1.shaffer.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received January 2014</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 20, Number 1, February 2014 <br> Copyright &#0169; 2014 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+[1] Throughout its history, <i>Music Theory Online </i> has leveraged new digital technologies to increase access to high-level scholarship and facilitate discussions of published materials inside the journal itself. (See, for example, the commentaries in Volumes <a href="http://www.mtosmt.org/issues/mto.93.0.2/toc.0.2.html" target="_blank">0.2</a>, <a href="http://www.mtosmt.org/issues/mto.95.1.1/toc.1.1.html" target="_blank">1.1</a>,  <a href="http://www.mtosmt.org/issues/mto.07.13.3/toc.13.3.html" target="_blank">13.3</a>, and <a href="http://www.mtosmt.org/issues/mto.10.16.4/toc.16.4.html" target="_blank">16.4</a>.) New technologies and publishing practices have developed in the past few years that can carry these practices even further, in great service to the academic community. One such publishing practice is open peer review, exemplified by publications like the <a href="http://journalofdigitalhumanities.org/" target="_blank">Journal of Digital Humanities,</a> <a href="http://digitalhumanitiesnow.org/" target="_blank">Digital Humanities Now,</a> <a href="http://dhthis.org" target="_blank">Digital Humanities This,</a> <a href="http://americanhistorynow.org/" target="_blank"> American History Now,</a> and the book <i>Web Writing: Why and How for Liberal Arts Teaching and Learning</i> (Dougherty et al. 2014). While multiple practices exist that can be considered manifestations of open peer review, open peer review in its fullest sense takes the scholarly discussion that traditionally follows publication&#8212;such as the discussion threads contained in the early issues of <I>MTO</I>&#8212;and moves it pre-publication, rendering them part of the review process. Open peer review ensures high visibility for the best work, extensive vetting by the scholarly community pre-publication, and a timely publication process, all the while maintaining high standards for peer-reviewed publication. </p><p>
+[2] Music theorists would benefit from having an open peer-review journal, and <I>MTO</I> is best situated to be that journal. <I>MTO</I> is also well situated to experiment with open peer review without committing its entire future to such a model. In this article, I will explain open peer review in more detail by following an example article through the process of review and publication, commenting on the potential benefits of this process along the way. I conclude with a proposal for how <I>MTO</I> might experiment with the open peer-review model in order to gauge its potential for our field more precisely. </p>
+<p style="text-align:center">
+<b>Following the Process</b></p>
+<p>
+[3] One of the first articles to appear in the <i>Journal of Digital Humanities</i> is Trevor Owens&#8217;s &#8220;Defining Data for Humanists: Text, Artifact, Information or Evidence?&#8221; This article began as a chapter for the book, <a href="http://writinghistory.trincoll.edu/" target="_blank"> 
+<em>Writing History in the Digital Age</em></a>, itself an open peer-review project (Nawrotski and Dougherty, 2013). 
+<em>Writing History in the Digital Age</em> was undertaken by co-editors Jack Dougherty (Trinity College, Connecticut) and Kristen Nawrotzki (P&#228;dagogische Hochschule Heidelberg), in collaboration with the University of Michigan Press. This project is available from <a href="http://www.digitalculture.org/books/writing-history-in-the-digital-age/" target="_blank">UMP</a> as a print book, a downloadable ebook, and an open-access web book as part of their series of <a href="http://www.digitalculture.org/" target="_blank"> digitalculturebooks</a> that explore novel publication models like open peer review and simultaneous print and open-access publication. For that project, Owens co-authored a chapter with Frederick W. Gibbs called &#8220;The Hermeneutics of Data and Historical Writing.&#8221; The <a href="http://writinghistory.trincoll.edu/data/hermeneutics-of-data-and-historical-writing-gibbs-owens/" target="_blank"> first version of this chapter</a> was posted to the project website in the fall of 2011. On this website, readers can comment on the chapter as a whole, or on specific paragraphs in the chapter. The chapter received 35 total comments&#8212;12 on the chapter as a whole, and 23 on specific passages. Some of these comments we would recognize as typical peer-review summaries (accept/reject/revise with comments on how best to revise); others were directed at improving specific elements in the chapter.
+</p><p> [4] Owens and Gibbs replied to some comments directly, and ultimately composed <a href="http://writinghistory.trincoll.edu/data/gibbs-owens-2012-spring/" target="_blank">a revision of this chapter</a>, which appeared on the project website in the spring of 2012. At this stage in the publication process, the chapter moved from review mode to copyediting mode. The chapter on the website includes a link to <a href="https://docs.google.com/document/d/1vLZPQkVQ8avcaDn2L-7G1PPC9ChPg0pGj0gae5r5N4Q/edit" target="_blank">a document in Google Drive</a> where any reader can comment (though comments ended up limited to the two authors and two editors), but only the document owners can change the text in response to those comments. The final version of this document was submitted to the publisher for inclusion in the print and electronic book editions (Gibbs and Owens 2013). However, the open peer-review process for Owens&#8217;s and Gibbs&#8217;s chapter did not end with the publication of 
+<em>Writing History in the Digital Age</em>.
+</p><p> [5] In December 2011, the middle of the open peer-review process for this chapter, Owens wrote on his <a href="http://www.trevorowens.org/2011/12/defining-data-for-humanists-text-artifact-information-or-evidence/" target="_blank">blog:</a><blockquote>
+We were asked to clarify what we saw as the difference between data and evidence. We will help to clarify this in the paper, but it has also sparked a much longer conversation in my mind that I wanted to share here and invite comments on. As I said, this is too big of a can of worms to fit into that paper, but I wanted to take a few moments to sketch this out and see what others think about it.</blockquote>
+</p><p> [6] What followed in that blog post was the first version of Owens&#8217;s essay, &#8220;Defining Data for Humanists: Text, Artifact, Information or Evidence?&#8221; This essay sparked the interest of digital humanists on the internet, and on February 2, 2012, it was re-posted on <a href="http://digitalhumanitiesnow.org/2012/02/defining-data-for-humanists-text-artifact-information-or-evidence-by-trevor-owens/" target="_blank">Digital Humanities Now</a>, an open-access website that aggregates content on the open web related to the field of digital humanities, or DH. In addition to simply aggregating or re-posting the blog post, 
+<em>DHNow</em>&#8217;s editors labeled the post &#8220;Editor&#8217;s Choice,&#8221; meaning that their team of regular editors and temporary &#8220;editors-at-large&#8221; agree that it is worth particular attention from the DH community. Though 
+<em>DHNow</em> does include some form of peer review (albeit without comments, or even the idea of &#8220;submission&#8221;), it is not a journal, simply a quality-controlled aggregator that attempts to help DH scholars find good content on the open web. Comments and responses to items posted on 
+<em>DHNow</em> are posted on the original sites (controlled by the authors), and journal publication is left to others. </p><p>
+[7] <i>DHNow</i> is one of several publications produced by the <a href="http://chnm.gmu.edu/" target="_blank">Roy Rosenzweig Center for History and New Media</a>. Another is the <a href="http://journalofdigitalhumanities.org/" target="_blank">Journal of Digital Humanities</a>. As stated on the journal&#8217;s website,
+<blockquote>The <i>Journal of Digital Humanities</i> selects content from the <a href="http://digitalhumanitiesnow.org/category/featured/" target="_blank">Editors&#8217; Choice</a> pieces from <i> Digital Humanities Now,</i> which highlights the best scholarship&#8212;in whatever form&#8212;that drives the field of digital humanities field [sic] forward. The <i>Journal of Digital Humanities</i> provides three additional layers of evaluation, review, and editing to the pieces initially identified by <i>Digital Humanities Now</i>.</blockquote></p><p>
+[8] Owens&#8217;s blog post that appeared in <em>DHNow</em>&#8217;s Editor&#8217;s Choice stream was picked up by <i>JDH</i> in just such a manner. After a round of revisions, it appeared in <a href="http://journalofdigitalhumanities.org/1-1/defining-data-for-humanists-by-trevor-owens/" target="_blank">Volume 1.1 of <i>JDH</i></a> in Winter 2011 (Owens 2011)&#8212;<i>before the book chapter completed its editorial process. </i>Though this final editing process did not take place on the open web, we can compare the blog post to the version published in <i>JDH</i> and see that most of the changes made during this final review stage were small. The most substantial changes were additions: a new introduction to fit the new medium of publication, a new paragraph engaging existing research not cited in the original, and a conclusion&#8212;something often missing from a blog post, but essential to a polished publication. </p><p>
+[9] This open peer-review process produced several unique benefits: (1) It produced two publications in highly respected media instead of one. Having two publications is an obvious benefit for the author, but since the extra publication allowed Owens to address a significant issue that he and Gibbs could not address fully in the original chapter, the extra publication benefits the field as well. (2) The open peer-review process allowed a greater number of scholars to provide refining input to the authors before final publication. (3) It generated a collaborative environment in which to make the chapter and article better. (4) In addition to the advantages of the open review process, both the book and the journal processes included the biggest advantages of traditional publishing: working with peer reviewers, editors, and publishers to ensure high quality content and to make the work available to a wide readership. </p><p>
+[10] Open peer review and its advantages are not exclusive to the field of digital humanities. For instance, <i>Empirical Musicology Review </i>employs a &#8220;public peer review&#8221; model and publishes commentaries alongside articles in the journal, with the goal of &#8220;allowing readers to witness a scholarly conversation.&#8221; (See this description of <a href="http://libeas01.it.ohio-state.edu/ojs/index.php/EMR/about/editorialPolicies#peerReviewProcess" target="_blank"><i>Empirical Musicology Review</i>&#8217;s peer-review process</a>.) Open peer review can benefit music theorists, as well, and <I>MTO</I> is well positioned to incorporate it into a viable publication model for music theory. With the advantages of open peer review in mind, I will now outline a proposal for an open peer-review experiment for <I>MTO</I>.</p>
+<p style="text-align:center"><b>
+A Proposal for Open Peer Review in <i>MTO</i></b></p>
+<p>[11] For the past year, the SMT Networking Committee (of which I am a member) has been discussing the possibility of creating a website that will curate content of interest to music theory scholars available on the open web. We have built a prototype for this curation site using open-source content management software called <a href="http://pligg.com/" target="_blank">Pligg</a>. Pligg allows a community to register its members, and all registered members can nominate content for inclusion on the site. Once a member submits a link to an online resource and a brief description of the resource, it appears on a page available to members that contains the most recently submitted content. Members can follow the link to the original resource, comment on the original page, comment within Pligg&#8217;s members area regarding its merit for inclusion, and vote thumbs-up or thumbs-down on Pligg. Once a submitted resource reaches a certain threshold&#8212;five more thumbs up than down, for example&#8212;it is automatically moved to the front page, which is viewable by anyone, members and non-members alike. This proposed curation site is based on the model of <a href="http://www.dhthis.org/" target="_blank"><i>DHThis,</i></a> which is similar to <i>DHNow,</i> but with a more transparent and community-driven review process. </p><p>
+[12] Such a curation site would be a valuable tool in itself. As SMT members have moved more of their online discussion and resource sharing off of smt-talk, discussions have become more fragmented. This curation site could serve as a valuable portal to help music scholars find good content and online discussions, a portal that is flexible enough to deal with the changing landscape of online social interaction. As more music scholars are blogging about their research, and especially their teaching, and more music instructors are posting course materials on the open web, this curation site could serve as a valuable portal to good research, research-in-progress, and pedagogical tips and materials. Such a site would also allow, potentially, for a greater diversity of voices within the music theory community, as a small sub-community could easily share their materials. (If that community is active and enthusiastic enough, they could readily help each other&#8217;s work reach the main page. And if a community abused the process, algorithms for front-page inclusion could be adjusted or users could be suspended.) </p><p>
+[13] However, just as <i>DHNow</i> is not the final stage in a peer-review process, this music theory curation site need not be the final stage in a peer-review process. I propose that <I>MTO</I> take on a function similar to the <i>Journal of Digital Humanities. MTO</I>&#8217;s editors can periodically mine the front page of this curation site, as well as the comment threads, for articles of interest, to find blog posts and essays that are of great interest to the music theory community, that receive significant positive feedback, and that have improved as a result of the feedback received. <I>MTO</I>&#8217;s editors can seek out simply the best content, or the best content related to a pre-identifed theme. <I>MTO</I>&#8217;s editors (as well as organizers of conferences and symposia) can also identify themes that emerge on the curation site, and use those themes to organize special issues.
+</p>
+<p>
+[14] Once content from the curation site has been identified for potential inclusion in <I>MTO</I>, I envision one of two primary options for the final stage of review. The first option would follow <i>JDH</i>: accept the article pending revision, and assign a small team of editors and/or referees to work collaboratively, and non-anonymously, with the author to bring the article up to publication standard. The second option would follow something similar to the <i>Writing History in the Digital Age</i> model: accept the article pending revision, and make the article available for public comment pre-publication, so that the author can revise the article based on (good) comments received, followed by a final copyediting pass  before publication on <I>MTO</I>. In both cases, the editor would retain the final decision about inclusion in the journal. </p>
+<p style="text-align:center"><b>
+A Community Mind-shift</b></p>
+<p>[15] Such a publication model would both produce and require a mind-shift from the music theory community. It would require a greater comfort than our field has traditionally shown with sharing ideas publicly that may not be camera-ready. It would require individuals to overcome a greater technological hurdle than with traditional publishing. Since this open peer-review model would be based around pre-published material on the web, it would generally lead to shorter publications than traditional publishing. Articles that work well for open peer review tend to be shorter, much more targeted, and have a much shorter bibliography than traditional articles, even when they represent the same level of research quality. Lastly, just as authors would need to be more comfortable sharing ideas that may not be camera-ready, reviewers need to be more comfortable sharing their comments, including critical ones, on the open web for such a project to work. Blind peer review protects reviewers as much as authors. Open peer review may be a non-starter for those used to providing their comments anonymously. Regardless, open peer review does require a major shift in thought here, and it may only work in sub-communities (such as the <a href="http://www.flipcamp.org/" target="_blank">FlipCamp</a> community, or within a department or a school of thought) where a strong collegiality already exists. </p><p>
+[16] Open peer review would also produce a mind-shift among music theory scholars: scholarship would be less about individuals working in isolation, and more about collaboration. That, in turn, means that working and talking openly with other scholars becomes a primary means of participating in scholarly discourse. (That is the spirit behind<i> Empirical Musicology Review&#8217;s</i> review process and open access policy.) For my part, that would be a welcome and exciting shift in the way we as music theorists work. </p><p>
+[17] Open peer review has much to offer our scholarly community. While the proposal I have outlined may not be the ultimate destination for SMT or <I>MTO</I>, it is a process that has proven valuable enough to other humanistic disciplines that it is worth attempting in ours. Regardless of the end result, I hope that we as a scholarly society can be among the leaders of those increasing access to good research and teaching materials and facilitating meaningful scholarly discourse about music, both within our society and without.</p>
+
+
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Kris P. Shaffer<br>
+	University of Colorado&#8211;Boulder<br>College of Music<br>301 UCVB<br>Boulder, CO 80309<br><a href="mailto:kris.shaffer@gmail.com">kris.shaffer@gmail.com</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_dougherty_et_al_2014" class="flyoverdiv">Dougherty, Jack, Jason B. Jones, Dina Anselmi, and Tennyson O&#8217;Donnell, eds. 2014. <a href='http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=dh;c=dh;idno=12230987.0001.001;rgn=full%20text;view=toc;xc=1;g=dculture'  target='_blank'><i>Web Writing: Why and How for Liberal Arts Teaching & Learning</a>. </i>Ann Arbor, Mich.: University of Michigan Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dougherty_et_al_2014"></a>Dougherty, Jack, Jason B. Jones, Dina Anselmi, and Tennyson O&#8217;Donnell, eds. 2014. <a href='http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=dh;c=dh;idno=12230987.0001.001;rgn=full%20text;view=toc;xc=1;g=dculture'  target='_blank'><i>Web Writing: Why and How for Liberal Arts Teaching & Learning</a>. </i>Ann Arbor, Mich.: University of Michigan Press.</p><div id="citediv_gibbs_2013" class="flyoverdiv">Gibbs, Frederick W. and Trevor J. Owens. 2013. &#8220;<a href='http://quod.lib.umich.edu/d/dh/12230987.0001.001/1:7/--writing-history-in-the-digital-age?g=dculture;rgn=div1;view=fulltext;xc=1#7.3' target='_blank'>The Hermeneutics of Data and Historical Writing</a>.&#8221; In <i>Writing History in the Digital Age,</i> ed. Kristen Nawrotzki and Jack Dougherty. Ann Arbor, Mich.: University of Michigan Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gibbs_2013"></a>Gibbs, Frederick W. and Trevor J. Owens. 2013. &#8220;<a href='http://quod.lib.umich.edu/d/dh/12230987.0001.001/1:7/--writing-history-in-the-digital-age?g=dculture;rgn=div1;view=fulltext;xc=1#7.3' target='_blank'>The Hermeneutics of Data and Historical Writing</a>.&#8221; In <i>Writing History in the Digital Age,</i> ed. Kristen Nawrotzki and Jack Dougherty. Ann Arbor, Mich.: University of Michigan Press.</p><div id="citediv_nawrotzki_and_dougherty_2013" class="flyoverdiv">Nawrotzki, Kristen and Jack Dougherty, eds. 2013. <i><a href='http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=dh;c=dh;idno=12230987.0001.001;rgn=full%20text;view=toc;xc=1;g=dculture' target='_blank'>Writing History in the Digital Age</a>.</i> Ann Arbor, Mich.: University of Michigan Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nawrotzki_and_dougherty_2013"></a>Nawrotzki, Kristen and Jack Dougherty, eds. 2013. <i><a href='http://quod.lib.umich.edu/cgi/t/text/text-idx?cc=dh;c=dh;idno=12230987.0001.001;rgn=full%20text;view=toc;xc=1;g=dculture' target='_blank'>Writing History in the Digital Age</a>.</i> Ann Arbor, Mich.: University of Michigan Press.</p><div id="citediv_owens_2011" class="flyoverdiv">Owens, Trevor. 2011. &#8220;<a href='http://journalofdigitalhumanities.org/1-1/defining-data-for-humanists-by-trevor-owens' target='_blank'>Defining Data for Humanists: Text, Artifact, Information or Evidence?</a>&#8221;<i> Journal of Digital Humanities </i>1, no. 1 (accessed January 10, 2014).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="owens_2011"></a>Owens, Trevor. 2011. &#8220;<a href='http://journalofdigitalhumanities.org/1-1/defining-data-for-humanists-by-trevor-owens' target='_blank'>Defining Data for Humanists: Text, Artifact, Information or Evidence?</a>&#8221;<i> Journal of Digital Humanities </i>1, no. 1 (accessed January 10, 2014).</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2014 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by Carmel Raz, Editorial Assistant  
+
+
+<br>
+		
+			<br>Number of visits:  
+
+		10967
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

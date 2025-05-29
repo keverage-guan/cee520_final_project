@@ -1,0 +1,2160 @@
+﻿ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 4.6: Rahn, Marchetto&rsquo;s Tuning</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Practical Aspects of Marchetto&rsquo;s Tuning">
+
+    <meta name="citation_author" content="Rahn, Jay">
+      
+
+<meta name="citation_publication_date" content="1998/11/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="4">
+<meta name="citation_issue" content="6">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Practical Aspects of Marchetto&rsquo;s Tuning
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.98.4.6/mto.98.4.6.rahn.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Jay Rahn</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: semitone, monochord, geometry, perception,
+beats, counterpoint, chant, pedagogy, scale</font></p><p><font size='4'>ABSTRACT: In his historically momentous account of 
+tuning, Marchetto of Padua (fl. 1305&ndash;19) proposed
+dividing the whole tone of received theory (9/8=204
+cents) into 5 parts. This report develops determinate
+arithmetic and geometric realizations of Marchetto&rsquo;s
+formulation&mdash;directly applicable to the medieval
+monochord, and sonically illustrated by digital files.
+The resulting intervals&rsquo; feasibility is compared with
+current findings in the psychology of interval
+perception. Conjectures are offered as to how and to
+whom Marchetto&rsquo;s tuning was taught. A dual formulation
+of &ldquo;nuanced,&rdquo; heterogenous tonal systems is advanced to
+assess structural effects of Marchetto&rsquo;s tuning on
+pieces and to suggest ways one could learn to perceive
+and sing his intervals nowadays.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.98.4.6/mto.98.4.6.rahn.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.98.4.6/rahn_examples.pdf">PDF examples </a></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 4, Number 6, November 1998 <br> Copyright &#0169; 1998 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>
+<h5>INTRODUCTION</h5>
+
+<h5>1. OVERVIEW</h5> 
+ 
+<h5>2. GEOMETRIC CONSTRUCTIONS FOR THE MONOCHORD</h5> 
+ 
+<h5>3. FEASIBILITY OF DRAFTING MARCHETTO&rsquo;S 9-FOLD DIVISION</h5> 
+ 
+<h5>4. INTERVAL PERCEPTION AND MARCHETTO&rsquo;S DIESES</h5>
+
+<h5>5. PEDAGOGICAL ASPECTS OF MARCHETTO&rsquo;S FORMULATION</h5>
+
+<h5>6. OTHER REALIZATIONS OF MARCHETTO&rsquo;S DIESES</h5>
+
+<h5>7. MARCHETTO&rsquo;S CHROMATICISMS AND RECENT SCALE THEORY</h5>
+
+<h5>FOOTNOTES</h5> 
+ 
+<h5>WORKS CITED</h5>
+<p> 
+<hr> 
+
+
+<p style="text-align: center"><b>INTRODUCTION</b></p>
+
+<p>[0.0] Marchetto of Padua (fl. 1305&ndash;19) was arguably the
+most important European music theorist between Guido of
+Arezzo (fl. ~991/2&ndash;1033+) and Gioseffo Zarlino (1517&ndash;90). A leading experimental composer of his era,
+Marchetto taught at Padua&rsquo;s Cathedral, a job that would
+involve training choirboys, leading the chorus in
+liturgical chant, performing his own part in written
+and/or improvised discant (counterpoint), and both
+performing and rehearsing/directing others in cutting-edge music of his own creation (Gallo 1974: 42&ndash;43;
+Vecchi 1954: 166&ndash;68).
+<p>
+
+[0.1] Under aristocratic patronage, Marchetto published
+pathbreaking contributions to all the main areas of
+music theory, then or now: in his Lucidarium (1317&ndash;18),
+musical philosophy, semiotics, numerology,  and applied
+mathematics, as well as more narrowly technical matters
+of tuning, discant, pitch notation, melodic analysis,
+and modality; in its sequel, the Pomerium (1318&ndash;19),
+rhythmic theory and notation (Herlinger 1985: 3&ndash;21;
+Gallo 1977/1985: 113&ndash;16). 
+<p>
+
+[0.2] These innovations influenced pre-eminent
+theorists and musicians of Europe for almost 300 years
+(cf., e.g., Niem&ouml;ller 1956; Herlinger 1981a, 1981b, 
+1990). Nonetheless, the novelty for which Marchetto was, 
+and remains, best known&mdash;namely, his proposal that 
+whole tones be divided into 5 parts&mdash;has been interpreted
+somewhat indeterminately. E.g., Jan Herlinger&rsquo;s 
+important account concludes (1985: 17):
+<ul>
+
+     Just as Marchetto&rsquo;s enharmonic and diatonic
+     semitones must be approximations, so must be his 
+     diesis and chromatic semitone. [The latter]      
+     differ from each other in size to a greater degree
+     than [Marchetto&rsquo;s] enharmonic and diatonic 
+     semitones, but <i>just how much</i> we cannot say [my 
+     emphasis].
+</ul>
+
+<p>[0.3] The present report advances determinate
+interpretations of Marchetto&rsquo;s often difficult account
+of tuning. Briefly, Marchetto&rsquo;s account favours 2 main
+readings of his whole-tone division: into 9 or 5 parts.
+From <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.15|</a> onward, Marchetto writes uniformly
+of 5 dieses per whole tone.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> However, to regard the
+whole tone as divided into 5 parts <i>tout court</i> is to
+discount Marchetto&rsquo;s extended preliminary account of
+how &ldquo;the nature of the whole tone, its essence, would
+consist in the 9-fold number compared to the 8-fold
+number [i.e., the ratio 9/8]&rdquo; (quod natura toni et
+essentia eius consistat in novenario numero ad octonarium
+comparato: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.4.1&ndash;42|</a>) and &ldquo;in the perfection
+of the 9-fold number&rdquo; (in perfectione numeri
+novenarii: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.8|</a>), as well as his theses that:
+<ul>
+
+<p>
+a) &ldquo;the 9-fold number [i.e., as such, in contrast to,
+e.g., 9 * 2 = 18 or 3 * 3 = 9] can never be divided into equal
+parts&rdquo; (novenarius numerus numquam potest dividi in
+partes equales: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.9|</a>); 
+<p>
+
+<p>
+b) &ldquo;its parts must be unequal&rdquo; (partes ipsius debeant
+esse inequales: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.13|</a>);
+<p>
+
+<p>
+c) &ldquo;1 would be its 1st part; from 1 to 3, its 2d
+[part]; from 3 to 5, its 3d [part]; from 5 to 7, its
+4th [part]; from 7 to 9, its 5th [part]; and such a 5th
+part is the 5th odd number of the 9-fold totality&rdquo;
+(unus sit prima pars; de uno ad tres, secunda; de
+tribus ad quinque, tertia; de quinque ad septem,
+quarta; de septem ad novem, quinta; et talis quinta
+pars est quintus numerus impar totius novenarii:
+<a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.14|</a>)&mdash;in other words, that Marchetto construes
+the 5 unequal parts of the whole tone as comprising
+1 + ( 4 * 2 ) 9th-parts, a point clarified by his having
+emphasized that the 9-fold number can never be divided
+into equal parts, because:
+<p>
+
+<p>
+d) &ldquo;a unit is in it that resists being divided&rdquo; (est
+<nobr>. . .</nobr> ibi unitas que resistit dividi: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.10|</a>), an
+idea Herlinger astutely connects with Marchetto&rsquo;s
+later, more complete statement of Remigius s doctrine
+that:
+<p>
+
+<p>
+e) &ldquo;an even number is mutable and divisible [i.e., into
+equal segments], whereas an odd number is indivisible,
+containing a unit <i>in its middle</i> that resists division&rdquo;
+(numerus par mutabilis et divisibilis est; numerus vero
+impar indivisibilis est continens unitatem <i>in medio sui</i>
+que divisioni resistit: <a href="http://www.music.indiana.edu/tml/14th/MARLUC6_TEXT.html">|Luc. 6.3.14|</a>: [my emphasis]).
+</ul>
+
+<p>[0.4] Although a 5-fold division partitioned into 2 + 1 + 2
+would satisfy this last point as well as a 9-fold
+division partitioned into ( 2 * 2 ) + 1 + ( 2 * 2 ), it would miss
+the plausibility that Marchetto regarded as an
+important aspect of his original formulation of the 9/8
+ratio, &ldquo;not yet discovered demonstrated by writers [on
+music theory]&rdquo; (nondum invenitur <nobr>. . .</nobr> ab auctoribus
+demonstratum: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 2.4.3|</a>), the following idea:
+each of the 9 parts of the 9th part of any whole tone
+division is the same size as each of the immediately
+preceding 8 parts of the 8th part (cf. 81/72 and 72/64,
+and [0.5], [2.3&ndash;5], below). Like other aspects of his
+tuning, this is something &ldquo;[he could] display to
+perception on sonorous bodies, i.e., the monochord
+etc.&rdquo; (cf.: ostendimus ad sensum in corporibus
+sonoribus, puta in monocordo et aliis: <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.8|</a>).
+It jibes with the earlier medieval privileging of
+supernumerary ratios,  ( x + 1 ) / x, of which the smaller
+number, x, is a power of 2, i.e., 2^n, as in
+2/1 = ( 1 + ( 2^0 ) ) / ( 2^0 ) (trivially), or more importantly, 
+3/2 = ( 1 + ( 2^1 ) ) / ( 2^1 ).
+<p>
+
+[0.5] Such an approach facilitated geometric
+construction of ratios by reducing all steps to
+bisection or addition/transposition of parts resulting
+from bisection and could be confirmed on the monochord
+by eye and ear. For Marchetto&rsquo;s novel division, all 9
+parts of a whole-tone ratio:
+9/8 ( = ( ( 1 + 8 ) / 8 ) = ( ( 1 + ( 2^3 ) ) / ( 2^3 ) ) ) would be evident in
+this way, as would all 9 parts within a whole tone:
+81/72 ( = ( ( 9 * ( 1 + 8 ) ) / ( ( 8 * ( 8 ) ) = ( ( 9 * ( 1 + ( 2^3 ) ) / ( ( 8 * ( 2^3 ) ) ) ).
+That each of the 9 ( = 81 - 72 ) parts in the 9th part of a
+9/8 ratio would be of the same length as each of the
+preceding 8 ( = 72 - 64 ) parts of the preceding, 8th part,
+which also is a whole tone, since 72/64 = 9/8, would
+necessarily result from the general inequality: 
+(x^2) - x ( x - 1 ) = x ( x - 1 ) - ( ( x - 1 )^2 ) + 1 
+(e.g., ( 2^2 ) - 2 ( 1 ) = 2 ( 1 ) - ( 1^2 ) + 1  or  4 - 2 = 2 - 1 + 1 or 2 = 2;
+( 3^2 ) - 3 ( 2 ) = 3 ( 2 ) - ( 2^2 ) + 1 or 9 - 6 = 6 - 4 + 1 ) or 3 = 3 ).
+<p>
+ 
+[0.6] The 9 spaces marked off within a whole tone&rsquo;s
+space would be partitioned into 5 spaces, each of which
+would be a diesis, the middlemost of which (77/76)
+would comprise the &ldquo;unit that cannot be divided:&rdquo;
+<pre>
+     81   80   79   78   77        76   75   74  73  72
+     81        79        77        76        74      72
+     <-diesis-><-diesis-><-diesis-><-diesis-><-diesis->
+</pre>     
+<p>Arithmetically, this would involve dividing the
+frequency-ratio for the whole tone (e.g., C/D), which
+for almost 2000 years had been formulated as 9/8:
+<pre>
+
+     C                                            D
+     9                                            8 
+
+</pre>     
+<p>into 9 parts (cf. Gurlitt and Eggebrecht 1967: v. 3, 225):
+<pre>
+
+     C                                            D
+     9    8    7    6    5    4    3    2    1    0
+
+</pre>     
+<p>so that the entire whole tone could be understood as
+81/72:
+<pre>
+
+     C                                            D
+     81   80   79   78   77   76   75   74   73   72
+
+</pre>
+<p>Within this newly construed whole tone, Marchetto&rsquo;s
+most important diesis (e.g., C74/D) would be 74/72
+( = 37/36 ),
+whereas its complement within the whole tone (e.g.,
+C/C74), would be Marchetto&rsquo;s &ldquo;chromatic semitone,&rdquo;
+81/74:<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup><pre>
+
+     <a target="ex_window" onClick="newwindow('c.mp3',400,200); return false;" href="c.mp3">|c|</a>                                <a target="ex_window" onClick="newwindow('c74.mp3',400,200); return false;" href="c74.mp3">|c74|</a>      <a target="ex_window" onClick="newwindow('d.mp3',400,200); return false;" href="d.mp3">|d|</a>
+     81                                 74         72
+     <--------chromatic semitone--------><--diesis-->
+                                        37         36
+
+</pre>
+<p>
+
+[0.7] Marchetto&rsquo;s other semitones (i.e., parts of a
+whole tone; incomplete, imperfect tones&mdash;not 1/2-tones:
+cf. <a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.5.18|</a>) would be, to use further terms he
+appropriated from Ancient Greek theory (via 
+Boethius),<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> the &ldquo;enharmonic&rdquo; semitone, whose 2 
+dieses would comprise 81/77 (e.g., for A/Bb77) and its
+whole-tone complement, the 3-diesis, &ldquo;diatonic
+semitone&rdquo; (e.g., Bb77/B), whose ratio would be 77/72
+(cf., however, below):
+<pre>
+
+     <a target="ex_window" onClick="newwindow('a.mp3',400,200); return false;" href="a.mp3">|a|</a>                  <a target="ex_window" onClick="newwindow('bb77.mp3',400,200); return false;" href="bb77.mp3">|bb77|</a>                  <a target="ex_window" onClick="newwindow('b.mp3',400,200); return false;" href="b.mp3">|b|</a>
+     81                    77                     72
+     <-enharmonic semitone-><---diatonic semitone--->
+
+</pre>
+<p>
+
+<p style="text-align: center"><b>1. OVERVIEW</b></p>
+ 
+<p>[1.0] Although Marchetto&rsquo;s numerical formulation is
+highly interesting in its own right, as is its place in
+the stylistic, intellectual, cultural, ethnic, and
+gendered ideological history of Western European music,
+I focus here on immediate practical aspects of his
+tuning. Most important, Marchetto&rsquo;s diesis was a very
+narrow interval, ~48%, i.e., ca. 48 cents, much closer
+to a tempered quartertone (50%) than to a tempered
+semitone (100%). With this in mind, the following
+questions arise:
+<ul>
+
+<p>     a) How could Marchetto geometrically draft marks
+          on a monochord to realize his tuning?
+<p>
+<p>     b) What physical constraints would a monochord
+          place on conveying Marchetto&rsquo;s tuning:
+
+<ul>
+               i) visually?<br>
+               ii) sonically?
+</ul><p>
+
+<p>     c) How readily could musicians identify Marchettan
+          intervals?
+<p>
+<p>     d) How might Marchetto have taught singers to
+          produce reliably and fluently his new
+          intervals?
+<p>
+<p>     e) How well would compositions (and discant
+          improvisation) using Marchettan intervals
+          survive the almost inevitable
+          misunderstandings and re-formulations of
+          later centuries?
+<p>
+<p>     f) What new conceptual/perceptual understanding
+          would be involved in learning to hear and
+          sing Marchetto&rsquo;s dieses?
+</ul>
+<p>
+
+[1.1] Briefly, my answers are as follow (extended
+discussions are in paragraphs indicated below):
+<ul>
+
+<p>
+a) Monochord marks for Marchetto&rsquo;s new intervals could
+     be drawn using the same kinds of geometric
+     constructions as had been needed to realize the
+     proportions for earlier medieval (Pythagorean)
+     tuning. Either of 2 propositions from Euclid
+     would suffice&mdash;even to realize alternative
+     Renaissance versions of Marchetto&rsquo;s tuning.[2;6]
+<p>
+<p>
+b):
+<ul>
+     i) Visually, the marks for Marchetto&rsquo;s truly novel
+     intervals (involving F74, C74, G74, D74) would be
+     quite distinct from those of previous tunings. The
+     intervals in his tuning that involved B or Bb
+     were alternatives to, substitutes for, or re-&ldquo;ratio&rdquo;-nalizations of, intervals in previous
+     medieval tuning. These novelties would be hard to
+     distinguish by eye from those they would have
+     replaced, especially in upper registers.[3.0&ndash;8]
+     <p>
+     <p>
+     ii) Sonically, the medieval monochord would be much
+     more accurate than its post-1500 successor. All
+     the same, any sources of measurement error would
+     help persuade listeners of Marchetto&rsquo;s time that
+     differences between his enharmonic/diatonic
+     semitones and their earlier, Pythagorean versions
+     were negligible.[3.9&ndash;10]
+     </ul>
+     <p>
+
+<p>   
+c) Melodically or in discant, musicians would have
+     little difficulty distinguishing aurally intervals
+     produced by Marchetto&rsquo;s novel F74, C74, G74, and 
+     D74 from  intervals of previous medieval practice.
+     Conversely, Marchetto&rsquo;s substitutes for standard
+     Pythagorean notes (B, Bb) generally would pass
+     unnoticed.[4]
+<p>
+
+<p>     
+d) Marchetto&rsquo;s musical examples would serve not only as
+     an excellent lab demonstration for theorists but
+     also as a superb, step-by-step curriculum for
+     novice singers. His schematic fragments easily
+     could be memorized as exercises and used as a
+     basis for group- or self-instruction.[5]
+<p>
+
+<p>     
+e) Even if simplistically realized (e.g., as &ldquo;1/5-tones&rdquo;), characteristically Marchettan pitch-structures would survive&mdash;as they would if the
+     most important mathematical flaw in Marchetto&rsquo;s
+     formulation were removed in a straightforward
+     manner [3.6&ndash;7;6]
+<p>
+
+<p>     
+f) Even if Marchetto&rsquo;s intervals were performed in
+     Pythagorean, equally-tempered, etc. versions,
+     Marchettan structures would persist&mdash;albeit to
+     varying degrees&mdash;in pieces closest in provenance
+     to his original formulation. Each such version can
+     be understood in its own right&mdash;or in fully &ldquo;de-centred&rdquo; fashion, as a variant of the others. In
+     principle, fluency in each could be acquired by
+     refining or &ldquo;de-refining&rdquo; skills learned for any
+     of the others.[7]
+</ul>
+<p>
+
+<p style="text-align: center"><b>2. GEOMETRIC CONSTRUCTIONS FOR THE MONOCHORD</b></p>
+
+<p>[2.0] Geometric constructions required for a
+fastidious, &ldquo;ideal&rdquo; realization of Marchetto&rsquo;s tuning
+on the monochord had been known for about 2 millenia.
+E.g., Euclid VI,9 (Heath 1926/1956: v.2, 211&ndash;12) gave a
+formulation for dividing any line segment into any
+number of subsegments having equal lengths. This
+powerful construction would more than suffice for both
+Marchetto&rsquo;s dieses and the previously standard medieval
+tuning. However, both this earlier, Pythagorean tuning
+and Marchetto&rsquo;s innovative dieses could be constructed
+entirely by applying Euclid&rsquo;s well known construction
+(I,10) for bisecting any given line segment (Heath
+1926/1956: v.1, 267&ndash;68: cf. Adkins 1980).
+<p>
+
+[2.1] Because the  location of the mark for GGG (gamma-ut), the monochord&rsquo;s lowest note, was largely arbitrary
+(cf., however, [3.0&ndash;3.2], below), GGG&rsquo;s sounding length
+could be established indirectly at the outset by
+setting BB (a M3 above GGG) at 3 times any feasible
+length, x, where x = ~1/4 the length available:
+<pre>
+
+     (bridge)  BB                            (bridge)
+     <----x----><---------------3x--------------->
+
+</pre>     
+<p>Merely by cutting off three consecutive segments of
+length x, BB&rsquo;s effective, sounding string-length (i.e.,
+its distance from the rightmost bridge), would be 3x:
+<pre>
+
+     (bridge)  BB                            (bridge)
+     <----x----><----x----><----x----><----x---->
+
+</pre>     
+<p>Bisecting BB&rsquo;s length once,
+b, a p8 above BB, would be at ( 1/2 ) * 3x = ( 3/2 ) x:
+<pre>
+
+     (bridge)  BB              b             (bridge)
+     <--(2/2)x-><----(3/2)x----><----(3/2)x---->
+     <-----------(5/2)x--------><----(3/2)x---->
+
+</pre>     
+<p>Bisecting BB&rsquo;s length a second time,
+b1, a p15 above BB, would be at ( 1/4 ) * ( 3x ) = 
+( 1/2 ) * ( 3/2 ) x = ( 3/4 ) x , whereas EE, a p4 above BB (or a p5
+below b, or a p12 below b1) would be at ( 3/4 ) * 3x =
+( 3/2 ) * ( 3/2 ) x = ( 3/1 ) * ( 3/4 ) x = <nobr>( 9/4 ) x :</nobr>
+<pre>
+
+     (bridge)  BB      EE       b       b1    (bridge)
+     <--(4/4)x-><(3/4)x><(3/4)x><(3/4)x><(3/4)x>
+     <----(7/4)x-------><--------(9/4)x-------->
+
+</pre>     
+<p>And so forth, downward through the cycle of p5s, for A,
+D, G, C, F, and Bb.
+<p>
+
+[2.2] To add Marchetto&rsquo;s new, sharpened notes (e.g.,
+C74), one need only bisect the whole tone above (D/E)
+twice, and cut off 1 of these 1/4s <i>below</i> the lower
+note (D):
+<pre>
+
+<a target="ex_window" onClick="newwindow('c.mp3',400,200); return false;" href="c.mp3">|c|</a>                <a target="ex_window" onClick="newwindow('c74.mp3',400,200); return false;" href="c74.mp3">|c74|</a> <a target="ex_window" onClick="newwindow('d.mp3',400,200); return false;" href="d.mp3">|d|</a>                 <a target="ex_window" onClick="newwindow('e.mp3',400,200); return false;" href="e.mp3">|e|</a>
+                         9                   8
+                         36                  32
+                         36   35   34   33   32
+                    37   36                  32
+81                  74   72   70   68   66   64
+9                        8
+
+</pre>
+<p>Because the whole tone ( D/E ) would form the ratio
+9/8 = 72/64, its 1/4s would be formed by marks for 70,
+68, 66; the 1/4 below the lower note ( D = 72 ) would be at
+C74&mdash;and C, a whole tone below D, would be at 81.
+<p>
+
+[2.3] To construct <i>all</i> Marchetto&rsquo;s sharpened notes
+(F74, C74, G74, D74), one could begin the original
+tuning at <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> ~1/2-way along the available string,
+rather than at BB (~1/4 from the bottom) and construct
+all other marks relative to this <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>. BB&rsquo;s length would
+be 3/2 times <nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&rsquo;s; d74&rsquo;s would ( 37/36 ) * ( 9/8 ) greater; 
+etc.:
+<pre>
+
+<a target="ex_window" onClick="newwindow('d.mp3',400,200); return false;" href="d.mp3">|d|</a>          <a target="ex_window" onClick="newwindow('d74.mp3',400,200); return false;" href="d74.mp3">|d74|</a>  <a target="ex_window" onClick="newwindow('e.mp3',400,200); return false;" href="e.mp3">|e|</a>             (<nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>)
+                    9                8
+                    36               32
+                    36  35  34  33   32
+               37   36               32
+81             74   72  70  68  66   64
+9                   8
+
+</pre>
+<p>The Pythagorean <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (parenthesized) would be much (~ 42%)
+lower than Marchetto&rsquo;s new F74:
+<pre>
+
+               81                          74    72
+               <a target="ex_window" onClick="newwindow('f.mp3',400,200); return false;" href="f.mp3">|f|</a>                 (<nobr><span style= 'letter-spacing:-0.8px'>f<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>)   <a target="ex_window" onClick="newwindow('f74.mp3',400,200); return false;" href="f74.mp3">|f74|</a>  <a target="ex_window" onClick="newwindow('g.mp3',400,200); return false;" href="g.mp3">|g|</a>
+                                   <--42--><--48-->
+                                   <------90------>
+
+</pre>
+<p>
+
+[2.4] To divide a whole tone (e.g., A/B) into
+Marchetto&rsquo;s enharmonic semitone (A/Bb77) and diatonic
+semitone (Bb77/B), one would only have to bisect a
+whole tone above (B/<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, where <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> would be a Pythagorean
+note not actually used by Marchetto) and cut off one of
+these 1/2s above the enharmonic semitone&rsquo;s lower note
+(A):
+<pre>
+
+<a target="ex_window" onClick="newwindow('a.mp3',400,200); return false;" href="a.mp3">|a|</a>       <a target="ex_window" onClick="newwindow('bb77.mp3',400,200); return false;" href="bb77.mp3">|bb77|</a>              <a target="ex_window" onClick="newwindow('b.mp3',400,200); return false;" href="b.mp3">|b|</a>                 (<nobr><span style= 'letter-spacing:-0.8px'>c<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>)
+                              9                   (8)
+                              18         17       (16)
+                              72         68       (64)
+81        77                  72
+
+</pre>
+<p>Because the whole tone above (B/<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>) would be 9/8 = 72/64,
+its precise 1/2 (i.e., arithmetic mean) would be at 68.
+Since 72 - 68 = 4, the Bb77 could be marked readily at
+77 = 81 - 4.
+<p>
+
+
+<p style="text-align: center"><b>3. FEASIBILITY OF DRAFTING MARCHETTO&rsquo;S 9-FOLD DIVISION</b></p>
+
+<p>[3.0] In Marchetto&rsquo;s period, fundamental frequencies
+corresponding to notated pitches were not standardized
+as they are for today&rsquo;s concert musicians (for whom the
+fundamental frequency of a1 above middle c is ~440&ndash;446
+Hz). Nonetheless, there were constraints, as always, on
+vocal ranges of the adults and children who might sing
+such notes as Marchetto prescribed.
+<p>
+
+[3.1] Expressed in modern notation, Marchetto&rsquo;s gamut
+ranged from GGG (gamma-ut) on the lowest line of the
+bass-clef staff to e1 in the top space of the treble-clef staff. In the late 19th century, Alexander Ellis
+gave absolute values between 403.9 and 425.2 Hz for
+various versions of a1 above middle c produced by
+tuning forks and pitch pipes used in Padua to tune
+bells and other fixed-frequency instruments (1885/1954:
+510). Although his measurements are based on local
+musical practices during the period 1730&ndash;80, i.e., 4
+centuries after Marchetto&rsquo;s time, there is little to
+suggest pitch standards in the Middle Ages diverged
+much more from modern norms than Ellis&rsquo;s measurements
+suggest&mdash;especially in leading churches, where such
+fixed-frequency instruments as organs might be played
+with other instruments or voices, and vocal music
+called for increasingly large ensemble ranges (cf.,
+e.g., Mendel 1948/1968, especially 167).
+<p>
+
+[3.2] Additionally, manuscript illustrations, though
+unreliable for certain details, indicate that
+monochords of the time were ~3&ndash;4 ft. long (cf. the
+general estimate of 90&ndash;122 cm. in Adkins 1980:495).
+E.g., well-known medieval illustration shows a 
+monochord held by Guido and Bishop Theobaldus (see <b>Figure 1</b>), whose
+adult heights provide rough estimates of the
+instrument&rsquo;s absolute dimensions (as do the plates in
+Adkins (1992: v.2, 500&ndash;10) and the ~1150 drawing of 
+Boethius (at the SMT homepage; see <b>Figure 2</b>).</p>
+
+
+<table align=center><tr><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Guido and Bishop Theobaldus</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rahn_examples.php?id=0&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="rahn_fig1_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td>
+		
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. Boethius</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rahn_examples.php?id=1&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="rahn_fig2_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td></tr>
+</table>
+
+<p>
+
+[3.3] Presuming, at least for the sake of illustration,
+a monochord whose sounding string was about a yard
+long, one can estimate quite closely the absolute
+distances between various marks for the notes it would
+produce. GGG gamma-ut, corresponding to the lowest line
+of the modern bass-clef staff could result from
+sounding a string-length of 36 inches. The highest
+notes in Marchetto&rsquo;s system that would produce his
+narrow diesis are e1 and d741 at the modern treble-clef
+staff&rsquo;s top. Relative to a GGG gamma-ut of 36&rdquo;, their
+string-lengths would be:
+<pre>
+
+     for <a target="ex_window" onClick="newwindow('e1.mp3',400,200); return false;" href="e1.mp3">|e1|</a>, 36*(1/2)*(1/2)*(2/3)*(8/9)    =5.33&rdquo;,
+and for <a target="ex_window" onClick="newwindow('d741.mp3',400,200); return false;" href="d741.mp3">|d741|</a>, 5.33*(74/72)                 =5.48&rdquo;.
+
+</pre>
+<p>
+
+[3.4] Such marks would be about 1/6&rdquo; apart, i.e.,
+readily distinguishable from each other by instruments
+used at the time  for geometric diagrams. Even if
+&ldquo;concert pitch&rdquo; for such church musicians were fully a
+p4 higher, one would still be dealing with smallest
+distances of about 1/8&rdquo;, as one would if a monochord&rsquo;s
+open string-length were only ~27&rdquo;. An 8ve below, this
+distance would be twice as great; a 15th below, 4 times
+as great, i.e., ~.5&rdquo;&mdash;for this, the very smallest
+interval of Marchetto&rsquo;s formulation.
+<p>
+
+[3.5] The notes b' and c' (in the middle of the modern
+treble-clef staff) were the highest for which Marchetto
+would use his revised, &ldquo;enharmonic&rdquo; version of the
+minor semitone. According to earlier medieval tuning,
+these notes would be marked off at the following points
+on a 36&rdquo; monochord:
+<pre>
+
+     for <a target="ex_window" onClick="newwindow('c1.mp3',400,200); return false;" href="c1.mp3">|c1|</a>, 36*(1/2)*(1/2)*(4/3) 	=6.75&rdquo;,
+ and for <a target="ex_window" onClick="newwindow('b1.mp3',400,200); return false;" href="b1.mp3">|b1|</a>, 6.75*(256/243)     	=7.11&rdquo;.
+ 
+</pre>
+<p>Relative to c1 at 6.75&rdquo;, Marchetto&rsquo;s version might be
+located at:
+<pre>
+
+     <a target="ex_window" onClick="newwindow('b771.mp3',400,200); return false;" href="b771.mp3">|b771|</a>, (81/77)*6.75&rdquo;              =7.101&rdquo;,
+ or  <a target="ex_window" onClick="newwindow('b761.mp3',400,200); return false;" href="b761.mp3">|b761|</a>, (76/72)*6.75&rdquo;              =7.125&rdquo;, 
+ 
+i.e., ~1/100&rdquo; to ~1/70&rdquo; from the Pythagorean mark, from
+which neither would be easily distinguished by eye (nor
+from the other).
+</pre>
+<p>
+
+[3.6] As a precise calculation, Marchetto&rsquo;s tuning
+disregards the incommensuracy between 9-fold
+subdivisions of the spaces from A to B, Bb to C, and
+B to (Pythagorean) <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>. Overlooked (or ignored) is the
+mathematical difficulty that 81/77 (in modern decimals,
+~1.052) is a smaller ratio than 76/72 (~1.056), but
+each would be 2 dieses:
+<pre>
+
+<a target="ex_window" onClick="newwindow('a1.mp3',400,200); return false;" href="a1.mp3">|a1|</a>      <a target="ex_window" onClick="newwindow('bb771.mp3',400,200); return false;" href="bb771.mp3">|bb771|</a>        <a target="ex_window" onClick="newwindow('b1.mp3',400,200); return false;" href="b1.mp3">|b1|</a>      (c1)      (<nobr><span style= 'letter-spacing:-0.8px'>c<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>1)
+81        77             72        68?       64
+          81             76        72        68?
+(a1)      <a target="ex_window" onClick="newwindow('bb1.mp3',400,200); return false;" href="bb1.mp3">|bb1|</a>          <a target="ex_window" onClick="newwindow('b761.mp3',400,200); return false;" href="b761.mp3">|b761|</a>    <a target="ex_window" onClick="newwindow('c1.mp3',400,200); return false;" href="c1.mp3">|c1|</a>      (<nobr><span style= 'letter-spacing:-0.8px'>c<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>1)
+
+</pre>
+<p>Marchetto should have known that for (positive) numbers
+generally, a/b &gt; ( a + x ) / ( b + x ), an important inequality
+he invoked in discussing the ratios 17/16 and 18/17
+(<a href="http://www.music.indiana.edu/tml/14th/MARLUC4_TEXT.html">|Luc. 
+4.11.4|</a>: cf. 72/68 and 68/64, here and [2.6],
+above; cf. also Euclid V.8 in Heath 1926/1956: v. 2,
+149&ndash;53).
+<p>
+
+[3.7] A plausible way out of this difficulty would be
+to divide the m3 a1/c1 space into 4 + 5 + 4 = 13 dieses:
+<pre>
+
+<a target="ex_window" onClick="newwindow('a1.mp3',400,200); return false;" href="a1.mp3">|a1|</a>      <a target="ex_window" onClick="newwindow('bb3961.mp3',400,200); return false;" href="bb3961.mp3">|bb3961|</a>       <a target="ex_window" onClick="newwindow('b3711.mp3',400,200); return false;" href="b3711.mp3">|b3711|</a>    <a target="ex_window" onClick="newwindow('c1.mp3',400,200); return false;" href="c1.mp3">|c1|</a>
+32                                  27
+<--4*5---><------5*5------><--4*5--->
+416       396             371       351
+
+</pre>
+<p>The 32/27 m3 ratio could be expanded to 416/351 (by
+multiplying both numbers by 13, a mathematical &rdquo;trick&ldquo;
+reported by Boethius, e.g., in 5.16.366), so that the 
+4/9-whole-tone, 2-diesis minor semitones would be
+20 = 4 * 5 of the intervening 65 = 13 * 5 = 13 * ( 32 - 27 ) parts.
+Graphically the resulting differences would be only
+~1/25&rdquo; in the highest register, where they could hardly
+be distinguished by drawing tools of the time&mdash;or eyes
+of any time.
+<p>
+
+[3.8] In sum, Marchetto&rsquo;s new version of the minor
+semitone (and hence, its whole-tone complement, the
+major semitone, e.g., from Bb396 or Bb77 to B371 or
+B76) produced differences from the earlier medieval
+values so slight that they could be ignored or
+exploited persuasively in a visual demonstration,
+whereas his most striking innovation, greatly raised
+scale degrees, would be clearly, visibly distinct on
+the monochord.
+<p>
+
+[3.9] In addition to problems of drawing and discerning
+geometric figures, one can assess how vulnerable the
+sounds of Marchetto&rsquo;s tuning might have been when
+realized on a necessarily fallible mechanism like the
+monochord. Although Ellis reported substantial errors
+in the fundamental frequencies produced on well
+regarded monochords of his day (1885/1954: 441&ndash;42), it
+should be emphasized that the 3-bridge monochord of
+Marchetto&rsquo;s period (2 fixed at the ends, 1 movable
+between&mdash;touching the string from below) greatly
+excelled in accuracy the post-1500 instrument, with 
+fixed bridge and nut with movable tangent between&mdash;to 
+press the string to the belly from above. For the
+latter, Cecil Adkins (1963: 4) reported accuracy of 
+~0.5 mm.&mdash;at e1, ~6.5 cents.
+<p>
+
+[3.10] Nonetheless, any span of tolerance resulting
+from changes of tension, friction between bridge and
+string, aligning bridge and marks by eye, matching by
+ear pitches on another string (e.g., for Marchetto&rsquo;s
+dyad examples), variations in temperature and humidity,
+etc. would add persuasive auditory force to the notion
+that divergence of Marchetto&rsquo;s enharmonic semitone from
+the earlier minor semitone was negligible.
+<p>
+
+
+<p style="text-align: center"><b>4. INTERVAL PERCEPTION AND MARCHETTO&rsquo;S DIESES</b></p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rahn_examples.php?id=2&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="rahn_fig3_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.0] In recent music perception experiments I had
+undertaken quite independently of my Marchetto
+studies&mdash;or so I thought!&mdash;I found that for <i>melodic</i>
+(i.e., successive) intervals, my subjects (8
+undergraduate music majors) were quite uncertain
+whether to label a particular melodic interval as,
+e.g., M3 or m3 if its frequency-ratio was close to 350%
+(i.e., midway between the ideal values of 300% and 400%
+for modern, equally tempered, 3- and 4-st intervals).
+Such uncertainty generally extended from ~330% to
+~370%. Moreover, much the same held for other intervals
+involving notes &ldquo;in the cracks:&rdquo; the students generally
+displayed uncertainty in labeling frequency-ratios
+within the ranges 130%&ndash;170%, 230%&ndash;270%, 430%&ndash;470%,
+530%&ndash;570%, <nobr>. . .</nobr> 1130%&ndash;1170% (see <b>Figure 3</b>).
+<p>
+
+[4.1] These results agreed with other recent studies of
+the so-called &ldquo;categorical perception&rdquo; of intervals
+(Harnad 1987; Butler 1992: 55; Krumhansl 1991: 281&ndash;83).
+Of greater moment here was an apparent anomaly that arose
+consistently for each subject. The region of uncertainty
+in deciding whether to label a melodic interval &ldquo;unison&rdquo; 
+or &ldquo;semitone&rdquo; appeared not between ~30% and ~70%; 
+instead, from ~15% to ~35%. In other words, a much 
+smaller difference was required to distinguish a semitone 
+from a unison. This is not to say that the students heard 
+all tones differing by less than ~15% as &ldquo;the same.&rdquo; Post-experiment de-briefing indicated that, if perceived as 
+differing, such tones were heard as not differing enough 
+to constitute a semitone.
+<p>
+ 
+[4.2] All students applied with full certainty the
+label &ldquo;semitone&rdquo; to differences on the order of
+Marchetto&rsquo;s 48%. For differences smaller than ~25%,
+some offered such responses as &ldquo;sharp unison.&rdquo; The
+distinction here seems to have been between 2 distinct
+pitches, e.g., <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and C, and 2 versions of the same
+pitch, e.g., <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and sharp <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>&mdash;in other words, between a
+functional difference and a nuanced sameness. In
+converse fashion, some offered the idea that smaller
+versions of intervals heard clearly as semitones were
+&ldquo;flat semitones.&rdquo; The following tones illustrate
+intervals they heard, where 0%=c and 100%=(equally
+tempered) <nobr><span style= 'letter-spacing:-0.8px'>c<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>:
+<pre>
+
+<a target="ex_window" onClick="newwindow('0pc.mp3',400,200); return false;" href="0pc.mp3">|0%|</a>	 <a target="ex_window" onClick="newwindow('5pc.mp3',400,200); return false;" href="5pc.mp3">|5%|</a>      <a target="ex_window" onClick="newwindow('10pc.mp3',400,200); return false;" href="10pc.mp3">|10%|</a>     <a target="ex_window" onClick="newwindow('15pc.mp3',400,200); return false;" href="15pc.mp3">|15%|</a>     <a target="ex_window" onClick="newwindow('20pc.mp3',400,200); return false;" href="20pc.mp3">|20%|</a>     <a target="ex_window" onClick="newwindow('25pc.mp3',400,200); return false;" href="25pc.mp3">|25%|</a>
+<a target="ex_window" onClick="newwindow('30pc.mp3',400,200); return false;" href="30pc.mp3">|30%|</a>    <a target="ex_window" onClick="newwindow('35pc.mp3',400,200); return false;" href="35pc.mp3">|35%|</a>     <a target="ex_window" onClick="newwindow('40pc.mp3',400,200); return false;" href="40pc.mp3">|40%|</a>     <a target="ex_window" onClick="newwindow('45pc.mp3',400,200); return false;" href="45pc.mp3">|45%|</a>     <a target="ex_window" onClick="newwindow('50pc.mp3',400,200); return false;" href="50pc.mp3">|50%|</a>     <a target="ex_window" onClick="newwindow('55pc.mp3',400,200); return false;" href="55pc.mp3">|55%|</a>
+<a target="ex_window" onClick="newwindow('60pc.mp3',400,200); return false;" href="60pc.mp3">|60%|</a>    <a target="ex_window" onClick="newwindow('65pc.mp3',400,200); return false;" href="65pc.mp3">|65%|</a>     <a target="ex_window" onClick="newwindow('70pc.mp3',400,200); return false;" href="70pc.mp3">|70%|</a>     <a target="ex_window" onClick="newwindow('75pc.mp3',400,200); return false;" href="75pc.mp3">|75%|</a>     <a target="ex_window" onClick="newwindow('80pc.mp3',400,200); return false;" href="80pc.mp3">|80%|</a>     <a target="ex_window" onClick="newwindow('85pc.mp3',400,200); return false;" href="85pc.mp3">|85%|</a>
+<a target="ex_window" onClick="newwindow('90pc-upper.mp3',400,200); return false;" href="90pc-upper.mp3">|90%|</a>    <a target="ex_window" onClick="newwindow('95pc.mp3',400,200); return false;" href="95pc.mp3">|95%|</a>     <a target="ex_window" onClick="newwindow('100pc.mp3',400,200); return false;" href="100pc.mp3">|100%|</a>
+</pre>
+
+<p>
+[4.3] 3 students volunteered the adjectives &ldquo;sharp&rdquo; and
+&ldquo;flat&rdquo; for intervals close to each maximally uncertain
+interval. E.g., at ~340% they volunteered &ldquo;sharp m3;&rdquo;
+~360%, &ldquo;flat M3.&rdquo; This tendency to label intervals of
+( ( 2n + 1 ) * 50 ) +/-10 ) % sharp or flat recurred in all
+mid-regions&mdash;except for the unison/semitone, where ~20%
+intervals were labeled &ldquo;sharp unisons,&rdquo; and ~30%
+intervals &ldquo;flat semitones.&rdquo; 
+<p>
+
+[4.4] Marchetto emphasized his new dieses were not for
+use in chant, rather, in discant, i.e., 2-part
+<i>polyphony</i> and closely related idioms. In the
+Lucidarium, Marchetto&rsquo;s 27 musical examples of the diesis
+interval are all cast in a2, note-against-note,
+&ldquo;first-species&rdquo; counterpoint, each illustration
+presenting a sharpened tone in the 2d of its 3
+sonorities. 
+<p>
+
+[4.5] 3 of his musical examples are counter-examples; regular
+in all other respects, they counter-indicate use of his
+sharps in oblique motion, specifically against repeated
+notes that would form with them the following sonority
+successions (<a href="http://www.music.indiana.edu/tml/14th/MARLUC5_TEXT.html">|Luc. 
+5.6.8-12|</a>): 
+<pre>
+
+    <a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>_<a target="ex_window" onClick="newwindow('DDc74.mp3',400,200); return false;" href="DDc74.mp3">|DDc74|</a>_<a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>      	<a target="ex_window" onClick="newwindow('CCg.mp3',400,200); return false;" href="CCg.mp3">|CCg|</a>_<a target="ex_window" onClick="newwindow('CCf74.mp3',400,200); return false;" href="CCf74.mp3">|CCf74|</a>_<a target="ex_window" onClick="newwindow('CCg.mp3',400,200); return false;" href="CCg.mp3">|CCg|</a>
+    p8     M7      p8        	p12    x11     p12
+              	<a target="ex_window" onClick="newwindow('bd.mp3',400,200); return false;" href="bd.mp3">|bd|</a>_<a target="ex_window" onClick="newwindow('c74d.mp3',400,200); return false;" href="c74d.mp3">|c74d|</a>_<a target="ex_window" onClick="newwindow('dd.mp3',400,200); return false;" href="dd.mp3">|dd|</a> 
+               	m3   m2     p1
+
+</pre>
+<p>
+
+[4.6] The wide M7 and x11, and especially the narrow m2
+he proscribed would produce beating (smooth, continuous
+fluctuation in loudness: ~ 4&ndash;18Hz) or roughness
+(~18&ndash;100+Hz), particularly in lower registers (Stevens
+and Davis 1938/1983: 242&ndash;45). Just below top-space GG in
+the modern bass-clef staff, a narrow Marchettan m2
+(e.g., a dyad, <a target="ex_window" onClick="newwindow('180-185.mp3',400,200); return false;" href="180-185.mp3">|180-185|</a>, with fundamental frequencies
+of 180Hz and 185Hz: cf. 74/72= 37/36) would produce
+beats of 5Hz (i.e., 185-180 = 5 pulses/second: this 
+&lsquo;dyad&rsquo; can help confirm the accuracy of transferred ra 
+files).
+<p>
+
+[4.7] Well within the range where beating is most
+prominent (~ 4 to 18 Hz), such effects could be clearly
+heard and/or felt whenever narrow m2s were produced by
+a 2-course monochord (or &ldquo;dichord:&rdquo; Adkins 1980 and
+1991: 33&ndash;40, 500&ndash;10), or by voices&mdash;from top-space GG
+of the bass-clef staff to e1 at the top of Marchetto&rsquo;s
+pitch system, i.e., throughout the range where they
+would occur in Marchettan works if he had not
+proscribed them.
+<p>
+
+[4.8] Secondary, &ldquo;subjective&rdquo; beating would be
+especially prominent between the 2d partial (i.e., 1st
+&ldquo;overtone&rdquo;) and 1st partial (&ldquo;fundamental&rdquo;) of tones
+close to an 8ve apart (i.e., within 4&ndash;18 Hz of the 2/1
+ratio), if sounded at relatively high intensities (as
+they would be in vocal music or on monochords/dichords 
+with resonators, post-1200: Stevens and Davis 1938/83:
+184&ndash;87, 244; Adkins 1980).  Throughout Marchetto&rsquo;s
+pitch system such effects could be heard in the wide
+M7s he warns against, especially in lower registers: 
+<pre>
+
+from GGGFF74	cf.  96Hz   vs 2*96*72/74  = ~186.8Hz
+
+to  ed741 	cf.  324Hz  vs 2*324*72/74 = ~630.5Hz
+
+</pre>
+<p>which yield secondary beat-rates of (respectively):
+<pre>
+
+    (2*96)-186.8  =  5.2Hz (cf. [4.6], above)
+
+</pre>
+<p>and
+<pre>
+
+    (2*324)-630.5 =  17.5Hz.
+
+</pre>
+<p>
+
+[4.9] Divergences greater than ~18Hz give rise to
+pronounced &ldquo;roughness.&rdquo; Peaking in intensity at ~50 Hz,
+such roughness would be especially audible in wide M3s
+of the lowest register, where DDFF74 would produce a
+roughness rate of 144 - 186.8 = ~ 42.8Hz. Such effects
+also would be prominent in the lowest p5s (e.g., around
+AAEE in the bass-clef staff, where 108Hz and 162Hz
+produce roughness of 162 - 108 = 54Hz) and in narrow m3s
+above middle c (e.g., around f74a1 in the treble-clef
+staff, where 432 * ( 8/9 ) * ( 72/74 ) = ~373.6Hz and 432Hz
+result in roughness of 432 - 373.6 = ~58.4Hz). By contrast,
+Marchetto&rsquo;s musical examples tend to locate such
+potentially problematic intervals well outside their
+respective regions of maximal roughness: both
+illustrations of his narrow m3 about an 8ve lower (at
+FF74a and GG74b, where roughness rates would be ~1/2), 
+and all 7 examples of p5s half an 8ve or more above 
+(1 at EEb, 4 at FFc, and 1 each at ae and bb&ndash;f). The 
+only exceptions are 2 of his 3 illustrations  of the 
+wide M3 (at EEGG74)&mdash;the other appearing at bd74 (i.e., 
+half an 8ve above the interval&rsquo;s roughness peak).
+<p>
+
+[4.10] In short, one can understand Marchetto&rsquo;s
+prohibition of coloured m2s and M7s, as well as his
+tendency to illustrate p5s and coloured M3s (or m3s) in
+particular registers as a way of preventing&mdash;if only in
+lab demonstrations&mdash;salient beats and roughness in
+discant. Nonetheless, Marchetto (citing Isidore of
+Seville) tried to realize in his dissonances harsh,
+unpleasant effects, and his sharpened degrees served as
+means to such closely controlled ends: specifically,
+&ldquo;extreme mixtures of two sounds thoroughly mixed with
+one another, coming harsh and unpleasant to the ear&rdquo;
+(duorum sonorum sibimet permixtorum ad aurem veniens
+aspera atque iniocunda permixtio: <a href="http://www.music.indiana.edu/tml/14th/MARLUC5_TEXT.html">|Luc. 
+5.2.2|</a>).
+<p>
+
+[4.11] Except his counter-examples (of wide M7s and
+x11s, and narrow m2s), all Marchetto&rsquo;s diesis
+illustrations exemplify sharpened degrees participating
+in narrow m3s, and wide M3s, M6s, and M10s. Each
+diverges from its ideal, medieval (or, for that matter,
+modern, equally tempered) frequency-ratio by about half
+a semitone (all sizes in cents):
+<pre>
+
+interval Marchettan     Pythagorean    	equal-temp&rsquo;t
+m3       252            294          	300 
+M3       450         	408          	400 
+M6       948            906          	900 
+M10    	1650         	1608         	1600 
+              
+</pre>
+<p>
+
+[4.12] Although one might expect musicians to respond
+erratically to Marchetto&rsquo;s m3, M3, M6, and M10,
+important studies by E. M. Burns and W. D. Ward (1978)
+and Donald E. Hall and Joan Taylor Hess (1984) argue
+against such a prediction. Burns and Ward emphasized
+their subjects were most uncertain (i.e., closest to a
+50-50, flip-a-coin response) when asked to label
+(melodic) frequency-ratios close to 350% as &ldquo;m3&rdquo; or
+&ldquo;M3.&rdquo; However, several of their formally trained
+subjects were very certain if asked to isolate
+intervals &ldquo;in the cracks&rdquo; as such&mdash;i.e., in contrast to
+intervals closer to the ideal sizes of 12-st equal
+temperament. Indeed, the step-like curves for their
+responses merely shifted ~50%.
+<p>
+
+[4.13] Hall and Hess asked similar subjects not merely
+to label simultaneous intervals (with spectra ranging
+from partials 1&ndash;5 to 1&ndash;10) but also to characterize
+each on a 7-point scale of &ldquo;acceptability.&rdquo; Their
+results confirm for simultaneous intervals earlier
+findings concerning category boundaries between melodic
+intervals a semitone or larger: in general, these
+appear at ( 2n - 1 ) * 50%, where n = 1, 2, 3, <nobr>. . .</nobr> (i.e., even
+for the m2 sonority Marchetto proscribed and that had a 
+~25% boundary in my study of melodic interval 
+perception: the single outstanding exception in Hall 
+and Hess&rsquo;s study of simultaneous intervals was their 
+high M6/m7 boundary, ~970%).
+<p>
+
+[4.14] Hall and Hess also emphasized the importance of 
+beats and roughness in describing sonorities, especially if 
+such effects can be traced to the first 5 partials 
+(e.g., C, c, g, c1, e1). Their subjects tended to 
+label &ldquo;acceptable&rdquo; intervals close to the following 
+values: 2/1, 3/2, and 4/3 for p8s, p5s, and p4s (as in 
+Marchetto&rsquo;s, and earlier medieval tunings, as well as 
+subsequent formulations of just intonation): 5/4, 5/3, 
+5/2, and 6/5, 8/5, and 12/5 for, respectively, M3, M6, M10, 
+and m3, m6, and m10, (i.e., the ideal values sought in 
+just intonation). Subjects displayed small ranges of 
+acceptance for perfects, and especially M and m imperfects, 
+in contrast to x4, d5, and all 2s and 7s.
+<p>
+
+[4.15] Though appearing to support, in particular, just
+intonation, these data jibe well with Marchetto&rsquo;s
+diesis tuning. Marchetto&rsquo;s ideal values for perfect
+intervals would yield no beats or roughness; his
+coloured intervals (especially his wide M3, M6 and M10, but
+also his narrow m3, m6, and m10) would fall well within
+the &ldquo;unacceptable&rdquo; characterization of the modern-day
+musicians Hall and Hess studied. Also important, all
+intervals in Hall and Hess&rsquo;s study lasted 3 secs.;
+similarly long durations were notated for simultaneous
+rough coloured imperfects in music closest in
+provenance to Marchetto s formulation (and in the dyad
+examples here).
+<p>
+ 
+[4.16] In Marchetto&rsquo;s tuning, &ldquo;non-coloured&rdquo; 3, 6 and
+10 (e.g., c/e, e/g, e/c , g/e, CC/e, EE/g) diverged
+quite far from the ideal values Hall and Hess
+discerned. In Marchettan works, these non-coloured
+imperfects had rather short durations, as did 2 and
+7&mdash;especially the (prominently rough or beating)
+coloured m2, M7, and x11 Marchetto emphatically
+proscribed. The non-coloured imperfect intervals
+Marchetto retained from earlier Pythagorean tuning
+necessarily diverged as much as their precursors from
+the focal, beat-less, ideal values Hall and Hess found.
+Moreover, Marchettan substitutes for <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and/or B would
+produce similar divergences (all sizes in cents):
+<pre>
+
+tuning        G/Bb                G/B
+1/13s         <a target="ex_window" onClick="newwindow('291.mp3',400,200); return false;" href="291.mp3">|291|</a>               <a target="ex_window" onClick="newwindow('402.mp3',400,200); return false;" href="402.mp3">|402|</a>
+               =(416/396)*(9/8)    =(371/351)*(81/64)
+1/9s          <a target="ex_window" onClick="newwindow('292.mp3',400,200); return false;" href="292.mp3">|292|</a>               <a target="ex_window" onClick="newwindow('404.mp3',400,200); return false;" href="404.mp3">|404|</a>
+               =(81/77)*(9/8)      =(76/72)*(81/64)
+Pythagorean   <a target="ex_window" onClick="newwindow('294.mp3',400,200); return false;" href="294.mp3">|294|</a>               <a target="ex_window" onClick="newwindow('408.mp3',400,200); return false;" href="408.mp3">|408|</a>
+               =32/27              =81/64
+just          <a target="ex_window" onClick="newwindow('316.mp3',400,200); return false;" href="316.mp3">|316|</a>               <a target="ex_window" onClick="newwindow('386.mp3',400,200); return false;" href="386.mp3">|386|</a>
+               =6/5                =5/4     
+
+</pre>
+<p>
+
+[4.17] In Hall and Hess&rsquo;s study, the relatively narrow
+m3s (291&ndash;300%) and wide M3s (402&ndash;411%) would all fall
+in the &ldquo;unacceptable&rdquo; half of their subjects&rsquo; scaling.
+The pronounced sensitivity to rather slight divergences
+from 5/4 etc. Hall and Hess found can be explained by
+beating, which is especially salient for sonorities of
+long duration. In actual Marchettan works, the
+sensitivity Hall and Hess tapped would arise only in
+such long-held cadence sonorities as <a target="ex_window" onClick="newwindow('EEcg-sharp.mp3',400,200); return false;" href="EEcg-sharp.mp3">|EEc<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>|</a>.
+Moreover, EE<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> would be rough irrespective of the
+beating in c<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> or EEc, whereas other non-coloured,
+non-cadential imperfect intervals were much shorter.
+<p>
+ 
+[4.18] Recent research on interval perception uniformly
+shows responses are learned and learnable. Formally
+trained musicians display much less uncertainty than
+non-trained (e.g., as measured by better fits to
+steeper ogives: cf. Figure 3 in [4.0], above);<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> some 
+also sub-categorize  reliably in distinguishing among 
+m3, wide m3, narrow M3, etc.; and adapt readily to 
+novel intervals &ldquo;in the cracks.&rdquo; Cross-cutting these 
+achievements are acoustically and physiologically 
+based, non-cognitive phenomena: beating and roughness. 
+Though these effects can be tapped experimentally by 
+requiring such polar, arguably ethnocentric (or 
+&ldquo;hodiecentric&rdquo;) responses as &ldquo;acceptable&rdquo; vs 
+&ldquo;unacceptable,&rdquo; they can be channeled stylistically 
+in many ways within particular cultural settings.
+<p>
+
+[4.19] E.g., in great contrast to Western European
+ideals of beat-less perfect intervals are the precisely
+patterned, &ldquo;shimmering&rdquo; beat-rates for p1, p8, etc.
+among the bronze keys and gongs of gamelan; through
+such carefully crafted timbral structures, professional
+Indonesian tuners have shaped the individual
+personalities of entire ensembles&mdash;in principle, for
+centuries (cf. Hood 1960; Susilo 1975; Rahn 1996). By
+comparison, Marchetto&rsquo;s tuning intensified an earlier
+medieval opposition between beat-less perfect intervals
+and all others&mdash;especially M3, M6, their inversions, and 8ve-compounds&mdash;and provided for vividly sharpened leading
+tones.
+<p>
+
+
+<p style="text-align: center"><b>5. PEDAGOGICAL ASPECTS OF MARCHETTO&rsquo;S FORMULATION</b></p>
+
+<p>[5.0] As in the Lucidarium, pieces closest in
+provenance to Marchetto&rsquo;s original account of dieses
+tend to locate his sharpened notes in the highest
+voice(s): specifically, from FF74 to d741, in parts
+designated for boys&mdash;in particular, pairs of boys (duo
+pueri: Vecchi 1954). That boys originally were the main
+performers of Marchetto&rsquo;s sharps illuminates the
+reception of his challenging account.
+<p>
+
+[5.1] Because Marchetto complained his new sharp-sign
+had been drawn wrongly and, as Karol Berger rightly
+stresses, his sharps &ldquo;commonly&rdquo; (a vulgo: <a href="http://www.music.indiana.edu/tml/14th/MARLUC8_TEXT.html">|Luc. 
+8.1.4, 17|</a>; <a href="http://www.music.indiana.edu/tml/14th/MARPOME_TEXT.html">|Pom., p. [-40-]|</a>) had been called &ldquo;falsa musica&rdquo; (lit.
+false music, in contrast to &ldquo;color fictitius,&rdquo; lit.
+fictitious colour: imaginative, in one&rsquo;s head, by ear&mdash;
+<a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.8.9|</a>; <a href="http://www.music.indiana.edu/tml/14th/MARLUC5_TEXT.html">|5.6.27|</a>: cf. Berger 1987: 16), one can
+conclude his diesis chromaticism had circulated outside
+his direct purview before 1317&ndash;18. Beyond some scores
+that clearly specify Marchetto&rsquo;s sharp notes (e.g., by
+a natural, square-B sign with upward stem to the right)
+and the many Lucidarium copies made, transmission of
+his tuning must have been largely oral.
+<p>
+
+[5.2] Marchetto&rsquo;s tuning was absorbed into elementary
+music instruction (Herlinger 1990). E.g., a rudimentary 
+digest of Marchetto&rsquo;s modal theory, seemingly used to
+teach neophytes at St. Mark&rsquo;s in Venice, the Ars magistri
+marchetti (Monterosso 1966), presumed knowledge of his 
+dieses in order to determine whether problematically 
+narrow melodies were authentic or plagal. Plausibly, too,
+the Hebrew translation of an originally vernacular, 
+Italian digest of Marchetto&rsquo;s  modal theory, brought to 
+light by Israel Adler (1971), also referred to dieses 
+after the point where the only surviving copy breaks off. 
+If so, this remarkable work would testify to an unusually 
+wide readership for Marchetto&rsquo;s diesis doctrine.(5)</p>
+
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rahn_examples.php?id=3&nonav=true"><img border="1" alt="Example 1 thumbnail" src="rahn_fig4_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>		
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="rahn_examples.php?id=4&nonav=true"><img border="1" alt="Example 2 thumbnail" src="rahn_fig5_small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<p>
+
+[5.3] Significantly, too, the extensive compilation of 
+selections from the Lucidarium in ms Vatican, BAV Capp.
+lat. 206 (ca. 1500: ff. 138&ndash;67; cf. Herlinger 1990: 239&ndash;40), which seems aimed at more advanced practising 
+musicians, e.g., composers or choral directors (rather 
+than their charges), retains the complex argument 
+Marchetto adduced to support his division of the whole 
+tone&mdash;an indication that this apparently speculative 
+material, not readily available outside the Lucidarium, 
+formed the basis of lab demos for the actual mathematics
+underlying Marchetto&rsquo;s tuning for 200 years (as in the 
+Ancient tradition of Euclid&rsquo;s canon: Mathiesen 1975; cf. 
+Szabo 1978 on the centrality of the canon = monochord = 
+qanun? = qun? for mathematics instruction generally).</p>
+
+<p>
+ 
+[5.4] As well as providing further lab demos for 
+speculative aspects of Marchetto&rsquo;s tuning, the 
+Lucidarium&rsquo;s 25 musical examples of sharps could have introduced 
+novices to his chromatic practice. Among pieces using 
+these sharps, Marchetto&rsquo;s a3 motet Ave, Regina Celorum/
+Mater innocencie/[Ite, missa est]</a> (Sanders 1973: 571&ndash;73; 
+Gallo 1974; Fischer and Gallo 1985: #37) stands out for 
+the microtonal fluency it presumes of its upper voices at 
+a very early date (see <b>Example 1</b>). Conversely, the much later 
+anon. a4 motet Ave, Corpus Sanctum/Gloriosi Stefani/ 
+Protomartiris (see <b>Example 2</b>) evidences, in its frequent
+doublings at the lower 8ve, enduring concern for accuracy 
+in the highest voices (Gallo 1968; Fischer and Gallo 1985: 
+#38).</p>
+
+
+<p>
+
+[5.5] Most of Marchetto&rsquo;s semitone examples are schematic:
+17 present the diesis sharp as a chromatic passing
+tone, e.g.:
+<pre>
+
+         ascending:     <a target="ex_window" onClick="newwindow('FFc.mp3',400,200); return false;" href="FFc.mp3">|FFc|</a>_<a target="ex_window" onClick="newwindow('EEc74.mp3',400,200); return false;" href="EEc74.mp3">|EEc74|</a>_<a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">DDd|</a> 
+    or  descending:     <a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>_<a target="ex_window" onClick="newwindow('EEc74.mp3',400,200); return false;" href="EEc74.mp3">|EEc74|</a>_<a target="ex_window" onClick="newwindow('FFc.mp3',400,200); return false;" href="FFc.mp3">|FFc|</a>
+    
+</pre>
+<p>thereby illustrating directly Marchetto&rsquo;s chromatic
+division and providing rudimentary exercises for
+learning to sing the new intervals. 4 more exemplify
+the diesis sharp as a chromatic lower neighbour. Of
+these 2 are censured (cf. [4.6] above):
+<pre>
+
+    <a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>_<a target="ex_window" onClick="newwindow('DDc74.mp3',400,200); return false;" href="DDc74.mp3">|DDc74|</a>_<a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>      <a target="ex_window" onClick="newwindow('CCg.mp3',400,200); return false;" href="CCg.mp3">|CCg|</a>_<a target="ex_window" onClick="newwindow('CCf74.mp3',400,200); return false;" href="CCf74.mp3">|CCf74|</a>_<a target="ex_window" onClick="newwindow('CCg.mp3',400,200); return false;" href="CCg.mp3">|CCg|</a> 
+    
+</pre>
+<p>in contrast to a repeated example of approved usage:
+<pre>
+
+                   <a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>_<a target="ex_window" onClick="newwindow('EEc74.mp3',400,200); return false;" href="EEc74.mp3">|EEc74|</a>__<a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a>
+</pre>
+<p>
+
+[5.6] Of the rest, 6 provide parallel realizations of
+Marchetto&rsquo;s substitutes for minor and major semitones:
+<pre>
+
+         <a target="ex_window" onClick="newwindow('aa.mp3',400,200); return false;" href="aa.mp3">|aa|</a>_<a target="ex_window" onClick="newwindow('GGbb77.mp3',400,200); return false;" href="GGbb77.mp3">|GGbb77|</a>_<a target="ex_window" onClick="newwindow('EEb.mp3',400,200); return false;" href="EEb.mp3">|EEb|</a>    <a target="ex_window" onClick="newwindow('EEb.mp3',400,200); return false;" href="EEb.mp3">|EEb|</a>_<a target="ex_window" onClick="newwindow('GGbb77.mp3',400,200); return false;" href="GGbb77.mp3">|GGbb77|</a>_<a target="ex_window" onClick="newwindow('aa.mp3',400,200); return false;" href="aa.mp3">|aa|</a>
+          
+</pre>
+<p>Although Marchetto said direct chromatic progressions
+between <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and B could occur in any kind of music
+(chant, discant, etc.), he emphasized in the Pomerium
+(<a href="http://www.music.indiana.edu/tml/14th/MARPOME_TEXT.html">
+|Pom., [-69-]-[-72-]|</a>) that they were not properly used to form
+leading tones in cadences.
+<p>
+
+[5.7] Because Marchettan pieces do not employ such
+progressions, one can understand his prominent examples
+of them merely as showing how his tuning would replace
+earlier versions of B and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>. Setting such B-<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>progressions in discant thus concretized his
+distinction between diatonic and chromatic semitones,
+especially as he tightly juxtaposed their contrasting
+examples (<a href="http://www.music.indiana.edu/tml/14th/MARLUC8_TEXT.html">|Luc. 
+8.1.3|</a>). His idea that enharmonic and
+diatonic semitones were not to be used in cadences
+clarified greatly his concept of cadence and emphasized
+further that the earlier, Pythagorean versions of
+imperfect intervals he retained would not draw
+attention to themselves.
+<p>
+
+[5.8] Generally, Marchetto presented the simplest, most
+schematic examples both earlier in a group of 2 to 4, and
+repeatedly throughout his entire discussion. Such
+distinctions as between using sharp dieses more or less
+&ldquo;properly&rdquo; (proprie) or &ldquo;naturally&rdquo; (naturaliter) are
+exemplified by changing only a single variable&mdash;as in
+inductive ascent and incremental pedagogy, from Francis
+Bacon and Johann Heinrich Pestalozzi onward).
+<p>
+
+[5.9] Later introduced in a few groups of examples are
+illustrations that presume basic knowledge of his novel
+division, but set in contexts that extend melodically
+beyond a whole tone: first in a lower range, plausibly
+to be sung by older instructors, illustrating the
+proper, natural, rising resolution: <a target="ex_window" onClick="newwindow('DDa.mp3',400,200); return false;" href="DDa.mp3">|DDa|</a>_<a target="ex_window" onClick="newwindow('GG74b.mp3',400,200); return false;" href="GG74b.mp3">|GG74b|</a>_<a target="ex_window" onClick="newwindow('aa.mp3',400,200); return false;" href="aa.mp3">|aa|</a>
+thereupon, the less proper, less natural, falling
+resolution:  <a target="ex_window" onClick="newwindow('EEb.mp3',400,200); return false;" href="EEb.mp3">|EEb|</a>_<a target="ex_window" onClick="newwindow('FF74a.mp3',400,200); return false;" href="FF74a.mp3">|FF74a|</a>_<a target="ex_window" onClick="newwindow('FFc.mp3',400,200); return false;" href="FFc.mp3">|FFc|</a>
+followed by the proscribed, oblique resolution (cf.
+[4.6], above:  <a target="ex_window" onClick="newwindow('bd.mp3',400,200); return false;" href="bd.mp3">|bd|</a>_<a target="ex_window" onClick="newwindow('c74d.mp3',400,200); return false;" href="c74d.mp3">|c74d|</a>_<a target="ex_window" onClick="newwindow('dd.mp3',400,200); return false;" href="dd.mp3">|dd|</a>
+culminating in a non-schematic, but thoroughly
+idiomatic approach and resolution, entirely within an
+upper voice: <a target="ex_window" onClick="newwindow('EEe.mp3',400,200); return false;" href="EEe.mp3">|EEe|</a>_<a target="ex_window" onClick="newwindow('DDf74.mp3',400,200); return false;" href="DDf74.mp3">|DDf74|</a>_<a target="ex_window" onClick="newwindow('CCg.mp3',400,200); return false;" href="CCg.mp3">|CCg|</a>
+Thus, the principles of Marchetto&rsquo;s tuning could be
+understood by following his words, observing his
+monochord marks, listening to, and eventually singing,
+the accompanying examples: in sum, a cumulative process 
+facilitated by his own cross-referencing of relevant 
+passages in the Lucidarium and Pomerium.
+<p>
+<html> 
+<head> 
+<title>MTO 4.6: Rahn, Practical Aspects of Marchetto&rsquo;s Tuning</title> 
+</head> 
+ 
+<body> 
+
+
+
+
+[5.10] Emphasized throughout Marchetto&rsquo;s exposition of
+diesis tuning were new possibilities for sharp
+chromaticism, even in monophony. Among Paduan dramatic
+offices of the time, the Lamentum Beate Marie Virginis
+(Vecchi 1954: 56&ndash;63) realized this possibility amply,
+gradually unfolding (like other Marchettan works)
+increasing chromatic complication, before opening into
+a thorough mixture of unisons and constantly crossing
+3ds and 5ths in its binatim-like close.
+<p>
+ 
+[5.11] That Marchetto&rsquo;s sharps &ldquo;properly&rdquo; participated
+in one of 2 basic progressions:
+<pre>
+
+    3&ndash;5       cf.  <a target="ex_window" onClick="newwindow('ac74.mp3',400,200); return false;" href="ac74.mp3">|ac74|</a>_<a target="ex_window" onClick="newwindow('GGd.mp3',400,200); return false;" href="GGd.mp3">|GGd|</a>
+    or 6&ndash;8    cf.  <a target="ex_window" onClick="newwindow('af74.mp3',400,200); return false;" href="af74.mp3">|af74|</a>_<a target="ex_window" onClick="newwindow('GGg.mp3',400,200); return false;" href="GGg.mp3">|GGg|</a>
+
+</pre>
+<p>(and their inversions) suggests an incipient &ldquo;chromatic
+discant modality&rdquo; that might comprise not only
+originally modal melodies adapted to polyphony as
+tenors but also, at least intermittently, unaccompanied
+melody. E.g., at the <a target="ex_window" onClick="newwindow('end.mp3',400,200); return false;" href="end.mp3">end [MIDI]</a> of the Lamentum&rsquo;s main,
+monophonic section, a concluding discant cadence to D 
+(or G), <a target="ex_window" onClick="newwindow('EEc74.mp3',400,200); return false;" href="EEc74.mp3">|EEc74|</a>_<a target="ex_window" onClick="newwindow('DDd.mp3',400,200); return false;" href="DDd.mp3">|DDd|</a> (or <a target="ex_window" onClick="newwindow('ac74.mp3',400,200); return false;" href="ac74.mp3">|ac74|</a>_<a target="ex_window" onClick="newwindow('GGd.mp3',400,200); return false;" href="GGd.mp3">|GGd|</a>), is strongly 
+implied by the melodic progression <a target="ex_window" onClick="newwindow('c74.mp3',400,200); return false;" href="c74.mp3">|c74|</a>_<a target="ex_window" onClick="newwindow('d.mp3',400,200); return false;" href="d.mp3">|d|</a>, and 
+intensifies the previous centrality of D, just before 
+the work presses to its <a target="ex_window" onClick="newwindow('a2.mp3',400,200); return false;" href="a2.mp3">|a2| [MIDI]</a> conclusion on G (tuned 
+to equal temperament in its MIDI file).
+<p>
+
+[5.12] Marchetto carefully delineated genre-based
+differences in semitone usage. Because he provided the
+same kinds of musical examples for his initial demonstrations
+of tuning and dissonance (<a href="http://www.music.indiana.edu/tml/14th/MARLUC2_TEXT.html">|Luc. 
+2.6.4&ndash;2.8.9|</a>; <a href="http://www.music.indiana.edu/tml/14th/MARLUC5_TEXT.html">|Luc. 
+5.6.8&ndash;27|</a>) as for his innovative account of chromatic
+permutation, i.e., sharp and flat/natural solmization
+(<a href="http://www.music.indiana.edu/tml/14th/MARLUC8_TEXT.html">|Luc. 
+8.8.3|</a>), one can surmize he intended all his
+musical examples to be sung by his readers/pupils only when
+understood, conceptually and aurally.
+<p>
+
+[5.13] Since his first groups of examples appeared well
+before his treatment of sight singing, they must have
+served first as sounding illustrations on the monochord
+&mdash;or more precisely and plausibly, as all are a2&mdash;on 2
+monochord or dichord courses tuned in unison. Such an
+instrumental realization would also make available a
+constant check on initial attempts to sing Marchetto&rsquo;s
+sharps against a (generally lower) non-chromatic part.
+A &ldquo;tenor&rdquo; of this sort could be performed on a single 
+course with movable bridge as support for, or challenge 
+to, an upper voice, which could be checked readily by a 
+2d course with (independently) movable bridge. In this
+way, Marchetto&rsquo;s pupils could proceed from initial
+stages of comprehension to fluent vocal application in
+his more demanding works.
+<p>
+
+
+<p style="text-align: center"><b>6. OTHER REALIZATIONS OF MARCHETTO&rsquo;S DIESES</b></p>
+
+<p>[6.0] Such later writers as Tinctoris (Berger 1987: 22&ndash;
+29) mention Marchetto&rsquo;s 5-diesis whole tone without
+mentioning its basis in 1/9-tone division. The space
+for a whole tone could be divided into 5 equal segments
+by construing its 9/8 ratio as 45/40. The leading-tone
+diesis would be 41/40: 42% as compared with 48% for
+the 1/9-tone ratio 74/72 (=37/36), and similarly 
+perceived as a melodic semitone rather than as a wide 
+unison. In comparison with a string-length of 5.33&rdquo; for 
+e1 (see [3.3], above), this 1/5-tone diesis&rsquo;s d411
+string-length would be ~5.4635&rdquo;: readily visible ~1/7&rdquo;
+away from its resolution, but less than 1/50&rdquo; from its
+1/9-tone counterpart (at 5.48&rdquo;). Respective rates of
+beating and roughness also would be similar.
+<p>
+
+[6.1] A 1/5-tone, enharmonic-semitone ratio would be
+45/43: ~<a target="ex_window" onClick="newwindow('79pc.mp3',400,200); return false;" href="79pc.mp3">|79%|</a> as compared with ~<a target="ex_window" onClick="newwindow('88pc.mp3',400,200); return false;" href="88pc.mp3">|88%|</a> for the 1/9-tone
+version, and ~<a target="ex_window" onClick="newwindow('90pc.mp3',400,200); return false;" href="90pc.mp3">|90%|</a> for the earlier, Pythagorean value
+it would replace. For c1 with string-length 6.75&rdquo;, the
+1/5-tone version of b1 would be at 7.06&rdquo;: ~1/20&rdquo; from
+the 1/9-tone b1 (at 7.11&rdquo;), and slightly further from
+the Pythagorean value (7.125&rdquo;). Although well within
+the central range for stepwise melodic semitones (a
+usual context for mi-fa progressions), B or <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> tuned
+this way would produce beats if combined with
+Pythagorean E or F: above a 162Hz EE, a 1/5-tone b
+would be ~249.8Hz, in comparison with a 243Hz
+Pythagorean b, producing 13.6Hz beating an 8ve higher 
+(cf. 486Hz and 499.6Hz).
+<p>
+
+[6.2] To construct such a 1/5-tone division of, e.g.,
+d/e at d41, one could &ldquo;back up&rdquo; even further than for
+the 1/9-tone tuning: to a Pythagorean <nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> at a little
+less than 1/4 GGG&rsquo;s length. Regarding this as 4x,
+bisecting its length twice (i.e., into 4 x-units) would
+provide e at 5x. Bisecting e&rsquo;s length thrice (into 8
+divisions of .625x) would result in d at 5.625x
+( = ( 9/8 ) * 5x ). Bisecting the space between the <nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> and e
+thrice, into 8 divisions of .125x, would give d41 at
+5.125x ( = ( 41/40 ) * 5x ), etc.:
+<pre>
+
+<a target="ex_window" onClick="newwindow('d.mp3',400,200); return false;" href="d.mp3">|d|</a>          <a target="ex_window" onClick="newwindow('d41.mp3',400,200); return false;" href="d41.mp3">|d41|</a> <a target="ex_window" onClick="newwindow('e.mp3',400,200); return false;" href="e.mp3">|e|</a>                          (<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>)
+45            41   40                            32
+                                                 4x--&gt;
+                   5x--&gt;                              
+5.625x--&gt;          
+              5.125x--&gt;
+
+</pre>
+<p>[6.3] As a plausible solution to incommensuracy
+problems for B and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in any such tuning, the space for
+the Pythagorean m3 A/C (32/27) could be construed as
+7 ( = 2 + 3 + 2 ) &ldquo;1/5-tone&rdquo; dieses. A/C divided into 7 equal
+segments would produce 224/214 ( = 112/107 = 80% ) for A/Bb
+and 199/189 ( = 89% ) for B/C: cf. 90% for Pythagorean B/C. 
+Combined with Pythagorean values, this 1/7-m3 tuning 
+would produce virtually beat-less realizations of E/B, 
+but Bb/F would beat as in 1/9-tone tuning. Because none 
+of these p5s would appear in a Marchettan cadence 
+(since no sharp leading tone, i.e., sharp E or A, was 
+available for them to resolve&mdash;though 1/7-m3 B would 
+support 1/5-tone D41 in a cadence to A/E: BD41_AE)&mdash;such effects would pass unnoticed, like those of their 
+uncoloured imperfect counterparts.
+<p>
+
+[6.4] Among copies of the Lucidarium there was great
+inconsistency in notating Marchetto&rsquo;s dieses. Even more
+difficult to assess are pieces that originally might
+have been composed and/or performed with Marchetto&rsquo;s
+chromaticisms but that survive only in copies lacking 
+his explicit signs. Determining intonation for such 
+pieces is all the more difficult because of the 
+continuing controversy and confusion his doctrine 
+provoked and wide variation in successors&rsquo; usage of 
+Boethian semitone terms he adopted.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup><p>
+
+[6.5] Among later tunings, the recurrent 4-dieses-plus-comma formulation seems quite parallel to Marchetto&rsquo;s
+5-fold partition of 1/9-tones, especially as his odd-number
+doctrine would identify the comma (or diacisma) with
+his middlemost diesis, 77/76 ( = ~23%&mdash;cf. the
+Pythagorean comma: 24%). Moreover, terse references to
+such seemingly non-Marchettan whole-tone divisions as
+into 4 or 8 parts (e.g., in Tinctoris 1475/1963) might
+merely record widespread tuning mnemonics for 9- or
+5-fold division via adjacent whole tones: 72/64 or
+40/36. Nonetheless, the possibility remains that works
+originally conceived in 1/9- or 1/5-tone tuning were
+actually sung with other, e.g., Pythagorean, intervals.
+<p>
+ 
+[6.6] If all Marchetto&rsquo;s sharps were rendered in
+Pythagorean tuning&mdash;or as today, in equal temperament&mdash;
+only Marchetto&rsquo;s leading tones would be affected
+greatly. The extremely wide, coloured intervals could
+assume the Pythagorean sizes and qualities of other
+early idioms; p8s, p5s etc. would sound and be
+performed much the same as in 1/9- and 1/5-tone
+tunings; not highlighted in cadences, non-coloured
+imperfect intervals and dissonances would pass as
+little noticed as in a 1/9- or 1/5-tone performance: in
+metrically weak positions, for short durations, or as
+additions to more salient structures.
+<p>
+
+[6.7] Prominent in Marchettan a3 and a4 works were
+such progressions as <a target="ex_window" onClick="newwindow('EEcg-sharp.mp3',400,200); return false;" href="EEcg-sharp.mp3">|EEc<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>|</a>_<a target="ex_window" onClick="newwindow('DDda1.mp3',400,200); return false;" href="DDda1.mp3">|DDda1|</a>. Arguably, 1/9- or 
+1/5-tone tuning alone would highlight physiologically 
+and cognitively the core, contrary-motion, leading-tone, 
+discant structure of such arresting cadences: EE<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>_DDa1.    
+Relegated to a subsidiary structural role would be the
+(much) augmented 5&rsquo;s similar motion to p5: c<nobr><span style= 'letter-spacing:-0.8px'>g<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>_da1, c 
+being construed also as forming a structurally less
+salient, but beating, m6 with EE, with which it would
+proceed stepwise in non-cadential contrary motion to
+d: EEc_DDd.
+<p>
+
+[6.8] In listening to a modern, equal-temperament
+rendering of Ave, Regina Celorum/
+Mater innocencie (<a target="ex_window" onClick="newwindow('1305.mp3',400,200); return false;" href="1305.mp3">audio for Ave, Regina Celorum</a> [MIDI]), a work in which this a3 progression forms 
+the initial cadence, one can merely imagine,
+&ldquo;fictitiously,&rdquo; as it were, the effect produced if the
+already prominent cadential sharps were realized only
+~48% (or ~42%) from their resolutions.
+<p>
+
+
+<p style="text-align: center"><b>7. MARCHETTO&rsquo;S CHROMATICISMS AND RECENT SCALE THEORY</b></p>
+
+<p>[7.0] Reversing such an exercise, one can consider the
+effects Marchetto&rsquo;s tuning would have on the diatonic
+collection as understood of late. In such a view, one
+construes sharpened and flattened forms of degrees as
+replacing, at least temporarily, their natural
+counterparts. As well, one specifies the structural
+changes that take place when one or more degrees are
+altered in various ways (cf. Rahn 1991: 35&ndash;44; Clough
+and Douthett 1991: 125&ndash;44).
+<p>
+
+[7.1] Of particular concern here are contradictions and
+ambiguities. E.g., if the &ldquo;white-key&rdquo; collection is
+understood as 12 equally tempered semitones, it is
+remarkable for comprising no contradictions and only 1
+ambiguity, namely, between its x4 (FB) and its d5 (BF),
+where intervals of differing degree-sizes (4th, 5th)
+have the same sizes in cents or semitones: 600% or 6
+st. In a Pythagorean construal, there are no 
+ambiguities, but the FB/BF pair forms a contradiction: 
+an interval of smaller degree-size (4th) has a larger 
+frequency-ratio (612%) than an interval of larger 
+degree-size (5th: 588%).
+<p>
+
+[7.2] In Marchettan works, sharps generally appear 1 at 
+a time: e.g., <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> returns to, is &ldquo;re-replaced&rdquo; by, 
+C before <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, or <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> replaces F, G, 
+D, or B&mdash;in contrast to later use of 2 sharpened degrees
+in &ldquo;double-leading-tone&rdquo; cadences: e.g., EEG<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><nobr><span style= 'letter-spacing:-0.8px'>c<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>_DDad. 
+The following figure compares consequences of replacing B by <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>, F by <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, C by <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, G by <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and D by <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in 2 frameworks:
+<ul>
+
+	a) equally tempered 12-semitone (cf. modern, e.g.,
+	keyboard, realizations);<p><p>
+
+	b) Pythagorean tuning (cf. historical 
+	reconstructions	of early music):
+</ul>
+<pre>
+
+altered  intervals      ideal tuning (in cents):
+degree:  affected:      a) equal temp&rsquo;t b) Pythag&rsquo;n
+    
+
+Bb        BbE/EBb       600/600         612/588
+
+<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>        C<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>/<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>C       600/600         612/588
+
+<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>    G<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,FB/<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>G,BF     600/600         612/588
+      <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F/FA,GB,A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>     400/400         384/408
+
+<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>   D<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,FB/<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>D,BF      600/600         612/588
+     <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>C/CE,E<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,FA      400/400         384/408
+    F<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>/DF,<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>B,AC,BD    300/300         318/294
+
+<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>  A<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>,FB/<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>A,BF       600/600         612/588
+   <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>G/CE,FA,GB,B<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>     400/400         384/408
+ *C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>*/EG,AC,BD/*<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F* *300*/300/*200* *318*/294/*180*
+    <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F/FG,GA,AB        200/200         180/204
+
+</pre>
+<p>[7.3] As the above figure shows:
+
+<ul>
+i) replacing C by <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (cf. &ldquo;ascending melodic minor&rdquo;)
+yields 12-st ambiguities or Pythagorean contradictions
+between the d4 <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F and the M3s A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, FA, and GB;
+<p>
+
+ii) a corresponding result obtains for the d4 <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>C if G
+is replaced by <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (cf. &ldquo;harmonic minor&rdquo;); also the x2
+F<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> produces ambiguities/contradictions with the m3s
+DF, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>B, AC, and BD.
+<p>
+
+iii) substituting <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> for D results not only in further
+ambiguities/contradictions (between the d3 <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F and the
+M2s FG, GA, and AB), but also a 12-st contradiction
+between the <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F d3 (200%) and the C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> x2 (300%), and
+for a Pythagorean construal, a &ldquo;doubly contradictory&rdquo;
+relation: not only is the C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> x2 (318%) larger than the
+m3s EG, AC, and BD (294%), but also both sorts are
+larger than the M2s FG, GA, AB (204%), which are larger
+than the d3 <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F (180%)!
+<p>
+</ul>
+
+<p>[7.4] Whether Marchetto&rsquo;s chromaticisms are realized by
+modern equal temperament or historical Pythagorean
+tuning, four gradations can be acknowledged:
+
+<ul>
+a) substituting <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> for F (or <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> for B) complicates an
+originally diatonic collection merely by virtue of
+adding a new pitch class to the piece or passage as a
+whole; otherwise, the new collection created by the
+substitution has the same profile of ambiguities or
+contradictions as the diatonic original&mdash;the tritone
+merely moves to another pair of scale degrees;
+<p>
+
+b) replacing C by <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> adds a further tritone pair as
+well as ambiguities/contradictions around the d4 <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F;
+<p>
+
+c) whereas all such complications appear if <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> replaces
+G, ambiguities/contradictions around the x2 F<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> are
+also introduced;
+<p>
+
+d) finally, if <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> replaces D, the same kinds of
+ambiguities/contradictions arise: additionally, there
+are ambiguities/contradictions around the <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F d3, and
+most important, whether the framework be equally
+tempered or Pythagorean, this interval not only
+contradicts the larger x2 C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, but does so doubly.
+In short, even without adopting Marchetto&rsquo;s tuning,
+chromaticisms of these kinds produce a coherent,
+gradated increase in complication: from a simple,
+diatonic starting-point to the complications of <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>.
+</ul>
+<p>
+
+[7.5] Taken at face value or understood as an
+approximation to quartertone equal temperament,
+Marchetto&rsquo;s intervals intensify complications found
+already in simpler tunings. As the following figure
+shows, from <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> onward all the ambiguities in an equally
+tempered, 12-st construal become contradictions,
+whether the framework comprises 24 quartertones or
+Marchetto&rsquo;s reconfiguration of Pythagorean values. Of
+these possible construals, Marchetto&rsquo;s tuning produces
+greater contrasts between contradictory intervals,
+reaching a climax (or crisis) at the d3 <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>F (138%),
+which is fully 222% smaller than the x2 C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> (360%),
+which is, to re-work a once-popular song title, &ldquo;its
+own scale-degree construal&rsquo;s frequency-ratio 
+grandparent.&rdquo; If Marchetto&rsquo;s diesis-based versions of 
+B and <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> are incorporated, these contrasts increase, 
+but only slightly (on the order of ~2&ndash;6%):
+<pre>
+
+altered  intervals      ideal tuning (in cents):
+degree:  affected:      equal temperament  Marchettan
+                        (quartertone)      (1/9-tone)
+
+Bb       BbE/EBb        600/600             612/588
+                   
+<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+      C<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+           650                 654
+         <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+C           550                 546
+    
+<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+      G<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;FB        650;600             654;612
+         BF;<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+G        600;550             588;546
+
+         A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;FA,GB     450;400             450;408
+         <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+F           350                 342
+                                            
+
+<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+      D<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;FB        650;600             654;612
+         BF;<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+D        600;550             588;546
+
+         E<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;CE,FA     450;400             450;408
+         <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+C           350                 342
+
+         F<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+           350                 360
+         DF,AC,BD;<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+B  300;250             294;252
+
+<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+      A<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;FB        650;600             654;612
+         BF;<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+A        600;550             588;546
+
+         B<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+;CE,FA,GB  450;400             450;408
+         <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+G           350                 342
+                             
+         *C<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+*         *350*               *360*
+     EG,AC,BD;*<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+F*   300;*150*           294;*138*
+
+         FG,GA,AB       200                 204
+         <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+F           150                 138
+
+</pre>
+<p>
+
+[7.6] All differences effected by adopting narrow
+semitones merely intensify complications that would
+arise in earlier Pythagorean, or modern equally
+tempered, 12-semitone or 24-quartertone construals.
+Moreover, in each of these, the divergent tones form a
+coherent grouping of their own, parallel to the
+diatonic originals&mdash;a &ldquo;displaced cycle,&rdquo; as it were,
+shadowing the cycle of 5ths. <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>, and <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> form,
+among themselves, a secondary cycle of 702% or 700%, at
+distances of 100 ( = 600 - 500 )%, 114 ( = 612 - 498 ) %, 150 ( = 650 - 
+500 ) %, or 156 ( = 654 - 498 ) % above F, C, G, and D. For 2/9-tone dieses, these cycles are as follow:<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup><pre>
+
+      F74 <--702%--> C74 <--702%--> G74 <--702%--> D74
+      /              /              /              /
+    156%           156%           156%           156%
+    /             /              /               /
+   F  <--702%--> C  <--702%-->  G  <--702%-->   D
+
+</pre>
+<p>
+
+[7.7] If Marchetto&rsquo;s single-diesis semitones are heard
+or performed as nuanced versions of more usual
+semitones, i.e., not merely as &ldquo;semitones&rdquo;  nor as
+full-fledged &ldquo;quartertone&rdquo; intervals, but as &ldquo;narrow,
+small, or sharp semitones,&rdquo; the nuances that result can
+be construed as forming similarity relations among
+themselves, e.g., narrow, small, or sharp &ldquo;to the same
+extent&rdquo; or &ldquo;by the same amount.&rdquo; In this way,
+putatively quantitative divergences can be understood
+as proportionally qualitative or qualified&mdash;as it were,
+&ldquo;adverbially&rdquo; (e.g., DF74 is smaller than DG &ldquo;by as
+much as&rdquo; F74A exceeds GA), rather than &ldquo;adjectivally&rdquo;
+or as &ldquo;nouns&rdquo; in their own right (e.g., DF74 and F74A
+are a &ldquo;large&rdquo; M3 and a &ldquo;small&rdquo; m3, or &ldquo;a p4 minus a
+diesis&rdquo; and &ldquo;a M2 plus a diesis&rdquo;): put another way, not
+as separate, distinct &ldquo;kinds&rdquo; of intervals nor merely
+as &ldquo;marked&rdquo; intervals, but as intervals aletered or 
+varied in a shared, common way and forming a cycle of 
+their own.
+<p>
+ 
+[7.8] That a wide M3 would be understood as a version
+&ldquo;of&rdquo; a diatonic M3, rather than vice versa&mdash;and rather
+than each being construed as &ldquo;allophonic&rdquo; or &ldquo;in free
+variation&rdquo; with the other (cf. allophones or phonetic 
+variations within a single phoneme)&mdash;is assured by the
+consequences: CE and GB match each other within a
+passage where <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ is the only chromatic note; FA and GB
+match each other within a passage where <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ is the only
+chromatic note, whereas D<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ and A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ match each other
+only between such passages; however, CE and FA match
+each other across such passages also; instances of GB
+match within and between such passages; etc.
+<p>
+
+[7.9] Because Marchettan chromatic intervals
+idiomatically are always &ldquo;out-numbered&rdquo; by their
+diatonic counterparts, they are sites of complexity.
+Disadvantaged by their opposition to the many matching
+relations among other intervals of the same
+scale-degree size, each chromatic interval, on its own,
+would be rather difficult to learn (as are the
+similarly rare tritones within the diatonic
+collection). However, that they share extents by which
+they diverge from their majorities (e.g., A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ and <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+E
+vs FA, GB, and DF, EG, BF, etc.) provides a
+starting-point for a &ldquo;progressive&rdquo; Marchettan pedagogy,
+with direct extensions available through matching
+across time-spans (e.g., A<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, E<nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+).
+<p>
+
+[7.10] Cross-cutting the simple-to-complex ordering of
+chromatic effects from <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> to <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> are the potential
+reinforcers served up by the observation that each
+sharp forms with several of its diatonic passage-mates
+similar intervals as the others (cf. <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ vs G, C, D,
+and <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ vs E, A, B). Rather than shaping each sharp&rsquo;s
+intonation merely with its resolution (e.g., by
+carefully tuning <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ relative to G, as in chromatic
+neighbour-tone figures), or construing its intonation
+merely as diverging from a referential value (e.g., by
+tuning <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ relative to F, as in a chromatic passing-tone figure), or attending only to such connections
+within an initial stage (e.g., <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+ along with <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+,
+and <nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, and/or <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+/G along with <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+/D, <nobr><span style= 'letter-spacing:-0.8px'>G<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+/A, and 
+<nobr><span style= 'letter-spacing:-0.8px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+/E), Marchettan sharp-structures suggest a richer
+curriculum that would introduce non-leading-tone/
+altered-tone successions early on: D/<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, A/<nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, 
+C/<nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr>+, etc.), and amplify such melodic tasks with
+discant&mdash;much as the Lucidarium&rsquo;s musical examples imply and
+Marchettan works require.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Jay Rahn<br>
+	York University<br>Fine Arts Dept., Atkinson College<br>4700 Keele St.<br>Toronto, Ontario M3J 1P3<br><a href="mailto:Harrisrahn@aol.com">Harrisrahn@aol.com</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_adkins_1963" class="flyoverdiv">Adkins, Cecil. 1963. <i>The Theory and Practice of the Monochord</i>. unpub. Ph.D. diss. (Iowa, Music), reprinted Ann Arbor: UMI Dissertation Services (64&ndash;3344).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adkins_1963"></a>Adkins, Cecil. 1963. <i>The Theory and Practice of the Monochord</i>. unpub. Ph.D. diss. (Iowa, Music), reprinted Ann Arbor: UMI Dissertation Services (64&ndash;3344).</p><div id="citediv_adkins_1980" class="flyoverdiv">Adkins, Cecil. 1980.  Monochord. <i>New Grove Dictionary of Music and Musicians</i>. London: Macmillan, vol. 12,  495&ndash;96.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adkins_1980"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1980.  Monochord. <i>New Grove Dictionary of Music and Musicians</i>. London: Macmillan, vol. 12,  495&ndash;96.</p><div id="citediv_adkins_1991" class="flyoverdiv">Adkins, Cecil. 1991. <i>A Trumpet by Any Other Name: A History of the Trumpet Marine</i>. Buren: Frits Knuf, 2 volumes.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adkins_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. <i>A Trumpet by Any Other Name: A History of the Trumpet Marine</i>. Buren: Frits Knuf, 2 volumes.</p><div id="citediv_adler_1971" class="flyoverdiv">Adler, Israel. 1971. Fragment h&rsquo;ebraieque d&rsquo;un trait&rsquo;e attribu&rsquo;e a&rsquo; Marchetto de Padoue. <i>Yuval</i> 2: 1&ndash;10 (cf. RISM Bix2, 490).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="adler_1971"></a>Adler, Israel. 1971. Fragment h&rsquo;ebraieque d&rsquo;un trait&rsquo;e attribu&rsquo;e a&rsquo; Marchetto de Padoue. <i>Yuval</i> 2: 1&ndash;10 (cf. RISM Bix2, 490).</p><div id="citediv_berger_1987" class="flyoverdiv">Berger, Karol. 1987. <i>Musica Ficta: Theories of Accidental Inflection in Vocal Polyphony from Marchetto da Padova to Gioseffo Zarlino</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="berger_1987"></a>Berger, Karol. 1987. <i>Musica Ficta: Theories of Accidental Inflection in Vocal Polyphony from Marchetto da Padova to Gioseffo Zarlino</i>. Cambridge: Cambridge University Press.</p><div id="citediv_bernhard_and_bower_1996" class="flyoverdiv">Bernhard, Michael, and Calvin Bower. 1996. <i>Glossa Maior in Institutionem Musicam Boethii</i>. Munich: Bayerischen Akademie der Wissenschaften.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bernhard_and_bower_1996"></a>Bernhard, Michael, and Calvin Bower. 1996. <i>Glossa Maior in Institutionem Musicam Boethii</i>. Munich: Bayerischen Akademie der Wissenschaften.</p><div id="citediv_billanovich_1940" class="flyoverdiv">Billanovich, G. 1940. Uffici Drammatici della Chiesa Padovana. <i>Rivisita Italiana del Dramma</i> 4: 72&ndash;100.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="billanovich_1940"></a>Billanovich, G. 1940. Uffici Drammatici della Chiesa Padovana. <i>Rivisita Italiana del Dramma</i> 4: 72&ndash;100.</p><div id="citediv_boethius_1989" class="flyoverdiv">Boethius, Anicius Manlius Severinus. ~520/1989. <i>Fundamentals of Music</i>, trans. Calvin M. Bower, ed. Claude V. Palisca. New Haven: Yale University Press (cf. Bernhard and Bower 1996).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="boethius_1989"></a>Boethius, Anicius Manlius Severinus. ~520/1989. <i>Fundamentals of Music</i>, trans. Calvin M. Bower, ed. Claude V. Palisca. New Haven: Yale University Press (cf. Bernhard and Bower 1996).</p><div id="citediv_burns_and_ward_1978" class="flyoverdiv">Burns, E. M., and W. D. Ward. 1978. Categorical Perception of Musical Intervals&mdash;Phenomenon or Epiphenomenon? Evidence and Experiments in the Perception of Melodic Intervals. <i>Journal of the Acoustical Society of America</i> 63: 456&ndash;68.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="burns_and_ward_1978"></a>Burns, E. M., and W. D. Ward. 1978. Categorical Perception of Musical Intervals&mdash;Phenomenon or Epiphenomenon? Evidence and Experiments in the Perception of Melodic Intervals. <i>Journal of the Acoustical Society of America</i> 63: 456&ndash;68.</p><div id="citediv_butler_1992" class="flyoverdiv">Butler, David. 1992. <i>The Musician&rsquo;s Guide to Perception and Cognition</i>. New York: Schirmer.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="butler_1992"></a>Butler, David. 1992. <i>The Musician&rsquo;s Guide to Perception and Cognition</i>. New York: Schirmer.</p><div id="citediv_clough_and_douthett_1991" class="flyoverdiv">Clough, John, and Jack Douthett. 1991. Maximally Even Sets. <i>Journal of Music Theory</i> 35/1&ndash;2: 93&ndash;173.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_and_douthett_1991"></a>Clough, John, and Jack Douthett. 1991. Maximally Even Sets. <i>Journal of Music Theory</i> 35/1&ndash;2: 93&ndash;173.</p><div id="citediv_clough_et_al_1993" class="flyoverdiv">Clough, John, Jack Douthett, N. Ramanathan, and Lewis Rowell. 1993. Early Indian Heptatonic Scales and Recent Diatonic Theory. <i>Music Theory Spectrum</i> 15/1: 36&ndash;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_et_al_1993"></a>Clough, John, Jack Douthett, N. Ramanathan, and Lewis Rowell. 1993. Early Indian Heptatonic Scales and Recent Diatonic Theory. <i>Music Theory Spectrum</i> 15/1: 36&ndash;58.</p><div id="citediv_ellis_1954" class="flyoverdiv">Ellis, Alexander J. 1885/1954. Additions by the Translator. In Hermann L.F. Helmholtz. <i>On the Sensations of Tone as a Physiological Basis for the Theory of Music</i> 2nd Eng. ed. reprinted New York: Dover, 430&ndash;556.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ellis_1954"></a>Ellis, Alexander J. 1885/1954. Additions by the Translator. In Hermann L.F. Helmholtz. <i>On the Sensations of Tone as a Physiological Basis for the Theory of Music</i> 2nd Eng. ed. reprinted New York: Dover, 430&ndash;556.</p><div id="citediv_ellsworth_1987" class="flyoverdiv">Ellsworth, Oliver B. 1987. Rev. of Herlinger 1985 in <i>Journal of Music Theory</i> 31/2: 337&ndash;45.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ellsworth_1987"></a>Ellsworth, Oliver B. 1987. Rev. of Herlinger 1985 in <i>Journal of Music Theory</i> 31/2: 337&ndash;45.</p><div id="citediv_fischer_and_gallo_1985" class="flyoverdiv">Fischer, Kurt von, and F. Alberto Gallo, eds.1985&ndash;87. <i>Italian Sacred Music</i>. Monaco: Oiseau-Lyre. vol. 12&ndash;13.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fischer_and_gallo_1985"></a>Fischer, Kurt von, and F. Alberto Gallo, eds.1985&ndash;87. <i>Italian Sacred Music</i>. Monaco: Oiseau-Lyre. vol. 12&ndash;13.</p><div id="citediv_gallo_1966" class="flyoverdiv">Gallo, F. Alberto. 1966. Cantus Planus Binatim:  Polifonica Primitiva in Fonti Tardive. <i>Quadrivium</i> 7:  79&ndash;89.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gallo_1966"></a>Gallo, F. Alberto. 1966. Cantus Planus Binatim:  Polifonica Primitiva in Fonti Tardive. <i>Quadrivium</i> 7:  79&ndash;89.</p><div id="citediv_gallo_1968" class="flyoverdiv">Gallo, F. Alberto. 1968. Da un Codice Italiano di Motetti del Primo Trecento. <i>Quadrivium</i> 9: 25&ndash;44.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gallo_1968"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1968. Da un Codice Italiano di Motetti del Primo Trecento. <i>Quadrivium</i> 9: 25&ndash;44.</p><div id="citediv_gallo_1974" class="flyoverdiv">Gallo, F. Alberto. 1974. Marchetus in Padua und die franco-venetische  Musik des fr&uuml;hen Trecento. <i>Archiv f&uuml;r Musikwissenschaft</i> 31: 42&ndash;56.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gallo_1974"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1974. Marchetus in Padua und die franco-venetische  Musik des fr&uuml;hen Trecento. <i>Archiv f&uuml;r Musikwissenschaft</i> 31: 42&ndash;56.</p><div id="citediv_gallo_1977" class="flyoverdiv">Gallo, F. Alberto. 1977/1985. <i>Il Medioevo II</i> Torino: Edizioni di Torino (trans. Karen Eales, as <i>Music of the Middle Ages II</i>. Cambridge: Cambridge University Press).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gallo_1977"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1977/1985. <i>Il Medioevo II</i> Torino: Edizioni di Torino (trans. Karen Eales, as <i>Music of the Middle Ages II</i>. Cambridge: Cambridge University Press).</p><div id="citediv_guilford_1954" class="flyoverdiv">Guilford, J. P. 1954. <i>Psychometric Methods</i>, 2nd ed. New York: McGraw Hill.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guilford_1954"></a>Guilford, J. P. 1954. <i>Psychometric Methods</i>, 2nd ed. New York: McGraw Hill.</p><div id="citediv_gurlitt_and_eggebrecht_1959" class="flyoverdiv">Gurlitt, Willibald, and Hans Heinrich Eggebrecht, comp., ed. 1959&ndash;67. Diesis. <i>Riemann Musik Lexicon</i>, 12th ed. Mainz: Schott. 3 volumes, <i>Sachteil</i>: 225.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="gurlitt_and_eggebrecht_1959"></a>Gurlitt, Willibald, and Hans Heinrich Eggebrecht, comp., ed. 1959&ndash;67. Diesis. <i>Riemann Musik Lexicon</i>, 12th ed. Mainz: Schott. 3 volumes, <i>Sachteil</i>: 225.</p><div id="citediv_hall_and_hess_1984" class="flyoverdiv">Hall, Donald E., and Joan Taylor Hess. 1984. Perception of Musical Interval Tuning. <i>Music Perception</i> 2/2: 166&ndash;95.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hall_and_hess_1984"></a>Hall, Donald E., and Joan Taylor Hess. 1984. Perception of Musical Interval Tuning. <i>Music Perception</i> 2/2: 166&ndash;95.</p><div id="citediv_harnad_1987" class="flyoverdiv">Harnad, Stevan, ed. 1987. <i>Categorical Perception</i>. Cambridge: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="harnad_1987"></a>Harnad, Stevan, ed. 1987. <i>Categorical Perception</i>. Cambridge: Cambridge University Press.</p><div id="citediv_heath_1925" class="flyoverdiv">Heath, (Sir) Thomas L. 1925/1956. trans., ed. <i>Euclid:  The Thirteen Books of The Elements</i>, 2nd ed. reprinted New York: Dover, 3 volumes.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="heath_1925"></a>Heath, (Sir) Thomas L. 1925/1956. trans., ed. <i>Euclid:  The Thirteen Books of The Elements</i>, 2nd ed. reprinted New York: Dover, 3 volumes.</p><div id="citediv_herlinger_1978" class="flyoverdiv">Herlinger, Jan W. 1978. The <i>Lucidarium</i> of Marchetto of Padua: A Critical Edition, Translation, and Commentary. Ph.D. diss., University of Chicago.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="herlinger_1978"></a>Herlinger, Jan W. 1978. The <i>Lucidarium</i> of Marchetto of Padua: A Critical Edition, Translation, and Commentary. Ph.D. diss., University of Chicago.</p><div id="citediv_herlinger_1981a" class="flyoverdiv">Herlinger, Jan W. 1981a. Fractional Divisions of the Whole Tone. <i>Music Theory Spectrum</i> 3: 74&ndash;83.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="herlinger_1981a"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1981a. Fractional Divisions of the Whole Tone. <i>Music Theory Spectrum</i> 3: 74&ndash;83.</p><div id="citediv_herlinger_1981b" class="flyoverdiv">Herlinger, Jan W. 1981b). Marchetto&rsquo;s Division of the Whole Tone. <i>Journal of the American Musicological Society</i> 34/2: 193&ndash;216.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="herlinger_1981b"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1981b). Marchetto&rsquo;s Division of the Whole Tone. <i>Journal of the American Musicological Society</i> 34/2: 193&ndash;216.</p><div id="citediv_herlinger_1985" class="flyoverdiv">Herlinger, Jan W., trans., ed. 1985. <i>The Lucidarium of Marchetto of Padua</i> Chicago: University of Chicago Press (cf. also http://www.music.indiana.edu/tml/14th/MARLUC#_TEXT: # = the Arabic numeral for each  of the Lucidarium&rsquo;s 16 tractata).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="herlinger_1985"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>, ed. 1985. <i>The Lucidarium of Marchetto of Padua</i> Chicago: University of Chicago Press (cf. also http://www.music.indiana.edu/tml/14th/MARLUC#_TEXT: # = the Arabic numeral for each  of the Lucidarium&rsquo;s 16 tractata).</p><div id="citediv_herlinger_1990" class="flyoverdiv">Herlinger, Jan. W. 1990. Marchetto&rsquo;s Influence:  The Manuscript Evidence. In Andr&eacute; Barbera, ed.  <i>Music Theory and Its Sources: Antiquity and the  Middle Ages</i> Notre Dame: Notre Dame University Press, 235&ndash;58.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="herlinger_1990"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1990. Marchetto&rsquo;s Influence:  The Manuscript Evidence. In Andr&eacute; Barbera, ed.  <i>Music Theory and Its Sources: Antiquity and the  Middle Ages</i> Notre Dame: Notre Dame University Press, 235&ndash;58.</p><div id="citediv_kolinski_1961" class="flyoverdiv">Kolinski, Mieczyslaw. 1961. The Origin of the Indian 22-Tone System. <i>Studies in Ethnomusicology</i> 1: 3&ndash;18.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kolinski_1961"></a>Kolinski, Mieczyslaw. 1961. The Origin of the Indian 22-Tone System. <i>Studies in Ethnomusicology</i> 1: 3&ndash;18.</p><div id="citediv_krumhansl_1991" class="flyoverdiv">Krumhansl, Carol. 1991. Music Psychology: Tonal Structures in Perception and Memory. <i>Annual Review of Psychology</i> 42: 277&ndash;303.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="krumhansl_1991"></a>Krumhansl, Carol. 1991. Music Psychology: Tonal Structures in Perception and Memory. <i>Annual Review of Psychology</i> 42: 277&ndash;303.</p><div id="citediv_marchetto_of_padua_1961" class="flyoverdiv">Marchetto of Padua. [1318&ndash;19]/1961. <i>Pomerium</i>. Ed. Giuseppe Vecchi. Florence: American Institute of Musicology (cf. also <a href='http://www.music.indiana.edu/tml/14th/MARPOME_TEXT.html'>http://www.music.indiana.edu/tml/14th/MARPOME_TEXT</a>).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="marchetto_of_padua_1961"></a>Marchetto of Padua. [1318&ndash;19]/1961. <i>Pomerium</i>. Ed. Giuseppe Vecchi. Florence: American Institute of Musicology (cf. also <a href='http://www.music.indiana.edu/tml/14th/MARPOME_TEXT.html'>http://www.music.indiana.edu/tml/14th/MARPOME_TEXT</a>).</p><div id="citediv_martinez-g&ouml;llner_1963" class="flyoverdiv">Martinez-[G&ouml;llner], Marie Louise. 1963. <i>Die Musik des fr&uuml;hen Trecento</i>. Tutzing: Schneider.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="martinez-g&ouml;llner_1963"></a>Martinez-[G&ouml;llner], Marie Louise. 1963. <i>Die Musik des fr&uuml;hen Trecento</i>. Tutzing: Schneider.</p><div id="citediv_mathiesen_1975" class="flyoverdiv">Mathiesen, Thomas J. 1975. An Annotated Translation of Euclid&rsquo;s Division of a Monochord. <i>Journal of Music Theory</i> 19: 236&ndash;57.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mathiesen_1975"></a>Mathiesen, Thomas J. 1975. An Annotated Translation of Euclid&rsquo;s Division of a Monochord. <i>Journal of Music Theory</i> 19: 236&ndash;57.</p><div id="citediv_mendel_1948" class="flyoverdiv">Mendel, Arthur. 1948/1968. Pitch in the 16th and  Early 17th Centuries. <i>Musical Quarterly</i> 48/1&ndash;4, reprinted  in Arthur Mendel, ed. <i>Studies in the History of  Musical Pitch</i> Amsterdam: Frits Knuf, 88&ndash;169.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mendel_1948"></a>Mendel, Arthur. 1948/1968. Pitch in the 16th and  Early 17th Centuries. <i>Musical Quarterly</i> 48/1&ndash;4, reprinted  in Arthur Mendel, ed. <i>Studies in the History of  Musical Pitch</i> Amsterdam: Frits Knuf, 88&ndash;169.</p><div id="citediv_monterosso_1966" class="flyoverdiv">Monterosso, Raffaello. 1966. Un Compendio Inedito del &lsquo;Lucidarium&rsquo; di Marchetto da Padova. <i>Studi Medievali</i> 7/2: 914&ndash;31 (cf. also MSS Pavia, Aldini 450: 7'&ndash;10, and Seville, Biblioteca Capitular y Colombina 5.2.25: 66'&ndash; 68').</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="monterosso_1966"></a>Monterosso, Raffaello. 1966. Un Compendio Inedito del &lsquo;Lucidarium&rsquo; di Marchetto da Padova. <i>Studi Medievali</i> 7/2: 914&ndash;31 (cf. also MSS Pavia, Aldini 450: 7'&ndash;10, and Seville, Biblioteca Capitular y Colombina 5.2.25: 66'&ndash; 68').</p><div id="citediv_niem&ouml;ller_1956" class="flyoverdiv">Niem&ouml;ller, Klaus Wolfgang. 1956. Zur Tonus-Lehre der italienischen Musiktheorie des ausgehenden Mittelalter. <i>Kirchenmusikalisches Jahrbuch</i> 60: 23&ndash;32.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="niem&ouml;ller_1956"></a>Niem&ouml;ller, Klaus Wolfgang. 1956. Zur Tonus-Lehre der italienischen Musiktheorie des ausgehenden Mittelalter. <i>Kirchenmusikalisches Jahrbuch</i> 60: 23&ndash;32.</p><div id="citediv_pirrotta_1955" class="flyoverdiv">Pirrotta, Nino. 1955. Marchettus de Padua and the Italian Ars Nova. <i>Musica Disciplina</i> 9: 55&ndash;71.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="pirrotta_1955"></a>Pirrotta, Nino. 1955. Marchettus de Padua and the Italian Ars Nova. <i>Musica Disciplina</i> 9: 55&ndash;71.</p><div id="citediv_rahn_1991" class="flyoverdiv">Rahn, Jay. 1991. Coordination of Interval Sizes in Seven-Tone Collections. <i>Journal of Music Theory</i>  35/1&ndash;2: 33&ndash;60.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1991"></a>Rahn, Jay. 1991. Coordination of Interval Sizes in Seven-Tone Collections. <i>Journal of Music Theory</i>  35/1&ndash;2: 33&ndash;60.</p><div id="citediv_rahn_1996" class="flyoverdiv">Rahn, Jay. 1996. Perceptual Aspects of Tuning in a Balinese Gamelan Angklung for North American Students. <i>Canadian University Music Review</i> 16/2: 1&ndash;44.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1996"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1996. Perceptual Aspects of Tuning in a Balinese Gamelan Angklung for North American Students. <i>Canadian University Music Review</i> 16/2: 1&ndash;44.</p><div id="citediv_sanders_1973" class="flyoverdiv">Sanders, Ernest. 1973. The Medieval Motet. In Wolf Arlt et al., eds. <i>Gattungen der Musik in Einzeldar-stellungen</i>. Bern: Francke, 497&ndash;573.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="sanders_1973"></a>Sanders, Ernest. 1973. The Medieval Motet. In Wolf Arlt et al., eds. <i>Gattungen der Musik in Einzeldar-stellungen</i>. Bern: Francke, 497&ndash;573.</p><div id="citediv_smith_1985" class="flyoverdiv">Smith, Gary. 1985. <i>Statistical Reasoning</i>. Boston: Allyn and Bacon.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="smith_1985"></a>Smith, Gary. 1985. <i>Statistical Reasoning</i>. Boston: Allyn and Bacon.</p><div id="citediv_stevens_and_hallowell_1938" class="flyoverdiv">Stevens, Stanley Smith, and Hallowell Davis. 1938/1983. <i>Hearing: Its Psychology and Physiology</i>. New York: American Institute of Physics.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stevens_and_hallowell_1938"></a>Stevens, Stanley Smith, and Hallowell Davis. 1938/1983. <i>Hearing: Its Psychology and Physiology</i>. New York: American Institute of Physics.</p><div id="citediv_susilo_1975" class="flyoverdiv">Susilo, Hardja. 1975. Rev. of Jaap Kunst. <i>Music in Java</i>, 3rd ed., Ernst Heins in <i>Asian Music</i> 7/1:  58&ndash;68.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="susilo_1975"></a>Susilo, Hardja. 1975. Rev. of Jaap Kunst. <i>Music in Java</i>, 3rd ed., Ernst Heins in <i>Asian Music</i> 7/1:  58&ndash;68.</p><div id="citediv_szabo_1978" class="flyoverdiv">Szabo, Arpad. 1978. <i>The Beginnings of Greek Mathematics</i>, trans. A. M. Ungar. Hingham, Mass.: D.  Reidel.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="szabo_1978"></a>Szabo, Arpad. 1978. <i>The Beginnings of Greek Mathematics</i>, trans. A. M. Ungar. Hingham, Mass.: D.  Reidel.</p><div id="citediv_tinctoris_1963" class="flyoverdiv">Tinctoris, Johannes. 1475/1963. <i>Dictionary of Musical Terms</i>, trans. Carl Parrish. Glencoe, Ill.: Free Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tinctoris_1963"></a>Tinctoris, Johannes. 1475/1963. <i>Dictionary of Musical Terms</i>, trans. Carl Parrish. Glencoe, Ill.: Free Press.</p><div id="citediv_vecchi_1954" class="flyoverdiv">Vecchi, Giuseppe. 1954. <i>Uffici Drammatici Padovani</i>. Florence: Olschki (cf. Billanovich 1940).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="vecchi_1954"></a>Vecchi, Giuseppe. 1954. <i>Uffici Drammatici Padovani</i>. Florence: Olschki (cf. Billanovich 1940).</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> References to the Lucidarium follow Herlinger&rsquo;s
+numbering of its tractata, chapters, and clauses
+(1985). The | sign indicates links to the edition at
+the TML website <a href='http://www.music.indiana.edu/tml/14th'>http://www.music.indiana.edu/tml/14th</a>.
+[EDITORIAL NOTE:  The URL leads to fourteenth-century
+texts at the TML site., which has both the Gerbert
+version (MARLU) and the Herlinger edition (MARLUC).
+Each <i>Ludicarium</i> tratctatus is in a separate HTML file,
+in the form MARLUC#_TEXT.html, where # is the number of
+an individual tractatus in the treatise (e.g.
+MARLUC8_TEXT.html).]<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Below, a tone designated by letter-name within |
+signs, e.g., <a href='mto.98.4.6.c.ram'>|c|</a>, can be heard, in the html 
+version, by clicking on the letter-name, or getting the
+corresponding RealAudio (ra) file, e.g.,
+http://mto/audio/4.6/c.ra. [<b>Editorial Note:</b> Users may need to
+adjust the volume when playing some audio files.]  
+For sound files, bass-clef
+staff letter-names are capitalized and tripled (GGG for
+1st-line), or doubled (AA, BB, <nobr>. . .</nobr> GG for 1st space to
+top space). Upper registers are designated by single
+letters (from a, just below middle c to g&mdash;with a
+numeral 1 for an 8ve higher: a1, b1, <nobr>. . .</nobr>). By contrast,
+single capitals (A, B, <nobr>. . .</nobr>G) designate any member of a
+pitch class. Flats are designated by b (e.g., Bb for
+B-flat); Marchetto&rsquo;s high sharps, by their
+characteristic numbers (e.g., C74); non-Marchettan
+sharps, by # (e.g., C#). In the sonic examples, c is
+middle c (256Hz); unless otherwise indicated, tuning is
+Pythagorean (e.g., g = ( 3/2 ) * 256 = 384Hz).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Oliver B. Ellsworth (1987: 340) gives a clear
+account of how Marchetto adapted earlier semitone terms
+by shifting each &ldquo;up 1 notch.&rdquo;<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> In my study of melodic interval perception, all 
+ogives (cf. Guilford 1954) were significantly close to 
+(i.e., diverged non-significantly from) the students&rsquo; 
+responses at the p <= .05 level in a standard chi-squared test for grouped data (on which see Smith 1985: 319&ndash;414). For intervals of 1 to 12 semitones, responses were grouped into 5-cent increments within the medial, ( 100n +/-30 )% ) range; for the unison/semitone pair, within the ( 5 45 )% range.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Karol Berger (1987: 16&ndash;29) comprehensively
+surveys successors&rsquo; responses to Marchetto&rsquo;s terms and
+notational signs. As Berger (26) and Ellsworth (1987:
+337&ndash;38) emphasize, the Lucidarium survives in 15 full
+and 3 incomplete copies (~1317&ndash;1500), and the Marchettan 
+orthodoxy of Bonaventura da Brescia&rsquo;s Breviloquium 
+enjoyed 19 early editions (1497&ndash;1570).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Mieczyslaw Kolinski&rsquo;s Pythagorean formulation of the 
+22 srutis of Ancient South Asian tuning (1961) would 
+also result in a displaced cycle and satisfy the scale
+analysis of Clough et al. (1993), the latter  re-framed
+as comprising 2 kinds of intervals: a = 90% and b = 24%. In
+such a construal, a sruti could be understood, like
+Marchetto&rsquo;s diesis, as the difference between
+consecutive strings, marks, or frets on a tuning
+instrument (e.g., of the vina variety).<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">References to the Lucidarium follow Herlinger&rsquo;s
+numbering of its tractata, chapters, and clauses
+(1985). The | sign indicates links to the edition at
+the TML website <a href='http://www.music.indiana.edu/tml/14th'>http://www.music.indiana.edu/tml/14th</a>.
+[EDITORIAL NOTE:  The URL leads to fourteenth-century
+texts at the TML site., which has both the Gerbert
+version (MARLU) and the Herlinger edition (MARLUC).
+Each <i>Ludicarium</i> tratctatus is in a separate HTML file,
+in the form MARLUC#_TEXT.html, where # is the number of
+an individual tractatus in the treatise (e.g.
+MARLUC8_TEXT.html).]</div><div id="fndiv2" class="flyoverdiv">Below, a tone designated by letter-name within |
+signs, e.g., <a href='mto.98.4.6.c.ram'>|c|</a>, can be heard, in the html 
+version, by clicking on the letter-name, or getting the
+corresponding RealAudio (ra) file, e.g.,
+http://mto/audio/4.6/c.ra. [<b>Editorial Note:</b> Users may need to
+adjust the volume when playing some audio files.]  
+For sound files, bass-clef
+staff letter-names are capitalized and tripled (GGG for
+1st-line), or doubled (AA, BB, . . . GG for 1st space to
+top space). Upper registers are designated by single
+letters (from a, just below middle c to g&mdash;with a
+numeral 1 for an 8ve higher: a1, b1, . . .). By contrast,
+single capitals (A, B, . . .G) designate any member of a
+pitch class. Flats are designated by b (e.g., Bb for
+B-flat); Marchetto&rsquo;s high sharps, by their
+characteristic numbers (e.g., C74); non-Marchettan
+sharps, by # (e.g., C#). In the sonic examples, c is
+middle c (256Hz); unless otherwise indicated, tuning is
+Pythagorean (e.g., g = ( 3/2 ) * 256 = 384Hz).</div><div id="fndiv3" class="flyoverdiv">Oliver B. Ellsworth (1987: 340) gives a clear
+account of how Marchetto adapted earlier semitone terms
+by shifting each &ldquo;up 1 notch.&rdquo;</div><div id="fndiv4" class="flyoverdiv">In my study of melodic interval perception, all 
+ogives (cf. Guilford 1954) were significantly close to 
+(i.e., diverged non-significantly from) the students&rsquo; 
+responses at the p </div><div id="fndiv5" class="flyoverdiv">Karol Berger (1987: 16&ndash;29) comprehensively
+surveys successors&rsquo; responses to Marchetto&rsquo;s terms and
+notational signs. As Berger (26) and Ellsworth (1987:
+337&ndash;38) emphasize, the Lucidarium survives in 15 full
+and 3 incomplete copies (~1317&ndash;1500), and the Marchettan 
+orthodoxy of Bonaventura da Brescia&rsquo;s Breviloquium 
+enjoyed 19 early editions (1497&ndash;1570).</div><div id="fndiv6" class="flyoverdiv">Mieczyslaw Kolinski&rsquo;s Pythagorean formulation of the 
+22 srutis of Ancient South Asian tuning (1961) would 
+also result in a displaced cycle and satisfy the scale
+analysis of Clough et al. (1993), the latter  re-framed
+as comprising 2 kinds of intervals: a = 90% and b = 24%. In
+such a construal, a sruti could be understood, like
+Marchetto&rsquo;s diesis, as the difference between
+consecutive strings, marks, or frets on a tuning
+instrument (e.g., of the vina variety).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1998 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Rebecca Flore and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

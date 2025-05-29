@@ -1,0 +1,1602 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 13.4: Hook, Why are There Twenty-Nine Tetrachords?</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Why Are There Twenty-Nine Tetrachords? A Tutorial on Combinatorics and Enumeration in Music Theory">
+
+    <meta name="citation_author" content="Hook, Julian">
+      
+
+<meta name="citation_publication_date" content="2007/12/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="13">
+<meta name="citation_issue" content="4">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+			
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+	
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Why Are There Twenty-Nine Tetrachords? A Tutorial on Combinatorics and Enumeration in Music Theory
+
+	<sup><a name="FN0REF" href="#FN0" id="footnote0">*</a></sup> </h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.07.13.4/mto.07.13.4.hook.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Julian Hook</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: combinatorics, enumeration, permutations, combinations, P&oacute;lya, pitch-class sets, set classes, twelve-tone rows</font></p><p><font size='4'>ABSTRACT: Many techniques in combinatorial mathematics have applications in music theory. Standard formulas for permutations and combinations may be used to enumerate melodies, rhythms, rows, pitch-class sets, and other familiar musical entities subject to various constraints on their structure. Some music scholars in the eighteenth century advocated elementary combinatorial methods, including dice games, as aids in composition. Problems involving the enumeration of set classes, row classes, and other types of equivalence classes are more difficult and require advanced techniques for their solution, notably P&oacute;lya&#8217;s Enumeration Theorem. Such techniques are applicable in a wide variety of situations, enabling the enumeration of diverse musical structures in scales of various cardinalities and under various definitions of equivalence relations.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.07.13.4/mto.07.13.4.hook.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.07.13.4/hook_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2007</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 13, Number 4, December 2007 <br> Copyright &#0169; 2007 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>	
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center">&#8220;Can you do addition?&#8221; the White Queen asked. 
+<br>
+&#8220;How 
+much is one and one and one and one and one <br>
+and one and one and one and one and 
+one?&#8221;<br>
+&#8220;I don&#8217;t know,&#8221; said Alice. &#8220;I lost count.&#8221;<br>
+&#8220;She can&#8217;t do addition,&#8221; the Red Queen interrupted.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+&#8212;Lewis Carroll, <i>Through the Looking Glass</i><br>
+&nbsp;</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 1</b>. Enumeration of mod-12 pitch-class sets and <i>T<sub>n</sub></i>/<i>T<sub>n</sub>I</i> set classes</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=0&nonav=true"><img border="1" alt="Table 1 thumbnail" src="hook_table1_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[1] <b>Table 1</b> gives the number of pitch-class sets and the number of <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> set 
+classes of each cardinality from 0 through 12. The number of different pc-sets 
+of cardinality <i><i>k</i></i>, appearing in the central row of the table, may be calculated 
+by a well-known formula (to be reviewed below) for &#8220;the number of combinations 
+of 12 things <i><i>k</i></i> at a time.&#8221; The set-class counts in the bottom row are familiar 
+to music theorists not by means of a formula, but through the widespread use of 
+tables enumerating all the set classes. Such tables appear, for example, in 
+<a href="#forte_1973" id="citation_forte_1973_67dc9b0edd78d">Forte 1973</a>, <a href="#rahn_1980" id="citation_rahn_1980_67dc9b0edd793">Rahn 1980</a>, <a href="#morris_1987" id="citation_morris_1987_67dc9b0edd796">Morris 1987</a>and <a href="#morris_1991" id="citation_morris_1991_67dc9b0edd79b">1991</a>, and <a href="#straus_2005" id="citation_straus_2005_67dc9b0edd79e">Straus 2005</a>, among various other texts.</p>
+
+<p>[2] The formula giving the number of set classes&#8212;if indeed there is such a formula 
+at all&#8212;is not an obvious one. On reflection, some aspects of these numbers may 
+even seem somewhat counterintuitive. We might expect that when we count 
+something governed by a high degree of symmetry, such as the number of different 
+types of four-element subsets of a twelve-element set, we should end up with a 
+&#8220;round&#8221; number&#8212;probably a number with many divisors, such as 24, 30, or 36. The 
+fact that the number of tetrachord types turns out to be 29&#8212;a number not only 
+odd but prime&#8212;challenges this intuition and suggests that the enumeration 
+question may be deeper or more difficult than we imagined.</p>
+
+<p>[3] <a href="#bernard_1997" id="citation_bernard_1997_67dc9b0edd7a1">Bernard 1997</a> and <a href="#nolan_2003" id="citation_nolan_2003_67dc9b0edd7a4">Nolan 2003</a> show that pitch-class sets and set classes have been 
+effectively enumerated in various ways dating back at least to the late 
+nineteenth century. In general, though, the music scholars who have carried out 
+this exercise have not pursued mathematical explanations for the numbers 
+appearing in the bottom row of Table 1. That is, they have not attempted to 
+calculate the <i>number</i> of set classes except by exhaustively <i>listing</i> all of the 
+set classes&#8212;a process akin to the White Queen&#8217;s way of &#8220;doing addition&#8221; in the 
+quotation above.</p>
+
+<p>[4] Beyond simple curiosity, a further motivation for exploring the mathematics 
+behind set-class enumeration is its potential for generalization. If we develop 
+a formula that explains why there are 29 tetrachords, that formula will likely 
+be applicable in a variety of other situations: other cardinalities of set 
+(besides 4), other cardinalities of the underlying scale (besides 12), other 
+definitions of &#8220;set class&#8221; (besides the usual one based on <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> equivalence), 
+and perhaps enumeration problems of entirely different sorts, involving 
+twelve-tone rows or rhythms, for example. Listing and counting all the mod-12 
+set classes is feasible but already somewhat unwieldy, as the multi-page lengths 
+of the tabulations cited above reveal; it is not hard to devise similar problems 
+for which the numbers involved are much larger and the exhaustive approach 
+becomes impractical.</p>
+
+<p>[5] This article is organized in two parts. Part I, which might be subtitled &#8220;What 
+every music theorist should know about combinatorics,&#8221; offers a primer on 
+standard techniques in classical combinatorial theory (including the 
+&#8220;combinations&#8221; formula mentioned above) and offers some simple applications to 
+music theory (including the enumeration of pitch-class sets) and historical 
+notes (including a brief overview of the <i><i>ars combinatoria</i></i> that found its way 
+into eighteenth-century musical discourse). The computational methods of Part I 
+are familiar to every mathematician and will be familiar as well to many readers 
+of this article. I believe it is useful to include this crash course here 
+because, even though the mathematics involved is elementary, it has never become 
+a part of the standard music theorist&#8217;s toolbox and has seldom if ever been 
+given a unified presentation oriented toward musical applications. Moreover, the 
+elementary techniques covered in Part I foreshadow certain aspects of the more 
+difficult work of Part II, and therefore may form a pedagogically beneficial 
+bridge to the advanced material.</p>
+
+<p>[6] The general problem of set-class enumeration, as intimated above, turns out to 
+require mathematical techniques of substantial power and sophistication. Some of 
+the appropriate methodology was not developed until well into the twentieth 
+century; the most important theoretical result, P&oacute;lya&#8217;s Enumeration Theorem, was 
+first published in <a href="#p&oacute;lya_1937" id="citation_p&oacute;lya_1937_67dc9b0edd7c7">1937</a>. Part II is devoted to an exploration of some of these 
+advanced techniques and their music-theoretic applications. Here at last the 
+numbers in the bottom row of Table 1 will find their theoretical justification, 
+and a variety of other musical problems amenable to the same techniques will be 
+discussed.</p>
+
+<p>[7] It should be acknowledged at the outset that most of the results in this 
+article, even those in Part II, are not new. Applications of P&oacute;lya&#8217;s theorem to 
+the set-class enumeration problem and other musical situations may be found in 
+<a href="#reiner_1985" id="citation_reiner_1985_67dc9b0edd7cb">Reiner 1985</a>, <a href="#fripertinger_1992_1993" id="citation_fripertinger_1992_1993_67dc9b0edd7cf">Fripertinger 1992, 1993</a> and <a href="#fripertinger_1999" id="citation_fripertinger_1999_67dc9b0edd7d4">1999</a>, <a href="#read_1997" id="citation_read_1997_67dc9b0edd7d7">Read 1997</a>, <a href="#jedrzejewski_2006" id="citation_jedrzejewski_2006_67dc9b0edd7d9">Jedrzejewski 2006</a>, and <a href="#benson_2007" id="citation_benson_2007_67dc9b0edd7dc">Benson 2007</a>. Most music theorists, however, would likely find these sources 
+impenetrable, as all of them demand considerable mathematical fluency of the 
+reader. I hope in this article to provide an exposition that will be more 
+readily accessible to the music theory community. The mathematical discourse 
+will have to be ratcheted up a notch in Part II, where some basic group theory 
+will be assumed, but on the whole the most important mathematical prerequisite 
+for this article is a simple willingness to jump in and get one&#8217;s hands dirty.</p>
+<h3 align="center">I. Elementary Techniques</h3>
+
+<p>[8] <i>1.1. Combinatorics.</i> If a five-person committee is to be appointed from a group 
+of eleven people, how many different committees are possible? In how many 
+different ways can the six faces of a cube be painted if each face is to be a 
+solid color, four colors are available, and all possible rotations of one 
+painted cube are considered the same? Given a map showing a network of 
+intersecting roads across the state of Texas, in how many ways can one travel 
+from Galveston to Amarillo without crossing one&#8217;s path? These are some of the 
+questions addressed by the branch of mathematics known as <i>combinatorics</i>. 
+Combinatorics is essentially the study of methods of <i>counting</i>&#8212;enumerating all 
+the objects of a certain description, all the ways in which a certain task can 
+be performed, or all possible outcomes of a certain series of actions.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup></p>
+
+<p>[9] The most obvious way to find out how many objects of a certain type there are is 
+the White Queen&#8217;s method: count them, one by one by one. Of course, people have 
+been counting things for thousands of years. Listing and counting a large number 
+of possibilities, however, is inefficient, prone to error, and in many 
+situations completely impractical (although of course computers have redefined 
+what we mean by &#8220;practical&#8221;). Moreover, it is mathematically unrevealing. In 
+comparison with a method that tells us that the answer to a certain problem is 1 
++ 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1 + 1, a procedure that gives a formula such as 
+2 &#0183; 5 or 5 &#0183; 4 / 2, or possibly 4 + 3 + 2 + 1, is likely to be both more reliable 
+and more enlightening: it will not only tell us that the answer is 10, but will 
+also offer some insight into why it should be 10 rather than 9 or 11, may convey 
+a helpful visual interpretation of the calculation, and also may suggest answers 
+or approaches to other similar problems. It may be said, therefore, that 
+combinatorics is not so much the study of counting as the study of how to <i>avoid</i> 
+counting: the search for more revealing and more efficient approaches to 
+problems of enumeration that could, at least in principle, be solved by brute 
+force.</p>
+
+<p>[10] Not surprisingly, some of the earliest recorded mathematics involves questions 
+of enumeration. Combinatorial problems are presented and solved (along with 
+problems in algebra and simple arithmetic) in the Rhind Papyrus, an Egyptian 
+document dating from about 1650 BCE but apparently copied from even older 
+sources. Such problems also interested Pingala, an Indian mathematician of the 
+third century BCE; Sun Zi (Sun Tzu), a Chinese mathematician of approximately 
+the third century CE; and Leonardo of Pisa (Fibonacci), writing around 1200.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+
+<p>[11] Problems in combinatorics are often easy to state and to understand but 
+deceptively difficult to solve. Combinatorics has consequently attracted the 
+attention of some of the greatest minds in mathematics, but has also exerted a 
+powerful appeal on many mathematical amateurs. Such is the allure of the 
+discipline that is has often been extolled as an art, known by the Latin name 
+<i>ars combinatoria</i>. <i>Ars combinatoria</i> is, in fact, the name of a journal of 
+combinatorics, and <i>De arte combinatoria</i> is the title of a 1666 treatise by 
+Gottfried Wilhelm Leibniz (1646&#8211;1716), who is remembered especially for his 
+pioneering work in calculus but who also spearheaded a renewed interest in 
+combinatorial theory among leading European mathematicians in the seventeenth 
+and eighteenth centuries. Among the parade of other celebrated mathematicians 
+who devised powerful combinatorial techniques may be found Blaise Pascal 
+(1623&#8211;62), forever associated with the triangle (discussed below) that bears his 
+name, though he was not the first to construct it; Jacob Bernoulli <nobr>(1654&#8211;1705),</nobr>
+a follower of Leibniz and one of the most notable members of a family that was 
+to produce no fewer than ten distinguished mathematicians; Leonhard Euler 
+(1707&#8211;1783), whose astonishingly broad range of achievements not only forged 
+connections between combinatorics and other branches of mathematics but even 
+ventured into music (Euler constructed a version of what we now know as the 
+Riemannian <i>Tonnetz</i>); and Pierre-Simon Laplace (1749&#8211;1827), who among his many 
+and varied accomplishments pioneered the study of probability, which is 
+intimately connected to combinatorics.</p>
+
+<p>[12] Combinatorial problems typically involve small numbers of objects that give rise 
+to large numbers of possible configurations through combinations of various 
+kinds. Music offers a clear illustration: though there may be only a small 
+number of notes and durations to work with, the variety of ways in which a 
+composer may combine them into a musical composition is enormous. Loosely 
+speaking, the main reason for the proliferation of possibilities is what we may 
+call the <i>multiplication principle</i>: if several choices are made independently, or 
+several events happen in succession, the numbers of possibilities at the various 
+stages are <i>multiplied</i> (not added as beginning students of the subject sometimes 
+mistakenly assume). This simple principle suffices to solve a wide variety of 
+enumeration problems; we offer a few musical illustrations.</p>
+<p>[13]
+<i>1.2. Example: simple melodies</i>. Suppose we wish to write a melody using only the 
+notes of one octave of a major scale: eight notes to choose from (including 
+tonic at both ends of the scale). Even if we restrict ourselves to melodies six 
+notes in length (to choose an arbitrary but manageable limit), and even if we 
+ignore rhythmic considerations entirely, the number of possibilities is 
+8 &#0183; 8 &#0183; 8 &#0183; 8 &#0183; 8 &#0183; 8, which is 8<sup>6</sup> (8 to the 6th power) or 262,144&#8212;more than a 
+quarter-million possible melodies, far more than anyone would care to list and 
+count by hand. (The fact that many of these melodies will not be of much musical 
+interest is, of course, beside the point of the present all-inclusive 
+calculation. At least in principle, the formula is subject to numerous possible 
+refinements on the basis of various criteria for &#8220;musical interest.&#8221;)</p>
+<p>[14]
+The above calculation enumerates the melodies that are <i>exactly</i> six notes long. 
+If we wish to consider melodies that are<i> no more than</i> six notes long, then we 
+may add the corresponding results for lengths 1 through 6, yielding</p>
+<p style="text-align: center">8<sup>1</sup> + 8<sup>2</sup> + 8<sup>3</sup> + 8<sup>4</sup> + 8<sup>5</sup> + 8<sup>6</sup> = 8 + 64 + 512 + 4,096 + 32,768 + 262,144 = 299,592.</p>
+<p>This sum may be written more compactly in the form</p>
+<p style="text-align: center">
+<img border="0" src="hook_eq1.gif" width="41" height="50"></p>
+<p>(&#8220;the summation of 8<sup><i>k</i></sup> as <i>k</i> ranges from 1 to 6&#8221;).</p>
+<p>[15]
+This formula is a simple one, but a few further remarks are in order for the 
+benefit of readers with little experience in such calculations. In light of our 
+previous remarks about the multiplication principle, it is worth taking a moment 
+to consider why the six powers of 8 have been <i>added</i> rather than multiplied. We 
+did not set out to write a one-note melody <i>and</i> a two-note melody <i>and</i> a 
+three-note melody, and so on through six successive independently constructed 
+melodies; had that been our intent, we would have multiplied the numbers. (The 
+resulting product, 8<sup>1</sup> &#0183; 8<sup>2</sup> &#0183; 8<sup>3</sup> &#0183; 8<sup>4</sup> &#0183; 8<sup>5</sup> &#0183; 8<sup>6</sup>, is precisely 8<sup>21</sup>, which is as we should 
+have suspected, since by making all the above choices in succession we would 
+effectively have composed a 21-note melody.) Rather, the problem called for us 
+to choose a one-note melody <i>or</i> a two-note melody <i>or</i> a three-note melody 
+<i>or</i> <nobr>. . .</nobr> 
+The difference between <i>and</i> and <i>or</i> is the difference between multiplication and 
+addition. In making a single selection from several mutually exclusive sets of 
+choices, the possibilities must be added, not multiplied.</p>
+<p>[16]
+The number of melodies with <i>no more than</i> six notes (299,592) does not appear 
+much larger than the number with <i>exactly</i> six notes (262,144). Another look at 
+the summation above shows why. Each successive power of 8 is significantly 
+larger than all the previous ones, so the sum is dominated by its last (and 
+largest) term. All melodies of one through five notes are numerically 
+insignificant compared with the melodies of six notes&#8212;but bumping the length 
+limit up from six notes to seven would change the magnitude of the total 
+dramatically.</p>
+<p>[17]
+A detail-minded mathematician could claim that the above sum overlooks one 
+melody of &#8220;no more than six notes,&#8221; namely the &#8220;empty melody&#8221; consisting of no 
+notes at all. If we wish to account for this &#8220;melody of length zero,&#8221; we may do 
+so with little difficulty. The 0th power of any positive number is 1 by 
+definition,<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> so adding 8<sup>0</sup> at the beginning of the sum increases the total by 1; 
+the revised total is</p>
+<p style="text-align: center">
+<img border="0" src="hook_eq2.gif" width="130" height="53"></p>
+<p>[18]
+Such formulas are reasonably compact and convenient, but the calculation of this 
+sum of powers still entails several steps. Much of the work of the early 
+combinatorists was devoted to the derivation of formulas by which such 
+calculations could be simplified further. Precisely such a formula is applicable 
+in this case, namely the &#8220;sum of a geometric series&#8221; given by</p>
+<p style="text-align: center"><img border="0" src="hook_eq3.gif"></p>
+<p>Substituting <i>a</i> = 8 and <i><i>n</i></i> = 6 in this equation, the right side reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq4.gif"></p>
+<p>the same answer as before. Here the summation of six powers has been replaced by 
+a single power calculation and a simple division&#8212;a gain in efficiency that 
+becomes more pronounced as the numbers involved grow larger.</p>
+<p>[19]
+<i>1.3. Example: twelve-tone rows</i>. How many possible twelve-tone rows are there? At 
+first glance this example resembles the previous one, but with twelve notes to 
+choose from (rather than eight) and twelve notes in the melody (rather than 
+six), so we might suppose that the answer should be 12<sup>12</sup>. But there is a 
+problem: a melody twelve notes in length can (and usually will) repeat one or 
+more pitch classes, so not all of the 12<sup>12</sup> melodies are actually valid rows.</p>
+<p>[20]
+The multiplication principle is still applicable to this problem, but it must be 
+applied judiciously. Let us construct a twelve-tone row, one note at a time. Of 
+course there are 12 choices for the first note. But whatever the first note is, 
+it cannot be repeated, so there are only 11 possible choices for the second note 
+(and therefore 12 &#0183; 11 = 132 possibilities for the first two notes in order, 
+rather than 12 &#0183; 12 = 144). By the same reasoning, there are only 10 possibilities 
+for the third note, 9 for the fourth, and so on, and the total number of 
+possible rows is</p>
+<p style="text-align: center">12 &#0183; 11 &#0183; 10 &#0183; 9 &#0183; 8 &#0183; 7 &#0183; 6 &#0183; 5 &#0183; 4 &#0183; 3 &#0183; 2 &#0183; 1 = 479,001,600.</p>
+<p>This product is traditionally known as &#8220;12 factorial,&#8221; abbreviated 12!. (In 
+general, <i><i>n</i></i>! is the product of all the integers from 1 to <i><i>n</i></i>.) This is a very 
+large number&#8212;almost half a billion&#8212;but it is nevertheless far smaller than 12<sup>12</sup>, 
+which is almost 9 trillion. (As <i><i>n</i></i> increases, <i><i>n</i></i>! grows very rapidly&#8212;but not as 
+rapidly as <i><i>n</i><sup><i>n</i></sup></i>.)</p>
+<p>[21]
+The last factor in the above product is the number 1. Multiplying by 1, of 
+course, has no bearing on the result. This makes sense because once the first 
+eleven notes of a twelve-tone row have been selected, the twelfth is 
+automatically determined&#8212;there are no more choices to make. In a twelve-pc 
+universe, the number of twelve-tone rows is the same as the number of 
+eleven-tone rows.</p>
+<p>[22]
+The above calculation gives the literal count of arrangements of the twelve 
+pitch classes; it does not take into account the convention in serial theory by 
+which rows related to each other by transposition, inversion, or retrogression 
+are considered equivalent. We have counted rows, that is, not row classes. If 
+all row classes consisted of exactly 48 rows, the number of row classes could be 
+obtained by dividing the above total by 48. But there are some symmetrical rows 
+(that of Berg&#8217;s <i>Lyric Suite</i> being a well-known example) whose classes contain 
+only 24 rows rather than 48, so this calculation would be in error. The precise 
+calculation of the number of row classes is a considerably more complex problem, 
+and will be considered in Part II. (In fact, <i>most</i> row classes do comprise 48 
+distinct rows, so even the incorrect calculation outlined above would give a 
+good estimate, differing from the actual count of row classes by less than 0.1 
+percent.)</p>
+<p>[23] <i>1.4. Permutations</i>. The enumeration of twelve-tone rows is an example of a 
+<i>permutation</i> problem. A permutation is an ordered arrangement of objects. It 
+should be evident from the above discussion that the number of permutations of <i><i>n</i></i> 
+objects is <i><i>n</i></i>!. Occasionally it is useful to form a permutation of some 
+<i>subset</i> of 
+the available objects rather than of all of them; that is, there are <i><i>n</i></i> objects 
+from which to choose, but we are to construct an ordered arrangement of only <i>k</i> 
+of them, for some <i>k</i> &lt; <i><i>n</i></i>. Such arrangements are referred to as &#8220;permutations of <i><i>n</i></i> 
+objects <i>k</i> at a time,&#8221; and the number of these permutations is denoted 
+<i>P</i>(<i>n</i>, <i>k</i>). 
+By the above reasoning, <i>P</i>(<i>n</i>, <i>k</i>) may be calculated as a product <i>n</i> &#0183; (<i>n</i> &#8211; 1)  &#0183; (<i>n</i> &#8211; 
+2)   &#0183;   &#0183;   &#0183; (<i>n</i> &#8211; <i>k</i> + 1), similar to the calculation of <i>n</i>! but stopping after the first <i>k</i> 
+factors. This product may be written more compactly in the form</p>
+<p style="text-align: center"><img border="0" src="hook_eq5.gif"></p>
+<p>In this formula the <i>n</i> &#8211; <i>k</i> &#8220;extra&#8221; factors (<i>n</i> &#8211; <i>k</i>) 
+<sup><font size="4">. . .</font></sup> 1 in <i>n</i>! in the numerator of 
+the fraction are exactly canceled by the corresponding factors in (<i>n</i> &#8211; <i>k</i>)! in 
+the denominator.</p>
+<p>[24] <i>1.5. Example: melodies with no repeated notes</i>. Suppose again that we wish to 
+write a six-note melody from our one-octave diatonic scale, but now with the 
+restriction that all six notes must be different. The number of ways to do this 
+is <i>P</i>(8, 6), or 8 &#0183; 7 &#0183; 6 &#0183; 5 &#0183; 4 &#0183; 3, or 8!/2!, or 20,160. This figure represents a 
+drastic reduction from the number 262,144 calculated previously when note 
+repetitions were allowed: more than 92 percent of the six-note melodies 
+enumerated in section 1.2 include at least one note repetition. This statistical 
+generalization is surely reflected in compositional practice: apart from the 
+occasional unidirectional scalar melody (&#8220;Joy to the World&#8221;), coherent melodic 
+phrases in which no notes are repeated are rare.</p>
+<p>[25] <i>1.6. Example: pitch-class sets</i>. How many pitch-class sets are there? It may not 
+be immediately obvious that the multiplication principle applies to this 
+question: pc-sets are not permutations, and we do not ordinarily think of 
+constructing a pc-set through an orderly selection process with an easily 
+determined number of choices at each stage. But there is such a process, a very 
+simple one in fact, and it illustrates the creative logic with which simple 
+combinatorial principles can often be applied. A pc-set may be uniquely 
+specified by considering each of the twelve pitch classes in turn, and answering 
+for each one a yes-or-no question. Is C in the set? Is C-sharp in the set? Is D 
+in the set? When all twelve questions have been answered, the set is determined. 
+The number of pitch-class sets is the number of ways the questions can be 
+answered, namely 2<sup>12</sup> = 4,096. This number appears at the right side of Table 1. 
+The calculation accounts for both the empty set (the result of answering &#8220;no&#8221; to 
+all questions) and the complete twelve-tone aggregate (&#8220;yes&#8221; to all questions), 
+along with everything in between. By the same reasoning, the number of distinct 
+subsets of any set with <i>n</i> elements is always precisely 2<sup><i>n</i></sup>.</p>
+<p>[26] <i>1.7. Example: rhythms</i>. How many different rhythms are possible within a 4/4 
+measure, given that there are no rests and that all durations are to be eighth 
+notes or whole multiples thereof? This problem, too, is a simple one when viewed 
+from the proper perspective. Such a rhythm may be represented as a string of 
+eight eighth notes, with some adjacent notes joined by ties. Specifying a rhythm 
+is tantamount to specifying a subset of the seven possible ties; the number of 
+possibilities is therefore 2<sup>7</sup> = 128. If sixteenth-note multiple durations are 
+allowed, the number rises dramatically to 2<sup>15</sup> = 32,768.</p>
+<p>[27] <i>1.8. Example: pitch-class sets of specified cardinality; combinations</i>. How many 
+four-note pitch-class sets are there? The figure 4,096 calculated in section 1.6 
+gives the total number of pc-sets of all possible cardinalities in mod-12 space, 
+but we have not yet shown how to calculate the number of pc-sets of any given 
+size. There are <i>P</i>(12, 4) = 11,880 permutations of four pcs, but that is not the 
+number of four-note pc-sets: the 11,880 permutations would, for instance, count 
+C&#8211;D&#8211;E&#8211;G, C&#8211;D&#8211;G&#8211;E, and E&#8211;G&#8211;C&#8211;D as three separate permutations even though as 
+pc-sets they are all the same. Permutations are <i>ordered</i> arrangements; unordered 
+collections are known as <i>combinations</i>. In terminology more familiar in music 
+theory, combinations are <i>sets</i> while permutations are <i>segments</i> or 
+<i>strings</i>.</p>
+<p>[28]
+The number of &#8220;combinations of <i>n</i> things <i>k</i> at a time&#8221; is denoted <i>C</i>(<i>n</i>, <i>k</i>); this is 
+simply the number of different <i>k</i>-element subsets of a fixed <i>n</i>-element set. 
+Clearly <i>C</i>(<i>n</i>, <i>k</i>) is a smaller number than <i>P</i>(<i>n</i>, <i>k</i>). How much smaller? In the case 
+of four-note sets, the enumeration of the <i>P</i>(12, 4) permutations will count every 
+combination many times&#8212;precisely 4! = 24 times, in fact, because the four notes 
+of any such set can be permuted in 4! ways. It follows that <i>C</i>(12, 4) is exactly 
+<i>P</i>(12, 4) divided by 24, which is 11,880/24 or 495. The general combinations 
+formula is</p>
+<p style="text-align: center"><img border="0" src="hook_eq6.gif"></p>
+<p>[29]
+These combination numbers <i>C</i>(<i>n</i>, <i>k</i>) (for <i>n</i> = 12) are precisely the numbers in the 
+central row of Table 1. This row is symmetrical from left to right, because <i>C</i>(<i>n</i>, 
+<i>k</i>) = <i>C</i>(<i>n</i>, <i>n</i> &#8211; <i>k</i>). This is clear from the above formula, in which <i>k</i> and <i>n</i> &#8211; <i>k</i> are 
+interchangeable; of course it is also clear because <i>k</i>-element sets are in 
+one-to-one correspondence with their (<i>n</i> &#8211; <i>k</i>)-element complements.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 1</b>. Pascal&rsquo;s triangle</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=1&nonav=true"><img border="1" alt="Figure 1 thumbnail" src="hook_fig1_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 2</b>. The binomial theorem</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=2&nonav=true"><img border="1" alt="Figure 2 thumbnail" src="hook_fig2_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[30] <i>1.9. Pascal&#8217;s triangle and the binomial theorem</i>. The combination numbers turn up 
+in many diverse mathematical contexts. These are, in fact, the numbers appearing 
+in <i>Pascal&#8217;s triangle</i>, shown in <b>Figure 1</b>. The number <i>C</i>(<i>n</i>, <i>k</i>) may be found at the 
+intersection of the <i>n</i><sup>th</sup> row and the <i>k</i><sup>th</sup> diagonal, as illustrated in the figure 
+for <i>n</i> = 8 and <i>k</i> = 3. Each number in the interior of this triangle is the sum of 
+the two numbers immediately above it. The preceding discussion explains why the 
+triangle is symmetrical from left to right, and why the sum of all the numbers 
+in the <i>n</i><sup>th</sup> row is exactly 2<sup><i>n</i></sup>.</p>
+		<p style="margin-top:0em">[31]
+The combination numbers appear also in the well-known <i>binomial theorem</i>. If the 
+algebraic expression <i><i>x</i></i> + <i><i>y</i></i> (a <i>binomial</i>) is raised to successive powers, the 
+numbers appearing as coefficients in the various terms of the algebraic 
+expansions are exactly the combination numbers <i>C</i>(<i>n</i>, <i>k</i>), and can, in fact, be 
+read directly across the rows of Pascal&#8217;s triangle, as illustrated in <b>Figure 2</b>. 
+The numbers <i>C</i>(<i>n</i>, <i>k</i>) are therefore often called <i>binomial coefficients</i>. A 
+frequently used alternate notation for binomial coefficients is </p>
+		<p style="margin-top:0em; text-align:center"> <img border="0" src="hook_eq7.gif"></p>
+<p>The symbol on the right is commonly pronounced &#8220;<i>n</i> choose <i>k</i>,&#8221; reflecting the 
+number&#8217;s interpretation as an enumeration of combinations.</p>
+
+<p>[32]
+The relation between binomial expansions and enumeration is worth lingering over 
+a bit longer, because it resembles, in a somewhat simplified form, the more 
+advanced enumeration techniques to be explored in Part II. According to the 
+binomial theorem, the expansion of the binomial (<i><i>x</i></i> + <i><i>y</i></i>)<sup>12</sup> is</p>
+<p style="text-align: center">(<i>x</i> + <i>y</i>)<sup>12</sup> = <i>C</i>(12, 0)<i>x</i><sup>12</sup> + <i>C</i>(12, 1)<i>x</i><sup>11</sup><i>y</i> + 
+<sup><font size="4">. . .</font></sup> + <i>C</i>(12, 11)<i>xy</i><sup>11</sup> + <i>C</i>(12, 12)<i>y</i><sup>12</sup>,</p>
+<p>which may be calculated as</p>
+<p style="text-align: center"><i>x</i><sup>12</sup> + 12<i>x</i><sup>11</sup><i>y</i> + 66<i>x</i><sup>10</sup><i>y</i><sup>2</sup> + 220<i>x</i><sup>9</sup><i>y</i><sup>3</sup> + 495<i>x</i><sup>8</sup><i>y</i><sup>4</sup> + 792<i>x</i><sup>7</sup><i>y</i><sup>5</sup> + 924<i>x</i><sup>6</sup><i>y</i><sup>6</sup><br>
++ 792<i>x</i><sup>5</sup><i>y</i><sup>7</sup> + 495<i>x</i><sup>4</sup><i>y</i><sup>8</sup> + 220<i>x</i><sup>3</sup><i>y</i><sup>9</sup> + 66<i>x</i><sup>2</sup><i>y</i><sup>10</sup> + 12<i>xy</i><sup>11</sup> + 
+<i>y</i><sup>12</sup>.</p>
+<p>The above expression is a polynomial in the two variables <i><i>x</i></i> and <i>y</i>; the 
+polynomial is <i>homogeneous of degree</i> 12, meaning that in each term the exponents 
+on <i>x</i> and <i>y</i> add up to 12. The variables <i>x</i> and <i>y</i> here do not represent any 
+particular quantities; they serve only as algebraic placeholders to assist us in 
+organizing our calculations involving the coefficients, which are our primary 
+interest.</p>
+<p>[33]
+These coefficients are, of course, the numbers from  Table 1, enumerating pc-sets 
+of each cardinality from 0 to 12. The binomial theorem therefore provides a 
+method for calculating the pc-set counts: take the abstract binomial <i>x</i> + <i>y</i>, 
+raise it to the power 12, do the algebra, and the desired numbers emerge. We may 
+say that (<i>x</i> + <i>y</i>)<sup>12</sup> is an <i>enumeration function</i> for the pc-set counts. In this 
+case, doing the calculation in this rather cumbersome way is quite unnecessary 
+because we already know a simple formula for the combination numbers. But there 
+is no simple formula for the set-class numbers in the bottom row of Table 1. 
+When we calculate these numbers in Part II, we shall do so by exhibiting an 
+enumeration function for them&#8212;a function more complex than a power of a 
+binomial, but similar to the binomial theorem in its general strategy.</p>
+<p>[34] <i>1.10. Example: intervals in pitch-class sets</i>. Consider for a moment the numbers 
+appearing in the <i>k</i> = 2 diagonal of Pascal&#8217;s triangle: 1, 3, 6, 10, 15, 21, 28, <nobr>. . .</nobr> These are the numbers <i>C</i>(<i>n</i>, 2) for <i>n</i> &#8805; 2. The combinations formula in this case 
+reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq8.gif"></p>
+<p>The number <i>C</i>(<i>n</i>, 2) has a natural musical interpretation as the number of 2-note 
+subsets&#8212;that is, intervals&#8212;within a pc-set of cardinality <i>n</i>. This observation 
+explains why the sum of the entries in the interval-class vector of a pc-set is 
+always 3 for a trichord, 6 for a tetrachord, 10 for a pentachord, and so on.</p>
+<p>[35] <i>1.11. Ars combinatoria and eighteenth-century music</i>. We conclude Part I with a 
+few illustrations of ways in which elementary combinatorial principles such as 
+those discussed above left their mark upon musical composition and scholarship 
+in the eighteenth century. By this time, mathematical techniques and mechanistic 
+explanations were infusing many aspects of life and art, and music was no 
+exception. Many of the leading musical treatises of the day include careful 
+enumerations of musical configurations of various kinds, as well as particularly 
+methodical and exhaustive case-by-case analysis more or less in the spirit of 
+<i>ars combinatoria</i>.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup></p>
+<p>[36]
+Among the most fervent advocates of combinatorial methods in music was Joseph 
+Riepel, who applied such methods to a great many musical parameters with 
+meticulous thoroughness. In his <i>Grundregeln zur Tonordnung insgemein</i> of 1755, 
+Riepel takes a four-note figure and exhibits all 4! = 24 possible permutations. 
+Turning his attention to chord structure, he considers all possible three- and 
+four-note diatonic chords over a fixed bass note; this is a problem in 
+combinations rather than permutations, and Riepel recognizes correctly that the 
+possibilities for three-note chords number <i>C</i>(7, 2) = 21 and for four-note chords 
+<i>C</i>(7, 3) = 35. Another opportunity for permutations arises when Riepel considers 
+the order of keys within a composition: for a piece that starts and ends in C 
+major, Riepel actually lists all the 5! = 120 possible permutations of the other 
+five closely related keys that could occur in between. In a later publication 
+Riepel even enumerates patterns of articulation and bowing. As Riepel sums up 
+his attitude in the <i>Grundregeln</i>, &#8220;the unique art of permutations, by 
+which one can uncover in a single day far more than 99 themes, is at least 99 
+times healthier for composition than the calculation of ratios.&#8221;<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup></p>
+<p>[37] Riepel was a practical musician, and as his disparaging reference to the 
+pitch-ratio calculations used by Rameau and others as justification for their 
+harmonic theories attests, he abhorred some kinds of abstract mathematical 
+calculation. He evidently believed, though, that the study of permutations was a 
+useful aid in the production of effective compositions. After enumerating 
+melodic permutations and chords as described above, he proceeds to display every 
+one of them in a sensible musical context (except for a few of the four-note 
+chords that he dismisses as unworkable). Another theorist who expressed a 
+similar view and who may even have surpassed Riepel in his zeal for 
+combinatorics was Francesco Galeazzi, who in his <i>Elementi teorico-pratici di 
+musica</i> of 1791&#8211;96 defends his method of inventing melodic figures by 
+combinatorial manipulation, saying that it is especially suitable for sparking 
+the imaginations of those who are otherwise unable to invent their own:</p>
+
+<blockquote>
+<p>We find many who can proceed with a given figure with little effort but who have 
+insuperable difficulties when they have to invent new material. Here is 
+something that can assist (in invention) with which one can discover a hundred, 
+a thousand in the twinkling of an eye: it may appear puerile but first 
+experiment with it and then judge.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+</blockquote>
+
+<p>[38] <i>1.12. Dice games</i>. Among the best-known examples of combinatorial activity in 
+eighteenth-century music are the &#8220;dice games&#8221; that were in vogue roughly for the 
+latter half of the century. These games offer a completely mechanical way to 
+compose: as their authors almost invariably point out, one need not know any 
+rules of music, only the rules of the game. The first such game appeared in 1757 
+as Johann Philipp Kirnberger&#8217;s first published work, <i>Der allezeit fertige 
+Polonaisen- und Menuettencomponist</i> (&#8220;Every-Ready Polonaise and Minuet 
+Composer&#8221;). Kirnberger&#8217;s method spawned a wealth of imitators, with more than a 
+dozen similar games appearing in the following decades, including games 
+attributed somewhat dubiously to Haydn and Mozart.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup></p>
+
+<p>[39] To play the game, one generally rolls a die (or rolls two dice, or spins a top, 
+or generates a random number by some other means), then looks up the resulting 
+number in a table to find a reference to a measure (more or less) of music, 
+which one transcribes; then one rolls again, consults the next column of the 
+table to find the next measure; and so on. After typically sixteen or thirty-two 
+measures, one has a complete waltz, or minuet, or polonaise, or march, or organ 
+prelude. The logic of the game is simple enough: all the possible outcomes for 
+any given measure share a harmonic basis, so the broad tonal outline of the 
+piece is fixed, independent of the rolls of the dice, though the melodic and 
+rhythmic details are quite variable. The scrambled appearance of the numbers in 
+the table is contrived to shield the player from the underlying logic, thereby 
+making the reasonably coherent music that emerges seem downright magical.</p>
+
+<p>[40] Because of the multiplication principle, the number of possible compositions 
+that can result from even a short dice game is enormous. In the game attributed 
+to Mozart, for example, two dice are rolled, so there are eleven possible 
+outcomes for each measure (the numbers 2 through 12&#8212;not all of which, it may be 
+noted, are equally likely). The number of possibilities for the sixteen measures 
+of music should therefore be 11<sup>16</sup>, a 17-digit number. Careful scrutiny of the 
+tables reveals, however, that all eleven versions of measure 8 are the same, as 
+are all eleven versions of measure 16, so the actual number of possible 
+compositions is 11<sup>14</sup>, which is &#8220;only&#8221; about 380,000,000,000,000. Of course the 
+actual variety present in these compositions is far more limited than such a 
+vast sum may suggest, because they share an underlying harmonic structure and 
+are composed from a common pool of musical fragments. Nevertheless, Joel Lester 
+and Leonard Ratner have pointed out that these games could have come to the aid 
+of a host in need of a supply of dances with which to entertain his guests, or a 
+small-town organist without ready access to large quantities of printed music 
+(<a href="#lester_1992" id="citation_lester_1992_67dc9b0edd857">Lester 1992</a>, 229; <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0edd859">Ratner 1970</a>, 357).</p>
+
+<p>[41] Eighteenth-century dice games have been cited by David Cope as important 
+precedents for his much-publicized &#8220;Experiments in Musical Intelligence&#8221; 
+computer program, which composes music in various styles (<a href="#cope_2001" id="citation_cope_2001_67dc9b0edd85b">Cope 2001</a>), but such 
+games may seem far removed from the usual compositional practices and artistic 
+ideals of human composers such as Haydn, Mozart, and Beethoven. Ratner, however, 
+discerns quasi-combinatorial processes at work in the music of all three of the 
+Viennese masters (<a href="#ratner_1970" id="citation_ratner_1970_67dc9b0edd85c">Ratner 1970</a>, 359&#8211;62). Ratner observes, for instance, that the 
+patchwork rearrangement of an eight-measure melody near the end of the <i>Alla tedesca</i> movement of Beethoven&#8217;s String Quartet, Op. 130, is a permutational 
+process. A Mozartian brand of permutation is on display in the famous five-part 
+counterpoint that brings the curtain down on the &#8220;Jupiter&#8221; Symphony: the five 
+melodic figures are traded among the five string parts in a largely systematic 
+sequence of permutations constructed to ensure that each part takes a turn at 
+each figure.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> (It has been suggested that writing out the 5! = 120 permutations 
+of this counterpoint by hand would constitute apt punishment for unruly theory 
+students.) Haydn&#8217;s frequent rearrangements of themes in his recapitulations also 
+represent a sort of permutation; in that light, even sonata form can be seen as 
+a series of slots into which musical elements may be inserted through 
+combinatorial play. In Ratner&#8217;s concluding words:</p>
+
+<blockquote>
+<p><i>Ars combinatoria</i> is not composition but a resource in its service; it is a 
+rational, intellectual device that can help to spark musical feeling, to set the 
+clockwork in motion, to stir the mechanical into life. (<a href="#ratner_1970" id="citation_ratner_1970_67dc9b0edd860">Ratner 1970</a>, 361&#8211;62)</p>
+</blockquote>
+
+<h3 align="center">II. Advanced Techniques</h3>
+
+<p>[42] <i>2.1. Groups of equivalences</i>. Enumerating set classes&#8212;the bottom row of numbers 
+in Table 1&#8212;is not a simple exercise in permutations or combinations. Instead, the problem is to count equivalence classes under a given equivalence relation. The equivalence relation is defined by a group <i>G</i> of <i>transformations</i><sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> acting on a set <i>Z</i> of <i>configurations</i> of some sort; two configurations are considered 
+equivalent if some transformation in the group maps one to the other. For this 
+reason we call <i>G</i> the <i>group of equivalences</i> for the enumeration problem under 
+consideration. (In the usual conception of pc-sets and set classes, the 
+configurations are pc-sets and the group of equivalences consists of all the 
+transposition and inversion operators.) The problem is to enumerate not the 
+configurations themselves but the equivalence classes, or <i>orbits</i> as they are 
+commonly called. The orbit of a configuration <i>z</i> in the set <i>Z</i> consists of all the 
+configurations <i>g</i>(<i>z</i>), as <i>g</i> ranges through the transformations in the group <i>G</i>. In 
+many cases we are interested not only in a single count of all the orbits, but 
+in sub-counts of orbits of certain types (such as set classes consisting of sets 
+of certain specific cardinalities).</p>
+
+<p>[43] Although this problem is not one of permutations as discussed in Part I, the 
+word <i>permutation</i> is often employed in this context as well&#8212;a usage whose sense 
+it is important to understand. The configurations under consideration typically 
+consist of a fixed number <i>N</i> of objects arranged in some characteristic way, and 
+a transformation typically acts on a configuration by rearranging, or <i>permuting</i>, 
+the <i>N</i> objects. In Part I we described permutations as static <i>arrangements</i> of 
+objects, but they may also be regarded more dynamically as <i>mappings</i>, or 
+<i>transformations</i>, that map a set of objects to itself. A pitch-class operator 
+such as <i>T</i><sub>4</sub><i>I</i> may be regarded as a permutation of the twelve pitch classes, either 
+as a mapping</p>
+<div >
+	<table border="0">
+		<tr>
+			<td>&nbsp;0 </td>
+			<td>&nbsp;1 </td>
+			<td>&nbsp;2 </td>
+			<td>&nbsp;3 </td>
+			<td>&nbsp;4 </td>
+			<td>&nbsp;5 </td>
+			<td>&nbsp;6 </td>
+			<td>&nbsp;7 </td>
+			<td>&nbsp;8 </td>
+			<td>&nbsp;9 </td>
+			<td>&nbsp;A </td>
+			<td>&nbsp;B </td>
+		</tr>
+		<tr>
+			<td width="8">&nbsp;&#8595;&nbsp; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+			<td>&nbsp;&#8595; </td>
+		</tr>
+		<tr>
+			<td>&nbsp;4 </td>
+			<td>&nbsp;3&nbsp; </td>
+			<td>&nbsp;2 </td>
+			<td>&nbsp;1 </td>
+			<td>&nbsp;0 </td>
+			<td>&nbsp;B </td>
+			<td>&nbsp;A </td>
+			<td>&nbsp;9 </td>
+			<td>&nbsp;8 </td>
+			<td>&nbsp;7 </td>
+			<td>&nbsp;6 </td>
+			<td>&nbsp;5 </td>
+		</tr>
+	</table>
+</div>
+<p>or in static form as the arrangement 43210BA98765. The <i>N</i>! possible permutations 
+of <i>N</i> objects form a group (commonly known as <i>S<sub>N</sub></i>, the <i>symmetric group</i> on <i>N</i> 
+objects), and the group of equivalences <i>G</i> in any enumeration problem is 
+typically a subgroup of <i>S<sub>N</sub></i>. Of course, <i>G</i> need not include every permutation in 
+<i>S<sub>N</sub></i>. Indeed, if it does, then every configuration is deemed &#8220;equivalent&#8221; to every 
+other, so they are all in the same orbit and there is nothing of interest to 
+count. The twelve pitch classes theoretically admit 12! = 479,001,600 
+permutations, but most of these permutations jumble the pitch classes in 
+musically nonsensical fashion; only 24 of them are members of the group of 
+transposition and inversion operators.</p>
+
+<p>[44] <i>2.2. Burnside&#8217;s Lemma</i>. A single overall count of orbits can generally be 
+calculated by means of a theorem that goes by the name of <i>Burnside&#8217;s</i> <i>Lemma</i>:<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup></p>
+<blockquote>
+	<p>If a group <i>G</i> acts on a set <i>Z</i> of configurations, the number of orbits is
+	</p>
+	<p style="text-align: center"><img border="0" src="hook_eq9.gif"></p>
+	<p>where |<i>G</i>| denotes the order (cardinality) of the group 
+	<i>G</i>; the sum is taken over 
+all permutations <i>g</i> in the group <i>G</i>; and <i>&psi;</i>(<i>g</i>) denotes the number of configurations 
+fixed by the permutation <i>g</i> (that is, the number of configurations <i>z</i> in 
+	<i>Z</i> such 
+that <i>g</i>(<i>z</i>) = <i>z</i>).</p>
+</blockquote>
+<p>By adding up <i><i>&psi;</i></i>(<i>g</i>) for the various permutations <i>g</i> in the group <i>G</i> and then dividing by the order of the group, as the above formula specifies, we are 
+effectively calculating the <i>average</i> value of <i>&psi;</i>(<i>g</i>). Burnside&#8217;s Lemma says, 
+therefore, that the number of orbits is equal to the average number of 
+configurations fixed by an element of the transformation group. Upon reflection, 
+this formula should make intuitive sense. In the trivial case in which the only 
+element of the group is the identity <i>e</i>, each configuration is an orbit by 
+itself, so the number of orbits is the number of configurations, which is also 
+<i>&psi;</i>(<i>e</i>) since the identity fixes everything. If there are other transformations in 
+the group that fix fewer things, then more things become equivalent, the number 
+of orbits decreases, and the average value of <i>&psi;</i>(<i>g</i>) decreases also.</p>
+
+<p>[45] Before applying Burnside&#8217;s Lemma to the set-class problem, it is instructive to 
+consider two simpler situations of types commonly encountered in the study of 
+combinatorics, which we shall call the <i>birthday-cake problem</i> and the <i>necklace 
+problem</i>.</p>
+
+<div style="width:800px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 3</b>. Four configurations of candles on a birthday cake or beads in a necklace</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=3&nonav=true"><img border="1" alt="Figure 3 thumbnail" src="hook_fig3_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[46] <i>2.3. Example: birthday-cake problem</i>. First suppose you wish to put four candles 
+on a cake; you have four fixed positions in which to place candles, and you have 
+supplies of candles of three different colors (red, blue, green). The number of 
+configurations is 3<sup>4</sup> = 81. But some of these are equivalent, because a birthday 
+cake can be rotated. In <b>Figure 3</b>, for example, configurations (a) and (b) are 
+equivalent; if you decorate the cake as at (a), you can easily turn it to look 
+like (b). Neither configuration (c) nor (d), however, is equivalent to any of 
+the others shown (even though all four use the same colors in the same 
+quantities). The group of equivalences <i>G</i> is the <i>cyclic</i> <i>group</i> <i>C</i><sub>4</sub> of order 4. The elements of this group are analogous to transpositions in pitch-class space, so 
+we may designate them by the labels <i>T</i><sub>0</sub>, <i>T</i><sub>1</sub>, <i>T</i><sub>2</sub>, and <i>T</i><sub>3</sub>. <i>T</i><sub>0</sub> is the identity 
+transformation&#8212;the identity element of the group&#8212;and of course it fixes all 81 
+configurations, so <i>&psi;</i>(<i>T</i><sub>0</sub>) = 81. <i>T</i><sub>1</sub> is a 90-degree clockwise rotation; the only 
+way a configuration can be unchanged by this rotation is if all four candles are 
+the same color. The only possibilities for such a configuration are the three 
+single-color candle arrangements (all red candles, all blue, or all green), so 
+<i>&psi;</i>(<i>T</i><sub>1</sub>) = 3. Likewise <i>T</i><sub>3</sub>, the 90-degree rotation in the opposite direction, fixes 
+only these same three configurations, so <i>&psi;</i>(<i>T</i><sub>3</sub>) = 3 also. For a configuration to 
+be fixed by the 180-degree rotation <i>T</i><sub>2</sub>, the candles opposite each other must be 
+the same color, but the two pairs of opposite candles need not match; there are 
+3<sup>2</sup> = 9 such configurations, so <i>&psi;</i>(<i>T</i><sub>3</sub>) = 9. Burnside&#8217;s Lemma tells us, therefore, 
+that the number of orbits&#8212;the number of distinguishable ways to decorate the 
+birthday cake&#8212;is the average of these four values of <i>&psi;</i>(<i>g</i>): </p>
+<p style="text-align: center"><img border="0" src="hook_eq10.gif"></p>
+<p>The reader may enjoy the not-too-difficult exercise of listing these 24 
+inequivalent configurations.<p>
+
+<p>[47] <i>2.4. Example: necklace problem</i>. The diagrams in Figure 3 could represent beads 
+in a necklace as well as candles on a birthday cake. The group of equivalences 
+is different in the necklace problem, however, because a necklace may be flipped 
+over as well as rotated; configurations (c) and (d) in Figure 3 are equivalent 
+in the necklace problem but not in the birthday-cake problem. The group is now 
+the <i>dihedral group</i> <i>D</i><sub>4</sub>, which consists of <i>eight</i> transformations of the four-sided 
+figure. Four of these are the rotations <i>T</i><sub>0</sub>, <i>T</i><sub>1</sub>, <i>T</i><sub>2</sub>, <i>T</i><sub>3</sub> as before. The other four 
+are <i>reflections</i>, which we may designate <i>I</i> (= <i>T</i><sub>0</sub><i>I</i>), <i>T</i><sub>1</sub><i>I</i>, <i>T</i><sub>2</sub><i>I</i>, <i>T</i><sub>3</sub><i>I</i>. The notation 
+here pursues the analogy with familiar transformations of musical pitch-class 
+space; <i>I</i> is understood to be a flip about the vertical axis in the diagram, and 
+<i>T<sub>j</sub>I</i> is the result of following the reflection <i>I</i> by the rotation <i>T<sub>j</sub></i>. </p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Figure 4</b>. The transformations in the dihedral group 
+<i>D</i><sub>4</sub></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=4&nonav=true"><img border="1" alt="Figure 4 thumbnail" src="hook_fig4_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 2</b>. Cycle structure of the permutations in the dihedral group 
+<i>D</i><sub>4</sub> (3-color necklace problem)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=5&nonav=true"><img border="1" alt="Table 2 thumbnail" src="hook_table2_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[48] To apply Burnside&#8217;s Lemma to the necklace problem, we must calculate the number  of configurations fixed by each transformation in the group <i>D</i><sub>4</sub>. For this purpose the graphic depictions of the actions of the transformations in <b>Figure 4</b> may 
+prove helpful, along with the tabulation in <b>Table 2</b>. Here the transformations 
+are represented as permutations of the numbers 0, 1, 2, and 3. Figure 4 shows, 
+for example, that <i>T</i><sub>1</sub> effects a 90-degree clockwise rotation of the initial 
+configuration, mapping 0 to position 1, 1 to 2, 2 to 3, and 3 to 0; this action 
+is represented in Table 2 by the chain of arrows 
+0&#8594;1&#8594;2&#8594;3&#8594;0. The reflection <i>I</i> 
+leaves 0 and 2 unchanged (0&#8594;0, 2&#8594;2) while interchanging 1 and 3 (1&#8594;3&#8594;1). The 
+reflection <i>T</i><sub>1</sub><i>I</i> behaves somewhat differently, exchanging the numbers in two pairs 
+(0&#8594;1&#8594;0, 2&#8594;3&#8594;2).</p>
+
+<p>[49] The calculations of <i>&psi;</i>(<i>g</i>) for the various transformations <i>g</i> depend heavily on how the permutations break down into <i>cycles</i>. The three transformations just 
+considered, in fact, have three different cycle structures. The rotation <i>T</i><sub>1</sub> 
+permutes the four numbers in a single cycle, described by the action 0&#8594;1&#8594;2&#8594;3&#8594;0 
+or the more compact <i>cycle representation</i> (0 1 2 3). (The closing parenthesis 
+indicates the completion of the cycle&#8212;that is, the implied mapping of the last 
+number listed to the first, in this case 3&#8594;0.) This is a cycle of four elements, 
+or a <i>4-cycle</i>. The reflection <i>I</i>, in contrast, breaks down into two 1-cycles and a 
+2-cycle, (0)(1 3)(2), while <i>T</i><sub>1</sub><i>I</i> breaks down into two 2-cycles, (0 1)(2 3). (The 
+order in which the cycles are listed in a permutation is of no consequence, and 
+cyclic reorderings of the numbers within any one cycle are also possible; thus 
+<i>T</i><sub>1</sub><i>I</i> could equally well be represented in the form (3 2)(0 1), for example. We 
+follow the convention of listing smaller numbers first whenever there is a 
+choice.)</p>
+
+<p>[50] A transformation always maps any element to the next element within its cycle. 
+In order for a necklace configuration to be fixed by a transformation, 
+therefore, all the elements within any one cycle must be the same color, but the 
+colors for elements in different cycles may be chosen independently. So the 
+number of configurations fixed by any transformation (still under the assumption 
+that there are three available colors) is 3<sup><i>k</i></sup>, where <i>k</i> is the number of distinct 
+cycles in the cycle representation. These numbers are tabulated in Table 2. The 
+numbers in the &#8220;Fixed configurations&#8221; column can then be plugged into the 
+formula of Burnside&#8217;s Lemma to calculate that the number of orbits in the 
+necklace problem&#8212;the number of distinguishable four-bead necklaces that can be 
+constructed using beads of three colors&#8212;is </p>
+<p style="text-align: center"><img border="0" src="hook_eq11.gif"></p>
+<p>This number is, as we should expect, smaller than the corresponding result in 
+the birthday-cake problem, which was 24: more transformations are allowable for 
+necklaces, so more configurations are equivalent and the number of orbits is 
+reduced. Recall that configurations (c) and (d) in  Figure 3 belong to two 
+different orbits in the birthday-cake problem but are subsumed in a single orbit 
+when reflections are allowed in the necklace problem. The reduction from 24 
+orbits to 21 is a small one; in fact, the orbits of configurations (c) and (d), 
+and two other similar orbit pairs involving two blue or two green beads, are the 
+only orbits to be conflated in this way.</p>
+
+<p>[51] <i>2.5. Cycle structure of permutations</i>. The final two columns in Table 2 supply 
+some additional information that will prove useful later in the general 
+application of P&oacute;lya&#8217;s theorem. The <i>cycle type</i> is a shorthand accounting of the 
+number of cycles of each length: 4<sup>1</sup> in the case of <i>T</i><sub>1</sub> indicates a single 
+4-cycle, while 1<sup>2</sup>2<sup>1</sup> in the case of <i>I</i> indicates two 1-cycles and one 2-cycle. The 
+cycle type is converted in a straightforward way to the <i>cycle index</i>, an 
+algebraic expression in which abstract variables <i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>, <i>t</i><sub>4</sub> stand in for the 
+corresponding cycle lengths. More precisely, the <i>cycle index</i> <i>p<sub>g</sub></i> of a permutation 
+<i>g</i> of <i>N</i> objects is an expression potentially involving the <i>N</i> variables <i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>, <nobr>. . .</nobr>, 
+<i>t<sub>N</sub></i>, namely</p>
+<p style="text-align: center"><img border="0" src="hook_eq12.gif"></p>
+<p>where <i>&lambda;<sub>j</sub></i>(<i>g</i>) is the number of <i>j</i>-cycles in the cycle representation of <i>g</i>. The 
+cycle index <i>P<sub>G</sub></i> <i>of a permutation group</i> <i>G</i> is a more complex polynomial in <i>N</i> 
+variables, defined as the average of the cycle indices of all the permutations 
+in <i>G</i>:</p>
+<p style="text-align: center"><img border="0" src="hook_eq13.gif"></p>
+<p>The variables <i>t<sub>j</sub></i> do not stand for anything in particular at this point, but 
+later will be replaced by something more concrete.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 3</b>. Cycle structure of the permutations in the dihedral group <i>D</i><sub>12</sub> (set-class problem)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=6&nonav=true"><img border="1" alt="Table 3 thumbnail" src="hook_table3_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[52] <i>2.6. Example</i>: <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> <i>set classes</i>. The set-class problem in music theory is 
+essentially the necklace problem with two modifications: more objects and fewer 
+colors. The objects are the twelve pitch classes. A pc-set may be specified by 
+coloring the pitch classes with two colors, called <i>yes</i> and <i>no</i>. That is, a pc 
+either belongs to a given pc-set or it does not; the 2<sup>12</sup> colorings of the pitch 
+classes uniquely determine each of the 2<sup>12</sup> pc-sets. The group of equivalences is 
+the dihedral group <i>D</i><sub>12</sub> of order 24, consisting of twelve rotations 
+(transpositions) and twelve reflections (inversions) of mod-12 pitch-class 
+space. <b>Table 3</b> displays the cycle structures of all 24 of these transformations. 
+The cycle representations here reflect properties of the transformations that 
+music theorists will recognize. The twelve transpositions display six different 
+cycle types, while the twelve inversions are of only two types: even-numbered 
+inversions that fix two pitch classes, and odd-numbered inversions that fix 
+none. Adding up the numbers of configurations fixed by these transformations and 
+dividing by 24, as specified by Burnside&#8217;s Lemma, yields 224, the total number 
+of set classes appearing in the lower-right corner of  Table 1.</p>
+
+<p>[53] <i>2.7. Weighted colors</i>. The complete solution of the set-class problem entails 
+more than this single number: we must still show how to derive the numbers of 
+set classes of the various cardinalities from 0 through 12. To this end, let us 
+step back momentarily to a higher level of abstraction, a general setting 
+involving configurations of <i>N</i> objects colored with <i>k</i> colors. We assign an 
+algebraic symbol to each color; these symbols will be called the <i>weights</i> of the 
+colors. In the birthday-cake or necklace problem, for example, we could assign 
+the weights <i>r</i>, <i>b</i>, and <i>g</i> to the colors red, blue, and green. In the set-class 
+problem we could assign weight <i>x</i> to the color <i>no</i> and weight <i>y</i> to the color 
+<i>yes</i>. 
+In the general setting in which there are <i>k</i> colors from which to choose, we 
+shall write <i>w</i><sub>1</sub>, <i>w</i><sub>2</sub>, <nobr>. . .</nobr>, <i>w<sub>k</sub></i> for the weights assigned to the colors.</p>
+
+<p>[54] Define the <i>weight of a configuration</i> to be the product of the weights of the 
+colors of its objects. The weight of a configuration thus describes the 
+multiplicities of its colors. All four configurations shown in Figure 3, for 
+example, are of weight <i>r</i><sup>2</sup><i>bg</i>. In the set-class problem the weight of any 
+tetrachord is <i>x</i><sup>8</sup><i>y</i><sup>4</sup> (eight pitch classes colored 
+<i>no</i>, four <i>yes</i>). The weight of a 
+configuration is a property of the configuration itself, and does not depend on 
+the group of equivalences. When a group is at hand, however, permuting the 
+objects does not change the weight of a configuration, so equivalent 
+configurations (in the same orbit) will always have the same weight. The 
+converse is not true: configurations of the same weight need not be in the same 
+orbit, as Figure 3 illustrates. Because configurations in the same orbit have 
+the same weight, it makes sense to speak of the <i>weight of an orbit</i>&#8212;that is, the 
+common weight of all the configurations in the orbit. The problem is now to 
+calculate the number of different orbits of any given weight.</p>
+
+<p>[55] To do this, as was suggested in Part I, we shall exhibit an enumeration 
+function. An enumeration function for the birthday-cake or necklace problem will 
+be a polynomial in the variables <i>r</i>, <i>b</i>, and <i>g</i>, homogeneous of degree 4 (the 
+number of colored objects in any configuration), in which the coefficient of 
+<i>r</i><sup>2</sup><i>bg</i> or any other such term is the number of distinct orbits of that weight. An 
+enumeration function for the set-class problem will be a polynomial in the 
+variables <i>x</i> and <i>y</i>, homogeneous of degree 12 (the total number of &#8220;colored&#8221; pitch 
+classes), in which the coefficient of <i>x</i><sup>8</sup><i>y</i><sup>4</sup> is the number of orbits of 
+tetrachords (and similarly for the other terms). The reader may recall from Part 
+I that the binomial theorem provided a formula of exactly this sort, but the 
+numbers appearing there enumerated actual sets rather than set classes. (In 
+fact, that formula may be considered a special case of the general 
+orbit-counting formula we are now seeking&#8212;namely, the special case in which the 
+group <i>G</i> consists of the identity permutation only, so that every pc-set defines 
+its own orbit.)</p>
+
+<p>[56] <i>2.8. P&oacute;lya&#8217;s Enumeration Theorem</i>. The enumeration function we are seeking is 
+given explicitly by <i>P&oacute;lya&#8217;s Enumeration Theorem</i>:<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup></p>
+<blockquote>
+	<p>Suppose a transformation group <i>G</i> acts on configurations of <i>N</i> objects colored 
+with <i>k</i> colors. Let the weights assigned to the colors be <i>w</i><sub>1</sub>, 
+	<i>w</i><sub>2</sub>, <nobr>. . .</nobr>, <i>w<sub>k</sub></i>, and 
+define</p>
+	<p style="text-align: center"><img border="0" src="hook_eq14.gif"></p>
+	<p>Let <i>P<sub>G</sub></i> be the cycle index of the group <i>G</i>. Then the sum of the weights of all the 
+orbits, counting each orbit once, is <i>P<sub>G</sub></i>(<i>&alpha;</i><sub>1</sub>, <i>&alpha;</i><sub>2</sub>, <nobr>. . .</nobr>, <i>&alpha;</i><sub><i>N</i></sub>).</p>
+</blockquote>
+
+<p>[57] The cycle index of the group <i>G</i>, it will be recalled, is a polynomial in <i>N</i> 
+variables, <i>P<sub>G</sub></i>(<i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>, <nobr>. . .</nobr>, <i>t<sub>N</sub></i>), calculated by averaging together the cycle indices 
+of the various permutations in the group. P&oacute;lya&#8217;s theorem instructs us to 
+substitute <i>&alpha;</i><sub>1</sub>, <i>&alpha;</i><sub>2</sub>, <nobr>. . .</nobr>, <i>&alpha;</i><sub><i>N</i></sub> for the variables <i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>, <nobr>. . .</nobr>, <i>t<sub>N</sub></i> in this expression. 
+Because <i>&alpha;</i><sub>1</sub>, <i>&alpha;</i><sub>2</sub>, <nobr>. . .</nobr>, <i>&alpha;</i><sub><i>N</i>
+</sub> are defined as sums of powers of the weights <i>w</i><sub>1</sub>, <i>w</i><sub>2</sub>, <nobr>. . .</nobr>, 
+<i>w<sub>k</sub></i>, the resulting expression <i>P<sub>G</sub></i>(<i>&alpha;</i><sub>1</sub>, <i>&alpha;</i><sub>2</sub>, <nobr>. . .</nobr>, <i>&alpha;</i><sub><i>N</i></sub>) is ultimately a polynomial in <i>w</i><sub>1</sub>, 
+<i>w</i><sub>2</sub>, <nobr>. . .</nobr>, <i>w<sub>k</sub></i>; it is known as the <i>P&oacute;lya polynomial</i>. The theorem says that the P&oacute;lya 
+polynomial is the enumeration function: by calculating this polynomial in full, 
+we will see the number of orbits of each weight as the coefficient of the 
+appropriate term.</p>
+
+<p>[58] <i>2.9. Example: birthday-cake problem, revisited</i>. Let us consider in detail how P&oacute;lya&#8217;s theorem applies to the birthday-cake problem described previously, with 
+<i>N</i> = 4 and <i>k</i> = 3. The group <i>G</i> is a cyclic group <i>C</i><sub>4</sub>, consisting only of the 
+rotations <i>T</i><sub>0</sub>, <i>T</i><sub>1</sub>, <i>T</i><sub>2</sub>, <i>T</i><sub>3</sub>, whose cycle indices were presented in the top half of Table 2. These formulas involve the variables <i>t</i><sub>1</sub>, <i>t</i><sub>2</sub>, and <i>t</i><sub>4</sub> (<i>t</i><sub>3</sub> happens not to 
+appear), for which we must now substitute <i>&alpha;</i><sub>1</sub>, <i>&alpha;</i><sub>2</sub>, and <i>&alpha;</i><sub>4</sub>, defined as <i>&alpha;</i><sub>1</sub> = <i>r</i> + <i>b</i> 
++ <i>g</i>, <i>&alpha;</i><sub>2</sub> = <i>r</i><sup>2</sup> + <i>b</i><sup>2</sup> + <i>g</i><sup>2</sup>, and <i>&alpha;</i><sub>4</sub> = 
+<i>r</i><sup>4</sup> + <i>b</i><sup>4</sup> + <i>g</i><sup>4</sup>. We consider each of the rotations 
+<i>T<sub>j</sub></i> in turn.</p>
+
+<p>[59] The cycle index of <i>T</i><sub>0</sub>, as given in Table 2, is</p>
+<p style="text-align: center"><img border="0" src="hook_eq15.gif"></p>
+<p>The contribution of <i>T</i><sub>0</sub> to the P&oacute;lya polynomial is therefore</p>
+<p style="text-align: center"><img border="0" src="hook_eq16.gif"></p>
+<p>This expression appears rather unwieldy; there are, however, well-known formulas 
+(analogous to the binomial theorem) for raising an expression such as <i>r</i> + <i>b</i> + <i>g</i> 
+to any given power. Computationally, the most cumbersome part of the calculation 
+of a P&oacute;lya polynomial is usually the step involving the identity element of the 
+group (<i>T</i><sub>0</sub> in this case). This odd state of affairs arises because the point of 
+the calculation is to enumerate the configurations fixed by each transformation, 
+and the identity fixes everything&#8212;more than any other transformation. The above 
+polynomial in fact enumerates the weights of all 81 configurations in the 
+birthday-cake problem, all of which, of course, are fixed by <i>T</i><sub>0</sub>.</p>
+
+<p>[60] The calculations involving <i>T</i><sub>1</sub> and <i>T</i><sub>3</sub> are much simpler. Both have cycle index 
+<i>t</i><sub>4</sub><sup>1</sup>, so the P&oacute;lya polynomial has two terms of the form</p>
+<p style="text-align: center"><img border="0" src="hook_eq17.gif"></p>
+<p>The only configurations fixed by <i>T</i><sub>1</sub> and <i>T</i><sub>3</sub> are the three single-color 
+configurations, and the above expression is simply the sum of their weights.</p>
+
+<p>[61] Finally, <i>T</i><sub>2</sub> is a permutation of cycle index <i>t</i><sub>2</sub><sup>2</sup>, so it contributes the term</p>
+<p style="text-align: center"><img border="0" src="hook_eq18.gif"></p>
+<p>This polynomial represents the sum of the weights of the nine configurations 
+fixed by <i>T</i><sub>2</sub>.</p>
+
+<p>[62] The complete P&oacute;lya polynomial for the birthday-cake problem is therefore</p>
+<p style="text-align: center"><img border="0" src="hook_eq19.gif"></p>
+<p>which reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq20.gif"></p>
+<p>The coefficients in this formula (including several suppressed 1&#8217;s) give the 
+number of orbits of each weight. For instance, the term 3<i>r</i><sup>2</sup><i>bg</i> tells us that 
+there are exactly three inequivalent configurations of weight <i>r</i><sup>2</sup><i>bg</i>. These are 
+represented by configurations (a), (c), and (d) of  Figure 3. (Configuration (b), 
+it will be recalled, is equivalent to (a) and is therefore not counted 
+separately.) Readers should be able to convince themselves that there are no 
+others: any arrangement of two red candles, one blue, and one green can be 
+rotated to look like (a), (c), or (d). </p>
+
+<p>[63] Two further remarks about the above formula are in order. First, the P&oacute;lya 
+polynomial is homogeneous of degree 4: every term involves a product of exactly 
+four factors <i>r</i>, <i>b</i>, and <i>g</i> in some combination. In general, a P&oacute;lya polynomial is 
+homogeneous of degree <i>N</i>, the number of objects in each configuration. (Indeed, 
+the polynomial <i>must</i> be homogeneous of degree <i>N</i> if it is to enumerate the weights 
+properly.) Second, the coefficients in the above formula sum to 24, which we 
+calculated in section 2.3 to be the total number of orbits in the birthday-cake 
+problem. The previous calculation was based on Burnside&#8217;s Lemma and did not 
+involve weights; the weighted method given by P&oacute;lya&#8217;s theorem is simply a 
+refinement of the same idea, showing exactly how the 24 orbits are distributed 
+among the various weights.</p>
+
+<p>[64] <i>2.10. Example: necklace problem, revisited</i>. The application of P&oacute;lya&#8217;s theorem 
+to the necklace problem begins like that for the birthday-cake problem, but 
+requires additional terms for the transformations <i>I</i>, <i>T</i><sub>1</sub><i>I</i>, <i>T</i><sub>2</sub><i>I</i>, and <i>T</i><sub>3</sub><i>I</i> in the 
+dihedral group <i>D</i><sub>4</sub>. As Table 2 shows, two of these are permutations of cycle 
+index <i>t</i><sub>2</sub><sup>2</sup>, so there are two more terms of the form <i>&alpha;</i><sub>2</sub><sup>2</sup>, identical to the term 
+for <i>T</i><sub>2</sub> displayed above. The other two are of cycle index <i>t</i><sub>1</sub><sup>2</sup><i>t</i><sub>2</sub><sup>1</sup>, and give rise 
+to two terms of the form </p>
+<p style="text-align: center"><img border="0" src="hook_eq21.gif"></p>
+<p>When these four new terms are added to the four calculated previously and the 
+result is divided by 8 (not 4) and simplified, the resulting formula is</p>
+<p style="text-align: center"><img border="0" src="hook_eq22.gif"></p>
+<p>which is identical to the formula for the birthday-cake problem except that the 
+terms involving <i>r</i><sup>2</sup><i>bg</i>, <i>rb</i><sup>2</sup><i>g</i>, and 
+<i>rbg</i><sup>2</sup><i> </i>now carry the coefficient 2 instead of 3, 
+indicating (as observed previously in conjunction with Figure 3) that there are 
+only two distinct necklace configurations of each of these weights rather than 
+three.</p>
+
+<p>[65] <i>2.11. Example: T<sub>n</sub>/T<sub>n</sub>I set classes, revisited</i>. We are finally in a position to realize our original objective: that is, to verify the set-class counts from Table 1. Here <i>N</i> = 12 and <i>k</i> = 2. The P&oacute;lya polynomial for enumerating the set 
+classes involves the quantities <i>&alpha;</i><sub>1</sub> = <i>x</i> + <i>y</i>, <i>&alpha;</i><sub>2</sub> = 
+<i>x</i><sup>2</sup> + <i>y</i><sup>2</sup>, <nobr>. . .</nobr>, <i>&alpha;</i><sub>12</sub> = 
+<i>x</i><sup>12</sup> + <i>y</i><sup>12</sup>. 
+There are 24 terms to be added, corresponding to the cycle structures of the 
+transformations <i>T<sub><i>n</i></sub></i> and <i>T<sub><i>n</i></sub>I</i>, as enumerated in Table 3 above. The calculation is 
+rather lengthy, but is simplified somewhat by the numerous repetitions among 
+these cycle types. The P&oacute;lya polynomial is</p>
+<p style="text-align: center"><img border="0" src="hook_eq23.gif"></p>
+<p>which reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq24.gif"></p>
+<p>The coefficients exactly match the numbers of set classes in Table 1.</p>
+
+<p>[66] <i>2.12. Example: T<sub>n</sub> set classes</i>. Having developed the general technique of 
+set-class enumeration, we may now readily apply it in a variety of alternative 
+situations. We may, for instance, choose to consider only transpositional 
+equivalence, so that inversionally related sets such as major and minor triads 
+are no longer considered to belong to the same set class. This is the system 
+called SG1 in <a href="#morris_2001" id="citation_morris_2001_67dc9b0edd8a6">Morris 2001</a>; it is analogous, in the world of twelve pcs and two 
+colors, to stepping back from the necklace problem to the birthday-cake problem. 
+The group of equivalences in this situation is the cyclic group <i>C</i><sub>12</sub> rather than 
+the dihedral group <i>D</i><sub>12</sub>; we need only consider the terms associated with the 
+transpositions <i>T<sub><i>n</i></sub></i> (the top half of  Table 3) in the above calculation. The 
+resulting P&oacute;lya polynomial is</p>
+<p style="text-align: center"><img border="0" src="hook_eq25.gif"></p>
+<p>which reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq26.gif"></p>
+<p>As usual, the number of inequivalent pc-sets of each cardinality may be read 
+directly from the coefficients in this formula. Comparison with the previous 
+formula developed under the assumption of <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> equivalence shows that the 
+number of set classes increases when inversional equivalence is disregarded. 
+This is as we should expect, of course; each asymmetrical set class of the 
+<i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> variety splits into two set classes of the <i>T<sub><i>n</i></sub></i> variety. There are now 43 
+tetrachords rather than 29, because 14 asymmetrical tetrachord types have split. 
+The total number of <i>T<sub><i>n</i></sub></i> set classes of all cardinalities, obtained by summing all 
+the coefficients, is 352, compared with 224 in the <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> situation.</p>
+
+<p>[67] <i>2.13. Example: T<sub>n</sub>/I/M set classes</i>. If we create <i>more</i> ways for pc-sets to be 
+equivalent, then the number of set classes will <i>decrease</i>. One way to do this is 
+to adjoin the operator <i>M</i> (multiplication by 5 mod 12) to the group of 
+equivalences, as in Morris (<a href="#morris_1987" id="citation_morris_1987_67dc9b0edd8a8">1987</a>, <a href="#morris_1991" id="citation_morris_1991_67dc9b0edd8aa">1991</a>, <a href="#morris_2001" id="citation_morris_2001_67dc9b0edd8ab">2001</a>; the <i>T<sub><i>n</i></sub></i>/<i>I</i>/<i>M</i> system is called SG3 in <a href="#morris_2001" id="citation_morris_2001_67dc9b0edd8ac">Morris 2001</a>). The group is now of order 48, and includes transformations of the 
+forms <i>T<sub><i>n</i></sub></i><i>M</i> and <i>T<sub><i>n</i></sub>MI</i> in addition to the previous <i>T<sub><i>n</i></sub></i> and <i>T<sub><i>n</i></sub>I</i>. The reader may verify 
+that the transformation <i>M</i> is of cycle type 1<sup>4</sup>2<sup>4</sup> and therefore of cycle index 
+<i>t</i><sub>1</sub><sup>4</sup>t<sub>2</sub><sup>4</sup>; the various transformations <i>T<sub><i>n</i></sub></i><i>M</i> and <i>T<sub><i>n</i></sub>MI</i> 
+are of several different types, including <i>t</i><sub>2</sub><sup>6</sup>, <i>t</i><sub>4</sub><sup>3</sup>,
+<i>t</i><sub>6</sub><sup>2</sup>, <i>t</i><sub>1</sub><sup>4</sup><i>t</i><sub>2</sub><sup>4</sup>,
+<i>t</i><sub>1</sub><sup>6</sup><i>t</i><sub>2</sub><sup>3</sup>, and <i>t</i><sub>3</sub><sup>2</sup><i>t</i><sub>6</sub><sup>1</sup>. The P&oacute;lya polynomial 
+reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq27.gif"></p>
+<p>which represents a considerable reduction in set-class counts in comparison with 
+the previous two examples, reflecting the broader understanding of equivalence 
+that arises when <i>M</i> is included. Note in particular that the number of &#8220;interval 
+classes&#8221; (set classes of two-element pc-sets) has dropped from six to five; this 
+is because the usual ic1 and ic5 are related to each other by <i>M</i> (while the other 
+interval classes are preserved under <i>M</i>). The total number of <i>T<sub><i>n</i></sub></i>/<i>I</i>/<i>M</i> set classes is only 158.</p>
+
+<p>[68] <i>2.14. Example: T<sub>n</sub>/T<sub>n</sub>I set classes in a 19-note scale</i>. Scales with 19 notes to the octave have received attention for their considerable acoustic and 
+structural similarities with the familiar twelve-note system (Mandelbaum 1961). 
+If <i>N</i> = 19 rather than 12, there are 38 pc-set operations of the forms <i>T<sub><i>n</i></sub></i> and 
+<i>T<sub><i>n</i></sub>I</i>. Although the transformation group is larger than in the twelve-note case, 
+the fact that 19 is a prime number simplifies the cycle structure of the 
+transformations considerably. In fact, there are only three different cycle 
+types: the identity (<i>T</i><sub>0</sub>) is of cycle index <i>t</i><sub>1</sub><sup>19</sup>; the transpositions <i>T</i><sub>1</sub>, <nobr>. . .</nobr>, 
+<i>T</i><sub>18</sub> 
+are all of type <i>t</i><sub>19</sub><sup>1</sup> (each permuting the nineteen pcs in one large cycle); and 
+the inversions <i>I</i>, <i>T</i><sub>1</sub><i>I</i>, <nobr>. . .</nobr>, <i>T</i><sub>18</sub><i>I</i> 
+are all of type <i>t</i><sub>1</sub><sup>1</sup><i>t</i><sub>2</sub><sup>9</sup> (each fixing one pc while 
+exchanging the others in pairs). The P&oacute;lya polynomial is therefore simply</p>
+<p style="text-align: center"><img border="0" src="hook_eq28.gif"></p>
+<p>which, when expanded, becomes</p>
+<p style="text-align: center"><img border="0" src="hook_eq29.gif"></p>
+<p>The numbers have increased greatly relative to the twelve-note situation. There 
+are 120 tetrachords, almost 2500 nine-note set classes, and 14,310 set classes 
+altogether.</p>
+
+<p>[69] <i>2.15. Example: diatonic set classes</i>. Moving in the direction of smaller rather 
+than larger scale systems, let us consider the diatonic scale, for which <i>N</i> = 7. 
+In the mod-7 system, the identity (<i>T</i><sub>0</sub>) is of cycle index <i>t</i><sub>1</sub><sup>7</sup>; the transpositions 
+<i>T</i><sub>1</sub>, <nobr>. . .</nobr>, <i>T</i><sub>6</sub> are all of type <i>t</i><sub>7</sub><sup>1</sup>; and the inversions <i>I</i>, <i>T</i><sub>1</sub><i>I</i>, <nobr>. . .</nobr>, <i>T</i><sub>6</sub><i>I</i> are all of type 
+<i>t</i><sub>1</sub><sup>1</sup><i>t</i><sub>2</sub><sup>3</sup>. The P&oacute;lya polynomial is therefore</p>
+<p style="text-align: center"><img border="0" src="hook_eq30.gif"></p>
+<p>which reduces to</p>
+<p style="text-align: center"><img border="0" src="hook_eq31.gif"></p>
+<p>If inversion is not considered, the calculation is even simpler:</p>
+<p style="text-align: center"><img border="0" src="hook_eq32.gif"></p>
+<p>In the diatonic world there are only 18 set classes if inversion is considered, 
+and only two additional ones if it is not. These diatonic set classes are listed 
+in <a href="#clough_1979" id="citation_clough_1979_67dc9b0edd8b9">Clough 1979</a>.</p>
+
+<p>[70] <i>2.16. Some general formulas</i>. We have thus far skirted the question of whether it 
+is actually possible to write down a single formula for the number of <i>k</i>-note set 
+classes (either <i>T<sub><i>n</i></sub></i> classes or <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes) in an <i>N</i>-note scale system. In 
+fact, there is such a formula, but it is not simple.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>			To derive it one first 
+needs a general formula for the cycle index of the cyclic group <i>C<sub>N</sub></i> or the 
+dihedral group <i>D<sub>N</sub></i>, as appropriate. Such formulas can be found in the 
+combinatorial literature (e.g., <a href="#riordan_1958" id="citation_riordan_1958_67dc9b0edd8bc">Riordan 1958</a>, 149&#8211;50) and will be given here 
+without proof.</p>
+
+<p>[71] The cycle index formulas involve Euler&#8217;s <i>&phi;</i> function: for any positive integer <i>n</i>, 
+<i>&phi;</i>(<i>n</i>) is defined to be the number of positive integers <i>m</i> &#8804; <i>n</i> that are coprime to <i>n</i> (that is, for which the greatest common divisor of <i>m</i> and <i>n</i> is 1).<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>			Specifically, the cycle index of <i>C<sub>N</sub></i> is</p>
+<p style="text-align: center"><img border="0" src="hook_eq33.gif"></p>
+<p>where the sum is taken over all positive divisors <i>j </i>of <i>N</i>. The cycle index of <i>D<sub>N</sub></i> 
+is</p>
+<p style="text-align: center"><img border="0" src="hook_eq34.gif"></p>
+<p>where 
+&Phi;<i><sub>N</sub></i> is the cycle index of the cyclic group from the previous formula.</p>
+
+<p>[72] We must then exhibit a formula for the coefficient of <i>x<sup>N</sup></i><sup>&#8211;</sup><i><sup>k</sup>y<sup>k</sup></i> when <i>&alpha;</i><sub><i>j</i></sub> = 
+<i>x<sup>j</sup></i> + <i>y</i><i><sup>j</sup></i> 
+is substituted for <i>t<sub>j</sub></i> in each of these equations, as P&oacute;lya&#8217;s theorem specifies. 
+In the cyclic case, the coefficient of <i>x<sup>N</sup></i><sup>&#8211;</sup><i><sup>k</sup>y<sup>k</sup></i>&#8212;the number of <i>T<sub><i>n</i></sub></i> classes of <i>k</i>-note 
+sets in an <i>N</i>-note scale&#8212;is given by</p>
+<p style="text-align: center"><img border="0" src="hook_eq35.gif"></p>
+<p>where the sum is taken over all common divisors <i>j</i> of <i>N</i> and <i>k</i>. The quantity in 
+the large parentheses on the right is a binomial coefficient, the number of 
+combinations of <i>N</i>/<i>j</i> things taken <i>k</i>/<i>j</i> at a time. The corresponding coefficient in 
+the dihedral case&#8212;the number of <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes&#8212;is</p>
+<p style="text-align: center"><img border="0" src="hook_eq36.gif"></p>
+<p>Again, the quantities in the large parentheses are binomial coefficients; 
+<img border="0" src="hook_eq37.gif" align="absmiddle"> denotes the largest integer less than or equal to <i>x</i>.</p>
+
+<p>[73] Ambitious readers may use the above formulas to verify some of the results 
+discussed previously. For example, in the usual 12-note system there are 43 <i>T<sub><i>n</i></sub></i> 
+classes of tetrachords (<i>&zeta;</i><sub>12</sub>(4) = 43) and 29 <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes of tetrachords 
+(<i>&xi;</i><sub>12</sub>(4) = 29), while in the 19-note system the number of <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes of 
+tetrachords is 120 (<i>&xi;</i><sub>19</sub>(4) = 120). It will be noted that the sums appearing in 
+the formulas for &Phi;<sub><i>N</i></sub> and <i>&zeta;</i><sub><i>N</i></sub>(<i>k</i>) involve many terms when the number <i>N</i> has many 
+divisors but are much simpler if <i>N</i> is a prime number; this is consistent with 
+the relative complexity of our previous calculations in the 12- and 19-note 
+cases.</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 4</b>. Values of <i>&zeta;<sub>N</sub></i>(<i>k</i>), the number of <i>T<sub>n</sub></i> classes of 
+<i>k</i>-note chords in an 
+<i>N</i>-note scale</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=7&nonav=true"><img border="1" alt="Table 4 thumbnail" src="hook_table4_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Table 5</b>. Values of <i>&xi;</i><sub><i>N</i></sub>(<i>k</i>), the number of <i>T<sub>n</sub></i>/<i>T<sub>n</sub>I</i> classes of 
+<i>k</i>-note chords in an <i>N</i>-note scale</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="hook_examples.php?id=8&nonav=true"><img border="1" alt="Table 5 thumbnail" src="hook_table5_small.gif"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[74] The above formulas have been used to produce <b>Tables 4 and 5</b>, which enumerate the 
+<i>T<sub><i>n</i></sub></i> and <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes, respectively, of <i>k</i>-note sets in an <i>N</i>-note scale for all 
+values of <i>N</i> from 7 to 24. To save space, values are shown only for <i>k</i> &#8804; 12; this 
+is sufficient because the number of <i>k</i>-note set classes is the same as the number 
+of (<i>N</i> &#8211; <i>k</i>)-note set classes. (In a 19-note scale, for instance, the number of 
+15-note set classes does not appear in the table, but it is the same as the 
+number of 4-note set classes, which does appear.) The final column gives the 
+total number of set classes of all cardinalities for each value of <i>N</i>.</p>
+
+<p>[75] These tables illustrate in dramatic fashion how set classes proliferate as <i>N</i> 
+increases. In the quarter-tone system (<i>N</i> = 24), there are more than 350,000 
+<i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes and almost 700,000 <i>T<sub><i>n</i></sub></i> classes. The latter number is almost twice 
+the former; indeed, as <i>N</i> increases, the ratio of <i>T<sub><i>n</i></sub></i> classes to <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> classes 
+approaches 2, because symmetrical sets become statistically scarcer. Without 
+venturing too far into the somewhat contentious question of the &#8220;privileged&#8221; 
+nature of the mod-12 system, we may at least note that the usual 224 <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> 
+classes, in comparison with the counts in other lines of the tables, are 
+sufficient to provide a rich variety of set types while remaining a manageable 
+number from the perspective of classification and aural recognition.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup></p>
+
+<p>[76] <i>2.17. Example: beat-class sets</i>. Similarities between pitch and rhythmic 
+structures have been widely noted. For example, <a href="#cohn_1992" id="citation_cohn_1992_67dc9b0edd8d3">Cohn 1992</a> and <a href="#roeder_2003" id="citation_roeder_2003_67dc9b0edd8d4">Roeder 2003</a> employ 
+<i>beat-class sets</i>, the rhythmic counterpart of pitch-class sets, to study Steve 
+Reich&#8217;s phase techniques. Indeed, calculations involving the distribution of <i>k</i> 
+attacks in a measure of <i>N</i> beats are completely analogous to calculations 
+involving <i>k</i>-note subsets of an <i>N</i>-note system. Rhythmic rotations play the role 
+of transpositions, and retrogrades the role of inversions. If rotations (but not 
+retrogrades) of a rhythm are considered equivalent, the number of ways to place 
+four notes and eight rests (or vice versa) in a twelve-beat measure is <i>&zeta;</i>12(4) = 
+<i>&zeta;</i>12(8) = 43 as calculated above. If retrogrades are also considered equivalent, 
+the number drops to <i>&xi;</i>12(4) = <i>&xi;</i>12(8) = 29. Reich&#8217;s <i>Clapping Music</i> in fact 
+consists of rotations of a twelve-beat rhythm with eight attacks. <a href="#haack_1991" id="citation_haack_1991_67dc9b0edd8d6">Haack 1991</a> applies combinatorial techniques to this piece, considering some of the 
+properties of the particular rhythm chosen by Reich and exploring how many other 
+rhythms might have been equally suitable.</p>
+
+<p>[77] <i>2.18. Example: twelve-tone rows, revisited</i>. In section 1.3 we observed that the 
+total number of twelve-tone rows is 12!, and that the number of row classes in 
+classical serial theory is approximately, but not exactly, 1/48 of that number. 
+We now consider ways to make the latter calculation precise.<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup>The group of equivalences is of order 48, consisting of all transposition, inversion, and 
+retrograde operations. It is possible to calculate how many of the 12! rows are 
+fixed by each of these 48 transformations, and thereby to calculate the number 
+of orbits using Burnside&#8217;s Lemma. The process can be simplified considerably, 
+however, because the twelve transpositions of a row are always distinct: no rows 
+are fixed by <i>T<sub>j</sub></i> for <i>j</i> &#8800; 0. Because of this observation, transposition can be 
+effectively eliminated from the calculation. Instead of considering the 12! rows 
+acted upon by a group of order 48, we consider only the 11! <i>T<sub><i>n</i></sub></i> classes of rows 
+acted upon by a group of order 4 consisting of <i>T</i><sub>0</sub> (the identity), <i>I</i>, 
+<i>R</i>, and <i>RI </i>(= <i>IR</i>). Each <i>T<sub><i>n</i></sub></i> class consists of exactly twelve rows, and may be represented by 
+a single row that starts with 0. The number of orbits of the <i>T<sub><i>n</i></sub></i> classes in this 
+simplified setting is the same as the number of orbits of rows in the original 
+situation.</p>
+
+<p>[78] To apply Burnside&#8217;s Lemma we must determine how many <i>T<sub><i>n</i></sub></i> classes are fixed by each of the four transformations in the group. Clearly <i>T</i><sub>0</sub> fixes all 11! <i>T<sub><i>n</i></sub></i> classes, and <i>I</i> fixes none (an inverted form of a row can never be a 
+transposition of the original row). For a <i>T<sub><i>n</i></sub></i> class represented by a row (0, 
+<i>a</i><sub>1</sub>, 
+<i>a</i><sub>2</sub>, <nobr>. . .</nobr>, <i>a</i><sub>11</sub>) to be fixed by <i>R</i>, the retrograde (<i>a</i><sub>11</sub>, 
+<i>a</i><sub>10</sub>, <nobr>. . .</nobr>, <i>a</i><sub>1</sub>, 0) must be some 
+transposition <i>T<sub>j</sub></i> of the row. That is, for some <i>j</i>, the twelve equations</p>
+<p style="text-align: center">0 + <i>j</i> = <i>a</i><sub>11</sub>, <i>a</i><sub>1</sub> + <i>j</i> = 
+<i>a</i><sub>10</sub>, <nobr>. . .</nobr>, <i>a</i><sub>11</sub> + <i>j</i> = 0</p>
+<p>all hold (mod 12). The first equation says that <i>j</i> = <i>a</i><sub>11</sub>; then the last equation 
+implies that <i>j</i> = <i>a</i><sub>11</sub> = 6. (It cannot be 0, since 0 is the first note of the row 
+and <i>a</i><sub>11</sub> is the last.) Retrograde symmetry, therefore, is possible only at the 
+tritone transposition <i>T</i><sub>6</sub>. The second note <i>a</i><sub>1</sub> may be chosen freely from the 
+remaining ten pcs (besides 0 and <i>a</i><sub>11</sub> = 6), but then <i>a</i><sub>10</sub> = <i>a</i><sub>1</sub> + 6 is determined. 
+Continuing in this way, there are eight choices for the third note, six for the 
+fourth, four for the fifth, and two for the sixth, and the second half of the 
+row is determined by these choices. The number of <i>T<sub><i>n</i></sub></i> classes fixed by <i>R</i>, 
+therefore, is 10 &#0183; 8 &#0183; 6 &#0183; 4 &#0183; 2 = 3840. These classes represent only a tiny fraction of 
+the 11! possible <i>T<sub><i>n</i></sub></i> classes, but the rows of Berg&#8217;s 
+<i>Lyric Suite </i>and Webern&#8217;s 
+Symphony, Op. 21 are of this type.</p>
+
+<p>[79] Finally, if a <i>T<sub><i>n</i></sub></i> class represented by (0, <i>a</i><sub>1</sub>, <nobr>. . .</nobr>, <i>a</i><sub>11</sub>) is fixed by <i>RI</i>, the 
+equations become</p>
+<p style="text-align: center">0 + <i>a</i><sub>11</sub> = <i>j</i>, <i>a</i><sub>1</sub> + <i>a</i><sub>10</sub> = <i>j</i>, <nobr>. . .</nobr>, <i>a</i><sub>5</sub> + <i>a</i><sub>6</sub> = <i>j</i></p>
+<p>for some <i>j</i>. Even values of <i>j</i> are impossible: indeed, if <i>j</i> = 2<i>i</i>, then the pitch 
+class <i>i</i> can have no partner with which to sum to <i>j</i>, as the equations require. 
+For any of the six odd values of <i>j</i>, however, the situation is similar to that in 
+the previous paragraph: <i>a</i><sub>11</sub> is determined; <i>a</i><sub>1</sub> can then be chosen from ten 
+options, thereby determining <i>a</i><sub>10</sub>; and so on. The number of <i>T<sub><i>n</i></sub></i> classes fixed by 
+<i>RI</i> is therefore 6 &#0183; 10 &#0183; 8 &#0183; 6 &#0183; 4 &#0183; 2 = 23,040. These classes are theoretically six times 
+as numerous as the <i>R</i>-invariant classes but still rare among all <i>T<sub><i>n</i></sub></i> classes; the 
+rows of Webern&#8217;s String Quartet, Op. 28, Cantata, Op. 29, and Variations, Op. 30 
+are all of this type.<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></p>
+
+<p>[80] By Burnside&#8217;s Lemma, then, the total number of row classes is</p>
+<p style="text-align: center"><img border="0" src="hook_eq38.gif"></p>
+<p>It is not difficult to show, using methods similar to the above, that the number 
+of row classes in an <i>N</i>-note scale is</p>
+<p style="text-align: center"><img border="0" src="hook_eq39.gif"></p>
+
+<p>[81] <i>2.19. Further examples and conclusions</i>. Fripertinger (1993, 5) shows that if <i>N</i> 
+is even, the number of self-complementary <i>N</i>/2-note set classes may be calculated 
+as <i>P<sub>G</sub></i>(0, 2, 0, 2, <nobr>. . .</nobr>)&#8212;that is, by alternately substituting 0 and 2 for the 
+variables <i>t<sub>j</sub></i> in the cycle index of the group of equivalences (which as usual may 
+be either <i>C<sub>N</sub></i> or <i>D<sub>N</sub></i>). One can use this formula together with the cycle index 
+formulas given previously to verify that for <i>N</i> = 12 the number of 
+self-complementary hexachords is 8 if the group of equivalences is <i>C<sub>N</sub></i> (that is, 
+eight <i>T<sub><i>n</i></sub></i> types of hexachords are related to their complements by some <i>T<sub><i>n</i></sub></i>), or 20 
+if the group is <i>D<sub>N</sub></i> (twenty <i>T<sub><i>n</i></sub></i>/<i>T<sub><i>n</i></sub>I</i> types of hexachords are related to their 
+complements by some <i>T<sub><i>n</i></sub></i> and/or <i>T<sub><i>n</i></sub>I</i>).</p>
+
+<p>[82] <a href="#fripertinger_1992_1993" id="citation_fripertinger_1992_1993_67dc9b0edd8e7">Fripertinger 1992, 1993</a> and <a href="#read_1997" id="citation_read_1997_67dc9b0edd8e8">Read 1997</a> give many additional examples of advanced 
+calculations. Among the phenomena for which Fripertinger devises methods of 
+enumeration are <i>k</i>-note row classes mod <i>N</i> (pages 11&#8211;12); all-interval rows (pages 
+13&#8211;17); &#8220;motifs&#8221; involving both pitch and rhythm (pages 18&#8211;20); and Hauer&#8217;s tropes 
+(pages 20&#8211;21). Read (<a href="#read_1997" id="citation_read_1997_67dc9b0edd8ea">1997</a>, 547) enumerates row classes if the group of 
+equivalences is expanded to include rotations. (For <i>N</i> = 12 in this situation, 
+the group is of order 48 &#0183; 12 = 576, and the number of row classes is 836,017. As 
+we should expect, this number is slightly more than 1/12 of the number 
+calculated in the previous section: the size of the group has increased by a 
+factor of exactly 12, but the number of row classes is not precisely divided by 
+12 because a small number of the original row classes are fixed by some nonzero 
+rotation.)</p>
+
+<p>[83] In what may be the most Herculean feat of music-theoretic enumeration on record, 
+Read (<a href="#read_1997" id="citation_read_1997_67dc9b0edd8eb">1997</a>, 548&#8211;51) takes on Stockhausen&#8217;s <i>Klavierst&uuml;ck XI</i>, in which the 
+performer is asked to make successive random choices among 19 fragments of music 
+subject to certain constraints. Through several pages of work with enumeration 
+functions, Read calculates the number of different possible performances of the 
+piece to be no less than</p>
+<p style="text-align: center">17,423,935,148,332,958,167,310,127,282,862,901,334,594.</p>
+<p>Perhaps of more practical interest than this vast number are Read&#8217;s observations 
+about the lengths of the possible performances. The rules imply that the longest 
+possible performance consists of 39 fragments; it turns out that most of the 
+possible performances are close to this maximum length, and in fact the average 
+length of all the possible performances is just over 38 fragments. (This 
+situation recalls a much simpler observation from section 1.2, where we noted 
+that of the melodies with no more than six notes, the great majority have 
+<i>exactly</i> six notes. As was the case there, an enumeration of configurations of 
+variable size is dominated by the configurations of the largest possible size.)</p>
+
+<p>[84] The extravagance of such a calculation recalls the work of Riepel and Galeazzi, 
+who saw immense numbers of possibilities as potential stimuli for musical 
+creativity. Whether one subscribes to this view or not, the recent resurgence in 
+applications of combinatorics to music theory at least aids our understanding of 
+music in several ways. Combinatorial methods offer ways to understand simple and 
+not-so-simple numerical patterns that arise naturally in the discipline, and 
+provide answers to a wide variety of enumeration questions. Familiar concepts 
+are seen in new light, as for instance when a tedious brute-force listing is 
+superseded by an elegant (if esoteric) enumeration procedure, or when early 
+attempts at pc-set classification are reconsidered in the context of groups of 
+equivalences and the corresponding enumeration problems. The methodology 
+employed in these calculations ranges from elementary observations to recent 
+techniques of considerable sophistication, but all of it reaffirms and 
+strengthens the long-standing bond between music and mathematics.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Julian Hook<br>
+	Jacobs School of Music<br>Indiana University<br>Bloomington, IN 47405<br><a href="mailto:juhook@indiana.edu">juhook@indiana.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_benson_2007" class="flyoverdiv">Benson, David J. 2007. <i>Music: A Mathematical Offering</i>. Cambridge, UK: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="benson_2007"></a>Benson, David J. 2007. <i>Music: A Mathematical Offering</i>. Cambridge, UK: Cambridge University Press.</p><div id="citediv_bernard_1997" class="flyoverdiv">Bernard, Jonathan W. 1997. &#8220;Chord, Collection, and Set in Twentieth-Century Theory.&#8221; In <i>Music Theory in Concept and Practice</i>, ed. James M. Baker, David W. Beach, and Jonathan W. Bernard (Rochester: University of Rochester Press), 11&#8211;51.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bernard_1997"></a>Bernard, Jonathan W. 1997. &#8220;Chord, Collection, and Set in Twentieth-Century Theory.&#8221; In <i>Music Theory in Concept and Practice</i>, ed. James M. Baker, David W. Beach, and Jonathan W. Bernard (Rochester: University of Rochester Press), 11&#8211;51.</p><div id="citediv_christensen_1993" class="flyoverdiv">Christensen, Thomas. 1993. <i>Rameau and Musical Thought in the Enlightenment.</i> Cambridge, UK: Cambridge University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="christensen_1993"></a>Christensen, Thomas. 1993. <i>Rameau and Musical Thought in the Enlightenment.</i> Cambridge, UK: Cambridge University Press.</p><div id="citediv_cohen_1978" class="flyoverdiv">Cohen, Daniel I. A. 1978. <i>Basic Techniques of Combinatorial Theory</i>. New York: John Wiley & Sons.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohen_1978"></a>Cohen, Daniel I. A. 1978. <i>Basic Techniques of Combinatorial Theory</i>. New York: John Wiley & Sons.</p><div id="citediv_cohn_1992" class="flyoverdiv">Cohn, Richard. 1992. &#8220;Transpositional Combination of Beat-Class Sets in Steve Reich&#8217;s Phase-Shifting Music.&#8221; <i>Perspectives of New Music</i> 30/2: 146&#8211;77.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cohn_1992"></a>Cohn, Richard. 1992. &#8220;Transpositional Combination of Beat-Class Sets in Steve Reich&#8217;s Phase-Shifting Music.&#8221; <i>Perspectives of New Music</i> 30/2: 146&#8211;77.</p><div id="citediv_clough_1979" class="flyoverdiv">Clough, John. 1979. &#8220;Aspects of Diatonic Sets.&#8221; <i>Journal of Music Theory</i> 23: 45&#8211;61.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="clough_1979"></a>Clough, John. 1979. &#8220;Aspects of Diatonic Sets.&#8221; <i>Journal of Music Theory</i> 23: 45&#8211;61.</p><div id="citediv_cooke_2005" class="flyoverdiv">Cooke, Roger. 2005. <i>The History of Mathematics: A Brief Course</i>, 2nd ed. Hoboken, NJ: John Wiley & Sons.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cooke_2005"></a>Cooke, Roger. 2005. <i>The History of Mathematics: A Brief Course</i>, 2nd ed. Hoboken, NJ: John Wiley & Sons.</p><div id="citediv_cope_2001" class="flyoverdiv">Cope, David. 2001. <i>Virtual Music: Computer Synthesis of Musical Style</i>. Cambridge, MA: MIT Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="cope_2001"></a>Cope, David. 2001. <i>Virtual Music: Computer Synthesis of Musical Style</i>. Cambridge, MA: MIT Press.</p><div id="citediv_dummit_and_foote_2004" class="flyoverdiv">Dummit, David S. and Richard M. Foote. 2004. <i>Abstract Algebra</i>, 3rd ed. Hoboken, NJ: John Wiley & Sons.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="dummit_and_foote_2004"></a>Dummit, David S. and Richard M. Foote. 2004. <i>Abstract Algebra</i>, 3rd ed. Hoboken, NJ: John Wiley & Sons.</p><div id="citediv_forte_1973" class="flyoverdiv">Forte, Allen. 1973. <i>The Structure of Atonal Music</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="forte_1973"></a>Forte, Allen. 1973. <i>The Structure of Atonal Music</i>. New Haven: Yale University Press.</p><div id="citediv_fripertinger_1992_1993" class="flyoverdiv">Fripertinger, Harald. 1992, 1993. &#8220;Enumeration in Musical Theory.&#8221; <i>Beitr&auml;ge zur elektronischen Musik</i> 1 (1992). Available online at <a href='http://www.uni-graz.at/~fripert/publications.html'>http://www.uni-graz.at/~fripert/publications.html</a> (1993 version of paper; accessed 2 October 2007).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fripertinger_1992_1993"></a>Fripertinger, Harald. 1992, 1993. &#8220;Enumeration in Musical Theory.&#8221; <i>Beitr&auml;ge zur elektronischen Musik</i> 1 (1992). Available online at <a href='http://www.uni-graz.at/~fripert/publications.html'>http://www.uni-graz.at/~fripert/publications.html</a> (1993 version of paper; accessed 2 October 2007).</p><div id="citediv_fripertinger_1999" class="flyoverdiv">Fripertinger, Harald. 1999. &#8220;Enumeration and Construction in Music Theory.&#8221; In <i>Diderot Forum on Mathematics and Music: Computational and Mathematical Methods in Music</i>, ed. H. G. Feichtinger and M. D&ouml;rfler (Vienna: &Ouml;sterreichische Computergesellschaft), 179&#8211;204. Available online at <a href='http://www.uni-graz.at/~fripert/publications.html'>http://www.uni-graz.at/~fripert/publications.html</a> (accessed 2 October 2007).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fripertinger_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. &#8220;Enumeration and Construction in Music Theory.&#8221; In <i>Diderot Forum on Mathematics and Music: Computational and Mathematical Methods in Music</i>, ed. H. G. Feichtinger and M. D&ouml;rfler (Vienna: &Ouml;sterreichische Computergesellschaft), 179&#8211;204. Available online at <a href='http://www.uni-graz.at/~fripert/publications.html'>http://www.uni-graz.at/~fripert/publications.html</a> (accessed 2 October 2007).</p><div id="citediv_haack_1991" class="flyoverdiv">Haack, Joel K. 1991. &#8220;Clapping Music&#8212;A Combinatorial Problem.&#8221; <i>College Mathematics Journal</i> 22: 224&#8211;27.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="haack_1991"></a>Haack, Joel K. 1991. &#8220;Clapping Music&#8212;A Combinatorial Problem.&#8221; <i>College Mathematics Journal</i> 22: 224&#8211;27.</p><div id="citediv_hardy_and_wright_1979" class="flyoverdiv">Hardy, G. H. and E. M. Wright. 1979. <i>An Introduction to the Theory of Numbers</i>, 5th ed. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hardy_and_wright_1979"></a>Hardy, G. H. and E. M. Wright. 1979. <i>An Introduction to the Theory of Numbers</i>, 5th ed. Oxford: Oxford University Press.</p><div id="citediv_helm_1966" class="flyoverdiv">Helm, E. Eugene. 1966. &#8220;Six Random Measures of C. P. E. Bach.&#8221; <i>Journal of Music Theory</i> 10: 139&#8211;51.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="helm_1966"></a>Helm, E. Eugene. 1966. &#8220;Six Random Measures of C. P. E. Bach.&#8221; <i>Journal of Music Theory</i> 10: 139&#8211;51.</p><div id="citediv_hunter_and_von_hippel_2003" class="flyoverdiv">Hunter, David J. and Paul T. von Hippel. 2003. &#8220;How Rare is Symmetry in Musical 12-Tone Rows?&#8221; <i>American Mathematical Monthly</i> 110: 124&#8211;32.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="hunter_and_von_hippel_2003"></a>Hunter, David J. and Paul T. von Hippel. 2003. &#8220;How Rare is Symmetry in Musical 12-Tone Rows?&#8221; <i>American Mathematical Monthly</i> 110: 124&#8211;32.</p><div id="citediv_jedrzejewski_2006" class="flyoverdiv">Jedrzejewski, Franck. 2006. <i>Mathematical Theory of Music</i>. Paris: Editions Delatour France.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="jedrzejewski_2006"></a>Jedrzejewski, Franck. 2006. <i>Mathematical Theory of Music</i>. Paris: Editions Delatour France.</p><div id="citediv_knobloch_2002" class="flyoverdiv">Knobloch, Eberhard. 2002. &#8220;The Sounding Algebra: Relations Between Combinatorics and Music from Mersenne to Euler.&#8221; In <i>Mathematics and Music: A Diderot Mathematical Forum</i>, ed. Gerard Assayag, Hans Georg Feichtinger, and Jos&eacute; Francisco Rodrigues (Berlin: Springer), 27&#8211;48.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="knobloch_2002"></a>Knobloch, Eberhard. 2002. &#8220;The Sounding Algebra: Relations Between Combinatorics and Music from Mersenne to Euler.&#8221; In <i>Mathematics and Music: A Diderot Mathematical Forum</i>, ed. Gerard Assayag, Hans Georg Feichtinger, and Jos&eacute; Francisco Rodrigues (Berlin: Springer), 27&#8211;48.</p><div id="citediv_kupper_1994&ndash;95" class="flyoverdiv">Kupper, Hubert. 1994&#8211;95. &#8220;<i>Der allezeit fertige Polonaisen- und Menuettencomponist</i> von Johann Philipp Kirnberger.&#8221; Available online at <a href='http://www.musikwissenschaft.uni-mainz.de/Musikinformatik/schriftenreihe/nr15/Kirnframe.html'>http://www.musikwissenschaft.uni-mainz.de/Musikinformatik/schriftenreihe/nr15/Kirnframe.html</a> (accessed 2 October 2007).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="kupper_1994&ndash;95"></a>Kupper, Hubert. 1994&#8211;95. &#8220;<i>Der allezeit fertige Polonaisen- und Menuettencomponist</i> von Johann Philipp Kirnberger.&#8221; Available online at <a href='http://www.musikwissenschaft.uni-mainz.de/Musikinformatik/schriftenreihe/nr15/Kirnframe.html'>http://www.musikwissenschaft.uni-mainz.de/Musikinformatik/schriftenreihe/nr15/Kirnframe.html</a> (accessed 2 October 2007).</p><div id="citediv_lester_1992" class="flyoverdiv">Lester, Joel. 1992. <i>Compositional Theory in the Eighteenth Century</i>. Cambridge, MA: Harvard University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lester_1992"></a>Lester, Joel. 1992. <i>Compositional Theory in the Eighteenth Century</i>. Cambridge, MA: Harvard University Press.</p><div id="citediv_lewin_1987" class="flyoverdiv">Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="lewin_1987"></a>Lewin, David. 1987. <i>Generalized Musical Intervals and Transformations</i>. New Haven: Yale University Press.</p><div id="citediv_mandelbaum_1961" class="flyoverdiv">Mandelbaum, M. Joel. 1961. &#8220;Multiple Division of the Octave and the Tonal Resources of 19-Tone Temperament.&#8221; Ph.D. dissertation, Indiana University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="mandelbaum_1961"></a>Mandelbaum, M. Joel. 1961. &#8220;Multiple Division of the Octave and the Tonal Resources of 19-Tone Temperament.&#8221; Ph.D. dissertation, Indiana University.</p><div id="citediv_morris_1987" class="flyoverdiv">Morris, Robert D. 1987. <i>Composition with Pitch-Classes: A Theory of Compositional Design</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1987"></a>Morris, Robert D. 1987. <i>Composition with Pitch-Classes: A Theory of Compositional Design</i>. New Haven: Yale University Press.</p><div id="citediv_morris_1991" class="flyoverdiv">Morris, Robert D. 1991. <i>Class Notes for Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. <i>Class Notes for Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</p><div id="citediv_morris_2001" class="flyoverdiv">Morris, Robert D. 2001. <i>Class Notes for Advanced Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="morris_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. <i>Class Notes for Advanced Atonal Music Theory</i>. Lebanon, NH: Frog Peak Music.</p><div id="citediv_nolan_2003" class="flyoverdiv">Nolan, Catherine. 2003. &#8220;Combinatorial Space in Nineteenth- and Early Twentieth-Century Music Theory.&#8221; <i>Music Theory Spectrum</i> 25: 205&#8211;41.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="nolan_2003"></a>Nolan, Catherine. 2003. &#8220;Combinatorial Space in Nineteenth- and Early Twentieth-Century Music Theory.&#8221; <i>Music Theory Spectrum</i> 25: 205&#8211;41.</p><div id="citediv_p&oacute;lya_1937" class="flyoverdiv">P&oacute;lya, George. 1937. &#8220;Kombinatorische Anzahlbestimmungen f&uuml;r Gruppen, Graphen und chemische Verbindungen.&#8221; <i>Acta Mathematica</i> 68: 145&#8211;254.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="p&oacute;lya_1937"></a>P&oacute;lya, George. 1937. &#8220;Kombinatorische Anzahlbestimmungen f&uuml;r Gruppen, Graphen und chemische Verbindungen.&#8221; <i>Acta Mathematica</i> 68: 145&#8211;254.</p><div id="citediv_p&oacute;lya_2004" class="flyoverdiv">P&oacute;lya, George. 2004 [1945]. <i>How to Solve It: A New Aspect of Mathematical Method</i>. Princeton, NJ: Princeton University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="p&oacute;lya_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004 [1945]. <i>How to Solve It: A New Aspect of Mathematical Method</i>. Princeton, NJ: Princeton University Press.</p><div id="citediv_p&oacute;lya_tarjan_and_woods_1983" class="flyoverdiv">P&oacute;lya, George, Robert E. Tarjan, and Donald R. Woods. 1983. <i>Notes on Introductory Combinatorics</i>. Boston: Birkh&auml;user.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="p&oacute;lya_tarjan_and_woods_1983"></a>P&oacute;lya, George, Robert E. Tarjan, and Donald R. Woods. 1983. <i>Notes on Introductory Combinatorics</i>. Boston: Birkh&auml;user.</p><div id="citediv_rahn_1980" class="flyoverdiv">Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Longman.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="rahn_1980"></a>Rahn, John. 1980. <i>Basic Atonal Theory</i>. New York: Longman.</p><div id="citediv_ratner_1970" class="flyoverdiv">Ratner, Leonard. 1970. &#8220;<i>Ars combinatoria</i>: Chance and Choice in Eighteenth-Century Music.&#8221; In <i>Studies in Eighteenth-Century Music</i>, ed. H. C. Robbins Landon and Roger E. Chapman (New York: Oxford University Press), 343&#8211;63.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ratner_1970"></a>Ratner, Leonard. 1970. &#8220;<i>Ars combinatoria</i>: Chance and Choice in Eighteenth-Century Music.&#8221; In <i>Studies in Eighteenth-Century Music</i>, ed. H. C. Robbins Landon and Roger E. Chapman (New York: Oxford University Press), 343&#8211;63.</p><div id="citediv_ratner_1980" class="flyoverdiv">Ratner, Leonard. 1980. <i>Classic Music: Expression, Form, and Style</i>. New York: Macmillan.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="ratner_1980"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1980. <i>Classic Music: Expression, Form, and Style</i>. New York: Macmillan.</p><div id="citediv_read_1997" class="flyoverdiv">Read, R. C. 1997. &#8220;Combinatorial Problems in the Theory of Music.&#8221; <i>Discrete Mathematics</i> 167&#8211;168: 543&#8211;51.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="read_1997"></a>Read, R. C. 1997. &#8220;Combinatorial Problems in the Theory of Music.&#8221; <i>Discrete Mathematics</i> 167&#8211;168: 543&#8211;51.</p><div id="citediv_reiner_1985" class="flyoverdiv">Reiner, David L. 1985. &#8220;Enumeration in Music Theory.&#8221; <i>American Mathematical Monthly</i> 92: 51&#8211;54.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="reiner_1985"></a>Reiner, David L. 1985. &#8220;Enumeration in Music Theory.&#8221; <i>American Mathematical Monthly</i> 92: 51&#8211;54.</p><div id="citediv_riordan_1958" class="flyoverdiv">Riordan, John. 1958. <i>An Introduction to Combinatorial Analysis</i>. New York: John Wiley & Sons.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="riordan_1958"></a>Riordan, John. 1958. <i>An Introduction to Combinatorial Analysis</i>. New York: John Wiley & Sons.</p><div id="citediv_roeder_2003" class="flyoverdiv">Roeder, John. 2003. &#8220;Beat-Class Modulation in Steve Reich&#8217;s Music.&#8221; <i>Music Theory Spectrum</i> 25: 275&#8211;304.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="roeder_2003"></a>Roeder, John. 2003. &#8220;Beat-Class Modulation in Steve Reich&#8217;s Music.&#8221; <i>Music Theory Spectrum</i> 25: 275&#8211;304.</p><div id="citediv_straus_2005" class="flyoverdiv">Straus, Joseph N. 2005. <i>Introduction to Post-Tonal Theory</i>, 3rd ed. Upper Saddle River, NJ: Pearson Prentice Hall.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="straus_2005"></a>Straus, Joseph N. 2005. <i>Introduction to Post-Tonal Theory</i>, 3rd ed. Upper Saddle River, NJ: Pearson Prentice Hall.</p><div id="citediv_struik_1967" class="flyoverdiv">Struik, Dirk J. 1967. <i>A Concise History of Mathematics</i>, 3rd ed. New York: Dover.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="struik_1967"></a>Struik, Dirk J. 1967. <i>A Concise History of Mathematics</i>, 3rd ed. New York: Dover.</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	           <p><a name="FN0">*</a> Some of the material in this article was presented at a Special Session on Mathematical Techniques in Musical Analysis at the Joint Mathematics Meetings in Phoenix in 2004.<br><a href="#FN0REF">Return to text</a></p><div id="fndiv0" class="flyoverdiv">Some of the material in this article was presented at a Special Session on Mathematical Techniques in Musical Analysis at the Joint Mathematics Meetings in Phoenix in 2004.</div><p><a name="FN1">1.</a> The fundamentals of combinatorics are summarized in many texts in &#8220;discrete mathematics&#8221; as well as more specialized texts in combinatorics. <a href="#cohen_1978" id="citation_cohen_1978_67dc9b0ed766c">Cohen 1978</a> is both thorough and reader-friendly.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> There are numerous published histories of mathematics. <a href="#struik_1967" id="citation_struik_1967_67dc9b0ed7673">Struik 1967</a> is compact and widely available; much of the information given here is from the more comprehensive <a href="#cooke_2005" id="citation_cooke_2005_67dc9b0ed7677">Cooke 2005</a>, especially pages 210&#8211;19.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> A little reflection shows that 1 is the only mathematically reasonable way for 8<sup>0</sup> (or 
+<i><i>n</i></i><sup>0</sup>) to be defined. Just as the &#8220;sum of zero terms&#8221; is 0 (the additive identity), the &#8220;product of zero factors&#8221; must be 1 (the multiplicative identity). This definition together with the definition 
+<i><i>n</i><sup>&#8211;k</sup></i> = 1/<i>n<sup>k</i></sup> for negative exponents ensures that a sequence of numbers such as <nobr>. . .</nobr> 8<sup>&#8211;2</sup> = 1/64, 8<sup>&#8211;1</sup> = 1/8, 8<sup>0</sup> = 1, 8<sup>1</sup> = 8, 8<sup>2</sup> = 64, <nobr>. . .</nobr> is a &#8220;geometric sequence&#8221; whose successive terms are always related by factors of 8. For similar reasons, 0! (0 factorial) is defined to be 1 also.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> For mathematical approaches to music in the eighteenth century as a reflection of the temper of their time, see <a href="#christensen_1993" id="citation_christensen_1993_67dc9b0ed767b">Christensen 1993</a>, 103&#8211;06. For more examples of specifically combinatorial approaches, see <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed767e">Ratner 1970</a>; <a href="#ratner_1980" id="citation_ratner_1980_67dc9b0ed7681">Ratner 1980</a>, 98&#8211;102; <a href="#lester_1992" id="citation_lester_1992_67dc9b0ed7684">Lester 1992</a>, 226&#8211;29; and <a href="#knobloch_2002" id="citation_knobloch_2002_67dc9b0ed7687">Knobloch 2002</a>.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Quoted in <a href="#lester_1992" id="citation_lester_1992_67dc9b0ed768a">Lester 1992</a>, 226.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Quoted in <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed768d">Ratner 1970</a>, 348. Galeazzi constructs lengthy melodies in several stages, first choosing a few notes literally at random and eventually superimposing other elements such as rhythm. He calculates the possibilities for melodies available by his method to be an immense number of 24 digits.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> The <i>Musikalische W&uuml;rfelspiel</i> attributed to Mozart was published in 1793 and reprinted under his name by B. Schott, Mainz, in 1956. Dice games are discussed in more detail in <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed7690">Ratner 1970</a>. Several online implementations of dice games are available. Particularly noteworthy is <a href="#kupper_1994&ndash;95" id="citation_kupper_1994&ndash;95_67dc9b0ed7694">Kupper 1994&ndash;95</a>, which includes facsimiles of Kirnberger&#8217;s complete pamphlet along with an extended discussion.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Uniquely among the eighteenth-century dice games, C. P. E. Bach&#8217;s 
+<i>Einfall, einen doppelten Contrapunct in der Octave von sechs Takten zu machen, ohne die Regeln davon zu wissen</i> of 1757 is based not upon a harmonic pattern but upon a two-voice contrapuntal model. Bach&#8217;s method, in which the two voices are generated independently, is described in detail in <a href="#helm_1966" id="citation_helm_1966_67dc9b0ed7697">Helm 1966</a>. Helm calculates that the game produces 9<sup>12</sup> = 282,429,536,481 possible compositions, but this calculation overlooks the fact that the nine versions of the lower voice in the last measure are identical; the correct total is 9<sup>11</sup> = 31,381,059,609.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Transformation groups have enjoyed wide exposure in music theory through the work of David Lewin (<a href="#lewin_1987" id="citation_lewin_1987_67dc9b0ed769c">1987</a>) and his many followers. For basic group theory the reader may consult any abstract algebra text such as <a href="#dummit_and_foote_2004" id="citation_dummit_and_foote_2004_67dc9b0ed76a0">Dummit and Foote 2004</a>.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Burnside&#8217;s Lemma is named for William S. Burnside, who published it in 1897, but the result was known to earlier mathematicians, notably Augustin Cauchy as early as the 1840s.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Hungarian-born mathematician George P&oacute;lya (1887&#8211;1985) made important contributions to many branches of mathematics. Renowned also as a teacher and writer, P&oacute;lya authored the widely-read and often-reprinted book of problem-solving strategies titled <i>How to Solve It</i> (<a href="#p&oacute;lya_2004" id="citation_p&oacute;lya_2004_67dc9b0ed76a4">2004</a>). P&oacute;lya published the enumeration theorem in <a href="#p&oacute;lya_1937" id="citation_p&oacute;lya_1937_67dc9b0ed76a7">1937</a>, motivated by a problem in chemistry: his goal was to enumerate chemical compounds subject to various constraints on molecular structure. P&oacute;lya&#8217;s own approach to teaching combinatorics is described in <a href="#p&oacute;lya_tarjan_and_woods_1983" id="citation_p&oacute;lya_tarjan_and_woods_1983_67dc9b0ed76ac">P&oacute;lya, Tarjan, and Woods 1983</a>.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> These formulas appear in <a href="#reiner_1985" id="citation_reiner_1985_67dc9b0ed76af">Reiner 1985</a>, 52&#8211;53 and <a href="#fripertinger_1992_1993" id="citation_fripertinger_1992_1993_67dc9b0ed76b4">Fripertinger 1992, 1993</a>, 4. Reiner&#8217;s formula for the cycle index of the dihedral group contains a misprint; the formula given here is correct.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> The function <i>&phi;</i> is well-known in number theory and has many interesting properties and applications; see <a href="#hardy_and_wright_1979" id="citation_hardy_and_wright_1979_67dc9b0ed76b7">Hardy and Wright 1979</a>, 54ff. Calculation of <i>&phi;</i> is simplified by the following multiplicative property: if <i>m</i> and <i>n</i> are coprime, then <i>&phi;</i>(<i>mn</i>) = <i>&phi;</i>(<i>m</i>)<i>&phi;</i>(<i>n</i>). For example, 3 and 8 are coprime; <i>&phi;</i>(3) = 2 because the two integers 1 and 2 are both coprime to 3; <i>&phi;</i>(8) = 4 because the four integers 1, 3, 5, and 7 are each coprime to 8; and therefore <i>&phi;</i>(24) = <i>&phi;</i>(3  &#0183; 8) = <i>&phi;</i>(3)  &#0183; 
+<i>&phi;</i></i>(8) = 2  &#0183; 4 = 8. Indeed, the eight integers &#8804; 24 that are coprime to 24 are 1, 5, 7, 11, 13, 17, 19, and 23.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Mandelbaum (<a href="#mandelbaum_1961" id="citation_mandelbaum_1961_67dc9b0ed76ba">1961</a>, 251) has proposed that &#8220;it is conceivable that there was a point around <nobr>. . .</nobr> Zarlino&#8217;s time when music might have evolved as easily toward 19-tone temperament as toward 12-.&#8221; It is interesting to speculate about how much more difficult the classification of pc-sets would have been had such a scenario come to pass.<br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> The number of row classes can be calculated by elementary means in rather painstaking fashion. Whether a row class consists of 24 or 48 rows depends on the symmetry of the two hexachords. It is possible to determine, for each of the 50 hexachord classes, how many row classes of each cardinality arise. The much shorter calculation presented here, using Burnside&#8217;s Lemma, is based on <a href="#reiner_1985" id="citation_reiner_1985_67dc9b0ed76be">Reiner 1985</a>. A rather different algebraic proof appears in <a href="#hunter_and_von_hippel_2003" id="citation_hunter_and_von_hippel_2003_67dc9b0ed76c1">Hunter and von Hippel 2003</a>, 129.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> <a href="#hunter_and_von_hippel_2003" id="citation_hunter_and_von_hippel_2003_67dc9b0ed76c4">Hunter and von Hippel 2003</a> offer statistical confirmation that twelve-tone composers choose symmetrical rows far more often than random selection would dictate.<br><a href="#FN16REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The fundamentals of combinatorics are summarized in many texts in &#8220;discrete mathematics&#8221; as well as more specialized texts in combinatorics. <a href="#cohen_1978" id="citation_cohen_1978_67dc9b0ed766c">Cohen 1978</a> is both thorough and reader-friendly.</div><div id="fndiv2" class="flyoverdiv">There are numerous published histories of mathematics. <a href="#struik_1967" id="citation_struik_1967_67dc9b0ed7673">Struik 1967</a> is compact and widely available; much of the information given here is from the more comprehensive <a href="#cooke_2005" id="citation_cooke_2005_67dc9b0ed7677">Cooke 2005</a>, especially pages 210&#8211;19.</div><div id="fndiv3" class="flyoverdiv">A little reflection shows that 1 is the only mathematically reasonable way for 80 (or 
+<i><i>n</i></i>0) to be defined. Just as the &#8220;sum of zero terms&#8221; is 0 (the additive identity), the &#8220;product of zero factors&#8221; must be 1 (the multiplicative identity). This definition together with the definition 
+<i><i>n</i>&#8211;k</i> = 1/<i>nk</i> for negative exponents ensures that a sequence of numbers such as . . . 8&#8211;2 = 1/64, 8&#8211;1 = 1/8, 80 = 1, 81 = 8, 82 = 64, . . . is a &#8220;geometric sequence&#8221; whose successive terms are always related by factors of 8. For similar reasons, 0! (0 factorial) is defined to be 1 also.</div><div id="fndiv4" class="flyoverdiv">For mathematical approaches to music in the eighteenth century as a reflection of the temper of their time, see <a href="#christensen_1993" id="citation_christensen_1993_67dc9b0ed767b">Christensen 1993</a>, 103&#8211;06. For more examples of specifically combinatorial approaches, see <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed767e">Ratner 1970</a>; <a href="#ratner_1980" id="citation_ratner_1980_67dc9b0ed7681">Ratner 1980</a>, 98&#8211;102; <a href="#lester_1992" id="citation_lester_1992_67dc9b0ed7684">Lester 1992</a>, 226&#8211;29; and <a href="#knobloch_2002" id="citation_knobloch_2002_67dc9b0ed7687">Knobloch 2002</a>.</div><div id="fndiv5" class="flyoverdiv">Quoted in <a href="#lester_1992" id="citation_lester_1992_67dc9b0ed768a">Lester 1992</a>, 226.</div><div id="fndiv6" class="flyoverdiv">Quoted in <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed768d">Ratner 1970</a>, 348. Galeazzi constructs lengthy melodies in several stages, first choosing a few notes literally at random and eventually superimposing other elements such as rhythm. He calculates the possibilities for melodies available by his method to be an immense number of 24 digits.</div><div id="fndiv7" class="flyoverdiv">The <i>Musikalische W&uuml;rfelspiel</i> attributed to Mozart was published in 1793 and reprinted under his name by B. Schott, Mainz, in 1956. Dice games are discussed in more detail in <a href="#ratner_1970" id="citation_ratner_1970_67dc9b0ed7690">Ratner 1970</a>. Several online implementations of dice games are available. Particularly noteworthy is <a href="#kupper_1994&ndash;95" id="citation_kupper_1994&ndash;95_67dc9b0ed7694">Kupper 1994&ndash;95</a>, which includes facsimiles of Kirnberger&#8217;s complete pamphlet along with an extended discussion.</div><div id="fndiv8" class="flyoverdiv">Uniquely among the eighteenth-century dice games, C. P. E. Bach&#8217;s 
+<i>Einfall, einen doppelten Contrapunct in der Octave von sechs Takten zu machen, ohne die Regeln davon zu wissen</i> of 1757 is based not upon a harmonic pattern but upon a two-voice contrapuntal model. Bach&#8217;s method, in which the two voices are generated independently, is described in detail in <a href="#helm_1966" id="citation_helm_1966_67dc9b0ed7697">Helm 1966</a>. Helm calculates that the game produces 912 = 282,429,536,481 possible compositions, but this calculation overlooks the fact that the nine versions of the lower voice in the last measure are identical; the correct total is 911 = 31,381,059,609.</div><div id="fndiv9" class="flyoverdiv">Transformation groups have enjoyed wide exposure in music theory through the work of David Lewin (<a href="#lewin_1987" id="citation_lewin_1987_67dc9b0ed769c">1987</a>) and his many followers. For basic group theory the reader may consult any abstract algebra text such as <a href="#dummit_and_foote_2004" id="citation_dummit_and_foote_2004_67dc9b0ed76a0">Dummit and Foote 2004</a>.</div><div id="fndiv10" class="flyoverdiv">Burnside&#8217;s Lemma is named for William S. Burnside, who published it in 1897, but the result was known to earlier mathematicians, notably Augustin Cauchy as early as the 1840s.</div><div id="fndiv11" class="flyoverdiv">Hungarian-born mathematician George P&oacute;lya (1887&#8211;1985) made important contributions to many branches of mathematics. Renowned also as a teacher and writer, P&oacute;lya authored the widely-read and often-reprinted book of problem-solving strategies titled <i>How to Solve It</i> (<a href="#p&oacute;lya_2004" id="citation_p&oacute;lya_2004_67dc9b0ed76a4">2004</a>). P&oacute;lya published the enumeration theorem in <a href="#p&oacute;lya_1937" id="citation_p&oacute;lya_1937_67dc9b0ed76a7">1937</a>, motivated by a problem in chemistry: his goal was to enumerate chemical compounds subject to various constraints on molecular structure. P&oacute;lya&#8217;s own approach to teaching combinatorics is described in <a href="#p&oacute;lya_tarjan_and_woods_1983" id="citation_p&oacute;lya_tarjan_and_woods_1983_67dc9b0ed76ac">P&oacute;lya, Tarjan, and Woods 1983</a>.</div><div id="fndiv12" class="flyoverdiv">These formulas appear in <a href="#reiner_1985" id="citation_reiner_1985_67dc9b0ed76af">Reiner 1985</a>, 52&#8211;53 and <a href="#fripertinger_1992_1993" id="citation_fripertinger_1992_1993_67dc9b0ed76b4">Fripertinger 1992, 1993</a>, 4. Reiner&#8217;s formula for the cycle index of the dihedral group contains a misprint; the formula given here is correct.</div><div id="fndiv13" class="flyoverdiv">The function <i>&phi;</i> is well-known in number theory and has many interesting properties and applications; see <a href="#hardy_and_wright_1979" id="citation_hardy_and_wright_1979_67dc9b0ed76b7">Hardy and Wright 1979</a>, 54ff. Calculation of <i>&phi;</i> is simplified by the following multiplicative property: if <i>m</i> and <i>n</i> are coprime, then <i>&phi;</i>(<i>mn</i>) = <i>&phi;</i>(<i>m</i>)<i>&phi;</i>(<i>n</i>). For example, 3 and 8 are coprime; <i>&phi;</i>(3) = 2 because the two integers 1 and 2 are both coprime to 3; <i>&phi;</i>(8) = 4 because the four integers 1, 3, 5, and 7 are each coprime to 8; and therefore <i>&phi;</i>(24) = <i>&phi;</i>(3  &#0183; 8) = <i>&phi;</i>(3)  &#0183; 
+<i>&phi;</i></i>(8) = 2  &#0183; 4 = 8. Indeed, the eight integers &#8804; 24 that are coprime to 24 are 1, 5, 7, 11, 13, 17, 19, and 23.</div><div id="fndiv14" class="flyoverdiv">Mandelbaum (<a href="#mandelbaum_1961" id="citation_mandelbaum_1961_67dc9b0ed76ba">1961</a>, 251) has proposed that &#8220;it is conceivable that there was a point around . . . Zarlino&#8217;s time when music might have evolved as easily toward 19-tone temperament as toward 12-.&#8221; It is interesting to speculate about how much more difficult the classification of pc-sets would have been had such a scenario come to pass.</div><div id="fndiv15" class="flyoverdiv">The number of row classes can be calculated by elementary means in rather painstaking fashion. Whether a row class consists of 24 or 48 rows depends on the symmetry of the two hexachords. It is possible to determine, for each of the 50 hexachord classes, how many row classes of each cardinality arise. The much shorter calculation presented here, using Burnside&#8217;s Lemma, is based on <a href="#reiner_1985" id="citation_reiner_1985_67dc9b0ed76be">Reiner 1985</a>. A rather different algebraic proof appears in <a href="#hunter_and_von_hippel_2003" id="citation_hunter_and_von_hippel_2003_67dc9b0ed76c1">Hunter and von Hippel 2003</a>, 129.</div><div id="fndiv16" class="flyoverdiv"><a href="#hunter_and_von_hippel_2003" id="citation_hunter_and_von_hippel_2003_67dc9b0ed76c4">Hunter and von Hippel 2003</a> offer statistical confirmation that twelve-tone composers choose symmetrical rows far more often than random selection would dictate.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2007 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Stefanie Acevedo, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="3270236"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="cd2ef743"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/3270236/0/cd2ef743/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

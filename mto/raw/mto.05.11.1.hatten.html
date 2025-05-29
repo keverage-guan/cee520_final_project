@@ -1,0 +1,667 @@
+﻿ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 11.1: Hatten, Review of Programming the Absolute</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Berthold Hoeckner, <i>Programming the Absolute: 
+	Nineteenth-Century German Music and the Hermeneutics of the Moment</i> 
+	(Princeton University Press, 2002)">
+
+    <meta name="citation_author" content="Hatten, Robert S.">
+      
+
+<meta name="citation_publication_date" content="2005/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="11">
+<meta name="citation_issue" content="1">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Berthold Hoeckner, <i>Programming the Absolute: 
+	Nineteenth-Century German Music and the Hermeneutics of the Moment</i> 
+	(Princeton University Press, 2002)
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.05.11.1/mto.05.11.1.hatten.html"><img src="https://www.mtosmt.org/gifs/mto_classic3.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Robert S. Hatten</a></font></span></h2><br><br>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.05.11.1/mto.05.11.1.hatten.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received August 2004</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 11, Number 1, March 2005 <br> Copyright &#0169; 2005 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] &ldquo;Hats off,&rdquo; as Schumann<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> would say, to an ingenious scholar who has imaginatively adapted Adorno&rsquo;s philosophy of music to his own hermeneutic reading of significant events in works by Beethoven, Schumann, Liszt, Wagner, Mahler, and Schoenberg. Berthold Hoeckner, Associate Professor of Music and the Humanities at the University of Chicago, offers an &ldquo;essayistic musicology&rdquo; guided by a &ldquo;hermeneutics of the moment&rdquo; that focuses interpretation on culminating points of expressive or dramatic meaning in a work&mdash;moments that are also emblematic of crucial stages in an unfolding critical history of German music and cultural ideology from early Romanticism to early modernism.
+<p>[2] Hoeckner&rsquo;s interpretive method draws insights from close analysis, historical research, and a network of associations among music, literature, and the fine arts. In the course of elaborating the profound meaning of a musical moment, he traces these potential linkages among artworks and other cultural manifestations as fluidly as a &ldquo;Magister Ludi&rdquo; absorbed in an intricate &ldquo;glass bead game,&rdquo; to recall Hermann Hesse&rsquo;s 
+memorable conceit.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Hoeckner&rsquo;s quest for meaning privileges certain Romantic images, such as &ldquo;distance,&rdquo; &ldquo;gaze,&rdquo; &ldquo;<i>Augenblick</i> (moment or glance)&rdquo; and &ldquo;E/echo,&rdquo; that are not only given thematic significance across the fine arts, but are also metaphysically developed throughout the course of German cultural history. 
+</p>
+<p>[3] The interpretive appeal of Hoeckner&rsquo;s project may serve as a wake-up call to those who would dismiss this aspect of the European humanistic tradition by erroneously associating it with the &ldquo;old musicology&rdquo; of more positivist scholars, many of whom left Germany to escape the Nazis, and who in turn helped establish American musicology as a discipline (xv). Hoeckner makes a strong case for the revitalization of traditional hermeneutic inquiry by preserving and updating a style of musicological inquiry and discourse that was previously renovated by Carl Dahlhaus and paralleled by Joseph Kerman&rsquo;s call for a new form of music criticism.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> Indeed, Hoeckner&rsquo;s virtuosic essays may at times call to mind certain &ldquo;new musicological&rdquo; interpretive practices. But Hoeckner&rsquo;s interpretive project, as informed by Adorno&rsquo;s philosophy, is more complex, and his eloquent prose may appear daunting in its density of ideas and frequent shifts among levels of musical, cultural, and historical meaning. If, as I believe, this is a book theorists as well as musicologists should be reading, it is also a book that American theorists may resist, in part because its philosophical roots and literary style are unfamiliar.
+</p>
+<p>[4] Consider, from the outset, the many ways that Hoeckner construes his &ldquo;hermeneutics of the moment.&rdquo; Hermeneutics as an approach to literary texts stems from Friedrich Schleiermacher (1768&ndash;1834), the Protestant theologian and philologist who developed a sophisticated theory of interpretation applicable to any verbal text.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Schleiermacher&rsquo;s hermeneutic approach privileges certain striking events in an artwork as crucial 
+<i>parts</i> that reflect the significance of the <i>whole.</i><sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Hoeckner privileges such musical events as &ldquo;moments&rdquo; that play an even more central role in his interpretations&mdash;whether as epiphany, dramatic reversal, or recognition. As he reminds us, &ldquo;<i>Moment,</i> in German, means both instant (<i>Augenblick</i>) and part (<i>Bestandteil</i>)&rdquo; (4). Adorno&rsquo;s &ldquo;aesthetics of the moment&rdquo; not only invests these moments with the power to stand for the whole,<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> but metaphorically conceives of the artwork itself as a moment, in which music captures the absoluteness of an infinite meaning (7). Hoeckner finds this notion of the &ldquo;absolutizing&rdquo; of the individual moment most clearly in Novalis (6), but also implicitly in the various tropes of both Romantic and modern writers:
+</p>
+<blockquote>The experience of suddenness and the sudden experience, especially, are central to modern aesthetic consciousness: the infinite irony in Schlegel, the diagnostic astonishment in Kleist, the demonic appearance in Kierkegaard, the abrupt aphorism in Nietzsche, the aesthetic ecstasy in Pater, the involuntary memory in Proust, the pure instant in Woolf, the experiential epiphany in Joyce, the &ldquo;other state&rdquo; in Musil, the constellation in Benjamin, and, of course, the celestial apparition in Adorno (7).<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> 
+</blockquote>
+<p>But Hoeckner distances himself (4&ndash;5) from the simplistic hermeneutics of Hermann 
+Kretzschmar, an early 20th-century music scholar who popularized hermeneutics as a label for a type of music-semantic interpretation.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup> Instead, Hoeckner defends his own interpretive approach by analogy to the implied hermeneutics found in the analytical discourse of Heinrich Schenker (229&ndash;30), a theorist who pointedly distanced himself from 
+Kretzschmar&rsquo;s mode of interpretation.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup></p>
+<p>[5] Hoeckner&rsquo;s personal mode of critical discourse is generous enough to embrace a wider range of influences, and even the omnipresent Adorno is not incorporated without some degree of critical distance. But Adorno&rsquo;s aesthetics of the moment is strongly exemplified in Hoeckner&rsquo;s style of writing, which features its own rhetorical &ldquo;moments&rdquo;: clinching interpretive insights that appear as climaxes to a series of coalescing cross-cultural references, associations, and tropes. The excitement of these moments of cumulative, often intertextual, insight may leave the reader reluctant to weigh the relevance and strength of each link as actual evidence for a coherent argument.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> Indeed, Hoeckner&rsquo;s discourse is often characterized by a flow that is more literary and associative than logical or systematic. Although at times a creative and poetic insight can indeed count for more than a tedious theoretical argument or syntactic analysis, it is in this context that one must consider his quest for an &ldquo;essayistic musicology&rdquo; (of which I will have more to say below). 
+</p>
+<p>[6] The musical moments Hoeckner highlights are further magnified, not only as &ldquo;momentous&rdquo; for an intertextually enhanced critical discourse, but as marked allegorical moments in the history of German music (their place in a composer&rsquo;s aesthetics, or their critical consequences for the history of Romantic to early modernist German music). Ultimately (perhaps inevitably) these moments are sounded for their resonance in the political history of the German nation, from its nineteenth-century formation in the wake of Napoleon&rsquo;s downfall to its self-examination in the aftermath of WWII (coming to terms with defeat, destruction, and the Holocaust). In keeping all of these associative levels active, Hoeckner displays to a remarkable degree the &ldquo;infinite agility&rdquo; so admired by the Romantics, and so crucial to their melding of art and criticism.
+</p>
+<p>[7] A model for this ascending ladder of musical, artistic, cultural, historical, and even political associations is the post-WWII novel 
+<i>Dr. Faustus,</i> written by Thomas Mann and deeply influenced by the music-philosophical and interpretive perspectives of his friend, Theodor Adorno. The novel (a focal point of discussion in the final chapter) is highly relevant to Hoeckner&rsquo;s project in that it is constructed using musical techniques and forms, it embraces the same span of German music history (from the fictive Wendell Kretschmar&rsquo;s lectures on Beethoven to the fictive composer Adrian Leverk&uuml;hn&rsquo;s compositional career as modeled on Schoenberg&rsquo;s), and it allegorizes German political history as rooted in German culture. But Mann, however philosophically and critically perceptive in his view of Germany&rsquo;s crises, is writing as a novelist whose borrowed musical interpretations are clearly motivated as literary tropes.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> Hoeckner appears willing (although not without a subtle distancing) to give these tropes a more critical, music-hermeneutical status, most notably in his detailed interpretation of the &ldquo;moment&rdquo; Adorno presented to Mann from the 
+<i>Arietta</i> variation finale of Beethoven&rsquo;s last piano sonata, Op. 111: the famous <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> passing tone inserted in the final return of the 
+<i>Arietta</i> theme (measures 169&ndash;70) that Adorno found so touchingly human and suggestive of a tender, poignant leave-taking&mdash;and then raised to the level of a farewell to the sonata as a formal genre.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup> Mann makes this the poetic and expressive climax of the fictional Wendell Kretschmar&rsquo;s lectures on Beethoven. Interpretively, however, it is not what one would consider to be the movement&rsquo;s most obvious expressive crux: the climactic &ldquo;moment&rdquo; when, after the extreme registral trills and climb through <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major, a vertiginous chromatic reversal at the peak (<span style='font-size:0.8em'><math><mover><mn>5</mn><mo>&#710;</mo></mover></math></span>&ndash;<nobr><span style= 'letter-spacing:-0.8px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr><span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>&ndash;<span style='font-size:0.8em'><math><mover><mn>4</mn><mo>&#710;</mo></mover></math></span>) and sudden registral collapse captures the gesture of inward spiritual awe at the height of a transcendent encounter (measures 118&ndash;19).<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup> </p>
+<p>[8] Hoeckner clearly recognizes that the <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> is &ldquo;only an ornament&rdquo; (234)&mdash;although he hedges his concession with analytical commentary on other appearances of <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> in the finale. He also defends the potential of that <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> by illustrating Schenker&rsquo;s own hermeneutically-tilted interpretation of a moment in the finale, which focuses on the f<sup> 3</sup> appearing in measure 102 as the climax of the variation just prior to the moment in <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> major: &ldquo;He hears this f<sup> 3</sup> as the &lsquo;visionary tone&rsquo; initiating what the composer labeled in the sketches as a cadenza [the <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> section]&rdquo; (231). What matters about the F is not merely its surface expressive salience, but its longer range connection to (as &ldquo;mysteriously transformed into&rdquo;) the fifth of the dominant of <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> in measure 111. How then can Adorno&rsquo;s and Mann&rsquo;s <nobr><span style= 'letter-spacing:-0.8px'>C<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> be so weighted with significance? Because, in Hoeckner&rsquo;s diagnosis of Adorno, &ldquo;the smaller the detail, the larger its promise&rdquo; (235, in reference to Walter Benjamin), and &ldquo;only a philosophy that could grasp such micrological figures in its innermost construction of the aesthetic whole would make good on what it promises&rdquo; (235, quoting Adorno). Despite Hoeckner&rsquo;s critical qualms, the focus of interpretation is nevertheless placed on the poetic insight of Adorno/Mann, not on a deeper interpretation of expressive meaning in Beethoven&rsquo;s extraordinary finale. And whether or not a privileging of any such &ldquo;moment&rdquo; is fully adequate to an interpretation of this remarkable movement is a question not explicitly addressed.
+</p>
+<p>[9] Hoeckner has more original musical insights to offer in his chapter on Liszt.<sup><a name="FN14REF" href="#FN14" id="footnote14">(14)</a></sup> In this attractive essay, Hoeckner views the emergence of the tone poem&mdash;between programmatic overture and absolute symphony&mdash;as a moment in music history that summarizes the conflict between absolute and programmatic music. As Liszt argued in 1855 in his essay on Berlioz&rsquo;s 
+<i>Harold</i> Symphony, absolute instrumental music, with its aesthetic of the indefinite, could be &ldquo;guided toward a definite object&rdquo; without thereby losing its inwardness (165). The contemporaneous critic Franz Brendel concurred, but cautioned that &ldquo;we should content ourselves with grasping the general idea, while leaving the particular to the free play of the imagination&rdquo; (167). 	
+</p>
+<p>[10] Hoeckner examines Liszt&rsquo;s early experiment in the tone poem, <i>Ce qu&rsquo;on entend sur la montagne</i> (referred to by Liszt as his &ldquo;<i>Bergsymphonie</i>&rdquo;), based on Victor Hugo&rsquo;s ode, &ldquo;Les feuilles d&rsquo;automne&rdquo; (1831). Hoeckner&rsquo;s exhaustive analysis draws on James Hepokoski&rsquo;s sonata deformation theory<sup><a name="FN15REF" href="#FN15" id="footnote15">(15)</a></sup> to address the key &ldquo;moment&rdquo; in the work: an 
+<i>Andante religioso</i> chorale that first disrupts the form as an &ldquo;episode within the developmental space&rdquo; (172) and then returns just before the coda. Liszt&rsquo;s friend Felix Draeseke construed this textless chorale as a fleeting and illusory vision of peace between a larger developmental conflict initiated in the development section and re-engaged in the recapitulation (170). But the recapitulation features another, strikingly climactic chorale, whose &ldquo;new&rdquo; theme Hoeckner finds linked to previous themes by melodic and rhythmic motives. Hoeckner interprets this second chorale as a transcendent breakthrough in the recapitulation, a &ldquo;moment where artistic intuition from inside seems to connect with divine inspiration from outside&rdquo; (176). 
+</p>
+<p>[11] The Liszt chapter integrates extensive historical and critical evidence with a comparative formal analysis of two versions of the work, but the climax of Hoeckner&rsquo;s critical method is what I would call a moment of 
+<i>critical epiphany, </i>as he loads opposition after interpretive opposition into his dialectic framework. 
+</p>
+<blockquote>The two moments, then, that matter most in the Mountain Symphony&mdash;the [climactic] new [chorale] theme and the &ldquo;Andante religioso&rdquo; [chorale theme]&mdash;can be heard as relating to each other dialectically: the disruptive culmination of an objective formal process against the smooth suspension of that process; an overstated secular chorale against an understated sacred one; modern autonomous music against traditional functional music; bourgeois individuality against pre-bourgeois collectivity; idealized humanity against monastic community; in short: art religion against religious art.<nobr> . . . </nobr>While the spectacular breakthrough of the secular chorale has merely a dramatic effect, the gentle intrusion of the sacred chorale effects a profound change in perspective. And while the most prestigious vehicle of free subjectivity&mdash;autonomous instrumental music&mdash;depicts the limitations of mankind, the vehicle of communal worship&mdash;a functional hymn&mdash;harbors the possibilities of personal redemption. Since the secular chorale is inverted by the sacred one, the &ldquo;religioso&rdquo; becomes the antithesis of the new theme. But it was only after introducing the hymn into the work at a later stage of its genesis that Liszt created this sublime suspension of the sublime&rdquo; (178&ndash;79).<sup><a name="FN16REF" href="#FN16" id="footnote16">(16)</a></sup></blockquote>
+<p>[12] Hoeckner makes originary claims for this mode of discourse, describing it as &ldquo;essayistic musicology.&rdquo;<sup><a name="FN17REF" href="#FN17" id="footnote17">(17)</a></sup> Passages such as the one just cited appear to clinch an interpretive argument with compelling poetic tropes (&ldquo;art religion against religious art&rdquo;), while ratcheting the stakes still higher (here, the vehicle of free subjectivity depicts the limitations of mankind, whereas the vehicle of communal worship suggests the possibility of personal redemption&mdash;a nice irony). The reader electrified by the power of this interpretive climax would be well advised to take a moment to reflect on this crescendo of insights, to weigh how much each supports the next&mdash;and perhaps (in fairness to the genuine merits of Hoeckner&rsquo;s essayistic musicology) to ask whether the music of Liszt lends itself to this kind of interpretation better than the more intricately structured forms of Brahms (who is conspicuously absent from Hoeckner&rsquo;s brief history of moments).<sup><a name="FN18REF" href="#FN18" id="footnote18">(18)</a></sup></p>
+<p>[13] For a book that relies so heavily on Adorno (and Adorno&rsquo;s <i>own</i> essayistic, even aphoristic discourse), one might ask why Adorno&rsquo;s name does not appear in the title.<sup><a name="FN19REF" href="#FN19" id="footnote19">(19)</a></sup> Hoeckner&rsquo;s subsequent essay on &ldquo;Schoenberg&rsquo;s Gaze,&rdquo; although enriched by an examination of Schoenberg&rsquo;s self-portraits with their phosphorescent eyes, essentially retraces Adorno&rsquo;s interpretation of the gap between the atonal 
+<i>Erwartung</i> and the pre-serial <i>Die Jakobsleiter</i> as a dialectical &ldquo;turn from expression to construction, as well as from particularity to totality.&rdquo; As Hoeckner notes, &ldquo;For Adorno the changes of style, of expression, and of meaning appeared nowhere more glaring than in the gap between 
+<i>Erwartung</i> and <i>Die Jakobsleiter</i>; between the frustrated search for human love and the successful prayer for divine love&rdquo; (210). Echoes of Mann/Adorno&rsquo;s Leverk&uuml;hn are noted in a critical discourse that hears 
+<i>Die Jakobsleiter</i> as a relapse into the rational and the false fusion of art and religion. Here one can sense the dialectic that perhaps led Hoeckner to his interpretations in &ldquo;Lizst&rsquo;s Prayer.&rdquo; Schoenberg envisioned the ending of 
+<i>Die Jakobsleiter</i> as a prayer, as inspired by <i>S&eacute;raphita,</i> Balzac&rsquo;s novella that dramatizes the Swedenborgian conversion of a couple by the androgynous angel S&eacute;raphita/Seraphitus. But Adorno&rsquo;s withering critique of Schoenberg&rsquo;s planned ending, which Hoeckner accepts, is that &ldquo;it created the illusion that a sublime subject [idea] alone can guarantee the sublimity of content&rdquo; (211).
+</p>
+<p>[14] Hoeckner shifts focus, however, to feature a moment other than that of Schoenberg&rsquo;s ending, choosing instead the prior moment of death and transfiguration, for which Schoenberg doubly underlined the word 
+<i>Augenblick</i> [moment] in his draft of the text: &ldquo;Lord! Throughout my whole life I waited for this 
+<i>Augenblick</i>&rdquo; (215). For Hoeckner, the crucial moment crystallizes not in death, as marked by the wordless vocal &ldquo;Oh&rdquo; that descends in a two-octave glissando, but in transfiguration, as marked by the offstage violin&rsquo;s upward glissando immediately following, which represents the spirit rising free of the body (216&ndash;17). This moment is then made to bear a series of interpretations that are on the one hand intuitively satisfying, but on the other, appear weakly supported by the evidence. Hoeckner hears an allusion in the solo violin to the opening of 
+<i>Tristan</i> (supported by melodic contour but not exact intervallic sequence), which he at first acknowledges may have been unconscious on Schoenberg&rsquo;s part. But he then turns this lack of clear evidence to his advantage, further incorporating Adorno&rsquo;s dialectic between 
+<i>constructional</i> and <i>expressive truth:</i> &ldquo;Precisely by being not intended, the allusion collapses the &lsquo;constructional truth&rsquo; of the hexachord with the &lsquo;expressive truth&rsquo; of the Tristanesque gesture&rdquo; (222). In the very next sentence Hoeckner&rsquo;s interpretive ratcheting shifts us to the level of compositional history: &ldquo;Poised between the no-longer of chromatic harmony and the not-yet of dodecaphony, the solo of the soul becomes emblematic of Schoenberg&rsquo;s historical position between the two different compositional paradigms, both of which he sought to embrace&rdquo; (222). Finally, in the concluding sentence of this paragraph, Hoeckner sees the compositional moment &ldquo;As an unintended instance of programming the absolute&rdquo; and, in a typical glass-bead-game maneuver, he pursues still another association: &ldquo;it is the absolute melody which, to use Nietzsche&rsquo;s words, &lsquo;chooses&rsquo; the program as a metaphorical expression of itself&rdquo; (222).  Before the chapter is over, Hoeckner has added the notion of &ldquo;gaze&rdquo; to his interpretation of this increasingly overdetermined moment, noting that it &ldquo;alludes to the two archetypal glances of all opera&mdash;the one that separated Orpheus and Euridice, and the one that united Tristan and Isolde&rdquo; (223). Finally, he returns to the gazes in Schoenberg&rsquo;s self-portraits, first noting Adorno&rsquo;s interpretation of them as &ldquo;<i>phantoms</i> of transcendence,&rdquo; and then developing that trope (by several associative links) into what he calls 
+<i>Die Jakobsleiter&rsquo;s</i> &ldquo;moment of visionary blindness&rdquo; (223). Here, Hoeckner&rsquo;s essayistic method of associations threatens to dissolve into a series of literary tropes that, for all their surface appeal, do not add up to a consistent or coherent hermeneutic argument. 	
+</p>
+<p>[15] Another potential pitfall in Hoeckner&rsquo;s essayistic approach is that a theme from the music may be too readily linked to a personal or political theme. At the end of his first essay, on Beethoven&rsquo;s 
+<i>Fidelio,</i> Hoeckner quotes a poem by Albrecht Haushofer, whose misgivings about the Nazis led him to join the Resistance; he was eventually captured by the Gestapo and was found executed at the end of the war, clutching his prison poems in one hand. The cited poem is entitled &ldquo;Fidelio.&rdquo; Its near-final line, &ldquo;in life there are no tones like these,&rdquo; is readily interpretable as an intrusion of reality disrupting the poet&rsquo;s visionary account of 
+<i>Fidelio.</i> Hoeckner claims that &ldquo;after reading the poem, it will be impossible to hear 
+<i>Fidelio</i> ever again as an untainted representation of utopian humanity,&rdquo; but hastens to assure us that &ldquo;this does not spell the end of art after Auschwitz&rdquo; (49). Here, the subjective essay, in tone and topic, intrudes ideologically into the musicological realm of criticism. Even if we are in sympathy with the poem, we may feel discomfort at this overlapping of concerns. Yet Hoeckner attempts to weave this episode into his narrative on Beethoven, by claiming that &ldquo;only&rdquo; this poetic line &ldquo;might warrant the interpretive pressure put on&rdquo; the moment of Leonore&rsquo;s scream.<sup><a name="FN20REF" href="#FN20" id="footnote20">(20)</a></sup> Clearly, Hoeckner wants us to follow him into this fusion of twentieth-century politics with nineteenth-century musical meaning, and he supports his increasingly personally motivated interpretation with reference to Walter Benjamin&rsquo;s &ldquo;hermeneutics of hope&rdquo;: &ldquo;only for the sake of the hopeless have we been given hope&rdquo; (50). Whether the reader can join him there or not, she will recognize the commitment as part of a central theme found throughout the book. Indeed, in the closing sentence to his Introduction, Hoeckner adapts the closing line of Adorno&rsquo;s 
+<i>Negative Dialectics</i> by claiming that <i>Programming the Absolute </i>may be understood &ldquo;as a gesture of solidarity with the moment of German music at the moment of its fall&rdquo; (11).
+</p>
+<p>[16] The second chapter, on Schumann, does not feature this kind of political and historical engagement. Here, Hoeckner hews a critical line more relevant to the time of the composer. Entitled &ldquo;Schumann&rsquo;s Distance,&rdquo;<sup><a name="FN21REF" href="#FN21" id="footnote21">(21)</a></sup> it expands on a topic not addressed in John Daverio&rsquo;s important study of Romantic music aesthetics.<sup><a name="FN22REF" href="#FN22" id="footnote22">(22)</a></sup> &ldquo;Distance,&rdquo; as a Romantic trope elaborated by Novalis, is interpreted by Hoeckner with justice to its widely ranging significance. Hoeckner explores, among other meanings, the representation of spatial distance (the &ldquo;aesthetics of sound dying away in the distance&rdquo; 51) and distant events (as in memory and reminiscence), the sense of distance from the beloved (as in Schumann&rsquo;s separation from Clara), and music as distant from meaning (compared to language). After a rich examination of the poetics of Novalis and Jean Paul Richter, Hoeckner concentrates on a series of applications, primarily to Schumann&rsquo;s solo piano music, of these different perspectives on distance. Not surprisingly, he begins by probing already established links between the end of 
+<i>Papillons</i> and the final scene of Jean Paul&rsquo;s novel, <i>Flegeljahre.</i> Next, Hoeckner unfolds the aesthetic of distance as a critical category in Schumann&rsquo;s review of Schubert&rsquo;s &ldquo;Great&rdquo; Symphony in C Major, D. 944. Here, he cites Walter Benjamin for the distinction between 
+<i>aura</i> and <i>trace:</i> &ldquo;The trace is the appearance of closeness, however distant that which left the trace behind. The aura is the appearance of a distance, however close that which created it. In the trace we get hold of a thing, in the aura the thing gets hold of us&rdquo; (68). As Hoeckner aptly elaborates, &ldquo;the distant aura of art, like that of nature, grasps 
+<i>us</i>&rdquo; (68), and it is this mode of perception, he claims, that Schumann&rsquo;s review attempts to foster in his readers.
+</p>
+<p>[17] Another form of distance stems from the literal intertextuality of Schumann&rsquo;s appropriation of a song by Carl Gottlieb Reissiger, &ldquo;Heimweh,&rdquo; into his own song, &ldquo;An Anna,&rdquo; which was later incorporated as the slow movement of the Piano Sonata in <nobr><span style= 'letter-spacing:-0.8px'>F<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266f;</span><span></nobr> Minor, op. 11. Hoeckner summarizes Manfred Schmid&rsquo;s (1981) opinion that words could no longer be added to the song as it appeared in the sonata, since &ldquo;its now wordless expression had become part of a purely musical remembrance&rdquo; (76). Hoeckner further examines this relationship, noting the emergence of the Aria theme in the 
+<i>sotto voce Introduzione</i> to the first movement, and its later return only in the Aria, as reminiscence or involuntary memory, &ldquo;<i>senza passione ma espressivo.</i>&rdquo; Here, Hoeckner deftly pins down an important point: &ldquo;Caught between the aesthetics of vocal and absolute music&mdash;between song and sonata&mdash;the Aria descended from song, but 
+<i>appears</i> to have sprung from music alone&rdquo; (79).
+</p>
+<p>[18] The next section, on distant mountains and musical landscape, may profitably be read in tandem with Charles Rosen&rsquo;s important chapter in 
+<i>The Romantic Generation.</i><sup><a name="FN23REF" href="#FN23" id="footnote23">(23)</a></sup> Both cite the penultimate number of the 
+<i>Davidsb&uuml;ndlert&auml;nze,</i> Op. 6, for its remarkable cueing of a sense of spatial distance. Hoeckner goes further by exploring the intertextual cueing (via various quotes and allusions to Clara&rsquo;s 
+<i>Valses Romantiques,</i> Op. 4, including some previously unrecognized) of both inner and outer spaces. Finally, the cyclic return of the second dance also marks a temporal distance, and Hoeckner cites Rosen&rsquo;s sensitive observation that, &ldquo;this is a genuine return of the past&mdash;not a formal return, or a
+<i>da capo</i> or a recapitulation, but a memory&rdquo; (92; Rosen 233).
+</p>
+<p>[19] Hoeckner&rsquo;s analysis of the famous first movement of the <i>Fantasie, </i>Op. 17, goes further than Daverio&rsquo;s by featuring more examples of 
+<i>Witz</i>-inspired motivic connections, including further, hitherto unrecognized associations between the last song of Beethoven&rsquo;s 
+<i>An die ferne Geliebte</i> and the second theme of the <i>Fantasie.</i><sup><a name="FN24REF" href="#FN24" id="footnote24">(24)</a></sup> Here, distance is interpreted as historical (the &ldquo;ruins&rdquo; of fragments), referential (fragments of a specific work of Beethoven&rsquo;s), and discursive (<i>Im Legendenton
+</i>as an interpolation akin to an arabesque, drawing on Daverio&rsquo;s analysis). Hoeckner also discovers a connection between Clara&rsquo;s 
+<i>Romance vari&eacute;e,</i> Op. 3, and <i>Im Legendenton, </i>which was entitled &ldquo;<i>Romanza</i>&rdquo; in the autograph of the Fantasie (104). Clara&rsquo;s reprise of her theme is transformed within a C minor 
+<i>Adagio,</i> and its recall has the effect of a distant memory; thus, its otherwise tenuous melodic connection to Schumann&rsquo;s episode is strengthened on the basis of formal procedure (104). 
+</p>
+<p>[20] Finally, through symbolic associations of the keys of C (for Clara) and <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> (&ldquo;Es,&rdquo; for Schumann), Hoeckner traces a connection between Robert and the distant Clara that is fully realized in the 
+<i>Fantasie</i> when the definitive form of the Beethoven quote appears in the 
+home key of C major, and when the last, augmented repetition of the quote 
+creates a voice exchange between <nobr><span style= 'letter-spacing:-1px'>E<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> and C. In the next subsection of the chapter, on the
+<i>Noveletten,</i> Hoeckner elaborates on Clara&rsquo;s voice as Robert&rsquo;s notated &ldquo;Stimme aus der Ferne,&rdquo; since the melody is a literal quote from Clara&rsquo;s &ldquo;Notturno&rdquo; (<i>Soir&eacute;es musicales,</i> Op. 6). The implied exchange of literal voices (Clara&rsquo;s and Robert&rsquo;s) is the central trope in Hoeckner&rsquo;s reading of both the 
+<i>Noveletten</i> and the <i>Fantasie.</i> </p>
+<p>[21] In this wide-ranging chapter, by far the longest in the book, Hoeckner reinforces his theme of &ldquo;programming the absolute&rdquo; by exploring the distance between words and music in various examples of songs stripped of their words to become part of instrumental works, which may in turn resonate with former textual meanings for those aware of their source. Hoeckner also develops the tropes of distance between analysis and criticism, and between technical and non-technical language (113). 
+</p>
+<p>[22] One might add still other tropes of distance to Hoeckner&rsquo;s inventory: for example, the musical trope of psychological distance as 
+<i>alienation,</i> so beautifully expressed in Schumann&rsquo;s setting of &ldquo;In der Fremde,&rdquo; the first of the Eichendorff
+<i>Liederkreis,</i> Op. 39. Or the discursive trope of <i>Romantic irony,</i> which implies distance in its shift between levels of discourse (and commentary on the prevailing discourse by an implied agent at a higher level). Or the aesthetic trope of 
+<i>critical distance, </i>which presupposes a more mediated, critical reflection by the listener (or composer) on the artwork.<sup><a name="FN25REF" href="#FN25" id="footnote25">(25)</a></sup> Hoeckner, however, safely assumes the listener&rsquo;s immediate engagement in Schumann&rsquo;s piano music, whether hearing his representation of spatially distant sounds, or temporally distant memories, or both at once. 
+</p>
+<p>[23] &ldquo;Schumann and Distance&rdquo; impresses me as the most successful of Hoeckner&rsquo;s ventures into essayistic musicology, perhaps because the trope of distance is so malleable for those expressive suggestions of absolute music that hint at the programmatic. Here, Hoeckner is less indebted to isolated, single moments than in the other essays, and the results are less constraining. When the historical, cultural, and analytical evidence is mutually supportive, as here, Hoeckner&rsquo;s claims are both convincing and eloquently conveyed. When the argument depends more heavily on an associative network of artistic allusions and tropes, the resulting interpretations, if not entirely convincing, may nevertheless be intuitively compelling as ways of hearing the music.
+</p>
+<p>[24] Hoeckner&rsquo;s approach, despite its literary and scholarly sophistication, raises still other critical questions that I can but mention here.<sup><a name="FN26REF" href="#FN26" id="footnote26">(26)</a></sup> </p>
+<ol>
+	<li>To what extent are Hoeckner&rsquo;s expressive interpretations uncritically dependent on Adorno&rsquo;s (or Thomas Mann&rsquo;s) philosophies (or tropes)? 
+	</li>
+	<li>To what extent does Hoeckner create the very meanings he purports to find?<sup><a name="FN27REF" href="#FN27" id="footnote27">(27)</a></sup> </li>
+	<li>By what underlying theoretical standard would Hoeckner have us evaluate his interpretations, when they emerge from a tissue of literary, musical, and philosophical analogues and associations? 
+	</li>
+	<li>To what extent should a hermeneutic inquiry&rsquo;s endless &ldquo;chain of interpretants&rdquo; be constrained? 
+	</li>
+	<li>Is it possible to ground such freely-associative (and intertextual) interpretive practices within more rigorous reconstructions of general stylistic meaning? 
+	</li>
+</ol>
+<p>[25] Regardless of how one critically engages with its claims, Berthold Hoeckner&rsquo;s profound and wide-ranging study offers a wealth of cultural images and musical meanings. It is a book that cannot be adequately summarized, and this review can touch on but a few of its many brilliant moments of musical, literary, historical, and philosophical insight. Adorno, on listening to the horn calls at the end of the first movement of Beethoven&rsquo;s
+<i>Lebewohl</i> sonata, claimed that &ldquo;the eternal attaches itself precisely to this most transient moment&rdquo; (10). It is this idealistic perspective that informs Hoeckner&rsquo;s own imaginative tropes and that lends them such power to inspire. Those who share Hoeckner&rsquo;s interpretive journeys will be amply rewarded by his eloquent and humane voice, emerging from Adorno to re-create German music&rsquo;s quintessential moments of expressive and moral force.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Robert S. Hatten<br>
+	School of Music<br>Indiana University<br><a href="mailto:rohatten@indiana.edu">rohatten@indiana.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Schumann&rsquo;s debut as a writer was an article 
+extolling Chopin&rsquo;s Op. 2. Published in 1831 in the Leipzig <i>Allgemeine 
+Musikalische Zeitung,</i> Schumann&rsquo;s impressionistic review begins with the line, 
+&ldquo;Hats off, gentlemen, a genius.&rdquo;<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Hesse, <i>Das Glasperlenspiel: Versuch einer Lebensbeschreibung des Magister Ludi 
+Josef Knecht samt Knechts hinterlassenen Schriften</i> (Z&uuml;rich, Fretz &amp; Wasmuth, 
+1943).<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> For early examples, see Dahlhaus, <i>Between Romantic and 
+Modern: 4 Studies in the Music of the Later Nineteenth Century,</i> trans. Mary Whittall (Berkeley: University of California Press, 1980 [1974]), 
+<i>The Idea of 
+Absolute Music,</i> trans. Roger Lustig (Chicago: University of Chicago Press, 1989 
+[1978]), and Dahlhaus, ed., <i>Beitr&auml;ge zur musikalischen Hermeneutik</i> (Regensburg: 
+G. Bosse, 1975). Kerman&rsquo;s first programmatic statement on critical insight as 
+key to the sensitive interpretation of music was delivered as a plenary address 
+at the 1964 annual meeting of the AMS in Washington, D.C., and was published as 
+&ldquo;A Profile for American Musicology,&rdquo; <i>Journal of the American Musicological 
+Society</i> 18 (1965), 61&ndash;69 (reprinted in <i>Write All These Down: Essays on Music</i> 
+[Berkeley: University of California Press, 1994], 3&ndash;11).<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> With his dialectic between grammatical and psychological 
+interpretation, Schleiermacher anticipates the important distinction between 
+reconstructing the style and interpreting the work that is crucial to my own 
+semiotic theory of musical meaning (Hatten, &ldquo;Grounding Interpretation: A 
+Semiotic Framework for Musical Hermeneutics,&rdquo; <i>The American Journal of Semiotics</i> 
+13/1&ndash;4 (1996 [1998]), 30). For an important account of Schleiermacher&rsquo;s methods 
+and theoretical contributions, see Ian Bent, &ldquo;General Introduction&rdquo; to 
+<i>Music Analysis in the Nineteenth Century, </i>vol. 2, Hermeneutic Approaches, ed. Ian Bent 
+(Cambridge: Cambridge University Press, 1994), 2&ndash;4.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> In my own work I have given similar interpretive weight 
+to strategically marked events in Beethoven&rsquo;s late works&mdash;events that often serve 
+as dramatic hinges, ranging from the &ldquo;expressive crux&rdquo; of a phrase to the 
+chromatic reversal that cues abnegation as the crucial hinge in the dramatic 
+trajectory of an &ldquo;expressive genre.&rdquo; See Hatten, <i>Musical Meaning in Beethoven: 
+Markedness, Correlation, and Interpretation</i> (Bloomington: Indiana University 
+Press, 1994).<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> This is an extravagant synecdoche, to be sure, but one 
+that exists physically: a fragment is all that is necessary to generate the 
+whole, in the case of a hologram.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Hoeckner&rsquo;s &ldquo;hermeneutics of the moment&rdquo; also derives 
+from Walter Benjamin&rsquo;s &ldquo;paradoxical hermeneutics of hope: &lsquo;Only for the sake of 
+the hopeless have we been given hope&rsquo;,&rdquo; (12) which in turn inspired Adorno in 
+his philosophical approach to interpreting Beethoven, via &ldquo;the image of the 
+falling star flashing in the dark sky&rdquo; (12).<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> See Kretzschmar, <i>Gesammelte Aufs&auml;tze &uuml;ber Musik und 
+Anderes,</i> in <i>Gesammelte Aufs&auml;tze aus den Jahrb&uuml;chern der Musikbibliothek Peters,</i> 
+vol. 2 (Leipzig: C. F. Peters, 1911).<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> In his monograph <i>Beethoven&rsquo;s Ninth Symphony</i> (Vienna: 
+Universal Edition, 1912) Schenker frequently disparages Kretzschmar&rsquo;s 
+interpretations and quasi-program-note commentaries from <i>F&uuml;hrer durch den 
+Konzertsaal </i>(2nd ed; Leipzig: Breitkopf und Hartel, 1890).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> It is a criticized aspect of Adorno&rsquo;s mode of 
+argument. Carl Dahlhaus claimed &ldquo;the verbal analogies perform the function of 
+hiding a gap which the arguments could not close&rdquo; (cited by Charles Rosen in 
+&ldquo;Should We Adore Adorno,&rdquo; <i>The New York Review of Books,</i> [October 24, 2002], note 
+6, as quoted by Max Paddison, &ldquo;Immanent Critique or Musical Stocktaking,&rdquo; in 
+<i>Adorno: A Critical Reader,</i> ed. Nigel Gibson and Andrew Ruben [Blackwell, 2002], 
+223.)<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> For example, the &ldquo;gaze&rdquo; of the boy &ldquo;Echo,&rdquo; Leverk&uuml;hn&rsquo;s 
+illegitimate but innocent son, who dies as a result of his father&rsquo;s sin.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Adorno&rsquo;s manuscript notation of this event in his note 
+to Mann is reproduced on the cover of Hoeckner&rsquo;s book.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> This is an extreme form of the gesture Beethoven will 
+use to set the devotional &ldquo;ihr st&uuml;rzt nieder&rdquo; in the finale of the Ninth 
+Symphony, as the millions are enjoined to collapse in reverent awe before the 
+Creator.<br><a href="#FN13REF">Return to text</a></p><p><a name="FN14">14.</a> Liszt (along with Mahler) is assimilated into this 
+study of exclusively German music without comment&mdash;as Liszt might well have 
+approved, at least in this stage of his career. Mahler is represented by the 
+intertextual moment in which the <i>Adagissimo</i> of the Ninth Symphony quotes the 
+final phrase from the fourth song of the <i>Kindertotenlieder.</i><br><a href="#FN14REF">Return to text</a></p><p><a name="FN15">15.</a> Hoeckner cites three independent studies of 
+Hepokoski&rsquo;s, on Strauss [&ldquo;Fiery Pulsed Libertine or Domestic Hero? Strauss&rsquo;s 
+<i>Don 
+Juan</i> Reinvestigated,&rdquo; in <i>Richard Strauss: New Perspectives on the Composer and 
+His Work, </i>ed. Bryan Gilliam (Durham: Duke University Press, 1992), 135&ndash;76], 
+Verdi [&ldquo;Genre and Content in Mid-Century Verdi: &lsquo;Addio, del passato&rsquo; (<i>La traviata,</i> act 3),&rdquo; 
+<i>Cambridge Opera Journal</i> 1 (1989), 249&ndash;76], and Sibelius [<i>Sibelius: 
+Symphony No. 5</i> (Cambridge: Cambridge University Press, 1993), 4&ndash;9]. More 
+recently Hepokoski has collaborated with Warren Darcy on a new &ldquo;sonata theory&rdquo; 
+that addresses genre and form, and their deformations, in 18th- and very early 
+19th-century sonata forms.<br><a href="#FN15REF">Return to text</a></p><p><a name="FN16">16.</a> The next section of Hoeckner&rsquo;s essay follows the 
+history of the work&rsquo;s revisions.<br><a href="#FN16REF">Return to text</a></p><p><a name="FN17">17.</a> One might note that a similar critical genre has 
+already emerged in the essays of Lawrence Kramer and Susan McClary, to mention 
+but two of the leading &ldquo;new musicologists.&rdquo; But Hoeckner offers a satisfying 
+range of historically and analytically pertinent evidence to support both his 
+formal and his poetic interpretations of the Liszt tone poem. Hoeckner also 
+concedes &ldquo;the dilemma of an essayistic musicology, stranded in the no-man&rsquo;s-land 
+between scholarship and criticism&rdquo; (11)&mdash;and, I might add, between those 
+endeavors and poetic criticism as an art form in its own right.<br><a href="#FN17REF">Return to text</a></p><p><a name="FN18">18.</a> Hoeckner acknowledges this absence (and that of 
+Mendelssohn, Bruckner, and Strauss), in that each &ldquo;blurred the line between 
+absolute and program music&rdquo; (3). For an approach to the incorporation by Brahms 
+of techniques associated with Liszt and Wagner, see A. Peter Brown, &ldquo;Brahms&rsquo;s 
+Third Symphony and the New German School,&rdquo; <i>Journal of Musicology</i> 2/4 (1983), 
+434&ndash;52.<br><a href="#FN18REF">Return to text</a></p><p><a name="FN19">19.</a> However, as mentioned earlier, Adorno&rsquo;s note to Mann 
+is featured as the cover illustration, where it functions (according to Hoeckner, 
+personal communication), as &ldquo;a moment in music that becomes the moment of German 
+music.&rdquo;<br><a href="#FN19REF">Return to text</a></p><p><a name="FN20">20.</a> Earlier in the essay Hoeckner had argued both for the 
+<nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266e;</span><span></nobr> and the <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> versions at the climax of Leonore&rsquo;s music. The operatic 
+scream also figures heavily in Hoeckner&rsquo;s subsequent account of Elsa in Wagner&rsquo;s 
+<i>Lohengrin,</i> with interesting results. He demonstrates two frames for the 
+opera: Lohengrin&rsquo;s 
+frame, representing the perspective of absolute aesthetics, gives priority to 
+thematic reprise and tonal closure, and is marked by the Prelude and the Grail 
+narration, whereas Elsa&rsquo;s more &ldquo;progressive&rdquo; frame is delineated by her two 
+screams.<br><a href="#FN20REF">Return to text</a></p><p><a name="FN21">21.</a> A version of this essay appeared as &ldquo;Schumann and 
+Romantic Distance,&rdquo; <i>Journal of the American Musicological Society</i> 50/1 (1997), 
+55&ndash;132. Hoeckner notes there that some of the material originated with his 
+dissertation, &ldquo;Music as a Metaphor for Metaphysics: Tropes of Transcendence in 
+Nineteenth-Century Music from Schumann to Mahler,&rdquo; (Ph.D. diss., Cornell 
+University, 1994).<br><a href="#FN21REF">Return to text</a></p><p><a name="FN22">22.</a> Daverio, <i>Nineteenth-Century Music and the German 
+Romantic Ideology</i> (New York: Schirmer, 1993).<br><a href="#FN22REF">Return to text</a></p><p><a name="FN23">23.</a> Rosen, <i>The Romantic Generation</i> (Cambridge, MA: Harvard 
+University Press, 1995), Chapter 3.<br><a href="#FN23REF">Return to text</a></p><p><a name="FN24">24.</a> Compare Daverio, <i>Nineteenth Century Music,</i> 19&ndash;47.<br><a href="#FN24REF">Return to text</a></p><p><a name="FN25">25.</a> This critical mode of appreciation may indeed be more 
+relevant to Schumann&rsquo;s non-operatic treatment of philosophical issues in his 
+<i>Scenen aus Goethe&rsquo;s Faust</i> (1844&ndash;53).<br><a href="#FN25REF">Return to text</a></p><p><a name="FN26">26.</a> For further consideration of questions 3&ndash;5, see 
+Hatten, &ldquo;Grounding Interpretation,&rdquo; 25&ndash;42.<br><a href="#FN26REF">Return to text</a></p><p><a name="FN27">27.</a> And is this an inevitable consequence of 
+Schleiermacher&rsquo;s hermeneutic principle, that somehow we can &ldquo;understand the 
+author better than he understood himself&rdquo; (6)? Or is it the inevitable 
+consequence of basing interpretation on previous studies and critical reception?<br><a href="#FN27REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Schumann&rsquo;s debut as a writer was an article 
+extolling Chopin&rsquo;s Op. 2. Published in 1831 in the Leipzig <i>Allgemeine 
+Musikalische Zeitung,</i> Schumann&rsquo;s impressionistic review begins with the line, 
+&ldquo;Hats off, gentlemen, a genius.&rdquo;</div><div id="fndiv2" class="flyoverdiv">Hesse, <i>Das Glasperlenspiel: Versuch einer Lebensbeschreibung des Magister Ludi 
+Josef Knecht samt Knechts hinterlassenen Schriften</i> (Z&uuml;rich, Fretz &amp; Wasmuth, 
+1943).</div><div id="fndiv3" class="flyoverdiv">For early examples, see Dahlhaus, <i>Between Romantic and 
+Modern: 4 Studies in the Music of the Later Nineteenth Century,</i> trans. Mary Whittall (Berkeley: University of California Press, 1980 [1974]), 
+<i>The Idea of 
+Absolute Music,</i> trans. Roger Lustig (Chicago: University of Chicago Press, 1989 
+[1978]), and Dahlhaus, ed., <i>Beitr&auml;ge zur musikalischen Hermeneutik</i> (Regensburg: 
+G. Bosse, 1975). Kerman&rsquo;s first programmatic statement on critical insight as 
+key to the sensitive interpretation of music was delivered as a plenary address 
+at the 1964 annual meeting of the AMS in Washington, D.C., and was published as 
+&ldquo;A Profile for American Musicology,&rdquo; <i>Journal of the American Musicological 
+Society</i> 18 (1965), 61&ndash;69 (reprinted in <i>Write All These Down: Essays on Music</i> 
+[Berkeley: University of California Press, 1994], 3&ndash;11).</div><div id="fndiv4" class="flyoverdiv">With his dialectic between grammatical and psychological 
+interpretation, Schleiermacher anticipates the important distinction between 
+reconstructing the style and interpreting the work that is crucial to my own 
+semiotic theory of musical meaning (Hatten, &ldquo;Grounding Interpretation: A 
+Semiotic Framework for Musical Hermeneutics,&rdquo; <i>The American Journal of Semiotics</i> 
+13/1&ndash;4 (1996 [1998]), 30). For an important account of Schleiermacher&rsquo;s methods 
+and theoretical contributions, see Ian Bent, &ldquo;General Introduction&rdquo; to 
+<i>Music Analysis in the Nineteenth Century, </i>vol. 2, Hermeneutic Approaches, ed. Ian Bent 
+(Cambridge: Cambridge University Press, 1994), 2&ndash;4.</div><div id="fndiv5" class="flyoverdiv">In my own work I have given similar interpretive weight 
+to strategically marked events in Beethoven&rsquo;s late works&mdash;events that often serve 
+as dramatic hinges, ranging from the &ldquo;expressive crux&rdquo; of a phrase to the 
+chromatic reversal that cues abnegation as the crucial hinge in the dramatic 
+trajectory of an &ldquo;expressive genre.&rdquo; See Hatten, <i>Musical Meaning in Beethoven: 
+Markedness, Correlation, and Interpretation</i> (Bloomington: Indiana University 
+Press, 1994).</div><div id="fndiv6" class="flyoverdiv">This is an extravagant synecdoche, to be sure, but one 
+that exists physically: a fragment is all that is necessary to generate the 
+whole, in the case of a hologram.</div><div id="fndiv7" class="flyoverdiv">Hoeckner&rsquo;s &ldquo;hermeneutics of the moment&rdquo; also derives 
+from Walter Benjamin&rsquo;s &ldquo;paradoxical hermeneutics of hope: &lsquo;Only for the sake of 
+the hopeless have we been given hope&rsquo;,&rdquo; (12) which in turn inspired Adorno in 
+his philosophical approach to interpreting Beethoven, via &ldquo;the image of the 
+falling star flashing in the dark sky&rdquo; (12).</div><div id="fndiv8" class="flyoverdiv">See Kretzschmar, <i>Gesammelte Aufs&auml;tze &uuml;ber Musik und 
+Anderes,</i> in <i>Gesammelte Aufs&auml;tze aus den Jahrb&uuml;chern der Musikbibliothek Peters,</i> 
+vol. 2 (Leipzig: C. F. Peters, 1911).</div><div id="fndiv9" class="flyoverdiv">In his monograph <i>Beethoven&rsquo;s Ninth Symphony</i> (Vienna: 
+Universal Edition, 1912) Schenker frequently disparages Kretzschmar&rsquo;s 
+interpretations and quasi-program-note commentaries from <i>F&uuml;hrer durch den 
+Konzertsaal </i>(2nd ed; Leipzig: Breitkopf und Hartel, 1890).</div><div id="fndiv10" class="flyoverdiv">It is a criticized aspect of Adorno&rsquo;s mode of 
+argument. Carl Dahlhaus claimed &ldquo;the verbal analogies perform the function of 
+hiding a gap which the arguments could not close&rdquo; (cited by Charles Rosen in 
+&ldquo;Should We Adore Adorno,&rdquo; <i>The New York Review of Books,</i> [October 24, 2002], note 
+6, as quoted by Max Paddison, &ldquo;Immanent Critique or Musical Stocktaking,&rdquo; in 
+<i>Adorno: A Critical Reader,</i> ed. Nigel Gibson and Andrew Ruben [Blackwell, 2002], 
+223.)</div><div id="fndiv11" class="flyoverdiv">For example, the &ldquo;gaze&rdquo; of the boy &ldquo;Echo,&rdquo; Leverk&uuml;hn&rsquo;s 
+illegitimate but innocent son, who dies as a result of his father&rsquo;s sin.</div><div id="fndiv12" class="flyoverdiv">Adorno&rsquo;s manuscript notation of this event in his note 
+to Mann is reproduced on the cover of Hoeckner&rsquo;s book.</div><div id="fndiv13" class="flyoverdiv">This is an extreme form of the gesture Beethoven will 
+use to set the devotional &ldquo;ihr st&uuml;rzt nieder&rdquo; in the finale of the Ninth 
+Symphony, as the millions are enjoined to collapse in reverent awe before the 
+Creator.</div><div id="fndiv14" class="flyoverdiv">Liszt (along with Mahler) is assimilated into this 
+study of exclusively German music without comment&mdash;as Liszt might well have 
+approved, at least in this stage of his career. Mahler is represented by the 
+intertextual moment in which the <i>Adagissimo</i> of the Ninth Symphony quotes the 
+final phrase from the fourth song of the <i>Kindertotenlieder.</i></div><div id="fndiv15" class="flyoverdiv">Hoeckner cites three independent studies of 
+Hepokoski&rsquo;s, on Strauss [&ldquo;Fiery Pulsed Libertine or Domestic Hero? Strauss&rsquo;s 
+<i>Don 
+Juan</i> Reinvestigated,&rdquo; in <i>Richard Strauss: New Perspectives on the Composer and 
+His Work, </i>ed. Bryan Gilliam (Durham: Duke University Press, 1992), 135&ndash;76], 
+Verdi [&ldquo;Genre and Content in Mid-Century Verdi: &lsquo;Addio, del passato&rsquo; (<i>La traviata,</i> act 3),&rdquo; 
+<i>Cambridge Opera Journal</i> 1 (1989), 249&ndash;76], and Sibelius [<i>Sibelius: 
+Symphony No. 5</i> (Cambridge: Cambridge University Press, 1993), 4&ndash;9]. More 
+recently Hepokoski has collaborated with Warren Darcy on a new &ldquo;sonata theory&rdquo; 
+that addresses genre and form, and their deformations, in 18th- and very early 
+19th-century sonata forms.</div><div id="fndiv16" class="flyoverdiv">The next section of Hoeckner&rsquo;s essay follows the 
+history of the work&rsquo;s revisions.</div><div id="fndiv17" class="flyoverdiv">One might note that a similar critical genre has 
+already emerged in the essays of Lawrence Kramer and Susan McClary, to mention 
+but two of the leading &ldquo;new musicologists.&rdquo; But Hoeckner offers a satisfying 
+range of historically and analytically pertinent evidence to support both his 
+formal and his poetic interpretations of the Liszt tone poem. Hoeckner also 
+concedes &ldquo;the dilemma of an essayistic musicology, stranded in the no-man&rsquo;s-land 
+between scholarship and criticism&rdquo; (11)&mdash;and, I might add, between those 
+endeavors and poetic criticism as an art form in its own right.</div><div id="fndiv18" class="flyoverdiv">Hoeckner acknowledges this absence (and that of 
+Mendelssohn, Bruckner, and Strauss), in that each &ldquo;blurred the line between 
+absolute and program music&rdquo; (3). For an approach to the incorporation by Brahms 
+of techniques associated with Liszt and Wagner, see A. Peter Brown, &ldquo;Brahms&rsquo;s 
+Third Symphony and the New German School,&rdquo; <i>Journal of Musicology</i> 2/4 (1983), 
+434&ndash;52.</div><div id="fndiv19" class="flyoverdiv">However, as mentioned earlier, Adorno&rsquo;s note to Mann 
+is featured as the cover illustration, where it functions (according to Hoeckner, 
+personal communication), as &ldquo;a moment in music that becomes the moment of German 
+music.&rdquo;</div><div id="fndiv20" class="flyoverdiv">Earlier in the essay Hoeckner had argued both for the 
+B&#x266e; and the B&#x266d; versions at the climax of Leonore&rsquo;s music. The operatic 
+scream also figures heavily in Hoeckner&rsquo;s subsequent account of Elsa in Wagner&rsquo;s 
+<i>Lohengrin,</i> with interesting results. He demonstrates two frames for the 
+opera: Lohengrin&rsquo;s 
+frame, representing the perspective of absolute aesthetics, gives priority to 
+thematic reprise and tonal closure, and is marked by the Prelude and the Grail 
+narration, whereas Elsa&rsquo;s more &ldquo;progressive&rdquo; frame is delineated by her two 
+screams.</div><div id="fndiv21" class="flyoverdiv">A version of this essay appeared as &ldquo;Schumann and 
+Romantic Distance,&rdquo; <i>Journal of the American Musicological Society</i> 50/1 (1997), 
+55&ndash;132. Hoeckner notes there that some of the material originated with his 
+dissertation, &ldquo;Music as a Metaphor for Metaphysics: Tropes of Transcendence in 
+Nineteenth-Century Music from Schumann to Mahler,&rdquo; (Ph.D. diss., Cornell 
+University, 1994).</div><div id="fndiv22" class="flyoverdiv">Daverio, <i>Nineteenth-Century Music and the German 
+Romantic Ideology</i> (New York: Schirmer, 1993).</div><div id="fndiv23" class="flyoverdiv">Rosen, <i>The Romantic Generation</i> (Cambridge, MA: Harvard 
+University Press, 1995), Chapter 3.</div><div id="fndiv24" class="flyoverdiv">Compare Daverio, <i>Nineteenth Century Music,</i> 19&ndash;47.</div><div id="fndiv25" class="flyoverdiv">This critical mode of appreciation may indeed be more 
+relevant to Schumann&rsquo;s non-operatic treatment of philosophical issues in his 
+<i>Scenen aus Goethe&rsquo;s Faust</i> (1844&ndash;53).</div><div id="fndiv26" class="flyoverdiv">For further consideration of questions 3&ndash;5, see 
+Hatten, &ldquo;Grounding Interpretation,&rdquo; 25&ndash;42.</div><div id="fndiv27" class="flyoverdiv">And is this an inevitable consequence of 
+Schleiermacher&rsquo;s hermeneutic principle, that somehow we can &ldquo;understand the 
+author better than he understood himself&rdquo; (6)? Or is it the inevitable 
+consequence of basing interpretation on previous studies and critical reception?</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2005 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Brent Yorgason, Managing Editor and Rebecca Flore, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

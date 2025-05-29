@@ -1,0 +1,554 @@
+ 
+ 
+
+<link rel=StyleSheet href="../../scripts/mtostyle.css" type="text/css" media=all>
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 17.3: Endrinal, Defining the Interverse</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Burning Bridges: Defining the Interverse in the Music of U2">
+
+    <meta name="citation_author" content="Endrinal, Christopher">
+      
+
+<meta name="citation_publication_date" content="2011/10/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="17">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Burning Bridges: Defining the Interverse in the Music of U2
+
+	</h1>
+	<div style="width:900px">
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Christopher Endrinal</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: interverse, bridge, popular music, form, U2, Bono, The Edge, Adam Clayton, Larry Mullen Jr., introduction, verse, chorus, refrain, interlude, transition, conclusion</font></p><p><font size='4'>ABSTRACT: Popular music analysis, particularly pop-rock analysis, presents several challenges.  Despite the repetition and seeming simplicity of the harmonic progressions in many pop-rock songs, analyzing their form can be difficult.  One of these difficulties lies in the terminology used to describe the sections within a song.  Specifically, the term &#8220;bridge&#8221; is troublesome because frequently it does not adequately describe the function of the section it represents.  Using the music of Irish group U2, this paper defines and illustrates the &#8220;interverse,&#8221; a new term for the section traditionally called a &#8220;bridge&#8221; in pop-rock music, one that more accurately describes how the section relates to immediately preceding and succeeding material, as well as how it functions within the song as a whole.  In addition to introducing new terminology, this paper also defines, illustrates, and distinguishes among the traditional sections of a pop-rock song, namely the introduction, verse, chorus, refrain, interlude, transition, and conclusion.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.11.17.3/mto.11.17.3.endrinal.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.11.17.3/endrinal_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+			<div style="float:left; font-size:1.1rem;"><i>Received February 2011</i></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 17, Number 3, October 2011 <br> Copyright &#0169; 2011 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+
+<p>[1] The word &#8220;bridge&#8221; suggests connecting or transitional function, as in the statement &#8220;bridging the gap between point A and point B.&#8221;  A physical bridge links two otherwise separate entities.  For example, travelers use the Golden Gate Bridge in California to get from one side of the San Francisco Bay to the other.  Essentially, the Bridge connects the two sides.  While it is a visual wonder and an architectural phenomenon, its primary function is not to serve as a destination, but rather as an agent of transition.</p>
+<p>[2] Formal analysis of popular music has centered on large-scale formal types, but comparatively little discussion has focused on the individual sections themselves that comprise these designs.  In particular, analyses of rock music have not devoted much attention to &#8220;bridge&#8221; sections.  Within musical contexts, a &#8220;bridge&#8221; is
+<blockquote>... a passage in which a formal transition is made.  In popular music, [the term refers to] the penultimate section in the refrain of a popular song, leading to the final repeat of the opening section (section <i>b</i> in the form <i>aaba</i>); the bridge provides contrasts, often tonal as well as harmonic and melodic, with the opening section ... Rock musicians may call any different section that appears once within an otherwise repeating form the bridge. (&#8220;Bridge (ii),&#8221; <i>Grove Music Online</i>)</blockquote>
+<p>This section in modern rock songs, however, often is <i>not</i> transitional in nature.  In other words, the &#8220;bridge&#8221; section does not necessarily connect two other sections.  The material of the &#8220;bridge&#8221; section frequently does not contrast that of the surrounding sections.  Additionally, there are &#8220;bridge&#8221; sections in which the material is melodically, harmonically, and grammatically closed, effectively nullifying any transitional function.  In many examples, therefore, the label &#8220;bridge&#8221; inadequately describes the <i>function</i> 
+of the section. Using melodic, harmonic, lyric, and reductive analyses of 
+&ldquo;bridge&rdquo; sections in the music of Irish rock group U2, this article defines and 
+illustrates the <i>interverse</i>, which replaces the misnomer &#8220;bridge.&#8221;<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> 
+Inconsistent use has led to the misapplication of the descriptor &ldquo;bridge,&rdquo; 
+likely because there are no definitive criteria for what constitutes the section 
+I now call an <i>interverse</i>.  This article will provide such criteria.</p>
+<p>[3]	According to Ken Stephenson,
+<blockquote>[T]he first problem in the analysis of form (and the fundamental problem for a [project] on general stylistic characteristics) is the discovery of features that delineate sections ... In a musical piece, we must look for formalized musical cues concerning form ... In rock the relevant cues most often appear in the areas of text, instrumentation, rhythm, and harmony.  In many cases, the patterns in these areas work together to create a clear form; in many others, changes in one or more areas work against a backdrop of stability in the other areas to create a subtler form.  And in yet other cases, lack of alignment in the patterns of change of various areas makes for ambiguity (<a href="#stephenson_2005" id="citation_stephenson_2005_67dc9abf6bada">2005</a>, 122).</blockquote>
+<p>In analyzing the music of U2, I take into account all four areas Stephenson lists.  There are three aspects of the lyrics that help define a song&#8217;s form: 1) Repetition: the statement and subsequent return of specific text is perhaps the clearest and most readily identifiable formal characteristic.  Other elements, such as melodic contour and rhythm, are linked to textual repetition, helping the listener make real-time delineations of form, in addition to retrospective judgments; 2) Location: where and when a particular textual passage is used helps determine both its local relationship to surrounding sections and its place within the song&#8217;s global formal structure; and 3) Grammar: the ordering of words, the construction of phrases and sentences, and the particular emphases placed on certain lyrics contribute to the textual definition of a song&#8217;s overall formal scheme.</p>
+<p>[4]	Several musical factors contribute to formal section boundaries, namely changes in instrumentation, melodic motive, and harmonic pattern.  As Stephenson states, variations in instrumentation&#8212;&#8220;the specific combinations of instruments, including vocal lines, performing a piece&#8221;&#8212;often signal the beginning of a new section in a rock song (<a href="#stephenson_2005" id="citation_stephenson_2005_67dc9abf6baed">2005</a>, 126).  These changes include, but are not limited to, the addition or subtraction of instruments or voices.  Instrumentation changes lead to textural and timbral differences, which can also serve as formal markers.  The modification of a particular line or motive in one or more of the instruments, such as a new guitar riff or the introduction of a new vocal melody, can also serve as a section delineator. Rock music lacks a formalized set of rules regarding harmonic progressions and cadential formulae.  However, despite this non-traditional harmonic nature, &#8220;many rock songs use differences in harmonic progressions to help distinguish sections ... [And because] repetition of harmonic patterns is so common [in rock], any break in the pattern will likely mark a significant moment in the form&#8221; (131).</p>
+<p>[5] Besides a profound, personal connection to their music, I have chosen to focus exclusively on U2&#8217;s catalogue for several reasons.  First, U2 is one of the all-time greats in rock history, as demonstrated by their longevity, sustained relevance, influence, album sales, concert attendance figures, critical acclaim, and popularity 
+with the general public.  Secondly, I use only U2&#8217;s music in this essay for the sake of consistency.  Using the music of other rock artists could raise issues of style differences or historical context, and while those issues certainly are worthy of exploration, they are beyond the scope of this article.  My primary intent here is not a historical overview of interverse sections throughout rock history, nor is it to illustrate a particular band&#8217;s exceptional use of those sections.  Rather, the purpose of this essay is to identify the function of interverses as they relate to other song sections and to refine those descriptions in order to obtain a more accurate overview of rock song construction in general.  U2&#8217;s music merely serves as a model for this type of examination.  In effect, the methods presented here could be applied to the music of many other rock artists.</p>
+<p>[6]	U2&#8217;s career can be divided into four style periods, each characterized by particular sonic, lyric, and aesthetic traits.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> Throughout the rest of this article, a coding system is provided in parentheses following the title of each song to identify where in the band&#8217;s chronology the song falls.  The coding system includes a shorthand listing of the style period (Roman numeral), album (capital letter), and track number (Arabic numeral) for the referenced song, each separated by a colon.  For example, &#8220;Dirty Day,&#8221; the ninth track from the second album (B) of the third style period (III), would be listed as follows: &#8220;Dirty Day&#8221; (III:B:9).  This shorthand derives the coding system from the following discography, which lists only the band&#8217;s full-length studio releases.  U2 has released a number of B-sides, remixes, and live recordings.  Although these songs and performances certainly are interesting and worthy of study, the multitude of variables that encompass these versions&#8212;limited circulation and release, the concept of authenticity and legitimacy, live performance considerations, for example&#8212;places the complete analysis of these recordings beyond the scope of this article.</p>
+<p style="text-align:center"><b>U2 Discography</b><br />[<i>album title</i> (release year)]</p>
+<ol>
+<li type="I">First Period</li>
+<ol>
+<li type="A"><i>Boy</i> (1980)</li>
+<li type="A"><i>October</i> (1981)</li>
+<li type="A"><i>War</i> (1983)</li>
+</ol>
+<li type="I">Second Period</li>
+<ol>
+<li type="A"><i>The Unforgettable Fire</i> (1984)</li>
+<li type="A"><i>The Joshua Tree</i> (1987)</li>
+<li type="A"><i>Rattle and Hum</i> (1988)</li>
+</ol>
+<li type="I">Third Period</li>
+<ol>
+<li type="A"><i>Achtung Baby</i> (1991)</li>
+<li type="A"><i>Zooropa</i> (1993)</li>
+<li type="A"><i>Pop</i> (1997)</li>
+</ol>
+<li type="I">Fourth Period</li>
+<ol>
+<li type="A"><i>All That You Can&#8217;t Leave Behind</i> (2000)</li>
+<li type="A"><i>How To Dismantle An Atomic Bomb</i> (2004)</li>
+<li type="A"><i>No Line On The Horizon</i> (2009)</li>
+</ol>
+</ol>
+<p>[7] The majority of the terms in this article are not new to the established popular music lexicon.  However, some of the definitions and uses of the terms are slightly different from conventional usage, and one term is new.  My definitions are based on four factors, listed here in order of relative importance: 1) the section&#8217;s timbral and textural character in relation to the song&#8217;s other parts, 2) the section&#8217;s lyrical content and repetition, 3) the section&#8217;s harmonic and melodic content, and 4) the location of the section within the song&#8217;s overall formal design and with respect to other sections.  This system of section labeling and designation is akin to the method used by Stephenson, who considers the text to be of central importance, with the harmonic, melodic, timbral, and textural considerations not necessarily less important, but serving as supporting evidence (<a href="#stephenson_2005" id="citation_stephenson_2005_67dc9abf6baf0">2005</a>, 124).  Walter Everett (<a href="#everett_1999" id="citation_everett_1999_67dc9abf6baf2">1999</a>, 15&#8211;17) and John Covach (<a href="#covach_2005" id="citation_covach_2005_67dc9abf6baf4">2005</a>, 66) take the opposite approach in analyzing form in rock music.  They begin by defining each section in terms of its harmonic content and function, and use the other elements as secondary (though not unimportant) factors.  While certainly significant in the determination of local and global function in the music of U2 for Everett and Covach, a specific section&#8217;s location within the song is not as important as the content of the section.</p>
+<p>[8]	In specifically examining the music of U2 and rock music in general, one of the difficulties 
+one encounters is the lack of standardized terminology used to describe the form of rock songs and the fact that, despite the increased attention paid to popular music scholarship, comparatively little has been written regarding some general definitions of form in rock music.   This article attempts to rectify that dilemma by providing one set of terms and their definitions, along with examples of each drawn from U2&#8217;s catalogue.  While the primary concern of this article is to define and illustrate the interverse, I first explain and exemplify the other sections, namely the introduction, verse, refrain, transition, chorus, interlude, coda, and conclusion.  Included with these definitions and model examples from each of the band&#8217;s four style periods are some anomalies, aberrant instances that differ markedly from the prototypical models of each section.  Discussion of the other song sections is necessary in order to give perspective to the definition of the interverse.  As I elaborate below, the identification of the specific function of the interverse is contingent upon knowing the content and function of the other parts of the song.</p>
+<p style="text-align:center"><b>Introduction, Coda, and Conclusion</b></p>
+<p>[9]	The vast majority of U2&#8217;s songs begin with an <i>introduction</i> (i), which is typically instrumental, with a length that varies from just a few seconds to one-and-a-half minutes or even longer.  Establishing the meter, tempo, key, and overall mood of the song is the primary function of the introduction.  Frequently, the introduction also presents the &#8220;hook,&#8221; the main theme or motive around which the song based. 
+(Please see the <a href="#Glossary">glossary</a><a name="Par9"></a> at the end of the essay for a complete list of terms and their definitions.)  &#8220;The Electric Co.&#8221; (I:A:10), &#8220;Bad&#8221; (II:B:7), &#8220;Staring At The Sun&#8221; (III:C:5), and &#8220;A Man And A Woman&#8221; (IV:B:7) all utilize prototypical introductions: melodically and harmonically stable instrumental sections of moderate duration (29, 21, 14, and 16 seconds, or 20, 8, 4, and 8 measures, respectively) that use each respective song&#8217;s hook to establish a definite tempo, meter, and key.  &#8220;Walk On&#8221; (IV:A:4) features a rare two-part introduction, the first half of which is highlighted by spoken vocals while the second half is the more customary instrumental passage.  It is in the introduction&#8217;s second half that lead guitarist The Edge presents the musical hook, a solo guitar motive reminiscent of the band&#8217;s work on <i>The Unforgettable Fire</i> and <i>The Joshua Tree</i> albums from their second style period.</p>
+<p>[10]	Though rare, there are introductions that create a sense of metric, tonal, and/or character ambiguity that is later resolved by either another part of the introduction or the entrance of another section entirely.  &#8220;Ultraviolet (Light My Way)&#8221; (III:A:10) provides an example of such an introduction.  The entire section can be divided into two parts: the first 47 seconds (approximately 21 measures), characterized by metric and tonal ambiguity, and the following 18 seconds (eight measures), in which the meter and tonal center of the song are firmly established. Bono&#8217;s vocal line is the main content of the first part, in which he sings of uncertainty and doubt:
+<div style="width:420px;float:right;border:none;margin-left:30px">            
+
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b>. Introduction, Part 1, &#8220;Ultraviolet (Light My Way)&#8221; (0:20-0:47)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="endrinal_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p></div>
+<blockquote>Sometimes I feel like I don&#8217;t know<br />
+Sometimes I feel like checking out<br />
+I wanna get it wrong<br />
+Can&#8217;t always be strong<br />
+And love, it won&#8217;t be long ...</blockquote>
+
+<p>Accompanying these lyrics is a melody that gives little indication as to the song&#8217;s tonality and even less evidence of the song&#8217;s meter and tempo.  <b>Example 1</b> is an approximate transcription of that melody.</p>
+<p>[11]	A  meter and an E major key signature have been assigned to the transcription, with the retrospective knowledge that the remainder of the song after the introduction is, in fact, in <nobr><math><msubsup><mtext></mtext><mn>4</mn><mn>4</mn></msubsup></math></nobr> and in E major, with a tempo of about 107 bpm.  However, an examination of the introductory melody&#8217;s rhythm reveals a lack of a clear internal metrical organization, particularly in the last five measures.  The rhythmic liberties 
+that lead singer Bono takes in this specific introduction create an unstructured melody that places more importance on the emotional underpinnings of the lyrics than on a strict observance of the song&#8217;s (eventual) meter and key.</p>
+<p>[12]	The <i>coda</i> (D) and <i>conclusion</i> (o) both serve to end a rock song.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Similar to the introduction, the use of either of these sections is not obligatory, as many rock songs end abruptly after the last chorus.  &#8220;Sunday Bloody Sunday&#8221; (I:C:1), &#8220;Even Better Than The Real Thing&#8221; (III:A:2), and &#8220;All Because Of You&#8221; (IV:B:6), for example, do not include either a coda or a conclusion; instead, each song ends immediately at the end of its final chorus section.  The coda typically consists of music based on material from the chorus, repeating the hook or a set of lyrics from that section.  In the majority of rock songs, there is textual, harmonic, and melodic closure in the coda, although there are examples of inconclusive coda sections.  Often, these inconclusive codas are either those that end on non-tonic harmonies with open-ended thoughts in the lyrics or with a fade-out.  The conclusion section may be appended to the end of a rock song after the coda.  It is instrumental in nature and, much like the coda, is an element that may serve to end the entire song, either with a cadence (frequently on tonic, but not necessarily) or with a fade-out.  A song may contain both a coda and a conclusion.  However, if both sections are used, the conclusion will usually follow the coda in an effort to complete the song&#8217;s overall organization: an instrumental conclusion would balance the (typically) instrumental introduction.  &#8220;Tomorrow&#8221; (I:B:6), &#8220;Elvis Presley And America&#8221; (II:A:9), &#8220;Please&#8221; (III:C:11), and &#8220;Moment of Surrender&#8221; (IV:C:3) incorporate a coda section, while &#8220;Fire&#8221; (I:B:5), &#8220;Running To Stand Still&#8221; (II:B:5), &#8220;Babyface&#8221; (III:B:2), and &#8220;In A Little While&#8221; (IV:A:6) use examples of a conclusion.</p>
+<p style="text-align:center"><b>Verse, Transition, and Link</b></p>
+<p>[13]	Typically, the material heard after the introduction is the first of several <i>verses</i> (V).  The term &#8220;verse&#8221; is linked to both the music and the text.  Recurring several times during a given song, verses usually have different lyrics set to the same music.  Each verse has a similar melody, rhythm, harmonic progression, and instrumentation accompanying different text, although slight variations in the melodic contour and rhythmic patterns of the lyrics are quite common.  &#8220;&#8216;40&#8217;&#8221; (I:C:10), &#8220;Silver And Gold&#8221; (II:C:8), &#8220;Stay (Faraway, So Close!)&#8221; (III:B:5), and &#8220;Wild Honey&#8221; (IV:A:7) all use archetypal verses.</p>
+<p>[14]	A <i>transition</i> (T) in a rock song is frequently an unstable passage that connects two other sections of relative stability.  Changes in musical material, most notably the harmonic progression and rhythmic intensity, along with its location, characterize this section.  In U2&#8217;s transitions, non-tonic tension-producing harmonies become the focus in order to drive toward another upcoming harmony&#8212;frequently tonic&#8212;that begins the next section.  Also aiding this push toward tonic resolution is an augmentation of the instrumentation, a thickening of the texture by adding other layers of instruments (e.g. rhythm guitar, strings, or keyboard), or by modifying one of the instruments already present in the texture.  Many times, artists 
+such as U2 incorporate both techniques.  This section may recur several times throughout the song; the text content may be either similar or identical, or different each time.  Model examples of transition sections can be heard in &#8220;Shadows And Tall Trees&#8221; (I:A:11), &#8220;Desire&#8221; (II:B:3), &#8220;Last Night On Earth&#8221; (III:C:6), and &#8220;Stuck In A Moment You Can&#8217;t Get Out Of&#8221; (IV:A:2).</p>
+<p>[15]	Some popular music scholars use the term &#8220;pre-chorus&#8221; to describe what has been defined in this article as the &#8220;transition&#8221; section.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> While a reasonable description, this term is adequate only when a transition directly precedes a chorus.  Not all transitions serve 
+a &#8220;pre-chorus&#8221; function.  In fact, in U2&#8217;s catalogue, there are a number of songs in which transition sections do <i>not</i> precede chorus sections.  Transition sections in &#8220;Until the End of the World (III:A:4),&#8221; &#8220;The Playboy Mansion&#8221; (III:C:9), and &#8220;When I Look At The World&#8221; (IV:A:9) precede refrains (defined below), not choruses.  In &#8220;Another Time, Another Place&#8221; (I:A:9), &#8220;Dirty Day&#8221; (III:B:9), and &#8220;Discoth&eacute;que&#8221; (III:C:1), the transition section that comes after the first verse precedes a link (defined in the next section).  Transitions can also function to connect 
+one verse to another (&#8220;Like A Song ... &#8221; (I:C:4), &#8220;Whose Gonna Ride Your Wild Horses&#8221; (III:A:5), &#8220;Numb&#8221; (III:B:3), and &#8220;Stay (Faraway, So Close!)&#8221;), or to connect a chorus to an interlude (also defined below), as in &#8220;Vertigo&#8221; (IV:B:1).  In other words, transition sections are versatile and can have multiple functions, depending on their location within the song&#8217;s overall organization.  For the purposes of this article, any section that contains lyrics and connects two other sections will be called simply a &#8220;transition.&#8221;</p>
+<p>[16]	A short instrumental passage that is used between two major sections is called a <i>link</i> (L).  A link usually has transitional function, but, unlike a typical transition section, it is primarily instrumental.  Often, a link uses the song&#8217;s hook to transition to a verse from a chorus, although a link may be used in other locations.  Prototypical examples of links can be found in &#8220;New Year&#8217;s Day&#8221; (I:C:3), &#8220;Wire&#8221; (II:A:3), &#8220;Gone&#8221; (III:C:7), and &#8220;Get On Your Boots&#8221; (IV:C:6).</p>
+<p style="text-align:center"><b>Chorus and Refrain</b></p>
+<p>[17]	The <i>chorus</i> (C) is a section comprised of several lines of text that is distinct from the verse and transition, and returns several times throughout the song, usually with the same or similar lyrics.  Frequently, the title of the song, or some variation of it, is included in the chorus as a lyrical hook.  From a musical standpoint, the harmonies, texture, and timbre in the chorus are different from the material that comes before it, which is usually either a verse or a transition.  Generally, the chorus emphasizes the tonic or the pitch center of the song, which serves to resolve any harmonic or melodic tension created in the preceding section.  &#8220;Out Of Control&#8221; (I:A:5), &#8220;When Love Comes To Town&#8221; (II:C:12), &#8220;Daddy&#8217;s Gonna Pay For Your Crashed Car&#8221; (III:B:6), and &#8220;I&#8217;ll Go Crazy If I Don&#8217;t Go Crazy Tonight&#8221; (IV:C:5) utilize standard chorus sections.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">           
+ 
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b>. Chorus sections of &#8220;One&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="endrinal_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[18]	The chorus sections in &#8220;One&#8221; (III:A:3) stand out in that the lyrics change each time the section appears.  Slight variations to the melody and rhythms of the vocal line accompany the differences in text, although the general contour and overall harmonic language in each of the occurrences of the chorus remain the same.  Transcriptions show that lyrics, while an important factor in determining formal sections within a song, are not the only element to be considered.  <b>Examples 2a</b> through <b>2d</b> present transcriptions of each chorus vocal line and the associated lyrics.  Despite the difference in lyrics among the four passages, two factors distinguish these passages as <i>chorus</i> sections and not verses.  First, the harmonic progression is different from that in the verse: I-vi-IV-I (C-Am-F-C) in the chorus as opposed to vi-II-IV-V (Am-D-F-G) in the verse.  The chorus progression reveals a focus on C, with those tonic harmonies bookending the progression, further characterizing the function of the sections as choruses.  Second, the title word &#8220;one&#8221; appears (and is repeated) only in these sections.  The word &#8220;one&#8221; is a common thread among these passages, helping to assign them chorus function.  Despite the A minor centricity initially suggested by the verses, C major functions as tonic because of the combination of its repetition and the lyrical content of the chorus.</p>
+<p>[19]	A <i>refrain</i> (R) consists of one or two lines of text that function as a kind of lyrical hook.  That is, a refrain is repeated several times throughout the song, either in the middle of a verse or at the end of a verse or a transition, therefore making it easily recognizable.  As a result of this placement, a refrain often has a very similar or even the same texture and instrumentation as the preceding verse or transition.  Additionally, a refrain is relatively short, lasting no more than four measures, with a typical length of only one or two measures.  These two attributes&#8212;location and sonic content&#8212;combine to form the defining characteristic of a refrain: its lack of independence from preceding material.  Unlike a chorus, which is lyrically, texturally, and often harmonically different from a verse or transition, a refrain is not its own section; rather, it is the tail end of the material that precedes it.  Consequently, songs normally use either a refrain or a chorus.  Songs that utilize both are less common.</p>
+<p>[20]	Despite the refrain&#8217;s lack of independence, however, it is an important part of the form 
+of a song.  Its primary function is the resolution of any lyrical, melodic, and/or harmonic open-endedness in the preceding material.  The text of the refrain typically is the song&#8217;s title or some derivative thereof, and that fact alone imparts some significance 
+to the refrain.  Even for those refrains whose text is not the title, the repetition throughout the song lends the refrain import. </p>
+<p>[21]	&#8220;Hawkmoon 269&#8221; (II:C:4) uses a straightforward example of a refrain.  The lyrics &#8220;I need your love&#8221; are used at the end of each verse, and therefore function as the refrain.  As the independent clause, it provides the necessary grammatical closure to the dependent clauses in the preceding lines that begin with &#8220;Like ... &#8221;  Below are the third and fourth verses:
+<br>
+&nbsp; <table align="center"><tr>
+<td valign="top" width="20%"><b>Verse<br /><br /><br /><br />Refrain<br /><br />Verse<br /><br /><br /><br />Refrain</b></td>
+<td width="60%">Like a rhythm unbroken,<br />Like drums in the night,<br />Like sweet soul music,<br />Like sunlight,<br />I need your love.<br /><br />Like coming home,<br />And you don&#8217;t know where you&#8217;ve been,<br />Like black coffee,<br />Like nicotine,<br />I need your love (I need your love).<br />I need your love (I need your love).</td>
+<td valign="top" width="20%">(1:08)<br /><br /><br /><br />(1:17)<br /><br />(1:23)<br /><br /><br /><br />(1:32)</td></tr></table><br />
+&#8220;A Day Without Me&#8221; (I:A:8), &#8220;The First Time&#8221; (III:B:8), and &#8220;Grace&#8221; (IV:A:11) are among other songs that incorporate a typical verse-ending refrain.</p>
+<p>[22]	Refrains may also follow transitions in order to end lyrical stanzas, as in &#8220;Until The End Of The World.&#8221;  Here, each stanza is comprised of an eight-measure verse followed by a four-measure transition.  A portion of the song&#8217;s title functions as the primary lyrics of the two-measure refrain that serves to close the stanza, as illustrated below:<br><br>
+ <table align="center"><tr>
+<td valign="top" width="20%"><b>Verse<br /><br /><br /><br />Transition<br /><br />Refrain</b></td>
+<td width="65%">Haven&#8217;t seen you in quite a while<br />I was down the hold just passing time<br />Last time we met was in a low-lit room<br /><nobr>We were as close together as a bride and groom</nobr><br />We ate the food, we drank the wine<br />Everybody having a good time, except you<br />You were talking about the end of the world<br /></td>
+<td valign="top" width="15%">(0:36)<br /><br /><br /><br />(0:55)<br /><br />(1:05)</td></tr></table>
+</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">          
+  
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b>. Vocals and bass line of the Verse, Transition, and Refrain in &#8220;Until The End Of The World&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="endrinal_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[23]	Grouped together, the segments I have labeled &#8220;Transition&#8221; and &#8220;Refrain&#8221; are <i>not</i> a chorus section for several reasons.  First, the lyrical hook, &#8220;You were talking about the end of the world,&#8221; is the very last line of text, concluding the stanza.  Often, the lyrical hook in a chorus section appears earlier.  Second, despite no change to the overall texture and instrumentation, a cymbal crash and an eighth-sixteenth-sixteenth snare drum pattern on the last beat of the transition subtly separate that section from the upcoming refrain.  Lastly, although the vocal melody reaches a resolution in the final measure of the refrain, it is accompanied by a non-tonic harmony (A).  The harmonic progression through the transition and refrain is relatively unstable.  Emphasis on the pitch center, E, occurs <i>after</i> the refrain, during the link, as the transcription in <b>Example 3</b> demonstrates.  While the refrain provides lyrical and melodic closure, the link supplies the harmonic resolution.  In effect, this link functions as an &#8220;instrumental chorus.&#8221;</p>
+<p>[24]	Of the 137 songs analyzed for this project, 21 (15.3%) incorporate refrains, and of these 21, only 4 use both a refrain and a chorus.  &#8220;Tryin&#8217; To Throw Your Arms Around The World&#8221; (III:A:9) is one of those rare tracks.  The placement of the two-measure refrain in the middle and at the end of the verse, along with the refrain&#8217;s lyrical content, easily distinguish it from the eight-measure chorus that follows the verse:<br><br>
+<table align="center"><tr>
+<td valign="top" width="20%"><b>Verse<br /><br />Refrain<br />Verse (con&#8217;t)<br /><br />Refrain<br />Chorus</b></td>
+<td width="80%">Six o&#8217;clock in the morning<br />You&#8217;re the last to hear the warning<br />You&#8217;ve been trying to throw your arms around the world<br />You&#8217;ve been falling off the sidewalk<br />Your lips move but you can&#8217;t talk<br />You&#8217;ve been tryin&#8217; to throw your arms around the world<br />I gonna run to you, run to you, run to you ...<br />Be still<br />I gonna run to you, run to you, run to you ...<br />Woman I will</td>
+<td valign="top" width="80%">(0:16)<br /><br />(0:21)<br /><br /><br />(0:32)<br />(0:37)</td></tr></table><br />
+&#8220;With A Shout&#8221; (I:B:8), &#8220;Where The Streets Have No Name&#8221; (II:B:1), and &#8220;Some Days Are Better Than Others&#8221; (III:B:7) are the other three songs that have both a refrain and a chorus.</p>
+<p style="text-align:center"><b>Interlude and Interverse</b></p>
+<p>[25]	An <i>interlude</i> (I) features instrumental solos, lacks texted vocals, and usually includes dramatic variations in texture and timbre from previous material.  &#8220;Texted vocals&#8221; refers to actual lyrics&#8212;real words instead of syllables, intonations, or scat-like vocalizations such as &#8220;oh,&#8221; &#8220;ah,&#8221; &#8220;ooh,&#8221; and the like.  The harmonic progression in the interlude frequently is based either on the verse or the chorus; however, interludes with different harmonic progressions are also common.  Usually, there is just one interlude per song, which appears after the second statement of the chorus or before the final chorus section.</p>
+<p>[26]	Typically, a rock interlude&#8212;commonly referred to as the &#8220;solo&#8221; or &#8220;instrumental break&#8221;&#8212;is the part of the song where the musicians display their virtuosity, particularly the lead guitarist.  Jimmy Page&#8217;s solo in Led Zeppelin&#8217;s &#8220;Tangerine&#8221; (<i>Led Zeppelin III</i> [1970], track 7) and Slash&#8217;s passage in Guns N&#8217; Roses&#8217; &#8220;You Could Be Mine&#8221; (<i>Use Your Illusion II</i> [1991], track 12) serve as classic examples of a rock interlude, which often has been referred to as an &#8220;instrumental bridge.&#8221;  That terminology, however, is problematic due to the implications of the term &#8220;bridge.&#8221;  These implications and the associated difficulties will be detailed shortly.</p>
+<p>[27]	The interlude in a U2 song is also instrumental, but the typical U2 interlude differs from more traditional rock interludes in that it is used primarily to present and develop a musical idea rather than flaunt guitar-playing skill.  In &#8220;Sunday Bloody Sunday,&#8221; The Edge&#8217;s solo passage functions more as counterpoint to Adam Clayton&#8217;s bass line than as a display of guitar prowess.  The interludes in &#8220;Even Better Than The Real Thing&#8221; and &#8220;Kite&#8221; (IV:A:5) serve to contrast the vocal lines in each song, and the solo in &#8220;Some Days Are Better Than Others&#8221; is a simple melody played on an overdriven guitar.</p>
+<p>[28]	The <i>interverse</i> (N) is the section previously referred to as the &#8220;bridge.&#8221;  I have renamed the section due to the semantic implications of the term &#8220;bridge,&#8221; which suggests connecting or transitional function.  I 
+have chosen the term &ldquo;interverse&rdquo; because of the word&#8217;s constituent parts.  The prefix &#8220;inter-&#8220; is for the fact that the section occurs <i>between</i> two other sections: the interverse does not begin or end a song; and the suffix &#8220;-verse&#8221; for the fact that there are lyrics in the interverse.  The interverse can function similarly to the previously defined &#8220;interlude;&#8221; the primary difference between the two sections is that the interverse includes texted lyrics while the interlude is principally instrumental.  It is not uncommon for rock songs to incorporate both an interlude and an interverse.  Artists typically distinguish the interverse from other sections by stark changes in texture, instrumentation, timbre, harmony, melody, lyrics, or any combination thereof.  However, as some of the following types of interverses prove, this contrast is <i>not</i> a requisite condition of the section.  The interverse tends to provide a formal break in the song as well as to build tension that is eventually resolved in the subsequent material.  That is, it serves as a kind of push toward the end of the song.</p>
+<p>[29]	There are four types of interverses: independent continuous, independent sectional, dependent continuous, and dependent sectional.  Each interverse is distinguished from the others by its relationship to preceding and succeeding material.  The following definitions borrow some terminology from the analysis of classical formal structures, particularly Douglass Green&#8217;s discussion of small forms 
+(<a href="#green_1979" id="citation_green_1979_67dc9abf6bbee">Green 1979</a>).  The <i>independent continuous interverse</i> (N<img src="../../gifs/ic.gif" align="top">) is the most common type of interverse in U2&#8217;s catalogue, appearing in 28 of the 137 songs analyzed in this project, or 20.4%.  New musical material, such as a new chord progression, different instrumentation, a new vocal melody, a change in texture, or any combination of those elements provides the &#8220;independent&#8221; quality, while an opened-ended, non-tonic harmony and/or melody note at the end of the section supplies the &#8220;continuous&#8221; quality.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">      
+      
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b>. Reduction of &#8220;Sometimes You Can&#8217;t Make It On Your Own&#8221; (2:40-3:57)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="endrinal_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[30]	&#8220;Sometimes You Can&#8217;t Make It On Your Own&#8221; (IV:B:3) demonstrates some prototypical qualities of an independent continuous interverse.  <b>Example 4</b> is a reduction of this interverse and the surrounding transition and chorus sections.  The strip of letters above the reduction represents a condensed formal overview of the song.  Each letter is an abbreviation for the corresponding song section (i = introduction, V = verse, T = transition, etc.).  The seven-measure section preceding the interverse performs 
+a transitional function between the second chorus and the interverse.  Together, 
+the second chorus and the interverse are labeled as &#8220;Transition 2&#8221; due to different melodic and harmonic material from the previous transition sections in the song.  That is, the F, C, Dm, and Am harmonies (<nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>VI, <nobr><span style= 'letter-spacing:-1px'><span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr>III, iv, and i, respectively) in the preceding transition are not used in the song until this point.  They constitute a new harmonic progression with a faster harmonic rhythm than in previous sections, thus contributing to this section&#8217;s transitional character.</p>
+<p>[31]	After a brief mode shift to A minor in the transition, the &#8220;home&#8221; key of A major returns in first measure of the interverse.  Accompanying this return are a new vocal melody, a new harmonic progression, and an expanded texture, all of which contribute to the &#8220;independent&#8221; quality of the interverse.  Although the chords in this section are not new to the song&#8217;s harmonic language, they are used in a different order, thereby creating a different progression.  The &#8220;continuous&#8221; nature of the interverse stems from both the music and the lyrics.  Despite the vocal line&#8217;s almost scalar descent from the high A to the tonic pitch an octave below, there is a lack of finality at the end of the section due to the non-tonic D major harmony and the lyrics &#8220;Don&#8217;t leave me here alone.&#8221;  The subsequent chorus and coda sections are needed to bring the song to an appropriate close, both harmonically and lyrically.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b>. Reduction of &#8220;Mysterious Ways&#8221; (1:43-3:16)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="endrinal_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+<p>[32]	<b>Example 5</b> is a reduction of part of &#8220;Mysterious Ways&#8221; (III:A:8).  Similar to the interverse in &#8220;Sometimes You Can&#8217;t Make It On Your Own,&#8221; the harmonies in this independent continuous interverse of &#8220;Mysterious Ways&#8221; are not new to the song&#8217;s harmonic collection.  As illustrated in the reduction, the harmonies are the same as those in the chorus, but used in a different order in the first half of the section.  A change in the harmonic progression, in conjunction with a new lead guitar pattern and a new vocal melody, renders this particular interverse &#8220;independent,&#8221; while the final <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> harmony is inconclusive, eventually ascending in stepwise motion to the tonic <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> harmony that begins the next section&#8212;hence, the continuous label.  I choose not to interpret the new progression as a key change or tonicization of <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> because of the length of the new progression&#8212;only four measures that lasts a scant nine seconds&#8212;and because of the function of the <nobr><span style= 'letter-spacing:-1px'>A<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> harmony in the interverse.  It is not a destination; instead, it serves as a lower neighbor to the tonic <nobr><span style= 'letter-spacing:-1px'>B<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> harmony that enters after the lyrics &#8220;how by this love,&#8221; at about the 2:48 mark.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b>. Reduction of &#8220;Elevation&#8221; (1:36-2:52)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="endrinal_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b>. Three versions of &#8220;Elevation&#8221;: studio, edited a, edited b</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="endrinal_ex7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge and listen)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b>. Form diagrams of three versions of &#8220;Elevation&#8221;</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="endrinal_ex8small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b>. Reduction of &#8220;City Of Blinding Lights&#8221; (3:56-4:58)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="endrinal_ex9small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b>. Reduction of &#8220;Original Of The Species&#8221; (2:01-3:51)</p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="endrinal_ex10small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p>            
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b>. Two version of &#8220;Original Of The Species&#8221;: <i>studio</i> and <i>edited</i></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="endrinal_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="endrinal_ex11small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge, see the rest, and listen)</font></p></div>
+<p>[33]	<b>Example 6</b> is a reduction of several sections of the song &#8220;Elevation&#8221; (IV:A:3), which represents an example of an <i>independent sectional interverse</i> (N<img src="../../gifs/is.gif" align="top">).  This type of interverse is characterized by new musical material as well as by a conclusive tonic harmony ending.  The interverse in &#8220;Elevation&#8221; introduces a new harmony, D, and features a drastically different texture, vocal register, and melody from previous sections, thereby qualifying this specific interverse as &#8220;independent.&#8221;  The harmonic structure of this interverse reveals its &#8220;sectional&#8221; quality: a tonic ending closes the section harmonically, thereby negating any transitional function the section may have had.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[34]	In addition to being harmonically and melodically conclusive, this interverse is lyrically terminative, ending with the line &#8220;I believe in you.&#8221;  Because of the conclusive melody, harmony, and text, the interverse does not flow smoothly into the third chorus, exemplifying the deficiency of the term &#8220;bridge.&#8221;  In this particular example, this section does <i>not</i> have transitional function; therefore, it cannot be called a &#8220;bridge&#8221; because it does not connect or transition out of or into either of the two surrounding choruses.  Hypothetically, the interverse could have been left out altogether, and the second and third choruses could just as easily have been stated successively, consequently changing the overall form of the song from an AA&prime;BA&prime; to AA&prime;A&prime;&prime;.  This hypothetical edited version is listed in the middle column of <b>Example 7</b>, &#8220;<i>edited a</i>.&#8221;  A second hypothetical edit (&#8220;<i>edited b</i>&#8221;) changes the form of the song even more radically by splicing out the second link, the interverse, and the third chorus, resulting in an overall form of AA&prime;.  The bold and italicized lyrics in each column represent the section(s) that have been spliced out to create the respective edited versions.  Overall, the form of the song would radically change with each edition, as listed in <b>Example 8</b>.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup></p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[35]	The third type of interverse is the <i>dependent continuous interverse</i> (N<img src="../../gifs/dc.gif" align="top">).  This type differs from the first two in that it borrows musical material from other sections within the song, hence the &#8220;dependent&#8221; label.  It is &#8220;continuous&#8221; because of harmonic and/or melodic open-endedness.  &#8220;City Of Blinding Lights&#8221; (IV:B:5) contains a clear example of a dependent continuous interverse.  This particular interverse not only incorporates part of the bass line and harmonic progression first heard in the chorus section, but also has the same instrumentation and timbre as the chorus, thereby qualifying it as &#8220;dependent.&#8221;  As shown in the reduction in <b>Example 9</b>, the inconclusive <nobr><span style= 'letter-spacing:-1px'>D<span style='font-family: Arial Unicode MS, Lucida Sans Unicode;'>&#x266d;</span><span></nobr> harmony and the slurs connecting the interverse to the succeeding chorus&#8212;as well as to the preceding transition&#8212;indicate the section&#8217;s &#8220;continuous&#8221; function.</p>
+<div style="width:420px;float:right;border:none;margin-left:30px">
+</div>
+<p>[36]	The <i>dependent sectional interverse</i> (N<img src="../../gifs/ds.gif" align="top">) is the fourth type of interverse.  It borrows material from other song sections but is harmonically and/or melodically closed.  <b>Example 10</b> presents a reduction of part of &#8220;Original Of The Species&#8221; (IV:B:10).  Here, the harmonic progression is drawn from the previous transition, lending the &#8220;dependent&#8221; quality to the section, while the tonic endings in both the melody and supporting harmony contribute to this interverse being &#8220;sectional.&#8221;</p>
+<p>[37]	In similar fashion to &#8220;Elevation,&#8221; the sectional nature of this interverse allows for a hypothetical revision that changes the song&#8217;s form by removing the interverse.  The right column of <b>Example 11</b> lists the lyrics for this edited version, in which the last two lines of the second chorus, the second link, the interverse, and the first two lines of the chorus&#8217; are taken out and the remaining material is spliced together.  Much like the interverse in &#8220;Elevation,&#8221; the transitional function of the passage is countered by the fact that the interverse is sectional.  Neither does the section fulfill the requirement of &#8220;contrast&#8221; set forth in the Grove definition of a &#8220;bridge&#8221; due to its dependent quality.  Describing this portion of &#8220;Original Of The Species&#8221; specifically as a dependent sectional interverse instead of a general, vague, and inaccurate &#8220;bridge&#8221; identifies particular musical characteristics of the section as well as identifying how the section functions in relation to surrounding material.</p>
+<div style="width:500px;float:right;border:none;margin-left:30px">
+</div>
+<p>[38]	One of the objectives in defining, demonstrating, and differentiating the various sections of a rock song&#8212;and in particular replacing the descriptor &#8220;bridge&#8221; with &#8220;interverse&#8221;&#8212;is specificity of function and terminological consistency.  Defining these terms precisely and consistently necessitates in-depth examination of formal relationships within rock songs.  As can be deduced by the above definitions, many of the sections can function and relate to the surrounding material in different ways, particularly the interverse.  Identifying the specific function of a song section can clarify its relationship to the other passages, in turn affecting the meaning and interpretation of the song as a whole.  The detailed classification system described in this article allows for better, more complete stylistic comparisons among U2&#8217;s songs, with the potential for application to works by other artists within and across popular music genres.  Ultimately, this system allows for a more thorough understanding of formal processes and song construction in U2&#8217;s music specifically, and popular music in general.</p>
+<a name="Glossary"></a><p style="text-align:center"><b>Glossary</b></p>
+<p><b><i>Chorus</i> (C)</b>&#8212;the section of the song that resolves any lyrical and/or musical tension established in previous sections.  It is distinct from the verse and transition in that the chorus returns several times throughout the song, usually with the same lyrics.  Typically, the chorus uses the title of the song, or some variation of it, as a lyrical hook.</p>
+<p><b><i>Coda</i> (D)</b>&#8212;an optional closing section that uses lyrics, usually featuring repeated text from the chorus that 
+typically provides lyrical closure to the song.</p>
+<p><b><i>Conclusion</i> (o)</b>&#8212;an optional closing section that does not feature lyrics and is primarily instrumental.  It usually appears after a coda, if one is present, and serves to end the entire song, either with a cadence or with a fade out.</p>
+<p><b><i>Dependent Continuous Interverse</i> (N<img src="../../gifs/dc.gif" align="top">)</b>&#8212;an interverse that borrows musical and/or lyrical material from other song sections and is harmonically and/or melodically open.  This type of interverse does not contrast markedly with the rest of the song.</p>
+<p><b><i>Dependent Sectional Interverse</i> (N<img src="../../gifs/ds.gif" align="top">)</b>&#8212;an interverse that borrows musical and/or lyrical material from other song sections and is harmonically and/or melodically closed.  This type of interverse does not contrast markedly with the rest of the song.</p>
+<p><b><i>Hook</i></b>&#8212;the main theme or motive around which the song is based.  The hook often is presented in the introduction, although this material frequently is featured in the chorus.  A song may have multiple hooks, which may be of musical character or lyrical content, or both.</p>
+<p><b><i>Independent Continuous Interverse</i> (N<img src="../../gifs/ic.gif" align="top">)</b>&#8212;an interverse that uses new musical material and ends on an open-ended, non-tonic harmony and/melody note.  This is the most common type of interverse.</p>
+<p><b><i>Independent Sectional Interverse</i> (N<img src="../../gifs/is.gif" align="top">)</b>&#8212;an interverse that uses new musical material and ends on a conclusive tonic harmony.</p>
+<p><b><i>Interlude</i> (I)</b>&#8212;the section of a song that features instrumental solos and (typically) dramatic changes in texture and timbre.</p>
+<p><b><i>Interverse</i> (N)</b>&#8212;formerly known as the &#8220;bridge&#8221; section.  Usually, this section features new or contrasting material from previously heard sections, although contrast is not necessarily a requirement of the section.</p>
+<p><b><i>Introduction</i> (i)</b>&#8212;the opening section of a song.  This section typically is instrumental, and frequently presents the song&#8217;s &#8220;hook.&#8221;</p>
+<p><b><i>Link</i> (L)</b>&#8212;a short, typically instrumental passage that connects two major sections (e.g., a chorus and a verse).</p>
+<p><b><i>Overall Form</i></b>&#8212;the large-scale organization of a song, usually consisting of a small number of large sections, each of which is made up of smaller sections.</p>
+<p><b><i>Refrain</i> (R)</b>&#8212;a line or pair of lines that recur throughout the song.  The refrain usually appears at the end of a verse or a transition.  Most often, the song&#8217;s title, or some variation thereof, serves as the text of the refrain.</p>
+<p><b><i>Specific Form</i></b>&#8212;a detailed summary of the song&#8217;s organization.  The specific form outlines the individual sections that ultimately comprise the song&#8217;s larger, overall design.</p>
+<p><b><i>Transition</i> (T)</b>&#8212;a passage of relative instability that serves to connect two other sections, usually a verse to a chorus or refrain.</p>
+<p><b><i>Verse</i> (V)</b>&#8212;a recurring section that usually has different lyrics set to the same, or similar, music, although slight variations in the melody&#8217;s contour and rhythmic patterns 
+are not unusual.<br>
+<br />
+<a href="#Par9">Return to text</a></p>
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Christopher Endrinal<br>
+	University of Massachusetts, Lowell<br>35 Wilder St., Suite 3<br>Lowell, MA 01854<br><a href="mailto:cjsendrinal@gmail.com">cjsendrinal@gmail.com</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+	<hr>
+	
+	<h3><a name="WorksCited">Works Cited</a></h3>
+	
+	<div id="citediv_assayas_2005" class="flyoverdiv">Assayas, Michka.  2005.  <i>Bono: In Coversation</i>.  New York: Riverhead Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="assayas_2005"></a>Assayas, Michka.  2005.  <i>Bono: In Coversation</i>.  New York: Riverhead Books.</p><div id="citediv_bordowitz_2003" class="flyoverdiv">Bordowitz, Hank.  2003.  <i>The U2 Reader: A Quarter Century of Commentary, Criticism, and Reviews</i>.  Milwaukee: Hal Leonard Corporation.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="bordowitz_2003"></a>Bordowitz, Hank.  2003.  <i>The U2 Reader: A Quarter Century of Commentary, Criticism, and Reviews</i>.  Milwaukee: Hal Leonard Corporation.</p><div id="citediv_brackett_2000" class="flyoverdiv">Brackett, David.  2000.  <i>Interpreting Popular Music</i>.  Berkley: University of California Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brackett_2000"></a>Brackett, David.  2000.  <i>Interpreting Popular Music</i>.  Berkley: University of California Press.</p><div id="citediv_brackett_2005" class="flyoverdiv">Brackett, David. 2005. <i>The Pop, Rock, and Soul Reader</i>. New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="brackett_2005"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2005. <i>The Pop, Rock, and Soul Reader</i>. New York: Oxford University Press.</p><div id="citediv_&#8220;bridge_(ii)&#8221;_<i>grove_music_online<-i>" class="flyoverdiv">&#8220;Bridge (ii).&#8221; 2007&#8211;11. <i>Grove Music Online</i>. Oxford: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="&#8220;bridge_(ii)&#8221;_<i>grove_music_online<-i>"></a>&#8220;Bridge (ii).&#8221; 2007&#8211;11. <i>Grove Music Online</i>. Oxford: Oxford University Press.</p><div id="citediv_burns_1987" class="flyoverdiv">Burns, Gary.  1987.  &#8220;A Typology of &#8216;Hooks&#8217; in Popular Records.&#8221;  <i>Popular Music</i> 6, no. 1: 1&#8211;20.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="burns_1987"></a>Burns, Gary.  1987.  &#8220;A Typology of &#8216;Hooks&#8217; in Popular Records.&#8221;  <i>Popular Music</i> 6, no. 1: 1&#8211;20.</p><div id="citediv_covach_2005" class="flyoverdiv">Covach, John.  2005.  &#8220;Form in Rock Music: A Primer.&#8221; In <i>Engaging Music: Essays in Musical Analysis</i>,  ed. Deborah Stein.  New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="covach_2005"></a>Covach, John.  2005.  &#8220;Form in Rock Music: A Primer.&#8221; In <i>Engaging Music: Essays in Musical Analysis</i>,  ed. Deborah Stein.  New York: Oxford University Press.</p><div id="citediv_covach_2006" class="flyoverdiv">Covach, John.  2006.  <i>What&#8217;s That Sound: An Introduction to Rock and Its History</i>. New York: W. W. Norton.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="covach_2006"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  2006.  <i>What&#8217;s That Sound: An Introduction to Rock and Its History</i>. New York: W. W. Norton.</p><div id="citediv_darling_2004" class="flyoverdiv">Darling, Tim.  &#8220;A Study of The Edge&#8217;s (U2) Guitar Delay.&#8221; <a href="http://www.amnesta.net/edge_delay">http://www.amnesta.net/edge_delay</a> (accessed 10 September 2007).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="darling_2004"></a>Darling, Tim.  &#8220;A Study of The Edge&#8217;s (U2) Guitar Delay.&#8221; <a href="http://www.amnesta.net/edge_delay">http://www.amnesta.net/edge_delay</a> (accessed 10 September 2007).</p><div id="citediv_endrinal_2008" class="flyoverdiv">Endrinal, Christopher.  2008.  &#8220;Form and Style in the Music of U2.&#8221;  PhD Diss. The Florida State University.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="endrinal_2008"></a>Endrinal, Christopher.  2008.  &#8220;Form and Style in the Music of U2.&#8221;  PhD Diss. The Florida State University.</p><div id="citediv_everett_1995" class="flyoverdiv">Everett, Walter.  1995.  &#8220;The Beatles as Composers.&#8221;  <i>Concert Music, Rock, and Jazz Since 1945&#8212;Essays and Analytical Studies</i>.  Rochester: University of Rochester.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="everett_1995"></a>Everett, Walter.  1995.  &#8220;The Beatles as Composers.&#8221;  <i>Concert Music, Rock, and Jazz Since 1945&#8212;Essays and Analytical Studies</i>.  Rochester: University of Rochester.</p><div id="citediv_everett_1999" class="flyoverdiv">Everett, Walter. 1999. <i>The Beatles as Musicians: &#8220;Revolver&#8221; through the &#8220;Anthology.&#8221;</i>  New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="everett_1999"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1999. <i>The Beatles as Musicians: &#8220;Revolver&#8221; through the &#8220;Anthology.&#8221;</i>  New York: Oxford University Press.</p><div id="citediv_everett_2009" class="flyoverdiv">Everett, Walter.  2009.  <i>The Foundations of Rock</i>.  New York: Oxford University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="everett_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  2009.  <i>The Foundations of Rock</i>.  New York: Oxford University Press.</p><div id="citediv_fast_2000" class="flyoverdiv">Fast, Susan.  2000.  &#8220;Music, Contexts, and Meaning in U2.&#8221; In <i>Expression in Pop-Rock Music: A Collection of Critical and Analytical Essays</i>, ed. Walter Everett.  New York: Garland Publishing.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="fast_2000"></a>Fast, Susan.  2000.  &#8220;Music, Contexts, and Meaning in U2.&#8221; In <i>Expression in Pop-Rock Music: A Collection of Critical and Analytical Essays</i>, ed. Walter Everett.  New York: Garland Publishing.</p><div id="citediv_green_1979" class="flyoverdiv">Green, Douglass.  1979.  <i>Form in Tonal Music: An Introduction to Analysis</i>.  New York: Schirmer Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="green_1979"></a>Green, Douglass.  1979.  <i>Form in Tonal Music: An Introduction to Analysis</i>.  New York: Schirmer Books.</p><div id="citediv_middleton_1983" class="flyoverdiv">Middleton, Richard.  1983.  &#8220;&#8217;Play It Again Sam&#8217;: Some Notes on the Productivity of Repetition in Popular Music.&#8221;  <i>Popular Music</i> 3, &#8220;Producers and Markets&#8221;: 235&#8211;70.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="middleton_1983"></a>Middleton, Richard.  1983.  &#8220;&#8217;Play It Again Sam&#8217;: Some Notes on the Productivity of Repetition in Popular Music.&#8221;  <i>Popular Music</i> 3, &#8220;Producers and Markets&#8221;: 235&#8211;70.</p><div id="citediv_middleton_1990" class="flyoverdiv">Middleton, Richard. 1990. <i>Studying Popular Music</i>.  Philadelphia: Open University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="middleton_1990"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1990. <i>Studying Popular Music</i>.  Philadelphia: Open University Press.</p><div id="citediv_middleton_1993" class="flyoverdiv">Middleton, Richard. 1993.  &#8220;Popular Music Analysis and Musicology: Bridging the Gap.&#8221;  <i>Popular Music</i> 12, no. 2: 177&#8211;90.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="middleton_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993.  &#8220;Popular Music Analysis and Musicology: Bridging the Gap.&#8221;  <i>Popular Music</i> 12, no. 2: 177&#8211;90.</p><div id="citediv_moore_1992" class="flyoverdiv">Moore, Allan F.  1992.  &#8220;Patterns of Harmony.&#8221;  <i>Popular Music</i> 11, no. 1: 73&#8211;106.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_1992"></a>Moore, Allan F.  1992.  &#8220;Patterns of Harmony.&#8221;  <i>Popular Music</i> 11, no. 1: 73&#8211;106.</p><div id="citediv_moore_1998" class="flyoverdiv">Moore, Allan F. 1998. &#8220;U2 and the Myth of Authenticity in Rock.&#8221;  <i>Popular Musicology</i> 3, no. 6: 5&#8211;33.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_1998"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1998. &#8220;U2 and the Myth of Authenticity in Rock.&#8221;  <i>Popular Musicology</i> 3, no. 6: 5&#8211;33.</p><div id="citediv_moore_2000" class="flyoverdiv">Moore, Allan F. 2000.  &#8220;Constructing Authenticity in Rock.&#8221;  <i>International e-Journal of the Performing Arts</i> 001.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_2000"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000.  &#8220;Constructing Authenticity in Rock.&#8221;  <i>International e-Journal of the Performing Arts</i> 001.</p><div id="citediv_moore_2001" class="flyoverdiv">Moore, Allan F. 2001. <i>Rock: The Primary Text</i>, 2<sup>nd</sup> ed.  Burlington: Ashgate.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_2001"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2001. <i>Rock: The Primary Text</i>, 2<sup>nd</sup> ed.  Burlington: Ashgate.</p><div id="citediv_moore_2002" class="flyoverdiv">Moore, Allan F. 2002.  &#8220;Looking for the Kingdom Come: Questioning Spirituality in U2.&#8221;  <i>Popular Musicology Online</i> 1.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="moore_2002"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2002.  &#8220;Looking for the Kingdom Come: Questioning Spirituality in U2.&#8221;  <i>Popular Musicology Online</i> 1.</p><div id="citediv_murphey_1989" class="flyoverdiv">Murphey, Tim.  1989.  &#8220;The When, Where, and Who of Pop Lyrics: The Listener&#8217;s Prerogative.&#8221;  <i>Popular Music</i> 8, no. 2: 185&#8211;93.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="murphey_1989"></a>Murphey, Tim.  1989.  &#8220;The When, Where, and Who of Pop Lyrics: The Listener&#8217;s Prerogative.&#8221;  <i>Popular Music</i> 8, no. 2: 185&#8211;93.</p><div id="citediv_scrimgeour_2004" class="flyoverdiv">Scrimgeour, Diana.  2004.  <i>U2 Show</i>.  New York: Riverhead Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="scrimgeour_2004"></a>Scrimgeour, Diana.  2004.  <i>U2 Show</i>.  New York: Riverhead Books.</p><div id="citediv_stephenson_2005" class="flyoverdiv">Stephenson, Ken. 2005. <i>What To Listen For In Rock: A Stylistic Analysis</i>. New Haven: Yale University Press.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stephenson_2005"></a>Stephenson, Ken. 2005. <i>What To Listen For In Rock: A Stylistic Analysis</i>. New Haven: Yale University Press.</p><div id="citediv_stokes_2009" class="flyoverdiv">Stokes, Niall.  2009.  <i>U2: The Stories behind Every U2 Song</i>. London: Carlton Books.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="stokes_2009"></a>Stokes, Niall.  2009.  <i>U2: The Stories behind Every U2 Song</i>. London: Carlton Books.</p><div id="citediv_summach_2010" class="flyoverdiv">Summach, Jay.  2010.  &#8220;The Structural Origins of the Prechorus.&#8221; Paper presented at the Thirty-Third Annual Meeting of the Society for Music Theory and the Seventy-Sixth Annual Meeting of the American Musicological Society, Indianapolis, 4&#8211;7 November.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="summach_2010"></a>Summach, Jay.  2010.  &#8220;The Structural Origins of the Prechorus.&#8221; Paper presented at the Thirty-Third Annual Meeting of the Society for Music Theory and the Seventy-Sixth Annual Meeting of the American Musicological Society, Indianapolis, 4&#8211;7 November.</p><div id="citediv_tagg_1982" class="flyoverdiv">Tagg, Philip.  1982.  &#8220;Analysing Popular Music: Theory, Method, and Practice.&#8221;  <i>Popular Music</i> 2: 37&#8211;67.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="tagg_1982"></a>Tagg, Philip.  1982.  &#8220;Analysing Popular Music: Theory, Method, and Practice.&#8221;  <i>Popular Music</i> 2: 37&#8211;67.</p><div id="citediv_discography_discography" class="flyoverdiv"><h3>Discography</h3></div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="discography_discography"></a><h3>Discography</h3></p><div id="citediv_guggenheim_2009" class="flyoverdiv">Guggenheim, Davis.  2009.  <i>It Might Get Loud</i>. Blu-ray video.  Steel Curtain Pictures.</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="guggenheim_2009"></a>Guggenheim, Davis.  2009.  <i>It Might Get Loud</i>. Blu-ray video.  Steel Curtain Pictures.</p><div id="citediv_u2_1980" class="flyoverdiv">U2.  1980.  <i>Boy</i>.  Island Records (422-842 296-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1980"></a>U2.  1980.  <i>Boy</i>.  Island Records (422-842 296-2).</p><div id="citediv_u2_1981" class="flyoverdiv">U2. 1981.  <i>October</i>.  Island Records (422-842 297-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1981"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1981.  <i>October</i>.  Island Records (422-842 297-2).</p><div id="citediv_u2_1983" class="flyoverdiv">U2. 1983.  <i>War</i>.  Island Records (422-811 148-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1983"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1983.  <i>War</i>.  Island Records (422-811 148-2).</p><div id="citediv_u2_1984" class="flyoverdiv">U2.  1984.  <i>The Unforgettable Fire</i>.  Island Records (422-822 898-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1984"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>.  1984.  <i>The Unforgettable Fire</i>.  Island Records (422-822 898-2).</p><div id="citediv_u2_1987" class="flyoverdiv">U2. 1987.  <i>The Joshua Tree</i>.  Island Records (422-842 298-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1987"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1987.  <i>The Joshua Tree</i>.  Island Records (422-842 298-2).</p><div id="citediv_u2_1988" class="flyoverdiv">U2. 1988.  <i>Rattle And Hum</i>.  Island Records (422-842 299-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1988"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. (1988).  <i>Rattle And Hum</i>.  Island Records (422-842 299-2).</p><div id="citediv_u2_1991" class="flyoverdiv">U2. 1991. <i>Achtung Baby</i>.  Island Records (I2 10347).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1991"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1991. <i>Achtung Baby</i>.  Island Records (I2 10347).</p><div id="citediv_u2_1993" class="flyoverdiv">U2. 1993.  <i>Zooropa</i>.  Island Records (314-518 047-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1993"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1993.  <i>Zooropa</i>.  Island Records (314-518 047-2).</p><div id="citediv_u2_1997" class="flyoverdiv">U2. 1997.  <i>Pop</i>.  Island Records (314-524 334-2).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_1997"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 1997.  <i>Pop</i>.  Island Records (314-524 334-2).</p><div id="citediv_u2_2000" class="flyoverdiv">U2. 2000.  <i>All That You Can&#8217;t Leave Behind</i>.  Interscope Records (3145246532).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_2000"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2000.  <i>All That You Can&#8217;t Leave Behind</i>.  Interscope Records (3145246532).</p><div id="citediv_u2_2004" class="flyoverdiv">U2. 2004.  <i>How To Dismantle An Atomic Bomb</i>.  Interscope Records (B0003613-02).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_2004"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2004.  <i>How To Dismantle An Atomic Bomb</i>.  Interscope Records (B0003613-02).</p><div id="citediv_u2_2009" class="flyoverdiv">U2. 2009.  <i>No Line On The Horizon</i>.  Interscope Records (B001O5W6CK).</div><p style="text-indent: -1em; margin-left: 1em; margin-top: 0em"><a name="u2_2009"></a><span class='sans'>&mdash;&mdash;&mdash;&mdash;&mdash;</span>. 2009.  <i>No Line On The Horizon</i>.  Interscope Records (B001O5W6CK).</p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> While the band has an extensive catalogue of live albums, remixes, B-sides, and even an album released under another name, the musical examples used for this article are drawn solely from the band&#8217;s twelve studio albums.  Doubtless, alternate or live versions of U2&#8217;s music are interesting; however, many of the issues brought to the fore regarding those versions are beyond the scope of this article.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> The first style period is characterized by a driving, forceful post-punk rock sound.  The second style period features an open, atmospheric sound that incorporates a fair amount of echo and delay in the lead guitar.  A darker sound featuring extensive amounts of electronic processing characterizes the band&#8217;s third period.  U2 return to their guitar-driven, rock-based sound in their fourth style period.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Please refer to Everett&#8217;s <i>The Foundations of Rock</i> book (<a href="#everett_2009" id="citation_everett_2009_67dc9abf690eb">Everett 2009</a>), Covach&#8217;s &#8220;Form in Rock: A Primer&#8221; article (<a href="#covach_2005" id="citation_covach_2005_67dc9abf690f0">Covach 2005</a>), and Ken Stephenson&#8217;s <i>What To Listen Form In Rock: A Stylistic Analysis</i> book (<a href="#stephenson_2005" id="citation_stephenson_2005_67dc9abf690f3">Stephenson 2005</a>) for recent publications on the topic of form in rock music.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> &#8220;D&#8221; designates the coda section because I have chosen to use &#8220;C&#8221; to label the chorus section.  Since I have chosen &#8220;i&#8221; for the introduction, the section that effectively &#8220;turns on&#8221; the song, I have chosen the binary opposite &#8220;o&#8221; to represent the conclusion, the section that &#8220;turns off&#8221; the song. I elected not to call the conclusion section an &#8220;outro,&#8221; as is practiced by some performers and analysts, because the word &#8220;outroduction&#8221; does not exist.  For consistency, I avoid using the term &#8220;intro&#8221; and refer to an opening instrumental section as the &#8220;introduction.&#8221;<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> John Covach (among others) uses the term &#8220;pre-chorus&#8221; to identify a transitional section that precedes the chorus section.  He uses the term specifically in his formal outline of Michael Jackson&#8217;s &#8220;Thriller&#8221; and Sheryl Crow&#8217;s &#8220;All I Wanna Do&#8221; in his book <i>What&#8217;s That Sound?</i> (<a href="#covach_2006" id="citation_covach_2006_67dc9abf690f6">Covach 2006</a>).  Jay Summach&#8217;s 2010 SMT presentation, &#8220;The Structural Origins of the Prechorus,&#8221; outlines the history of the &#8220;pre-chorus&#8221; in pop music.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> In no way do I mean to imply that taking out an independent sectional interverse makes this or any other song better or worse; qualitative judgments of form are not the subject of this project.  This revision is meant merely to show the lack of transitional function, from purely melodic, harmonic, and lyric standpoints, in an interverse with sectional qualities.<br><a href="#FN6REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">While the band has an extensive catalogue of live albums, remixes, B-sides, and even an album released under another name, the musical examples used for this article are drawn solely from the band&#8217;s twelve studio albums.  Doubtless, alternate or live versions of U2&#8217;s music are interesting; however, many of the issues brought to the fore regarding those versions are beyond the scope of this article.</div><div id="fndiv2" class="flyoverdiv">The first style period is characterized by a driving, forceful post-punk rock sound.  The second style period features an open, atmospheric sound that incorporates a fair amount of echo and delay in the lead guitar.  A darker sound featuring extensive amounts of electronic processing characterizes the band&#8217;s third period.  U2 return to their guitar-driven, rock-based sound in their fourth style period.</div><div id="fndiv3" class="flyoverdiv">Please refer to Everett&#8217;s <i>The Foundations of Rock</i> book (<a href="#everett_2009" id="citation_everett_2009_67dc9abf690eb">Everett 2009</a>), Covach&#8217;s &#8220;Form in Rock: A Primer&#8221; article (<a href="#covach_2005" id="citation_covach_2005_67dc9abf690f0">Covach 2005</a>), and Ken Stephenson&#8217;s <i>What To Listen Form In Rock: A Stylistic Analysis</i> book (<a href="#stephenson_2005" id="citation_stephenson_2005_67dc9abf690f3">Stephenson 2005</a>) for recent publications on the topic of form in rock music.</div><div id="fndiv4" class="flyoverdiv">&#8220;D&#8221; designates the coda section because I have chosen to use &#8220;C&#8221; to label the chorus section.  Since I have chosen &#8220;i&#8221; for the introduction, the section that effectively &#8220;turns on&#8221; the song, I have chosen the binary opposite &#8220;o&#8221; to represent the conclusion, the section that &#8220;turns off&#8221; the song. I elected not to call the conclusion section an &#8220;outro,&#8221; as is practiced by some performers and analysts, because the word &#8220;outroduction&#8221; does not exist.  For consistency, I avoid using the term &#8220;intro&#8221; and refer to an opening instrumental section as the &#8220;introduction.&#8221;</div><div id="fndiv5" class="flyoverdiv">John Covach (among others) uses the term &#8220;pre-chorus&#8221; to identify a transitional section that precedes the chorus section.  He uses the term specifically in his formal outline of Michael Jackson&#8217;s &#8220;Thriller&#8221; and Sheryl Crow&#8217;s &#8220;All I Wanna Do&#8221; in his book <i>What&#8217;s That Sound?</i> (<a href="#covach_2006" id="citation_covach_2006_67dc9abf690f6">Covach 2006</a>).  Jay Summach&#8217;s 2010 SMT presentation, &#8220;The Structural Origins of the Prechorus,&#8221; outlines the history of the &#8220;pre-chorus&#8221; in pop music.</div><div id="fndiv6" class="flyoverdiv">In no way do I mean to imply that taking out an independent sectional interverse makes this or any other song better or worse; qualitative judgments of form are not the subject of this project.  This revision is meant merely to show the lack of transitional function, from purely melodic, harmonic, and lyric standpoints, in an interverse with sectional qualities.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 2011 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1.1rem'>Prepared by John Reef, Editorial Assistant  
+
+
+<br>
+		
+	
+					Number of visits:
+			<!-- Start of StatCounter Code ----- UPDATE sc_project and sc_security WITH EACH NEW ITEM-->
+			<script type="text/javascript">
+			var sc_project="7266901"; 
+			var sc_invisible=0; 
+			var sc_partition=63; 
+			var sc_click_stat=1;
+			var sc_security="e5917917"; 
+			var sc_text=2; 
+			</script>
+			
+			<script type="text/javascript" 
+			src="https://www.statcounter.com/counter/counter.js">
+			</script><noscript><div class="statcounter">
+			<a class="statcounter" href="https://www.statcounter.com/">
+			<img class="statcounter" src="https://c.statcounter.com/7266901/0/e5917917/0/" alt="click tracking" />
+			</a></div></noscript>
+			<!-- End of StatCounter Code -->
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

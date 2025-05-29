@@ -1,0 +1,627 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.6: Smoliar, Computers Compose Music</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Computers Compose Music, But Do We Listen?">
+
+    <meta name="citation_author" content="Smoliar, Stephen W.">
+      
+
+<meta name="citation_publication_date" content="1994/01/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="6">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Computers Compose Music, But Do We Listen?
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.94.0.6/mto.94.0.6.smoliar.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Stephen W. Smoliar</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: music composition, EMI, artificial intelligence, ATN</font></p><p><font size='4'>ABSTRACT: This is an examination of the current state of the
+art in the computer composition of music.  David Cope&rsquo;s EMI
+(Experiments in Music Intelligence) project is examined as a
+representative of this state of the art.  Both its assets
+and its liabilities are considered.  However, the conclusion
+is that the matter of whether or not a computer will ever be
+a successful composer may not be that appropriate a
+question.  Music is &ldquo;in the ear of the listener;&rdquo; and
+audiences listen to <i>performances</i> rather than
+<i>compositions</i>.  The quality of performance often overrides
+whether what is being performed has come from a struggling
+genius, a commercial hack, chance decisions, or even a
+computer program.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.94.0.6/mto.94.0.6.smoliar.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 6, January 1994 <br> Copyright &#0169; 1994 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><p>[0] NOTE: This paper has been reproduced with permission
+from World Scientific from their volume <i>Multimedia Modeling</i>.
+
+
+<p style="text-align: center"><b>EMI: The State of the Art in Computer Composition</b></p>
+
+
+<p>[1] Members of the IEEE Computer Society may recall that the
+July 1991 issue of their monthly magazine, <i>Computer</i>, was a
+special issue devoted to the topic of &ldquo;Computer-Generated
+Music.&rdquo;  There has long been a fascination with mechanical
+means for generating original musical compositions.  Indeed,
+that fascination preceded the invention of the computer
+itself by several centuries.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>
+
+<p>[2] Of the articles which appeared in this special issue,
+the one which probably best characterizes the current state
+of the art is &ldquo;Recombinant Music: Using the Computer to
+Explore Musical Style,&rdquo; by David Cope.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup> The topic of the
+article is a component of a more general project called
+Experiments in Musical Intelligence (EMI).  Cope provides an
+excellent summary of the fascinating behavior of this
+component in his introduction:
+
+<blockquote>This EMI subprogram . . . separates and analyzes 
+musical pitches and durations and then mixes and
+recombines the patterns of those pitches and
+durations so that, while each new composition is
+different, it substantially conforms to the style
+of the original.  The new works generally inherit
+aspects of the style of the period and, to a
+lesser degree, the style of the composer of the
+recombined works.  Called <i>recombinant music</i>,
+this is not just a parlor game but a serious
+attempt to understand how listeners recognize the
+style of a composer or period, one of the more
+elusive and difficult to describe musical
+phenomena.</blockquote>
+
+<p>[3] Cope&rsquo;s claim is as fascinating as it is bold.  His
+article leads the reader through an exercise in the
+synthesis of a piano sonata in the style of Wolfgang Amadeus
+Mozart.  In an earlier paper<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup> he demonstrated that his
+technique works for not only Mozart but also Giovanni
+Pierluigi da Palestrina, Johann Sebastian Bach, Tomaso
+Albinoni, Frederick Chopin, Bela Bartok, Igor Stravinsky,
+and Scott Joplin.  These are extensive efforts.  If we are
+to consider whether or not we are on the threshold of the
+age of computer composers, we need to examine both the
+assets and the liabilities of Cope&rsquo;s EMI system.  Having
+done so, we may then be able to ask whether artificial
+intelligence has now solved the problem of turning a
+computer into a successful composer.
+
+</p>
+<p style="text-align: center"><b>EMI&rsquo;s Assets</b></p>
+
+
+<p>[4] Perhaps the most important thing about Cope&rsquo;s results is
+that, at first hearing, they do a good job of <i>sounding</i>
+convincing.  One can play the &ldquo;EMI-Mozart sonata movement&rdquo;
+illustrated in his <i>Computer</i> article and be reasonably
+fooled into taking it for &ldquo;real&rdquo; Mozart.  Serious Mozart
+scholars are less likely to be fooled, but even <i>they</i> may
+have to listen for a bit before identifying what they hear
+as an imitation.  If nothing else, Cope may have latched on
+to getting a computer to perform an important exercise in
+the study of &ldquo;free composition:&rdquo; the task of using an
+existing composition as a model which guides the structuring
+of a new one.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>
+<p>[5] Such a model-based approach is important because it
+takes the computer away from the ultimately misguided
+approach to music composition as a process of putting notes
+together.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup> Composition operates at a larger granularity,
+and Cope&rsquo;s recombinant music may be regarded as a hypothesis
+of a more viable grain size.  Just <i>how</i> those grains are
+determined&mdash;whether they are products of pattern matching
+algorithms which lie at the heart of EMI&rsquo;s operation or of
+Cope&rsquo;s own skill at musical analysis&mdash;is not made entirely
+clear; but the results are impressive enough to justify
+taking his thesis seriously.
+
+<p>[6] However, the possibility that Cope&rsquo;s own skill may
+figure in EMI&rsquo;s results may, itself, be one of the system&rsquo;s
+assets.  Cope&rsquo;s work may be distinguished from many other
+results in computer-generated music by the fact that Cope,
+himself, is a serious composer.  This makes EMI a system 
+which is based on <i>practice</i> as much as <i>theory</i>, if not
+more so.  In other words the judgments exercised by Cope in
+developing EMI may very well have more to do with how
+practical experience guides his decisions than with any
+attempts at theoretical models which dictate how decisions
+<i>should</i> be made.
+
+</p><p style="text-align: center"><b>EMI&rsquo;s Liabilities</b></p>
+
+
+<p>[7] Nevertheless, it is important to observe that the extent
+to which EMI is convincing as a composer in its own right is
+superficial, in the literal sense of the word.  In other
+words the decisions which EMI makes in composing a piece of
+music are all concentrated on the surface structure.
+However, much of music theory has been concerned with the
+question of whether or not music has a &ldquo;deep structure,&rdquo;
+such as that which Chomsky claims is in natural language.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup> 
+Cope is well aware of the importance of deep structure in
+both natural language and music.  Indeed, much of his
+success is based on the power of the augmented transition
+network (ATN) to handle both the analysis and synthesis of
+natural language syntactic structures.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup> The heart of
+Cope&rsquo;s work involves adapting the ATN so that it may
+accommodate the synthesis of <i>musical</i> structures.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup></p>
+
+
+<p>[8] At this point, however, one can raise the question as to
+just <i>who</i> is doing the composing.  Ultimately, the success
+of the computer at &ldquo;synthesizing&rdquo; Mozart or Joplin depends
+on Cope&rsquo;s success at designing an ATN which controls that
+synthesis.  This technique is not that different from the
+one Mozart engaged for his own &ldquo;Dice Composer,&rdquo; a toy which
+enabled his contemporaries to compose simple dances without
+any prior knowledge of music just by rolling a pair of
+dice.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup> I recently demonstrated that this toy was basically
+a very well designed random sentence generator.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup> 
+
+Mozart&rsquo;s Dice Composer, for example, generated (to
+use the terminology of computational linguistics)
+random sentences by selecting productions from a
+simple context-free grammar.  Each of the terminal
+symbols in this case was an entire measure of
+keyboard music.  Each measure of the score, in
+turn, corresponded to 11 productions, each of
+which filled in that measure with one of those
+terminals.  The bulk of Mozart&rsquo;s work with the
+Dice Composer was to make sure that the terminals
+chosen for any given measure were interchangeable.
+
+It would thus be fair to say that the <i>real</i> composer of
+anything produced by the Dice Composer is Mozart, himself,
+rather than whoever happens to be tossing the dice.  By
+similar reasoning, then, in designing specifications with
+ATN representations, Cope is the one doing the composing,
+even if EMI is actually &ldquo;generating the output.&rdquo;
+
+<p>[9] Of course Mozart never drew upon use of the Dice
+Composer for his <i>own</i> compositions.  One may assume that he
+felt that music it produced was &ldquo;not good enough&rdquo; for his
+personal standards.  Indeed, he used his standards for what
+it meant to be &ldquo;not good enough&rdquo; as a basis for another
+composition, his K. 522 sextet, subtitled <i>Ein Musikalischer
+Spass</i> (a musical joke).<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  This composition serves as a 
+sort of <i>catalogue raisonne</i> of the sorts of faulty devices 
+one could find in the work of mediocre (or poorer) composers 
+of Mozart&rsquo;s day.  Such composers would often have a few good 
+ideas but simply never got the details correct, and Mozart was 
+capable of picking out examples of such inattention as a subject 
+for lampoon.
+
+<p>[10] This is not to say that Cope&rsquo;s work is a joke.
+Nevertheless, it in unclear just how seriously an
+experienced listening ear may be expected to react.
+Certainly, it will not react to the Mozart examples as if it
+has just encountered a previously undiscovered Mozart
+composition.  More likely, it will respond with an uneasy
+sense of familiarity, as if it had been <i>reminded</i> of Mozart
+but then recognized at least one spanner in the works which
+caused the result to be &ldquo;not quite right.&rdquo;
+
+<p>[11] Of course it is important to remember that the first
+letter of EMI stands for &ldquo;Experiments.&rdquo;  In the world of
+science, not all experiments succeed; but we assume we can
+learn something even if the outcome is not successful.  Can
+we learn anything from the results of Cope&rsquo;s experiments?
+
+<p>[12] One thing we may learn is that, whether or not music
+<i>has</i> a deep structure, much of our response, as
+individuals, is to surface features.  Thus, we can pick up
+on surface cues and start to follow through with them, even
+if the music does not follow through in the same way.  This
+is particularly the case if the music is <i>performed</i> with
+the appropriate air of seriousness.  Cope has been fortunate
+enough to have his work performed by skilled
+instrumentalists and singers participating in the Santa Cruz
+Baroque Festival.  Hearing these results performed with the
+same seriousness of purpose which one would expect for a
+performance of Palestrina or Bach quickly dispels any notion
+that this is just another variation on a Mozart-type musical
+joke.  Because the <i>performers</i> are not the village amateurs
+which Mozart chose to ridicule, we assume that the
+<i>composer</i> is no less mediocre.  Ultimately, whether or not
+the results are laughable depends upon whether or not they
+receive very loving performances in a very convincing
+manner.  Whether or not we come away any the wiser about
+&ldquo;Musical Intelligence&rdquo; or the stylistic characteristics of
+Mozart or Joplin may ultimately be beside the point.
+
+</p>
+<p style="text-align: center"><b>Music Is in the Ear of the Listener</b></p>
+
+
+<p>[13] Erik Satie was a key forerunner of the avant garde
+approach to musical composition which developed at the
+beginning of this century.  There is a story that Satie was
+once (if not many times) asked if he felt that the sorts of
+things he did were <i>really</i> music.  It is said that Satie&rsquo;s
+favorite answer to this question was: &ldquo;Music is what happens
+at concerts.&rdquo;  This seems to capture a key element of what
+makes output from EMI &ldquo;work.&rdquo;  Whether or not it was music
+when it came out of the computer, it was <i>certainly</i> music
+when it happened at the Santa Cruz Bach Festival!
+
+<p>[14] Thus, the <i>real</i> lesson to be learned is that, in
+matters of music, practice is more important than theory.
+Music is what musicians do at concerts, and practice has
+more to do with <i>performing behavior</i> than with writing
+scores.  Performing behavior remains a great mystery to us,
+but it has tremendous power.  Skilled actors are capable of
+picking up a telephone directory and reading aloud from it
+with the same command of emotional manipulation they can
+apply to Shakespeare.  This does not mean that a telephone
+directory is &ldquo;great literature;&rdquo; but it <i>does</i> mean that a
+good enough actor can fool a willing audience into taking it
+as such!  This is because we, as audiences, do not listen to
+compositions; we listen to the <i>performances</i>.  Composition
+is simply the armature which is then fleshed out by
+performance.
+
+<p>[15] For many centuries this approach to music behavior was
+pretty much taken for granted.  It has only been in the last
+century or two that the composer has begun to assume the
+role of &ldquo;significant individual&rdquo; in his own right.  In
+today&rsquo;s world of competitions and grants, the situation has
+become even more exacerbated.  The consequence is that we
+seem to be losing sight of the behavior side of the story,
+particularly the significance of the behavior of the
+performer.  Yet it is that performer behavior which
+ultimately determines whether or not we, as audience, decide
+to devote enough attention to listen, regardless of whether
+what is performed has come from a struggling genius, a
+commercial hack, chance decisions, or even a computer
+program.</p><!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Stephen W. Smoliar<br>
+	National University of Singapore<br>Institute of Systems Science<br>Heng Mui Keng Terrace<br>Kent Ridge, SINGAPORE 0511<br><a href="mailto:smoliar@iss.nus.sg">smoliar@iss.nus.sg</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Hiller, L. A. and Isaacson, L. M.  <i>Experimental Music:
+Composition with an Electronic Computer</i>, New York:
+McGraw-Hill (1959).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Cope, D.  &ldquo;Recombinant Music: Using the Computer to
+Explore Musical Style,&rdquo; <i>Computer</i> 24 (7) (1991): 22&ndash;28.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Cope, op. cit.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Schoenberg, A.  <i>Models for Beginners in Composition</i>,
+New York: Schirmer (1943).<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Smoliar, S. W.  &ldquo;Algorithms for Musical Composition: A
+Question of Granularity,&rdquo; <i>Computer</i> 24 (7) (1991): 54&ndash;56.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Chomsky, A. N.  &ldquo;Language: Chomsky&rsquo;s Theory,&rdquo; in <i>The
+Oxford Companion to the Mind</i>, Gregory, R. L., editor, New
+York: Oxford University Press (1987): 419&ndash;421.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Woods, W. A.  &ldquo;Transition Network Grammars for Natural
+Language Analysis,&rdquo; <i>Communications of the ACM</i> 13 (10)
+(1970): 591&ndash;606.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Cope, op. cit.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> Mozart, W. A.  <i>The Dice Composer</i>, New York: Guild
+Publications of Art and Music (1941).<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> Smoliar, op. cit.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Apel, W.  &ldquo;Musikalischer Spass, Ein,&rdquo; in <i>Harvard
+Dictionary of Music</i>, Apel, W., editor, Cambridge: Harvard
+University Press (1969): 560.<br><a href="#FN11REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Hiller, L. A. and Isaacson, L. M.  <i>Experimental Music:
+Composition with an Electronic Computer</i>, New York:
+McGraw-Hill (1959).</div><div id="fndiv2" class="flyoverdiv">Cope, D.  &ldquo;Recombinant Music: Using the Computer to
+Explore Musical Style,&rdquo; <i>Computer</i> 24 (7) (1991): 22&ndash;28.</div><div id="fndiv3" class="flyoverdiv">Cope, op. cit.</div><div id="fndiv4" class="flyoverdiv">Schoenberg, A.  <i>Models for Beginners in Composition</i>,
+New York: Schirmer (1943).</div><div id="fndiv5" class="flyoverdiv">Smoliar, S. W.  &ldquo;Algorithms for Musical Composition: A
+Question of Granularity,&rdquo; <i>Computer</i> 24 (7) (1991): 54&ndash;56.</div><div id="fndiv6" class="flyoverdiv">Chomsky, A. N.  &ldquo;Language: Chomsky&rsquo;s Theory,&rdquo; in <i>The
+Oxford Companion to the Mind</i>, Gregory, R. L., editor, New
+York: Oxford University Press (1987): 419&ndash;421.</div><div id="fndiv7" class="flyoverdiv">Woods, W. A.  &ldquo;Transition Network Grammars for Natural
+Language Analysis,&rdquo; <i>Communications of the ACM</i> 13 (10)
+(1970): 591&ndash;606.</div><div id="fndiv8" class="flyoverdiv">Cope, op. cit.</div><div id="fndiv9" class="flyoverdiv">Mozart, W. A.  <i>The Dice Composer</i>, New York: Guild
+Publications of Art and Music (1941).</div><div id="fndiv10" class="flyoverdiv">Smoliar, op. cit.</div><div id="fndiv11" class="flyoverdiv">Apel, W.  &ldquo;Musikalischer Spass, Ein,&rdquo; in <i>Harvard
+Dictionary of Music</i>, Apel, W., editor, Cambridge: Harvard
+University Press (1969): 560.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1994 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Natalie Boisvert, Cynthia Gonzales, and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

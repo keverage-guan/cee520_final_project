@@ -1,0 +1,420 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 2.3: Dempster, Review of Kivy</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Review of Peter Kivy&rsquo;s <i>The Fine Art of Repetition</i> (Cambridge University Press, 1993)">
+
+    <meta name="citation_author" content="Dempster, Douglas">
+      
+
+<meta name="citation_publication_date" content="1996/03/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="2">
+<meta name="citation_issue" content="3">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+
+	<h1 style="width:900px; margin-top:1em; font-size: 2.4rem;">Review of Peter Kivy&rsquo;s <i>The Fine Art of Repetition</i> (Cambridge University Press, 1993)
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.96.2.3/mto.96.2.3.dempster.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Douglas Dempster</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: formalism, antihistoricism, 18th c. musical aesthetics, Platonism, authentic performance, emotion and expression in music</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.96.2.3/mto.96.2.3.dempster.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 2, Number 3, March 1996 <br> Copyright &#0169; 1996 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p>[1] Peter Kivy is the leading authority in the philosophy of music as practiced in the Anglo-American or &ldquo;non-speculative&rdquo; tradition in philosophy.  He is, to a large extent, responsible for rejuvenating,
+over the last 20 years, the discipline of music aesthetics through his many papers and books on the topic.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup> His greatest strength is as a historian of philosophy and especially 18th-century aesthetic theory. Like the best historians of philosophy, he looks to history for solutions to contemporary philosophical problems, and he often finds them.  He is also an elegant and accessible essayist whether discussing commonplace concerns about the place of music in a liberal
+education or arcane academic inquiries about the philosophical influences on Mattheson&rsquo;s <i>Der vollkommene Capellmeister</i>.<p>
+
+[2] <i>The Fine Art of Repetition</i> concentrates many papers (19) formerly scattered among journals and conferences from over the last 35 years.  Such retrospective collections from distinguished scholars
+are often not cohesive, and at first glance, Kivy&rsquo;s wide ranging essays might be mistaken for such a hodgepodge.  He considers topics as diverse as Platonistic metaphysical accounts of musical
+compositions and the psychological impossibility of atemporal cognition of music.  There is, however, a philosophical tendon that holds these disjoint topics together: Kivy&rsquo;s fundamentally Kantian view (250&ndash;264) that music, at least absolute music, music in its most unadulterated form, &ldquo;music alone,&rdquo; as he calls it, is &ldquo;sonic wallpaper,&rdquo; not to be classified, understood, or evaluated alongside art forms that are by nature meaningful or representational.  But Kivy&rsquo;s self-effacing term, so conspicuous in an age of overblown
+rhetoric, misrepresents the value he places on music.  He believes that music is a purely decorative art, yet a decorative art capable of carrying the profoundest value for our culture, in truth, more like the Alhambra or finest of Persian carpets than like anything so trivial as wallpaper (349&ndash;354).<p>
+
+[3] Kivy defends a formalist view of music.  Music is, on this view, literally meaningless, in the sense of having no semantic content.  It is a &ldquo;fine art of repetition&rdquo; incapable of expressing thoughts, ideas,
+or sentiments beyond what he calls &ldquo;the garden variety emotions,&rdquo; joy, sorrow, fury, bliss. Because of this he believes that the turn towards interpretation in the so-called &ldquo;new musicology&rdquo; is misguided: what
+has no meaning cannot be interpreted (316).  In 1990 he wrote that &ldquo;My own fear<nobr> . . . </nobr>is that the &lsquo;new music critics&rsquo; will allow themselves to be blown onto the shoals of interpretation&rdquo; (322).  The ship of music criticism is, by this time of course, firmly grounded on those shoals and is taking on interpretations at an alarming rate. (&ldquo;Abandon ship!  Philosophers and music theorists to the life rafts!&rdquo;)<p>
+ 
+[4] But Kivy&rsquo;s formalism is certainly not a vindication of music analysis as it is traditionally and typically practiced.  He rejects, and does so convincingly, Hanslick&rsquo;s polemic against the expressive
+function of music (265&ndash;295).  He goes so far as to argue that the ubiquity of the &ldquo;lowly musical repeat&rdquo; unsettles organicist conceits of so much contemporary music analysis (338&ndash;344).  Furthermore, in
+earlier books Kivy works mightily to make room in his formalism for something he calls the &ldquo;expressive properties&rdquo; of music.  Music does not literally express emotions, but it is &ldquo;expressive of&rdquo; them, he
+says.  This relationship of expressiveness is not a causal relation between a real emotion either expressed (e.g. by the composer) or aroused (e.g. in the listener) by the music.  Nor is it an abstractly semantic or representational relation.  Kivy endorses a counter-intuitive &ldquo;possession theory&rdquo; or a &ldquo;cognitivist theory&rdquo;: the emotions &ldquo;expressed&rdquo; by music are simply &ldquo;possessed&rdquo; by the music or &ldquo;embodied&rdquo; in it.  These emotions are, Kivy would say, &ldquo;an essential part of the syntactic structure of music&rdquo; (258, 230&ndash;233, 314&ndash;317).<p>
+
+[5] By redeeming this notion, Kivy claims, philosophers have shown music critics the way to a more justifiable &ldquo;new&rdquo; music criticism. The catch in all this for music theory and analysis is that a truly
+thorough formalist music criticism ought not, according to Kivy, neglect the expressive or emotive aspects of musical structure while in hot pursuit of organic unities.  Music analysis, Kivy says, needs to be &ldquo;amplified&rdquo; to include consideration of these expressive structural properties (316).<p>
+
+[6] The problem with Kivy&rsquo;s proposal is this.  Predictably, the music analyst will heartily agree that the expressive characteristics of musical structure ought not be neglected in analysis.  But the analyst
+will also rightfully insist that music analysis doesn&rsquo;t neglect these features, at least not when analysis is done sensitively and intelligently.  (At most, the analyst should concede that music analyses often proceed without a comprehensive preanalytical inventory of the expressive and other musically interesting features of the piece about to be etherized upon the analytical table.)<p>
+
+[7] Where the music analyst and Kivy disagree is with regard to the reducibility of expressive properties to the more purely structural and psycho-acoustic properties of music.  The typical music analyst believes that higher-order or &ldquo;surface&rdquo; musical properties (e.g. resolution, sorrowfulness, etc.) are understood when we understand the underlying pitch relations from which these properties &ldquo;emerge&rdquo; or upon which they are structurally &ldquo;dependent.&rdquo;  That&rsquo;s why analysts will reject Kivy&rsquo;s accusation that they neglect the expressive properties of music.  This methodological reductionism is the very heart and soul of &ldquo;music analysis,&rdquo; just as the name suggests.  By contrast, Kivy&rsquo;s &ldquo;amplified analysis&rdquo; clearly treats such higher-order properties as just one among many equally fundamental &ldquo;elements&rdquo; that constitute the syntactic structure of a piece (319&ndash;320).  And no proposal could be less compatible with the methodological assumptions of music analysis.<p>
+
+[8] Not only does Kivy&rsquo;s formalism try to make room for the expressive &ldquo;content&rdquo; in music, but it is also combined with an old-fashioned intentionalist view of correct performance practice, which is, even
+more surprisingly, antihistoricist in its justification.  This musicological view is advanced in an extended defense of a Platonistic account of the metaphysics of music.<p>
+
+[9] The Platonist is impressed by the reproducibility of musical works in performances, scores, and even thought.  He concludes that the &ldquo;work itself&rdquo; must be whatever all these reproductions or instances
+are reproductions or instances of.  And that thing, the Platonist standardly argues, must be an abstract entity, a &ldquo;universal,&rdquo; or kind, because any concrete particular, even the original score or creative
+thought, would be just one more instance (e.g. score, performance, experience, etc.) and not the &ldquo;work itself.&rdquo;  (Compare this to the authenticity of, say, a lithographic print which inherits its authenticity by virtue of standing in the right causal relation to the relevant etched stone.)  What&rsquo;s more, the Platonistic insight seems corroborated by intuitions about the comparative indestructibility of musical works, which, unlike much sculpture, painting, print-arts and architecture, can continue to exist&mdash;in some sense anyway&mdash;quite
+independently of the destruction or loss of any particular sketches, scores, or performances of it.<p>
+
+[10] The rub, of course, for the Platonist is that Platonic entities aren&rsquo;t supposed to be creatable; they&rsquo;re eternal and only waiting to be discovered through the recognition or creation of instances.  And
+that seems at odds with our settled intuitions about the god-like creativity and originality of the compositional genius.<p>
+
+[11] Kivy bites the bullet.  He argues that we&rsquo;re just mistaken about the creativity of composers: that the notion is a false conceit of Romanticism elevated to an ahistorical conceptual truth (40&ndash;43); that
+our valuing of compositional genius needn&rsquo;t at all be jeopardized when we recognize that a composer discovered rather than created a work (43&ndash;46); that historicist arguments that a work is created (and
+thereby acquires its essential attributes in its unique historical circumstance) are inconsistent with entrenched musical intuitions (60&ndash;66); that, contrary to historicists, it is logically possible for the exact same piece of music to be independently composed (i.e. discovered) by different composers in different times and
+cultures (70&ndash;73); and that musical works are defined in terms of pitch structures and not even partially in terms of historical performance means (i.e. instrumentation and orchestration) or historical performance practices (75&ndash;94).<p>
+
+[12] Kivy&rsquo;s target here is historical essentialism, which treats every interpretable artifact, whether a poem or composition, as having its identity and meaning fixed by some exaggerated moment in its history, usually the mythical moment of creation.  In rejecting such a view, Kivy still leaves plenty of room for historically &ldquo;correct&rdquo; performances that do not pretend to some exaggerated authenticity. Kivy is pluralistic about historical authenticity: widely divergent performances can all be historically authentic in accordance with some or several reproducible features of a work as it was originally performed or intended to be performed.  But very likely, he argues, not all of these features can be simultaneously realizable in any one performance (117&ndash;133).  Therefore, there is not any one uniquely authentic performance of a piece.<p>
+
+[13] Kivy, the formalist, even goes so far as to argue that historically informed performances that conform to compositional intentions are justifiably &ldquo;better&rdquo; than performances that disregard those intentions.  But this &lsquo;better&rsquo; is for Kivy a purely moralistic value, in the most literal sense, and not musicological or aesthetic:
+&ldquo;[performers] have a strong obligation to honor the performance intentions of dead composers.  This is a special case of our obligation to comply, where we can, with the wishes and intentions of the dead; and this obligation has its source in our duty to refrain from injuring the interests of others&rdquo; (114).<p>
+
+[14] Kivy makes a persuasive case for performers having moral obligations to the performance intentions, such as they are, of the composer.  He doesn&rsquo;t, however, make a persuasive case that this obligation actually accounts for why many musicians pursue and are committed to historically correct performances: &ldquo;the peculiar zeal with which performers pursue the performance intentions of dead composers<nobr> . . . </nobr>can best be explained by their strong belief in an ethical calling vis-a-vis the performance intentions of the composers
+whose works they interpret&rdquo; (114).  Performers who were simply executing a moral duty to a dead composer would not presume to achieve, thereby, any aesthetic perfection.  Dutifully consuming Aunt Maude&rsquo;s inedible fruit cake in accordance with her last will and testament carries with it no corollary obligation to admire her cooking. Similary, the dutiful performer, motivated only by a moral obligation to the composer&rsquo;s performance preferences, would stoically take the aesthetically good with the bad.  In fact, it is hard to
+believe that the motivation behind the typical historically &ldquo;correct&rdquo; performance is not primarily an aesthetic objective guided by Romantic presumptions about the creative infallibility of the creative genius.
+Kivy mistakes the artistic zeal of performers for a &ldquo;missionary zeal.&rdquo;<p>
+ 
+[15] The most vexing problem for Kivy&mdash;one which he addresses in both the opening and closing essays of <i>The Fine Art of Repetition</i>, and which absorbed his entire earlier book, <i>Music Alone</i>&mdash;is
+explaining the value, indeed, what is sometimes the &ldquo;exalted&rdquo; and <i>profound</i> value, of an inherently meaningless decorative art form. Whatever value absolute music holds for us (327&ndash;359), whatever claims
+it can justifiably make on a liberal educational curriculum (11&ndash;31), it must make within the limitations of a purely formal art.  Kivy offers two distinct defenses of music.  The first is a justification that attributes &ldquo;humanizing,&rdquo; &ldquo;ritualistic,&rdquo; &ldquo;communal,&rdquo; and &ldquo;participatory&rdquo; functions to performances of musical formalities
+(25&ndash;31).  The second argues that while musi c may be essentially &ldquo;sonic wallpaper&rdquo; it is, or can be anyway,&ldquo;multi-dimensionally&rdquo; complex, &ldquo;quasi-syntactical,&rdquo; &ldquo;highly expressive,&rdquo; and &ldquo;profoundly moving&rdquo;
+(354&ndash;358).  And presumably he takes these properties to be intrinsically valuable in ways that &ldquo;elevate&rdquo; music from &ldquo;mere wallpaper&rdquo; to sublime decoration.<p>
+
+[16] I&rsquo;ve discussed only the main issues running through Kivy&rsquo;s rich collection of essays.  Other chapters examine a wide range of issues in historical musicology, musical aesthetics, and the history of musical aesthetics.  There are chapters on Kant&rsquo;s formalism, Hanslick&rsquo;s inconsistent formalism, the power of musical
+characterization in opera, the origins of the child Mozart legend, and an obscure debate between Darwin and Spencer on evolutionary origins of music.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Douglas Dempster<br>
+	Eastman School of Music, Univ. of Rochester<br>Humanities Department<br>26 Gibbs St.<br>Rochester, NY 14607<br><a href="mailto:demp@uhura.cc.rochester.edu">demp@uhura.cc.rochester.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> <i>Authenticities: Philosophical reflections on musical performance</i> (Cornell, 1995); <i>Music Alone: Philosophical reflections on the purely musical experience</i> (Cornell, 1990); <i>Sound Sentiment: An essay on the musical emotions</i> (Temple, 1989); <i>Osmin&rsquo;s Rage: Philosophical
+reflections on opera, drama, and text</i> (Princeton, 1988); <i>Sound and
+Semblance: Reflections on musical representation</i> (Princeton, 1984);
+<i>The Corded Shell: Reflections on musical expression</i> (Princeton,
+1980).<br><a href="#FN1REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv"><i>Authenticities: Philosophical reflections on musical performance</i> (Cornell, 1995); <i>Music Alone: Philosophical reflections on the purely musical experience</i> (Cornell, 1990); <i>Sound Sentiment: An essay on the musical emotions</i> (Temple, 1989); <i>Osmin&rsquo;s Rage: Philosophical
+reflections on opera, drama, and text</i> (Princeton, 1988); <i>Sound and
+Semblance: Reflections on musical representation</i> (Princeton, 1984);
+<i>The Corded Shell: Reflections on musical expression</i> (Princeton,
+1980).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1996 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Lee A. Rothfarb, General Editor and Tahirih Motazedian, Editorial Assistant  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

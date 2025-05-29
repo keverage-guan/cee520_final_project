@@ -1,0 +1,904 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 0.11: Covach, Destructuring Cartesian Dualism</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Destructuring Cartesian Dualism in Musical Analysis">
+
+    <meta name="citation_author" content="Covach, John R.">
+      
+
+<meta name="citation_publication_date" content="1994/11/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="0">
+<meta name="citation_issue" content="11">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Destructuring Cartesian Dualism in Musical Analysis
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.94.0.11/mto.94.0.11.covach.html"><img src="https://www.mtosmt.org/gifs/mto_classic1.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">John R. Covach</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: Heidegger, Husserl, phenomenology, fundamental
+ontology, hermeneutics</font></p><p><font size='4'>ABSTRACT: The following study represents work-in-progress.  In
+this preliminary study I will explore the topic of subject-object
+dualism as it arises in musical analysis.  My work is strongly
+influenced by Martin Heidegger&rsquo;s &ldquo;fundamental ontology,&rdquo; which he
+presents in his important philosophical work, <i>Being and Time</i>
+[1927].<sup><a name='FN1REF' href='#FN2' id='footnote1'>(1)</a></sup>  I will argue that Heidegger&rsquo;s critique of Rene Descartes&rsquo;
+systematic reduction of intellectual certainty to a fundamental &ldquo;first
+fact of knowledge&rdquo;&mdash;the famous <i>cogito, ergo sum</i>&mdash;offers us a
+useful guide in the consideration of dualism as it occurs in musical
+analysis.  Heidegger&rsquo;s notion of destructuring (<i>Destruktion</i>) will
+prove to be especially valuable in investigating this problem.  The
+exploration of subject-object dualism will then lead to consideration
+of musical understanding and musical meaning, and concepts derived
+from the writings of Heidegger and Hans-Georg Gadamer will be
+employed as I suggest a number of preliminary solutions to problems
+that will arise in the discussion of these issues.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.94.0.11/mto.94.0.11.covach.pdf">PDF text </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 0, Number 11, November 1994 <br> Copyright &#0169; 1994 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p style="text-align: center"><b>Philosophical Background</b></p>
+<p>[1] By the term &ldquo;subject-object dualism,&rdquo; I mean the separation that
+occurs&mdash;however tacitly&mdash;whenever we approach a piece of music as
+an object in some world &ldquo;out there,&rdquo; an object distinct from ourselves
+as perceiving and conceiving subjects.  It is probably safe to say that
+in our analysis of works we tend to assume this subject-object
+distinction; while we are mostly not at all clear on what the specific
+nature of the musical object is, we nevertheless proceed as if that
+problem can be &ldquo;bracketed&rdquo; in analytical discussion.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup>  As the
+Polish phenomenologist Roman Ingarden has shown, however, the
+ontological status of the musical work is a rather complicated
+philosophical question; our tacit acceptance of a musical work as an
+object may be disrupted, for example, when we engage questions of
+variant performances of a single work (Is the work its performance?)
+or various editions of the score (Is the work its score?).<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup></p>
+
+<p>[2] Ingarden thinks of the musical work as an &ldquo;intentional object,&rdquo; by
+which he means that it is an object for me and towards which my
+consciousness is directed.  Phenomenologists tend to hold that the
+notion of intentionality, first proposed by Franz Brentano but most
+often associated with the work of Edmund Husserl, transforms the
+Cartesian subject-object split in an important way.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup>  For Husserl,
+consciousness is always consciousness of something; there is no
+subject without an object.  Likewise, there are no objects independent
+of subjects.  Thus, intentionality places the subject and object in a
+richly interdependent relationship.</p>  
+
+<p>[3] Husserl also distinguishes between the usual ways we have of
+thinking about things in the world, which he calls the &ldquo;natural
+attitude,&rdquo; and the &ldquo;phenomenological attitude.&rdquo;  The
+phenomenological attitude entails &ldquo;bracketing&rdquo;&mdash;that is, setting aside
+in full consciousness of doing so&mdash;our usual theories and ways of
+accounting for things in the act of perception; focus is placed on the
+phenomenon of our conscious experience itself.  Husserl conceived
+of phenomenology as a method that was applicable to many
+disciplines, and indeed, in the years following the publication of
+Husserl&rsquo;s central texts (<i>Logical Investigations</i> [1900, 1901], <i>Ideas
+I</i> [1913], and <i>Cartesian Meditations</i> [1931]), a number of scholars
+have adopted a phenomenological approach in a wide variety of
+fields.  In their application of the phenomenological method, music
+theorists have tended to bracket our usual theories and analytical
+methods, coaxing the reader to hear the music in a fresh manner; and
+understandably the emphasis in these studies often seems to fall on
+the perceptual experience of the music itself, and especially on the
+temporal dimension of that experience.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>   But despite the central
+notion of intentionality, phenomenologists tend to preserve the
+conception of the musical work as an object, even if the
+phenomenological method reveals it to be a richer object than we
+might have previously imagined.</p>
+
+<p>[4] Heidegger was assistant to Husserl in Freiburg during the 1920&ndash;
+23 period, and his writing in the mid to late 1920s is sometimes
+thought to constitute an extension of the Husserlian project; in fact,
+Heidegger himself describes one aspect of his work during this
+period as &ldquo;hermeneutic phenomenology.&rdquo;  Many philosophers,
+however, hold that Heidegger&rsquo;s work breaks with Husserl&rsquo;s project in
+important ways.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  One way in which Heidegger breaks with
+Husserl&rsquo;s work is by subjecting the phenomenological attitude itself&mdash;
+and, consequently, the Cartesian subject/object split&mdash;to
+phenomenological scrutiny.  But in order to understand Heidegger&rsquo;s
+critique of Descartes&mdash;and by extention, Husserl&mdash;it is important first
+to survey the broader concerns Heidegger addresses in <i>Being and
+Time</i>.</p>
+
+<p>[5] One of the central arguments Heidegger makes in <i>Being and
+Time</i> is that the Western philosophical tradition has &ldquo;forgotten&rdquo; the
+question of being.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>  Philosophers have tended to think of being as
+if it were a substance; we ask the question in the form &ldquo;What is
+being?&rdquo;  But Heidegger sees the question as something more like
+&ldquo;How is being?&rdquo;  This way of formulating the question seems strange
+to us, and Heidegger argues that this is because in many ways our
+language itself participates in this &ldquo;forgetfulness of being.&rdquo; 
+Heidegger would like to retrieve what he views as the all-important
+question of being, but in order to accomplish this he has to overcome
+what he takes to be fundamental biases that he sees as embedded
+within the philosophical tradition, within the language that that
+tradition, and within Western culture generally.</p>
+
+<p>[6] In order to get to the question of being, then, Heidegger
+&ldquo;destructures&rdquo; the tradition; that is, he attempts to bring to light the
+underlying assumptions that generally go unexamined in the
+philosophical discourse.  These assumptions, according to Heidegger,
+are so commonly held and so fundamental to our way of thinking
+about things that they are almost completely transparent to us; we are
+generally unaware of their presence in our thinking.  But if we can
+tease out these assumptions, we can begin to see how our thinking is
+over-determined by these assumptions, and how this over-
+determination closes off other kinds of solutions to certain central
+philosophical problems than those commonly held within the Western
+tradition.  Heidegger pursues three basic strategies for disrupting our
+assumptions: he offers detailed critiques of the tradition; he pursues
+his infamous word etymologies; and he focusses attention on our
+everyday ways of coping in the world (this last aspect, and especially
+Heidegger&rsquo;s discussions of <i>Angst</i> and <i>Sorge</i>, has often been
+interpreted as existentialist).</p>
+
+<p>[7] It is, then, in the context of retrieving the question of being that
+Heidegger focusses attention of the subject-object split, especially as
+it is asserted by Descartes in his <i>Discourse on Method</i> [1637] and
+<i>Meditations on First Philosophy</i> [1641].  Descartes sought the
+basis of absolute intellectual certainty; he employed a method of
+doubting everything in order to come down to the foundation for all
+certain knowledge.  In Part Four of his <i>Discourse on Method</i>,
+Descartes comes to the conclusion that while he could doubt all
+knowledge gained both by the senses and by rational means, the one
+thing he could not doubt was the very fact that he was doubting. 
+This reduction leads to the famous <i>cogito, ergo sum</i>&mdash;I think,
+therefore I am.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  From this first principle of certain knowledge,
+Descartes rebuilds his understanding of the world through a rational
+methodological procedure.</p>
+
+<p>[8] Heidegger finds in Descartes&rsquo; first principle a strong statement of
+something he takes to be an assumption in all Western philosophy
+since Plato: we tend to privilege rational procedures in acquiring
+knowledge over other possible ones.  But in Descartes especially, the
+subject, certain of its own consciousness, is to be distinguished from
+the world that this subject places before itself as an object.  This
+subject-object distinction is taken as self-evident&mdash;becoming thus,
+transparent&mdash;and forms the foundation for all knowledge.  In our
+daily lives, we can readily detect the presence of notions like
+&ldquo;scientific method&rdquo; and &ldquo;objectivity&rdquo; in our assumptions about
+knowledge and its acquisition.  In dealing with a situation
+&ldquo;objectively,&rdquo; we set our rational selves over against whatever we
+mean to investigate.  In terms of Heidegger&rsquo;s larger concern with the
+question of being, the result of the subject-object split is that we tend
+to place being before us as if it too were an object&mdash;some kind of
+entity or state that we could explore objectively.  But Heidegger&rsquo;s
+argument is precisely that being is not such an entity at all, and the
+reason why such a statement seems so peculiar is because the notion
+that it should be an object is so deeply engrained in our usual ways
+of thinking that we find it difficult to imagine things any other way.</p>
+
+<p>[9] Heidegger&rsquo;s &ldquo;fundamental ontology&rdquo; is an attempt not so much to
+answer, but rather to raise the question of being in a way that avoids
+the assumptions that the tradition imposes on us.  In pursuing this
+goal, Heidegger turns to our everyday coping in the world around us. 
+Heidegger argues that in our daily lives we interact with the things
+around us not so much as objects in the Cartesian sense, but rather as
+things that are situated within a vast network of contexts.  When I
+type this paper (or as you read it), the computer is not so much an
+object in front of me as much as it is a tool within the larger context
+of what I am trying accomplish by writing the paper.  It resides in a
+context with the printer, the coffee pot, and a large number of things
+in my office that are typically viewed in the context of some task at
+hand.  It is only when something happens that interrupts my work in
+some way&mdash;the screen locks or the power goes out, say&mdash;that I look at
+the computer as an object.  If I am qualified to do so (and I am not),
+I might open the computer up and have a look at the circuit boards. 
+But whatever I do, the disruption of my work transforms my
+conception of the computer; and if I attend to this shift, I will find
+not only that the computer becomes an object for me, but also that it
+was not really an object in the same sense before the disruption.  The
+argument that Heidegger wants to make is not that philosophy should
+abandon the subject-object split; this, of course is impossible. 
+Rather, Heidegger wants to show that this kind of Cartesian dualism
+is not the foundational fact of understanding; the subject-object split
+is instead derivative of another aspect he wants to uncover: being-in-
+the-world.</p>
+
+<p style="text-align: center"><b>Musical Objects</b></p>
+<p>[10] As was mentioned above, music theorists and analysts tend to
+assume that the musical work is an object, even if it is a richly
+faceted one.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>  We have a tendency to &ldquo;measure&rdquo; works according
+to objective standards: on the most fundamental level we speak of
+intervals, rhythms, or timbres&mdash;all aspects of the physical make-up of
+sounds that can be measured empirically.  Other aspects of music
+that are less physically tangible&mdash;aspects such as form, harmony,
+counterpoint, voice leading, and motive&mdash;are sometimes thought of as
+if they were physical properties that operate according to certain
+kinds of laws.  While the notion that the major triad is the &ldquo;chord of
+nature&rdquo; or Schoenberg&rsquo;s notion that dissonances are merely remote
+consonances are mostly viewed with suspicion by today&rsquo;s theorist,
+the scholarly literature is replete with unsubstantiated assumptions
+that, for example, tonality acts like a musical force that creates a
+hierarchical relationship among tones.</p>
+
+<p>[11] Now it is not so much that I would want to challenge such
+fundamental notions in the current discourse as form or tonality.  To
+have such shared assumptions is part of what constitutes participating
+in a culture.  These shared assumptions, it seems, are necessary and
+unavoidable.  But to the extent that they are shared, they also
+become transparent to us.<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup>  In his <i>Truth and Method</i> [1962],
+Heidegger student Hans-Georg Gadamer calls such shared
+assumptions &ldquo;prejudices,&rdquo; arguing for the retrieving of an
+understanding of the positive role such prejudices play against an
+Enlightenment conception that all prejudices need to be erased.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup> 
+Prejudices cannot ever be eliminated&mdash;there is no way to retrieve, in
+historical writing for example, the past &ldquo;as it really was&rdquo;&mdash;but
+prejudices can be understood and accounted for in interpretation.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup></p>
+
+<p>[12] If we are to follow Heidegger&rsquo;s model, we need to destructure
+certain aspects of our discourse to tease out the prejudices.  As a
+very simple example, let us take a focal concern of many music
+theorists: tonality.  At the undergraduate level, we teach tonality as if
+there were a wide consensus among us on what we mean by the
+term, and I think in a very general sense there is.  Disagreements do
+arise, however, and the famous Schenker-Schoenberg polemic is one
+of many that could be cited, both historically and in the current
+literature.  But when we discuss tonality, we tend to speak in
+theoretical terms; that is, we speak of tonal movement as abstract and
+not as the exclusive property of any particular work.  One says
+&ldquo;dominant tends to resolve to tonic,&rdquo; or &ldquo;a tonic chord may be
+embellished by a subdomiant chord over a tonic pedal in the bass.&rdquo; 
+Many of us teaching from a Schenkerian orientation teach the
+students a four-stage &ldquo;phrase model,&rdquo; according to which the
+sequence tonic-predominant-dominant-tonic becomes the basic
+paradigm for harmonic progression and tonal prolongation.</p>
+
+<p>[13] At least once each term, however, a student writes a progression
+such as I - ii - iii - IV, plays it at the keyboard, and wonders what is
+&ldquo;wrong&rdquo; with the progression.  To this student it sounds fine, and if
+the course were devoted to writing music in the style of Lionel
+Ritchie it would be fine; but that is not the kind of music that is a
+central concern in such a course, and this cuts right to the heart of
+the problem.  Theories of tonality do not describe properties that a
+particular musical object has in isolation; they describe how that
+piece relates to other pieces.  If you have a theory of tonality, it has
+to arise from actual or potential pieces of music.  When we teach
+tonality in music from the common-practice period, each example is
+viewed&mdash;often tacitly&mdash;against the practice of composers in that
+particular tradition.  I do not mean that we refer to specific musical
+examples (which we may or may not do), but rather that we tacitly
+refer to a body of music with which we are to some degree&mdash;often to
+a great degree&mdash;familiar.  Thus, understanding and meaning arise in
+tonal analysis only when one &ldquo;situates&rdquo; a particular example within a
+not-always-consciously circumscribed literature.  To the student who
+writes the Lionel Ritchie progression, the answer is not &ldquo;this is a bad
+progression,&rdquo; but rather &ldquo;good progression, wrong style.&rdquo;</p>
+
+<p>[14] It is useful&mdash;and sometimes essential&mdash;to discuss tonality as if it
+could be &ldquo;disembodied&rdquo; from real pieces that reside with myriad
+other works within cultural traditions.  This kind of thinking, though,
+has a tendency to reinforce the notion that a musical work is a kind
+of self-contained object, and analyses according to this idea can tend
+to reinforce the idea that such an object has certain properties that
+can be duly noted and interpreted.  Such &ldquo;objectification&rdquo; of the
+musical experience is not restricted to the harmonic analysis of tonal
+music, however, and could be uncovered in music-theoretical writing
+addressing any of the aspects of music mentioned above.  I would
+argue, however, that this is not really the way we understand music
+in the most fundamental sense, and thus, it is not ultimately in these
+terms that music becomes meaningful for us.  Following Heidegger, I
+want to argue that &ldquo;objective&rdquo; theoretical thinking is derivitive of a
+more fundamental kind of musical experience.</p>
+
+<p style="text-align: center"><b>Musical Worlds</b></p>
+<p>[15] If there is a mode of experiencing music that is more
+fundamental than the usual rational one to which we most often
+attend&mdash;that is, if there is a mode of musical experience that
+corresponds to being-in-the-world&mdash;What is it? or perhaps better,
+How is it?  I argued above that when we think of a particular piece
+in terms of its tonality, for example, we are really situating that piece
+within a literature; and when we situate a piece in this way, we are
+not necessarily conscious of doing so.  Thus, what I am proposing is
+not simply a modified Heideggerian style theory in which one would
+consciously situate works within specified literatures.  I am also not
+arguing, that in hearing a piece of music, say a Beethoven string
+quartet, we consciously say to ourselves: &ldquo;Ahah!  This bit is just like
+a passage from Haydn, and that other bit is very like a Mozart
+passage I know.&rdquo;  This is, of course, something we all do to some
+extent; but this kind of intertextuality is also not what I am getting
+at.  I am instead arguing that we never hear the Beethoven string
+quartet in isolation from other works; or perhaps it would be better to
+say, we never <i>prefer</i> an interpretation of the Beethoven in isolation
+from other works (we can, after all, imagine a culture that prefers to
+hear works in isolation from all others, but Western culture is not
+that way).  The question now arises: If these other works are present
+in our understanding a particular work, and if those other works are
+not present for the most part through quotation or allusion, how are
+they present?</p>
+
+<p>[16] Particular pieces of music are situated within what I shall term
+&ldquo;musical worlds.&rdquo;  The musical world of a piece is a number of other
+works that form a kind of background&mdash;a body of other pieces that
+create a purely musical context for some particular piece.  The
+musical world of a piece is usually not something of which we are
+conscious when we listen, but is the product of our cumulative
+experience in music.  The exact pieces that make up a musical world
+could never be exhaustively listed; in a certain sense they are what is
+closest to us in our musical experience, but by virtue of this they are
+also what is most difficult to articulate in a conscious manner:
+musical worlds are transparent.</p>
+
+<p>[17] The ways in which we typically go about training ourselves and
+others in music, however, betray the underlying presence of musical
+worlds.  It is fairly clear that we operate in most instances according
+to the assumption that in order to understand music, one needs to
+know a lot of music.  This assumption is typically tacit until some
+circumstance disrupts it and brings it to our attention.  For example,
+if I am teaching a class in harmony&mdash;to return to the example used
+earlier&mdash;and am faced with a few students in the class who know very
+little Western art music from the common-practice period, it becomes
+very difficult to play a particularly unlikely harmonic progression and
+say: &ldquo;Now use your ears; does this sound like something you might
+hear in Mozart?&rdquo;  Not knowing the literature to which I am referring,
+the only honest answer the student can give is: &ldquo;How should I
+know?&rdquo;  On the other hand, those students who have more
+experience with that literature can immediately answer &ldquo;No&rdquo; to this
+question, though they may have to pause to figure out why the
+progression does not work according to the theoretical principles
+discussed in class.  In the first instance the musical world in which I
+am asking the student to situate the progression is unavailable to
+him/her; in the second instance the student cannot satisfactorily
+situate the progression within the musical world that I specify. 
+Similar instances abound in teaching performance and composition. 
+In teaching jazz or rock improvisation on the guitar, for instance, it is
+almost impossible for the student to make any progress if s/he is
+unwilling to dedicate his/herself to listening to hours of music in the
+style; the student must build an appropriate musical world in which
+to maneuver when improvising.</p>
+
+<p>[18] In many ways much of this is self-evident; but when differences
+arise between theories or analyses, the difference can often be traced
+to a lack of clarity with regard to the musical worlds that form the
+background of each opposing point of view.  To use a brief example,
+many of the differences between the harmonic theories of Schenker
+and Schoenberg can be traced to the fact that the two theorists were
+generalizing across two different bodies of music.  As is well known,
+Schenker restricted his analyses for the most part to pieces he
+considered to be masterworks.  Schoenberg, too, considered those
+pieces; but Schoenberg included the music of Richard Strauss,
+Gustav Mahler, and many others (including himself).  It might even
+be said that Schoenberg extended his generalizations to pieces that
+had not yet been composed (or pieces that might have been
+composed).  It is, thus, inevitable that differences should arise in
+their respective theories.  The problems enter when we suppose that
+there must exist one single unifying theory of tonality.  Tonality is
+not something akin to a physical property; unlike Earth&rsquo;s gravity,
+tonality is not the same for all terrestrial places and times.  Tonality
+is a way of situating pieces within a&mdash;perhaps extremely large&mdash;group
+of pieces.  This being the case, the question is not &ldquo;How does
+tonality work?&rdquo; but rather &ldquo;How does tonality work with regard to
+these pieces?&rdquo;</p>
+
+<p>[19] Returning, then, to the subject/object split: I am arguing that at
+the most fundamental level we do not experience a piece of music as
+a self-contained object.  A piece is rather more like a location within
+a rich network of other pieces in our musical experience.  <i>Musical
+understanding arises when we are able to situate a particular piece
+within a musical world, and musical meaning arises as we appreciate
+the particular way in which the work is situated.</i>  The work is not
+so much an isolated point as much as it is a location of gathering
+together.  We may explain aspects of this gathering together in terms
+of tonality, form, row structure, or motivic development, but such
+descriptions will always be derivative objectifications of a more basic
+kind of musical experience.  By making such a claim I am not
+coming out against dualism in analysis; I am instead arguing that
+dualism is already once removed from what is most fundamental in
+musical experience.  Musical analysis always presumes a musical
+world, even if the analyst rarely articulates this transparent
+background.</p>
+
+<p>[20] A number of questions remain to be addressed with regard to
+the position outlined above.  For example, Lydia Goehr has recented
+dealt at some length with the notion of the musical work in Western
+art music.<sup><a name="FN13REF" href="#FN13" id="footnote13">(13)</a></sup>  She traces the origins to this way of thinking about
+music back to the beginnings of the nineteenth century.  There are a
+number of other kinds of music, both non-Western and Western, for
+which the idea of a musical &ldquo;work&rdquo; does not apply.  In rock music,
+for example, it is difficult to think in the traditional terms of &ldquo;pivotal
+works.&rdquo;  In a tradition that does not privilege the notion of the work,
+how does this difference impact the musical world of the listener as
+sketched above?  Hermeneutic positions such as the one I am
+forwarding are also often subject to charges of relativism,
+subjectivism, and solipsism.  Critics might question whether, for
+instance, we each carry around our own musical worlds, or whether
+we carry around one or many musical worlds.  How do our musical
+worlds change as our experience grows?  Such questions are the
+topic of my on-going work on this philosphical problem.  I welcome
+suggestions and discussion from interested readers.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	John R. Covach<br>
+	University of North Texas<br>College of Music<br>Denton, TX 76203&ndash;6887<br><a href="mailto:jcovach@music.unt.edu">jcovach@music.unt.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> Martin Heidegger, <i>Being and Time</i>, trans. John Macquarrie and
+Edward Robinson (New York: Harper and Row, 1962).<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Cartesian dualism is sometimes discussed in terms of a mind-body,
+or mind-world split.  For discussions of subject-object dualism as it
+arises in the consideration of music, see F. Joseph Smith&rsquo;s chapter,
+&ldquo;Cartesian Theory and Musical Science,&rdquo; in his <i>The Experiencing of
+Musical Sound: Prelude to a Phenomenology of Music</i> (New York:
+Gordon and Breach, 1979), 119&ndash;42; as well as his &ldquo;Music Theory and
+the History of Ideas,&rdquo; in F. Joseph Smith, ed. <i>In Search of Musical
+Method</i> (London: Gordon and Breach, 1976), 125&ndash;49.  See also
+Thomas Clifton, &ldquo;Music as Constituted Object,&rdquo; in <i>In Search of
+Musical Method</i>, 73&ndash;98 and Lawrence Ferrara, &ldquo;Phenomenology as
+a Tool for Musical Analysis,&rdquo; <i>The Musical Quarterly</i> 70/3 (1984):
+355&ndash;73.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> Roman Ingarden, <i>The Work of Music and the Problem of its
+Identity</i>, trans. A. Czerniawski (Berkeley: University of California
+Press, 1986).  A helpful summary of Ingarden&rsquo;s essay is provided in
+Edward Lippman, <i>A History of Western Musical Aesthetics</i>
+(Linclon: University of Nebraska Press, 1992), 441&ndash;43.  Ingarden&rsquo;s
+arguments certainly merit far more careful consideration than the
+scope of this paper allows; I hope here merely to offer a sense of
+what some of the questions are that surround the discussion of the
+musical object.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> For a clear account of Husserl&rsquo;s position and on the historical and
+intellectual context in which it arose, see David Woodruff Smith and
+Ronald McIntyre, <i>Husserl and Intentionality: A Study of Mind,
+Meaning, and Language</i> (Dordrecht: D. Reidel, 1982).  For a
+general introduction to Husserl&rsquo;s philosophy and the
+phenomenological tradition, see Joseph J. Kockelmans, ed.,
+<i>Phenomenology: The Philosophy of Edmund Husserl and its
+Interpretation</i> (New York: Anchor Books, 1967).  Don Ihde offers a
+summary of intentionality in his <i>Listening and Voice: A
+Phenomenology of Sound</i> (Athens: Ohio University Press, 1976),
+Chapter 3 especially.  While Ihde addresses the topic of sound
+generally&mdash;and consequently music constitutes only one aspect of his
+study&mdash;his book provides a valuable introduction to phenomenological
+thought and method.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> See, for example, Thomas Clifton, <i>Music as Heard: A Study in
+Applied Phenomenology</i> (New Haven: Yale University Press, 1983);
+David Lewin, &ldquo;Music Theory, Phenomenology,
+and Modes of Perception,&rdquo; <i>Music Perception</i> 3/4 (1986): 327&ndash;92;
+and Judy Lochhead, &ldquo;Temporal Structure in Recent Music,&rdquo; in F.
+Joseph Smith, ed., <i>Understanding the Musical Experience</i> (New
+York: Gordon and Breach, 1989), 121&ndash;65. <br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Hubert L. Dreyfus, in his <i>Being-in-the-World: A Commentary of
+Heidegger&rsquo;s Being and Time, Division I</i> (Cambridge, Mass.: MIT
+Press, 1991), explores this issue in detail (see especially pp. 46&ndash;54). 
+Dreyfus&rsquo;s position is that &ldquo;Heidegger succeeds in taking over
+Husserl&rsquo;s definition of phenomenology and totally transforming it for
+his own ends, making &lsquo;phenomenology&rsquo; mean exactly the opposite of
+Husserl&rsquo;s proposed method for spelling out the intentional contents of
+his own belief system and thereby arriving at indubitable evidence&rdquo;
+(30).<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> In the following paragraphs I offer a much simplied overview of
+some of the important issues in <i>Being and Time</i>.  Far more
+detailed expositions of Heidegger&rsquo;s work can be found in Dreyfus,
+<i>Being-in-the-World</i>; Michael Gelven, <i>A Commentary on
+Heidegger&rsquo;s Being and Time</i> (New York: Harper and Row, 1970);
+and John Richardson, <i>Existential Epistemology: A Heideggerian
+Critique of the Cartesian Project</i> (Oxford: Clarendon Press, 1986). 
+For the purposes of this study, I am avoiding the use of the standard
+Heideggerian terms (<i>Dasein</i>, <i>Zuhandenheit</i>, <i>Vorhandenheit</i>,
+<i>sein bei</i>, <i>Mitsein</i>, and so on); the use of this specialized
+vocabulary would only unnecessarily complicate the brief
+consideration of Heidegger&rsquo;s ideas that the scope of this study
+allows.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> Rene Descartes, <i>Discourse on Method and Meditations of First
+Philosophy</i>, trans. Donald A. Cress (Indianapolis: Hackett
+Publishing, 1980), 17.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> David Lewin (&ldquo;Music Theory&rdquo;) makes a similar point, though he
+casts it as &ldquo;distinguishing X from Y&rdquo; (375).  Lewin goes on to argue
+that while such dualism &ldquo;in thinking about perception does not in
+itself pose a danger for music theory,&rdquo; the &ldquo;X/Y paradigm&rdquo; is less
+useful in describing the relationship to music in which composers or
+performers participate.  This latter type of experience is discussed
+very much in terms of what Heideggerians might call &ldquo;involvement,&rdquo;
+though Lewin himself does not use this term.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> This principle underlies Thomas Kuhn&rsquo;s writing on the history of
+science; see his influential <i>The Structure of Scientific Revolutions</i>,
+2nd rev. ed. (Chicago: University of Chicago Press, 1970). 
+Heidegger&rsquo;s perspective has had an enormous influence on French
+philosophy since the Second World War; one can hardly imagine the
+work of Jean-Paul Sartre, Maurice Merleau-Ponty, Jacques Derrida,
+and Michel Foucault without <i>Being and Time</i>.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> Hans-Georg Gadamer, <i>Truth and Method</i>, 2nd rev. ed., trans
+Joel Weinsheimer and Donald G. Marshall (New York: Continuum,
+1991), 271&ndash;85 esp.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> For a detailed discussion of Gadamer&rsquo;s philosophical
+hermeneutics in the context of musical scholarship, see Thomas
+Christensen, &ldquo;Music Theory and its Histories,&rdquo; in Christopher Hatch
+and David Bernstein, eds., <i>Music Theory and the Exploration of the
+Past</i> (Chicago: University of Chicago Press, 1993), 9&ndash;39.<br><a href="#FN12REF">Return to text</a></p><p><a name="FN13">13.</a> Lydia Goehr, <i>The Imaginary Museum of Musical Works: An
+Essay in the Philosophy of Music</i> (Oxford: Clarendon Press, 1992). 
+See also Patricia Carpenter, &ldquo;The Musical Object,&rdquo; <i>Current
+Musicology</i> 5 (1967): 56&ndash;87.<br><a href="#FN13REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">Martin Heidegger, <i>Being and Time</i>, trans. John Macquarrie and
+Edward Robinson (New York: Harper and Row, 1962).</div><div id="fndiv2" class="flyoverdiv">Cartesian dualism is sometimes discussed in terms of a mind-body,
+or mind-world split.  For discussions of subject-object dualism as it
+arises in the consideration of music, see F. Joseph Smith&rsquo;s chapter,
+&ldquo;Cartesian Theory and Musical Science,&rdquo; in his <i>The Experiencing of
+Musical Sound: Prelude to a Phenomenology of Music</i> (New York:
+Gordon and Breach, 1979), 119&ndash;42; as well as his &ldquo;Music Theory and
+the History of Ideas,&rdquo; in F. Joseph Smith, ed. <i>In Search of Musical
+Method</i> (London: Gordon and Breach, 1976), 125&ndash;49.  See also
+Thomas Clifton, &ldquo;Music as Constituted Object,&rdquo; in <i>In Search of
+Musical Method</i>, 73&ndash;98 and Lawrence Ferrara, &ldquo;Phenomenology as
+a Tool for Musical Analysis,&rdquo; <i>The Musical Quarterly</i> 70/3 (1984):
+355&ndash;73.</div><div id="fndiv3" class="flyoverdiv">Roman Ingarden, <i>The Work of Music and the Problem of its
+Identity</i>, trans. A. Czerniawski (Berkeley: University of California
+Press, 1986).  A helpful summary of Ingarden&rsquo;s essay is provided in
+Edward Lippman, <i>A History of Western Musical Aesthetics</i>
+(Linclon: University of Nebraska Press, 1992), 441&ndash;43.  Ingarden&rsquo;s
+arguments certainly merit far more careful consideration than the
+scope of this paper allows; I hope here merely to offer a sense of
+what some of the questions are that surround the discussion of the
+musical object.</div><div id="fndiv4" class="flyoverdiv">For a clear account of Husserl&rsquo;s position and on the historical and
+intellectual context in which it arose, see David Woodruff Smith and
+Ronald McIntyre, <i>Husserl and Intentionality: A Study of Mind,
+Meaning, and Language</i> (Dordrecht: D. Reidel, 1982).  For a
+general introduction to Husserl&rsquo;s philosophy and the
+phenomenological tradition, see Joseph J. Kockelmans, ed.,
+<i>Phenomenology: The Philosophy of Edmund Husserl and its
+Interpretation</i> (New York: Anchor Books, 1967).  Don Ihde offers a
+summary of intentionality in his <i>Listening and Voice: A
+Phenomenology of Sound</i> (Athens: Ohio University Press, 1976),
+Chapter 3 especially.  While Ihde addresses the topic of sound
+generally&mdash;and consequently music constitutes only one aspect of his
+study&mdash;his book provides a valuable introduction to phenomenological
+thought and method.</div><div id="fndiv5" class="flyoverdiv">See, for example, Thomas Clifton, <i>Music as Heard: A Study in
+Applied Phenomenology</i> (New Haven: Yale University Press, 1983);
+David Lewin, &ldquo;Music Theory, Phenomenology,
+and Modes of Perception,&rdquo; <i>Music Perception</i> 3/4 (1986): 327&ndash;92;
+and Judy Lochhead, &ldquo;Temporal Structure in Recent Music,&rdquo; in F.
+Joseph Smith, ed., <i>Understanding the Musical Experience</i> (New
+York: Gordon and Breach, 1989), 121&ndash;65. </div><div id="fndiv6" class="flyoverdiv">Hubert L. Dreyfus, in his <i>Being-in-the-World: A Commentary of
+Heidegger&rsquo;s Being and Time, Division I</i> (Cambridge, Mass.: MIT
+Press, 1991), explores this issue in detail (see especially pp. 46&ndash;54). 
+Dreyfus&rsquo;s position is that &ldquo;Heidegger succeeds in taking over
+Husserl&rsquo;s definition of phenomenology and totally transforming it for
+his own ends, making &lsquo;phenomenology&rsquo; mean exactly the opposite of
+Husserl&rsquo;s proposed method for spelling out the intentional contents of
+his own belief system and thereby arriving at indubitable evidence&rdquo;
+(30).</div><div id="fndiv7" class="flyoverdiv">In the following paragraphs I offer a much simplied overview of
+some of the important issues in <i>Being and Time</i>.  Far more
+detailed expositions of Heidegger&rsquo;s work can be found in Dreyfus,
+<i>Being-in-the-World</i>; Michael Gelven, <i>A Commentary on
+Heidegger&rsquo;s Being and Time</i> (New York: Harper and Row, 1970);
+and John Richardson, <i>Existential Epistemology: A Heideggerian
+Critique of the Cartesian Project</i> (Oxford: Clarendon Press, 1986). 
+For the purposes of this study, I am avoiding the use of the standard
+Heideggerian terms (<i>Dasein</i>, <i>Zuhandenheit</i>, <i>Vorhandenheit</i>,
+<i>sein bei</i>, <i>Mitsein</i>, and so on); the use of this specialized
+vocabulary would only unnecessarily complicate the brief
+consideration of Heidegger&rsquo;s ideas that the scope of this study
+allows.</div><div id="fndiv8" class="flyoverdiv">Rene Descartes, <i>Discourse on Method and Meditations of First
+Philosophy</i>, trans. Donald A. Cress (Indianapolis: Hackett
+Publishing, 1980), 17.</div><div id="fndiv9" class="flyoverdiv">David Lewin (&ldquo;Music Theory&rdquo;) makes a similar point, though he
+casts it as &ldquo;distinguishing X from Y&rdquo; (375).  Lewin goes on to argue
+that while such dualism &ldquo;in thinking about perception does not in
+itself pose a danger for music theory,&rdquo; the &ldquo;X/Y paradigm&rdquo; is less
+useful in describing the relationship to music in which composers or
+performers participate.  This latter type of experience is discussed
+very much in terms of what Heideggerians might call &ldquo;involvement,&rdquo;
+though Lewin himself does not use this term.</div><div id="fndiv10" class="flyoverdiv">This principle underlies Thomas Kuhn&rsquo;s writing on the history of
+science; see his influential <i>The Structure of Scientific Revolutions</i>,
+2nd rev. ed. (Chicago: University of Chicago Press, 1970). 
+Heidegger&rsquo;s perspective has had an enormous influence on French
+philosophy since the Second World War; one can hardly imagine the
+work of Jean-Paul Sartre, Maurice Merleau-Ponty, Jacques Derrida,
+and Michel Foucault without <i>Being and Time</i>.</div><div id="fndiv11" class="flyoverdiv">Hans-Georg Gadamer, <i>Truth and Method</i>, 2nd rev. ed., trans
+Joel Weinsheimer and Donald G. Marshall (New York: Continuum,
+1991), 271&ndash;85 esp.</div><div id="fndiv12" class="flyoverdiv">For a detailed discussion of Gadamer&rsquo;s philosophical
+hermeneutics in the context of musical scholarship, see Thomas
+Christensen, &ldquo;Music Theory and its Histories,&rdquo; in Christopher Hatch
+and David Bernstein, eds., <i>Music Theory and the Exploration of the
+Past</i> (Chicago: University of Chicago Press, 1993), 9&ndash;39.</div><div id="fndiv13" class="flyoverdiv">Lydia Goehr, <i>The Imaginary Museum of Musical Works: An
+Essay in the Philosophy of Music</i> (Oxford: Clarendon Press, 1992). 
+See also Patricia Carpenter, &ldquo;The Musical Object,&rdquo; <i>Current
+Musicology</i> 5 (1967): 56&ndash;87.</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1994 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Christopher Pitchford and Rebecca Flore, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+

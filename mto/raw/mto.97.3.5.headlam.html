@@ -1,0 +1,1569 @@
+ 
+ 
+
+<!-------------------------------- HEADER -------------------------------------------->
+
+	  
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml" xml:lang="en" lang="en"> 
+<head>
+
+<title> MTO 3.5: Headlam, Multimedia for Music Study on the Web</title>
+
+<link rel="SHORTCUT ICON" href="https://www.mtosmt.org/gifs/favicon.ico">
+<link rel="stylesheet" href="https://www.mtosmt.org/scripts/colorbox.css">
+<link rel=StyleSheet href="https://www.mtosmt.org/scripts/mto-tufte.css" type="text/css" media=all>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script src="https://www.google-analytics.com/urchin.js" type="text/javascript"></script>
+<script type="text/javascript">_uacct = "UA-968147-1"; urchinTracker();</script>
+
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/expandingMenu.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/dropdownMenu.js"></script>
+<!--<script language="JavaScript" type="text/javascript" src="https://www.mtosmt.org/scripts/AC_QuickTime.js"></script>-->
+<!--<script type="text/javascript" src="https://www.mtosmt.org/scripts/examples.js"></script>-->
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/hover.js"></script>  
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="https://www.mtosmt.org/scripts/colorbox-master/jquery.colorbox.js"></script>
+<script type="text/javascript" src="https://www.mtosmt.org/scripts/jQueryRotate.2.2.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
+<script>
+MathJax.Hub.Config({
+    TeX: { noErrors: { disabled: true } }
+});
+</script>
+
+  <script>
+   $(function () {
+      $(document).tooltip({
+        position: { my: "center bottom-10", at: "center top", },
+    content: function () {
+              return $(this).prop('title');
+          }
+      });
+  });
+  </script>
+
+  <style>
+    .ui-tooltip {
+      color: #3a3a3a;
+      font: 300 14px/20px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      max-width: 600px;
+      box-shadow: 0 0 7px gray;
+    }
+    ol.mto-alpha {
+        list-style: lower-alpha none outside;
+    }
+   ol.mto-alpha li {
+       margin-bottom: 0.75em;
+       margin-left: 2em;
+       padding-left: 0.5em;
+    }
+  </style>
+
+    <script language="Javascript">
+        $(document).ready(function() {
+            $(".mp3").colorbox({iframe:true, internalWidth:360, width:400, internalHeight:100, rel:'mp3', height:150, opacity:0.1, onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+            $(".youtube").colorbox({iframe:true, innerWidth:640, innerHeight:390, opacity:0.1, rel:'youtube', onComplete: function(e) {
+                $('#colorbox').on({
+                    mousedown: function(e){
+                        if (~$.inArray(e.target, $('input, textarea, button, a, .no_drag', $('#colorbox')))) return;
+                        var os = $('#colorbox').offset(),
+                            dx = e.pageX-os.left, dy = e.pageY-os.top;
+                        $(document).on('mousemove.drag', function(e){
+                            $('#colorbox').offset({ top: e.pageY-dy, left: e.pageX-dx } );
+                        });
+                    },
+                    mouseup: function(){ $(document).unbind('mousemove.drag'); }
+                });
+            }
+        });
+
+      $("a[id^=footnote]").each(function(){
+        var fnnum = $(this).attr('id').substring(8);
+	var foot_me = '#fndiv'+fnnum;
+        $("#footnote" + fnnum).attr('title', $(foot_me).html());
+
+        });
+
+
+        $("a[id^=citation]").each(function(){
+         var separatorPos = $(this).attr('id').lastIndexOf('_');
+         var linkid = $(this).attr('id');
+         var citeref = $(this).attr('id').substring(8,separatorPos);
+         var cite_me = '#citediv'+citeref;
+         $("#" + linkid).attr('title', $(cite_me).html());
+
+        });
+    });
+
+    </script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-968147-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-968147-1');
+</script>
+
+
+<meta http-equiv="Content-Language" content="en-us">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ 
+
+<meta name="citation_title" content="Multimedia for Music Study on the Web: Director from Macromedia">
+
+    <meta name="citation_author" content="Headlam, Dave">
+      
+
+<meta name="citation_publication_date" content="1997/09/01">
+<meta name="citation_journal_title" content="Music Theory Online">
+<meta name="citation_volume" content="3">
+<meta name="citation_issue" content="5">
+
+</head>
+
+<body>
+<div class="bannertop">
+	<a id="smt-link" alt="Society for Music Theory" href="https://www.societymusictheory.org">&nbsp;</a>
+</div>
+		
+		<div style = "height:160px; width:900px; background-image: url('../../gifs/banner_blue_grey_900px.png'); background-repeat: no-repeat; background-position: 0px 0px"></div>
+		
+<!-------------------------------- MENU -------------------------------------------->
+
+	
+<div class="dropdown_menu">
+
+<ul class="fullwidth" id="ddm">
+    <li><a href="https://www.mtosmt.org/index.php">MTO Home</a>
+    </li>
+    <li><a href="https://www.mtosmt.org/issues/mto.24.30.4/toc.30.4.html">Current Issue</a>    </li>
+    <li><a href="https://www.mtosmt.org/issues/issues.php"
+    	onmouseover="mopen('m3')" 
+        onmouseout="mclosetime()">Previous Issues</a>
+        <div id="m3" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/index-author.php">By Author</a>
+	        <a href="https://www.mtosmt.org/issues/issues.php">By Volume&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </div>
+	</li>
+	
+    <li><a href="https://www.mtosmt.org/docs/authors.html.php"
+    	onmouseover="mopen('m4')" 
+        onmouseout="mclosetime()">For Authors</a>
+        <div id="m4" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/mto-editorial-policy.html">MTO Editorial Policy</a>
+	      <a href="https://www.mtosmt.org/docs/mto-style-guidelines.html">MTO Style Guidelines</a>
+	      <a href="https://www.mtosmt.org/docs/how-to-submit-an-article-to-mto.html">How to Submit an Article</a>
+	      <a href="https://www.mtosmt.org/ojs">Submit Article Online</a>
+	      <a href="https://www.mtosmt.org/docs/reviewers.html">Book Review Guidelines</a>
+        </div>
+	</li>
+
+ <!--   <li><a href="https://www.mtosmt.org/docs/authors.html">Submit</a>
+	</li> -->
+	
+    <li><a href="https://www.mtosmt.org/mto-jobs.php"
+    	onmouseover="mopen('m6')" 
+        onmouseout="mclosetime()">Jobs</a>
+        <div id="m6" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/mto-jobs.php">Current Job Listings</a>
+	        <a href="https://www.mtosmt.org/mto-job-post.php">Submit Job Listing</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/docs/diss-index.php"
+    	onmouseover="mopen('m7')" 
+        onmouseout="mclosetime()">Dissertations</a>
+        <div id="m7" 
+            onmouseover="mcancelclosetime()" 
+            onmouseout="mclosetime()">
+	        <a href="https://www.mtosmt.org/docs/diss-index.php">All Dissertations</a>
+	        <a href="https://www.mtosmt.org/docs/diss-index.php?new=true">New Dissertations</a>
+	        <a href="https://www.mtosmt.org/mto-diss-post.php">List Your Dissertation</a>
+        </div>
+	</li>
+    <li><a href="https://www.mtosmt.org/about.html">About</a>
+	</li>
+<!--    <li><a href="https://www.mtosmt.org/mto_links.html">Journals</a>  
+	</li> -->
+    <li><a href="https://societymusictheory.org">SMT</a>
+	</li>
+   <!-- <li><a href="https://societymusictheory.org/announcement/contest-new-mto-logo-2024-02"><span style="color:yellow">Logo Design Contest</span></a>
+	</li>-->
+
+</ul>
+
+</div>
+
+
+<!-------------------------------- TITLE -------------------------------------------->
+
+	<article>
+
+<div id="content">
+<a name="Beginning"></a>
+
+			
+	<h1 style="width:900px; margin-top:1em">Multimedia for Music Study on the Web: Director from Macromedia
+
+	</h1>
+	<div style="width:900px">
+			<div style="width:100px;float:right;border:none"><a href="https://www.mtosmt.org/classic/mto.97.3.5/mto.97.3.5.headlam.html"><img src="https://www.mtosmt.org/gifs/mto_classic2.gif"></a></div>
+				</div>
+				<h2><span style="font-weight: 400"><font size="5"><a style="color:black" href="#AUTHORNOTE1">Dave Headlam</a></font></span></h2><br><br><p><font size='4'>KEYWORDS: multimedia, director, web</font></p><p><font size='4'>ABSTRACT: The advent of powerful, widely accessible, and financially viable personal computers with network connections on
+the World Wide Web has lead to exciting possibilities for
+creating musically meaningful presentations for teaching,
+performing, and researching music and disseminating them easily
+to colleagues, classes, or even to a potentially vast mass
+audience.  These presentations can combine sound, images,
+animation, and interaction for stimulating and interesting
+results.  The downsides of learning different programming
+languages, understanding Web page design and networking, dealing
+with multiple platforms (principally MacIntosh and Windows), and
+the problems of generating sound on different computers have a
+solution in the multimedia authoring program Director and its Web
+counterpart Shockwave, from Macromedia.  This paper outlines the
+format of Director in its Web version with an emphasis on its
+potential for sound, and includes some demonstration files, and
+closes with some considerations of technique and content in web
+authoring for educational purposes.</font></p>			
+	<div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'><a href="http://www.mtosmt.org/issues/mto.97.3.5/mto.97.3.5.headlam.pdf">PDF text </a> | <a href="http://www.mtosmt.org/issues/mto.97.3.5/headlam_examples.pdf">PDF examples </a></div></div><div style='width:800px'><div style='float:right; font-size:1.2rem;'></div></div>
+		<div style="width:850px">
+	<div style="text-align:center; font-size: 1.1rem; margin-bottom:2em;margin-top:4em;margin-right:auto;margin-left:auto;width:870px">
+		Volume 3, Number 5, September 1997 <br> Copyright &#0169; 1997 Society for Music Theory	</div>
+	</div>
+
+<hr style="width:850px"><br>
+<section>
+<!-------------------------------- ARTICLE BODY (begin) -------------------------------------->
+
+<p><a HREF="#Section1">1.  Introduction</a></p>
+ 
+<p><a HREF="#Section2">2.  Educational and Research Writings on Music Using Computers</a></p> 
+ 
+<p><a HREF="#Section3">3.  Files on the Web: Quality, Quantity, and Convenience</a></p> 
+ 
+<p><a HREF="#Section4">4.  Sound on the Computer from the Web</a></p> 
+
+<p><a HREF="#Section5">5.  Web Authoring: Browsers and HTML</a></p> 
+
+<p><a HREF="#Section6">6.  Shockwave plug-in</a></p> 
+
+<p><a HREF="#Section7">7.  Director</a></p> 
+
+<p><a HREF="#Section8">8.  Music Analysis on the Web with Minimal Scripting: An Example</a></p> 
+
+<p><a HREF="#Section9">9.  Scripting</a></p> 
+
+<p><a HREF="#Section10">10. Teaching Music Theory: A Scripted Example</a></p> 
+
+<p><a HREF="#Section11">11. Streaming Audio</a></p> 
+
+<p><a HREF="#Section12">12. More on Shockwave: Web Programming</a></p> 
+
+<p><a HREF="#Section13">13. Conclusion</a></p> 
+
+
+ 
+<hr> 
+ 
+<p style="text-align: center"><a name="Section1"><b>1. Introduction</b></a></p> 
+ 
+<p>[1.1] With the advent of powerful, widely accessible, and
+financially viable personal computers with network connections on
+the World Wide Web, musicians of widely varying interests are
+presented with an intriguing prospect:  the possibility of
+creating musically meaningful presentations for teaching,
+performing, and researching music and disseminating them easily
+to colleagues, classes, or even to a potentially vast mass
+audience.  These presentations can combine sound, images,
+animation, and interaction for stimulating and interesting
+results.  The frustrating downside to this picture is, of course,
+the necessity of learning different programming languages,
+understanding Web page design and networking, dealing with
+multiple platforms (principally MacIntosh and Windows), and,
+worst of all, solving the problems of generating sound on
+different computers.</p>
+
+<p>[1.2] Fortunately, a solution to these obstacles exists in the
+multimedia authoring program Director and its Web counterpart
+Shockwave, from Macromedia.  This program, currently at version
+6.0, is available in an educational form for around $300 and is
+well worth the time and effort to learn.  In this paper, I will
+outline the format of Director in its Web version with an
+emphasis on its potential for sound, and include some
+demonstration files.  I have used Director only on the Macintosh,
+and this article is written from that perspective, but the
+program exists in almost the same form in Windows versions, with
+differences noted clearly in the documentation.  The Web
+compiler, Shockwave, allows authors to compile Director files for
+use on the Web, and a Shockwave plug-in for Web browsers allows
+users to access the Director program in a suitable format.<sup><a name="FN1REF" href="#FN1" id="footnote1">(1)</a></sup>  I
+have used Shockwave only with the browser Netscape Navigator, but
+other browsers also support Shockwave.
+</p>
+ 
+<p style="text-align: center"><a NAME="Section2"><b>2. Educational and Research Writings on Music Using Computers</b></a></p> 
+ 
+<p>[2.1] The computer digital revolution is often compared to the
+development of the printing press in the 1500s.  The printing
+press allowed for wide dissemination of reading material as well
+as musical scores.  While books were illustrated, combining the
+visual with the printed word, for musicians books and scores
+separated the visual from the aural.  An educational industry has
+grown up around attempts to recombine these two aspects, usually
+with value placed on the ability to conjure sound from image
+using internal musical production and by developing musical
+memory.  The computer, however, allows authors to combine sound,
+text, and images, thus creating a true musical book.
+</p>
+
+<p>[2.2] Those who believe in the split between the visual and aural
+might be skeptical of the computer&rsquo;s sound production
+capabilities, regarding them as a crutch similar to using a piano
+for sight-singing or part-writing.  Those who regard it as a
+benefit when the visual and aural are joined in a musical
+environment will find truly new uses for computers in musical
+production, education, and research.  The trick, I believe, is to
+use the computer in ways that it is uniquely suited for, and not
+to translate books or musical scores into computer programs with
+the same goals and perceived limitations.  Several interesting
+uses of computers, in Computer Aided Instruction (CAI) and with
+Hypercard Stacks have and are emerging, as well as some
+innovative Web page designs, and it is my hope that musicians
+will be stimulated by this discussion of Director to keep
+developing new tools and paradigms in this area.<sup><a name="FN2REF" href="#FN2" id="footnote2">(2)</a></sup></p>
+
+<p style="text-align: center"><a name="Section3"><b>3. Files on the Web: Quality, Quantity, and Convenience</b></a></p> 
+
+<p>[3.1] The first consideration for Web authoring is the tradeoff
+between the quality of the images or sound viewed and the
+quantity and size of files required.  These are in direct
+proportion:  the larger the file, the greater the amount of
+information, and the better the resulting quality.  However, on
+the Web, quantity is also inversely proportional to download time
+and ease of use.  Thus, the larger the file, the longer is the
+time it takes for the client computer to receive the information
+from the server, and the more taxing the requirements of the
+downloaded file on the client computer in terms of memory and
+processing time.
+</p>
+
+<p>[3.2] At least five solutions have arisen in response to this
+situation:  1) use of small files with often ingenious solutions
+to the limitations and/or acceptance of a lower quality; 2)
+development of compression programs that allow files to be sent
+in a smaller, compressed form from the server and then be
+expanded on the client computer; 3) breaking down of files into
+smaller components that are downloaded on demand; 4) linking to
+external media such as images, sound, and video (instead of
+copying them into a program so they are internal or inline), which
+are downloaded separately and on demand; and 5) streaming of
+files that only need to be partially downloaded before
+functioning, particularly with sound and video files, which tend
+to be large.<sup><a name="FN3REF" href="#FN3" id="footnote3">(3)</a></sup>  Director&rsquo;s Web design incorporates all of these
+solutions but allows for less reliance on the first solution than
+has been the case on the Web.
+</p>
+
+<p style="text-align: center"><a NAME="Section4"><b>4. Sound on the Computer from the Web</b></a></p> 
+
+<p>[4.1] As those with experience creating or receiving sound on
+personal computers from the Web can attest, it is often an
+apparently chancy and unpredictable procedure.  Why is this the
+case?  Transmitting images and texts on Web pages works almost
+100% of the time, but sound requires a few conditions be set.
+Director&rsquo;s Shockwave plug-in handles the sound playback
+requirements for the most part, but it is useful to know a bit
+about sound files on the Web to use sound efficiently.
+</p>
+
+<div style="width:400px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 1</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=0&nonav=true"><img border="1" alt="Example 1 thumbnail" src="headlam_ex1small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></div>
+
+<p>[4.2] Sound files have several forms.  First, as relatively large
+files, they contain numbers that are representations of actual
+sound signals, carrying information about amplitude and time
+dimensions created from an Analog to Digital converter.<sup><a name="FN4REF" href="#FN4" id="footnote4">(4)</a></sup> Sound files are in two sections, a header containing information
+relating to the control and format of the data, and the data
+itself.  The header features control settings such as whether the
+sound is mono or stereo, what the maximum amplitude is, what the
+sample rate is, what the bit rate is, etc..  The remainder of the
+file, the raw sound data, is interpreted according to the
+settings in the header.  To hear the sound, the numbers must be
+fed into a Digital-to-Analog converter to convert numbers to
+electrical signals that can be processed into sound, similarly to
+a home stereo setup with a CD player.  This setup is included in
+most computers sold within the last few years, which all have
+CD-ROMS, but the client computer and its browser must also have
+some sort of program or plug-in to interpret the sound file
+properly and link up with the computer&rsquo;s sound hardware.  Using
+Netscape, useful plug-ins related to sound are Quicktime from
+Apple (<b>Example 1</b>), and LiveAudio; these programs can handle the
+usual .AIF (MacIntosh) and .WAV (Window) sound file formats, as
+well as others.  Director has its own sound format, .SWA, which
+is incorporated into its Shockwave plug-in.
+</p>
+
+<p>[4.3] When discussing digital sound quality, reference is made to
+bits, bytes, and samples:  the more bits, bytes, and samples in
+the representation, the better the sound quality and the larger
+the file.  The standard Web sound quality, 8-bit and 22050 (or
+less) sample rate, is intolerable for musicians, but it is used
+because a mono sound file of 8-bit, 22050 samples (uncompressed)
+takes about 22 Kilobytes (KB) per second or 1.3 Megabytes (MB)
+per minute, while a CD-quality stereo 16-bit, 44100 sample file
+takes 166.4 KB per second or about 10 MB per minute in size.  A
+mono 16/44100 file, perfectly acceptable, is 88.2 KB/s or about 5
+MB/m, but a good compromise file size is mono 16/22050, which
+requires 44 KB/s or 2.5 MB/m.  Even though sound files are
+compressed, with ratios of 3:1 or 4:1 common, they are still
+relatively large.  With download times of, on average:  1
+KB/second for a 14.4 Kilobit (Kb) modem, 3 KB/second for 28.8 Kb
+modem, 5 KB/second for a 64 Kbs connection, and about 30
+KB/second for higher speed connections, such as the T1 connection
+often found in universities, sizes of sound files are a constant
+consideration.
+</p>
+ 
+<p>[4.4] To get sound files to a more manageable size, several
+compression procedures are used, which cut down on the amount of
+numbers used to represent the signal.  Audio compression is a
+complex topic beyond the bounds of this article, but Director and
+Sound Edit 16 have a particularly good compression feature in
+Shockwave Audio (discussed below), which allows for an acceptable
+quality of 16 bit/22050 sample, and provides for at least a 6:1
+compression ratio (compressed file is 1/6 the size of the
+original).
+</p>
+
+<p>[4.5] Other common types of sound files are Midi (Musical
+Instrument Digital Interface) files, that contain no information
+about the actual sound and so are quite compact, and files like
+Mod files that contain mostly Midi-type information but also a
+few sound samples.<sup><a name="FN5REF" href="#FN5" id="footnote5">(5)</a></sup>  Midi files have the advantage of being
+small, as they contain only information about frequency,
+duration, attack, articulation, etc.  The disadvantage is that
+the resulting sound is entirely the result of the client computer
+system, which can be good or bad, depending on the prescence of
+synthesized sound sources.  One useful development is the
+inclusion of a software synthesizer in Apple&rsquo;s Quicktime 2.5, so
+that Midi files can play directly through the MacIntosh&rsquo;s Sound
+Manager.<sup><a name="FN6REF" href="#FN6" id="footnote6">(6)</a></sup>  Director can use the same Midi tools as Apple&rsquo;s
+Hypercard, as part of its overall compatibility with Hypercard
+Xcommands.  Mod files and others with a few sounds and lots of
+control instructions have been staples of computer games for
+years; they allow the author to control the resulting sound and
+have small file sizes.  There is no record of Director uses of
+Mod files, at least that I have found, but they might be useful
+when specific sounds are desired for extensive sounds.
+</p>
+
+<p style="text-align: center"><a NAME="Section5"><b>5. Web authoring: Browsers and HTML</b></a></p>
+
+<p>[5.1] Web Browsers all read HTML (Hypertext Markup Language), a
+language consisting of a simple set of controls over data.
+Rather than include graphics and sound files within one file,
+HTML files include only instructions and text; other elements are
+called when needed from their resting places in the same folder
+as the HTML file.  With this architecture, HTML files can be
+quite small and thus transfer quickly over the internet.
+</p>
+ 
+<p>[5.2] HTML is basically a labeling language, but has associated
+scripting and programming languages like CGI, Perl, Java, and
+JavaScript.  These allow for more complex interactions between
+the browser and the file, and for more interesting Web pages than
+the standard static page available with simple HTML commands.
+Currently Java applets, small programs that are compiled and run
+on the client computer, and Director Shockwave movies are the
+most common applications used for creating Web pages that combine
+sound, image, animation, and text.  When, as is the case with
+Director movies, files sent over the Internet have more complex
+control sections, and use different proprietary command
+structures, the browser may need plug-ins to run or display them.
+Director&rsquo;s plug-in is called Shockwave; by using Shockwave from
+within Director, self-contained file is created which consists of
+controls and resources (such as images, movies, etc.)  that are
+either placed within the file or are outside and are called when
+required (like HTML).  The Director movie is called from within
+an HTML file using an EMBED command (described below).  Linked
+sounds (.SWA files) and images (.GIF files) do not require a
+separate HTML file, but currently linked video must be called
+from within a separate HTML file.
+</p>
+ 
+
+<p>[5.3] Readers running Netscape should look at their plug-ins.  Go
+to the Finder and look inside the Netscape folder for
+the plug-ins folder and look inside at the plug-in programs
+available (Example 1 above).  You will probably see Quicktime and
+LiveAudio&mdash;other plug-ins may be downloaded from various places
+on the Web.  In the next section of this paper, you will put the Shockwave 
+plug-in this folder.  Back to Netscape.  In Netscape,
+open up Options; then General Preferences, and
+then helpers (<b>Example 2</b>).  A list of helper applications that
+call plug-in programs appears; it will probably also include
+Quicktime and LiveAudio.  Click on one plug-in line and then edit
+to see the details (<b>Example 3</b>):  the code names for the
+application and the file extensions or suffixes, such as .mid for
+Midi files and .dcr, .dir, .dxr for Director.  These extensions
+are very important, as they tell the browser what type of file
+needs to be interpreted.
+</p>
+
+<table><tr><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 2</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=1&nonav=true"><img border="1" alt="Example 2 thumbnail" src="headlam_ex2small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 3</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=2&nonav=true"><img border="1" alt="Example 3 thumbnail" src="headlam_ex3small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td></tr>
+</table>
+
+<p style="text-align: center"><a NAME="Section6"><b>6. Shockwave plug-in</b></a></p>
+
+<p>[6.1] Director&rsquo;s plug-in is called Shockwave, and it is used to
+interpret the control codes of Shockwave files, which are
+identified with .dcr suffixes.  Before continuing with this
+article, the reader should get a shockwave plug-in and install
+it.  Go to this URL address:
+<a href="http://www.macromedia.com/shockwave/download">http://www.macromedia.com/shockwave/download</a> and download the
+plug-in, following instructions.  Another address,
+<a href="http://www.macromedia.com/support/shockwave">http://www.macromedia.com/support/shockwave</a>, has answers to
+questions.  The plug-in and supporting files come in a compressed
+form and require Stuff-it Expander to expand.  If you have this
+program, it will expand the file automatically (or you may have
+to double-click on the downloaded file).  An installer program
+will appear; quit the browser and double-click on it to install
+the Shockwave plug-ins.  Start up Netscape, and set the .dcr type
+in Options:  General Preferences:  Helpers:  New (Example 3).  If
+you don&rsquo;t have Stuff-it Expander, there is a Catch-22 because
+Stuff-it Expander itself is often presented for download in a
+compressed state.  Here are two addresses to help getting
+Stuff-it Expander:</p>
+
+<p><a href="http://www.aladdinsys.com/consumer/expander2.html">http://www.aladdinsys.com/consumer/expander2.html</a>, and <br>
+<a href="http://www.aladdinsys.com/support/faqs/mexp2.html">http://www.aladdinsys.com/support/faqs/mexp2.html</a>.
+</p>
+
+
+<p>[6.2] You will need to restart Netscape, but first increase the
+amount of memory (<b>Example 4</b>) that Netscape allots, since the
+program will now have to open up Director movies as well.  Set
+the memory to at least 15000 KB (15 MB).  Restart Netscape.  Go
+to the Options folder and increase the cache size to at least 10
+MB (<b>Example 5</b>).  Finally, if you haven&rsquo;t already, extend the
+window to the right so that it is as wide as your screen.  The
+accompanying movies to the rest of this article will appear in a
+new upper window which you can move around to be able to see the
+corresponding text while you look at the movie or image.
+</p>
+
+<table><tr><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 4</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=3&nonav=true"><img border="1" alt="Example 4 thumbnail" src="headlam_ex4small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td><td width=50></td><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 5</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=4&nonav=true"><img border="1" alt="Example 5 thumbnail" src="headlam_ex5small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to enlarge)</font></p></td></tr>
+</table>
+
+<p style="text-align: center"><a NAME="Section7"><b>7. Director</b></a></p> 
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 6</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=5&nonav=true"><img border="1" alt="Example 6 thumbnail" src="headlam_ex6small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></div>
+
+<p>[7.1] Director, as the name implies, uses the metaphor of a movie
+for file creation.<sup><a name="FN7REF" href="#FN7" id="footnote7">(7)</a></sup>  A director movie that is itself an
+introduction to Director is provided in <b>Example 6</b>.  Go through the movie
+and refer to it for the following.  Each element in the movie, an
+image, text, sound, or video, is called a cast member; when it
+sits in reserve in a cast library; and a sprite; when it is
+actually onstage;&mdash;the screen space allotted for the movie&mdash;and
+part of the action.  The sprite corresponding to a cast member is
+independent and can be altered in many aspects (size, color,
+etc.), without affecting the original cast member, which acts as
+a template.  Up to 32,000 cast members can be ready for use in a
+movie (using linked libraries), with up to 120 sprites possible
+on the stage at one time.  Successive events&mdash;combinations of
+sprites&mdash;happen in frames; placed within a score; which controls
+the action.  Each element, the frame, the score, the sprites, and
+cast members, can all have scripts or sets of commands associated
+with them, activated automatically within the movie or by the
+user.  Pre-set scripts called behaviors; are included, but these
+can be altered and new scripts written.  The user interacts by
+clicking on sprites, which can be buttons or hot; spots; as with
+Web pages, it is possible to indicate to the user where to click
+by changing the cursor to a hand; at those places.
+</p>
+ 
+<p>[7.2] Director&rsquo;s design gives the author a choice of two levels
+for creating presentations:  1) using prepared scripts
+called behaviors; and 2) writing new scripts.  Script is a general
+term denoting a programming language that is created to use
+common language references, such asset the text of castmember &lsquo;x&rsquo;
+to &lsquo;I love ice cream,&rsquo; rather than the more complex allotment of
+variables, types, and memory locations found in C or C++ or other
+similar programs.  While easier to use than programming
+languages, scripting retains certain features, such as &ldquo;if then .
+.  &rdquo;; and &ldquo;while&rdquo; loop constructions, and the ancestor - parent -
+child metaphor of object-oriented programs.  Director&rsquo;s
+programming language is called Lingo.  The standardized behavior
+scripts allow for application of scripts and interaction without
+independent programming, but those interested in programming can
+add their own scripts to govern the actions of sprites, etc.  in
+the course of the movie.  Since the behavior scripts have only
+appeared in the latest version of Director, 6.0, anyone who has
+used Director has already learned scripting, which was required
+of the author in earlier versions.
+</p>
+ 
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 7</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=6&nonav=true"><img border="1" alt="Example 7 thumbnail" src="headlam_ex7small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></div>
+
+<p>[7.3] Movies with behavior scripts only are generally created
+manually, using the changing relationships of sprites in the flow
+of frames implied in the movie metaphor.  Cast members&mdash;images,
+text, etc.&mdash;are either imported or created within Director, using
+its Paint and Field tools, and put in a list of cast members,
+then dragged and arranged on a stage as sprites.  Successive
+movie frames; are similarly arranged, with a few behavior scripts
+to create animations.  The introductory movie shown above has few
+scripts, consisting mostly of 1) &ldquo;wait&rdquo; type commands, which
+stops the movie by causing it to replay the same frame until the
+user clicks; and 2) &ldquo;go to&rdquo; type commands that send the movie to
+a different frame when the user clicks.  Another movie (see <b>Example 7</b>) with
+minimal scripting is one I created for a multi-media class at
+Eastman, with general information on computers and multi-media.
+The only scripts are &ldquo;go to&rdquo; types and &ldquo;wait until user does
+something&rdquo; types.
+</p>
+
+<p>[7.4] When the movie is run, the frames run sequentially at
+speeds of 1 to 30 frames per second, allowing for animation or
+sequences of events similar to a movie reel.  In frame-by-frame
+animation (see <b>Example 8</b>), the frame succession is clear when the tempo, or frame
+rate, of the movie is slowed.  Frames can be looped to wait for
+user-activated buttons or hot; spots:  these interactive elements
+allow the user to jump around between frames and control the pace
+or order of the movie, depending on its design.  A simple
+interactive movie (see <b>Example 9</b>) allows users to alternate between images.
+Simple movies with animation are small, easy to create and
+compile, and can be found in many places on the Web.
+</p>
+
+<table align=center><tr><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 8</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=7&nonav=true"><img border="1" alt="Example 8 thumbnail" src="headlam_ex8small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></td><td width=50></td><td>
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 9</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=8&nonav=true"><img border="1" alt="Example 9 thumbnail" src="headlam_ex9small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></td></tr></table>
+
+
+
+<p style="text-align: center"><a NAME="Section8"><b>8. Music Analysis on the Web with minimal Scripting: An Example</b></a></p> 
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 10</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=9&nonav=true"><img border="1" alt="Example 10 thumbnail" src="headlam_ex10small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></div>
+
+<p>[8.1] As a simple example of music analysis using a Director
+movie with minimal scripting, I offer a study of Los muertos
+illvan alas de musgo, a madrigal by George Crumb (see <b>Example 10</b>).  The Director
+movie of this analysis was created with 1) a Finale file of the
+score, which was imported into Director as the notes only, and
+the staves only, the two are combined in the movie, but having
+them as separate cast members allows for manipulations (such as
+coloring) on the notes alone; 2) colored cast members taken from
+the notes cast member; 3) a separate analytical stave; and 4) a
+sound file of the song, in this case a performance conducted by
+the author.
+</p>
+
+<p>[8.2] The tricky part was to get the scrolling of the score to
+coincide with the music:  the corresponding cast members of the
+score and notes were lined up and placed in successive frames on
+the stage to line up approximately with the flow of the music.
+As the score scrolls by, colored cast members are placed on the
+score, then moved up to the analytical layer to show the analysis
+develop in real time.  The advantage is that the harmonies
+(pitch-class sets) are coordinated with colors, and that the
+student can listen to the score and start, stop, and pause the
+music and score for study.<sup><a name="FN8REF" href="#FN8" id="footnote8">(8)</a></sup>  The scripts are minimal for this
+movie, which is based on the frame-by-frame succession that is
+the essence of Director movies, and consist only of restart and
+pause controls, which are toggled when the user clicks on the
+stage, and the stop/restart button on the stage.
+</p>
+ 
+<p style="text-align: center"><a NAME="Section9"><b>9. Scripting</b></a></p> 
+
+<p>[9.1] Scripted movies have the advantage that a small number of
+elements may be manipulated in different ways by controls in the
+script, so that the size of the file is smaller than if the
+elements were copies and manipulated manually.  Director&rsquo;s
+language, Lingo, is somewhat similar to Hypercard&rsquo;s Hyperscript
+and has features found in many scripting languages.  Every
+element of a movie has a controlling script which may be defined
+using program handlers that begin with the word on:  from the
+movie itself (on startMovie), to frames (on enterFrame, on
+exitFrame), to cast members, sprites, and interactive buttons and
+hot spots (on mouseUp, on mouseDown).  In addition to the program
+handlers provided within Director, users may write their own
+handlers, which are similar to functions in programs like C and
+Pascal, and either perform a task or take a value, change it, and
+return a value.  Variables may used locally, or defined as global
+and used in different handlers.
+</p>
+
+<p>[9.2] The script of Lingo can be divided into at least nine
+categories:  1) decision scripts:  mathematical symbols, numbers,
+operators such as = or &lt;&gt; (not equals); &ldquo;if - then &mdash; else if -
+then &mdash; else&rdquo; loops; &ldquo;repeat while&rdquo; or &ldquo;repeat with&rdquo; loops; 2)
+function scripts:  handlers which perform a task, or take a
+value, perform an operation, and return a value; 3)
+classification scripts:  define local variables, global
+variables, lists, put and set commands which assign values; 4)
+control and program handler scripts:  scripts that run the
+program and connect with the computer, such as abort, exit,
+start, alert, mouseDown, KeyDown, button scripts, menus, sorts;
+5) location scripts:  setting the location of sprites; on the
+stage:  top, bottom, right, left, location of mouse when clicking
+on stage; 6) attributes scripts:  setting other attributes of
+elements than location:  color, blend, height, number, name,
+type; 7) text-related scripts:  identifying characters, words,
+lines, whether text field is editable by user, length; 8)
+connection scripts:  connecting to other programs, files, desk
+accessories, resedit manipulations, Xlibraries, File Input/Output
+(I/O), etc.; 9) creation scripts:  object-oriented programming
+elements:  ancestors, parents, children; 10) Web and
+network-related scripts:  controlling Web and networking
+features.
+</p>
+
+<p style="text-align: center"><a NAME="Section10"><b>10. Teaching Music Theory with Director: A Scripted Example</b></a></p> 
+
+<div style="width:300px;float:right;border:none;margin-left:30px">
+                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 11</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=10&nonav=true"><img border="1" alt="Example 11 thumbnail" src="headlam_ex11small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 12</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=11&nonav=true"><img border="1" alt="Example 12 thumbnail" src="headlam_ex12small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p>                
+<p class='fullwidth' style="text-align: center; margin-top:0em"><b>Example 13</b></p><p class='fullwidth' style="text-align: center; margin-bottom:0em"><a class='youtube'  target="blank" href="headlam_examples.php?id=12&nonav=true"><img border="1" alt="Example 13 thumbnail" src="headlam_ex13small.png"></a></p><p class='fullwidth' style="text-align: center; margin-top:0em"><font size="2">(click to watch video)</font></p></div>
+<p>[10.1] A typical freshman homework assignment using a scripted
+Director movie is given (see <b>Example 11</b>), with the first eight bars of Schubert&rsquo;s
+Moment Musicale op.  94/6 as the passage.  The movie involves 
+1) the use of a notation program such as Finale to notate the
+musical passage, a reduction of the passage as the answer (if
+desired), and a blank stave of the same size as the reduction for
+the students to enter their answers to a counterpoint-type
+question; 2) a Roman Numeral, Arabic number, and note head
+repository for analysis; 3) color flags and text field to label
+non-chord tones; and 4) a sound file of the passage, the movie
+includes a sound file of the outer voices for the answer.  For
+the first question, the passage appears on the stage, and the
+student can first listen to the passage, then arrange Roman
+Numerals and Arabic numbers in the proper place, and then move
+color flags over non-chord tones and label them.  For the second
+question, on a blank stave, the student can arrange notes and
+numbers to show underlying counterpoint and/or a reduction of the
+harmonies.  When done, if desired, the student can check the
+answer.  To hand the assignment in, the student makes snapshots
+of the screen (command-shift-3 with any Macintosh after Operating
+System 7.01) showing the answer to question 1 then question 2;
+the snapshot saves a picture of the screen as a PICT file to the
+desktop.  The student then labels the two pictures with his/her
+name, and puts them in a homework folder.
+</p>
+
+<p>[10.2] A non-working version of the movie showing the separate
+elements is included (see <b>Example 12</b>).  To create the movie, the main cast
+members, the score and staves, are exported from Finale as PICT
+files (an image format that Director supports).  First, import
+the files into Director as cast members, and size the stage at
+432 X 455 pixels (for a 17 inch monitor, 464 X 310 for 15 inch).
+For Question 1, put the notation cast member on the stage.  To
+create the Roman numeral, Arabic number, and note repository, use
+fields and type in the numerals and numbers, but use texts for
+the quarter note heads and sharp, natural, and flat signs (using
+a font like Petrucci).  Fields are more flexible, but require
+that the user has the same fonts as the author&mdash;so they should be
+set up so that the font doesn&rsquo;t really matter; texts are treated
+like bitmap images so the user won&rsquo;t need the Petrucci or other
+notational font.  To complete the cast, using the Paint tool,
+make a small colored circle to use for non-chord tones.  Arrange
+the Roman Numerals and Figures and symbols on the stage.  For
+each sprite, check the moveable box so that the user can move the
+symbol.  Create a field for the student to add the names of
+non-chord tones, and fields explaining what the student is to do.
+Finally, add navigational buttons, to move to different frames.
+When allowing for interaction, use &ldquo;go to the frame&rdquo; in the frame
+script, as this allows the movie to keep running and accepting
+mouse clicks etc. (the use of &ldquo;pause&rdquo; stops the movie).  For
+Question 2 and the answer, follow a similar procedure.
+</p>
+ 
+<p>[10.3] A working version of the movie showing its scripts is also
+included (see <b>Example 13</b>)&mdash;the main movie script is given in the top right hand
+field, changing scripts according to what sprite is clicked are
+given in the lower right field.  These fields may be moved by
+dragging with the mouse.
+</p>
+ 
+<p>[10.4] When scripting a movie, it is easiest to place all handlers
+in &ldquo;Movie&rdquo; scripts, under a general global line, so that the
+global variables are available to all handlers, with calls to the
+handlers in the scripts of the various corresponding sprites,
+frames, etc.  This avoids the common problem of undefined global
+variables&mdash;a situation which causes errors not always clearly
+articulated by Director&rsquo;s automatic de-bugging features.
+The Movie script; sets up several groups of variables, beginning
+with IH, IIH, etc., which are variables set to the initial
+locations of many sprites (necessary for the script when they
+move and recreate themselves as the user performs the analysis).
+The next variables (scroll down in the upper right hand box to
+see these) are for two lists, then for counters also used in the
+move/recreate scripts.  Global variables for the sound follow.
+The &ldquo;on startMovie&rdquo; handler sets up the initial values for
+locations and counter global variables.  It also initially sets
+all sprites visible, as some are made invisible in the course of
+the movie, but toward the end another handler called
+&ldquo;nonvissprites1&rdquo; makes the sprites corresponding to question 2
+invisible, since the user will presumably start with question 1.
+(If the user goes to question 2 first, a script along the way
+will make the relevant sprites visible.)  It also erases all cast
+members past a certain number:  this is the number of functioning
+cast members, until users start to perform the analyses, then
+more cast members are created.  Every time the movie is
+restarted, the excess cast members are deleted.
+</p>
+ 
+<p>[10.5] The essential script for all the moving sprites (the roman
+numerals, etc.)  is &ldquo;dupandmove,&rdquo; placed within the movie script.
+Move one of the Roman Numerals to show this script, then look in
+the lower right field.  The &ldquo;if ..  then&rdquo; script is a test:  if
+the sprite has been moved from its original location, then it
+will not duplicate itself; this is so that users can adjust the
+Roman Numerals, etc.  they have already placed in the score.  If
+the sprite has not been moved, then the handler &ldquo;dupandmove&rdquo; is
+invoked.  This script, shown in the upper right hand field,
+duplicates the cast member corresponding to the sprite, assigning
+the duplicate all the attributes of the original (all the &ldquo;set
+the&rdquo; lines in the script) so that there is an apparently endless
+supply of numerals and figures.  In fact, the duplicate replaces
+a dummy sprite that is sitting unnoticed on the stage, starting
+with sprite 120 and moving backwards by the incremented value of
+a counter variable x.  There is a total of 120-(the number of
+functioning cast members) of these dummy sprites, allowing for
+around 60 copies of the Roman Numerals, etc.  The script places
+the duplicate at the same place as the original, while the
+original is free to move away.
+</p>
+ 
+<p>[10.6] The trick in the script is to duplicate the cast member
+(the Roman numeral, etc.)  only the first time the sprite is
+clicked&mdash;after it is moved, the user should be able to move it
+again without creating another duplicate.  As noted above, this
+is the purpose of the location test beginning the script in each
+of these moving sprites, as seen in the lower field on the stage.
+If the sprite is at the original location, it will create a
+duplicate; if it has been moved once, it will not.
+</p>
+ 
+<p>[10.7] The handler &ldquo;dupandmove&rdquo; also includes &ldquo;puppetSprite&rdquo;
+commands.  To alter the condition of a sprite from the script, it
+is necessary to use a &ldquo;puppetSprite spriteNumber, TRUE or FALSE&rdquo;
+command.  All elements, sounds, transitions, palettes, etc.  may
+be changed with Lingo, with the corresponding &lsquo;puppet command
+(&ldquo;puppetSound,&rdquo; etc.).  When changing any sprite attributes, it
+is also necessary to end the handler with &ldquo;upDateStage&rdquo; or to use
+&ldquo;go to the frame&rdquo; in the frame script to register the
+change&mdash;this movie uses the latter.
+</p>
+ 
+<p>[10.8] A problem with the &ldquo;puppet&rdquo; commands within Director lead
+to the &ldquo;visible&rdquo; sprite handlers, &ldquo;vissprites&rdquo; and
+&ldquo;nonvissprites.&rdquo;  To see these handlers, click on one of the
+navigation buttons:  &ldquo;question 2&rdquo; or &ldquo;Answer.&rdquo;  A channel or
+sprite that is puppeted will persist on the stage even when it is
+not in the score; thus, it needs to be made invisible when not
+required.  The &ldquo;vissprites&rdquo; and &ldquo;nonvissprites&rdquo; handlers set the
+sprites corresponding to question 1 visible or invisible, while
+the &ldquo;vissprites1&rdquo; and &ldquo;nonvissprites1&rdquo; handlers set the
+visibility of sprites corresponding to question 2.  Two lists are
+created to catalogue the sprites from these two questions:
+Q1List and Q2List.  At the end of the &ldquo;dupandmove&rdquo; handler, the
+duplicated sprite number is put into the corresponding list, and
+the numbers in the list are used in the &ldquo;visible&rdquo; handlers.
+These handlers also include the sprite numbers corresponding to
+the original movable sprites (the Roman numerals, etc.), which
+also must be made visible or invisible, since they are also
+puppeted.
+</p>
+
+<p style="text-align: center"><a NAME="Section11"><b>11. Streaming Audio</b></a></p> 
+
+<p>[11.1] Director movies may also include sound files.<sup><a name="FN9REF" href="#FN9" id="footnote9">(9)</a></sup>  With
+Director on the Web as Shockwave, having relatively large sound
+files embedded in the program causes slow download problems.  One
+solution is to use Macromedia&rsquo;s streaming audio format, which
+comes with an efficient compression of at least 6:1.  Using this
+compression, sound files embedded in the movie are smaller, and
+can be used normally.  When files are still quite large, it is
+also possible to link to external sound files and play them
+during the movie.  This is the technique in the assignment
+analysis movie:  the sound is played with the &ldquo;Listen&rdquo; button,
+which activates a specially prepared compressed sound file,
+&ldquo;schubert.swa,&rdquo; that sits outside the movie and is called when
+needed.  The handler is set in the movie script, and the sound is
+called by the button script, with the handler &ldquo;playswa.&rdquo;  With
+this streaming audio, a buffer is created and the downloading
+sound file is played when the buffer is full, generally about 5
+seconds.  As the file continues to download, it simultaneously
+plays.
+</p>
+
+<p>[11.2] Returning to the homework assignment, to complete the
+steps for creating the movie, prepare a sound file of the
+passage, using a program like Sound-Edit 16 (also made by
+Macromedia), to create a mono file, 16-bit and 22050 samples.
+Use the SWA Compression Xtra in Soundedit and the SWA Settings
+Xtra for Director to compress the sound.  The sound is given a
+corresponding dummy cast member, called &ldquo;SWAHolder,&rdquo; and the name
+of the sound file is assigned in the &ldquo;on startMovie&rdquo; handler.
+The sound handlers then take this sound file and play it, with a
+few configuration features.  The sound can be heard any number of
+times by pressing the corresponding button.  A second sound in
+this example is a reduction to the two outer voices.  Both of
+these sounds were created first as Midi files, then altered to
+.AIF format sound files using Quicktime&rsquo;s MoviePlayer, then Sound
+Edit 16 to change the sounds into compressed .SWA files.
+</p>
+
+<p style="text-align: center"><a NAME="Section12"><b>12. More on Shockwave: Web Programming.</b></a></p> 
+
+<p>[12.1] Shockwave, both a process and plug-in for putting Director
+movies on the Web, was introduced in October 1995, and is
+available for Windows or Macintosh computers, and for Web
+browsers Netscape Navigator and Microsoft Internet Explorer.
+Since Shockwave introduces a new MIME type, .DCR, the server must
+be configured, and the client browser must be configured with the
+plug-in and helper type (as discussed above).<sup><a name="FN10REF" href="#FN10" id="footnote10">(10)</a></sup>  To create
+Shockwave movies, Director uses Xtras contained in folders called
+&ldquo;media,&rdquo; which contain Xtras related to streaming audio, and net
+support, which contain Xtras related to Shockwave movies on the
+Web.  Director 5.0 had an Xtra called &ldquo;Afterburner&rdquo; to create
+shocked movies, but Director 6 has a built-in &ldquo;Create Shockwave
+Movies&rdquo; choice in the file menu, which creates a file ending with
+.DCR.  Shocked movies are placed within HTML documents.  The
+basic EMBED tag is:  &lt;EMBED SRC=&ldquo;movieName.drc&rdquo;
+WIDTH=widthInPixels HEIGHT=heightInPixels&gt;.
+</p>
+
+<p>[12.2] The first rule of Web programming with Shockwave is to
+start with the smallest movie possible:  if the movie is large,
+divide it into smaller movies that call one another, or begin
+with an introductory movie that consists of only an image which
+displays while other movies load (using the &ldquo;GoToNetMovie&rdquo;
+script).  The second rule is be clear on pathnames and file
+names.  Director&rsquo;s lingo, the pathName, is disabled in Shockwave,
+and the movie and supporting files all need to be in the same
+folder or directory and properly labelled.  Files names have
+different restrictions on different platforms:  UNIX servers are
+case-sensitive; Windows machines may have trouble with names
+longer than eight characters with a three character extension or
+names with spaces.  These two and MacIntosh may have trouble with
+special characters in file names.
+</p>
+ 
+<p>[12.3] As with sound, color and graphics are complex topics unto
+themselves when it comes to size, quality, and compression.  The
+safest route is to use the System Color Palettes and the smallest
+bit size for images that provides a clear image:  the difference
+between 8 bit and 16 bit color is noticeable, but the former is
+acceptable.  Use text fields if possible, with standard fonts:
+the client computer must have the same fonts to get the same text
+shape and size.<sup><a name="FN11REF" href="#FN11" id="footnote11">(11)</a></sup>  Director automatically substitutes between
+standard MacIntosh and Windows fonts.  Text created in the text
+cast members is bitmapped and takes more space, but the client
+does not need the same fonts, and so the effect can be assured.
+</p>
+
+<p>[12.4] When putting Director movies into shocked form on the Web,
+important considerations are:  1) data transmission rates; 2) New
+Lingo commands; 3) Director features disabled; and 4)
+miscellaneous issues that affect playing Director movies in a
+browser.  Data transmission on the Web is, from a hardware point
+of view, standardized, with user modem speeds of 14.4 kilobits
+(Kb) per second (= 1.8 KB/s), 28.8 Kb/s (3.6 KB/s), 33.6 Kb/s
+(4.2 KB/s), and 56 Kb/s (7 KB/s).  Higher speeds come from ISDN
+lines, ranging from 64 Kb/s (8 KB/s) to 1.5 Megabits (Mb)/s (184
+KB/s), and T1 lines at 1.544 Mb/s (193 KB/s), Ethernet at 10 Mb/s
+(1.25 MegaBytes (MB)/s), and T3 lines at 44.736 Mb/s (5.592
+MB/s).  Over the internet, however, these theoretical speeds are
+affected by the data transmission capacity of server computers
+and by how busy the server and the lines between server and
+client are at that moment&mdash;a very unpredictable value.  A given
+speed estimate for general use is about 1 KB/s.  By taking the
+size of the movie and supporting files, approximate download
+times can be calculated.  The most important advances for data
+transmission are streaming versions of data:  Shocked movies and
+audio are both streaming, but streaming video is not incorporated
+into Director, although Quicktime movies, which are linked to
+from within shocked movies, are now streaming.
+</p>
+ 
+<p>[12.5] Other concerns to users of Director are the features not
+available in Shockwave form, and the new Lingo scripts required
+by Net form.  Features not available are mostly those related to
+operating systems:  custom menus, printing, saving, restarting,
+resources, file I/O etc., but also include movies within windows.
+The Web-related Lingo commands are in three categories:  those
+that start a process, those that monitor it, and those that send
+or receive a result once the process is done.  This three-step
+set-up accommodates the essentially asynchronous Internet, where
+the time to send and receive data is unpredictable.  Finally, a
+concern at all times on computers is the amount of free memory:
+Shocked movies on top of Web Browsers take up enormous resources,
+and the use of multimedia files can easily (on the MacIntosh at
+least) cause system crashes.  While new versions of operating
+systems and internet protocols help this situation, it is always
+a concern when sending large and complex files over the Web.
+</p>
+
+<p style="text-align: center"><a NAME="Section13"><b>13. Conclusion</b></a></p> 
+
+<p>[13.1] As I noted at the outset, the availability of powerful
+computers linked on the Web offers many possibilities, but also
+pitfalls.  The most basic opposition here is technique versus
+content.  It is easy (remarkably easy!)  to become absorbed in
+the how rather than the why and what when working with computers.
+This situation is the result of many factors.  First, although
+the Web is meant to be platform independent, in reality, each of
+the major systems, from Apple, Microsoft and the IBM clones, Sun,
+and SGI, has its own characteristic ways of interacting with
+the Web.  Thus, authors must learn different programming
+languages and codes.  Currently, for instance, Microsoft has its
+own brand of HTML, different for its browser, called Internet
+Explorer, than that used on the browser, Netscape Navigator, so
+that some web pages or features cannot be read by both programs.
+Although Director is useful since its Shockwave movies are
+playable on MacIntosh or Windows machines, in the latter case,
+users must have sound cards properly installed and overcome some
+difficulties in the plug-and-play; features to hear musical
+files.  As well, servers are often Unix based machines.  In my
+own efforts, I discovered that, while upper case or lower case
+letters in file names and links are equivalent on the MacIntosh,
+on the UNIX server a reference to a file with a different
+configuration of lower or upper case letters failed to find the
+file, and I had to redo some links and code.
+</p>
+ 
+<p>[13.2] Second, since in the marketing of computer programs,
+prices must go down with successive generations of more powerful
+systems, companies dole out versions of software yearly that
+users are required to purchase to keep up.  Although Director is
+useful, for instance, the initial cost is high (around $800)
+until the educational versions come out, usually a year or two
+later.  The educational version of Director 5, for around $75,
+was available only a few months before Director 6.0 came out.
+After the initial outlay, while upgrades are not too expensive,
+the price dissuades many authors.  In my case, I learned the
+Shockwave version of Director 5.0 by cobbling together elements
+from books and the Web; in Director 6.0, these elements have been
+integrated into the program&mdash;but with some elements now changed
+from the Afterburner; generation.  Such changes make working in
+multi-media exasperating.
+</p>
+ 
+<p>[13.3] Third, to create worthwhile educational content for the
+Web, instructors have to re-imagine their course material, or
+invent new courses, appropriate for the new medium.  Putting
+class notes and schedules in electronic form is convenient, but
+hardly represents a new use for computers.  What is the criteria
+for useful Web texts?  At Eastman, only a relatively small
+proportion of students have web access, so it is difficult to do
+tests with large groups.  I have just begun to use web pages in
+my own teaching, but in the process of thinking about using the
+web and computers, a few important questions have come to mind
+and, I believe, need to be considered by all web authors for
+educational materials:</p>
+
+<blockquote> 
+
+1) Do the materials use the capabilities of the computer to
+combine sound and image?  Image and text alone work quite well in
+a book, and sound alone is easily available on CD systems.
+Combining images and text, with instant access to both, is a
+strength of the computer, and should be the goal of instructional
+materials.</blockquote>
+
+
+<blockquote>2) Are the learning materials goal-directed?  I&rsquo;m not a big fan
+of pages full of multiple menu possibilities on successive pages
+or teaching materials organized like a game.  Part of teaching is
+instructing students in a systematic and goal-oriented way, as
+their lack of experience with the material is the reason they&rsquo;re
+in the class to begin with:  it is not appropriate to assume that
+they will make the best decisions in the order of material.  Web
+materials should be efficiently and clearly presented, with the
+next step indicated.</blockquote>
+ 
+<blockquote>3) Do the assignments or tasks on the Web allow students to learn
+at their own pace?  This question requires a well-thought out
+interface, with lots of looping connectors so that students can
+go back over material and review/rediscover ideas and concepts as
+needed.  This potential is also one of the great strengths of the
+computer.</blockquote>
+ 
+<blockquote>4) Does the program or file point beyond itself, causing the
+student to make larger connections?  Self-contained drill type
+programs might be of some use in a directed environment, but the
+ideal materials should both present the immediate topic and point
+(with links) to topics of larger implication.
+</blockquote> 
+ 
+<p>[13.4] To the problems of multi-media authoring noted
+above&mdash;learning programming languages, Web pages, problems with
+multiple platforms and generating sound&mdash;Director offers an
+all-in-one solution, and is worth consideration by all those
+interested.  Although it has a few quirks, Director is relatively
+easy to learn and get fast results with scripts.<sup><a name="FN12REF" href="#FN12" id="footnote12">(12)</a></sup>  As for the
+often frustrating and time-consuming process of developing
+content for the Web, Director can help with the technique, but
+the content&mdash;from imagination and an understanding of the
+medium&mdash;is the result of hard work and time spent in the
+environment.  As operating systems and programs become ever more
+closely tied to the Web, with teaching and learning in the
+education business inevitably following, all of us will need to
+use computers in the most efficient and effective ways possible.</p>
+
+<!-------------------------------- END Article Body -------------------------------------------->
+
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Author Info -------------------------------------------->
+
+	
+<hr>
+
+	<p><a name="AUTHORNOTE1"></a>
+	
+	Dave Headlam<br>
+	Eastman School of Music<br>26 Gibbs Street<br>Rochester, New York 14604<br><a href="mailto:dhlm@theory.esm.rochester.edu">dhlm@theory.esm.rochester.edu</a><br>	
+</p>
+	
+       
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- Works Cited List -------------------------------------------->
+
+	
+<!-------------------------------- Footnotes List -------------------------------------------->
+
+		
+	<hr>
+	
+	<h3><a name="Footnotes">Footnotes</a></h3>
+	
+	<p><a name="FN1">1.</a> The author is here defined as the creator of the program or
+file which is then utilized by the user.  The author puts the
+file on a server computer, and the user accesses the file on a
+client computer which is connected to the server in some way,
+most likely via the internet.<br><br>
+ 
+Computer programs such as word processors, webbrowsers, and
+operating systems are often designed with smaller programs in
+self-contained modules which can be added on easily.  For
+instance, the MacIntosh operating system has system extensions and
+control panels, Director has Xtras, and Netscape has plug-ins,
+called helpers in the Preferences menu.  These modules, put in an
+appointed folder, can be called upon when necessary to run
+certain parts of the program or to recognize and run related
+types of programs.  Procedures made available by Xtras are called
+X-commands (Xcmd), and other names beginning with X.  Netscape&rsquo;s
+plug-ins allow it to recognize file types, called Mime
+(Multipurpose Internet Mail Extensions) types, that are sent over
+the internet.  Director&rsquo;s web plug-in for Netscape is called
+Shockwave.<br><br>
+
+Web browsers are programs designed to recognize and display
+different types of files, particularly Mime (Multipurpose
+Internet Mail Extensions) types, which are sent over the
+internet.  Netscape Navigator is a well-known browser, that can
+display text, images, and animations written in different codes,
+such as HTML (Hypertext Markup Language).  Browsers can be
+extended by plug-ins when new codes are introduced.<br><a href="#FN1REF">Return to text</a></p><p><a name="FN2">2.</a> Computer-aided Instruction (CAI) programs have developed
+along with personal computers.  Some existing programs are
+MacGamut, Practica Musica.
+<br> <br>
+ 
+Hypercard is a MacIntosh program using a stack of cards as the
+metaphor.  The best known examples of its use are found in
+studies of works such as Stravinksy&rsquo;s Rite of Spring and
+Beethoven&rsquo;s Ninth Symphony, as well as the more recent Ragtime,
+put out by the Voyager Company.  For recent examples of teaching
+uses, see the article by Elizabeth West Marvin and Alexander R.
+Brinkman in this issue of MTO.  See also the Voyager web site and
+accompanying software, CDLink, which allows for Hypercard Stacks
+online.
+<br><br>
+ 
+For some Web pages designed for interactive activities and
+teaching, see the following <a href='http://sparky.parmly.luc.edu/sharc'>http://sparky.parmly.luc.edu/sharc</a> for Greg Sandell&rsquo;s timbre research, as well as
+<a href='http://locutus.esm.rochester.edu/~cscotto/jrt121/'>http://locutus.esm.rochester.edu/~cscotto/jrt121/</a> by my
+colleague, Ciro Scotto, as well as my own
+<a href='http://locutus.esm.rochester.edu/~dhlm/acoustic.html'>http://locutus.esm.rochester.edu/~dhlm/acoustic.html</a>.<br><a href="#FN2REF">Return to text</a></p><p><a name="FN3">3.</a> In the past on the Internet, a sound or other file had to
+download completely and then begin playing, which can take a
+lengthy period of time.  Streaming files are created with enough
+control information put at the beginning of the file so that the
+file can be processed and begin playing or presenting almost
+immediately.  The remainder of the file continues to download
+into a buffer simultaneously.  The problem is that download times
+are unpredictable on the Web and may change even during one
+file&rsquo;s download.  Thus, a sound may begin playing, then stop,
+while enough information flows into the buffer to continue the
+play.  Director&rsquo;s streaming audio allows authors to set the
+initial time before the playing begins (default 5 seconds), which
+allows some leeway, but there is no fail-safe solution.<br><a href="#FN3REF">Return to text</a></p><p><a name="FN4">4.</a> Soundwaves can be described digitally in a Cartesian graph
+type format, with x-values as time, measured in small chunks
+called samples.  Samples of sounds are taken in fractions of
+seconds, usually in 1/22050 or 1/44100&rsquo;s of a second, or 44,100
+samples = 44,100 times a second.  The sample rate is twice the
+highest frequency possible in the sound represented, thus 44,100
+samples per second allows for a frequency of 22050 Hz, or cycles
+per second, above most people&rsquo;s range of hearing; 22050 samples
+per second allows for 11025 Hz frequencies, within the range of
+hearing, but is acceptable as a compromise (the piano spans 27.4-
+4186 Hz).
+<br><br>
+ 
+Computers store information in binary numbers, with each bit set
+to either 0 or 1, and in bytes of 8-bits each to store numbers or
+words, etc:  8-bits = 1 byte, 16 bit = 2 bytes.  A kilobit (Kb) =
+1000 bits, a Kilobyte (KB) = 1000 bytes, a Megabyte (MB) =
+1,000,000 bytes.  In the Cartesian graph representation of a
+soundfile, y-values are the amplitude levels, measured in
+divisions relating to the bits; present in the sound
+representation, usually 8 bits (=256 levels) or 16 bits (=16536
+levels).  The sound wave is much more faithfully reproduced by
+the many more levels in 16 bits, but for size reasons 8-bit sound
+has been used on the Web.  The size of sound files (uncompressed)
+depends on the bits and samples:  8 bits = 1 byte, so that 8 bit,
+22050 sample sound takes about 22 KB per second; CD quality
+stereo 16 bit, 44,100 sample sound takes 2 <i> 2 </i> 44,100 = about
+166.4 KB per second.
+<br><br>
+ 
+An Analog-to-Digital converter converts a sound signal (trumpet
+note, traffic noise) from its electrical representation into a
+series of numbers representing the time and amplitude values of
+the signal.  A Digital-to-Analog converter reverses the process,
+creating sound from a series of binary numbers.<br><a href="#FN4REF">Return to text</a></p><p><a name="FN5">5.</a> Midi file information can be found at
+<a href='http://www.eeb.ele.tue.nl/midi/index.html'>http://www.eeb.ele.tue.nl/midi/index.html</a>, but there are
+thousands of sites with MIDI files and info.  Mod file
+information can be found at:
+<a href='http://members.aol.com/Edgeman101/musica.html'>http://members.aol.com/Edgeman101/musica.html</a>.<br><a href="#FN5REF">Return to text</a></p><p><a name="FN6">6.</a> Information and downloads related to Quicktime 2.5 can be
+found at:  <a href='http://quicktime.apple.com'>http://quicktime.apple.com</a>.<br><a href="#FN6REF">Return to text</a></p><p><a name="FN7">7.</a> Although useful by itself, Director may also be ordered in a
+Studio, bundled with a sound editing program, SoundEdit 16, an
+image editor, xRes 3, and a 3D tool, Extreme 3D 2, for a complete
+multimedia package.<br><a href="#FN7REF">Return to text</a></p><p><a name="FN8">8.</a> In the original CD-ROM version of this movie, the sound is a
+quicktime movie, and can be accessed at any point, as well as
+stopped, started, and paused.  Director&rsquo;s streaming audio
+unfortunately only allows for the latter.<br><a href="#FN8REF">Return to text</a></p><p><a name="FN9">9.</a> In non-web uses, sounds can also be placed in the two sound
+channels; when the movie plays the frame with the sound file in
+it, it will play the sound file.  To coordinate sound with
+animation, it is easier to import the sound as a quicktime movie;
+quicktime movies can be controlled virtually frame by frame, and
+so a quicktime movie sound can also be started and stopped and
+accessed at any point easily to coordinate with animation.
+Unfortunately, this is not yet possible with linked quicktime
+sounds or Director&rsquo;s streaming audio.<br><a href="#FN9REF">Return to text</a></p><p><a name="FN10">10.</a> On servers, a file called &ldquo;mime.type&rdquo; (UNIX) contains many
+file types; add the line:  application/x-director dcr, dir, dxr.<br><a href="#FN10REF">Return to text</a></p><p><a name="FN11">11.</a> The standard system fonts:  Arial, Courier New, Symbol,
+Times New Roman, and Wingdings on Windows and Chicago, Courier,
+Geneva, Helvetica, Monaco, New York, Palatino, Symbol, and Times
+on the Macintosh.  If you choose a standard Macintosh system
+font, Director automatically substitutes a standard Windows
+system font when someone runs the movie on a Windows
+computer--and vice versa.<br><a href="#FN11REF">Return to text</a></p><p><a name="FN12">12.</a> Director has a few quirks that should be noted.  First, the
+first frame of a movie often doesn&rsquo;t work properly when sounds or
+scripts are present, and it is best to begin in frame 2, leaving
+frame 1 either empty, or with the same stage as frame 2 without
+the sounds, scripts, or markers, so that the movie begins and
+passes through at least one unscripted frame before the action
+begins.  Second, the last frame of a movie needs to be considered
+carefully, otherwise the movie will just end; often, the ;last;
+frame loops, waiting for a user click.  Third, repeat loops and
+pauses shut out the user (and, in Web pages, the browser as well)
+and should be used carefully; options should be given to stop any
+lengthy activity.  Fourth, when using text, use ;field; cast
+members for general text but use a standard font, since client
+computers will only show fonts that they have mounted; for
+specific fonts or text arrangements, use ;text; cast members,
+which are read as bitmaps.  Fifth, when done making a movie, it
+is often convenient to get rid of unused Cast members by opening
+the Find command, which has a setting ;not used in movie.; The
+list of members includes movie and frame scripts however, which
+must be kept.  It is thus best to name these scripts to avoid a
+tedious search to be sure which cast members may be deleted.
+There are also a few general quirks of computer programs to
+remember.  For instance, when using linked media, make the link
+to a copy of the image or sound, etc., because any changes made
+within, in this case, Director, will change the source media.
+<br><br>
+ 
+For the best source on Director, go to
+<a href='http://www.macromedia.com/'>http://www.macromedia.com/</a>, for music-related shockwave sites
+go to <a href='http://www.teleport.com/~arcana/shockwave'>http://www.teleport.com/~arcana/shockwave</a>; a few helpful
+books are:  Gary Rosenzweig, <i>The Comprehensive Guide to Lingo</i>
+(Ventana, 1996), and Cathy Clarke, Lee Swearingen, and David K.
+Anderson, <i>Shocking the Web</i> (Berkeley, CA:  Macromedia Press,
+1997).<br><a href="#FN12REF">Return to text</a></p><div id="fndiv1" class="flyoverdiv">The author is here defined as the creator of the program or
+file which is then utilized by the user.  The author puts the
+file on a server computer, and the user accesses the file on a
+client computer which is connected to the server in some way,
+most likely via the internet.<br><br>
+ 
+Computer programs such as word processors, webbrowsers, and
+operating systems are often designed with smaller programs in
+self-contained modules which can be added on easily.  For
+instance, the MacIntosh operating system has system extensions and
+control panels, Director has Xtras, and Netscape has plug-ins,
+called helpers in the Preferences menu.  These modules, put in an
+appointed folder, can be called upon when necessary to run
+certain parts of the program or to recognize and run related
+types of programs.  Procedures made available by Xtras are called
+X-commands (Xcmd), and other names beginning with X.  Netscape&rsquo;s
+plug-ins allow it to recognize file types, called Mime
+(Multipurpose Internet Mail Extensions) types, that are sent over
+the internet.  Director&rsquo;s web plug-in for Netscape is called
+Shockwave.<br><br>
+
+Web browsers are programs designed to recognize and display
+different types of files, particularly Mime (Multipurpose
+Internet Mail Extensions) types, which are sent over the
+internet.  Netscape Navigator is a well-known browser, that can
+display text, images, and animations written in different codes,
+such as HTML (Hypertext Markup Language).  Browsers can be
+extended by plug-ins when new codes are introduced.</div><div id="fndiv2" class="flyoverdiv">Computer-aided Instruction (CAI) programs have developed
+along with personal computers.  Some existing programs are
+MacGamut, Practica Musica.
+<br> <br>
+ 
+Hypercard is a MacIntosh program using a stack of cards as the
+metaphor.  The best known examples of its use are found in
+studies of works such as Stravinksy&rsquo;s Rite of Spring and
+Beethoven&rsquo;s Ninth Symphony, as well as the more recent Ragtime,
+put out by the Voyager Company.  For recent examples of teaching
+uses, see the article by Elizabeth West Marvin and Alexander R.
+Brinkman in this issue of MTO.  See also the Voyager web site and
+accompanying software, CDLink, which allows for Hypercard Stacks
+online.
+<br><br>
+ 
+For some Web pages designed for interactive activities and
+teaching, see the following <a href='http://sparky.parmly.luc.edu/sharc'>http://sparky.parmly.luc.edu/sharc</a> for Greg Sandell&rsquo;s timbre research, as well as
+<a href='http://locutus.esm.rochester.edu/~cscotto/jrt121/'>http://locutus.esm.rochester.edu/~cscotto/jrt121/</a> by my
+colleague, Ciro Scotto, as well as my own
+<a href='http://locutus.esm.rochester.edu/~dhlm/acoustic.html'>http://locutus.esm.rochester.edu/~dhlm/acoustic.html</a>.</div><div id="fndiv3" class="flyoverdiv">In the past on the Internet, a sound or other file had to
+download completely and then begin playing, which can take a
+lengthy period of time.  Streaming files are created with enough
+control information put at the beginning of the file so that the
+file can be processed and begin playing or presenting almost
+immediately.  The remainder of the file continues to download
+into a buffer simultaneously.  The problem is that download times
+are unpredictable on the Web and may change even during one
+file&rsquo;s download.  Thus, a sound may begin playing, then stop,
+while enough information flows into the buffer to continue the
+play.  Director&rsquo;s streaming audio allows authors to set the
+initial time before the playing begins (default 5 seconds), which
+allows some leeway, but there is no fail-safe solution.</div><div id="fndiv4" class="flyoverdiv">Soundwaves can be described digitally in a Cartesian graph
+type format, with x-values as time, measured in small chunks
+called samples.  Samples of sounds are taken in fractions of
+seconds, usually in 1/22050 or 1/44100&rsquo;s of a second, or 44,100
+samples = 44,100 times a second.  The sample rate is twice the
+highest frequency possible in the sound represented, thus 44,100
+samples per second allows for a frequency of 22050 Hz, or cycles
+per second, above most people&rsquo;s range of hearing; 22050 samples
+per second allows for 11025 Hz frequencies, within the range of
+hearing, but is acceptable as a compromise (the piano spans 27.4-
+4186 Hz).
+<br><br>
+ 
+Computers store information in binary numbers, with each bit set
+to either 0 or 1, and in bytes of 8-bits each to store numbers or
+words, etc:  8-bits = 1 byte, 16 bit = 2 bytes.  A kilobit (Kb) =
+1000 bits, a Kilobyte (KB) = 1000 bytes, a Megabyte (MB) =
+1,000,000 bytes.  In the Cartesian graph representation of a
+soundfile, y-values are the amplitude levels, measured in
+divisions relating to the bits; present in the sound
+representation, usually 8 bits (=256 levels) or 16 bits (=16536
+levels).  The sound wave is much more faithfully reproduced by
+the many more levels in 16 bits, but for size reasons 8-bit sound
+has been used on the Web.  The size of sound files (uncompressed)
+depends on the bits and samples:  8 bits = 1 byte, so that 8 bit,
+22050 sample sound takes about 22 KB per second; CD quality
+stereo 16 bit, 44,100 sample sound takes 2 <i> 2 </i> 44,100 = about
+166.4 KB per second.
+<br><br>
+ 
+An Analog-to-Digital converter converts a sound signal (trumpet
+note, traffic noise) from its electrical representation into a
+series of numbers representing the time and amplitude values of
+the signal.  A Digital-to-Analog converter reverses the process,
+creating sound from a series of binary numbers.</div><div id="fndiv5" class="flyoverdiv">Midi file information can be found at
+<a href='http://www.eeb.ele.tue.nl/midi/index.html'>http://www.eeb.ele.tue.nl/midi/index.html</a>, but there are
+thousands of sites with MIDI files and info.  Mod file
+information can be found at:
+<a href='http://members.aol.com/Edgeman101/musica.html'>http://members.aol.com/Edgeman101/musica.html</a>.</div><div id="fndiv6" class="flyoverdiv">Information and downloads related to Quicktime 2.5 can be
+found at:  <a href='http://quicktime.apple.com'>http://quicktime.apple.com</a>.</div><div id="fndiv7" class="flyoverdiv">Although useful by itself, Director may also be ordered in a
+Studio, bundled with a sound editing program, SoundEdit 16, an
+image editor, xRes 3, and a 3D tool, Extreme 3D 2, for a complete
+multimedia package.</div><div id="fndiv8" class="flyoverdiv">In the original CD-ROM version of this movie, the sound is a
+quicktime movie, and can be accessed at any point, as well as
+stopped, started, and paused.  Director&rsquo;s streaming audio
+unfortunately only allows for the latter.</div><div id="fndiv9" class="flyoverdiv">In non-web uses, sounds can also be placed in the two sound
+channels; when the movie plays the frame with the sound file in
+it, it will play the sound file.  To coordinate sound with
+animation, it is easier to import the sound as a quicktime movie;
+quicktime movies can be controlled virtually frame by frame, and
+so a quicktime movie sound can also be started and stopped and
+accessed at any point easily to coordinate with animation.
+Unfortunately, this is not yet possible with linked quicktime
+sounds or Director&rsquo;s streaming audio.</div><div id="fndiv10" class="flyoverdiv">On servers, a file called &ldquo;mime.type&rdquo; (UNIX) contains many
+file types; add the line:  application/x-director dcr, dir, dxr.</div><div id="fndiv11" class="flyoverdiv">The standard system fonts:  Arial, Courier New, Symbol,
+Times New Roman, and Wingdings on Windows and Chicago, Courier,
+Geneva, Helvetica, Monaco, New York, Palatino, Symbol, and Times
+on the Macintosh.  If you choose a standard Macintosh system
+font, Director automatically substitutes a standard Windows
+system font when someone runs the movie on a Windows
+computer--and vice versa.</div><div id="fndiv12" class="flyoverdiv">Director has a few quirks that should be noted.  First, the
+first frame of a movie often doesn&rsquo;t work properly when sounds or
+scripts are present, and it is best to begin in frame 2, leaving
+frame 1 either empty, or with the same stage as frame 2 without
+the sounds, scripts, or markers, so that the movie begins and
+passes through at least one unscripted frame before the action
+begins.  Second, the last frame of a movie needs to be considered
+carefully, otherwise the movie will just end; often, the ;last;
+frame loops, waiting for a user click.  Third, repeat loops and
+pauses shut out the user (and, in Web pages, the browser as well)
+and should be used carefully; options should be given to stop any
+lengthy activity.  Fourth, when using text, use ;field; cast
+members for general text but use a standard font, since client
+computers will only show fonts that they have mounted; for
+specific fonts or text arrangements, use ;text; cast members,
+which are read as bitmaps.  Fifth, when done making a movie, it
+is often convenient to get rid of unused Cast members by opening
+the Find command, which has a setting ;not used in movie.; The
+list of members includes movie and frame scripts however, which
+must be kept.  It is thus best to name these scripts to avoid a
+tedious search to be sure which cast members may be deleted.
+There are also a few general quirks of computer programs to
+remember.  For instance, when using linked media, make the link
+to a copy of the image or sound, etc., because any changes made
+within, in this case, Director, will change the source media.
+<br><br>
+ 
+For the best source on Director, go to
+<a href='http://www.macromedia.com/'>http://www.macromedia.com/</a>, for music-related shockwave sites
+go to <a href='http://www.teleport.com/~arcana/shockwave'>http://www.teleport.com/~arcana/shockwave</a>; a few helpful
+books are:  Gary Rosenzweig, <i>The Comprehensive Guide to Lingo</i>
+(Ventana, 1996), and Cathy Clarke, Lee Swearingen, and David K.
+Anderson, <i>Shocking the Web</i> (Berkeley, CA:  Macromedia Press,
+1997).</div>	
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+	
+<!-------------------------------- FOOTER -------------------------------------------->
+
+	<hr>
+<h3>Copyright Statement</h3>
+<p><h4>Copyright &copy; 1997 by the Society for Music Theory. All rights reserved.</h4></p>
+<p class="small">[1] Copyrights for individual items published in  <i>Music Theory Online</i> (<i>MTO</i>) 
+are held by their authors. Items appearing in  <i>MTO</i> may be saved and stored in electronic or paper form, and may be shared among individuals for purposes of 
+scholarly research or discussion, but may  <i>not</i>  be republished in any form, electronic or print, without prior, written permission from the author(s), and advance 
+notification of the editors of  <i>MTO.</i></p>
+<p class="small">[2] Any redistributed form of items published in  <i>MTO</i> must include the following information in a form appropriate to the medium in which the items are 
+to appear: </p>
+<blockquote>
+<p class="small">This item appeared in  <i>Music Theory Online</i> in [VOLUME #, ISSUE #] on [DAY/MONTH/YEAR]. It was authored by [FULL NAME, EMAIL ADDRESS], with whose written 
+permission it is reprinted here.</p>
+</blockquote>
+<p class="small">[3] Libraries may archive issues of  <i>MTO</i> in electronic or paper form for public access so long as each issue is stored in its entirety, and no access fee 
+is charged. Exceptions to these requirements must be approved in writing by the editors of  <i>MTO,</i> who will act in accordance with the decisions of the Society 
+for Music Theory. </p>
+<p class="small">This document and all portions thereof are protected by U.S. and international copyright laws. Material contained herein may be copied and/or distributed for research 
+purposes only. </p>
+	   
+	<div style="height:24px;width:150px;background-color:#4c7381;float:left;text-align: center;vertical-align: middle;line-height: 24px;">
+		&nbsp;&nbsp;&nbsp;
+		<a style="color:white;" onmouseover="this.style.color='#0000ff';text-decoration:none" 
+		onmouseout="this.style.color='white';" href="#Beginning">Return to beginning</a>
+		&nbsp;&nbsp;&nbsp;
+	</div><br><br>
+
+		
+		
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 
+
+
+<div style="width:55%;float:right"><a href="https://societymusictheory.org">
+<img alt="SMT" longdesc="Society for Music Theory" src="https://mtosmt.org/gifs/smtlogo_black.png" width="180"></a></div>
+	
+<div>
+<p style='font-size:1rem'>Prepared by Jon Koriagin and Tahirih Motazedian, Editorial Assistants  
+
+
+<br>
+		
+	
+		
+	</p><br><br>
+</i>		
+
+</div>
+</div>
+</article>
+</body>
+</html>
+
